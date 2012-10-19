@@ -122,8 +122,8 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static List<ModelRoot> loadModelRoots(List<Element> modelRootElements, final MacroHelper macroHelper) {
-    return ListSequence.fromList(modelRootElements).select(new ISelector<Element, ModelRoot>() {
+  public static List<ModelRoot> loadModelRoots(Iterable<Element> modelRootElements, final MacroHelper macroHelper) {
+    return Sequence.fromIterable(modelRootElements).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelRoot(mre, macroHelper);
       }

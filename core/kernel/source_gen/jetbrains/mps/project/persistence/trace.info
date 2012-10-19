@@ -1,106 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1986682148700850462" modelId="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)">
-    <nodeInfo nodeId="5932019537937718585" fileName="DeploymentDescriptorPersistence.java" startLine="20" startPosition="81" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718588" fileName="DeploymentDescriptorPersistence.java" startLine="21" startPosition="36" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937718591" fileName="DeploymentDescriptorPersistence.java" startLine="23" startPosition="9" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718596" fileName="DeploymentDescriptorPersistence.java" startLine="24" startPosition="54" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718605" fileName="DeploymentDescriptorPersistence.java" startLine="25" startPosition="72" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="28" startPosition="46" endLine="29" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="29" startPosition="90" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="30" startPosition="94" endLine="31" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="31" startPosition="74" endLine="32" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="32" startPosition="89" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="33" startPosition="69" endLine="34" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="34" startPosition="89" endLine="35" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937807292" fileName="DeploymentDescriptorPersistence.java" startLine="35" startPosition="69" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="40" startPosition="44" endLine="41" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="41" startPosition="88" endLine="42" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="42" startPosition="138" endLine="43" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="43" startPosition="102" endLine="44" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="44" startPosition="76" endLine="45" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="45" startPosition="101" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3451207279393967460" fileName="DeploymentDescriptorPersistence.java" startLine="50" startPosition="11" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3451207279393967472" fileName="DeploymentDescriptorPersistence.java" startLine="52" startPosition="107" endLine="53" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3451207279393967501" fileName="DeploymentDescriptorPersistence.java" startLine="55" startPosition="107" endLine="56" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937720903" fileName="DeploymentDescriptorPersistence.java" startLine="57" startPosition="11" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937720933" fileName="DeploymentDescriptorPersistence.java" startLine="59" startPosition="107" endLine="60" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937720907" fileName="DeploymentDescriptorPersistence.java" startLine="60" startPosition="110" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="61" startPosition="0" endLine="62" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="62" startPosition="82" endLine="63" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="63" startPosition="79" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="64" startPosition="89" endLine="65" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937720904" fileName="DeploymentDescriptorPersistence.java" startLine="66" startPosition="11" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="67" startPosition="0" endLine="68" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5932019537937718991" fileName="DeploymentDescriptorPersistence.java" startLine="71" startPosition="27" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5932019537937718995" fileName="DeploymentDescriptorPersistence.java" startLine="73" startPosition="5" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5932019537937718996" fileName="DeploymentDescriptorPersistence.java" startLine="74" startPosition="0" endLine="75" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937719000" fileName="DeploymentDescriptorPersistence.java" startLine="75" startPosition="63" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1986682148700850464" fileName="DeploymentDescriptorPersistence.java" startLine="16" startPosition="46" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeploymentDescriptorPersistence#()V" />
-    <nodeInfo nodeId="3451207279393967462" fileName="DeploymentDescriptorPersistence.java" startLine="51" startPosition="0" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3451207279393967491" fileName="DeploymentDescriptorPersistence.java" startLine="54" startPosition="11" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5932019537937720905" fileName="DeploymentDescriptorPersistence.java" startLine="58" startPosition="0" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="39" startPosition="108" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/project/structure/modules/Dependency;" />
-    <nodeInfo nodeId="5932019537937807402" fileName="DeploymentDescriptorPersistence.java" startLine="38" startPosition="109" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937807320" fileName="DeploymentDescriptorPersistence.java" startLine="37" startPosition="112" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5932019537937807295" fileName="DeploymentDescriptorPersistence.java" startLine="36" startPosition="0" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="27" startPosition="77" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/project/structure/modules/DeploymentDescriptor;" />
-    <nodeInfo nodeId="5932019537937718606" fileName="DeploymentDescriptorPersistence.java" startLine="26" startPosition="0" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5932019537937718589" fileName="DeploymentDescriptorPersistence.java" startLine="22" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5932019537937718577" fileName="DeploymentDescriptorPersistence.java" startLine="19" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadDeploymentDescriptor#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DeploymentDescriptor;" />
-    <scopeInfo nodeId="1986682148700850467" fileName="DeploymentDescriptorPersistence.java" startLine="17" startPosition="44" endLine="17" endPosition="44" />
-    <scopeInfo nodeId="3451207279393967465" fileName="DeploymentDescriptorPersistence.java" startLine="52" startPosition="107" endLine="53" endPosition="85" />
-    <scopeInfo nodeId="3451207279393967494" fileName="DeploymentDescriptorPersistence.java" startLine="55" startPosition="107" endLine="56" endPosition="83" />
-    <scopeInfo nodeId="5932019537937718987" fileName="DeploymentDescriptorPersistence.java" startLine="71" startPosition="0" endLine="72" endPosition="39">
+    <nodeInfo nodeId="5932019537937718585" fileName="DeploymentDescriptorPersistence.java" startLine="19" startPosition="81" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718588" fileName="DeploymentDescriptorPersistence.java" startLine="20" startPosition="36" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5932019537937718591" fileName="DeploymentDescriptorPersistence.java" startLine="22" startPosition="9" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718596" fileName="DeploymentDescriptorPersistence.java" startLine="23" startPosition="54" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718605" fileName="DeploymentDescriptorPersistence.java" startLine="24" startPosition="60" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="27" startPosition="46" endLine="28" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="28" startPosition="90" endLine="29" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="29" startPosition="94" endLine="30" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="30" startPosition="74" endLine="31" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="31" startPosition="89" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="32" startPosition="69" endLine="33" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="33" startPosition="89" endLine="34" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937807292" fileName="DeploymentDescriptorPersistence.java" startLine="34" startPosition="69" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="39" startPosition="44" endLine="40" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="40" startPosition="88" endLine="41" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="41" startPosition="138" endLine="42" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="42" startPosition="102" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="43" startPosition="76" endLine="44" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="44" startPosition="101" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3451207279393967460" fileName="DeploymentDescriptorPersistence.java" startLine="49" startPosition="11" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3451207279393967472" fileName="DeploymentDescriptorPersistence.java" startLine="51" startPosition="128" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3451207279393967501" fileName="DeploymentDescriptorPersistence.java" startLine="54" startPosition="128" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937720903" fileName="DeploymentDescriptorPersistence.java" startLine="56" startPosition="11" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967214182" fileName="DeploymentDescriptorPersistence.java" startLine="57" startPosition="0" endLine="58" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="59" startPosition="32" endLine="60" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="60" startPosition="89" endLine="61" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="61" startPosition="80" endLine="62" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="62" startPosition="96" endLine="63" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937720904" fileName="DeploymentDescriptorPersistence.java" startLine="64" startPosition="11" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="65" startPosition="0" endLine="66" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932019537937718991" fileName="DeploymentDescriptorPersistence.java" startLine="69" startPosition="27" endLine="70" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5932019537937718995" fileName="DeploymentDescriptorPersistence.java" startLine="71" startPosition="5" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5932019537937718996" fileName="DeploymentDescriptorPersistence.java" startLine="72" startPosition="0" endLine="73" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937719000" fileName="DeploymentDescriptorPersistence.java" startLine="73" startPosition="63" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1986682148700850464" fileName="DeploymentDescriptorPersistence.java" startLine="15" startPosition="46" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeploymentDescriptorPersistence#()V" />
+    <nodeInfo nodeId="3451207279393967462" fileName="DeploymentDescriptorPersistence.java" startLine="50" startPosition="0" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3451207279393967491" fileName="DeploymentDescriptorPersistence.java" startLine="53" startPosition="11" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5932019537937720905" fileName="DeploymentDescriptorPersistence.java" startLine="58" startPosition="101" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="38" startPosition="108" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/project/structure/modules/Dependency;" />
+    <nodeInfo nodeId="5932019537937807402" fileName="DeploymentDescriptorPersistence.java" startLine="37" startPosition="130" endLine="47" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937807320" fileName="DeploymentDescriptorPersistence.java" startLine="36" startPosition="133" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5932019537937807295" fileName="DeploymentDescriptorPersistence.java" startLine="35" startPosition="0" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="26" startPosition="77" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/project/structure/modules/DeploymentDescriptor;" />
+    <nodeInfo nodeId="5932019537937718606" fileName="DeploymentDescriptorPersistence.java" startLine="25" startPosition="0" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932019537937718589" fileName="DeploymentDescriptorPersistence.java" startLine="21" startPosition="0" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5932019537937718577" fileName="DeploymentDescriptorPersistence.java" startLine="18" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadDeploymentDescriptor#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DeploymentDescriptor;" />
+    <scopeInfo nodeId="1986682148700850467" fileName="DeploymentDescriptorPersistence.java" startLine="16" startPosition="44" endLine="16" endPosition="44" />
+    <scopeInfo nodeId="3451207279393967465" fileName="DeploymentDescriptorPersistence.java" startLine="51" startPosition="128" endLine="52" endPosition="85" />
+    <scopeInfo nodeId="3451207279393967494" fileName="DeploymentDescriptorPersistence.java" startLine="54" startPosition="128" endLine="55" endPosition="83" />
+    <scopeInfo nodeId="5932019537937718987" fileName="DeploymentDescriptorPersistence.java" startLine="69" startPosition="0" endLine="70" endPosition="39">
       <varInfo nodeId="5932019537937718988" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937718990" fileName="DeploymentDescriptorPersistence.java" startLine="71" startPosition="27" endLine="72" endPosition="39" />
-    <scopeInfo nodeId="1986682148700850464" fileName="DeploymentDescriptorPersistence.java" startLine="16" startPosition="46" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="3451207279393967462" fileName="DeploymentDescriptorPersistence.java" startLine="51" startPosition="0" endLine="54" endPosition="11">
+    <scopeInfo nodeId="5932019537937718990" fileName="DeploymentDescriptorPersistence.java" startLine="69" startPosition="27" endLine="70" endPosition="39" />
+    <scopeInfo nodeId="1986682148700850464" fileName="DeploymentDescriptorPersistence.java" startLine="15" startPosition="46" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="3451207279393967462" fileName="DeploymentDescriptorPersistence.java" startLine="50" startPosition="0" endLine="53" endPosition="11">
       <varInfo nodeId="3451207279393967463" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="3451207279393967491" fileName="DeploymentDescriptorPersistence.java" startLine="54" startPosition="11" endLine="57" endPosition="11">
+    <scopeInfo nodeId="3451207279393967491" fileName="DeploymentDescriptorPersistence.java" startLine="53" startPosition="11" endLine="56" endPosition="11">
       <varInfo nodeId="3451207279393967492" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="40" startPosition="44" endLine="46" endPosition="59">
+    <scopeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="59" startPosition="32" endLine="63" endPosition="84">
+      <varInfo nodeId="5932019537937720906" varName="result_wu2j1h_a0a01a0a0d0c0a" />
+      <varInfo nodeId="5932019537937720906" varName="result_wu2j1h_a1a01a0a0d0c0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="39" startPosition="44" endLine="45" endPosition="59">
       <varInfo nodeId="5932019537937807365" varName="result_wu2j1h_a0a0a0a0a0a4a0a0d0c0a" />
       <varInfo nodeId="5932019537937807365" varName="result_wu2j1h_a0a0a0a0a4a0a0d0c0a" />
       <varInfo nodeId="5932019537937807365" varName="result_wu2j1h_a1a0a0a0a0a4a0a0d0c0a" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937720906" fileName="DeploymentDescriptorPersistence.java" startLine="59" startPosition="107" endLine="65" endPosition="83">
-      <varInfo nodeId="5932019537937720906" varName="result_wu2j1h_a2a9a0a0d0c0a" />
-      <varInfo nodeId="5932019537937720906" varName="result_wu2j1h_a3a9a0a0d0c0a" />
-      <varInfo nodeId="5932019537937720934" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="39" startPosition="108" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="5932019537937807323" fileName="DeploymentDescriptorPersistence.java" startLine="38" startPosition="109" endLine="48" endPosition="26" />
-    <scopeInfo nodeId="5932019537937807298" fileName="DeploymentDescriptorPersistence.java" startLine="37" startPosition="112" endLine="49" endPosition="13" />
-    <scopeInfo nodeId="5932019537937807320" fileName="DeploymentDescriptorPersistence.java" startLine="37" startPosition="112" endLine="49" endPosition="13">
+    <scopeInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="38" startPosition="108" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="5932019537937807323" fileName="DeploymentDescriptorPersistence.java" startLine="37" startPosition="130" endLine="47" endPosition="26" />
+    <scopeInfo nodeId="5932019537937807298" fileName="DeploymentDescriptorPersistence.java" startLine="36" startPosition="133" endLine="48" endPosition="13" />
+    <scopeInfo nodeId="5932019537937807320" fileName="DeploymentDescriptorPersistence.java" startLine="36" startPosition="133" endLine="48" endPosition="13">
       <varInfo nodeId="5932019537937807321" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937807295" fileName="DeploymentDescriptorPersistence.java" startLine="36" startPosition="0" endLine="50" endPosition="11">
+    <scopeInfo nodeId="5932019537937807295" fileName="DeploymentDescriptorPersistence.java" startLine="35" startPosition="0" endLine="49" endPosition="11">
       <varInfo nodeId="5932019537937807296" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="28" startPosition="46" endLine="68" endPosition="41">
+    <scopeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="27" startPosition="46" endLine="66" endPosition="41">
       <varInfo nodeId="5932019537937718608" varName="result_wu2j1h_a0a0a0d0c0a" />
       <varInfo nodeId="5932019537937718608" varName="result_wu2j1h_a0a0d0c0a" />
       <varInfo nodeId="5932019537937718608" varName="result_wu2j1h_a1a0a0d0c0a" />
       <varInfo nodeId="5932019537937718608" varName="result_wu2j1h_a2a0a0d0c0a" />
+      <varInfo nodeId="2184872129967214183" varName="sources" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="27" startPosition="77" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="5932019537937718590" fileName="DeploymentDescriptorPersistence.java" startLine="23" startPosition="9" endLine="70" endPosition="17">
+    <scopeInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="26" startPosition="77" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="5932019537937718590" fileName="DeploymentDescriptorPersistence.java" startLine="22" startPosition="9" endLine="68" endPosition="17">
       <varInfo nodeId="5932019537937718592" varName="document" />
       <varInfo nodeId="5932019537937718597" varName="rootElement" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937718580" fileName="DeploymentDescriptorPersistence.java" startLine="20" startPosition="81" endLine="76" endPosition="22">
+    <scopeInfo nodeId="5932019537937718580" fileName="DeploymentDescriptorPersistence.java" startLine="19" startPosition="81" endLine="74" endPosition="22">
       <varInfo nodeId="5932019537937718586" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5932019537937718577" fileName="DeploymentDescriptorPersistence.java" startLine="19" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="5932019537937718577" fileName="DeploymentDescriptorPersistence.java" startLine="18" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="5932019537937719002" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="39" startPosition="64" endLine="48" endPosition="15" unitName="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$2" />
-    <unitInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="27" startPosition="23" endLine="70" endPosition="7" unitName="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$1" />
-    <unitInfo nodeId="1986682148700850462" fileName="DeploymentDescriptorPersistence.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence" />
+    <unitInfo nodeId="5932019537937807365" fileName="DeploymentDescriptorPersistence.java" startLine="38" startPosition="64" endLine="47" endPosition="15" unitName="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$2" />
+    <unitInfo nodeId="5932019537937718608" fileName="DeploymentDescriptorPersistence.java" startLine="26" startPosition="23" endLine="68" endPosition="7" unitName="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$1" />
+    <unitInfo nodeId="1986682148700850462" fileName="DeploymentDescriptorPersistence.java" startLine="15" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence" />
   </root>
   <root nodeId="2184872129967111884" modelId="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)">
     <nodeInfo nodeId="2184872129967112015" fileName="JDOMUtil.java" startLine="14" startPosition="82" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1256,13 +1255,13 @@
     <nodeInfo nodeId="7879430306815332193" fileName="ModuleDescriptorPersistence.java" startLine="56" startPosition="59" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842994667883031880" fileName="ModuleDescriptorPersistence.java" startLine="65" startPosition="84" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5705137293084116007" fileName="ModuleDescriptorPersistence.java" startLine="91" startPosition="69" endLine="96" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032127" fileName="ModuleDescriptorPersistence.java" startLine="125" startPosition="112" endLine="130" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="842994667883032127" fileName="ModuleDescriptorPersistence.java" startLine="125" startPosition="116" endLine="130" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="702807520180545456" fileName="ModuleDescriptorPersistence.java" startLine="158" startPosition="118" endLine="163" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="842994667883032029" fileName="ModuleDescriptorPersistence.java" startLine="118" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="saveDependencyList#(Lorg/jdom/Element;Ljava/util/Collection;)V" />
     <nodeInfo nodeId="842994667883031898" fileName="ModuleDescriptorPersistence.java" startLine="71" startPosition="0" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842994667883031925" fileName="ModuleDescriptorPersistence.java" startLine="78" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8222824327012642969" fileName="ModuleDescriptorPersistence.java" startLine="225" startPosition="58" endLine="232" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="842994667883032122" fileName="ModuleDescriptorPersistence.java" startLine="124" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadModelRoots#(Ljava/util/List;Ljetbrains/mps/util/MacroHelper;)Ljava/util/List;" />
+    <nodeInfo nodeId="842994667883032122" fileName="ModuleDescriptorPersistence.java" startLine="124" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadModelRoots#(Ljava/lang/Iterable;Ljetbrains/mps/util/MacroHelper;)Ljava/util/List;" />
     <nodeInfo nodeId="5690219435161890585" fileName="ModuleDescriptorPersistence.java" startLine="144" startPosition="70" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="702807520180545451" fileName="ModuleDescriptorPersistence.java" startLine="157" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadStubModelEntries#(Lorg/jdom/Element;Ljetbrains/mps/util/MacroHelper;)Ljava/util/List;" />
     <nodeInfo nodeId="842994667883031846" fileName="ModuleDescriptorPersistence.java" startLine="53" startPosition="0" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1352,7 +1351,7 @@
     <scopeInfo nodeId="842994667883031926" fileName="ModuleDescriptorPersistence.java" startLine="79" startPosition="51" endLine="84" endPosition="37">
       <varInfo nodeId="2184872129967112297" varName="usedDevKits" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883032126" fileName="ModuleDescriptorPersistence.java" startLine="125" startPosition="112" endLine="130" endPosition="24" />
+    <scopeInfo nodeId="842994667883032126" fileName="ModuleDescriptorPersistence.java" startLine="125" startPosition="116" endLine="130" endPosition="24" />
     <scopeInfo nodeId="702807520180545455" fileName="ModuleDescriptorPersistence.java" startLine="158" startPosition="118" endLine="163" endPosition="24" />
     <scopeInfo nodeId="8222824327012642970" fileName="ModuleDescriptorPersistence.java" startLine="226" startPosition="43" endLine="231" endPosition="11">
       <varInfo nodeId="8222824327012642972" varName="m" />
@@ -1744,215 +1743,188 @@
     <unitInfo nodeId="842994667883032218" fileName="ProjectDescriptorPersistence.java" startLine="30" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" />
   </root>
   <root nodeId="842994667883032842" modelId="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)">
-    <nodeInfo nodeId="842994667883032842" fileName="SolutionDescriptorPersistence.java" startLine="23" startPosition="44" endLine="24" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="842994667883032851" fileName="SolutionDescriptorPersistence.java" startLine="29" startPosition="102" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032856" fileName="SolutionDescriptorPersistence.java" startLine="31" startPosition="9" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032861" fileName="SolutionDescriptorPersistence.java" startLine="32" startPosition="54" endLine="33" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032867" fileName="SolutionDescriptorPersistence.java" startLine="33" startPosition="54" endLine="34" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032873" fileName="SolutionDescriptorPersistence.java" startLine="34" startPosition="60" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032874" fileName="SolutionDescriptorPersistence.java" startLine="35" startPosition="0" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="842994667883032878" fileName="SolutionDescriptorPersistence.java" startLine="36" startPosition="37" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="39" startPosition="44" endLine="40" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="40" startPosition="86" endLine="41" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="41" startPosition="93" endLine="42" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032890" fileName="SolutionDescriptorPersistence.java" startLine="42" startPosition="74" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032892" fileName="SolutionDescriptorPersistence.java" startLine="44" startPosition="66" endLine="45" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032892" fileName="SolutionDescriptorPersistence.java" startLine="45" startPosition="97" endLine="46" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1371785386182008035" fileName="SolutionDescriptorPersistence.java" startLine="48" startPosition="212" endLine="49" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1371785386182008035" fileName="SolutionDescriptorPersistence.java" startLine="49" startPosition="169" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1371785386182008032" fileName="SolutionDescriptorPersistence.java" startLine="51" startPosition="11" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="52" startPosition="0" endLine="53" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="53" startPosition="144" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032929" fileName="SolutionDescriptorPersistence.java" startLine="54" startPosition="77" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032931" fileName="SolutionDescriptorPersistence.java" startLine="56" startPosition="108" endLine="57" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032931" fileName="SolutionDescriptorPersistence.java" startLine="57" startPosition="136" endLine="58" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032947" fileName="SolutionDescriptorPersistence.java" startLine="59" startPosition="11" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032948" fileName="SolutionDescriptorPersistence.java" startLine="60" startPosition="0" endLine="61" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032964" fileName="SolutionDescriptorPersistence.java" startLine="61" startPosition="249" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2896881808974360368" fileName="SolutionDescriptorPersistence.java" startLine="63" startPosition="120" endLine="64" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="702807520180572303" fileName="SolutionDescriptorPersistence.java" startLine="64" startPosition="198" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="702807520180572492" fileName="SolutionDescriptorPersistence.java" startLine="66" startPosition="11" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883032965" fileName="SolutionDescriptorPersistence.java" startLine="67" startPosition="0" endLine="68" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="148855744827195970" fileName="SolutionDescriptorPersistence.java" startLine="69" startPosition="367" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7168227884262543416" fileName="SolutionDescriptorPersistence.java" startLine="70" startPosition="56" endLine="71" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7168227884262543428" fileName="SolutionDescriptorPersistence.java" startLine="71" startPosition="46" endLine="72" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7168227884262543439" fileName="SolutionDescriptorPersistence.java" startLine="72" startPosition="90" endLine="73" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7168227884262543444" fileName="SolutionDescriptorPersistence.java" startLine="73" startPosition="54" endLine="74" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033007" fileName="SolutionDescriptorPersistence.java" startLine="75" startPosition="11" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033018" fileName="SolutionDescriptorPersistence.java" startLine="77" startPosition="198" endLine="78" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="79" startPosition="11" endLine="80" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="842994667883033037" fileName="SolutionDescriptorPersistence.java" startLine="83" startPosition="27" endLine="84" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="148855744827195973" fileName="SolutionDescriptorPersistence.java" startLine="85" startPosition="5" endLine="86" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033043" fileName="SolutionDescriptorPersistence.java" startLine="86" startPosition="63" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="92" startPosition="33" endLine="93" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033055" fileName="SolutionDescriptorPersistence.java" startLine="94" startPosition="7" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="842994667883033059" fileName="SolutionDescriptorPersistence.java" startLine="96" startPosition="5" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="99" startPosition="31" endLine="100" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033071" fileName="SolutionDescriptorPersistence.java" startLine="101" startPosition="48" endLine="102" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033071" fileName="SolutionDescriptorPersistence.java" startLine="102" startPosition="77" endLine="103" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033089" fileName="SolutionDescriptorPersistence.java" startLine="105" startPosition="43" endLine="106" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033089" fileName="SolutionDescriptorPersistence.java" startLine="106" startPosition="72" endLine="107" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1371785386182008625" fileName="SolutionDescriptorPersistence.java" startLine="109" startPosition="56" endLine="110" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1371785386182008625" fileName="SolutionDescriptorPersistence.java" startLine="110" startPosition="79" endLine="111" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="112" startPosition="9" endLine="113" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="113" startPosition="77" endLine="114" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033124" fileName="SolutionDescriptorPersistence.java" startLine="115" startPosition="49" endLine="116" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033124" fileName="SolutionDescriptorPersistence.java" startLine="116" startPosition="102" endLine="117" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033140" fileName="SolutionDescriptorPersistence.java" startLine="118" startPosition="9" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="119" startPosition="0" endLine="120" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033143" fileName="SolutionDescriptorPersistence.java" startLine="120" startPosition="70" endLine="121" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="121" startPosition="117" endLine="122" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033150" fileName="SolutionDescriptorPersistence.java" startLine="122" startPosition="66" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="702807520180571703" fileName="SolutionDescriptorPersistence.java" startLine="124" startPosition="60" endLine="125" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="702807520180571706" fileName="SolutionDescriptorPersistence.java" startLine="125" startPosition="84" endLine="126" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="702807520180571703" fileName="SolutionDescriptorPersistence.java" startLine="126" startPosition="133" endLine="127" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="702807520180571722" fileName="SolutionDescriptorPersistence.java" startLine="128" startPosition="9" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033179" fileName="SolutionDescriptorPersistence.java" startLine="129" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="130" startPosition="0" endLine="131" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033187" fileName="SolutionDescriptorPersistence.java" startLine="132" startPosition="89" endLine="133" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033187" fileName="SolutionDescriptorPersistence.java" startLine="133" startPosition="77" endLine="134" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033187" fileName="SolutionDescriptorPersistence.java" startLine="134" startPosition="82" endLine="135" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033187" fileName="SolutionDescriptorPersistence.java" startLine="135" startPosition="97" endLine="136" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="137" startPosition="9" endLine="138" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033200" fileName="SolutionDescriptorPersistence.java" startLine="138" startPosition="67" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033201" fileName="SolutionDescriptorPersistence.java" startLine="139" startPosition="0" endLine="140" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="140" startPosition="88" endLine="141" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="842994667883033206" fileName="SolutionDescriptorPersistence.java" startLine="143" startPosition="15" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="842994667883033209" fileName="SolutionDescriptorPersistence.java" startLine="145" startPosition="9" endLine="146" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883033215" fileName="SolutionDescriptorPersistence.java" startLine="146" startPosition="48" endLine="147" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="149" startPosition="33" endLine="150" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033231" fileName="SolutionDescriptorPersistence.java" startLine="152" startPosition="5" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1772246947774001116" fileName="SolutionDescriptorPersistence.java" startLine="153" startPosition="0" endLine="154" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032946" fileName="SolutionDescriptorPersistence.java" startLine="157" startPosition="71" endLine="158" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5386339623102269794" fileName="SolutionDescriptorPersistence.java" startLine="25" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SolutionDescriptorPersistence#()V" />
-    <nodeInfo nodeId="842994667883033008" fileName="SolutionDescriptorPersistence.java" startLine="76" startPosition="0" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="91" startPosition="28" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="91" startPosition="28" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="148" startPosition="27" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="148" startPosition="27" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883032891" fileName="SolutionDescriptorPersistence.java" startLine="43" startPosition="0" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1371785386182008034" fileName="SolutionDescriptorPersistence.java" startLine="47" startPosition="11" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883032930" fileName="SolutionDescriptorPersistence.java" startLine="55" startPosition="0" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="702807520180572301" fileName="SolutionDescriptorPersistence.java" startLine="62" startPosition="0" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883033070" fileName="SolutionDescriptorPersistence.java" startLine="100" startPosition="70" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883033083" fileName="SolutionDescriptorPersistence.java" startLine="104" startPosition="9" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1371785386182008624" fileName="SolutionDescriptorPersistence.java" startLine="108" startPosition="9" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883033123" fileName="SolutionDescriptorPersistence.java" startLine="114" startPosition="89" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883032946" fileName="SolutionDescriptorPersistence.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_8ckma3_a0k0a0a0a0g0b0a#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="702807520180571702" fileName="SolutionDescriptorPersistence.java" startLine="123" startPosition="0" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883033051" fileName="SolutionDescriptorPersistence.java" startLine="90" startPosition="125" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842994667883033182" fileName="SolutionDescriptorPersistence.java" startLine="131" startPosition="75" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="842994667883032969" fileName="SolutionDescriptorPersistence.java" startLine="68" startPosition="97" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="842994667883033207" fileName="SolutionDescriptorPersistence.java" startLine="144" startPosition="0" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="38" startPosition="75" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-    <nodeInfo nodeId="842994667883032879" fileName="SolutionDescriptorPersistence.java" startLine="37" startPosition="0" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="98" startPosition="67" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jdom/Element;" />
-    <nodeInfo nodeId="842994667883033064" fileName="SolutionDescriptorPersistence.java" startLine="97" startPosition="0" endLine="143" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="842994667883032854" fileName="SolutionDescriptorPersistence.java" startLine="30" startPosition="34" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="842994667883032843" fileName="SolutionDescriptorPersistence.java" startLine="28" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/util/MacroHelper;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-    <nodeInfo nodeId="842994667883033047" fileName="SolutionDescriptorPersistence.java" startLine="89" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="saveSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Ljetbrains/mps/util/MacroHelper;)V" />
-    <scopeInfo nodeId="5386339623102269797" fileName="SolutionDescriptorPersistence.java" startLine="26" startPosition="43" endLine="26" endPosition="43" />
-    <scopeInfo nodeId="842994667883033017" fileName="SolutionDescriptorPersistence.java" startLine="77" startPosition="198" endLine="78" endPosition="121" />
-    <scopeInfo nodeId="842994667883033033" fileName="SolutionDescriptorPersistence.java" startLine="83" startPosition="0" endLine="84" endPosition="39">
+    <nodeInfo nodeId="2184872129967195043" fileName="SolutionDescriptorPersistence.java" startLine="22" startPosition="44" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE_PATH" />
+    <nodeInfo nodeId="2184872129967195051" fileName="SolutionDescriptorPersistence.java" startLine="23" startPosition="57" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE_PATH_SOURCE" />
+    <nodeInfo nodeId="2184872129967195058" fileName="SolutionDescriptorPersistence.java" startLine="24" startPosition="60" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPILE_IN_MPS" />
+    <nodeInfo nodeId="842994667883032842" fileName="SolutionDescriptorPersistence.java" startLine="25" startPosition="62" endLine="26" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="842994667883032851" fileName="SolutionDescriptorPersistence.java" startLine="31" startPosition="102" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032856" fileName="SolutionDescriptorPersistence.java" startLine="33" startPosition="9" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032861" fileName="SolutionDescriptorPersistence.java" startLine="34" startPosition="54" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032873" fileName="SolutionDescriptorPersistence.java" startLine="35" startPosition="60" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883032874" fileName="SolutionDescriptorPersistence.java" startLine="36" startPosition="0" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="842994667883032878" fileName="SolutionDescriptorPersistence.java" startLine="37" startPosition="33" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="40" startPosition="44" endLine="41" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="41" startPosition="86" endLine="42" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="42" startPosition="89" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883032890" fileName="SolutionDescriptorPersistence.java" startLine="43" startPosition="74" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883032892" fileName="SolutionDescriptorPersistence.java" startLine="45" startPosition="62" endLine="46" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032892" fileName="SolutionDescriptorPersistence.java" startLine="46" startPosition="93" endLine="47" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194383" fileName="SolutionDescriptorPersistence.java" startLine="48" startPosition="11" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194385" fileName="SolutionDescriptorPersistence.java" startLine="49" startPosition="0" endLine="50" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1371785386182008035" fileName="SolutionDescriptorPersistence.java" startLine="51" startPosition="62" endLine="52" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1371785386182008035" fileName="SolutionDescriptorPersistence.java" startLine="52" startPosition="94" endLine="53" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1371785386182008032" fileName="SolutionDescriptorPersistence.java" startLine="54" startPosition="11" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="55" startPosition="0" endLine="56" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="56" startPosition="150" endLine="57" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883032929" fileName="SolutionDescriptorPersistence.java" startLine="57" startPosition="77" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194450" fileName="SolutionDescriptorPersistence.java" startLine="58" startPosition="0" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032931" fileName="SolutionDescriptorPersistence.java" startLine="60" startPosition="62" endLine="61" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883032931" fileName="SolutionDescriptorPersistence.java" startLine="61" startPosition="90" endLine="62" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883032947" fileName="SolutionDescriptorPersistence.java" startLine="63" startPosition="11" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883032948" fileName="SolutionDescriptorPersistence.java" startLine="64" startPosition="0" endLine="65" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883032964" fileName="SolutionDescriptorPersistence.java" startLine="65" startPosition="253" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194529" fileName="SolutionDescriptorPersistence.java" startLine="66" startPosition="0" endLine="67" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2896881808974360368" fileName="SolutionDescriptorPersistence.java" startLine="68" startPosition="41" endLine="69" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="702807520180572303" fileName="SolutionDescriptorPersistence.java" startLine="69" startPosition="116" endLine="70" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="702807520180572492" fileName="SolutionDescriptorPersistence.java" startLine="71" startPosition="11" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883032965" fileName="SolutionDescriptorPersistence.java" startLine="72" startPosition="0" endLine="73" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="148855744827195970" fileName="SolutionDescriptorPersistence.java" startLine="74" startPosition="375" endLine="75" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7168227884262543416" fileName="SolutionDescriptorPersistence.java" startLine="75" startPosition="56" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7168227884262543428" fileName="SolutionDescriptorPersistence.java" startLine="76" startPosition="46" endLine="77" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7168227884262543439" fileName="SolutionDescriptorPersistence.java" startLine="77" startPosition="90" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7168227884262543444" fileName="SolutionDescriptorPersistence.java" startLine="78" startPosition="54" endLine="79" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033007" fileName="SolutionDescriptorPersistence.java" startLine="80" startPosition="11" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883033018" fileName="SolutionDescriptorPersistence.java" startLine="82" startPosition="211" endLine="83" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="84" startPosition="11" endLine="85" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="842994667883033037" fileName="SolutionDescriptorPersistence.java" startLine="88" startPosition="27" endLine="89" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="148855744827195973" fileName="SolutionDescriptorPersistence.java" startLine="90" startPosition="5" endLine="91" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033043" fileName="SolutionDescriptorPersistence.java" startLine="91" startPosition="63" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="97" startPosition="33" endLine="98" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033055" fileName="SolutionDescriptorPersistence.java" startLine="99" startPosition="7" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="842994667883033059" fileName="SolutionDescriptorPersistence.java" startLine="101" startPosition="5" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194653" fileName="SolutionDescriptorPersistence.java" startLine="102" startPosition="0" endLine="103" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2184872129967194678" fileName="SolutionDescriptorPersistence.java" startLine="104" startPosition="44" endLine="105" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194711" fileName="SolutionDescriptorPersistence.java" startLine="107" startPosition="39" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194735" fileName="SolutionDescriptorPersistence.java" startLine="110" startPosition="52" endLine="111" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194780" fileName="SolutionDescriptorPersistence.java" startLine="112" startPosition="5" endLine="113" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194817" fileName="SolutionDescriptorPersistence.java" startLine="114" startPosition="45" endLine="115" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033140" fileName="SolutionDescriptorPersistence.java" startLine="116" startPosition="5" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194858" fileName="SolutionDescriptorPersistence.java" startLine="117" startPosition="0" endLine="118" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883033143" fileName="SolutionDescriptorPersistence.java" startLine="118" startPosition="43" endLine="119" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194884" fileName="SolutionDescriptorPersistence.java" startLine="119" startPosition="96" endLine="120" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033150" fileName="SolutionDescriptorPersistence.java" startLine="120" startPosition="30" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194921" fileName="SolutionDescriptorPersistence.java" startLine="122" startPosition="56" endLine="123" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="702807520180571706" fileName="SolutionDescriptorPersistence.java" startLine="123" startPosition="65" endLine="124" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194932" fileName="SolutionDescriptorPersistence.java" startLine="124" startPosition="120" endLine="125" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="702807520180571722" fileName="SolutionDescriptorPersistence.java" startLine="126" startPosition="5" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2184872129967194964" fileName="SolutionDescriptorPersistence.java" startLine="127" startPosition="0" endLine="128" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2184872129967195019" fileName="SolutionDescriptorPersistence.java" startLine="129" startPosition="85" endLine="130" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967194977" fileName="SolutionDescriptorPersistence.java" startLine="131" startPosition="5" endLine="132" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033200" fileName="SolutionDescriptorPersistence.java" startLine="132" startPosition="34" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883033201" fileName="SolutionDescriptorPersistence.java" startLine="133" startPosition="0" endLine="134" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033206" fileName="SolutionDescriptorPersistence.java" startLine="134" startPosition="69" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="842994667883033209" fileName="SolutionDescriptorPersistence.java" startLine="136" startPosition="9" endLine="137" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="842994667883033215" fileName="SolutionDescriptorPersistence.java" startLine="137" startPosition="48" endLine="138" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="140" startPosition="33" endLine="141" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033231" fileName="SolutionDescriptorPersistence.java" startLine="143" startPosition="5" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1772246947774001116" fileName="SolutionDescriptorPersistence.java" startLine="144" startPosition="0" endLine="145" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5386339623102269794" fileName="SolutionDescriptorPersistence.java" startLine="27" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SolutionDescriptorPersistence#()V" />
+    <nodeInfo nodeId="842994667883033008" fileName="SolutionDescriptorPersistence.java" startLine="81" startPosition="0" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="96" startPosition="28" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="96" startPosition="28" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883033070" fileName="SolutionDescriptorPersistence.java" startLine="103" startPosition="45" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883033083" fileName="SolutionDescriptorPersistence.java" startLine="106" startPosition="5" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1371785386182008624" fileName="SolutionDescriptorPersistence.java" startLine="109" startPosition="5" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883033123" fileName="SolutionDescriptorPersistence.java" startLine="113" startPosition="88" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883033182" fileName="SolutionDescriptorPersistence.java" startLine="128" startPosition="50" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="139" startPosition="27" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="139" startPosition="27" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883032891" fileName="SolutionDescriptorPersistence.java" startLine="44" startPosition="0" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1371785386182008034" fileName="SolutionDescriptorPersistence.java" startLine="50" startPosition="74" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883032930" fileName="SolutionDescriptorPersistence.java" startLine="59" startPosition="82" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="702807520180572301" fileName="SolutionDescriptorPersistence.java" startLine="67" startPosition="119" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="702807520180571702" fileName="SolutionDescriptorPersistence.java" startLine="121" startPosition="0" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883033051" fileName="SolutionDescriptorPersistence.java" startLine="95" startPosition="113" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842994667883032969" fileName="SolutionDescriptorPersistence.java" startLine="73" startPosition="93" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="842994667883033207" fileName="SolutionDescriptorPersistence.java" startLine="135" startPosition="0" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="39" startPosition="75" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
+    <nodeInfo nodeId="842994667883032879" fileName="SolutionDescriptorPersistence.java" startLine="38" startPosition="0" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883033047" fileName="SolutionDescriptorPersistence.java" startLine="94" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="saveSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Ljetbrains/mps/util/MacroHelper;)V" />
+    <nodeInfo nodeId="842994667883032854" fileName="SolutionDescriptorPersistence.java" startLine="32" startPosition="34" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="842994667883032843" fileName="SolutionDescriptorPersistence.java" startLine="30" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/util/MacroHelper;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
+    <scopeInfo nodeId="5386339623102269797" fileName="SolutionDescriptorPersistence.java" startLine="28" startPosition="43" endLine="28" endPosition="43" />
+    <scopeInfo nodeId="842994667883033017" fileName="SolutionDescriptorPersistence.java" startLine="82" startPosition="211" endLine="83" endPosition="121" />
+    <scopeInfo nodeId="842994667883033033" fileName="SolutionDescriptorPersistence.java" startLine="88" startPosition="0" endLine="89" endPosition="39">
       <varInfo nodeId="842994667883033034" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883033036" fileName="SolutionDescriptorPersistence.java" startLine="83" startPosition="27" endLine="84" endPosition="39" />
-    <scopeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="92" startPosition="33" endLine="93" endPosition="50" />
-    <scopeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="149" startPosition="33" endLine="150" endPosition="25" />
-    <scopeInfo nodeId="842994667883032946" fileName="SolutionDescriptorPersistence.java" startLine="157" startPosition="71" endLine="158" endPosition="43" />
-    <scopeInfo nodeId="5386339623102269794" fileName="SolutionDescriptorPersistence.java" startLine="25" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="842994667883032892" fileName="SolutionDescriptorPersistence.java" startLine="44" startPosition="66" endLine="46" endPosition="73">
-      <varInfo nodeId="842994667883032892" varName="result_8ckma3_a0a2a0a0g0b0a" />
+    <scopeInfo nodeId="842994667883033036" fileName="SolutionDescriptorPersistence.java" startLine="88" startPosition="27" endLine="89" endPosition="39" />
+    <scopeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="97" startPosition="33" endLine="98" endPosition="50" />
+    <scopeInfo nodeId="842994667883033071" fileName="SolutionDescriptorPersistence.java" startLine="104" startPosition="44" endLine="105" endPosition="61" />
+    <scopeInfo nodeId="842994667883033089" fileName="SolutionDescriptorPersistence.java" startLine="107" startPosition="39" endLine="108" endPosition="56" />
+    <scopeInfo nodeId="1371785386182008625" fileName="SolutionDescriptorPersistence.java" startLine="110" startPosition="52" endLine="111" endPosition="69" />
+    <scopeInfo nodeId="842994667883033124" fileName="SolutionDescriptorPersistence.java" startLine="114" startPosition="45" endLine="115" endPosition="101" />
+    <scopeInfo nodeId="842994667883033187" fileName="SolutionDescriptorPersistence.java" startLine="129" startPosition="85" endLine="130" endPosition="133" />
+    <scopeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="140" startPosition="33" endLine="141" endPosition="25" />
+    <scopeInfo nodeId="5386339623102269794" fileName="SolutionDescriptorPersistence.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="842994667883032892" fileName="SolutionDescriptorPersistence.java" startLine="45" startPosition="62" endLine="47" endPosition="73">
+      <varInfo nodeId="842994667883032892" varName="result_8ckma3_a0a2a0a0f0b0a" />
     </scopeInfo>
-    <scopeInfo nodeId="1371785386182008035" fileName="SolutionDescriptorPersistence.java" startLine="48" startPosition="212" endLine="50" endPosition="73">
-      <varInfo nodeId="1371785386182008035" varName="result_8ckma3_a0a3a0a0g0b0a" />
+    <scopeInfo nodeId="1371785386182008035" fileName="SolutionDescriptorPersistence.java" startLine="51" startPosition="62" endLine="53" endPosition="73">
+      <varInfo nodeId="1371785386182008035" varName="result_8ckma3_a0a5a0a0f0b0a" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883032931" fileName="SolutionDescriptorPersistence.java" startLine="56" startPosition="108" endLine="58" endPosition="79">
-      <varInfo nodeId="842994667883032931" varName="result_8ckma3_a0a7a0a0g0b0a" />
+    <scopeInfo nodeId="842994667883032931" fileName="SolutionDescriptorPersistence.java" startLine="60" startPosition="62" endLine="62" endPosition="80">
+      <varInfo nodeId="842994667883032931" varName="result_8ckma3_a0a01a0a0f0b0a" />
     </scopeInfo>
-    <scopeInfo nodeId="702807520180572302" fileName="SolutionDescriptorPersistence.java" startLine="63" startPosition="120" endLine="65" endPosition="72">
+    <scopeInfo nodeId="702807520180572302" fileName="SolutionDescriptorPersistence.java" startLine="68" startPosition="41" endLine="70" endPosition="72">
       <varInfo nodeId="2896881808974360369" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883033071" fileName="SolutionDescriptorPersistence.java" startLine="101" startPosition="48" endLine="103" endPosition="85">
-      <varInfo nodeId="842994667883033071" varName="result_8ckma3_a0a0a0a0c0b" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883033089" fileName="SolutionDescriptorPersistence.java" startLine="105" startPosition="43" endLine="107" endPosition="85">
-      <varInfo nodeId="842994667883033089" varName="result_8ckma3_a0a1a0a0c0b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1371785386182008625" fileName="SolutionDescriptorPersistence.java" startLine="109" startPosition="56" endLine="111" endPosition="91">
-      <varInfo nodeId="1371785386182008625" varName="result_8ckma3_a0a2a0a0c0b" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883033124" fileName="SolutionDescriptorPersistence.java" startLine="115" startPosition="49" endLine="117" endPosition="100">
-      <varInfo nodeId="842994667883033124" varName="result_8ckma3_a0a4a0a0c0b" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883033208" fileName="SolutionDescriptorPersistence.java" startLine="145" startPosition="9" endLine="147" endPosition="56">
+    <scopeInfo nodeId="842994667883033208" fileName="SolutionDescriptorPersistence.java" startLine="136" startPosition="9" endLine="138" endPosition="55">
       <varInfo nodeId="842994667883033210" varName="os" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883033008" fileName="SolutionDescriptorPersistence.java" startLine="76" startPosition="0" endLine="79" endPosition="11">
+    <scopeInfo nodeId="842994667883033008" fileName="SolutionDescriptorPersistence.java" startLine="81" startPosition="0" endLine="84" endPosition="11">
       <varInfo nodeId="842994667883033009" varName="entryElement" />
     </scopeInfo>
-    <scopeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="91" startPosition="28" endLine="94" endPosition="7" />
-    <scopeInfo nodeId="702807520180571703" fileName="SolutionDescriptorPersistence.java" startLine="124" startPosition="60" endLine="127" endPosition="70">
-      <varInfo nodeId="702807520180571703" varName="result_8ckma3_a0a8a0a0c0b" />
+    <scopeInfo nodeId="148855744827197543" fileName="SolutionDescriptorPersistence.java" startLine="96" startPosition="28" endLine="99" endPosition="7" />
+    <scopeInfo nodeId="702807520180571703" fileName="SolutionDescriptorPersistence.java" startLine="122" startPosition="56" endLine="125" endPosition="42">
+      <varInfo nodeId="2184872129967194922" varName="stubModelEntries" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883033225" fileName="SolutionDescriptorPersistence.java" startLine="148" startPosition="0" endLine="151" endPosition="7">
-      <varInfo nodeId="842994667883033226" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="148" startPosition="27" endLine="151" endPosition="7" />
-    <scopeInfo nodeId="842994667883033228" fileName="SolutionDescriptorPersistence.java" startLine="148" startPosition="27" endLine="151" endPosition="7" />
-    <scopeInfo nodeId="842994667883033052" fileName="SolutionDescriptorPersistence.java" startLine="91" startPosition="28" endLine="95" endPosition="13" />
-    <scopeInfo nodeId="842994667883033187" fileName="SolutionDescriptorPersistence.java" startLine="132" startPosition="89" endLine="136" endPosition="76">
-      <varInfo nodeId="842994667883033187" varName="result_8ckma3_a0a0a0a11a0a0c0b" />
-      <varInfo nodeId="842994667883033187" varName="result_8ckma3_a0a0a11a0a0c0b" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883032946" fileName="SolutionDescriptorPersistence.java" startLine="156" startPosition="0" endLine="160" endPosition="0">
-      <varInfo nodeId="842994667883032946" varName="str" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883032971" fileName="SolutionDescriptorPersistence.java" startLine="69" startPosition="367" endLine="74" endPosition="69">
-      <varInfo nodeId="7168227884262543417" varName="entry" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883033182" fileName="SolutionDescriptorPersistence.java" startLine="131" startPosition="75" endLine="137" endPosition="9">
+    <scopeInfo nodeId="842994667883033182" fileName="SolutionDescriptorPersistence.java" startLine="128" startPosition="50" endLine="131" endPosition="5">
       <varInfo nodeId="842994667883033183" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883032969" fileName="SolutionDescriptorPersistence.java" startLine="68" startPosition="97" endLine="75" endPosition="11">
+    <scopeInfo nodeId="842994667883033225" fileName="SolutionDescriptorPersistence.java" startLine="139" startPosition="0" endLine="142" endPosition="7">
+      <varInfo nodeId="842994667883033226" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="1772246947774001112" fileName="SolutionDescriptorPersistence.java" startLine="139" startPosition="27" endLine="142" endPosition="7" />
+    <scopeInfo nodeId="842994667883033228" fileName="SolutionDescriptorPersistence.java" startLine="139" startPosition="27" endLine="142" endPosition="7" />
+    <scopeInfo nodeId="842994667883033052" fileName="SolutionDescriptorPersistence.java" startLine="96" startPosition="28" endLine="100" endPosition="13" />
+    <scopeInfo nodeId="842994667883032971" fileName="SolutionDescriptorPersistence.java" startLine="74" startPosition="375" endLine="79" endPosition="69">
+      <varInfo nodeId="7168227884262543417" varName="entry" />
+    </scopeInfo>
+    <scopeInfo nodeId="842994667883032969" fileName="SolutionDescriptorPersistence.java" startLine="73" startPosition="93" endLine="80" endPosition="11">
       <varInfo nodeId="842994667883032970" varName="entryElement" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="39" startPosition="44" endLine="80" endPosition="41">
-      <varInfo nodeId="842994667883032881" varName="result_8ckma3_a0a0a0g0b0a" />
-      <varInfo nodeId="842994667883032881" varName="result_8ckma3_a0a0g0b0a" />
-      <varInfo nodeId="842994667883032881" varName="result_8ckma3_a5a0a0g0b0a" />
+    <scopeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="40" startPosition="44" endLine="85" endPosition="41">
+      <varInfo nodeId="2184872129967194451" varName="genOutput" />
+      <varInfo nodeId="2184872129967194386" varName="pluginKind" />
+      <varInfo nodeId="842994667883032881" varName="result_8ckma3_a0a0a0f0b0a" />
+      <varInfo nodeId="842994667883032881" varName="result_8ckma3_a0a0f0b0a" />
+      <varInfo nodeId="842994667883032881" varName="result_8ckma3_a7a0a0f0b0a" />
+      <varInfo nodeId="2184872129967194530" varName="stubModelEntries" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="99" startPosition="31" endLine="141" endPosition="37">
-      <varInfo nodeId="842994667883033067" varName="result_8ckma3_a0a0c0b" />
-      <varInfo nodeId="842994667883033067" varName="result_8ckma3_a11a0a0c0b" />
-      <varInfo nodeId="842994667883033067" varName="result_8ckma3_a3a0a0c0b" />
-      <varInfo nodeId="842994667883033067" varName="result_8ckma3_a6a0a0c0b" />
+    <scopeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="39" startPosition="75" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="842994667883033050" fileName="SolutionDescriptorPersistence.java" startLine="95" startPosition="113" endLine="145" endPosition="63">
+      <varInfo nodeId="2184872129967194859" varName="models" />
+      <varInfo nodeId="2184872129967194654" varName="result" />
+      <varInfo nodeId="2184872129967194965" varName="sourcePath" />
     </scopeInfo>
-    <scopeInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="38" startPosition="75" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="98" startPosition="67" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="842994667883032855" fileName="SolutionDescriptorPersistence.java" startLine="31" startPosition="9" endLine="82" endPosition="17">
-      <varInfo nodeId="842994667883032857" varName="document" />
-      <varInfo nodeId="842994667883032862" varName="rootElement" />
-      <varInfo nodeId="842994667883032868" varName="solutionElement" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883032846" fileName="SolutionDescriptorPersistence.java" startLine="29" startPosition="102" endLine="87" endPosition="22">
-      <varInfo nodeId="842994667883032852" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883032843" fileName="SolutionDescriptorPersistence.java" startLine="28" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="842994667883033045" varName="file" />
-      <varInfo nodeId="7414871074591352979" varName="macroHelper" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883033050" fileName="SolutionDescriptorPersistence.java" startLine="90" startPosition="125" endLine="154" endPosition="63">
-      <varInfo nodeId="842994667883033065" varName="solElem" />
-    </scopeInfo>
-    <scopeInfo nodeId="842994667883033047" fileName="SolutionDescriptorPersistence.java" startLine="89" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="842994667883033047" fileName="SolutionDescriptorPersistence.java" startLine="94" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="842994667883033236" varName="descriptor" />
       <varInfo nodeId="842994667883033234" varName="file" />
       <varInfo nodeId="7414871074591353636" varName="macroHelper" />
     </scopeInfo>
-    <unitInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="38" startPosition="23" endLine="82" endPosition="7" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence$1" />
-    <unitInfo nodeId="842994667883033067" fileName="SolutionDescriptorPersistence.java" startLine="98" startPosition="26" endLine="143" endPosition="5" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence$2" />
-    <unitInfo nodeId="842994667883032842" fileName="SolutionDescriptorPersistence.java" startLine="23" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
+    <scopeInfo nodeId="842994667883032855" fileName="SolutionDescriptorPersistence.java" startLine="33" startPosition="9" endLine="87" endPosition="17">
+      <varInfo nodeId="842994667883032857" varName="document" />
+      <varInfo nodeId="842994667883032862" varName="rootElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="842994667883032846" fileName="SolutionDescriptorPersistence.java" startLine="31" startPosition="102" endLine="92" endPosition="22">
+      <varInfo nodeId="842994667883032852" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="842994667883032843" fileName="SolutionDescriptorPersistence.java" startLine="30" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="842994667883033045" varName="file" />
+      <varInfo nodeId="7414871074591352979" varName="macroHelper" />
+    </scopeInfo>
+    <unitInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="39" startPosition="23" endLine="87" endPosition="7" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence$1" />
+    <unitInfo nodeId="842994667883032842" fileName="SolutionDescriptorPersistence.java" startLine="22" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
   </root>
 </debugInfo>
 
