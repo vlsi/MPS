@@ -43,8 +43,8 @@ public class SReferenceCreator implements SReferenceHandler {
     }
 
     if (SetSequence.fromSet(models).count() > 1) {
-      for (SModelReference model : models) {
-        source.getOldModel().addModelImport(model, false);
+      for (SModelReference m : models) {
+        model.addModelImport(m, false);
       }
       return new DynamicReference(role, source, new SModelReference(pack, model.getStereotype()), resolveInfo);
     }
