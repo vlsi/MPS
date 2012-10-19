@@ -25,6 +25,7 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -57,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSetupContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformActionsBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformPreconditionContext" />

@@ -6,6 +6,10 @@ import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
+import java.awt.Color;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
@@ -14,6 +18,11 @@ public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_Beh
 
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return BuildMps_IdeaPlugin_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
+  }
+
+  @Nullable
+  public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
+    return BuildStringContainer_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
