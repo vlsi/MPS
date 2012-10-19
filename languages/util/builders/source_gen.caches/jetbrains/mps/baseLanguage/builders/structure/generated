@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-97a33cs28kqgficbo1bsprqnqy375cv">
+<dependencies version="2" modelHash="-9krv06b0cs6386k8hset7ne2jw9gn5d">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="44lzlq1u85ktrzs2pfmlcov6gdlbsb6" />
@@ -57,7 +57,7 @@
   <source id="7288041816792292064" name="ResultExpression" hash="-1str3l5qv1dbd4lzs1x4fsvv1bcbsp8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792374843" name="SimpleBuilders" hash="6rikzbm9jc7c4f88mydrsyifwt6a4k">
+  <source id="7288041816792374843" name="SimpleBuilders" hash="-dcgcpu62sue0v7j97jwyv2op8eu2qj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7288041816792577338" name="SimpleBuilderChild" hash="be89chy66lw3fev8zfiqh966njm8ex2">
@@ -93,7 +93,7 @@
   <source id="2679357232283750087" name="BeanPropertyBuilder" hash="-cil14fdqg0netyy6yabjh1dwg0rs0nc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666322667909540799" name="BeanBuilder" hash="-9l34fu3xrul2qaibi6wgkpnj1g33rwe">
+  <source id="6666322667909540799" name="BeanBuilder" hash="6fcqefmb25x6eefw25c65hg6kyiqvir">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5389689214216557332" name="AsTypeBuilder" hash="-8dmfrnbcogz90ezmi9auqrbdaz4r8x8">
