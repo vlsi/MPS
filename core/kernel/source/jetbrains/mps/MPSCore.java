@@ -88,7 +88,6 @@ public class MPSCore extends ComponentPlugin {
     init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
     init(new AuxilaryRuntimeModel(myModelRepository));
     init(new ImmatureReferences(myModelRepository));
-    init(new CommandEventsManager(myModelRepository, myGlobalSModelEventsManager));
     init(new LibrariesLoader(myModuleRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));

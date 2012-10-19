@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -24,17 +23,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-public interface ModelDataSource {
-  //------changes watching--------
-
-  void startListening(ChangeListener l);
-
-  void stopListening(ChangeListener l);
-
-  long getTimestamp();
-
-  //------model loading------
+public interface ModelDataSource extends DataSource {
 
   DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException;
 

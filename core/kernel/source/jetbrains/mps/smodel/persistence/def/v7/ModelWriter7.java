@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.XmlStringUtil;
+import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -51,7 +51,7 @@ public class ModelWriter7 implements IModelWriter {
     }
     
     for (Map.Entry<String,String> en: myModel.getSModelHeader().getOptionalProperties().entrySet()) {
-      rootElement.setAttribute(en.getKey(), XmlStringUtil.escapeXml(en.getValue()));
+      rootElement.setAttribute(en.getKey(), StringUtil.escapeXml(en.getValue()));
     }
 
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);

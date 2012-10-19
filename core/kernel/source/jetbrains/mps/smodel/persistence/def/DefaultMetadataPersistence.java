@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 
-public class DefaultMetadataPersistence {
+class DefaultMetadataPersistence {
   private static final Logger LOG = Logger.getLogger(DefaultMetadataPersistence.class);
 
   private static final String ENTRY = "entry";
