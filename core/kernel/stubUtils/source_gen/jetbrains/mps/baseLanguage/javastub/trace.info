@@ -2870,8 +2870,8 @@
     <nodeInfo nodeId="3337801829813900291" fileName="SReferenceCreator.java" startLine="51" startPosition="0" endLine="52" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5700691190903453152" fileName="SReferenceCreator.java" startLine="52" startPosition="152" endLine="53" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6256594769885917049" fileName="SReferenceCreator.java" startLine="53" startPosition="123" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3337801829813899329" fileName="SReferenceCreator.java" startLine="54" startPosition="80" endLine="55" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3337801829813899376" fileName="SReferenceCreator.java" startLine="55" startPosition="84" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3337801829813899329" fileName="SReferenceCreator.java" startLine="54" startPosition="80" endLine="55" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3337801829813899376" fileName="SReferenceCreator.java" startLine="55" startPosition="69" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3337801829813899339" fileName="SReferenceCreator.java" startLine="59" startPosition="92" endLine="60" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3633685240070179369" fileName="SReferenceCreator.java" startLine="33" startPosition="62" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="711884569791035470" fileName="SReferenceCreator.java" startLine="40" startPosition="0" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

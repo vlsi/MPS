@@ -52,7 +52,7 @@ public class SReferenceCreator implements SReferenceHandler {
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, model.getStereotype()), moduleRef, false);
     assert !(AuxilaryRuntimeModel.isAuxModel(SNodeOperations.getModel(source)));
-    source.getOldModel().addModelImport(SetSequence.fromSet(models).first(), false);
+    model.addModelImport(SetSequence.fromSet(models).first(), false);
     return SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
