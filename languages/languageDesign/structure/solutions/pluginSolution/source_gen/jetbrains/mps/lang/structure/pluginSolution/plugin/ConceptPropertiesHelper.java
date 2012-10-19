@@ -20,6 +20,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.List;
@@ -72,12 +73,8 @@ public class ConceptPropertiesHelper {
 
     RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
       public void performAction(RefactoringViewItem refactoringViewItem) {
-        for (SNode node : SetSequence.fromSet(conceptUsages)) {
-          final Set<SNode> searchedConcepts = SetSequence.fromSet(new HashSet<SNode>());
-          SetSequence.fromSet(searchedConcepts).addElement(node);
-          for (SNode usage : SetSequence.fromSet(FindUsagesManager.getInstance().findUsages(searchedConcepts, SearchType.INSTANCES, scope, new EmptyProgressMonitor()))) {
-            usage.setProperty("conceptAlias", SConceptPropertyOperations.getString(usage, "alias"));
-          }
+        for (SNode concept : SetSequence.fromSet(conceptUsages)) {
+          SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
         }
         for (SNode node : SetSequence.fromSet(accessUsages)) {
           SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0a1a0a0b0a9a1().createNode(), "operation", true));
