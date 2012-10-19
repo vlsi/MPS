@@ -670,9 +670,9 @@
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="1744445256079578761">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1744445256079578595" resolveInfo="GoToEditorDeclaration" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1744445256079578762">
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8620300841413764531">
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_E" />
-        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="8586967776370449213">
