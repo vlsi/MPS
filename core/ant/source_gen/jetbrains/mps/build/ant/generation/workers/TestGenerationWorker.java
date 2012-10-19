@@ -398,8 +398,8 @@ public class TestGenerationWorker extends MpsWorker {
           if (isWholeProject(prj)) {
             _modules.value = Sequence.fromIterable(_modules.value).concat(Sequence.fromIterable(prj.getModules()));
           } else
-          if (!(((FileMPSProject) prj).getDescriptor().getTestConfiturations().isEmpty())) {
-            for (BaseTestConfiguration tconf : ((FileMPSProject) prj).getDescriptor().getTestConfiturations()) {
+          if (!(((FileMPSProject) prj).getDescriptor().getTestConfigurations().isEmpty())) {
+            for (BaseTestConfiguration tconf : ((FileMPSProject) prj).getDescriptor().getTestConfigurations()) {
               try {
                 result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable((Iterable<SModelDescriptor>) tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {

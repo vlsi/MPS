@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-62zoj8q36rw8raici0ksi3x1pp4lxkk">
+<dependencies version="2" modelHash="1uoz5nn48mbqd3984hz5avwzurj9g1a">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -22,24 +22,17 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6hh98xngdbah9vcaahb3pvwhjzrl9ha" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="ec3gznkwxykcw7q10wncyfqe3at1s9u" />
-  <dep model="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.xmlQuery.runtime)" hash="-a8jphana9j25rlpqkperypoe34e2vq1" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-c9thvap90c0u6m1aex053edqxzdqjg5" />
   <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" hash="-dsr4briyj40yl7sj7qgx1za0xczx2j7" />
-  <dep model="r:6aa32a3e-1885-41c3-a554-8f15807d380a(jetbrains.mps.xmlQuery.generator.template.main@generator)" hash="ewgtreq09eb1nhdll5iuzixxubuwcf4" />
   <dep model="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" hash="-9krv06b0cs6386k8hset7ne2jw9gn5d" />
-  <dep model="r:7cd2ab50-795e-40e4-9913-a76e3028b5d1(jetbrains.mps.xmlSchema.generator.template.main@generator)" hash="-5fofw4vt0hfc85ajk1qcg2pbpptxrwo" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <dep model="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" hash="-ayz6t0t8drjt8tavmwart5bauuqbp4v" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
   <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
-  <common hash="9lqigunji84b5a3e0nf3w9vm67yojho">
+  <common hash="errmv3kbpix6pkwelpjubdjau5h3485">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="842994667883029936" name="MPS project schema" hash="-54k2s1jymqvum8g02d3d02p1cu4hmfu">
-    <dep model="r:7cd2ab50-795e-40e4-9913-a76e3028b5d1(jetbrains.mps.xmlSchema.generator.template.main@generator)" />
-  </source>
   <source id="842994667883030054" name="ModuleDescriptorsBuilders" hash="b0rko26j3gwauhl1kqfgn59yin6r930">
     <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" />
   </source>
@@ -68,7 +61,6 @@
     <dep root="2184872129967111884" />
     <dep root="2709156219364650064" />
     <dep root="5932019537937719012" />
-    <dep root="842994667883029936" />
     <dep root="842994667883030054" />
     <dep root="842994667883030151" />
     <dep root="842994667883031167" />
@@ -113,7 +105,6 @@
     <dep root="2184872129967111884" />
     <dep root="2709156219364650064" />
     <dep root="5932019537937719012" />
-    <dep root="842994667883029936" />
     <dep root="842994667883030054" />
     <dep root="842994667883030151" />
     <dep root="842994667883030499" />
@@ -158,7 +149,6 @@
     <dep root="2184872129967111884" />
     <dep root="2709156219364650064" />
     <dep root="5932019537937719012" />
-    <dep root="842994667883029936" />
     <dep root="842994667883030054" />
     <dep root="842994667883030151" />
     <dep root="842994667883030499" />
@@ -200,12 +190,11 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModuleDescriptorPersistence.java" />
   </source>
-  <source id="842994667883032218" name="ProjectDescriptorPersistence" hash="69wwk8n94lveihpb60n3c01fblrc4o4">
-    <dep root="842994667883029936" />
+  <source id="842994667883032218" name="ProjectDescriptorPersistence" hash="8qf8k252n2njmkat6lbir7lxgkusbdu">
+    <dep root="2184872129967111884" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.project(MPS.Core/jetbrains.mps.project.structure.project@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.project.testconfigurations(MPS.Core/jetbrains.mps.project.structure.project.testconfigurations@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -218,11 +207,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.xmlQuery.runtime)" />
-    <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" />
-    <dep model="r:6aa32a3e-1885-41c3-a554-8f15807d380a(jetbrains.mps.xmlQuery.generator.template.main@generator)" />
-    <dep model="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" />
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ProjectDescriptorPersistence.java" />
