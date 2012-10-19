@@ -330,10 +330,11 @@
       <modulePath path="${project}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml.sax/sax.mpl" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="core.langs" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/custommps/custommps.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/dependency/dependency.mpl" folder="languages.build" />
