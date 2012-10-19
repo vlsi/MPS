@@ -23,8 +23,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
-  @NotNull
-  private final ModelDataSource mySource;
   private DataSourceListener mySourceListener = new DataSourceListener() {
     @Override
     public void changed(DataSource source) {
@@ -32,19 +30,18 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     }
   };
 
-  protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
-    super(modelReference, checkDup);
-    mySource = source;
-    mySource.addListener(mySourceListener);
+  protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull DataSource source) {
+    super(modelReference, source);
+    getSource().addListener(mySourceListener);
   }
 
   @NotNull
   public ModelDataSource getSource() {
-    return mySource;
+    return (ModelDataSource) super.getSource();
   }
 
   public void dispose() {
-    mySource.removeListener(mySourceListener);
+    getSource().removeListener(mySourceListener);
     super.dispose();
   }
 
@@ -59,7 +56,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public void updateDiskTimestamp() {
-    mySourceTimestamp = mySource.getTimestamp();
+    mySourceTimestamp = getSource().getTimestamp();
   }
 
   protected void processChanged(ProgressMonitor monitor) {
@@ -71,7 +68,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public boolean needsReloading() {
-    return mySource.getTimestamp() != mySourceTimestamp;
+    return getSource().getTimestamp() != mySourceTimestamp;
   }
 
   protected synchronized void replaceModel(Runnable replacer) {

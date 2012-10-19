@@ -15,13 +15,18 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-import org.jetbrains.mps.openapi.model.SModel;
+public class NullDataSource implements DataSource {
 
-public interface ModelPersistence {
+  @Override
+  public void addListener(DataSourceListener listener) {
+  }
 
-  boolean canLoad(DataSource source);
+  @Override
+  public void removeListener(DataSourceListener listener) {
+  }
 
-  SModel loadModel(DataSource source);
-
-  void saveModel(SModel model, DataSource source);
+  @Override
+  public long getTimestamp() {
+    return 0;
+  }
 }

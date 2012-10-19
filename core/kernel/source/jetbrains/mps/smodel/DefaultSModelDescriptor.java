@@ -16,13 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.MetadataContainer;
 import jetbrains.mps.smodel.descriptor.Refactorable;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -35,6 +33,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Collections;
 import java.util.Map;
@@ -74,8 +73,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private SModule myModule;
 
-  public DefaultSModelDescriptor(SModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
-    super(modelReference, source, true);
+  public DefaultSModelDescriptor(SModule module, DataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+    super(modelReference, source);
     myModule = module;
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
@@ -317,14 +316,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     } else {
       reloadFromDisk();
     }
-  }
-
-  protected void processChanged(ProgressMonitor monitor) {
-    if (!needsReloading()) return;
-
-    monitor.start("Reloading " + getLongName(), 1);
-    reloadFromDiskSafe();
-    monitor.done();
   }
 
   protected void reload() {
