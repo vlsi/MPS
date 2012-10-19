@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import java.util.List;
 
 /**
- * @deprecated starting from MPS 3.0 <code>SubstituteInfoPartExt</code> should be used
- *
- * Igor Alshannikov
- * Date: Nov 29, 2006
+ * User: shatalin
+ * Date: 10/19/12
  */
-@Deprecated
-public interface SubstituteInfoPart {
-  /**
-   * @deprecated starting from MPS 3.0 <code>SubstituteInfoPartExt</code> should be used
-   */
-  @Deprecated
+public interface SubstituteInfoPartExt {
   List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext);
 }
