@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -147,9 +148,17 @@ public class EditorManager {
     return getCurrentAttributedCellWithRole(AttributeKind.Node.class);
   }
 
+  /**
+   * @deprecated in MPS 3.0 Is here only for the compatibility with generated editor code.
+   */
+  @Deprecated
   public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
+    return createRoleAttributeCell((jetbrains.mps.openapi.editor.EditorContext) context, roleAttribute, attributeKind, cellWithRole);
+  }
+
+  public EditorCell createRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
-    EditorCell attributeCell = context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
+    EditorCell attributeCell = (EditorCell) context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
     // see a comment for isAttributedCell() method
     if (attributeCell == cellWithRole) {
       return cellWithRole;
@@ -158,7 +167,7 @@ public class EditorManager {
       attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
 
-    EditorComponent editor = context.getNodeEditorComponent();
+    EditorComponent editor = (EditorComponent) context.getEditorComponent();
     Set<SNode> newAttributeCell_DependOn = new HashSet<SNode>();
     Set<SNode> attributeCell_DependOn = editor.getNodesCellDependOn(attributeCell);
     if (attributeCell_DependOn != null) {
@@ -190,14 +199,14 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
+  jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, jetbrains.mps.openapi.editor.EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
       myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
-    stack.push(cellWithRole);
-    myLastAttributedCell = cellWithRole;
+    stack.push((EditorCell) cellWithRole);
+    myLastAttributedCell = (EditorCell) cellWithRole;
     EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myLastAttributedCell = null;
     EditorCell cellWithRolePopped = stack.pop();
@@ -393,19 +402,19 @@ public class EditorManager {
 
     // delete the hint when pressed ctrl-delete, delete or backspace
     sideTransformHintCell.setAction(CellActionType.DELETE, new EditorCellAction() {
-      public void execute(final EditorContext context) {
+      public void execute(final jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'space'
     sideTransformHintCell.setAction(CellActionType.RIGHT_TRANSFORM, new EditorCellAction() {
-      public void execute(EditorContext context) {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
 
     sideTransformHintCell.setAction(CellActionType.LEFT_TRANSFORM, new EditorCellAction() {
-      public void execute(EditorContext context) {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
@@ -427,7 +436,7 @@ public class EditorManager {
         List wrapperList = new LinkedList();
         for (final Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
-            public SNode substitute(@Nullable EditorContext context, String pattern) {
+            public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   SNodeEditorUtil.removeRightTransformHint(node);
@@ -478,17 +487,17 @@ public class EditorManager {
     return resultCell;
   }
 
-  private void removeSTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
+  private void removeSTHintAndChangeSelection(final jetbrains.mps.openapi.editor.EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
     SNodeEditorUtil.removeRightTransformHint(node);
     SNodeEditorUtil.removeLeftTransformHint(node);
 
     context.flushEvents();
 
-    EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     if (cellInfoToSelect == null) return;
-    EditorCell newlySelectedCell = cellInfoToSelect.findCell(nodeEditorComponent);
+    EditorCell newlySelectedCell = cellInfoToSelect.findCell(editorComponent);
     if (newlySelectedCell == null) return;
-    context.getNodeEditorComponent().changeSelection(newlySelectedCell);
+    editorComponent.changeSelection(newlySelectedCell);
     if (newlySelectedCell instanceof EditorCell_Label) {
       ((EditorCell_Label) newlySelectedCell).end();
     }

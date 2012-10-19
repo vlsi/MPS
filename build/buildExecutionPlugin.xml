@@ -399,6 +399,7 @@
       </src>
       <classpath>
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -438,6 +439,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/common/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -480,6 +482,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/settings/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -525,6 +528,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/util/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -561,6 +565,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/commands/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -615,6 +620,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -677,6 +683,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/deprecated/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -741,6 +748,7 @@
         <path location="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -803,6 +811,7 @@
         <path location="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -845,6 +854,7 @@
         <path location="${mps_home}/plugins/execution-configurations/languages/migration/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
@@ -910,6 +920,7 @@
         <path location="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />

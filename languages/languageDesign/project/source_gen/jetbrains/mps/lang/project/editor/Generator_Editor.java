@@ -4,7 +4,7 @@ package jetbrains.mps.lang.project.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -86,7 +86,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generator");
     editorCell.setCellId("Constant_cqvux8_a0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -94,7 +94,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "id");
     editorCell.setCellId("Constant_cqvux8_c0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -102,7 +102,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_cqvux8_e0");
     {
       Style style = editorCell.getStyle();
@@ -114,7 +114,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uuid");
     editorCell.setCellId("Constant_cqvux8_a5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -122,7 +122,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_b5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_b5a");
     {
       Style style = editorCell.getStyle();
@@ -133,7 +133,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_d5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate templates");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate templates");
     editorCell.setCellId("Constant_cqvux8_d5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -141,14 +141,14 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_e5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_e5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_cqvux8_g5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_g5a");
     {
       Style style = editorCell.getStyle();
@@ -159,7 +159,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_h5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "models");
     editorCell.setCellId("Constant_cqvux8_h5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -167,7 +167,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_i5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_i5a");
     {
       Style style = editorCell.getStyle();
@@ -179,7 +179,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_k5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_k5a");
     {
       Style style = editorCell.getStyle();
@@ -190,7 +190,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_l5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model roots");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model roots");
     editorCell.setCellId("Constant_cqvux8_l5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -198,7 +198,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_m5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_m5a");
     {
       Style style = editorCell.getStyle();
@@ -210,7 +210,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_o5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_o5a");
     {
       Style style = editorCell.getStyle();
@@ -221,7 +221,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_p5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "used languages");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "used languages");
     editorCell.setCellId("Constant_cqvux8_p5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -229,7 +229,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_q5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_q5a");
     {
       Style style = editorCell.getStyle();
@@ -241,7 +241,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_s5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_s5a");
     {
       Style style = editorCell.getStyle();
@@ -252,7 +252,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_t5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "used devkits");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "used devkits");
     editorCell.setCellId("Constant_cqvux8_t5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -260,7 +260,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_u5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_u5a");
     {
       Style style = editorCell.getStyle();
@@ -272,7 +272,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_w5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_w5a");
     {
       Style style = editorCell.getStyle();
@@ -283,7 +283,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_x5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dependencies");
     editorCell.setCellId("Constant_cqvux8_x5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -291,7 +291,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_y5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_y5a");
     {
       Style style = editorCell.getStyle();
@@ -303,7 +303,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_ab5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_ab5a");
     {
       Style style = editorCell.getStyle();
@@ -314,7 +314,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_bb5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on generators");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "depends on generators");
     editorCell.setCellId("Constant_cqvux8_bb5a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -322,7 +322,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_cb5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_cqvux8_cb5a");
     {
       Style style = editorCell.getStyle();
@@ -334,7 +334,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_eb5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqvux8_eb5a");
     {
       Style style = editorCell.getStyle();
@@ -345,7 +345,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqvux8_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_cqvux8_g0");
     {
       Style style = editorCell.getStyle();
@@ -791,7 +791,7 @@ public class Generator_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), " ");
       editorCell.setSelectable(false);
       {
         Style style = editorCell.getStyle();
@@ -803,7 +803,7 @@ public class Generator_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_cqvux8_a13f0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< priority rules >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<< priority rules >>");
       editorCell.setCellId("Constant_cqvux8_a13f0");
       {
         Style style = editorCell.getStyle();

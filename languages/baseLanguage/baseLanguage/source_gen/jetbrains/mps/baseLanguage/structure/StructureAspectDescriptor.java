@@ -330,7 +330,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 156:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IWrapper"}, new String[]{}, new String[]{});
       case 157:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.ILocalReference"}, new String[]{}, new String[]{"localVariableDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"localVariableDeclaration"});
       case 158:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"value"}, new String[]{});
       case 159:
@@ -516,9 +516,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 249:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
       case 250:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"}, new String[]{"isFinal"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{"isFinal"}, new String[]{});
       case 251:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.IVariableReference"}, new String[]{}, new String[]{"variableDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.IVariableReference", "jetbrains.mps.baseLanguage.structure.ILocalReference"}, new String[]{}, new String[]{"variableDeclaration"});
       case 252:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 253:

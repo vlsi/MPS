@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.NodeFactoryManager;

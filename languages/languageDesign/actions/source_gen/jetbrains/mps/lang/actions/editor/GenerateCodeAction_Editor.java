@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -62,14 +62,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_imc6ai_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate code");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate code");
     editorCell.setCellId("Constant_imc6ai_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_imc6ai_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_imc6ai_b0");
     {
       Style style = editorCell.getStyle();
@@ -80,14 +80,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_imc6ai_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_imc6ai_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_imc6ai_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_imc6ai_e0");
     {
       Style style = editorCell.getStyle();
@@ -98,14 +98,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_imc6ai_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parameters");
     editorCell.setCellId("Constant_imc6ai_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_imc6ai_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_imc6ai_h0");
     {
       Style style = editorCell.getStyle();
@@ -116,14 +116,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_imc6ai_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get action UI");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get action UI");
     editorCell.setCellId("Constant_imc6ai_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_imc6ai_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_imc6ai_k0");
     {
       Style style = editorCell.getStyle();
@@ -134,7 +134,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_imc6ai_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "execute");
     editorCell.setCellId("Constant_imc6ai_l0");
     editorCell.setDefaultText("");
     return editorCell;

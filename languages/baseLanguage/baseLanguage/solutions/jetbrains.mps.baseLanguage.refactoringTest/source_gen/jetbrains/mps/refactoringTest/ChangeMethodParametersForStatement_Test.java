@@ -33,7 +33,7 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
       this.addNodeById("1230052406554");
       this.addNodeById("1230052406581");
       {
-        SNode c_ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SNode c_ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(c_ref, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052406612"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
         ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
         ListSequence.fromList(params.getParameters()).getElement(0).setSelected(false);

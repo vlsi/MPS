@@ -39,6 +39,9 @@ public class EditorResolver implements IResolver {
         return false;
       }
       NodeSubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
+      if (substituteInfo == null) {
+        return false;
+      }
       final INodeSubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
       if (applicableSubstituteAction == null) {
         return false;

@@ -43,8 +43,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4f.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281768">
-      <property name="name" nameId="tpck.1169194664001" value="CommandDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CommandDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -64,13 +64,13 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281787">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
       <property name="name" nameId="tpck.1169194664001" value="BuilderParameter" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281790">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="error" />
       <property name="name" nameId="tpck.1169194664001" value="ReportExecutionError" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="error" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="856705193941281792" resolveInfo="ReportErrorStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281792">
@@ -87,18 +87,18 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8478830098674460022">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <property name="name" nameId="tpck.1169194664001" value="DebuggerSettingsCommandParameterDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7327337331549086040" resolveInfo="CommandParameterDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7327337331549086040">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <property name="name" nameId="tpck.1169194664001" value="CommandParameterDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6129022259108579244">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="612376536074296995">
@@ -106,8 +106,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="856705193941281810" resolveInfo="ProcessType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="889694274152216058">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="ProcessBuilderCommandPartType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2459753140357918802">
@@ -115,38 +115,38 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="889694274152177535">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="KeyValueCommandPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="889694274152177536" resolveInfo="ProcessBuilderCommandPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="889694274152177536">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="ProcessBuilderCommandPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6868250101935610313">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="ListCommandPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="889694274152177536" resolveInfo="ProcessBuilderCommandPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8234001627574071406">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="PropertyCommandPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="889694274152177536" resolveInfo="ProcessBuilderCommandPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8234001627573935224">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="CommandPartToListOperation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2343546112398330898">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="NewProcessBuilderExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1616228152992023913">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <property name="name" nameId="tpck.1169194664001" value="CommandPartLengthOperation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -287,7 +287,7 @@
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="856705193941281789">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="tpee.1068581242866" resolveInfo="LocalVariableReference" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
   </root>
   <root id="856705193941281790">
@@ -449,8 +449,8 @@
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2168104298250244983">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <property name="role" nameId="tpce.1071599776563" value="items" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6868250101935610316">

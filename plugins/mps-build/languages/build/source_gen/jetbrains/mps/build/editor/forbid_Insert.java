@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.ide.editor.actions.EditorActionUtils;
@@ -27,7 +27,7 @@ public class forbid_Insert {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      EditorCell cell = editorContext.getNodeEditorComponent().findNodeCell(node);
+      EditorCell cell = (EditorCell) editorContext.getEditorComponent().findNodeCell(node);
       EditorCell outerCollection = (cell != null ?
         EditorActionUtils.getSiblingCollectionForInsert(cell, false) :
         null
@@ -70,7 +70,7 @@ public class forbid_Insert {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      EditorCell cell = editorContext.getNodeEditorComponent().findNodeCell(node);
+      EditorCell cell = (EditorCell) editorContext.getEditorComponent().findNodeCell(node);
       EditorCell outerCollection = (cell != null ?
         EditorActionUtils.getSiblingCollectionForInsert(cell, true) :
         null

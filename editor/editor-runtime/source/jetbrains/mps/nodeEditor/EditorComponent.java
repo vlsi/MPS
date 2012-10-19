@@ -1475,7 +1475,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (action != null && action.executeInCommand()) {
       executeCommand(new Runnable() {
         public void run() {
-          EditorContext editorContext = getEditorContext();
+          jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
           if (!editorContext.getOperationContext().isValid()) return;
           action.execute(editorContext);
         }

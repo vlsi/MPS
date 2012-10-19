@@ -16,11 +16,11 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
@@ -66,12 +66,33 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     return myChildConcept;
   }
 
-
   public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
+    return createNodeCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * This method should be removed, content moved to:
+   * <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
     return editorContext.createNodeCell(node);
   }
 
   protected EditorCell createEmptyCell(EditorContext editorContext) {
+    return createEmptyCell((jetbrains.mps.nodeEditor.EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * This method should be removed, content moved to:
+   * <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  protected EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);

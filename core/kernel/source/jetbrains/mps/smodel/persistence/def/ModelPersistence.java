@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
@@ -307,13 +308,6 @@ public class ModelPersistence {
 
   //-------- --------
 
-
-  public static SModelReference upgradeModelUID(SModelReference modelReference) {
-    return getCurrentModelPersistence().upgradeModelUID(modelReference);
-  }
-
-  //-------- --------
-
   @NotNull
   private static Document loadModelDocument(@NotNull InputSource source) throws ModelReadException {
     try {
@@ -457,7 +451,7 @@ public class ModelPersistence {
           } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
           } else {
-            myResult.getHeader().setOptionalProperty(name, XmlStringUtil.unescapeXml(value));
+            myResult.getHeader().setOptionalProperty(name, StringUtil.unescapeXml(value));
           }
         }
       } else if (PERSISTENCE.equals(qName)) {

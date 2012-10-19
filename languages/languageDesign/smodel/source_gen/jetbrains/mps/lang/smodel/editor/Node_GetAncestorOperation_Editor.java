@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -61,7 +61,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "The 'ancestor' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "The 'ancestor' operation");
     editorCell.setCellId("Constant_4l84js_a0");
     {
       Style style = editorCell.getStyle();
@@ -74,7 +74,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_4l84js_b0");
     {
       Style style = editorCell.getStyle();
@@ -85,7 +85,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns ancestor node (if no parameters returns direct parent)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns ancestor node (if no parameters returns direct parent)");
     editorCell.setCellId("Constant_4l84js_c0");
     {
       Style style = editorCell.getStyle();
@@ -97,7 +97,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_4l84js_d0");
     {
       Style style = editorCell.getStyle();
@@ -108,7 +108,7 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Optional parameters:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Optional parameters:");
     editorCell.setCellId("Constant_4l84js_e0");
     {
       Style style = editorCell.getStyle();
@@ -120,14 +120,14 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "root");
     editorCell.setCellId("Constant_4l84js_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_4l84js_b5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get top ancestor");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get top ancestor");
     editorCell.setCellId("Constant_4l84js_b5a");
     {
       Style style = editorCell.getStyle();
@@ -139,14 +139,14 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_c5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept");
     editorCell.setCellId("Constant_4l84js_c5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_4l84js_d5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get ancestor which is instance of concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get ancestor which is instance of concept");
     editorCell.setCellId("Constant_4l84js_d5a");
     {
       Style style = editorCell.getStyle();
@@ -158,14 +158,14 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_e5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept in");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept in");
     editorCell.setCellId("Constant_4l84js_e5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_4l84js_f5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get ancestor which is instance of one of concepts");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get ancestor which is instance of one of concepts");
     editorCell.setCellId("Constant_4l84js_f5a");
     {
       Style style = editorCell.getStyle();
@@ -177,14 +177,14 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4l84js_g5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "+");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "+");
     editorCell.setCellId("Constant_4l84js_g5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_4l84js_h5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return current node if it meets the requirements");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "return current node if it meets the requirements");
     editorCell.setCellId("Constant_4l84js_h5a");
     {
       Style style = editorCell.getStyle();

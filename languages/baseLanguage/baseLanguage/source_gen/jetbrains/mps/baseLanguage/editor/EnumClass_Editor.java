@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -114,7 +114,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enum");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "enum");
     editorCell.setCellId("Constant_y68cfu_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -127,7 +127,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implements");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "implements");
     editorCell.setCellId("Constant_y68cfu_f0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -140,7 +140,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_a7a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_y68cfu_a7a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -152,7 +152,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_b1h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_y68cfu_b1h0");
     {
       Style style = editorCell.getStyle();
@@ -163,7 +163,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_d1h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_y68cfu_d1h0");
     {
       Style style = editorCell.getStyle();
@@ -174,7 +174,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_g1h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_y68cfu_g1h0");
     {
       Style style = editorCell.getStyle();
@@ -185,7 +185,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y68cfu_c7a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_y68cfu_c7a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -377,7 +377,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a6a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a6a");
       {
         Style style = editorCell.getStyle();
@@ -428,7 +428,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a0b7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a0b7a");
       {
         Style style = editorCell.getStyle();
@@ -479,7 +479,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a2b7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a2b7a");
       {
         Style style = editorCell.getStyle();
@@ -530,7 +530,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a5b7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a5b7a");
       {
         Style style = editorCell.getStyle();
@@ -581,7 +581,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a7b7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a7b7a");
       {
         Style style = editorCell.getStyle();
@@ -632,7 +632,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a8b7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a8b7a");
       {
         Style style = editorCell.getStyle();
@@ -683,7 +683,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_y68cfu_a9b7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_y68cfu_a9b7a");
       {
         Style style = editorCell.getStyle();

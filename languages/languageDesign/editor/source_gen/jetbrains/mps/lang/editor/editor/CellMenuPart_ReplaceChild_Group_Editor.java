@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -156,7 +156,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (group of custom actions)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "replace child (group of custom actions)");
     editorCell.setCellId("Constant_2287jw_a0a");
     {
       Style style = editorCell.getStyle();
@@ -168,7 +168,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_2287jw_a1a");
     {
       Style style = editorCell.getStyle();
@@ -179,14 +179,14 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter object type");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parameter object type");
     editorCell.setCellId("Constant_2287jw_a0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2287jw_b0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_2287jw_b0b1a");
     {
       Style style = editorCell.getStyle();
@@ -197,14 +197,14 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter objects");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parameter objects");
     editorCell.setCellId("Constant_2287jw_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2287jw_b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_2287jw_b1b1a");
     {
       Style style = editorCell.getStyle();
@@ -215,14 +215,14 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "presentation");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "presentation");
     editorCell.setCellId("Constant_2287jw_a2b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2287jw_b2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_2287jw_b2b1a");
     {
       Style style = editorCell.getStyle();
@@ -233,14 +233,14 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "matching text");
     editorCell.setCellId("Constant_2287jw_a3b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2287jw_b3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_2287jw_b3b1a");
     {
       Style style = editorCell.getStyle();
@@ -251,14 +251,14 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "description text");
     editorCell.setCellId("Constant_2287jw_a4b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2287jw_b4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_2287jw_b4b1a");
     {
       Style style = editorCell.getStyle();
@@ -269,14 +269,14 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2287jw_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create new child");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "create new child");
     editorCell.setCellId("Constant_2287jw_a5b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2287jw_b5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_2287jw_b5b1a");
     {
       Style style = editorCell.getStyle();

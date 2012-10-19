@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -39,7 +39,7 @@ public class Reference_GetRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4wrz2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'role' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Get reference 'role' operation");
     editorCell.setCellId("Constant_e4wrz2_a0");
     {
       Style style = editorCell.getStyle();
@@ -52,7 +52,7 @@ public class Reference_GetRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4wrz2_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_e4wrz2_b0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class Reference_GetRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4wrz2_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns reference role value");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns reference role value");
     editorCell.setCellId("Constant_e4wrz2_c0");
     {
       Style style = editorCell.getStyle();

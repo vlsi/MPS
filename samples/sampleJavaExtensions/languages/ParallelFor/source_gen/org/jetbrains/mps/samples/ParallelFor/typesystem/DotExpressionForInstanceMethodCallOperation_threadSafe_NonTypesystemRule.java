@@ -59,8 +59,8 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
           }
         }
       }
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
-        SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false);
+      if ((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+        SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         SNode declarationsAncestor = SNodeOperations.getAncestor(variableDeclaration, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
         if (directAncestor != declarationsAncestor) {
           if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {

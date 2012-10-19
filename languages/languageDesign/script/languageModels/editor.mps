@@ -18,6 +18,12 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1177460802386">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp33.1177457850499" resolveInfo="MigrationScriptPart_Instance" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2598676492883164208">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp33.2598676492883164205" resolveInfo="FactoryMigrationScriptPart" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2598676492883244608">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp33.2598676492883244606" resolveInfo="WhitespaceMigrationScriptPart" />
+    </node>
   </roots>
   <root id="1177460073219">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177460151034">
@@ -269,6 +275,20 @@
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_VerticalGrid" typeId="tpc2.1239814640496" id="1239880399732" />
     </node>
+  </root>
+  <root id="2598676492883164208">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2598676492883164210">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2598676492883164215">
+        <property name="text" nameId="tpc2.1073389577007" value="Factory static method: " />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2598676492883164216">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp33.2598676492883164207" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="2598676492883164212" />
+    </node>
+  </root>
+  <root id="2598676492883244608">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2598676492883244610" />
   </root>
 </model>
 

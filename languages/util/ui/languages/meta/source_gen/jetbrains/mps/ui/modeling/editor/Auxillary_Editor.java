@@ -4,7 +4,7 @@ package jetbrains.mps.ui.modeling.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -61,7 +61,7 @@ public class Auxillary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_w1zhs4_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "auxillary objects");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "auxillary objects");
     editorCell.setCellId("Constant_w1zhs4_a0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -76,7 +76,7 @@ public class Auxillary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_w1zhs4_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

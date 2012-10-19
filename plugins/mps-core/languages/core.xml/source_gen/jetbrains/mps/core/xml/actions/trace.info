@@ -180,13 +180,13 @@
     <nodeInfo nodeId="6666499814681637592" fileName="AttributeUtil.java" startLine="35" startPosition="14" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6666499814681637546" fileName="AttributeUtil.java" startLine="38" startPosition="12" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6666499814681637530" fileName="AttributeUtil.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setIndexSelection#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="6666499814681637914" fileName="AttributeUtil.java" startLine="21" startPosition="75" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6666499814681637914" fileName="AttributeUtil.java" startLine="21" startPosition="104" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6666499814681637443" fileName="AttributeUtil.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_u51ahb_a0a0a0e0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6666499814681637559" fileName="AttributeUtil.java" startLine="29" startPosition="96" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6666499814681637475" fileName="AttributeUtil.java" startLine="28" startPosition="72" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6666499814681637463" fileName="AttributeUtil.java" startLine="27" startPosition="27" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6666499814681637426" fileName="AttributeUtil.java" startLine="20" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="6666499814681637426" fileName="AttributeUtil.java" startLine="20" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="6666499814681637425" fileName="AttributeUtil.java" startLine="15" startPosition="26" endLine="15" endPosition="26" />
     <scopeInfo nodeId="6666499814681637533" fileName="AttributeUtil.java" startLine="18" startPosition="69" endLine="18" endPosition="69" />
     <scopeInfo nodeId="6666499814681637915" fileName="AttributeUtil.java" startLine="22" startPosition="23" endLine="23" endPosition="13" />
@@ -211,7 +211,7 @@
     <scopeInfo nodeId="6666499814681637463" fileName="AttributeUtil.java" startLine="27" startPosition="27" endLine="41" endPosition="5">
       <varInfo nodeId="6666499814681637466" varName="part" />
     </scopeInfo>
-    <scopeInfo nodeId="6666499814681637429" fileName="AttributeUtil.java" startLine="21" startPosition="75" endLine="44" endPosition="5">
+    <scopeInfo nodeId="6666499814681637429" fileName="AttributeUtil.java" startLine="21" startPosition="104" endLine="44" endPosition="5">
       <varInfo nodeId="6666499814681637458" varName="lastValue" />
       <varInfo nodeId="6666499814681637433" varName="valuesToDelete" />
     </scopeInfo>

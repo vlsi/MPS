@@ -81,8 +81,8 @@
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="229" startPosition="9" endLine="230" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="232" startPosition="45" endLine="233" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2286463592495498206" fileName="ModelReader5Handler.java" startLine="233" startPosition="42" endLine="234" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2286463592495498114" fileName="ModelReader5Handler.java" startLine="234" startPosition="49" endLine="235" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="235" startPosition="119" endLine="236" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2286463592495498114" fileName="ModelReader5Handler.java" startLine="234" startPosition="49" endLine="235" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="235" startPosition="92" endLine="236" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="238" startPosition="39" endLine="239" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2286463592495498229" fileName="ModelReader5Handler.java" startLine="239" startPosition="38" endLine="240" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="240" startPosition="66" endLine="241" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -132,7 +132,7 @@
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="396" startPosition="80" endLine="397" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
     <nodeInfo nodeId="2286463592495498295" fileName="ModelReader5Handler.java" startLine="403" startPosition="67" endLine="404" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2286463592495498303" fileName="ModelReader5Handler.java" startLine="404" startPosition="65" endLine="405" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2286463592495498312" fileName="ModelReader5Handler.java" startLine="405" startPosition="69" endLine="406" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2286463592495498312" fileName="ModelReader5Handler.java" startLine="405" startPosition="69" endLine="406" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="410" startPosition="45" endLine="411" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="415" startPosition="104" endLine="416" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="417" startPosition="33" endLine="418" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -443,7 +443,7 @@
     <scopeInfo nodeId="3912764103614069948" fileName="ModelReader5Handler.java" startLine="281" startPosition="82" endLine="284" endPosition="7">
       <varInfo nodeId="3912764103614069949" varName="referencePersister" />
     </scopeInfo>
-    <scopeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="403" startPosition="67" endLine="406" endPosition="147">
+    <scopeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="403" startPosition="67" endLine="406" endPosition="120">
       <varInfo nodeId="2286463592495498296" varName="indexValue" />
       <varInfo nodeId="2286463592495498304" varName="versionValue" />
     </scopeInfo>
@@ -697,30 +697,6 @@
     <unitInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="430" startPosition="0" endLine="511" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$NodeElementHandler" />
     <unitInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="156" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$ModelElementHandler" />
     <unitInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="26" startPosition="0" endLine="602" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" />
-  </root>
-  <root nodeId="2286463592495498121" modelId="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)">
-    <nodeInfo nodeId="2286463592495498180" fileName="ModelUtil.java" startLine="13" startPosition="56" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2286463592495498184" fileName="ModelUtil.java" startLine="15" startPosition="5" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9034052485202337810" fileName="ModelUtil.java" startLine="19" startPosition="81" endLine="20" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2286463592495498143" fileName="ModelUtil.java" startLine="20" startPosition="73" endLine="21" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="8" startPosition="24" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUtil#()V" />
-    <nodeInfo nodeId="2286463592495498170" fileName="ModelUtil.java" startLine="12" startPosition="61" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeModelUID#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="11" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeStereotype#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2286463592495498126" fileName="ModelUtil.java" startLine="9" startPosition="22" endLine="9" endPosition="22" />
-    <scopeInfo nodeId="2286463592495498172" fileName="ModelUtil.java" startLine="13" startPosition="56" endLine="14" endPosition="40" />
-    <scopeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="8" startPosition="24" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="2286463592495498130" fileName="ModelUtil.java" startLine="19" startPosition="81" endLine="21" endPosition="121">
-      <varInfo nodeId="9034052485202337811" varName="newStereo" />
-    </scopeInfo>
-    <scopeInfo nodeId="2286463592495498165" fileName="ModelUtil.java" startLine="12" startPosition="61" endLine="16" endPosition="22" />
-    <scopeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="2286463592495498140" varName="modelReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="11" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="2286463592495498168" varName="stereotype" />
-    </scopeInfo>
-    <unitInfo nodeId="2286463592495498121" fileName="ModelUtil.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
   </root>
   <root nodeId="651246788329828609" modelId="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)">
     <nodeInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="16" startPosition="86" endLine="17" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />

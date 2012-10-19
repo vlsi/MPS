@@ -8,7 +8,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
+import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
 
 public class AssignmentExpression_DataFlow extends DataFlowBuilder {
   public AssignmentExpression_DataFlow() {
@@ -18,7 +18,7 @@ public class AssignmentExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));
     SNode variable = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      if (!(SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) || LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+      if (!((SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) || VariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
         _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), SLinkOperations.getTarget(_context.getNode(), "rValue", true));
       }
     } else {

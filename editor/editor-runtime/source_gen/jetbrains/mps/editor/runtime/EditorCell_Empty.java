@@ -111,7 +111,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     return !(this.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT));
   }
 
-  private boolean applyLeftTransform(EditorContext editorContext, EditorCell cellForNewNode, String text) {
+  private boolean applyLeftTransform(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cellForNewNode, String text) {
     EditorCellAction ltAction = cellForNewNode.getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
     ltAction.execute(editorContext);
     cellForNewNode.getSTHintCell().changeText(text);
@@ -119,7 +119,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     return true;
   }
 
-  private boolean applyRightTransform(EditorContext editorContext, EditorCell cellForNewNode, String text) {
+  private boolean applyRightTransform(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cellForNewNode, String text) {
     EditorCellAction ltAction = cellForNewNode.getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
     ltAction.execute(editorContext);
     cellForNewNode.getSTHintCell().changeText(text);

@@ -53,7 +53,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     if (myLinkDeclaration == null) {
       return Collections.emptyList();
     }
-    EditorComponent editor = mySubstituteInfo.getEditorContext().getNodeEditorComponent();
+    EditorComponent editor = (EditorComponent) mySubstituteInfo.getEditorContext().getEditorComponent();
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, ((String) BehaviorManager.getInstance().invoke(Object.class, myLinkDeclaration, "call_getGenuineRole_1213877254542", new Class[]{SNode.class})));
 
     if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {

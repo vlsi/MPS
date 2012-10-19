@@ -217,7 +217,7 @@ public class IntelligentInputUtil {
       ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
     }
 
-    rtAction.execute(editorContext);
+    rtAction.execute((jetbrains.mps.openapi.editor.EditorContext) editorContext);
 
     EditorCell newCellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
     EditorCell rtHintCell = prepareSTCell(editorContext, newCellForNewNode, tail);
@@ -345,7 +345,7 @@ public class IntelligentInputUtil {
       ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
     }
 
-    ltAction.execute(editorContext);
+    ltAction.execute((jetbrains.mps.openapi.editor.EditorContext) editorContext);
 
     EditorCell newCellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
     prepareSTCell(editorContext, newCellForNewNode, head);
@@ -430,7 +430,7 @@ public class IntelligentInputUtil {
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getEditorContext().getOperationContext());
-    NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getEditorContext()) {
+    NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
       protected List<INodeSubstituteAction> createActions() {
         return helper.createActions();
       }

@@ -4,7 +4,7 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -59,7 +59,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gl82dd_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default");
     editorCell.setCellId("Constant_gl82dd_a0a");
     {
       Style style = editorCell.getStyle();
@@ -72,7 +72,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gl82dd_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_gl82dd_a0a_0");
     {
       Style style = editorCell.getStyle();
@@ -83,7 +83,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gl82dd_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_gl82dd_c0");
     {
       Style style = editorCell.getStyle();
@@ -141,11 +141,11 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       SPropertyOperations.set(node, "default", "" + (parameterObject));
     }
 

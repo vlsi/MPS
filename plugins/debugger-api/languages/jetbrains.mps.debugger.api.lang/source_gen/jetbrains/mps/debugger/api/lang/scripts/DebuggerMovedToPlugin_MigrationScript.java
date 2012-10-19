@@ -225,16 +225,19 @@ public class DebuggerMovedToPlugin_MigrationScript extends BaseMigrationScript {
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
+        return "jetbrains.mps.baseLanguage.structure.VariableReference";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "fieldDeclaration"));
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+          return false;
+        }
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
         return StubUtil.isReferenceToDebuggerStub(reference);
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubUtil.resolveAndReplace(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), SLinkOperations.getRole(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "fieldDeclaration"))));
+        StubUtil.resolveAndReplace(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), SLinkOperations.getRole(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"))));
       }
 
       public boolean isShowAsIntention() {

@@ -6,7 +6,9 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class WhenConcreteStatement_DataFlow extends DataFlowBuilder {
@@ -14,8 +16,12 @@ public class WhenConcreteStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode lvr : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})) {
-      SNode variableDeclaration = SLinkOperations.getTarget(lvr, "variableDeclaration", false);
+    for (SNode lvr : ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      }
+    }).toListSequence()) {
+      SNode variableDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(lvr, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
       if (SNodeOperations.getAncestor(variableDeclaration, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false, false) != _context.getNode()) {
         _context.getBuilder().emitRead(variableDeclaration);
       }

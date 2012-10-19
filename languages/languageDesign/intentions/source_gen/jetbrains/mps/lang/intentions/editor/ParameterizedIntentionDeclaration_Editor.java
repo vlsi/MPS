@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -128,7 +128,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterized");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parameterized");
     editorCell.setCellId("Constant_crf3gy_a0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -136,7 +136,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_b0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "intention");
     editorCell.setCellId("Constant_crf3gy_b0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -144,7 +144,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_d0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for concept");
     editorCell.setCellId("Constant_crf3gy_d0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -152,7 +152,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_crf3gy_b0a");
     {
       Style style = editorCell.getStyle();
@@ -165,7 +165,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error intention :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "error intention :");
     editorCell.setCellId("Constant_crf3gy_a0b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -173,7 +173,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "available in child nodes :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "available in child nodes :");
     editorCell.setCellId("Constant_crf3gy_a1b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -181,7 +181,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_crf3gy_c1b0");
     {
       Style style = editorCell.getStyle();
@@ -192,14 +192,14 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_e1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_crf3gy_e1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_crf3gy_g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_crf3gy_g1b0");
     {
       Style style = editorCell.getStyle();
@@ -210,7 +210,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_i1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_crf3gy_i1b0");
     {
       Style style = editorCell.getStyle();
@@ -221,7 +221,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_crf3gy_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_crf3gy_c0");
     {
       Style style = editorCell.getStyle();
@@ -234,7 +234,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createIndentCell_crf3gy_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

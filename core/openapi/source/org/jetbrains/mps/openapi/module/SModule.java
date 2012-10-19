@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 public interface SModule {
 
@@ -28,6 +29,8 @@ public interface SModule {
 
   @NotNull
   SModuleReference getModuleReference();
+
+  boolean isReadOnly();
 
   boolean isPackaged();
 
@@ -42,4 +45,6 @@ public interface SModule {
   SModel getModel(SModelId id);
 
   Iterable<SModel> getModels();
+
+  Iterable<ModelRoot> getModelRoots();
 }

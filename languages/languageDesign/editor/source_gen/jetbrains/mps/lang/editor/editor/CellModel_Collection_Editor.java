@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -360,7 +360,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_a1a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cvgoyj_a1a0a");
     {
       Style style = editorCell.getStyle();
@@ -371,7 +371,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_a2a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cvgoyj_a2a0a");
     {
       Style style = editorCell.getStyle();
@@ -382,7 +382,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cvgoyj_b0");
     {
       Style style = editorCell.getStyle();
@@ -393,7 +393,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cell collection:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Cell collection:");
     editorCell.setCellId("Constant_cvgoyj_c0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -401,7 +401,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell layout");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "cell layout");
     editorCell.setCellId("Constant_cvgoyj_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -409,7 +409,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uses braces");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uses braces");
     editorCell.setCellId("Constant_cvgoyj_a1d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -417,7 +417,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cvgoyj_a2d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uses folding");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uses folding");
     editorCell.setCellId("Constant_cvgoyj_a2d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -555,19 +555,19 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
   }
 
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0a0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0d0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0d0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a1d0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a1d0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 

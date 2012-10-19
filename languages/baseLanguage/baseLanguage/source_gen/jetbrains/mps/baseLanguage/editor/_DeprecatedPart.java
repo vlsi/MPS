@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -24,6 +24,12 @@ public class _DeprecatedPart extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uc5iyq_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_uc5iyq_a(EditorContext editorContext, SNode node) {
@@ -57,7 +63,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_uc5iyq_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/**");
     editorCell.setCellId("Constant_uc5iyq_a0a");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -70,7 +76,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_uc5iyq_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " * ");
     editorCell.setCellId("Constant_uc5iyq_b0a");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -78,7 +84,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_uc5iyq_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@deprecated");
     editorCell.setCellId("Constant_uc5iyq_c0a");
     BaseLanguageStyle_StyleSheet.getJavaDoc(editorCell).apply(editorCell);
     {
@@ -90,7 +96,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_uc5iyq_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " */");
     editorCell.setCellId("Constant_uc5iyq_d0a");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -102,7 +108,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_uc5iyq_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**...*/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/**...*/");
     editorCell.setCellId("Constant_uc5iyq_a0a_0");
     BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

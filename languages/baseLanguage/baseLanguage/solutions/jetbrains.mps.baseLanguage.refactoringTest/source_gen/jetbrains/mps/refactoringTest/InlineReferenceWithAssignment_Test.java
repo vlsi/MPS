@@ -27,7 +27,7 @@ public class InlineReferenceWithAssignment_Test extends BaseTransformationTest4 
     public void test_InlineReferenceWithAssignment() throws Exception {
       this.addNodeById("1230053266542");
       this.addNodeById("1230053266566");
-      InlineVariableRefactoring ref = InlineVariableRefactoring.createRefactoring(SNodeOperations.cast(this.getNodeById("1230053266560"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+      InlineVariableRefactoring ref = InlineVariableRefactoring.createRefactoring(SNodeOperations.cast(this.getNodeById("1230053266560"), "jetbrains.mps.baseLanguage.structure.VariableReference"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266543"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266567"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }

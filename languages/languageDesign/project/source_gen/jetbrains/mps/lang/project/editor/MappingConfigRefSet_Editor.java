@@ -4,7 +4,7 @@ package jetbrains.mps.lang.project.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -35,7 +35,7 @@ public class MappingConfigRefSet_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3pyl5y_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "set");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "set");
     editorCell.setCellId("Constant_3pyl5y_a0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -43,7 +43,7 @@ public class MappingConfigRefSet_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3pyl5y_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_3pyl5y_b0");
     {
       Style style = editorCell.getStyle();
@@ -55,7 +55,7 @@ public class MappingConfigRefSet_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3pyl5y_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_3pyl5y_d0");
     {
       Style style = editorCell.getStyle();

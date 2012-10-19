@@ -28,7 +28,7 @@ public class InlineInsideClosure_Test extends BaseTransformationTest4 {
     public void test_InlineInsideClosureTest() throws Exception {
       this.addNodeById("7093131866560585662");
       this.addNodeById("7093131866560585699");
-      InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("7093131866560585685"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+      InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("7093131866560585685"), "jetbrains.mps.baseLanguage.structure.VariableReference"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7093131866560585663"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7093131866560585703"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }

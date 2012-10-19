@@ -4,7 +4,7 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -270,7 +270,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default");
     editorCell.setCellId("Constant_q0s13v_a0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -282,7 +282,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a0a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_q0s13v_a0a0_0");
     {
       Style style = editorCell.getStyle();
@@ -293,7 +293,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a0a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<--");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<--");
     editorCell.setCellId("Constant_q0s13v_a0a2a0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -302,7 +302,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a0a2a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<--");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<--");
     editorCell.setCellId("Constant_q0s13v_a0a2a0_0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
@@ -312,7 +312,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_b0a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<-->");
     editorCell.setCellId("Constant_q0s13v_b0a2a0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
@@ -322,14 +322,14 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_q0s13v_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_q0s13v_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_q0s13v_a1a");
     {
       Style style = editorCell.getStyle();
@@ -340,7 +340,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operations");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "operations");
     editorCell.setCellId("Constant_q0s13v_a1b1a");
     {
       Style style = editorCell.getStyle();
@@ -351,14 +351,14 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_q0s13v_a2b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_q0s13v_a0b2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sequence");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "sequence");
     editorCell.setCellId("Constant_q0s13v_a0b2b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -366,7 +366,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a1b2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_q0s13v_a1b2b1a");
     {
       Style style = editorCell.getStyle();
@@ -377,7 +377,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a2b2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "size");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "size");
     editorCell.setCellId("Constant_q0s13v_a2b2b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -385,7 +385,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a3b2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_q0s13v_a3b2b1a");
     {
       Style style = editorCell.getStyle();
@@ -396,7 +396,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q0s13v_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_q0s13v_a2a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -418,7 +418,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -536,11 +536,11 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       SPropertyOperations.set(node, "default", "" + (parameterObject));
     }
 
@@ -578,7 +578,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -590,7 +590,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -602,7 +602,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

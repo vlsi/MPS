@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -148,7 +148,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept");
     editorCell.setCellId("Constant_pxqe0v_a0a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -160,7 +160,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inheritors");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "inheritors");
     editorCell.setCellId("Constant_pxqe0v_a1a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -172,7 +172,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "condition");
     editorCell.setCellId("Constant_pxqe0v_a2a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -184,7 +184,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_a3a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keep input root");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keep input root");
     editorCell.setCellId("Constant_pxqe0v_a3a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -196,7 +196,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-->");
     editorCell.setCellId("Constant_pxqe0v_b0");
     {
       Style style = editorCell.getStyle();
@@ -207,14 +207,14 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_pxqe0v_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pxqe0v_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_pxqe0v_e0");
     {
       Style style = editorCell.getStyle();
@@ -226,7 +226,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root mapping rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "root mapping rule");
     editorCell.setCellId("Constant_pxqe0v_a0");
     {
       Style style = editorCell.getStyle();
@@ -239,7 +239,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_b0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_pxqe0v_b0_0");
     {
       Style style = editorCell.getStyle();
@@ -250,7 +250,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pxqe0v_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
     editorCell.setCellId("Constant_pxqe0v_a2a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.SNode;
 
 public interface INodeEditor {
-  EditorCell createEditorCell(EditorContext editorContext, SNode node);
+  EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node);
 
-  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
+  EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node);
 }

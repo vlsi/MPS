@@ -4,16 +4,21 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.build.behavior.BuildStringPart_Behavior;
+import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
+import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -25,20 +30,113 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createProperty_zen9g6_a0(editorContext, node);
+      editorCell = this.createAlternation_zen9g6_a0(editorContext, node);
     } else {
-      editorCell = this.createProperty_zen9g6_a0_0(editorContext, node);
+      editorCell = this.createAlternation_zen9g6_a0_0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createProperty_zen9g6_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_zen9g6_a0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_zen9g6_a0a(editorContext, node);
+    } else {
+      editorCell = this.createProperty_zen9g6_a0a_0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createAlternation_zen9g6_a0_0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0a_0(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_zen9g6_a0a_1(editorContext, node);
+    } else {
+      editorCell = this.createProperty_zen9g6_a0a_2(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createProperty_zen9g6_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
+    buildStyles_StyleSheet.getString(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a1a0a((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
+    editorCell.addKeyMap(new BuildSimpleName_text());
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_zen9g6_a0a_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("text");
+    provider.setNoTargetText("<no text>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_text_1");
+    buildStyles_StyleSheet.getString(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a0a0a((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
+    editorCell.addKeyMap(new BuildSimpleName_text());
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_zen9g6_a0a_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("text");
+    provider.setNoTargetText("<no text>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_text_2");
     buildStyles_StyleSheet.getString(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -56,13 +154,13 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_zen9g6_a0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_zen9g6_a0a_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_text_1");
+    editorCell.setCellId("property_text_3");
     buildStyles_StyleSheet.getString(editorCell).apply(editorCell);
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -76,7 +174,37 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_zen9g6_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return BuildStringPart_Behavior.call_punctuationLeft_5096397858823356723(node);
+  }
+
+  private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return (BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node) != null) && BuildStringContainer_Behavior.call_getColorForTextPart_6083230236994422116(BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node), SNodeOperations.getParent(node).getRole_()) != null;
+  }
+
+  private static boolean renderingCondition_zen9g6_a0a_0(SNode node, EditorContext editorContext, IScope scope) {
+    return BuildStringPart_Behavior.call_punctuationLeft_5096397858823356723(node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_zen9g6_a1a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
+    if ((container != null)) {
+      Color colorForTextPart = BuildStringContainer_Behavior.call_getColorForTextPart_6083230236994422116(container, SNodeOperations.getParent(node).getRole_());
+      if (colorForTextPart != null) {
+        return colorForTextPart;
+      }
+    }
+    return null;
+  }
+
+  private static Color _StyleParameter_QueryFunction_zen9g6_a0a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
+    if ((container != null)) {
+      Color colorForTextPart = BuildStringContainer_Behavior.call_getColorForTextPart_6083230236994422116(container, SNodeOperations.getParent(node).getRole_());
+      if (colorForTextPart != null) {
+        return colorForTextPart;
+      }
+    }
+    return null;
   }
 }

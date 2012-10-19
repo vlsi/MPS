@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -57,7 +57,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     if (CommentPart_Behavior.call_isToDo_7236590470026152831(node)) {
       return Color.BLUE;
     } else {

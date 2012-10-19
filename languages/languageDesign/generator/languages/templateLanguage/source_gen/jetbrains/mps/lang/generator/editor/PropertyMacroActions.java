@@ -4,11 +4,12 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 
 public class PropertyMacroActions {
@@ -30,9 +31,10 @@ public class PropertyMacroActions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNode propertyDeclaration = AttributeOperations.getPropertyDeclaration(SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
-      EditorCell cell = editorContext.getNodeEditorComponent().findCellWithId(attributedNode, PropertyDeclaration_Behavior.call_getCellId_1216822951265(propertyDeclaration));
+      EditorComponent editorComponent = editorContext.getEditorComponent();
+      EditorCell cell = ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).findCellWithId(attributedNode, PropertyDeclaration_Behavior.call_getCellId_1216822951265(propertyDeclaration));
       if (cell != null) {
-        editorContext.getNodeEditorComponent().changeSelection(cell);
+        editorComponent.changeSelection(cell);
       }
       SNodeOperations.deleteNode(node);
     }

@@ -15,26 +15,27 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.descriptor.source.ChangeListener;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
   @NotNull
   private final ModelDataSource mySource;
-  private ChangeListener mySourceListener = new ChangeListener() {
-    public void changed(ProgressMonitor monitor) {
-      processChanged(monitor);
+  private DataSourceListener mySourceListener = new DataSourceListener() {
+    @Override
+    public void changed(DataSource source) {
+      processChanged(new EmptyProgressMonitor());
     }
   };
 
   protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
     super(modelReference, checkDup);
     mySource = source;
-    mySource.startListening(mySourceListener);
+    mySource.addListener(mySourceListener);
   }
 
   @NotNull
@@ -43,7 +44,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public void dispose() {
-    mySource.stopListening(mySourceListener);
+    mySource.removeListener(mySourceListener);
     super.dispose();
   }
 
@@ -53,7 +54,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected abstract void reloadFromDiskSafe();
 
-  public long getSourceTimestamp(){
+  public long getSourceTimestamp() {
     return mySourceTimestamp;
   }
 

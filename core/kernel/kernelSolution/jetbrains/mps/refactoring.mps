@@ -18,6 +18,7 @@
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="i8bi" modelUID="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" version="-1" />
   <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
+  <import index="t3eg" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -25,7 +26,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="mlj4" modelUID="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" version="4" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
-  <import index="821q" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.language(MPS.Core/org.jetbrains.mps.openapi.language@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5817662974489412297">
       <property name="name" nameId="tpck.1169194664001" value="StructureModification" />
@@ -2317,7 +2317,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398929">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="821q.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                           </node>
                         </node>
                       </node>
@@ -2697,7 +2697,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398720">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="821q.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                           </node>
                         </node>
                       </node>
@@ -3353,7 +3353,7 @@
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398993">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="821q.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                                   </node>
                                 </node>
                               </node>
@@ -4909,8 +4909,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758593748">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="history" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="history" />
+      <property name="name" nameId="tpck.1169194664001" value="history" />
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9051163691968350262">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9051163691968345406" resolveInfo="StructureModificationLog" />
       </node>
@@ -4948,8 +4948,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596708">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="element" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="StructureModification" />
+      <property name="name" nameId="tpck.1169194664001" value="element" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="2742566862758596752">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="2742566862758596753" resolveInfo="dependencies" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="2742566862758596852">
@@ -5056,8 +5056,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596753">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="dependencies" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="dependencies" />
+      <property name="name" nameId="tpck.1169194664001" value="dependencies" />
       <node role="children" roleId="mlj4.8640335038346828085" type="mlj4.XMLSAXChildRule" typeId="mlj4.8640335038346803749" id="2742566862758596774">
         <link role="rule" roleId="mlj4.8640335038346803761" targetNodeId="2742566862758596728" resolveInfo="model" />
         <node role="handler" roleId="mlj4.8640335038346803781" type="mlj4.XMLSAXChildHandler" typeId="mlj4.8640335038346803750" id="2742566862758596776">
@@ -5145,8 +5145,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596728">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="model" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="model" />
+      <property name="name" nameId="tpck.1169194664001" value="model" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596732">
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="index" />
@@ -5185,8 +5185,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596862">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="MoveNode" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="move" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveNode" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596864">
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="id" />
@@ -5234,8 +5234,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596887">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="RenameNode" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="rename" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameNode" />
       <node role="attrs" roleId="mlj4.4635390255047981704" type="mlj4.XMLSAXAttributeRule" typeId="mlj4.4635390255047981693" id="2742566862758596889">
         <property name="isRequired" nameId="mlj4.2268737274629028866" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="id" />
@@ -5304,8 +5304,8 @@
     </node>
     <node role="nodes" roleId="mlj4.4635390255047870146" type="mlj4.XMLSAXNodeRule" typeId="mlj4.4635390255047863051" id="2742566862758596934">
       <property name="isCompact" nameId="mlj4.2286463592495362657" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="RenameModel" />
       <property name="tagName" nameId="mlj4.4635390255047870170" value="RenameModel" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameModel" />
       <node role="type" roleId="mlj4.4635390255047981675" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2742566862758596935">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4136069314959823738" resolveInfo="StructureModification.RenameModel" />
       </node>

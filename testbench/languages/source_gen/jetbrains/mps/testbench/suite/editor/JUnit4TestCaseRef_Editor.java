@@ -4,7 +4,7 @@ package jetbrains.mps.testbench.suite.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -33,7 +33,7 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hazblc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Test");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Test");
     editorCell.setCellId("Constant_hazblc_a0");
     {
       Style style = editorCell.getStyle();
@@ -71,7 +71,7 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "muted");
   }
 

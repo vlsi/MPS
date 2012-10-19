@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -33,7 +33,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q2clzo_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replaceAll");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "replaceAll");
     editorCell.setCellId("Constant_q2clzo_a0");
     {
       Style style = editorCell.getStyle();
@@ -44,7 +44,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q2clzo_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_q2clzo_c0");
     {
       Style style = editorCell.getStyle();
@@ -55,7 +55,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_q2clzo_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
     editorCell.setCellId("Constant_q2clzo_d0");
     {
       Style style = editorCell.getStyle();

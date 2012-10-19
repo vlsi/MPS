@@ -4,7 +4,7 @@ package jetbrains.mps.lang.pattern.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -44,21 +44,21 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_vh2hfk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator internal_ reference descriptor");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generator internal_ reference descriptor");
     editorCell.setCellId("Constant_vh2hfk_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_vh2hfk_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main node");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "main node");
     editorCell.setCellId("Constant_vh2hfk_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_vh2hfk_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_vh2hfk_e0");
     {
       Style style = editorCell.getStyle();
@@ -71,14 +71,14 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_vh2hfk_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "role");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "role");
     editorCell.setCellId("Constant_vh2hfk_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_vh2hfk_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_vh2hfk_g0");
     {
       Style style = editorCell.getStyle();
@@ -89,7 +89,7 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_vh2hfk_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_vh2hfk_i0");
     {
       Style style = editorCell.getStyle();
@@ -100,14 +100,14 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_vh2hfk_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "id");
     editorCell.setCellId("Constant_vh2hfk_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_vh2hfk_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_vh2hfk_k0");
     {
       Style style = editorCell.getStyle();
@@ -118,7 +118,7 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_vh2hfk_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_vh2hfk_m0");
     {
       Style style = editorCell.getStyle();

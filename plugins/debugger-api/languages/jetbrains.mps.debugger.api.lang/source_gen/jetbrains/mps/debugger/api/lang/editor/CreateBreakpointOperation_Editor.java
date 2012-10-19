@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.api.lang.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -53,7 +53,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "create");
     editorCell.setCellId("Constant_vi48ux_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_vi48ux_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -69,7 +69,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_vi48ux_d0");
     {
       Style style = editorCell.getStyle();
@@ -80,7 +80,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_vi48ux_f0");
     {
       Style style = editorCell.getStyle();
@@ -91,7 +91,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vi48ux_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_vi48ux_h0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -169,11 +169,11 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       return ListSequence.fromList(new ArrayList<IBreakpointKind>());
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       this.handleAction_impl((IBreakpointKind) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(IBreakpointKind parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(IBreakpointKind parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       SPropertyOperations.set(node, "kindName", parameterObject.getName());
       SPropertyOperations.set(node, "kindPresentation", parameterObject.getPresentation());
     }

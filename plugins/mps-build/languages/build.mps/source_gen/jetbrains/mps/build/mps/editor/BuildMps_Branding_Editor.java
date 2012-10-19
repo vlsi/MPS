@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -112,7 +112,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "codename");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "codename");
     editorCell.setCellId("Constant_1x254q_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -120,7 +120,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "version");
     editorCell.setCellId("Constant_1x254q_c2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -128,7 +128,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_e2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
     editorCell.setCellId("Constant_1x254q_e2a");
     {
       Style style = editorCell.getStyle();
@@ -140,7 +140,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_g2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_1x254q_g2a");
     {
       Style style = editorCell.getStyle();
@@ -151,7 +151,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_h2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "eap");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "eap");
     editorCell.setCellId("Constant_1x254q_h2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -159,7 +159,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_j2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "full name");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "full name");
     editorCell.setCellId("Constant_1x254q_j2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -167,7 +167,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_l2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build number");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "build number");
     editorCell.setCellId("Constant_1x254q_l2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -175,7 +175,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_n2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_1x254q_n2a");
     {
       Style style = editorCell.getStyle();
@@ -186,7 +186,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_o2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "date");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "date");
     editorCell.setCellId("Constant_1x254q_o2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -194,7 +194,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_q2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icons");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "icons");
     editorCell.setCellId("Constant_1x254q_q2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -206,7 +206,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_a71c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "16x16");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "16x16");
     editorCell.setCellId("Constant_1x254q_a71c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -214,7 +214,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_c71c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "32x32");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "32x32");
     editorCell.setCellId("Constant_1x254q_c71c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -222,7 +222,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_e71c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "32x32 opaque");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "32x32 opaque");
     editorCell.setCellId("Constant_1x254q_e71c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -230,7 +230,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_s2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "splash screen");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "splash screen");
     editorCell.setCellId("Constant_1x254q_s2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -238,7 +238,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_u2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "textcolor");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "textcolor");
     editorCell.setCellId("Constant_1x254q_u2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -246,7 +246,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_w2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "about screen");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "about screen");
     editorCell.setCellId("Constant_1x254q_w2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -254,7 +254,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_y2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dialog image");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dialog image");
     editorCell.setCellId("Constant_1x254q_y2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -262,7 +262,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_ab2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "welcome screen");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "welcome screen");
     editorCell.setCellId("Constant_1x254q_ab2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -274,7 +274,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_a72c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caption");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "caption");
     editorCell.setCellId("Constant_1x254q_a72c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -282,7 +282,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_c72c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "slogan");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "slogan");
     editorCell.setCellId("Constant_1x254q_c72c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -290,7 +290,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_eb2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "feedback url");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "feedback url");
     editorCell.setCellId("Constant_1x254q_eb2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -298,7 +298,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_1x254q_d0");
     editorCell.setDefaultText("");
     return editorCell;

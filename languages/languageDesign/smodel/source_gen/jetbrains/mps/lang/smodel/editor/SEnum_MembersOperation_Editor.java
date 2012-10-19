@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -15,7 +15,7 @@ public class SEnum_MembersOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rgzic9_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "members");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "members");
     editorCell.setCellId("Constant_rgzic9_a");
     BaseLanguageStyle_StyleSheet.getStaticMethod(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

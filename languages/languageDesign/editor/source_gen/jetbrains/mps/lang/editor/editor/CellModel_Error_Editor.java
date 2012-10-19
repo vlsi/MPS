@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -101,7 +101,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xkqo7y_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_xkqo7y_b0");
     {
       Style style = editorCell.getStyle();
@@ -112,7 +112,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xkqo7y_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Error cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Error cell:");
     editorCell.setCellId("Constant_xkqo7y_c0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -120,7 +120,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xkqo7y_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text");
     editorCell.setCellId("Constant_xkqo7y_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -186,7 +186,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

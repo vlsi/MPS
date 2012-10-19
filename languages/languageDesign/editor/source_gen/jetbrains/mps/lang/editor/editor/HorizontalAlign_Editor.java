@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -32,7 +32,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nmsmyd_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "horizontal-align");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "horizontal-align");
     editorCell.setCellId("Constant_nmsmyd_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nmsmyd_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_nmsmyd_b0");
     editorCell.setDefaultText("");
     return editorCell;

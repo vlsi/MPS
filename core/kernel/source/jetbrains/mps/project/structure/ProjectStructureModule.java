@@ -20,7 +20,10 @@ import jetbrains.mps.generator.TransientModelNodeFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
@@ -28,6 +31,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -45,24 +52,24 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static ProjectStructureModule INSTANCE;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
-  private final ModuleRepositoryAdapter myListener = new ModuleRepositoryAdapter() {
+  private final SRepositoryListener myListener = new SRepositoryListenerAdapter() {
     @Override
-    public void moduleAdded(IModule module) {
+    public void moduleAdded(SModule module) {
       refreshModule(module, false);
     }
 
     @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       refreshModule(module, true);
     }
 
     @Override
-    public void moduleInitialized(IModule module) {
+    public void moduleInitialized(SModule module) {
       refreshModule(module, false);
     }
 
     @Override
-    public void moduleChanged(IModule module) {
+    public void moduleChanged(SModule module) {
       refreshModule(module, false);
     }
 
@@ -80,7 +87,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     setModuleReference(MODULE_REFERENCE);
   }
 
-  private void refreshModule(IModule module, boolean isDeleted) {
+  private void refreshModule(SModule module, boolean isDeleted) {
     ModelAccess.assertLegalWrite();
 
     if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
@@ -206,7 +213,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public ProjectStructureSModelDescriptor createModel(IModule module) {
+  public ProjectStructureSModelDescriptor createModel(SModule module) {
     ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module, this);
     myModels.put(result.getSModelReference(), result);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
@@ -214,13 +221,13 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return result;
   }
 
-  private static SModelFqName getModelFqName(IModule module) {
-    return new SModelFqName(MODULE_REFERENCE.getModuleFqName(), "module." + module.getModuleFqName(), SModelStereotype.getStubStereotypeForId("project"));
+  private static SModelFqName getModelFqName(SModule module) {
+    return new SModelFqName(MODULE_REFERENCE.getModuleFqName(), "module." + module.getModuleName(), SModelStereotype.getStubStereotypeForId("project"));
   }
 
-  private static SModelReference getSModelReference(IModule module) {
+  private static SModelReference getSModelReference(SModule module) {
     SModelFqName fqName = getModelFqName(module);
-    ModuleId moduleId = module.getModuleReference().getModuleId();
+    SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = moduleId != null ? SModelId.foreign("project", moduleId.toString()) : null;
     return new SModelReference(fqName, id);
   }
@@ -246,10 +253,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   public static class ProjectStructureSModelDescriptor extends BaseSpecialModelDescriptor {
-    private final IModule myModule;
+    private final SModule myModule;
     private final ProjectStructureModule myProjectStructureModule;
 
-    private ProjectStructureSModelDescriptor(SModelReference ref, IModule module, @NotNull ProjectStructureModule projectStructureModule) {
+    private ProjectStructureSModelDescriptor(SModelReference ref, SModule module, @NotNull ProjectStructureModule projectStructureModule) {
       super(ref, false);
       myModule = module;
       myProjectStructureModule = projectStructureModule;
@@ -257,8 +264,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     protected ProjectStructureSModel createModel() {
       final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
-      final ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
-      final IFile file = myModule.getDescriptorFile();
+      final ModuleDescriptor moduleDescriptor = ((IModule) myModule).getModuleDescriptor();
+      final IFile file = ((IModule) myModule).getDescriptorFile();
 
       if (file != null && moduleDescriptor != null) {
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
@@ -266,24 +273,24 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           public void run() {
             new ProjectStructureBuilder(moduleDescriptor, file, model) {
               @Override
-              public Iterable<SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
-                IModule module = moduleDescriptor == descriptor ? myModule :
-                  MPSModuleRepository.getInstance().getModule(descriptor.getModuleReference());
+              public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
+                SModule module = moduleDescriptor == descriptor ? myModule :
+                  ModuleRepositoryFacade.getInstance().getModule(descriptor.getModuleReference());
                 if (module == null) {
                   return Collections.emptyList();
                 }
 
-                return Sequence.<SModelDescriptor>fromIterable(module.getOwnModelDescriptors()).
-                  where(new IWhereFilter<SModelDescriptor>() {
+                return Sequence.<org.jetbrains.mps.openapi.model.SModel>fromIterable(module.getModels()).
+                  where(new IWhereFilter<org.jetbrains.mps.openapi.model.SModel>() {
                     @Override
-                    public boolean accept(SModelDescriptor o) {
+                    public boolean accept(org.jetbrains.mps.openapi.model.SModel o) {
                       return SModelStereotype.isUserModel(o);
                     }
                   }).
-                  select(new ISelector<SModelDescriptor, SModelReference>() {
+                  select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
                     @Override
-                    public SModelReference select(SModelDescriptor o) {
-                      return o.getSModelReference();
+                    public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel o) {
+                      return o.getModelReference();
                     }
                   });
               }

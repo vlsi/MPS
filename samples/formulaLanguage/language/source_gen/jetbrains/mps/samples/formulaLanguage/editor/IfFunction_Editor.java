@@ -4,7 +4,7 @@ package jetbrains.mps.samples.formulaLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -34,14 +34,14 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tonzor_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IF(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "IF(");
     editorCell.setCellId("Constant_tonzor_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tonzor_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_tonzor_c0");
     {
       Style style = editorCell.getStyle();
@@ -52,7 +52,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tonzor_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_tonzor_e0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tonzor_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_tonzor_g0");
     editorCell.setDefaultText("");
     return editorCell;

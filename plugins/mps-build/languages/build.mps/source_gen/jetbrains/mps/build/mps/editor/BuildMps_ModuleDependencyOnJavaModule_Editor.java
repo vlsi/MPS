@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -36,7 +36,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_1yxynp_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_1yxynp_b0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     delete_javaDepReexport.setCellActions(editorCell, node, editorContext);

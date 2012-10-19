@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -59,7 +59,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "info");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "info");
     editorCell.setCellId("Constant_x0qgth_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
     editorCell.setCellId("Constant_x0qgth_c0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -75,14 +75,14 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_x0qgth_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_x0qgth_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_x0qgth_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -93,7 +93,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_x0qgth_c0_0");
     {
       Style style = editorCell.getStyle();
@@ -105,7 +105,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention linked with info message(optional)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "intention linked with info message(optional)");
     editorCell.setCellId("Constant_x0qgth_d0");
     {
       Style style = editorCell.getStyle();
@@ -116,7 +116,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_x0qgth_f0");
     {
       Style style = editorCell.getStyle();
@@ -128,7 +128,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0qgth_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreign message source(optional)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "foreign message source(optional)");
     editorCell.setCellId("Constant_x0qgth_g0");
     {
       Style style = editorCell.getStyle();

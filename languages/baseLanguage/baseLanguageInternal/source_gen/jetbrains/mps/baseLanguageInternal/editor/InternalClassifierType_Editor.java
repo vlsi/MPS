@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguageInternal.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -72,7 +72,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
     editorCell.setCellId("Constant_7zoim2_a0a");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -80,7 +80,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends");
     editorCell.setCellId("Constant_7zoim2_c0a");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -88,7 +88,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
     editorCell.setCellId("Constant_7zoim2_e0a");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -96,7 +96,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
     editorCell.setCellId("Constant_7zoim2_a0a_0");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -104,7 +104,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_c0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends");
     editorCell.setCellId("Constant_7zoim2_c0a_0");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -112,7 +112,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_e0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
     editorCell.setCellId("Constant_7zoim2_e0a_0");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -120,7 +120,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_f0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_7zoim2_f0a");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -128,7 +128,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7zoim2_h0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_7zoim2_h0a");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -323,7 +323,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

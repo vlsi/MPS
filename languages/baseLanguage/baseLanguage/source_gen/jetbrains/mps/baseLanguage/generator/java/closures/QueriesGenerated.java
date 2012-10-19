@@ -44,16 +44,10 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Closure", false, false) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1170198665539(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
-    SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
-    if (contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext) _context).getGenerator());
+  public static boolean baseMappingRule_Condition_1842587602196092389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      return false;
     }
-    return false;
-  }
-
-  public static boolean baseMappingRule_Condition_1170198858690(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if (contextOwner != null) {

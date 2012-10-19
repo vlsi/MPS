@@ -4,7 +4,7 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -335,7 +335,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default");
     editorCell.setCellId("Constant_a19ihi_a0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -347,7 +347,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a0a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_a19ihi_a0a0_0");
     {
       Style style = editorCell.getStyle();
@@ -358,14 +358,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_a19ihi_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a19ihi_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_a19ihi_e0a");
     {
       Style style = editorCell.getStyle();
@@ -376,7 +376,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a0a5a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<--");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<--");
     editorCell.setCellId("Constant_a19ihi_a0a5a0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -385,7 +385,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a0a5a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<--");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<--");
     editorCell.setCellId("Constant_a19ihi_a0a5a0_0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
@@ -395,7 +395,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_b0a5a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<-->");
     editorCell.setCellId("Constant_a19ihi_b0a5a0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
@@ -405,14 +405,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_g0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_a19ihi_g0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a19ihi_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_a19ihi_a1a");
     {
       Style style = editorCell.getStyle();
@@ -423,7 +423,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parameter");
     editorCell.setCellId("Constant_a19ihi_a0b1a");
     {
       Style style = editorCell.getStyle();
@@ -434,14 +434,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_a19ihi_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a19ihi_a0b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "query");
     editorCell.setCellId("Constant_a19ihi_a0b1b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -449,7 +449,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a1b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_a19ihi_a1b1b1a");
     {
       Style style = editorCell.getStyle();
@@ -460,7 +460,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a2b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toString");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "toString");
     editorCell.setCellId("Constant_a19ihi_a2b1b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -468,7 +468,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a3b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_a19ihi_a3b1b1a");
     {
       Style style = editorCell.getStyle();
@@ -479,7 +479,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "accessors");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "accessors");
     editorCell.setCellId("Constant_a19ihi_a3b1a");
     {
       Style style = editorCell.getStyle();
@@ -490,14 +490,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_a19ihi_a4b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a19ihi_a0b4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get");
     editorCell.setCellId("Constant_a19ihi_a0b4b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -505,7 +505,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a1b4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_a19ihi_a1b4b1a");
     {
       Style style = editorCell.getStyle();
@@ -516,7 +516,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a19ihi_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_a19ihi_a2a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -538,7 +538,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -688,11 +688,11 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       SPropertyOperations.set(node, "default", "" + (parameterObject));
     }
 
@@ -730,7 +730,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -742,7 +742,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -754,7 +754,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

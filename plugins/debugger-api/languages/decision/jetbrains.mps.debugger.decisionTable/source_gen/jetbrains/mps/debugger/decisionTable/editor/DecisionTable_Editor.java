@@ -4,14 +4,14 @@ package jetbrains.mps.debugger.decisionTable.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.table.runtime.TableModelCreator;
+import jetbrains.mps.lang.editor.table.runtime.TableModelFactory;
 import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.XYCTableModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -49,12 +49,12 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createTable_h1ymql_b0(EditorContext editorContext, SNode node) {
-    TableModelCreator creator = new TableModelCreator() {
-      public TableModel getTable(final SNode node, final EditorContext editorContext) {
+    TableModelFactory creator = new TableModelFactory() {
+      public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
         return new XYCTableModel(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "caseX"), SLinkOperations.findLinkDeclaration("jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "caseY"), SLinkOperations.findLinkDeclaration("jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "content"), editorContext);
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.getTable(node, editorContext), "Table_h1ymql_b0");
+    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_h1ymql_b0");
     editorCell.setCellId("Table_h1ymql_b0_0");
     return editorCell;
   }

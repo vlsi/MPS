@@ -806,6 +806,45 @@
     <unitInfo nodeId="3050821798733939045" fileName="VisibleClassConstructorsScope.java" startLine="37" startPosition="89" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope$2" />
     <unitInfo nodeId="3024565449487117567" fileName="VisibleClassConstructorsScope.java" startLine="23" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope" />
   </root>
+  <root nodeId="304895491241625072" modelId="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)">
+    <nodeInfo nodeId="304895491241621891" fileName="MigrationScopes.java" startLine="17" startPosition="115" endLine="18" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="304895491241626202" fileName="MigrationScopes.java" startLine="19" startPosition="24" endLine="20" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="304895491241626195" fileName="MigrationScopes.java" startLine="21" startPosition="12" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="304895491241626057" fileName="MigrationScopes.java" startLine="26" startPosition="70" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="declarationConcept" />
+    <nodeInfo nodeId="304895491241625114" fileName="MigrationScopes.java" startLine="29" startPosition="80" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="304895491241626090" fileName="MigrationScopes.java" startLine="30" startPosition="24" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="304895491241626148" fileName="MigrationScopes.java" startLine="35" startPosition="43" endLine="36" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="304895491241625074" fileName="MigrationScopes.java" startLine="13" startPosition="30" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationScopes#()V" />
+    <nodeInfo nodeId="304895491241626211" fileName="MigrationScopes.java" startLine="21" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="304895491241625098" fileName="MigrationScopes.java" startLine="28" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationVariablesScope#(Ljetbrains/mps/scope/Scope;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="304895491241626186" fileName="MigrationScopes.java" startLine="18" startPosition="172" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="304895491241626044" fileName="MigrationScopes.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="304895491241625078" fileName="MigrationScopes.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="forVariables#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="304895491241625077" fileName="MigrationScopes.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="304895491241626201" fileName="MigrationScopes.java" startLine="19" startPosition="24" endLine="20" endPosition="84" />
+    <scopeInfo nodeId="304895491241626187" fileName="MigrationScopes.java" startLine="21" startPosition="12" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="304895491241626049" fileName="MigrationScopes.java" startLine="35" startPosition="43" endLine="36" endPosition="92" />
+    <scopeInfo nodeId="304895491241625074" fileName="MigrationScopes.java" startLine="13" startPosition="30" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="304895491241625101" fileName="MigrationScopes.java" startLine="29" startPosition="80" endLine="31" endPosition="51" />
+    <scopeInfo nodeId="304895491241625098" fileName="MigrationScopes.java" startLine="28" startPosition="0" endLine="32" endPosition="5">
+      <varInfo nodeId="304895491241626054" varName="declarationConcept" />
+      <varInfo nodeId="304895491241626040" varName="innerScope" />
+    </scopeInfo>
+    <scopeInfo nodeId="304895491241626044" fileName="MigrationScopes.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="304895491241626047" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="304895491241625081" fileName="MigrationScopes.java" startLine="17" startPosition="115" endLine="23" endPosition="5">
+      <varInfo nodeId="304895491241621892" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="304895491241625078" fileName="MigrationScopes.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="304895491241625082" varName="contextNode" />
+      <varInfo nodeId="304895491241625084" varName="contextRole" />
+      <varInfo nodeId="304895491241625091" varName="declarationConcept" />
+      <varInfo nodeId="304895491241625087" varName="position" />
+    </scopeInfo>
+    <unitInfo nodeId="304895491241625096" fileName="MigrationScopes.java" startLine="26" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.MigrationScopes$MigrationVariablesScope" />
+    <unitInfo nodeId="304895491241625072" fileName="MigrationScopes.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.MigrationScopes" />
+  </root>
   <root nodeId="3161373106581137350" modelId="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)">
     <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="24" startPosition="80" endLine="25" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2990203945682755992" fileName="VisibilityUtil.java" startLine="26" startPosition="96" endLine="27" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1373,7 +1412,7 @@
   <root nodeId="4143990013474875883" modelId="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)">
     <nodeInfo nodeId="6428254090689409135" fileName="Scopes.java" startLine="17" startPosition="30" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1866379231788528080" fileName="Scopes.java" startLine="19" startPosition="5" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1866379231788528082" fileName="Scopes.java" startLine="20" startPosition="92" endLine="21" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1866379231788528082" fileName="Scopes.java" startLine="20" startPosition="92" endLine="21" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1866379231788528118" fileName="Scopes.java" startLine="24" startPosition="94" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1866379231788528169" fileName="Scopes.java" startLine="28" startPosition="83" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6428254090689409126" fileName="Scopes.java" startLine="33" startPosition="30" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1416,7 +1455,7 @@
       <varInfo nodeId="4143990013475289668" varName="parentScope" />
       <varInfo nodeId="4143990013475289665" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="1866379231788528079" fileName="Scopes.java" startLine="16" startPosition="99" endLine="21" endPosition="172" />
+    <scopeInfo nodeId="1866379231788528079" fileName="Scopes.java" startLine="16" startPosition="99" endLine="21" endPosition="171" />
     <scopeInfo nodeId="1866379231788528255" fileName="Scopes.java" startLine="32" startPosition="95" endLine="37" endPosition="171" />
     <scopeInfo nodeId="4143990013475407977" fileName="Scopes.java" startLine="40" startPosition="99" endLine="45" endPosition="153" />
     <scopeInfo nodeId="9000162595163812002" fileName="Scopes.java" startLine="47" startPosition="0" endLine="52" endPosition="0">

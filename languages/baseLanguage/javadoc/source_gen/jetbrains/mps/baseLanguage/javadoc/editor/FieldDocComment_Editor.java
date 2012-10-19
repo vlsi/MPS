@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javadoc.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -67,7 +67,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c4imx1_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/**");
     editorCell.setCellId("Constant_c4imx1_a0");
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -79,7 +79,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c4imx1_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_c4imx1_a2a");
     {
       Style style = editorCell.getStyle();
@@ -91,7 +91,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c4imx1_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " */");
     editorCell.setCellId("Constant_c4imx1_d0");
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -240,7 +240,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_c4imx1_a1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_c4imx1_a1a");
       {
         Style style = editorCell.getStyle();

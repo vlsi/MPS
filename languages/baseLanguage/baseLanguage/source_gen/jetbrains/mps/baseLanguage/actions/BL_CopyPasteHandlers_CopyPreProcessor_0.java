@@ -5,18 +5,19 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.datatransfer.CopyPreProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor {
   public SNode getApplicableConcept() {
-    return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
+    return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference");
   }
 
   public void preProcesNode(SNode copy, SNode original) {
-    SNode staticFieldReference = SNodeFactoryOperations.replaceWithNewChild(copy, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
-    SLinkOperations.setTarget(staticFieldReference, "variableDeclaration", SLinkOperations.getTarget(original, "variableDeclaration", false), false);
-    SLinkOperations.setTarget(staticFieldReference, "classifier", SNodeOperations.getAncestor(original, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), false);
+    SNode qualifiedReference = VariableDeclaration_Behavior.call_getQualifiedReference_4598334504606213641(SLinkOperations.getTarget(copy, "variableDeclaration", false));
+    if ((qualifiedReference != null)) {
+      SNodeOperations.replaceWithAnother(copy, qualifiedReference);
+    }
   }
 }

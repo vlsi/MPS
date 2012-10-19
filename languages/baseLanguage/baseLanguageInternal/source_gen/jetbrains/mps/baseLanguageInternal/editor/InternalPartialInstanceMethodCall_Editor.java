@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguageInternal.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -49,7 +49,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_uv9f3e_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
     editorCell.setCellId("Constant_uv9f3e_a0");
     {
       Style style = editorCell.getStyle();
@@ -61,7 +61,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_uv9f3e_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
     editorCell.setCellId("Constant_uv9f3e_c0");
     {
       Style style = editorCell.getStyle();
@@ -73,7 +73,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_uv9f3e_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
     editorCell.setCellId("Constant_uv9f3e_e0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -81,7 +81,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_uv9f3e_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_uv9f3e_g0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -89,7 +89,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_uv9f3e_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_uv9f3e_i0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -203,7 +203,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -211,7 +211,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     }
 
     private EditorCell createConstant_uv9f3e_a7a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_uv9f3e_a7a");
       editorCell.setDefaultText("");
       return editorCell;

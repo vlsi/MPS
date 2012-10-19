@@ -72,7 +72,7 @@ public abstract class InlineVariableRefactoring {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       return new InlineVariableAssignmentRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
     } else {
-      return new InlineVariableReferenceRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+      return new InlineVariableReferenceRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"));
     }
   }
 }

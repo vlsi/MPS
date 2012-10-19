@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -35,7 +35,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g1wmr2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "menu parts:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "menu parts:");
     editorCell.setCellId("Constant_g1wmr2_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -89,7 +89,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_g1wmr2_a1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_g1wmr2_a1a");
       {
         Style style = editorCell.getStyle();

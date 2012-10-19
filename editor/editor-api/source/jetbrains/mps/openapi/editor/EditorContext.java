@@ -15,13 +15,66 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 
 /**
  * evgeny, 11/17/11
  */
 public interface EditorContext {
 
+  SNode getSelectedNode();
+
+  /**
+   * same as selectWRTFocusPolicy(node, true);
+   */
   void selectWRTFocusPolicy(SNode node);
+
+  /**
+   * Select one of available EditorCells representing passes SNode in the associated editor.
+   * If multiple EditorCells are representing same SNode in this editor then most applicable
+   * will be selected based on FocusPolicies specified on EditorCells.
+   *
+   * @param node  one of EditorCells representing this SNode should be selected
+   * @param force change selection even if getSelectedNode() == node
+   */
+  void selectWRTFocusPolicy(SNode node, boolean force);
+
+  void select(SNode node);
+
+  void selectBefore(SNode node);
+
+  void selectAfter(SNode node);
+
+  void selectAndSetCaret(SNode node, int position);
+
+  EditorCell getSelectedCell();
+
+  EditorCell getContextCell();
+
   EditorInspector getInspector();
+
+  EditorComponent getEditorComponent();
+
+  void executeCommand(Runnable r);
+
+  <T> T executeCommand(Computable<T> c);
+
+  boolean isInsideCommand();
+
+  void flushEvents();
+
+  IScope getScope();
+
+  EditorCell createNodeCell(SNode node);
+
+  EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
+
+  EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
+
+  IOperationContext getOperationContext();
+
+  boolean isInspector();
 }

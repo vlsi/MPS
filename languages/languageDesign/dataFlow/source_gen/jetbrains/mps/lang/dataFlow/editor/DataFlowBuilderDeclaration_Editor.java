@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -39,7 +39,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9xj3dm_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "data");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "data");
     editorCell.setCellId("Constant_9xj3dm_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -47,7 +47,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9xj3dm_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "flow");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "flow");
     editorCell.setCellId("Constant_9xj3dm_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -55,7 +55,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9xj3dm_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "builder");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "builder");
     editorCell.setCellId("Constant_9xj3dm_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -63,7 +63,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9xj3dm_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
     editorCell.setCellId("Constant_9xj3dm_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -71,7 +71,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9xj3dm_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_9xj3dm_f0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -83,7 +83,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9xj3dm_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_9xj3dm_h0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

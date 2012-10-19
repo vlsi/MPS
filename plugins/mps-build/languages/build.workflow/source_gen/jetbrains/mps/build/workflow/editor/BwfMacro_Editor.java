@@ -4,7 +4,7 @@ package jetbrains.mps.build.workflow.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -59,7 +59,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "export");
     editorCell.setCellId("Constant_kawrig_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "location");
     editorCell.setCellId("Constant_kawrig_b0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -75,7 +75,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uninitialized");
     editorCell.setCellId("Constant_kawrig_c0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -83,7 +83,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "macro");
     editorCell.setCellId("Constant_kawrig_d0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -91,21 +91,21 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
     editorCell.setCellId("Constant_kawrig_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kawrig_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_kawrig_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kawrig_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "export:");
     editorCell.setCellId("Constant_kawrig_a0_0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -113,7 +113,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "location:");
     editorCell.setCellId("Constant_kawrig_c0_0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -121,7 +121,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kawrig_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uninitialized:");
     editorCell.setCellId("Constant_kawrig_e0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

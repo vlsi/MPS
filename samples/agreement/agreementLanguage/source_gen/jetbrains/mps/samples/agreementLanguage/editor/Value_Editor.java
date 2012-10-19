@@ -4,7 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -64,14 +64,14 @@ public class Value_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wn8465_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "value");
     editorCell.setCellId("Constant_wn8465_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_wn8465_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    ");
     editorCell.setCellId("Constant_wn8465_a1a");
     {
       Style style = editorCell.getStyle();
@@ -178,7 +178,7 @@ public class Value_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_wn8465_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Quantity");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "press <Ctrl>+<Enter> to add Quantity");
       editorCell.setCellId("Constant_wn8465_a1b0");
       {
         Style style = editorCell.getStyle();

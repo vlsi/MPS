@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -115,7 +115,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yczb8_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$image$");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$image$");
     editorCell.setCellId("Constant_yczb8_a");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -123,7 +123,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yczb8_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_yczb8_b0");
     {
       Style style = editorCell.getStyle();
@@ -134,7 +134,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yczb8_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Image cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Image cell:");
     editorCell.setCellId("Constant_yczb8_c0");
     {
       Style style = editorCell.getStyle();
@@ -145,7 +145,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yczb8_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "image provider : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "image provider : ");
     editorCell.setCellId("Constant_yczb8_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -153,7 +153,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yczb8_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "image file : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "image file : ");
     editorCell.setCellId("Constant_yczb8_a1d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -161,7 +161,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yczb8_a2d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "descent :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "descent :");
     editorCell.setCellId("Constant_yczb8_a2d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

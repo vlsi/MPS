@@ -25,40 +25,40 @@
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="7874812549549771289">
-      <property name="name" nameId="tpck.1169194664001" value="RenameMethod" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Rename Method" />
+      <property name="name" nameId="tpck.1169194664001" value="RenameMethod" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.1347577327951770664" resolveInfo="Rename" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="2869783065404758436">
-      <property name="name" nameId="tpck.1169194664001" value="MakeFieldFinal" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Make Field Final" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeFieldFinal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="5142438244426791432">
-      <property name="name" nameId="tpck.1169194664001" value="MoveStaticField" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Static Field" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveStaticField" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="418677511065471952">
-      <property name="name" nameId="tpck.1169194664001" value="MoveStaticMethod" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Move Static Method" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveStaticMethod" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="4946830740863976385">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertAnonymousClass" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Convert Anonymous to Inner Class" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertAnonymousClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="overrides" roleId="tp1h.6895093993902236387" targetNodeId="2yc6.7012097027058633272" resolveInfo="MoveNodes" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="9118878263582100185">
-      <property name="name" nameId="tpck.1169194664001" value="MakeFieldStatic" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Make field static" />
+      <property name="name" nameId="tpck.1169194664001" value="MakeFieldStatic" />
     </node>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="5161277940733430086">
-      <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignature" />
       <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Change Method Signature" />
+      <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignature" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
   </roots>
@@ -585,11 +585,31 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9118878263582108239">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9118878263582108240">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="9118878263582108257">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9118878263582108261">
-                <node role="operand" roleId="tpee.1197027771414" type="tp1h.ConceptFunctionParameter_SNode" typeId="tp1h.6895093993902310814" id="9118878263582108260" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="9118878263582108265">
-                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="9118878263582108267">
-                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1466384023878382092">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1466384023878382093">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1466384023878382094">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1466384023878382095">
+                      <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1466384023878382096">
+                        <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
+                        <node role="leftExpression" roleId="tp25.1140138123956" type="tp1h.ConceptFunctionParameter_SNode" typeId="tp1h.6895093993902310814" id="1466384023878382097" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1466384023878382098">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1466384023878382099">
+                      <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1466384023878382100">
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1466384023878382101">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp1h.ConceptFunctionParameter_SNode" typeId="tp1h.6895093993902310814" id="1466384023878382102" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1466384023878382103">
+                      <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1466384023878382104">
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -842,8 +862,8 @@
                       <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9118878263582143937">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="9118878263582143939">
                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143940">
-                            <property name="label" nameId="tp3r.6489343236075007666" value="LocalStaticFieldReference" />
                             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
+                            <property name="label" nameId="tp3r.6489343236075007666" value="LocalStaticFieldReference" />
                             <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9118878263582143954">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9118878263582123088" resolveInfo="newDeclaration" />
                             </node>

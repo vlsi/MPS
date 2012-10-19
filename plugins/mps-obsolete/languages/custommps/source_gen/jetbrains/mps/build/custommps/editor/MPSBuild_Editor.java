@@ -4,7 +4,7 @@ package jetbrains.mps.build.custommps.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -136,7 +136,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ek3l5j_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build tools");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "build tools");
     editorCell.setCellId("Constant_ek3l5j_b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -144,7 +144,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ek3l5j_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to mps build tools");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "path to mps build tools");
     editorCell.setCellId("Constant_ek3l5j_a0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -152,7 +152,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ek3l5j_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to license");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "path to license");
     editorCell.setCellId("Constant_ek3l5j_a1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -160,7 +160,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ek3l5j_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
