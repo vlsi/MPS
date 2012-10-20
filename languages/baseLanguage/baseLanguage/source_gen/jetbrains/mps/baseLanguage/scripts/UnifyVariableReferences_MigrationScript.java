@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class UnifyVariableReferences_MigrationScript extends BaseMigrationScript {
   public UnifyVariableReferences_MigrationScript(IOperationContext operationContext) {
-    super("Convert all local/parameter/local instance field/ local static field variable references to variable reference concept");
+    super("Unify variable reference nodes");
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       this.addRefactoring(refactoring);
     }

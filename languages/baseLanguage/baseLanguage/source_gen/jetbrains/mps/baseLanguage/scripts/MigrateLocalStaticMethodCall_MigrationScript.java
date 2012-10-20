@@ -8,7 +8,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 
 public class MigrateLocalStaticMethodCall_MigrationScript extends BaseMigrationScript {
   public MigrateLocalStaticMethodCall_MigrationScript(IOperationContext operationContext) {
-    super("Migrate LocalStaticMethodCall to LocalMethodCall");
+    super("Migrate LocalStaticMethodCall to LocalMethodCall (smodel usages)");
     for (AbstractMigrationRefactoring refactoring : AbstractMigrations.migrateIntentionCondition(MigrationsFactory.LOCAL_STATIC_METHOD_CALL_MIGRATION_CONTEXT)) {
       this.addRefactoring(refactoring);
     }

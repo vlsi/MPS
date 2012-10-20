@@ -53,7 +53,7 @@
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8897506886668070863">
-      <property name="title" nameId="tp33.1177457669450" value="Convert all local/parameter/local instance field/ local static field variable references to variable reference concept" />
+      <property name="title" nameId="tp33.1177457669450" value="Unify variable reference nodes" />
       <property name="name" nameId="tpck.1169194664001" value="UnifyVariableReferences" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.vars_unifying" />
@@ -64,37 +64,38 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="15576470009741251">
-      <property name="title" nameId="tp33.1177457669450" value="Migrate parameter reference smodel usages" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate ParameterReference to VariableReference (smodel usages)" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateParameterReference" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.vars_unifying" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7159297221554223394">
-      <property name="title" nameId="tp33.1177457669450" value="Migrate local static reference smodel usages" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate LocalStaticFieldReference to VariableReference (smodel usages)" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateLocalStaticFieldReference" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.vars_unifying" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1466384023878141384">
-      <property name="title" nameId="tp33.1177457669450" value="Migrate local instance reference smodel usages" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate LocalInstanceFieldReference to VariableReference (smodel usages)" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateLocalInstanceFieldReference" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.vars_unifying" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="2242608743097729323">
-      <property name="title" nameId="tp33.1177457669450" value="Migrate local variable reference smodel usages" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate LocalVariableReference to VariableReference (smodel usages)" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateLocalVariableReference" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.vars_unifying" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="575279248907487609">
-      <property name="title" nameId="tp33.1177457669450" value="Convert all LocalStaticMethodCall and LocalInstanceMethodCall to LocalMethodCall concept" />
+      <property name="title" nameId="tp33.1177457669450" value="Unify local method call nodes" />
       <property name="name" nameId="tpck.1169194664001" value="UnifyLocalMethodCalls" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.method_calls_unifying" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2379275658802276133">
@@ -102,7 +103,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="2379275658802316547">
-      <property name="title" nameId="tp33.1177457669450" value="Migrate LocalStaticMethodCall to LocalMethodCall" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate LocalStaticMethodCall to LocalMethodCall (smodel usages)" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateLocalStaticMethodCall" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unifying.method_calls_unifying" />

@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateLocalStaticFieldReference_MigrationScript extends BaseMigrationScript {
   public MigrateLocalStaticFieldReference_MigrationScript(IOperationContext operationContext) {
-    super("Migrate local static reference smodel usages");
+    super("Migrate LocalStaticFieldReference to VariableReference (smodel usages)");
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceSModelUsages(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       this.addRefactoring(refactoring);
     }

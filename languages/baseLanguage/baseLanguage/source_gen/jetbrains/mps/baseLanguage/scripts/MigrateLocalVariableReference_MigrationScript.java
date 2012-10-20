@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateLocalVariableReference_MigrationScript extends BaseMigrationScript {
   public MigrateLocalVariableReference_MigrationScript(IOperationContext operationContext) {
-    super("Migrate local variable reference smodel usages");
+    super("Migrate LocalVariableReference to VariableReference (smodel usages)");
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceSModelUsages(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       this.addRefactoring(refactoring);
     }

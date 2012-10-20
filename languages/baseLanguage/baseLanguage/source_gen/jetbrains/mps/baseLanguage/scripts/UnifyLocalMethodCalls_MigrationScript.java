@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class UnifyLocalMethodCalls_MigrationScript extends BaseMigrationScript {
   public UnifyLocalMethodCalls_MigrationScript(IOperationContext operationContext) {
-    super("Convert all LocalStaticMethodCall and LocalInstanceMethodCall to LocalMethodCall concept");
+    super("Unify local method call nodes");
     for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateLocalMethodCallNodes(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       this.addRefactoring(refactoring);
     }
