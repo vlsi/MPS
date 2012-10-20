@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-dxx8kr2u5zqcgfqbeo4hfinvyd9tx0">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-djmnpmg1bhn2mn53expf0s1xxpkcwj0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ewgblj5m32jyc5zc1n1eup4emffkdql" />
   <common hash="as5gdsb65f344uxxvq6xe2tf8m5elm4">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="6854028447099469547" name="IWritableGenericFeatureDesign" hash="-e2jt3gf1y7x5vlc9picx9jvl5oxhufa">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IWritableGenericFeatureDesign.java" />
   </source>
   <source id="6854028447099469632" name="IGenericFeatureDesign" hash="-3svdrl8domlvqjpvc65ak4dm8n9qdkr">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IGenericFeatureDesign.java" />
   </source>
   <source id="6854028447099469660" name="IFeatureDesign" hash="-b75h5ya09tma9endkmxr4105zp2cftc">
@@ -22,17 +19,14 @@
   </source>
   <source id="6854028447099469544" name="IWritableGenericParameterizedFeatureDesign" hash="6y5ocdty834h3qmib10skvwkjh2d4dv">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IWritableGenericParameterizedFeatureDesign.java" />
   </source>
   <source id="6854028447099469545" name="IParameterizedFeatureDesign" hash="-dmhc7523iquobmzx6dvzy68qjvmdrbs">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IParameterizedFeatureDesign.java" />
   </source>
   <source id="6854028447099469542" name="IGenericParameterizedFeatureDesign" hash="-4vitnrv3o8v24am1e8oly48yup479nx">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IGenericParameterizedFeatureDesign.java" />
   </source>
 </dependencies>
