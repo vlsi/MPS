@@ -236,9 +236,12 @@ public class ClassifierType_Behavior {
       return;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
-      // treat raw type as if all params were Object 
+      // treat raw type as if all params were Object or the appropriate bound 
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
-        MapSequence.fromMap(substitutions).put(tvd, new ClassifierType_Behavior.QuotationClass_hz3823_a1a0a0b0c0t().createNode());
+        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
+          new ClassifierType_Behavior.QuotationClass_hz3823_a0b0a0a1a2a91().createNode() :
+          SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
+        ));
       }
     } else {
       {
@@ -433,8 +436,8 @@ public class ClassifierType_Behavior {
     }
   }
 
-  public static class QuotationClass_hz3823_a1a0a0b0c0t {
-    public QuotationClass_hz3823_a1a0a0b0c0t() {
+  public static class QuotationClass_hz3823_a0b0a0a1a2a91 {
+    public QuotationClass_hz3823_a0b0a0a1a2a91() {
     }
 
     public SNode createNode() {
@@ -444,7 +447,7 @@ public class ClassifierType_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -94,8 +94,11 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
               }
             }).toListSequence();
             for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
-              // assume all unbound type vars outside an inference context are Object 
-              MapSequence.fromMap(subs).put(tvd, new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a1a0b0c0c0n0a().createNode(typeCheckingContext));
+              // assume all unbound type vars outside an inference context are Object or its bound 
+              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
+                new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0b0a1a2a2a31a0().createNode(typeCheckingContext) :
+                SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
+              ));
             }
           }
           if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
@@ -228,8 +231,8 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     }
   }
 
-  public static class QuotationClass_ecn83h_a1a0b0c0c0n0a {
-    public QuotationClass_ecn83h_a1a0b0c0c0n0a() {
+  public static class QuotationClass_ecn83h_a0b0a1a2a2a31a0 {
+    public QuotationClass_ecn83h_a0b0a1a2a2a31a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -239,7 +242,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -252,7 +255,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

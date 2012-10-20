@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cfwtne03we41wdqykf0pzy90qnyoz8s">
+<dependencies version="2" modelHash="6ouuunvynhztsqsihbhbz4ybqsqhkhh">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)" />
@@ -717,7 +717,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="DefaultPropertyImplementation_Behavior.java" />
   </source>
-  <source id="1213877272873" name="TypeVariableReference_Behavior" hash="-dx082ec8sg4le0s43m86kwjd42rfz38">
+  <source id="1213877272873" name="TypeVariableReference_Behavior" hash="1nt5qjnwt97t5a0lrzzp847rf74ugcl">
     <dep root="1213877337303" />
     <dep root="4107091686347010318" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -841,7 +841,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Classifier_Behavior.java" />
   </source>
-  <source id="1213877308091" name="UpperBoundType_Behavior" hash="-4p1b8hetekve5j1m9dtk4jzraffqdau">
+  <source id="1213877308091" name="UpperBoundType_Behavior" hash="-3nxyc9ol7523z63p1e8eu8zli1vt1n9">
     <dep root="1213877337303" />
     <dep root="4107091686347010318" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -878,7 +878,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ShortType_Behavior.java" />
   </source>
-  <source id="1213877315813" name="ClassifierType_Behavior" hash="-2vmbfovmtwrvbzq6jd65dh6ykabpps5">
+  <source id="1213877315813" name="ClassifierType_Behavior" hash="-4imrh2f96er7l1dnl6qki922mtbg1xl">
     <dep root="1213877305150" />
     <dep root="1213877337303" />
     <dep root="1213877355772" />
@@ -1006,7 +1006,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Type_Behavior.java" />
   </source>
-  <source id="1213877339152" name="BaseMethodCall_Behavior" hash="-bzo5dywgpt737lxgxmogse1mlzyc5pt">
+  <source id="1213877339152" name="BaseMethodCall_Behavior" hash="-6xsoqgxv16hdukwmndlb8956onbcmb0">
     <dep root="1213877433049" />
     <dep root="1213877519768" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -1112,7 +1112,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VariableReference_Behavior.java" />
   </source>
-  <source id="1213877350233" name="BaseMethodDeclaration_Behavior" hash="74iionhbkox5y7hb9pukax5prdt5z7l">
+  <source id="1213877350233" name="BaseMethodDeclaration_Behavior" hash="-1cnpzzazzlf0fvset4ipngxtmxk793">
     <dep root="1213877337303" />
     <dep root="1233076309785" />
     <dep root="1233920947404" />
@@ -1465,7 +1465,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ByteType_Behavior.java" />
   </source>
-  <source id="1213877421700" name="LowerBoundType_Behavior" hash="ebqoavtj4ixvr1qi8erdql05g4j6697">
+  <source id="1213877421700" name="LowerBoundType_Behavior" hash="becrr0jsdexj23g36hz4123quim7tol">
     <dep root="1213877337303" />
     <dep root="4107091686347010318" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -1519,7 +1519,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="PropertyImplementation_Behavior.java" />
   </source>
-  <source id="1213877433049" name="IMethodCall_Behavior" hash="-b9il2r5zraalaz5yv3n199l28g2vbyu">
+  <source id="1213877433049" name="IMethodCall_Behavior" hash="-d9j8dil6bh5tid7l7ycofwxbpq2cqp4">
     <dep root="1213877435744" />
     <dep root="1213877519768" />
     <dep root="1233920947404" />
@@ -1553,7 +1553,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IMethodCall_Behavior.java" />
   </source>
-  <source id="1213877435147" name="InstanceMethodDeclaration_Behavior" hash="-1a648e5b3vlsfl81uozxd8ofkqwcpcl">
+  <source id="1213877435147" name="InstanceMethodDeclaration_Behavior" hash="88khzn3jgqpoi4hn4qmtu5eiqikx9pv">
     <dep root="1213877350233" />
     <dep root="1233076309785" />
     <dep root="5017341185733869578" />
@@ -1696,7 +1696,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="SuperConstructorInvocation_Behavior.java" />
   </source>
-  <source id="1213877482533" name="ClassCreator_Behavior" hash="7xe4s885zxbins3jrzrcbnk77vfnqnp">
+  <source id="1213877482533" name="ClassCreator_Behavior" hash="ce8o8z1vqmc9fyk2fmhjz7c66h1osj2">
     <dep root="1213877433049" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -3112,7 +3112,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="IClassifierMember_Behavior.java" />
   </source>
-  <source id="4107091686347010318" name="IGenericType_Behavior" hash="2mw6btqtxeopnd5mwhfgetqqq76l8tf">
+  <source id="4107091686347010318" name="IGenericType_Behavior" hash="-b23iuj7vv61o4ay7p5x8yaoakeg2gd7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -3132,7 +3132,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IGenericType_Behavior.java" />
   </source>
-  <source id="8277080359323274915" name="IGenericDeclaration_Behavior" hash="-br9hza4xdogk4sc4n8c7wb0n1mbggjb">
+  <source id="8277080359323274915" name="IGenericDeclaration_Behavior" hash="4fucbmqopwovswa3sjdd3r5xcezjifa">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -3143,7 +3143,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="IGenericDeclaration_Behavior.java" />
   </source>
-  <source id="8277080359323839092" name="ITypeApplicable_Behavior" hash="61ob8rzau91og6sb4yzl7t3moldz6j1">
+  <source id="8277080359323839092" name="ITypeApplicable_Behavior" hash="a0mulqr2gkl2m3jub2smv9y7acyfoes">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
