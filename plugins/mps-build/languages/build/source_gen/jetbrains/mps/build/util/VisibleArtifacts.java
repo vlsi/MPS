@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
@@ -200,6 +201,7 @@ public class VisibleArtifacts {
     return null;
   }
 
+  @NotNull
   public Tuples._2<SNode, String> getResource(SNode path) {
     SNode result = findArtifact(path);
     if (result != null) {
