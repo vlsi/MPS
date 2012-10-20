@@ -854,7 +854,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         clearModelDisposedTrace();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (myNode != null && myNode.isRegistered()) {
+        if (myNode != null && jetbrains.mps.util.SNodeOperations.isRegistered(myNode)) {
           myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
           myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         } else {
@@ -1213,14 +1213,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void assertModelNotDisposed() {
     assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !myNode.isDisposed() : getNodeDisposedMessage();
+    assert myNode == null || !jetbrains.mps.util.SNodeOperations.isDisposed(myNode) : getNodeDisposedMessage();
   }
 
   private String getNodeDisposedMessage() {
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] modelDisposedTrace = myNode.getModelDisposedTrace();
+      StackTraceElement[] result;
+      if (myNode.getModelInternal() != null) {
+        result = myNode.getModelInternal().getDisposedStacktrace();
+      } else {
+        result = null;
+      }
+      StackTraceElement[] modelDisposedTrace = result;
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -1272,7 +1278,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isInvalidLightweight() {
     return getEditorContext() == null ||
       getEditedNode() == null ||
-      getEditedNode().isDisposed();
+      jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
   }
 
   private void addOurListeners(@NotNull SModelDescriptor sm) {
@@ -1469,7 +1475,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (action != null && action.executeInCommand()) {
       executeCommand(new Runnable() {
         public void run() {
-          EditorContext editorContext = getEditorContext();
+          jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
           if (!editorContext.getOperationContext().isValid()) return;
           action.execute(editorContext);
         }
@@ -2733,7 +2739,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     for (SModelEvent e : events) {
       if (e instanceof SModelChildEvent) {
         SModelChildEvent ce = (SModelChildEvent) e;
-        if (ce.getParent().getAncestors(true).contains(getEditedNode())) {
+        if (jetbrains.mps.util.SNodeOperations.isAncestor(getEditedNode(), ce.getParent())) {
           if (ce.isAdded()) {
             lastAdd = ce;
             childAddedEventNodes.add(ce.getChild());
@@ -2965,7 +2971,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isNodeDisposed() {
-    return getEditedNode() != null && getEditedNode().isDisposed();
+    return getEditedNode() != null && jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
   }
 
   public boolean isEditable() {

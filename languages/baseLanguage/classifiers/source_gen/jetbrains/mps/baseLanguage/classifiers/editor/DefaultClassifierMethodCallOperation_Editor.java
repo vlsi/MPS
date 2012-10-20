@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -53,7 +53,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   }
 
   private EditorCell createConstant_c9gv4j_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_c9gv4j_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   }
 
   private EditorCell createConstant_c9gv4j_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_c9gv4j_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (renderingCondition_c9gv4j_a3a(node, editorContext, editorContext.getScope())) {
@@ -187,7 +187,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -195,7 +195,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     }
 
     private EditorCell createConstant_c9gv4j_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_c9gv4j_a2a");
       {
         Style style = editorCell.getStyle();

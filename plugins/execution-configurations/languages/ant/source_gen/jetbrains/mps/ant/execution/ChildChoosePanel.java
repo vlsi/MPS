@@ -54,7 +54,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
       public void run() {
         List<C> childrenNodes = getChildrenNodes(node);
         if (childrenNodes != null && ListSequence.fromList(childrenNodes).isNotEmpty()) {
-          child.value = ((SNode) ListSequence.fromList(childrenNodes).first()).getId();
+          child.value = ((SNode) ListSequence.fromList(childrenNodes).first()).getSNodeId().toString();
         }
       }
     });
@@ -87,7 +87,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     final Wrappers._T<String> id = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        id.value = ((SNode) ChildChoosePanel.this.myChild).getId();
+        id.value = ((SNode) ChildChoosePanel.this.myChild).getSNodeId().toString();
       }
     });
     return id.value;

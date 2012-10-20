@@ -5,7 +5,7 @@ package jetbrains.mps.platform.conf.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -34,6 +35,12 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bx3ota_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_bx3ota_a(EditorContext editorContext, SNode node) {
@@ -80,7 +87,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_bx3ota_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Broken references:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Broken references:");
     editorCell.setCellId("Constant_bx3ota_a0a0");
     {
       Style style = editorCell.getStyle();
@@ -97,7 +104,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).any(new IWhereFilter<SReference>() {
+    return Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).any(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;
       }
@@ -105,7 +112,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {
-    String txt = Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).where(new IWhereFilter<SReference>() {
+    String txt = Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;
       }

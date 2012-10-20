@@ -7,8 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,22 +19,25 @@ public class check_FinalLocalFieldReferenceNotAssigned_NonTypesystemRule extends
   public check_FinalLocalFieldReferenceNotAssigned_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode reference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(reference, "variableDeclaration", false), "isFinal") && CheckingUtil.isAssignedIllegaly(reference)) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(reference, "Cannot assign a value to final variable '" + SPropertyOperations.getString(SLinkOperations.getTarget(reference, "variableDeclaration", false), "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356438183038", null, errorTarget);
+  public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      SNode field = SNodeOperations.cast(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      if (SPropertyOperations.getBoolean(field, "isFinal") && CheckingUtil.isAssignedIllegaly(variableReference)) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot assign a value to final variable '" + SPropertyOperations.getString(field, "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356438183038", null, errorTarget);
+        }
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

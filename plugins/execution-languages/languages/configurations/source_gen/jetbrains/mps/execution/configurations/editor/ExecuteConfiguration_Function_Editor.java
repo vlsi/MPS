@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -39,7 +39,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ydtnyj_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_ydtnyj_b0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -51,7 +51,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ydtnyj_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_ydtnyj_d0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -72,7 +72,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());

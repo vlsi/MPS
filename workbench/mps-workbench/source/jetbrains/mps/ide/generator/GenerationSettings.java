@@ -265,6 +265,16 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
   @Override
+  public boolean isDebugIncrementalDependencies() {
+    return myState.myDebugIncrementalDependencies;
+  }
+
+  @Override
+  public void setDebugIncrementalDependencies(boolean value) {
+    myState.myDebugIncrementalDependencies = value;
+  }
+
+  @Override
   public boolean isFailOnMissingTextGen() {
     return myState.myFailOnMissingTextGen;
   }
@@ -329,6 +339,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myFailOnMissingTextGen = false;
     private boolean myGenerateDebugInfo = true;
     private boolean myShowBadChildWarning = true;
+    private boolean myDebugIncrementalDependencies = false;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -440,6 +451,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setIncrementalUseCache(boolean incrementalUseCache) {
       myIncrementalUseCache = incrementalUseCache;
+    }
+
+    public boolean isDebugIncrementalDependencies() {
+      return myDebugIncrementalDependencies;
+    }
+
+    public void setDebugIncrementalDependencies(boolean debugIncrementalDependencies) {
+      myDebugIncrementalDependencies = debugIncrementalDependencies;
     }
 
     public boolean isFailOnMissingTextGen() {

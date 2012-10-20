@@ -4,7 +4,7 @@ package jetbrains.mps.lang.behavior.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -64,7 +64,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n52m2z_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "super");
     editorCell.setCellId("Constant_n52m2z_a0");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n52m2z_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_n52m2z_a1a");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -84,7 +84,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n52m2z_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_n52m2z_c1a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -92,7 +92,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n52m2z_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "super concept:");
     editorCell.setCellId("Constant_n52m2z_a0_0");
     editorCell.setDefaultText("");
     return editorCell;

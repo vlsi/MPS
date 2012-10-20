@@ -152,7 +152,7 @@ public class GenerateConstructor_Action extends BaseAction {
             SNode parameter = SNodeFactoryOperations.addNewChild(constructor, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             SPropertyOperations.set(parameter, "name", SPropertyOperations.getString(superParam, "name"));
             SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(superParam, "type", true)), true);
-            SNode paramReference = SNodeFactoryOperations.addNewChild(invocation, "actualArgument", "jetbrains.mps.baseLanguage.structure.ParameterReference");
+            SNode paramReference = SNodeFactoryOperations.addNewChild(invocation, "actualArgument", "jetbrains.mps.baseLanguage.structure.VariableReference");
             SLinkOperations.setTarget(paramReference, "variableDeclaration", parameter, false);
           }
         }
@@ -223,7 +223,7 @@ public class GenerateConstructor_Action extends BaseAction {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -241,7 +241,7 @@ public class GenerateConstructor_Action extends BaseAction {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

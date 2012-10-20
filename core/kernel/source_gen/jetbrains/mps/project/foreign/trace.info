@@ -9,7 +9,7 @@
     <nodeInfo nodeId="3323419009397487087" fileName="MPSFacetConfiguration.java" startLine="27" startPosition="45" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedLanguages" />
     <nodeInfo nodeId="3323419009397527087" fileName="MPSFacetConfiguration.java" startLine="33" startPosition="84" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3323419009397532794" fileName="MPSFacetConfiguration.java" startLine="36" startPosition="124" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3323419009397527140" fileName="MPSFacetConfiguration.java" startLine="40" startPosition="73" endLine="41" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3323419009397527140" fileName="MPSFacetConfiguration.java" startLine="40" startPosition="85" endLine="41" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3323419009397527617" fileName="MPSFacetConfiguration.java" startLine="42" startPosition="23" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5753791343209503615" fileName="MPSFacetConfiguration.java" startLine="44" startPosition="68" endLine="45" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7691797154759969825" fileName="MPSFacetConfiguration.java" startLine="47" startPosition="50" endLine="48" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -173,7 +173,7 @@
       <varInfo nodeId="3323419009397527692" varName="pr" />
       <varInfo nodeId="3323419009397527693" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3323419009397487160" fileName="MPSFacetConfiguration.java" startLine="40" startPosition="73" endLine="55" endPosition="7">
+    <scopeInfo nodeId="3323419009397487160" fileName="MPSFacetConfiguration.java" startLine="40" startPosition="85" endLine="55" endPosition="7">
       <varInfo nodeId="3323419009397527141" varName="pr" />
     </scopeInfo>
     <scopeInfo nodeId="3323419009397487159" fileName="MPSFacetConfiguration.java" startLine="39" startPosition="5" endLine="56" endPosition="5">
@@ -195,7 +195,7 @@
     <nodeInfo nodeId="7691797154759996211" fileName="IdeaModuleConfiguration.java" startLine="26" startPosition="59" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7691797154759996262" fileName="IdeaModuleConfiguration.java" startLine="30" startPosition="73" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7691797154759996279" fileName="IdeaModuleConfiguration.java" startLine="31" startPosition="44" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7691797154759982954" fileName="IdeaModuleConfiguration.java" startLine="35" startPosition="137" endLine="36" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7691797154759982954" fileName="IdeaModuleConfiguration.java" startLine="35" startPosition="137" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3323419009397602178" fileName="IdeaModuleConfiguration.java" startLine="38" startPosition="41" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3323419009397602193" fileName="IdeaModuleConfiguration.java" startLine="42" startPosition="42" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7691797154759996244" fileName="IdeaModuleConfiguration.java" startLine="45" startPosition="34" endLine="46" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -206,11 +206,11 @@
     <nodeInfo nodeId="7691797154759982933" fileName="IdeaModuleConfiguration.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaModuleConfiguration#(Ljetbrains/mps/vfs/IFile;)V" />
     <nodeInfo nodeId="7691797154759996295" fileName="IdeaModuleConfiguration.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleFile#()Ljetbrains/mps/vfs/IFile;" />
     <nodeInfo nodeId="7691797154759982942" fileName="IdeaModuleConfiguration.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSFacetConfiguration#()Ljetbrains/mps/project/foreign/MPSFacetConfiguration;" />
-    <nodeInfo nodeId="3323419009397602176" fileName="IdeaModuleConfiguration.java" startLine="37" startPosition="238" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jdom/Element;)Z" />
+    <nodeInfo nodeId="3323419009397602176" fileName="IdeaModuleConfiguration.java" startLine="37" startPosition="250" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jdom/Element;)Z" />
     <nodeInfo nodeId="3323419009397602191" fileName="IdeaModuleConfiguration.java" startLine="41" startPosition="57" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jdom/Element;)Z" />
     <nodeInfo nodeId="7691797154759996257" fileName="IdeaModuleConfiguration.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMPSFacetConfiguration#(Ljetbrains/mps/project/foreign/MPSFacetConfiguration;)V" />
     <nodeInfo nodeId="7691797154759996150" fileName="IdeaModuleConfiguration.java" startLine="46" startPosition="74" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3323419009397602163" fileName="IdeaModuleConfiguration.java" startLine="36" startPosition="82" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3323419009397602163" fileName="IdeaModuleConfiguration.java" startLine="36" startPosition="72" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7691797154759982937" fileName="IdeaModuleConfiguration.java" startLine="34" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/foreign/IdeaModuleConfiguration;" />
     <scopeInfo nodeId="7691797154759982936" fileName="IdeaModuleConfiguration.java" startLine="18" startPosition="47" endLine="19" endPosition="23" />
     <scopeInfo nodeId="7691797154759996298" fileName="IdeaModuleConfiguration.java" startLine="22" startPosition="32" endLine="23" endPosition="18" />
@@ -226,7 +226,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7691797154759996295" fileName="IdeaModuleConfiguration.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="7691797154759982942" fileName="IdeaModuleConfiguration.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3323419009397602176" fileName="IdeaModuleConfiguration.java" startLine="37" startPosition="238" endLine="41" endPosition="0">
+    <scopeInfo nodeId="3323419009397602176" fileName="IdeaModuleConfiguration.java" startLine="37" startPosition="250" endLine="41" endPosition="0">
       <varInfo nodeId="3323419009397602176" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="3323419009397602191" fileName="IdeaModuleConfiguration.java" startLine="41" startPosition="57" endLine="45" endPosition="0">
@@ -243,7 +243,7 @@
     <scopeInfo nodeId="7691797154759982937" fileName="IdeaModuleConfiguration.java" startLine="34" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="7691797154759982947" varName="moduleFile" />
     </scopeInfo>
-    <unitInfo nodeId="3323419009397602176" fileName="IdeaModuleConfiguration.java" startLine="37" startPosition="213" endLine="41" endPosition="5" unitName="jetbrains.mps.project.foreign.IdeaModuleConfiguration$1" />
+    <unitInfo nodeId="3323419009397602176" fileName="IdeaModuleConfiguration.java" startLine="37" startPosition="225" endLine="41" endPosition="5" unitName="jetbrains.mps.project.foreign.IdeaModuleConfiguration$1" />
     <unitInfo nodeId="3323419009397602191" fileName="IdeaModuleConfiguration.java" startLine="41" startPosition="32" endLine="45" endPosition="5" unitName="jetbrains.mps.project.foreign.IdeaModuleConfiguration$2" />
     <unitInfo nodeId="7691797154759982931" fileName="IdeaModuleConfiguration.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.project.foreign.IdeaModuleConfiguration" />
   </root>

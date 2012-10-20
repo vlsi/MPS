@@ -45,7 +45,11 @@ public class CommonPaths {
       }
     }, types);
     for (ClassType type : types) {
-      if (type == ClassType.CORE) {
+      if (type == ClassType.OPENAPI) {
+        addOpenAPIJars(result);
+      } else if (type == ClassType.CORE) {
+        // TODO remove openapi here
+        addOpenAPIJars(result);
         addCoreJars(result);
       } else if (type == ClassType.EDITOR) {
         addEditorJars(result);
@@ -147,6 +151,10 @@ public class CommonPaths {
     addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
     return result;
+  }
+
+  private static void addOpenAPIJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-openapi.jar");
   }
 
   private static void addCoreJars(CompositeClassPathItem result) {

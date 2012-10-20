@@ -17,8 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 /**
  * Igor Alshannikov
@@ -69,7 +67,7 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
 
   private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
     public AuxModelDescriptor() {
-      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
+      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE);
     }
 
     protected SModel createModel() {

@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -45,7 +45,7 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_sf63zn_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "filemode");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "filemode");
     editorCell.setCellId("Constant_sf63zn_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_sf63zn_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "folders:");
     editorCell.setCellId("Constant_sf63zn_b0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_sf63zn_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_sf63zn_d0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -73,7 +73,7 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_sf63zn_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "files:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "files:");
     editorCell.setCellId("Constant_sf63zn_e0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

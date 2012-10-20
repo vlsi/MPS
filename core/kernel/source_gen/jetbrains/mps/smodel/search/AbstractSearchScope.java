@@ -5,6 +5,7 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
           return null;
         }
         for (SNode node : getNodes()) {
-          if (referenceInfo.equals(node.getResolveInfo())) {
+          if (referenceInfo.equals(SNodeOperations.getResolveInfo(node))) {
             return node;
           }
         }

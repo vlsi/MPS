@@ -37,7 +37,7 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -58,7 +58,7 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)"), SNodeId.fromString("2295870045929265512")));
+        quotedNode1_3.setReference("classifier", SReference.create("classifier", quotedNode1_3, SModelReference.fromString("r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)"), SNodeId.fromString("2295870045929265512")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
@@ -85,7 +85,7 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)"), SNodeId.fromString("2295870045929265512")));
+        quotedNode1_3.setReference("classifier", SReference.create("classifier", quotedNode1_3, SModelReference.fromString("r:5420fa50-d52f-4531-bdd3-8e4092faaf95(jetbrains.mps.ypath.runtime)"), SNodeId.fromString("2295870045929265512")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;

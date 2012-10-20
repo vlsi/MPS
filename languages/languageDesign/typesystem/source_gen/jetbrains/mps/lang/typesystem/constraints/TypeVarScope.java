@@ -34,7 +34,7 @@ public class TypeVarScope extends SearchScopeWithNode {
     if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.StatementList")) {
       statementList = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.StatementList");
     } else {
-      statementList = (SNode) enclosingNode.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+      statementList = (SNode) jetbrains.mps.util.SNodeOperations.findParent(enclosingNode, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
     }
     if ((statementList != null)) {
       SNode currentStatement;
@@ -43,7 +43,7 @@ public class TypeVarScope extends SearchScopeWithNode {
       } else if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
         currentStatement = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement");
       } else {
-        currentStatement = (SNode) enclosingNode.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+        currentStatement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(enclosingNode, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
       }
       populateLocalVariables(statementList, currentStatement, vars);
     }
@@ -68,9 +68,9 @@ public class TypeVarScope extends SearchScopeWithNode {
         result.add(statement);
       }
     }
-    SNode containingStatement = (SNode) statementList.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+    SNode containingStatement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(statementList, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
     if ((containingStatement != null)) {
-      statementList = (SNode) containingStatement.findParent(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+      statementList = (SNode) jetbrains.mps.util.SNodeOperations.findParent(containingStatement, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
       if (statementList != null) {
         populateLocalVariables(statementList, containingStatement, result);
       }

@@ -18,9 +18,9 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_URL;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 public class URLCellProvider extends PropertyCellProvider {  
@@ -30,7 +30,7 @@ public class URLCellProvider extends PropertyCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context) {    
-    EditorCell_URL editorCell = EditorCell_URL.create(context, getSNode(), getPropertyName());
+    EditorCell_URL editorCell = EditorCell_URL.create((jetbrains.mps.nodeEditor.EditorContext) context, getSNode(), getPropertyName());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), getPropertyName()));

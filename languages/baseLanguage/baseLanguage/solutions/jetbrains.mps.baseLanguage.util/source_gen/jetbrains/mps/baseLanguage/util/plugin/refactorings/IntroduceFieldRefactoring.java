@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -74,7 +75,11 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", true, new String[]{})).isEmpty();
+        result.value = ListSequence.fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          }
+        }).toListSequence().isEmpty();
       }
     });
     return result.value;
@@ -220,7 +225,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_11 = quotedNode_6;
-              quotedNode1_11.setReferent("fieldDeclaration", (SNode) parameter_13);
+              quotedNode1_11.setReferenceTarget("fieldDeclaration", (SNode) parameter_13);
               quotedNode_3.addChild("operation", quotedNode1_11);
             }
             quotedNode_2.addChild("lValue", quotedNode1_9);
@@ -267,7 +272,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_7);
+          quotedNode1_6.setReferenceTarget("fieldDeclaration", (SNode) parameter_7);
           quotedNode_1.addChild("operation", quotedNode1_6);
         }
         result = quotedNode1_4;

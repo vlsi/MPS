@@ -94,8 +94,8 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
-          quotedNode1_8.setProperty("modelId", "jetbrains.mps.lang.typesystem.intentions");
           quotedNode1_8.setProperty("nodeId", "3302086321380616758");
+          quotedNode1_8.setProperty("modelId", "jetbrains.mps.lang.typesystem.intentions");
           quotedNode_1.addChild("smodelAttribute", quotedNode1_8);
         }
         result = quotedNode1_5;
@@ -115,7 +115,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("quickFix", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("quickFix", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

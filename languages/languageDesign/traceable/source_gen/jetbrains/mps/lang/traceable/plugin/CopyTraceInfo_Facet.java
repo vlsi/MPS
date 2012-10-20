@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
-import jetbrains.mps.make.facet.ITargetEx;
+import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -64,7 +64,7 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
     return new CopyTraceInfo_Facet.TargetProperties();
   }
 
-  public static class Target_copyTraceInfo implements ITargetEx {
+  public static class Target_copyTraceInfo implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
@@ -75,52 +75,58 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull ProgressMonitor progressMonitor) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_zgz0lb_a0a = null;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(Target_copyTraceInfo.this.getName(), CopyTraceInfo_Facet.Target_copyTraceInfo.Parameters.class).skipCopying())) {
                 return new IResult.SUCCESS(_output_zgz0lb_a0a);
               }
-              final List<IFile> toCreate = ListSequence.fromList(new ArrayList<IFile>());
-              final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
-              for (IResource resource : input) {
-                TResource tres = (TResource) resource;
-                final IFile destination = tres.module().getClassesGen().getDescendant(tres.modelDescriptor().getLongName().replace(".", "/"));
-                if (!(destination.exists())) {
-                  ListSequence.fromList(toCreate).addElement(destination);
-                }
-                Sequence.fromIterable(tres.delta()).visitAll(new IVisitor<IDelta>() {
-                  public void visit(IDelta it) {
-                    it.acceptVisitor(new FilesDelta.Visitor() {
-                      @Override
-                      public boolean acceptWritten(IFile file) {
-                        if (file.getName().equals(TraceInfoCache.TRACE_FILE_NAME)) {
-                          IFile copy = destination.getDescendant(file.getName());
-                          ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
+              progressMonitor.start("Copying resources", 2);
+              progressMonitor.step("trace.info");
+              try {
+                final List<IFile> toCreate = ListSequence.fromList(new ArrayList<IFile>());
+                final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
+                for (IResource resource : input) {
+                  TResource tres = (TResource) resource;
+                  final IFile destination = tres.module().getClassesGen().getDescendant(tres.modelDescriptor().getLongName().replace(".", "/"));
+                  if (!(destination.exists())) {
+                    ListSequence.fromList(toCreate).addElement(destination);
+                  }
+                  Sequence.fromIterable(tres.delta()).visitAll(new IVisitor<IDelta>() {
+                    public void visit(IDelta it) {
+                      it.acceptVisitor(new FilesDelta.Visitor() {
+                        @Override
+                        public boolean acceptWritten(IFile file) {
+                          if (file.getName().equals(TraceInfoCache.TRACE_FILE_NAME)) {
+                            IFile copy = destination.getDescendant(file.getName());
+                            ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
+                          }
+                          return true;
                         }
-                        return true;
+                      });
+                    }
+                  });
+
+                  _output_zgz0lb_a0a = Sequence.fromIterable(_output_zgz0lb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                }
+                FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                  public void run() {
+                    ListSequence.fromList(toCreate).visitAll(new IVisitor<IFile>() {
+                      public void visit(IFile it) {
+                        it.mkdirs();
+                      }
+                    });
+                    ListSequence.fromList(toCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                      public void visit(Tuples._2<IFile, IFile> ftc) {
+                        IFileUtils.copyFileContent(ftc._0(), ftc._1());
                       }
                     });
                   }
                 });
-
-                _output_zgz0lb_a0a = Sequence.fromIterable(_output_zgz0lb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+              } finally {
+                progressMonitor.done();
               }
-              FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                public void run() {
-                  ListSequence.fromList(toCreate).visitAll(new IVisitor<IFile>() {
-                    public void visit(IFile it) {
-                      it.mkdirs();
-                    }
-                  });
-                  ListSequence.fromList(toCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
-                    public void visit(Tuples._2<IFile, IFile> ftc) {
-                      IFileUtils.copyFileContent(ftc._0(), ftc._1());
-                    }
-                  });
-                }
-              });
             default:
               return new IResult.SUCCESS(_output_zgz0lb_a0a);
           }
@@ -182,6 +188,10 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
         ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
+    }
+
+    public int workEstimate() {
+      return 30;
     }
 
     public static class Parameters extends MultiTuple._1<Boolean> {

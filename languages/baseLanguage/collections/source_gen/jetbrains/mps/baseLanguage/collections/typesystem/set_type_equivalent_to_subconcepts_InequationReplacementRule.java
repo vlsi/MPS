@@ -52,14 +52,14 @@ public class set_type_equivalent_to_subconcepts_InequationReplacementRule extend
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSubtypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSupertypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

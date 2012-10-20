@@ -104,7 +104,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
       for (SNodePointer fieldPtr : selectedFields) {
         final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
-        SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
         ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0e0o0a0e().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
@@ -294,7 +294,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_5);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_5);
       return result;
     }
   }

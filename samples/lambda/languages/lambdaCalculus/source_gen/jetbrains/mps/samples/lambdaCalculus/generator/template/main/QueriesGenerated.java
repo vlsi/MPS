@@ -72,7 +72,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6139750523307920886(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ("let_" + _context.getNode().getId());
+    return ("let_" + _context.getNode().getSNodeId().toString());
   }
 
   public static Object propertyMacro_GetPropertyValue_466391367986582294(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -112,7 +112,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2167053794906731228(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Function_" + _context.getNode().getId();
+    return "Function_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2985097847315884744(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -128,7 +128,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_816130369292752659(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "lambdaAbstr_" + SLinkOperations.getTarget(_context.getNode(), "function", true).getId();
+    return "lambdaAbstr_" + SLinkOperations.getTarget(_context.getNode(), "function", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2985097847315884705(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -136,23 +136,23 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2584857295430340569(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "parameterFromVar"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_2584857295430340546(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "parameterFromVar"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_2584857295430340722(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "parameterLetExpr");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_5142899583592522507(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "parameterLetExpr");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_2167053794906731184(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameterFromVar"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static SNode sourceNodeQuery_391739495267927128(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -372,7 +372,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -390,7 +390,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -408,7 +408,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -426,7 +426,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -444,7 +444,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -462,7 +462,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

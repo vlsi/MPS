@@ -140,10 +140,10 @@
         </node>
       </node>
       <node role="dimensions" roleId="tprh.1226850487634" type="tprh.DialogDimensions" typeId="tprh.1226850367300" id="1226850968481">
+        <property name="height" nameId="tprh.1226850388991" value="200" />
+        <property name="width" nameId="tprh.1226850387521" value="600" />
         <property name="left" nameId="tprh.1226850380566" value="100" />
         <property name="top" nameId="tprh.1226850405617" value="100" />
-        <property name="width" nameId="tprh.1226850387521" value="600" />
-        <property name="height" nameId="tprh.1226850388991" value="200" />
       </node>
     </node>
   </root>
@@ -558,7 +558,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3365295161442892840">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~IScope%dgetLanguage(jetbrains%dmps%dproject%dstructure%dmodules%dModuleReference)%cjetbrains%dmps%dsmodel%dLanguage" resolveInfo="getLanguage" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~IScope%dgetLanguage(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference)%cjetbrains%dmps%dsmodel%dLanguage" resolveInfo="getLanguage" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3365295161442892842">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3365295161442854975" resolveInfo="addedLanguage" />
                                 </node>

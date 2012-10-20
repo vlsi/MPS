@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.table.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
@@ -101,14 +101,14 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqolwn_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cqolwn_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_cqolwn_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_a1a0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -116,7 +116,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqolwn_c1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_c1a0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -124,7 +124,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqolwn_a0b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_a0b0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -132,7 +132,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqolwn_c0b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_c0b0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -140,7 +140,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqolwn_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_a1b0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -148,7 +148,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cqolwn_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_c1b0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

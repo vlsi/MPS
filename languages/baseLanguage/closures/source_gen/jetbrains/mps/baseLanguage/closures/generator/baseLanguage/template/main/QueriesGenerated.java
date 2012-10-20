@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.closures.helper.Values;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.helper.Flags;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SNode;
@@ -36,7 +37,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -132,6 +132,10 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201093930999(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      return false;
+    }
+
     return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && Values.CLOSURE_DATA.get(_context, SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) != null;
   }
 
@@ -144,6 +148,10 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207146877066(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      return false;
+    }
+
     return Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(_context, _context.getNode());
   }
 
@@ -156,6 +164,10 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1219934617805(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      return false;
+    }
+
     return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(_context, SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept")).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
   }
 
@@ -1101,11 +1113,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7246115176735005356(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_tmp_" + _context.getNode().getId();
+    return "_tmp_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_7246115176735007801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_tmp_" + _context.getNode().getId();
+    return "_tmp_" + _context.getNode().getSNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_8424084437048109268(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2583,16 +2595,16 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1207147150424(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode oldDecl = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
+    SNode oldDecl = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SNode newDecl = _context.getOutputNodeByInputNodeAndMappingLabel(oldDecl, "wrapped_localVar");
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", newDecl, false);
     return lvr;
   }
 
   public static SNode mapSrcMacro_mapper_1219934508839(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvds = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "woven_LVDS");
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode lvds = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "woven_LVDS");
+    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(lvds, "localVariableDeclaration", true), false);
     return lvr;
   }
@@ -2611,7 +2623,7 @@ public class QueriesGenerated {
       SNode copy = CopyUtil.copyAndPreserveId(p, false);
       ListSequence.fromList(SLinkOperations.getTargets(bmc, "actualArgument", true)).addElement(copy);
     }
-    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.BlockStatement", false, false), "statements", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true), false);
     ListSequence.fromList(SLinkOperations.getTargets(bmc, "actualArgument", true)).addElement(lvr);
     return bmc;
@@ -2623,7 +2635,7 @@ public class QueriesGenerated {
     List<SNode> copyArgs = SLinkOperations.getTargets(copy, "actualArgument", true);
     for (int idx = ListSequence.fromList(args).count() - 1; idx >= 0; idx--) {
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(args).getElement(idx)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
-        SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.BlockStatement", false, false), "statements", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true), false);
         SNodeOperations.replaceWithAnother(ListSequence.fromList(copyArgs).getElement(idx), lvr);
         break;
@@ -2767,7 +2779,7 @@ public class QueriesGenerated {
           Flags.WRAPPING_LOCAL_VARIABLE.flag(_context, vd);
           SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
           for (SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {
-            if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false) == vd) {
+            if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == vd) {
               Flags.WRAPPING_LOCAL_VARIABLE.flag(_context, desc);
             }
           }
@@ -2854,11 +2866,11 @@ public class QueriesGenerated {
             SNode de = SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression");
             SNode lvd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
             SLinkOperations.setTarget(lvd, "type", FunctionTypeUtil.unmeet(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true))), true);
-            SPropertyOperations.set(lvd, "name", "_tmp_" + de.getId());
+            SPropertyOperations.set(lvd, "name", "_tmp_" + de.getSNodeId().toString());
             Flags.NEEDS_INITIALIZER.flag(_context, lvd);
             SNode lvds = SNodeOperations.insertPrevSiblingChild(stmt, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null));
             SLinkOperations.setTarget(lvds, "localVariableDeclaration", lvd, true);
-            SNode lvr = SNodeOperations.replaceWithAnother(de, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null));
+            SNode lvr = SNodeOperations.replaceWithAnother(de, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null));
             SLinkOperations.setTarget(lvr, "variableDeclaration", lvd, false);
             SNode es = SNodeOperations.insertPrevSiblingChild(stmt, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null));
             SLinkOperations.setTarget(es, "expression", de, true);
@@ -2967,7 +2979,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
         result = quotedNode1_2;
       }
       return result;

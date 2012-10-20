@@ -16,11 +16,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SNodePointer {
+public class SNodePointer implements SNodeReference {
   private static SModelRepository ourSModelRepository = null;
 
   private SModelReference myModelReference;

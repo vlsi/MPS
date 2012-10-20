@@ -66,7 +66,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
         switchStatement = SNodeOperations.as(findThisOrParent(SNodeOperations.getParent(switchStatement), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement")), "jetbrains.mps.baseLanguage.structure.SwitchStatement");
       }
       // filter nulls 
-      List<SNode> tmp = new ArrayList();
+      List<SNode> tmp = new ArrayList<SNode>();
       for (SNode node : myLocalVariables) {
         if (node != null) {
           tmp.add(node);
@@ -122,7 +122,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
 
   private void _populateLocalVariables(SNode loopStatement, List<SNode> result) {
     for (SNode child : SNodeOperations.getChildren(loopStatement)) {
-      if (child.getRole_().equals("body")) {
+      if (child.getRole().equals("body")) {
         continue;
       }
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {

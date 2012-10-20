@@ -142,7 +142,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public void validateExtends() {
     List<ModuleReference> remove = new ArrayList<ModuleReference>();
     for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      if (getModuleFqName().equals(ref.getModuleFqName())) {
+      if (getModuleName().equals(ref.getModuleFqName())) {
         remove.add(ref);
       }
     }
@@ -318,38 +318,43 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     myNamesWithNoConcepts.clear();
   }
 
-  public SNode findConceptDeclaration(@NotNull String conceptName) {
+  public SNode findConceptDeclaration(@NotNull final String conceptName) {
     if (myNamesLoadingState == ModelLoadingState.FULLY_LOADED) return myNameToConceptCache.get(conceptName);
     if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     if (myNamesWithNoConcepts.contains(conceptName)) return null;
 
-    SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-    if (structureModelDescriptor == null) return null;
-    SModel structureModel = structureModelDescriptor.getSModel();
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+        if (structureModelDescriptor == null) return null;
+        SModel structureModel = structureModelDescriptor.getSModel();
 
-    //if not all the model is loaded, we try to look up the given concept only between root nodes first
-    if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-      for (SNode root : structureModel.roots()) {
-        String name = getConceptName(root);
-        if (name == null) continue;
-        myNameToConceptCache.putIfAbsent(name, root);
+        //if not all the model is loaded, we try to look up the given concept only between root nodes first
+        if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
+          for (SNode root : structureModel.roots()) {
+            String name = getConceptName(root);
+            if (name == null) continue;
+            myNameToConceptCache.putIfAbsent(name, root);
+          }
+          if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
+        }
+
+        //if we haven't found a root concept, then try to find in any node in the model
+        for (SNode node : structureModel.nodes()) {
+          String name = getConceptName(node);
+          if (name == null) continue;
+          myNameToConceptCache.putIfAbsent(name, node);
+        }
+
+        SNode result = myNameToConceptCache.get(conceptName);
+        if (result == null) {
+          myNamesWithNoConcepts.add(conceptName);
+        }
+
+        return result;
       }
-      if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
-    }
-
-    //if we haven't found a root concept, then try to find in any node in the model
-    for (SNode node : structureModel.nodes()) {
-      String name = getConceptName(node);
-      if (name == null) continue;
-      myNameToConceptCache.putIfAbsent(name, node);
-    }
-
-    SNode result = myNameToConceptCache.get(conceptName);
-    if (result == null) {
-      myNamesWithNoConcepts.add(conceptName);
-    }
-
-    return result;
+    });
   }
 
   private String getConceptName(SNode node) {
@@ -445,7 +450,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   @Override
   public Class getClass(String fqName) {
-    if (!fqName.startsWith(getModuleFqName() + ".stubs.")) return super.getClass(fqName);
+    if (!fqName.startsWith(getModuleName() + ".stubs.")) return super.getClass(fqName);
     try {
       return myStubsLoader.loadClass(fqName);
     } catch (ClassNotFoundException e) {
@@ -505,7 +510,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
               continue;
             }
 
-            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
+            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleName()));
           } catch (IOException e) {
             LOG.debug(e.getMessage());
           }
@@ -524,7 +529,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
     if (myLanguageDescriptor != null) {
       IFile bundleParent = getBundleHome().getParent();
-      String jarName = getModuleFqName() + ".jar";
+      String jarName = getModuleName() + ".jar";
       IFile bundleHomeFile = bundleParent.getDescendant(jarName);
 
       if (!bundleHomeFile.exists()) return;

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.behavior.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -73,7 +73,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuxtnd_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept behavior");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept behavior");
     editorCell.setCellId("Constant_cuxtnd_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -81,7 +81,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuxtnd_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_cuxtnd_c0a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -89,7 +89,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuxtnd_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cuxtnd_a1b0");
     {
       Style style = editorCell.getStyle();
@@ -100,7 +100,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuxtnd_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_cuxtnd_c1b0");
     {
       Style style = editorCell.getStyle();
@@ -111,7 +111,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cuxtnd_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_cuxtnd_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -135,7 +135,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cuxtnd_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
@@ -248,7 +248,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_cuxtnd_a3b1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<concept methods>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<concept methods>>");
       editorCell.setCellId("Constant_cuxtnd_a3b1a");
       {
         Style style = editorCell.getStyle();
@@ -299,7 +299,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_cuxtnd_a4b1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<static concept methods>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<static concept methods>>");
       editorCell.setCellId("Constant_cuxtnd_a4b1a");
       {
         Style style = editorCell.getStyle();

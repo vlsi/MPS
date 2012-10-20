@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -63,7 +63,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yfw6cj_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "type");
     editorCell.setCellId("Constant_yfw6cj_a0a");
     {
       Style style = editorCell.getStyle();
@@ -77,7 +77,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yfw6cj_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_yfw6cj_b0a");
     {
       Style style = editorCell.getStyle();
@@ -94,7 +94,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-          public EditorCell createEditorCell(EditorContext editorContext) {
+          public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
             EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
             if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {

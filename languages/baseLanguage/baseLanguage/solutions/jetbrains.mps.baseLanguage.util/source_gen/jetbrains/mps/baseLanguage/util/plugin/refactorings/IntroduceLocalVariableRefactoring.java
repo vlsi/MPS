@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
@@ -52,7 +53,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   }
 
   public void replaceNode(SNode node, SNode declaration) {
-    SNode reference = new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a0a2().createNode(declaration);
+    SNode reference = ((SNode) BehaviorManager.getInstance().invoke(Object.class, declaration, "virtual_createReference_1213877517482", new Class[]{SNode.class}));
     SNodeOperations.replaceWithAnother(node, reference);
     this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
   }
@@ -130,24 +131,6 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
           quotedNode_1.addChild("localVariableDeclaration", quotedNode1_6);
         }
         result = quotedNode1_5;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_nngwe4_a0a0a2 {
-    public QuotationClass_nngwe4_a0a0a2() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
       }
       return result;
     }

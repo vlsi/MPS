@@ -4,7 +4,7 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,7 +36,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       }
     } else {
       // <node> 
-      mySource.removeReferent(SPropertyOperations.getString(genuineLinkDeclaration, "role"));
+      mySource.setReferenceTarget(SPropertyOperations.getString(genuineLinkDeclaration, "role"), null);
     }
   }
 }

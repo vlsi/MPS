@@ -169,7 +169,7 @@ public class GenerationRootDependencies {
 
     List<String> local = new ArrayList<String>(localNodes.size());
     for (SNode n : localNodes) {
-      local.add(n.getId());
+      local.add(n.getSNodeId().toString());
     }
     Collections.sort(local);
 
@@ -186,7 +186,7 @@ public class GenerationRootDependencies {
 
     final SNode originalRoot = l.getOriginalRoot();
     return new GenerationRootDependencies(
-      originalRoot != null ? originalRoot.getId() : null,
+      originalRoot != null ? originalRoot.getSNodeId().toString() : null,
       originalRoot != null ? originalRoot.getName() : null,
       l.getHash(), l.isDependsOnConditionals(), l.isDependsOnModelNodes(),
       local, external, generatedFiles);

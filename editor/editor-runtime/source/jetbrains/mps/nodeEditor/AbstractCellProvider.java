@@ -43,5 +43,21 @@ public abstract class AbstractCellProvider {
     return new BasicCellContext(getSNode());
   }
 
-  public abstract EditorCell createEditorCell(EditorContext editorContext);
+  /**
+   * Since MPS 3.0
+   * should be transformed to abstract method in future
+   */
+  public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
+    // calling deprecated method for the compatibility with generated code
+    return createEditorCell((EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public EditorCell createEditorCell(EditorContext editorContext) {
+    throw new RuntimeException("Method not implemented");
+  }
 }

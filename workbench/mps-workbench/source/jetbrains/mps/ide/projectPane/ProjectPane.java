@@ -50,7 +50,6 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -59,6 +58,7 @@ import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -194,7 +194,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
-    myUpdateQueue.queue(new AbstractUpdate(UpateID.REBUILD) {
+    myUpdateQueue.queue(new AbstractUpdate(UpdateID.REBUILD) {
       public void run() {
         if (getTree() == null) {
           return;
@@ -237,7 +237,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void rebuildTree() {
-    myUpdateQueue.queue(new AbstractUpdate(UpateID.REBUILD) {
+    myUpdateQueue.queue(new AbstractUpdate(UpdateID.REBUILD) {
       public void run() {
         if (getTree() == null || getProject().isDisposed()) {
           return;
@@ -266,7 +266,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   //----selection----
 
-  public void selectModule(@NotNull final IModule module, final boolean autofocus) {
+  public void selectModule(@NotNull final SModule module, final boolean autofocus) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         activatePane(new PaneActivator(true) {
@@ -275,7 +275,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
             MPSTreeNode moduleTreeNode = myFindHelper.findMostSuitableModuleTreeNode(module);
 
             if (moduleTreeNode == null) {
-              LOG.warning("Couldn't select module \"" + module.getModuleFqName() + "\" : tree node not found.");
+              LOG.warning("Couldn't select module \"" + module.getModuleName() + "\" : tree node not found.");
               return;
             }
 
@@ -359,21 +359,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     });
   }
 
-  //----selection queries----
-
-  public List<SNode> getNormalizedSelectedSNodes() {
-    List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedSNodes());
-    HashSet<SNode> unselectedNodes = new HashSet<SNode>();
-
-    for (SNode node : selectedNodes) {
-      if (node == null) continue;
-      if (unselectedNodes.contains(node)) continue;
-      unselectedNodes.addAll(node.getDescendants());
-    }
-    selectedNodes.removeAll(unselectedNodes);
-    return selectedNodes;
-  }
-
   //----tree node selection queries---
 
   public MPSTreeNode findNextTreeNode(SNode node) {
@@ -439,7 +424,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     @Override
     public final void run() {
       getProjectView().changeView(getId());
-      myUpdateQueue.queue(new AbstractUpdate(UpateID.SELECT) {
+      myUpdateQueue.queue(new AbstractUpdate(UpdateID.SELECT) {
         public void run() {
           // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
           if (myRunReadAction) {
@@ -464,13 +449,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     void componentCreated(ProjectPane projectPane);
   }
 
-  private enum UpateID {
+  private enum UpdateID {
     REBUILD(20),
     SELECT(30);
 
     private int myPriority;
 
-    UpateID(int priority) {
+    UpdateID(int priority) {
       myPriority = priority;
     }
 
@@ -480,7 +465,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   private abstract class AbstractUpdate extends Update {
-    private AbstractUpdate(UpateID id) {
+    private AbstractUpdate(UpdateID id) {
       super(id, id.getPriority());
     }
   }

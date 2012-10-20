@@ -43,7 +43,7 @@ public class ClosureLiteral_Behavior {
   }
 
   public static String call_getFunctionInterfaceName_1213877338544(SNode thisNode) {
-    return "_function_" + ((SNode) thisNode).getId();
+    return "_function_" + ((SNode) thisNode).getSNodeId().toString();
   }
 
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
@@ -77,7 +77,7 @@ public class ClosureLiteral_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return Scopes.forVariables(kind, SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.lazyParentScope(thisNode, kind));
       }
@@ -169,7 +169,7 @@ public class ClosureLiteral_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

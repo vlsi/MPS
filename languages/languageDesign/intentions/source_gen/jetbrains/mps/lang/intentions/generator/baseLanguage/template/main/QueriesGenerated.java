@@ -88,9 +88,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7040691005578862316(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0o(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
+        return eq_x583g4_a0a0a0a0a0a0a0a41(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
-    }).first().getId();
+    }).first().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791693985(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -247,7 +247,7 @@ public class QueriesGenerated {
 
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0o(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0a41(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

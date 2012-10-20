@@ -37,14 +37,14 @@ public class EditorCell_Property extends EditorCell_Label {
     myModelAccessor = accessor;
   }
 
-  public static EditorCell_Property create(EditorContext editorContext, ModelAccessor modelAccessor, SNode node) {
+  public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext editorContext, ModelAccessor modelAccessor, SNode node) {
     NodeReadAccessInEditorListener listener = NodeReadAccessCasterInEditor.getReadAccessListener();
     if (modelAccessor instanceof PropertyAccessor) {
       if (listener != null) {
         listener.clearCleanlyReadAccessProperties();
       }
     }
-    EditorCell_Property result = new EditorCell_Property(editorContext, modelAccessor, node);
+    EditorCell_Property result = new EditorCell_Property((EditorContext) editorContext, modelAccessor, node);
     if (listener != null) {
       addPropertyDependenciesToEditor(listener, result);
     }
@@ -91,7 +91,7 @@ public class EditorCell_Property extends EditorCell_Label {
     // a solution for MPS-13531
     // better solution is to redispatch all currently waiting EDT commands inside MPSProject.dispose() method
     // currently not available - not possible to redispatch all waiting commands from AWT Thread.
-    if (getSNode().isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isDisposed(getSNode())) {
       return;
     }
     if (myCommitInProgress) return;

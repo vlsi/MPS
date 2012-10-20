@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="184542595914090623" modelId="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)">
+    <nodeInfo nodeId="184542595914091309" fileName="ITargetEx2.java" startLine="6" startPosition="47" endLine="7" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workEstimate#()I" />
+    <scopeInfo nodeId="184542595914091309" fileName="ITargetEx2.java" startLine="6" startPosition="47" endLine="7" endPosition="28" />
+    <unitInfo nodeId="184542595914090623" fileName="ITargetEx2.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.facet.ITargetEx2" />
+  </root>
   <root nodeId="2192279360708028642" modelId="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)">
     <nodeInfo nodeId="2192279360708028648" fileName="IFacetManifest.java" startLine="6" startPosition="33" endLine="7" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="facets#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5215469770656069678" fileName="IFacetManifest.java" startLine="7" startPosition="35" endLine="8" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookup#(Ljetbrains/mps/make/facet/IFacet/Name;)Ljetbrains/mps/make/facet/IFacet;" />

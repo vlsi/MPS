@@ -4,7 +4,7 @@ package jetbrains.mps.samples.plainText.stubs;
 
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +26,7 @@ import java.io.OutputStream;
 public class TextModelDataSource extends FileBasedModelDataSource {
   private IFile dir;
 
-  public TextModelDataSource(IFile file, ModuleReference ref) {
+  public TextModelDataSource(IFile file, SModuleReference ref) {
     super(ref);
     this.dir = file;
   }

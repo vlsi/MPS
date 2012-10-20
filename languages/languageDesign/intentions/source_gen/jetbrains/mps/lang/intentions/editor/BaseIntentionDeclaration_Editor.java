@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -144,7 +144,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "intention");
     editorCell.setCellId("Constant_2ji0fa_a0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -152,7 +152,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_c0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for concept");
     editorCell.setCellId("Constant_2ji0fa_c0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -160,7 +160,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_2ji0fa_b0a");
     {
       Style style = editorCell.getStyle();
@@ -173,7 +173,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error intention :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "error intention :");
     editorCell.setCellId("Constant_2ji0fa_a0b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -181,7 +181,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_a0b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "available in child nodes :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "available in child nodes :");
     editorCell.setCellId("Constant_2ji0fa_a0b1b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -189,7 +189,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_a1b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child filter :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "child filter :");
     editorCell.setCellId("Constant_2ji0fa_a1b1b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -197,14 +197,14 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_2ji0fa_c1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2ji0fa_e1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_2ji0fa_e1b0");
     {
       Style style = editorCell.getStyle();
@@ -215,7 +215,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_2ji0fa_g1b0");
     {
       Style style = editorCell.getStyle();
@@ -226,7 +226,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ji0fa_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_2ji0fa_c0");
     {
       Style style = editorCell.getStyle();
@@ -239,7 +239,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_2ji0fa_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

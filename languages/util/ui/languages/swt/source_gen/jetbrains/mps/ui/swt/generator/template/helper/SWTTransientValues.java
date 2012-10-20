@@ -18,7 +18,7 @@ public enum SWTTransientValues {
 
   public void put(TemplateQueryContext genContext, SNode node, SNode value) {
     if (node != null) {
-      genContext.putTransientObject(this.name + node.getId(), value);
+      genContext.putTransientObject(this.name + node.getSNodeId().toString(), value);
     }
   }
 
@@ -26,7 +26,7 @@ public enum SWTTransientValues {
     if (node == null) {
       return null;
     }
-    return (SNode) genContext.getTransientObject(this.name + node.getId());
+    return (SNode) genContext.getTransientObject(this.name + node.getSNodeId().toString());
   }
 
   private String prefix() {

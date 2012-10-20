@@ -159,7 +159,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   }
 
   private static SModelFqName getModelFqName(Language module) {
-    return new SModelFqName(module.getModuleFqName(), SModelStereotype.DESCRIPTOR);
+    return new SModelFqName(module.getModuleName(), SModelStereotype.DESCRIPTOR);
   }
 
   private static SModelReference getSModelReference(Language module) {
@@ -178,7 +178,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     private String myHash;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
-      super(ref, false);
+      super(ref);
       myModule = module;
       myHash = null;
     }

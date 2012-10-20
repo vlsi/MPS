@@ -13,15 +13,16 @@ import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.build.ant.FileMPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModelValidator;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -64,16 +65,16 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     for (Project p : go.getProjects()) {
       extractModels(go.getModels(), p);
     }
-    for (IModule m : go.getModules()) {
+    for (SModule m : go.getModules()) {
       extractModels(go.getModels(), m);
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : go.getModels()) {
+        for (SModel sm : go.getModels()) {
           if (!(SModelStereotype.isUserModel(sm))) {
             continue;
           }
-          String testName = "test references for " + sm.getLongName();
+          String testName = "test references for " + sm.getModelName();
           output(myBuildServerMessageFormat.formatTestStart(testName));
           StringBuffer errorMessages = checkModel(sm);
           if (errorMessages.length() > 0) {
@@ -89,34 +90,34 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     System.out.println(s);
   }
 
-  private StringBuffer checkModel(final SModelDescriptor sm) {
-    final IScope scope = sm.getModule().getScope();
+  private StringBuffer checkModel(final SModel sm) {
+    final IScope scope = ((IModule) sm.getModule()).getScope();
     StringBuffer errorMessages = new StringBuffer();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return new ModelValidator(sm.getSModel()).validate(scope);
+        return new ModelValidator(sm).validate(scope);
       }
     });
     for (String item : validationResult) {
       errorMessages.append(item);
       errorMessages.append("\n");
     }
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : sm.getRootNodes()) {
       debug("Checking node " + node);
-      if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
-        errorMessages.append(node.getConceptFqName());
+        errorMessages.append(node.getConcept().getId());
         errorMessages.append("\n");
       }
     }
-    for (SNode node : sm.getSModel().nodes()) {
-      for (SReference ref : node.getReferences()) {
-        if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
+    for (SNode node : sm.getRootNodes()) {
+      for (SReference ref : ((jetbrains.mps.smodel.SNode) node).getReferences()) {
+        if (SNodeUtil.hasReferenceMacro((jetbrains.mps.smodel.SNode) node, ref.getRole())) {
           continue;
         }
         if (ref.getTargetNode() == null) {
           errorMessages.append("Broken reference in node ");
-          errorMessages.append(node.getId());
+          errorMessages.append(node.getSNodeId().toString());
           errorMessages.append("(");
           errorMessages.append(node);
           errorMessages.append(")\n");

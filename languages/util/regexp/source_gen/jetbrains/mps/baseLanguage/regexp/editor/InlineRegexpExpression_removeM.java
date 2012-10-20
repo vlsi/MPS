@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
@@ -27,10 +27,10 @@ public class InlineRegexpExpression_removeM {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      EditorCell current = editorContext.getSelectedCell();
+      EditorCell current = (EditorCell) editorContext.getSelectedCell();
       EditorCell toSelect = current.getPrevLeaf(CellConditions.SELECTABLE);
       SPropertyOperations.set(node, "multiLine", "" + (false));
-      editorContext.getNodeEditorComponent().changeSelection(toSelect);
+      editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }
 }

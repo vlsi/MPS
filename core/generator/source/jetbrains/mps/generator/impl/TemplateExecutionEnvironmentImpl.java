@@ -24,8 +24,12 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -78,14 +82,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     Collection<SNode> outputNodes = null;
     for (SNode newInputNode : inputNodes) {
       Collection<SNode> _outputNodes =
-        newInputNode.getModel() == generator.getInputModel() && newInputNode.isRegistered()
+        newInputNode.getModel() == generator.getInputModel() && jetbrains.mps.util.SNodeOperations.isRegistered(newInputNode)
           ? generator.copyNodeFromInputNode(mappingName, templateNode, templateId, newInputNode, reductionContext, new boolean[]{false})
           : generator.copyNodeFromExternalNode(mappingName, templateNode, templateId, newInputNode, reductionContext);
       if (_outputNodes != null) {
         // check node languages : prevent 'input node' query from returning node, which language was not counted when
         // planning the generation steps.
         for (SNode outputNode : _outputNodes) {
-          Language outputNodeLang = outputNode.getNodeLanguage();
+          Language outputNodeLang = jetbrains.mps.util.SNodeOperations.getLanguage(outputNode);
           if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
             if (!outputNodeLang.getGenerators().isEmpty()) {
               SNode tNode = templateNode.getNode();
@@ -115,7 +119,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   public SNode insertNode(SNode child, SNodePointer templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
     // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
     // planning the generation steps.
-    Language childLang = child.getNodeLanguage();
+    Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
     if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
       if (!childLang.getGenerators().isEmpty()) {
         SNode tNode = templateNode.getNode();
@@ -126,7 +130,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       }
     }
 
-    if (child.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
       // must be "in air"
       child = CopyUtil.copy(child);
     }
@@ -135,22 +139,26 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return child;
   }
 
-  private void validateReferences(SNode node, SNode inputNode) {
-    for (SReference reference : node.getReferencesArray()) {
-      // reference to input model - illegal
-      if (generator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
-        // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          reference.getRole(),
-          reference.getSourceNode(),
-          inputNode,
-          reference.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-          refInfo,
-          generator);
-        reference.getSourceNode().replaceReference(reference, postponedReference);
+  private void validateReferences(SNode node, final SNode inputNode) {
+    node.visitReferences(new ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+        SReference reference = (SReference) ref;
+        // reference to input model - illegal
+        if (generator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+          // replace
+          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+            reference.getRole(),
+            reference.getSourceNode(),
+            inputNode,
+            reference.getTargetNode());
+          PostponedReference postponedReference = new PostponedReference(
+            refInfo,
+            generator);
+          reference.getSourceNode().setReference(reference.getRole(), postponedReference);
+        }
+        return true;
       }
-    }
+    });
     for (SNode child : node.getChildren()) {
       validateReferences(child, inputNode);
     }
@@ -253,7 +261,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.addReference(postponedReference);
+    outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
   public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
@@ -268,7 +276,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.addReference(postponedReference);
+    outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
@@ -280,7 +288,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.addReference(postponedReference);
+    outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
   /*
@@ -319,11 +327,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       // there should have been warning about that
       contextParentNode.addChild(childRole, outputNodeToWeave);
     } else {
-      // if singular child then don't add more that 1 child
       if (SModelUtil.isMultipleLinkDeclaration(childLinkDeclaration)) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
-        contextParentNode.setChild(childRole, outputNodeToWeave);
+        SNode oldChild = contextParentNode.getChild(childRole);
+        if (oldChild != null) {
+          // if singular child then don't add more that 1 child
+          contextParentNode.removeChild(oldChild);
+        }
+        contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
   }

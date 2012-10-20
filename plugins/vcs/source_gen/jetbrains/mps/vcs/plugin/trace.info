@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1156564534683188476" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="25" startPosition="74" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="26" startPosition="40" endLine="27" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="3903119074522538562" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rebuild" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="31" startPosition="72" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="32" startPosition="35" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="31" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="34" startPosition="35" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="39" startPosition="32" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683228095" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9010458443787639167" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="144" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8610665572788514648" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8610665572788514669" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="49" startPosition="23" endLine="50" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788514676" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="50" startPosition="44" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8610665572788514681" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="7" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="59" startPosition="60" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="63" startPosition="33" endLine="64" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="71" startPosition="53" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="5" endLine="74" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="62" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="67" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="81" startPosition="5" endLine="82" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683228135" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="86" startPosition="9" endLine="87" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8610665572788514624" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="131" endLine="88" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="90" startPosition="33" endLine="91" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="97" startPosition="31" endLine="98" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="98" startPosition="44" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="99" startPosition="36" endLine="100" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="100" startPosition="20" endLine="101" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="101" startPosition="51" endLine="102" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="100" startPosition="20" endLine="102" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9010458443787639165" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="44" startPosition="129" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="70" startPosition="95" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="74" startPosition="100" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="78" startPosition="105" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="89" startPosition="27" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="89" startPosition="27" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8610665572788514667" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="48" startPosition="235" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="57" startPosition="9" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="30" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeOrRebuildModelsFromChangeList_Action#(Z)V" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="85" startPosition="96" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="95" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="56" startPosition="89" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="84" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="69" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="39" startPosition="32" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="9010458443787639166" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="144" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="63" startPosition="33" endLine="64" endPosition="108" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="71" startPosition="53" endLine="72" endPosition="19" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="62" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="67" endLine="80" endPosition="19" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="90" startPosition="33" endLine="91" endPosition="107" />
-    <scopeInfo nodeId="8610665572788514668" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="49" startPosition="23" endLine="51" endPosition="18" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="7" endLine="60" endPosition="63">
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="27" startPosition="74" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="28" startPosition="40" endLine="29" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="3903119074522538562" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rebuild" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="72" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="34" startPosition="35" endLine="35" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="35" startPosition="31" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="36" startPosition="35" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5551197716189739271" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="87" endLine="46" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9010458443787639167" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="47" startPosition="144" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788514648" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8610665572788514669" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="51" startPosition="23" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788514676" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="52" startPosition="44" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788514681" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="60" startPosition="7" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="61" startPosition="60" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="65" startPosition="33" endLine="66" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="67" startPosition="7" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="81" startPosition="67" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683228135" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8610665572788514624" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="89" startPosition="208" endLine="90" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="92" startPosition="33" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="99" startPosition="31" endLine="100" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="100" startPosition="44" endLine="101" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="101" startPosition="36" endLine="102" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="103" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="103" startPosition="51" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="104" startPosition="20" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9010458443787639165" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="46" startPosition="206" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="72" startPosition="95" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="76" startPosition="100" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="80" startPosition="105" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8610665572788514667" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="50" startPosition="235" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="32" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeOrRebuildModelsFromChangeList_Action#(Z)V" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="96" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="97" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="86" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="44" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="57" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="71" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="9010458443787639166" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="47" startPosition="144" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="65" startPosition="33" endLine="66" endPosition="108" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="81" startPosition="67" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="92" startPosition="33" endLine="93" endPosition="107" />
+    <scopeInfo nodeId="8610665572788514668" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="51" startPosition="23" endLine="53" endPosition="18" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="60" startPosition="7" endLine="62" endPosition="63">
       <varInfo nodeId="1156564534683188476" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="86" startPosition="9" endLine="88" endPosition="315">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="88" startPosition="9" endLine="90" endPosition="315">
       <varInfo nodeId="1156564534683228136" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="100" startPosition="20" endLine="102" endPosition="20" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="62" startPosition="27" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="89" startPosition="0" endLine="92" endPosition="7">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="102" startPosition="20" endLine="104" endPosition="20" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="7">
       <varInfo nodeId="1156564534683188476" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="89" startPosition="27" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="31" startPosition="72" endLine="35" endPosition="40" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="57" startPosition="9" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="62" startPosition="0" endLine="66" endPosition="44">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="91" startPosition="27" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="33" startPosition="72" endLine="37" endPosition="40" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="0" endLine="68" endPosition="44">
       <varInfo nodeId="1156564534683188476" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="62" startPosition="27" endLine="66" endPosition="44" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="77" startPosition="5" endLine="81" endPosition="5" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="30" startPosition="0" endLine="36" endPosition="3">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="64" startPosition="27" endLine="68" endPosition="44" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="32" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="1156564534683188476" varName="rebuild_par" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="97" startPosition="31" endLine="103" endPosition="26">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="99" startPosition="31" endLine="105" endPosition="26">
       <varInfo nodeId="1156564534683188476" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="85" startPosition="96" endLine="93" endPosition="5" />
-    <scopeInfo nodeId="1156564534683188480" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="43" startPosition="87" endLine="53" endPosition="17">
-      <varInfo nodeId="1156564534683228096" varName="models" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="87" startPosition="96" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188480" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="45" startPosition="87" endLine="55" endPosition="17">
+      <varInfo nodeId="5551197716189739272" varName="models" />
       <varInfo nodeId="8610665572788514649" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="95" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="56" startPosition="89" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="84" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="97" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="86" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1156564534683188476" varName="_params" />
       <varInfo nodeId="1156564534683188476" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="70" startPosition="95" endLine="82" endPosition="16" />
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="72" startPosition="95" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="44" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1156564534683188476" varName="_params" />
       <varInfo nodeId="1156564534683188476" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="57" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1156564534683188476" varName="_params" />
       <varInfo nodeId="1156564534683188476" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="69" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="71" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1156564534683188476" varName="_params" />
       <varInfo nodeId="1156564534683188476" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="25" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" />
+    <unitInfo nodeId="1156564534683188476" fileName="MakeOrRebuildModelsFromChangeList_Action.java" startLine="27" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" />
   </root>
   <root nodeId="1156564534683228178" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
     <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="9" startPosition="75" endLine="10" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -150,263 +150,6 @@
     <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="14" startPosition="79" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="13" startPosition="34" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="12" startPosition="68" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Vcs_PluginInitializer#()V" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="10" endLine="1" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="0" endLine="2" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="2" endLine="2" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="0" endLine="3" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="4" endLine="3" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="4" endLine="3" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="5" endLine="3" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="15" endLine="3" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="4" endLine="4" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="4" endLine="4" endPosition="44" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="5" endLine="4" endPosition="43" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="43" endLine="4" endPosition="44" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="5" startPosition="0" endLine="5" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="0" endLine="6" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="1" endLine="6" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="1" endLine="6" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="12" endLine="6" endPosition="23" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="12" endLine="6" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="23" endLine="6" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="23" endLine="6" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="54" endLine="6" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="55" endLine="6" endPosition="56" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="0" endLine="7" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="2" endLine="7" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="3" endLine="7" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="3" endLine="7" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="5" endLine="7" endPosition="6" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="6" endLine="7" endPosition="23" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="6" endLine="7" endPosition="23" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="6" endLine="7" endPosition="23" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="23" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="25" endLine="7" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="25" endLine="7" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="27" endLine="7" endPosition="28" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="0" endLine="8" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="2" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="3" endLine="8" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="3" endLine="8" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="7" endLine="8" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="8" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="8" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="8" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="31" endLine="8" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="33" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="33" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="37" endLine="8" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="0" endLine="9" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="2" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="3" endLine="9" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="3" endLine="9" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="14" endLine="9" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="15" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="15" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="15" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="34" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="36" endLine="9" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="36" endLine="9" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="47" endLine="9" endPosition="48" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="0" endLine="10" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="2" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="3" endLine="10" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="3" endLine="10" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="10" endLine="10" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="11" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="11" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="11" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="16" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="18" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="18" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="25" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="0" endLine="11" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="2" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="3" endLine="11" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="3" endLine="11" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="9" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="9" endLine="11" endPosition="45" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="15" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="15" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="44" endLine="11" endPosition="45" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="45" endLine="11" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="45" endLine="11" endPosition="64" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="52" endLine="11" endPosition="63" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="52" endLine="11" endPosition="63" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="63" endLine="11" endPosition="64" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="64" endLine="11" endPosition="65" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="65" endLine="11" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="65" endLine="11" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="65" endLine="11" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="74" endLine="11" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="76" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="76" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="82" endLine="11" endPosition="83" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="0" endLine="12" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="2" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="3" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="3" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="15" endLine="12" endPosition="29" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="15" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="29" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="29" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="36" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="13" startPosition="0" endLine="13" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="13" startPosition="2" endLine="13" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="14" startPosition="0" endLine="14" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="14" startPosition="2" endLine="14" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="0" endLine="15" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="2" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="3" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="3" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="25" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="0" endLine="16" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="4" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="5" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="5" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="14" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="0" endLine="17" endPosition="6" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="6" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="7" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="7" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="27" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="28" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="28" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="28" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="74" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="76" endLine="17" endPosition="96" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="76" endLine="17" endPosition="96" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="96" endLine="17" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="18" startPosition="0" endLine="18" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="18" startPosition="4" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="18" startPosition="6" endLine="18" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="18" startPosition="6" endLine="18" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="18" startPosition="15" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="19" startPosition="0" endLine="19" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="19" startPosition="2" endLine="19" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="19" startPosition="4" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="19" startPosition="4" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="19" startPosition="26" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="20" startPosition="0" endLine="20" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="20" startPosition="2" endLine="20" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="0" endLine="21" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="2" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="3" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="3" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="13" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="13" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="34" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="34" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="46" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="47" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="0" endLine="22" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="4" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="5" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="5" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="17" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="17" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="34" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="34" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="74" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="23" startPosition="0" endLine="23" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="23" startPosition="2" endLine="23" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="23" startPosition="4" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="23" startPosition="4" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="23" startPosition="14" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="24" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="24" startPosition="0" endLine="24" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="24" startPosition="2" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="24" startPosition="2" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="24" startPosition="13" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="21" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="8" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="16" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="4" startPosition="44" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="5" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="5" startPosition="1" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="56" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="28" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="8" startPosition="38" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="9" startPosition="48" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="10" startPosition="26" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="11" startPosition="83" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="53" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="13" startPosition="2" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="14" startPosition="2" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="26" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="15" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="17" startPosition="97" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="18" startPosition="16" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="19" startPosition="27" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="20" startPosition="2" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="48" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="91" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="23" startPosition="15" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="24" startPosition="14" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="7" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="6" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="32" startPosition="31" endLine="32" endPosition="31" />
     <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="35" startPosition="34" endLine="35" endPosition="34" />
     <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="49" />
@@ -422,7 +165,7 @@
     <scopeInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="12" startPosition="68" endLine="23" endPosition="3" />
     <unitInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer$1" />
     <unitInfo nodeId="3531023421907347091" fileName="Vcs_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
-    <unitInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.plugin.plugin$xml" />
+    <unitInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="1" startPosition="0" endLine="19" endPosition="14" unitName="jetbrains.mps.vcs.plugin.plugin" />
   </root>
   <root nodeId="3877003870834324810" modelId="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)">
     <nodeInfo nodeId="3877003870834324810" fileName="CompareTransientModels_Action.java" startLine="26" startPosition="63" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

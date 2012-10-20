@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -102,7 +102,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$LABEL$");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$LABEL$");
     editorCell.setCellId("Constant_x0em22_a0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
@@ -115,7 +115,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label node macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "label node macro");
     editorCell.setCellId("Constant_x0em22_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -128,7 +128,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_x0em22_b0");
     {
       Style style = editorCell.getStyle();
@@ -139,14 +139,14 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
     editorCell.setCellId("Constant_x0em22_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_x0em22_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_x0em22_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -157,14 +157,14 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_x0em22_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
     editorCell.setCellId("Constant_x0em22_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_x0em22_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_x0em22_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -218,7 +218,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
       this.myComponent = new replace_node_macro();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

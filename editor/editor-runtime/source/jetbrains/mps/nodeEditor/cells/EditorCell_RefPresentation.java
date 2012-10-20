@@ -25,9 +25,9 @@ import jetbrains.mps.util.EqualUtil;
 
 public class EditorCell_RefPresentation {
 
-  public static EditorCell_Property create(EditorContext context, SNode node) {
+  public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
     MyAccessor accessor = new MyAccessor();
-    EditorCell_Property result = new EditorCell_Property(context, accessor, node) {
+    EditorCell_Property result = new EditorCell_Property((EditorContext) context, accessor, node) {
       @Override
       public boolean isInTree() {
         return super.isInTree();
@@ -43,8 +43,8 @@ public class EditorCell_RefPresentation {
     return result;
   }
 
-  public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
-    MyAccessor accessor = new MyAccessor(context, node, refNode, linkDeclaration);
+  public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
+    MyAccessor accessor = new MyAccessor((EditorContext) context, node, refNode, linkDeclaration);
     EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
     return result;
   }
@@ -82,7 +82,7 @@ public class EditorCell_RefPresentation {
           // FIXME throw exception if reference is null
           return myNode.getPresentation();
         }
-        IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
+        IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref).getReferencePresentation();
         if (presentation == null) {
           return myNode.getPresentation();
         }
@@ -100,7 +100,7 @@ public class EditorCell_RefPresentation {
         // FIXME throw exception if reference is null
         return referenceTarget.getPresentation();
       }
-      IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref, myContext.getOperationContext()).getReferencePresentation();
+      IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref).getReferencePresentation();
       if (presentation == null) {
         return referenceTarget.getPresentation();
       }

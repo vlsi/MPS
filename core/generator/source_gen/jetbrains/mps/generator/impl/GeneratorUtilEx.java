@@ -46,7 +46,7 @@ public class GeneratorUtilEx {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")) {
       mappingLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "labelDeclaration", false);
     } else {
-      LOG.errorWithTrace("unexpected input " + node.getDebugText());
+      LOG.errorWithTrace("unexpected input " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
     String mappingName = (mappingLabel != null ?
       SPropertyOperations.getString(mappingLabel, "name") :
@@ -64,7 +64,7 @@ public class GeneratorUtilEx {
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new LinkedList<SNode>();
-    for (SNode subnode : template.getDescendantsIterable(new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
+    for (SNode subnode : jetbrains.mps.util.SNodeOperations.getDescendants(template, new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
       templateFragments.add((SNode) subnode);
     }
     return templateFragments;
@@ -78,10 +78,10 @@ public class GeneratorUtilEx {
     if (fragments.size() > 1) {
       SNode templateNode = SNodeOperations.getParent(fragments.get(0));
       SNode parent = SNodeOperations.getParent(templateNode);
-      String role = templateNode.getRole_();
+      String role = templateNode.getRole();
       for (SNode fragment : fragments) {
         templateNode = SNodeOperations.getParent(fragment);
-        if (!((parent == SNodeOperations.getParent(templateNode) && role.equals(templateNode.getRole_())))) {
+        if (!((parent == SNodeOperations.getParent(templateNode) && role.equals(templateNode.getRole())))) {
           generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
           return false;
         }

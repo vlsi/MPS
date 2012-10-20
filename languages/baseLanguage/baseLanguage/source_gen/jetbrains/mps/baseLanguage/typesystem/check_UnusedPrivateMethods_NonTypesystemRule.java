@@ -30,7 +30,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
           {
             SNode matchingNode_sl9v9q_a0a0a = classifierMember;
             if (matchingNode_sl9v9q_a0a0a != null) {
-              matches_sl9v9q_a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_sl9v9q_a0a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              matches_sl9v9q_a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_sl9v9q_a0a0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
             }
           }
           if (matches_sl9v9q_a0a0a) {
@@ -69,7 +69,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

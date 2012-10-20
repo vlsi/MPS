@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
 
 import java.util.List;
 
@@ -150,7 +151,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getOriginalCopiedInputNode(SNode node) {
-    if (node == null || node.isDisposed()) return null;
+    if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return null;
     SNode result = TracingUtil.getInputNode(node);
     return result != null ? result : node;
   }

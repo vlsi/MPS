@@ -27,6 +27,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeUIHelper;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -69,6 +71,10 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
 
   private List<MPSTreeNodeListener> myTreeNodeListeners = new ArrayList<MPSTreeNodeListener>();
+
+  // todo: make unique name
+  private MergingUpdateQueue myQueue = new MergingUpdateQueue("MPS Tree Rebuild Later Watcher Queue", 500, true, null);
+  private final Object myUpdateId = new Object();
 
   private boolean myDisposed = false;
 
@@ -378,10 +384,15 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void rebuildLater() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    myQueue.queue(new Update(myUpdateId) {
+      @Override
       public void run() {
-        if (isDisposed()) return;
-        rebuildNow();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            if (isDisposed()) return;
+            rebuildNow();
+          }
+        });
       }
     });
   }

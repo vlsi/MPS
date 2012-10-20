@@ -30,16 +30,15 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.reference.SModuleReference;
 
 import java.io.File;
 import java.io.IOException;
@@ -78,15 +77,18 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.remove(creationListener);
   }
 
+  @Deprecated
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
-    IModelRootManager manager = root.getManager();
+    return createModel(name.toString(), root, adj);
+  }
 
-    if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPath() + "[" + root.getManager().getClass().getSimpleName() + "]");
+  public final EditableSModelDescriptor createModel(String name, org.jetbrains.mps.openapi.persistence.ModelRoot root, ModelAdjuster adj) {
+    if (!root.canCreateModel(name)) {
+      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation() + "[" + root.getKind() + "]");
       return null;
     }
 
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createModel(this, root.getModelRoot(), name);
+    EditableSModelDescriptor model = (EditableSModelDescriptor) root.createModel(name);
     if (adj != null) {
       adj.adjust(model);
     }
@@ -111,12 +113,11 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public SModuleId getModuleId() {
-    // TODO API (implement)
-    return null;
+    return getModuleReference().getModuleId();
   }
 
   @Override
-  public String getPresentation() {
+  public String getModuleName() {
     return getModuleFqName();
   }
 
@@ -127,13 +128,13 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Override
-  public Collection<SModuleReference> getUsedModules() {
+  public Iterable<SDependency> getDeclaredDependencies() {
     // TODO API (implement)
     return null;
   }
 
   @Override
-  public Collection<SLanguage> getUsedLanguages() {
+  public Iterable<SLanguage> getUsedLanguages() {
     // TODO API (implement)
     return null;
   }
@@ -431,7 +432,7 @@ public abstract class AbstractModule implements IModule {
 
         for (String path : getAllStubPaths()) {
           try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleFqName());
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleName());
             myCachedClassPathItem.add(pathItem);
           } catch (IOException e) {
             LOG.error(e.getMessage());
@@ -457,8 +458,14 @@ public abstract class AbstractModule implements IModule {
   }
 //----
 
+  @Deprecated
   public Collection<SModelRoot> getSModelRoots() {
     return Collections.unmodifiableCollection(mySModelRoots);
+  }
+
+  @Override
+  public Iterable<org.jetbrains.mps.openapi.persistence.ModelRoot> getModelRoots() {
+    return Collections.<org.jetbrains.mps.openapi.persistence.ModelRoot>unmodifiableCollection(mySModelRoots);
   }
 
   protected void reloadAfterDescriptorChange() {
@@ -488,12 +495,23 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return isPackaged();
+  }
+
+  @Override
   public boolean isPackaged() {
     return getDescriptorFile() != null && FileSystem.getInstance().isPackaged(getDescriptorFile());
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return SModelRepository.getInstance().getModelDescriptors(this);
+  }
+
+  @Override
+  public Collection<SModel> getModels() {
+    return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
   public List<SModelDescriptor> getHiddenModelDescriptors() {
@@ -553,7 +571,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected Set<SModelRoot> doUpdateModelsSet() {
-    List<SModelReference> allLoadedModels = new ArrayList<SModelReference>();
+    List<org.jetbrains.mps.openapi.model.SModelReference> allLoadedModels = new ArrayList<org.jetbrains.mps.openapi.model.SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     Set<SModelRoot> result = new jetbrains.mps.util.misc.hash.HashSet<SModelRoot>();
     if (descriptor != null) {
@@ -561,17 +579,13 @@ public abstract class AbstractModule implements IModule {
       Collection<ModelRoot> roots = descriptor.getModelRoots();
       for (ModelRoot modelRoot : roots) {
         try {
-          SModelRoot root = new SModelRoot(modelRoot);
+          SModelRoot root = new SModelRoot(this, modelRoot);
           result.add(root);
-          IModelRootManager manager = root.getManager();
-          if (manager == null) continue;
-          //model with model root manager not yet loaded - should be loaded after classes reloading
 
-          Collection<SModelDescriptor> models = manager.load(root.getModelRoot(), this);
-          for (SModelDescriptor model : models) {
-            allLoadedModels.add(model.getSModelReference());
-            if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
-              smRepo.registerModelDescriptor(model, this);
+          for (SModel model : root.getModels()) {
+            allLoadedModels.add(model.getModelReference());
+            if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
+              smRepo.registerModelDescriptor((SModelDescriptor) model, this);
             }
           }
         } catch (ManagerNotFoundException e) {
@@ -680,14 +694,14 @@ public abstract class AbstractModule implements IModule {
 
   public void updateSModelReferences() {
     if (getModuleDescriptor() == null) return;
-    if (getModuleDescriptor().updateModelRefs()){
+    if (getModuleDescriptor().updateModelRefs()) {
       setChanged();
     }
   }
 
   public void updateModuleReferences() {
     if (getModuleDescriptor() == null) return;
-    if (getModuleDescriptor().updateModuleRefs()){
+    if (getModuleDescriptor().updateModuleRefs()) {
       setChanged();
     }
   }

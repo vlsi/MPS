@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -48,7 +48,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1i9du0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "files");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "files");
     editorCell.setCellId("Constant_1i9du0_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -57,7 +57,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1i9du0_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from");
     editorCell.setCellId("Constant_1i9du0_b0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -151,7 +151,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_1i9du0_a3a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_1i9du0_a3a");
       {
         Style style = editorCell.getStyle();

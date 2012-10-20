@@ -17,12 +17,14 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @ImmutableObject
-public final class SModelReference {
+public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static SModelReference fromString(String s) {
@@ -56,6 +58,23 @@ public final class SModelReference {
 
   public SModelFqName getSModelFqName() {
     return myModelFqName;
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SModelId getModelId() {
+    return myModelId;
+  }
+
+  public String getModelName() {
+    return myModelFqName.hasStereotype()
+      ? myModelFqName.getLongName() + "@" + myModelFqName.getStereotype()
+      : myModelFqName.getLongName();
+  }
+
+  @Override
+  public SModel resolve(SRepository repo) {
+    // TODO
+    return null;
   }
 
   public boolean equals(Object o) {
@@ -125,8 +144,8 @@ public final class SModelReference {
     String modelName = index >= 0 ? shortName.substring(0, index) : shortName;
     String stereotype;
     index = modelName.indexOf('@');
-    if(index >= 0) {
-      stereotype = modelName.substring(index+1);
+    if (index >= 0) {
+      stereotype = modelName.substring(index + 1);
       modelName = modelName.substring(0, index);
     } else {
       stereotype = "";

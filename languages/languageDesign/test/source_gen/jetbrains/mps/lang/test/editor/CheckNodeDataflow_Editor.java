@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -31,7 +31,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r9gaet_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check");
     editorCell.setCellId("Constant_r9gaet_a0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -39,7 +39,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r9gaet_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dataflow");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dataflow");
     editorCell.setCellId("Constant_r9gaet_c0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -47,7 +47,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_r9gaet_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_r9gaet_d0");
     {
       Style style = editorCell.getStyle();

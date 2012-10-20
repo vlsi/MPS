@@ -14,7 +14,7 @@ import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.annotations.Nls;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
@@ -47,12 +47,9 @@ public class ScopePositionInfo extends PositionInfo {
     }
   }
 
-  public SNode getVarNode(String varName) {
-    VarInfo varInfo = SortedMapSequence.fromMap(myNamesToVars).get(varName);
-    if (varInfo == null) {
-      return null;
-    }
-    return DebugInfo.nodeFrom(MultiTuple.<String,String>from(varInfo.getNodeId(), getModelId()));
+  @Nls
+  public String getVarId(String varName) {
+    return check_azb46d_a0a1(SortedMapSequence.fromMap(myNamesToVars).get(varName));
   }
 
   public void addVarInfo(@NotNull SNode node) {
@@ -64,7 +61,7 @@ public class ScopePositionInfo extends PositionInfo {
       SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     } else {
       if (log.isWarnEnabled()) {
-        log.warn("variable name is null for node " + node.getId());
+        log.warn("variable name is null for node " + node.getSNodeId().toString());
       }
     }
   }
@@ -130,5 +127,12 @@ public class ScopePositionInfo extends PositionInfo {
       return 1;
     }
     return id1.compareTo(id2);
+  }
+
+  private static String check_azb46d_a0a1(VarInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
+    }
+    return null;
   }
 }

@@ -22,11 +22,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 
@@ -43,12 +43,12 @@ public class CellAction_PasteNode extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
 
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = getCellToPasteTo(context.getNodeEditorComponent().getSelectedCell());
+    EditorCell selectedCell = getCellToPasteTo((EditorCell) context.getSelectedCell());
     if (selectedCell == null) {
       return false;
     }
     SNode selectedNode = selectedCell.getSNode();
-    if (selectedNode == null || selectedNode.isDisposed()) {
+    if (selectedNode == null || jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
       return false;
     }
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
@@ -65,7 +65,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
-    final EditorComponent editorComponent = context.getNodeEditorComponent();
+    final EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
     final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
     final SNode nodeSelected = pasteTargetCell.getSNode();
@@ -97,7 +97,7 @@ public class CellAction_PasteNode extends EditorCellAction {
               addImportsRunnable.run();
             }
             SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
-            if (selectedNode.isDisposed()) {
+            if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
               StringBuilder errorText = new StringBuilder("Selected node is disposed: " + selectedNode.toString());
               SModelReference modelReference = selectedNodePointer.getModelReference();
               if (modelReference != null) {
@@ -107,7 +107,7 @@ public class CellAction_PasteNode extends EditorCellAction {
                   errorText.append(", sModel.isDisposed(): " + sModel.isDisposed());
                   SNode node = sModel.getNodeById(selectedNodePointer.getNodeId());
                   if (node != null) {
-                    errorText.append(", node != null, node.isDisposed(): " + node.isDisposed());
+                    errorText.append(", node != null, node.isDisposed(): " + jetbrains.mps.util.SNodeOperations.isDisposed(node));
                   } else {
                     errorText.append(", node == null");
                   }
@@ -167,7 +167,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode anchor = selectedCell.getSNode();
     if (anchor.getParent() == null) return false;
 
-    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole_());
+    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRole());
     if (nodeAndRole == null) return false;
 
     EditorCell targetCell = selectedCell.getEditor().findNodeCell(nodeAndRole.myNode);

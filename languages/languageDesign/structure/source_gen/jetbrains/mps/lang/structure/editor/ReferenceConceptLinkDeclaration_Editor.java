@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -35,7 +35,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c1olec_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "reference");
     editorCell.setCellId("Constant_c1olec_a0");
     {
       Style style = editorCell.getStyle();
@@ -47,7 +47,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c1olec_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "target concept:");
     editorCell.setCellId("Constant_c1olec_c0");
     {
       Style style = editorCell.getStyle();

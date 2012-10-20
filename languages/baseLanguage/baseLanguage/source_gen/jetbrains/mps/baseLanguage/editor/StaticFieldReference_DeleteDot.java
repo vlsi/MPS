@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -45,7 +45,7 @@ public class StaticFieldReference_DeleteDot {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+          quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
           result = quotedNode1_2;
         }
         return result;

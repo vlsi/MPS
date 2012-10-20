@@ -4,7 +4,7 @@ package jetbrains.mps.execution.settings.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -112,7 +112,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lchw91_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Deprecated");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@Deprecated");
     editorCell.setCellId("Constant_lchw91_a0a");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -124,7 +124,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lchw91_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "since");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "since");
     editorCell.setCellId("Constant_lchw91_a1a0");
     {
       Style style = editorCell.getStyle();
@@ -136,7 +136,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lchw91_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_lchw91_a2a0");
     {
       Style style = editorCell.getStyle();
@@ -148,7 +148,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lchw91_c2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_lchw91_c2a0");
     {
       Style style = editorCell.getStyle();
@@ -160,14 +160,14 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lchw91_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "since");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "since");
     editorCell.setCellId("Constant_lchw91_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_lchw91_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
     editorCell.setCellId("Constant_lchw91_a1a");
     editorCell.setDefaultText("");
     return editorCell;

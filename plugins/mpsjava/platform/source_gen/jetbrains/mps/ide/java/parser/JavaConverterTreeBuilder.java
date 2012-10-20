@@ -504,7 +504,7 @@ public class JavaConverterTreeBuilder {
     addCallArgs(x.arguments, result);
     SReference methodReference = myTypesProvider.createMethodReference(x.binding, "baseMethodDeclaration", result);
     if (methodReference != null) {
-      result.addReference(methodReference);
+      result.setReference(methodReference.getRole(), methodReference);
     }
     return result;
   }
@@ -588,9 +588,9 @@ public class JavaConverterTreeBuilder {
         SLinkOperations.setTarget(value, "value", processExpressionRefl(pair.value), true);
         SNode valueNode = value;
         if (pair.binding == null) {
-          valueNode.addReference(myTypesProvider.createErrorReference("key", new String(pair.name), valueNode));
+          valueNode.setReference(myTypesProvider.createErrorReference("key", new String(pair.name), valueNode).getRole(), myTypesProvider.createErrorReference("key", new String(pair.name), valueNode));
         } else {
-          valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
+          valueNode.setReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode).getRole(), myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
         }
         ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
       }
@@ -611,9 +611,9 @@ public class JavaConverterTreeBuilder {
       SLinkOperations.setTarget(value, "value", processExpressionRefl(pair.value), true);
       SNode valueNode = value;
       if (pair.binding == null) {
-        valueNode.addReference(myTypesProvider.createErrorReference("key", new String(pair.name), valueNode));
+        valueNode.setReference(myTypesProvider.createErrorReference("key", new String(pair.name), valueNode).getRole(), myTypesProvider.createErrorReference("key", new String(pair.name), valueNode));
       } else {
-        valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
+        valueNode.setReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode).getRole(), myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
       }
       ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
     }
@@ -634,7 +634,7 @@ public class JavaConverterTreeBuilder {
       classifierReference = myTypesProvider.createClassifierReference(annotationBinding.getAnnotationType(), "annotation", sourceNode);
     }
     if (classifierReference != null) {
-      sourceNode.addReference(classifierReference);
+      sourceNode.setReference(classifierReference.getRole(), classifierReference);
     }
     return annotationInstance;
   }
@@ -642,7 +642,7 @@ public class JavaConverterTreeBuilder {
   /*package*/ SNode processExpression(QualifiedThisReference x) {
     SNode thisRef = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     TypeBinding typeBinding = x.qualification.resolvedType;
-    thisRef.addReference(myTypesProvider.createClassifierReference((ReferenceBinding) typeBinding, "classConcept", thisRef));
+    thisRef.setReference(myTypesProvider.createClassifierReference((ReferenceBinding) typeBinding, "classConcept", thisRef).getRole(), myTypesProvider.createClassifierReference((ReferenceBinding) typeBinding, "classConcept", thisRef));
     return thisRef;
   }
 
@@ -650,7 +650,7 @@ public class JavaConverterTreeBuilder {
     FieldBinding fieldBinding = x.binding;
     if (fieldBinding == null) {
       SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-      ref.addReference(myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref));
+      ref.setReference(myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref).getRole(), myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref));
       return new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0c0b0nb().createNode(processExpressionRefl(x.receiver), ref);
     }
     return expressionFromFieldBinding(fieldBinding, processExpressionRefl(x.receiver));
@@ -667,8 +667,8 @@ public class JavaConverterTreeBuilder {
   private SNode fieldReferenceFromProblem(ProblemBinding binding, String firstName, String secondName) {
     SNode sfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
     SNode sourceNode = sfr;
-    sourceNode.addReference(myTypesProvider.createErrorReference("classifier", firstName, sourceNode));
-    sourceNode.addReference(myTypesProvider.createErrorReference("variableDeclaration", secondName, sourceNode));
+    sourceNode.setReference(myTypesProvider.createErrorReference("classifier", firstName, sourceNode).getRole(), myTypesProvider.createErrorReference("classifier", firstName, sourceNode));
+    sourceNode.setReference(myTypesProvider.createErrorReference("variableDeclaration", secondName, sourceNode).getRole(), myTypesProvider.createErrorReference("variableDeclaration", secondName, sourceNode));
     return sfr;
   }
 
@@ -683,25 +683,25 @@ public class JavaConverterTreeBuilder {
         SNode enumConstantReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
         role = "enumConstantDeclaration";
         sourceNode = enumConstantReference;
-        enumConstantReference.addReference(SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)));
+        enumConstantReference.setReference(SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)).getRole(), SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)));
         result = enumConstantReference;
       } else
       if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
         role = "variableDeclaration";
-        SNode lsfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", null);
+        SNode lsfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
         sourceNode = lsfr;
         result = lsfr;
       } else {
         SNode sfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
         sourceNode = sfr;
         role = "variableDeclaration";
-        sfr.addReference(SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)));
+        sfr.setReference(SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)).getRole(), SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)));
         result = sfr;
       }
     } else {
       if (instanceExpression == null) {
         role = "variableDeclaration";
-        SNode lifr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode lifr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
         sourceNode = lifr;
         result = lifr;
       } else {
@@ -720,7 +720,7 @@ public class JavaConverterTreeBuilder {
       }
     }
     SReference fieldReference = myTypesProvider.createFieldReference(fieldBinding, role, sourceNode);
-    sourceNode.addReference(fieldReference);
+    sourceNode.setReference(fieldReference.getRole(), fieldReference);
     return result;
   }
 
@@ -762,21 +762,21 @@ public class JavaConverterTreeBuilder {
         break;
       }
     }
-    thisExpression.addReference(myTypesProvider.createClassifierReference((ReferenceBinding) currentClass, "classConcept", thisExpression));
+    thisExpression.setReference(myTypesProvider.createClassifierReference((ReferenceBinding) currentClass, "classConcept", thisExpression).getRole(), myTypesProvider.createClassifierReference((ReferenceBinding) currentClass, "classConcept", thisExpression));
     return thisExpression;
   }
 
   /*package*/ SNode processValuesExpression(SyntheticMethodBinding binding) {
     SNode expression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null);
     SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, "enumClass", expression);
-    expression.addReference(classifierReference);
+    expression.setReference(classifierReference.getRole(), classifierReference);
     return expression;
   }
 
   /*package*/ SNode processValueOfExpression(SyntheticMethodBinding binding, MessageSend x) {
     SNode expression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null);
     SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, "enumClass", expression);
-    expression.addReference(classifierReference);
+    expression.setReference(classifierReference.getRole(), classifierReference);
     if (x.arguments != null) {
       SLinkOperations.setTarget(expression, "value", processExpressionRefl(x.arguments[0]), true);
     }
@@ -800,7 +800,7 @@ public class JavaConverterTreeBuilder {
       methodCall = smc;
       result = smc;
       SReference classifierReference = myTypesProvider.createClassifierReference(x.binding.declaringClass, "classConcept", smc);
-      smc.addReference(classifierReference);
+      smc.setReference(classifierReference.getRole(), classifierReference);
     } else
     if (x.receiver instanceof SuperReference || x.receiver instanceof QualifiedSuperReference) {
       SNode smc = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SuperMethodCall", null);
@@ -833,7 +833,7 @@ public class JavaConverterTreeBuilder {
       methodReference = myTypesProvider.createMethodReference(x.binding, "baseMethodDeclaration", methodCall);
     }
     if (methodReference != null) {
-      methodCall.addReference(methodReference);
+      methodCall.setReference(methodReference.getRole(), methodReference);
     }
     addMethodTypeArgs(x.typeArguments, methodCall);
     addCallArgs(x.arguments, methodCall);
@@ -848,7 +848,7 @@ public class JavaConverterTreeBuilder {
       methodReference = myTypesProvider.createErrorReference("baseMethodDeclaration", new String(x.resolvedType.sourceName()), classCreator);
     }
     if (methodReference != null) {
-      classCreator.addReference(methodReference);
+      classCreator.setReference(methodReference.getRole(), methodReference);
     }
     if (x.enumConstant != null) {
       throw new JavaConverterException("unexpected enum constant creation");
@@ -879,7 +879,7 @@ public class JavaConverterTreeBuilder {
       if (x.anonymousType.methods.length > 0 && x.anonymousType.methods[0] instanceof ConstructorDeclaration) {
         MethodBinding superConstructorBinding = ((ConstructorDeclaration) x.anonymousType.methods[0]).constructorCall.binding;
         SReference methodReference = myTypesProvider.createMethodReference(superConstructorBinding, "baseMethodDeclaration", anonymousClass);
-        anonymousClass.addReference(methodReference);
+        anonymousClass.setReference(methodReference.getRole(), methodReference);
         addCallArgs(x.arguments, anonymousClass);
       }
       SLinkOperations.setTarget(anonymousClassCreator, "cls", anonymousClass, true);
@@ -917,7 +917,7 @@ public class JavaConverterTreeBuilder {
     if (x.targetType instanceof ReferenceBinding) {
       SNode classExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
       SReference classifierReference = myTypesProvider.createClassifierReference((ReferenceBinding) x.targetType, "classifier", classExpression);
-      classExpression.addReference(classifierReference);
+      classExpression.setReference(classifierReference.getRole(), classifierReference);
       return classExpression;
     }
     if (x.targetType instanceof BaseTypeBinding) {
@@ -973,14 +973,14 @@ public class JavaConverterTreeBuilder {
     SNode variable = SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     SNode result;
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-      reference.addReference(SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")));
+      SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
+      reference.setReference(SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")).getRole(), SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")));
       result = reference;
     } else
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+      SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(parameterReference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), false);
-      SNodeOperations.getReference(parameterReference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", "parameterDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
+      SNodeOperations.getReference(parameterReference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
       result = parameterReference;
     } else {
       throw new JavaConverterException("Unknown VariableDeclaration subclass.");

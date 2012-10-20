@@ -5,10 +5,10 @@ package jetbrains.mps.lang.dataFlow;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
@@ -21,7 +21,6 @@ public class DataFlowManager implements CoreComponent {
   private static DataFlowManager INSTANCE;
 
   private ClassLoaderManager myClassLoaderManager;
-  private MPSModuleRepository myModuleRepository;
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
@@ -32,7 +31,6 @@ public class DataFlowManager implements CoreComponent {
 
   public DataFlowManager(ClassLoaderManager classLoaderManager, MPSModuleRepository moduleRepository) {
     this.myClassLoaderManager = classLoaderManager;
-    this.myModuleRepository = moduleRepository;
   }
 
   public void init() {
@@ -82,9 +80,8 @@ public class DataFlowManager implements CoreComponent {
         String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
         if (buildersClass != null) {
-          DataFlowBuilders builders = null;
           try {
-            builders = buildersClass.newInstance();
+            DataFlowBuilders builders = buildersClass.newInstance();
             builders.install(this);
           } catch (Throwable t) {
             LOG.error(t);

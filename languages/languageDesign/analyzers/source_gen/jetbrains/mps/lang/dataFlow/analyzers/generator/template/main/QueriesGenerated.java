@@ -105,7 +105,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")) {
       return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), "concept", false));
     }
-    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), "pattern", true)), "jetbrains.mps.lang.pattern.structure.PatternExpression"), "patternNode", true).getConceptFqName();
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), "pattern", true)), "jetbrains.mps.lang.pattern.structure.PatternExpression"), "patternNode", true).getConcept().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_4352355327610883660(final IOperationContext operationContext, final PropertyMacroContext _context) {

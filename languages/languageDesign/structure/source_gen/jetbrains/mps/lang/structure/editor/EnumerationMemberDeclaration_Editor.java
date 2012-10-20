@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -56,7 +56,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n0n6wp_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "identifier");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "identifier");
     editorCell.setCellId("Constant_n0n6wp_a0a");
     {
       Style style = editorCell.getStyle();
@@ -69,14 +69,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n0n6wp_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_n0n6wp_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_n0n6wp_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "value");
     editorCell.setCellId("Constant_n0n6wp_b0");
     {
       Style style = editorCell.getStyle();
@@ -89,7 +89,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n0n6wp_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  presentation");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  presentation");
     editorCell.setCellId("Constant_n0n6wp_d0");
     {
       Style style = editorCell.getStyle();
@@ -102,7 +102,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n0n6wp_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    (default)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    (default)");
     editorCell.setCellId("Constant_n0n6wp_f0");
     {
       Style style = editorCell.getStyle();

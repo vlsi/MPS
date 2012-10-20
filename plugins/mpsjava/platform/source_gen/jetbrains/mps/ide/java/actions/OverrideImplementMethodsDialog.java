@@ -121,7 +121,14 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         SNode parentA = SNodeOperations.getParent(a);
         SNode parentB = SNodeOperations.getParent(b);
         if (parentA == parentB) {
-          return new Integer(parentA.getIndexOfChild(a)).compareTo(parentB.getIndexOfChild(b));
+          String aRole = SNodeOperations.getContainingLinkRole(a);
+          String bRole = SNodeOperations.getContainingLinkRole(b);
+
+          if (neq_sivw9t_a0d0c0a0a0a0d0a(aRole, bRole)) {
+            return aRole.compareTo(bRole);
+          }
+
+          return new Integer(parentA.getChildren(aRole).indexOf(a)).compareTo(parentB.getChildren(bRole).indexOf(b));
         }
         int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ?
           MapSequence.fromMap(containerIndex).get(parentA) :
@@ -142,5 +149,12 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         return new SNodePointer(it);
       }
     }).toGenericArray(SNodePointer.class);
+  }
+
+  private static boolean neq_sivw9t_a0d0c0a0a0a0d0a(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }

@@ -75,7 +75,7 @@ public class ChildrenCollectionFinder {
           EditorCell current = traverser.getCurrent();
           SNode currentNode = current.getSNode();
 
-          if (!anchorNode.isAncestorOf(currentNode)) {
+          if (!jetbrains.mps.util.SNodeOperations.isAncestor(anchorNode, currentNode)) {
             return null;
           }
 

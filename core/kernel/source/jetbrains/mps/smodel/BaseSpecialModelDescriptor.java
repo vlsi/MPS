@@ -17,12 +17,13 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   protected SModel mySModel;
 
-  protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
-    super(modelReference, checkDup);
+  protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
+    super(modelReference, new NullDataSource());
   }
 
   public final synchronized SModel getSModel() {
@@ -44,5 +45,4 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   }
 
   protected abstract SModel createModel();
-
 }

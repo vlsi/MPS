@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellProvider {
@@ -21,8 +21,14 @@ public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellPr
     return this.createConstant_2ccpf5_a(editorContext, node);
   }
 
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createConstant_2ccpf5_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{...}");
     editorCell.setCellId("Constant_2ccpf5_a");
     BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

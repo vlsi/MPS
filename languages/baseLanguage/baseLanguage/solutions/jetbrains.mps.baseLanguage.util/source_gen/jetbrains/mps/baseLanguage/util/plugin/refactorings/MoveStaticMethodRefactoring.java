@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -18,7 +19,11 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
 
   private void replaceFields() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
+    for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+      }
+    })) {
       SNodeOperations.replaceWithAnother(field, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0a().createNode(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
     }
   }
@@ -68,8 +73,8 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("variableDeclaration", (SNode) parameter_4);
         result = quotedNode1_2;
       }
       return result;
@@ -87,8 +92,8 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_4);
-        quotedNode1_2.setReferent("classConcept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("classConcept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -106,7 +111,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -124,8 +129,8 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_4);
-        quotedNode1_2.setReferent("classConcept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("classConcept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

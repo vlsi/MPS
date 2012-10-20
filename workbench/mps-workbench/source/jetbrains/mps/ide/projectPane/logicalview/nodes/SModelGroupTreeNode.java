@@ -28,7 +28,7 @@ public class SModelGroupTreeNode extends NamespaceTextNode implements Stereotype
   public String getNamespace() {
     if (getParent() == null || !(getParent() instanceof ProjectLanguageTreeNode)) return "";
     ProjectLanguageTreeNode parent = (ProjectLanguageTreeNode) getParent();
-    return parent.getModule().getModuleFqName();
+    return parent.getModule().getModuleName();
   }
 
   public boolean isFinalName() {

@@ -87,12 +87,12 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       {
         SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0;
         nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -141,12 +141,12 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       {
         SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0;
         nodeToMatch_IterateOverIterable_6isygg_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0h;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
         }

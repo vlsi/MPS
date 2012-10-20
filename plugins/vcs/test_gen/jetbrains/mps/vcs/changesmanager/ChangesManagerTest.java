@@ -710,7 +710,11 @@ public class ChangesManagerTest {
         SNode declarationStatement = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(foreachBody, "statement", true)).getElement(0), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
         final SNode declaration = SLinkOperations.getTarget(declarationStatement, "localVariableDeclaration", true);
         final SNode initializer = SLinkOperations.getTarget(declaration, "initializer", true);
-        ListSequence.fromList(SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        ListSequence.fromList(SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          }
+        }).toListSequence().where(new IWhereFilter<SNode>() {
           public boolean accept(SNode vr) {
             return SLinkOperations.getTarget(vr, "variableDeclaration", false) == declaration;
           }

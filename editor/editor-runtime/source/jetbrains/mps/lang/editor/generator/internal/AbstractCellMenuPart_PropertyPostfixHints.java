@@ -17,11 +17,11 @@ package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.PropertySupport;
@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart {
   private static final Logger LOG = Logger.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
 
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     final SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
     if (property == null) {

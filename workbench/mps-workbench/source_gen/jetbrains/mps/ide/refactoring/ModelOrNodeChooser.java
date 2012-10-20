@@ -58,7 +58,7 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
         if (selection instanceof SNodeTreeNode) {
           result.value = ((SNodeTreeNode) selection).getSNode();
         } else if (selection instanceof SModelTreeNode) {
-          result.value = ((SModelTreeNode) selection).getSModel().getModelDescriptor();
+          result.value = ((SModelTreeNode) selection).getModel();
         }
       }
     });

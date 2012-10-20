@@ -49,8 +49,8 @@ public class SModelStereotype {
     return isUserModelStereotype(model.getStereotype());
   }
 
-  public static boolean isUserModel(@NotNull SModelDescriptor model) {
-    return isUserModelStereotype(model.getStereotype());
+  public static boolean isUserModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
+    return isUserModelStereotype(getStereotype(model));
   }
 
   private static boolean isUserModelStereotype(String stereotype) {
@@ -62,16 +62,16 @@ public class SModelStereotype {
     return isGeneratorModelStereotype(model.getStereotype());
   }
 
-  public static boolean isGeneratorModel(@NotNull SModelDescriptor model) {
-    return isGeneratorModelStereotype(model.getStereotype());
+  public static boolean isGeneratorModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
+    return isGeneratorModelStereotype(getStereotype(model));
   }
 
   public static boolean isTestModelStereotype(String stereotype) {
     return TESTS.equals(stereotype);
   }
 
-  public static boolean isTestModel(SModelDescriptor model) {
-    return isTestModelStereotype(model.getStereotype());
+  public static boolean isTestModel(org.jetbrains.mps.openapi.model.SModel model) {
+    return isTestModelStereotype(getStereotype(model));
   }
 
   public static boolean isTestModel(SModel model) {
@@ -88,5 +88,15 @@ public class SModelStereotype {
 
   public static boolean isGeneratorModelStereotype(String stereotype) {
     return GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
+  }
+
+  public static String getStereotype(org.jetbrains.mps.openapi.model.SModel model) {
+    String name = model.getModelName();
+    int atIndex = name.lastIndexOf('@');
+    if (atIndex == -1) {
+      return "";
+    } else {
+      return name.substring(atIndex + 1);
+    }
   }
 }

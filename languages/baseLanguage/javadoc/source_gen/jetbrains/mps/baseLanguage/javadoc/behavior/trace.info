@@ -149,7 +149,7 @@
     <nodeInfo nodeId="5521685164201558508" fileName="HTMLElement_Behavior.java" startLine="68" startPosition="124" endLine="69" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3633133276124409295" fileName="HTMLElement_Behavior.java" startLine="70" startPosition="9" endLine="71" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5521685164201345794" fileName="HTMLElement_Behavior.java" startLine="73" startPosition="5" endLine="74" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521685164201377221" fileName="HTMLElement_Behavior.java" startLine="77" startPosition="63" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521685164201377225" fileName="HTMLElement_Behavior.java" startLine="77" startPosition="63" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5521685164201377199" fileName="HTMLElement_Behavior.java" startLine="27" startPosition="60" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3633133276124307749" fileName="HTMLElement_Behavior.java" startLine="35" startPosition="29" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3633133276124307921" fileName="HTMLElement_Behavior.java" startLine="47" startPosition="111" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -158,7 +158,7 @@
     <nodeInfo nodeId="5521685164201558377" fileName="HTMLElement_Behavior.java" startLine="39" startPosition="116" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5521685164201818823" fileName="HTMLElement_Behavior.java" startLine="54" startPosition="45" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5521685164201558496" fileName="HTMLElement_Behavior.java" startLine="66" startPosition="45" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5521685164201377221" fileName="HTMLElement_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_5xz1u8_a0b0h0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5521685164201377225" fileName="HTMLElement_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_5xz1u8_a0b0h0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3633133276124409264" fileName="HTMLElement_Behavior.java" startLine="60" startPosition="12" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3633133276124409249" fileName="HTMLElement_Behavior.java" startLine="51" startPosition="0" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="439148907936531663" fileName="HTMLElement_Behavior.java" startLine="34" startPosition="10" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -169,7 +169,7 @@
     <scopeInfo nodeId="3633133276124307752" fileName="HTMLElement_Behavior.java" startLine="36" startPosition="173" endLine="37" endPosition="63" />
     <scopeInfo nodeId="3633133276124307924" fileName="HTMLElement_Behavior.java" startLine="48" startPosition="122" endLine="49" endPosition="66" />
     <scopeInfo nodeId="3633133276124409282" fileName="HTMLElement_Behavior.java" startLine="63" startPosition="104" endLine="64" endPosition="198" />
-    <scopeInfo nodeId="5521685164201377221" fileName="HTMLElement_Behavior.java" startLine="77" startPosition="63" endLine="78" endPosition="43" />
+    <scopeInfo nodeId="5521685164201377225" fileName="HTMLElement_Behavior.java" startLine="77" startPosition="63" endLine="78" endPosition="43" />
     <scopeInfo nodeId="5521685164201558378" fileName="HTMLElement_Behavior.java" startLine="40" startPosition="24" endLine="42" endPosition="246" />
     <scopeInfo nodeId="5521685164201818824" fileName="HTMLElement_Behavior.java" startLine="55" startPosition="29" endLine="57" endPosition="248" />
     <scopeInfo nodeId="5521685164201558497" fileName="HTMLElement_Behavior.java" startLine="67" startPosition="29" endLine="69" endPosition="255" />
@@ -185,8 +185,8 @@
     <scopeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="13" startPosition="35" endLine="17" endPosition="0">
       <varInfo nodeId="6612597108004626828" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5521685164201377221" fileName="HTMLElement_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="5521685164201377221" varName="str" />
+    <scopeInfo nodeId="5521685164201377225" fileName="HTMLElement_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="5521685164201377225" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="439148907936340115" fileName="HTMLElement_Behavior.java" startLine="26" startPosition="58" endLine="33" endPosition="44">
       <varInfo nodeId="5521685164201377132" varName="prev" />
@@ -219,25 +219,25 @@
     <nodeInfo nodeId="439148907936414703" fileName="CommentLine_Behavior.java" startLine="30" startPosition="54" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="439148907936414722" fileName="CommentLine_Behavior.java" startLine="31" startPosition="44" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="439148907936414718" fileName="CommentLine_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="439148907936414630" fileName="CommentLine_Behavior.java" startLine="37" startPosition="64" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="439148907936414661" fileName="CommentLine_Behavior.java" startLine="41" startPosition="66" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="439148907936414634" fileName="CommentLine_Behavior.java" startLine="37" startPosition="64" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="439148907936414665" fileName="CommentLine_Behavior.java" startLine="41" startPosition="66" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="12" startPosition="35" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="439148907936414630" fileName="CommentLine_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_hntxdb_a0a0a0e0a0b#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="439148907936414661" fileName="CommentLine_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_hntxdb_a0a0a0e0a0b_0#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="439148907936414634" fileName="CommentLine_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_hntxdb_a0a0a0e0a0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="439148907936414665" fileName="CommentLine_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_hntxdb_a0a0a0e0a0b_0#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="439148907936414609" fileName="CommentLine_Behavior.java" startLine="22" startPosition="0" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="439148907936414410" fileName="CommentLine_Behavior.java" startLine="17" startPosition="98" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="16" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_tryMergeToRight_439148907936414403#(Ljetbrains/mps/smodel/SNode;I)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <scopeInfo nodeId="6962838954693316945" fileName="CommentLine_Behavior.java" startLine="13" startPosition="43" endLine="14" endPosition="118" />
-    <scopeInfo nodeId="439148907936414630" fileName="CommentLine_Behavior.java" startLine="37" startPosition="64" endLine="38" endPosition="44" />
-    <scopeInfo nodeId="439148907936414661" fileName="CommentLine_Behavior.java" startLine="41" startPosition="66" endLine="42" endPosition="44" />
+    <scopeInfo nodeId="439148907936414634" fileName="CommentLine_Behavior.java" startLine="37" startPosition="64" endLine="38" endPosition="44" />
+    <scopeInfo nodeId="439148907936414665" fileName="CommentLine_Behavior.java" startLine="41" startPosition="66" endLine="42" endPosition="44" />
     <scopeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="12" startPosition="35" endLine="16" endPosition="0">
       <varInfo nodeId="6962838954693316943" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="439148907936414630" fileName="CommentLine_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="439148907936414630" varName="str" />
+    <scopeInfo nodeId="439148907936414634" fileName="CommentLine_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="439148907936414634" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="439148907936414661" fileName="CommentLine_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="439148907936414661" varName="str" />
+    <scopeInfo nodeId="439148907936414665" fileName="CommentLine_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="439148907936414665" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="439148907936414452" fileName="CommentLine_Behavior.java" startLine="18" startPosition="508" endLine="32" endPosition="49">
       <varInfo nodeId="439148907936414566" varName="leftPart" />

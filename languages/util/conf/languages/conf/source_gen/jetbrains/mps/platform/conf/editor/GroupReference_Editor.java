@@ -4,7 +4,7 @@ package jetbrains.mps.platform.conf.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -84,14 +84,14 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b7gqtc_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "at");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "at");
     editorCell.setCellId("Constant_b7gqtc_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b7gqtc_c0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "position");
     editorCell.setCellId("Constant_b7gqtc_c0c0");
     editorCell.setDefaultText("");
     return editorCell;

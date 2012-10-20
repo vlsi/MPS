@@ -761,6 +761,12 @@
   </root>
   <root id="6666322667909634563">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6666322667909634565">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2184872129966352975">
+        <property name="text" nameId="tpc2.1073389577007" value="builder for" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="2184872129966352976">
+          <property name="color" nameId="tpc2.1186403713874" value="blue" />
+        </node>
+      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="6666322667909634568">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="pmg0.6666322667909540800" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="6666322667909634569">

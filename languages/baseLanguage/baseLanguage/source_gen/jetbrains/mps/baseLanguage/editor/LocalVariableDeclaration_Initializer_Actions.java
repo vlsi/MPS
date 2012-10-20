@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
@@ -36,8 +36,8 @@ public class LocalVariableDeclaration_Initializer_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
       editorContext.flushEvents();
-      EditorComponent editor = editorContext.getNodeEditorComponent();
-      EditorCell nodeCell = editor.findNodeCell(node);
+      EditorComponent editor = editorContext.getEditorComponent();
+      EditorCell nodeCell = (EditorCell) editor.findNodeCell(node);
       EditorCell lastSelectable = nodeCell.getLastLeaf(CellConditions.SELECTABLE);
       editor.changeSelection(lastSelectable);
       if (lastSelectable instanceof EditorCell_Label) {

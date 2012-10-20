@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.NodeFactoryUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;

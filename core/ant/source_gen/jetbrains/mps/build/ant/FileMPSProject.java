@@ -12,12 +12,13 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.ProjectManager;
 import java.util.Set;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import java.util.Collections;
@@ -29,11 +30,12 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import org.jdom.Element;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class FileMPSProject extends Project {
   private static Logger LOG = Logger.getLogger(FileMPSProject.class);
@@ -84,7 +86,7 @@ public class FileMPSProject extends Project {
   protected void readModules(FileMPSProject.ProjectDescriptor projDesc) {
     myErrors = null;
     //  load solutions 
-    Set<ModuleReference> existingModules = getModuleReferences();
+    Set<SModuleReference> existingModules = getModuleReferences();
     for (Path modulePath : projDesc.getModules()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
@@ -92,8 +94,8 @@ public class FileMPSProject extends Project {
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
           ModulesMiner.ModuleHandle moduleHandle = new ModulesMiner.ModuleHandle(descriptorFile, descriptor);
-          IModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
-          ModuleReference moduleReference = m.getModuleReference();
+          SModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
+          SModuleReference moduleReference = m.getModuleReference();
           if (!(existingModules.remove(moduleReference))) {
             super.addModule(moduleReference);
           }
@@ -104,7 +106,7 @@ public class FileMPSProject extends Project {
         error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
-    for (ModuleReference ref : existingModules) {
+    for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
   }
@@ -128,8 +130,8 @@ public class FileMPSProject extends Project {
       public void run() {
         readModules(myDescriptor);
         //  TODO FIXME get rid of onModuleLoad 
-        for (IModule m : getModules()) {
-          m.onModuleLoad();
+        for (SModule m : getModules()) {
+          ((IModule) m).onModuleLoad();
         }
       }
     });
@@ -175,7 +177,7 @@ public class FileMPSProject extends Project {
         }
       }
       if (projectElement != null) {
-        load(projFile, (Element) projectElement);
+        load(projFile, projectElement);
       }
     }
 
@@ -189,10 +191,10 @@ public class FileMPSProject extends Project {
       }
 
       List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectSolutions")).first(), "solutionPath")));
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "languagePath")));
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectDevkits")).first(), "devkitPath")));
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectModules")).first(), "modulePath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectSolutions"), "solutionPath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectLanguages"), "languagePath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectDevkits"), "devkitPath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
         Path result_dkknya_a1a9a0a1a = modulePath;
@@ -203,20 +205,22 @@ public class FileMPSProject extends Project {
         result_dkknya_a0a1a.addModule(modulePath);
       }
 
-      for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModels"))) {
+      for (Element e : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "genConfs"), "genConfModels"))) {
         ModelsTestConfiguration tc = new ModelsTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
-        for (Element me : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(e, "models")).first(), "model"))) {
+        for (Element me : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(e, "models"), "model"))) {
           tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
         }
-        result_dkknya_a0a1a.getTestConfiturations().add(tc);
+        result_dkknya_a0a1a.getTestConfigurations().add(tc);
       }
-      for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModule"))) {
+
+      for (Element e : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "genConfs"), "genConfModule"))) {
         ModuleTestConfiguration tc = new ModuleTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
-        if (e.getAttributeValue("moduleRef") != null) {
-          tc.setModuleRef(ModuleReference.fromString(e.getAttributeValue("moduleRef")));
-          result_dkknya_a0a1a.getTestConfiturations().add(tc);
+        String moduleRef = e.getAttributeValue("moduleRef");
+        if (moduleRef != null) {
+          tc.setModuleRef(ModuleReference.fromString(moduleRef));
+          result_dkknya_a0a1a.getTestConfigurations().add(tc);
         }
       }
     }
@@ -237,7 +241,7 @@ public class FileMPSProject extends Project {
       myModulePaths.add(p);
     }
 
-    public List<BaseTestConfiguration> getTestConfiturations() {
+    public List<BaseTestConfiguration> getTestConfigurations() {
       return myTestConfigs;
     }
   }

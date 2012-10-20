@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -79,9 +78,9 @@ public class VersionUtil {
       return text;
     }
     StringBuilder result = new StringBuilder();
-    if (usemodel && !(myModelRef.equals(ref)))  result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
+    if (usemodel && !(myModelRef.equals(ref))) result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
     result.append(text);
-    if (impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
+    if (impElem.getUsedVersion() >= 0) result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
     return result.toString();
   }
 
@@ -91,17 +90,21 @@ public class VersionUtil {
   }
 
   public String genType(@NotNull SNode node) {
-    return genReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName(), false);
+    return genReferenceString(node.getConceptDeclarationNode(), node.getConcept().getId(), false);
   }
+
   public String genRole(@NotNull SNode node) {
-    return node.getRole_() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRole_(), true);
+    return node.getRole() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRole(), true);
   }
+
   public String genRole(@NotNull SReference ref) {
     return genReferenceString(ref.getSourceNode().getLinkDeclaration(ref.getRole()), ref.getRole(), true);
   }
+
   public String genName(@NotNull SNode node, @NotNull String prop) {
     return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
   }
+
   public String genTarget(@NotNull SReference ref) {
     String target = ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^";
     SModelReference targetModel = ref.getTargetSModelReference();
@@ -123,9 +126,9 @@ public class VersionUtil {
       return;
     }
     int ix = Integer.parseInt(index);
-    SModelReference modelRef = ModelUtil.upgradeModelUID(SModelReference.fromString(modelUID));
+    SModelReference modelRef = SModelReference.fromString(modelUID);
     ImportElement elem = new ImportElement(modelRef, ix, version);
-    if (model.getMaxImportIndex() < ix)  model.setMaxImportIndex(ix);
+    if (model.getMaxImportIndex() < ix) model.setMaxImportIndex(ix);
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);
     if (implicit)
@@ -164,23 +167,25 @@ public class VersionUtil {
     char[] chars = src.toCharArray();
     int i0 = -1, i1 = chars.length;
     if (hasmodel) { // false means we shouldn't try to parse model id
-      while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
-      if (i0 == i1 || chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
+      while (++i0 < i1) if (!Character.isDigit(chars[i0])) break;
+      if (i0 == i1 || chars[i0] != MODEL_SEPARATOR_CHAR) i0 = -1;
     }
-    while (i0 < --i1)  if (!Character.isDigit(chars[i1]))  break;
-    if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
+    while (i0 < --i1) if (!Character.isDigit(chars[i1])) break;
+    if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR) i1 = chars.length;
     res.text = src.substring(i0 + 1, i1);
     res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
-    res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
+    res.version = i1 < chars.length - 1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
     return res;
   }
 
   public String readType(String s) {
     return parse(s, false).text;
   }
+
   public String readRole(String s) {
     return parse(s, true).text;
   }
+
   public String readName(String s) {
     return parse(s, true).text;
   }

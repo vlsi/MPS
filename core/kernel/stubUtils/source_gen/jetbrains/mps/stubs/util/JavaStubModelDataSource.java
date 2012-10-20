@@ -4,7 +4,7 @@ package jetbrains.mps.stubs.util;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -28,6 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.LanguageID;
@@ -40,7 +41,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
 
   private boolean skipPrivate;
 
-  public JavaStubModelDataSource(ModuleReference origin, boolean skipPrivate) {
+  public JavaStubModelDataSource(SModuleReference origin, boolean skipPrivate) {
     super(origin);
     this.skipPrivate = skipPrivate;
   }
@@ -72,7 +73,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
     if (item == null) {
       return new HashSet<NodeDescriptor>();
     }
-    HashSet res = new HashSet();
+    HashSet<NodeDescriptor> res = new HashSet<NodeDescriptor>();
     iterateClassPath(model.getModule().getModuleReference(), item, res, model.getLongName());
     return res;
   }

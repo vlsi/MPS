@@ -74,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252323013(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true).getId();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358760(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -82,7 +82,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358773(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeParent", true).getId();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeParent", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358999(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -90,7 +90,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252359012(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true).getId();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252398461(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -98,7 +98,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252398474(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeAncestor", true).getId();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeAncestor", true).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_3749568622064121023(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -137,7 +137,7 @@ public class QueriesGenerated {
     return _context.getOriginalCopiedInputNode((ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(((SNode) _context.getVariable("factory"))) ?
       ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(((SNode) _context.getVariable("factory"))) :
       ((SNode) _context.getVariable("factory"))
-    )).getId();
+    )).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7093837644838476833(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -158,7 +158,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5934496548013422581(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalCopiedInputNode(((SNode) _context.getVariable("factory"))).getId();
+    return _context.getOriginalCopiedInputNode(((SNode) _context.getVariable("factory"))).getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_3602553488694021819(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -485,8 +485,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getInteger(java.lang.String):int")));
+        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298626")));
+        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298519")));
         result = quotedNode1_2;
       }
       return result;
@@ -504,8 +504,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getBoolean(java.lang.String):boolean")));
-        quotedNode1_2.addReference(SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
+        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298668")));
+        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298519")));
         result = quotedNode1_2;
       }
       return result;
@@ -523,8 +523,8 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getString(java.lang.String):java.lang.String")));
+        quotedNode1_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298583")));
+        quotedNode1_2.setReference("classConcept", SReference.create("classConcept", quotedNode1_2, SModelReference.fromString("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)"), SNodeId.fromString("6599163591527298519")));
         result = quotedNode1_2;
       }
       return result;

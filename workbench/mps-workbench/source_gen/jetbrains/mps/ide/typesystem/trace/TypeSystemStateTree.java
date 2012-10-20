@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -133,18 +134,12 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Type system state", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
-    /*
-      result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));
-    */
     TypeSystemStateTreeNode[] nodes = {createInequalitiesNode(), createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null), createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null), createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
     for (TypeSystemStateTreeNode node : nodes) {
       if (node.children().hasMoreElements()) {
         result.add(node);
       }
     }
-    /*
-      result.add(createTypesNode());
-    */
     return result;
   }
 
@@ -271,7 +266,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
         }
         for (SNode var : vars) {
           SNode node = check_x8yvv7_a0a0d0a0a0a0d0o(maps, var);
-          if (node != null && node.isRegistered()) {
+          if (node != null && SNodeOperations.isRegistered(node)) {
             final SNodePointer pointer = new SNodePointer(node);
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {

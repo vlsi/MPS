@@ -16,10 +16,14 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.components.ProjectComponent;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,6 +32,33 @@ public class MPSProject extends Project implements ProjectComponent {
 
   public MPSProject(com.intellij.openapi.project.Project project) {
     myProject = project;
+  }
+
+  @NotNull
+  public List<IModule> getModules() {
+    // TODO remove after 3.0, this method is a copy of Project.getModules() returning List<IModule>
+    List<IModule> result = new ArrayList<IModule>();
+    for (SModuleReference ref : myModules) {
+      IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+      if (module != null) {
+        result.add(module);
+      }
+    }
+    return result;
+  }
+
+  @Override
+  public List<IModule> getModulesWithGenerators() {
+    // TODO remove after 3.0, this method is a copy of Project.getModulesWithGenerators() returning List<IModule>
+    List<IModule> modules = getModules();
+    List<IModule> generators = new ArrayList<IModule>();
+    for (IModule m : modules) {
+      if (m instanceof Language) {
+        generators.addAll(((Language) m).getGenerators());
+      }
+    }
+    modules.addAll(generators);
+    return modules;
   }
 
   @Override

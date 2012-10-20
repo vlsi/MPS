@@ -4,7 +4,7 @@ package jetbrains.mps.core.xml.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -22,7 +22,7 @@ public class XmlPrologElement_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<no prolog element>");
+            EditorCell_Error result = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, "<no prolog element>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
             return result;

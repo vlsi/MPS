@@ -48,13 +48,13 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     }
     Set<String> extendedLanguages = new HashSet<String>();
     Language sourceLanguage = myModule.getSourceLanguage();
-    usedLanguages.remove(sourceLanguage.getModuleFqName());
+    usedLanguages.remove(sourceLanguage.getModuleName());
 
     Set<Language> ext = new LinkedHashSet<Language>();
     sourceLanguage.getDependenciesManager().collectAllExtendedLanguages(ext);
 
     for(Language language : ext){
-      extendedLanguages.add(language.getModuleFqName());
+      extendedLanguages.add(language.getModuleName());
     }
 
     for (String lang : usedLanguages) {

@@ -30,6 +30,9 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="7219266275016638568">
       <property name="name" nameId="tpck.1169194664001" value="ITargetEx" />
     </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="184542595914090623">
+      <property name="name" nameId="tpck.1169194664001" value="ITargetEx2" />
+    </node>
   </roots>
   <root id="6168415856807657096">
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6168415856807657097">
@@ -892,6 +895,19 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7219266275016638569" />
     <node role="extendedInterface" roleId="tpee.1107797138135" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7219266275016638570">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6168415856807657134" resolveInfo="ITarget" />
+    </node>
+  </root>
+  <root id="184542595914090623">
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="184542595914091309">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="workEstimate" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="184542595914091313" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="184542595914091311" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="184542595914091312" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="184542595914090624" />
+    <node role="extendedInterface" roleId="tpee.1107797138135" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="184542595914091308">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7219266275016638568" resolveInfo="ITargetEx" />
     </node>
   </root>
 </model>

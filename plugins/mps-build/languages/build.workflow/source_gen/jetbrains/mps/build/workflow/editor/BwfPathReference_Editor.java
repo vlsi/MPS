@@ -4,7 +4,7 @@ package jetbrains.mps.build.workflow.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -40,7 +40,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_75jjqz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_75jjqz_a0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -52,7 +52,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_75jjqz_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pathref");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "pathref");
     editorCell.setCellId("Constant_75jjqz_b0");
     XmlSS_StyleSheet.getXmlExtensionName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -60,7 +60,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_75jjqz_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/>");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/>");
     editorCell.setCellId("Constant_75jjqz_d0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {

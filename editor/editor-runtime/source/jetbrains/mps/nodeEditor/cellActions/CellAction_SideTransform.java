@@ -16,14 +16,14 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class CellAction_SideTransform extends EditorCellAction {
   private CellSide mySide;
@@ -33,11 +33,11 @@ public class CellAction_SideTransform extends EditorCellAction {
   }
 
   public boolean canExecute(EditorContext context) {
-    return context.getSelectedCell() != null && canCreateRightTransformHint(context.getSelectedCell());
+    return context.getSelectedCell() != null && canCreateRightTransformHint((EditorCell) context.getSelectedCell());
   }
 
   private boolean canCreateRightTransformHint(EditorCell selectedCell) {
-    EditorContext editorContext = selectedCell.getEditorContext();
+    EditorContext editorContext = selectedCell.getContext();
     SNode node = selectedCell.getSNode();
     if (node == null) return false;
     if (getSideTransformHintAnchorCell(selectedCell, mySide) == null) return false;
@@ -82,7 +82,7 @@ public class CellAction_SideTransform extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    EditorCell selectedCell = context.getSelectedCell();
+    EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     SNode node = selectedCell.getSNode();
 
     if (SNodeEditorUtil.hasRightTransformHint(node)) {
@@ -105,20 +105,21 @@ public class CellAction_SideTransform extends EditorCellAction {
     if (anchorTag != null) {
       node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
     } else {
-      node.removeUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG);
+      node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, null);
     }
 
     context.flushEvents();
 
-    EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(node);
+    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
+    EditorCell nodeCell = editorComponent.findNodeCell(node);
     assert nodeCell != null : "can't find cell for node " + node.getId() +  " " + node.getModel();
     assert node.equals(nodeCell.getSNode()) : "node cell has incorrect node: " + nodeCell.getSNode();
     EditorCell rtHint = nodeCell.getSTHintCell();
     if (rtHint == null) {
       String anchorCellID = anchorCell.getCellId();
-      EditorCell anchor_Cell = context.getNodeEditorComponent().findCellWithId(node, anchorCellID);
+      EditorCell anchor_Cell = editorComponent.findCellWithId(node, anchorCellID);
       assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getId() +  " " + node.getModel() + " ( anchorCellId = " + anchorCellID + ", anchor_Cell = " + anchor_Cell + ", original anchor cell: " + anchorCell + ")" ;
     }
-    context.getNodeEditorComponent().changeSelection(rtHint);
+    editorComponent.changeSelection(rtHint);
   }
 }

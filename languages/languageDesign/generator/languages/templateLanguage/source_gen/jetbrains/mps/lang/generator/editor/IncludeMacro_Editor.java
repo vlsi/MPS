@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -132,7 +132,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$INCLUDE$");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$INCLUDE$");
     editorCell.setCellId("Constant_8okfes_a0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {
@@ -145,7 +145,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include-macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "include-macro");
     editorCell.setCellId("Constant_8okfes_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -158,7 +158,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_8okfes_b0");
     {
       Style style = editorCell.getStyle();
@@ -169,14 +169,14 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
     editorCell.setCellId("Constant_8okfes_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8okfes_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_8okfes_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -187,14 +187,14 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
     editorCell.setCellId("Constant_8okfes_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8okfes_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_8okfes_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -205,7 +205,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapped node");
     editorCell.setCellId("Constant_8okfes_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -216,7 +216,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_8okfes_b2c0");
     {
       Style style = editorCell.getStyle();
@@ -227,7 +227,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_8okfes_d2a");
     {
       Style style = editorCell.getStyle();
@@ -238,7 +238,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_a4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include template");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "include template");
     editorCell.setCellId("Constant_8okfes_a4c0");
     {
       Style style = editorCell.getStyle();
@@ -249,7 +249,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8okfes_b4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
     editorCell.setCellId("Constant_8okfes_b4c0");
     {
       Style style = editorCell.getStyle();
@@ -341,7 +341,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
       this.myComponent = new replace_node_macro();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

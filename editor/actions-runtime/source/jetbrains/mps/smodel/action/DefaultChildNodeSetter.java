@@ -44,13 +44,13 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
     if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
-      LOG.error("couldn't set instance of " + newChild.getConceptFqName() +
+      LOG.error("couldn't set instance of " + newChild.getConcept().getId() +
         " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + parentNode.getDebugText());
       return newChild;
     }
 
     if (oldChild == null) {
-      parentNode.setChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
+      parentNode.addChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
     } else {
       parentNode.replaceChild(oldChild, newChild);
       oldChild.delete();

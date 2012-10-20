@@ -4,7 +4,7 @@ package jetbrains.mps.lang.constraints.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -264,7 +264,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "provider");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "provider");
     editorCell.setCellId("Constant_5v10so_b0a");
     {
       Style style = editorCell.getStyle();
@@ -276,7 +276,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_5v10so_b0");
     {
       Style style = editorCell.getStyle();
@@ -287,7 +287,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_5v10so_d0");
     {
       Style style = editorCell.getStyle();
@@ -298,7 +298,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macros:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "macros:");
     editorCell.setCellId("Constant_5v10so_e0");
     {
       Style style = editorCell.getStyle();
@@ -309,14 +309,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a0f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model");
     editorCell.setCellId("Constant_5v10so_a0f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_b0f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model of node containing reference");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model of node containing reference");
     editorCell.setCellId("Constant_5v10so_b0f0");
     {
       Style style = editorCell.getStyle();
@@ -327,14 +327,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a1f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exists");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "exists");
     editorCell.setCellId("Constant_5v10so_a1f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_b1f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false when reference is being created");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "false when reference is being created");
     editorCell.setCellId("Constant_5v10so_b1f0");
     {
       Style style = editorCell.getStyle();
@@ -345,14 +345,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a2f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contextNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "contextNode");
     editorCell.setCellId("Constant_5v10so_a2f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_b2f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node with the reference, or closest not-null context node");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node with the reference, or closest not-null context node");
     editorCell.setCellId("Constant_5v10so_b2f0");
     {
       Style style = editorCell.getStyle();
@@ -363,14 +363,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a3f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contextRole");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "contextRole");
     editorCell.setCellId("Constant_5v10so_a3f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_b3f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target role in contextNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "target role in contextNode");
     editorCell.setCellId("Constant_5v10so_b3f0");
     {
       Style style = editorCell.getStyle();
@@ -381,14 +381,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a4f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "position");
     editorCell.setCellId("Constant_5v10so_a4f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_b4f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target index in contextRole");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "target index in contextRole");
     editorCell.setCellId("Constant_5v10so_b4f0");
     {
       Style style = editorCell.getStyle();
@@ -399,14 +399,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a5f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_5v10so_a5f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5v10so_a6f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Deprecated:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Deprecated:");
     editorCell.setCellId("Constant_5v10so_a6f0");
     {
       Style style = editorCell.getStyle();
@@ -417,7 +417,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a7f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scope");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "scope");
     editorCell.setCellId("Constant_5v10so_a7f0");
     {
       Style style = editorCell.getStyle();
@@ -428,7 +428,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b7f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context (jetbrains.mps.smodel.IScope)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "context (jetbrains.mps.smodel.IScope)");
     editorCell.setCellId("Constant_5v10so_b7f0");
     {
       Style style = editorCell.getStyle();
@@ -439,7 +439,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a8f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "referenceNode");
     editorCell.setCellId("Constant_5v10so_a8f0");
     {
       Style style = editorCell.getStyle();
@@ -450,7 +450,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a1i5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node that contains reference link");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node that contains reference link");
     editorCell.setCellId("Constant_5v10so_a1i5a");
     {
       Style style = editorCell.getStyle();
@@ -461,7 +461,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b1i5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(optional - may not exist yet)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(optional - may not exist yet)");
     editorCell.setCellId("Constant_5v10so_b1i5a");
     {
       Style style = editorCell.getStyle();
@@ -473,7 +473,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a9f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkTarget");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "linkTarget");
     editorCell.setCellId("Constant_5v10so_a9f0");
     {
       Style style = editorCell.getStyle();
@@ -484,7 +484,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b9f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept where link can refer to (for specialized links)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept where link can refer to (for specialized links)");
     editorCell.setCellId("Constant_5v10so_b9f0");
     {
       Style style = editorCell.getStyle();
@@ -495,7 +495,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a01f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "enclosingNode");
     editorCell.setCellId("Constant_5v10so_a01f0");
     {
       Style style = editorCell.getStyle();
@@ -506,7 +506,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a1k5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent of referenceNode, null for root nodes");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parent of referenceNode, null for root nodes");
     editorCell.setCellId("Constant_5v10so_a1k5a");
     {
       Style style = editorCell.getStyle();
@@ -517,7 +517,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b1k5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode and ecnlosingNode cannot be null both at the same time");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "referenceNode and ecnlosingNode cannot be null both at the same time");
     editorCell.setCellId("Constant_5v10so_b1k5a");
     {
       Style style = editorCell.getStyle();
@@ -528,7 +528,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a11f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containingLink");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "containingLink");
     editorCell.setCellId("Constant_5v10so_a11f0");
     {
       Style style = editorCell.getStyle();
@@ -539,7 +539,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_a1l5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "LinkDeclaration describing parent-child relationship between");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "LinkDeclaration describing parent-child relationship between");
     editorCell.setCellId("Constant_5v10so_a1l5a");
     {
       Style style = editorCell.getStyle();
@@ -550,7 +550,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   }
 
   private EditorCell createConstant_5v10so_b1l5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode and referenceNode");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "enclosingNode and referenceNode");
     editorCell.setCellId("Constant_5v10so_b1l5a");
     {
       Style style = editorCell.getStyle();

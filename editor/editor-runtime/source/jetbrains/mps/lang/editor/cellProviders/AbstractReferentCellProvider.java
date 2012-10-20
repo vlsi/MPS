@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -33,7 +32,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
+
+import java.util.List;
 
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
 
@@ -107,7 +109,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     }
     SNode referentNode = null;
     if (myIsAggregation) {
-      referentNode = node.getChild(myGenuineRole);
+      List<SNode> ch = node.getChildren(myGenuineRole);
+      referentNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
     } else {
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
@@ -122,8 +125,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
     if (referentNode == null) {
       EditorCell_Label noRefCell = myIsCardinality1 ?
-        new EditorCell_Error(context, node, myNoTargetText) :
-        new EditorCell_Constant(context, node, "");
+        new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, myNoTargetText) :
+        new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, "");
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
@@ -143,7 +146,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
-    EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
+    EditorCell_Error errorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, error);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
     return errorCell;
   }
@@ -163,11 +166,12 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();
-      SNode currentChild = parentNode.getChild(myGenuineRole);
+      List<SNode> ch = parentNode.getChildren(myGenuineRole);
+      SNode currentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       return new AggregationCellContext(parentNode, currentChild, myLinkDeclaration);
     }
     SNode referenceNode = getSNode();
-    SNode currentReferent = referenceNode.getReferent(myGenuineRole);
+    SNode currentReferent = (SNode) referenceNode.getReferenceTarget(myGenuineRole);
     return new ReferenceCellContext(referenceNode, currentReferent, myLinkDeclaration);
   }
 }

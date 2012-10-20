@@ -4,7 +4,7 @@ package jetbrains.mps.lang.textGen.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -44,7 +44,7 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tc2pit_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_tc2pit_a0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -56,7 +56,7 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tc2pit_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_tc2pit_c0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -68,14 +68,14 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tc2pit_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
     editorCell.setCellId("Constant_tc2pit_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tc2pit_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "indent");
     editorCell.setCellId("Constant_tc2pit_b0");
     editorCell.setDefaultText("");
     return editorCell;

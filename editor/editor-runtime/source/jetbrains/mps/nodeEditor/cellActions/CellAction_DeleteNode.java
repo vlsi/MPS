@@ -17,8 +17,8 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
   }
 
   public boolean canExecute(EditorContext context) {
-    EditorCell cell = context.getNodeEditorComponent().findNodeCell(mySemanticNode);
+    EditorCell cell = (EditorCell) context.getEditorComponent().findNodeCell(mySemanticNode);
     return cell != null && cell.getParent() != null;
   }
 

@@ -414,12 +414,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5543996881668550095">
             <property name="name" nameId="tpck.1169194664001" value="instanceFieldReference" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5543996881668550096">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5543996881668550097">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="5543996881668550098">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5543996881668550099">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                 </node>
               </node>
             </node>
@@ -432,7 +432,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5543996881668550095" resolveInfo="instanceFieldReference" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5543996881668550104">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.7785501532031731645" />
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="5543996881668550105">
@@ -624,12 +624,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5543996881668550137">
             <property name="name" nameId="tpck.1169194664001" value="staticFieldReference" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5543996881668550138">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5543996881668550139">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="5543996881668550140">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5543996881668550141">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1172008963197" resolveInfo="LocalStaticFieldReference" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
                 </node>
               </node>
             </node>
@@ -642,7 +642,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5543996881668550137" resolveInfo="staticFieldReference" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5543996881668550146">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1172008963202" />
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517664" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="5543996881668550147">
@@ -2000,8 +2000,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699923943">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2932187755699923944">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="TestSuperClass" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2932187755699923951">
           <property name="name" nameId="tpck.1169194664001" value="someMethod" />
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2932187755699923952">
@@ -2028,8 +2028,8 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550190">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5543996881668550191">
-        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="TestClass" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
         <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5543996881668550192">
           <property name="name" nameId="tpck.1169194664001" value="someStaticMethod" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550193">
@@ -9259,8 +9259,8 @@
           </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4816137365279729469">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223186">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223187" />
             <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223188" />
@@ -9378,8 +9378,8 @@
           </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4587766555754887094">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223213">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223214" />
             <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223215" />
@@ -9503,8 +9503,8 @@
           </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4587766555754950828">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223143">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223144" />
             <node role="highType" roleId="8sls.4544608336420691674" type="tpee.StringType" typeId="tpee.1225271177708" id="2754592889269223145" />
@@ -9616,8 +9616,8 @@
           </node>
         </node>
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="4587766555754950778">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="var" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223192">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223193" />
             <node role="highType" roleId="8sls.4544608336420691674" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2754592889269223194" />
@@ -9785,8 +9785,8 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5586226261252332123">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="5586226261252332134">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="value" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223117">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223118">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
@@ -9866,8 +9866,8 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="3525964900474412383">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="3525964900474412384">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="value" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223146">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223147" />
             <node role="highType" roleId="8sls.4544608336420691674" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2754592889269223148" />
@@ -9945,8 +9945,8 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5586226261252332094">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
         <node role="variables" roleId="8sls.6036237525966243735" type="8sls.LowLevelVariable" typeId="8sls.6036237525966182694" id="5586226261252384875">
-          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <property name="name" nameId="tpck.1169194664001" value="value" />
+          <property name="isOutOfScope" nameId="8sls.6146091894852355121" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2754592889269223120">
             <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2754592889269223121">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />

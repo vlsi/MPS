@@ -74,7 +74,7 @@ public class QueriesGenerated {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "classifier", false));
   }
 
-  public static Object referenceMacro_GetReferent_1238251743299(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8567847449660562845(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ExtractToField");
   }
 
@@ -90,7 +90,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "ExtractedCtor");
   }
 
-  public static boolean ifMacro_Condition_5042204713575387814(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8567847449660562851(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
   }
 

@@ -32,23 +32,26 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelReference;
 import org.jdesktop.observablecollections.ObservableCollections;
-import java.util.ArrayList;
 import javax.swing.JList;
 import com.intellij.ui.components.JBList;
 import javax.swing.DefaultListCellRenderer;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.Color;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JScrollPane;
@@ -56,6 +59,8 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -234,21 +239,21 @@ public class TestConfigurationDialog extends BaseDialog {
       myModuleUID = new JTextField();
       JButton button = new JButton(new AbstractAction("Select") {
         public void actionPerformed(ActionEvent e) {
-          final Wrappers._T<Set<IModule>> modules = new Wrappers._T<Set<IModule>>();
-          final Wrappers._T<List<IModule>> projectModules = new Wrappers._T<List<IModule>>();
+          final Wrappers._T<Set<SModule>> modules = new Wrappers._T<Set<SModule>>();
+          final Wrappers._T<List<SModule>> projectModules = new Wrappers._T<List<SModule>>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              modules.value = MPSModuleRepository.getInstance().getAllModules();
-              projectModules.value = myProject.getModules();
+              modules.value = SetSequence.fromSetWithValues(new HashSet<SModule>(), (Iterable<IModule>) MPSModuleRepository.getInstance().getAllModules());
+              projectModules.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) myProject.getModules());
             }
           });
-          List<ModuleReference> projectModuleRefs = ListSequence.fromList(projectModules.value).select(new ISelector<IModule, ModuleReference>() {
-            public ModuleReference select(IModule it) {
+          List<SModuleReference> projectModuleRefs = ListSequence.fromList(projectModules.value).select(new ISelector<SModule, SModuleReference>() {
+            public SModuleReference select(SModule it) {
               return it.getModuleReference();
             }
           }).toListSequence();
-          List<ModuleReference> moduleRefs = SetSequence.fromSet(modules.value).select(new ISelector<IModule, ModuleReference>() {
-            public ModuleReference select(IModule it) {
+          List<SModuleReference> moduleRefs = SetSequence.fromSet(modules.value).select(new ISelector<SModule, SModuleReference>() {
+            public SModuleReference select(SModule it) {
               return it.getModuleReference();
             }
           }).toListSequence();
@@ -292,9 +297,9 @@ public class TestConfigurationDialog extends BaseDialog {
       myModelsList = new JBList();
       myModelsList.setCellRenderer(new DefaultListCellRenderer() {
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-          final SModelReference model = (SModelReference) value;
+          final org.jetbrains.mps.openapi.model.SModelReference model = (org.jetbrains.mps.openapi.model.SModelReference) value;
           final DefaultListCellRenderer ren = this;
-          String modelName = model.getLongName();
+          String modelName = model.getModelName();
           if (modelName == null) {
             modelName = "<no name>";
           }
@@ -305,8 +310,8 @@ public class TestConfigurationDialog extends BaseDialog {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               boolean inProject = false;
-              for (SModelDescriptor projectModel : myProject.getProjectModels()) {
-                if (model.equals(projectModel.getSModelReference())) {
+              for (SModel projectModel : myProject.getProjectModels()) {
+                if (model.equals(projectModel.getModelReference())) {
                   inProject = true;
                   break;
                 }
@@ -329,11 +334,11 @@ public class TestConfigurationDialog extends BaseDialog {
       ListAddAction addAction = new ListAddAction(myModelsList) {
         @Override
         protected int doAdd(AnActionEvent e) {
-          List<SModelDescriptor> models = myProject.getComponent(MPSProject.class).getProjectModels();
+          Iterable<SModel> models = myProject.getComponent(MPSProject.class).getProjectModels();
           List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
-          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelsPanel.this, ListSequence.fromList(models).select(new ISelector<SModelDescriptor, SModelReference>() {
-            public SModelReference select(SModelDescriptor it) {
-              return it.getSModelReference();
+          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelsPanel.this, Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
+            public SModelReference select(SModel it) {
+              return (SModelReference) it.getModelReference();
             }
           }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {

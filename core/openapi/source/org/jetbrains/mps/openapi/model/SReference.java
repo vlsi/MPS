@@ -28,7 +28,8 @@ public interface SReference {
 
   SNode getTargetNode();
 
-  SModel getTargetModel();
+// TODO conflict with StaticReference.getTargetModel
+//  SModel getTargetModel();
 
   String getText();
 }

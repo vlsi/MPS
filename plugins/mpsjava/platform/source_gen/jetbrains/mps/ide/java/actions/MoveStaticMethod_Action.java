@@ -93,10 +93,10 @@ public class MoveStaticMethod_Action extends BaseAction {
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))).isRegistered()) || ((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))).isDisposed()) {
+          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
             return;
           }
-          if (!(((SNode) whereToMove).isRegistered()) || ((SNode) whereToMove).isDisposed()) {
+          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) whereToMove))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) whereToMove))) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod", Arrays.asList("destination"), Arrays.asList(whereToMove), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

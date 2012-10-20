@@ -1,16 +1,11 @@
-<!DOCTYPE idea-plugin
-  PUBLIC
-    "Plugin/DTD"
-    "http://plugins.intellij.net/plugin.dtd"
->
+<!DOCTYPE idea-plugin PUBLIC 'Plugin/DTD' 'http://plugins.intellij.net/plugin.dtd'>
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>a</id>
   <name>a</name>
   <description>a</description>
   <version>a</version>
   <vendor url="a" logo="a">a</vendor>
-  <idea-version since-build="a"></idea-version>
-  
+  <idea-version since-build="a" />
   
   <application-components>
     <component>

@@ -5,7 +5,7 @@ package jetbrains.mps.bash.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -22,6 +22,12 @@ public class Option_EditorComponent extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_6h1fs3_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createProperty_6h1fs3_a(EditorContext editorContext, SNode node) {

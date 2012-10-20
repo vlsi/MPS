@@ -481,7 +481,7 @@ public class Java_Command {
             {
               quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_14 = quotedNode_7;
-              quotedNode1_14.addReference(SReference.create("classifier", quotedNode1_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+              quotedNode1_14.setReference("classifier", SReference.create("classifier", quotedNode1_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
               quotedNode_6.addChild("componentType", quotedNode1_14);
             }
             quotedNode_5.addChild("type", quotedNode1_13);

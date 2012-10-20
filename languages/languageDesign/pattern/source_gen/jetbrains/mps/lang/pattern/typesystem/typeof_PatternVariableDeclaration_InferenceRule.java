@@ -30,7 +30,7 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488469553", true), (SNode) new typeof_PatternVariableDeclaration_InferenceRule.QuotationClass_6f7aax_a0a0a2a0().createNode(typeCheckingContext), _info_12389875345);
       }
     } else {
-      String role = attributedNode.getRole_();
+      String role = attributedNode.getRole();
       SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -46,7 +46,7 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -95,7 +95,7 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -108,7 +108,7 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

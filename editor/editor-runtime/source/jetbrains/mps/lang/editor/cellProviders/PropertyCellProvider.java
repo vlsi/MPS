@@ -21,7 +21,6 @@ import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -30,6 +29,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
@@ -56,8 +56,8 @@ public class PropertyCellProvider extends CellProviderWithRole {
   }
 
   public EditorCell createEditorCell(EditorContext context) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myPropertyName, myReadOnly, myAllowsEmptyTarget, context);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, getSNode());
+    PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myPropertyName, myReadOnly, myAllowsEmptyTarget, (jetbrains.mps.nodeEditor.EditorContext) context);
+    EditorCell_Property editorCell = EditorCell_Property.create((jetbrains.mps.nodeEditor.EditorContext) context, propertyAccessor, getSNode());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));

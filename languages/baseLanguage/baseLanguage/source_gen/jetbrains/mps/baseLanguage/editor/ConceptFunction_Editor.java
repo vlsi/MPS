@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -34,7 +34,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-          public EditorCell createEditorCell(EditorContext editorContext) {
+          public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
             EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
             if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -46,6 +46,12 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return this.createCollection_n84rmm_a(editorContext, node);
   }
 
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_n84rmm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n84rmm_a");
@@ -71,7 +77,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n84rmm_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_n84rmm_a1a");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -87,7 +93,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n84rmm_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_n84rmm_c1a");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -185,7 +191,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -193,7 +199,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_n84rmm_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no params");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "no params");
       editorCell.setCellId("Constant_n84rmm_a1b0");
       {
         Style style = editorCell.getStyle();

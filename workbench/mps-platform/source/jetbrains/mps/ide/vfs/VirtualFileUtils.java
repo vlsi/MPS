@@ -47,4 +47,15 @@ public class VirtualFileUtils {
       throw new RuntimeException("Attempt to get File for non local file." + f.getPath());
     }
   }
+
+  /**
+   * Allows to distinguish file events from MPS code and from IDEA platform code
+   * We don't process events on file updates from MPS
+   *
+   * @param event
+   * @return true - event is from IdeaFile processing, false - event from refresh or any other VirtualFile changes
+   */
+  public static boolean isFileEventFromMPS(VFileEvent event) {
+    return event.getRequestor() == IdeaFileSystemProvider.class;
+  }
 }

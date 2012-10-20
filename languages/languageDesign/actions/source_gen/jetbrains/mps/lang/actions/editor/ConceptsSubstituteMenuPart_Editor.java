@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -79,7 +79,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a32wui_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "query");
     editorCell.setCellId("Constant_a32wui_a1b0");
     {
       Style style = editorCell.getStyle();
@@ -90,12 +90,12 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_a32wui_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_a32wui_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

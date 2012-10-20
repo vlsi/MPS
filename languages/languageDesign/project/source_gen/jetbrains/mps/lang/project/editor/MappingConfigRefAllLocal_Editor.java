@@ -4,7 +4,7 @@ package jetbrains.mps.lang.project.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -22,7 +22,7 @@ public class MappingConfigRefAllLocal_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yx0g67_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "all local");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "all local");
     editorCell.setCellId("Constant_yx0g67_a0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -34,7 +34,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_ns0lc3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "boolean");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "boolean");
     editorCell.setCellId("Constant_ns0lc3_a0");
     {
       Style style = editorCell.getStyle();
@@ -46,7 +46,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_ns0lc3_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<inheritable:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<inheritable:");
     editorCell.setCellId("Constant_ns0lc3_c0");
     {
       Style style = editorCell.getStyle();
@@ -58,7 +58,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_ns0lc3_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_ns0lc3_e0");
     {
       Style style = editorCell.getStyle();

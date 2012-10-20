@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -41,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DescriptorLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor" file="TextModelDescriptor.java">

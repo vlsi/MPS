@@ -4,7 +4,7 @@ package jetbrains.mps.lang.quotation.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -57,7 +57,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lbdr4h_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "%(");
     editorCell.setCellId("Constant_lbdr4h_a0");
     {
       Style style = editorCell.getStyle();
@@ -79,7 +79,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lbdr4h_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")%");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")%");
     editorCell.setCellId("Constant_lbdr4h_d0");
     {
       Style style = editorCell.getStyle();
@@ -101,7 +101,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lbdr4h_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node antiquotation ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node antiquotation ");
     editorCell.setCellId("Constant_lbdr4h_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -112,7 +112,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lbdr4h_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_lbdr4h_b0");
     {
       Style style = editorCell.getStyle();
@@ -124,14 +124,14 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lbdr4h_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "attributed node concept:");
     editorCell.setCellId("Constant_lbdr4h_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_lbdr4h_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node role in parent:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "attributed node role in parent:");
     editorCell.setCellId("Constant_lbdr4h_e0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -152,7 +152,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -169,7 +169,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
         if ((parent != null)) {
-          return parent.getRole_();
+          return parent.getRole();
         } else {
           return "";
         }
@@ -179,7 +179,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -241,15 +241,15 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_lbdr4h_a0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_lbdr4h_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_lbdr4h_a0b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_lbdr4h_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_lbdr4h_a0d0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_lbdr4h_a0d0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return Colors.BROWN;
   }
 }

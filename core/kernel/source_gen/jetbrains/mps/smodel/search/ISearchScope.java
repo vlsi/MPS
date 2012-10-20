@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 @Deprecated
@@ -51,7 +51,7 @@ interface ISearchScope {
     }
 
     public String getReferenceText(SNode anchor, SNode target) {
-      String resolveInfo = target.getResolveInfo();
+      String resolveInfo = SNodeOperations.getResolveInfo(target);
       if ((resolveInfo != null && resolveInfo.length() > 0)) {
         return resolveInfo;
       }
@@ -82,12 +82,12 @@ interface ISearchScope {
       SNode sourceNode = reference.getSourceNode();
       String role = reference.getRole();
 
-      SNode mostSpecificLink = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(sourceNode)).getMostSpecificLinkDeclarationByRole(role);
+      SNode mostSpecificLink = new ConceptAndSuperConceptsScope(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(sourceNode)).getMostSpecificLinkDeclarationByRole(role);
       if (mostSpecificLink == null) {
         return null;
       }
 
-      IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(sourceNode, SLinkOperations.getTarget(SNodeOperations.cast(mostSpecificLink, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "target", false));
+      IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(sourceNode, SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(mostSpecificLink, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "target", false));
       if (infoResolver == null) {
         return null;
       }

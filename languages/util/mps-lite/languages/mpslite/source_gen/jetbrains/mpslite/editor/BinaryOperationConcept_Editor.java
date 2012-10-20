@@ -4,7 +4,7 @@ package jetbrains.mpslite.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -116,7 +116,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh5h91_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "binary operation concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "binary operation concept");
     editorCell.setCellId("Constant_xh5h91_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -124,7 +124,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh5h91_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends");
     editorCell.setCellId("Constant_xh5h91_c0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -132,7 +132,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh5h91_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sign");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "sign");
     editorCell.setCellId("Constant_xh5h91_a0b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -140,7 +140,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh5h91_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left operand");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "left operand");
     editorCell.setCellId("Constant_xh5h91_a1b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -148,7 +148,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh5h91_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right operand");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "right operand");
     editorCell.setCellId("Constant_xh5h91_a2b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -156,7 +156,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh5h91_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_xh5h91_c0");
     {
       Style style = editorCell.getStyle();
@@ -167,7 +167,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xh5h91_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

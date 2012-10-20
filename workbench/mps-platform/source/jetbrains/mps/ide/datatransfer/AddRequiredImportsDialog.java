@@ -29,6 +29,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.*;
 import java.awt.*;
@@ -61,9 +62,9 @@ public class AddRequiredImportsDialog extends DialogWrapper {
         for (SModelReference ref : myRequiredImports) {
           SModelDescriptor descr = SModelRepository.getInstance().getModelDescriptor(ref);
           if (descr == null) continue;
-          IModule module = descr.getModule();
+          SModule module = descr.getModule();
           if (module == null) continue;
-          myImport2Module.put(ref, module.getModuleFqName());
+          myImport2Module.put(ref, module.getModuleName());
           if (module instanceof Language) {
             LanguageAspect modelAspect = Language.getModelAspect(descr);
             if (modelAspect != null) {

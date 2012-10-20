@@ -15,7 +15,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.INodeEditor;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.ErrorNodeEditor;
@@ -75,7 +75,7 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public synchronized INodeEditor loadEditor(EditorContext context, SNode node) {
-    assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getId() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
+    assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getSNodeId().toString() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
 
     if (node.getLanguage() == null) {
       return new ErrorNodeEditor();
@@ -120,7 +120,7 @@ public class EditorsFinderManager implements ApplicationComponent {
       public INodeEditor compute() {
         SNode nodeConcept = SNodeOperations.getConceptDeclaration(nodeToEdit);
         if (nodeConcept == null) {
-          EditorsFinderManager.LOG.error("error loading editor for node " + nodeToEdit.getDebugText() + "\n" + "couldn't find node concept");
+          EditorsFinderManager.LOG.error("error loading editor for node " + jetbrains.mps.util.SNodeOperations.getDebugText(nodeToEdit) + "\n" + "couldn't find node concept");
           return null;
         }
         if (SNodeOperations.isInstanceOf(nodeConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
@@ -206,11 +206,11 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return new EditorCell_Error(context, node, "    ");
+      return new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, "    ");
     }
 
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
-      return new EditorCell_Constant(context, node, node.getDebugText());
+      return new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }

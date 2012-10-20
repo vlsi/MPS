@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -82,7 +82,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java options");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java options");
     editorCell.setCellId("Constant_nphvgz_a0");
     buildStyles_StyleSheet.getProjectPartKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -90,7 +90,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate debug info");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate debug info");
     editorCell.setCellId("Constant_nphvgz_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -98,7 +98,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate no warnings");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate no warnings");
     editorCell.setCellId("Constant_nphvgz_c2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -106,7 +106,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_e2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "maximum heap size (MB)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "maximum heap size (MB)");
     editorCell.setCellId("Constant_nphvgz_e2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -114,7 +114,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_g2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compiler");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "compiler");
     editorCell.setCellId("Constant_nphvgz_g2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -122,7 +122,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_i2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy resources");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "copy resources");
     editorCell.setCellId("Constant_nphvgz_i2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -130,7 +130,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_a01c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resource patterns");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "resource patterns");
     editorCell.setCellId("Constant_nphvgz_a01c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -142,7 +142,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nphvgz_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_nphvgz_d0");
     {
       Style style = editorCell.getStyle();
@@ -353,7 +353,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_nphvgz_a1k2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_nphvgz_a1k2a");
       editorCell.setDefaultText("<all non-java files>");
       return editorCell;

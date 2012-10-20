@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -64,7 +64,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ayjduv_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "${");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "${");
     editorCell.setCellId("Constant_ayjduv_a0a");
     buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
     {
@@ -77,7 +77,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ayjduv_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "${");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "${");
     editorCell.setCellId("Constant_ayjduv_a0a_0");
     buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
     {
@@ -91,7 +91,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ayjduv_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_ayjduv_a2a");
     buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
     {
@@ -104,7 +104,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ayjduv_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_ayjduv_a2a_0");
     buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
     {

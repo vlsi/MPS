@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -49,7 +49,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ndq0bl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "typeof");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "typeof");
     editorCell.setCellId("Constant_ndq0bl_a0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     {
@@ -71,7 +71,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ndq0bl_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_ndq0bl_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -79,7 +79,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ndq0bl_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_ndq0bl_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -87,7 +87,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ndq0bl_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip dependency on current:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "skip dependency on current:");
     editorCell.setCellId("Constant_ndq0bl_a0_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -129,7 +129,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else {

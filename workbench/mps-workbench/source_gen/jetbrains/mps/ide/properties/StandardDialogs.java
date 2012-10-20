@@ -195,7 +195,7 @@ public class StandardDialogs {
         DevKitPropertiesDialog dialog = result_960thj_a0a0a2;
         final BaseTabbedBindedDialog.DialogTab result_960thj_a1a0a0a2 = new BaseTabbedBindedDialog.DialogTab("Common");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a0a0a2 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a0a1a0a0a2 = StandardComponents.createNamespacePanel(dialog, "Namespace:", dialog.myProperties, ModuleProperties.NAMESPACE);
+        final JComponent result_960thj_a0a0a1a0a0a2 = StandardComponents.createNamespacePanel(dialog, "Namespace:", dialog.myProperties, DevkitProperties.NAMESPACE);
         result_960thj_a0a1a0a0a2.setComponent(result_960thj_a0a0a1a0a0a2);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a0a0a2 = BaseBindedDialog.ConstraintsType.FIELD;
         result_960thj_a0a1a0a0a2.setConstraints(result_960thj_a1a0a1a0a0a2);

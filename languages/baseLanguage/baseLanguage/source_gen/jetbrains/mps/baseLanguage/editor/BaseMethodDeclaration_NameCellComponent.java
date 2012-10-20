@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -37,6 +37,12 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8989zw_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_8989zw_a(EditorContext editorContext, SNode node) {
@@ -83,7 +89,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
   }
 

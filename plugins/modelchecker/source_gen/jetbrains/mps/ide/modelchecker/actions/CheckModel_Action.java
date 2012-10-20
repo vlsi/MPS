@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -80,7 +81,7 @@ public class CheckModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       // check all models in model 
-      List<SModelDescriptor> modelsToCheck = new ArrayList<SModelDescriptor>();
+      List<SModel> modelsToCheck = new ArrayList<SModel>();
       modelsToCheck.addAll(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
       for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))) {
         String name = model.getLongName();

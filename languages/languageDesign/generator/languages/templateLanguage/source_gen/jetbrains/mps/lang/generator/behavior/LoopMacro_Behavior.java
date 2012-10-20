@@ -35,7 +35,7 @@ public class LoopMacro_Behavior {
       {
         SNode nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0;
         nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getConcept().getId()))) {
           return false;
         }
         {
@@ -48,10 +48,10 @@ public class LoopMacro_Behavior {
             {
               SNode nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a;
               nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a = childVar_LoopMacro_Behavior_cdqxf8_a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getConceptFqName()))) {
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getConcept().getId()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getReferent("concept");
+              patternVar_concept = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getReferenceTarget("concept");
             }
           }
         }

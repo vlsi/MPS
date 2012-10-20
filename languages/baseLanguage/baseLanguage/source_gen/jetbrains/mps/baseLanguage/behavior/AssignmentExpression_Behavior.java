@@ -51,10 +51,10 @@ public class AssignmentExpression_Behavior {
     SNode varType = TypeChecker.getInstance().getRuntimeSupport().coerce_(valueType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SLinkOperations.setNewChild(varDeclStmnt, "localVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-    SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+    SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference");
     String name = (varName == null ?
       ((SLinkOperations.getTarget(ref, "variableDeclaration", false) == null) ?
-        SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")).getResolveInfo() :
+        SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")).getResolveInfo() :
         SPropertyOperations.getString(SLinkOperations.getTarget(ref, "variableDeclaration", false), "name")
       ) :
       varName
@@ -77,7 +77,7 @@ public class AssignmentExpression_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -18,7 +18,6 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
@@ -28,6 +27,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 
@@ -58,7 +58,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     if (myIsAggregation) {
       editorCell = inlineComponent.createEditorCell(context);
     } else {
-      editorCell = context.createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
+      editorCell = ((jetbrains.mps.nodeEditor.EditorContext) context).createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
       CellUtil.setupIDeprecatableStyles(effectiveNode, editorCell);
     }
     setSemanticNodeToCells(editorCell, node);
@@ -93,7 +93,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   }
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
-    EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
+    EditorCell_Error errorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, error, true);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     return errorCell;
   }

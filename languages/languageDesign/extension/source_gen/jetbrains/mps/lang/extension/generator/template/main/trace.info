@@ -65,8 +65,8 @@
   <root nodeId="8820339482096486792" modelId="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)">
     <nodeInfo nodeId="7036359038356140567" fileName="QueriesGenerated.java" startLine="38" startPosition="154" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="63012922130951123" fileName="QueriesGenerated.java" startLine="42" startPosition="152" endLine="43" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7897579632834442163" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6936542821592014202" fileName="QueriesGenerated.java" startLine="47" startPosition="160" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7897579632834442163" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6936542821592014202" fileName="QueriesGenerated.java" startLine="47" startPosition="176" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7036359038356140445" fileName="QueriesGenerated.java" startLine="91" startPosition="136" endLine="92" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356140492" fileName="QueriesGenerated.java" startLine="95" startPosition="136" endLine="96" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356140557" fileName="QueriesGenerated.java" startLine="118" startPosition="150" endLine="119" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

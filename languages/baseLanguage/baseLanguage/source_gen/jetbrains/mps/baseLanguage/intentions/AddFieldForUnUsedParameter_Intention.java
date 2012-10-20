@@ -70,7 +70,7 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention implemen
     SLinkOperations.setTarget(leftPart, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
     SLinkOperations.setTarget(leftPart, "operation", fieldRef, true);
     SLinkOperations.setTarget(expr, "lValue", leftPart, true);
-    SNode paramRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode paramRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(paramRef, "variableDeclaration", node, false);
     SLinkOperations.setTarget(expr, "rValue", paramRef, true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true), "statement", true)).addElement(newStatement);

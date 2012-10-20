@@ -35,18 +35,18 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+        if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
           return false;
         }
-        SNode declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false);
+        SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "rValue", true), "jetbrains.mps.baseLanguage.structure.PlusExpression"))) {
           return false;
         }
         SNode plusExpr = SNodeOperations.cast(SLinkOperations.getTarget(node, "rValue", true), "jetbrains.mps.baseLanguage.structure.PlusExpression");
-        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(plusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+        if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(plusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(plusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
           return false;
         }
-        if (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(plusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false) != declaration) {
+        if (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(plusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) != declaration) {
           return false;
         }
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(plusExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"))) {
@@ -59,8 +59,8 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false);
-        SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(ref, "variableDeclaration", declaration, false);
         SNode inc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
         SLinkOperations.setTarget(inc, "expression", ref, true);
@@ -85,18 +85,18 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+        if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
           return false;
         }
-        SNode declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false);
+        SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "rValue", true), "jetbrains.mps.baseLanguage.structure.MinusExpression"))) {
           return false;
         }
         SNode minusExpr = SNodeOperations.cast(SLinkOperations.getTarget(node, "rValue", true), "jetbrains.mps.baseLanguage.structure.MinusExpression");
-        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(minusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
+        if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(minusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(minusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
           return false;
         }
-        if (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(minusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false) != declaration) {
+        if (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(minusExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) != declaration) {
           return false;
         }
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(minusExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"))) {
@@ -109,8 +109,8 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false);
-        SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(ref, "variableDeclaration", declaration, false);
         SNode dec = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
         SLinkOperations.setTarget(dec, "expression", ref, true);
@@ -135,7 +135,7 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageEnhancements_MigrationScript.QuotationClass_3alopx_a0a0a0d0a0a0d0a().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageEnhancements_MigrationScript.QuotationClass_3alopx_a0a0a0d0a0a0a0d0a().createNode(), "classifier", false);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -148,8 +148,8 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
     });
   }
 
-  public static class QuotationClass_3alopx_a0a0a0d0a0a0d0a {
-    public QuotationClass_3alopx_a0a0a0d0a0a0d0a() {
+  public static class QuotationClass_3alopx_a0a0a0d0a0a0a0d0a {
+    public QuotationClass_3alopx_a0a0a0d0a0a0a0d0a() {
     }
 
     public SNode createNode() {
@@ -159,7 +159,7 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String")));
         result = quotedNode1_2;
       }
       return result;

@@ -18,9 +18,9 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -68,7 +68,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (myParentNode != myFirstNode.getParent() || myParentNode != myLastNode.getParent()) {
       throw new SelectionRestoreException();
     }
-    if (!myRole.equals(myFirstNode.getRole_()) || !myRole.equals(myLastNode.getRole_())) {
+    if (!myRole.equals(myFirstNode.getRole()) || !myRole.equals(myLastNode.getRole())) {
       throw new SelectionRestoreException();
     }
     initSelectedCells();
@@ -79,11 +79,11 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     myFirstNode = firstNode;
     myLastNode = lastNode;
     myParentNode = myFirstNode.getParent();
-    myRole = myFirstNode.getRole_();
+    myRole = myFirstNode.getRole();
 
     assert myParentNode != null;
     assert myParentNode == myLastNode.getParent();
-    assert myRole != null && myRole.equals(myLastNode.getRole_()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRole_();
+    assert myRole != null && myRole.equals(myLastNode.getRole()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRole();
     initSelectedCells();
   }
 
@@ -108,9 +108,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
     selectionInfo.getPropertiesMap().put(ROLE_PROPERTY_NAME, myRole);
     selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myParentNode.getModel().getSModelReference().toString());
-    selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getId());
-    selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getId());
-    selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getId());
+    selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getSNodeId().toString());
+    selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getSNodeId().toString());
+    selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getSNodeId().toString());
     return selectionInfo;
   }
 

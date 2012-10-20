@@ -59,7 +59,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("concept", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
+        quotedNode1_2.setReference("concept", SReference.create("concept", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
         result = quotedNode1_2;
       }
       return result;
@@ -72,7 +72,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("concept", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
+        quotedNode1_2.setReference("concept", SReference.create("concept", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
         result = quotedNode1_2;
       }
       return result;
@@ -87,7 +87,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
       {
         SNode nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a;
         nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a.getConceptFqName()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a.getConcept().getId()))) {
           return false;
         }
       }

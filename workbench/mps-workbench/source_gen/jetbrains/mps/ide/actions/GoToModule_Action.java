@@ -14,17 +14,18 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.actions.goTo.NavigateCallback;
@@ -70,18 +71,18 @@ public class GoToModule_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
       // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
       BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
-        public NavigationItem doGetNavigationItem(final ModuleReference ref) {
+        public NavigationItem doGetNavigationItem(final SModuleReference ref) {
           return new BaseModuleItem(ref) {
             public void navigate(boolean requestFocus) {
               ProjectPane projectPane = ProjectPane.getInstance(project);
-              IModule module = MPSModuleRepository.getInstance().getModule(ref);
+              IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
               projectPane.selectModule(module, true);
             }
           };
         }
 
-        public ModuleReference[] find(IScope scope) {
-          List<ModuleReference> modules = new ArrayList<ModuleReference>();
+        public SModuleReference[] find(IScope scope) {
+          List<SModuleReference> modules = new ArrayList<SModuleReference>();
           for (IModule module : scope.getVisibleModules()) {
             if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
               continue;

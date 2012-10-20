@@ -42,7 +42,7 @@ public class ConcretePropertyPart_Behavior {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "_");
-        quotedNode1_2.addReference(SReference.create("dataType", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983657062")));
+        quotedNode1_2.setReference("dataType", SReference.create("dataType", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983657062")));
         result = quotedNode1_2;
       }
       return result;
@@ -61,7 +61,7 @@ public class ConcretePropertyPart_Behavior {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "_");
-        quotedNode1_2.addReference(SReference.create("dataType", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
+        quotedNode1_2.setReference("dataType", SReference.create("dataType", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
         result = quotedNode1_2;
       }
       return result;

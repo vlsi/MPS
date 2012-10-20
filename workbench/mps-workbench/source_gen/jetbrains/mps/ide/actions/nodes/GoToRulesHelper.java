@@ -138,7 +138,7 @@ public class GoToRulesHelper {
         }
         String nodeName = node.getName();
         if (nodeName == null || nodeName.equals("")) {
-          nodeName = node.getConceptShortName();
+          nodeName = node.getConcept().getName();
         }
         add(new AbstractAction(nodeName + " (" + node.getModel() + ")") {
           {
@@ -148,7 +148,7 @@ public class GoToRulesHelper {
           public void actionPerformed(ActionEvent e) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
-                if (node.isDisposed() || !(node.isRegistered()) || node.getModel().getModelDescriptor() != null) {
+                if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || !(jetbrains.mps.util.SNodeOperations.isRegistered(node)) || node.getModel().getModelDescriptor() != null) {
                   return;
                 }
                 // TODO: use node pointers here 

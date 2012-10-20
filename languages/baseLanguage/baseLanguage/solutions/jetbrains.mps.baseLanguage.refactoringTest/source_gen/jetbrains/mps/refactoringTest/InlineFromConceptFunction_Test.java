@@ -43,7 +43,7 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest4 {
     public void test_reference() throws Exception {
       this.addNodeById("1230053266366");
       this.addNodeById("1230053266380");
-      InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("1230053266377"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
+      InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("1230053266377"), "jetbrains.mps.baseLanguage.structure.VariableReference"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266367"), "jetbrains.mps.baseLanguage.structure.ConceptFunction")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266381"), "jetbrains.mps.baseLanguage.structure.ConceptFunction"))));
     }

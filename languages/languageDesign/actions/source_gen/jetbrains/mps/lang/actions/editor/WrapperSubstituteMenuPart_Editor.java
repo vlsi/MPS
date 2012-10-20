@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -132,7 +132,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2q5d2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "wrap");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "wrap");
     editorCell.setCellId("Constant_b2q5d2_a0a");
     {
       Style style = editorCell.getStyle();
@@ -143,7 +143,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2q5d2_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "wrapper block");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "wrapper block");
     editorCell.setCellId("Constant_b2q5d2_a1b0");
     {
       Style style = editorCell.getStyle();
@@ -154,7 +154,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2q5d2_a0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "return");
     editorCell.setCellId("Constant_b2q5d2_a0b2a");
     {
       Style style = editorCell.getStyle();
@@ -165,7 +165,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2q5d2_b0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "small");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "small");
     editorCell.setCellId("Constant_b2q5d2_b0b2a");
     {
       Style style = editorCell.getStyle();
@@ -176,7 +176,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2q5d2_c0b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "part");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "part");
     editorCell.setCellId("Constant_b2q5d2_c0b2a");
     {
       Style style = editorCell.getStyle();
@@ -187,22 +187,22 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_b2q5d2_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_b2q5d2_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_b2q5d2_a1b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

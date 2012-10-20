@@ -51,9 +51,9 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
         StringBuilder result = new StringBuilder();
 
         result.append("model = ").append(node.getModel().getSModelReference()).append("\n");
-        result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConceptFqName())).append("\n");
-        result.append("language = ").append(node.getLanguageNamespace()).append("\n");
-        result.append("ID = ").append(node.getId()).append("\n");
+        result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConcept().getId())).append("\n");
+        result.append("language = ").append(NameUtil.namespaceFromConceptFQName(node.getConcept().getId())).append("\n");
+        result.append("ID = ").append(node.getSNodeId().toString()).append("\n");
 
         result.append("\nReferences:");
         for (SReference ref : node.getReferences()) {
@@ -67,7 +67,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
           } else {
             result.append("Model = ").append(target.getModel().getSModelReference()).append("\n");
             result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
-            result.append("ID = ").append(target.getId()).append("\n");
+            result.append("ID = ").append(target.getSNodeId().toString()).append("\n");
           }
 
           result.append("\n");

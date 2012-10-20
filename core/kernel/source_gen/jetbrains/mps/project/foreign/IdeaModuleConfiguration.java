@@ -33,8 +33,8 @@ public class IdeaModuleConfiguration {
   }
 
   public static IdeaModuleConfiguration readFile(IFile moduleFile) throws JDOMException, IOException, FacetConfigurationFormatException {
-    Element module = (Element) JDOMUtil.loadDocument(moduleFile).getRootElement();
-    Element cfg = ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(module, "component")).findFirst(new IWhereFilter<Element>() {
+    Element module = JDOMUtil.loadDocument(moduleFile).getRootElement();
+    Element cfg = ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(((Element) module), "component")).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element ch) {
         return "FacetManager".equals(ch.getAttributeValue("name"));
       }

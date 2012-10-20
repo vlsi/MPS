@@ -14,8 +14,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.ModuleOperationContext;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -40,6 +39,9 @@ public class EditorResolver implements IResolver {
         return false;
       }
       NodeSubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
+      if (substituteInfo == null) {
+        return false;
+      }
       final INodeSubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
       if (applicableSubstituteAction == null) {
         return false;
@@ -59,7 +61,7 @@ public class EditorResolver implements IResolver {
     IModule module = check_jllgm1_a0c0b(SNodeOperations.getModel(sourceNode).getModelDescriptor());
     SNode target = reference.getTargetNodeSilently();
     if (target != null && module != null) {
-      Scope scope = ModelConstraintsUtil.getScope(reference, new ModuleOperationContext(module));
+      Scope scope = ModelConstraints.getScope(reference);
       result = scope.getReferenceText(sourceNode, target);
     }
     return result;

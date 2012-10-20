@@ -38,7 +38,7 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -58,7 +58,7 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("persistentConfiguration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -71,7 +71,7 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("persistentConfiguration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -89,7 +89,7 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("configuration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("configuration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -102,7 +102,7 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("configuration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("configuration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

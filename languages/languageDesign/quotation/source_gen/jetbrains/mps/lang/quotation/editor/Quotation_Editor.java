@@ -4,7 +4,7 @@ package jetbrains.mps.lang.quotation.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -95,7 +95,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_29llnk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_29llnk_a0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
@@ -110,7 +110,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_29llnk_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_29llnk_c0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
@@ -125,21 +125,21 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_29llnk_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[model =");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[model =");
     editorCell.setCellId("Constant_29llnk_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_29llnk_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
     editorCell.setCellId("Constant_29llnk_c3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_29llnk_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept:");
     editorCell.setCellId("Constant_29llnk_a0a");
     {
       Style style = editorCell.getStyle();
@@ -151,7 +151,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_29llnk_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<not specified>");
+    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<not specified>");
     editorCell.setCellId("Error_29llnk_c0a");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new Quotation_Editor.Quotation_component_cellMenu_a0c0a()}));
     return editorCell;
@@ -170,7 +170,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -232,7 +232,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       this.myComponent = new Quotation_quotedNode();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -244,7 +244,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       this.myComponent = new Quotation_quotedNode();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

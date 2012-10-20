@@ -33,7 +33,7 @@ public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInfer
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -53,7 +53,7 @@ public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInfer
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("commandDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("commandDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -66,7 +66,7 @@ public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInfer
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("commandDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("commandDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
@@ -32,8 +32,8 @@ public class CellAction_DeleteOnErrorReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    if (mySource.getReference(myRole) != null && mySource.getReferent(myRole) == null) {
-      mySource.removeReference(mySource.getReference(myRole));
+    if (mySource.getReference(myRole) != null && mySource.getReferenceTarget(myRole) == null) {
+      mySource.setReference(myRole, null);
     } else {
       List<SNode> nodes = new ArrayList<SNode>();
       nodes.add(mySource);

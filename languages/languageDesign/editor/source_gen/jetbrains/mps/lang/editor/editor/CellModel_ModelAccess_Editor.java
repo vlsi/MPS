@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -116,7 +116,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j8ahcr_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model access");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model access");
     editorCell.setCellId("Constant_j8ahcr_b0");
     {
       Style style = editorCell.getStyle();
@@ -182,7 +182,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j8ahcr_b0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_j8ahcr_b0_0");
     {
       Style style = editorCell.getStyle();
@@ -194,7 +194,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j8ahcr_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Model access cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Model access cell:");
     editorCell.setCellId("Constant_j8ahcr_c0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -202,7 +202,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j8ahcr_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model acessor:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model acessor:");
     editorCell.setCellId("Constant_j8ahcr_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -210,7 +210,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j8ahcr_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text*");
     editorCell.setCellId("Constant_j8ahcr_a1d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -258,23 +258,23 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static int _StyleParameter_QueryFunction_j8ahcr_a4b0(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_j8ahcr_a4b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_j8ahcr_a5b0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_j8ahcr_a5b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_j8ahcr_a1b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_j8ahcr_a1b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_j8ahcr_a2b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_j8ahcr_a2b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_j8ahcr_a3b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_j8ahcr_a3b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 }

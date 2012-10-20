@@ -4,7 +4,7 @@ package jetbrains.mps.bash.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -53,14 +53,14 @@ public class CaseCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xxihx4_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "case");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "case");
     editorCell.setCellId("Constant_xxihx4_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xxihx4_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in");
     editorCell.setCellId("Constant_xxihx4_c0");
     {
       Style style = editorCell.getStyle();
@@ -71,7 +71,7 @@ public class CaseCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xxihx4_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "esac");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "esac");
     editorCell.setCellId("Constant_xxihx4_e0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -142,7 +142,7 @@ public class CaseCommand_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_xxihx4_a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<case clause ... >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<case clause ... >>");
       editorCell.setCellId("Constant_xxihx4_a0d0");
       BashLanguageStyle_StyleSheet.getHintStyle(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

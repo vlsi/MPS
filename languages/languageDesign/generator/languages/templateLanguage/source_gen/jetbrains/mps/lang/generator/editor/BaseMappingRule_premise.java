@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -31,6 +31,12 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v63wqt_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_v63wqt_a(EditorContext editorContext, SNode node) {
@@ -86,7 +92,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_v63wqt_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept");
     editorCell.setCellId("Constant_v63wqt_a0a");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -98,7 +104,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_v63wqt_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inheritors");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "inheritors");
     editorCell.setCellId("Constant_v63wqt_a1a");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -110,7 +116,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_v63wqt_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "condition");
     editorCell.setCellId("Constant_v63wqt_a2a");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {

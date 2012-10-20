@@ -312,7 +312,7 @@ public class ClassifierType_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -327,12 +327,12 @@ public class ClassifierType_Behavior {
       {
         SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j;
         nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getConcept().getId()))) {
           return false;
         }
         {
           SNodePointer pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getReferent("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -368,13 +368,13 @@ public class ClassifierType_Behavior {
       {
         SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9;
         nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getConceptFqName()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getConcept().getId()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a9;
-          if (nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getReferent("classifier") != referent) {
+          if (nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }

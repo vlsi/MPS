@@ -21,6 +21,8 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
@@ -29,6 +31,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
@@ -426,7 +429,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
         @Override
         public String compute() {
-          return getCellId() + "_" + getSNode().getId();
+          return getCellId() + "_" + getSNode().getSNodeId().toString();
         }
       });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -720,13 +723,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       myWithSelection = withSelection;
     }
 
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return isCaretPositionAllowed(getCaretPosition() - 1);
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       setCaretPosition(getCaretPosition() - 1, myWithSelection);
-      context.getNodeEditorComponent().resetLastCaretX();
+      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
       ensureCaretVisible();
     }
   }
@@ -738,46 +741,46 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       myWithSelection = withSelection;
     }
 
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return isCaretPositionAllowed(getCaretPosition() + 1);
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       setCaretPosition(getCaretPosition() + 1, myWithSelection);
-      context.getNodeEditorComponent().resetLastCaretX();
+      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
       ensureCaretVisible();
     }
   }
 
   private class SelectHome extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       if (!isCaretPositionAllowed(0)) return false;
       return true;
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       setCaretPosition(0, true);
-      context.getNodeEditorComponent().resetLastCaretX();
+      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
       ensureCaretVisible();
     }
   }
 
   private class SelectEnd extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       if (!isCaretPositionAllowed(getText().length())) return false;
       return true;
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       setCaretPosition(getText().length(), true);
-      context.getNodeEditorComponent().resetLastCaretX();
+      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
       ensureCaretVisible();
     }
   }
 
   private class CopyLabelText extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
         EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
         return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
@@ -785,7 +788,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return false;
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
     }
@@ -798,11 +801,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       mySelect = select;
     }
 
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return !isFirstCaretPosition() && isFirstPositionAllowed();
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       setCaretPosition(0, mySelect);
     }
   }
@@ -814,35 +817,35 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       mySelect = select;
     }
 
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return !isLastCaretPosition() && isLastPositionAllowed();
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       setCaretPosition(getText().length(), mySelect);
     }
   }
 
   private class PasteIntoLabelText extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
       return node != null && label.canPasteText() && TextPasteUtil.hasStringInClipboard() && !(CopyPasteUtil.doesClipboardContainNode());
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell_Label cell = (EditorCell_Label) context.getSelectedCell();
       final String s = TextPasteUtil.getStringFromClipboard();
       cell.insertText(NameUtil.escapeInvisibleCharacters(s));
-      context.getNodeEditorComponent().resetLastCaretX();
+      ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
       cell.ensureCaretVisible();
     }
   }
 
   private class CutLabelText extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
         EditorCellLabelSelection labelSelection = (EditorCellLabelSelection) selectionManager.getSelection();
         return labelSelection.getEditorCellLabel().getSelectedText().length() > 0;
@@ -850,7 +853,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return false;
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       String toCopy = label.getSelectedText();
       CopyPasteUtil.copyTextToClipboard(toCopy);

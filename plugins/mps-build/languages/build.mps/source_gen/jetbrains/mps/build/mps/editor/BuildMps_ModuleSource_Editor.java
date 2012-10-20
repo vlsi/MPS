@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -21,8 +21,8 @@ public class BuildMps_ModuleSource_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-          public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<no source>");
+          public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext context) {
+            EditorCell_Error result = new EditorCell_Error(context, node, "<no source>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
             return result;

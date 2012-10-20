@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -60,14 +60,14 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_la7hkt_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "quick fix");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "quick fix");
     editorCell.setCellId("Constant_la7hkt_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_la7hkt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_la7hkt_b0");
     {
       Style style = editorCell.getStyle();
@@ -78,14 +78,14 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_la7hkt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "arguments:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "arguments:");
     editorCell.setCellId("Constant_la7hkt_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_la7hkt_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_la7hkt_e0");
     {
       Style style = editorCell.getStyle();
@@ -96,14 +96,14 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_la7hkt_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fields:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "fields:");
     editorCell.setCellId("Constant_la7hkt_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_la7hkt_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_la7hkt_h0");
     {
       Style style = editorCell.getStyle();
@@ -114,7 +114,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_la7hkt_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_la7hkt_j0");
     {
       Style style = editorCell.getStyle();

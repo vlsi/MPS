@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.tableTests.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.table.runtime.TableModelCreator;
+import jetbrains.mps.lang.editor.table.runtime.TableModelFactory;
 import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.AbstractTableModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,7 +44,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qpt50r_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "StateMachine");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "StateMachine");
     editorCell.setCellId("Constant_qpt50r_a0");
     {
       Style style = editorCell.getStyle();
@@ -78,8 +78,8 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createTable_qpt50r_c0(EditorContext editorContext, SNode node) {
-    TableModelCreator creator = new TableModelCreator() {
-      public TableModel getTable(final SNode node, final EditorContext editorContext) {
+    TableModelFactory creator = new TableModelFactory() {
+      public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
           public int getColumnCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
@@ -223,7 +223,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
         };
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.getTable(node, editorContext), "Table_qpt50r_c0");
+    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_qpt50r_c0");
     editorCell.setCellId("Table_qpt50r_c0_0");
     return editorCell;
   }

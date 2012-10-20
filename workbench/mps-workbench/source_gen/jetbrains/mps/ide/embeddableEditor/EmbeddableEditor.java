@@ -39,12 +39,13 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.CResource;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
@@ -159,7 +160,7 @@ public class EmbeddableEditor {
 
         MakeSession session = new MakeSession(myContext, null, true);
         if (IMakeService.INSTANCE.get().openNewSession(session)) {
-          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, ctl);
+          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<SModel>singleton(myModel)).resources(false), scr, ctl);
           try {
             IResult result = future.get();
             if (result.isSucessful()) {

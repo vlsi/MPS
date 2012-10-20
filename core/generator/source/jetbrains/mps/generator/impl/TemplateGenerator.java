@@ -33,9 +33,14 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -66,7 +71,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private final IGenerationTracer myGenerationTracer;
   private IPerformanceTracer ttrace;
-  private DependenciesBuilder myDependenciesBuilder;
+  private final DependenciesBuilder myDependenciesBuilder;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -272,7 +277,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
         // we copy user objects in reduction rules, root mapping rules are no different
-        outputNode.putUserObjects(inputNode);
+        jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
       }
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
@@ -333,7 +338,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     try {
-      if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
+      if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
         if (environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, new DefaultTemplateContext(inputRootNode))) {
           myGenerationTracer.pushInputNode(inputRootNode);
           myGenerationTracer.pushRule(rule.getRuleNode());
@@ -419,7 +424,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 // output node should be accessible via 'findCopiedNode'
                 getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
                 // preserve user objects
-                reducedNode.putUserObjects(inputNode);
+                if (TracingUtil.getInput(reducedNode) == null) {
+                  jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
+                }
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
                   TracingUtil.putInputNode(reducedNode, inputNode);
@@ -459,7 +466,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   Collection<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
-    if (inputNode.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       // TODO fail in strict mode
       inputNode = CopyUtil.copy(inputNode);
       // TODO inputNode.changeModel();
@@ -467,7 +474,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     synchronized (myAdditionalInputNodes) {
       if (!myAdditionalInputNodes.containsKey(inputNode)) {
-        for (SNode n : inputNode.getDescendantsIterable(null, true)) {
+        myAdditionalInputNodes.put(inputNode, Boolean.TRUE);
+        for (SNode n : inputNode.getDescendants()) {
           myAdditionalInputNodes.put(n, Boolean.TRUE);
         }
       }
@@ -500,8 +508,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private SNode copyNodeFromInputNode_internal(@Nullable SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
-    SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    if (inputNode.hasId() && inputNode.isRegistered()) {
+    SNode outputNode = new SNode(myOutputModel, inputNode.getConcept().getId(), false);
+    if (inputNode.getSNodeId() != null && jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       outputNode.setId(inputNode.getSNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
@@ -514,15 +522,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // output node should be accessible via 'findCopiedNode'
     myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
-    outputNode.putProperties(inputNode);
-    outputNode.putUserObjects(inputNode);
+    jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
 
-    for (SReference inputReference : inputNode.getReferencesIterable()) {
-      if (inputNode.isRegistered() && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
+    for (SReference inputReference : inputNode.getReferences()) {
+      if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode) && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (inputReference instanceof StaticReference) {
@@ -533,12 +541,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             continue;
           }
 
-          outputNode.addReference(new StaticReference(
+          SReference reference = new StaticReference(
             inputReference.getRole(),
             outputNode,
             targetModelReference,
             inputReference.getTargetNodeId(),
-            inputReference.getResolveInfo()));
+            inputReference.getResolveInfo());
+          outputNode.setReference(reference.getRole(), reference);
         } else if (inputReference instanceof DynamicReference) {
           DynamicReference outputReference = new DynamicReference(
             inputReference.getRole(),
@@ -546,7 +555,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             targetModelReference,
             inputReference.getResolveInfo());
           outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
-          outputNode.addReference(outputReference);
+          outputNode.setReference(outputReference.getRole(), outputReference);
         } else {
           myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
             new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
@@ -561,7 +570,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
         continue;
       }
-      if (inputTargetNode.isRegistered() && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
+      if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode) && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           inputReference.getRole(),
           outputNode,
@@ -571,9 +580,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           refInfo,
           this
         );
-        outputNode.addReference(reference);
-      } else if (inputTargetNode.isRegistered()) {
-        outputNode.setReferent(inputReference.getRole(), inputTargetNode);
+        outputNode.setReference(reference.getRole(), reference);
+      } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
+        outputNode.setReferenceTarget(inputReference.getRole(), inputTargetNode);
       } else {
         myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",
           GeneratorUtil.describeIfExists(inputNode, "input node"),
@@ -581,7 +590,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    for (SNode inputChildNode : inputNode.getChildrenIterable()) {
+    for (SNode inputChildNode : inputNode.getChildren()) {
       String childRole = inputChildNode.getRole_();
       assert childRole != null;
       myGenerationTracer.pushInputNode(inputChildNode);
@@ -621,14 +630,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
-    for (SReference reference : node.getReferencesArray()) {
-      if (reference instanceof PostponedReference) {
-        ((PostponedReference) reference).validateAndReplace();
+    node.visitReferences(new ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference reference) {
+        if (reference instanceof PostponedReference) {
+          ((PostponedReference) reference).validateAndReplace();
+        }
+        return true;
       }
-    }
+    });
 
-    for (SNode child : node.getChildrenIterable()) {
-      revalidateAllReferences(child);
+    for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+      revalidateAllReferences(((SNode) child));
     }
   }
 

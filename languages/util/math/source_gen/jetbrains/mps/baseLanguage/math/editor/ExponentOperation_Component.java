@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.math.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -42,6 +42,12 @@ public class ExponentOperation_Component extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_spngij_a(editorContext, node);
+  }
+
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_spngij_a(EditorContext editorContext, SNode node) {
@@ -94,7 +100,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
   }
 
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     editorCell.setCellId("Empty_spngij_c0");
     {
       Style style = editorCell.getStyle();
@@ -117,11 +123,11 @@ public class ExponentOperation_Component extends AbstractCellProvider {
       return result;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, "expr", true)));
     }
 

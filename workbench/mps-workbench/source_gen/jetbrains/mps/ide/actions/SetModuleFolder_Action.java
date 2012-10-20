@@ -18,6 +18,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class SetModuleFolder_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -84,7 +85,7 @@ public class SetModuleFolder_Action extends BaseAction {
         if (newFolder.equals("")) {
           newFolder = null;
         }
-        for (IModule m : pane.getSelectedModules()) {
+        for (SModule m : pane.getSelectedModules()) {
           ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(m, newFolder);
         }
         pane.rebuild();

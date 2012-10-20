@@ -5,7 +5,7 @@ package jetbrains.mps.bash.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -30,6 +30,12 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     return this.createCollection_3xyrme_a(editorContext, node);
   }
 
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_3xyrme_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3xyrme_a");
@@ -41,7 +47,7 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
   }
 
   private EditorCell createConstant_3xyrme_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@");
     editorCell.setCellId("Constant_3xyrme_a0");
     BashLanguageStyle_StyleSheet.getExternalCommandDescription(editorCell).apply(editorCell);
     {

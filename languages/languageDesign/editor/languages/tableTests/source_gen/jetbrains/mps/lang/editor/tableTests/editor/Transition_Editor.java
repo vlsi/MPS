@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.tableTests.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -78,7 +78,7 @@ public class Transition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jj4qz_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from:");
     editorCell.setCellId("Constant_jj4qz_a0a0");
     transitionActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -86,14 +86,14 @@ public class Transition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jj4qz_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "to:");
     editorCell.setCellId("Constant_jj4qz_a1a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_jj4qz_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "triggered by:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "triggered by:");
     editorCell.setCellId("Constant_jj4qz_a2a0");
     editorCell.setDefaultText("");
     return editorCell;

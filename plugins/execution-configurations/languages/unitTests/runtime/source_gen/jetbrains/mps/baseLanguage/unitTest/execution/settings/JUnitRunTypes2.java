@@ -7,10 +7,10 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public enum JUnitRunTypes2 {
   METHOD() {
@@ -85,7 +85,7 @@ public enum JUnitRunTypes2 {
   MODULE() {
 
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
-      IModule module = TestUtils.getModule(configuration.getModule());
+      SModule module = TestUtils.getModule(configuration.getModule());
       if (module == null) {
         return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
@@ -96,7 +96,7 @@ public enum JUnitRunTypes2 {
       if (isEmpty_torbaz_a0a0b3(configuration.getModule())) {
         return "Module is not selected.";
       }
-      IModule module = TestUtils.getModule(configuration.getModule());
+      SModule module = TestUtils.getModule(configuration.getModule());
       if (module == null) {
         return "Module " + configuration.getModule() + " does not exist.";
       }

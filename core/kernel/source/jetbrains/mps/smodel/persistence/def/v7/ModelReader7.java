@@ -22,8 +22,8 @@ import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.XmlStringUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import org.jdom.Attribute;
 import org.jdom.Document;
@@ -62,7 +62,7 @@ public class ModelReader7 implements IModelReader {
         model.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(value, false));
       }
       else if (!ModelPersistence.MODEL_UID.equals(name)) {
-        model.getSModelHeader().setOptionalProperty(name, XmlStringUtil.unescapeXml(value));
+        model.getSModelHeader().setOptionalProperty(name, StringUtil.unescapeXml(value));
       }
     }
 
@@ -160,8 +160,8 @@ public class ModelReader7 implements IModelReader {
 //      } else {
         StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ptr.getNodeId(), resolveInfo);
         myLinkMap.addTargetLocation(ptr, ref);
-        node.addReference(ref);
-        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
+      node.setReference(ref.getRole(), ref);
+      myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
 //      }
     }
 

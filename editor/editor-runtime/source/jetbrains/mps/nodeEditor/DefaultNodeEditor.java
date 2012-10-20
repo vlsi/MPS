@@ -23,10 +23,30 @@ import org.jetbrains.annotations.NotNull;
 
 public class DefaultNodeEditor implements INodeEditor {
 
+  @Override
+  public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+    return createEditorCell((EditorContext) editorContext, node);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return new EditorCell_Error(editorContext, node, "no editor found");
   }
 
+  @Override
+  public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+    return createInspectedCell((EditorContext) editorContext, node);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return new DefaultInspectorCell(editorContext, node, node.getDebugText(), true);
   }

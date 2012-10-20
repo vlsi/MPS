@@ -116,6 +116,7 @@
       <modulePath path="${project}/languages/core/stub/JDK/JDK.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Core/Core.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Editor/Editor.msd" folder="core.stub" />
+      <modulePath path="${project}/languages/core/stub/MPS.OpenAPI/OpenAPI.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Platform/Platform.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Workbench/Workbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
@@ -307,6 +308,7 @@
       <modulePath path="${project}/plugins/execution-languages/languages/demo/pluginSolution/pluginSolution.msd" folder="languages.execution.demo" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated.runtime/runtime.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/languages/devkit/devkit.devkit" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/library/jetbrains.mps.execution.lib.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/plugin/languages.msd" folder="languages.execution.languages-plugin" />
@@ -328,10 +330,11 @@
       <modulePath path="${project}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml.sax/sax.mpl" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="core.langs" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/custommps/custommps.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/dependency/dependency.mpl" folder="languages.build" />
@@ -414,6 +417,7 @@
       <modulePath path="${project}/testbench/modules/testAntTask/solutions/testAntTask/testAntTask.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/jetbrains.mps.makeTest.msd" folder="core.make" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.testModels/jetbrains.mps.testModels.msd" folder="testbench" />
+      <modulePath path="${project}/testbench/modules/testRead/testRead.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testRefactoring/languages/testRefactoring/testRefactoring.mpl" folder="test" />
       <modulePath path="${project}/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" folder="test" />
       <modulePath path="${project}/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="testbench" />

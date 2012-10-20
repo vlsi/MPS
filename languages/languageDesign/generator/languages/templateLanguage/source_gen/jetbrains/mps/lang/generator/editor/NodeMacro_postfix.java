@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -41,6 +41,12 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return this.createCollection_crgygw_a(editorContext, node);
   }
 
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createCollection_crgygw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_crgygw_a");
@@ -71,7 +77,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_crgygw_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bad role:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "bad role:");
     editorCell.setCellId("Constant_crgygw_a0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -80,14 +86,14 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   private EditorCell createReadOnlyModelAccessor_crgygw_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return node.getRole_();
+        return node.getRole();
       }
 
       public void setText(String s) {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -146,7 +152,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    String actualRole = node.getRole_();
+    String actualRole = node.getRole();
     String expectedRole = "smodelAttribute";
     return !(actualRole.equals(expectedRole));
   }

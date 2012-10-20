@@ -26,11 +26,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.Project;
@@ -59,7 +59,7 @@ public class TestUtils {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.getNode().getId();
+        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.getNode().getSNodeId().toString();
       }
     });
     return value.value;
@@ -208,11 +208,12 @@ __switch__:
     if ((modelName == null || modelName.length() == 0)) {
       return null;
     }
+
     SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(modelName));
     if (modelDescriptor == null) {
       return null;
     }
-    return modelDescriptor.getSModel();
+    return modelDescriptor;
   }
 
   @Nullable
@@ -224,7 +225,7 @@ __switch__:
   }
 
   public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, null)).select(new ISelector<SNode, ITestNodeWrapper>() {
+    return Sequence.fromIterable(((Iterable<SNode>) model.getRootNodes())).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }
@@ -235,29 +236,25 @@ __switch__:
     });
   }
 
-  public static Iterable<ITestNodeWrapper> getModuleTests(@NotNull final IModule module) {
-    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
-      public Iterable<SModelDescriptor> iterable() {
-        return module.getOwnModelDescriptors();
+  public static Iterable<ITestNodeWrapper> getModuleTests(@NotNull final SModule module) {
+    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
+      public Iterable<SModel> iterable() {
+        return module.getModels();
       }
-    })).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
+    })).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return SModelStereotype.isUserModel(it);
       }
-    }).translate(new ITranslator2<SModelDescriptor, ITestNodeWrapper>() {
-      public Iterable<ITestNodeWrapper> translate(SModelDescriptor model) {
-        return TestUtils.getModelTests(model.getSModel());
+    }).translate(new ITranslator2<SModel, ITestNodeWrapper>() {
+      public Iterable<ITestNodeWrapper> translate(SModel model) {
+        return TestUtils.getModelTests(model);
       }
     });
   }
 
-  public static Iterable<ITestNodeWrapper> getProjectTests(@NotNull final Project project) {
-    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<IModule>() {
-      public Iterable<IModule> iterable() {
-        return project.getModules();
-      }
-    })).translate(new ITranslator2<IModule, ITestNodeWrapper>() {
-      public Iterable<ITestNodeWrapper> translate(IModule module) {
+  public static Iterable<ITestNodeWrapper> getProjectTests(@NotNull Project project) {
+    return Sequence.fromIterable(((Iterable<SModule>) project.getModules())).translate(new ITranslator2<SModule, ITestNodeWrapper>() {
+      public Iterable<ITestNodeWrapper> translate(SModule module) {
         return TestUtils.getModuleTests(module);
       }
     });

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -48,7 +48,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_649p0a_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check types");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check types");
     editorCell.setCellId("Constant_649p0a_a0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -56,21 +56,21 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_649p0a_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation name:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "operation name:");
     editorCell.setCellId("Constant_649p0a_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_649p0a_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow errors:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "allow errors:");
     editorCell.setCellId("Constant_649p0a_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_649p0a_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow warnings:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "allow warnings:");
     editorCell.setCellId("Constant_649p0a_e0");
     editorCell.setDefaultText("");
     return editorCell;

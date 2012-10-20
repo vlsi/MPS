@@ -30,9 +30,14 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,41 +62,51 @@ public class TemplateProcessor {
   public List<SNode> processTemplateNode(String mappingName, SNode templateNode, @NotNull TemplateContext context)
     throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
     IGeneratorLogger logger = myGenerator.getLogger();
-
-    if (myGenerator.getProgressMonitor().isCanceled()) {
-      if (myGenerator.getGenerationTracer().isTracing() && logger.needsInfo()) {
-        logger.info("generation canceled when processing branch:");
-        GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), false);
-      }
-      throw new GenerationCanceledException();
+    if (myGenerator.isIncremental()) {
+      // turn off tracing
+      NodeReadEventsCaster.setNodesReadListener(null);
     }
-
     try {
-      List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, context.subContext(mappingName), 0);
-      if (outputNodes == null) {
-        throw new TemplateProcessingFailureException();
+      if (myGenerator.getProgressMonitor().isCanceled()) {
+        if (myGenerator.getGenerationTracer().isTracing() && logger.needsInfo()) {
+          logger.info("generation canceled when processing branch:");
+          GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), false);
+        }
+        throw new GenerationCanceledException();
       }
-      return outputNodes;
-    } catch (StackOverflowError e) {
-      // this is critical
-      logger.error("generation thread run out of stack space :(");
-      if (myGenerator.getGenerationTracer().isTracing()) {
-        logger.error("failed branch was:");
-        GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), true);
-      } else {
-        logger.error("try to increase JVM stack size (-Xss option)");
-        logger.error("to get more diagnostic generate model with the 'save transient models' option");
+
+      try {
+        List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, context.subContext(mappingName), 0);
+        if (outputNodes == null) {
+          throw new TemplateProcessingFailureException();
+        }
+        return outputNodes;
+      } catch (StackOverflowError e) {
+        // this is critical
+        logger.error("generation thread run out of stack space :(");
+        if (myGenerator.getGenerationTracer().isTracing()) {
+          logger.error("failed branch was:");
+          GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), true);
+        } else {
+          logger.error("try to increase JVM stack size (-Xss option)");
+          logger.error("to get more diagnostic generate model with the 'save transient models' option");
+        }
+        myGenerator.showErrorMessage(context.getInput(), templateNode, "couldn't process template");
+        throw new GenerationFailureException(e);
       }
-      myGenerator.showErrorMessage(context.getInput(), templateNode, "couldn't process template");
-      throw new GenerationFailureException(e);
+    } finally {
+      if (myGenerator.isIncremental()) {
+        // restore tracing
+        NodeReadEventsCaster.removeNodesReadListener();
+      }
     }
   }
 
   @Nullable
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
-                                                       SNode templateNode,
-                                                       @NotNull TemplateContext context,
-                                                       int nodeMacrosToSkip)
+                             SNode templateNode,
+                             @NotNull TemplateContext context,
+                             int nodeMacrosToSkip)
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
@@ -100,7 +115,7 @@ public class TemplateProcessor {
     int macroCount = 0;
     // templateNode has unprocessed node-macros?
     for (SNode templateChildNode : templateNode.getChildren()) {
-      if (!(templateChildNode.isInstanceOfConcept(RuleUtil.concept_NodeMacro))) continue;
+      if (!(templateChildNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_NodeMacro)))) continue;
       macroCount++;
       if (macroCount <= nodeMacrosToSkip) continue;
       generationTracer.pushMacro(new SNodePointer(templateChildNode));
@@ -113,7 +128,7 @@ public class TemplateProcessor {
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(new SNodePointer(templateNode));
-    SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
+    SNode outputNode = new SNode(myOutputModel, templateNode.getConcept().getId(), false);
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
     for (SNode historyInputNode : context.getInputHistory()) {
@@ -121,10 +136,10 @@ public class TemplateProcessor {
     }
     mappings.addOutputNodeByInputNodeAndMappingName(context.getInput(), mappingName, outputNode);
     mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
-    outputNode.putProperties(templateNode);
+    jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
 
     SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferencesIterable()) {
+    for (SReference reference : templateNode.getReferences()) {
       if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
         continue;
       }
@@ -142,16 +157,16 @@ public class TemplateProcessor {
           refInfo,
           myGenerator
         );
-        outputNode.addReference(postponedReference);
+        outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else {
-        outputNode.setReferent(reference.getRole(), templateReferentNode);
+        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
     }
 
     // process property and reference macros
     List<SNode> templateChildNodes = new ArrayList<SNode>();
     for (SNode templateChildNode : templateNode.getChildren()) {
-      String templateChildNodeConcept = templateChildNode.getConceptFqName();
+      String templateChildNodeConcept = templateChildNode.getConcept().getId();
 
       if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
         myReductionContext.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
@@ -165,7 +180,7 @@ public class TemplateProcessor {
           refInfo,
           myGenerator
         );
-        outputNode.addReference(postponedReference);
+        outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else if (!GeneratorUtilEx.isTemplateLanguageElement(templateChildNode)) {
         templateChildNodes.add(templateChildNode);
       }
@@ -199,7 +214,7 @@ public class TemplateProcessor {
 
   @Nullable
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip, String outerMappingName) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    String macroConceptFQName = macro.getConceptFqName();
+    String macroConceptFQName = macro.getConcept().getId();
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtilEx.getMappingName(macro, outerMappingName);
@@ -229,14 +244,14 @@ public class TemplateProcessor {
       SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
         Collection<SNode> _outputNodes =
-          newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
+          newInputNode.getModel() == myGenerator.getInputModel() && jetbrains.mps.util.SNodeOperations.isRegistered(newInputNode)
             ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, null, newInputNode, myReductionContext, new boolean[]{false})
             : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, null, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
           for (SNode outputNode : _outputNodes) {
-            Language outputNodeLang = outputNode.getNodeLanguage();
+            Language outputNodeLang = jetbrains.mps.util.SNodeOperations.getLanguage(outputNode);
             if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
                 myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
@@ -256,7 +271,7 @@ public class TemplateProcessor {
       if (child != null) {
         // check node languages : prevent 'insert' query from returnning node, which language was not counted when
         // planning the generation steps.
-        Language childLang = child.getNodeLanguage();
+        Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
         if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
           if (!childLang.getGenerators().isEmpty()) {
             myGenerator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
@@ -266,7 +281,7 @@ public class TemplateProcessor {
           }
         }
 
-        if (child.isRegistered()) {
+        if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
           // must be "in air"
           child = CopyUtil.copy(child);
         }
@@ -376,7 +391,7 @@ public class TemplateProcessor {
         try {
           TemplateContext newcontext = templateContext.subContext(mappingName, newInputNode);
           if (macro_mapperFunction != null) {
-            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
+            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConcept().getId(), myOutputModel, myGenerator.getScope(), false);
             generationTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
@@ -599,24 +614,29 @@ public class TemplateProcessor {
     }
   }
 
-  private void validateReferences(SNode node, SNode inputNode) {
-    for (SReference reference : node.getReferencesArray()) {
-      // reference to input model - illegal
-      if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
-        // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          reference.getRole(),
-          reference.getSourceNode(),
-          inputNode,
-          reference.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-          refInfo,
-          myGenerator);
-        reference.getSourceNode().replaceReference(reference, postponedReference);
+  private void validateReferences(SNode node, final SNode inputNode) {
+    node.visitReferences(new ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+        SReference reference = (SReference) ref;
+        // reference to input model - illegal
+        if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+          // replace
+          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+            reference.getRole(),
+            reference.getSourceNode(),
+            inputNode,
+            reference.getTargetNode());
+          PostponedReference postponedReference = new PostponedReference(
+            refInfo,
+            myGenerator);
+          reference.getSourceNode().setReference(reference.getRole(), postponedReference);
+        }
+        return true;
       }
-    }
-    for (SNode child : node.getChildren()) {
-      validateReferences(child, inputNode);
+    });
+
+    for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+      validateReferences(((SNode) child), inputNode);
     }
   }
 
@@ -630,8 +650,8 @@ public class TemplateProcessor {
 
   @Nullable
   private List<SNode> createOutputNodesForExternalTemplateNode(String mappingName,
-                                                               SNode templateNode,
-                                                               TemplateContext context)
+                                 SNode templateNode,
+                                 TemplateContext context)
     throws
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {

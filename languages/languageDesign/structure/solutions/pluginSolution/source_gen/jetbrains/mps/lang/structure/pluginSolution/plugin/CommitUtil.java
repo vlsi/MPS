@@ -12,7 +12,7 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
 
 public class CommitUtil {
@@ -71,7 +71,7 @@ public class CommitUtil {
     if (oldValue.equals(newValue)) {
       return true;
     }
-    int res = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming " + "this element" + " can break your model. It is advised to use refactoring for this. Execute refactoring?", "Rename " + "element", JOptionPane.YES_NO_CANCEL_OPTION);
+    int res = JOptionPane.showConfirmDialog(editorContext.getEditorComponent().getEditorComponent(), "Renaming " + "this element" + " can break your model. It is advised to use refactoring for this. Execute refactoring?", "Rename " + "element", JOptionPane.YES_NO_CANCEL_OPTION);
     if (res == JOptionPane.YES_OPTION) {
       refactorRenameNode(editorContext.getOperationContext(), node, newValue);
     }

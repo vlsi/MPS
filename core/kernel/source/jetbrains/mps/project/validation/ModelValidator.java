@@ -30,8 +30,16 @@ import java.util.List;
 public class ModelValidator {
   private SModel myModel;
 
+  /**
+   * use ModelValidator(openapi.model.SModel)
+   */
+  @Deprecated
   public ModelValidator(SModel model) {
     myModel = model;
+  }
+
+  public ModelValidator(org.jetbrains.mps.openapi.model.SModel model) {
+    myModel = ((SModelDescriptor) model).getSModel();
   }
 
   public List<String> validate(IScope scope) {

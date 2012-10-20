@@ -24,7 +24,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -38,6 +37,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.File;
 import java.util.Collection;
@@ -50,7 +50,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
 
   private IFile myFile;
 
-  public RegularModelDataSource(ModuleReference origin, @NotNull IFile file) {
+  public RegularModelDataSource(SModuleReference origin, @NotNull IFile file) {
     super(origin);
     myFile = file;
   }

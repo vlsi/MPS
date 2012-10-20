@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
+import java.util.List;
 
 /**
  * evgeny, 11/17/11
@@ -34,23 +35,33 @@ public interface EditorComponent {
 
   SNode getSelectedNode();
 
-  IOperationContext getOperationContext();
+  void selectNode(SNode node);
+
+  void changeSelection(EditorCell newSelectedCell);
+
+  EditorCell getDeepestSelectedCell();
+
+  List<SNode> getSelectedNodes();
 
   EditorCell getRootCell();
 
-  EditorCell findNodeCell(final SNode node);
+  EditorCell findNodeCell(SNode node);
+
+  EditorCell findCellWithId(SNode node, @NotNull String id);
 
   void scrollToNode(SNode node);
 
   void scrollToCell(@NotNull EditorCell cell);
 
-  void changeSelection(EditorCell newSelectedCell);
-
-  void selectNode(SNode node);
+  void rebuildEditorContent();
 
   boolean isDisposed();
 
+  void dispose();
+
+  IOperationContext getOperationContext();
+
   EditorContext getEditorContext();
 
-  void dispose();
+  boolean isReadOnly();
 }

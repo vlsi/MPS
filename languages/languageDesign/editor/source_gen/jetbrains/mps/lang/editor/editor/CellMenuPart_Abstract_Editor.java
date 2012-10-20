@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -17,7 +17,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_7tiwfz_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose menu part>");
+    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<choose menu part>");
     editorCell.setCellId("Error_7tiwfz_a");
     {
       Style style = editorCell.getStyle();

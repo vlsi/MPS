@@ -40,7 +40,7 @@ public class ProjectStubs extends AbstractModelRootManager {
     return Sequence.fromIterable(descriptors).select(new ISelector<ModulesMiner.ModuleHandle, BaseStubModelDescriptor>() {
       public BaseStubModelDescriptor select(ModulesMiner.ModuleHandle it) {
         SModelReference modelRef = ProjectStubs.this.createModelReference(it, module, stereotype);
-        BaseStubModelDescriptor descriptor = new BaseStubModelDescriptor(modelRef, false, new FileStubSource(module.getModuleReference(), it.getFile(), modelRef), module);
+        BaseStubModelDescriptor descriptor = new BaseStubModelDescriptor(modelRef, new FileStubSource(module.getModuleReference(), it.getFile(), modelRef), module);
         return descriptor;
       }
     });

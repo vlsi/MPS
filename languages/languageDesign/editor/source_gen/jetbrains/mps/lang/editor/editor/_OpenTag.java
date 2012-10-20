@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
@@ -30,6 +30,12 @@ public class _OpenTag extends AbstractCellProvider {
     return this.createReadOnlyModelAccessor_mtiojs_a(editorContext, node);
   }
 
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createReadOnlyModelAccessor_mtiojs_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
@@ -40,7 +46,7 @@ public class _OpenTag extends AbstractCellProvider {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -64,7 +70,7 @@ public class _OpenTag extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_mtiojs_a0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mtiojs_a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

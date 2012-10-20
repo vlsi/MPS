@@ -4,7 +4,7 @@ package jetbrains.mps.samples.formulaLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
@@ -14,7 +14,7 @@ public class Constant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_b5vi9g_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?constant?");
+    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "?constant?");
     editorCell.setCellId("Error_b5vi9g_a");
     return editorCell;
   }

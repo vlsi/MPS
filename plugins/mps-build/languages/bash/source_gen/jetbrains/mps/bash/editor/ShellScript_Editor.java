@@ -4,7 +4,7 @@ package jetbrains.mps.bash.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -45,7 +45,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jf4pm0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#!/bin/sh");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "#!/bin/sh");
     editorCell.setCellId("Constant_jf4pm0_a0");
     BashLanguageStyle_StyleSheet.getActivationRecord(editorCell).apply(editorCell);
     {
@@ -57,7 +57,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jf4pm0_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "#");
     editorCell.setCellId("Constant_jf4pm0_b0");
     BashLanguageStyle_StyleSheet.getCommentSymbol(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -65,7 +65,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jf4pm0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "used variables:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "used variables:");
     editorCell.setCellId("Constant_jf4pm0_c0");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jf4pm0_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "#");
     editorCell.setCellId("Constant_jf4pm0_e0");
     BashLanguageStyle_StyleSheet.getCommentSymbol(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -84,7 +84,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jf4pm0_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "name:");
     editorCell.setCellId("Constant_jf4pm0_f0");
     {
       Style style = editorCell.getStyle();

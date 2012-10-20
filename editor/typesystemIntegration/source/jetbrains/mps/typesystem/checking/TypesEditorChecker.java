@@ -132,7 +132,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
                         if (selectedCell instanceof EditorCell_Label) {
                           EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
-                          restoreCaretPosition = cell_label.getSNode().getAncestors(true).contains(quickFixNode);
+                          restoreCaretPosition = jetbrains.mps.util.SNodeOperations.isAncestor(quickFixNode, cell_label.getSNode());
                           caretX = cell_label.getCaretX();
                           caretY = cell_label.getBaseline();
                           boolean last = cell_label.getCaretPosition() == cell_label.getText().length();

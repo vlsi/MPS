@@ -16,5 +16,5 @@
 package org.jetbrains.mps.openapi.module;
 
 public enum SDependencyKind {
-  COMPILE_ONLY, ALL
+  DEFAULT, EXTENDS, GENERATES_INTO, DESIGN, COMPILE, RUNTIME, PROVIDED
 }

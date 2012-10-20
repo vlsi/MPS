@@ -16,16 +16,14 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.loading.UpdateableModel;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
  */
-public interface SModelDescriptor {
+public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel {
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */
@@ -70,10 +68,4 @@ public interface SModelDescriptor {
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  //--------------model command listeners-------------
-
-  void addModelCommandListener(@NotNull SModelCommandListener listener);
-
-  void removeModelCommandListener(@NotNull SModelCommandListener listener);
 }

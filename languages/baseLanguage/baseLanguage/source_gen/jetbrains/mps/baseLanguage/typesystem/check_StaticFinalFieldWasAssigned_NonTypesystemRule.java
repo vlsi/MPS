@@ -32,7 +32,7 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
     }
     SNode initializer = SLinkOperations.getTarget(classifier, "classInitializer", true);
     if (initializer != null) {
-      for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"}, false, new String[]{})) {
+      for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference"}, false, new String[]{})) {
         if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == field && CheckingUtil.isAssigned(reference)) {
           return;
         }
@@ -50,7 +50,7 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

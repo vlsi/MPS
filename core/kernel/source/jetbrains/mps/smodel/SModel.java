@@ -29,13 +29,12 @@ import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel implements org.jetbrains.mps.openapi.model.SModel {
+public class SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -62,7 +61,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   private boolean fullLoadUpdateMode;
 
   private StackTraceElement[] myDisposedStacktrace = null;
-  private final ModelDependenciesManager myModelDependenciesManager = new ModelDependenciesManager(this);
+  private ModelDependenciesManager myModelDependenciesManager;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -88,11 +87,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return getSModelReference().getSModelId();
   }
 
-  @Override
-  public org.jetbrains.mps.openapi.model.SModelId getModelId() {
-    return getSModelId();
-  }
-
   @NotNull
   public String getStereotype() {
     return myReference.getStereotype();
@@ -101,29 +95,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   @NotNull
   public String getLongName() {
     return myReference.getLongName();
-  }
-
-  @Override
-  public String getPresentation() {
-    return getLongName();
-  }
-
-  @Override
-  public SModule getModule() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
-  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
-    // TODO API (implement)
-    return null;
   }
 
   public boolean isTransient() {
@@ -234,12 +205,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   public int registeredNodesCount() {
     enforceFullLoad();
     return myIdToNodeMap.size();
-  }
-
-  public void clearAdaptersAndUserObjects() {
-    for (SNode node : myIdToNodeMap.values()) {
-      node.removeAllUserObjects();
-    }
   }
 
   //---------loading state--------
@@ -364,7 +329,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
-  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
+  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
@@ -376,7 +341,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
@@ -388,7 +353,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
@@ -465,14 +430,30 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Nullable
+  public org.jetbrains.mps.openapi.model.SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    checkNotDisposed();
+    if (myDisposed) return null;
+
+    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
+    if (node != null) return node;
+    enforceFullLoad();
+    return myIdToNodeMap.get(nodeId);
+  }
+
+  /**
+   * use getNode(SNodeId)
+   */
+  @Deprecated
+  @Nullable
   public SNode getNodeById(@NotNull SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
-    SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
+    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
+    if (node instanceof SNode) return (SNode) node;
     enforceFullLoad();
-    return myIdToNodeMap.get(nodeId);
+    node = myIdToNodeMap.get(nodeId);
+    return node instanceof SNode ? (SNode) node : null;
   }
 
   //---------node registration--------
@@ -482,8 +463,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (myDisposed) return;
 
     enforceFullLoad();
-    SNodeId id = node.hasId() ? node.getSNodeId() : null;
-    SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
+    SNodeId id = node.getSNodeId();
+    org.jetbrains.mps.openapi.model.SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
     if (id == null || existingNode != null && existingNode != node) {
       id = generateUniqueId();
       while (myIdToNodeMap.containsKey(id)) {
@@ -507,6 +488,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
+    if (myModelDependenciesManager == null) myModelDependenciesManager = new ModelDependenciesManager(this);
     return myModelDependenciesManager;
   }
 
@@ -607,13 +589,13 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         for (String propname : node.getProperties().keySet()) {
           result.add(RoleIdsComponent.getPropertyNamePointer(node, propname).getModelReference());
         }
-        for (SReference ref : node.getReferencesIterable()) {
+        for (SReference ref : node.getReferences()) {
           if (ref.getTargetSModelReference() != null) {
             result.add(ref.getTargetSModelReference());
           }
           result.add(RoleIdsComponent.getReferenceRolePointer(ref).getModelReference());
         }
-        for (SNode child : node.getChildrenIterable()) {
+        for (SNode child : node.getChildren()) {
           result.add(RoleIdsComponent.getNodeRolePointer(child).getModelReference());
         }
       } else {
@@ -631,7 +613,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
             result.add(decl.getModel().getSModelReference());
           }
         }
-        for (SReference ref : node.getReferencesIterable()) {
+        for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
           if (targetModelRef == null) {
             LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());
@@ -645,10 +627,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
             result.add(decl.getModel().getSModelReference());
           }
         }
-        for (SNode child : node.getChildrenIterable()) {
+        for (SNode child : node.getChildren()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
-            LOG.error("undeclared child role: '" + child.getRole_() + "' in node " + node.getDebugText());
+            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + node.getDebugText());
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -847,13 +829,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
     myDisposed = true;
     myDisposedStacktrace = new Throwable().getStackTrace();
-    for (SNode sn : myIdToNodeMap.values()) {
-      sn.dispose();
-    }
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
-    myModelDependenciesManager.dispose();
+    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
   }
 
   public boolean updateSModelReferences() {
@@ -861,7 +840,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     enforceFullLoad();
 
     boolean changed = false;
-    for (SNode node : myIdToNodeMap.values()) {
+    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
+      // TODO SNode cast
+      if (!(n instanceof SNode)) continue;
+      SNode node = (SNode) n;
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
@@ -924,7 +906,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
-    for (SNode node : myIdToNodeMap.values()) {
+    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
+      // TODO SNode cast
+      if (!(n instanceof SNode)) continue;
+      SNode node = (SNode) n;
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
           reference.setTargetSModelReference(newModelReference);

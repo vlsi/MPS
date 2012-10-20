@@ -16,21 +16,21 @@
 package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.Condition;
 
 public class CellAction_UnfoldCell extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     if (selectedCell == null) return false;
     return findCell(selectedCell) != null;
   }
 
   public void execute(EditorContext context) {
-    EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+    EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     EditorCell_Collection targetCell = findCell(selectedCell);
     targetCell.unfold();
   }

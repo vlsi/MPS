@@ -119,7 +119,7 @@ public class GenerateToString_Action extends BaseAction {
       SNode currentExpression = null;
       for (SNodePointer fieldPtr : selectedFields) {
         SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-        SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
         SNode item = new GenerateToString_Action.QuotationClass_dpuufu_a0a3a51a0a4().createNode(((fieldPtr == firstField ?
           "" :
@@ -453,7 +453,7 @@ public class GenerateToString_Action extends BaseAction {
         {
           quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_14 = quotedNode_5;
-          quotedNode1_14.addReference(SReference.create("annotation", quotedNode1_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+          quotedNode1_14.setReference("annotation", SReference.create("annotation", quotedNode1_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
           quotedNode_1.addChild("annotation", quotedNode1_14);
         }
         result = quotedNode1_8;

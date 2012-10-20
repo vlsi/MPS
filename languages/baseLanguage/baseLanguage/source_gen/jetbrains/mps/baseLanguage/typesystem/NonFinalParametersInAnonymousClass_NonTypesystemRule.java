@@ -7,9 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.ParameterReference_Behavior;
+import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,24 +20,27 @@ public class NonFinalParametersInAnonymousClass_NonTypesystemRule extends Abstra
   public NonFinalParametersInAnonymousClass_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode parameterReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(parameterReference, "variableDeclaration", false) != null) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(parameterReference, "variableDeclaration", false), "isFinal"))) {
-      if (!(ParameterReference_Behavior.call_isParameterOfThisMethod_1240394425603(parameterReference))) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameterReference, "Parameter must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1240395578471", null, errorTarget);
+  public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      if ((declaration != null) && !(SPropertyOperations.getBoolean(declaration, "isFinal"))) {
+        if (!(VariableReference_Behavior.call_isParameterOfThisMethod_1240394425603(variableReference))) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Parameter must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1240395578471", null, errorTarget);
+          }
         }
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ParameterReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

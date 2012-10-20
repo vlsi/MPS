@@ -107,7 +107,7 @@ public class GenerateSetters_Action extends BaseAction {
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
         // Method creation begins 
         String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
-        SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
         SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetters_Action.QuotationClass_5cfua3_a0a0a6a51a0a4().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
         lastAdded = added;
@@ -226,7 +226,7 @@ public class GenerateSetters_Action extends BaseAction {
         }
         result = quotedNode1_11;
       }
-      quotedNode_9.setReferent("variableDeclaration", quotedNode_5);
+      quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_5);
       return result;
     }
   }

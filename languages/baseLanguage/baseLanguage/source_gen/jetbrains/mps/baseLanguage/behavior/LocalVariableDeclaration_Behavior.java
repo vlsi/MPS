@@ -9,8 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -29,7 +34,7 @@ public class LocalVariableDeclaration_Behavior {
   }
 
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
-    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
     return ref;
   }
@@ -37,7 +42,11 @@ public class LocalVariableDeclaration_Behavior {
   public static boolean call_isVariableReferencedInClosures_1229352990212(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
     {
-      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).iterator();
+      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        }
+      }).toListSequence().iterator();
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
@@ -76,6 +85,29 @@ public class LocalVariableDeclaration_Behavior {
 
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {
     throw new UnsupportedOperationException();
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      if (ScopeUtils.comeFrom("initializer", thisNode, child)) {
+        return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
+      } else {
+        return ScopeUtils.lazyParentScope(thisNode, kind);
+      }
+    }
+    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", kind, child);
+  }
+
+  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+      if (role.equals("initializer")) {
+        return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
+      } else {
+        return ScopeUtils.lazyParentScope(thisNode, kind);
+      }
+    }
+
+    return ScopeProvider_Behavior.callSuperNew_getScope_7722139651431880752(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", kind, role, index);
   }
 
   public static String call_getPrefix_3012473318495506424(SNode thisNode, Project project) {

@@ -356,8 +356,8 @@
   <root nodeId="4474271214083122145" modelId="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)">
     <nodeInfo nodeId="4474271214083122155" fileName="NodeTreeNode.java" startLine="11" startPosition="44" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4474271214083122167" fileName="NodeTreeNode.java" startLine="15" startPosition="71" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4474271214083122170" fileName="NodeTreeNode.java" startLine="16" startPosition="25" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083122175" fileName="NodeTreeNode.java" startLine="17" startPosition="41" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122170" fileName="NodeTreeNode.java" startLine="16" startPosition="25" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083122175" fileName="NodeTreeNode.java" startLine="17" startPosition="48" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083122148" fileName="NodeTreeNode.java" startLine="10" startPosition="57" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4474271214083122158" fileName="NodeTreeNode.java" startLine="14" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="4474271214083122154" fileName="NodeTreeNode.java" startLine="11" startPosition="44" endLine="12" endPosition="21" />

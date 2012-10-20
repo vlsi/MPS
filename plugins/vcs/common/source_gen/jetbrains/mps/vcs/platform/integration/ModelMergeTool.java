@@ -25,7 +25,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
-import java.lang.reflect.Method;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
@@ -100,24 +99,10 @@ public class ModelMergeTool extends MergeTool {
   }
 
   @Nullable
-  private static VirtualFile getFileFromMergeRequest(MergeRequestImpl mergeRequest) throws SecurityException {
-    // This is a hacky method which accesses private nested class MergeRequestImpl.MergeContent 
-    // using reflection. Alternative way would require patching IDEA platform. 
-    // TODO rewrite eature request filed: IDEA-75603 
+  private static VirtualFile getFileFromMergeRequest(MergeRequestImpl mergeRequest) {
     DiffContent resultContent = mergeRequest.getResultContent();
-    try {
-      Class<?> mergeContentClass = Class.forName("com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl$MergeContent");
-      if (mergeContentClass.isInstance(resultContent)) {
-        Method getFileMethod = mergeContentClass.getMethod("getFile");
-        getFileMethod.setAccessible(true);
-        Object file = getFileMethod.invoke(resultContent);
-        assert file == null || file instanceof VirtualFile;
-        return ((VirtualFile) file);
-      }
-    } catch (Exception e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
-      }
+    if (resultContent instanceof MergeRequestImpl.MergeContent) {
+      return ((MergeRequestImpl.MergeContent) resultContent).getFile();
     }
     return null;
   }

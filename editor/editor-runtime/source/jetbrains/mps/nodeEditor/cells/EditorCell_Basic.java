@@ -23,14 +23,18 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.*;
 
@@ -192,11 +196,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (action.executeInCommand()) {
       getEditorContext().executeCommand(new Runnable() {
         public void run() {
-          action.execute(myEditorContext);
+          action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
         }
       });
     } else {
-      action.execute(myEditorContext);
+      action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
     }
     return true;
   }
@@ -257,7 +261,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode operationNode = null;
     SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = node.getReferent(SModelUtil.getLinkDeclarationRole(linkDeclaration));
+      SNode referentNode = (SNode) node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
         operationNode = referentNode;
       }
@@ -439,6 +443,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myEditorContext;
   }
 
+  @Override
+  public jetbrains.mps.openapi.editor.EditorContext getContext() {
+    return myEditorContext;
+  }
+
   public IOperationContext getOperationContext() {
     return myEditorContext.getOperationContext();
   }
@@ -505,10 +514,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = node.getParent().getLinkDeclaration(node.getRole_());
+    SNode link = node.getParent().getLinkDeclaration(node.getRole());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
-    if (node.getConceptFqName().equals(concreteConceptFqName)) {
+    String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
+    if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }
     SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
@@ -791,7 +800,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         return null;
       }
 
-      assert anchorCell.getParent() != null : "No cell parent for node " + node.getId() + " " + node.getModel();
+      assert anchorCell.getParent() != null : "No cell parent for node " + node.getSNodeId().toString() + " " + node.getModel();
 
       int indexInParent = anchorCell.getParent().indexOf(anchorCell);
 
