@@ -67,7 +67,7 @@ public class AuxilaryRuntimeModel implements ModelOwner, CoreComponent {
 
   private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
     public AuxModelDescriptor() {
-      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
+      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE);
     }
 
     protected SModel createModel() {

@@ -8,8 +8,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -22,7 +21,7 @@ public class DeploymentDescriptorPersistence {
 
     try {
       Document document = JDOMUtil.loadDocument(file);
-      final Element rootElement = ((Element) document.getRootElement());
+      final Element rootElement = document.getRootElement();
 
       descriptor = new _FunctionTypes._return_P0_E0<DeploymentDescriptor>() {
         public DeploymentDescriptor invoke() {
@@ -34,8 +33,8 @@ public class DeploymentDescriptorPersistence {
           final String result_wu2j1h_a2a0a0d0c0a = rootElement.getAttributeValue("type");
           result_wu2j1h_a0a0d0c0a.setType(result_wu2j1h_a2a0a0d0c0a);
 
-          for (Element a : ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "dependencies"))) {
-            for (final Element module : ListSequence.fromList(AttributeUtils.elementChildren(a, "module"))) {
+          for (Element a : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(rootElement, "dependencies"))) {
+            for (final Element module : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(a, "module"))) {
               result_wu2j1h_a0a0d0c0a.getDependencies().add(new _FunctionTypes._return_P0_E0<Dependency>() {
                 public Dependency invoke() {
                   final Dependency result_wu2j1h_a0a0a0a0a4a0a0d0c0a = new Dependency();
@@ -49,20 +48,19 @@ public class DeploymentDescriptorPersistence {
             }
           }
 
-          for (Element b : ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "runtime"))) {
+          for (Element b : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(rootElement, "runtime"))) {
             result_wu2j1h_a0a0d0c0a.getRuntimeJars().add(b.getAttributeValue("jar"));
           }
-          for (Element b : ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "library"))) {
+          for (Element b : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(rootElement, "library"))) {
             result_wu2j1h_a0a0d0c0a.getLibraries().add(b.getAttributeValue("jar"));
           }
 
-          if (ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "sources")).isNotEmpty()) {
-            Element t = ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "sources")).first();
-
-            final String result_wu2j1h_a2a9a0a0d0c0a = t.getAttributeValue("jar");
-            result_wu2j1h_a0a0d0c0a.setSourcesJar(result_wu2j1h_a2a9a0a0d0c0a);
-            final String result_wu2j1h_a3a9a0a0d0c0a = t.getAttributeValue("descriptor");
-            result_wu2j1h_a0a0d0c0a.setDescriptorFile(result_wu2j1h_a3a9a0a0d0c0a);
+          Element sources = jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, "sources");
+          if (sources != null) {
+            final String result_wu2j1h_a0a01a0a0d0c0a = sources.getAttributeValue("jar");
+            result_wu2j1h_a0a0d0c0a.setSourcesJar(result_wu2j1h_a0a01a0a0d0c0a);
+            final String result_wu2j1h_a1a01a0a0d0c0a = sources.getAttributeValue("descriptor");
+            result_wu2j1h_a0a0d0c0a.setDescriptorFile(result_wu2j1h_a1a01a0a0d0c0a);
           }
 
           return result_wu2j1h_a0a0d0c0a;

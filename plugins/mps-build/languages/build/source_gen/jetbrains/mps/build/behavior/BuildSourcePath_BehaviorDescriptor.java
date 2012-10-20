@@ -25,6 +25,10 @@ public abstract class BuildSourcePath_BehaviorDescriptor extends BaseConcept_Beh
     return BuildSourcePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode, context);
   }
 
+  public String virtual_getAntPath_8563603456895173701(SNode thisNode, Context context) {
+    return BuildSourcePath_Behavior.virtual_getAntPath_8563603456895173701(thisNode, context);
+  }
+
   public String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
     return BuildSourcePath_Behavior.virtual_getLastSegment_1368030936106771141(thisNode, helper);
   }

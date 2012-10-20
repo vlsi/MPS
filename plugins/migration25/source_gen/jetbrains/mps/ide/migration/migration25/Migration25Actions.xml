@@ -1,54 +1,54 @@
 <components>
   <actions>
-    <action id="jetbrains.mps.ide.migration.migration25.AddExtendedLanguagesAsUsed_Action" class="jetbrains.mps.ide.migration.migration25.AddExtendedLanguagesAsUsed_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action" class="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action" class="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action" class="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action" class="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ExecutionAPIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ExecutionAPIMigration_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action" class="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action"/>
-    <group id="Migrations25_ActionGroupoptional"/>
+    <action id="jetbrains.mps.ide.migration.migration25.AddExtendedLanguagesAsUsed_Action" class="jetbrains.mps.ide.migration.migration25.AddExtendedLanguagesAsUsed_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action" class="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action" class="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action" class="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action" class="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ExecutionAPIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ExecutionAPIMigration_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action"></action>
+    <action id="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action" class="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action"></action>
+    <group id="Migrations25_ActionGroupoptional" />
     <group id="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" text="Migrations 2.5" popup="true">
-      <separator/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.AddExtendedLanguagesAsUsed_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ExecutionAPIMigration_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action"/>
-      <reference ref="Migrations25_ActionGroupoptional"/>
-      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <separator />
+      <reference ref="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.AddExtendedLanguagesAsUsed_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ExecutionAPIMigration_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" />
+      <reference ref="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action" />
+      <reference ref="Migrations25_ActionGroupoptional" />
+      <add-to-group group-id="ToolsMenu" anchor="last" />
     </group>
   </actions>
 </components>

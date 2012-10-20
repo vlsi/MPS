@@ -11,7 +11,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
@@ -25,7 +25,7 @@ public class DevkitDescriptorPersistence {
   public static DevkitDescriptor loadDevKitDescriptor(IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
-      final Element root = ((Element) document.getRootElement());
+      final Element root = document.getRootElement();
       DevkitDescriptor descriptor = new _FunctionTypes._return_P0_E0<DevkitDescriptor>() {
         public DevkitDescriptor invoke() {
           final DevkitDescriptor result_raojav_a0a0c0a0a = new DevkitDescriptor();
@@ -34,18 +34,22 @@ public class DevkitDescriptorPersistence {
           final String result_raojav_a1a0a0c0a0a = root.getAttributeValue("uuid");
           result_raojav_a0a0c0a0a.setUUID(result_raojav_a1a0a0c0a0a);
 
-          ModuleDescriptorPersistence.loadDependencies(result_raojav_a0a0c0a0a, root);
-
-          for (Element exportedLang : ListSequence.fromList(AttributeUtils.elementChildren(root, "exported-language"))) {
+          for (Element exportedLang : ListSequence.fromList((List<Element>) root.getChildren("exported-language"))) {
             result_raojav_a0a0c0a0a.getExportedLanguages().add(ModuleReference.fromString(exportedLang.getAttributeValue("name")));
           }
 
-          for (Element xde : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "extendedDevKits")).first(), "extendedDevKit"))) {
-            result_raojav_a0a0c0a0a.getExtendedDevkits().add(ModuleReference.fromString(xde.getText()));
+          Element extendedDevKits = ListSequence.fromList(((List<Element>) root.getChildren("extendedDevKits"))).first();
+          if (extendedDevKits != null) {
+            for (Element xde : ListSequence.fromList((List<Element>) extendedDevKits.getChildren("extendedDevKit"))) {
+              result_raojav_a0a0c0a0a.getExtendedDevkits().add(ModuleReference.fromString(xde.getText()));
+            }
           }
 
-          for (Element xse : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "exported-solutions")).first(), "exported-solution"))) {
-            result_raojav_a0a0c0a0a.getExportedSolutions().add(ModuleReference.fromString(xse.getText()));
+          Element exportedSolutions = ListSequence.fromList(((List<Element>) root.getChildren("exported-solutions"))).first();
+          if (exportedSolutions != null) {
+            for (Element xse : ListSequence.fromList((List<Element>) exportedSolutions.getChildren("exported-solution"))) {
+              result_raojav_a0a0c0a0a.getExportedSolutions().add(ModuleReference.fromString(xse.getText()));
+            }
           }
           return result_raojav_a0a0c0a0a;
         }
@@ -62,47 +66,61 @@ public class DevkitDescriptorPersistence {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         final Element result_raojav_a0a0a0b = new Element("dev-kit");
-        final String result_raojav_a0a0a0a0b = descriptor.getNamespace();
-        result_raojav_a0a0a0b.setAttribute("name", "" + result_raojav_a0a0a0a0b);
-
+        result_raojav_a0a0a0b.setAttribute("name", descriptor.getNamespace());
         if (descriptor.getUUID() != null) {
-          final String result_raojav_a0a2a0a0a0b = descriptor.getUUID();
-          result_raojav_a0a0a0b.setAttribute("uuid", "" + result_raojav_a0a2a0a0a0b);
+          result_raojav_a0a0a0b.setAttribute("uuid", descriptor.getUUID());
         }
 
-        ModuleDescriptorPersistence.saveDependencies(result_raojav_a0a0a0b, descriptor);
-
-        for (ModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
-          final Element result_raojav_a0a6a0a0a0b = new Element("exported-language");
-          final String result_raojav_a0a0a6a0a0a0b = lang.toString();
-          result_raojav_a0a6a0a0a0b.setAttribute("name", "" + result_raojav_a0a0a6a0a0a0b);
-          result_raojav_a0a0a0b.addContent(result_raojav_a0a6a0a0a0b);
+        for (final ModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
+          result_raojav_a0a0a0b.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+            public Element invoke() {
+              final Element result_raojav_a0a0a0a3a0a0a0b = new Element("exported-language");
+              result_raojav_a0a0a0a3a0a0a0b.setAttribute("name", lang.toString());
+              return result_raojav_a0a0a0a3a0a0a0b;
+            }
+          }.invoke());
         }
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
-          final Element result_raojav_a0a8a0a0a0b = new Element("extendedDevKits");
-          for (ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
-            final Element result_raojav_a0a0a0a8a0a0a0b = new Element("extendedDevKit");
-            final String result_raojav_a0a0a0a0a8a0a0a0b = ref.toString();
-            result_raojav_a0a0a0a8a0a0a0b.setText(result_raojav_a0a0a0a0a8a0a0a0b);
-            result_raojav_a0a8a0a0a0b.addContent(result_raojav_a0a0a0a8a0a0a0b);
-          }
-          result_raojav_a0a0a0b.addContent(result_raojav_a0a8a0a0a0b);
+          result_raojav_a0a0a0b.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+            public Element invoke() {
+              final Element result_raojav_a0a0a0a5a0a0a0b = new Element("extendedDevKits");
+              for (final ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
+                result_raojav_a0a0a0a5a0a0a0b.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+                  public Element invoke() {
+                    final Element result_raojav_a0a0a0a0a0a0a0a5a0a0a0b = new Element("extendedDevKit");
+                    result_raojav_a0a0a0a0a0a0a0a5a0a0a0b.setText(ref.toString());
+                    return result_raojav_a0a0a0a0a0a0a0a5a0a0a0b;
+                  }
+                }.invoke());
+              }
+              return result_raojav_a0a0a0a5a0a0a0b;
+            }
+          }.invoke());
         }
 
         if (!(descriptor.getExportedSolutions().isEmpty())) {
-          final Element result_raojav_a0a01a0a0a0b = new Element("exported-solutions");
-          for (ModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
-            final Element result_raojav_a0a0a0a01a0a0a0b = new Element("exported-solution");
-            final String result_raojav_a0a0a0a0a01a0a0a0b = ref.toString();
-            result_raojav_a0a0a0a01a0a0a0b.setText(result_raojav_a0a0a0a0a01a0a0a0b);
-            result_raojav_a0a01a0a0a0b.addContent(result_raojav_a0a0a0a01a0a0a0b);
-          }
-          result_raojav_a0a0a0b.addContent(result_raojav_a0a01a0a0a0b);
+          result_raojav_a0a0a0b.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+            public Element invoke() {
+              final Element result_raojav_a0a0a0a7a0a0a0b = new Element("exported-solutions");
+              for (final ModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
+                result_raojav_a0a0a0a7a0a0a0b.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+                  public Element invoke() {
+                    final Element result_raojav_a0a0a0a0a0a0a0a7a0a0a0b = new Element("exported-solution");
+                    result_raojav_a0a0a0a0a0a0a0a7a0a0a0b.setText(ref.toString());
+                    return result_raojav_a0a0a0a0a0a0a0a7a0a0a0b;
+                  }
+                }.invoke());
+              }
+              return result_raojav_a0a0a0a7a0a0a0b;
+            }
+          }.invoke());
         }
+
         return result_raojav_a0a0a0b;
       }
     }.invoke();
+
 
     try {
       OutputStream os = file.openOutputStream();

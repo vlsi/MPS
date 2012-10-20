@@ -260,6 +260,9 @@
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/util/util.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/execution-languages/languages/util/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
+    <copy todir="${build.layout}/plugins/execution-languages/languages">
+      <fileset file="${mps_home}/plugins/execution-languages/languages/devkit/devkit.devkit" />
+    </copy>
     <mkdir dir="${build.layout}/plugins/execution-configurations" />
     <mkdir dir="${build.layout}/plugins/execution-configurations/META-INF" />
     <copy todir="${build.layout}/plugins/execution-configurations/META-INF">

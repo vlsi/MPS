@@ -17,7 +17,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   private boolean isChanged = false;
 
   public TextModelDescriptor(IModule module, TextModelDataSource source) {
-    super(TextPersistenceUtil.refByModule(module.getModuleReference()), source, false);
+    super(TextPersistenceUtil.refByModule(module.getModuleReference()), source);
     this.myModule = module;
     updateDiskTimestamp();
   }

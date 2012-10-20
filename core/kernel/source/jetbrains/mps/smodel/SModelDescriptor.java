@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
@@ -69,10 +68,4 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  //--------------model command listeners-------------
-
-  void addModelCommandListener(@NotNull SModelCommandListener listener);
-
-  void removeModelCommandListener(@NotNull SModelCommandListener listener);
 }

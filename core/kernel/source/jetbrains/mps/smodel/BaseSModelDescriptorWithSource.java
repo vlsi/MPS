@@ -15,35 +15,33 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.descriptor.source.ChangeListener;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
-  @NotNull
-  private final ModelDataSource mySource;
-  private ChangeListener mySourceListener = new ChangeListener() {
-    public void changed(ProgressMonitor monitor) {
-      processChanged(monitor);
+  private DataSourceListener mySourceListener = new DataSourceListener() {
+    @Override
+    public void changed(DataSource source) {
+      processChanged(new EmptyProgressMonitor());
     }
   };
 
-  protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull ModelDataSource source, boolean checkDup) {
-    super(modelReference, checkDup);
-    mySource = source;
-    mySource.startListening(mySourceListener);
+  protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull DataSource source) {
+    super(modelReference, source);
+    getSource().addListener(mySourceListener);
   }
 
   @NotNull
   public ModelDataSource getSource() {
-    return mySource;
+    return (ModelDataSource) super.getSource();
   }
 
   public void dispose() {
-    mySource.stopListening(mySourceListener);
+    getSource().removeListener(mySourceListener);
     super.dispose();
   }
 
@@ -53,12 +51,12 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected abstract void reloadFromDiskSafe();
 
-  public long getSourceTimestamp(){
+  public long getSourceTimestamp() {
     return mySourceTimestamp;
   }
 
   public void updateDiskTimestamp() {
-    mySourceTimestamp = mySource.getTimestamp();
+    mySourceTimestamp = getSource().getTimestamp();
   }
 
   protected void processChanged(ProgressMonitor monitor) {
@@ -70,7 +68,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   public boolean needsReloading() {
-    return mySource.getTimestamp() != mySourceTimestamp;
+    return getSource().getTimestamp() != mySourceTimestamp;
   }
 
   protected synchronized void replaceModel(Runnable replacer) {
