@@ -8,6 +8,11 @@ import java.util.Collections;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import java.util.HashSet;
@@ -46,6 +51,56 @@ public class AbstractMigrations {
           SNode isApplicableBody = new AbstractMigrations.QuotationClass_jfwjkz_a0a0a0c0e0a0a0a0().createNode(condition, SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(intention, "isApplicableFunction", true), "body", true), "statement", true));
           SLinkOperations.setTarget(SLinkOperations.getTarget(intention, "isApplicableFunction", true), "body", isApplicableBody, true);
         }
+      }
+    });
+  }
+
+  public static List<AbstractMigrationRefactoring> migrateNodeAttributes(final AbstractMigrations.ConceptMigrationContext context) {
+    return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
+      public String getName() {
+        return "Migrate node attributes for " + context.getName();
+      }
+
+      public String getAdditionalInfo() {
+        return getName();
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+      }
+
+      public boolean isApplicableInstanceNode(SNode conceptDeclaration) {
+        if (!(SConceptOperations.isSubConceptOf(((SNode) conceptDeclaration), "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
+          return false;
+        }
+        SNode concept = (SNode) conceptDeclaration;
+        Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
+
+        return Sequence.fromIterable(attributedConcepts).contains(context.sourceConcept) && !(Sequence.fromIterable(attributedConcepts).contains(context.targetConcept));
+      }
+
+      public void doUpdateInstanceNode(SNode conceptDeclaration) {
+        SNode concept = (SNode) conceptDeclaration;
+        Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
+
+        if (!(Sequence.fromIterable(attributedConcepts).contains(context.targetConcept))) {
+          ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).addElement(new AbstractMigrations.QuotationClass_jfwjkz_a0a0a0d0e0a0a0a1().createNode(context.targetConcept, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first()));
+        }
+      }
+
+      private Iterable<SNode> getAttributedConcepts(SNode concept) {
+        final SNode attributedLinkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first();
+        assert (attributedLinkDeclaration != null);
+
+        return ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "conceptLinkDeclaration", false) == attributedLinkDeclaration;
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+          }
+        });
       }
     });
   }
@@ -178,6 +233,25 @@ public class AbstractMigrations {
           }
         }
         result = quotedNode1_9;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_jfwjkz_a0a0a0d0e0a0a0a1 {
+    public QuotationClass_jfwjkz_a0a0a0d0e0a0a0a1() {
+    }
+
+    public SNode createNode(Object parameter_3, Object parameter_4) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferenceTarget("conceptLinkDeclaration", (SNode) parameter_4);
+        quotedNode1_2.setReferenceTarget("target", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

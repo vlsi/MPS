@@ -12,5 +12,9 @@ public class MigrateLocalStaticMethodCall_MigrationScript extends BaseMigrationS
     for (AbstractMigrationRefactoring refactoring : AbstractMigrations.migrateIntentionCondition(MigrationsFactory.LOCAL_STATIC_METHOD_CALL_MIGRATION_CONTEXT)) {
       this.addRefactoring(refactoring);
     }
+    // whitespace 
+    for (AbstractMigrationRefactoring refactoring : AbstractMigrations.migrateNodeAttributes(MigrationsFactory.LOCAL_STATIC_METHOD_CALL_MIGRATION_CONTEXT)) {
+      this.addRefactoring(refactoring);
+    }
   }
 }
