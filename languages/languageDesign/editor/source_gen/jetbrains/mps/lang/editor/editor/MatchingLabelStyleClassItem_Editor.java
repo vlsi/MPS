@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -59,7 +59,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_uvxm5p_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_a0d0()}));
     return editorCell;
   }
 
@@ -90,7 +90,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_labelName");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -136,7 +136,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     public MatchingLabelStyleClassItem_generic_cellMenu_a0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "hasNoLabel", "" + (true));
     }
 
@@ -149,7 +149,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     public MatchingLabelStyleClassItem_generic_cellMenu_a0d0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "hasNoLabel", "" + (false));
     }
 

@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -200,7 +200,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_a0a1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_a0a1a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a1a");
     return editorCell;
   }

@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -57,7 +57,7 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<- ");
     editorCell.setCellId("Constant_1tjmxy_a0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0a0a()}));
     return editorCell;
   }
 
@@ -65,7 +65,7 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ->");
     editorCell.setCellId("Constant_1tjmxy_b0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0b0a()}));
     return editorCell;
   }
 
@@ -73,7 +73,7 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " - ");
     editorCell.setCellId("Constant_1tjmxy_c0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0c0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0c0a()}));
     return editorCell;
   }
 
@@ -81,7 +81,7 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<->");
     editorCell.setCellId("Constant_1tjmxy_d0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0d0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_a0d0a()}));
     return editorCell;
   }
 
@@ -101,50 +101,50 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     return "FILL".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
   }
 
-  public static class HorizontalAlignment_component_cellMenu_a0a0a implements SubstituteInfoPart {
+  public static class HorizontalAlignment_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
     private HorizontalAlignment_Chooser myComponent;
 
     public HorizontalAlignment_component_cellMenu_a0a0a() {
       this.myComponent = new HorizontalAlignment_Chooser();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class HorizontalAlignment_component_cellMenu_a0b0a implements SubstituteInfoPart {
+  public static class HorizontalAlignment_component_cellMenu_a0b0a implements SubstituteInfoPartExt {
     private HorizontalAlignment_Chooser myComponent;
 
     public HorizontalAlignment_component_cellMenu_a0b0a() {
       this.myComponent = new HorizontalAlignment_Chooser();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class HorizontalAlignment_component_cellMenu_a0c0a implements SubstituteInfoPart {
+  public static class HorizontalAlignment_component_cellMenu_a0c0a implements SubstituteInfoPartExt {
     private HorizontalAlignment_Chooser myComponent;
 
     public HorizontalAlignment_component_cellMenu_a0c0a() {
       this.myComponent = new HorizontalAlignment_Chooser();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class HorizontalAlignment_component_cellMenu_a0d0a implements SubstituteInfoPart {
+  public static class HorizontalAlignment_component_cellMenu_a0d0a implements SubstituteInfoPartExt {
     private HorizontalAlignment_Chooser myComponent;
 
     public HorizontalAlignment_component_cellMenu_a0d0a() {
       this.myComponent = new HorizontalAlignment_Chooser();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

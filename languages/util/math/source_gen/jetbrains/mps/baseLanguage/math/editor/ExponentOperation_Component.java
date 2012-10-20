@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -88,7 +88,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
     }
     deleteUpperIndex.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -113,7 +113,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     public ExponentialOperation_generic_cellMenu_a0b0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "allowedSubstituends")).first(), SNodeOperations.getModel(node), scope))) {
         if (!(SConceptPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
@@ -123,11 +123,11 @@ public class ExponentOperation_Component extends AbstractCellProvider {
       return result;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, "expr", true)));
     }
 

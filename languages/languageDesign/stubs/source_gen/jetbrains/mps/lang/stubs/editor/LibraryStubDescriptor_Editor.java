@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -350,7 +350,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_moduleName");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_a0b0a1b0(), new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_b0b0a1b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_a0b0a1b0(), new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_b0b0a1b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -377,15 +377,15 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     public LibraryStubDescriptor_generic_cellMenu_a0b0a1b0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SetSequence.fromSet(StubSolutionCreateHelper.getAvailableStubSolutions(node)).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((StubSolution) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(StubSolution parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(StubSolution parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "moduleId", parameterObject.getId().toString());
     }
 
@@ -406,7 +406,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     public LibraryStubDescriptor_generic_cellMenu_b0b0a1b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       StubSolutionCreateHelper.createNewStubSolution(operationContext, node);
     }
 

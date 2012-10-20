@@ -27,7 +27,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
@@ -155,7 +155,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
         }
       });
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -185,7 +185,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     public BuildCompositePath_head_cellMenu_a0a0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(node, "jetbrains.mps.build.structure.BuildRelativePath", false, false), Context.defaultContext()));
     }
   }

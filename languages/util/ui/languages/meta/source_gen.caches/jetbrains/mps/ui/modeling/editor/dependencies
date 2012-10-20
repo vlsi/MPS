@@ -670,7 +670,8 @@
   <dependency className="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser" file="HorizontalAlignment_Chooser.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -696,7 +697,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.HorizontalAlignment_Chooser" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.editor.HorizontalConstraint_Editor" file="HorizontalConstraint_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -995,7 +996,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
@@ -1120,7 +1121,8 @@
   <dependency className="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser" file="VerticalAlignment_Chooser.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -1146,7 +1148,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.editor.VerticalAlignment_Chooser" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.editor.VerticalConstraint_Editor" file="VerticalConstraint_Editor.java">
     <classNode dependClassName="java.lang.Class" />

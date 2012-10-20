@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -45,7 +45,7 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new RemoveAllSetElementsOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_12()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new RemoveAllSetElementsOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_12()}));
     return editorCell;
   }
 

@@ -19,7 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -88,7 +88,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new StaticConceptMethodCall_Editor._Inline_fn54i1_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticConceptMethodCall_Editor.StaticConceptMethodCall_customReplace_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticConceptMethodCall_Editor.StaticConceptMethodCall_customReplace_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -103,15 +103,15 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     public StaticConceptMethodCall_customReplace_cellMenu_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return StaticConceptMethodCallUtil.getParameterObjectsForMethodDeclaration(node, scope);
     }
 
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return StaticConceptMethodCallUtil.createNewNodeForMethodDeclarationParameter(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"));
     }
 

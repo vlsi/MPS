@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -70,7 +70,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AggregationConceptLink_Editor.AggregationConceptLink_target_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AggregationConceptLink_Editor.AggregationConceptLink_target_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -85,7 +85,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     public AggregationConceptLink_target_cellMenu_a0c0() {
     }
 
-    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
+    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
     }
   }

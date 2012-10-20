@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -33,7 +33,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yfwtie_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfwtie_a");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a()}));
     if (renderingCondition_yfwtie_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_yfwtie_a0(editorContext, node));
     }
@@ -52,7 +52,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0b0()}));
     return editorCell;
   }
 
@@ -68,7 +68,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -95,38 +95,38 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     return str == null || str.length() == 0;
   }
 
-  public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPart {
+  public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
     public MacroReference_component_cellMenu_a0a0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class MacroReference_component_cellMenu_a0b0 implements SubstituteInfoPart {
+  public static class MacroReference_component_cellMenu_a0b0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
     public MacroReference_component_cellMenu_a0b0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class MacroReference_component_cellMenu_a0a implements SubstituteInfoPart {
+  public static class MacroReference_component_cellMenu_a0a implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
     public MacroReference_component_cellMenu_a0a() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -176,7 +176,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.DRAW_BORDER, true);
       }
       editorCell.setDefaultText("<no role>");
-      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_a0b0()}));
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_a0b0()}));
       editorCell.setCommitInCommand(false);
     }
     SNode attributeConcept = provider.getRoleAttribute();
@@ -244,7 +244,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -289,7 +289,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     public LinkDeclaration_sourceCardinality_cellMenu_a0c0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
         for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
@@ -307,7 +307,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     public LinkDeclaration_null_postfixCellMenu_a0b0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(node, "target", false) != null)) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));

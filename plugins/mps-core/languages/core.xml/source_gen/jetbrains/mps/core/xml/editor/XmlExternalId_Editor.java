@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -59,7 +59,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_dsthrr_a0a0");
     XmlSS_StyleSheet.getXmlTagName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_a0a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_a0a0a0()}));
     return editorCell;
   }
 
@@ -68,7 +68,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_dsthrr_a0a");
     XmlSS_StyleSheet.getXmlTagName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_a0a0a()}));
     return editorCell;
   }
 
@@ -116,26 +116,26 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isPublic");
   }
 
-  public static class XmlExternalId_component_cellMenu_a0a0a0 implements SubstituteInfoPart {
+  public static class XmlExternalId_component_cellMenu_a0a0a0 implements SubstituteInfoPartExt {
     private ExternalIdMenu myComponent;
 
     public XmlExternalId_component_cellMenu_a0a0a0() {
       this.myComponent = new ExternalIdMenu();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class XmlExternalId_component_cellMenu_a0a0a implements SubstituteInfoPart {
+  public static class XmlExternalId_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
     private ExternalIdMenu myComponent;
 
     public XmlExternalId_component_cellMenu_a0a0a() {
       this.myComponent = new ExternalIdMenu();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

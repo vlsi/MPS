@@ -42,7 +42,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 
 public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -495,7 +495,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public InterfaceConceptDeclaration_generic_cellMenu_a0f1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -510,7 +510,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public InterfaceConceptDeclaration_generic_cellMenu_a0i1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
@@ -639,7 +639,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0f1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0f1c0()}));
       }
     }
 
@@ -683,7 +683,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0i1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0i1c0()}));
       }
     }
 

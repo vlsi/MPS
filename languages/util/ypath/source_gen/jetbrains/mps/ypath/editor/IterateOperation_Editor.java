@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.ypath.behavior.IterateOperation_Behavior;
@@ -143,7 +143,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0b1a()}));
     return editorCell;
   }
 
@@ -218,7 +218,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -259,7 +259,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     }
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0d1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0d1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -307,38 +307,38 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "paramObject", true) != null);
   }
 
-  public static class IterateOperation_component_cellMenu_a0b1a implements SubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu_a0b1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
     public IterateOperation_component_cellMenu_a0b1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class IterateOperation_component_cellMenu_a0c1a implements SubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu_a0c1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
     public IterateOperation_component_cellMenu_a0c1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class IterateOperation_component_cellMenu_a0d1a implements SubstituteInfoPart {
+  public static class IterateOperation_component_cellMenu_a0d1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
     public IterateOperation_component_cellMenu_a0d1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -52,7 +52,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_n0gj60_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_0()}));
     return editorCell;
   }
 
@@ -72,7 +72,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -90,7 +90,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_style");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -136,15 +136,15 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public FontStyleStyleClassItem_generic_cellMenu_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
       if (eq_n0gj60_a0b0c1(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
         SLinkOperations.setTarget(node, "query", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
@@ -167,15 +167,15 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public FontStyleStyleClassItem_generic_cellMenu_a0d0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
     }
