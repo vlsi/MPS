@@ -24,10 +24,10 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8166483729924360116">
-      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-      <property name="name" nameId="tpck.1169194664001" value="Mps25ExecutionApiMigration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
       <property name="title" nameId="tp33.1177457669450" value="Execution Api Migration" />
+      <property name="name" nameId="tpck.1169194664001" value="Mps25ExecutionApiMigration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
   </roots>
   <root id="8166483729924360116">

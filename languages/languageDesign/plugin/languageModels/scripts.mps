@@ -49,19 +49,19 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="5538333046911349083">
       <property name="title" nameId="tp33.1177457669450" value="Convert ActionParameter Condition" />
       <property name="name" nameId="tpck.1169194664001" value="ConvertActionParameterCondition" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="5606420294479385927">
       <property name="title" nameId="tp33.1177457669450" value="Split MPS.Classpath Stubs" />
       <property name="name" nameId="tpck.1169194664001" value="SplitMPSClasspath" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8954236049244973041">
       <property name="title" nameId="tp33.1177457669450" value="API Migration" />
       <property name="name" nameId="tpck.1169194664001" value="Mps25ApiMigration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1760076887286546794">
@@ -75,7 +75,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4214874532454943783">
       <property name="title" nameId="tp33.1177457669450" value="Resolve broken stub references to MPS.Core/Editor/Platform/Workbench" />
       <property name="name" nameId="tpck.1169194664001" value="UpdateMPSModules" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="756174446849966792">
