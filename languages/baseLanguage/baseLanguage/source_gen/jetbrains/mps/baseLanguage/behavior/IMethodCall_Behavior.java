@@ -31,6 +31,7 @@ public class IMethodCall_Behavior {
   private static Class[] PARAMETERS_8008512149545154471 = {SNode.class};
   private static Class[] PARAMETERS_851115533308208851 = {SNode.class};
   private static Class[] PARAMETERS_5776618742611315379 = {SNode.class, String.class};
+  private static Class[] PARAMETERS_4837286298388660615 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -120,6 +121,11 @@ public class IMethodCall_Behavior {
     return new ArrayList<SNode>();
   }
 
+  public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    SNode methodAnc = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == thisNode || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == thisNode || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == thisNode || ((methodAnc != null) && IMethodLike_Behavior.call_getLastStatement_1239354409446(methodAnc) == SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+  }
+
   public static SNode call_getInstanceType_8008512149545154471(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471, new Object[]{});
@@ -135,6 +141,11 @@ public class IMethodCall_Behavior {
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, new Object[]{methodName});
   }
 
+  public static boolean call_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_isInTypeInferenceContext_4837286298388660615", PARAMETERS_4837286298388660615, new Object[]{});
+  }
+
   public static SNode callSuperNew_getInstanceType_8008512149545154471(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", PARAMETERS_8008512149545154471, new Object[]{});
   }
@@ -145,6 +156,10 @@ public class IMethodCall_Behavior {
 
   public static List<SNode> callSuperNew_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, new Object[]{methodName});
+  }
+
+  public static boolean callSuperNew_isInTypeInferenceContext_4837286298388660615(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_isInTypeInferenceContext_4837286298388660615", PARAMETERS_4837286298388660615, new Object[]{});
   }
 
   @Deprecated
@@ -160,6 +175,11 @@ public class IMethodCall_Behavior {
   @Deprecated
   public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, new Object[]{methodName});
+  }
+
+  @Deprecated
+  public static boolean callSuper_isInTypeInferenceContext_4837286298388660615(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_isInTypeInferenceContext_4837286298388660615", PARAMETERS_4837286298388660615, new Object[]{});
   }
 
   public static class Pattern_fq0410_a0a0a5a2a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {

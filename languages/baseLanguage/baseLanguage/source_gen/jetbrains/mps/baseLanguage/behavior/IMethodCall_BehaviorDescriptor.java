@@ -10,4 +10,5 @@ public interface IMethodCall_BehaviorDescriptor extends TypeDerivable_BehaviorDe
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode);
   public Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode);
   public List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName);
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode);
 }
