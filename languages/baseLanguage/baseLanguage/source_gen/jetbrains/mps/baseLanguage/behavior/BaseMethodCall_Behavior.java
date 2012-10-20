@@ -41,4 +41,8 @@ public class BaseMethodCall_Behavior {
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return true;
   }
+
+  public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.callSuperNew_isInTypeInferenceContext_4837286298388660615(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+  }
 }

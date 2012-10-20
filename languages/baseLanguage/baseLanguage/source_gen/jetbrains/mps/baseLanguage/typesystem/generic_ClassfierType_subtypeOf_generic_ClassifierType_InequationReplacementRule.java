@@ -11,12 +11,17 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.Iterator;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Iterator;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -42,8 +47,14 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_e5spwb_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0);
       if (coercedNode_e5spwb_a0 != null) {
-        Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_e5spwb_a0, "parameter", true)).iterator();
-        Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(coercedNode_e5spwb_a0, subs);
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(supertype, subs);
+        SNode ctLeftExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(coercedNode_e5spwb_a0, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        SNode ctRightExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(supertype, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+
+        Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctLeftExp, "parameter", true)).iterator();
+        Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctRightExp, "parameter", true)).iterator();
         while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
           SNode leftParam = leftParamIt.next();
           SNode rightParam = rightParamIt.next();
@@ -67,6 +78,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159482", 0, null);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
               typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) rightParam, false, true, _info_12389875345);
+            }
+          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7192154694570987550", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createEquation((SNode) leftParam, (SNode) rightParam, _info_12389875345);
             }
           } else {
             // <node> 
@@ -103,8 +121,14 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       GeneratedMatchingPattern pattern_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1a2(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_a0);
       if (coercedNode_a0 != null) {
-        Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_a0, "parameter", true)).iterator();
-        Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(coercedNode_a0, subs);
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(supertype, subs);
+        SNode ctLeftExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(coercedNode_a0, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        SNode ctRightExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(supertype, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+
+        Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctLeftExp, "parameter", true)).iterator();
+        Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctRightExp, "parameter", true)).iterator();
         while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
           SNode leftParam = leftParamIt.next();
           SNode rightParam = rightParamIt.next();
@@ -114,6 +138,8 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), (SNode) leftParam, true);
           } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) rightParam, true);
+          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+            result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
           } else {
             // <node> 
             // TODO this is actually an equivalence relation 

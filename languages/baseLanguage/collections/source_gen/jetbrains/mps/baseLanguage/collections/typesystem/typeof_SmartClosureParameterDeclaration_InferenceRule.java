@@ -68,7 +68,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
               }
             */
           }
-        }, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948093", false, false);
+        }, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948093", true, false);
       }
       // <node> 
       // <node> 

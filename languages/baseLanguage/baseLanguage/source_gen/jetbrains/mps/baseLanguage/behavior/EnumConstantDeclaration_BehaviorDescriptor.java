@@ -66,6 +66,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }
 
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
+  }
+
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return EnumConstantDeclaration_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
