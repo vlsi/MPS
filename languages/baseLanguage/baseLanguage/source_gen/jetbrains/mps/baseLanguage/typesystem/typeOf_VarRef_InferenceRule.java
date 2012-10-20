@@ -56,8 +56,8 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
           SNode _nodeToCheck_1029348928467 = varRef;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "580901458078891430", 0, null);
-          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "580901458078891407", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_fse81k_a0a01a0a0().createNode(typeCheckingContext), true, false, _info_12389875345);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2573549641317146385", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2573549641317146387", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_fse81k_a0a01a0a0().createNode(typeCheckingContext), true, true, _info_12389875345);
         }
       }
 

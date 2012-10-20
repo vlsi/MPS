@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1n11qx6johkj5mi76uzefp1r7lla6w4">
+<dependencies version="2" modelHash="-3a2ng4tpikksufxaa9y88zbqddbl0m1">
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="3ccoowm8ygsaoot7ql9tazl5iv0a6t7" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-cfwtne03we41wdqykf0pzy90qnyoz8s" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1w1o9tb6qqcisqktehgbk34xbcxxes2" />
@@ -300,7 +300,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TestSafeEquals_Test.java" />
   </source>
-  <source id="6011730950863071455" name="NullableAnalyzer" hash="c7xq0gp5ymp7p8ft3j57u60h4dkud1z">
+  <source id="6011730950863071455" name="NullableAnalyzer" hash="bwqtr8g5oft8dih5ldxsn8eyfck5sdy">
     <dep root="5097124989039164757" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -342,7 +342,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="PrivateField_Test.java" />
   </source>
-  <source id="843236768048177679" name="FinalFieldWasAssigned" hash="-7c0ywfn36h5w63naddnqo7ye8rbokub">
+  <source id="843236768048177679" name="FinalFieldWasAssigned" hash="-2lnjca2pfc4kwokkgilrulx9j49rlai">
     <dep root="5097124989039164757" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -380,7 +380,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="RollBacksNewTypeSystem_Test.java" />
   </source>
-  <source id="7868761255934329294" name="Validation" hash="-79igji8e3859wc6mvj0zdswjb7mii9t">
+  <source id="7868761255934329294" name="Validation" hash="-a0mys81eolw4ppqybs7orjol3h0afb6">
     <dep root="5097124989039164757" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -408,7 +408,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="TypesTest_BL_Test.java" />
   </source>
-  <source id="6639374232683434563" name="hasSameSignatureTest" hash="7wsyqecsxmeq29w1xbrvnxav1kxfij">
+  <source id="6639374232683434563" name="hasSameSignatureTest" hash="16std3f5a8aaw1f0jhpwbz0vf2lcvhx">
     <dep root="5097124989039164757" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -422,7 +422,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="hasSameSignatureTest_Test.java" />
   </source>
-  <source id="4395293866213195826" name="TestExpectedType" hash="-30tguu9lq8aeu52py39oasgozemz4fx">
+  <source id="4395293866213195826" name="TestExpectedType" hash="-6e31u0lxzxri5osw8rl22gzi6287e57">
     <dep root="5097124989039164757" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -436,7 +436,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="TestExpectedType_Test.java" />
   </source>
-  <source id="4705425356438246924" name="FinalVarRefs" hash="a3kmrcq1zk012hvv56bbnub7q9dwdco">
+  <source id="4705425356438246924" name="FinalVarRefs" hash="2of9psuo1nzk0gw5b2tzltbbx96vj8w">
     <dep root="5097124989039164757" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

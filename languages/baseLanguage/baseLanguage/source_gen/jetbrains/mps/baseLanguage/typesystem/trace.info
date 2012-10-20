@@ -2153,9 +2153,9 @@
     <nodeInfo nodeId="580901458078891391" fileName="typeOf_VarRef_InferenceRule.java" startLine="51" startPosition="7" endLine="52" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="580901458078891391" fileName="typeOf_VarRef_InferenceRule.java" startLine="52" startPosition="50" endLine="53" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="580901458078891391" fileName="typeOf_VarRef_InferenceRule.java" startLine="53" startPosition="204" endLine="54" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="57" startPosition="9" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="58" startPosition="52" endLine="59" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="59" startPosition="206" endLine="60" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="57" startPosition="9" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="58" startPosition="52" endLine="59" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="59" startPosition="207" endLine="60" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="583966111002868644" fileName="typeOf_VarRef_InferenceRule.java" startLine="62" startPosition="7" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="583966111002868646" fileName="typeOf_VarRef_InferenceRule.java" startLine="63" startPosition="0" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="583966111002868556" fileName="typeOf_VarRef_InferenceRule.java" startLine="65" startPosition="5" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -2175,22 +2175,22 @@
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="99" startPosition="5" endLine="100" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="100" startPosition="119" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="105" startPosition="30" endLine="106" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="113" startPosition="76" endLine="114" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="114" startPosition="26" endLine="115" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="115" startPosition="67" endLine="116" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="117" startPosition="7" endLine="118" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="118" startPosition="163" endLine="119" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="119" startPosition="43" endLine="120" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="120" startPosition="243" endLine="121" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="122" startPosition="7" endLine="123" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="126" startPosition="31" endLine="127" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="127" startPosition="26" endLine="128" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="128" startPosition="67" endLine="129" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="130" startPosition="7" endLine="131" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="131" startPosition="163" endLine="132" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="132" startPosition="43" endLine="133" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="133" startPosition="243" endLine="134" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="135" startPosition="7" endLine="136" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="113" startPosition="76" endLine="114" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="114" startPosition="26" endLine="115" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="115" startPosition="67" endLine="116" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="117" startPosition="7" endLine="118" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="118" startPosition="163" endLine="119" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="119" startPosition="43" endLine="120" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="120" startPosition="243" endLine="121" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="122" startPosition="7" endLine="123" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="126" startPosition="31" endLine="127" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="127" startPosition="26" endLine="128" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="128" startPosition="67" endLine="129" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="130" startPosition="7" endLine="131" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="131" startPosition="163" endLine="132" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="132" startPosition="43" endLine="133" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="133" startPosition="243" endLine="134" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="135" startPosition="7" endLine="136" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="144" startPosition="96" endLine="145" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="145" startPosition="26" endLine="146" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="146" startPosition="67" endLine="147" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2220,7 +2220,7 @@
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="190" startPosition="9" endLine="191" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="192" startPosition="7" endLine="193" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="27" startPosition="113" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeOf_VarRef_InferenceRule#()V" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="109" startPosition="55" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_fse81k_a0a01a0a0#()V" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="109" startPosition="55" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_fse81k_a0a01a0a0#()V" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="140" startPosition="60" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_fse81k_a0a0a0a2a1a4a0#()V" />
     <nodeInfo nodeId="2573549641316780148" fileName="typeOf_VarRef_InferenceRule.java" startLine="33" startPosition="173" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="580901458078891047" fileName="typeOf_VarRef_InferenceRule.java" startLine="38" startPosition="101" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2234,22 +2234,22 @@
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="98" startPosition="68" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="580901458078891391" fileName="typeOf_VarRef_InferenceRule.java" startLine="50" startPosition="7" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="56" startPosition="61" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="56" startPosition="61" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219923151018" fileName="typeOf_VarRef_InferenceRule.java" startLine="79" startPosition="33" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219923263526" fileName="typeOf_VarRef_InferenceRule.java" startLine="79" startPosition="33" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="580901458078891155" fileName="typeOf_VarRef_InferenceRule.java" startLine="44" startPosition="75" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1219923151018" fileName="typeOf_VarRef_InferenceRule.java" startLine="72" startPosition="43" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="116" startPosition="32" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="116" startPosition="32" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="129" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="129" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="116" startPosition="32" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="116" startPosition="32" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="129" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="129" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="154" startPosition="30" endLine="160" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="180" startPosition="30" endLine="186" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="55" startPosition="7" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="55" startPosition="7" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="1219923151018" fileName="typeOf_VarRef_InferenceRule.java" startLine="78" startPosition="9" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="112" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="125" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="112" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="125" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="151" startPosition="43" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="151" startPosition="43" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="177" startPosition="43" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2265,7 +2265,7 @@
     <nodeInfo nodeId="583966111002868558" fileName="typeOf_VarRef_InferenceRule.java" startLine="31" startPosition="119" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="30" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="28" startPosition="40" endLine="28" endPosition="40" />
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="110" startPosition="46" endLine="110" endPosition="46" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="110" startPosition="46" endLine="110" endPosition="46" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="141" startPosition="51" endLine="141" endPosition="51" />
     <scopeInfo nodeId="2573549641316780149" fileName="typeOf_VarRef_InferenceRule.java" startLine="34" startPosition="32" endLine="35" endPosition="15" />
     <scopeInfo nodeId="580901458078891048" fileName="typeOf_VarRef_InferenceRule.java" startLine="39" startPosition="38" endLine="40" endPosition="15" />
@@ -2280,7 +2280,7 @@
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="99" startPosition="5" endLine="101" endPosition="45">
       <varInfo nodeId="1176719219618" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="109" startPosition="55" endLine="111" endPosition="5" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="109" startPosition="55" endLine="111" endPosition="5" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="140" startPosition="60" endLine="142" endPosition="5" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="157" startPosition="18" endLine="159" endPosition="41" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="183" startPosition="18" endLine="185" endPosition="41" />
@@ -2288,9 +2288,9 @@
       <varInfo nodeId="580901458078891391" varName="_info_12389875345" />
       <varInfo nodeId="580901458078891391" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="57" startPosition="9" endLine="60" endPosition="367">
-      <varInfo nodeId="580901458078891430" varName="_info_12389875345" />
-      <varInfo nodeId="580901458078891430" varName="_nodeToCheck_1029348928467" />
+    <scopeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="57" startPosition="9" endLine="60" endPosition="367">
+      <varInfo nodeId="2573549641317146385" varName="_info_12389875345" />
+      <varInfo nodeId="2573549641317146385" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
     <scopeInfo nodeId="1219923263526" fileName="typeOf_VarRef_InferenceRule.java" startLine="80" startPosition="11" endLine="83" endPosition="419">
       <varInfo nodeId="1219923263526" varName="_info_12389875345" />
@@ -2309,29 +2309,29 @@
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="98" startPosition="68" endLine="102" endPosition="5" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="117" startPosition="7" endLine="121" endPosition="31">
-      <varInfo nodeId="580901458078891435" varName="quotedNode1_2" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="117" startPosition="7" endLine="121" endPosition="31">
+      <varInfo nodeId="2573549641317146390" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="130" startPosition="7" endLine="134" endPosition="31">
-      <varInfo nodeId="580901458078891435" varName="quotedNode1_2" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="130" startPosition="7" endLine="134" endPosition="31">
+      <varInfo nodeId="2573549641317146390" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891430" fileName="typeOf_VarRef_InferenceRule.java" startLine="56" startPosition="61" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="2573549641317146385" fileName="typeOf_VarRef_InferenceRule.java" startLine="56" startPosition="61" endLine="61" endPosition="9" />
     <scopeInfo nodeId="1219923151018" fileName="typeOf_VarRef_InferenceRule.java" startLine="79" startPosition="33" endLine="84" endPosition="11" />
     <scopeInfo nodeId="1219923151020" fileName="typeOf_VarRef_InferenceRule.java" startLine="79" startPosition="33" endLine="84" endPosition="11" />
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="116" startPosition="32" endLine="122" endPosition="7" />
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="129" startPosition="32" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="116" startPosition="32" endLine="122" endPosition="7" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="129" startPosition="32" endLine="135" endPosition="7" />
     <scopeInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="1176719219618" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="113" startPosition="76" endLine="123" endPosition="20">
-      <varInfo nodeId="580901458078891435" varName="_parameterValues_129834374" />
-      <varInfo nodeId="580901458078891435" varName="quotedNode_1" />
-      <varInfo nodeId="580901458078891435" varName="result" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="113" startPosition="76" endLine="123" endPosition="20">
+      <varInfo nodeId="2573549641317146390" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2573549641317146390" varName="quotedNode_1" />
+      <varInfo nodeId="2573549641317146390" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="126" startPosition="31" endLine="136" endPosition="20">
-      <varInfo nodeId="580901458078891435" varName="_parameterValues_129834374" />
-      <varInfo nodeId="580901458078891435" varName="quotedNode_1" />
-      <varInfo nodeId="580901458078891435" varName="result" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="126" startPosition="31" endLine="136" endPosition="20">
+      <varInfo nodeId="2573549641317146390" varName="_parameterValues_129834374" />
+      <varInfo nodeId="2573549641317146390" varName="quotedNode_1" />
+      <varInfo nodeId="2573549641317146390" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="152" startPosition="9" endLine="163" endPosition="11">
       <varInfo nodeId="1219923269828" varName="quotedNode1_4" />
@@ -2339,10 +2339,10 @@
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="178" startPosition="9" endLine="189" endPosition="11">
       <varInfo nodeId="1219923269828" varName="quotedNode1_4" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="112" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="580901458078891435" varName="typeCheckingContext" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="112" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="2573549641317146390" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="125" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="125" startPosition="0" endLine="138" endPosition="0" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="151" startPosition="43" endLine="164" endPosition="9" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="177" startPosition="43" endLine="190" endPosition="9" />
     <scopeInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="149" startPosition="7" endLine="165" endPosition="31">
@@ -2392,7 +2392,7 @@
       <varInfo nodeId="1176719219618" varName="typeCheckingContext" />
       <varInfo nodeId="1176719219618" varName="varRef" />
     </scopeInfo>
-    <unitInfo nodeId="580901458078891435" fileName="typeOf_VarRef_InferenceRule.java" startLine="109" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_VarRef_InferenceRule$QuotationClass_fse81k_a0a01a0a0" />
+    <unitInfo nodeId="2573549641317146390" fileName="typeOf_VarRef_InferenceRule.java" startLine="109" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_VarRef_InferenceRule$QuotationClass_fse81k_a0a01a0a0" />
     <unitInfo nodeId="1219923269828" fileName="typeOf_VarRef_InferenceRule.java" startLine="140" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_VarRef_InferenceRule$QuotationClass_fse81k_a0a0a0a2a1a4a0" />
     <unitInfo nodeId="1176719219618" fileName="typeOf_VarRef_InferenceRule.java" startLine="27" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_VarRef_InferenceRule" />
   </root>
