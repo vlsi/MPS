@@ -827,9 +827,9 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7201967929020665828">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7201967929020665777" resolveInfo="kind" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_IsSubConceptOfOperation" typeId="tp25.1180031783296" id="7201967929020665855">
-              <node role="conceptArgument" roleId="tp25.1180031783297" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7201967929020665857">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_IsExactlyOperation" typeId="tp25.1172326502327" id="7059828622922166324">
+              <node role="conceptArgument" roleId="tp25.1206733650006" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7059828622922166326">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.7812454656619025416" resolveInfo="MethodDeclaration" />
               </node>
             </node>
           </node>

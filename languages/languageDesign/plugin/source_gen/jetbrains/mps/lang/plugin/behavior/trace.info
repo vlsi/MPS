@@ -438,7 +438,7 @@
     <nodeInfo nodeId="1213877371978" fileName="ActionDeclaration_Behavior.java" startLine="35" startPosition="106" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877371985" fileName="ActionDeclaration_Behavior.java" startLine="36" startPosition="63" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5003188907305392394" fileName="ActionDeclaration_Behavior.java" startLine="40" startPosition="98" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7201967929020688144" fileName="ActionDeclaration_Behavior.java" startLine="45" startPosition="116" endLine="46" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7201967929020688144" fileName="ActionDeclaration_Behavior.java" startLine="45" startPosition="103" endLine="46" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7201967929020688082" fileName="ActionDeclaration_Behavior.java" startLine="48" startPosition="41" endLine="49" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7201967929020688170" fileName="ActionDeclaration_Behavior.java" startLine="51" startPosition="9" endLine="52" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7201967929020665782" fileName="ActionDeclaration_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -477,7 +477,7 @@
     <scopeInfo nodeId="1213877371869" fileName="ActionDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1213877371869" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7201967929020665825" fileName="ActionDeclaration_Behavior.java" startLine="45" startPosition="116" endLine="52" endPosition="124">
+    <scopeInfo nodeId="7201967929020665825" fileName="ActionDeclaration_Behavior.java" startLine="45" startPosition="103" endLine="52" endPosition="124">
       <varInfo nodeId="7201967929020688145" varName="baseActionType" />
       <varInfo nodeId="7201967929020688115" varName="methods" />
     </scopeInfo>
