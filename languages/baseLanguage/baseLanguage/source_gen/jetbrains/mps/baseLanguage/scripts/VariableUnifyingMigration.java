@@ -7,20 +7,18 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class VariableUnifyingMigration {
   private VariableUnifyingMigration() {
@@ -31,42 +29,16 @@ public class VariableUnifyingMigration {
 
     MigrationConfig config = getMigrationConfig(referenceConcept, targetConcept);
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
-    ListSequence.fromList(refactorings).addElement(migrateSpecializedLinkAccess(referenceConcept, targetConcept));
+    ListSequence.fromList(refactorings).addElement(SpecialMigrations.migrateSpecializedLinkAccess(referenceConcept, targetConcept));
 
     return refactorings;
-  }
-
-  private static AbstractMigrationRefactoring migrateSpecializedLinkAccess(final SNode referenceConcept, final SNode targetConcept) {
-    final SNode linkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(referenceConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "target", false) == targetConcept;
-      }
-    });
-    if (linkDeclaration == null) {
-      throw new IllegalArgumentException();
-    }
-
-    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
-      public String getName() {
-        return "Migrate specialized link reference access for " + SPropertyOperations.getString(referenceConcept, "name");
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "link", false) == linkDeclaration;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"), false);
-        // <node> 
-      }
-    };
   }
 
   public static MigrationConfig getMigrationConfig(SNode referenceConcept, SNode targetConcept) {
     return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference")) {
       public SNode createCondition(SNode arg) {
         // <node> 
-        return new VariableUnifyingMigration.QuotationClass_u7t7ux_a0b0a0a0a0c().createNode(targetConcept, arg);
+        return new VariableUnifyingMigration.QuotationClass_u7t7ux_a0b0a0a0a0b().createNode(targetConcept, arg);
       }
 
       @Override
@@ -93,40 +65,8 @@ public class VariableUnifyingMigration {
     };
   }
 
-  public static class QuotationClass_u7t7ux_a0a2a0a1a2a0a3a1 {
-    public QuotationClass_u7t7ux_a0a2a0a1a2a0a3a1() {
-    }
-
-    public SNode createNode(Object parameter_5, Object parameter_6) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("concept", (SNode) parameter_6);
-        {
-          quotedNode_2 = (SNode) parameter_5;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_4 = quotedNode_2;
-          }
-          if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode1_4));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_u7t7ux_a0b0a0a0a0c {
-    public QuotationClass_u7t7ux_a0b0a0a0a0c() {
+  public static class QuotationClass_u7t7ux_a0b0a0a0a0b {
+    public QuotationClass_u7t7ux_a0b0a0a0a0b() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {
