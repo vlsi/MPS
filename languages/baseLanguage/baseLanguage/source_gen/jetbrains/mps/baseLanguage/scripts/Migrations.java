@@ -285,7 +285,7 @@ public class Migrations {
         // <node> 
         // <node> 
 
-        return true;
+        return false;
       }
 
       public void doUpdateInstanceNode(SNode node) {
