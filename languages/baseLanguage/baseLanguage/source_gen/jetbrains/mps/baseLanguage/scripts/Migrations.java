@@ -115,7 +115,17 @@ public class Migrations {
         SNode concept = (SNode) conceptDeclaration;
         Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
 
-        return Sequence.fromIterable(attributedConcepts).contains(config.sourceConcept) && !(Sequence.fromIterable(attributedConcepts).contains(config.targetConcept));
+        if (!(Sequence.fromIterable(attributedConcepts).contains(config.sourceConcept))) {
+          return false;
+        }
+
+        if (config.isPullUp()) {
+          // should remove sourceConcept anyway 
+          return true;
+        } else {
+          // should add targetConcept only 
+          return !(Sequence.fromIterable(attributedConcepts).contains(config.targetConcept));
+        }
       }
 
       public void doUpdateInstanceNode(SNode conceptDeclaration) {
@@ -125,11 +135,24 @@ public class Migrations {
         if (!(Sequence.fromIterable(attributedConcepts).contains(config.targetConcept))) {
           ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).addElement(new Migrations.QuotationClass_b5gojm_a0a0a0d0c0a0a0d().createNode(config.targetConcept, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first()));
         }
+        if (config.isPullUp()) {
+          // node attributes are inheritable, so in this case we can remove attribute for sourceConcept 
+          if (Sequence.fromIterable(attributedConcepts).contains(config.sourceConcept)) {
+            SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SLinkOperations.getTarget(it, "conceptLinkDeclaration", false) == getAttributedLinkDeclaration();
+              }
+            }).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false) == config.sourceConcept;
+              }
+            }).first());
+          }
+        }
       }
 
       private Iterable<SNode> getAttributedConcepts(SNode concept) {
-        final SNode attributedLinkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first();
-        assert (attributedLinkDeclaration != null);
+        final SNode attributedLinkDeclaration = getAttributedLinkDeclaration();
 
         return ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -140,6 +163,12 @@ public class Migrations {
             return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
           }
         });
+      }
+
+      private SNode getAttributedLinkDeclaration() {
+        SNode attributedLinkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first();
+        assert (attributedLinkDeclaration != null);
+        return attributedLinkDeclaration;
       }
     };
   }
