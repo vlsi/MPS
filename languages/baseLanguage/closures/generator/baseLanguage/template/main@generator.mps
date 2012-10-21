@@ -17932,7 +17932,7 @@
                           <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8665905049776863921">
                             <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="8665905049776863922">
                               <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8665905049776863923">
-                                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
+                                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
                               </node>
                             </node>
                           </node>
@@ -17945,13 +17945,13 @@
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8665905049776863926">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8665905049776863927">
                             <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8665905049776863928">
-                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1172058436953" resolveInfo="LocalStaticMethodCall" />
+                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
                               <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8665905049776863929">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8665905049776863915" resolveInfo="bmc" />
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8665905049776863930">
-                              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1172058436957" />
+                              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.7812454656619025415" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="8665905049776863931">
