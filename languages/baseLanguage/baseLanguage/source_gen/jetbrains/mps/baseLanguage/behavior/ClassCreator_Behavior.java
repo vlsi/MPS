@@ -41,4 +41,8 @@ public class ClassCreator_Behavior {
     }
     return SLinkOperations.getTargets(classConcept, "constructor", true);
   }
+
+  public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.callSuperNew_isInTypeInferenceContext_4837286298388660615(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+  }
 }

@@ -26,6 +26,10 @@ public abstract class ConstructorInvocationStatement_BehaviorDescriptor extends 
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }
 
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
+  }
+
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return IMethodCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }

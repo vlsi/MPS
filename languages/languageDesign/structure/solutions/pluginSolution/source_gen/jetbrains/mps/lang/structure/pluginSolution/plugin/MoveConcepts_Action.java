@@ -114,8 +114,8 @@ public class MoveConcepts_Action extends BaseAction {
         public SModelReference select(SModelDescriptor it) {
           return it.getSModelReference();
         }
-      }).where(new IWhereFilter<SModelReference>() {
-        public boolean accept(SModelReference it) {
+      }).where(new IWhereFilter<org.jetbrains.mps.openapi.model.SModelReference>() {
+        public boolean accept(org.jetbrains.mps.openapi.model.SModelReference it) {
           return Language.getModelAspect(SModelRepository.getInstance().getModelDescriptor(it)) == LanguageAspect.STRUCTURE;
         }
       }).toListSequence();

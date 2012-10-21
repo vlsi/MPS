@@ -33,6 +33,10 @@ public class BeanBuilder_BehaviorDescriptor extends Builder_BehaviorDescriptor i
     return BeanBuilder_Behavior.virtual_getResultType_7057666463730718251(thisNode);
   }
 
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
+  }
+
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return IMethodCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }

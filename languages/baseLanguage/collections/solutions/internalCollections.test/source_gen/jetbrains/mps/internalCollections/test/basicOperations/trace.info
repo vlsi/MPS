@@ -1550,7 +1550,7 @@
     <nodeInfo nodeId="1227555936011" fileName="Map_Test.java" startLine="111" startPosition="66" endLine="112" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227555936018" fileName="Map_Test.java" startLine="112" startPosition="58" endLine="113" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237103478208" fileName="Map_Test.java" startLine="120" startPosition="6" endLine="121" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237103602885" fileName="Map_Test.java" startLine="122" startPosition="78" endLine="123" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237103602885" fileName="Map_Test.java" startLine="122" startPosition="70" endLine="123" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239092127115" fileName="Map_Test.java" startLine="128" startPosition="49" endLine="129" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239092155838" fileName="Map_Test.java" startLine="129" startPosition="132" endLine="130" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240854982045" fileName="Map_Test.java" startLine="133" startPosition="48" endLine="134" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1658,7 +1658,7 @@
     <scopeInfo nodeId="1115463791055973112" fileName="Map_Test.java" startLine="211" startPosition="38" endLine="211" endPosition="38" />
     <scopeInfo nodeId="1208429049859" fileName="Map_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="44" />
     <scopeInfo nodeId="1227381759518" fileName="Map_Test.java" startLine="95" startPosition="47" endLine="96" endPosition="96" />
-    <scopeInfo nodeId="1237103523435" fileName="Map_Test.java" startLine="122" startPosition="78" endLine="123" endPosition="95" />
+    <scopeInfo nodeId="1237103523435" fileName="Map_Test.java" startLine="122" startPosition="70" endLine="123" endPosition="95" />
     <scopeInfo nodeId="6445734908654411449" fileName="Map_Test.java" startLine="189" startPosition="54" endLine="190" endPosition="60" />
     <scopeInfo nodeId="6445734908654412054" fileName="Map_Test.java" startLine="194" startPosition="41" endLine="195" endPosition="33" />
     <scopeInfo nodeId="1115463791055973105" fileName="Map_Test.java" startLine="209" startPosition="9" endLine="210" endPosition="25" />
