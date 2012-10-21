@@ -13,7 +13,7 @@ public class MigrationConfig {
   /**
    * 
    * 
-   * @param conditionCreator accept expression with type node<sourceConcept> and should return condition expression with type boolean
+   * @param conditionCreator accept expression with type node<sourceConcept> and should return condition expression with type boolean, return expression simple as possible 
    */
   public MigrationConfig(SNode sourceConcept, SNode targetConcept, _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> conditionCreator) {
     this.sourceConcept = sourceConcept;

@@ -107,7 +107,8 @@ public class Migrations {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode result = createCondition(config, IOperation_Behavior.call_getOperand_1213877410070(node));
+        SNode result = new Migrations.QuotationClass_b5gojm_a0a0a1a0a0a3().createNode(IOperation_Behavior.call_getOperand_1213877410070(node), config.targetConcept, createCondition(config, IOperation_Behavior.call_getOperand_1213877410070(node)));
+
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
       }
     };
@@ -282,6 +283,76 @@ public class Migrations {
         quotedNode1_2.setReferenceTarget("conceptLinkDeclaration", (SNode) parameter_4);
         quotedNode1_2.setReferenceTarget("target", (SNode) parameter_3);
         result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_b5gojm_a0a0a1a0a0a3 {
+    public QuotationClass_b5gojm_a0a0a1a0a0a3() {
+    }
+
+    public SNode createNode(Object parameter_15, Object parameter_16, Object parameter_17) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_9 = quotedNode_2;
+          {
+            quotedNode_4 = (SNode) parameter_15;
+            SNode quotedNode1_10;
+            if (_parameterValues_129834374.contains(quotedNode_4)) {
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_4);
+            } else {
+              _parameterValues_129834374.add(quotedNode_4);
+              quotedNode1_10 = quotedNode_4;
+            }
+            if (quotedNode1_10 != null) {
+              quotedNode_2.addChild("operand", HUtil.copyIfNecessary(quotedNode1_10));
+            }
+          }
+          {
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_11 = quotedNode_5;
+            {
+              quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_12 = quotedNode_7;
+              quotedNode1_12.setReferenceTarget("conceptDeclaration", (SNode) parameter_16);
+              quotedNode_5.addChild("conceptArgument", quotedNode1_12);
+            }
+            quotedNode_2.addChild("operation", quotedNode1_11);
+          }
+          quotedNode_1.addChild("leftExpression", quotedNode1_9);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_13 = quotedNode_3;
+          {
+            quotedNode_6 = (SNode) parameter_17;
+            SNode quotedNode1_14;
+            if (_parameterValues_129834374.contains(quotedNode_6)) {
+              quotedNode1_14 = HUtil.copyIfNecessary(quotedNode_6);
+            } else {
+              _parameterValues_129834374.add(quotedNode_6);
+              quotedNode1_14 = quotedNode_6;
+            }
+            if (quotedNode1_14 != null) {
+              quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode1_14));
+            }
+          }
+          quotedNode_1.addChild("rightExpression", quotedNode1_13);
+        }
+        result = quotedNode1_8;
       }
       return result;
     }
