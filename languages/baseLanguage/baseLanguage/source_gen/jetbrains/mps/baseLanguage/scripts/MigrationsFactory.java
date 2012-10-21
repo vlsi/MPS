@@ -32,24 +32,15 @@ public class MigrationsFactory {
 
   public static List<AbstractMigrationRefactoring> migrateVariableReferenceNodes(final SNode referenceConcept, final SNode targetConcept) {
     final String referenceConceptSimpleName = SPropertyOperations.getString(referenceConcept, "name");
-    final String referenceConceptFqName = INamedConcept_Behavior.call_getFqName_1213877404258(referenceConcept);
     final String targetConceptFqName = INamedConcept_Behavior.call_getFqName_1213877404258(targetConcept);
 
-    return ListSequence.fromListAndArray(new ArrayList<AbstractMigrationRefactoring>(), new AbstractMigrationRefactoring(null) {
+    return ListSequence.fromListAndArray(new ArrayList<AbstractMigrationRefactoring>(), new SimpleMigration(referenceConcept) {
       public String getName() {
         return "Convert all nodes of " + referenceConceptSimpleName + " concept to VariableReference nodes";
       }
 
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return referenceConceptFqName;
-      }
-
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(targetConceptFqName.equals(check_uzzzvm_a0a0a0d0a0a0e0a(check_uzzzvm_a0a0a0a3a0a0a4a0(check_uzzzvm_a0a0a0a0a3a0a0a4a0(node)))))) {
+        if (!(targetConceptFqName.equals(check_uzzzvm_a0a0a0b0a0a0d0a(check_uzzzvm_a0a0a0a1a0a0a3a0(check_uzzzvm_a0a0a0a0a1a0a0a3a0(node)))))) {
           return false;
         }
 
@@ -73,34 +64,20 @@ public class MigrationsFactory {
         result.setId(node.getSNodeId());
         SNodeOperations.replaceWithAnother(node, result);
       }
-
-      @Override
-      public boolean isShowAsIntention() {
-        return false;
-      }
     });
   }
 
   public static List<AbstractMigrationRefactoring> migrateLocalMethodCallNodes(final SNode methodCallConcept, final SNode methodDeclarationConcept) {
     final String callConceptSimpleName = SPropertyOperations.getString(methodCallConcept, "name");
-    final String callConceptFqName = INamedConcept_Behavior.call_getFqName_1213877404258(methodCallConcept);
     final String declarationConceptFqName = INamedConcept_Behavior.call_getFqName_1213877404258(methodDeclarationConcept);
 
-    return ListSequence.fromListAndArray(new ArrayList<AbstractMigrationRefactoring>(), new AbstractMigrationRefactoring(null) {
+    return ListSequence.fromListAndArray(new ArrayList<AbstractMigrationRefactoring>(), new SimpleMigration(methodCallConcept) {
       public String getName() {
         return "Convert all nodes of " + callConceptSimpleName + " concept to LocalMethodCall nodes";
       }
 
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return callConceptFqName;
-      }
-
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(declarationConceptFqName.equals(check_uzzzvm_a0a0a0d0a0a0e0b(check_uzzzvm_a0a0a0a3a0a0a4a1(check_uzzzvm_a0a0a0a0a3a0a0a4a1(node)))))) {
+        if (!(declarationConceptFqName.equals(check_uzzzvm_a0a0a0b0a0a0d0b(check_uzzzvm_a0a0a0a1a0a0a3a1(check_uzzzvm_a0a0a0a0a1a0a0a3a1(node)))))) {
           return false;
         }
 
@@ -124,11 +101,6 @@ public class MigrationsFactory {
         result.setId(node.getSNodeId());
         SNodeOperations.replaceWithAnother(node, result);
       }
-
-      @Override
-      public boolean isShowAsIntention() {
-        return false;
-      }
     });
   }
 
@@ -145,17 +117,9 @@ public class MigrationsFactory {
   private static List<AbstractMigrationRefactoring> migrateSModelTypes(final SNode referenceConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
-    ListSequence.fromList(refactorings).addElement(new AbstractMigrationRefactoring(null) {
+    ListSequence.fromList(refactorings).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType")) {
       public String getName() {
         return "Migrate all SNodeTypes with " + SPropertyOperations.getString(referenceConcept, "name");
-      }
-
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.smodel.structure.SNodeType";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
@@ -166,17 +130,9 @@ public class MigrationsFactory {
         SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
       }
     });
-    ListSequence.fromList(refactorings).addElement(new AbstractMigrationRefactoring(null) {
+    ListSequence.fromList(refactorings).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType")) {
       public String getName() {
         return "Migrate all SNodeListTypes with " + SPropertyOperations.getString(referenceConcept, "name");
-      }
-
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.smodel.structure.SNodeListType";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
@@ -201,17 +157,9 @@ public class MigrationsFactory {
       throw new IllegalArgumentException();
     }
 
-    return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
+    return Collections.<AbstractMigrationRefactoring>singletonList(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
       public String getName() {
         return "Migrate specialized link reference access for " + SPropertyOperations.getString(referenceConcept, "name");
-      }
-
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.smodel.structure.SLinkAccess";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
@@ -270,106 +218,106 @@ public class MigrationsFactory {
     return refactorings;
   }
 
-  private static String check_uzzzvm_a0a0a0d0a0a0e0a(SConcept checkedDotOperand) {
+  private static String check_uzzzvm_a0a0a0b0a0a0d0a(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getId();
     }
     return null;
   }
 
-  private static SConcept check_uzzzvm_a0a0a0a3a0a0a4a0(SNode checkedDotOperand) {
+  private static SConcept check_uzzzvm_a0a0a0a1a0a0a3a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConcept();
     }
     return null;
   }
 
-  private static SNode check_uzzzvm_a0a0a0a0a3a0a0a4a0(SNode checkedDotOperand) {
+  private static SNode check_uzzzvm_a0a0a0a0a1a0a0a3a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "variableDeclaration", false);
     }
     return null;
   }
 
-  private static String check_uzzzvm_a0a0d0d0a0a0e0a(SModelFqName checkedDotOperand) {
+  private static String check_uzzzvm_a0a0d0b0a0a0d0a(SModelFqName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelFqName check_uzzzvm_a0a0a3a3a0a0a4a0(SModelReference checkedDotOperand) {
+  private static SModelFqName check_uzzzvm_a0a0a3a1a0a0a3a0(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelFqName();
     }
     return null;
   }
 
-  private static SModelReference check_uzzzvm_a0a0a0d0d0a0a0e0a(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_uzzzvm_a0a0a0d0b0a0a0d0a(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static SModelDescriptor check_uzzzvm_a0a0a0a3a3a0a0a4a0(SModel checkedDotOperand) {
+  private static SModelDescriptor check_uzzzvm_a0a0a0a3a1a0a0a3a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static String check_uzzzvm_a0a0a0d0a0a0e0b(SConcept checkedDotOperand) {
+  private static String check_uzzzvm_a0a0a0b0a0a0d0b(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getId();
     }
     return null;
   }
 
-  private static SConcept check_uzzzvm_a0a0a0a3a0a0a4a1(SNode checkedDotOperand) {
+  private static SConcept check_uzzzvm_a0a0a0a1a0a0a3a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConcept();
     }
     return null;
   }
 
-  private static SNode check_uzzzvm_a0a0a0a0a3a0a0a4a1(SNode checkedDotOperand) {
+  private static SNode check_uzzzvm_a0a0a0a0a1a0a0a3a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "baseMethodDeclaration", false);
     }
     return null;
   }
 
-  private static String check_uzzzvm_a0a0d0d0a0a0e0b(SModelFqName checkedDotOperand) {
+  private static String check_uzzzvm_a0a0d0b0a0a0d0b(SModelFqName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelFqName check_uzzzvm_a0a0a3a3a0a0a4a1(SModelReference checkedDotOperand) {
+  private static SModelFqName check_uzzzvm_a0a0a3a1a0a0a3a1(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelFqName();
     }
     return null;
   }
 
-  private static SModelReference check_uzzzvm_a0a0a0d0d0a0a0e0b(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_uzzzvm_a0a0a0d0b0a0a0d0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static SModelDescriptor check_uzzzvm_a0a0a0a3a3a0a0a4a1(SModel checkedDotOperand) {
+  private static SModelDescriptor check_uzzzvm_a0a0a0a3a1a0a0a3a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  public static class QuotationClass_uzzzvm_a0a2a0a1a4a0a0d0e {
-    public QuotationClass_uzzzvm_a0a2a0a1a4a0a0d0e() {
+  public static class QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0e {
+    public QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0e() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
