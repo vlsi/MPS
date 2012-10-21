@@ -27,11 +27,17 @@ public abstract class MigrationConfig {
    * @param arg expression with type "node<sourceConcept>"
    * @return condition expression with type "boolean", return expression simple as possible 
    */
-  public abstract SNode createCondition(SNode arg);
+  protected abstract SNode createConditionInternal(SNode arg);
 
   public boolean isInstanceNodeMigrationNonTrivial() {
     return false;
   }
 
   public abstract SNode migrateInstanceNode(SNode node);
+
+  public final SNode createCondition(SNode arg) {
+    SNode condition = createConditionInternal(arg);
+    // todo: add simplifyings here! : (VariableReference) -> VariableReference 
+    return condition;
+  }
 }

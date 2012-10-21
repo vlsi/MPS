@@ -35,7 +35,7 @@ public class LocalMethodCallsMigration {
 
   public static MigrationConfig getMigrationConfig(SNode callConcept, final SNode declarationConcept) {
     return new MigrationConfig(callConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall")) {
-      public SNode createCondition(SNode arg) {
+      protected SNode createConditionInternal(SNode arg) {
         // <node> 
         return new LocalMethodCallsMigration.QuotationClass_lds4sy_a0b0a0a0a0b().createNode(declarationConcept, arg);
       }
