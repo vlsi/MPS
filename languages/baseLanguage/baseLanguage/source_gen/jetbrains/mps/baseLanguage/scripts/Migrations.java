@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -28,6 +29,7 @@ public class Migrations {
 
     ListSequence.fromList(migrations).addElement(migrateIntentionCondition(config));
     ListSequence.fromList(migrations).addElement(migrateNodeAttributes(config));
+    ListSequence.fromList(migrations).addElement(migrateInstanceOf(config));
 
     return migrations;
   }
@@ -93,6 +95,19 @@ public class Migrations {
             return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
           }
         });
+      }
+    };
+  }
+
+  public static AbstractMigrationRefactoring migrateInstanceOf(final MigrationConfig context) {
+    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), context.sourceConcept) {
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false) == context.sourceConcept;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = context.conditionCreator.invoke(IOperation_Behavior.call_getOperand_1213877410070(node));
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
       }
     };
   }

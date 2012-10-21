@@ -10,14 +10,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class SModelMethodMigration extends SimpleMigration {
-  protected final SNode referenceConcept;
-  protected final SNode targetConcept;
-  protected final SNode smodelFunctionConcept;
+  private final SNode sourceConcept;
+  private final SNode smodelFunctionConcept;
 
-  public SModelMethodMigration(SNode smodelFunctionConcept, SNode referenceConcept, SNode targetConcept) {
+  public SModelMethodMigration(SNode smodelFunctionConcept, SNode sourceConcept) {
     super(smodelFunctionConcept);
-    this.referenceConcept = referenceConcept;
-    this.targetConcept = targetConcept;
+    this.sourceConcept = sourceConcept;
     this.smodelFunctionConcept = smodelFunctionConcept;
   }
 
@@ -27,6 +25,6 @@ public abstract class SModelMethodMigration extends SimpleMigration {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false), "name").equals("alias");
       }
     }), "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value");
-    return "Migrate " + functionAlias + "(" + SPropertyOperations.getString(referenceConcept, "name") + ") usages";
+    return "Migrate " + functionAlias + "(" + SPropertyOperations.getString(sourceConcept, "name") + ") usages";
   }
 }

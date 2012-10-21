@@ -90,7 +90,9 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -117,6 +119,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfigs" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
