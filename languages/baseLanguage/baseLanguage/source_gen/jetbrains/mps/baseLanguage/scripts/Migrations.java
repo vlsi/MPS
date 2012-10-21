@@ -263,7 +263,7 @@ public class Migrations {
   }
 
   public static SNode createCondition(MigrationConfig config, SNode arg) {
-    SNode condition = config.conditionCreator.invoke(arg);
+    SNode condition = config.createCondition(arg);
     // todo: add simplifyings here! : (VariableReference) -> VariableReference 
     return condition;
   }

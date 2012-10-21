@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.scripts;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,26 +19,26 @@ public class MigrationConfigs {
   private MigrationConfigs() {
   }
 
-  public static MigrationConfig variableUnifyingMigration(SNode referenceConcept, final SNode targetConcept) {
-    return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference"), new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-      public SNode invoke(SNode node) {
+  public static MigrationConfig variableUnifyingMigration(SNode referenceConcept, SNode targetConcept) {
+    return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      public SNode createCondition(SNode arg) {
         // <node> 
-        return new MigrationConfigs.QuotationClass_w0ym7l_a0b0a0a2a0a0a().createNode(targetConcept, node);
+        return new MigrationConfigs.QuotationClass_w0ym7l_a0b0a0a0a0a().createNode(targetConcept, arg);
       }
-    });
+    };
   }
 
   public static MigrationConfig localMethodCallUnifyingMigration(SNode callConcept, final SNode declarationConcept) {
-    return new MigrationConfig(callConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-      public SNode invoke(SNode node) {
+    return new MigrationConfig(callConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall")) {
+      public SNode createCondition(SNode arg) {
         // <node> 
-        return new MigrationConfigs.QuotationClass_w0ym7l_a0b0a0a2a0a0b().createNode(declarationConcept, node);
+        return new MigrationConfigs.QuotationClass_w0ym7l_a0b0a0a0a0b().createNode(declarationConcept, arg);
       }
-    });
+    };
   }
 
-  public static class QuotationClass_w0ym7l_a0b0a0a2a0a0a {
-    public QuotationClass_w0ym7l_a0b0a0a2a0a0a() {
+  public static class QuotationClass_w0ym7l_a0b0a0a0a0a {
+    public QuotationClass_w0ym7l_a0b0a0a0a0a() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {
@@ -95,8 +94,8 @@ public class MigrationConfigs {
     }
   }
 
-  public static class QuotationClass_w0ym7l_a0b0a0a2a0a0b {
-    public QuotationClass_w0ym7l_a0b0a0a2a0a0b() {
+  public static class QuotationClass_w0ym7l_a0b0a0a0a0b {
+    public QuotationClass_w0ym7l_a0b0a0a0a0b() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {
