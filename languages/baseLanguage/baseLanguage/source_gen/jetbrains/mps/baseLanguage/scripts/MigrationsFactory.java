@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Collections;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
@@ -109,14 +108,12 @@ public class MigrationsFactory {
 
     MigrationConfig config = MigrationConfigs.variableUnifyingMigration(referenceConcept, targetConcept);
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
-
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateVariableReferenceSModelUsages(referenceConcept, targetConcept)));
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateSModelAccess(referenceConcept, targetConcept)));
+    ListSequence.fromList(refactorings).addElement(migrateSpecializedLinkAccess(referenceConcept, targetConcept));
 
     return refactorings;
   }
 
-  private static List<AbstractMigrationRefactoring> migrateSModelAccess(final SNode referenceConcept, final SNode targetConcept) {
+  private static AbstractMigrationRefactoring migrateSpecializedLinkAccess(final SNode referenceConcept, final SNode targetConcept) {
     final SNode linkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(referenceConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "target", false) == targetConcept;
@@ -126,7 +123,7 @@ public class MigrationsFactory {
       throw new IllegalArgumentException();
     }
 
-    return Collections.<AbstractMigrationRefactoring>singletonList(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
+    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
       public String getName() {
         return "Migrate specialized link reference access for " + SPropertyOperations.getString(referenceConcept, "name");
       }
@@ -139,7 +136,7 @@ public class MigrationsFactory {
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"), false);
         // <node> 
       }
-    });
+    };
   }
 
   private static String check_uzzzvm_a0a0a0b0a0a0d0a(SConcept checkedDotOperand) {
@@ -240,8 +237,8 @@ public class MigrationsFactory {
     return null;
   }
 
-  public static class QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0d {
-    public QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0d() {
+  public static class QuotationClass_uzzzvm_a0a2a0a1a2a0a3a3 {
+    public QuotationClass_uzzzvm_a0a2a0a1a2a0a3a3() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
