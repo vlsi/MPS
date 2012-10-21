@@ -808,7 +808,7 @@ public class JavaConverterTreeBuilder {
       result = smc;
     } else {
       if (x.receiver instanceof ThisReference && x.receiver.isImplicitThis()) {
-        SNode limc = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
+        SNode limc = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
         methodCall = limc;
         result = limc;
       } else {

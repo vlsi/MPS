@@ -6288,7 +6288,7 @@
     <nodeInfo nodeId="7992933469059568250" fileName="AddTypeParameters_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7992933469059568254" fileName="AddTypeParameters_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7992933469059568254" fileName="AddTypeParameters_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="439" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7992933469059568266" fileName="AddTypeParameters_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="53" startPosition="37" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="14" startPosition="85" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddTypeParameters_Intention#()V" />
@@ -6309,7 +6309,7 @@
     <scopeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="17" />
     <scopeInfo nodeId="7992933469059517024" fileName="AddTypeParameters_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="33" />
     <scopeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="7992933469059568253" fileName="AddTypeParameters_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="204" />
+    <scopeInfo nodeId="7992933469059568253" fileName="AddTypeParameters_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="439" />
     <scopeInfo nodeId="7992933469059517026" fileName="AddTypeParameters_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="106" />
     <scopeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="53" startPosition="37" endLine="54" endPosition="51" />
     <scopeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="14" startPosition="85" endLine="16" endPosition="3" />
