@@ -867,7 +867,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="607759879653668583">
             <property name="name" nameId="tpck.1169194664001" value="localInstanceMethodCall" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="607759879653668584">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="607759879653673818">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="607759879653673819">
@@ -890,7 +890,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607759879653668583" resolveInfo="localInstanceMethodCall" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="607759879653668597">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.3066917033203112509" />
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.7812454656619025415" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="607759879653668602">

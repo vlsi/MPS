@@ -26016,7 +26016,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5311267937735269237">
             <property name="name" nameId="tpck.1169194664001" value="methodCall" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5311267937735269238">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5311267937735269239">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5311267937735269240">
@@ -26024,7 +26024,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="5311267937735269242" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="5311267937735269243">
-                <link role="concept" roleId="tp25.1139867957129" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
+                <link role="concept" roleId="tp25.1139867957129" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
               </node>
             </node>
           </node>
@@ -26042,7 +26042,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5311267937735269237" resolveInfo="methodCall" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5311267937735269251">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.3066917033203112509" />
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.7812454656619025415" />
               </node>
             </node>
           </node>
