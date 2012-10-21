@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.scripts;
 
 import java.util.List;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -19,22 +19,23 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class AbstractMigrations {
-  private AbstractMigrations() {
+public class Migrations {
+  private Migrations() {
   }
 
-  public static List<AbstractMigrationRefactoring> migrateIntentionCondition(final MigrationConfig context) {
-    return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
+  public static List<AbstractMigrationRefactoring> migrateConcept(MigrationConfig config) {
+    List<AbstractMigrationRefactoring> migrations = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
+
+    ListSequence.fromList(migrations).addElement(migrateIntentionCondition(config));
+    ListSequence.fromList(migrations).addElement(migrateNodeAttributes(config));
+
+    return migrations;
+  }
+
+  public static AbstractMigrationRefactoring migrateIntentionCondition(final MigrationConfig context) {
+    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration")) {
       public String getName() {
         return "Migrate intentions condition for " + context.getName();
-      }
-
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.intentions.structure.IntentionDeclaration";
       }
 
       public boolean isApplicableInstanceNode(SNode intention) {
@@ -45,27 +46,19 @@ public class AbstractMigrations {
         SLinkOperations.setTarget(intention, "forConcept", context.targetConcept, false);
         SNode condition = context.conditionCreator.invoke(SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", null));
         if ((SLinkOperations.getTarget(intention, "isApplicableFunction", true) == null)) {
-          SLinkOperations.setTarget(intention, "isApplicableFunction", new AbstractMigrations.QuotationClass_jfwjkz_a0a0a2a4a0a0a0a().createNode(condition), true);
+          SLinkOperations.setTarget(intention, "isApplicableFunction", new Migrations.QuotationClass_b5gojm_a0a0a2a2a0a0a1().createNode(condition), true);
         } else {
-          SNode isApplicableBody = new AbstractMigrations.QuotationClass_jfwjkz_a0a0a0c0e0a0a0a0().createNode(condition, SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(intention, "isApplicableFunction", true), "body", true), "statement", true));
+          SNode isApplicableBody = new Migrations.QuotationClass_b5gojm_a0a0a0c0c0a0a0b().createNode(condition, SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(intention, "isApplicableFunction", true), "body", true), "statement", true));
           SLinkOperations.setTarget(SLinkOperations.getTarget(intention, "isApplicableFunction", true), "body", isApplicableBody, true);
         }
       }
-    });
+    };
   }
 
-  public static List<AbstractMigrationRefactoring> migrateNodeAttributes(final MigrationConfig context) {
-    return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
+  public static AbstractMigrationRefactoring migrateNodeAttributes(final MigrationConfig context) {
+    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       public String getName() {
         return "Migrate node attributes for " + context.getName();
-      }
-
-      public String getAdditionalInfo() {
-        return getName();
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
 
       public boolean isApplicableInstanceNode(SNode conceptDeclaration) {
@@ -83,7 +76,7 @@ public class AbstractMigrations {
         Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
 
         if (!(Sequence.fromIterable(attributedConcepts).contains(context.targetConcept))) {
-          ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).addElement(new AbstractMigrations.QuotationClass_jfwjkz_a0a0a0d0e0a0a0a1().createNode(context.targetConcept, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first()));
+          ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).addElement(new Migrations.QuotationClass_b5gojm_a0a0a0d0c0a0a0c().createNode(context.targetConcept, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first()));
         }
       }
 
@@ -101,11 +94,11 @@ public class AbstractMigrations {
           }
         });
       }
-    });
+    };
   }
 
-  public static class QuotationClass_jfwjkz_a0a0a2a4a0a0a0a {
-    public QuotationClass_jfwjkz_a0a0a2a4a0a0a0a() {
+  public static class QuotationClass_b5gojm_a0a0a2a2a0a0a1 {
+    public QuotationClass_b5gojm_a0a0a2a2a0a0a1() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -147,8 +140,8 @@ public class AbstractMigrations {
     }
   }
 
-  public static class QuotationClass_jfwjkz_a0a0a0c0e0a0a0a0 {
-    public QuotationClass_jfwjkz_a0a0a0c0e0a0a0a0() {
+  public static class QuotationClass_b5gojm_a0a0a0c0c0a0a0b {
+    public QuotationClass_b5gojm_a0a0a0c0c0a0a0b() {
     }
 
     public SNode createNode(Object parameter_16, Object parameter_17) {
@@ -216,8 +209,8 @@ public class AbstractMigrations {
     }
   }
 
-  public static class QuotationClass_jfwjkz_a0a0a0d0e0a0a0a1 {
-    public QuotationClass_jfwjkz_a0a0a0d0e0a0a0a1() {
+  public static class QuotationClass_b5gojm_a0a0a0d0c0a0a0c {
+    public QuotationClass_b5gojm_a0a0a0d0c0a0a0c() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
