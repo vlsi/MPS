@@ -905,7 +905,7 @@ public class Migrations {
     public QuotationClass_b5gojm_a0a2a2a0a0a6() {
     }
 
-    public SNode createNode(Object parameter_13) {
+    public SNode createNode(Object parameter_11) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -913,45 +913,38 @@ public class Migrations {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
-      SNode quotedNode_6 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_7 = quotedNode_1;
+        SNode quotedNode1_6 = quotedNode_1;
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_8 = quotedNode_2;
+          SNode quotedNode1_7 = quotedNode_2;
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_9 = quotedNode_4;
-            {
-              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, GlobalScope.getInstance(), false);
-              SNode quotedNode1_10 = quotedNode_6;
-              quotedNode1_10.setProperty("value", "false");
-              quotedNode_4.addChild("expression", quotedNode1_10);
-            }
-            quotedNode_2.addChild("statement", quotedNode1_9);
+            SNode quotedNode1_8 = quotedNode_4;
+            quotedNode_2.addChild("statement", quotedNode1_8);
           }
-          quotedNode_1.addChild("ifTrue", quotedNode1_8);
+          quotedNode_1.addChild("ifTrue", quotedNode1_7);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_11 = quotedNode_3;
+          SNode quotedNode1_9 = quotedNode_3;
           {
-            quotedNode_5 = (SNode) parameter_13;
-            SNode quotedNode1_12;
+            quotedNode_5 = (SNode) parameter_11;
+            SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
-              quotedNode1_12 = quotedNode_5;
+              quotedNode1_10 = quotedNode_5;
             }
-            if (quotedNode1_12 != null) {
-              quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode1_12));
+            if (quotedNode1_10 != null) {
+              quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode1_10));
             }
           }
-          quotedNode_1.addChild("condition", quotedNode1_11);
+          quotedNode_1.addChild("condition", quotedNode1_9);
         }
-        result = quotedNode1_7;
+        result = quotedNode1_6;
       }
       return result;
     }
