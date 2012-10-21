@@ -27,8 +27,9 @@ public class LocalMethodCallsMigration {
   public static List<AbstractMigrationRefactoring> forConcept(SNode callConcept, final SNode declarationConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(getMigrationConfig(callConcept, declarationConcept))));
-    ListSequence.fromList(refactorings).addElement(SpecialMigrations.migrateSpecializedLinkAccess(callConcept, declarationConcept));
+    MigrationConfig config = getMigrationConfig(callConcept, declarationConcept);
+    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
+    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(SpecialMigrations.migrateSpecializedLinkAccess(config, declarationConcept)));
 
     return refactorings;
   }

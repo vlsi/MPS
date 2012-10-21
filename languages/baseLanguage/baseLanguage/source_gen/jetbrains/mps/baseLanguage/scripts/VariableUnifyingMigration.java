@@ -29,7 +29,7 @@ public class VariableUnifyingMigration {
 
     MigrationConfig config = getMigrationConfig(referenceConcept, targetConcept);
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
-    ListSequence.fromList(refactorings).addElement(SpecialMigrations.migrateSpecializedLinkAccess(referenceConcept, targetConcept));
+    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(SpecialMigrations.migrateSpecializedLinkAccess(config, targetConcept)));
 
     return refactorings;
   }
