@@ -5,13 +5,26 @@ package jetbrains.mps.baseLanguage.checkedDots.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CheckedDotExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static boolean call_hasLocalContextInside_3674434577577159922(SNode thisNode) {
-    return ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.ThisExpression"}, false, new String[]{})).isNotEmpty();
+    if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})).isNotEmpty()) {
+      return true;
+    }
+    if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      }
+    }).isNotEmpty()) {
+      return true;
+    }
+    // todo: VariableReference on FieldDeclaration? 
+    return false;
   }
 
   public static boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
