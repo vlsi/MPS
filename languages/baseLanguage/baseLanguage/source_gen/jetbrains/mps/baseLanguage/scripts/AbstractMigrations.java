@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -24,7 +23,7 @@ public class AbstractMigrations {
   private AbstractMigrations() {
   }
 
-  public static List<AbstractMigrationRefactoring> migrateIntentionCondition(final AbstractMigrations.ConceptMigrationContext context) {
+  public static List<AbstractMigrationRefactoring> migrateIntentionCondition(final MigrationConfig context) {
     return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
       public String getName() {
         return "Migrate intentions condition for " + context.getName();
@@ -55,7 +54,7 @@ public class AbstractMigrations {
     });
   }
 
-  public static List<AbstractMigrationRefactoring> migrateNodeAttributes(final AbstractMigrations.ConceptMigrationContext context) {
+  public static List<AbstractMigrationRefactoring> migrateNodeAttributes(final MigrationConfig context) {
     return Collections.<AbstractMigrationRefactoring>singletonList(new AbstractMigrationRefactoring(null) {
       public String getName() {
         return "Migrate node attributes for " + context.getName();
@@ -103,27 +102,6 @@ public class AbstractMigrations {
         });
       }
     });
-  }
-
-  public static class ConceptMigrationContext {
-    public final SNode sourceConcept;
-    public final SNode targetConcept;
-    public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> conditionCreator;
-
-    /**
-     * 
-     * 
-     * @param conditionCreator accept expression with type node<sourceConcept> and should return condition expression with type boolean
-     */
-    public ConceptMigrationContext(SNode sourceConcept, SNode targetConcept, _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> conditionCreator) {
-      this.sourceConcept = sourceConcept;
-      this.targetConcept = targetConcept;
-      this.conditionCreator = conditionCreator;
-    }
-
-    public String getName() {
-      return sourceConcept.getName() + " to " + targetConcept.getName() + " migration";
-    }
   }
 
   public static class QuotationClass_jfwjkz_a0a0a2a4a0a0a0a {
