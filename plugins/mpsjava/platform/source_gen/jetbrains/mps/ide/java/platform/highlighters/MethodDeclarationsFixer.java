@@ -230,12 +230,16 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, String name) {
+    if (SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")) == null) {
+      return MultiTuple.<SNode,Boolean>from((SNode) null, false);
+    }
+
     Scope scope = ModelConstraints.getScope(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")));
     SNode resolvedMethod = SNodeOperations.cast(scope.resolve(methodCall, name), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     if ((resolvedMethod != null)) {
       return MultiTuple.<SNode,Boolean>from(resolvedMethod, true);
     } else {
-      return resolveMethodByCandidatesAndTypes(methodCall, scope.getAvailableElements(null), null);
+      return resolveMethodByCandidatesAndTypes(methodCall, (Iterable<SNode>) scope.getAvailableElements(null), null);
     }
   }
 
