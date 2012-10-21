@@ -34,9 +34,21 @@ public class CommonPaths {
   private static final String JAVA_VERSION = System.getProperty("java.version").toLowerCase();
 
   public static final boolean isMac = OS_NAME.startsWith("mac");
-  public static final boolean isJdk7 = JAVA_VERSION.startsWith("1.7");
+  public static final int jdkVersion;
 
   private static final Logger LOG = Logger.getLogger(CommonPaths.class);
+
+  static {
+    if (JAVA_VERSION.matches("\\d\\.\\d+\\..*")) {
+      String version = JAVA_VERSION.substring(JAVA_VERSION.indexOf(".") + 1);
+      jdkVersion = Integer.parseInt(version.substring(0, version.indexOf(".")));
+    } else if (JAVA_VERSION.matches("\\d\\.\\d+")) {
+      jdkVersion = Integer.parseInt(JAVA_VERSION.substring(JAVA_VERSION.indexOf(".") + 1));
+    } else {
+      LOG.error("Unexpected java version format " + JAVA_VERSION + ".");
+      jdkVersion = 0;
+    }
+  }
 
   //--------paths-----------
 
@@ -96,7 +108,7 @@ public class CommonPaths {
   private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
-    if (isMac && !isJdk7) {
+    if (isMac && jdkVersion < 7) {
       // in apple jdk's (< jdk7) rt.jar classes contains in classes.jar
       result.add("classes.jar");
     } else {
