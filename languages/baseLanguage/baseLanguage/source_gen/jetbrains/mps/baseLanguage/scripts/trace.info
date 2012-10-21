@@ -2216,135 +2216,159 @@
     <nodeInfo nodeId="6405155471901981088" fileName="LocalMethodCallsMigration.java" startLine="45" startPosition="46" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6405155471901986139" fileName="LocalMethodCallsMigration.java" startLine="49" startPosition="52" endLine="50" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6405155471901986145" fileName="LocalMethodCallsMigration.java" startLine="50" startPosition="118" endLine="51" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901986153" fileName="LocalMethodCallsMigration.java" startLine="51" startPosition="139" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6405155471901986157" fileName="LocalMethodCallsMigration.java" startLine="53" startPosition="91" endLine="54" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901986163" fileName="LocalMethodCallsMigration.java" startLine="54" startPosition="130" endLine="55" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901986177" fileName="LocalMethodCallsMigration.java" startLine="56" startPosition="9" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901986187" fileName="LocalMethodCallsMigration.java" startLine="57" startPosition="40" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6405155471901981104" fileName="LocalMethodCallsMigration.java" startLine="62" startPosition="58" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="72" startPosition="71" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="73" startPosition="26" endLine="74" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="74" startPosition="67" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="75" startPosition="32" endLine="76" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="76" startPosition="32" endLine="77" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="77" startPosition="32" endLine="78" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="78" startPosition="32" endLine="79" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="79" startPosition="32" endLine="80" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="81" startPosition="7" endLine="82" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="82" startPosition="162" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="84" startPosition="9" endLine="85" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="85" startPosition="176" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="87" startPosition="11" endLine="88" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="88" startPosition="172" endLine="89" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="89" startPosition="47" endLine="90" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="90" startPosition="89" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="92" startPosition="11" endLine="93" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="9" endLine="96" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="96" startPosition="164" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="98" startPosition="11" endLine="99" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="99" startPosition="163" endLine="100" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="100" startPosition="48" endLine="101" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="101" startPosition="242" endLine="102" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="104" startPosition="11" endLine="105" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="105" startPosition="48" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="107" startPosition="68" endLine="108" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="109" startPosition="20" endLine="110" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="110" startPosition="59" endLine="111" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="113" startPosition="41" endLine="114" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="116" startPosition="11" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="118" startPosition="9" endLine="119" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="120" startPosition="7" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3151704181842847055" fileName="LocalMethodCallsMigration.java" startLine="51" startPosition="139" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3151704181842847057" fileName="LocalMethodCallsMigration.java" startLine="52" startPosition="0" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6405155471901986153" fileName="LocalMethodCallsMigration.java" startLine="53" startPosition="38" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6405155471901986157" fileName="LocalMethodCallsMigration.java" startLine="55" startPosition="91" endLine="56" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901986163" fileName="LocalMethodCallsMigration.java" startLine="56" startPosition="130" endLine="57" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3151704181842846431" fileName="LocalMethodCallsMigration.java" startLine="58" startPosition="9" endLine="59" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3151704181842846435" fileName="LocalMethodCallsMigration.java" startLine="60" startPosition="89" endLine="61" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3151704181842846441" fileName="LocalMethodCallsMigration.java" startLine="61" startPosition="133" endLine="62" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3151704181842846455" fileName="LocalMethodCallsMigration.java" startLine="63" startPosition="9" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3151704181842846459" fileName="LocalMethodCallsMigration.java" startLine="65" startPosition="83" endLine="66" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3151704181842846465" fileName="LocalMethodCallsMigration.java" startLine="66" startPosition="123" endLine="67" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3151704181842846430" fileName="LocalMethodCallsMigration.java" startLine="68" startPosition="9" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3151704181842846397" fileName="LocalMethodCallsMigration.java" startLine="69" startPosition="0" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6405155471901986177" fileName="LocalMethodCallsMigration.java" startLine="70" startPosition="17" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901986187" fileName="LocalMethodCallsMigration.java" startLine="71" startPosition="40" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405155471901981104" fileName="LocalMethodCallsMigration.java" startLine="76" startPosition="58" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="86" startPosition="71" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="87" startPosition="26" endLine="88" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="88" startPosition="67" endLine="89" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="89" startPosition="32" endLine="90" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="90" startPosition="32" endLine="91" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="91" startPosition="32" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="92" startPosition="32" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="93" startPosition="32" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="7" endLine="96" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="96" startPosition="162" endLine="97" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="98" startPosition="9" endLine="99" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="99" startPosition="176" endLine="100" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="101" startPosition="11" endLine="102" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="102" startPosition="172" endLine="103" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="103" startPosition="47" endLine="104" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="104" startPosition="89" endLine="105" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="106" startPosition="11" endLine="107" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="109" startPosition="9" endLine="110" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="110" startPosition="164" endLine="111" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="112" startPosition="11" endLine="113" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="113" startPosition="163" endLine="114" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="114" startPosition="48" endLine="115" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="115" startPosition="242" endLine="116" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="118" startPosition="11" endLine="119" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="119" startPosition="48" endLine="120" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="121" startPosition="68" endLine="122" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="123" startPosition="20" endLine="124" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="124" startPosition="59" endLine="125" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="127" startPosition="41" endLine="128" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="130" startPosition="11" endLine="131" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="132" startPosition="9" endLine="133" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="134" startPosition="7" endLine="135" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6405155471902063092" fileName="LocalMethodCallsMigration.java" startLine="23" startPosition="40" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalMethodCallsMigration#()V" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="68" startPosition="57" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_lds4sy_a0b0a0a0a0b#()V" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="109" startPosition="18" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="112" startPosition="13" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6405155471901986155" fileName="LocalMethodCallsMigration.java" startLine="52" startPosition="34" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="82" startPosition="57" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_lds4sy_a0b0a0a0a0b#()V" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="123" startPosition="18" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="126" startPosition="13" endLine="129" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6405155471901986155" fileName="LocalMethodCallsMigration.java" startLine="54" startPosition="34" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3151704181842846433" fileName="LocalMethodCallsMigration.java" startLine="59" startPosition="31" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3151704181842846457" fileName="LocalMethodCallsMigration.java" startLine="64" startPosition="29" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6405155471901976024" fileName="LocalMethodCallsMigration.java" startLine="38" startPosition="144" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConditionInternal#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6405155471901981080" fileName="LocalMethodCallsMigration.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConditionNonTrivial#()Z" />
-    <nodeInfo nodeId="6405155471901981096" fileName="LocalMethodCallsMigration.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceNodeMigrationNonTrivial#()Z" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="86" startPosition="45" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="86" startPosition="45" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="46" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="46" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="106" startPosition="33" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6405155471901981096" fileName="LocalMethodCallsMigration.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceNodeMigrationNonTrivial#()Z" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="100" startPosition="45" endLine="106" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="100" startPosition="45" endLine="106" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="111" startPosition="46" endLine="117" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="111" startPosition="46" endLine="117" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="120" startPosition="33" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6405155471902063097" fileName="LocalMethodCallsMigration.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="forConcept#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="83" startPosition="43" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="83" startPosition="43" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901981090" fileName="LocalMethodCallsMigration.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="migrateInstanceNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="103" startPosition="11" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="103" startPosition="11" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="9" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="9" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976018" fileName="LocalMethodCallsMigration.java" startLine="37" startPosition="103" endLine="65" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="842610415962523934" fileName="LocalMethodCallsMigration.java" startLine="36" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMigrationConfig#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/scripts/MigrationConfig;" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="80" startPosition="32" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="80" startPosition="32" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="71" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="43" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="43" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="117" startPosition="11" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="117" startPosition="11" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="108" startPosition="9" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="108" startPosition="9" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901981090" fileName="LocalMethodCallsMigration.java" startLine="48" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="migrateInstanceNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="32" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="32" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901976018" fileName="LocalMethodCallsMigration.java" startLine="37" startPosition="103" endLine="79" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="842610415962523934" fileName="LocalMethodCallsMigration.java" startLine="36" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMigrationConfig#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/scripts/MigrationConfig;" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="85" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="6405155471902063095" fileName="LocalMethodCallsMigration.java" startLine="24" startPosition="39" endLine="24" endPosition="39" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="69" startPosition="48" endLine="69" endPosition="48" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="83" startPosition="48" endLine="83" endPosition="48" />
     <scopeInfo nodeId="6405155471901981083" fileName="LocalMethodCallsMigration.java" startLine="45" startPosition="46" endLine="46" endPosition="20" />
-    <scopeInfo nodeId="6405155471901981099" fileName="LocalMethodCallsMigration.java" startLine="62" startPosition="58" endLine="63" endPosition="20" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="107" startPosition="68" endLine="108" endPosition="67" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="113" startPosition="41" endLine="114" endPosition="86" />
+    <scopeInfo nodeId="6405155471901981099" fileName="LocalMethodCallsMigration.java" startLine="76" startPosition="58" endLine="77" endPosition="20" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="121" startPosition="68" endLine="122" endPosition="67" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="127" startPosition="41" endLine="128" endPosition="86" />
     <scopeInfo nodeId="6405155471902063092" fileName="LocalMethodCallsMigration.java" startLine="23" startPosition="40" endLine="25" endPosition="3" />
     <scopeInfo nodeId="6405155471901976035" fileName="LocalMethodCallsMigration.java" startLine="39" startPosition="58" endLine="41" endPosition="117" />
-    <scopeInfo nodeId="6405155471901986156" fileName="LocalMethodCallsMigration.java" startLine="53" startPosition="91" endLine="55" endPosition="191">
+    <scopeInfo nodeId="6405155471901986156" fileName="LocalMethodCallsMigration.java" startLine="55" startPosition="91" endLine="57" endPosition="191">
       <varInfo nodeId="6405155471901986158" varName="copy" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="68" startPosition="57" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="109" startPosition="20" endLine="111" endPosition="44" />
-    <scopeInfo nodeId="6405155471901986155" fileName="LocalMethodCallsMigration.java" startLine="52" startPosition="34" endLine="56" endPosition="9">
+    <scopeInfo nodeId="3151704181842846434" fileName="LocalMethodCallsMigration.java" startLine="60" startPosition="89" endLine="62" endPosition="193">
+      <varInfo nodeId="3151704181842846436" varName="copy" />
+    </scopeInfo>
+    <scopeInfo nodeId="3151704181842846458" fileName="LocalMethodCallsMigration.java" startLine="65" startPosition="83" endLine="67" endPosition="191">
+      <varInfo nodeId="3151704181842846460" varName="copy" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="82" startPosition="57" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="123" startPosition="20" endLine="125" endPosition="44" />
+    <scopeInfo nodeId="6405155471901986155" fileName="LocalMethodCallsMigration.java" startLine="54" startPosition="34" endLine="58" endPosition="9">
       <varInfo nodeId="6405155471901986172" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="87" startPosition="11" endLine="91" endPosition="68">
+    <scopeInfo nodeId="3151704181842846433" fileName="LocalMethodCallsMigration.java" startLine="59" startPosition="31" endLine="63" endPosition="9">
+      <varInfo nodeId="3151704181842846450" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="3151704181842846457" fileName="LocalMethodCallsMigration.java" startLine="64" startPosition="29" endLine="68" endPosition="9">
+      <varInfo nodeId="3151704181842846474" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="101" startPosition="11" endLine="105" endPosition="68">
       <varInfo nodeId="6405155471901976042" varName="quotedNode1_9" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="98" startPosition="11" endLine="102" endPosition="63">
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="112" startPosition="11" endLine="116" endPosition="63">
       <varInfo nodeId="6405155471901976042" varName="quotedNode1_11" />
     </scopeInfo>
     <scopeInfo nodeId="6405155471901976024" fileName="LocalMethodCallsMigration.java" startLine="38" startPosition="144" endLine="43" endPosition="0">
       <varInfo nodeId="6405155471901976027" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="6405155471901981080" fileName="LocalMethodCallsMigration.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6405155471901981096" fileName="LocalMethodCallsMigration.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="86" startPosition="45" endLine="92" endPosition="11" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="46" endLine="103" endPosition="11" />
+    <scopeInfo nodeId="6405155471901981096" fileName="LocalMethodCallsMigration.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="100" startPosition="45" endLine="106" endPosition="11" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="111" startPosition="46" endLine="117" endPosition="11" />
     <scopeInfo nodeId="6405155471902063100" fileName="LocalMethodCallsMigration.java" startLine="27" startPosition="114" endLine="34" endPosition="24">
       <varInfo nodeId="8602774279581213938" varName="config" />
       <varInfo nodeId="6405155471902063114" varName="refactorings" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901981095" fileName="LocalMethodCallsMigration.java" startLine="49" startPosition="52" endLine="58" endPosition="22">
-      <varInfo nodeId="6405155471901986140" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="84" startPosition="9" endLine="93" endPosition="60">
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="98" startPosition="9" endLine="107" endPosition="60">
       <varInfo nodeId="6405155471901976042" varName="quotedNode1_8" />
     </scopeInfo>
     <scopeInfo nodeId="6405155471902063097" fileName="LocalMethodCallsMigration.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6405155471902063103" varName="callConcept" />
       <varInfo nodeId="6405155471902063105" varName="declarationConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="83" startPosition="43" endLine="94" endPosition="9" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="104" startPosition="11" endLine="115" endPosition="13">
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="43" endLine="108" endPosition="9" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="118" startPosition="11" endLine="129" endPosition="13">
       <varInfo nodeId="6405155471901976042" varName="quotedNode1_12" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901981090" fileName="LocalMethodCallsMigration.java" startLine="48" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="6405155471901981093" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="103" startPosition="11" endLine="116" endPosition="11" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="9" endLine="117" endPosition="59">
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="117" startPosition="11" endLine="130" endPosition="11" />
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="109" startPosition="9" endLine="131" endPosition="59">
       <varInfo nodeId="6405155471901976042" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="9" endLine="118" endPosition="9" />
-    <scopeInfo nodeId="842610415962523937" fileName="LocalMethodCallsMigration.java" startLine="37" startPosition="103" endLine="65" endPosition="6" />
-    <scopeInfo nodeId="842610415962523934" fileName="LocalMethodCallsMigration.java" startLine="36" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="6405155471901981095" fileName="LocalMethodCallsMigration.java" startLine="49" startPosition="52" endLine="72" endPosition="22">
+      <varInfo nodeId="6405155471901986140" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="108" startPosition="9" endLine="132" endPosition="9" />
+    <scopeInfo nodeId="6405155471901981090" fileName="LocalMethodCallsMigration.java" startLine="48" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6405155471901981093" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="7" endLine="133" endPosition="31">
+      <varInfo nodeId="6405155471901976042" varName="quotedNode1_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="32" endLine="134" endPosition="7" />
+    <scopeInfo nodeId="842610415962523937" fileName="LocalMethodCallsMigration.java" startLine="37" startPosition="103" endLine="79" endPosition="6" />
+    <scopeInfo nodeId="842610415962523934" fileName="LocalMethodCallsMigration.java" startLine="36" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="842610415962523939" varName="callConcept" />
       <varInfo nodeId="842610415962523941" varName="declarationConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="81" startPosition="7" endLine="119" endPosition="31">
-      <varInfo nodeId="6405155471901976042" varName="quotedNode1_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="80" startPosition="32" endLine="120" endPosition="7" />
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="72" startPosition="71" endLine="121" endPosition="20">
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="86" startPosition="71" endLine="135" endPosition="20">
       <varInfo nodeId="6405155471901976042" varName="_parameterValues_129834374" />
       <varInfo nodeId="6405155471901976042" varName="quotedNode_1" />
       <varInfo nodeId="6405155471901976042" varName="quotedNode_2" />
@@ -2354,13 +2378,13 @@
       <varInfo nodeId="6405155471901976042" varName="quotedNode_6" />
       <varInfo nodeId="6405155471901976042" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="71" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="85" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="6405155471901976042" varName="parameter_13" />
       <varInfo nodeId="6405155471901976042" varName="parameter_14" />
     </scopeInfo>
-    <unitInfo nodeId="6405155471901976022" fileName="LocalMethodCallsMigration.java" startLine="38" startPosition="15" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration$1" />
-    <unitInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="68" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration$QuotationClass_lds4sy_a0b0a0a0a0b" />
-    <unitInfo nodeId="6405155471902063090" fileName="LocalMethodCallsMigration.java" startLine="23" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration" />
+    <unitInfo nodeId="6405155471901976022" fileName="LocalMethodCallsMigration.java" startLine="38" startPosition="15" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration$1" />
+    <unitInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="82" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration$QuotationClass_lds4sy_a0b0a0a0a0b" />
+    <unitInfo nodeId="6405155471902063090" fileName="LocalMethodCallsMigration.java" startLine="23" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration" />
   </root>
   <root nodeId="7159297221554223394" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
     <nodeInfo nodeId="7159297221554223394" fileName="MigrateLocalStaticFieldReference_MigrationScript.java" startLine="11" startPosition="95" endLine="12" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

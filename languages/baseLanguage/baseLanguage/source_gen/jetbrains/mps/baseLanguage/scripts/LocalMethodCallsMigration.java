@@ -49,11 +49,25 @@ public class LocalMethodCallsMigration {
       public SNode migrateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
         SLinkOperations.setTarget(result, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
+
+        // todo: make it in right way 
         // copy smodel attributes 
         for (SNode attribute : SLinkOperations.getTargets(node, "smodelAttribute", true)) {
           SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), "jetbrains.mps.lang.core.structure.Attribute");
           ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "smodelAttribute"))).addElement(copy);
         }
+        // copy actualArgument 
+        for (SNode argument : SLinkOperations.getTargets(node, "actualArgument", true)) {
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(argument), "jetbrains.mps.baseLanguage.structure.Expression");
+          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument"))).addElement(copy);
+        }
+        // copy typeArgument 
+        for (SNode type : SLinkOperations.getTargets(node, "typeArgument", true)) {
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(type), "jetbrains.mps.baseLanguage.structure.Type");
+          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "typeArgument"))).addElement(copy);
+        }
+
+        // copy  
         result.setId(node.getSNodeId());
         return result;
       }

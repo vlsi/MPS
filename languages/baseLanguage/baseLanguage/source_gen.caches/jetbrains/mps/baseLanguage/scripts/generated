@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9vfy2i28gzm389xeckz8gha49rgjcje">
+<dependencies version="2" modelHash="-3vek8fr78hvjtxh94636hkz9bldajz5">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -58,7 +58,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="1240068519431" name="ShowJavaUtilReferences" hash="-dspdetr0191vyze6ryqfuov7c4bhckm">
+  <source id="1240068519431" name="ShowJavaUtilReferences" hash="-13dd9lanb8nkifuwdnu308m2xczvzrg">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -68,7 +68,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="ShowJavaUtilReferences_MigrationScript.java" />
   </source>
-  <source id="4581730695772514123" name="BaseLanguageEnhancements" hash="-cu6o4tf0ybfroio056uqcoipakbzgqi">
+  <source id="4581730695772514123" name="BaseLanguageEnhancements" hash="-6g0dt929l2s66hwkkl5eab17hld6kbu">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -84,7 +84,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseLanguageEnhancements_MigrationScript.java" />
   </source>
-  <source id="1704189004094297789" name="RemoveThisWhereAppropriate" hash="-ac7vdtizkmpev0jem5zhzw17o3cg80w">
+  <source id="1704189004094297789" name="RemoveThisWhereAppropriate" hash="-6qedup6dhwbjsq9yoog28o66ntpr8zt">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -95,7 +95,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="RemoveThisWhereAppropriate_MigrationScript.java" />
   </source>
-  <source id="8647043020514320142" name="ConvertAnnotationInstances" hash="ekxc73tafjb8lpi269zj0srf2nucexb">
+  <source id="8647043020514320142" name="ConvertAnnotationInstances" hash="-94gk32d9vdljms8vz8hci2s07ccy5so">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
@@ -242,7 +242,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="MigrateLocalInstanceMethodCall_MigrationScript.java" />
   </source>
-  <source id="6405155471902063090" name="LocalMethodCallsMigration" hash="7adl3oh6qp01x7w28hjpiuk7fyngflu">
+  <source id="6405155471902063090" name="LocalMethodCallsMigration" hash="8v6r8lbm36yosikgo2kkhr6ivqk190k">
     <dep root="2379275658802276133" />
     <dep root="8602774279580416019" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
