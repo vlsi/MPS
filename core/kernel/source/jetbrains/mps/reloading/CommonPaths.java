@@ -31,7 +31,10 @@ import java.util.List;
 
 public class CommonPaths {
   private static final String OS_NAME = System.getProperty("os.name").toLowerCase();
+  private static final String JAVA_VERSION = System.getProperty("java.version").toLowerCase();
+
   public static final boolean isMac = OS_NAME.startsWith("mac");
+  public static final boolean isJdk7 = JAVA_VERSION.startsWith("1.7");
 
   private static final Logger LOG = Logger.getLogger(CommonPaths.class);
 
@@ -93,10 +96,11 @@ public class CommonPaths {
   private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
-    if (!isMac) {
-      result.add("rt.jar");
-    } else {
+    if (isMac && !isJdk7) {
+      // in apple jdk's (< jdk7) rt.jar classes contains in classes.jar
       result.add("classes.jar");
+    } else {
+      result.add("rt.jar");
     }
 
     result.add("jsse.jar");
