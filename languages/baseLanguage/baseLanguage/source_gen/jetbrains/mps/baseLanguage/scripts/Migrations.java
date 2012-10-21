@@ -15,6 +15,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -27,6 +31,8 @@ public class Migrations {
 
   public static List<AbstractMigrationRefactoring> migrateConcept(MigrationConfig config) {
     List<AbstractMigrationRefactoring> migrations = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
+
+    ListSequence.fromList(migrations).addElement(migrateInstanceNodes(config));
 
     ListSequence.fromList(migrations).addElement(migrateIntentionCondition(config));
     ListSequence.fromList(migrations).addElement(migrateCheckingRulesCondition(config));
@@ -262,10 +268,65 @@ public class Migrations {
     };
   }
 
+  public static AbstractMigrationRefactoring migrateInstanceNodes(final MigrationConfig config) {
+    return new SimpleMigration(config.sourceConcept) {
+      public String getName() {
+        return "Convert all nodes of " + SPropertyOperations.getString(config.sourceConcept, "name") + " concept to " + SPropertyOperations.getString(config.targetConcept, "name") + " nodes";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        // todo: why we need it? 
+        // checking target concept in for example ParameterReference on equal (strict) with ParameterDeclaration 
+
+        // this code for testing simplifying 
+        // <node> 
+        // <node> 
+
+        // <node> 
+        // <node> 
+
+        return true;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode result = config.migrateInstanceNode(node);
+        SNodeOperations.replaceWithAnother(node, result);
+      }
+    };
+  }
+
   public static SNode createCondition(MigrationConfig config, SNode arg) {
     SNode condition = config.createCondition(arg);
     // todo: add simplifyings here! : (VariableReference) -> VariableReference 
     return condition;
+  }
+
+  private static String check_b5gojm_a0a0f0b0a0a0m(SModelFqName checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLongName();
+    }
+    return null;
+  }
+
+  private static SModelFqName check_b5gojm_a0a0a5a1a0a0a21(SModelReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModelFqName();
+    }
+    return null;
+  }
+
+  private static SModelReference check_b5gojm_a0a0a0f0b0a0a0m(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModelReference();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_b5gojm_a0a0a0a5a1a0a0a21(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
   }
 
   public static class QuotationClass_b5gojm_a0a0a2a2a0a0a1 {

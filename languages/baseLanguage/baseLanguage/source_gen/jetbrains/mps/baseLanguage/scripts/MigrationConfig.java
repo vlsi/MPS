@@ -17,6 +17,10 @@ public abstract class MigrationConfig {
     return sourceConcept.getName() + " to " + targetConcept.getName() + " migration";
   }
 
+  public boolean isConditionNonTrivial() {
+    return false;
+  }
+
   /**
    * 
    * 
@@ -24,4 +28,10 @@ public abstract class MigrationConfig {
    * @return condition expression with type "boolean", return expression simple as possible 
    */
   public abstract SNode createCondition(SNode arg);
+
+  public boolean isInstanceNodeMigrationNonTrivial() {
+    return false;
+  }
+
+  public abstract SNode migrateInstanceNode(SNode node);
 }
