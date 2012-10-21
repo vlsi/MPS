@@ -275,8 +275,9 @@ public class Migrations {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        // todo: why we need it? 
-        // checking target concept in for example ParameterReference on equal (strict) with ParameterDeclaration 
+        if (SNodeOperations.getConceptDeclaration(node) != config.sourceConcept) {
+          return false;
+        }
 
         // this code for testing simplifying 
         // <node> 
@@ -301,28 +302,28 @@ public class Migrations {
     return condition;
   }
 
-  private static String check_b5gojm_a0a0f0b0a0a0m(SModelFqName checkedDotOperand) {
+  private static String check_b5gojm_a0a0e0b0a0a0m(SModelFqName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelFqName check_b5gojm_a0a0a5a1a0a0a21(SModelReference checkedDotOperand) {
+  private static SModelFqName check_b5gojm_a0a0a4a1a0a0a21(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelFqName();
     }
     return null;
   }
 
-  private static SModelReference check_b5gojm_a0a0a0f0b0a0a0m(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_b5gojm_a0a0a0e0b0a0a0m(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static SModelDescriptor check_b5gojm_a0a0a0a5a1a0a0a21(SModel checkedDotOperand) {
+  private static SModelDescriptor check_b5gojm_a0a0a0a4a1a0a0a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
