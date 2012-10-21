@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -29,9 +30,13 @@ public class Migrations {
 
     ListSequence.fromList(migrations).addElement(migrateIntentionCondition(config));
     ListSequence.fromList(migrations).addElement(migrateCheckingRulesCondition(config));
+
     ListSequence.fromList(migrations).addElement(migrateNodeAttributes(config));
     ListSequence.fromList(migrations).addElement(migrateInstanceOf(config));
     ListSequence.fromList(migrations).addElement(migrateGetDescendants(config));
+
+    ListSequence.fromList(migrations).addElement(migrateSNodeType(config));
+    ListSequence.fromList(migrations).addElement(migrateSNodeListType(config));
 
     return migrations;
   }
@@ -168,6 +173,38 @@ public class Migrations {
         SNode condition = createCondition(config, new Migrations.QuotationClass_b5gojm_a1a0b0c0a0a0f().createNode(SLinkOperations.getTarget(rule, "applicableNode", true)));
         SNode checkingStatement = new Migrations.QuotationClass_b5gojm_a0a2a2a0a0a5().createNode(condition);
         ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(rule, "body", true), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", "statement"))).insertElement(0, checkingStatement);
+      }
+    };
+  }
+
+  public static AbstractMigrationRefactoring migrateSNodeType(final MigrationConfig config) {
+    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType")) {
+      public String getName() {
+        return "Migrate all SNodeTypes with " + SPropertyOperations.getString(config.sourceConcept, "name");
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "concept", false) == config.sourceConcept;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "concept", config.targetConcept, false);
+      }
+    };
+  }
+
+  public static AbstractMigrationRefactoring migrateSNodeListType(final MigrationConfig config) {
+    return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType")) {
+      public String getName() {
+        return "Migrate all SNodeListTypes with " + SPropertyOperations.getString(config.sourceConcept, "name");
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "elementConcept", false) == config.sourceConcept;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "elementConcept", config.targetConcept, false);
       }
     };
   }

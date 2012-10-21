@@ -107,42 +107,11 @@ public class MigrationsFactory {
   public static List<AbstractMigrationRefactoring> migrateVariableReferenceSModelUsages(SNode referenceConcept, SNode targetConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
+    MigrationConfig config = MigrationConfigs.variableUnifyingMigration(referenceConcept, targetConcept);
+    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
+
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateSModelFunctions(referenceConcept, targetConcept)));
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateSModelTypes(referenceConcept)));
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateSModelAccess(referenceConcept, targetConcept)));
-
-    return refactorings;
-  }
-
-  private static List<AbstractMigrationRefactoring> migrateSModelTypes(final SNode referenceConcept) {
-    List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
-
-    ListSequence.fromList(refactorings).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      public String getName() {
-        return "Migrate all SNodeTypes with " + SPropertyOperations.getString(referenceConcept, "name");
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "concept", false) == referenceConcept;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
-      }
-    });
-    ListSequence.fromList(refactorings).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType")) {
-      public String getName() {
-        return "Migrate all SNodeListTypes with " + SPropertyOperations.getString(referenceConcept, "name");
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "elementConcept", false) == referenceConcept;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "elementConcept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
-      }
-    });
 
     return refactorings;
   }
@@ -175,7 +144,6 @@ public class MigrationsFactory {
 
   private static List<AbstractMigrationRefactoring> migrateSModelFunctions(final SNode referenceConcept, final SNode targetConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(MigrationConfigs.variableUnifyingMigration(referenceConcept, targetConcept))));
 
     ListSequence.fromList(refactorings).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), referenceConcept) {
       public boolean isApplicableInstanceNode(SNode node) {
@@ -316,8 +284,8 @@ public class MigrationsFactory {
     return null;
   }
 
-  public static class QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0e {
-    public QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0e() {
+  public static class QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0d {
+    public QuotationClass_uzzzvm_a0a2a0a1a2a0a0d0d() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
