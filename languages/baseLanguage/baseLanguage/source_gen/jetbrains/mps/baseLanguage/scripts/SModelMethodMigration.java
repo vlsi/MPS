@@ -13,9 +13,9 @@ public abstract class SModelMethodMigration extends SimpleMigration {
   private final SNode sourceConcept;
   private final SNode smodelFunctionConcept;
 
-  public SModelMethodMigration(SNode smodelFunctionConcept, SNode sourceConcept) {
+  public SModelMethodMigration(SNode smodelFunctionConcept, MigrationConfig config) {
     super(smodelFunctionConcept);
-    this.sourceConcept = sourceConcept;
+    this.sourceConcept = config.sourceConcept;
     this.smodelFunctionConcept = smodelFunctionConcept;
   }
 

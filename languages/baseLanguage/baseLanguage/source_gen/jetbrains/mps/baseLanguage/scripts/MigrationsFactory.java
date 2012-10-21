@@ -110,7 +110,7 @@ public class MigrationsFactory {
     MigrationConfig config = MigrationConfigs.variableUnifyingMigration(referenceConcept, targetConcept);
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(Migrations.migrateConcept(config)));
 
-    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateSModelFunctions(referenceConcept, targetConcept)));
+    ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateVariableReferenceSModelUsages(referenceConcept, targetConcept)));
     ListSequence.fromList(refactorings).addSequence(ListSequence.fromList(migrateSModelAccess(referenceConcept, targetConcept)));
 
     return refactorings;
@@ -140,50 +140,6 @@ public class MigrationsFactory {
         // <node> 
       }
     });
-  }
-
-  private static List<AbstractMigrationRefactoring> migrateSModelFunctions(final SNode referenceConcept, final SNode targetConcept) {
-    List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
-
-    ListSequence.fromList(refactorings).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), referenceConcept) {
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "concept", false) == referenceConcept;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
-      }
-    });
-    ListSequence.fromList(refactorings).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), referenceConcept) {
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "concept", false) == referenceConcept;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
-      }
-    });
-    ListSequence.fromList(refactorings).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), referenceConcept) {
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "concept", false) == referenceConcept;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
-      }
-    });
-    ListSequence.fromList(refactorings).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), referenceConcept) {
-      public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "concept", false) == referenceConcept;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "concept", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068498886296"), false);
-      }
-    });
-
-
-    return refactorings;
   }
 
   private static String check_uzzzvm_a0a0a0b0a0a0d0a(SConcept checkedDotOperand) {
