@@ -27,59 +27,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalInstanceFieldReference_MigrationScript" file="MigrateLocalInstanceFieldReference_MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalInstanceMethodCall_MigrationScript" file="MigrateLocalInstanceMethodCall_MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfigs" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticFieldReference_MigrationScript" file="MigrateLocalStaticFieldReference_MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticMethodCall_MigrationScript" file="MigrateLocalStaticMethodCall_MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfigs" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalVariableReference_MigrationScript" file="MigrateLocalVariableReference_MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateParameterReference_MigrationScript" file="MigrateParameterReference_MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrationConfig" file="MigrationConfig.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrationConfigs" file="MigrationConfigs.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration" file="LocalMethodCallsMigration.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -91,6 +49,52 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalInstanceFieldReference_MigrationScript" file="MigrateLocalInstanceFieldReference_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalInstanceMethodCall_MigrationScript" file="MigrateLocalInstanceMethodCall_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticFieldReference_MigrationScript" file="MigrateLocalStaticFieldReference_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticMethodCall_MigrationScript" file="MigrateLocalStaticMethodCall_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateLocalVariableReference_MigrationScript" file="MigrateLocalVariableReference_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateParameterReference_MigrationScript" file="MigrateParameterReference_MigrationScript.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrationConfig" file="MigrationConfig.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.Migrations" file="Migrations.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -119,29 +123,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.MigrationsFactory" file="MigrationsFactory.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfigs" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -180,6 +161,34 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration" file="VariableUnifyingMigration.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
   </dependency>
 </dependenciesRoot>
 

@@ -5,11 +5,12 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateLocalInstanceMethodCall_MigrationScript extends BaseMigrationScript {
   public MigrateLocalInstanceMethodCall_MigrationScript(IOperationContext operationContext) {
     super("Migrate LocalInstanceMethodCall to LocalMethodCall");
-    for (AbstractMigrationRefactoring refactoring : Migrations.migrateConcept(MigrationConfigs.LOCAL_INSTANCE_METHOD_CALL_MIGRATION_CONFIG)) {
+    for (AbstractMigrationRefactoring refactoring : LocalMethodCallsMigration.forConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       this.addRefactoring(refactoring);
     }
   }
