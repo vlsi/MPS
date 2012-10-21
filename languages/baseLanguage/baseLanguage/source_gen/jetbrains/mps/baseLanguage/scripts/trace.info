@@ -406,7 +406,7 @@
     <nodeInfo nodeId="7159297221554209568" fileName="Migrations.java" startLine="253" startPosition="52" endLine="254" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209591" fileName="Migrations.java" startLine="261" startPosition="59" endLine="262" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7159297221554209603" fileName="Migrations.java" startLine="265" startPosition="52" endLine="266" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901991298" fileName="Migrations.java" startLine="273" startPosition="31" endLine="274" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405155471901991298" fileName="Migrations.java" startLine="273" startPosition="31" endLine="274" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6405155471901991915" fileName="Migrations.java" startLine="277" startPosition="59" endLine="278" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6405155471901991919" fileName="Migrations.java" startLine="278" startPosition="33" endLine="279" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6405155471901991922" fileName="Migrations.java" startLine="279" startPosition="113" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -917,7 +917,7 @@
     <scopeInfo nodeId="7159297221554209567" fileName="Migrations.java" startLine="253" startPosition="52" endLine="254" endPosition="80" />
     <scopeInfo nodeId="7159297221554209590" fileName="Migrations.java" startLine="261" startPosition="59" endLine="262" endPosition="89" />
     <scopeInfo nodeId="7159297221554209602" fileName="Migrations.java" startLine="265" startPosition="52" endLine="266" endPosition="80" />
-    <scopeInfo nodeId="6405155471901991297" fileName="Migrations.java" startLine="273" startPosition="31" endLine="274" endPosition="191" />
+    <scopeInfo nodeId="6405155471901991297" fileName="Migrations.java" startLine="273" startPosition="31" endLine="274" endPosition="172" />
     <scopeInfo nodeId="6405155471901991347" fileName="Migrations.java" startLine="305" startPosition="36" endLine="306" endPosition="45" />
     <scopeInfo nodeId="6405155471901991348" fileName="Migrations.java" startLine="312" startPosition="36" endLine="313" endPosition="49" />
     <scopeInfo nodeId="6405155471901991349" fileName="Migrations.java" startLine="319" startPosition="36" endLine="320" endPosition="52" />

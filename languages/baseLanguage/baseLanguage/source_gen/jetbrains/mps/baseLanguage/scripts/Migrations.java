@@ -271,7 +271,7 @@ public class Migrations {
   public static AbstractMigrationRefactoring migrateInstanceNodes(final MigrationConfig config) {
     return new SimpleMigration(config.sourceConcept) {
       public String getName() {
-        return "Convert all nodes of " + SPropertyOperations.getString(config.sourceConcept, "name") + " concept to " + SPropertyOperations.getString(config.targetConcept, "name") + " nodes";
+        return "Migrate instances of " + SPropertyOperations.getString(config.sourceConcept, "name") + " to " + SPropertyOperations.getString(config.targetConcept, "name");
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
