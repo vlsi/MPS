@@ -34,19 +34,19 @@ public class Migrations {
     return migrations;
   }
 
-  public static AbstractMigrationRefactoring migrateIntentionCondition(final MigrationConfig context) {
+  public static AbstractMigrationRefactoring migrateIntentionCondition(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration")) {
       public String getName() {
-        return "Migrate intentions condition for " + context.getName();
+        return "Migrate intentions condition for " + config.getName();
       }
 
       public boolean isApplicableInstanceNode(SNode intention) {
-        return SLinkOperations.getTarget(intention, "forConcept", false) == context.sourceConcept;
+        return SLinkOperations.getTarget(intention, "forConcept", false) == config.sourceConcept;
       }
 
       public void doUpdateInstanceNode(SNode intention) {
-        SLinkOperations.setTarget(intention, "forConcept", context.targetConcept, false);
-        SNode condition = context.conditionCreator.invoke(SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", null));
+        SLinkOperations.setTarget(intention, "forConcept", config.targetConcept, false);
+        SNode condition = createCondition(config, SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", null));
         if ((SLinkOperations.getTarget(intention, "isApplicableFunction", true) == null)) {
           SLinkOperations.setTarget(intention, "isApplicableFunction", new Migrations.QuotationClass_b5gojm_a0a0a2a2a0a0a1().createNode(condition), true);
         } else {
@@ -57,10 +57,10 @@ public class Migrations {
     };
   }
 
-  public static AbstractMigrationRefactoring migrateNodeAttributes(final MigrationConfig context) {
+  public static AbstractMigrationRefactoring migrateNodeAttributes(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       public String getName() {
-        return "Migrate node attributes for " + context.getName();
+        return "Migrate node attributes for " + config.getName();
       }
 
       public boolean isApplicableInstanceNode(SNode conceptDeclaration) {
@@ -70,15 +70,15 @@ public class Migrations {
         SNode concept = (SNode) conceptDeclaration;
         Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
 
-        return Sequence.fromIterable(attributedConcepts).contains(context.sourceConcept) && !(Sequence.fromIterable(attributedConcepts).contains(context.targetConcept));
+        return Sequence.fromIterable(attributedConcepts).contains(config.sourceConcept) && !(Sequence.fromIterable(attributedConcepts).contains(config.targetConcept));
       }
 
       public void doUpdateInstanceNode(SNode conceptDeclaration) {
         SNode concept = (SNode) conceptDeclaration;
         Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
 
-        if (!(Sequence.fromIterable(attributedConcepts).contains(context.targetConcept))) {
-          ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).addElement(new Migrations.QuotationClass_b5gojm_a0a0a0d0c0a0a0c().createNode(context.targetConcept, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first()));
+        if (!(Sequence.fromIterable(attributedConcepts).contains(config.targetConcept))) {
+          ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptLink", true)).addElement(new Migrations.QuotationClass_b5gojm_a0a0a0d0c0a0a0c().createNode(config.targetConcept, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).first()));
         }
       }
 
@@ -99,17 +99,23 @@ public class Migrations {
     };
   }
 
-  public static AbstractMigrationRefactoring migrateInstanceOf(final MigrationConfig context) {
-    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), context.sourceConcept) {
+  public static AbstractMigrationRefactoring migrateInstanceOf(final MigrationConfig config) {
+    return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), config.sourceConcept) {
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false) == context.sourceConcept;
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false) == config.sourceConcept;
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode result = context.conditionCreator.invoke(IOperation_Behavior.call_getOperand_1213877410070(node));
+        SNode result = createCondition(config, IOperation_Behavior.call_getOperand_1213877410070(node));
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), result);
       }
     };
+  }
+
+  public static SNode createCondition(MigrationConfig config, SNode arg) {
+    SNode condition = config.conditionCreator.invoke(arg);
+    // todo: add simplifyings here! : (VariableReference) -> VariableReference 
+    return condition;
   }
 
   public static class QuotationClass_b5gojm_a0a0a2a2a0a0a1 {
