@@ -6,22 +6,20 @@ import junit.framework.TestCase;
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.project.persistence.JDOMUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import junit.framework.Assert;
 import jetbrains.mps.project.foreign.MPSFacetConfiguration;
 import jetbrains.mps.project.foreign.IdeaModuleConfiguration;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.io.DescriptorIOFacade;
-import junit.framework.Assert;
 import java.io.IOException;
 import org.jdom.JDOMException;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
 public class FacetDescriptorsIO_Test extends TestCase {
@@ -29,15 +27,21 @@ public class FacetDescriptorsIO_Test extends TestCase {
   public void test_mpsFacet() throws Exception {
     IFile moduleFile = TestUtils.dataFile("module.iml");
     Element module = this.readRoot(moduleFile);
-    Element cfg = ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(module, "component")).findFirst(new IWhereFilter<Element>() {
-      public boolean accept(Element ch) {
-        return "FacetManager".equals(ch.getAttributeValue("name"));
+
+    Iterable<Element> components = JDOMUtil.children(module, "component");
+    Element facetManager = Sequence.fromIterable(components).findFirst(new IWhereFilter<Element>() {
+      public boolean accept(Element it) {
+        return "FacetManager".equals(it.getAttributeValue("name"));
       }
-    }), "facet")).findFirst(new IWhereFilter<Element>() {
+    });
+    Assert.assertNotNull(facetManager);
+    Element mpsFacet = Sequence.fromIterable(JDOMUtil.children(facetManager, "facet")).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element fct) {
         return "MPS".equals(fct.getAttributeValue("name"));
       }
-    }), "configuration")).first();
+    });
+    Assert.assertNotNull(mpsFacet);
+    Element cfg = JDOMUtil.first(mpsFacet, "configuration");
     MPSFacetConfiguration mpsCfg = new MPSFacetConfiguration();
     mpsCfg.readFromXml(cfg);
     this.assertMpsCfg(mpsCfg);
@@ -70,7 +74,7 @@ public class FacetDescriptorsIO_Test extends TestCase {
   }
 
   private Element readRoot(IFile moduleFile) throws IOException, JDOMException {
-    return (Element) JDOMUtil.loadDocument(moduleFile).getRootElement();
+    return jetbrains.mps.util.JDOMUtil.loadDocument(moduleFile).getRootElement();
   }
 
   private void assertMpsCfg(MPSFacetConfiguration mpsCfg) {

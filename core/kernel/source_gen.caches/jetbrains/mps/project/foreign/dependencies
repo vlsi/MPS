@@ -7,13 +7,14 @@
   </dependency>
   <dependency className="jetbrains.mps.project.foreign.IdeaModuleConfiguration" file="IdeaModuleConfiguration.java">
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
     <classNode dependClassName="jetbrains.mps.project.foreign.MPSFacetConfiguration" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
@@ -54,11 +55,12 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
+    <classNode dependClassName="jetbrains.mps.project.persistence.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
   <dependency className="jetbrains.mps.project.foreign.ModuleMacroExpander" file="ModuleMacroExpander.java">

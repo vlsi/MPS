@@ -10,6 +10,11 @@ import jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
@@ -78,6 +83,15 @@ public class QueriesGenerated {
     return "myLocator";
   }
 
+  public static boolean ifMacro_Condition_7113564998979659512(final IOperationContext operationContext, final IfMacroContext _context) {
+    SModel model = _context.getOriginalInputModel().getModelDescriptor();
+    if (model == null) {
+      return false;
+    }
+    SModule module = model.getModule();
+    return module instanceof Language || module instanceof Solution && ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
+  }
+
   public static boolean ifMacro_Condition_2264311582634171767(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "creator", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "body", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "creator", true), "body", true), "statement", true)).isNotEmpty();
   }
@@ -136,6 +150,15 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_2264311582634172803(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "result", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_7113564998979618879(final IOperationContext operationContext, final IfMacroContext _context) {
+    SModel model = _context.getOriginalInputModel().getModelDescriptor();
+    if (model == null) {
+      return false;
+    }
+    SModule module = model.getModule();
+    return module instanceof Language || module instanceof Solution && ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
   }
 
   public static SNode sourceNodeQuery_2264311582634171490(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

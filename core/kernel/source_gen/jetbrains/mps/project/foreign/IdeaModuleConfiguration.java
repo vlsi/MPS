@@ -7,8 +7,7 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import org.jdom.Element;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IdeaModuleConfiguration {
@@ -33,21 +32,33 @@ public class IdeaModuleConfiguration {
   }
 
   public static IdeaModuleConfiguration readFile(IFile moduleFile) throws JDOMException, IOException, FacetConfigurationFormatException {
+    IdeaModuleConfiguration imc = new IdeaModuleConfiguration(moduleFile);
     Element module = JDOMUtil.loadDocument(moduleFile).getRootElement();
-    Element cfg = ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(((Element) module), "component")).findFirst(new IWhereFilter<Element>() {
-      public boolean accept(Element ch) {
-        return "FacetManager".equals(ch.getAttributeValue("name"));
+
+    Iterable<Element> components = jetbrains.mps.project.persistence.JDOMUtil.children(module, "component");
+    Element facetManager = Sequence.fromIterable(components).findFirst(new IWhereFilter<Element>() {
+      public boolean accept(Element it) {
+        return "FacetManager".equals(it.getAttributeValue("name"));
       }
-    }), "facet")).findFirst(new IWhereFilter<Element>() {
+    });
+    if (facetManager == null) {
+      return imc;
+    }
+
+    Element mpsFacet = Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(facetManager, "facet")).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element fct) {
         return "MPS".equals(fct.getAttributeValue("name"));
       }
-    }), "configuration")).first();
-    IdeaModuleConfiguration imc = new IdeaModuleConfiguration(moduleFile);
+    });
+    if (mpsFacet == null) {
+      return imc;
+    }
+
+    Element cfg = jetbrains.mps.project.persistence.JDOMUtil.first(mpsFacet, "configuration");
     if (cfg != null) {
-      MPSFacetConfiguration mpsFacet = new MPSFacetConfiguration();
-      mpsFacet.readFromXml(cfg);
-      imc.setMPSFacetConfiguration(mpsFacet);
+      MPSFacetConfiguration mpsFacetConfig = new MPSFacetConfiguration();
+      mpsFacetConfig.readFromXml(cfg);
+      imc.setMPSFacetConfiguration(mpsFacetConfig);
     }
     return imc;
   }

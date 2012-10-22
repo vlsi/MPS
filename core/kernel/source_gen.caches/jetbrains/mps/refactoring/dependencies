@@ -19,7 +19,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.refactoring.ElementHandler" />
-    <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
+    <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.HistoryWriter" file="HistoryWriter.java">
     <classNode dependClassName="java.lang.Integer" />
