@@ -19,7 +19,6 @@ import jetbrains.mps.ide.actions.HighlightConstants;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -73,12 +72,10 @@ public class HighlightCellDependencies_Action extends BaseAction {
           highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
         }
       }
-      Set<SNodePointer> copyOfRefTargets = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCopyOfRefTargetsCellDependsOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+      Set<SNode> copyOfRefTargets = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCopyOfRefTargetsCellDependsOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
       if (copyOfRefTargets != null) {
-        for (SNodePointer nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
-          if (nodePointer.getNode() != null) {
-            highlightManager.mark(nodePointer.getNode(), HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
-          }
+        for (SNode node : SetSequence.fromSet(copyOfRefTargets)) {
+          highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
         }
       }
       highlightManager.repaintAndRebuildEditorMessages();
