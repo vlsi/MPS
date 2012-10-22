@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="caaou1e7rki55z1t5k7a476w0dk0ada">
+<dependencies version="2" modelHash="3h9rm8j72oxxd5yvfrtaqpdil7cdzvt">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -23,8 +23,8 @@
     <dep root="1177464627043" />
     <dep root="2598676492883187033" />
     <dep root="2598676492883206534" />
-    <dep root="5166971494091016677" />
     <dep root="5166971494091017133" />
+    <dep root="7098974335153470966" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -61,10 +61,13 @@
   <source id="2598676492883244618" name="reduce_WhitespaceMigrationScriptPart" hash="chreca14pl1f9m3zywnf2ctmhs21c6u">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5166971494091016677" name="mc_api" hash="ccqk87sr8n0i6jgztwexg2uzxpkrxm4">
+  <source id="5166971494091016677" name="mc_api" hash="-e0c92knzoqpaqbravhtfxp48kc79g33">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5166971494091017133" name="reduce_PullUpMethod" hash="drheyfwtsf1h98aiezeylli1c454z7x">
+  <source id="5166971494091017133" name="reduce_PullUpMethod" hash="cphogg9ikut4rad6w9cghx0auk6ovef">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="7098974335153470966" name="reduce_ExtractInterfaceMigration" hash="-6rufk9yxr809ig7lt9owesa2ebspker">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

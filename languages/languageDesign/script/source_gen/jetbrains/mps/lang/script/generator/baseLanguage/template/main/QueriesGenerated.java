@@ -64,6 +64,12 @@ public class QueriesGenerated {
     return "Pull up method " + oldClassifierFQName + "." + oldMethodName + " to " + newClassifierFQName + "." + newMethodName;
   }
 
+  public static Object propertyMacro_GetPropertyValue_7098974335153471015(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String oldClassifierFQName = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false));
+    String newClassifierFQName = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false));
+    return "Replacing " + oldClassifierFQName + " classifier type instances with " + newClassifierFQName;
+  }
+
   public static Object referenceMacro_GetReferent_8543458906717834887(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false);
   }
@@ -71,7 +77,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8543458906717834666(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(PullUpMethod_Behavior.call_getMigration_5166971494091017146(_context.getNode()), "newClassifier", false), "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0i(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "parameter", true)).count();
+        return eq_x583g4_a0a0a0a0a0a0a0j(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false), "parameter", true)).count();
       }
     }).first();
   }
@@ -82,6 +88,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_8543458906717834750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "oldMethodDeclaration", false);
+  }
+
+  public static Object referenceMacro_GetReferent_7098974335153471205(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "newClassifier", false);
+  }
+
+  public static Object referenceMacro_GetReferent_7098974335153471139(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "oldClassifier", false);
   }
 
   public static boolean ifMacro_Condition_2598676492883187120(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -116,11 +130,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }
 
-  public static Iterable sourceNodesQuery_5166971494091017100(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7098974335153470983(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "pullUpMethods", true);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0i(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

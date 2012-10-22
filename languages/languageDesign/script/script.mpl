@@ -65,7 +65,7 @@
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="jetbrains.mps.lang.script#1172274134493" />
+            <generator generatorUID="0e7e6e38-fc52-4859-a8a9-7c262a5ee452(jetbrains.mps.lang.script#1172274134493)" />
             <external-mapping>
               <mapping-set>
                 <mapping-set-element>
