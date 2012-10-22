@@ -4869,7 +4869,6 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.WhenConcreteStatement" typeId="tpd4.1185805035213" id="2684739085678948093">
-            <property name="isShallow" nameId="tpd4.1227279857428" value="true" />
             <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="2684739085678948094">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="7668447476859120558">
                 <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
@@ -4903,6 +4902,42 @@
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="7668447476859120581">
                     <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7668447476859120582">
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1225551180059" resolveInfo="scpd" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3830408436922089013">
+                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="3830408436922089014">
+                  <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="213041126213147042">
+                    <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="213041126213147046">
+                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="213041126213147047">
+                        <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1230315924141" resolveInfo="paramType" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="213041126213147045">
+                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="213041126213147018">
+                        <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="213041126213147021">
+                          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1225551180059" resolveInfo="scpd" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3830408436922089015">
+                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="3830408436922089016">
+                  <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="213041126213147074">
+                    <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="213041126213147078">
+                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="213041126213147079">
+                        <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1230315924141" resolveInfo="paramType" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="213041126213147077">
+                      <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="213041126213147051">
+                        <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="213041126213147053">
+                          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1225551180059" resolveInfo="scpd" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
