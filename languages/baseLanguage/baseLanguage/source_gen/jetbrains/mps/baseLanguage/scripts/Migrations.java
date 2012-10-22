@@ -337,12 +337,13 @@ public class Migrations {
 
       public void doUpdateInstanceNode(SNode rule) {
         SLinkOperations.setTarget(rule, "applicableConcept", config.targetConcept, false);
+        SPropertyOperations.set(rule, "applyToConceptInheritors", "" + (true));
         SNode condition = config.createCondition(SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null));
         if ((SLinkOperations.getTarget(rule, "conditionFunction", true) == null)) {
           SLinkOperations.setTarget(rule, "conditionFunction", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", null), true);
-          SLinkOperations.setTarget(SLinkOperations.getTarget(rule, "conditionFunction", true), "body", new Migrations.QuotationClass_b5gojm_a0a1a2a2a0a0a31().createNode(condition), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(rule, "conditionFunction", true), "body", new Migrations.QuotationClass_b5gojm_a0a1a3a2a0a0a31().createNode(condition), true);
         } else {
-          SNode checkingStatement = new Migrations.QuotationClass_b5gojm_a0a0a0c0c0a0a0n().createNode(condition);
+          SNode checkingStatement = new Migrations.QuotationClass_b5gojm_a0a0a0d0c0a0a0n().createNode(condition);
           ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "conditionFunction", true), "body", true), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", "statement"))).insertElement(0, checkingStatement);
         }
       }
@@ -950,8 +951,8 @@ public class Migrations {
     }
   }
 
-  public static class QuotationClass_b5gojm_a0a1a2a2a0a0a31 {
-    public QuotationClass_b5gojm_a0a1a2a2a0a0a31() {
+  public static class QuotationClass_b5gojm_a0a1a3a2a0a0a31 {
+    public QuotationClass_b5gojm_a0a1a3a2a0a0a31() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -993,8 +994,8 @@ public class Migrations {
     }
   }
 
-  public static class QuotationClass_b5gojm_a0a0a0c0c0a0a0n {
-    public QuotationClass_b5gojm_a0a0a0c0c0a0a0n() {
+  public static class QuotationClass_b5gojm_a0a0a0d0c0a0a0n {
+    public QuotationClass_b5gojm_a0a0a0d0c0a0a0n() {
     }
 
     public SNode createNode(Object parameter_13) {
