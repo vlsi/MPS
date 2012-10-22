@@ -2477,6 +2477,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
+    assert !nodes.contains(null);
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
