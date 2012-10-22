@@ -133,7 +133,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   public void projectOpened() {
     if (myThread != null && myThread.isAlive()) {
-      LOG.error("trying to initialize a Highlighter being already initialized");
+      LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
       return;
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
