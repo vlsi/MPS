@@ -24,14 +24,14 @@
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="5494815557703847191">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger.java.customViewers" />
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguage Debugger Support" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Debugger support for baseLanguage extensions" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.1" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Debugger support for baseLanguage extensions" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseLanguage Debugger Support" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.1" />
     </node>
     <node type="kisg.CustomWatchablesContainer" typeId="kisg.5117350825036256317" id="2929731761237869234">
       <property name="name" nameId="tpck.1169194664001" value="CollectionsWatchables" />
@@ -843,15 +843,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2929731761237871932">
             <property name="name" nameId="tpck.1169194664001" value="currentChild" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2929731761237871933" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7580556499267863972">
-              <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7580556499267863973" />
-              <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2929731761237871934">
-                <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2929731761237871935">
-                  <node role="leftExpression" roleId="tp25.1145404616321" type="kisg.HighLevelValue_ConceptFunctionParameter" typeId="kisg.43370322128272301" id="2929731761237871936" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="wch2.PrivateFieldReferenceOperation" typeId="wch2.6825241477451043705" id="7580556499267863961">
-                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="cu2c.~SNode%dfirst" resolveInfo="first" />
-                </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2929731761237871934">
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2929731761237871935">
+                <node role="leftExpression" roleId="tp25.1145404616321" type="kisg.HighLevelValue_ConceptFunctionParameter" typeId="kisg.43370322128272301" id="2929731761237871936" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="wch2.PrivateFieldReferenceOperation" typeId="wch2.6825241477451043705" id="7580556499267863961">
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="cu2c.~SNode%dfirst" resolveInfo="first" />
               </node>
             </node>
           </node>
@@ -887,17 +884,14 @@
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2929731761237871956">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2929731761237871932" resolveInfo="currentChild" />
                 </node>
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7580556499267863976">
-                  <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7580556499267863979" />
-                  <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2929731761237871952">
-                    <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2929731761237871953">
-                      <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2929731761237871954">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2929731761237871932" resolveInfo="currentChild" />
-                      </node>
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2929731761237871952">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2929731761237871953">
+                    <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2929731761237871954">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2929731761237871932" resolveInfo="currentChild" />
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="wch2.PrivateFieldReferenceOperation" typeId="wch2.6825241477451043705" id="7580556499267863964">
-                      <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="cu2c.~SNode%dnext" resolveInfo="next" />
-                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="wch2.PrivateFieldReferenceOperation" typeId="wch2.6825241477451043705" id="7580556499267863964">
+                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="cu2c.~SNode%dnext" resolveInfo="next" />
                   </node>
                 </node>
               </node>
@@ -1108,8 +1102,8 @@
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="2244048449136669037">
-                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_LINE_BREAKPOINT" />
                 <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Line Breakpoint" />
+                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_LINE_BREAKPOINT" />
                 <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2244048449136669038" />
                 <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2244048449136669039" />
               </node>
@@ -1130,8 +1124,8 @@
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="2244048449136669047">
-                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_FIELD_BREAKPOINT" />
                 <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Field Breakpoint" />
+                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_FIELD_BREAKPOINT" />
                 <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2244048449136669048" />
                 <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2244048449136669049" />
               </node>
