@@ -1392,7 +1392,7 @@
                                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
                               </node>
                               <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3180306201267234186">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1196351886648" resolveInfo="o" />
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1196351887553" resolveInfo="expr" />
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="3180306201267234187">
                                   <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
                                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="3180306201267234188">
@@ -1460,7 +1460,7 @@
                                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNodeId" resolveInfo="SNodeId" />
                               </node>
                               <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3180306201267234218">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="null" resolveInfo="o" />
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1196351887553" resolveInfo="expr" />
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="3180306201267234219">
                                   <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
                                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="3180306201267234220">
