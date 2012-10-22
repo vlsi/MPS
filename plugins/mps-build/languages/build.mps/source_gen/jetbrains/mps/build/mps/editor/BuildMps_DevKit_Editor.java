@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -154,7 +154,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_pa0pfb_a2a");
     {
       Style style = editorCell.getStyle();
@@ -165,7 +165,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_pa0pfb_c2a");
     {
       Style style = editorCell.getStyle();
@@ -178,7 +178,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "load from");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "load from");
     editorCell.setCellId("Constant_pa0pfb_a3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -186,7 +186,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends:");
     editorCell.setCellId("Constant_pa0pfb_a4a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -198,7 +198,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_c4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exports:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "exports:");
     editorCell.setCellId("Constant_pa0pfb_c4a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -210,7 +210,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_pa0pfb_f0");
     {
       Style style = editorCell.getStyle();
@@ -221,7 +221,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uuid:");
     editorCell.setCellId("Constant_pa0pfb_a0a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -229,7 +229,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends:");
     editorCell.setCellId("Constant_pa0pfb_a1a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -241,7 +241,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pa0pfb_c1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exports:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "exports:");
     editorCell.setCellId("Constant_pa0pfb_c1a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -465,7 +465,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_pa0pfb_a1e0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a1e0");
       {
         Style style = editorCell.getStyle();
@@ -516,7 +516,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_pa0pfb_a3e0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a3e0");
       {
         Style style = editorCell.getStyle();
@@ -567,7 +567,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_pa0pfb_a1b0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a1b0a");
       {
         Style style = editorCell.getStyle();
@@ -618,7 +618,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_pa0pfb_a3b0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a3b0a");
       {
         Style style = editorCell.getStyle();

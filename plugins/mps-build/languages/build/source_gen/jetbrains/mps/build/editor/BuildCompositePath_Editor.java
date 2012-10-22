@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -74,7 +74,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_n78otj_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
     editorCell.setCellId("Constant_n78otj_a1a");
     {
       Style style = editorCell.getStyle();
@@ -101,7 +101,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -170,7 +170,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
   }
 
-  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     File f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
     if (f == null) {
       return Color.BLACK;

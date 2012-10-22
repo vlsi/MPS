@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -39,7 +39,7 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_archsh_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'linkDeclaration' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Get reference 'linkDeclaration' operation");
     editorCell.setCellId("Constant_archsh_a0");
     {
       Style style = editorCell.getStyle();
@@ -52,7 +52,7 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_archsh_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_archsh_b0");
     {
       Style style = editorCell.getStyle();
@@ -63,7 +63,7 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_archsh_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns LinkDeclararion representing containment link for this node inside parent node");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns LinkDeclararion representing containment link for this node inside parent node");
     editorCell.setCellId("Constant_archsh_c0");
     {
       Style style = editorCell.getStyle();

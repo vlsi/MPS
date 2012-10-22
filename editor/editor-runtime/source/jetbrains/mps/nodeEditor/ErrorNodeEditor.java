@@ -24,14 +24,14 @@ import org.jetbrains.annotations.NotNull;
 
 public class ErrorNodeEditor implements INodeEditor {
 
-  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Error(editorContext, node, node.getPresentation());
+  public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
+    return new EditorCell_Error((EditorContext) editorContext, node, node.getPresentation());
   }
 
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+  public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
-    collection.addEditorCell(new EditorCell_Error(editorContext, node, "Can't find an editor."));
-    collection.addEditorCell(new EditorCell_Error(editorContext, node, "Concept = " + node.getConcept().getId()));
+    collection.addEditorCell(new EditorCell_Error((EditorContext) editorContext, node, "Can't find an editor."));
+    collection.addEditorCell(new EditorCell_Error((EditorContext) editorContext, node, "Concept = " + node.getConcept().getId()));
     return collection;
 
   }

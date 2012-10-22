@@ -36,7 +36,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
-  private List<SModelCommandListener> myModelCommandListeners = new CopyOnWriteArrayList<SModelCommandListener>();
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
@@ -167,17 +166,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelListeners;
   }
 
-  public void addModelCommandListener(@NotNull SModelCommandListener listener) {
-    myModelCommandListeners.add(listener);
-  }
-
-  public void removeModelCommandListener(@NotNull SModelCommandListener listener) {
-    myModelCommandListeners.remove(listener);
-  }
-
   private void clearListeners() {
     myModelListeners.clear();
-    myModelCommandListeners.clear();
   }
 
   // Not SModel-specific listener notifications
@@ -260,20 +250,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
         LOG.error(t);
       }
     }
-  }
-
-  void fireSModelChangedInCommandEvent(@NotNull final List<SModelEvent> events) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SModelCommandListener l : myModelCommandListeners) {
-          try {
-            l.eventsHappenedInCommand(events);
-          } catch (Exception e) {
-            LOG.error(e);
-          }
-        }
-      }
-    });
   }
 
   @Override

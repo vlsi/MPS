@@ -4,7 +4,7 @@ package jetbrains.mps.build.packaging.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -44,7 +44,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yfwtie_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "no macro");
     editorCell.setCellId("Constant_yfwtie_b0");
     PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     {
@@ -102,7 +102,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -114,7 +114,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
@@ -126,7 +126,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -45,7 +45,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_v39yb3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external jar");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "external jar");
     editorCell.setCellId("Constant_v39yb3_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_v39yb3_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_v39yb3_c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     delete_reexport_inJavaDependencyImportedJar.setCellActions(editorCell, node, editorContext);
@@ -62,7 +62,7 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_v39yb3_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "reexport:");
     editorCell.setCellId("Constant_v39yb3_a0_0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

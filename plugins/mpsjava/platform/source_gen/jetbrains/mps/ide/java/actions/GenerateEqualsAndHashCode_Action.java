@@ -108,9 +108,9 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       final SNode equalsDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a21a0a4().createNode(thisExp, thisExp, classConcept, classConcept);
       SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
 
-      SNode thatRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+      SNode thatRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(thatRef, "variableDeclaration", thatDeclaration, false);
-      SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SNode fieldRefOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
 
       for (SNodePointer fieldPtr : selectedFields) {
@@ -142,10 +142,10 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       // Method equals() is generated, now hashCode method body generation begins  
       SNode hashCodeDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a52a0a4().createNode());
       SNode resultDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a62a0a4().createNode();
-      SNode resultReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+      SNode resultReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
       SNode tempDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a92a0a4().createNode();
-      SNode tempReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+      SNode tempReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(tempReference, "variableDeclaration", SLinkOperations.getTarget(tempDeclaration, "localVariableDeclaration", true), false);
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

@@ -22,11 +22,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 
@@ -43,7 +43,7 @@ public class CellAction_PasteNode extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
 
   public boolean canExecute(EditorContext context) {
-    EditorCell selectedCell = getCellToPasteTo(context.getNodeEditorComponent().getSelectedCell());
+    EditorCell selectedCell = getCellToPasteTo((EditorCell) context.getSelectedCell());
     if (selectedCell == null) {
       return false;
     }
@@ -65,7 +65,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
-    final EditorComponent editorComponent = context.getNodeEditorComponent();
+    final EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
     final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
     final SNode nodeSelected = pasteTargetCell.getSNode();

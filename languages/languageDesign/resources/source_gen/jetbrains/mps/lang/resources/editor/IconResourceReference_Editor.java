@@ -4,7 +4,7 @@ package jetbrains.mps.lang.resources.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -35,7 +35,7 @@ public class IconResourceReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yu3d6c_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
     editorCell.setCellId("Constant_yu3d6c_b0");
     BaseLanguageStyle_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
@@ -47,7 +47,7 @@ public class IconResourceReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yu3d6c_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
     editorCell.setCellId("Constant_yu3d6c_d0");
     BaseLanguageStyle_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

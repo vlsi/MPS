@@ -58,7 +58,7 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
       SNode eStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SNode assignment = SNodeFactoryOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
       SLinkOperations.setTarget(assignment, "rValue", SLinkOperations.getTarget(variableDeclaration, "initializer", true), true);
-      SNode local = SNodeFactoryOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+      SNode local = SNodeFactoryOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.VariableReference");
       SLinkOperations.setTarget(local, "variableDeclaration", variableDeclaration, false);
       SNodeOperations.insertNextSiblingChild(stmtNode, eStatement);
       stmtNode = SNodeOperations.cast(SNodeOperations.getNextSibling(stmtNode), "jetbrains.mps.baseLanguage.structure.Statement");

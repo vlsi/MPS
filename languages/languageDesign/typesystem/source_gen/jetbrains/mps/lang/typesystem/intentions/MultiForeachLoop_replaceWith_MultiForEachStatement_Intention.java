@@ -56,9 +56,13 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
         return SLinkOperations.getTarget(lv, "variable", true);
       }
     }).toListSequence();
-    ListSequence.fromList(SNodeOperations.getDescendants(mfs, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getDescendants(mfs, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      }
+    }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode lvr) {
-        return ListSequence.fromList(lvs).contains(SLinkOperations.getTarget(lvr, "variableDeclaration", false));
+        return ListSequence.fromList(lvs).contains(SNodeOperations.cast(SLinkOperations.getTarget(lvr, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
       }
     }).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode lvr) {

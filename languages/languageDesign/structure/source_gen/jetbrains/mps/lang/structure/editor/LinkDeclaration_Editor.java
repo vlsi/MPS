@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -95,7 +95,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6h6dhy_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specializes:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "specializes:");
     editorCell.setCellId("Constant_6h6dhy_a4a");
     {
       Style style = editorCell.getStyle();
@@ -107,14 +107,14 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6h6dhy_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-G");
     editorCell.setCellId("Constant_6h6dhy_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_6h6dhy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "do not generate:");
     editorCell.setCellId("Constant_6h6dhy_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -130,7 +130,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());

@@ -113,7 +113,7 @@ public class _QueriesUtil {
       SNode varDeclStmt_output = (SNode) generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
       if ((varDeclStmt_output != null)) {
         SNode variable = SLinkOperations.getTarget(varDeclStmt_output, "localVariableDeclaration", true);
-        SNode variableRef = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+        SNode variableRef = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(variableRef, "variableDeclaration", variable, false);
         return variableRef;
       }

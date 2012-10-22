@@ -8,10 +8,20 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import java.util.Map;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import java.util.HashMap;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.scope.DefaultScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "8852113381329465495");
+  private static SNodePointer breakingNode_xor3la_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "2598676492883034140");
 
   public BeforeTaskParameterReference_Constraints() {
     super("jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference");
@@ -31,6 +41,35 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
     }
 
     return result;
+  }
+
+  @Override
+  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+    Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
+    references.put("variableDeclaration", new BaseReferenceConstraintsDescriptor("variableDeclaration", this) {
+      @Override
+      public boolean hasOwnScopeProvider() {
+        return true;
+      }
+
+      @Nullable
+      @Override
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_xor3la_a0a0a0a0a1a0b0a1a2;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return new DefaultScope(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter");
+
+          }
+        };
+      }
+    });
+    return references;
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {

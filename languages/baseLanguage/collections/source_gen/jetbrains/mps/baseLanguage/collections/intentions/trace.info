@@ -20,7 +20,7 @@
     <nodeInfo nodeId="1193397449135" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="59" startPosition="154" endLine="60" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193397466192" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="60" startPosition="101" endLine="61" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227876798265" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="63" startPosition="39" endLine="64" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193397293765" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="66" startPosition="9" endLine="67" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193397293765" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="66" startPosition="9" endLine="67" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="17" startPosition="109" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertForEachStatementToForeachStatement_Intention#()V" />
     <nodeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="41" startPosition="84" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -44,7 +44,7 @@
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="42" startPosition="58" endLine="43" endPosition="19" />
     <scopeInfo nodeId="1193396656624" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="16" />
     <scopeInfo nodeId="1227876798264" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="63" startPosition="39" endLine="64" endPosition="79" />
-    <scopeInfo nodeId="1193397276526" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="66" startPosition="9" endLine="67" endPosition="190" />
+    <scopeInfo nodeId="1193397276526" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="66" startPosition="9" endLine="67" endPosition="185" />
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="63" />
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="17" startPosition="109" endLine="19" endPosition="3" />
     <scopeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />

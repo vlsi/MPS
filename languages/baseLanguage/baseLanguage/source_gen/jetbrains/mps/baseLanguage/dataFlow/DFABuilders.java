@@ -45,10 +45,8 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", new InstanceOfExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", new LocalVariableDeclaration_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", new LocalVariableDeclarationStatement_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.LocalVariableReference", new LocalVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.NotExpression", new NotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new ParameterDeclaration_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.ParameterReference", new ParameterReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", new ParenthesizedExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.RemarkStatement", new RemarkStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ReturnStatement", new ReturnStatement_DataFlow());
@@ -64,6 +62,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.TryCatchStatement", new TryCatchStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.TryStatement", new TryStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.VariableDeclaration", new VariableDeclaration_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.VariableReference", new VariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.WhileStatement", new WhileStatement_DataFlow());
   }
 }

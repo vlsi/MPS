@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 
 public class VariableReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_3k454j_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6869702494692930640");
+  private static SNodePointer breakingNode_3k454j_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1791178592936928836");
 
   public VariableReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.VariableReference");

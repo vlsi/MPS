@@ -61,7 +61,7 @@ public class SModel {
   private boolean fullLoadUpdateMode;
 
   private StackTraceElement[] myDisposedStacktrace = null;
-  private final ModelDependenciesManager myModelDependenciesManager = new ModelDependenciesManager(this);
+  private ModelDependenciesManager myModelDependenciesManager;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -488,6 +488,7 @@ public class SModel {
   //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
+    if (myModelDependenciesManager == null) myModelDependenciesManager = new ModelDependenciesManager(this);
     return myModelDependenciesManager;
   }
 
@@ -831,7 +832,7 @@ public class SModel {
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
-    myModelDependenciesManager.dispose();
+    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
   }
 
   public boolean updateSModelReferences() {

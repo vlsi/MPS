@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.math.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -252,7 +252,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_b0ego6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     editorCell.setCellId("Empty_b0ego6_a0");
     {
       Style style = editorCell.getStyle();
@@ -263,7 +263,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_b0ego6_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     editorCell.setCellId("Empty_b0ego6_d0");
     {
       Style style = editorCell.getStyle();

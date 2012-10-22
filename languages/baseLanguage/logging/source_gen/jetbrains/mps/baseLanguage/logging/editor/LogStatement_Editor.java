@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.logging.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -64,7 +64,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xuwwk0_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_xuwwk0_a2a");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xuwwk0_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_xuwwk0_d0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -84,14 +84,14 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xuwwk0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Has exception");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Has exception");
     editorCell.setCellId("Constant_xuwwk0_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xuwwk0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Alt+Enter");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Alt+Enter");
     editorCell.setCellId("Constant_xuwwk0_c0");
     {
       Style style = editorCell.getStyle();

@@ -98,6 +98,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
+  /**
+   * @deprecated since MPS 3.0 use getContext() instead
+   */
+  @Deprecated
   EditorContext getEditorContext();
 
   void setCaretX(int x);

@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -33,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 
 import java.util.List;
@@ -125,8 +125,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
     if (referentNode == null) {
       EditorCell_Label noRefCell = myIsCardinality1 ?
-        new EditorCell_Error(context, node, myNoTargetText) :
-        new EditorCell_Constant(context, node, "");
+        new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, myNoTargetText) :
+        new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, "");
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
@@ -146,7 +146,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
-    EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
+    EditorCell_Error errorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, error);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
     return errorCell;
   }

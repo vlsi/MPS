@@ -5281,7 +5281,7 @@
     <nodeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="62" startPosition="70" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5062223007361662033" fileName="Collapse_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5062223007361662033" fileName="Collapse_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662020" fileName="Collapse_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5309,7 +5309,7 @@
     <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="58" startPosition="68" endLine="59" endPosition="19" />
     <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="62" startPosition="70" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="123" />
+    <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="164" />
     <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="82" />
     <scopeInfo nodeId="5062223007361662019" fileName="Collapse_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="123" />
     <scopeInfo nodeId="5062223007361662016" fileName="Collapse_Action.java" startLine="41" startPosition="7" endLine="43" endPosition="63">
@@ -5373,7 +5373,7 @@
     <nodeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="62" startPosition="68" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5062223007361662067" fileName="CollapseAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5062223007361662067" fileName="CollapseAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662054" fileName="CollapseAll_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5401,7 +5401,7 @@
     <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="58" startPosition="70" endLine="59" endPosition="19" />
     <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="62" startPosition="68" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="126" />
+    <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="167" />
     <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="85" />
     <scopeInfo nodeId="5062223007361662053" fileName="CollapseAll_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="127" />
     <scopeInfo nodeId="5062223007361662050" fileName="CollapseAll_Action.java" startLine="41" startPosition="7" endLine="43" endPosition="63">
@@ -5467,7 +5467,7 @@
     <nodeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="66" startPosition="70" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="68" startPosition="5" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5062223007361662103" fileName="Expand_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5062223007361662103" fileName="Expand_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="76" startPosition="33" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662088" fileName="Expand_Action.java" startLine="82" startPosition="77" endLine="83" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5498,7 +5498,7 @@
     <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="58" startPosition="65" endLine="59" endPosition="19" />
     <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="62" startPosition="68" endLine="63" endPosition="19" />
     <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="66" startPosition="70" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="121" />
+    <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="162" />
     <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="76" startPosition="33" endLine="77" endPosition="80" />
     <scopeInfo nodeId="5062223007361662087" fileName="Expand_Action.java" startLine="82" startPosition="77" endLine="83" endPosition="125" />
     <scopeInfo nodeId="5062223007361662084" fileName="Expand_Action.java" startLine="41" startPosition="7" endLine="43" endPosition="63">
@@ -5563,7 +5563,7 @@
     <nodeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="62" startPosition="68" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5062223007361662137" fileName="ExpandAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5062223007361662137" fileName="ExpandAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662124" fileName="ExpandAll_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5591,7 +5591,7 @@
     <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="58" startPosition="70" endLine="59" endPosition="19" />
     <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="62" startPosition="68" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="124" />
+    <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="165" />
     <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="83" />
     <scopeInfo nodeId="5062223007361662123" fileName="ExpandAll_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="129" />
     <scopeInfo nodeId="5062223007361662120" fileName="ExpandAll_Action.java" startLine="41" startPosition="7" endLine="43" endPosition="63">
@@ -5655,7 +5655,7 @@
     <nodeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="62" startPosition="70" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5062223007361662171" fileName="FoldSelection_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5062223007361662171" fileName="FoldSelection_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5062223007361662158" fileName="FoldSelection_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5683,7 +5683,7 @@
     <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="58" startPosition="68" endLine="59" endPosition="19" />
     <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="62" startPosition="70" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="128" />
+    <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="169" />
     <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="87" />
     <scopeInfo nodeId="5062223007361662157" fileName="FoldSelection_Action.java" startLine="78" startPosition="77" endLine="79" endPosition="133" />
     <scopeInfo nodeId="5062223007361662154" fileName="FoldSelection_Action.java" startLine="41" startPosition="7" endLine="43" endPosition="63">

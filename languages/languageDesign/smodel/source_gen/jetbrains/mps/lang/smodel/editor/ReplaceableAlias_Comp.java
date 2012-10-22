@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.editor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -34,6 +34,12 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     return this.createAlternation_gk1mhy_a(editorContext, node);
   }
 
+  @Deprecated
+  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    // This method was added in MPS 3.0 for the compatibility with prev. generated code 
+    return createEditorCell((EditorContext) editorContext);
+  }
+
   private EditorCell createAlternation_gk1mhy_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = ReplaceableAlias_Comp.renderingCondition_gk1mhy_a0(node, editorContext, editorContext.getOperationContext().getScope());
@@ -47,7 +53,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   }
 
   private EditorCell createError_gk1mhy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
+    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<choose operaion>");
     editorCell.setCellId("Error_gk1mhy_a0");
     return editorCell;
   }

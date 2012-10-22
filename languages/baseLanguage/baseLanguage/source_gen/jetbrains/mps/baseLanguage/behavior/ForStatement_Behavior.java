@@ -28,7 +28,7 @@ public class ForStatement_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       List<SNode> variables = new ArrayList<SNode>();
       if (!(ScopeUtils.comeFrom("variable", thisNode, child))) {
         ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "variable", true));

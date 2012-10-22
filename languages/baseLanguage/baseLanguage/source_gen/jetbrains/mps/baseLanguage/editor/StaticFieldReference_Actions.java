@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -31,7 +31,7 @@ public class StaticFieldReference_Actions {
       SNode classifier1 = SLinkOperations.getTarget(node, "classifier", false);
       SNode classifier2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (classifier1 == classifier2) {
-        SNode localStaticFieldReference = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
+        SNode localStaticFieldReference = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.VariableReference");
         SLinkOperations.setTarget(localStaticFieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
       }
     }

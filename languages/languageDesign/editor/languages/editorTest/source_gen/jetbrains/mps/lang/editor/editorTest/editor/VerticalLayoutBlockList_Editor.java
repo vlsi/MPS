@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editorTest.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -39,7 +39,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s783cw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vertical layout");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "vertical layout");
     editorCell.setCellId("Constant_s783cw_a0");
     editorCell.setDefaultText("");
     return editorCell;

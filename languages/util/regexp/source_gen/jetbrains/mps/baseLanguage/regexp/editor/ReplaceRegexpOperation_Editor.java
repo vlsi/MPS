@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -99,7 +99,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "s/");
     editorCell.setCellId("Constant_ldr481_a0");
     {
       Style style = editorCell.getStyle();
@@ -111,7 +111,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
     editorCell.setCellId("Constant_ldr481_c0");
     {
       Style style = editorCell.getStyle();
@@ -124,7 +124,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
     editorCell.setCellId("Constant_ldr481_e0");
     {
       Style style = editorCell.getStyle();
@@ -136,7 +136,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "g");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "g");
     editorCell.setCellId("Constant_ldr481_f0");
     {
       Style style = editorCell.getStyle();
@@ -149,7 +149,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "m");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "m");
     editorCell.setCellId("Constant_ldr481_g0");
     {
       Style style = editorCell.getStyle();
@@ -162,7 +162,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "s");
     editorCell.setCellId("Constant_ldr481_h0");
     {
       Style style = editorCell.getStyle();
@@ -175,7 +175,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "i");
     editorCell.setCellId("Constant_ldr481_i0");
     {
       Style style = editorCell.getStyle();
@@ -188,7 +188,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Options:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Options:");
     editorCell.setCellId("Constant_ldr481_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -199,21 +199,21 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Global replace (/g) :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Global replace (/g) :");
     editorCell.setCellId("Constant_ldr481_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ldr481_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ldr481_e0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Replaces every subsequence of the input sequence that matches the pattern with the given replacement string.");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Replaces every subsequence of the input sequence that matches the pattern with the given replacement string.");
     editorCell.setCellId("Constant_ldr481_e0_0");
     {
       Style style = editorCell.getStyle();
@@ -225,7 +225,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_f0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_f0_0");
     {
       Style style = editorCell.getStyle();
@@ -236,14 +236,14 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_g0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive (/i) :");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Case insensitive (/i) :");
     editorCell.setCellId("Constant_ldr481_g0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ldr481_i0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_i0_0");
     {
       Style style = editorCell.getStyle();
@@ -254,14 +254,14 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all (/s) : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Dot all (/s) : ");
     editorCell.setCellId("Constant_ldr481_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ldr481_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_l0");
     {
       Style style = editorCell.getStyle();
@@ -272,7 +272,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
     editorCell.setCellId("Constant_ldr481_m0");
     {
       Style style = editorCell.getStyle();
@@ -284,7 +284,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_n0");
     {
       Style style = editorCell.getStyle();
@@ -295,14 +295,14 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode (/m) : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Multiline mode (/m) : ");
     editorCell.setCellId("Constant_ldr481_o0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ldr481_q0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_q0");
     {
       Style style = editorCell.getStyle();
@@ -313,7 +313,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_r0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
     editorCell.setCellId("Constant_ldr481_r0");
     {
       Style style = editorCell.getStyle();
@@ -325,7 +325,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_s0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_s0");
     {
       Style style = editorCell.getStyle();
@@ -336,7 +336,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_t0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
     editorCell.setCellId("Constant_ldr481_t0");
     {
       Style style = editorCell.getStyle();
@@ -348,7 +348,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_u0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_u0");
     {
       Style style = editorCell.getStyle();
@@ -359,14 +359,14 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ldr481_v0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Value:");
     editorCell.setCellId("Constant_ldr481_v0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ldr481_x0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Replacement:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Replacement:");
     editorCell.setCellId("Constant_ldr481_x0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -385,7 +385,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -407,7 +407,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
+        return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
@@ -584,7 +584,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_ldr481_a3a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_ldr481_a3a");
       editorCell.setDefaultText("");
       return editorCell;

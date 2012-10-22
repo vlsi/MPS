@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.contracts.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.baseLanguage.contracts.generator.template.utils.ContractsUtils;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -25,6 +25,10 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_2203155934612649981(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      return false;
+    }
+
     SNode nodeParent = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     SNode linkParent = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     return (nodeParent != null) && (linkParent != null) && nodeParent != linkParent;
@@ -69,7 +73,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2203155934612650020(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode nodeParent = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     SNode linkParent = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    int declarationNum = ListSequence.fromList(SLinkOperations.getTargets(linkParent, "parameter", true)).indexOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
+    int declarationNum = ListSequence.fromList(SLinkOperations.getTargets(linkParent, "parameter", true)).indexOf(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
     SNode clone = SNodeOperations.copyNode(_context.getNode());
     SLinkOperations.setTarget(clone, "variableDeclaration", ListSequence.fromList(SLinkOperations.getTargets(nodeParent, "parameter", true)).getElement(declarationNum), false);
     return clone;

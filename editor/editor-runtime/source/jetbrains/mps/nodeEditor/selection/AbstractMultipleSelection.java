@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
@@ -60,7 +61,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
     getEditorComponent().assertModelNotDisposed();
     EditorCellAction action = getEditorComponent().getComponentAction(type);
     if (action != null && action.canExecute(getEditorComponent().getEditorContext())) {
-      action.execute(getEditorComponent().getEditorContext());
+      action.execute((EditorContext) getEditorComponent().getEditorContext());
     }
   }
 

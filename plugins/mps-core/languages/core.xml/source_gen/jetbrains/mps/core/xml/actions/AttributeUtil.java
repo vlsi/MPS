@@ -18,7 +18,7 @@ public class AttributeUtil {
   public static void setIndexSelection(EditorContext editorContext) {
   }
 
-  public static void updateValue(SNode attr, EditorContext editorContext) {
+  public static void updateValue(SNode attr, jetbrains.mps.openapi.editor.EditorContext editorContext) {
     if (attr == null) {
       return;
     }

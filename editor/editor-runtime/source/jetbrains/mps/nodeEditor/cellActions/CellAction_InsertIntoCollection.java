@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CellAction_InsertIntoCollection extends EditorCellAction {
   private AbstractCellListHandler myListHandler;
@@ -36,7 +35,7 @@ public class CellAction_InsertIntoCollection extends EditorCellAction {
 
   public void execute(EditorContext context) {
     boolean before = myInsertBefore;
-    EditorCell contextCell = context.getContextCell();    
-    myListHandler.startInsertMode(context, contextCell, before);
+    EditorCell contextCell = context.getContextCell();
+    myListHandler.startInsertMode(context, (jetbrains.mps.nodeEditor.cells.EditorCell) contextCell, before);
   }
 }

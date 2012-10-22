@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -91,7 +91,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comparison rule ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comparison rule ");
     editorCell.setCellId("Constant_c2v57n_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -103,7 +103,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_c2v57n_b0");
     {
       Style style = editorCell.getStyle();
@@ -114,7 +114,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable for ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "applicable for ");
     editorCell.setCellId("Constant_c2v57n_a2a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -126,14 +126,14 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
     editorCell.setCellId("Constant_c2v57n_c2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_c2v57n_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Constant_c2v57n_d0");
     {
       Style style = editorCell.getStyle();
@@ -144,7 +144,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "rule");
     editorCell.setCellId("Constant_c2v57n_a4a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -156,7 +156,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_b4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_c2v57n_b4a");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
@@ -168,7 +168,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_c2v57n_a5a");
     {
       Style style = editorCell.getStyle();
@@ -179,7 +179,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_c2v57n_g0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
@@ -191,7 +191,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_a0h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weak");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weak");
     editorCell.setCellId("Constant_c2v57n_a0h0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -199,7 +199,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c2v57n_b0h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
     editorCell.setCellId("Constant_c2v57n_b0h0");
     editorCell.setDefaultText("");
     return editorCell;

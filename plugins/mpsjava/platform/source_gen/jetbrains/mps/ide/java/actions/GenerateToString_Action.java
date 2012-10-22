@@ -119,7 +119,7 @@ public class GenerateToString_Action extends BaseAction {
       SNode currentExpression = null;
       for (SNodePointer fieldPtr : selectedFields) {
         SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-        SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
         SNode item = new GenerateToString_Action.QuotationClass_dpuufu_a0a3a51a0a4().createNode(((fieldPtr == firstField ?
           "" :

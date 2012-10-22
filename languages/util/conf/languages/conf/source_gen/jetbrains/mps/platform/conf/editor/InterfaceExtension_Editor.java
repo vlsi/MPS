@@ -4,7 +4,7 @@ package jetbrains.mps.platform.conf.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -58,7 +58,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4lf1wj_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implementation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "implementation:");
     editorCell.setCellId("Constant_4lf1wj_a1a");
     editorCell.setDefaultText("");
     return editorCell;

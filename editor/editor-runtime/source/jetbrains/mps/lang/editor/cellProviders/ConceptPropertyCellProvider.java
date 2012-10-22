@@ -16,9 +16,10 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -41,7 +42,6 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
-
   public EditorCell createEditorCell(EditorContext editorContext) {
     String text = getSNode().getConceptProperty(myConceptPropertyName);
     EditorCell_Label editorCell;
@@ -49,7 +49,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     if ((errorText == null) || (errorText.length() == 0)) {
       errorText = " <no  " + myConceptPropertyName + "  value> ";
     }
-    editorCell = EditorCell_Property.create(myEditorContext, new ConstantModelAccessor(text), getSNode());
+    editorCell = EditorCell_Property.create((jetbrains.mps.nodeEditor.EditorContext) myEditorContext, new ConstantModelAccessor(text), getSNode());
     editorCell.setDefaultText(errorText);
     editorCell.setEditable(true);
     editorCell.getStyle().set(StyleAttributes.FONT_STYLE, DEFAULT_FONT_STYLE);

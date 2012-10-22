@@ -23,12 +23,15 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -193,11 +196,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (action.executeInCommand()) {
       getEditorContext().executeCommand(new Runnable() {
         public void run() {
-          action.execute(myEditorContext);
+          action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
         }
       });
     } else {
-      action.execute(myEditorContext);
+      action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
     }
     return true;
   }
@@ -437,6 +440,11 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorContext getEditorContext() {
+    return myEditorContext;
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.EditorContext getContext() {
     return myEditorContext;
   }
 

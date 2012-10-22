@@ -4,12 +4,12 @@ package jetbrains.mps.execution.commands.editor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
@@ -40,8 +40,8 @@ public class RedirectOutputExpression {
       // some stuff I copied from binary operation 
       // it does some magic with selection 
       editorContext.flushEvents();
-      EditorComponent editor = editorContext.getNodeEditorComponent();
-      EditorCell cell = editor.findNodeCell(expression);
+      EditorComponent editor = editorContext.getEditorComponent();
+      EditorCell cell = (EditorCell) editor.findNodeCell(expression);
       if (cell != null) {
         EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(lastLeaf);

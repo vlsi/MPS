@@ -4,7 +4,7 @@ package jetbrains.mps.build.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -53,7 +53,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jumb3f_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
     editorCell.setCellId("Constant_jumb3f_a1a");
     {
       Style style = editorCell.getStyle();
@@ -65,7 +65,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jumb3f_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "artifacts location");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "artifacts location");
     editorCell.setCellId("Constant_jumb3f_b1a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -77,7 +77,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jumb3f_d1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
     editorCell.setCellId("Constant_jumb3f_d1a");
     {
       Style style = editorCell.getStyle();

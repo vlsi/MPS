@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -79,7 +79,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tbgpz7_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension methods");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extension methods");
     editorCell.setCellId("Constant_tbgpz7_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -87,7 +87,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tbgpz7_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
     editorCell.setCellId("Constant_tbgpz7_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -95,7 +95,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tbgpz7_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_tbgpz7_g0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -107,7 +107,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tbgpz7_b7a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_tbgpz7_b7a");
     {
       Style style = editorCell.getStyle();
@@ -119,7 +119,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tbgpz7_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_tbgpz7_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -236,7 +236,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_tbgpz7_a0h0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_tbgpz7_a0h0");
       editorCell.setDefaultText("<<static fields>>");
       return editorCell;
@@ -283,7 +283,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_tbgpz7_a2h0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
       editorCell.setCellId("Constant_tbgpz7_a2h0");
       editorCell.setDefaultText("<<extension methods>>");
       return editorCell;

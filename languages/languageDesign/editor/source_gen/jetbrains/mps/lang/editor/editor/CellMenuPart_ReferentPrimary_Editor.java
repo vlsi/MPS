@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -50,7 +50,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rsvjao_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "primary choose referent menu");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "primary choose referent menu");
     editorCell.setCellId("Constant_rsvjao_a0a");
     {
       Style style = editorCell.getStyle();
@@ -62,7 +62,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rsvjao_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
     editorCell.setCellId("Constant_rsvjao_a1a");
     {
       Style style = editorCell.getStyle();
@@ -73,7 +73,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rsvjao_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no customization needed");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "no customization needed");
     editorCell.setCellId("Constant_rsvjao_b1a");
     {
       Style style = editorCell.getStyle();

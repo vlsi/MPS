@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -31,7 +31,7 @@ public class IsOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5ag8rr_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is");
     editorCell.setCellId("Constant_5ag8rr_b0");
     editorCell.setDefaultText("");
     return editorCell;

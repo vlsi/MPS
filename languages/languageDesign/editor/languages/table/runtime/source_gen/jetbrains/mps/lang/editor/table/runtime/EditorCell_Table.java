@@ -59,7 +59,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       rowCell.setCellId(rowId);
 
       EditorCellAction selectRowAction = new EditorCellAction() {
-        public void execute(EditorContext editorContext) {
+        public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
           assert !(myEmpty);
           EditorComponent editorComponent = getEditorContext().getNodeEditorComponent();
           editorComponent.getSelectionManager().pushSelection(editorComponent.getSelectionManager().createSelection(rowCell));
@@ -88,24 +88,24 @@ public class EditorCell_Table extends EditorCell_Collection {
           if (value != null) {
             editorCell = getEditorContext().createNodeCell(value);
             editorCell.setAction(CellActionType.DELETE, new EditorCellAction() {
-              public void execute(EditorContext editorContext) {
+              public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
                 myModel.deleteColumn(finalColumn);
               }
             });
             editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
-              public void execute(EditorContext editorContext) {
+              public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
                 myModel.insertColumn(finalColumn + 1);
               }
             });
             editorCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
-              public void execute(EditorContext editorContext) {
+              public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
                 myModel.insertColumn(finalColumn);
               }
             });
           } else {
             editorCell = new EditorCell_Constant(getEditorContext(), getSNode(), "", true);
             editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
-              public void execute(EditorContext editorContext) {
+              public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
                 myModel.createElement(finalRow, finalColumn);
               }
             });
@@ -209,7 +209,7 @@ public class EditorCell_Table extends EditorCell_Collection {
     EditorCell_Collection rowCell = EditorCell_Collection.create(getEditorContext(), getSNode(), new CellLayout_Horizontal(), null);
     rowCell.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
     rowCell.setAction(CellActionType.DELETE, new EditorCellAction() {
-      public void execute(EditorContext p0) {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext p0) {
         myModel.deleteRow(row);
       }
     });
@@ -222,13 +222,13 @@ public class EditorCell_Table extends EditorCell_Collection {
       emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     } else {
       emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
-        public void execute(EditorContext editorContext) {
+        public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
           myModel.insertRow(rowNumber + 1);
         }
       });
     }
     emptyCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
-      public void execute(EditorContext editorContext) {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
         myModel.insertRow(rowNumber);
       }
     });
@@ -247,7 +247,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
   private void installEmptyRowCellActions(EditorCell emptyCell, final int rowNumber) {
     EditorCellAction createFirstCellAction = new EditorCellAction() {
-      public void execute(EditorContext editorContext) {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
         myModel.insertColumn(rowNumber);
       }
     };
@@ -265,7 +265,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
   private void installEmptyTableCellActions(EditorCell emptyCell) {
     EditorCellAction createFirstRowAction = new EditorCellAction() {
-      public void execute(EditorContext editorContext) {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext editorContext) {
         myModel.insertRow(0);
       }
     };
@@ -277,8 +277,8 @@ public class EditorCell_Table extends EditorCell_Collection {
     return EditorSettings.getInstance().getVerticalBoundWidth() / columnCount;
   }
 
-  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
-    return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model, uniquePrefix);
+  public static EditorCell_Collection createTable(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
+    return new EditorCell_Table((EditorContext) editorContext, node, new CellLayout_Table(), model, uniquePrefix);
   }
 
   public class SelectColumnAction extends EditorCellAction {
@@ -290,12 +290,12 @@ public class EditorCell_Table extends EditorCell_Collection {
       myExistingAction = existingAction;
     }
 
-    public void execute(EditorContext context) {
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       if (myExistingAction != null && myExistingAction.canExecute(context)) {
         myExistingAction.execute(context);
         return;
       }
-      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorComponent editorComponent = ((EditorComponent) context.getEditorComponent());
       TableColumnSelection selection = new TableColumnSelection(editorComponent, EditorCell_Table.this, myColumnNumber);
       editorComponent.getSelectionManager().pushSelection(selection);
     }

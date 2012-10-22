@@ -4,7 +4,7 @@ package jetbrains.mps.lang.findUsages.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -106,7 +106,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple finder");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "simple finder");
     editorCell.setCellId("Constant_m33ofg_a0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -114,7 +114,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_c0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for concept");
     editorCell.setCellId("Constant_m33ofg_c0a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -122,7 +122,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_m33ofg_b0a");
     {
       Style style = editorCell.getStyle();
@@ -135,7 +135,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "description:");
     editorCell.setCellId("Constant_m33ofg_a1b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -143,7 +143,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "long description:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "long description:");
     editorCell.setCellId("Constant_m33ofg_c1b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -151,7 +151,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_e1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_m33ofg_e1b0");
     {
       Style style = editorCell.getStyle();
@@ -163,7 +163,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_m33ofg_g1b0");
     {
       Style style = editorCell.getStyle();
@@ -175,7 +175,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_i1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_m33ofg_i1b0");
     {
       Style style = editorCell.getStyle();
@@ -187,7 +187,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_k1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_m33ofg_k1b0");
     {
       Style style = editorCell.getStyle();
@@ -199,7 +199,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_m1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_m33ofg_m1b0");
     {
       Style style = editorCell.getStyle();
@@ -211,7 +211,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m33ofg_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_m33ofg_c0");
     {
       Style style = editorCell.getStyle();
@@ -224,7 +224,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_m33ofg_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
     return result;
   }
 

@@ -156,7 +156,7 @@ public class ClosuresUtil {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
         continue;
       }
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
+      if ((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
         SNode variable = SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         if (SetSequence.fromSet(localVars).contains(variable)) {
           getClosureContextData(contextOwner, generator).putVariable(variable);

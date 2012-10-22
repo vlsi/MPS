@@ -37,42 +37,34 @@ public class SwitchStatement_Behavior {
       childStatement = SNodeOperations.getParent(childStatement);
     }
 
-    {
-      SNode concept_d0b;
-      concept_d0b = kind;
-      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
-        {
-          if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
-            return ScopeUtils.lazyParentScope(thisNode, kind);
-          }
-
-          List<SNode> variables = new ArrayList<SNode>();
-          for (SNode caseNode : SLinkOperations.getTargets(thisNode, "case", true)) {
-            if (caseNode == childStatement) {
-              break;
-            }
-            ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
-          }
-          return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
-        }
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
+        return ScopeUtils.lazyParentScope(thisNode, kind);
       }
-      if (SConceptOperations.isSubConceptOf(concept_d0b, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
-        {
-          List<SNode> parameter = new ArrayList<SNode>();
-          if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
-            ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
-          }
-          SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
-          for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
-            nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
-          }
-          nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
 
-          // todo: how to generialize? 
-          if (Arrays.asList(nodesInScope).contains(child)) {
-            return Scopes.forLoopLabels(parameter, ScopeUtils.lazyParentScope(thisNode, kind));
-          }
+      List<SNode> variables = new ArrayList<SNode>();
+      for (SNode caseNode : SLinkOperations.getTargets(thisNode, "case", true)) {
+        if (caseNode == childStatement) {
+          break;
         }
+        ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
+      }
+      return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
+    }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
+      List<SNode> parameter = new ArrayList<SNode>();
+      if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
+        ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
+      }
+      SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
+        nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
+      }
+      nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
+
+      // todo: how to generialize? 
+      if (Arrays.asList(nodesInScope).contains(child)) {
+        return Scopes.forLoopLabels(parameter, ScopeUtils.lazyParentScope(thisNode, kind));
       }
     }
     return null;

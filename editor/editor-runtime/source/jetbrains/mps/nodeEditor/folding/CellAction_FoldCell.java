@@ -17,15 +17,15 @@ package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.Condition;
 
 public class CellAction_FoldCell extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
-    EditorCell editorCell = context.getNodeEditorComponent().getSelectedCell();
+    EditorCell editorCell = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
     if (editorCell == null) return false;
     return findCell(editorCell) != null;
   }
@@ -36,7 +36,7 @@ public class CellAction_FoldCell extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    EditorComponent component = context.getNodeEditorComponent();
+    EditorComponent component = (EditorComponent) context.getEditorComponent();
     EditorCell editorCell = component.getSelectedCell();
     EditorCell_Collection targetCell = findCell(editorCell);
     targetCell.fold();

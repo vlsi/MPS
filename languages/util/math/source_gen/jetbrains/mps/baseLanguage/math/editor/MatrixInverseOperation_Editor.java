@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.math.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -39,7 +39,7 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_j4oyiy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision setting:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "precision setting:");
     editorCell.setCellId("Constant_j4oyiy_a0");
     editorCell.setDefaultText("");
     return editorCell;

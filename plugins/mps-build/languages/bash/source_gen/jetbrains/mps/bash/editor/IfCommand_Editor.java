@@ -4,7 +4,7 @@ package jetbrains.mps.bash.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -75,21 +75,21 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a9dubz_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "if");
     editorCell.setCellId("Constant_a9dubz_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a9dubz_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_a9dubz_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a9dubz_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "then");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "then");
     editorCell.setCellId("Constant_a9dubz_d0");
     {
       Style style = editorCell.getStyle();
@@ -100,7 +100,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a9dubz_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "else");
     editorCell.setCellId("Constant_a9dubz_a6a");
     {
       Style style = editorCell.getStyle();
@@ -111,7 +111,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a9dubz_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fi");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "fi");
     editorCell.setCellId("Constant_a9dubz_h0");
     {
       Style style = editorCell.getStyle();
@@ -228,7 +228,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_a9dubz_a5a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<elif ...>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<elif ...>>");
       editorCell.setCellId("Constant_a9dubz_a5a");
       BashLanguageStyle_StyleSheet.getHintStyle(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

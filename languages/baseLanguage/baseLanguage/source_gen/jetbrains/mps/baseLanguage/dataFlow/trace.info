@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
   <root nodeId="1206454554507" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="1206454560120" fileName="IfStatement_DataFlow.java" startLine="18" startPosition="102" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220014062836" fileName="IfStatement_DataFlow.java" startLine="20" startPosition="161" endLine="21" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -161,7 +161,7 @@
   <root nodeId="1206460339989" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="1206460344649" fileName="AssignmentExpression_DataFlow.java" startLine="17" startPosition="102" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225456499111" fileName="AssignmentExpression_DataFlow.java" startLine="18" startPosition="103" endLine="19" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225456606795" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="296" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225456606795" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="527" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207060739945" fileName="AssignmentExpression_DataFlow.java" startLine="24" startPosition="12" endLine="25" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="13" startPosition="68" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AssignmentExpression_DataFlow#()V" />
     <nodeInfo nodeId="1207060738396" fileName="AssignmentExpression_DataFlow.java" startLine="24" startPosition="10" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -169,7 +169,7 @@
     <nodeInfo nodeId="1206460370422" fileName="AssignmentExpression_DataFlow.java" startLine="19" startPosition="83" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="14" startPosition="42" endLine="14" endPosition="42" />
-    <scopeInfo nodeId="1225456443750" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="296" endLine="22" endPosition="303" />
+    <scopeInfo nodeId="1225456443750" fileName="AssignmentExpression_DataFlow.java" startLine="21" startPosition="527" endLine="22" endPosition="303" />
     <scopeInfo nodeId="1207060738397" fileName="AssignmentExpression_DataFlow.java" startLine="24" startPosition="12" endLine="25" endPosition="105" />
     <scopeInfo nodeId="1206460339989" fileName="AssignmentExpression_DataFlow.java" startLine="13" startPosition="68" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1206460370423" fileName="AssignmentExpression_DataFlow.java" startLine="20" startPosition="107" endLine="23" endPosition="7" />
@@ -1037,34 +1037,6 @@
       <varInfo nodeId="1221825780289" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="1221825780289" fileName="ConceptFunction_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ConceptFunction_DataFlow" />
-  </root>
-  <root nodeId="1222757967616" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
-    <nodeInfo nodeId="1225456405974" fileName="LocalVariableReference_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="11" startPosition="70" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableReference_DataFlow#()V" />
-    <nodeInfo nodeId="1225099965056" fileName="LocalVariableReference_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="12" startPosition="44" endLine="12" endPosition="44" />
-    <scopeInfo nodeId="1225099965057" fileName="LocalVariableReference_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="114" />
-    <scopeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="11" startPosition="70" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1222758001081" fileName="LocalVariableReference_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="1222757967616" varName="_context" />
-      <varInfo nodeId="1222757967616" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1222757967616" fileName="LocalVariableReference_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableReference_DataFlow" />
-  </root>
-  <root nodeId="1222758017511" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
-    <nodeInfo nodeId="1222758021530" fileName="ParameterReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="10" startPosition="66" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterReference_DataFlow#()V" />
-    <nodeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="11" startPosition="40" endLine="11" endPosition="40" />
-    <scopeInfo nodeId="1222758017513" fileName="ParameterReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="112" />
-    <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="10" startPosition="66" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1222758017511" varName="_context" />
-      <varInfo nodeId="1222758017511" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1222758017511" fileName="ParameterReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParameterReference_DataFlow" />
   </root>
   <root nodeId="1223989582690" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="1223990218854" fileName="Closure_DataFlow.java" startLine="17" startPosition="134" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2356,53 +2328,58 @@
   </root>
   <root nodeId="6868777471677432435" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="19" startPosition="43" endLine="20" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="23" startPosition="46" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432451" fileName="RuleFieldReference.java" startLine="29" startPosition="142" endLine="30" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="32" startPosition="11" endLine="33" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="49" endLine="35" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="35" startPosition="37" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="36" startPosition="60" endLine="37" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="37" startPosition="126" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="38" startPosition="42" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="23" startPosition="46" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1466384023878382311" fileName="RuleFieldReference.java" startLine="28" startPosition="159" endLine="29" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432451" fileName="RuleFieldReference.java" startLine="31" startPosition="88" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="13" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="36" startPosition="51" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="37" startPosition="39" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="38" startPosition="62" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="39" startPosition="72" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="40" startPosition="44" endLine="41" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="15" startPosition="61" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleFieldReference#()V" />
     <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="33" startPosition="33" endLine="40" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="31" startPosition="236" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432473" fileName="RuleFieldReference.java" startLine="30" startPosition="120" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432447" fileName="RuleFieldReference.java" startLine="28" startPosition="128" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6868777471677432438" fileName="RuleFieldReference.java" startLine="27" startPosition="53" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="26" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="35" startPosition="35" endLine="42" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="33" startPosition="238" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868777471677432473" fileName="RuleFieldReference.java" startLine="32" startPosition="122" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432447" fileName="RuleFieldReference.java" startLine="30" startPosition="74" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6868777471677432438" fileName="RuleFieldReference.java" startLine="29" startPosition="161" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1466384023878382247" fileName="RuleFieldReference.java" startLine="27" startPosition="53" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="26" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="16" startPosition="31" endLine="16" endPosition="31" />
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="19" startPosition="43" endLine="20" endPosition="174" />
-    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="23" startPosition="46" endLine="24" endPosition="78" />
+    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="23" startPosition="46" endLine="24" endPosition="68" />
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="15" startPosition="61" endLine="17" endPosition="3" />
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="6868777471677432435" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="49" endLine="39" endPosition="74">
+    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="36" startPosition="51" endLine="41" endPosition="76">
       <varInfo nodeId="6868777471677432475" varName="before" />
       <varInfo nodeId="6868777471677432475" varName="instruction" />
       <varInfo nodeId="6868777471677432475" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="32" startPosition="11" endLine="40" endPosition="13">
+    <scopeInfo nodeId="6868777471677432475" fileName="RuleFieldReference.java" startLine="34" startPosition="13" endLine="42" endPosition="15">
       <varInfo nodeId="6868777471677432475" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432474" fileName="RuleFieldReference.java" startLine="31" startPosition="236" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432450" fileName="RuleFieldReference.java" startLine="29" startPosition="142" endLine="42" endPosition="9">
+    <scopeInfo nodeId="6868777471677432474" fileName="RuleFieldReference.java" startLine="33" startPosition="238" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="6868777471677432450" fileName="RuleFieldReference.java" startLine="31" startPosition="88" endLine="44" endPosition="11">
       <varInfo nodeId="6868777471677432452" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432446" fileName="RuleFieldReference.java" startLine="28" startPosition="128" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432447" fileName="RuleFieldReference.java" startLine="28" startPosition="128" endLine="43" endPosition="7">
+    <scopeInfo nodeId="6868777471677432446" fileName="RuleFieldReference.java" startLine="30" startPosition="74" endLine="45" endPosition="9" />
+    <scopeInfo nodeId="6868777471677432447" fileName="RuleFieldReference.java" startLine="30" startPosition="74" endLine="45" endPosition="9">
       <varInfo nodeId="6868777471677432448" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432437" fileName="RuleFieldReference.java" startLine="27" startPosition="53" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="26" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1466384023878382248" fileName="RuleFieldReference.java" startLine="28" startPosition="159" endLine="46" endPosition="7">
+      <varInfo nodeId="1466384023878382312" varName="field" />
+    </scopeInfo>
+    <scopeInfo nodeId="6868777471677432437" fileName="RuleFieldReference.java" startLine="27" startPosition="53" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="26" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="6868777471677432435" varName="node" />
       <varInfo nodeId="6868777471677432435" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
+    <unitInfo nodeId="6868777471677432435" fileName="RuleFieldReference.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
   </root>
   <root nodeId="6868777471677432514" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="6868777471677432514" fileName="RuleMethodCall.java" startLine="18" startPosition="43" endLine="19" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2582,6 +2559,19 @@
       <varInfo nodeId="6868777471677432624" varName="o" />
     </scopeInfo>
     <unitInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
+  </root>
+  <root nodeId="7074068829090025540" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
+    <nodeInfo nodeId="7074068829090025543" fileName="VariableReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7074068829090025540" fileName="VariableReference_DataFlow.java" startLine="10" startPosition="65" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariableReference_DataFlow#()V" />
+    <nodeInfo nodeId="7074068829090025540" fileName="VariableReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7074068829090025540" fileName="VariableReference_DataFlow.java" startLine="11" startPosition="39" endLine="11" endPosition="39" />
+    <scopeInfo nodeId="7074068829090025542" fileName="VariableReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="112" />
+    <scopeInfo nodeId="7074068829090025540" fileName="VariableReference_DataFlow.java" startLine="10" startPosition="65" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="7074068829090025540" fileName="VariableReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="7074068829090025540" varName="_context" />
+      <varInfo nodeId="7074068829090025540" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7074068829090025540" fileName="VariableReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.VariableReference_DataFlow" />
   </root>
   <root nodeId="7597254041024463759" modelId="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)">
     <nodeInfo nodeId="7597254041024527612" fileName="DataFlowTryCatchUtil.java" startLine="25" startPosition="88" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

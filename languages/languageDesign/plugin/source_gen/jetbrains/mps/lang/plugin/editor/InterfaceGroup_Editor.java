@@ -4,7 +4,7 @@ package jetbrains.mps.lang.plugin.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -74,7 +74,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ttb7ur_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "bootstrap");
     editorCell.setCellId("Constant_ttb7ur_a0a");
     {
       Style style = editorCell.getStyle();
@@ -85,21 +85,21 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ttb7ur_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "group");
     editorCell.setCellId("Constant_ttb7ur_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ttb7ur_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal-id");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "internal-id");
     editorCell.setCellId("Constant_ttb7ur_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ttb7ur_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_ttb7ur_c0");
     {
       Style style = editorCell.getStyle();
@@ -110,7 +110,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ttb7ur_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register via plugin.xml:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "register via plugin.xml:");
     editorCell.setCellId("Constant_ttb7ur_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;

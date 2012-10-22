@@ -4,7 +4,7 @@ package jetbrains.mps.lang.core.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IOperationContext;
@@ -68,7 +68,7 @@ public class ExportScopeModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_1l2km8_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1l2km8_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (SNodeOperations.getParent(node) != null) && SNodeOperations.getParent(node).isRoot();
   }
 }

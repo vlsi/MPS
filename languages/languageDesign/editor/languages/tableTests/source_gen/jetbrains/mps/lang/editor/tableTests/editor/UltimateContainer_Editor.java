@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.tableTests.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -50,7 +50,7 @@ public class UltimateContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hd4pfy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
     editorCell.setCellId("Constant_hd4pfy_a0");
     {
       Style style = editorCell.getStyle();
@@ -61,7 +61,7 @@ public class UltimateContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hd4pfy_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "state machines:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "state machines:");
     editorCell.setCellId("Constant_hd4pfy_a1a");
     {
       Style style = editorCell.getStyle();
@@ -72,7 +72,7 @@ public class UltimateContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hd4pfy_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tables:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "tables:");
     editorCell.setCellId("Constant_hd4pfy_c1a");
     {
       Style style = editorCell.getStyle();
@@ -83,7 +83,7 @@ public class UltimateContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hd4pfy_e1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matrixes:");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "matrixes:");
     editorCell.setCellId("Constant_hd4pfy_e1a");
     {
       Style style = editorCell.getStyle();
@@ -94,7 +94,7 @@ public class UltimateContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hd4pfy_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
     editorCell.setCellId("Constant_hd4pfy_c0");
     {
       Style style = editorCell.getStyle();

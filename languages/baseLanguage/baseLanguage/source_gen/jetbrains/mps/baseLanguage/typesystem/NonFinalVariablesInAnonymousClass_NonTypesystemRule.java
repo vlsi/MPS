@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -21,20 +21,19 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
   public NonFinalVariablesInAnonymousClass_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode localVariableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(localVariableReference, "variableDeclaration", false) == null)) {
-      return;
-    }
-    if (!(SPropertyOperations.getBoolean(SLinkOperations.getTarget(localVariableReference, "variableDeclaration", false), "isFinal"))) {
-      if (!(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
-        if ((SNodeOperations.getAncestor(localVariableReference, "jetbrains.mps.baseLanguage.structure.IFinalWrapper", false, false) == null)) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localVariableReference, "Variable must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239123004897", null, errorTarget);
+  public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      if (!(SPropertyOperations.getBoolean(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "isFinal"))) {
+        if (!(VariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(variableReference))) {
+          if ((SNodeOperations.getAncestor(variableReference, "jetbrains.mps.baseLanguage.structure.IFinalWrapper", false, false) == null)) {
             {
-              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
-              intentionProvider.putArgument("varRef", localVariableReference);
-              _reporter_2309309498.addIntentionProvider(intentionProvider);
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Variable must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239123004897", null, errorTarget);
+              {
+                BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
+                intentionProvider.putArgument("varRef", variableReference);
+                _reporter_2309309498.addIntentionProvider(intentionProvider);
+              }
             }
           }
         }
@@ -43,7 +42,7 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.LocalVariableReference";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
