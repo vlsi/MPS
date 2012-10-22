@@ -73,13 +73,13 @@ public class DependenciesViewerTest extends BaseMPSTest {
             }
             SearchResults targetSearchResults = finder.getTargetSearchResults(nodes, testScope, new EmptyProgressMonitor());
             int size = targetSearchResults.getSearchResults().size();
-            if (size != 15) {
+            if (size != 11) {
               System.out.println("Targets size " + size);
               res[0] = false;
             }
-            SearchResults refSearchResults = finder.getRefSearchResults(nodes, testScope, targetScope, new EmptyProgressMonitor());
+            SearchResults refSearchResults = finder.getUsagesSearchResults(nodes, testScope, targetScope, new EmptyProgressMonitor());
             size = refSearchResults.getSearchResults().size();
-            if (size != 5) {
+            if (size != 4) {
               System.out.println("Results size " + size);
               res[0] = false;
             }

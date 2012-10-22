@@ -167,7 +167,11 @@ public class TargetsView extends UsagesView {
       if ((presentation == null || presentation.length() == 0)) {
         presentation = "the left tree scope selection";
       }
-      return "Dependencies of " + presentation;
+
+      return ((myParent.isMeta() ?
+        "Used languages in " :
+        "Dependencies of "
+      )) + presentation;
     }
 
     @NotNull

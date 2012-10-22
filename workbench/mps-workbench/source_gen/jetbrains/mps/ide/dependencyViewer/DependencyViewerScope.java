@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -17,13 +16,11 @@ public class DependencyViewerScope {
   private Collection<SModule> myModules;
   private Collection<SModel> myModels;
   private Collection<SNode> myRoots;
-  private Collection<SLanguage> myLanguages;
 
   public DependencyViewerScope() {
     myModules = CollectionSequence.fromCollection(new LinkedHashSet<SModule>());
     myModels = CollectionSequence.fromCollection(new LinkedHashSet<SModel>());
     myRoots = CollectionSequence.fromCollection(new LinkedHashSet<SNode>());
-    myLanguages = CollectionSequence.fromCollection(new LinkedHashSet<SLanguage>());
   }
 
   private int getNumRoots(SModel model) {
@@ -58,13 +55,6 @@ public class DependencyViewerScope {
     return CollectionSequence.fromCollection(myModules).contains(model.getModule());
   }
 
-  public boolean contains(SLanguage language) {
-    if (language == null) {
-      return false;
-    }
-    return CollectionSequence.fromCollection(myLanguages).contains(language);
-  }
-
   public void add(@Nullable SModule module) {
     if (module == null) {
       return;
@@ -88,13 +78,6 @@ public class DependencyViewerScope {
     if (!(contains(root))) {
       CollectionSequence.fromCollection(myRoots).addElement(root);
     }
-  }
-
-  public void add(SLanguage language) {
-    if (language == null) {
-      return;
-    }
-    CollectionSequence.fromCollection(myLanguages).addElement(language);
   }
 
   public Collection<SModel> getModels() {

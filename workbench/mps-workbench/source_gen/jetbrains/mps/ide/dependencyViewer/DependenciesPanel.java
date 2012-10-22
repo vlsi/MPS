@@ -30,6 +30,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ToggleAction;
 
 public class DependenciesPanel extends JPanel {
   private DependencyTree myInitTree;
@@ -42,10 +43,12 @@ public class DependenciesPanel extends JPanel {
   private List<SNode> mySourceNodes = ListSequence.fromList(new ArrayList<SNode>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
+  private boolean myIsMeta;
 
   public DependenciesPanel(BaseTool tool, Project project) {
     super(new BorderLayout());
     myTool = tool;
+    myIsMeta = false;
     myInitTree = new DependencyTree(this);
     myProject = project;
     myTargetsView = new TargetsView(myProject, this);
@@ -92,9 +95,12 @@ public class DependenciesPanel extends JPanel {
             ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
             try {
               monitor.start(null, 100);
-              List<SNode> nodes = myReferencesFinder.getNodes(sourceScope, monitor.subTask(50));
+              List<SNode> nodes = myReferencesFinder.getNodes(sourceScope, monitor.subTask(20));
               mySourceNodes = nodes;
-              results.value = myReferencesFinder.getTargetSearchResults(nodes, sourceScope, monitor.subTask(50));
+              results.value = (myIsMeta ?
+                myReferencesFinder.getUsedLanguagesSearchResults(nodes, sourceScope, monitor.subTask(80)) :
+                myReferencesFinder.getTargetSearchResults(nodes, sourceScope, monitor.subTask(80))
+              );
             } finally {
               monitor.done();
             }
@@ -119,7 +125,10 @@ public class DependenciesPanel extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-        SearchResults result = myReferencesFinder.getRefSearchResults(mySourceNodes, myScope, targetScope, monitor);
+        SearchResults result = (myIsMeta ?
+          myReferencesFinder.getLanguageUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor) :
+          myReferencesFinder.getUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor)
+        );
         results[0] = result;
         myReferencesView.setContents(result);
 
@@ -136,7 +145,12 @@ public class DependenciesPanel extends JPanel {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new DependenciesPanel.CloseAction());
     group.add(new DependenciesPanel.RerunAction());
+    group.add(new DependenciesPanel.ToggleUsedLanguages());
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+  }
+
+  public boolean isMeta() {
+    return myIsMeta;
   }
 
   private class CloseAction extends AnAction {
@@ -155,6 +169,21 @@ public class DependenciesPanel extends JPanel {
     }
 
     public void actionPerformed(AnActionEvent event) {
+      setContent(myInitialScope, myMPSProject);
+    }
+  }
+
+  public class ToggleUsedLanguages extends ToggleAction {
+    public ToggleUsedLanguages() {
+      super("Show used languages", "Show used languages", jetbrains.mps.ide.moduleDependencies.icons.Icons.USED_LANGUAGES_ICON);
+    }
+
+    public boolean isSelected(AnActionEvent event) {
+      return myIsMeta;
+    }
+
+    public void setSelected(AnActionEvent event, boolean b) {
+      myIsMeta = b;
       setContent(myInitialScope, myMPSProject);
     }
   }

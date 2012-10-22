@@ -10,16 +10,19 @@ import java.util.HashMap;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.progress.ProgressMonitor;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
 /*package*/ class ReferencesFinder {
   private Map<SModel, List<SReference>> myModelsRefsCache = new HashMap<SModel, List<SReference>>();
@@ -29,15 +32,18 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 
   /*package*/ SearchResults getTargetSearchResults(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
+    Set<SNode> targets = new HashSet<SNode>();
     try {
       monitor.start("computing references' targets", ListSequence.fromList(nodes).count());
       for (SNode node : nodes) {
         for (SReference ref : SNodeOperations.getReferences(((jetbrains.mps.smodel.SNode) node))) {
-          jetbrains.mps.smodel.SNode target = ref.getTargetNodeSilently();
+          SNode target = ref.getTargetNodeSilently();
           if (target == null || scope.contains(target)) {
             continue;
           }
-          results.getSearchResults().add(new SearchResult(target, "targets"));
+          if (targets.add(target)) {
+            results.getSearchResults().add(new SearchResult(target, "target"));
+          }
         }
         monitor.advance(1);
         if (monitor.isCanceled()) {
@@ -50,7 +56,28 @@ import org.jetbrains.mps.openapi.language.SLanguage;
     return results;
   }
 
-  /*package*/ SearchResults getRefSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
+  /*package*/ SearchResults getUsedLanguagesSearchResults(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
+    SearchResults results = new SearchResults();
+    Set<SNode> concepts = new HashSet<SNode>();
+    try {
+      monitor.start("computing used languages", ListSequence.fromList(nodes).count());
+      for (SNode node : nodes) {
+        SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance());
+        if (concepts.add(concept)) {
+          results.getSearchResults().add(new SearchResult(concept, "concept"));
+        }
+        monitor.advance(1);
+        if (monitor.isCanceled()) {
+          return results;
+        }
+      }
+    } finally {
+      monitor.done();
+    }
+    return results;
+  }
+
+  /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
     final SearchResults<SNode> results = new SearchResults<SNode>();
     try {
       monitor.start("filtering references", ListSequence.fromList(references).count());
@@ -64,6 +91,30 @@ import org.jetbrains.mps.openapi.language.SLanguage;
               }
               results.getSearchResults().add(new SearchResult(node, "references"));
               break;
+            }
+          }
+        });
+        if (monitor.isCanceled()) {
+          return results;
+        }
+        monitor.advance(1);
+      }
+    } finally {
+      monitor.done();
+    }
+    return results;
+  }
+
+  /*package*/ SearchResults getLanguageUsagesSearchResults(List<SNode> nodes, DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
+    final SearchResults<SNode> results = new SearchResults<SNode>();
+    try {
+      monitor.start("filtering nodes", ListSequence.fromList(nodes).count());
+      for (final SNode node : ListSequence.fromList(nodes)) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance());
+            if (concept != null && targetScope.contains(concept)) {
+              results.getSearchResults().add(new SearchResult(node, "language"));
             }
           }
         });
@@ -98,31 +149,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
           return result;
         }
         monitor.advance(1);
-      }
-    } finally {
-      monitor.done();
-    }
-    return result;
-  }
-
-  /*package*/ List<SLanguage> getUsedLanguages(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
-    List<SLanguage> result = ListSequence.fromList(new ArrayList<SLanguage>());
-    try {
-      monitor.start("detecting used languages " + scope.getPresentation(), scope.getNumRoots());
-      for (SModule element : scope.getModules()) {
-        if (monitor.isCanceled()) {
-          return result;
-        }
-      }
-      for (SModel element : scope.getModels()) {
-        if (monitor.isCanceled()) {
-          return result;
-        }
-      }
-      for (SNode root : scope.getRoots()) {
-        if (monitor.isCanceled()) {
-          return result;
-        }
       }
     } finally {
       monitor.done();
