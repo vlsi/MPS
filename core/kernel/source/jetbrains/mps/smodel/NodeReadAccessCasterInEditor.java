@@ -200,7 +200,9 @@ public class NodeReadAccessCasterInEditor {
       if (myEventsBlocked || skipNotification(sourceNode) || !sourceNode.getModelInternal().canFireEvent()) {
         return;
       }
-      myListenersStack.peek().addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
+      SNode node = new SNodePointer(targetModelReference, targetNodeId).getNode();
+      assert node != null;
+      myListenersStack.peek().addRefTargetToDependOn(node);
     }
 
     private boolean skipNotification(SNode node) {

@@ -23,7 +23,7 @@ import java.util.Set;
 
 public class NodeReadAccessInEditorListener implements INodesReadListener {
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
-  protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
+  protected HashSet<SNode> myReferentTargetsToDependOn = new HashSet<SNode>();
   protected HashSet<Pair<SNodePointer, String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
   protected HashSet<Pair<SNodePointer, String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
 
@@ -35,7 +35,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     return myNodesToDependOn;
   }
 
-  public Set<SNodePointer> getRefTargetsToDependOn() {
+  public Set<SNode> getRefTargetsToDependOn() {
     return myReferentTargetsToDependOn;
   }
 
@@ -61,7 +61,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     myNodesToDependOn.addAll(nodes);
   }
 
-  public void addRefTargetsToDependOn(Set<SNodePointer> targets) {
+  public void addRefTargetsToDependOn(Set<SNode> targets) {
     myReferentTargetsToDependOn.addAll(targets);
   }
 
@@ -85,10 +85,10 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
   }
 
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-     addRefTargetToDependOn(new SNodePointer(referent));
+     addRefTargetToDependOn(referent);
   }
 
-  public void addRefTargetToDependOn(SNodePointer target) {
+  public void addRefTargetToDependOn(SNode target) {
     myReferentTargetsToDependOn.add(target);
   }
 
