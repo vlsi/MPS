@@ -11,6 +11,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -56,33 +57,33 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0d0c0a.setGenPath(result_v3r4p8_a0a5a0a0d0c0a);
           }
 
-          Element modelsTag = jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "models");
+          Element modelsTag = XmlUtil.first(languageElement, "models");
           if (modelsTag != null) {
-            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(jetbrains.mps.project.persistence.JDOMUtil.children(modelsTag, "modelRoot"), macroHelper));
+            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(modelsTag, "modelRoot"), macroHelper));
           } else {
             // old - for backwards compatibility 
-            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(jetbrains.mps.project.persistence.JDOMUtil.children(languageElement, "modelRoot"), macroHelper));
+            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(languageElement, "modelRoot"), macroHelper));
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0d0c0a, languageElement);
-          for (Element extendedLanguage : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "extendedLanguages"), "extendedLanguage"))) {
+          for (Element extendedLanguage : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "extendedLanguages"), "extendedLanguage"))) {
             result_v3r4p8_a0a0d0c0a.getExtendedLanguages().add(ModuleReference.fromString(extendedLanguage.getText()));
           }
 
-          Element autoImports = jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "accessoryModels");
+          Element autoImports = XmlUtil.first(languageElement, "accessoryModels");
           if (autoImports == null) {
             // deprecated name 
-            autoImports = jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "library");
+            autoImports = XmlUtil.first(languageElement, "library");
           }
-          for (Element modelElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(autoImports, "model"))) {
+          for (Element modelElement : Sequence.fromIterable(XmlUtil.children(autoImports, "model"))) {
             result_v3r4p8_a0a0d0c0a.getAccessoryModels().add(SModelReference.fromString(modelElement.getAttributeValue("modelUID")));
           }
 
-          for (Element generatorElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "generators"), "generator"))) {
+          for (Element generatorElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "generators"), "generator"))) {
             result_v3r4p8_a0a0d0c0a.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macroHelper));
           }
 
-          for (Element entryElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "classPath"), "entry")).concat(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "runtimeClassPath"), "entry")))) {
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "runtimeClassPath"), "entry")))) {
             // runtimeClassPath was left for compatibility 
             ModelRoot entry = new ModelRoot();
             entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
@@ -90,30 +91,30 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0d0c0a.getStubModelEntries().add(entry);
           }
 
-          Element stubModelEntries = jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "stubModelEntries");
+          Element stubModelEntries = XmlUtil.first(languageElement, "stubModelEntries");
           if (stubModelEntries != null) {
             List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
             result_v3r4p8_a0a0d0c0a.getStubModelEntries().addAll(roots);
           }
 
-          for (Element entryElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "languageRuntimeClassPath"), "entry"))) {
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "languageRuntimeClassPath"), "entry"))) {
             ModelRoot entry = new ModelRoot();
             entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_v3r4p8_a0a0d0c0a.getRuntimeStubModels().add(entry);
           }
 
-          Element runtimeStubModels = jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "runtimeStubModels");
+          Element runtimeStubModels = XmlUtil.first(languageElement, "runtimeStubModels");
           if (runtimeStubModels != null) {
-            for (Element entryElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(runtimeStubModels, "stubModelEntry"))) {
+            for (Element entryElement : Sequence.fromIterable(XmlUtil.children(runtimeStubModels, "stubModelEntry"))) {
               final ModelRoot result_v3r4p8_a0a0a72a0a0d0c0a = new ModelRoot();
               final String result_v3r4p8_a0a0a0a72a0a0d0c0a = macroHelper.expandPath(entryElement.getAttributeValue("path"));
               result_v3r4p8_a0a0a72a0a0d0c0a.setPath(result_v3r4p8_a0a0a0a72a0a0d0c0a);
               final ModelRootManager result_v3r4p8_a1a0a0a72a0a0d0c0a = new ModelRootManager();
-              Element manager = jetbrains.mps.project.persistence.JDOMUtil.first(entryElement, "manager");
-              final String result_v3r4p8_a1a1a0a0a72a0a0d0c0a = jetbrains.mps.project.persistence.JDOMUtil.stringWithDefault(manager, "moduleId", "");
+              Element manager = XmlUtil.first(entryElement, "manager");
+              final String result_v3r4p8_a1a1a0a0a72a0a0d0c0a = XmlUtil.stringWithDefault(manager, "moduleId", "");
               result_v3r4p8_a1a0a0a72a0a0d0c0a.setModuleId(result_v3r4p8_a1a1a0a0a72a0a0d0c0a);
-              final String result_v3r4p8_a2a1a0a0a72a0a0d0c0a = jetbrains.mps.project.persistence.JDOMUtil.stringWithDefault(manager, "className", "");
+              final String result_v3r4p8_a2a1a0a0a72a0a0d0c0a = XmlUtil.stringWithDefault(manager, "className", "");
               result_v3r4p8_a1a0a0a72a0a0d0c0a.setClassName(result_v3r4p8_a2a1a0a0a72a0a0d0c0a);
               result_v3r4p8_a0a0a72a0a0d0c0a.setManager(result_v3r4p8_a1a0a0a72a0a0d0c0a);
               result_v3r4p8_a0a0d0c0a.getRuntimeStubModels().add(result_v3r4p8_a0a0a72a0a0d0c0a);
@@ -123,19 +124,19 @@ public class LanguageDescriptorPersistence {
             }
           }
 
-          Element stubSolutions = jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "stubSolutions");
+          Element stubSolutions = XmlUtil.first(languageElement, "stubSolutions");
           if (stubSolutions != null) {
-            for (Element solutionElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(stubSolutions, "stubSolution"))) {
+            for (Element solutionElement : Sequence.fromIterable(XmlUtil.children(stubSolutions, "stubSolution"))) {
               final StubSolution result_v3r4p8_a0a0a03a0a0d0c0a = new StubSolution();
-              final String result_v3r4p8_a0a0a0a03a0a0d0c0a = jetbrains.mps.project.persistence.JDOMUtil.stringWithDefault(solutionElement, "moduleName", "");
+              final String result_v3r4p8_a0a0a0a03a0a0d0c0a = XmlUtil.stringWithDefault(solutionElement, "moduleName", "");
               result_v3r4p8_a0a0a03a0a0d0c0a.setName(result_v3r4p8_a0a0a0a03a0a0d0c0a);
-              final ModuleId result_v3r4p8_a1a0a0a03a0a0d0c0a = ModuleId.fromString(jetbrains.mps.project.persistence.JDOMUtil.stringWithDefault(solutionElement, "moduleId", ""));
+              final ModuleId result_v3r4p8_a1a0a0a03a0a0d0c0a = ModuleId.fromString(XmlUtil.stringWithDefault(solutionElement, "moduleId", ""));
               result_v3r4p8_a0a0a03a0a0d0c0a.setId(result_v3r4p8_a1a0a0a03a0a0d0c0a);
               result_v3r4p8_a0a0d0c0a.getStubSolutions().add(result_v3r4p8_a0a0a03a0a0d0c0a);
             }
           }
 
-          for (Element entryElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(languageElement, "sourcePath"), "source"))) {
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "sourcePath"), "source"))) {
             result_v3r4p8_a0a0d0c0a.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
           return result_v3r4p8_a0a0d0c0a;
@@ -173,7 +174,7 @@ public class LanguageDescriptorPersistence {
 
     Element accessoryModels = new Element("accessoryModels");
     for (SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
-      jetbrains.mps.project.persistence.JDOMUtil.tagWithAttribute(accessoryModels, "model", "modelUID", model.toString());
+      XmlUtil.tagWithAttribute(accessoryModels, "model", "modelUID", model.toString());
     }
     languageElement.addContent(accessoryModels);
 
@@ -197,7 +198,7 @@ public class LanguageDescriptorPersistence {
       for (ModelRoot entry : SetSequence.fromSet(descriptor.getRuntimeStubModels())) {
         Element stubModelEntry = new Element("stubModelEntry");
         stubModelEntry.setAttribute("path", macroHelper.shrinkPath(entry.getPath()));
-        jetbrains.mps.project.persistence.JDOMUtil.tagWithAttributes(stubModelEntry, "manager", "moduleId", entry.getManager().getModuleId(), "className", entry.getManager().getClassName());
+        XmlUtil.tagWithAttributes(stubModelEntry, "manager", "moduleId", entry.getManager().getModuleId(), "className", entry.getManager().getClassName());
         runtimeStubModels.addContent(stubModelEntry);
       }
       languageElement.addContent(runtimeStubModels);
@@ -206,14 +207,14 @@ public class LanguageDescriptorPersistence {
     if (!(descriptor.getStubSolutions().isEmpty())) {
       Element stubSolutions = new Element("stubSolutions");
       for (StubSolution entry : SetSequence.fromSet(descriptor.getStubSolutions())) {
-        jetbrains.mps.project.persistence.JDOMUtil.tagWithAttributes(stubSolutions, "stubSolution", "moduleName", entry.getName(), "moduleId", entry.getId().toString());
+        XmlUtil.tagWithAttributes(stubSolutions, "stubSolution", "moduleName", entry.getName(), "moduleId", entry.getId().toString());
       }
       languageElement.addContent(stubSolutions);
     }
 
     Element sourcePath = new Element("sourcePath");
     for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
-      jetbrains.mps.project.persistence.JDOMUtil.tagWithAttribute(sourcePath, "source", "path", macroHelper.shrinkPath(p));
+      XmlUtil.tagWithAttribute(sourcePath, "source", "path", macroHelper.shrinkPath(p));
     }
     languageElement.addContent(sourcePath);
 
@@ -221,7 +222,7 @@ public class LanguageDescriptorPersistence {
 
     Element extendedLanguages = new Element("extendedLanguages");
     for (ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedLanguages())) {
-      jetbrains.mps.project.persistence.JDOMUtil.tagWithText(extendedLanguages, "extendedLanguage", ref.toString());
+      XmlUtil.tagWithText(extendedLanguages, "extendedLanguage", ref.toString());
     }
     languageElement.addContent(extendedLanguages);
 

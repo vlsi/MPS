@@ -265,6 +265,7 @@
       <modulePath path="${project}/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/jetbrains.mps.xml.tests.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xml/xml.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlInternal/xmlInternal.mpl" folder="languages.xml" />
+      <modulePath path="${project}/languages/util/xml/xmlQuery/runtime/runtime.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlQuery/xmlQuery.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlSchema/xmlSchema.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" folder="languages.xml" />

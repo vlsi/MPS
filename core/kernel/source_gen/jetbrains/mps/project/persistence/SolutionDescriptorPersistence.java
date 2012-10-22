@@ -12,6 +12,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -53,7 +54,7 @@ public class SolutionDescriptorPersistence {
             result_8ckma3_a0a0f0b0a.setKind(result_8ckma3_a0a5a0a0f0b0a);
           }
 
-          final boolean result_8ckma3_a7a0a0f0b0a = jetbrains.mps.project.persistence.JDOMUtil.booleanWithDefault(rootElement, COMPILE_IN_MPS, false);
+          final boolean result_8ckma3_a7a0a0f0b0a = XmlUtil.booleanWithDefault(rootElement, COMPILE_IN_MPS, false);
           result_8ckma3_a0a0f0b0a.setCompileInMPS(result_8ckma3_a7a0a0f0b0a);
 
           String genOutput = rootElement.getAttributeValue("generatorOutputPath");
@@ -62,16 +63,16 @@ public class SolutionDescriptorPersistence {
             result_8ckma3_a0a0f0b0a.setOutputPath(result_8ckma3_a0a01a0a0f0b0a);
           }
 
-          result_8ckma3_a0a0f0b0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, "models"), "modelRoot"), macroHelper));
+          result_8ckma3_a0a0f0b0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), macroHelper));
 
-          Element stubModelEntries = jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, "stubModelEntries");
+          Element stubModelEntries = XmlUtil.first(rootElement, "stubModelEntries");
           if (stubModelEntries != null) {
             List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
             result_8ckma3_a0a0f0b0a.getStubModelEntries().addAll(roots);
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0f0b0a, rootElement);
-          for (Element entryElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, "classPath"), "entry")).concat(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, "runtimeClassPath"), "entry")))) {
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "runtimeClassPath"), "entry")))) {
             // runtime classpath left for compatibility 
             ModelRoot entry = new ModelRoot();
             entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
@@ -79,7 +80,7 @@ public class SolutionDescriptorPersistence {
             result_8ckma3_a0a0f0b0a.getStubModelEntries().add(entry);
           }
 
-          for (Element entryElement : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, SOURCE_PATH), SOURCE_PATH_SOURCE))) {
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, SOURCE_PATH), SOURCE_PATH_SOURCE))) {
             result_8ckma3_a0a0f0b0a.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
           return result_8ckma3_a0a0f0b0a;
@@ -127,7 +128,7 @@ public class SolutionDescriptorPersistence {
 
     Element sourcePath = new Element(SOURCE_PATH);
     for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
-      jetbrains.mps.project.persistence.JDOMUtil.tagWithAttribute(sourcePath, SOURCE_PATH_SOURCE, "path", macroHelper.shrinkPath(p));
+      XmlUtil.tagWithAttribute(sourcePath, SOURCE_PATH_SOURCE, "path", macroHelper.shrinkPath(p));
     }
     result.addContent(sourcePath);
 
