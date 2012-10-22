@@ -147,7 +147,6 @@ public class SModelUtil_new implements CoreComponent {
     if (nodeId != null) {
       newNode.setId(nodeId);
     }
-    newNode.setModel(model);
     // create the node structure
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used

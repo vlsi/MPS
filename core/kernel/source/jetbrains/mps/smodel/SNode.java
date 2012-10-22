@@ -63,7 +63,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private String[] myProperties = null;
 
   private SModel myModel;
-  private SModel myOldModel;// DO NOT USE!!!
   private SNodeId myId;
 
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
@@ -728,12 +727,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Deprecated
-  //for migration purposes only. Should be removed in release
-  public void setModel(SModel model) {
-    myOldModel = model;
-  }
-
-  @Deprecated
   /**
    * Use<br/>
    * n = new SNode(concept);<br/>
@@ -747,7 +740,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
-    setModel(model);
   }
 
   @Deprecated
@@ -763,7 +755,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public SNode(SModel model, String conceptFqName) {
     this(InternUtil.intern(conceptFqName));
-    setModel(model);
   }
 
   //----------------------------------------------------------
@@ -804,15 +795,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private static Set<String> ourReported = new THashSet<String>();
 
-  public SModel getOldModel() {
-    Throwable t = new Throwable();
-    String s = t.toString();
-    if (!ourReported.contains(s)) {
-      ourReported.add(s);
-      LOG.error("DO NOT USE!!!", t);
-    }
-    return myOldModel;
-  }
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
@@ -892,7 +874,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       child.unRegisterFromModel();
     }
 
-    myOldModel = myModel;
     myModel = null;
   }
 
