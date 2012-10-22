@@ -87,7 +87,8 @@ class TypeSystemComponent extends CheckingComponent {
     while (!currentNodesToInvalidate_A.isEmpty() || !currentNodesToInvalidate_B.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate_A) {
         if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
-        invalidateNodeTypeSystem(nodeToInvalidate, true);
+        boolean recalc = nodeToInvalidate.getModel() != null;
+        invalidateNodeTypeSystem(nodeToInvalidate, recalc);
         invalidatedNodes_A.add(nodeToInvalidate);
         Set<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
