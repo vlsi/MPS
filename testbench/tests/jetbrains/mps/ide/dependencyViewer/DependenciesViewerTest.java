@@ -24,9 +24,9 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.util.PathManager;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.File;
 import java.util.List;
@@ -64,19 +64,20 @@ public class DependenciesViewerTest extends BaseMPSTest {
             testScope.add(testModel);
             DependencyViewerScope targetScope = new DependencyViewerScope();
             targetScope.add(targetModel);
-            List<SReference> references = finder.getReferences(testScope, new EmptyProgressMonitor());
 
-            if (references.size() != 15) {
-              System.out.println("References size " + references.size());
+            List<SNode> nodes = finder.getNodes(testScope, new EmptyProgressMonitor());
+
+            if (nodes.size() != 50) {
+              System.out.println("Nodes size " + nodes.size());
               res[0] = false;
             }
-            SearchResults targetSearchResults = finder.getTargetSearchResults(references, new EmptyProgressMonitor());
+            SearchResults targetSearchResults = finder.getTargetSearchResults(nodes, testScope, new EmptyProgressMonitor());
             int size = targetSearchResults.getSearchResults().size();
             if (size != 15) {
               System.out.println("Targets size " + size);
               res[0] = false;
             }
-            SearchResults refSearchResults = finder.getRefSearchResults(references, targetScope, new EmptyProgressMonitor());
+            SearchResults refSearchResults = finder.getRefSearchResults(nodes, testScope, targetScope, new EmptyProgressMonitor());
             size = refSearchResults.getSearchResults().size();
             if (size != 5) {
               System.out.println("Results size " + size);
