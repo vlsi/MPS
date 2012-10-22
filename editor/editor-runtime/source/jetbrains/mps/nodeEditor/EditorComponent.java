@@ -128,7 +128,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
 
-  private WeakHashMap<EditorCell, Set<SNode>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
+  private WeakHashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNodePointer>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
@@ -1357,21 +1357,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getEditorContext().popTracerTask();
   }
 
-  private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNode> nodes) {
-    if (nodes == null) return Collections.emptySet();
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    Set<SNode> nodeProxiesToDelete = new HashSet<SNode>();
-    for (SNode node : nodes) {
-      SModel model = node.getModel();
-      SModelDescriptor md = model == null ? null : model.getModelDescriptor();
-      if (md == null) {
-        nodeProxiesToDelete.add(node);
+  private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNodePointer> nodePointers) {
+    if (nodePointers == null) {
+      return Collections.emptySet();
+    }
+    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
+    Set<SNodePointer> nodeProxiesToDelete = new HashSet<SNodePointer>();
+    for (SNodePointer nodeProxy : nodePointers) {
+      SModelDescriptor model = nodeProxy.getModel();
+      if (model == null) {
+        nodeProxiesToDelete.add(nodeProxy);
       } else {
-        models.add(md);
+        modelDescriptors.add(model);
       }
     }
-    nodes.removeAll(nodeProxiesToDelete);
-    return models;
+    nodePointers.removeAll(nodeProxiesToDelete);
+    return modelDescriptors;
   }
 
   private Set<SModelDescriptor> getModels(@Nullable Set<SNode> nodes) {
@@ -2475,7 +2476,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     dependentCells.add(cell);
   }
 
-  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNode> refTargets) {
+  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
@@ -2486,20 +2487,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return Collections.unmodifiableSet(nodes);
   }
 
-  public Set<SNode> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
-    Set<SNode> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
+  public Set<SNodePointer> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
+    Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
     if (nodeProxies == null) return null;
     return Collections.unmodifiableSet(nodeProxies);
   }
 
-  public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
+  public boolean doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodePointer nodePointer) {
     if (cell == null && node != null) return true;
 
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
-    Set<SNode> refNodes = myCellsToRefTargetsToDependOnMap.get(cell);
+    Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
 
     if (sNodes != null && sNodes.contains(node)) return true;
-    return refNodes != null && refNodes.contains(node);
+    return nodeProxies != null && nodeProxies.contains(nodePointer);
   }
 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
