@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -23,6 +22,7 @@ import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -120,6 +120,10 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
+    return instantiateConceptDeclaration(conceptFqName, model, null, scope, fullNodeStructure);
+  }
+
+  public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
@@ -139,7 +143,10 @@ public class SModelUtil_new implements CoreComponent {
       conceptFqName = languageNamespace + ".structure." + conceptName;
     }
 
-    SNode newNode = new SNode(model, conceptFqName);
+    SNode newNode = new SNode(conceptFqName);
+    if (nodeId != null) {
+      newNode.setId(nodeId);
+    }
     // create the node structure
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used
@@ -172,7 +179,7 @@ public class SModelUtil_new implements CoreComponent {
     SNode conceptDeclaration = sourceNode.getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + conceptDeclaration.getDebugText(), sourceNode);
+      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(conceptDeclaration), sourceNode);
       return false;
     }
     return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);

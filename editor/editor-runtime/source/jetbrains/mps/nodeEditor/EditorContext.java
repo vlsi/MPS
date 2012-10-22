@@ -45,7 +45,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
-  private List<Pair<SNode, SNodePointer>> myModelModifications = null;
+  private List<SNode> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
@@ -116,7 +116,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myModelModifications = EditorManager.convert(modelEvents);
   }
 
-  private EditorCell createNodeCell(List<Pair<SNode, SNodePointer>> modifications) {
+  private EditorCell createNodeCell(List<SNode> modifications) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 
@@ -351,7 +351,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         return cellWithRole;
     }
     
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute, myModelModifications);
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, ((EditorCell) cellWithRole), this, roleAttribute, myModelModifications);
   }
 
   public List<SNode> getSelectedNodes() {

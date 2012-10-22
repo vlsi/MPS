@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 
 
 public class DefaultCellInfo implements CellInfo {
@@ -34,8 +33,6 @@ public class DefaultCellInfo implements CellInfo {
   private static final String ID = "id";
   private static final String PARENT = "parent";
 
-
-  @NotNull
   private SNodePointer myNodePointer;
   private String myCellId;
   private int myCellNumber;
@@ -45,11 +42,10 @@ public class DefaultCellInfo implements CellInfo {
 
   public DefaultCellInfo(final EditorCell cell) {
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
-        myNodePointer = new SNodePointer(cell.getSNode());
+        SNode n = cell.getSNode();
+        myNodePointer = n.getModel() == null ? null : new SNodePointer(n);
       }
-
     });
 
     myCellId = cell.getCellId();
@@ -73,6 +69,7 @@ public class DefaultCellInfo implements CellInfo {
     e.setAttribute(CELL_NUMBER, "" + myCellNumber);
     e.setAttribute(IS_IN_LIST, "" + myIsInList);
     Element nodeElement = new Element(NODE);
+    assert myNodePointer != null;
     nodeElement.setAttribute(MODEL, myNodePointer.getModelReference().toString());
     nodeElement.setAttribute(ID, myNodePointer.getNodeId().toString());
     e.addContent(nodeElement);
@@ -126,16 +123,18 @@ public class DefaultCellInfo implements CellInfo {
 
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
-      myNodePointer.hashCode() + (myCellId == null ? 0 : myCellId.hashCode()) + myCellNumber;
+      (myNodePointer == null ? 0 : myNodePointer.hashCode()) + (myCellId == null ? 0 : myCellId.hashCode()) + myCellNumber;
   }
 
   public EditorCell findCell(final EditorComponent editorComponent) {
     if (myCellId != null) {
+      if (myNodePointer == null) return null;
       return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
         public EditorCell compute() {
           // This is needed while merging: if node pointer points to node from current model,
           // it should be used instead of model in model repository.
           SNode node;
+          assert myNodePointer != null;
           if (editorComponent.getEditedNode() != null &&
             EqualUtil.equals(myNodePointer.getModelReference(),
               editorComponent.getEditedNode().getModel().getSModelReference())) {
@@ -185,7 +184,7 @@ public class DefaultCellInfo implements CellInfo {
   @Override
   public String toString() {
     return "DefaultCellInfo[" +
-      "myNodePointer=" + myNodePointer.getNodeId() +
+      "myNodePointer=" + (myNodePointer == null ? null : myNodePointer.getNodeId()) +
       ", myCellId='" + myCellId + '\'' +
       ", myCellNumber=" + myCellNumber +
       ", myIsInList=" + myIsInList +

@@ -502,7 +502,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "mps_home");
         result = quotedNode1_2;
@@ -521,11 +521,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654192646")));
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setReferenceTarget("macro", (SNode) parameter_5);
           quotedNode_1.addChild("artifacts", quotedNode1_4);
@@ -545,7 +545,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "idea_home");
         result = quotedNode1_2;
@@ -564,11 +564,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildExternalLayoutDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildExternalLayoutDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setReference("layout", SReference.create("layout", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("7181125477683264500")));
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setReferenceTarget("macro", (SNode) parameter_5);
           quotedNode_1.addChild("artifacts", quotedNode1_4);
@@ -590,15 +590,15 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         quotedNode1_4.setProperty("name", "plugins_home");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setReferenceTarget("macro", (SNode) parameter_7);
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "plugins");
             quotedNode_2.addChild("compositePart", quotedNode1_6);
@@ -621,11 +621,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("5148601452480491524")));
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setReferenceTarget("macro", (SNode) parameter_5);
           quotedNode_1.addChild("artifacts", quotedNode1_4);
@@ -646,11 +646,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("name", "date");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitWithDate", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitWithDate", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("pattern", "yyyyMMdd");
           quotedNode_1.addChild("initialValue", quotedNode1_4);
@@ -673,17 +673,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         quotedNode1_5.setProperty("name", "build.number");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitWithString", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitWithString", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("text", (String) parameter_9);
               quotedNode_3.addChild("parts", quotedNode1_8);
@@ -707,7 +707,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "mps_home");
         result = quotedNode1_2;
@@ -726,11 +726,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688312941958")));
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setReferenceTarget("macro", (SNode) parameter_5);
           quotedNode_1.addChild("artifacts", quotedNode1_4);
@@ -751,11 +751,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setReference("script", SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011003")));
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setReferenceTarget("macro", (SNode) parameter_5);
           quotedNode_1.addChild("artifacts", quotedNode1_4);
@@ -811,16 +811,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_36 = null;
       SNode quotedNode_37 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Branding", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Branding", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_38 = quotedNode_1;
         quotedNode1_38.setProperty("minor", "0");
         quotedNode1_38.setProperty("name", "MPS");
         quotedNode1_38.setProperty("major", "1");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_39 = quotedNode_2;
           {
-            quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_40 = quotedNode_16;
             quotedNode1_40.setReferenceTarget("macro", (SNode) parameter_75);
             quotedNode_2.addChild("parts", quotedNode1_40);
@@ -828,14 +828,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("buildNumber", quotedNode1_39);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_41 = quotedNode_3;
           {
-            quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_42 = quotedNode_17;
             quotedNode1_42.setProperty("head", (String) parameter_76);
             {
-              quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_43 = quotedNode_30;
               quotedNode1_43.setProperty("head", "MPS16.png");
               quotedNode_17.addChild("tail", quotedNode1_43);
@@ -845,10 +845,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("icon16", quotedNode1_41);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_44 = quotedNode_4;
           {
-            quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_45 = quotedNode_18;
             quotedNode1_45.setProperty("text", (String) parameter_77);
             quotedNode_4.addChild("parts", quotedNode1_45);
@@ -856,10 +856,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("shortName", quotedNode1_44);
         }
         {
-          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_46 = quotedNode_5;
           {
-            quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_47 = quotedNode_19;
             quotedNode1_47.setProperty("text", (String) parameter_78);
             quotedNode_5.addChild("parts", quotedNode1_47);
@@ -867,10 +867,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("fullName", quotedNode1_46);
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_48 = quotedNode_6;
           {
-            quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_49 = quotedNode_20;
             quotedNode1_49.setProperty("text", (String) parameter_79);
             quotedNode_6.addChild("parts", quotedNode1_49);
@@ -878,10 +878,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("codename", quotedNode1_48);
         }
         {
-          quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_50 = quotedNode_7;
           {
-            quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_51 = quotedNode_21;
             quotedNode1_51.setProperty("text", "002387");
             quotedNode_7.addChild("parts", quotedNode1_51);
@@ -889,14 +889,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("textColor", quotedNode1_50);
         }
         {
-          quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_52 = quotedNode_8;
           {
-            quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_53 = quotedNode_22;
             quotedNode1_53.setProperty("head", (String) parameter_80);
             {
-              quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_54 = quotedNode_31;
               quotedNode1_54.setProperty("head", "MPS32.png");
               quotedNode_22.addChild("tail", quotedNode1_54);
@@ -906,10 +906,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("icon32", quotedNode1_52);
         }
         {
-          quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_55 = quotedNode_9;
           {
-            quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_56 = quotedNode_23;
             quotedNode1_56.setReferenceTarget("macro", (SNode) parameter_81);
             quotedNode_9.addChild("parts", quotedNode1_56);
@@ -917,14 +917,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("buildDate", quotedNode1_55);
         }
         {
-          quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_57 = quotedNode_10;
           {
-            quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_58 = quotedNode_24;
             quotedNode1_58.setProperty("head", (String) parameter_82);
             {
-              quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_59 = quotedNode_32;
               quotedNode1_59.setProperty("head", "MPS32.png");
               quotedNode_24.addChild("tail", quotedNode1_59);
@@ -934,14 +934,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("icon32opaque", quotedNode1_57);
         }
         {
-          quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_60 = quotedNode_11;
           {
-            quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_61 = quotedNode_25;
             quotedNode1_61.setProperty("head", (String) parameter_83);
             {
-              quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_62 = quotedNode_33;
               quotedNode1_62.setProperty("head", "splash.png");
               quotedNode_25.addChild("tail", quotedNode1_62);
@@ -951,14 +951,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("splashScreen", quotedNode1_60);
         }
         {
-          quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_63 = quotedNode_12;
           {
-            quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_64 = quotedNode_26;
             quotedNode1_64.setProperty("head", (String) parameter_84);
             {
-              quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_65 = quotedNode_34;
               quotedNode1_65.setProperty("head", "about.png");
               quotedNode_26.addChild("tail", quotedNode1_65);
@@ -968,14 +968,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("aboutScreen", quotedNode1_63);
         }
         {
-          quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_66 = quotedNode_13;
           {
-            quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_67 = quotedNode_27;
             quotedNode1_67.setProperty("head", (String) parameter_85);
             {
-              quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_68 = quotedNode_35;
               quotedNode1_68.setProperty("head", "caption.png");
               quotedNode_27.addChild("tail", quotedNode1_68);
@@ -985,14 +985,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("welcomeCaption", quotedNode1_66);
         }
         {
-          quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_69 = quotedNode_14;
           {
-            quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_70 = quotedNode_28;
             quotedNode1_70.setProperty("head", (String) parameter_86);
             {
-              quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_71 = quotedNode_36;
               quotedNode1_71.setProperty("head", "slogan.png");
               quotedNode_28.addChild("tail", quotedNode1_71);
@@ -1002,14 +1002,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("welcomeSlogan", quotedNode1_69);
         }
         {
-          quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+          quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_72 = quotedNode_15;
           {
-            quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_73 = quotedNode_29;
             quotedNode1_73.setProperty("head", (String) parameter_87);
             {
-              quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_74 = quotedNode_37;
               quotedNode1_74.setProperty("head", "dialogImage.png");
               quotedNode_29.addChild("tail", quotedNode1_74);
@@ -1033,7 +1033,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", (String) parameter_3);
         result = quotedNode1_2;
@@ -1053,7 +1053,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Group", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Group", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         quotedNode1_4.setProperty("name", (String) parameter_6);
         {
@@ -1085,14 +1085,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_8 = null;
       SNode quotedNode_9 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_10 = quotedNode_1;
         quotedNode1_10.setProperty("id", (String) parameter_22);
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_11 = quotedNode_2;
           {
-            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_12 = quotedNode_7;
             quotedNode1_12.setProperty("text", (String) parameter_19);
             quotedNode_2.addChild("parts", quotedNode1_12);
@@ -1100,10 +1100,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("name", quotedNode1_11);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_13 = quotedNode_3;
           {
-            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_14 = quotedNode_8;
             quotedNode1_14.setProperty("text", "1.0");
             quotedNode_3.addChild("parts", quotedNode1_14);
@@ -1111,22 +1111,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("version", quotedNode1_13);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", null, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_15 = quotedNode_4;
           quotedNode1_15.setReferenceTarget("group", (SNode) parameter_20);
           quotedNode_1.addChild("content", quotedNode1_15);
         }
         {
-          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", null, GlobalScope.getInstance(), false);
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_16 = quotedNode_5;
           quotedNode1_16.setReference("target", SReference.create("target", quotedNode1_16, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4973949960459588488")));
           quotedNode_1.addChild("dependencies", quotedNode1_16);
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_17 = quotedNode_6;
           {
-            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_18 = quotedNode_9;
             quotedNode1_18.setProperty("text", (String) parameter_21);
             quotedNode_6.addChild("parts", quotedNode1_18);
@@ -1194,28 +1194,28 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_46 = null;
       SNode quotedNode_47 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_48 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_49 = quotedNode_2;
           quotedNode1_49.setReference("target", SReference.create("target", quotedNode1_49, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033161")));
           quotedNode_1.addChild("children", quotedNode1_49);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_50 = quotedNode_3;
           quotedNode1_50.setReference("target", SReference.create("target", quotedNode1_50, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1348803421063031332")));
           quotedNode_1.addChild("children", quotedNode1_50);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_51 = quotedNode_4;
           {
-            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_52 = quotedNode_8;
             {
-              quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_53 = quotedNode_26;
               quotedNode1_53.setProperty("text", "bin");
               quotedNode_8.addChild("parts", quotedNode1_53);
@@ -1223,17 +1223,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_4.addChild("containerName", quotedNode1_52);
           }
           {
-            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
+            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_54 = quotedNode_9;
             quotedNode1_54.setReference("target", SReference.create("target", quotedNode1_54, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("3684398890534586740")));
             {
-              quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, GlobalScope.getInstance(), false);
+              quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_55 = quotedNode_27;
               quotedNode1_55.setProperty("pattern", "log.xml");
               quotedNode_9.addChild("selectors", quotedNode1_55);
             }
             {
-              quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, GlobalScope.getInstance(), false);
+              quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_56 = quotedNode_28;
               quotedNode1_56.setProperty("pattern", "log4j.dtd");
               quotedNode_9.addChild("selectors", quotedNode1_56);
@@ -1241,24 +1241,24 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_4.addChild("children", quotedNode1_54);
           }
           {
-            quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+            quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_57 = quotedNode_10;
             {
-              quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex", null, GlobalScope.getInstance(), false);
+              quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_58 = quotedNode_29;
               quotedNode1_58.setProperty("flags", "g");
               quotedNode1_58.setProperty("pattern", "\\.MPS(\\w+)");
               {
-                quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+                quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_59 = quotedNode_41;
                 {
-                  quotedNode_46 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_46 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_60 = quotedNode_46;
                   quotedNode1_60.setProperty("text", "\\.");
                   quotedNode_41.addChild("parts", quotedNode1_60);
                 }
                 {
-                  quotedNode_47 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_47 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_61 = quotedNode_47;
                   quotedNode1_61.setReferenceTarget("macro", (SNode) parameter_95);
                   quotedNode_41.addChild("parts", quotedNode1_61);
@@ -1285,13 +1285,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("children", quotedNode1_51);
         }
         {
-          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_63 = quotedNode_5;
           {
-            quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_64 = quotedNode_11;
             {
-              quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_65 = quotedNode_31;
               quotedNode1_65.setProperty("text", "lib");
               quotedNode_11.addChild("parts", quotedNode1_65);
@@ -1299,17 +1299,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_5.addChild("containerName", quotedNode1_64);
           }
           {
-            quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
+            quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_66 = quotedNode_12;
             quotedNode1_66.setReference("target", SReference.create("target", quotedNode1_66, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033167")));
             {
-              quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+              quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_67 = quotedNode_32;
               quotedNode1_67.setProperty("pattern", "MPS-src.zip");
               quotedNode_12.addChild("selectors", quotedNode1_67);
             }
             {
-              quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+              quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_68 = quotedNode_33;
               quotedNode1_68.setProperty("pattern", "branding.jar");
               quotedNode_12.addChild("selectors", quotedNode1_68);
@@ -1317,13 +1317,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_5.addChild("children", quotedNode1_66);
           }
           {
-            quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Jar", null, GlobalScope.getInstance(), false);
+            quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Jar", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_69 = quotedNode_13;
             {
-              quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+              quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_70 = quotedNode_34;
               {
-                quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_71 = quotedNode_42;
                 quotedNode1_71.setProperty("text", "branding.jar");
                 quotedNode_34.addChild("parts", quotedNode1_71);
@@ -1331,7 +1331,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_13.addChild("containerName", quotedNode1_70);
             }
             {
-              quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_FilesOf", null, GlobalScope.getInstance(), false);
+              quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_FilesOf", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_72 = quotedNode_35;
               quotedNode1_72.setReferenceTarget("element", (SNode) parameter_97);
               quotedNode_13.addChild("children", quotedNode1_72);
@@ -1341,55 +1341,55 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("children", quotedNode1_63);
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_73 = quotedNode_6;
           {
-            quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+            quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_74 = quotedNode_14;
             quotedNode1_74.setReference("target", SReference.create("target", quotedNode1_74, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033217")));
             quotedNode_6.addChild("children", quotedNode1_74);
           }
           {
-            quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+            quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_75 = quotedNode_15;
             quotedNode1_75.setReference("target", SReference.create("target", quotedNode1_75, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033209")));
             quotedNode_6.addChild("children", quotedNode1_75);
           }
           {
-            quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+            quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_76 = quotedNode_16;
             quotedNode1_76.setReference("target", SReference.create("target", quotedNode1_76, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033226")));
             quotedNode_6.addChild("children", quotedNode1_76);
           }
           {
-            quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+            quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_77 = quotedNode_17;
             quotedNode1_77.setReference("target", SReference.create("target", quotedNode1_77, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("614687982853436655")));
             quotedNode_6.addChild("children", quotedNode1_77);
           }
           {
-            quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", null, GlobalScope.getInstance(), false);
+            quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_78 = quotedNode_18;
             quotedNode1_78.setReferenceTarget("plugin", (SNode) parameter_98);
             quotedNode_6.addChild("children", quotedNode1_78);
           }
           {
-            quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Comment", null, GlobalScope.getInstance(), false);
+            quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Comment", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_79 = quotedNode_19;
             quotedNode1_79.setProperty("text", "optional plugins");
             quotedNode_6.addChild("children", quotedNode1_79);
           }
           {
-            quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, GlobalScope.getInstance(), false);
+            quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_80 = quotedNode_20;
             quotedNode1_80.setReference("target", SReference.create("target", quotedNode1_80, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011106")));
             quotedNode_6.addChild("children", quotedNode1_80);
           }
           {
-            quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_81 = quotedNode_21;
             {
-              quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_82 = quotedNode_36;
               quotedNode1_82.setProperty("text", "plugins");
               quotedNode_21.addChild("parts", quotedNode1_82);
@@ -1399,13 +1399,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("children", quotedNode1_73);
         }
         {
-          quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoProperties", null, GlobalScope.getInstance(), false);
+          quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoProperties", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_83 = quotedNode_7;
           {
-            quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_84 = quotedNode_22;
             {
-              quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_85 = quotedNode_37;
               quotedNode1_85.setProperty("text", "build.number");
               quotedNode_22.addChild("parts", quotedNode1_85);
@@ -1413,14 +1413,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_7.addChild("fileName", quotedNode1_84);
           }
           {
-            quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", null, GlobalScope.getInstance(), false);
+            quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_86 = quotedNode_23;
             quotedNode1_86.setProperty("key", "build.number");
             {
-              quotedNode_38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+              quotedNode_38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_87 = quotedNode_38;
               {
-                quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_88 = quotedNode_43;
                 quotedNode1_88.setReferenceTarget("macro", (SNode) parameter_99);
                 quotedNode_38.addChild("parts", quotedNode1_88);
@@ -1430,14 +1430,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_7.addChild("entries", quotedNode1_86);
           }
           {
-            quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", null, GlobalScope.getInstance(), false);
+            quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_89 = quotedNode_24;
             quotedNode1_89.setProperty("key", "date");
             {
-              quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+              quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_90 = quotedNode_39;
               {
-                quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_91 = quotedNode_44;
                 quotedNode1_91.setReferenceTarget("macro", (SNode) parameter_100);
                 quotedNode_39.addChild("parts", quotedNode1_91);
@@ -1447,14 +1447,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_7.addChild("entries", quotedNode1_89);
           }
           {
-            quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", null, GlobalScope.getInstance(), false);
+            quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_92 = quotedNode_25;
             quotedNode1_92.setProperty("key", "version");
             {
-              quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+              quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_93 = quotedNode_40;
               {
-                quotedNode_45 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_45 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_94 = quotedNode_45;
                 quotedNode1_94.setProperty("text", "1.0");
                 quotedNode_40.addChild("parts", quotedNode1_94);
@@ -1482,14 +1482,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "idea.properties");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -1514,13 +1514,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_4;
             quotedNode1_7.setProperty("text", (String) parameter_9);
             quotedNode_2.addChild("parts", quotedNode1_7);
@@ -1528,7 +1528,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("containerName", quotedNode1_6);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_3;
           quotedNode1_8.setReferenceTarget("plugin", (SNode) parameter_10);
           quotedNode_1.addChild("children", quotedNode1_8);
@@ -1548,7 +1548,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("script", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -1566,7 +1566,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", "mps_home");
         result = quotedNode1_2;
@@ -1587,17 +1587,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         quotedNode1_5.setProperty("name", "version");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitWithString", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitWithString", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildString", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("text", "2.5");
               quotedNode_3.addChild("parts", quotedNode1_8);
@@ -1621,7 +1621,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("macro", SReference.create("macro", quotedNode1_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654465616")));
         result = quotedNode1_2;
@@ -1664,23 +1664,23 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_25 = null;
       SNode quotedNode_26 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Tar", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Tar", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_27 = quotedNode_1;
         quotedNode1_27.setProperty("compression", "gzip");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_28 = quotedNode_2;
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_29 = quotedNode_4;
             quotedNode1_29.setReferenceTarget("target", (SNode) parameter_53);
             quotedNode_2.addChild("children", quotedNode1_29);
           }
           {
-            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_30 = quotedNode_5;
             {
-              quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_31 = quotedNode_10;
               quotedNode1_31.setProperty("filemode", "755");
               {
@@ -1699,7 +1699,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_31);
             }
             {
-              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_33 = quotedNode_11;
               quotedNode1_33.setProperty("filemode", "755");
               {
@@ -1718,10 +1718,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_33);
             }
             {
-              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_35 = quotedNode_12;
               {
-                quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, GlobalScope.getInstance(), false);
+                quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_36 = quotedNode_21;
                 quotedNode1_36.setProperty("eol", "lf");
                 quotedNode1_36.setProperty("removeEOF", "true");
@@ -1743,16 +1743,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_35);
             }
             {
-              quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, GlobalScope.getInstance(), false);
+              quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_38 = quotedNode_13;
               {
-                quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+                quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_39 = quotedNode_23;
                 quotedNode1_39.setProperty("pattern", "**/fsnotifier");
                 quotedNode_13.addChild("parameters", quotedNode1_39);
               }
               {
-                quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+                quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_40 = quotedNode_24;
                 quotedNode1_40.setProperty("pattern", "**/fsnotifier64");
                 quotedNode_13.addChild("parameters", quotedNode1_40);
@@ -1773,10 +1773,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_38);
             }
             {
-              quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+              quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_42 = quotedNode_14;
               {
-                quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_43 = quotedNode_26;
                 quotedNode1_43.setProperty("text", "bin");
                 quotedNode_14.addChild("parts", quotedNode1_43);
@@ -1786,11 +1786,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_2.addChild("children", quotedNode1_30);
           }
           {
-            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_44 = quotedNode_6;
             quotedNode1_44.setProperty("filemode", "755");
             {
-              quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, GlobalScope.getInstance(), false);
+              quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_45 = quotedNode_15;
               quotedNode1_45.setProperty("eol", "lf");
               quotedNode1_45.setProperty("removeEOF", "true");
@@ -1812,16 +1812,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_2.addChild("children", quotedNode1_44);
           }
           {
-            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_47 = quotedNode_7;
             {
-              quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_48 = quotedNode_17;
               quotedNode1_48.setProperty("text", (String) parameter_59);
               quotedNode_7.addChild("parts", quotedNode1_48);
             }
             {
-              quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_49 = quotedNode_18;
               quotedNode1_49.setReferenceTarget("macro", (SNode) parameter_60);
               quotedNode_7.addChild("parts", quotedNode1_49);
@@ -1831,16 +1831,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("children", quotedNode1_28);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_50 = quotedNode_3;
           {
-            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_51 = quotedNode_8;
             quotedNode1_51.setReferenceTarget("macro", (SNode) parameter_61);
             quotedNode_3.addChild("parts", quotedNode1_51);
           }
           {
-            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_52 = quotedNode_9;
             quotedNode1_52.setProperty("text", "-linux.tar.gz");
             quotedNode_3.addChild("parts", quotedNode1_52);
@@ -1865,18 +1865,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "linux");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "fsnotifier");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -1903,18 +1903,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "linux");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "fsnotifier64");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -1940,14 +1940,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "mps.vmoptions");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -1971,14 +1971,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "linux");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2001,10 +2001,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("head", "mps.sh");
           quotedNode_1.addChild("compositePart", quotedNode1_4);
@@ -2102,25 +2102,25 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_78 = null;
       SNode quotedNode_79 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_80 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_81 = quotedNode_2;
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_82 = quotedNode_4;
             quotedNode1_82.setReferenceTarget("target", (SNode) parameter_159);
             quotedNode_2.addChild("children", quotedNode1_82);
           }
           {
-            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_83 = quotedNode_5;
             {
-              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_84 = quotedNode_11;
               {
-                quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_85 = quotedNode_22;
                 quotedNode1_85.setProperty("text", "bin");
                 quotedNode_11.addChild("parts", quotedNode1_85);
@@ -2128,7 +2128,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("containerName", quotedNode1_84);
             }
             {
-              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_86 = quotedNode_12;
               {
                 quotedNode_23 = (SNode) parameter_160;
@@ -2146,7 +2146,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_86);
             }
             {
-              quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_88 = quotedNode_13;
               {
                 quotedNode_24 = (SNode) parameter_161;
@@ -2164,13 +2164,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_88);
             }
             {
-              quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+              quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_90 = quotedNode_14;
               {
-                quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_91 = quotedNode_25;
                 {
-                  quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_92 = quotedNode_43;
                   quotedNode1_92.setProperty("text", "win");
                   quotedNode_25.addChild("parts", quotedNode1_92);
@@ -2178,10 +2178,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_14.addChild("containerName", quotedNode1_91);
               }
               {
-                quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, GlobalScope.getInstance(), false);
+                quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_93 = quotedNode_26;
                 {
-                  quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+                  quotedNode_44 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_94 = quotedNode_44;
                   quotedNode1_94.setProperty("pattern", "**/*.exe");
                   quotedNode_26.addChild("parameters", quotedNode1_94);
@@ -2202,14 +2202,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_14.addChild("children", quotedNode1_93);
               }
               {
-                quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Filemode", null, GlobalScope.getInstance(), false);
+                quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Filemode", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_96 = quotedNode_27;
                 quotedNode1_96.setProperty("filemode", "755");
                 {
-                  quotedNode_46 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, GlobalScope.getInstance(), false);
+                  quotedNode_46 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_97 = quotedNode_46;
                   {
-                    quotedNode_67 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, GlobalScope.getInstance(), false);
+                    quotedNode_67 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_98 = quotedNode_67;
                     quotedNode1_98.setProperty("pattern", "**/*.exe");
                     quotedNode_46.addChild("parameters", quotedNode1_98);
@@ -2234,19 +2234,19 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_90);
             }
             {
-              quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+              quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_100 = quotedNode_15;
               {
-                quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, GlobalScope.getInstance(), false);
+                quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_101 = quotedNode_28;
                 {
-                  quotedNode_47 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+                  quotedNode_47 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_102 = quotedNode_47;
                   quotedNode1_102.setProperty("pattern", "**/fsnotifier");
                   quotedNode_28.addChild("parameters", quotedNode1_102);
                 }
                 {
-                  quotedNode_48 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, GlobalScope.getInstance(), false);
+                  quotedNode_48 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_103 = quotedNode_48;
                   quotedNode1_103.setProperty("pattern", "**/fsnotifier64");
                   quotedNode_28.addChild("parameters", quotedNode1_103);
@@ -2267,7 +2267,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_15.addChild("children", quotedNode1_101);
               }
               {
-                quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_105 = quotedNode_29;
                 quotedNode1_105.setProperty("filemode", "755");
                 {
@@ -2286,7 +2286,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_15.addChild("children", quotedNode1_105);
               }
               {
-                quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_107 = quotedNode_30;
                 quotedNode1_107.setProperty("filemode", "755");
                 {
@@ -2305,10 +2305,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_15.addChild("children", quotedNode1_107);
               }
               {
-                quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_109 = quotedNode_31;
                 {
-                  quotedNode_52 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_52 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_110 = quotedNode_52;
                   quotedNode1_110.setProperty("text", "linux");
                   quotedNode_31.addChild("parts", quotedNode1_110);
@@ -2318,14 +2318,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_100);
             }
             {
-              quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+              quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_111 = quotedNode_16;
               {
-                quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Filemode", null, GlobalScope.getInstance(), false);
+                quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Filemode", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_112 = quotedNode_32;
                 quotedNode1_112.setProperty("filemode", "755");
                 {
-                  quotedNode_53 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, GlobalScope.getInstance(), false);
+                  quotedNode_53 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Files", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_113 = quotedNode_53;
                   {
                     quotedNode_69 = (SNode) parameter_167;
@@ -2345,10 +2345,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_16.addChild("children", quotedNode1_112);
               }
               {
-                quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_115 = quotedNode_33;
                 {
-                  quotedNode_54 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_54 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_116 = quotedNode_54;
                   quotedNode1_116.setProperty("text", "nix");
                   quotedNode_33.addChild("parts", quotedNode1_116);
@@ -2358,10 +2358,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_5.addChild("children", quotedNode1_111);
             }
             {
-              quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+              quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_117 = quotedNode_17;
               {
-                quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_118 = quotedNode_34;
                 {
                   quotedNode_55 = (SNode) parameter_168;
@@ -2379,7 +2379,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_118);
               }
               {
-                quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_120 = quotedNode_35;
                 {
                   quotedNode_56 = (SNode) parameter_169;
@@ -2397,7 +2397,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_120);
               }
               {
-                quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_122 = quotedNode_36;
                 {
                   quotedNode_57 = (SNode) parameter_170;
@@ -2415,7 +2415,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_122);
               }
               {
-                quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_124 = quotedNode_37;
                 {
                   quotedNode_58 = (SNode) parameter_171;
@@ -2433,7 +2433,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_124);
               }
               {
-                quotedNode_38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_126 = quotedNode_38;
                 {
                   quotedNode_59 = (SNode) parameter_172;
@@ -2451,7 +2451,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_126);
               }
               {
-                quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_128 = quotedNode_39;
                 quotedNode1_128.setProperty("filemode", "755");
                 {
@@ -2470,7 +2470,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_128);
               }
               {
-                quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_130 = quotedNode_40;
                 quotedNode1_130.setProperty("filemode", "755");
                 {
@@ -2489,13 +2489,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_130);
               }
               {
-                quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+                quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_132 = quotedNode_41;
                 {
-                  quotedNode_62 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                  quotedNode_62 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_133 = quotedNode_62;
                   {
-                    quotedNode_70 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                    quotedNode_70 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_134 = quotedNode_70;
                     quotedNode1_134.setProperty("text", "Contents");
                     quotedNode_62.addChild("parts", quotedNode1_134);
@@ -2503,13 +2503,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                   quotedNode_41.addChild("containerName", quotedNode1_133);
                 }
                 {
-                  quotedNode_63 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+                  quotedNode_63 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_135 = quotedNode_63;
                   {
-                    quotedNode_71 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                    quotedNode_71 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_136 = quotedNode_71;
                     {
-                      quotedNode_76 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                      quotedNode_76 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                       SNode quotedNode1_137 = quotedNode_76;
                       quotedNode1_137.setProperty("text", "Resources");
                       quotedNode_71.addChild("parts", quotedNode1_137);
@@ -2517,7 +2517,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                     quotedNode_63.addChild("containerName", quotedNode1_136);
                   }
                   {
-                    quotedNode_72 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                    quotedNode_72 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_138 = quotedNode_72;
                     {
                       quotedNode_77 = (SNode) parameter_175;
@@ -2537,13 +2537,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                   quotedNode_41.addChild("children", quotedNode1_135);
                 }
                 {
-                  quotedNode_64 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+                  quotedNode_64 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_140 = quotedNode_64;
                   {
-                    quotedNode_73 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                    quotedNode_73 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_141 = quotedNode_73;
                     {
-                      quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                      quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                       SNode quotedNode1_142 = quotedNode_78;
                       quotedNode1_142.setProperty("text", "MacOS");
                       quotedNode_73.addChild("parts", quotedNode1_142);
@@ -2551,7 +2551,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                     quotedNode_64.addChild("containerName", quotedNode1_141);
                   }
                   {
-                    quotedNode_74 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                    quotedNode_74 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_143 = quotedNode_74;
                     quotedNode1_143.setProperty("filemode", "755");
                     {
@@ -2572,7 +2572,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                   quotedNode_41.addChild("children", quotedNode1_140);
                 }
                 {
-                  quotedNode_65 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                  quotedNode_65 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_145 = quotedNode_65;
                   {
                     quotedNode_75 = (SNode) parameter_177;
@@ -2592,10 +2592,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_17.addChild("children", quotedNode1_132);
               }
               {
-                quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_147 = quotedNode_42;
                 {
-                  quotedNode_66 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_66 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_148 = quotedNode_66;
                   quotedNode1_148.setProperty("text", "mac");
                   quotedNode_42.addChild("parts", quotedNode1_148);
@@ -2607,7 +2607,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_2.addChild("children", quotedNode1_83);
           }
           {
-            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_149 = quotedNode_6;
             quotedNode1_149.setProperty("filemode", "755");
             {
@@ -2626,7 +2626,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_2.addChild("children", quotedNode1_149);
           }
           {
-            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_151 = quotedNode_7;
             quotedNode1_151.setProperty("filemode", "755");
             {
@@ -2645,16 +2645,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_2.addChild("children", quotedNode1_151);
           }
           {
-            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_153 = quotedNode_8;
             {
-              quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_154 = quotedNode_20;
               quotedNode1_154.setProperty("text", (String) parameter_180);
               quotedNode_8.addChild("parts", quotedNode1_154);
             }
             {
-              quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_155 = quotedNode_21;
               quotedNode1_155.setReferenceTarget("macro", (SNode) parameter_181);
               quotedNode_8.addChild("parts", quotedNode1_155);
@@ -2664,16 +2664,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("children", quotedNode1_81);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_156 = quotedNode_3;
           {
-            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_157 = quotedNode_9;
             quotedNode1_157.setReferenceTarget("macro", (SNode) parameter_182);
             quotedNode_3.addChild("parts", quotedNode1_157);
           }
           {
-            quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_158 = quotedNode_10;
             quotedNode1_158.setProperty("text", ".zip");
             quotedNode_3.addChild("parts", quotedNode1_158);
@@ -2697,14 +2697,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "mps.vmoptions");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2728,14 +2728,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "mps.exe.vmoptions");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2759,14 +2759,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "win");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2790,14 +2790,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "win");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2821,14 +2821,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "linux");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2853,18 +2853,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "linux");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "fsnotifier");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -2891,18 +2891,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "linux");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "fsnotifier64");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -2928,14 +2928,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "nix");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -2960,18 +2960,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "info_plist_parser.scpt");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -2998,18 +2998,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libbreakgen.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -3036,18 +3036,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libbreakgen64.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -3074,18 +3074,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libquaqua.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -3112,18 +3112,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libquaqua64.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -3150,18 +3150,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "relaunch");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -3188,18 +3188,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "fsnotifier");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -3228,26 +3228,26 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
             quotedNode1_9.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_4;
               quotedNode1_10.setProperty("head", "Contents");
               {
-                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_11 = quotedNode_5;
                 quotedNode1_11.setProperty("head", "Resources");
                 {
-                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_12 = quotedNode_6;
                   quotedNode1_12.setProperty("head", "mps.icns");
                   quotedNode_5.addChild("tail", quotedNode1_12);
@@ -3280,26 +3280,26 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
             quotedNode1_9.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_4;
               quotedNode1_10.setProperty("head", "Contents");
               {
-                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_11 = quotedNode_5;
                 quotedNode1_11.setProperty("head", "MacOS");
                 {
-                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_12 = quotedNode_6;
                   quotedNode1_12.setProperty("head", "mps");
                   quotedNode_5.addChild("tail", quotedNode1_12);
@@ -3331,22 +3331,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_6 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_2;
           quotedNode1_7.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_3;
             quotedNode1_8.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_9 = quotedNode_4;
               quotedNode1_9.setProperty("head", "Contents");
               {
-                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_10 = quotedNode_5;
                 quotedNode1_10.setProperty("head", "Info.plist");
                 quotedNode_4.addChild("tail", quotedNode1_10);
@@ -3373,10 +3373,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("head", "mps.sh");
           quotedNode_1.addChild("compositePart", quotedNode1_4);
@@ -3397,10 +3397,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("head", "mps.bat");
           quotedNode_1.addChild("compositePart", quotedNode1_4);
@@ -3467,19 +3467,19 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_47 = null;
       SNode quotedNode_48 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_49 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_50 = quotedNode_2;
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_51 = quotedNode_4;
             quotedNode1_51.setReferenceTarget("macro", (SNode) parameter_97);
             quotedNode_2.addChild("parts", quotedNode1_51);
           }
           {
-            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_52 = quotedNode_5;
             quotedNode1_52.setProperty("text", "-macos.zip");
             quotedNode_2.addChild("parts", quotedNode1_52);
@@ -3487,22 +3487,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("containerName", quotedNode1_50);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_53 = quotedNode_3;
           {
-            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, GlobalScope.getInstance(), false);
+            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_54 = quotedNode_6;
             quotedNode1_54.setReferenceTarget("target", (SNode) parameter_98);
             quotedNode_3.addChild("children", quotedNode1_54);
           }
           {
-            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_55 = quotedNode_7;
             {
-              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+              quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_56 = quotedNode_11;
               {
-                quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_57 = quotedNode_29;
                 quotedNode1_57.setProperty("text", "Contents");
                 quotedNode_11.addChild("parts", quotedNode1_57);
@@ -3510,13 +3510,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_7.addChild("containerName", quotedNode1_56);
             }
             {
-              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+              quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_58 = quotedNode_12;
               {
-                quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_59 = quotedNode_30;
                 {
-                  quotedNode_45 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_45 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_60 = quotedNode_45;
                   quotedNode1_60.setProperty("text", "Resources");
                   quotedNode_30.addChild("parts", quotedNode1_60);
@@ -3524,7 +3524,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_12.addChild("containerName", quotedNode1_59);
               }
               {
-                quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_61 = quotedNode_31;
                 {
                   quotedNode_46 = (SNode) parameter_99;
@@ -3544,13 +3544,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_7.addChild("children", quotedNode1_58);
             }
             {
-              quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+              quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_63 = quotedNode_13;
               {
-                quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+                quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_64 = quotedNode_32;
                 {
-                  quotedNode_47 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                  quotedNode_47 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_65 = quotedNode_47;
                   quotedNode1_65.setProperty("text", "MacOS");
                   quotedNode_32.addChild("parts", quotedNode1_65);
@@ -3558,7 +3558,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 quotedNode_13.addChild("containerName", quotedNode1_64);
               }
               {
-                quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+                quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_66 = quotedNode_33;
                 quotedNode1_66.setProperty("filemode", "755");
                 {
@@ -3579,7 +3579,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_7.addChild("children", quotedNode1_63);
             }
             {
-              quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_68 = quotedNode_14;
               {
                 quotedNode_34 = (SNode) parameter_101;
@@ -3599,13 +3599,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_3.addChild("children", quotedNode1_55);
           }
           {
-            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_70 = quotedNode_8;
             {
-              quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+              quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_71 = quotedNode_15;
               {
-                quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+                quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_72 = quotedNode_35;
                 quotedNode1_72.setProperty("text", "bin");
                 quotedNode_15.addChild("parts", quotedNode1_72);
@@ -3613,7 +3613,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("containerName", quotedNode1_71);
             }
             {
-              quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_73 = quotedNode_16;
               {
                 quotedNode_36 = (SNode) parameter_102;
@@ -3631,7 +3631,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_73);
             }
             {
-              quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_75 = quotedNode_17;
               {
                 quotedNode_37 = (SNode) parameter_103;
@@ -3649,7 +3649,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_75);
             }
             {
-              quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_77 = quotedNode_18;
               {
                 quotedNode_38 = (SNode) parameter_104;
@@ -3667,7 +3667,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_77);
             }
             {
-              quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_79 = quotedNode_19;
               {
                 quotedNode_39 = (SNode) parameter_105;
@@ -3685,7 +3685,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_79);
             }
             {
-              quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_81 = quotedNode_20;
               {
                 quotedNode_40 = (SNode) parameter_106;
@@ -3703,7 +3703,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_81);
             }
             {
-              quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_83 = quotedNode_21;
               quotedNode1_83.setProperty("filemode", "755");
               {
@@ -3722,7 +3722,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_83);
             }
             {
-              quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_85 = quotedNode_22;
               quotedNode1_85.setProperty("filemode", "755");
               {
@@ -3741,10 +3741,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               quotedNode_8.addChild("children", quotedNode1_85);
             }
             {
-              quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+              quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_87 = quotedNode_23;
               {
-                quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, GlobalScope.getInstance(), false);
+                quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_88 = quotedNode_43;
                 quotedNode1_88.setProperty("eol", "lf");
                 quotedNode1_88.setProperty("removeEOF", "true");
@@ -3768,11 +3768,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_3.addChild("children", quotedNode1_70);
           }
           {
-            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, GlobalScope.getInstance(), false);
+            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_File", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_90 = quotedNode_9;
             quotedNode1_90.setProperty("filemode", "755");
             {
-              quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, GlobalScope.getInstance(), false);
+              quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_91 = quotedNode_24;
               quotedNode1_91.setProperty("eol", "lf");
               quotedNode1_91.setProperty("removeEOF", "true");
@@ -3794,22 +3794,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             quotedNode_3.addChild("children", quotedNode1_90);
           }
           {
-            quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+            quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_93 = quotedNode_10;
             {
-              quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_94 = quotedNode_26;
               quotedNode1_94.setProperty("text", (String) parameter_111);
               quotedNode_10.addChild("parts", quotedNode1_94);
             }
             {
-              quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_95 = quotedNode_27;
               quotedNode1_95.setReferenceTarget("macro", (SNode) parameter_112);
               quotedNode_10.addChild("parts", quotedNode1_95);
             }
             {
-              quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+              quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_96 = quotedNode_28;
               quotedNode1_96.setProperty("text", ".app");
               quotedNode_10.addChild("parts", quotedNode1_96);
@@ -3838,26 +3838,26 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
             quotedNode1_9.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_4;
               quotedNode1_10.setProperty("head", "Contents");
               {
-                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_11 = quotedNode_5;
                 quotedNode1_11.setProperty("head", "Resources");
                 {
-                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_12 = quotedNode_6;
                   quotedNode1_12.setProperty("head", "mps.icns");
                   quotedNode_5.addChild("tail", quotedNode1_12);
@@ -3890,26 +3890,26 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
             quotedNode1_9.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_4;
               quotedNode1_10.setProperty("head", "Contents");
               {
-                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_11 = quotedNode_5;
                 quotedNode1_11.setProperty("head", "MacOS");
                 {
-                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                  quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_12 = quotedNode_6;
                   quotedNode1_12.setProperty("head", "mps");
                   quotedNode_5.addChild("tail", quotedNode1_12);
@@ -3941,22 +3941,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_6 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_2;
           quotedNode1_7.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_3;
             quotedNode1_8.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_9 = quotedNode_4;
               quotedNode1_9.setProperty("head", "Contents");
               {
-                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_10 = quotedNode_5;
                 quotedNode1_10.setProperty("head", "Info.plist");
                 quotedNode_4.addChild("tail", quotedNode1_10);
@@ -3985,18 +3985,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "info_plist_parser.scpt");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4023,18 +4023,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libbreakgen.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4061,18 +4061,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libbreakgen64.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4099,18 +4099,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libquaqua.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4137,18 +4137,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "libquaqua64.jnilib");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4175,18 +4175,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "relaunch");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4213,18 +4213,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("head", "mac");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("head", "fsnotifier");
               quotedNode_3.addChild("tail", quotedNode1_8);
@@ -4250,14 +4250,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode1_5.setProperty("head", "bin");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("head", "mps.vmoptions");
             quotedNode_2.addChild("tail", quotedNode1_6);
@@ -4280,10 +4280,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("head", "mps.sh");
           quotedNode_1.addChild("compositePart", quotedNode1_4);
@@ -4303,7 +4303,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("module", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -4323,13 +4323,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setProperty("text", (String) parameter_7);
             quotedNode_2.addChild("parts", quotedNode1_6);
@@ -4352,7 +4352,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("compact", "true");
         {
@@ -4384,7 +4384,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Language", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Language", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("compact", "true");
         {
@@ -4416,7 +4416,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("compact", "true");
         {
@@ -4448,10 +4448,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("head", "");
           quotedNode_1.addChild("compositePart", quotedNode1_4);

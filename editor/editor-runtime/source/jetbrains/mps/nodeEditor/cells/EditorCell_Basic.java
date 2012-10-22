@@ -521,7 +521,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       return null;
     }
     SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
-    node.getParent().replaceChild(node, newNode);
+    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
     editorContext.flushEvents();
     return newNode;
   }

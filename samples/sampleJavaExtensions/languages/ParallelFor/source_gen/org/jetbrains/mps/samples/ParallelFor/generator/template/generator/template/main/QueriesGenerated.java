@@ -122,7 +122,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode n = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode n = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         n.setReferent("exc", it, false);
         return n;
       }

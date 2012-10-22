@@ -182,22 +182,22 @@ public class ReferentsCreator {
       SNode visibility = getClassVisibility(binding);
       if (binding.isClass()) {
         if (binding.isLocalType()) {
-          classifier = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+          classifier = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
         } else {
-          SNode classConcept = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
+          SNode classConcept = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassConcept");
           SPropertyOperations.set(classConcept, "abstractClass", "" + (binding.isAbstract()));
           SPropertyOperations.set(classConcept, "isFinal", "" + (binding.isFinal()));
           classifier = classConcept;
         }
       } else
       if (binding.isInterface() && !(binding.isAnnotationType())) {
-        classifier = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.Interface", null);
+        classifier = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.Interface");
       } else
       if (binding.isAnnotationType()) {
-        classifier = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.Annotation", null);
+        classifier = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.Annotation");
       } else
       if (binding.isEnum()) {
-        classifier = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumClass", null);
+        classifier = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.EnumClass");
       } else {
         return false;
       }
@@ -217,7 +217,7 @@ public class ReferentsCreator {
       TypeParameter[] typeParameters = typeDeclaration.typeParameters;
       if (typeParameters != null) {
         for (TypeParameter typeParameter : typeParameters) {
-          SNode typeVariableDeclaration = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
+          SNode typeVariableDeclaration = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
           SPropertyOperations.set(typeVariableDeclaration, "name", new String(typeParameter.name));
           ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).addElement(typeVariableDeclaration);
         }
@@ -228,13 +228,13 @@ public class ReferentsCreator {
     private SNode getClassVisibility(ReferenceBinding b) {
       SModel model = myReferentsCreator.myCurrentModel;
       if (b.isPublic()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       } else
       if (b.isPrivate()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.PrivateVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
       } else
       if (b.isProtected()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
       } else {
         return null;
       }
@@ -401,7 +401,7 @@ public class ReferentsCreator {
       assert (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"));
       SModel model = myReferentsCreator.myCurrentModel;
       SNode enumClass = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass");
-      SNode enumConstant = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
+      SNode enumConstant = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       SPropertyOperations.set(enumConstant, "name", new String(binding.name));
       ListSequence.fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(enumConstant);
       myReferentsCreator.myBindingMap.put(binding, enumConstant);
@@ -415,7 +415,7 @@ public class ReferentsCreator {
       }
       SNode field;
       if (binding == null || !(binding.isStatic())) {
-        SNode fieldDeclaration = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, "jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+        SNode fieldDeclaration = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         if (binding != null) {
           SPropertyOperations.set(fieldDeclaration, "isVolatile", "" + (binding.isVolatile()));
         }
@@ -423,7 +423,7 @@ public class ReferentsCreator {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)).addElement(fieldDeclaration);
         field = fieldDeclaration;
       } else {
-        SNode staticFieldDeclaration = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
+        SNode staticFieldDeclaration = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
         field = staticFieldDeclaration;
         ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "staticField", true)).addElement(staticFieldDeclaration);
       }
@@ -450,7 +450,7 @@ public class ReferentsCreator {
       SModel model = myReferentsCreator.myCurrentModel;
       LocalVariableBinding b = localDeclaration.binding;
       SNode localType = createType(localDeclaration.type.resolvedType);
-      SNode newLocal = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+      SNode newLocal = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
       SPropertyOperations.set(newLocal, "name", new String(localDeclaration.name));
       SLinkOperations.setTarget(newLocal, "type", localType, true);
       if (b != null) {
@@ -468,10 +468,10 @@ public class ReferentsCreator {
         SNode enclosingType = SNodeOperations.cast(myReferentsCreator.myBindingMap.get(scope.enclosingSourceType()), "jetbrains.mps.baseLanguage.structure.Classifier");
         assert (SNodeOperations.isInstanceOf(enclosingType, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         SNode classConcept = SNodeOperations.cast(enclosingType, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-        SNode constructorDeclaration = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
+        SNode constructorDeclaration = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         SNode visibility = getMethodVisibility(b);
         SLinkOperations.setTarget(constructorDeclaration, "visibility", visibility, true);
-        SLinkOperations.setTarget(constructorDeclaration, "returnType", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.VoidType", null), true);
+        SLinkOperations.setTarget(constructorDeclaration, "returnType", SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.VoidType"), true);
         myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
         processMethodTypeParameters(ctorDecl, constructorDeclaration);
         mapParameters(constructorDeclaration, ctorDecl);
@@ -501,7 +501,7 @@ public class ReferentsCreator {
       SModel model = myReferentsCreator.myCurrentModel;
       SNode result;
       if (b != null && b.isStatic()) {
-        SNode staticMethodDeclaration = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
+        SNode staticMethodDeclaration = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
         SLinkOperations.setTarget(staticMethodDeclaration, "visibility", getMethodVisibility(b), true);
         if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -510,8 +510,8 @@ public class ReferentsCreator {
         result = staticMethodDeclaration;
       } else {
         SNode instanceMethodDeclaration = (isAnnotation ?
-          SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", null) :
-          SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null)
+          SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration") :
+          SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")
         );
         if (b != null) {
           SPropertyOperations.set(instanceMethodDeclaration, "isAbstract", "" + (b.isAbstract()));
@@ -533,7 +533,7 @@ public class ReferentsCreator {
       TypeParameter[] typeParameters = methodDeclaration.typeParameters();
       if (typeParameters != null) {
         for (TypeParameter typeParameter : typeParameters) {
-          SNode typeVariableDeclaration = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
+          SNode typeVariableDeclaration = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
           SPropertyOperations.set(typeVariableDeclaration, "name", new String(typeParameter.name));
           setTypeVariableBounds(typeParameter, typeVariableDeclaration);
           ListSequence.fromList(SLinkOperations.getTargets(newMethod, "typeVariableDeclaration", true)).addElement(typeVariableDeclaration);
@@ -567,7 +567,7 @@ public class ReferentsCreator {
         }
       }
       SNode type = myReferentsCreator.myTypesProvider.createType(binding.type, varArg);
-      SNode result = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+      SNode result = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       SPropertyOperations.set(result, "name", new String(binding.name));
       SLinkOperations.setTarget(result, "type", type, true);
       SPropertyOperations.set(result, "isFinal", "" + (binding.isFinal()));
@@ -579,13 +579,13 @@ public class ReferentsCreator {
     private SNode getMethodVisibility(MethodBinding b) {
       SModel model = myReferentsCreator.myCurrentModel;
       if (b.isPublic()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       } else
       if (b.isPrivate()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.PrivateVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
       } else
       if (b.isProtected()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
       } else {
         return null;
       }
@@ -594,13 +594,13 @@ public class ReferentsCreator {
     private SNode getFieldVisibility(FieldBinding b) {
       SModel model = myReferentsCreator.myCurrentModel;
       if (b.isPublic()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       } else
       if (b.isPrivate()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.PrivateVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
       } else
       if (b.isProtected()) {
-        return SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null);
+        return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
       } else {
         return null;
       }

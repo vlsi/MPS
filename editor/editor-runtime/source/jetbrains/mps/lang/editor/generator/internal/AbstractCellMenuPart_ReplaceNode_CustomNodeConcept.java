@@ -24,12 +24,12 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.*;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -84,7 +84,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
    * implements IChildNodeSetter
    */
   public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope) {
-    parentNode.replaceChild(oldNode, newNode);
+    SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
   }
 }

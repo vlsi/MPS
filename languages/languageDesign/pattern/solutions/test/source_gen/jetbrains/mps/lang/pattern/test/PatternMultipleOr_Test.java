@@ -73,22 +73,22 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
         SNode quotedNode_9 = null;
         SNode quotedNode_10 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_11 = quotedNode_1;
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_12 = quotedNode_2;
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_13 = quotedNode_4;
               {
-                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_14 = quotedNode_6;
                 quotedNode1_14.setProperty("value", "3");
                 quotedNode_4.addChild("rightExpression", quotedNode1_14);
               }
               {
-                quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+                quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_15 = quotedNode_7;
                 quotedNode1_15.setProperty("value", "4");
                 quotedNode_4.addChild("leftExpression", quotedNode1_15);
@@ -96,18 +96,18 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
               quotedNode_2.addChild("rightExpression", quotedNode1_13);
             }
             {
-              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, GlobalScope.getInstance(), false);
+              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_16 = quotedNode_5;
               {
-                quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+                quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_17 = quotedNode_8;
                 quotedNode_5.addChild("leftExpression", quotedNode1_17);
               }
               {
-                quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, GlobalScope.getInstance(), false);
+                quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_18 = quotedNode_9;
                 {
-                  quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, GlobalScope.getInstance(), false);
+                  quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_19 = quotedNode_10;
                   quotedNode_9.addChild("primitiveType", quotedNode1_19);
                 }
@@ -118,7 +118,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             quotedNode_1.addChild("condition", quotedNode1_12);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_20 = quotedNode_3;
             quotedNode_1.addChild("ifTrue", quotedNode1_20);
           }
@@ -523,10 +523,10 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
         SNode quotedNode_1 = null;
         SNode quotedNode_2 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_3 = quotedNode_1;
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_4 = quotedNode_2;
             quotedNode_1.addChild("primitiveType", quotedNode1_4);
           }

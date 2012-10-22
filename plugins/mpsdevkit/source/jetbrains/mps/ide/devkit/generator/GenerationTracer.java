@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -247,7 +248,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getNode().getDebugText());
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + SNodeUtil.getDebugText(node.getNode()));
     myCurrentTraceNode = null; // reset branch
   }
 
@@ -269,7 +270,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getNode().getDebugText());
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + SNodeUtil.getDebugText(node.getNode()));
     myCurrentTraceNode = null; // reset branch
   }
 

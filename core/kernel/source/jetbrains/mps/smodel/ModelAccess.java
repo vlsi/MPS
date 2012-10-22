@@ -160,7 +160,9 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   }
 
   protected static boolean isInRegisteredModel(SNode node) {
-    return node.getModelInternal().isRegistered();
+    SModel model = node.getModelInternal();
+    if (model==null) return false;
+    return model.isRegistered();
   }
 
   protected void doAssertLegalRead(SNode node) {

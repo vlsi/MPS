@@ -464,15 +464,30 @@ public class SModel {
 
     enforceFullLoad();
     SNodeId id = node.getSNodeId();
-    org.jetbrains.mps.openapi.model.SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
-    if (id == null || existingNode != null && existingNode != node) {
-      id = generateUniqueId();
-      while (myIdToNodeMap.containsKey(id)) {
-        resetIdCounter();
-        id = generateUniqueId();
-      }
-      node.setId(id);
+    if (id == null) {
+      assignNewId(node);
+      return;
     }
+
+    org.jetbrains.mps.openapi.model.SNode existingNode = myIdToNodeMap.get(id);
+    if (existingNode == null) {
+      myIdToNodeMap.put(node.getSNodeId(), node);
+    }
+
+    if (existingNode != null && existingNode != node) {
+      assignNewId(node);
+      return;
+    }
+  }
+
+  private void assignNewId(SNode node) {
+    SNodeId id;
+    id = generateUniqueId();
+    while (myIdToNodeMap.containsKey(id)) {
+      resetIdCounter();
+      id = generateUniqueId();
+    }
+    node.setId(id);
     myIdToNodeMap.put(id, node);
   }
 
@@ -601,14 +616,14 @@ public class SModel {
       } else {
         SNode concept = node.getConceptDeclarationNode();
         if (concept == null) {
-          LOG.error("concept not found for node " + node.getDebugText());
+          LOG.error("concept not found for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         } else {
           result.add(concept.getModel().getSModelReference());
         }
         for (String propname : node.getProperties().keySet()) {
           SNode decl = node.getPropertyDeclaration(propname);
           if (decl == null) {
-            LOG.error("undeclared property: '" + propname + "' in node " + node.getDebugText());
+            LOG.error("undeclared property: '" + propname + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -616,13 +631,13 @@ public class SModel {
         for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
           if (targetModelRef == null) {
-            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());
+            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(targetModelRef);
           }
           SNode decl = node.getLinkDeclaration(ref.getRole());
           if (decl == null) {
-            LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + node.getDebugText());
+            LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -630,7 +645,7 @@ public class SModel {
         for (SNode child : node.getChildren()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
-            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + node.getDebugText());
+            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
             result.add(decl.getModel().getSModelReference());
           }
@@ -896,9 +911,8 @@ public class SModel {
     return changed;
   }
 
-  //this method is only for access from SNode. Use SNode.isRoot from outer code
 
-  boolean isRoot(@Nullable SNode node) {
+  public boolean isRoot(@Nullable SNode node) {
     return myRoots.contains(node);
   }
 

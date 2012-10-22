@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
  * evgeny, 2/16/12
@@ -41,8 +42,8 @@ public abstract class ReferenceInfo_TemplateBase extends ReferenceInfo {
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {
         generator.getLogger().error(getTemplateNode(), "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
-          "source root: " + (inputSourceRoot == null ? "<conditional root>" : inputSourceRoot.getDebugText()) +
-          ", target root: " + (inputTargetRoot == null ? "<conditional root>" : inputTargetRoot.getDebugText()),
+          "source root: " + (inputSourceRoot == null ? "<conditional root>" : SNodeUtil.getDebugText(inputSourceRoot)) +
+          ", target root: " + (inputTargetRoot == null ? "<conditional root>" : SNodeUtil.getDebugText(inputTargetRoot)),
           GeneratorUtil.describeIfExists(getOutputSourceNode(), "source"),
           GeneratorUtil.describeIfExists(outputTarget, "target"));
       }

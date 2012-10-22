@@ -180,13 +180,12 @@ public class ClassifierUpdater {
       if (field.isCompilerGenerated()) {
         continue;
       }
-      SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a8().createNode(cm, createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
+      SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a8().createNode(cm, ASMNodeId.createId(refCls, field), createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
       SPropertyOperations.set(decl, "isDeprecated", "" + (field.isDeprecated()));
       for (ASMAnnotation annotation : field.getAnnotations()) {
         ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
       }
 
-      decl.setId(ASMNodeId.createId(refCls, field));
       ListSequence.fromList(SLinkOperations.getTargets(cls, "field", true)).addElement(decl);
     }
   }
@@ -204,12 +203,11 @@ public class ClassifierUpdater {
       }
       if (field.isEnumConstant()) {
         SNode enumClass = SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass");
-        SNode ecd = new ClassifierUpdater.QuotationClass_ol94f8_a0a1a3a0a9().createNode(cm, field.getName());
+        SNode ecd = new ClassifierUpdater.QuotationClass_ol94f8_a0a1a3a0a9().createNode(cm, ASMNodeId.createId(ac, field), field.getName());
 
-        ecd.setId(ASMNodeId.createId(ac, field));
         ListSequence.fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(ecd);
       } else {
-        SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0d0a0j().createNode(cm, createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
+        SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0d0a0j().createNode(cm, ASMNodeId.createId(ac, field), createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
         SPropertyOperations.set(decl, "isDeprecated", "" + (field.isDeprecated()));
         for (ASMAnnotation annotation : field.getAnnotations()) {
           ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
@@ -226,7 +224,6 @@ public class ClassifierUpdater {
           }
         }
 
-        decl.setId(ASMNodeId.createId(ac, field));
         ListSequence.fromList(SLinkOperations.getTargets(cls, "staticField", true)).addElement(decl);
       }
     }
@@ -234,13 +231,12 @@ public class ClassifierUpdater {
 
   private void updateAnnotationMethods(ASMClass refCls, final SNode annotation) {
     for (ASMMethod m : refCls.getDeclaredMethods()) {
-      SNode md = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0a01().createNode(cm, getTypeByASMType(m.getGenericReturnType(), null, annotation), m.getName());
+      SNode md = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0a01().createNode(cm, ASMNodeId.createAnnotationMethodId(refCls.getFqName(), m.getName()), getTypeByASMType(m.getGenericReturnType(), null, annotation), m.getName());
       SLinkOperations.setTarget(md, "visibility", new ClassifierUpdater.QuotationClass_ol94f8_a0a1a0a01().createNode(cm), true);
       if (m.getAnnotationDefault() != null) {
         SLinkOperations.setTarget(md, "defaultValue", getAnnotationValue(m.getAnnotationDefault()), true);
       }
 
-      md.setId(ASMNodeId.createAnnotationMethodId(refCls.getFqName(), m.getName()));
       ListSequence.fromList(SLinkOperations.getTargets(annotation, "method", true)).addElement(md);
     }
   }
@@ -254,7 +250,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(cm, createVisibility(c), SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
+      SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(cm, ASMNodeId.createId(ac, c), createVisibility(c), SModelOperations.createNewNode(cm, null, "jetbrains.mps.baseLanguage.structure.StubStatementList"), SPropertyOperations.getString(cls, "name"));
       SPropertyOperations.set(constructor, "isDeprecated", "" + (c.isDeprecated()));
       for (ASMTypeVariable tv : c.getTypeParameters()) {
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0f0a0l().createNode(cm, tv.getName()));
@@ -297,7 +293,6 @@ public class ClassifierUpdater {
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "throwsItem", true)).addElement(getTypeByASMType(exception, constructor, cls));
       }
 
-      constructor.setId(ASMNodeId.createId(ac, c));
       ListSequence.fromList(SLinkOperations.getTargets(cls, "constructor", true)).addElement(constructor);
     }
   }
@@ -317,12 +312,11 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode md = SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+      SNode md = SModelOperations.createNewNode(cm, ASMNodeId.createId(ac, m), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SPropertyOperations.set(md, "isAbstract", "" + (m.isAbstract()));
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       this.updateBaseMethod(m, md, cls);
 
-      md.setId(ASMNodeId.createId(ac, m));
       ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).addElement(md);
     }
   }
@@ -342,11 +336,10 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode md = SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
+      SNode md = SModelOperations.createNewNode(cm, ASMNodeId.createId(ac, m), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       updateBaseMethod(m, md, cls);
 
-      md.setId(ASMNodeId.createId(ac, m));
       ListSequence.fromList(SLinkOperations.getTargets(cls, "staticMethod", true)).addElement(md);
     }
   }
@@ -672,7 +665,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -689,7 +682,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", (String) parameter_4);
         result = quotedNode1_2;
@@ -707,7 +700,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", (String) parameter_4);
         result = quotedNode1_2;
@@ -725,7 +718,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_4);
         result = quotedNode1_2;
@@ -738,18 +731,18 @@ public class ClassifierUpdater {
     public QuotationClass_ol94f8_a0a3a0a8() {
     }
 
-    public SNode createNode(Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10) {
+    public SNode createNode(Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", (SModel) parameter_7, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", (SModel) parameter_7, (SNodeId) parameter_8, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("name", (String) parameter_10);
+        quotedNode1_4.setProperty("name", (String) parameter_11);
         {
-          quotedNode_2 = (SNode) parameter_8;
+          quotedNode_2 = (SNode) parameter_9;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
@@ -762,7 +755,7 @@ public class ClassifierUpdater {
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_9;
+          quotedNode_3 = (SNode) parameter_10;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
@@ -784,18 +777,18 @@ public class ClassifierUpdater {
     public QuotationClass_ol94f8_a0a0a0d0a0j() {
     }
 
-    public SNode createNode(Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10) {
+    public SNode createNode(Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", (SModel) parameter_7, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", (SModel) parameter_7, (SNodeId) parameter_8, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("name", (String) parameter_10);
+        quotedNode1_4.setProperty("name", (String) parameter_11);
         {
-          quotedNode_2 = (SNode) parameter_8;
+          quotedNode_2 = (SNode) parameter_9;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
@@ -808,7 +801,7 @@ public class ClassifierUpdater {
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_9;
+          quotedNode_3 = (SNode) parameter_10;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
@@ -835,7 +828,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -853,7 +846,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -866,14 +859,14 @@ public class ClassifierUpdater {
     public QuotationClass_ol94f8_a0a1a3a0a9() {
     }
 
-    public SNode createNode(Object parameter_3, Object parameter_4) {
+    public SNode createNode(Object parameter_3, Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", (SModel) parameter_3, (SNodeId) parameter_4, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("name", (String) parameter_4);
+        quotedNode1_2.setProperty("name", (String) parameter_5);
         result = quotedNode1_2;
       }
       return result;
@@ -884,7 +877,7 @@ public class ClassifierUpdater {
     public QuotationClass_ol94f8_a0a0a0a01() {
     }
 
-    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
+    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -892,11 +885,11 @@ public class ClassifierUpdater {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", (SModel) parameter_9, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", (SModel) parameter_9, (SNodeId) parameter_10, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setProperty("name", (String) parameter_11);
+        quotedNode1_5.setProperty("name", (String) parameter_12);
         {
-          quotedNode_2 = (SNode) parameter_10;
+          quotedNode_2 = (SNode) parameter_11;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_2);
@@ -909,12 +902,12 @@ public class ClassifierUpdater {
           }
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_9, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_9, (SNodeId) parameter_10, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_3;
           quotedNode_1.addChild("visibility", quotedNode1_7);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", (SModel) parameter_9, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", (SModel) parameter_9, (SNodeId) parameter_10, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_4;
           quotedNode_1.addChild("body", quotedNode1_8);
         }
@@ -933,7 +926,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -945,7 +938,7 @@ public class ClassifierUpdater {
     public QuotationClass_ol94f8_a0a3a0a11() {
     }
 
-    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
+    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -953,16 +946,16 @@ public class ClassifierUpdater {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", (SModel) parameter_9, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", (SModel) parameter_9, (SNodeId) parameter_10, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setProperty("name", (String) parameter_12);
+        quotedNode1_5.setProperty("name", (String) parameter_13);
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", (SModel) parameter_9, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", (SModel) parameter_9, (SNodeId) parameter_10, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode_1.addChild("returnType", quotedNode1_6);
         }
         {
-          quotedNode_3 = (SNode) parameter_10;
+          quotedNode_3 = (SNode) parameter_11;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
@@ -975,7 +968,7 @@ public class ClassifierUpdater {
           }
         }
         {
-          quotedNode_4 = (SNode) parameter_11;
+          quotedNode_4 = (SNode) parameter_12;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
             quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
@@ -1002,7 +995,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("name", (String) parameter_4);
         result = quotedNode1_2;
@@ -1021,7 +1014,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("name", (String) parameter_7);
         {
@@ -1052,7 +1045,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StubStatementList", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StubStatementList", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1070,7 +1063,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("name", (String) parameter_7);
         {
@@ -1101,7 +1094,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1118,7 +1111,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1135,7 +1128,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1152,7 +1145,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1169,7 +1162,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1186,7 +1179,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1203,7 +1196,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1221,7 +1214,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_6;
@@ -1251,7 +1244,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1269,7 +1262,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1287,7 +1280,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1305,7 +1298,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1323,7 +1316,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("charConstant", (String) parameter_3);
         result = quotedNode1_2;
@@ -1341,7 +1334,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_3);
         result = quotedNode1_2;
@@ -1359,7 +1352,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1377,7 +1370,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1395,7 +1388,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", (String) parameter_4);
         result = quotedNode1_2;
@@ -1439,7 +1432,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_6;
@@ -1470,7 +1463,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", (SModel) parameter_4, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", (SModel) parameter_4, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
@@ -1493,7 +1486,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1510,7 +1503,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1527,7 +1520,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1544,7 +1537,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1561,7 +1554,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1578,7 +1571,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1595,7 +1588,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1612,7 +1605,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1629,7 +1622,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1646,7 +1639,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1663,7 +1656,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1681,7 +1674,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_6;
@@ -1712,7 +1705,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_6;
@@ -1742,7 +1735,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1759,7 +1752,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1777,7 +1770,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_6;
@@ -1808,7 +1801,7 @@ public class ClassifierUpdater {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", (SModel) parameter_5, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", (SModel) parameter_5, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_6;
@@ -1838,7 +1831,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1855,7 +1848,7 @@ public class ClassifierUpdater {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", (SModel) parameter_3, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", (SModel) parameter_3, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

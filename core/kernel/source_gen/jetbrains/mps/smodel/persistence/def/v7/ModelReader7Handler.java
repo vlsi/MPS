@@ -23,8 +23,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 
 public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
@@ -457,7 +455,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SNode(fieldmodel, fieldhelper.readType(attrs.getValue("type")));
+      return new SNode(null, fieldhelper.readType(attrs.getValue("type")));
     }
 
     @Override
@@ -529,16 +527,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
           }
           return;
         }
-        /*
-          SReference ref;
-          if (pptr.o1) {
-            ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
-            fieldlinkMap.addDynamicReference(ptr.getModelReference(), (DynamicReference) ref);
-          } else {
-            ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
-            fieldlinkMap.addTargetLocation(ptr, (StaticReference) ref);
-          }
-        */
         StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
         fieldlinkMap.addTargetLocation(ptr, ref);
 

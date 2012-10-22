@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -104,7 +105,7 @@ public class SNodeFactoryOperations {
       model.addRoot(newChild);
       model.removeRoot(oldChild);
     } else {
-      oldChildParent.replaceChild(oldChild, newChild);
+      SNodeUtil.replaceWithAnother(oldChild, newChild);
     }
     copyAllAttributes(oldChild, newChild);
     return newChild;

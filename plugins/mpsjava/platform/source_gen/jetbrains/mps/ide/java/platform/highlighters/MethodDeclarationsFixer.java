@@ -100,7 +100,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           if (event.isAdded()) {
             nodeAdded(child, reResolvedTargets);
           } else {
-            nodeRemoved(child, event.getParent(), reResolvedTargets);
+            nodeRemoved(child, event.getParent(), event.getModel(), reResolvedTargets);
           }
         }
 
@@ -346,9 +346,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
 
-  private void nodeRemoved(SNode child, SNode formerParent, Map<SNode, SNode> resolveTargets) {
-    if (myCheckedMethodCalls.contains(new SNodePointer(formerParent))) {
-      myParametersToCheckedMethodCalls.remove(new SNodePointer(child));
+  private void nodeRemoved(SNode child, SNode formerParent, SModel m, Map<SNode, SNode> resolveTargets) {
+    if (myCheckedMethodCalls.contains(new SNodePointer(m.getSModelReference(), formerParent.getSNodeId()))) {
+      myParametersToCheckedMethodCalls.remove(new SNodePointer(m.getSModelReference(), child.getSNodeId()));
       testAndFixMethodCall(SNodeOperations.cast(formerParent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {

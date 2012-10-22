@@ -60,6 +60,7 @@ import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -127,7 +128,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
 
-  private WeakHashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNodePointer>>();
+  private WeakHashMap<EditorCell, Set<SNode>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
@@ -244,6 +245,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
   private boolean myPopupMenuEnabled = true;
   private boolean myIsInFiguresHierarchy = false;
+
+  private Set<SModelDescriptor> myLastDeps = new HashSet<SModelDescriptor>();
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false, false);
@@ -1221,8 +1224,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNode != null) {
       sb.append(", myNode is disposed");
       StackTraceElement[] result;
-      if (myNode.getModelInternal() != null) {
-        result = myNode.getModelInternal().getDisposedStacktrace();
+      SModel model = myNode.getModelInternal();
+      if (model != null) {
+        result = model.getDisposedStacktrace();
       } else {
         result = null;
       }
@@ -1297,6 +1301,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     for (SModelDescriptor sm : myModelDescriptorsWithListener.toArray(new SModelDescriptor[myModelDescriptorsWithListener.size()])) {
       removeOurListeners(sm);
     }
+    myLastDeps = new HashSet<SModelDescriptor>();
   }
 
   private void clearCaches() {
@@ -1311,8 +1316,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void setRootCell(EditorCell rootCell) {
     getEditorContext().pushTracerTask("setting root cell", true);
-    Set<SNode> oldNodesToDependOn = myCellsToNodesToDependOnMap.get(myRootCell);
-    Set<SNodePointer> oldRefTargetsToDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
 
     if (myRootCell != null) {
       ((EditorCell_Basic) myRootCell).onRemove();
@@ -1324,24 +1327,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ((EditorCell_Basic) myRootCell).onAdd();
     }
 
-    Set<SModelDescriptor> oldModelsToDependOn = getModels(oldNodesToDependOn);
-    Set<SModelDescriptor> newModelsToDependOn = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
-    oldModelsToDependOn.addAll(getModelsAndPurgeOrphaned(oldRefTargetsToDependsOn));
-    newModelsToDependOn.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
+    Set<SModelDescriptor> oldDeps = myLastDeps;
 
-    for (SModelDescriptor newDep : newModelsToDependOn) {
-      if (!oldModelsToDependOn.contains(newDep)) {
+    myLastDeps = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
+    myLastDeps.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
+
+    for (SModelDescriptor newDep : myLastDeps) {
+      if (!oldDeps.contains(newDep)) {
         addOurListeners(newDep);
       }
     }
-    for (SModelDescriptor oldDep : oldModelsToDependOn) {
-      if (!newModelsToDependOn.contains(oldDep)) {
+    for (SModelDescriptor oldDep : oldDeps) {
+      if (!myLastDeps.contains(oldDep)) {
         removeOurListeners(oldDep);
       }
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !myNode.isDeleted() && myNode.isRegistered()) {
+    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null && !AuxilaryRuntimeModel.isAuxModel(myNode.getModel())) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
@@ -1354,31 +1357,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getEditorContext().popTracerTask();
   }
 
-  private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNodePointer> nodePointers) {
-    if (nodePointers == null) {
-      return Collections.emptySet();
-    }
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
-    Set<SNodePointer> nodeProxiesToDelete = new HashSet<SNodePointer>();
-    for (SNodePointer nodeProxy : nodePointers) {
-      SModelDescriptor model = nodeProxy.getModel();
-      if (model == null) {
-        nodeProxiesToDelete.add(nodeProxy);
+  private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNode> nodes) {
+    if (nodes == null) return Collections.emptySet();
+    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
+    Set<SNode> nodeProxiesToDelete = new HashSet<SNode>();
+    for (SNode node : nodes) {
+      SModel model = node.getModel();
+      SModelDescriptor md = model == null ? null : model.getModelDescriptor();
+      if (md == null) {
+        nodeProxiesToDelete.add(node);
       } else {
-        modelDescriptors.add(model);
+        models.add(md);
       }
     }
-    nodePointers.removeAll(nodeProxiesToDelete);
-    return modelDescriptors;
+    nodes.removeAll(nodeProxiesToDelete);
+    return models;
   }
 
   private Set<SModelDescriptor> getModels(@Nullable Set<SNode> nodes) {
     if (nodes == null) {
-      return Collections.emptySet();
+      return new HashSet<SModelDescriptor>();
     }
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode node : nodes) {
-      SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+      SModel model = node.getModel();
+      SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -2472,7 +2475,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     dependentCells.add(cell);
   }
 
-  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
+  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNode> refTargets) {
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
@@ -2483,19 +2486,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return Collections.unmodifiableSet(nodes);
   }
 
-  public Set<SNodePointer> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
-    Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
+  public Set<SNode> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
+    Set<SNode> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
     if (nodeProxies == null) return null;
     return Collections.unmodifiableSet(nodeProxies);
   }
 
-  public boolean doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodePointer nodePointer) {
-    if ((cell == null) && node != null) {
-      return true;
-    }
+  public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
+    if (cell == null && node != null) return true;
+
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
-    Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(nodePointer)));
+    Set<SNode> refNodes = myCellsToRefTargetsToDependOnMap.get(cell);
+
+    if (sNodes != null && sNodes.contains(node)) return true;
+    return refNodes != null && refNodes.contains(node);
   }
 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {

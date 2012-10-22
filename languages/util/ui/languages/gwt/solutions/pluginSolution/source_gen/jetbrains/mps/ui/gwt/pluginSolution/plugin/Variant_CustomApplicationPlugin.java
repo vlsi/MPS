@@ -37,7 +37,7 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("plugin", SReference.create("plugin", quotedNode1_2, SModelReference.fromString("r:5c48d15b-8e31-45b6-af73-b6432909d8d3(jetbrains.mps.ui.gwt.pluginSolution.plugin)"), SNodeId.fromString("5487985028841944287")));
         result = quotedNode1_2;

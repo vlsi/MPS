@@ -47,7 +47,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", null);
+            SNode res = SModelOperations.createNewNode(model, null, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant");
             SPropertyOperations.set(res, "value", "" + (Integer.parseInt(pattern)));
             return res;
           }
@@ -79,7 +79,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode res = SModelOperations.createNewNode(model, null, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant");
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(res, "value", pattern + "0");
             } else {

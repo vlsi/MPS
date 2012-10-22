@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,7 +45,7 @@ import java.util.List;
     SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
     if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + referenceNodeConcept.getDebugText());
+      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + SNodeUtil.getDebugText(referenceNodeConcept));
       return new LinkedList<INodeSubstituteAction>();
     }
 

@@ -47,7 +47,7 @@ public class DecisionTableIsIDecisionTable_SubtypingRule extends SubtypingRule_R
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)"), SNodeId.fromString("6409088484822290043")));
         result = quotedNode1_2;
@@ -60,7 +60,7 @@ public class DecisionTableIsIDecisionTable_SubtypingRule extends SubtypingRule_R
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)"), SNodeId.fromString("6409088484822290043")));
         result = quotedNode1_2;

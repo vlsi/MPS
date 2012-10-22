@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
 
@@ -365,7 +366,7 @@ class GenerationSession {
           myLogger.error("last rules applied:");
           List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
           for (Pair<SNode, SNode> pair : pairs) {
-            myLogger.error(pair.o1, "rule: " + pair.o1.getDebugText(),
+            myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
               GeneratorUtil.describe(pair.o2, "input"));
           }
         } else {

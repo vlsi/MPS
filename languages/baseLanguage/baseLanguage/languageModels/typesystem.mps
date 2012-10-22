@@ -33689,12 +33689,30 @@
           <property name="text" nameId="tpee.6329021646629104958" value="TODO look for Suppress(&quot;unchecked&quot;) annotation" />
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="2796241438627654736">
-        <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2796241438627654739">
-          <property name="value" nameId="tpee.1070475926801" value="Unchecked conversion" />
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5483143114396623192">
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5483143114396628222">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5483143114396628594" />
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5483143114396624626">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="5483143114396626842" />
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5483143114396623652">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2796241438627654702" resolveInfo="ctLeft" />
+            </node>
+          </node>
         </node>
-        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2796241438627654740">
-          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2796241438627654702" resolveInfo="ctLeft" />
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5483143114396623194">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5483143114396629573">
+            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5483143114396629579">
+              <property name="text" nameId="tpee.6329021646629104958" value="it's strange to report an error for typesystem node as it will be never shown" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.WarningStatement" typeId="tpd4.1207055528241" id="2796241438627654736">
+            <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2796241438627654739">
+              <property name="value" nameId="tpee.1070475926801" value="Unchecked conversion" />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2796241438627654740">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2796241438627654702" resolveInfo="ctLeft" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
