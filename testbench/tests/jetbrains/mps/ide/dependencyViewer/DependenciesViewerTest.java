@@ -60,9 +60,9 @@ public class DependenciesViewerTest extends BaseMPSTest {
 
             ReferencesFinder finder = new ReferencesFinder();
 
-            Scope testScope = new Scope();
+            DependencyViewerScope testScope = new DependencyViewerScope();
             testScope.add(testModel);
-            Scope targetScope = new Scope();
+            DependencyViewerScope targetScope = new DependencyViewerScope();
             targetScope.add(targetModel);
             List<SReference> references = finder.getReferences(testScope, new EmptyProgressMonitor());
 

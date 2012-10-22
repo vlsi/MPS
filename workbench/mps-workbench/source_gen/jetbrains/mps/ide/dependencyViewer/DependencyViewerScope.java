@@ -13,12 +13,12 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
 
-public class Scope {
+public class DependencyViewerScope {
   private List<SModule> myModules;
   private List<SModel> myModels;
   private List<SNode> myRoots;
 
-  public Scope() {
+  public DependencyViewerScope() {
     myModules = ListSequence.fromList(new ArrayList<SModule>());
     myModels = ListSequence.fromList(new ArrayList<SModel>());
     myRoots = ListSequence.fromList(new ArrayList<SNode>());

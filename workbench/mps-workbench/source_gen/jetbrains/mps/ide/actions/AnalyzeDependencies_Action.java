@@ -16,7 +16,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.ide.dependencyViewer.Scope;
+import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
@@ -72,7 +72,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("myProject")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
-      Scope scope = new Scope();
+      DependencyViewerScope scope = new DependencyViewerScope();
       if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels")) != null) {
         for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels"))) {
           scope.add(model);

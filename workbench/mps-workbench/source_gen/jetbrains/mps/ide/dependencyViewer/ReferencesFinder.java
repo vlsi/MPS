@@ -40,7 +40,7 @@ public class ReferencesFinder {
     return results;
   }
 
-  public SearchResults getRefSearchResults(List<SReference> references, final Scope scope, ProgressMonitor monitor) {
+  public SearchResults getRefSearchResults(List<SReference> references, final DependencyViewerScope scope, ProgressMonitor monitor) {
     final SearchResults results = new SearchResults();
     try {
       monitor.start("filtering references", ListSequence.fromList(references).count());
@@ -63,7 +63,7 @@ public class ReferencesFinder {
     return results;
   }
 
-  public List<SReference> getReferences(Scope scope, ProgressMonitor monitor) {
+  public List<SReference> getReferences(DependencyViewerScope scope, ProgressMonitor monitor) {
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     try {
       monitor.start("searching references in " + scope.getPresentation(), scope.getNumRoots());
@@ -91,7 +91,7 @@ public class ReferencesFinder {
     return result;
   }
 
-  private List<SReference> getReferences(SModule module, Scope scope, ProgressMonitor monitor) {
+  private List<SReference> getReferences(SModule module, DependencyViewerScope scope, ProgressMonitor monitor) {
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     for (SModel element : module.getModels()) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(getReferences(element, scope, monitor)));
@@ -102,7 +102,7 @@ public class ReferencesFinder {
     return result;
   }
 
-  private List<SReference> getReferences(SModel model, Scope scope, ProgressMonitor monitor) {
+  private List<SReference> getReferences(SModel model, DependencyViewerScope scope, ProgressMonitor monitor) {
     List<SReference> result = myModelsRefsCache.get(model);
     monitor.step(model.getModelName());
     if (result != null) {
@@ -120,7 +120,7 @@ public class ReferencesFinder {
     return result;
   }
 
-  private List<SReference> getReferences(final SNode root, final Scope scope) {
+  private List<SReference> getReferences(final SNode root, final DependencyViewerScope scope) {
     final List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

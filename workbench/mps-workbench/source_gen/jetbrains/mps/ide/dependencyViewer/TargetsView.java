@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.Enumeration;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
@@ -46,14 +46,14 @@ public class TargetsView extends UsagesView {
   public void close() {
   }
 
-  public void selectModule(IModule module) {
+  public void selectModule(SModule module) {
     MPSTreeNode node = findModule(module);
     if (node != null) {
       getTreeComponent().getTree().selectNode(node);
     }
   }
 
-  private MPSTreeNode findModule(IModule module) {
+  private MPSTreeNode findModule(SModule module) {
     UsagesTree usagesTree = getTreeComponent().getTree();
     Enumeration nodes = usagesTree.getRootNode().breadthFirstEnumeration();
     while (nodes.hasMoreElements()) {
@@ -116,7 +116,7 @@ public class TargetsView extends UsagesView {
       if (paths == null || paths.length == 0) {
         return;
       }
-      Scope scope = new Scope();
+      DependencyViewerScope scope = new DependencyViewerScope();
       for (TreePath path : paths) {
         MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
         Object userObject = node.getUserObject();

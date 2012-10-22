@@ -22479,11 +22479,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3476022648979713759">
             <property name="name" nameId="tpck.1169194664001" value="scope" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3476022648979713760">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="Scope" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="DependencyViewerScope" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3476022648979713762">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3476022648979713764">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925458509" resolveInfo="Scope" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925458509" resolveInfo="DependencyViewerScope" />
               </node>
             </node>
           </node>
@@ -22731,7 +22731,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2082819859001484644">
         <property name="name" nameId="tpck.1169194664001" value="scope" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3476022648979727655">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="Scope" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="DependencyViewerScope" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6244372616898148626">
@@ -24030,11 +24030,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1298565956308939813">
             <property name="name" nameId="tpck.1169194664001" value="fromScope" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1298565956308939814">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="Scope" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="DependencyViewerScope" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1298565956308939815">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1298565956308939816">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925458509" resolveInfo="Scope" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925458509" resolveInfo="DependencyViewerScope" />
               </node>
             </node>
           </node>
@@ -24056,11 +24056,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2103186301101669039">
             <property name="name" nameId="tpck.1169194664001" value="toScope" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2103186301101669040">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="Scope" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="69zs.8294989614925458096" resolveInfo="DependencyViewerScope" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2103186301101669041">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2103186301101669042">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925458509" resolveInfo="Scope" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="69zs.8294989614925458509" resolveInfo="DependencyViewerScope" />
               </node>
             </node>
           </node>

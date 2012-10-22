@@ -4,7 +4,6 @@ package jetbrains.mps.ide.dependencyViewer;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,7 +23,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -38,9 +37,9 @@ public class DependenciesPanel extends JPanel {
   private TargetsView myTargetsView;
   private ReferencesView myReferencesView;
   private Project myProject;
-  private MPSProject myMPSProject;
-  private Scope myScope;
-  private Scope myInitialScope;
+  private jetbrains.mps.project.Project myMPSProject;
+  private DependencyViewerScope myScope;
+  private DependencyViewerScope myInitialScope;
   private List<SReference> myReferences = ListSequence.fromList(new ArrayList<SReference>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
@@ -66,7 +65,7 @@ public class DependenciesPanel extends JPanel {
     add(createToolbar(), BorderLayout.NORTH);
   }
 
-  public void setContent(Scope scope, MPSProject project) {
+  public void setContent(DependencyViewerScope scope, jetbrains.mps.project.Project project) {
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
     myInitTree.setContent(scope, project);
@@ -80,11 +79,11 @@ public class DependenciesPanel extends JPanel {
     return myReferencesView;
   }
 
-  public Scope getCurrentScope() {
+  public DependencyViewerScope getCurrentScope() {
     return myScope;
   }
 
-  public void updateTargetsView(final Scope scope) {
+  public void updateTargetsView(final DependencyViewerScope scope) {
     myScope = scope;
     final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults());
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
@@ -108,11 +107,11 @@ public class DependenciesPanel extends JPanel {
     updateReferencesView(null);
   }
 
-  public void selectInTargetsView(IModule module) {
+  public void selectInTargetsView(SModule module) {
     myTargetsView.selectModule(module);
   }
 
-  public SearchResults updateReferencesView(final Scope scope) {
+  public SearchResults updateReferencesView(final DependencyViewerScope scope) {
     final SearchResults[] results = new SearchResults[1];
     if (scope == null) {
       myReferencesView.setContents(new SearchResults());
