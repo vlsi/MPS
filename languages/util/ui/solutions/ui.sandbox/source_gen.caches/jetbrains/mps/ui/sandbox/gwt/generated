@@ -3,9 +3,9 @@
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.resources.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.resources.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1w1o9tb6qqcisqktehgbk34xbcxxes2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5adz33y0tgg1k47pmhud90912h9x4de" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6hh98xngdbah9vcaahb3pvwhjzrl9ha" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6md5g2h2acbyqtqsfqzg1ljuryigg5c" />
   <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-bjm41joiinsaf4eq4vwvx8oxwy3uze2" />
   <dep model="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" hash="-3hy8xbe6sxoee2wdlsg77prx51kv3sq" />
   <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-b7lmv01t39t8rbzasrj8sh9nioryk45" />
