@@ -122,10 +122,10 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_21 = quotedNode_5;
+            quotedNode1_21.setProperty("isDeprecated", "false");
             quotedNode1_21.setProperty("isAbstract", "false");
             quotedNode1_21.setProperty("name", "paint");
             quotedNode1_21.setProperty("isFinal", "false");
-            quotedNode1_21.setProperty("isDeprecated", "false");
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_22 = quotedNode_6;

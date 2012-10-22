@@ -42,7 +42,7 @@ public class ActionDeclaration_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) {
       SNode baseActionType = IClassifier_Behavior.call_getThisType_7405920559687254782(SNodeOperations.getNode("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"));
       Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(baseActionType)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

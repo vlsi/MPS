@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.checkedDots.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior;
@@ -26,6 +26,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_2319519288049917875(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+      return false;
+    }
     SNode checkedDot = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", false, false);
     return checkedDot != null && SLinkOperations.getTarget(checkedDot, "operation", true) != null && jetbrains.mps.util.SNodeOperations.isAncestor(SLinkOperations.getTarget(checkedDot, "operation", true), _context.getNode());
   }
@@ -48,7 +51,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2319519288049960746(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false);
+    return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
   }
 
   public static boolean ifMacro_Condition_53796356308815904(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -17,7 +17,7 @@ public class SpecifyClass_Intention extends BaseIntention implements Intention {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall";
+    return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
   }
 
   public boolean isParameterized() {
@@ -36,11 +36,23 @@ public class SpecifyClass_Intention extends BaseIntention implements Intention {
     return "Specify Class";
   }
 
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+  }
+
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode classConcept = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode method = SNodeOperations.cast(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+    SNode classConcept = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode smc = SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null));
     SLinkOperations.setTarget(smc, "classConcept", classConcept, false);
-    SLinkOperations.setTarget(smc, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
+    SLinkOperations.setTarget(smc, "baseMethodDeclaration", method, false);
     List<SNode> args = SLinkOperations.getTargets(node, "actualArgument", true);
     for (SNode arg : args) {
       ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.detachNode(arg));

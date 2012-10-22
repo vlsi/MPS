@@ -3,7 +3,7 @@
   <unitInfo fileName="AsBuilderStatement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.AsBuilderStatement_BehaviorDescriptor" />
   <unitInfo fileName="AsTypeBuilder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.AsTypeBuilder_BehaviorDescriptor" />
   <unitInfo fileName="BaseSimpleBuilderDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BeanBuilder_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_BehaviorDescriptor" />
+  <unitInfo fileName="BeanBuilder_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_BehaviorDescriptor" />
   <unitInfo fileName="BeanPropertyBuilder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuilderContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BuilderContainer_BehaviorDescriptor" />

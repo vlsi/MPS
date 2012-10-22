@@ -16,27 +16,26 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
-public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
+public class LocalMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_qj9uei_a(editorContext, node);
+    return this.createCollection_2jlgx_a(editorContext, node);
   }
 
-  private EditorCell createCollection_qj9uei_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2jlgx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_qj9uei_a");
+    editorCell.setCellId("Collection_2jlgx_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     }
-    editorCell.addEditorCell(this.createComponent_qj9uei_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_qj9uei_b0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_qj9uei_c0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_2jlgx_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_2jlgx_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_2jlgx_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_qj9uei_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_2jlgx_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_typeArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
@@ -46,18 +45,18 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_qj9uei_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_2jlgx_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_actualArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createRefCell_qj9uei_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2jlgx_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("staticMethodDeclaration");
-    provider.setNoTargetText("<no staticMethodDeclaration>");
+    provider.setRole("method");
+    provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LocalStaticMethodCall_Editor._Inline_qj9uei_a1a());
+    provider.setAuxiliaryCellProvider(new LocalMethodCall_Editor._Inline_2jlgx_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -70,8 +69,8 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_qj9uei_a1a extends InlineCellProvider {
-    public _Inline_qj9uei_a1a() {
+  public static class _Inline_2jlgx_a1a extends InlineCellProvider {
+    public _Inline_2jlgx_a1a() {
       super();
     }
 
@@ -80,10 +79,10 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_qj9uei_a0b0(editorContext, node);
+      return this.createProperty_2jlgx_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_qj9uei_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2jlgx_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -91,10 +90,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -52,7 +52,7 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    List<SNode> rules = (List<SNode>) GoToRulesHelper.getRules(node, false);
+    List<SNode> rules = GoToRulesHelper.getRules(node, true);
     return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
         boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");

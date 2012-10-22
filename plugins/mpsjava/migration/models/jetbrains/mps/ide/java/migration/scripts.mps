@@ -18,10 +18,10 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4397798827966744636">
-      <property name="name" nameId="tpck.1169194664001" value="Mps25JavaApiMigration" />
-      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
       <property name="title" nameId="tp33.1177457669450" value="Java API Migration" />
+      <property name="name" nameId="tpck.1169194664001" value="Mps25JavaApiMigration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
   </roots>
   <root id="4397798827966744636">
@@ -108,10 +108,10 @@
                     </node>
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3735392993382316300" />
                     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3735392993382316301">
+                      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                       <property name="name" nameId="tpck.1169194664001" value="paint" />
                       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3735392993382316302" />
                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3735392993382316303" />
                       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3735392993382316304">

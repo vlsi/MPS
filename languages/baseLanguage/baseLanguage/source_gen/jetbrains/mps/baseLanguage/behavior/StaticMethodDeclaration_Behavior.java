@@ -37,7 +37,7 @@ public class StaticMethodDeclaration_Behavior {
   }
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuperNew_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+    List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuperNew_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
@@ -58,7 +58,7 @@ public class StaticMethodDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }

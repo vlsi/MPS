@@ -747,7 +747,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_IMethodCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_IOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_InstanceMethodCallOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_LocalInstanceMethodCall_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_LocalMethodCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_LocalPropertyReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_LongLiteral_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.typeof_NPEEqualsExpression_InferenceRule" />
@@ -3922,7 +3922,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.typeof_LocalInstanceMethodCall_InferenceRule" file="typeof_LocalInstanceMethodCall_InferenceRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.typeof_LocalMethodCall_InferenceRule" file="typeof_LocalMethodCall_InferenceRule.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />

@@ -347,14 +347,18 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
 
   private void replaceLocalMemberReferences() {
     // convert local static method calls to qualified static method calls 
-    for (SNode localStaticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode localStaticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      }
+    }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
       SNode staticMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       // some concepts, such as :eq: extract static methods 
-      if (ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, new String[]{})).contains(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false))) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, new String[]{})).contains(SNodeOperations.cast(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
         continue;
       }
       SLinkOperations.setTarget(staticMethodCall, "classConcept", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
@@ -364,7 +368,11 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       SNodeOperations.replaceWithAnother(localStaticMethodCall, staticMethodCall);
     }
     // convert local instance method calls to qualified instance method calls 
-    for (SNode localInstanceMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode localInstanceMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      }
+    }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }

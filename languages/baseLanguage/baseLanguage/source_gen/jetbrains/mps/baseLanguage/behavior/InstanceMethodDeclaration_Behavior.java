@@ -48,7 +48,7 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }

@@ -9,17 +9,20 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.Language;
-import java.util.ArrayList;
+import java.util.Collections;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -54,36 +57,46 @@ public class GoToRulesHelper {
     m.show(frame, x, y);
   }
 
-  public static List<SNode> getRules(final SNode conceptDeclaration, final boolean exactConcept) {
-    Language language = getDeclaringLanguage(conceptDeclaration);
-    List<SNode> rules = new ArrayList<SNode>();
-    List<SNode> overriding = new ArrayList<SNode>();
-    if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {
-      SModelDescriptor helginsDescriptor = LanguageAspect.TYPESYSTEM.get(language);
-      if (helginsDescriptor != null) {
-        Condition<SNode> cond = new Condition<SNode>() {
-          public boolean met(SNode n) {
-            return GoToRulesHelper.isApplicable(n, conceptDeclaration, false);
-          }
-        };
-        Iterable<SNode> iter = new ConditionalIterable<SNode>(helginsDescriptor.getSModel().roots(), cond);
-        for (SNode node : iter) {
-          rules.add(node);
-          SNode inferenceRule = SNodeOperations.as(node, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
-          if ((inferenceRule != null) && SPropertyOperations.getBoolean(inferenceRule, "overrides")) {
-            overriding.add(inferenceRule);
-          }
-        }
-      }
+  public static List<SNode> getRules(final SNode concept, final boolean exactConcept) {
+    Language language = getDeclaringLanguage(concept);
+    if (language == null) {
+      return Collections.emptyList();
     }
+    SModel typesystemModel = check_l17hf5_a0c0b(LanguageAspect.TYPESYSTEM.get(language));
+    if (typesystemModel == null) {
+      return Collections.emptyList();
+    }
+
+    // todo: populate rules from other typesystem models! 
+    List<SNode> rules = ListSequence.fromList(SModelOperations.getRoots(typesystemModel, "jetbrains.mps.lang.typesystem.structure.AbstractRule")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode node) {
+        return isApplicable(node, concept, exactConcept);
+      }
+    }).toListSequence();
+
+    List<SNode> overriding = ListSequence.fromList(rules).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "overrides");
+      }
+    }).toListSequence();
+
     for (SNode overridingRule : overriding) {
-      SNode subConcept = getApplicableConcept(SLinkOperations.getTarget(overridingRule, "applicableNode", true));
-      for (SNode ruleNode : new ArrayList<SNode>(rules)) {
-        if (SNodeOperations.getConceptDeclaration(ruleNode) == SNodeOperations.getConceptDeclaration(overridingRule) && isApplicable(ruleNode, subConcept, true)) {
-          rules.remove(ruleNode);
+      final SNode subConcept = getApplicableConcept(SLinkOperations.getTarget(overridingRule, "applicableNode", true));
+      ListSequence.fromList(rules).removeWhere(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return getApplicableConcept(it) == subConcept;
         }
-      }
+      });
     }
+
     return rules;
   }
 
@@ -95,19 +108,18 @@ public class GoToRulesHelper {
     return ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
   }
 
-  private static boolean isApplicable(SNode ruleNode, SNode conceptDeclaration, boolean skipExact) {
-    SNode rule = SNodeOperations.as(ruleNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule");
-    if ((rule == null) || (conceptDeclaration == null)) {
+  private static boolean isApplicable(SNode rule, SNode concept, boolean exactConcept) {
+    if ((rule == null) || (concept == null)) {
       return false;
     }
     SNode applicableConcept = getApplicableConcept(SLinkOperations.getTarget(rule, "applicableNode", true));
     if (applicableConcept == null) {
       return false;
     }
-    if (skipExact && conceptDeclaration == applicableConcept) {
-      return false;
+    if (exactConcept) {
+      return concept == applicableConcept;
     }
-    return SModelUtil.isAssignableConcept(conceptDeclaration, applicableConcept);
+    return SModelUtil.isAssignableConcept(concept, applicableConcept);
   }
 
   private static SNode getApplicableConcept(SNode applicableNode) {
@@ -119,6 +131,13 @@ public class GoToRulesHelper {
     } else {
       return null;
     }
+  }
+
+  private static SModel check_l17hf5_a0c0b(DefaultSModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 
   private static class MyMenu extends JPopupMenu {

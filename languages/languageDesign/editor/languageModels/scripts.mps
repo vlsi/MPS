@@ -20,26 +20,26 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
-      <property name="name" nameId="tpck.1169194664001" value="EditorContext" />
       <property name="title" nameId="tp33.1177457669450" value="To Editor API usages" />
+      <property name="name" nameId="tpck.1169194664001" value="EditorContext" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="3_0" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="3.0" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="113254018726437116">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="3_0" />
       <property name="name" nameId="tpck.1169194664001" value="EditorMigration30" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="3_0" />
     </node>
   </roots>
   <root id="1234198385755">

@@ -139,10 +139,14 @@ public class InlineMethodRefactoring {
 
   private void replaceLocalStaticMethodCalls(SNode body) {
     SNode c = SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
+    for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      }
+    }).toListSequence()) {
       SNode newCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newCall, "classConcept", c, false);
-      SLinkOperations.setTarget(newCall, "baseMethodDeclaration", SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), false);
+      SLinkOperations.setTarget(newCall, "baseMethodDeclaration", SNodeOperations.cast(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SNodeOperations.replaceWithAnother(localCall, newCall);
     }
   }

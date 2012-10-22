@@ -27,7 +27,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
   }
 
   public void execute(SNode node) {
-    if (SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall") || SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall")) {
+    if (SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall") || (SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
+      // looks like wrong code (this part: methodCall.ancestor<concept = ClassConcept>) 
       SNode classConcept = (SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall") ?
         SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) :
         SNodeOperations.getAncestor(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)

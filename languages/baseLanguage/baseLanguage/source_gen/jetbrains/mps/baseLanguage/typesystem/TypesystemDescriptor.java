@@ -305,7 +305,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_LocalInstanceMethodCall_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_LocalMethodCall_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

@@ -18,6 +18,10 @@ public abstract class ConstructorInvocationStatement_BehaviorDescriptor extends 
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
+  }
+
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }

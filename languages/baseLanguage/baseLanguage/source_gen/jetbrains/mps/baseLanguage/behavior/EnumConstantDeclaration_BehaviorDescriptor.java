@@ -4,14 +4,18 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor {
   public EnumConstantDeclaration_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
   }
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {

@@ -7,21 +7,24 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_LocalStaticMethodCall_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> containers = SNodeOperations.getAncestors(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
+  public void applyRule(final SNode localMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(localMethodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+      return;
+    }
+    List<SNode> containers = SNodeOperations.getAncestors(localMethodCall, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode classConcept : containers) {
       List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(classConcept).getClassifiers();
@@ -29,14 +32,14 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);
       }
     }
-    if (!(SetSequence.fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(call, "baseMethodDeclaration", false))))) {
+    if (!(SetSequence.fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(localMethodCall, "baseMethodDeclaration", false))))) {
       // todo: should be disabled? 
       // <node> 
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall";
+    return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

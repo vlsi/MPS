@@ -12,10 +12,10 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="3239565862706583464">
-      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
-      <property name="name" nameId="tpck.1169194664001" value="RemoveKeystrokes" />
       <property name="title" nameId="tp33.1177457669450" value="remove keystrokes from refactorings" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveKeystrokes" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
   </roots>
   <root id="3239565862706583464">

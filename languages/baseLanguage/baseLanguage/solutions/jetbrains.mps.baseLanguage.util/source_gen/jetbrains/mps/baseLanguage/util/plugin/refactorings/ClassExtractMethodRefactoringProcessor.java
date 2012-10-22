@@ -19,7 +19,7 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
 
   public SNode createMethodCall(SNode declaration, List<SNode> parameters) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
       SLinkOperations.setTarget(result, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
       ListSequence.fromList(SLinkOperations.getTargets(result, "actualArgument", true)).addSequence(ListSequence.fromList(parameters));
       return result;
