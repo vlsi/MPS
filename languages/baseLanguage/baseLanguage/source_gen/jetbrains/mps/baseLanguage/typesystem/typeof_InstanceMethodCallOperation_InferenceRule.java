@@ -181,7 +181,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
             }
           }
         }
-      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4107091686347739849", true, false);
+      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4107091686347739849", false, false);
     }
   }
 

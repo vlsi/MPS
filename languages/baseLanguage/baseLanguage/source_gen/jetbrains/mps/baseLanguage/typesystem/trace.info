@@ -10096,7 +10096,7 @@
     <nodeInfo nodeId="4837286298389112177" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="72" startPosition="41" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4660288602099522911" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="149" startPosition="0" endLine="182" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="69" startPosition="59" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="68" startPosition="97" endLine="184" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="68" startPosition="97" endLine="184" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="66" startPosition="5" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1204056354664" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="38" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1204056354664" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="36" startPosition="61" endLine="36" endPosition="61" />
@@ -10264,7 +10264,7 @@
       <varInfo nodeId="4107091686347779169" varName="typel" />
     </scopeInfo>
     <scopeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="69" startPosition="59" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="67" startPosition="5" endLine="184" endPosition="126">
+    <scopeInfo nodeId="4107091686347739849" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="67" startPosition="5" endLine="184" endPosition="127">
       <varInfo nodeId="4107091686347739849" varName="IT" />
     </scopeInfo>
     <scopeInfo nodeId="1204056354665" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="39" startPosition="123" endLine="185" endPosition="5">
