@@ -20311,20 +20311,20 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="418677511065471873">
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="418677511065471874">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="418677511065471875">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="418677511065471876">
-                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="418677511065471877">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1939066678961135276">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1939066678961204351">
+                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1939066678961135277">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="418677511065471871" resolveInfo="newCall" />
                     </node>
-                    <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="418677511065471878">
-                      <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="418677511065471879">
-                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="418677511065471880">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1939066678961204354">
+                      <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1939066678961204356">
+                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1939066678961204357">
                           <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
-                          <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="418677511065471881">
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="418677511065471946">
+                          <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1939066678961204380">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1939066678961204359" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1939066678961204385">
                               <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5142438244426403031" resolveInfo="myReplacing" />
                             </node>
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="418677511065471883" />
                           </node>
                         </node>
                       </node>

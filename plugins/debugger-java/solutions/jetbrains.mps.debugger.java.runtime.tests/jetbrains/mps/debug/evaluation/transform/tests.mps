@@ -869,12 +869,11 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="607759879653668584">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="607759879653673818">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="607759879653673819">
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="607759879653673820">
-                  <property name="value" nameId="tpee.1068580320021" value="0" />
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="607759879653673821">
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="607759879653673822">
+            <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1939066678961233651">
+              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1939066678961233653">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1939066678961233656">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="1939066678961233657">
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1939066678961233659">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607759879653673696" resolveInfo="arguments" />
                     </node>
                   </node>
@@ -1100,12 +1099,11 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="607759879653674989">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="607759879653674990">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="607759879653675095">
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="607759879653675097">
-                  <property name="value" nameId="tpee.1068580320021" value="0" />
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="607759879653675098">
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="607759879653675100">
+            <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1939066678961233663">
+              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1939066678961233665">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1939066678961233666">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="1939066678961233667">
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1939066678961233669">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607759879653674979" resolveInfo="arguments" />
                     </node>
                   </node>

@@ -2380,11 +2380,11 @@
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dhz7.1173268376299571719" resolveInfo="StubRefUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dhz7.1173268376299572253" resolveInfo="replaceRefs" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="1865251034067724851" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1865251034067724853">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1865251034067728829">
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1865251034067728830">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1939066678961226864">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1939066678961226866">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1939066678961226867">
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1865251034067728832">
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1939066678961226869">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1865251034067724828" resolveInfo="method" />
                     </node>
                   </node>
@@ -2516,11 +2516,11 @@
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dhz7.1173268376299571719" resolveInfo="StubRefUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dhz7.1173268376299572253" resolveInfo="replaceRefs" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="1865251034067728859" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1865251034067728860">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1865251034067728861">
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1865251034067728862">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1939066678961226855">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1939066678961226857">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1939066678961226858">
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1865251034067728863">
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1939066678961226860">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1865251034067728836" resolveInfo="method" />
                     </node>
                   </node>
