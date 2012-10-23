@@ -14,6 +14,9 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
+import java.awt.Component;
+import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class CommitUtil {
   public static void refactorRenameNode(final IOperationContext context, final SNode node, final String newName) {
@@ -71,10 +74,17 @@ public class CommitUtil {
     if (oldValue.equals(newValue)) {
       return true;
     }
-    int res = JOptionPane.showConfirmDialog(editorContext.getEditorComponent().getEditorComponent(), "Renaming " + "this element" + " can break your model. It is advised to use refactoring for this. Execute refactoring?", "Rename " + "element", JOptionPane.YES_NO_CANCEL_OPTION);
+    int res = JOptionPane.showConfirmDialog(getFrame(editorContext), "Renaming " + "this element" + " can break your model. It is advised to use refactoring for this. Execute refactoring?", "Rename " + "element", JOptionPane.YES_NO_CANCEL_OPTION);
     if (res == JOptionPane.YES_OPTION) {
       refactorRenameNode(editorContext.getOperationContext(), node, newValue);
     }
     return (res != JOptionPane.NO_OPTION && res != JOptionPane.CLOSED_OPTION);
+  }
+
+  private static Component getFrame(EditorContext editorContext) {
+    if (editorContext.getOperationContext() == null) {
+      return null;
+    }
+    return WindowManager.getInstance().getFrame(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()));
   }
 }
