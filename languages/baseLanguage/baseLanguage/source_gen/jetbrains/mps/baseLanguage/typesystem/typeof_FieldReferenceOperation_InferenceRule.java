@@ -43,7 +43,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       typeCheckingContext.whenConcrete(OT, new Runnable() {
         public void run() {
           SNode fieldType = SLinkOperations.getTarget(fieldDecl, "type", true);
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType") && SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
             Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
             IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
             fieldType = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
