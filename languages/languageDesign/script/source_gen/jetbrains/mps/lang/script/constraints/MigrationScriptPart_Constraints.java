@@ -8,8 +8,4 @@ public class MigrationScriptPart_Constraints extends BaseConstraintsDescriptor {
   public MigrationScriptPart_Constraints() {
     super("jetbrains.mps.lang.script.structure.MigrationScriptPart");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart";
-  }
 }
