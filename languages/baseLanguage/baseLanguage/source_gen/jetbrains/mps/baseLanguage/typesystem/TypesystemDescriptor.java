@@ -693,6 +693,26 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnknownConsCall_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnknownDotCall_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnknownLocalCall_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnknownNameRef_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnknownNew_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_UnusedPrivateMethods_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -978,7 +998,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a532a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0b0a0a0a042a0().createNode();
         }
       };
       this.myVariableConverters.add(converter);
@@ -1011,14 +1031,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0jj0a().createNode();
+          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0oj0a().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a342a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a842a0().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1434,8 +1454,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0b0a0a0a532a0 {
-    public QuotationClass_3ist9o_a0a0b0a0a0a532a0() {
+  public static class QuotationClass_3ist9o_a0a0b0a0a0a042a0 {
+    public QuotationClass_3ist9o_a0a0b0a0a0a042a0() {
     }
 
     public SNode createNode() {
@@ -1452,8 +1472,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a342a0 {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a342a0() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a842a0 {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a842a0() {
     }
 
     public SNode createNode() {
@@ -1469,8 +1489,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0jj0a {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a0jj0a() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0oj0a {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a0oj0a() {
     }
 
     public SNode createNode() {
