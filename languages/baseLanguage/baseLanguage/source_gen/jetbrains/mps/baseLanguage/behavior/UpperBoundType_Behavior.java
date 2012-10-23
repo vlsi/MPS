@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
+import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -40,15 +41,15 @@ public class UpperBoundType_Behavior {
     return false;
   }
 
-  public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+  public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-      SNode expBound = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+      SNode expBound = IGenericType_Behavior.call_expandGenerics_4122274986016348613(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
       if (expBound == SLinkOperations.getTarget(thisNode, "bound", true)) {
         return thisNode;
       }
       return new UpperBoundType_Behavior.QuotationClass_cv9ggd_a0c0a0f().createNode(expBound);
     }
-    return IGenericType_Behavior.callSuperNew_expandGenerics_4107091686347199582(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions);
+    return IGenericType_Behavior.callSuperNew_expandGenerics_4122274986016348613(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions, expTrace);
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {

@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -69,14 +71,19 @@ public class TypeVariableReference_Behavior {
     }
   }
 
-  public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+  public static SNode virtual_expandGenerics_4122274986016348613(final SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
       SNode exp = SNodeOperations.copyNode(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false)));
-      if (MatchingUtil.matchNodes(thisNode, exp)) {
+      if (ListSequence.fromList(expTrace).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return MatchingUtil.matchNodes(thisNode, it);
+        }
+      })) {
         return thisNode;
       }
+      ListSequence.fromList(expTrace).addElement(thisNode);
       if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        return IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+        return IGenericType_Behavior.call_expandGenerics_4122274986016348613(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
       }
       return exp;
     }
