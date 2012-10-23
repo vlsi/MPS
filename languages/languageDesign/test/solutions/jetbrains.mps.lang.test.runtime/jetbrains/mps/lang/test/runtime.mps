@@ -4890,7 +4890,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpe3.Fail" typeId="tpe3.1172017222794" id="7107617965856385867">
                   <node role="message" roleId="tpe3.1172075534298" type="tpe3.Message" typeId="tpe3.1172073500303" id="7107617965856385868">
                     <node role="message" roleId="tpe3.1172073511101" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7107617965856385869">
-                      <property name="value" nameId="tpee.1070475926801" value="MPS Project was not specfied in test class, no currently open project was not found" />
+                      <property name="value" nameId="tpee.1070475926801" value="MPS Project was not specified in test class, no currently open project were found." />
                     </node>
                   </node>
                 </node>

@@ -10,13 +10,14 @@ import java.lang.reflect.Method;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.lang.reflect.Modifier;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class MPSFacetConfiguration {
@@ -37,15 +38,15 @@ public class MPSFacetConfiguration {
         MapSequence.fromMap(props).put(mth.getName().substring(3), mth);
       }
     }
-    for (Element ch : AttributeUtils.elementChildren(config, "option")) {
+    for (Element ch : XmlUtil.children(config, "option")) {
       Method pr = MapSequence.fromMap(props).get(NameUtil.capitalize(ch.getAttributeValue("name")));
       if (pr != null) {
         Object value;
         if (Set.class.isAssignableFrom(pr.getParameterTypes()[0])) {
-          value = readModelRoots(ListSequence.fromList(AttributeUtils.elementChildren(ch, "set")).first());
+          value = readModelRoots(XmlUtil.first(ch, "set"));
         } else
         if (pr.getParameterTypes()[0].isArray()) {
-          value = readArray(ListSequence.fromList(AttributeUtils.elementChildren(ch, "array")).first());
+          value = readArray(XmlUtil.first(ch, "array"));
         } else if (pr.getParameterTypes()[0].isPrimitive()) {
           value = Boolean.valueOf(ch.getAttributeValue("value"));
         } else {
@@ -71,7 +72,7 @@ public class MPSFacetConfiguration {
 
   private Set<ModelRoot> readModelRoots(Element array) {
     Set<ModelRoot> res = SetSequence.fromSet(new HashSet<ModelRoot>());
-    for (Element o : AttributeUtils.elementChildren(array, "ModelRoot")) {
+    for (Element o : XmlUtil.children(array, "ModelRoot")) {
       String path = getPath(o);
       if (path != null) {
         SetSequence.fromSet(res).addElement(new ModelRoot(path, null));
@@ -81,7 +82,7 @@ public class MPSFacetConfiguration {
   }
 
   private String getPath(Element modelRootElement) {
-    for (Element optionChild : ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "option"))) {
+    for (Element optionChild : Sequence.fromIterable(XmlUtil.children(modelRootElement, "option"))) {
       if ("path".equals(optionChild.getAttributeValue("name")) && optionChild.getAttributeValue("value") != null) {
         return optionChild.getAttributeValue("value");
       }
@@ -91,7 +92,7 @@ public class MPSFacetConfiguration {
 
   private String[] readArray(Element array) {
     List<String> res = ListSequence.fromList(new ArrayList<String>());
-    for (Element o : AttributeUtils.elementChildren(array, "option")) {
+    for (Element o : XmlUtil.children(array, "option")) {
       ListSequence.fromList(res).addElement(o.getAttributeValue("value"));
     }
     return ListSequence.fromList(res).toGenericArray(String.class);

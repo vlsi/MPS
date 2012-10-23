@@ -30,8 +30,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.MPSExtentions;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
@@ -215,14 +214,13 @@ public class JavaCompiler {
   private boolean createModels() {
     // first check if it is possible 
     for (String packageFqName : SetSequence.fromSet(myModelsToCreate)) {
-      if (getRootToCreateModel(SModelFqName.fromString(packageFqName)) == null) {
+      if (getRootToCreateModel(packageFqName) == null) {
         LOG.error("Cannot create model " + packageFqName + " in module " + myModule.getModuleFqName());
         return false;
       }
     }
     for (String packageFqName : myModelsToCreate) {
-      SModelFqName modelFqName = SModelFqName.fromString(packageFqName);
-      SModelDescriptor modelDescr = myModule.createModel(modelFqName, getRootToCreateModel(modelFqName), null);
+      SModelDescriptor modelDescr = myModule.createModel(packageFqName, getRootToCreateModel(packageFqName), null);
       assert modelDescr != null;
       myPackageFQNamesToModels.put(packageFqName, modelDescr.getSModel());
     }
@@ -230,9 +228,9 @@ public class JavaCompiler {
   }
 
   @Nullable
-  private SModelRoot getRootToCreateModel(SModelFqName modelFqName) {
-    for (SModelRoot root : CollectionSequence.fromCollection(myModule.getSModelRoots())) {
-      if (root.getManager().canCreateModel(myModule, root.getModelRoot(), modelFqName)) {
+  private ModelRoot getRootToCreateModel(String modelName) {
+    for (ModelRoot root : Sequence.fromIterable(myModule.getModelRoots())) {
+      if (root.canCreateModel(modelName)) {
         return root;
       }
     }
@@ -327,14 +325,14 @@ public class JavaCompiler {
 
   private boolean addClassPathsAndBuildAst() {
     boolean hasErrors = false;
-    Set<String> fqNames = new LinkedHashSet<String>();
+    Set<String> fqNames = SetSequence.fromSet(new LinkedHashSet<String>());
     for (CompilationUnitDeclaration decl : myCompilationUnitDeclarations) {
       if (decl.hasErrors()) {
         hasErrors = true;
         for (CategorizedProblem problem : decl.compilationResult().getErrors()) {
           int id = problem.getID();
           if (id == IProblem.ImportNotFound || id == IProblem.IsClassPathCorrect) {
-            fqNames.add(problem.getArguments()[0]);
+            SetSequence.fromSet(fqNames).addElement(problem.getArguments()[0]);
           } else {
             String message = problem.getMessage();
             LOG.warning(message + " (line: " + problem.getSourceLineNumber() + ")");
@@ -343,7 +341,7 @@ public class JavaCompiler {
       }
     }
     boolean buildAstNow = true;
-    if (!(fqNames.isEmpty()) && myContext != null) {
+    if (!(SetSequence.fromSet(fqNames).isEmpty()) && myContext != null) {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
         ClassPathDialog dialog = new ClassPathDialog(myProject, mySourceDirs, ListSequence.fromListWithValues(new ArrayList<String>(), fqNames));

@@ -43,7 +43,7 @@ public class AddTypeParameters_Intention extends BaseIntention implements Intent
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -6,17 +6,18 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class UnmarkLocalStaticMethodCallAsThreadSafe_Intention extends BaseIntention implements Intention {
   public UnmarkLocalStaticMethodCallAsThreadSafe_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall";
+    return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
   }
 
   public boolean isParameterized() {
@@ -46,6 +47,9 @@ public class UnmarkLocalStaticMethodCallAsThreadSafe_Intention extends BaseInten
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+      return false;
+    }
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null;
   }
 

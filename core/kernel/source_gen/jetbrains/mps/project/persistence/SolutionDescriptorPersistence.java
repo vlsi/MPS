@@ -11,16 +11,19 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.OutputStream;
 
 public class SolutionDescriptorPersistence {
+  private static final String SOURCE_PATH = "sourcePath";
+  private static final String SOURCE_PATH_SOURCE = "source";
+  private static final String COMPILE_IN_MPS = "compileInMPS";
   protected static Log log = LogFactory.getLog(SolutionDescriptorPersistence.class);
 
   private SolutionDescriptorPersistence() {
@@ -30,54 +33,57 @@ public class SolutionDescriptorPersistence {
     SolutionDescriptor descriptor;
     try {
       Document document = JDOMUtil.loadDocument(file);
-      Element rootElement = document.getRootElement();
-      final Element solutionElement = (Element) rootElement;
+      final Element rootElement = document.getRootElement();
 
-      assert solutionElement != null;
+      assert rootElement != null;
 
       descriptor = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
         public SolutionDescriptor invoke() {
-          final SolutionDescriptor result_8ckma3_a0a0g0b0a = new SolutionDescriptor();
-          final String result_8ckma3_a0a0a0g0b0a = solutionElement.getAttributeValue("name");
-          result_8ckma3_a0a0g0b0a.setNamespace(result_8ckma3_a0a0a0g0b0a);
+          final SolutionDescriptor result_8ckma3_a0a0f0b0a = new SolutionDescriptor();
+          final String result_8ckma3_a0a0a0f0b0a = rootElement.getAttributeValue("name");
+          result_8ckma3_a0a0f0b0a.setNamespace(result_8ckma3_a0a0a0f0b0a);
 
-          if (solutionElement.getAttributeValue("uuid") != null) {
-            final String result_8ckma3_a0a2a0a0g0b0a = solutionElement.getAttributeValue("uuid");
-            result_8ckma3_a0a0g0b0a.setUUID(result_8ckma3_a0a2a0a0g0b0a);
-          }
-          if (AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("pluginKind"), "") != null && AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("pluginKind"), "").length() > 0) {
-            final SolutionKind result_8ckma3_a0a3a0a0g0b0a = SolutionKind.valueOf(AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("pluginKind"), ""));
-            result_8ckma3_a0a0g0b0a.setKind(result_8ckma3_a0a3a0a0g0b0a);
+          if (rootElement.getAttributeValue("uuid") != null) {
+            final String result_8ckma3_a0a2a0a0f0b0a = rootElement.getAttributeValue("uuid");
+            result_8ckma3_a0a0f0b0a.setUUID(result_8ckma3_a0a2a0a0f0b0a);
           }
 
-          final boolean result_8ckma3_a5a0a0g0b0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
-          result_8ckma3_a0a0g0b0a.setCompileInMPS(result_8ckma3_a5a0a0g0b0a);
-
-          if (isNotEmpty_8ckma3_a0k0a0a0a0g0b0a(solutionElement.getAttributeValue("generatorOutputPath"))) {
-            final String result_8ckma3_a0a7a0a0g0b0a = macroHelper.expandPath(solutionElement.getAttributeValue("generatorOutputPath"));
-            result_8ckma3_a0a0g0b0a.setOutputPath(result_8ckma3_a0a7a0a0g0b0a);
+          String pluginKind = rootElement.getAttributeValue("pluginKind");
+          if (pluginKind != null && pluginKind.length() > 0) {
+            final SolutionKind result_8ckma3_a0a5a0a0f0b0a = SolutionKind.valueOf(pluginKind);
+            result_8ckma3_a0a0f0b0a.setKind(result_8ckma3_a0a5a0a0f0b0a);
           }
 
-          result_8ckma3_a0a0g0b0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), macroHelper));
+          final boolean result_8ckma3_a7a0a0f0b0a = XmlUtil.booleanWithDefault(rootElement, COMPILE_IN_MPS, false);
+          result_8ckma3_a0a0f0b0a.setCompileInMPS(result_8ckma3_a7a0a0f0b0a);
 
-          if (ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
-            List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), macroHelper);
-            result_8ckma3_a0a0g0b0a.getStubModelEntries().addAll(roots);
+          String genOutput = rootElement.getAttributeValue("generatorOutputPath");
+          if ((genOutput != null && genOutput.length() > 0)) {
+            final String result_8ckma3_a0a01a0a0f0b0a = macroHelper.expandPath(genOutput);
+            result_8ckma3_a0a0f0b0a.setOutputPath(result_8ckma3_a0a01a0a0f0b0a);
           }
 
-          ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0b0a, solutionElement);
-          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "runtimeClassPath")).first(), "entry")))) {
+          result_8ckma3_a0a0f0b0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), macroHelper));
+
+          Element stubModelEntries = XmlUtil.first(rootElement, "stubModelEntries");
+          if (stubModelEntries != null) {
+            List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
+            result_8ckma3_a0a0f0b0a.getStubModelEntries().addAll(roots);
+          }
+
+          ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0f0b0a, rootElement);
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "runtimeClassPath"), "entry")))) {
             // runtime classpath left for compatibility 
             ModelRoot entry = new ModelRoot();
             entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
             entry.setManager(LanguageID.JAVA_MANAGER);
-            result_8ckma3_a0a0g0b0a.getStubModelEntries().add(entry);
+            result_8ckma3_a0a0f0b0a.getStubModelEntries().add(entry);
           }
 
-          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "sourcePath")).first(), "source"))) {
-            result_8ckma3_a0a0g0b0a.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
+          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, SOURCE_PATH), SOURCE_PATH_SOURCE))) {
+            result_8ckma3_a0a0f0b0a.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
-          return result_8ckma3_a0a0g0b0a;
+          return result_8ckma3_a0a0f0b0a;
         }
       }.invoke();
     } catch (Exception e) {
@@ -87,7 +93,7 @@ public class SolutionDescriptorPersistence {
     return descriptor;
   }
 
-  public static void saveSolutionDescriptor(IFile file, final SolutionDescriptor descriptor, final MacroHelper macroHelper) {
+  public static void saveSolutionDescriptor(IFile file, SolutionDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
         log.error("Can't save " + file.getPath());
@@ -95,56 +101,42 @@ public class SolutionDescriptorPersistence {
       return;
     }
 
-    Element solElem = new _FunctionTypes._return_P0_E0<Element>() {
-      public Element invoke() {
-        final Element result_8ckma3_a0a0c0b = new Element("solution");
-        if (descriptor.getNamespace() != null) {
-          final String result_8ckma3_a0a0a0a0c0b = descriptor.getNamespace();
-          result_8ckma3_a0a0c0b.setAttribute("name", "" + result_8ckma3_a0a0a0a0c0b);
-        }
-        if (descriptor.getUUID() != null) {
-          final String result_8ckma3_a0a1a0a0c0b = descriptor.getUUID();
-          result_8ckma3_a0a0c0b.setAttribute("uuid", "" + result_8ckma3_a0a1a0a0c0b);
-        }
-        if (descriptor.getKind() != SolutionKind.NONE) {
-          final String result_8ckma3_a0a2a0a0c0b = descriptor.getKind().name();
-          result_8ckma3_a0a0c0b.setAttribute("pluginKind", "" + result_8ckma3_a0a2a0a0c0b);
-        }
-        final boolean result_8ckma3_a3a0a0c0b = descriptor.getCompileInMPS();
-        result_8ckma3_a0a0c0b.setAttribute("compileInMPS", "" + result_8ckma3_a3a0a0c0b);
-        if (descriptor.getOutputPath() != null) {
-          final String result_8ckma3_a0a4a0a0c0b = macroHelper.shrinkPath(descriptor.getOutputPath());
-          result_8ckma3_a0a0c0b.setAttribute("generatorOutputPath", "" + result_8ckma3_a0a4a0a0c0b);
-        }
+    Element result = new Element("solution");
+    if (descriptor.getNamespace() != null) {
+      result.setAttribute("name", descriptor.getNamespace());
+    }
+    if (descriptor.getUUID() != null) {
+      result.setAttribute("uuid", descriptor.getUUID());
+    }
+    if (descriptor.getKind() != SolutionKind.NONE) {
+      result.setAttribute("pluginKind", descriptor.getKind().name());
+    }
+    result.setAttribute(COMPILE_IN_MPS, Boolean.toString(descriptor.getCompileInMPS()));
+    if (descriptor.getOutputPath() != null) {
+      result.setAttribute("generatorOutputPath", macroHelper.shrinkPath(descriptor.getOutputPath()));
+    }
 
-        final Element result_8ckma3_a6a0a0c0b = new Element("models");
-        ModuleDescriptorPersistence.saveModelRoots(result_8ckma3_a6a0a0c0b, descriptor.getModelRoots(), macroHelper);
-        result_8ckma3_a0a0c0b.addContent(result_8ckma3_a6a0a0c0b);
+    Element models = new Element("models");
+    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRoots(), macroHelper);
+    result.addContent(models);
 
-        if (!(descriptor.getStubModelEntries().isEmpty())) {
-          final Element result_8ckma3_a0a8a0a0c0b = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_8ckma3_a0a8a0a0c0b, descriptor.getStubModelEntries(), macroHelper);
-          result_8ckma3_a0a0c0b.addContent(result_8ckma3_a0a8a0a0c0b);
-        }
+    if (!(descriptor.getStubModelEntries().isEmpty())) {
+      Element stubModelEntries = new Element("stubModelEntries");
+      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, descriptor.getStubModelEntries(), macroHelper);
+      result.addContent(stubModelEntries);
+    }
 
+    Element sourcePath = new Element(SOURCE_PATH);
+    for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
+      XmlUtil.tagWithAttribute(sourcePath, SOURCE_PATH_SOURCE, "path", macroHelper.shrinkPath(p));
+    }
+    result.addContent(sourcePath);
 
-        final Element result_8ckma3_a11a0a0c0b = new Element("sourcePath");
-        for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
-          final Element result_8ckma3_a0a0a11a0a0c0b = new Element("source");
-          final String result_8ckma3_a0a0a0a11a0a0c0b = macroHelper.shrinkPath(p);
-          result_8ckma3_a0a0a11a0a0c0b.setAttribute("path", "" + result_8ckma3_a0a0a0a11a0a0c0b);
-          result_8ckma3_a11a0a0c0b.addContent(result_8ckma3_a0a0a11a0a0c0b);
-        }
-        result_8ckma3_a0a0c0b.addContent(result_8ckma3_a11a0a0c0b);
-
-        ModuleDescriptorPersistence.saveDependencies(result_8ckma3_a0a0c0b, descriptor);
-        return result_8ckma3_a0a0c0b;
-      }
-    }.invoke();
+    ModuleDescriptorPersistence.saveDependencies(result, descriptor);
 
     try {
       OutputStream os = file.openOutputStream();
-      JDOMUtil.writeDocument(new Document(solElem), os);
+      JDOMUtil.writeDocument(new Document(result), os);
     } catch (Exception e) {
       if (log.isErrorEnabled()) {
         log.error("", e);
@@ -152,9 +144,5 @@ public class SolutionDescriptorPersistence {
     }
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
-  }
-
-  public static boolean isNotEmpty_8ckma3_a0k0a0a0a0g0b0a(String str) {
-    return str != null && str.length() > 0;
   }
 }

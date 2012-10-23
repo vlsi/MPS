@@ -21,10 +21,13 @@ import java.io.OutputStream;
 
 public interface MultiStreamDataSource extends DataSource {
 
+  String getLocation();
+
   Iterable<String> getAvailableStreams();
 
   InputStream openInputStream(String name) throws IOException;
 
   OutputStream openOutputStream(String name) throws IOException;
 
+  void delete(String name) throws IOException;
 }

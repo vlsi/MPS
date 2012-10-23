@@ -34,6 +34,7 @@
     <dependency reexport="false">39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.build.tests)</dependency>
     <dependency reexport="false">70b17f0c-ff72-43e8-9468-eda69efb2b71(jetbrains.mps.debugger.java.runtime.tests)</dependency>
     <dependency reexport="false">7b15492d-a198-43e2-91e3-4a7e9116ce2b(jetbrains.mps.execution.impl.tests)</dependency>
+    <dependency reexport="false">6cbb1052-4510-427f-926c-3476bfd7e801(jetbrains.mps.execution.impl.tests.sandbox)</dependency>
     <dependency reexport="false">50fc24f9-2bc9-4702-84ed-7f00cd088aca(jetbrains.mps.generator.tests)</dependency>
     <dependency reexport="false">1cf9ab03-28e6-49cc-b765-555cd6dcfc28(jetbrains.mps.graphLayout.test)</dependency>
     <dependency reexport="false">c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)</dependency>
@@ -46,6 +47,7 @@
     <dependency reexport="false">982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)</dependency>
     <dependency reexport="false">d51c8d2d-7b6e-4d93-9eee-b55b04c5886b(jetbrains.mps.lang.smodel.unittest)</dependency>
     <dependency reexport="false">8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</dependency>
+    <dependency reexport="false">ab46529e-de2c-48b6-80f0-9ec2d78b7df3(jetbrains.mps.lang.test.sandbox)</dependency>
     <dependency reexport="false">f5b70e84-5208-49eb-a417-d53c9f82bdf2(jetbrains.mps.lang.traceable.operations.test)</dependency>
     <dependency reexport="false">20351dc3-a2df-46f5-b667-fc9adab1f1c9(jetbrains.mps.make)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>

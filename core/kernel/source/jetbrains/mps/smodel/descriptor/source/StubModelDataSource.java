@@ -17,13 +17,13 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -32,7 +32,7 @@ import java.util.Set;
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
   private final Set<String> myStubPaths = new THashSet<String>();
 
-  public StubModelDataSource(ModuleReference origin) {
+  public StubModelDataSource(SModuleReference origin) {
     super(origin);
   }
 

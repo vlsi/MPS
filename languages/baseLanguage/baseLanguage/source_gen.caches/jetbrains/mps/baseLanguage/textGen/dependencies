@@ -748,12 +748,7 @@
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.LocalInstanceMethodCall_TextGen" file="LocalInstanceMethodCall_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.textGen.LocalStaticMethodCall_TextGen" file="LocalStaticMethodCall_TextGen.java">
+  <dependency className="jetbrains.mps.baseLanguage.textGen.LocalMethodCall_TextGen" file="LocalMethodCall_TextGen.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />

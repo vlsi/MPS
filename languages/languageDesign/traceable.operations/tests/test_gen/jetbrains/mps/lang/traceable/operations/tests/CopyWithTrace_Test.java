@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 @MPSLaunch
 public class CopyWithTrace_Test extends BaseTransformationTest4 {
@@ -43,7 +44,11 @@ public class CopyWithTrace_Test extends BaseTransformationTest4 {
       SNode callingCopy = ListSequence.fromList(copy).getElement(1);
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026848"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), TracingUtil.getInputNode(utilityCopy));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026875"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), TracingUtil.getInputNode(callingCopy));
-      Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(callingCopy, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{})).first(), "baseMethodDeclaration", false), utilityCopy);
+      Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(callingCopy, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+        }
+      }).toListSequence().first(), "baseMethodDeclaration", false), utilityCopy);
     }
   }
 }

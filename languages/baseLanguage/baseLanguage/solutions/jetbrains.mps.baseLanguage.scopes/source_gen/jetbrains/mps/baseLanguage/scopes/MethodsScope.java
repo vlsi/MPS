@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 
 public class MethodsScope extends Scope {
@@ -93,7 +94,13 @@ public class MethodsScope extends Scope {
       return ListSequence.fromList(methods).first();
     }
 
-    return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeBindings);
+    Pair<SNode, Boolean> resolveByTypes = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(null, methods, actualArguments, typeBindings);
+
+    if (resolveByTypes.o2) {
+      return resolveByTypes.o1;
+    } else {
+      return null;
+    }
   }
 
   private static Map<SNode, SNode> calcTypeBindings(SNode classifierType) {

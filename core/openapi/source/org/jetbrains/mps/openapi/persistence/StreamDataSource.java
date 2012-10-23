@@ -21,7 +21,11 @@ import java.io.OutputStream;
 
 public interface StreamDataSource extends DataSource {
 
+  String getLocation();
+
   InputStream openInputStream() throws IOException;
 
   OutputStream openOutputStream() throws IOException;
+
+  void delete() throws IOException;
 }

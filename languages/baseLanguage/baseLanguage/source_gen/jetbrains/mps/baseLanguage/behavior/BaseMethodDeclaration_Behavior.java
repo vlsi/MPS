@@ -27,6 +27,11 @@ import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class BaseMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_5039675756633081786 = {SNode.class};
@@ -263,6 +268,31 @@ public class BaseMethodDeclaration_Behavior {
     return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", kind, child);
   }
 
+  public static List<SNode> virtual_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs) {
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "type", true);
+      }
+    }));
+
+    if (SNodeOperations.isInstanceOf(ListSequence.fromList(result).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      int formalParams = ListSequence.fromList(result).count();
+      // replace the vararg formal param for easier computations 
+      SNode last = ListSequence.fromList(result).removeLastElement();
+      if (actualArgs > formalParams) {
+        while (actualArgs > ListSequence.fromList(result).count()) {
+          ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true)));
+        }
+      } else if (actualArgs == formalParams) {
+        // array may be passed as value for vararg 
+        ListSequence.fromList(result).addElement(new BaseMethodDeclaration_Behavior.QuotationClass_tq0gdw_a0a0b0a3a3a62().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true))));
+      }
+    }
+
+    return result;
+  }
+
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<Icon>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633081786, new Object[]{});
@@ -401,5 +431,56 @@ public class BaseMethodDeclaration_Behavior {
       a.equals(b) :
       a == b
     ));
+  }
+
+  public static class QuotationClass_tq0gdw_a0a0b0a3a3a62 {
+    public QuotationClass_tq0gdw_a0a0b0a3a3a62() {
+    }
+
+    public SNode createNode(Object parameter_9, Object parameter_10) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_2;
+          {
+            quotedNode_4 = (SNode) parameter_9;
+            SNode quotedNode1_7;
+            if (_parameterValues_129834374.contains(quotedNode_4)) {
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_4);
+            } else {
+              _parameterValues_129834374.add(quotedNode_4);
+              quotedNode1_7 = quotedNode_4;
+            }
+            if (quotedNode1_7 != null) {
+              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_7));
+            }
+          }
+          quotedNode_1.addChild("argument", quotedNode1_6);
+        }
+        {
+          quotedNode_3 = (SNode) parameter_10;
+          SNode quotedNode1_8;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_8 = quotedNode_3;
+          }
+          if (quotedNode1_8 != null) {
+            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_8));
+          }
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
   }
 }

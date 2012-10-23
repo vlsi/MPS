@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,25 +17,33 @@ public class MigrationScopes {
   }
 
   public static Scope forVariables(SNode declarationConcept, SNode contextNode, String contextRole, int position) {
-    Scope scope = Scope.getScope(contextNode, contextRole, position, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
-    if (scope != null) {
-      return new MigrationScopes.MigrationVariablesScope(scope, declarationConcept);
+    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")), declarationConcept);
+  }
+
+  public static Scope forMethods(SNode declarationConcept, SNode contextNode, String contextRole, int position) {
+    return filterByConceptScope(Scope.getScope(contextNode, contextRole, position, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration")), declarationConcept);
+  }
+
+  private static Scope filterByConceptScope(@Nullable Scope innerScope, @NotNull SNode concept) {
+    if (innerScope != null) {
+      return new MigrationScopes.FilterByConceptScope(innerScope, concept);
     } else {
       return new EmptyScope();
     }
   }
 
-  public static class MigrationVariablesScope extends FilteringScope {
-    private final SNode declarationConcept;
+  private static class FilterByConceptScope extends FilteringScope {
+    private final SNode concept;
 
-    public MigrationVariablesScope(Scope innerScope, SNode declarationConcept) {
+    public FilterByConceptScope(@NotNull Scope innerScope, @NotNull SNode concept) {
+      // todo: move this scope to mps.core? 
       super(innerScope);
-      this.declarationConcept = declarationConcept;
+      this.concept = concept;
     }
 
     @Override
     public boolean isExcluded(SNode node) {
-      return !(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(declarationConcept)));
+      return !(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept)));
     }
   }
 }

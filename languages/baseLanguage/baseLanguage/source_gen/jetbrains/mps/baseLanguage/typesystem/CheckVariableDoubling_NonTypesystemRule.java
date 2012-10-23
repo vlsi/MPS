@@ -7,14 +7,13 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -25,40 +24,42 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   public CheckVariableDoubling_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Scope paramsScope = Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
-    Scope localsScope = Scope.getScope(Scope.parent(iVariableDeclaration), iVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
-    List<SNode> vars = new ArrayList<SNode>();
-    if (localsScope != null) {
-      vars.addAll(Sequence.fromIterable(localsScope.getAvailableElements(null)).toListSequence());
-    }
-    if (paramsScope != null) {
-      vars.addAll(Sequence.fromIterable(paramsScope.getAvailableElements(null)).toListSequence());
-    }
-    SNode nearestMethod = SNodeOperations.getAncestor(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
-    List<SNode> methodVariables = SNodeOperations.getDescendants(nearestMethod, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{});
-    List<SNode> intersection = new ArrayList<SNode>();
-    for (SNode var : methodVariables) {
-      if (vars.contains(var)) {
-        ListSequence.fromList(intersection).addElement(var);
+  public void applyRule(final SNode localVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    Iterable<SNode> variablesInScope = Sequence.fromIterable(Scope.getScope(Scope.parent(localVariableDeclaration), localVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).getAvailableElements(SPropertyOperations.getString(localVariableDeclaration, "name"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       }
-    }
-    for (SNode var : intersection) {
-      if (var == null || SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") == null) {
-        continue;
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       }
-      if (SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(iVariableDeclaration, "name")) && !(var == iVariableDeclaration)) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iVariableDeclaration, "Variable " + SPropertyOperations.getString(iVariableDeclaration, "name") + " is already defined in the scope", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4164094338984214928", null, errorTarget);
-        }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_6gv83m_a0a0a0a0a0a0a0(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(localVariableDeclaration, "name"));
+      }
+    });
+    final SNode nearestMethod = SNodeOperations.getAncestor(localVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+    Iterable<SNode> variablesFromCurrentMethod = Sequence.fromIterable(variablesInScope).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false) == nearestMethod;
+      }
+    });
+
+    if (Sequence.fromIterable(variablesFromCurrentMethod).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      }
+    })) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("name");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localVariableDeclaration, "Variable " + SPropertyOperations.getString(localVariableDeclaration, "name") + " is already defined in the scope", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4164094338984214928", null, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.IVariableDeclaration";
+    return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -70,5 +71,12 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_6gv83m_a0a0a0a0a0a0a0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

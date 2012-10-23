@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
+import jetbrains.mps.util.xml.XMLSAXHandler;
 
 import java.util.HashMap;
 import java.util.List;

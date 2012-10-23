@@ -14,7 +14,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.make.java.ElementHandler" />
-    <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
+    <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.make.java.ModelDependencies" file="ModelDependencies.java">
     <classNode dependClassName="java.lang.Iterable" />

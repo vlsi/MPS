@@ -1,16 +1,11 @@
-<!DOCTYPE idea-plugin
-  PUBLIC
-    "Plugin/DTD"
-    "http://plugins.intellij.net/plugin.dtd"
->
+<!DOCTYPE idea-plugin PUBLIC 'Plugin/DTD' 'http://plugins.intellij.net/plugin.dtd'>
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jebrains.mps.ide</id>
   <name>IDE</name>
   <description>IDE core plugin</description>
   <version>2.5.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="117.105"></idea-version>
-  
+  <idea-version since-build="117.105" />
   
   <application-components>
     <component>
@@ -19,6 +14,6 @@
   </application-components>
   
   <extensions defaultExtensionNs="com.intellij">
-    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"></errorHandler>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
   </extensions>
 </idea-plugin>

@@ -18,10 +18,9 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
+import jetbrains.mps.util.xml.XMLSAXHandler;
 
 import java.util.List;
 import java.util.Map;
@@ -36,8 +35,6 @@ public interface IModelPersistence {
   XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header);
 
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
-
-  SModelReference upgradeModelUID(SModelReference modelReference);
 
   Map<IndexEntry,Integer> index(char[] data);
 }

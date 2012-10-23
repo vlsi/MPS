@@ -82,16 +82,19 @@ public class DebuggerMovedToPlugin_MigrationScript extends BaseMigrationScript {
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall";
+        return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "instanceMethodDeclaration"));
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+          return false;
+        }
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method"));
         return StubUtil.isReferenceToDebuggerStub(reference);
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        StubUtil.resolveAndReplace(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SLinkOperations.getRole(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "instanceMethodDeclaration"))));
+        StubUtil.resolveAndReplace(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SLinkOperations.getRole(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method"))));
       }
 
       public boolean isShowAsIntention() {

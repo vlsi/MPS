@@ -16,6 +16,10 @@ public class ExtensionMethodCall_BehaviorDescriptor extends BaseConcept_Behavior
   public ExtensionMethodCall_BehaviorDescriptor() {
   }
 
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
+  }
+
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }
@@ -46,6 +50,10 @@ public class ExtensionMethodCall_BehaviorDescriptor extends BaseConcept_Behavior
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
+  }
+
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
   }
 
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
