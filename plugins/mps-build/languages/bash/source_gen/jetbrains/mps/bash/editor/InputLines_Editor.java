@@ -12,7 +12,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -51,7 +53,15 @@ public class InputLines_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+      return this.nodeFactory(listOwner, editorContext);
+    }
+
+    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommandList", null);
+      SLinkOperations.setTarget(result, "head", SConceptOperations.createNewNode("jetbrains.mps.bash.structure.HeadCommandList", null), true);
+      SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "head", true), "jetbrains.mps.bash.structure.HeadCommandList"), "base", SConceptOperations.createNewNode("jetbrains.mps.bash.structure.HeadPipeline", null), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "head", true), "jetbrains.mps.bash.structure.HeadCommandList"), "base", true), "command", SConceptOperations.createNewNode("jetbrains.mps.bash.structure.Command", null), true);
+      return result;
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

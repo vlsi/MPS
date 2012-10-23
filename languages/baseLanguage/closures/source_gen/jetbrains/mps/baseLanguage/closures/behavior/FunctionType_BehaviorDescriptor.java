@@ -6,8 +6,8 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 
 public class FunctionType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public FunctionType_BehaviorDescriptor() {
@@ -15,6 +15,10 @@ public class FunctionType_BehaviorDescriptor extends Type_BehaviorDescriptor imp
 
   public SNode virtual_getResultType_1230475757059(SNode thisNode) {
     return FunctionType_Behavior.virtual_getResultType_1230475757059(thisNode);
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
   public String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
@@ -45,8 +49,8 @@ public class FunctionType_BehaviorDescriptor extends Type_BehaviorDescriptor imp
     return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {

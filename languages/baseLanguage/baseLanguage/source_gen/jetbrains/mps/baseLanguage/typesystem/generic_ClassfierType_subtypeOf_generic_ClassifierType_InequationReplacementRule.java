@@ -47,11 +47,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_e5spwb_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0);
       if (coercedNode_e5spwb_a0 != null) {
-        Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
-        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(coercedNode_e5spwb_a0, subs);
-        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(supertype, subs);
-        SNode ctLeftExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(coercedNode_e5spwb_a0, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNode ctRightExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(supertype, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        Map<SNode, SNode> subsRight = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(coercedNode_e5spwb_a0, subsLeft);
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(supertype, subsRight);
+        MapSequence.fromMap(subsLeft).putAll(subsRight);
+        SNode ctLeftExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(coercedNode_e5spwb_a0, subsLeft), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        SNode ctRightExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(supertype, subsRight), "jetbrains.mps.baseLanguage.structure.ClassifierType");
 
         Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctLeftExp, "parameter", true)).iterator();
         Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctRightExp, "parameter", true)).iterator();
@@ -121,11 +123,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       GeneratedMatchingPattern pattern_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1a2(SLinkOperations.getTarget(supertype, "classifier", false));
       SNode coercedNode_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_a0);
       if (coercedNode_a0 != null) {
-        Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
-        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(coercedNode_a0, subs);
-        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(supertype, subs);
-        SNode ctLeftExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(coercedNode_a0, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNode ctRightExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(supertype, subs), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        Map<SNode, SNode> subsRight = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(coercedNode_a0, subsLeft);
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(supertype, subsRight);
+        MapSequence.fromMap(subsLeft).putAll(subsRight);
+        SNode ctLeftExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(coercedNode_a0, subsLeft), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        SNode ctRightExp = SNodeOperations.cast(IGenericType_Behavior.call_expandGenerics_4107091686347199582(supertype, subsRight), "jetbrains.mps.baseLanguage.structure.ClassifierType");
 
         Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctLeftExp, "parameter", true)).iterator();
         Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(ctRightExp, "parameter", true)).iterator();

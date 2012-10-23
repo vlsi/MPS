@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -243,7 +243,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart", null);
+      return SConceptOperations.createNewNode("jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart", null);
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

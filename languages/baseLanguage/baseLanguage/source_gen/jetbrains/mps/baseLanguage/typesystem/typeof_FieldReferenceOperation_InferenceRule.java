@@ -8,13 +8,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import java.util.Map;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -28,39 +28,33 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode fieldReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final SNode fieldDeclaration = SLinkOperations.getTarget(fieldReference, "fieldDeclaration", false);
-    if ((fieldDeclaration == null)) {
+    final SNode fieldDecl = SLinkOperations.getTarget(fieldReference, "fieldDeclaration", false);
+    if ((fieldDecl == null)) {
       return;
     }
-    final SNode InstanceType_typevar_1206554174334 = typeCheckingContext.createNewRuntimeTypesVariable();
-    {
-      SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(fieldReference);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174335", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174339", true), (SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), _info_12389875345);
+
+    SNode thisClassifier = SNodeOperations.getAncestor(fieldDecl, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode thisType = Classifier_Behavior.call_getThisType_3305065273710880775(thisClassifier);
+
+    SNode fieldType = SLinkOperations.getTarget(fieldDecl, "type", true);
+    if (SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(thisType, subs);
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+      fieldType = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
     }
-    final SNode fieldClassifier = SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    {
+      SNode _nodeToCheck_1029348928467 = fieldReference;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176551", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176508", true), (SNode) fieldType, _info_12389875345);
+    }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
         SNode _nodeToCheck_1029348928467 = fieldReference;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a5a0().createNode(fieldClassifier, typeCheckingContext), true, false, _info_12389875345);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176594", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176596", true), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a9a0().createNode(typeCheckingContext), true, true, _info_12389875345);
       }
     }
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
-    {
-      SNode _nodeToCheck_1029348928467 = fieldReference;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174383", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174385", true), (SNode) matchedType, _info_12389875345);
-    }
-    {
-      SNode _nodeToCheck_1029348928467 = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044098", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044095", true), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a9a0().createNode(typeCheckingContext), false, true, _info_12389875345);
-    }
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), mmap);
-    RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
-    RulesFunctions_BaseLanguage.inference_setConcreteUpperBorders(typeCheckingContext, mmap);
   }
 
   public String getApplicableConceptFQName() {
@@ -76,37 +70,6 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
 
   public boolean overrides() {
     return false;
-  }
-
-  public static class QuotationClass_7hlfbz_a0a5a0 {
-    public QuotationClass_7hlfbz_a0a5a0() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 
   public static class QuotationClass_7hlfbz_a0a9a0 {
