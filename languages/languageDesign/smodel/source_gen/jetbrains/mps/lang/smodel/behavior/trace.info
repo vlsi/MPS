@@ -137,7 +137,7 @@
   <unitInfo fileName="SModelType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SModelType_BehaviorDescriptor" />
   <unitInfo fileName="SNodeCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeCreator_BehaviorDescriptor" />
   <unitInfo fileName="SNodeListCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListCreator_BehaviorDescriptor" />
-  <unitInfo fileName="SNodeListType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_BehaviorDescriptor" />
+  <unitInfo fileName="SNodeListType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_BehaviorDescriptor" />
   <unitInfo fileName="SNodeOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor" />
   <unitInfo fileName="SNodeTypeCastExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_BehaviorDescriptor" />
   <unitInfo fileName="SNodeType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_BehaviorDescriptor" />

@@ -12,8 +12,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
     <classNode dependClassName="jetbrains.mps.project.foreign.MPSFacetConfiguration" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
@@ -58,9 +58,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.foreign.FacetConfigurationFormatException" />
-    <classNode dependClassName="jetbrains.mps.project.persistence.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
   <dependency className="jetbrains.mps.project.foreign.ModuleMacroExpander" file="ModuleMacroExpander.java">
