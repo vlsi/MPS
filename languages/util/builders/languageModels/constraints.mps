@@ -68,7 +68,6 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="6254726786820421046">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="simple" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="pmg0.6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
-      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="pmg0.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
     </node>
   </roots>
   <root id="7288041816792309049">

@@ -6,7 +6,6 @@
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="6970965131508596231">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp33.6970965131508596229" resolveInfo="MigrationScriptPart" />
-      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="tp33.2598676492883244606" resolveInfo="WhitespaceMigrationScriptPart" />
     </node>
   </roots>
   <root id="6970965131508596231" />
