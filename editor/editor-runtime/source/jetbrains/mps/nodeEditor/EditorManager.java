@@ -59,11 +59,11 @@ public class EditorManager {
     return operationContext.getComponent(EditorManager.class);
   }
 
-  static List<SNode> convert(List<SModelEvent> events) {
+  static List<Pair<SNode, SNodePointer>> convert(List<SModelEvent> events) {
     if (events == null) {
       return null;
     }
-    LinkedHashSet<SNode> result = new LinkedHashSet<SNode>();
+    LinkedHashSet<Pair<SNode, SNodePointer>> result = new LinkedHashSet<Pair<SNode, SNodePointer>>();
     for (SModelEvent event : events) {
       SNode eventNode;
       if (event instanceof SModelChildEvent) {
@@ -73,9 +73,18 @@ public class EditorManager {
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(eventNode);
+      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(event.getModel().getSModelReference(),eventNode.getSNodeId()) {
+        int myHashCode = -1;
+        @Override
+        public int hashCode() {
+          if (myHashCode == -1) {
+            myHashCode = super.hashCode();
+          }
+          return myHashCode;
+        }
+      }));
     }
-    return new ArrayList<SNode>(result);
+    return new ArrayList<Pair<SNode, SNodePointer>>(result);
   }
 
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
@@ -88,7 +97,7 @@ public class EditorManager {
       EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell rootCell = nodeEditorComponent.getRootCell();
       ReferencedNodeContext nodeRefContext = ReferencedNodeContext.createNodeContext(node);
-      List<SNode> modifications = convert(events);
+      List<Pair<SNode, SNodePointer>> modifications = convert(events);
       assert myContextToOldCellMap.isEmpty();
       myContextToOldCellMap.push(new HashMap<ReferencedNodeContext, EditorCell>());
       if (rootCell != null && modifications != null) {
@@ -165,8 +174,8 @@ public class EditorManager {
     if (attributeCell_DependOn != null) {
       newAttributeCell_DependOn.addAll(attributeCell_DependOn);
     }
-    Set<SNode> newAttributeCell_RefTargetsDependsOn = new HashSet<SNode>();
-    Set<SNode> attributeCell_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(attributeCell);
+    Set<SNodePointer> newAttributeCell_RefTargetsDependsOn = new HashSet<SNodePointer>();
+    Set<SNodePointer> attributeCell_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(attributeCell);
     if (attributeCell_RefTargetsDependsOn != null) {
       newAttributeCell_RefTargetsDependsOn.addAll(attributeCell_RefTargetsDependsOn);
     }
@@ -175,7 +184,7 @@ public class EditorManager {
     if (cellWithRole_DependOn != null) {
       newAttributeCell_DependOn.addAll(cellWithRole_DependOn);
     }
-    Set<SNode> cellWithRole_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(cellWithRole);
+    Set<SNodePointer> cellWithRole_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(cellWithRole);
     if (cellWithRole_RefTargetsDependsOn != null) {
       newAttributeCell_RefTargetsDependsOn.addAll(cellWithRole_RefTargetsDependsOn);
     }
@@ -191,7 +200,7 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /*package*/ jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<SNode> modifications) {
+  /*package*/ jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
@@ -223,7 +232,7 @@ public class EditorManager {
     return !myCreatingInspectedCell;
   }
 
-  /*package*/ EditorCell createEditorCell(EditorContext context, List<SNode> modifications, ReferencedNodeContext refContext) {
+  /*package*/ EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodePointer>> modifications, ReferencedNodeContext refContext) {
     if (context.isTracing()) {
       context.pushTracerTask("?" + refContext.toString(), true);
     }
@@ -256,7 +265,7 @@ public class EditorManager {
         if (!nodeChanged) {
           if (oldCell != null) {
             final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getNodesCellDependOn(oldCell);
-            final Set<SNode> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(oldCell);
+            final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(oldCell);
             if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
               // Node was not changed, we have oldCell so it will not be re-created.
               //
@@ -299,9 +308,9 @@ public class EditorManager {
     }
   }
 
-  private boolean isNodeChanged(List<SNode> modifications, EditorComponent nodeEditorComponent, EditorCell oldCell) {
-    for (SNode modification : modifications) {
-      if (nodeEditorComponent.doesCellDependOnNode(oldCell, modification)) {
+  private boolean isNodeChanged(List<Pair<SNode, SNodePointer>> modifications, EditorComponent nodeEditorComponent, EditorCell oldCell) {
+    for (Pair<SNode, SNodePointer> modification : modifications) {
+      if (nodeEditorComponent.doesCellDependOnNode(oldCell, modification.o1, modification.o2)) {
         return true;
       }
     }
