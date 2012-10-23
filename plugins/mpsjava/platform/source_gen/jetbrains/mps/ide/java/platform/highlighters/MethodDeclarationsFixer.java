@@ -35,13 +35,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
@@ -229,7 +229,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     return resolveMethodByCandidatesAndTypes(methodCall, candidates, typeByTypeVar);
   }
 
-  private Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, String name) {
+  private Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, final String name) {
     if (SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")) == null) {
       return MultiTuple.<SNode,Boolean>from((SNode) null, false);
     }
@@ -239,7 +239,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if ((resolvedMethod != null)) {
       return MultiTuple.<SNode,Boolean>from(resolvedMethod, true);
     } else {
-      return resolveMethodByCandidatesAndTypes(methodCall, (Iterable<SNode>) scope.getAvailableElements(null), null);
+      return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_vo5uqs_a0a0a0a0a1a0a0e0h(SPropertyOperations.getString(it, "name"), name);
+        }
+      }), null);
     }
   }
 
@@ -363,5 +367,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   public void clear(SNode node, EditorComponent editor) {
     clearCaches();
+  }
+
+  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0h(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
