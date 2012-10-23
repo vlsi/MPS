@@ -335,7 +335,7 @@
     <nodeInfo nodeId="9143630131836949576" fileName="ProjectTestHelper.java" startLine="195" startPosition="28" endLine="196" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9143630131836949541" fileName="ProjectTestHelper.java" startLine="196" startPosition="123" endLine="197" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9143630131836949596" fileName="ProjectTestHelper.java" startLine="198" startPosition="23" endLine="199" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6036497252136222919" fileName="ProjectTestHelper.java" startLine="199" startPosition="70" endLine="200" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5782055005733406795" fileName="ProjectTestHelper.java" startLine="199" startPosition="70" endLine="200" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6078875650364604187" fileName="ProjectTestHelper.java" startLine="201" startPosition="7" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7216969004037112956" fileName="ProjectTestHelper.java" startLine="205" startPosition="50" endLine="206" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7621205992838583726" fileName="ProjectTestHelper.java" startLine="206" startPosition="152" endLine="207" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -563,7 +563,7 @@
     <scopeInfo nodeId="8597743085639790746" fileName="ProjectTestHelper.java" startLine="399" startPosition="47" endLine="400" endPosition="32" />
     <scopeInfo nodeId="8597743085639790749" fileName="ProjectTestHelper.java" startLine="403" startPosition="49" endLine="404" endPosition="34" />
     <scopeInfo nodeId="8597743085639790151" fileName="ProjectTestHelper.java" startLine="168" startPosition="38" endLine="170" endPosition="5" />
-    <scopeInfo nodeId="9143630131836949592" fileName="ProjectTestHelper.java" startLine="198" startPosition="23" endLine="200" endPosition="69" />
+    <scopeInfo nodeId="9143630131836949592" fileName="ProjectTestHelper.java" startLine="198" startPosition="23" endLine="200" endPosition="18" />
     <scopeInfo nodeId="8597743085639790179" fileName="ProjectTestHelper.java" startLine="375" startPosition="0" endLine="377" endPosition="5" />
     <scopeInfo nodeId="8597743085639790733" fileName="ProjectTestHelper.java" startLine="390" startPosition="21" endLine="392" endPosition="16" />
     <scopeInfo nodeId="8597743085639790752" fileName="ProjectTestHelper.java" startLine="407" startPosition="27" endLine="409" endPosition="35" />
