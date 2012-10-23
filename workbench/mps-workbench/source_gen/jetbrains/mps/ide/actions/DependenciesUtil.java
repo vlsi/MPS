@@ -22,7 +22,7 @@ public class DependenciesUtil {
 
     AnalyzeDependencies_Tool tool = project.getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
     DependenciesPanel panel = as_ehks51_a0a6a0(tool.getComponent(), DependenciesPanel.class);
-    panel.setContent(fromScope, mpsProject);
+    panel.resetContent(fromScope, mpsProject, false);
     panel.selectInTargetsView(to);
     if (openTool) {
       tool.openToolLater(true);
