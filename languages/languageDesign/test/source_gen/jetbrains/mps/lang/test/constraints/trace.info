@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104844716" modelId="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)">
     <nodeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="22" startPosition="78" endLine="23" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_i5q66v_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="25" startPosition="42" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -61,8 +61,8 @@
     <nodeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3798371591902584658" fileName="ScopesExpectedNode_Constraints.java" startLine="50" startPosition="13" endLine="51" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3798371591902559337" fileName="ScopesExpectedNode_Constraints.java" startLine="51" startPosition="131" endLine="52" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3798371591902587120" fileName="ScopesExpectedNode_Constraints.java" startLine="52" startPosition="287" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592361922" fileName="ScopesExpectedNode_Constraints.java" startLine="51" startPosition="131" endLine="52" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3798371591902587120" fileName="ScopesExpectedNode_Constraints.java" startLine="52" startPosition="305" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="58" startPosition="7" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ScopesExpectedNode_Constraints#()V" />
     <nodeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="33" startPosition="79" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
@@ -77,8 +77,8 @@
     <scopeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
     <scopeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="44" startPosition="61" endLine="45" endPosition="58" />
     <scopeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="3798371591902558762" fileName="ScopesExpectedNode_Constraints.java" startLine="50" startPosition="13" endLine="53" endPosition="23">
-      <varInfo nodeId="3798371591902559335" varName="s" />
+    <scopeInfo nodeId="3798371591902558762" fileName="ScopesExpectedNode_Constraints.java" startLine="50" startPosition="13" endLine="53" endPosition="44">
+      <varInfo nodeId="5449224527592361923" varName="modelPlusImportedScope" />
       <varInfo nodeId="3798371591902584659" varName="scopesTest" />
     </scopeInfo>
     <scopeInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="33" startPosition="79" endLine="38" endPosition="0" />
@@ -97,6 +97,76 @@
     <unitInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints$2" />
     <unitInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="33" startPosition="30" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints$1" />
     <unitInfo nodeId="3798371591902558756" fileName="ScopesExpectedNode_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints" />
+  </root>
+  <root nodeId="5449224527592362452" modelId="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)">
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="27" startPosition="71" endLine="28" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_jzm89w_a0a0a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="30" startPosition="35" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="35" startPosition="83" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="48" startPosition="61" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592427283" fileName="ScopesTest_Constraints.java" startLine="55" startPosition="84" endLine="56" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5449224527592427342" fileName="ScopesTest_Constraints.java" startLine="57" startPosition="223" endLine="58" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5449224527592427391" fileName="ScopesTest_Constraints.java" startLine="59" startPosition="17" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592427075" fileName="ScopesTest_Constraints.java" startLine="64" startPosition="80" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592427078" fileName="ScopesTest_Constraints.java" startLine="69" startPosition="86" endLine="70" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592427081" fileName="ScopesTest_Constraints.java" startLine="72" startPosition="14" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="77" startPosition="7" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ScopesTest_Constraints#()V" />
+    <nodeInfo nodeId="5449224527592427202" fileName="ScopesTest_Constraints.java" startLine="56" startPosition="59" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="37" startPosition="107" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="46" startPosition="40" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="5449224527592427027" fileName="ScopesTest_Constraints.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5449224527592427049" fileName="ScopesTest_Constraints.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5449224527592427013" fileName="ScopesTest_Constraints.java" startLine="54" startPosition="32" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5449224527592427006" fileName="ScopesTest_Constraints.java" startLine="53" startPosition="122" endLine="72" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="53" startPosition="122" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="51" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="45" startPosition="56" endLine="75" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="42" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="36" startPosition="75" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="33" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="30" startPosition="35" endLine="31" endPosition="58" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="48" startPosition="61" endLine="49" endPosition="58" />
+    <scopeInfo nodeId="5449224527592427205" fileName="ScopesTest_Constraints.java" startLine="57" startPosition="223" endLine="58" endPosition="100" />
+    <scopeInfo nodeId="5449224527592427048" fileName="ScopesTest_Constraints.java" startLine="64" startPosition="80" endLine="65" endPosition="28" />
+    <scopeInfo nodeId="5449224527592427072" fileName="ScopesTest_Constraints.java" startLine="69" startPosition="86" endLine="70" endPosition="28" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" />
+    <scopeInfo nodeId="5449224527592427202" fileName="ScopesTest_Constraints.java" startLine="56" startPosition="59" endLine="59" endPosition="17">
+      <varInfo nodeId="5449224527592427203" varName="reference" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="37" startPosition="107" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="46" startPosition="40" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5449224527592427026" fileName="ScopesTest_Constraints.java" startLine="55" startPosition="84" endLine="60" endPosition="29">
+      <varInfo nodeId="5449224527592427284" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592427027" fileName="ScopesTest_Constraints.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="5449224527592427030" varName="contextNode" />
+      <varInfo nodeId="5449224527592427032" varName="refText" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592427049" fileName="ScopesTest_Constraints.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="5449224527592427052" varName="contextNode" />
+      <varInfo nodeId="5449224527592427054" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592427013" fileName="ScopesTest_Constraints.java" startLine="54" startPosition="32" endLine="62" endPosition="0">
+      <varInfo nodeId="5449224527592427017" varName="prefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="53" startPosition="122" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="5449224527592362463" fileName="ScopesTest_Constraints.java" startLine="53" startPosition="122" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="51" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="5449224527592362452" varName="_context" />
+      <varInfo nodeId="5449224527592362452" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="45" startPosition="56" endLine="75" endPosition="10" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="42" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="35" startPosition="83" endLine="78" endPosition="22">
+      <varInfo nodeId="5449224527592362452" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="33" startPosition="0" endLine="80" endPosition="0" />
+    <unitInfo nodeId="5449224527592427011" fileName="ScopesTest_Constraints.java" startLine="54" startPosition="23" endLine="72" endPosition="13" unitName="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$3" />
+    <unitInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="46" startPosition="19" endLine="75" endPosition="9" unitName="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$2" />
+    <unitInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="37" startPosition="44" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$1" />
+    <unitInfo nodeId="5449224527592362452" fileName="ScopesTest_Constraints.java" startLine="27" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints" />
   </root>
 </debugInfo>
 

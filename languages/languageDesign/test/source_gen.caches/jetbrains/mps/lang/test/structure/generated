@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cc2kz0pbbtmioswljqjz9leo29mmhhk">
+<dependencies version="2" modelHash="-e1t95271r57m4jwrnx6ooz06inwr1nm">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5adz33y0tgg1k47pmhud90912h9x4de" />
@@ -202,7 +202,7 @@
   <source id="4395293866213195846" name="NodeExpectedTypeProperty" hash="-apbkw2yts9azy9w5wyfly6h1ktym3te">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="511191073233700873" name="ScopesTest" hash="bs2k5txbvjv5nlo63j5mua413eqw00u">
+  <source id="511191073233700873" name="ScopesTest" hash="5ecauidnyswsc3fqobnu0cerghkwn4b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3655334166513314291" name="ScopesExpectedNode" hash="5lmgshhxi7csw6y821oakpfitymypjs">

@@ -49,14 +49,14 @@ public class ScopesTest {
 
   public StringBuilder getFailMessage(List<SNode> unExpected, List<SNode> notFounded) {
     StringBuilder builder = new StringBuilder(System.getProperty("line.separator"));
-    builder.append("\tIn node " + myNode);
+    builder.append("\tIn node " + SLinkOperations.getTarget(myNode, "checkingReference", false));
     builder.append(System.getProperty("line.separator"));
 
     if (!(unExpected.isEmpty())) {
       builder.append("\t\tUnexpected scope elements:");
       builder.append(System.getProperty("line.separator"));
       for (SNode node : unExpected) {
-        builder.append("\t\t");
+        builder.append("\t\t\t");
         builder.append(node);
         builder.append(System.getProperty("line.separator"));
       }
@@ -66,7 +66,7 @@ public class ScopesTest {
       builder.append("\t\tNot founded scope elements:");
       builder.append(System.getProperty("line.separator"));
       for (SNode node : notFounded) {
-        builder.append("\t\t");
+        builder.append("\t\t\t");
         builder.append(node);
         builder.append(System.getProperty("line.separator"));
       }
@@ -80,7 +80,13 @@ public class ScopesTest {
   public void test() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SReference reference = SNodeOperations.getReference(SNodeOperations.getParent(ScopesTest.this.myNode), (SNode) SLinkOperations.getTargets(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(ScopesTest.this.myNode)), "linkDeclaration", true).get(0));
+        SReference reference = null;
+        for (SReference ref : SNodeOperations.getReferences(SNodeOperations.getParent(ScopesTest.this.myNode))) {
+          if (SLinkOperations.getTargetNode(ref) == SLinkOperations.getTarget(ScopesTest.this.myNode, "checkingReference", false)) {
+            reference = ref;
+            break;
+          }
+        }
         Scope scope = ModelConstraints.getScope(reference);
 
         List<SNode> expected = ScopesTest.this.getExpectedNodes(myNode);
