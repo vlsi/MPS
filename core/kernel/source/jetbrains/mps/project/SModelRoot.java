@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -109,6 +110,16 @@ public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRo
   @Override
   public SModel createModel(String modelName) {
     return getManager().createModel((IModule) myModule, myModelRoot, SModelFqName.fromString(modelName));
+  }
+
+  @Override
+  public void save(Memento memento) {
+
+  }
+
+  @Override
+  public void load(Memento memento) {
+
   }
 
   private static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {

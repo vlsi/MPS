@@ -15,21 +15,22 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import org.jetbrains.mps.openapi.model.SModelId;
 
-public interface MultiStreamDataSource extends DataSource {
+public abstract class PersistenceFacade {
 
-  String getLocation();
+  protected PersistenceFacade() {
+  }
 
-  Iterable<String> getAvailableStreams();
+  protected static PersistenceFacade INSTANCE;
 
-  InputStream openInputStream(String name) throws IOException;
+  public static PersistenceFacade getInstance() {
+    return INSTANCE;
+  }
 
-  OutputStream openOutputStream(String name) throws IOException;
+  public abstract ModelRootFactory getModelRootFactory(String id);
 
-  void rename(String oldName, String newName) throws IOException;
+  public abstract ModelFactory getModelFactory(String extension);
 
-  void delete(String name) throws IOException;
+  public abstract SModelId getModelId(String text);
 }

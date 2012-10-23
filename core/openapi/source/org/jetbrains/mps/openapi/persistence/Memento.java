@@ -15,21 +15,29 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+public interface Memento {
 
-public interface MultiStreamDataSource extends DataSource {
+  String getType();
 
-  String getLocation();
+  String get(String key);
 
-  Iterable<String> getAvailableStreams();
+  void put(String key, String value);
 
-  InputStream openInputStream(String name) throws IOException;
+  Iterable<String> getKeys();
 
-  OutputStream openOutputStream(String name) throws IOException;
+  String getPath(String key);
 
-  void rename(String oldName, String newName) throws IOException;
+  void putPath(String key, String path);
 
-  void delete(String name) throws IOException;
+  String getText();
+
+  void setText(String text);
+
+  Iterable<Memento> getChildren(String type);
+
+  Memento getChild(String type);
+
+  Iterable<Memento> getChildren();
+
+  Memento createChild(String type);
 }

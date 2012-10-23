@@ -31,7 +31,7 @@ public class ModuleDescriptor {
   private String myNamespace;
   private String myTimestamp;
 
-  private Collection<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
+  private Collection<ModelRoot> myModelRoots;
   private Collection<Dependency> myDependencies;
   private Collection<ModuleReference> myUsedLanguages;
   private Collection<ModuleReference> myUsedDevkits;

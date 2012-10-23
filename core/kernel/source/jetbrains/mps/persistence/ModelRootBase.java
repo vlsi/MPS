@@ -13,42 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package jetbrains.mps.persistence;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.io.IOException;
+/**
+ * evgeny, 10/23/12
+ */
+public abstract class ModelRootBase implements ModelRoot {
 
-public interface SModel {
+  private SModule myModule;
 
-  SModelId getModelId();
+  @Override
+  public SModule getModule() {
+    return myModule;
+  }
 
-  /*
-   * Includes stereotype.
-   */
-  String getModelName();
-
-  @NotNull
-  SModelReference getModelReference();
-
-  SModule getModule();
-
-  Iterable<? extends SNode> getRootNodes();
-
-  void addRootNode(SNode node);
-
-  SNode getNode(SNodeId id);
-
-  @NotNull
-  DataSource getSource();
-
-  boolean isLoaded();
-
-  void load() throws IOException;
-
-  void save() throws IOException;
-
-  void unload();
+  public void setModule(SModule module) {
+    // TODO check and set
+  }
 }

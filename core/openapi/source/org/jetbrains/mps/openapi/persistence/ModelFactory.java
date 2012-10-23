@@ -15,21 +15,11 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import org.jetbrains.mps.openapi.model.SModel;
 
-public interface MultiStreamDataSource extends DataSource {
+public interface ModelFactory {
 
-  String getLocation();
+  boolean canCreate(DataSource dataSource);
 
-  Iterable<String> getAvailableStreams();
-
-  InputStream openInputStream(String name) throws IOException;
-
-  OutputStream openOutputStream(String name) throws IOException;
-
-  void rename(String oldName, String newName) throws IOException;
-
-  void delete(String name) throws IOException;
+  SModel create(DataSource dataSource);
 }

@@ -36,4 +36,8 @@ public interface ModelRoot {
   boolean canCreateModel(String modelName);
 
   SModel createModel(String modelName);
+
+  void save(Memento memento);
+
+  void load(Memento memento);
 }

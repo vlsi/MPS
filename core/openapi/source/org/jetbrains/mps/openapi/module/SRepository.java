@@ -21,6 +21,10 @@ public interface SRepository {
 
   Iterable<SModule> getModules();
 
+  void applyChanges(Runnable r);
+
+  boolean isUpdating();
+
   void addRepositoryListener(SRepositoryListener listener);
 
   void removeRepositoryListener(SRepositoryListener listener);
