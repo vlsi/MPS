@@ -5,13 +5,14 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.stubs.util.PathItem;
@@ -44,7 +45,7 @@ import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 public class GWTStubsSource extends StubModelDataSource implements FastFindSupportProvider {
   private ModelRoot root;
 
-  public GWTStubsSource(ModuleReference origin, ModelRoot root) {
+  public GWTStubsSource(SModuleReference origin, ModelRoot root) {
     super(origin);
     this.root = root;
   }

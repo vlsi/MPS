@@ -178,7 +178,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     private String myHash;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
-      super(ref, false);
+      super(ref);
       myModule = module;
       myHash = null;
     }

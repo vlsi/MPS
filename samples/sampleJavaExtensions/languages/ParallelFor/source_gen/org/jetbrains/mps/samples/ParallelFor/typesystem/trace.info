@@ -708,18 +708,18 @@
     <nodeInfo nodeId="3540747636396672055" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="45" startPosition="45" endLine="46" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952426862" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="49" startPosition="13" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952426862" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="50" startPosition="66" endLine="51" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540747636396444476" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="56" startPosition="302" endLine="57" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952427093" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="58" startPosition="9" endLine="59" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5384012304952426940" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="59" startPosition="202" endLine="60" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3540747636396444476" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="56" startPosition="294" endLine="57" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952427093" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="58" startPosition="9" endLine="59" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5384012304952426940" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="59" startPosition="282" endLine="60" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952427125" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="61" startPosition="303" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952487123" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="65" startPosition="11" endLine="66" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952487123" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="66" startPosition="64" endLine="67" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952427127" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="70" startPosition="9" endLine="71" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952427127" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="71" startPosition="62" endLine="72" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952427131" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="73" startPosition="9" endLine="74" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3540747636396444488" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="76" startPosition="300" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5384012304952427203" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="78" startPosition="9" endLine="79" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5384012304952427238" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="79" startPosition="198" endLine="80" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3540747636396444488" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="76" startPosition="294" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5384012304952427203" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="78" startPosition="9" endLine="79" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5384012304952427238" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="79" startPosition="278" endLine="80" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952427249" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="81" startPosition="242" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5384012304952487099" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="85" startPosition="11" endLine="86" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5384012304952487099" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="86" startPosition="64" endLine="87" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -733,9 +733,9 @@
     <nodeInfo nodeId="5384012304952354752" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="23" startPosition="138" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CallsToNonThreadSafeMethod_NonTypesystemRule#()V" />
     <nodeInfo nodeId="5384012304952500184" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="30" startPosition="114" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5384012304952426750" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="34" startPosition="179" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3540747636396444474" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="55" startPosition="128" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3540747636396444474" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="55" startPosition="375" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5384012304952426953" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="60" startPosition="153" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3540747636396444486" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="75" startPosition="126" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3540747636396444486" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="75" startPosition="373" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5384012304952427247" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="80" startPosition="151" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5384012304952426855" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="38" startPosition="222" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3540747636396672053" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="44" startPosition="106" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -760,9 +760,9 @@
     <scopeInfo nodeId="5384012304952500185" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="31" startPosition="295" endLine="32" endPosition="17" />
     <scopeInfo nodeId="5384012304952426751" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="35" startPosition="214" endLine="36" endPosition="17" />
     <scopeInfo nodeId="3540747636396672054" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="45" startPosition="45" endLine="46" endPosition="88" />
-    <scopeInfo nodeId="3540747636396444475" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="56" startPosition="302" endLine="57" endPosition="17" />
+    <scopeInfo nodeId="3540747636396444475" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="56" startPosition="294" endLine="57" endPosition="17" />
     <scopeInfo nodeId="5384012304952426954" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="61" startPosition="303" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="3540747636396444487" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="76" startPosition="300" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="3540747636396444487" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="76" startPosition="294" endLine="77" endPosition="17" />
     <scopeInfo nodeId="5384012304952427248" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="81" startPosition="242" endLine="82" endPosition="17" />
     <scopeInfo nodeId="5384012304952354752" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="99" startPosition="46" endLine="100" endPosition="65" />
     <scopeInfo nodeId="5384012304952354752" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="110" startPosition="30" endLine="111" endPosition="17" />
@@ -808,11 +808,11 @@
       <varInfo nodeId="5384012304952354752" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="5384012304952426861" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="43" startPosition="16" endLine="53" endPosition="11" />
-    <scopeInfo nodeId="5384012304952427134" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="75" startPosition="126" endLine="93" endPosition="9">
+    <scopeInfo nodeId="5384012304952427134" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="75" startPosition="373" endLine="93" endPosition="9">
       <varInfo nodeId="5384012304952427239" varName="declaringClass" />
       <varInfo nodeId="5384012304952427204" varName="staticMethodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="5384012304952426722" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="55" startPosition="128" endLine="74" endPosition="15">
+    <scopeInfo nodeId="5384012304952426722" fileName="CallsToNonThreadSafeMethod_NonTypesystemRule.java" startLine="55" startPosition="375" endLine="74" endPosition="15">
       <varInfo nodeId="5384012304952426941" varName="declaringClass" />
       <varInfo nodeId="5384012304952427094" varName="instanceMethodDeclaration" />
     </scopeInfo>

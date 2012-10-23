@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -33,15 +34,17 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   private boolean myRegistered;
+  @NotNull
+  private final DataSource mySource;
+  @NotNull
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
 
-  protected BaseSModelDescriptor(@NotNull SModelReference modelReference, boolean checkDup) {
+
+  protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
-    if (checkDup) {
-      checkModelDuplication();
-    }
+    mySource = source;
   }
 
   @Override
@@ -52,6 +55,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public String getModelName() {
     return myModelReference.getModelName();
+  }
+
+  @NotNull
+  public DataSource getSource() {
+    return mySource;
   }
 
   @Override
@@ -107,6 +115,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myRegistered = registered;
   }
 
+  @Override
+  public boolean isLoaded() {
+    return getLoadingState() != ModelLoadingState.NOT_LOADED;
+  }
+
   @NotNull
   public SModelReference getModelReference() {
     return myModelReference;
@@ -140,14 +153,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   protected abstract SModel getCurrentModelInternal();
-
-  protected void checkModelDuplication() {
-    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
-    if (anotherModel != null) {
-      String message = "Model already registered: " + myModelReference + "\n";
-      LOG.error(message);
-    }
-  }
 
   public void addModelListener(@NotNull SModelListener listener) {
     if (listener.getPriority() == SModelListenerPriority.PLATFORM) {

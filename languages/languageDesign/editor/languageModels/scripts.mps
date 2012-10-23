@@ -2,9 +2,6 @@
 <model modelUID="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
   <persistence version="7" />
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="tpc7" modelUID="r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)" version="-1" />
@@ -34,7 +31,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
       <property name="title" nameId="tp33.1177457669450" value="To Editor API usages" />
       <property name="name" nameId="tpck.1169194664001" value="EditorContext" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="3.0" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="3_0" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>

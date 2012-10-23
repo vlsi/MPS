@@ -30,7 +30,11 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
 
   private void replaceMethods() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
+    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      }
+    }).toListSequence()) {
       if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) != this.myMoving) {
         SNode newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0a1a1().createNode(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false));
         ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)));
@@ -109,7 +113,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;

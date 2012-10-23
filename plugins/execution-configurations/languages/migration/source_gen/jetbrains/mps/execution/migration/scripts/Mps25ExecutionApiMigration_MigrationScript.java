@@ -937,11 +937,14 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall";
+        return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "staticMethodDeclaration")), SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("8492459591399147278"));
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+          return false;
+        }
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method")), SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("8492459591399147278"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -967,11 +970,14 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall";
+        return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "staticMethodDeclaration")), SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~BaseRunner.fs():java.lang.String"));
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+          return false;
+        }
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method")), SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~BaseRunner.fs():java.lang.String"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -2649,7 +2655,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -2685,7 +2691,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;

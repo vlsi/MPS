@@ -27,7 +27,7 @@ public class StaticMethod_Test extends BaseTransformationTest4 {
     public void test_StaticMethod() throws Exception {
       this.addNodeById("1230053223884");
       this.addNodeById("1230053223910");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053223905"), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"));
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053223905"), "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053223885"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053223911"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }

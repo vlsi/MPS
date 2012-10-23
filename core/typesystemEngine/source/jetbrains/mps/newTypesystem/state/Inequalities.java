@@ -102,7 +102,7 @@ public class Inequalities {
         continue;
       }
       passed.add(node);
-      if (!unsorted.contains(node)) {
+      if (!mySolvableLeft.contains(node) && !mySolvableRight.contains(node)) {
         dependsOn.addAll(myInputsToOutputsInc.getBySecond(node));
         continue;
       }

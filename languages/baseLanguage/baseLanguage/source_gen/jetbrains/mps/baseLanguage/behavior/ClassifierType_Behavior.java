@@ -19,6 +19,10 @@ import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -28,6 +32,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ClassifierType_Behavior {
   private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
@@ -82,6 +89,7 @@ public class ClassifierType_Behavior {
     return classifierType;
   }
 
+  @Deprecated
   public static boolean call_isRawType_702942408396828337(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if ((classifier == null)) {
@@ -206,6 +214,80 @@ public class ClassifierType_Behavior {
 
   public static Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "parameter", true);
+  }
+
+  public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
+      return thisNode;
+    }
+    if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).isEmpty()) {
+      return thisNode;
+    }
+    return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions);
+  }
+
+  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
+    // for each declared TypeVar substitute its actual value 
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return MapSequence.fromMap(substitutions).containsKey(it);
+      }
+    })) {
+      return;
+    }
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
+      // treat raw type as if all params were Object or the appropriate bound 
+      for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
+        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
+          new ClassifierType_Behavior.QuotationClass_hz3823_a0b0a0a1a2a91().createNode() :
+          SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
+        ));
+      }
+    } else {
+      {
+        Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> tval_it = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
+        SNode tvd_var;
+        SNode tval_var;
+        while (tvd_it.hasNext() && tval_it.hasNext()) {
+          tvd_var = tvd_it.next();
+          tval_var = tval_it.next();
+          MapSequence.fromMap(substitutions).put(tvd_var, SNodeOperations.copyNode(tval_var));
+          // iterate recursively into each parameter type if generic 
+          if (SNodeOperations.isInstanceOf(tval_var, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+            IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(tval_var, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions);
+          }
+        }
+      }
+    }
+
+    // traverse all extended/implemented classifiers 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(ClassConcept_Behavior.call_getSuperclass_1240936569950(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")), substitutions);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), substitutions);
+      for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(ifc, substitutions);
+      }
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true))) {
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(ifc, substitutions);
+      }
+    }
+    // traverse all enclosing classifiers if not in static context 
+    // TODO : move to generic declaration? 
+    if (!(ClassifierMember_Behavior.call_isStatic_8986964027630462944(SLinkOperations.getTarget(thisNode, "classifier", false)))) {
+      SNode enclosing = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      if ((enclosing != null)) {
+        SNode etype = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SLinkOperations.setTarget(etype, "classifier", enclosing, false);
+        for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(enclosing, "typeVariableDeclaration", true))) {
+          SNode tvr = SNodeFactoryOperations.addNewChild(etype, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+          SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
+        }
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(etype, substitutions);
+      }
+    }
   }
 
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
@@ -348,6 +430,24 @@ public class ClassifierType_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_hz3823_a0b0a0a1a2a91 {
+    public QuotationClass_hz3823_a0b0a0a1a2a91() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -14,6 +14,11 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -43,7 +48,7 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    List<SNode> result = HasAnnotation_Behavior.callSuperNew_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
@@ -77,6 +82,24 @@ public class InstanceMethodDeclaration_Behavior {
     MethodSignature signature = new MethodSignature(thisNode, context.getTypeByTypeVariableMapping());
     context.addMember(thisNode, signature);
     context.hideMembers(signature);
+  }
+
+  public static void virtual_collectGenericSubstitutions_8277080359323274918(SNode thisNode, final Map<SNode, SNode> substitutions, List<SNode> applications) {
+    SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true);
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return MapSequence.fromMap(substitutions).containsKey(it);
+      }
+    })) {
+      return;
+    }
+    List<SNode> decls = new ArrayList<SNode>();
+    ListSequence.fromList(decls).addElement(SLinkOperations.getTarget(thisNode, "returnType", true));
+    ListSequence.fromList(decls).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "type", true);
+      }
+    }));
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {

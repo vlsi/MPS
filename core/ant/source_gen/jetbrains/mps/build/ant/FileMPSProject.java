@@ -30,7 +30,8 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import org.jdom.Element;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
@@ -177,7 +178,7 @@ public class FileMPSProject extends Project {
         }
       }
       if (projectElement != null) {
-        load(projFile, (Element) projectElement);
+        load(projFile, projectElement);
       }
     }
 
@@ -191,10 +192,10 @@ public class FileMPSProject extends Project {
       }
 
       List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectSolutions")).first(), "solutionPath")));
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "languagePath")));
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectDevkits")).first(), "devkitPath")));
-      ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectModules")).first(), "modulePath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectLanguages"), "languagePath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectDevkits"), "devkitPath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
         Path result_dkknya_a1a9a0a1a = modulePath;
@@ -205,20 +206,22 @@ public class FileMPSProject extends Project {
         result_dkknya_a0a1a.addModule(modulePath);
       }
 
-      for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModels"))) {
+      for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
         ModelsTestConfiguration tc = new ModelsTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
-        for (Element me : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(e, "models")).first(), "model"))) {
+        for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
           tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
         }
-        result_dkknya_a0a1a.getTestConfiturations().add(tc);
+        result_dkknya_a0a1a.getTestConfigurations().add(tc);
       }
-      for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModule"))) {
+
+      for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
         ModuleTestConfiguration tc = new ModuleTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
-        if (e.getAttributeValue("moduleRef") != null) {
-          tc.setModuleRef(ModuleReference.fromString(e.getAttributeValue("moduleRef")));
-          result_dkknya_a0a1a.getTestConfiturations().add(tc);
+        String moduleRef = e.getAttributeValue("moduleRef");
+        if (moduleRef != null) {
+          tc.setModuleRef(ModuleReference.fromString(moduleRef));
+          result_dkknya_a0a1a.getTestConfigurations().add(tc);
         }
       }
     }
@@ -239,7 +242,7 @@ public class FileMPSProject extends Project {
       myModulePaths.add(p);
     }
 
-    public List<BaseTestConfiguration> getTestConfiturations() {
+    public List<BaseTestConfiguration> getTestConfigurations() {
       return myTestConfigs;
     }
   }

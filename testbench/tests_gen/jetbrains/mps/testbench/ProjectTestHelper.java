@@ -197,7 +197,7 @@ public class ProjectTestHelper {
       boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
       if (isParallel) {
         optBuilder.strictMode(true).generateInParallel(isParallel, 8);
-        SetSequence.fromSet(ignoredFiles).removeElement("generated");
+        // <node> 
       }
 
       final IScriptController ctl = new IScriptController.Stub() {

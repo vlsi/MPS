@@ -257,7 +257,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     private final ProjectStructureModule myProjectStructureModule;
 
     private ProjectStructureSModelDescriptor(SModelReference ref, SModule module, @NotNull ProjectStructureModule projectStructureModule) {
-      super(ref, false);
+      super(ref);
       myModule = module;
       myProjectStructureModule = projectStructureModule;
     }

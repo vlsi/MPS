@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
+import jetbrains.mps.util.xml.XMLSAXHandler;
 
 import java.util.Collections;
 import java.util.List;

@@ -38,7 +38,7 @@ public class ProjectModels {
     private final boolean myCanFireEvents;
 
     public MyBaseSModelDescriptor(SModelReference ref, boolean canFireEvents) {
-      super(ref, false);
+      super(ref);
       myCanFireEvents = canFireEvents;
     }
 

@@ -49,15 +49,17 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120577", 0, null);
               typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120581", true), (SNode) typeCheckingContext.getRepresentative(paramType_typevar_1230315924141), _info_12389875345);
             }
+            // <node> 
+            // <node> 
             /*
               {
-                IMatchingPattern pattern_sg6z08_a2a3a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-                SNode coercedNode_sg6z08_a2a3a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(sequenceTypeConcrete), pattern_sg6z08_a2a3a0a);
-                if (coercedNode_sg6z08_a2a3a0a != null) {
+                IMatchingPattern pattern_sg6z08_a4a3a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+                SNode coercedNode_sg6z08_a4a3a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(sequenceTypeConcrete), pattern_sg6z08_a4a3a0a);
+                if (coercedNode_sg6z08_a4a3a0a != null) {
                   {
                     SNode _nodeToCheck_1029348928467 = scpd;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948105", 0, null);
-                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948109", true), (SNode) SLinkOperations.getTarget(coercedNode_sg6z08_a2a3a0a, "elementType", true), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948109", true), (SNode) SLinkOperations.getTarget(coercedNode_sg6z08_a4a3a0a, "elementType", true), _info_12389875345);
                   }
                 } else {
                   {

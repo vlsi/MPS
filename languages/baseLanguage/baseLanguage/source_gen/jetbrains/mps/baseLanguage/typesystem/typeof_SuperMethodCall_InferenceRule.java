@@ -8,48 +8,148 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ITypeApplicable_Behavior;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SuperMethodCall_InferenceRule() {
   }
 
-  public void applyRule(final SNode superMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(superMethodCall, "baseMethodDeclaration", false) == null) {
+  public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    final SNode mdecl = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    if (mdecl == null) {
       return;
     }
-    final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(superMethodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    // --- 
-    final SNode instanceType_typevar_5569019188765050003 = typeCheckingContext.createNewRuntimeTypesVariable();
-    SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(superMethodCall);
-    List<SNode> typeVarRefs = new ArrayList<SNode>();
-    for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a0a0g0a().createNode(typeVariableDeclaration, typeCheckingContext));
+
+    SNode contextClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(methodCall);
+    if (contextClassifier == null) {
+      return;
+    }
+
+    SNode thisType = Classifier_Behavior.call_getThisType_3305065273710880775(contextClassifier);
+
+    final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    // check the inference context 
+    if (!(IMethodCall_Behavior.call_isInTypeInferenceContext_4837286298388660615(methodCall))) {
+      List<SNode> inferrableTypeVars = ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(mdecl, "returnType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getParent(it) == mdecl;
+        }
+      }).toListSequence();
+      List<SNode> boundTypeVars = ListSequence.fromList(SLinkOperations.getTargets(mdecl, "parameter", true)).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(SNode p) {
+          return SNodeOperations.getDescendants(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getParent(it) == mdecl;
+        }
+      }).toListSequence();
+      for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
+        // assume all unbound type vars outside an inference context are Object 
+        MapSequence.fromMap(subs).put(tvd, new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a1a0b0c0k0a().createNode(typeCheckingContext));
+      }
+    }
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
+      for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true))) {
+        if (!(MapSequence.fromMap(subs).containsKey(tvd))) {
+          final SNode T_typevar_4837286298389139314 = typeCheckingContext.createNewRuntimeTypesVariable();
+          MapSequence.fromMap(subs).put(tvd, typeCheckingContext.getRepresentative(T_typevar_4837286298389139314));
+        }
+      }
+    } else {
+      {
+        Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> targ_it = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
+        SNode tvd_var;
+        SNode targ_var;
+        while (tvd_it.hasNext() && targ_it.hasNext()) {
+          tvd_var = tvd_it.next();
+          targ_var = targ_it.next();
+          MapSequence.fromMap(subs).put(tvd_var, targ_var);
+          if (SNodeOperations.isInstanceOf(targ_var, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+            IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(targ_var, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+          }
+        }
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(thisType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(thisType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+    }
+
+    List<SNode> argl = SLinkOperations.getTargets(methodCall, "actualArgument", true);
+    List<SNode> typel = ITypeApplicable_Behavior.call_getTypeApplicationParameters_8277080359323839095(mdecl, ListSequence.fromList(argl).count());
+    for (SNode type : ListSequence.fromList(typel)) {
+      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+      }
+    }
+
+    SNode retType = SLinkOperations.getTarget(mdecl, "returnType", true);
+    if (SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(retType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+      retType = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(retType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
     }
     {
-      SNode _nodeToCheck_1029348928467 = superMethodCall;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5569019188765067989", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5569019188765050003), (SNode) new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a7a0().createNode(classifier, typeVarRefs, typeCheckingContext), _info_12389875345);
+      SNode _nodeToCheck_1029348928467 = methodCall;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4837286298389139430", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) retType, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4837286298389139432", true), false, true, _info_12389875345);
     }
-    // --- following piece of cake is identical for any method call --- 
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, superMethodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(superMethodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getRepresentative(instanceType_typevar_5569019188765050003), mmap);
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, superMethodCall, mmap);
-    RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
+
+    {
+      Iterator<SNode> type_it = ListSequence.fromList(typel).iterator();
+      Iterator<SNode> arg_it = ListSequence.fromList(argl).iterator();
+      SNode type_var;
+      SNode arg_var;
+      while (type_it.hasNext() && arg_it.hasNext()) {
+        type_var = type_it.next();
+        arg_var = arg_it.next();
+        if (SNodeOperations.isInstanceOf(type_var, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          {
+            SNode _nodeToCheck_1029348928467 = arg_var;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4837286298389139447", 0, null);
+            typeCheckingContext.createGreaterThanInequality((SNode) IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(type_var, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4837286298389139449", true), false, true, _info_12389875345);
+          }
+        } else {
+          if (!(typeCheckingContext.isSingleTypeComputation())) {
+            {
+              SNode _nodeToCheck_1029348928467 = arg_var;
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4837286298389139463", 0, null);
+              typeCheckingContext.createGreaterThanInequality((SNode) type_var, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4837286298389139465", true), true, true, _info_12389875345);
+            }
+          }
+        }
+      }
+    }
   }
 
   public String getApplicableConceptFQName() {
@@ -67,77 +167,32 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
     return true;
   }
 
-  public static class QuotationClass_okooqp_a0a0a0g0a {
-    public QuotationClass_okooqp_a0a0a0g0a() {
+  public static class QuotationClass_okooqp_a1a0b0c0k0a {
+    public QuotationClass_okooqp_a1a0b0c0k0a() {
     }
 
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_okooqp_a0a7a0 {
-    public QuotationClass_okooqp_a0a7a0() {
-    }
-
-    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_5;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_4, Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferenceTarget("classifier", (SNode) parameter_4);
-        {
-          List<SNode> nodes = (List<SNode>) parameter_5;
-          for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
-          }
-        }
-        result = quotedNode1_3;
       }
       return result;
     }

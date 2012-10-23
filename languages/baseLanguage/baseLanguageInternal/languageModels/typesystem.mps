@@ -176,6 +176,22 @@
                   </node>
                 </node>
               </node>
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.Type" typeId="tpee.1068431790189" id="8277080359324629241">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="8277080359324629242">
+                  <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8277080359324629314">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8277080359324629292">
+                      <property name="asCast" nameId="tp25.1238684351431" value="true" />
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+                      <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8277080359324629244">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1196525371874" resolveInfo="type" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="8277080359324629321">
+                      <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1109201940907" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

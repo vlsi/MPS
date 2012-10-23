@@ -153,7 +153,7 @@ public class TestModule extends ClassLoadingModule {
     private final SModel myToCopy;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
-      super(new SModelReference(fqName, SModelId.generate()), false);
+      super(new SModelReference(fqName, SModelId.generate()));
       myLongName = longName;
       myToCopy = toCopy;
     }

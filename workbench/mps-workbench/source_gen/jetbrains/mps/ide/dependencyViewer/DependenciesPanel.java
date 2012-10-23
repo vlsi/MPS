@@ -4,9 +4,8 @@ package jetbrains.mps.ide.dependencyViewer;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import java.util.List;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.tools.BaseTool;
@@ -16,7 +15,6 @@ import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +22,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -32,22 +30,25 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ToggleAction;
 
 public class DependenciesPanel extends JPanel {
   private DependencyTree myInitTree;
   private TargetsView myTargetsView;
   private ReferencesView myReferencesView;
   private Project myProject;
-  private MPSProject myMPSProject;
-  private Scope myScope;
-  private Scope myInitialScope;
-  private List<SReference> myReferences = ListSequence.fromList(new ArrayList<SReference>());
+  private jetbrains.mps.project.Project myMPSProject;
+  private DependencyViewerScope myScope;
+  private DependencyViewerScope myInitialScope;
+  private List<SNode> mySourceNodes = ListSequence.fromList(new ArrayList<SNode>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
+  private boolean myIsMeta;
 
   public DependenciesPanel(BaseTool tool, Project project) {
     super(new BorderLayout());
     myTool = tool;
+    myIsMeta = false;
     myInitTree = new DependencyTree(this);
     myProject = project;
     myTargetsView = new TargetsView(myProject, this);
@@ -66,7 +67,8 @@ public class DependenciesPanel extends JPanel {
     add(createToolbar(), BorderLayout.NORTH);
   }
 
-  public void setContent(Scope scope, MPSProject project) {
+  public void resetContent(DependencyViewerScope scope, jetbrains.mps.project.Project project, boolean isMeta) {
+    myIsMeta = isMeta;
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
     myInitTree.setContent(scope, project);
@@ -80,13 +82,13 @@ public class DependenciesPanel extends JPanel {
     return myReferencesView;
   }
 
-  public Scope getCurrentScope() {
+  public DependencyViewerScope getCurrentScope() {
     return myScope;
   }
 
-  public void updateTargetsView(final Scope scope) {
-    myScope = scope;
-    final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults());
+  public void updateTargetsView(final DependencyViewerScope sourceScope) {
+    myScope = sourceScope;
+    final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -94,9 +96,12 @@ public class DependenciesPanel extends JPanel {
             ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
             try {
               monitor.start(null, 100);
-              List<SReference> references = myReferencesFinder.getReferences(scope, monitor.subTask(50));
-              myReferences = references;
-              results.value = myReferencesFinder.getTargetSearchResults(references, monitor.subTask(50));
+              List<SNode> nodes = myReferencesFinder.getNodes(sourceScope, monitor.subTask(20));
+              mySourceNodes = nodes;
+              results.value = (myIsMeta ?
+                myReferencesFinder.getUsedLanguagesSearchResults(nodes, sourceScope, monitor.subTask(80)) :
+                myReferencesFinder.getTargetSearchResults(nodes, sourceScope, monitor.subTask(80))
+              );
             } finally {
               monitor.done();
             }
@@ -108,20 +113,23 @@ public class DependenciesPanel extends JPanel {
     updateReferencesView(null);
   }
 
-  public void selectInTargetsView(IModule module) {
+  public void selectInTargetsView(SModule module) {
     myTargetsView.selectModule(module);
   }
 
-  public SearchResults updateReferencesView(final Scope scope) {
+  public SearchResults updateReferencesView(final DependencyViewerScope targetScope) {
     final SearchResults[] results = new SearchResults[1];
-    if (scope == null) {
+    if (targetScope == null) {
       myReferencesView.setContents(new SearchResults());
       return results[0];
     }
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-        SearchResults result = myReferencesFinder.getRefSearchResults(myReferences, scope, monitor);
+        SearchResults result = (myIsMeta ?
+          myReferencesFinder.getLanguageUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor) :
+          myReferencesFinder.getUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor)
+        );
         results[0] = result;
         myReferencesView.setContents(result);
 
@@ -138,7 +146,12 @@ public class DependenciesPanel extends JPanel {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new DependenciesPanel.CloseAction());
     group.add(new DependenciesPanel.RerunAction());
+    group.add(new DependenciesPanel.ToggleUsedLanguages());
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+  }
+
+  public boolean isMeta() {
+    return myIsMeta;
   }
 
   private class CloseAction extends AnAction {
@@ -157,7 +170,21 @@ public class DependenciesPanel extends JPanel {
     }
 
     public void actionPerformed(AnActionEvent event) {
-      setContent(myInitialScope, myMPSProject);
+      resetContent(myInitialScope, myMPSProject, myIsMeta);
+    }
+  }
+
+  public class ToggleUsedLanguages extends ToggleAction {
+    public ToggleUsedLanguages() {
+      super("Show used languages", "Show used languages", jetbrains.mps.ide.moduleDependencies.icons.Icons.USED_LANGUAGES_ICON);
+    }
+
+    public boolean isSelected(AnActionEvent event) {
+      return myIsMeta;
+    }
+
+    public void setSelected(AnActionEvent event, boolean b) {
+      resetContent(myInitialScope, myMPSProject, b);
     }
   }
 }

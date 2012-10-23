@@ -39,6 +39,9 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Folder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_ImportContent_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Import_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Attribute_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Section_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Jar_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Tar_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_War_BehaviorDescriptor" />
@@ -46,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildNamedLayout_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProjectDependency_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourceMacroRelativePath_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourceProjectRelativePath_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_JavaClassFolder_BehaviorDescriptor" />
@@ -82,6 +86,8 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_JavaLibrary_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_JavaModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.GeneratorInternal_BuildSource_SingleFile_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
@@ -93,7 +99,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" file="BuildCompositePath_Behavior.java">
-    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -107,6 +113,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" file="BuildCompositePath_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -524,12 +532,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_BehaviorDescriptor" file="BuildLayout_EchoProperties_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -549,12 +561,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_EchoXml_BehaviorDescriptor" file="BuildLayout_EchoXml_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -736,6 +752,59 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Attribute_Behavior" file="BuildLayout_JarManifest_Attribute_Behavior.java">
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Attribute_BehaviorDescriptor" file="BuildLayout_JarManifest_Attribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Attribute_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Part_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior" file="BuildLayout_JarManifest_Behavior.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.util.Context" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_JarManifest_BehaviorDescriptor" file="BuildLayout_JarManifest_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Part_BehaviorDescriptor" file="BuildLayout_JarManifest_Part_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Section_BehaviorDescriptor" file="BuildLayout_JarManifest_Section_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_JarManifest_Part_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior" file="BuildLayout_Jar_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -785,17 +854,21 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_BehaviorDescriptor" file="BuildLayout_NamedContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -1132,6 +1205,46 @@
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_Behavior" file="BuildSourceArchiveRelativePath_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.util.Context" />
+    <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
+    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_BehaviorDescriptor" file="BuildSourceArchiveRelativePath_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.IWorkflowParticipant_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.util.Context" />
+    <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
+    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildSourceMacroRelativePath_Behavior" file="BuildSourceMacroRelativePath_Behavior.java">
@@ -1512,6 +1625,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" file="BuildStringContainer_Behavior.java">
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -1522,10 +1636,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" file="BuildStringContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildStringNotEmpty_BehaviorDescriptor" file="BuildStringNotEmpty_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1576,8 +1695,10 @@
   <dependency className="jetbrains.mps.build.behavior.BuildTextStringPart_Behavior" file="BuildTextStringPart_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildTextStringPart_BehaviorDescriptor" file="BuildTextStringPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1669,6 +1790,32 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor" file="GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor" file="GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.IWorkflowParticipant_Behavior" file="IWorkflowParticipant_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.IWorkflowParticipant_BehaviorDescriptor" file="IWorkflowParticipant_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
 

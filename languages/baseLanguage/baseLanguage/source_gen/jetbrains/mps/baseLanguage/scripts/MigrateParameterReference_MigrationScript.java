@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateParameterReference_MigrationScript extends BaseMigrationScript {
   public MigrateParameterReference_MigrationScript(IOperationContext operationContext) {
-    super("Migrate parameter reference smodel usages");
-    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceSModelUsages(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+    super("Migrate ParameterReference to VariableReference");
+    for (AbstractMigrationRefactoring refactoring : VariableUnifyingMigration.forConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       this.addRefactoring(refactoring);
     }
   }

@@ -34,7 +34,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IGenericType"}, new String[]{}, new String[]{});
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
       case 11:

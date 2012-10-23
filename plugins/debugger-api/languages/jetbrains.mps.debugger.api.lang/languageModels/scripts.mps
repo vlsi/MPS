@@ -27,7 +27,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4899606958030665162">
       <property name="title" nameId="tp33.1177457669450" value="Fix references to debugger classes" />
       <property name="name" nameId="tpck.1169194664001" value="DebuggerMovedToPlugin" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="2.5" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.5" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5992322387945369927">
@@ -178,7 +178,7 @@
     </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="4239159129957581680">
       <property name="description" nameId="tp33.1177457972041" value="Fix local instance method calls" />
-      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tpee.3066917033203108594" resolveInfo="LocalInstanceMethodCall" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
       <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="4239159129957581681">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4239159129957581682">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8285632988623946931">
@@ -195,7 +195,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetReferenceOperation" typeId="tp25.3609773094169249792" id="8285632988623946948">
                     <node role="linkQualifier" roleId="tp25.3609773094169252180" type="tp25.OperationParm_LinkQualifier" typeId="tp25.5168775467716640652" id="8285632988623946949">
                       <node role="linkQualifier" roleId="tp25.5168775467716640653" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="8285632988623946953">
-                        <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.3066917033203112509" />
+                        <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.7812454656619025415" />
                       </node>
                     </node>
                   </node>
@@ -208,6 +208,30 @@
       </node>
       <node role="affectedInstancePredicate" roleId="tp33.1177457957478" type="tp33.MigrationScriptPart_Instance_Predicate" typeId="tp33.1177458061340" id="4239159129957581703">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4239159129957581704">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="901167123042926443">
+            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="901167123042926444">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="901167123042926445">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="901167123042926446">
+                  <property name="value" nameId="tpee.1068580123138" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="901167123042926447">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="901167123042926448">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="901167123042926449">
+                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="901167123042926450">
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="901167123042926451">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="901167123042926452">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.7812454656619025415" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="901167123042926453" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4239159129957581705">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4239159129957581706">
               <property name="name" nameId="tpck.1169194664001" value="reference" />
@@ -217,7 +241,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetReferenceOperation" typeId="tp25.3609773094169249792" id="4239159129957581710">
                   <node role="linkQualifier" roleId="tp25.3609773094169252180" type="tp25.OperationParm_LinkQualifier" typeId="tp25.5168775467716640652" id="4239159129957581711">
                     <node role="linkQualifier" roleId="tp25.5168775467716640653" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="4239159129957581717">
-                      <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.3066917033203112509" />
+                      <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.7812454656619025415" />
                     </node>
                   </node>
                 </node>

@@ -8,7 +8,7 @@ import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.dependencyViewer.Scope;
+import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
 
@@ -30,8 +30,8 @@ public class AnalyzeDependencies_Tool extends GeneratedTool {
     super.dispose();
   }
 
-  public void setContent(Scope scope, MPSProject project) {
-    AnalyzeDependencies_Tool.this.myDependenciesPanel.setContent(scope, project);
+  public void setContent(DependencyViewerScope scope, MPSProject project) {
+    AnalyzeDependencies_Tool.this.myDependenciesPanel.resetContent(scope, project, false);
     AnalyzeDependencies_Tool.this.myDependenciesPanel.revalidate();
   }
 

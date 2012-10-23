@@ -14,6 +14,10 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
   public AnonymousClass_BehaviorDescriptor() {
   }
 
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
+  }
+
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }
@@ -48,6 +52,10 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
 
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return AnonymousClass_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  }
+
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
   }
 
   public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {

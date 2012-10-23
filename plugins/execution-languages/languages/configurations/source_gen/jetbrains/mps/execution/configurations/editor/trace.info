@@ -1182,186 +1182,296 @@
     <unitInfo nodeId="2866018809101862244" fileName="ExecuteConfiguration_Function_Editor.java" startLine="26" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" />
   </root>
   <root nodeId="3642991921658122721" modelId="r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)">
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="74" startPosition="58" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="28" startPosition="80" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="28" startPosition="80" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="35" startPosition="88" endLine="36" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="36" startPosition="128" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="37" startPosition="47" endLine="38" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="38" startPosition="85" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="39" startPosition="34" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="43" startPosition="88" endLine="44" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="44" startPosition="128" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="45" startPosition="47" endLine="46" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="46" startPosition="77" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="47" startPosition="34" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="51" startPosition="87" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="53" startPosition="38" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="54" startPosition="51" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="55" startPosition="26" endLine="56" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="56" startPosition="95" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="57" startPosition="58" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="58" startPosition="73" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="69" startPosition="87" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="70" startPosition="81" endLine="71" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="71" startPosition="42" endLine="72" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="72" startPosition="55" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="73" startPosition="26" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="74" startPosition="58" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="75" startPosition="73" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="76" startPosition="57" endLine="77" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="78" startPosition="35" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="79" startPosition="72" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="80" startPosition="78" endLine="81" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="82" startPosition="10" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="87" startPosition="33" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="91" startPosition="69" endLine="92" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="95" startPosition="81" endLine="96" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="99" startPosition="92" endLine="100" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="100" startPosition="84" endLine="101" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="101" startPosition="31" endLine="102" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="102" startPosition="44" endLine="103" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="103" startPosition="33" endLine="104" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="104" startPosition="28" endLine="105" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="105" startPosition="60" endLine="106" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="105" startPosition="60" endLine="106" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="106" startPosition="44" endLine="107" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="107" startPosition="75" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="108" startPosition="59" endLine="109" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="110" startPosition="37" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="111" startPosition="74" endLine="112" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="112" startPosition="80" endLine="113" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="114" startPosition="12" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="36" startPosition="128" endLine="38" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="44" startPosition="128" endLine="46" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="73" startPosition="26" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="55" startPosition="26" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="86" startPosition="69" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_nyg1sl_a0a#()V" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="104" startPosition="28" endLine="107" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="20" startPosition="71" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="60" startPosition="59" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="77" startPosition="59" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="109" startPosition="61" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_nyg1sl_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_nyg1sl_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_nyg1sl_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="68" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_nyg1sl_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="50" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_nyg1sl_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="98" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_nyg1sl_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" />
-    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="74" startPosition="58" endLine="74" endPosition="58" />
-    <scopeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" />
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="80" />
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="28" startPosition="80" endLine="29" endPosition="81" />
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" />
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="87" startPosition="33" endLine="88" endPosition="14" />
-    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="91" startPosition="69" endLine="92" endPosition="67" />
-    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="95" startPosition="81" endLine="96" endPosition="66" />
-    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="105" startPosition="60" endLine="106" endPosition="44" />
-    <scopeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="36" startPosition="128" endLine="38" endPosition="85" />
-    <scopeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="44" startPosition="128" endLine="46" endPosition="77" />
-    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="73" startPosition="26" endLine="75" endPosition="73" />
-    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="55" startPosition="26" endLine="58" endPosition="73" />
-    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="86" startPosition="58" endLine="86" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="103" startPosition="58" endLine="103" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="32" startPosition="99" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="32" startPosition="99" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="34" startPosition="109" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="37" startPosition="109" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="39" startPosition="5" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="39" startPosition="5" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="46" startPosition="88" endLine="47" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="47" startPosition="128" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="48" startPosition="47" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="49" startPosition="85" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="50" startPosition="34" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="54" startPosition="88" endLine="55" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="55" startPosition="128" endLine="56" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="56" startPosition="47" endLine="57" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="57" startPosition="77" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="58" startPosition="34" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="62" startPosition="87" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="64" startPosition="38" endLine="65" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="65" startPosition="51" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="66" startPosition="26" endLine="67" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="67" startPosition="95" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="68" startPosition="58" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="69" startPosition="73" endLine="70" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="70" startPosition="57" endLine="71" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="72" startPosition="35" endLine="73" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="73" startPosition="72" endLine="74" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="74" startPosition="78" endLine="75" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="76" startPosition="10" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="80" startPosition="87" endLine="81" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="81" startPosition="81" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="82" startPosition="38" endLine="83" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="83" startPosition="51" endLine="84" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="84" startPosition="26" endLine="85" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="85" startPosition="95" endLine="86" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="86" startPosition="58" endLine="87" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="87" startPosition="73" endLine="88" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="88" startPosition="57" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="90" startPosition="35" endLine="91" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="91" startPosition="72" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="92" startPosition="78" endLine="93" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="94" startPosition="10" endLine="95" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="98" startPosition="87" endLine="99" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="99" startPosition="81" endLine="100" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="100" startPosition="42" endLine="101" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="101" startPosition="55" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="102" startPosition="26" endLine="103" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="103" startPosition="58" endLine="104" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="104" startPosition="73" endLine="105" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="105" startPosition="57" endLine="106" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="107" startPosition="35" endLine="108" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="108" startPosition="72" endLine="109" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="109" startPosition="78" endLine="110" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="111" startPosition="10" endLine="112" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783164" fileName="RunConfigurationCreator_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="330" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783347" fileName="RunConfigurationCreator_Editor.java" startLine="119" startPosition="111" endLine="120" endPosition="330" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="124" startPosition="33" endLine="125" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="128" startPosition="69" endLine="129" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="132" startPosition="81" endLine="133" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="136" startPosition="92" endLine="137" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="137" startPosition="84" endLine="138" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="138" startPosition="31" endLine="139" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="139" startPosition="44" endLine="140" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="140" startPosition="33" endLine="141" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="141" startPosition="28" endLine="142" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="142" startPosition="60" endLine="143" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="143" startPosition="44" endLine="144" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="144" startPosition="95" endLine="145" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="145" startPosition="75" endLine="146" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="146" startPosition="59" endLine="147" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="148" startPosition="37" endLine="149" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="149" startPosition="74" endLine="150" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="150" startPosition="80" endLine="151" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="152" startPosition="12" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="158" startPosition="33" endLine="159" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="162" startPosition="69" endLine="163" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="166" startPosition="81" endLine="167" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="170" startPosition="92" endLine="171" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="171" startPosition="84" endLine="172" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="172" startPosition="31" endLine="173" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="173" startPosition="44" endLine="174" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="174" startPosition="33" endLine="175" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="175" startPosition="28" endLine="176" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="176" startPosition="60" endLine="177" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="177" startPosition="46" endLine="178" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="178" startPosition="105" endLine="179" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="179" startPosition="75" endLine="180" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="180" startPosition="59" endLine="181" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="182" startPosition="37" endLine="183" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="183" startPosition="74" endLine="184" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="184" startPosition="80" endLine="185" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="186" startPosition="12" endLine="187" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="47" startPosition="128" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="55" startPosition="128" endLine="57" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="102" startPosition="26" endLine="104" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="142" startPosition="60" endLine="144" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="176" startPosition="60" endLine="178" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="33" startPosition="48" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="33" startPosition="48" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="36" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="36" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="66" startPosition="26" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="84" startPosition="26" endLine="87" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="123" startPosition="69" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_nyg1sl_a0a#()V" />
+    <nodeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="157" startPosition="69" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_nyg1sl_a1a#()V" />
+    <nodeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="26" startPosition="71" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="943668161921783162" fileName="RunConfigurationCreator_Editor.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_nyg1sl_a0a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="943668161921783345" fileName="RunConfigurationCreator_Editor.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_nyg1sl_a1a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="141" startPosition="28" endLine="145" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="175" startPosition="28" endLine="179" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="71" startPosition="59" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="89" startPosition="59" endLine="95" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="106" startPosition="59" endLine="112" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="147" startPosition="61" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="181" startPosition="61" endLine="187" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_nyg1sl_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="53" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_nyg1sl_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="30" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_nyg1sl_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="97" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_nyg1sl_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="61" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_nyg1sl_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="79" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_nyg1sl_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="135" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_nyg1sl_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="169" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_nyg1sl_a0b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" />
+    <scopeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="86" startPosition="58" endLine="86" endPosition="58" />
+    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="103" startPosition="58" endLine="103" endPosition="58" />
+    <scopeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="32" startPosition="99" endLine="33" endPosition="48" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="34" startPosition="109" endLine="35" endPosition="82" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="37" startPosition="109" endLine="38" endPosition="82" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="39" startPosition="5" endLine="40" endPosition="81" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="80" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="41" startPosition="80" endLine="42" endPosition="81" />
+    <scopeInfo nodeId="943668161921783163" fileName="RunConfigurationCreator_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="330" />
+    <scopeInfo nodeId="943668161921783346" fileName="RunConfigurationCreator_Editor.java" startLine="119" startPosition="111" endLine="120" endPosition="330" />
+    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="124" startPosition="33" endLine="125" endPosition="14" />
+    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="128" startPosition="69" endLine="129" endPosition="67" />
+    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="132" startPosition="81" endLine="133" endPosition="66" />
+    <scopeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="158" startPosition="33" endLine="159" endPosition="14" />
+    <scopeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="162" startPosition="69" endLine="163" endPosition="67" />
+    <scopeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="166" startPosition="81" endLine="167" endPosition="66" />
+    <scopeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="47" startPosition="128" endLine="49" endPosition="85" />
+    <scopeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="55" startPosition="128" endLine="57" endPosition="77" />
+    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="102" startPosition="26" endLine="104" endPosition="73" />
+    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="142" startPosition="60" endLine="144" endPosition="95" />
+    <scopeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="176" startPosition="60" endLine="178" endPosition="105" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="33" startPosition="48" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="36" startPosition="5" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="66" startPosition="26" endLine="69" endPosition="73" />
+    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="72" startPosition="35" endLine="75" endPosition="105">
       <varInfo nodeId="3642991921658122726" varName="manager" />
       <varInfo nodeId="3642991921658122726" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="78" startPosition="35" endLine="81" endPosition="105">
+    <scopeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="84" startPosition="26" endLine="87" endPosition="73" />
+    <scopeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="90" startPosition="35" endLine="93" endPosition="105">
+      <varInfo nodeId="943668161921783159" varName="manager" />
+      <varInfo nodeId="943668161921783159" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="107" startPosition="35" endLine="110" endPosition="105">
       <varInfo nodeId="529406319400385976" varName="manager" />
       <varInfo nodeId="529406319400385976" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="86" startPosition="69" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="104" startPosition="28" endLine="107" endPosition="75" />
-    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="110" startPosition="37" endLine="113" endPosition="107">
+    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="123" startPosition="69" endLine="126" endPosition="5" />
+    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="148" startPosition="37" endLine="151" endPosition="107">
       <varInfo nodeId="3642991921658122729" varName="manager" />
       <varInfo nodeId="3642991921658122729" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="20" startPosition="71" endLine="24" endPosition="0">
+    <scopeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="157" startPosition="69" endLine="160" endPosition="5" />
+    <scopeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="182" startPosition="37" endLine="185" endPosition="107">
+      <varInfo nodeId="943668161921783161" varName="manager" />
+      <varInfo nodeId="943668161921783161" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="26" startPosition="71" endLine="30" endPosition="0">
       <varInfo nodeId="3642991921658122721" varName="editorContext" />
       <varInfo nodeId="3642991921658122721" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="943668161921783162" fileName="RunConfigurationCreator_Editor.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="943668161921783162" varName="editorContext" />
+      <varInfo nodeId="943668161921783162" varName="node" />
+      <varInfo nodeId="943668161921783162" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="943668161921783345" fileName="RunConfigurationCreator_Editor.java" startLine="118" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="943668161921783345" varName="editorContext" />
+      <varInfo nodeId="943668161921783345" varName="node" />
+      <varInfo nodeId="943668161921783345" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="3642991921658122727" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="131" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="3642991921658122727" varName="editorContext" />
       <varInfo nodeId="3642991921658122727" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="35" startPosition="88" endLine="40" endPosition="22">
+    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="141" startPosition="28" endLine="145" endPosition="75" />
+    <scopeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
+      <varInfo nodeId="943668161921783160" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="943668161921783160" varName="editorContext" />
+      <varInfo nodeId="943668161921783160" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="175" startPosition="28" endLine="179" endPosition="75" />
+    <scopeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="46" startPosition="88" endLine="51" endPosition="22">
       <varInfo nodeId="3642991921658122731" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="43" startPosition="88" endLine="48" endPosition="22">
+    <scopeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="54" startPosition="88" endLine="59" endPosition="22">
       <varInfo nodeId="3642991921658122733" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
-      <varInfo nodeId="3642991921658122723" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="3642991921658122731" fileName="RunConfigurationCreator_Editor.java" startLine="45" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="3642991921658122731" varName="editorContext" />
       <varInfo nodeId="3642991921658122731" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="3642991921658122733" fileName="RunConfigurationCreator_Editor.java" startLine="53" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="3642991921658122733" varName="editorContext" />
       <varInfo nodeId="3642991921658122733" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="3642991921658122723" varName="editorContext" />
-      <varInfo nodeId="3642991921658122723" varName="node" />
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="31" startPosition="89" endLine="43" endPosition="22">
+      <varInfo nodeId="3642991921658122723" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="69" startPosition="87" endLine="83" endPosition="22">
+    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="98" startPosition="87" endLine="112" endPosition="22">
       <varInfo nodeId="529406319400385976" varName="attributeConcept" />
       <varInfo nodeId="529406319400385976" varName="attributeKind" />
       <varInfo nodeId="529406319400385976" varName="editorCell" />
       <varInfo nodeId="529406319400385976" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="51" startPosition="87" endLine="66" endPosition="22">
+    <scopeInfo nodeId="3642991921658122723" fileName="RunConfigurationCreator_Editor.java" startLine="30" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="3642991921658122723" varName="editorContext" />
+      <varInfo nodeId="3642991921658122723" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="62" startPosition="87" endLine="77" endPosition="22">
       <varInfo nodeId="3642991921658122726" varName="attributeConcept" />
       <varInfo nodeId="3642991921658122726" varName="attributeKind" />
       <varInfo nodeId="3642991921658122726" varName="editorCell" />
       <varInfo nodeId="3642991921658122726" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="99" startPosition="92" endLine="115" endPosition="24">
+    <scopeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="80" startPosition="87" endLine="95" endPosition="22">
+      <varInfo nodeId="943668161921783159" varName="attributeConcept" />
+      <varInfo nodeId="943668161921783159" varName="attributeKind" />
+      <varInfo nodeId="943668161921783159" varName="editorCell" />
+      <varInfo nodeId="943668161921783159" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="97" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="529406319400385976" varName="editorContext" />
+      <varInfo nodeId="529406319400385976" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="136" startPosition="92" endLine="153" endPosition="24">
       <varInfo nodeId="3642991921658122729" varName="attributeConcept" />
       <varInfo nodeId="3642991921658122729" varName="attributeKind" />
       <varInfo nodeId="3642991921658122729" varName="editorCell" />
       <varInfo nodeId="3642991921658122729" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="529406319400385976" fileName="RunConfigurationCreator_Editor.java" startLine="68" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="529406319400385976" varName="editorContext" />
-      <varInfo nodeId="529406319400385976" varName="node" />
+    <scopeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="170" startPosition="92" endLine="187" endPosition="24">
+      <varInfo nodeId="943668161921783161" varName="attributeConcept" />
+      <varInfo nodeId="943668161921783161" varName="attributeKind" />
+      <varInfo nodeId="943668161921783161" varName="editorCell" />
+      <varInfo nodeId="943668161921783161" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="50" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="3642991921658122726" fileName="RunConfigurationCreator_Editor.java" startLine="61" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="3642991921658122726" varName="editorContext" />
       <varInfo nodeId="3642991921658122726" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="98" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="943668161921783159" fileName="RunConfigurationCreator_Editor.java" startLine="79" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="943668161921783159" varName="editorContext" />
+      <varInfo nodeId="943668161921783159" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3642991921658122729" fileName="RunConfigurationCreator_Editor.java" startLine="135" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="3642991921658122729" varName="editorContext" />
       <varInfo nodeId="3642991921658122729" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor$_Inline_nyg1sl_a0a" />
-    <unitInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="20" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor" />
+    <scopeInfo nodeId="943668161921783161" fileName="RunConfigurationCreator_Editor.java" startLine="169" startPosition="0" endLine="189" endPosition="0">
+      <varInfo nodeId="943668161921783161" varName="editorContext" />
+      <varInfo nodeId="943668161921783161" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="3642991921658122727" fileName="RunConfigurationCreator_Editor.java" startLine="123" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor$_Inline_nyg1sl_a0a" />
+    <unitInfo nodeId="943668161921783160" fileName="RunConfigurationCreator_Editor.java" startLine="157" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor$_Inline_nyg1sl_a1a" />
+    <unitInfo nodeId="3642991921658122721" fileName="RunConfigurationCreator_Editor.java" startLine="26" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor" />
   </root>
   <root nodeId="4366236229294105352" modelId="r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)">
     <nodeInfo nodeId="4366236229294139635" fileName="RunConfigurationProducer_Editor.java" startLine="105" startPosition="58" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

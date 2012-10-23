@@ -9,10 +9,10 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
@@ -23,7 +23,6 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -33,68 +32,53 @@ public class ProjectDescriptorPersistence {
   private ProjectDescriptorPersistence() {
   }
 
-  public static Element saveProjectDescriptorToElement(final ProjectDescriptor descriptor, IFile file) {
+  public static Element saveProjectDescriptorToElement(ProjectDescriptor descriptor, IFile file) {
     final MacroHelper macroHelper = MacrosFactory.forProjectFile(file);
-    return new _FunctionTypes._return_P0_E0<Element>() {
-      public Element invoke() {
-        final Element result_jnk9az_a0a1a0 = new Element("project");
-        final Element result_jnk9az_a0a0a1a0 = new Element("projectModules");
-        for (Path path : Sequence.fromIterable(((Iterable<Path>) descriptor.getModules())).sort(new ISelector<Path, String>() {
-          public String select(Path p) {
-            return macroHelper.shrinkPath(p.getPath());
-          }
-        }, true)) {
-          final Element result_jnk9az_a0a0a0a0a1a0 = new Element("modulePath");
-          if (path.getPath() != null) {
-            final String result_jnk9az_a0a0a0a0a0a0a1a0 = macroHelper.shrinkPath(path.getPath());
-            result_jnk9az_a0a0a0a0a1a0.setAttribute("path", "" + result_jnk9az_a0a0a0a0a0a0a1a0);
-          }
-          if (path.getMPSFolder() != null) {
-            final String result_jnk9az_a0a1a0a0a0a0a1a0 = path.getMPSFolder();
-            result_jnk9az_a0a0a0a0a1a0.setAttribute("folder", "" + result_jnk9az_a0a1a0a0a0a0a1a0);
-          }
-          result_jnk9az_a0a0a1a0.addContent(result_jnk9az_a0a0a0a0a1a0);
-        }
-        result_jnk9az_a0a1a0.addContent(result_jnk9az_a0a0a1a0);
+    Element project = new Element("project");
 
-        final Element result_jnk9az_a2a0a1a0 = new Element("genConfs");
-        for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
-          if (tc instanceof ModelsTestConfiguration) {
-            ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
-            final Element result_jnk9az_a1a0a0a2a0a1a0 = new Element("genConfModels");
-            if (mgc.getName() != null) {
-              final String result_jnk9az_a0a0a1a0a0a2a0a1a0 = mgc.getName();
-              result_jnk9az_a1a0a0a2a0a1a0.setAttribute("name", "" + result_jnk9az_a0a0a1a0a0a2a0a1a0);
-            }
-            final Element result_jnk9az_a1a1a0a0a2a0a1a0 = new Element("models");
-            for (SModelReference m : ListSequence.fromList(mgc.getModels())) {
-              final Element result_jnk9az_a0a0a1a1a0a0a2a0a1a0 = new Element("model");
-              final String result_jnk9az_a0a0a0a1a1a0a0a2a0a1a0 = m.toString();
-              result_jnk9az_a0a0a1a1a0a0a2a0a1a0.setAttribute("modelRef", "" + result_jnk9az_a0a0a0a1a1a0a0a2a0a1a0);
-              result_jnk9az_a1a1a0a0a2a0a1a0.addContent(result_jnk9az_a0a0a1a1a0a0a2a0a1a0);
-            }
-            result_jnk9az_a1a0a0a2a0a1a0.addContent(result_jnk9az_a1a1a0a0a2a0a1a0);
-            result_jnk9az_a2a0a1a0.addContent(result_jnk9az_a1a0a0a2a0a1a0);
-          }
-          if (tc instanceof ModuleTestConfiguration) {
-            ModuleTestConfiguration sgc = (ModuleTestConfiguration) tc;
-            final Element result_jnk9az_a1a1a0a2a0a1a0 = new Element("genConfModule");
-            if (sgc.getName() != null) {
-              final String result_jnk9az_a0a0a1a1a0a2a0a1a0 = sgc.getName();
-              result_jnk9az_a1a1a0a2a0a1a0.setAttribute("name", "" + result_jnk9az_a0a0a1a1a0a2a0a1a0);
-            }
-
-            if (sgc.getModuleRef() != null) {
-              final String result_jnk9az_a0a2a1a1a0a2a0a1a0 = sgc.getModuleRef().toString();
-              result_jnk9az_a1a1a0a2a0a1a0.setAttribute("moduleRef", "" + result_jnk9az_a0a2a1a1a0a2a0a1a0);
-            }
-            result_jnk9az_a2a0a1a0.addContent(result_jnk9az_a1a1a0a2a0a1a0);
-          }
-        }
-        result_jnk9az_a0a1a0.addContent(result_jnk9az_a2a0a1a0);
-        return result_jnk9az_a0a1a0;
+    Element projectModules = new Element("projectModules");
+    for (Path path : Sequence.fromIterable(((Iterable<Path>) descriptor.getModules())).sort(new ISelector<Path, String>() {
+      public String select(Path p) {
+        return macroHelper.shrinkPath(p.getPath());
       }
-    }.invoke();
+    }, true)) {
+      XmlUtil.tagWithAttributes(projectModules, "modulePath", "path", macroHelper.shrinkPath(path.getPath()), "folder", (path.getMPSFolder() != null ?
+        path.getMPSFolder() :
+        ""
+      ));
+    }
+    project.addContent(projectModules);
+
+    Element genConfs = new Element("genConfs");
+    for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
+      if (tc instanceof ModelsTestConfiguration) {
+        ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
+        Element genConfModels = new Element("genConfModels");
+        if (mgc.getName() != null) {
+          genConfModels.setAttribute("name", mgc.getName());
+        }
+        Element models = new Element("models");
+        for (SModelReference m : ListSequence.fromList(mgc.getModels())) {
+          XmlUtil.tagWithAttribute(models, "model", "modelRef", m.toString());
+        }
+        genConfModels.addContent(models);
+        genConfs.addContent(genConfModels);
+      }
+      if (tc instanceof ModuleTestConfiguration) {
+        ModuleTestConfiguration sgc = (ModuleTestConfiguration) tc;
+        Element genConfModule = new Element("genConfModule");
+        if (sgc.getName() != null) {
+          genConfModule.setAttribute("name", sgc.getName());
+        }
+        if (sgc.getModuleRef() != null) {
+          genConfModule.setAttribute("moduleRef", sgc.getModuleRef().toString());
+        }
+        genConfs.addContent(genConfModule);
+      }
+    }
+
+    project.addContent(genConfs);
+    return project;
   }
 
   public static void saveProjectDescriptor(ProjectDescriptor descriptor, IFile file) {
@@ -122,10 +106,10 @@ public class ProjectDescriptorPersistence {
     }
 
     List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
-    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectSolutions")).first(), "solutionPath")));
-    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "languagePath")));
-    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectDevkits")).first(), "devkitPath")));
-    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectModules")).first(), "modulePath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectLanguages"), "languagePath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectDevkits"), "devkitPath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectModules"), "modulePath")));
     for (Element moduleElement : ListSequence.fromList(moduleList)) {
       Path modulePath = new Path();
       Path result_jnk9az_a1a9a1a2 = modulePath;
@@ -136,19 +120,21 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a2.addModule(modulePath);
     }
 
-    for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModels"))) {
+    for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
       ModelsTestConfiguration tc = new ModelsTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
-      for (Element me : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(e, "models")).first(), "model"))) {
+      for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
         tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
       }
       result_jnk9az_a1a2.getTestConfigurations().add(tc);
     }
-    for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModule"))) {
+
+    for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
       ModuleTestConfiguration tc = new ModuleTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
-      if (e.getAttributeValue("moduleRef") != null) {
-        tc.setModuleRef(ModuleReference.fromString(e.getAttributeValue("moduleRef")));
+      String moduleRef = e.getAttributeValue("moduleRef");
+      if (moduleRef != null) {
+        tc.setModuleRef(ModuleReference.fromString(moduleRef));
         result_jnk9az_a1a2.getTestConfigurations().add(tc);
       }
     }
@@ -168,11 +154,11 @@ public class ProjectDescriptorPersistence {
     try {
       Document document = JDOMUtil.loadDocument(file);
       List<Element> components = ListSequence.fromListWithValues(new ArrayList<Element>(), ((List<Element>) document.getRootElement().getChildren("component")));
-      Element projectElement = ((Element) ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
+      Element projectElement = ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
         public boolean accept(Element it) {
           return it.getAttributeValue("name").equals("MPSProject");
         }
-      }));
+      });
 
       loadProjectDescriptorFromElement(descriptor, file, projectElement);
     } catch (Exception e) {

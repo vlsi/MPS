@@ -27,7 +27,7 @@ public class InlineMethodWithUnusedParameters_Test extends BaseTransformationTes
     public void test_InlineMethodWithUnusedParameters() throws Exception {
       this.addNodeById("4412735672778826495");
       this.addNodeById("4412735672778826537");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("4412735672778826530"), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"));
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("4412735672778826530"), "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672778826503"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672778826549"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }

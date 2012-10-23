@@ -2085,17 +2085,6 @@
     </scopeInfo>
     <unitInfo nodeId="1235130149678" fileName="LessThanOrEqualsExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LessThanOrEqualsExpression_TextGen" />
   </root>
-  <root nodeId="1235130213032" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
-    <nodeInfo nodeId="1237982066731" fileName="LocalStaticMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237982066731" fileName="LocalStaticMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235130213032" fileName="LocalStaticMethodCall_TextGen.java" startLine="8" startPosition="65" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1235130213032" fileName="LocalStaticMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" />
-    <scopeInfo nodeId="1237982066731" fileName="LocalStaticMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" />
-    <scopeInfo nodeId="1235130213032" fileName="LocalStaticMethodCall_TextGen.java" startLine="8" startPosition="65" endLine="12" endPosition="0">
-      <varInfo nodeId="1235130213032" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1235130213032" fileName="LocalStaticMethodCall_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LocalStaticMethodCall_TextGen" />
-  </root>
   <root nodeId="1235130247219" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="1235130247219" fileName="LocalVariableDeclarationStatement_TextGen.java" startLine="14" startPosition="77" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1235130247219" fileName="LocalVariableDeclarationStatement_TextGen.java" startLine="18" startPosition="44" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4594,17 +4583,6 @@
     </scopeInfo>
     <unitInfo nodeId="1251851371723517310" fileName="ArrayClassExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayClassExpression_TextGen" />
   </root>
-  <root nodeId="1703408759744446147" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
-    <nodeInfo nodeId="1703408759744452007" fileName="LocalInstanceMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1703408759744452007" fileName="LocalInstanceMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1703408759744446147" fileName="LocalInstanceMethodCall_TextGen.java" startLine="8" startPosition="67" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1703408759744446147" fileName="LocalInstanceMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" />
-    <scopeInfo nodeId="1703408759744452007" fileName="LocalInstanceMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" />
-    <scopeInfo nodeId="1703408759744446147" fileName="LocalInstanceMethodCall_TextGen.java" startLine="8" startPosition="67" endLine="12" endPosition="0">
-      <varInfo nodeId="1703408759744446147" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1703408759744446147" fileName="LocalInstanceMethodCall_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LocalInstanceMethodCall_TextGen" />
-  </root>
   <root nodeId="1830039279190474291" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="1830039279190477852" fileName="AdditionalForLoopVariable_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1830039279190477852" fileName="AdditionalForLoopVariable_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5379,6 +5357,17 @@
       <varInfo nodeId="7671513720556341113" varName="key" />
     </scopeInfo>
     <unitInfo nodeId="7671513720556341061" fileName="SimpleCache.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SimpleCache" />
+  </root>
+  <root nodeId="7812454656619184158" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+    <nodeInfo nodeId="7812454656619184161" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7812454656619184161" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7812454656619184158" fileName="LocalMethodCall_TextGen.java" startLine="8" startPosition="59" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="7812454656619184158" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" />
+    <scopeInfo nodeId="7812454656619184161" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" />
+    <scopeInfo nodeId="7812454656619184158" fileName="LocalMethodCall_TextGen.java" startLine="8" startPosition="59" endLine="12" endPosition="0">
+      <varInfo nodeId="7812454656619184158" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7812454656619184158" fileName="LocalMethodCall_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LocalMethodCall_TextGen" />
   </root>
   <root nodeId="8064396509828214712" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="8064396509828214715" fileName="UnaryMinus_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

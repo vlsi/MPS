@@ -4,6 +4,9 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
+import java.awt.Color;
+import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
@@ -17,6 +20,11 @@ public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends Buil
 
   public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
     return BuildLayout_NamedContainer_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
+  }
+
+  @Nullable
+  public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
+    return BuildStringContainer_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

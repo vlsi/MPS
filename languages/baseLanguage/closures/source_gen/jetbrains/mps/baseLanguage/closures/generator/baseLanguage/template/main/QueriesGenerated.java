@@ -2612,8 +2612,8 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_8665905049776863912(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode bmc;
     if (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) {
-      bmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null);
-      SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), "baseMethodDeclaration", SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), false);
+      bmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
+      SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), false);
     } else {
       bmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
