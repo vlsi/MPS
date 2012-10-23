@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
@@ -175,7 +174,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushOutputNode(SNode node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.OUTPUT, new SNodePointer(node)));
+    push(new TracerNode(TracerNode.Kind.OUTPUT, new SNodePointer(node.getOldModel().getSModelReference(), node.getSNodeId())));
   }
 
   @Override
