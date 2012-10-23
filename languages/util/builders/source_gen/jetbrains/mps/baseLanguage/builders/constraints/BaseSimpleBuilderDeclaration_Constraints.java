@@ -8,8 +8,4 @@ public class BaseSimpleBuilderDeclaration_Constraints extends BaseConstraintsDes
   public BaseSimpleBuilderDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration";
-  }
 }
