@@ -143,7 +143,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (columnNumber <= 0) {
               return;
             }
-            SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).removeElementAt(columnNumber - 1);
+            SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(columnNumber - 1);
             for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
               if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", false) == event) {
                 SNodeOperations.deleteNode(transition);
