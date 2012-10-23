@@ -87,6 +87,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     boolean finished = false;
     // we need to repeat replacing instance/static method calls, array operations 
     // because operand they are applied to might change and suddenly become ValueProxy during those changes 
+    int count = 0;
     while (!(finished)) {
 
       finished = replaceInstanceMethodCalls();
@@ -105,6 +106,9 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       finished &= replaceLocalVariableDeclarations();
       finished &= replaceForeachVariable();
       finished &= replaceCasts();
+      if (count++ > 100) {
+        break;
+      }
     }
 
     replaceInstanceofs();
