@@ -61,9 +61,6 @@
     <content url="file://$MODULE_DIR$/../../languages/languageDesign/test">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="true" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/languages/javaSource/source_gen">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/languages/javaSource/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../testbench">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/source" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/source_gen" isTestSource="true" />

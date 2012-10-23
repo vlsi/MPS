@@ -143,7 +143,7 @@ public class Utils {
     try {
       // FIXME  
       DirParser dirParser = new DirParser(ourModule, null, null);
-      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.tests.placeholder", "")).getSModel();
+      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
       List<SNode> nodes = dirParser.parseDir(new File(dirPath));
 
       for (SNode n : ListSequence.fromList(nodes)) {

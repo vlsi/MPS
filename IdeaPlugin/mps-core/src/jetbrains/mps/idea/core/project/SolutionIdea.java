@@ -35,6 +35,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.stubs.LibrariesLoader;
@@ -143,8 +144,6 @@ public class SolutionIdea extends Solution {
       }
       */
 
-      myModule.getProject().getComponent(Proj)
-
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
@@ -190,10 +189,10 @@ public class SolutionIdea extends Solution {
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     // FIXME make proper dependencies
-//    Dependency dep = new Dependency();
-//    dep.setModuleRef(moduleRef);
-//    dep.setReexport(false); // overriding parameter
-//    myAddedDependencies.add(dep);
+    Dependency dep = new Dependency();
+    dep.setModuleRef(moduleRef);
+    dep.setReexport(false); // overriding parameter
+    myAddedDependencies.add(dep);
   }
 
   @Override
@@ -279,7 +278,7 @@ public class SolutionIdea extends Solution {
       Library library = loe.getLibrary();
       if (library == null) continue;
 
-      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
+      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES), LanguageID.JAVA_MANAGER);
     }
   }
 

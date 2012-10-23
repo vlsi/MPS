@@ -37,18 +37,19 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.java.util.SolutionIds;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.JavaStubPsiListener;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
@@ -62,8 +63,7 @@ import java.util.*;
  */
 public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager implements ProjectComponent {
 
-  private static Map<Project,ProjectJavaSourceImporter> INSTANCEs = new HashMap<Project,ProjectJavaSourceImporter>();
-  private Object LOCK = new Object();
+  private final Object LOCK = new Object();
 
   private Project myProject;
   private ModuleManager myModuleManager;
@@ -90,17 +90,22 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
     myModulesToSolutions = new HashMap<Module,Solution>();
   }
 
+  protected ModelRootManager getModelRootManager() {
+    return new ModelRootManager(SolutionIds.stubManagerSltn.getModuleId().toString(), "jetbrains.mps.ide.java.stubManagers.JavaSourceStubs");
+  }
+
   @Override
   protected void init() {
-    synchronized (INSTANCEs) {
-      if (INSTANCEs.get(myProject)!=null) throw new IllegalStateException("Double initialization");
-      INSTANCEs.put(myProject,this);
-    }
   }
 
   @Override
   protected void dispose() {
   }
+
+//  @Override
+//  protected ModelRootManager getModelRootManager() {
+//    return null;
+//  }
 
   @Override
   public boolean isHidden() {
@@ -124,12 +129,6 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
     System.out.println("Disposing !!!");
     // remove listener
     myModuleManager = null;
-  }
-
-  public static ProjectJavaSourceImporter getInstance(Project p) {
-    synchronized (INSTANCEs) {
-      return INSTANCEs.get(p);
-    }
   }
 
   public Solution getSolutionForModule(Module mod) {
@@ -257,24 +256,22 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
     synchronized (LOCK) {
 
       final VirtualFile[] roots = ModuleRootManager.getInstance(module).getSourceRoots(false);
-      // workaround for setting variable from within a runnable
-      final Solution[] solutionCell = new Solution[1];
 
       for (VirtualFile root: roots) {
         System.out.println(" -- " + root);
       }
 
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      final Solution solution = ModelAccess.instance().runWriteAction(new Computable<Solution>() {
         @Override
-        public void run() {
-          Solution solution = addSolution(SOLUTION_NAME_PREFIX+module.getName(), roots, true);
+        public Solution compute() {
+          Solution solution = addSolution(SOLUTION_NAME_PREFIX+module.getName(), roots);
           solution.updateModelsSet();
           myModulesToSolutions.put(module, solution);
-          solutionCell[0] = solution;
+          return solution;
         }
       });
 
-      for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solutionCell[0])) {
+      for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solution)) {
         if (desc instanceof BaseStubModelDescriptor) {
           BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
           FileBasedModelDataSource modelDataSource = (FileBasedModelDataSource) modelDesc.getSource();
@@ -298,9 +295,15 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
         public void run() {
           MPSFacet mpsFacet = getMpsFacet(module);
           Solution facetSolution = mpsFacet.getSolution();
-          facetSolution.addDependency(solutionCell[0].getModuleReference(), false);
+          facetSolution.addDependency(solution.getModuleReference(), false);
         }
       });
+
+//      MPSFacet mpsFacet = getMpsFacet(module);
+//      if (mpsFacet!=null) {
+//        Solution facetSolution = mpsFacet.getSolution();
+//        facetSolution.invalidateDependencies();
+//      }
 
       if (separate) updatePsiListener();
     }

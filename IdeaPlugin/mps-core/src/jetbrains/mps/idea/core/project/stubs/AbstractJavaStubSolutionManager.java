@@ -35,10 +35,14 @@ import org.jetbrains.annotations.NotNull;
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
 
-  // FIXME maybe should be parameterized by ModelRootManager, not boolean sourceStubs
+  private static ModelRootManager defaultStubMgr = LanguageID.JAVA_MANAGER;
 
-  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots, boolean sourceStubs) {
-    ModelRootManager rootMgr = sourceStubs ? LanguageID.JAVA_SOURCE_MANAGER : LanguageID.JAVA_MANAGER;
+  protected ModelRootManager getModelRootManager() {
+    // default stub model root manager
+    return defaultStubMgr;
+  }
+
+  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots, ModelRootManager rootMgr) {
     for (VirtualFile f : roots) {
       ModelRoot modelRoot = new ModelRoot(getLocalPath(f), rootMgr);
       if (solutionDescriptor.getModelRoots().contains(modelRoot)) {
@@ -48,8 +52,9 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
     }
   }
 
-  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
-    addModelRoots(solutionDescriptor,roots, false);
+  protected void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
+    ModelRootManager rootMgr = getModelRootManager();
+    addModelRoots(solutionDescriptor, roots, rootMgr);
   }
 
   private static String getLocalPath(VirtualFile f) {
@@ -89,16 +94,12 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
   protected abstract void dispose();
 
-  protected Solution addSolution(String name, VirtualFile[] roots, boolean sourceStubs) {
+  protected Solution addSolution(String name, VirtualFile[] roots) {
     SolutionDescriptor sd = new SolutionDescriptor();
     sd.setNamespace(name);
     sd.setId(ModuleId.foreign(name));
-    addModelRoots(sd, roots, sourceStubs);
+    addModelRoots(sd, roots);
     return StubSolution.newInstance(sd, this);
-  }
-
-  protected Solution addSolution(String name, VirtualFile[] roots) {
-    return addSolution(name, roots, false);
   }
 
   protected void removeSolution(String name) {

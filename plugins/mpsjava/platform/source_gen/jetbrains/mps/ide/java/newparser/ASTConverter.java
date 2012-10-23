@@ -1466,10 +1466,6 @@ public class ASTConverter {
   }
 
   /*package*/ SNode convertExpression(SingleNameReference x) {
-
-
-    System.out.println("DEBUG: VAR REF = " + new String(x.token));
-
     SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SReference sref = new DynamicReference("variableDeclaration", varRef, null, new String(x.token));
     varRef.addReference(sref);
