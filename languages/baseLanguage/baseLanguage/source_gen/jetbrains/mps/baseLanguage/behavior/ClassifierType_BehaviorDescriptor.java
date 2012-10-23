@@ -16,6 +16,10 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return ClassifierType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }
 
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return ClassifierType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  }
+
   public boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return ClassifierType_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
   }
@@ -73,11 +77,11 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
   }
 
   public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return ClassifierType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {

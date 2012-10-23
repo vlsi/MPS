@@ -2058,8 +2058,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1075233539828">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no return type&gt;" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no return type&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068580123133" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1185275109560">
@@ -2314,8 +2314,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1075287750861">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no type&gt;" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no type&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068580123133" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1185275167058">
@@ -10404,8 +10404,8 @@
   </root>
   <root id="1181823106174">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1181823199382">
-      <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
       <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+      <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215090010725" resolveInfo="VariableName" />
       <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1181823199383">
@@ -12772,7 +12772,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1214918929704">
         <property name="text" nameId="tpc2.1073389577007" value="++" />
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2583220156311752620">
           <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
@@ -12792,8 +12792,11 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1214919144179">
         <property name="text" nameId="tpc2.1073389577007" value="--" />
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="9200955719633191868">
+          <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
+        </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="1236611958669">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -13776,16 +13779,21 @@
   </root>
   <root id="1239709274498">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1239709378679">
+      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1239709378680" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1239709383782">
         <property name="text" nameId="tpc2.1073389577007" value="++" />
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="9200955719633191865">
+          <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
+        </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationRightStyleClassItem" typeId="tpc2.1233759184865" id="1239711175394">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1239709450594">
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1239714902950" />
       </node>
     </node>
@@ -13794,8 +13802,11 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1239709669422">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1239709673955">
         <property name="text" nameId="tpc2.1073389577007" value="--" />
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="9200955719633191870">
+          <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
+        </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationRightStyleClassItem" typeId="tpc2.1233759184865" id="1239711190233">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>

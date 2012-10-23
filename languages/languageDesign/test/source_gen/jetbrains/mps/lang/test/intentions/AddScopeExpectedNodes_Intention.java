@@ -6,11 +6,11 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.test.behavior.ScopesTest_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AddScopeExpectedNodes_Intention extends BaseIntention implements Intention {
@@ -37,8 +37,19 @@ public class AddScopeExpectedNodes_Intention extends BaseIntention implements In
     return "Add Scope Expected Nodes";
   }
 
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return SLinkOperations.getTarget(node, "checkingReference", false) != null;
+  }
+
   public void execute(final SNode node, final EditorContext editorContext) {
-    Scope scope = ModelConstraints.getScope(((SNode) SNodeOperations.getParent(node)).getReferences().get(0));
+    Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(node));
     for (SNode avaliable : scope.getAvailableElements(null)) {
       SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
       SLinkOperations.setTarget(expectedNode, "ref", avaliable, false);

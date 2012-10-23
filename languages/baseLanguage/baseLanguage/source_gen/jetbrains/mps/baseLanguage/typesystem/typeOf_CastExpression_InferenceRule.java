@@ -9,18 +9,11 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_CastExpression_InferenceRule() {
@@ -35,26 +28,9 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode) castType, _info_12389875345);
       }
 
-      Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
-      if (SNodeOperations.isInstanceOf(castType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
-        // every unbound type var gets a var 
-        List<SNode> pl = SetSequence.fromSet(MapSequence.fromMap(subs).mappingsSet()).where(new IWhereFilter<IMapping<SNode, SNode>>() {
-          public boolean accept(IMapping<SNode, SNode> m) {
-            return SLinkOperations.getTarget(SNodeOperations.as(m.value(), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == m.key();
-          }
-        }).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
-          public SNode select(IMapping<SNode, SNode> m) {
-            return m.key();
-          }
-        }).toListSequence();
-        for (SNode p : ListSequence.fromList(pl)) {
-          final SNode T_typevar_778192503039804307 = typeCheckingContext.createNewRuntimeTypesVariable();
-          MapSequence.fromMap(subs).put(p, typeCheckingContext.getRepresentative(T_typevar_778192503039804307));
-        }
-        castType = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+      if (SNodeOperations.isInstanceOf(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+        castType = new typeOf_CastExpression_InferenceRule.QuotationClass_sr53ct_a0a0a3a0a0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), typeCheckingContext);
       }
-
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928127", 0, null);
@@ -76,5 +52,36 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_sr53ct_a0a0a3a0a0 {
+    public QuotationClass_sr53ct_a0a0a3a0a0() {
+    }
+
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

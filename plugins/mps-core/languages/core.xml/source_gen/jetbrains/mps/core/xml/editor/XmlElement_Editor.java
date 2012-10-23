@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class XmlElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -388,7 +389,11 @@ public class XmlElement_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+      return this.nodeFactory(listOwner, editorContext);
+    }
+
+    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+      return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
@@ -424,7 +429,11 @@ public class XmlElement_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+      return this.nodeFactory(listOwner, editorContext);
+    }
+
+    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+      return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

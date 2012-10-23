@@ -31,6 +31,7 @@ import java.io.IOException;
 import org.jdom.Element;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
@@ -191,10 +192,10 @@ public class FileMPSProject extends Project {
       }
 
       List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
-      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectSolutions"), "solutionPath")));
-      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectLanguages"), "languagePath")));
-      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectDevkits"), "devkitPath")));
-      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "projectModules"), "modulePath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectLanguages"), "languagePath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectDevkits"), "devkitPath")));
+      ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
         Path result_dkknya_a1a9a0a1a = modulePath;
@@ -205,16 +206,16 @@ public class FileMPSProject extends Project {
         result_dkknya_a0a1a.addModule(modulePath);
       }
 
-      for (Element e : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "genConfs"), "genConfModels"))) {
+      for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
         ModelsTestConfiguration tc = new ModelsTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
-        for (Element me : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(e, "models"), "model"))) {
+        for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
           tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
         }
         result_dkknya_a0a1a.getTestConfigurations().add(tc);
       }
 
-      for (Element e : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(jetbrains.mps.project.persistence.JDOMUtil.first(root, "genConfs"), "genConfModule"))) {
+      for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
         ModuleTestConfiguration tc = new ModuleTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
         String moduleRef = e.getAttributeValue("moduleRef");

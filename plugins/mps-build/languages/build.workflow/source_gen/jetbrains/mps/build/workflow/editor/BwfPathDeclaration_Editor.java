@@ -17,7 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -95,7 +95,11 @@ public class BwfPathDeclaration_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+      return this.nodeFactory(listOwner, editorContext);
+    }
+
+    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+      return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

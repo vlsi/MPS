@@ -4,11 +4,16 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public class TypeVariableReference_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public TypeVariableReference_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return TypeVariableReference_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
   public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
@@ -28,11 +33,11 @@ public class TypeVariableReference_BehaviorDescriptor extends Type_BehaviorDescr
   }
 
   public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return TypeVariableReference_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   @Override

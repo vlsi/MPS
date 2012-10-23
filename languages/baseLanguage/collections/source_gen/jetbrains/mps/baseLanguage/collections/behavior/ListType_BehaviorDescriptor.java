@@ -4,14 +4,18 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import jetbrains.mps.smodel.SModel;
 
 public class ListType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public ListType_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
   public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
@@ -42,8 +46,8 @@ public class ListType_BehaviorDescriptor extends Type_BehaviorDescriptor impleme
     return ListType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {

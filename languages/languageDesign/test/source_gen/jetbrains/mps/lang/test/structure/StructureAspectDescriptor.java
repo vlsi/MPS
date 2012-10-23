@@ -86,7 +86,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 34:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"ref"});
       case 35:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{"checkingReference"});
       case 36:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.NodesTestMethod", false, new String[]{"jetbrains.mps.lang.test.structure.NodesTestMethod"}, new String[]{}, new String[]{});
       case 37:

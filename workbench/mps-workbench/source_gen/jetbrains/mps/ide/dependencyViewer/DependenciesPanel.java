@@ -67,7 +67,8 @@ public class DependenciesPanel extends JPanel {
     add(createToolbar(), BorderLayout.NORTH);
   }
 
-  public void setContent(DependencyViewerScope scope, jetbrains.mps.project.Project project) {
+  public void resetContent(DependencyViewerScope scope, jetbrains.mps.project.Project project, boolean isMeta) {
+    myIsMeta = isMeta;
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
     myInitTree.setContent(scope, project);
@@ -169,7 +170,7 @@ public class DependenciesPanel extends JPanel {
     }
 
     public void actionPerformed(AnActionEvent event) {
-      setContent(myInitialScope, myMPSProject);
+      resetContent(myInitialScope, myMPSProject, myIsMeta);
     }
   }
 
@@ -183,8 +184,7 @@ public class DependenciesPanel extends JPanel {
     }
 
     public void setSelected(AnActionEvent event, boolean b) {
-      myIsMeta = b;
-      setContent(myInitialScope, myMPSProject);
+      resetContent(myInitialScope, myMPSProject, b);
     }
   }
 }

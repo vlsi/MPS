@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -31,12 +32,15 @@ public class ClassCreator_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if ((classConcept == null)) {
       // special logic for java stubs 
-      SModel targetModel = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")).getTargetModel();
-      SNodeId targetId = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")).getTargetNodeId();
-      if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(targetModel.getStereotype()) && targetId != null) {
-        String constructorId = targetId.toString();
-        String classId = constructorId.substring(0, constructorId.indexOf("."));
-        classConcept = SNodeOperations.cast(targetModel.getNodeById(classId), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      SReference constructorDeclarationReference = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+      if (constructorDeclarationReference != null) {
+        SModel targetModel = constructorDeclarationReference.getTargetModel();
+        SNodeId targetId = constructorDeclarationReference.getTargetNodeId();
+        if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(targetModel.getStereotype()) && targetId != null) {
+          String constructorId = targetId.toString();
+          String classId = constructorId.substring(0, constructorId.indexOf("."));
+          classConcept = SNodeOperations.cast(targetModel.getNodeById(classId), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        }
       }
     }
     return SLinkOperations.getTargets(classConcept, "constructor", true);

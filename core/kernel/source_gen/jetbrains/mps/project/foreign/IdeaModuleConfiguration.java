@@ -7,6 +7,7 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import org.jdom.Element;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -35,7 +36,7 @@ public class IdeaModuleConfiguration {
     IdeaModuleConfiguration imc = new IdeaModuleConfiguration(moduleFile);
     Element module = JDOMUtil.loadDocument(moduleFile).getRootElement();
 
-    Iterable<Element> components = jetbrains.mps.project.persistence.JDOMUtil.children(module, "component");
+    Iterable<Element> components = XmlUtil.children(module, "component");
     Element facetManager = Sequence.fromIterable(components).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element it) {
         return "FacetManager".equals(it.getAttributeValue("name"));
@@ -45,7 +46,7 @@ public class IdeaModuleConfiguration {
       return imc;
     }
 
-    Element mpsFacet = Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(facetManager, "facet")).findFirst(new IWhereFilter<Element>() {
+    Element mpsFacet = Sequence.fromIterable(XmlUtil.children(facetManager, "facet")).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element fct) {
         return "MPS".equals(fct.getAttributeValue("name"));
       }
@@ -54,7 +55,7 @@ public class IdeaModuleConfiguration {
       return imc;
     }
 
-    Element cfg = jetbrains.mps.project.persistence.JDOMUtil.first(mpsFacet, "configuration");
+    Element cfg = XmlUtil.first(mpsFacet, "configuration");
     if (cfg != null) {
       MPSFacetConfiguration mpsFacetConfig = new MPSFacetConfiguration();
       mpsFacetConfig.readFromXml(cfg);

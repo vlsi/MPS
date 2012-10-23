@@ -2982,7 +2982,7 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1214919536691(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);

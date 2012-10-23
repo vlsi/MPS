@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jdom.Element;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -37,15 +38,15 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
-    descriptor.getDependencies().addAll(loadDependenciesList(JDOMUtil.first(root, "dependencies")));
+    descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
 
-    descriptor.getUsedLanguages().addAll(Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {
         return ModuleReference.fromString(ul.getText());
       }
     }).toListSequence());
 
-    descriptor.getUsedDevkits().addAll(Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedDevkits().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element udk) {
         return ModuleReference.fromString(udk.getText());
       }
@@ -53,7 +54,7 @@ public class ModuleDescriptorPersistence {
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
-      Element runtimeXML = JDOMUtil.first(root, "runtime");
+      Element runtimeXML = XmlUtil.first(root, "runtime");
       if (runtimeXML != null) {
         for (Dependency dep : ListSequence.fromList(loadDependenciesList(runtimeXML))) {
           ld.getRuntimeModules().add(dep.getModuleRef());
@@ -72,14 +73,14 @@ public class ModuleDescriptorPersistence {
     if (!(descriptor.getUsedLanguages().isEmpty())) {
       Element usedLanguages = new Element("usedLanguages");
       for (ModuleReference langRef : CollectionSequence.fromCollection(descriptor.getUsedLanguages())) {
-        JDOMUtil.tagWithText(usedLanguages, "usedLanguage", langRef.toString());
+        XmlUtil.tagWithText(usedLanguages, "usedLanguage", langRef.toString());
       }
       result.addContent(usedLanguages);
     }
     if (!(descriptor.getUsedDevkits().isEmpty())) {
       Element usedDevKits = new Element("usedDevKits");
       for (ModuleReference dkRef : CollectionSequence.fromCollection(descriptor.getUsedDevkits())) {
-        JDOMUtil.tagWithText(usedDevKits, "usedDevKit", dkRef.toString());
+        XmlUtil.tagWithText(usedDevKits, "usedDevKit", dkRef.toString());
       }
       result.addContent(usedDevKits);
     }
@@ -100,14 +101,14 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<Dependency> loadDependenciesList(Element depElement) {
-    return Sequence.fromIterable(JDOMUtil.children(depElement, "dependency")).select(new ISelector<Element, Dependency>() {
+    return Sequence.fromIterable(XmlUtil.children(depElement, "dependency")).select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
             final Dependency result_dxyzb6_a0a0a0a0a0a2 = new Dependency();
             final ModuleReference result_dxyzb6_a0a0a0a0a0a0a2 = ModuleReference.fromString(d.getText());
             result_dxyzb6_a0a0a0a0a0a2.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a2);
-            final boolean result_dxyzb6_a1a0a0a0a0a0a2 = JDOMUtil.booleanWithDefault(d, "reexport", true);
+            final boolean result_dxyzb6_a1a0a0a0a0a0a2 = XmlUtil.booleanWithDefault(d, "reexport", true);
             result_dxyzb6_a0a0a0a0a0a2.setReexport(result_dxyzb6_a1a0a0a0a0a0a2);
             return result_dxyzb6_a0a0a0a0a0a2;
           }
@@ -118,7 +119,7 @@ public class ModuleDescriptorPersistence {
 
   private static void saveDependencyList(Element result, Collection<Dependency> dependencies) {
     for (Dependency md : CollectionSequence.fromCollection(dependencies)) {
-      JDOMUtil.tagWithAttributeAndText(result, "dependency", "reexport", Boolean.toString(md.isReexport()), md.getModuleRef().toString());
+      XmlUtil.tagWithAttributeAndText(result, "dependency", "reexport", Boolean.toString(md.isReexport()), md.getModuleRef().toString());
     }
   }
 
@@ -137,16 +138,16 @@ public class ModuleDescriptorPersistence {
         String pathName = modelRootElement.getAttributeValue("path");
         if (pathName == null) {
           // left for compatibility 
-          pathName = JDOMUtil.stringWithDefault(modelRootElement, "rootPath", "");
+          pathName = XmlUtil.stringWithDefault(modelRootElement, "rootPath", "");
         }
         final String result_dxyzb6_a2a0a0a5 = macroHelper.expandPath(pathName);
         result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a2a0a0a5);
-        Element manager = JDOMUtil.first(modelRootElement, "manager");
+        Element manager = XmlUtil.first(modelRootElement, "manager");
         if (manager != null) {
           final ModelRootManager result_dxyzb6_a0a4a0a0a5 = new ModelRootManager();
-          final String result_dxyzb6_a0a0a4a0a0a5 = JDOMUtil.stringWithDefault(manager, "moduleId", "");
+          final String result_dxyzb6_a0a0a4a0a0a5 = XmlUtil.stringWithDefault(manager, "moduleId", "");
           result_dxyzb6_a0a4a0a0a5.setModuleId(result_dxyzb6_a0a0a4a0a0a5);
-          final String result_dxyzb6_a1a0a4a0a0a5 = JDOMUtil.stringWithDefault(manager, "className", "");
+          final String result_dxyzb6_a1a0a4a0a0a5 = XmlUtil.stringWithDefault(manager, "className", "");
           result_dxyzb6_a0a4a0a0a5.setClassName(result_dxyzb6_a1a0a4a0a0a5);
           result_dxyzb6_a0a0a5.setManager(result_dxyzb6_a0a4a0a0a5);
         }
@@ -156,7 +157,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<ModelRoot> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
-    return Sequence.fromIterable(JDOMUtil.children(stubModelEntriesElement, "stubModelEntry")).select(new ISelector<Element, ModelRoot>() {
+    return Sequence.fromIterable(XmlUtil.children(stubModelEntriesElement, "stubModelEntry")).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelEntry(mre, macroHelper);
       }
@@ -169,11 +170,11 @@ public class ModuleDescriptorPersistence {
         final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
         final String result_dxyzb6_a0a0a0a7 = macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
         result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
-        Element manager = JDOMUtil.first(modelRootElement, "manager");
+        Element manager = XmlUtil.first(modelRootElement, "manager");
         final ModelRootManager result_dxyzb6_a2a0a0a7 = new ModelRootManager();
-        final String result_dxyzb6_a0a2a0a0a7 = JDOMUtil.stringWithDefault(manager, "moduleId", "");
+        final String result_dxyzb6_a0a2a0a0a7 = XmlUtil.stringWithDefault(manager, "moduleId", "");
         result_dxyzb6_a2a0a0a7.setModuleId(result_dxyzb6_a0a2a0a0a7);
-        final String result_dxyzb6_a1a2a0a0a7 = JDOMUtil.stringWithDefault(manager, "className", "");
+        final String result_dxyzb6_a1a2a0a0a7 = XmlUtil.stringWithDefault(manager, "className", "");
         result_dxyzb6_a2a0a0a7.setClassName(result_dxyzb6_a1a2a0a0a7);
         result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a2a0a0a7);
         return result_dxyzb6_a0a0a7;
@@ -189,7 +190,7 @@ public class ModuleDescriptorPersistence {
         root.getPath()
       )));
       if (root.getManager() != null) {
-        JDOMUtil.tagWithAttributes(modelRoot, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
+        XmlUtil.tagWithAttributes(modelRoot, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
       }
       result.addContent(modelRoot);
     }
@@ -202,7 +203,7 @@ public class ModuleDescriptorPersistence {
         "" :
         root.getPath()
       )));
-      JDOMUtil.tagWithAttributes(stubModelEntry, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
+      XmlUtil.tagWithAttributes(stubModelEntry, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
       result.addContent(stubModelEntry);
     }
   }

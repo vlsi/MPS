@@ -12,6 +12,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
@@ -19,6 +20,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import java.io.OutputStream;
 import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -40,7 +42,7 @@ public class ProjectDescriptorPersistence {
         return macroHelper.shrinkPath(p.getPath());
       }
     }, true)) {
-      JDOMUtil.tagWithAttributes(projectModules, "modulePath", "path", macroHelper.shrinkPath(path.getPath()), "folder", (path.getMPSFolder() != null ?
+      XmlUtil.tagWithAttributes(projectModules, "modulePath", "path", macroHelper.shrinkPath(path.getPath()), "folder", (path.getMPSFolder() != null ?
         path.getMPSFolder() :
         ""
       ));
@@ -57,7 +59,7 @@ public class ProjectDescriptorPersistence {
         }
         Element models = new Element("models");
         for (SModelReference m : ListSequence.fromList(mgc.getModels())) {
-          JDOMUtil.tagWithAttribute(models, "model", "modelRef", m.toString());
+          XmlUtil.tagWithAttribute(models, "model", "modelRef", m.toString());
         }
         genConfModels.addContent(models);
         genConfs.addContent(genConfModels);
@@ -85,7 +87,7 @@ public class ProjectDescriptorPersistence {
     try {
       OutputStream os = file.openOutputStream();
       Document doc = new Document(projectElement);
-      jetbrains.mps.util.JDOMUtil.writeDocument(doc, os);
+      JDOMUtil.writeDocument(doc, os);
     } catch (Exception e) {
       if (log.isErrorEnabled()) {
         log.error("", e);
@@ -104,10 +106,10 @@ public class ProjectDescriptorPersistence {
     }
 
     List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
-    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "projectSolutions"), "solutionPath")));
-    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "projectLanguages"), "languagePath")));
-    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "projectDevkits"), "devkitPath")));
-    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "projectModules"), "modulePath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectLanguages"), "languagePath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectDevkits"), "devkitPath")));
+    ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectModules"), "modulePath")));
     for (Element moduleElement : ListSequence.fromList(moduleList)) {
       Path modulePath = new Path();
       Path result_jnk9az_a1a9a1a2 = modulePath;
@@ -118,16 +120,16 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a2.addModule(modulePath);
     }
 
-    for (Element e : Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "genConfs"), "genConfModels"))) {
+    for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
       ModelsTestConfiguration tc = new ModelsTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
-      for (Element me : Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(e, "models"), "model"))) {
+      for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
         tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
       }
       result_jnk9az_a1a2.getTestConfigurations().add(tc);
     }
 
-    for (Element e : Sequence.fromIterable(JDOMUtil.children(JDOMUtil.first(root, "genConfs"), "genConfModule"))) {
+    for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
       ModuleTestConfiguration tc = new ModuleTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
       String moduleRef = e.getAttributeValue("moduleRef");
@@ -150,7 +152,7 @@ public class ProjectDescriptorPersistence {
     }
 
     try {
-      Document document = jetbrains.mps.util.JDOMUtil.loadDocument(file);
+      Document document = JDOMUtil.loadDocument(file);
       List<Element> components = ListSequence.fromListWithValues(new ArrayList<Element>(), ((List<Element>) document.getRootElement().getChildren("component")));
       Element projectElement = ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
         public boolean accept(Element it) {

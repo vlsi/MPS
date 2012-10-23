@@ -21,6 +21,7 @@
   <import index="jhs5" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.output(MPS.Core/org.jdom.output@java_stub)" version="-1" />
   <import index="hxfr" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)" version="-1" />
   <import index="gn4j" modelUID="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" version="-1" />
+  <import index="7a2w" modelUID="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -1225,8 +1226,8 @@
                 </node>
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7113564998979582809">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gn4j.2184872129967143036" resolveInfo="children" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gn4j.2184872129967111884" resolveInfo="JDOMUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7a2w.4876847581624854503" resolveInfo="children" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7a2w.4876847581624854372" resolveInfo="JDOMUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7113564998979582810">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5164231775618799760" resolveInfo="module" />
                 </node>
@@ -1293,8 +1294,8 @@
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7113564998979582924">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7113564998979582906">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gn4j.2184872129967111884" resolveInfo="JDOMUtil" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gn4j.2184872129967143036" resolveInfo="children" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7a2w.4876847581624854372" resolveInfo="JDOMUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7a2w.4876847581624854503" resolveInfo="children" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7113564998979582907">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842994667883032815" resolveInfo="facetManager" />
                   </node>
@@ -1348,8 +1349,8 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zwkq.~Element" resolveInfo="Element" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7113564998979582985">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gn4j.2184872129967143071" resolveInfo="first" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gn4j.2184872129967111884" resolveInfo="JDOMUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7a2w.4876847581624854534" resolveInfo="first" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7a2w.4876847581624854372" resolveInfo="JDOMUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7113564998979582986">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7113564998979582899" resolveInfo="mpsFacet" />
                 </node>

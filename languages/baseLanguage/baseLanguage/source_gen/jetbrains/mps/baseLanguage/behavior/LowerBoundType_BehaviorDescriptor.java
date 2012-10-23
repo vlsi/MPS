@@ -4,9 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
+import java.util.List;
 
 public class LowerBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public LowerBoundType_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return LowerBoundType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
   public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
@@ -30,11 +35,11 @@ public class LowerBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor i
   }
 
   public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return LowerBoundType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   @Override

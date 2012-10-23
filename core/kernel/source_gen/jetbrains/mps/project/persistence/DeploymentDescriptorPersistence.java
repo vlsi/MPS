@@ -9,6 +9,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -33,8 +34,8 @@ public class DeploymentDescriptorPersistence {
           final String result_wu2j1h_a2a0a0d0c0a = rootElement.getAttributeValue("type");
           result_wu2j1h_a0a0d0c0a.setType(result_wu2j1h_a2a0a0d0c0a);
 
-          for (Element a : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(rootElement, "dependencies"))) {
-            for (final Element module : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(a, "module"))) {
+          for (Element a : Sequence.fromIterable(XmlUtil.children(rootElement, "dependencies"))) {
+            for (final Element module : Sequence.fromIterable(XmlUtil.children(a, "module"))) {
               result_wu2j1h_a0a0d0c0a.getDependencies().add(new _FunctionTypes._return_P0_E0<Dependency>() {
                 public Dependency invoke() {
                   final Dependency result_wu2j1h_a0a0a0a0a4a0a0d0c0a = new Dependency();
@@ -48,14 +49,14 @@ public class DeploymentDescriptorPersistence {
             }
           }
 
-          for (Element b : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(rootElement, "runtime"))) {
+          for (Element b : Sequence.fromIterable(XmlUtil.children(rootElement, "runtime"))) {
             result_wu2j1h_a0a0d0c0a.getRuntimeJars().add(b.getAttributeValue("jar"));
           }
-          for (Element b : Sequence.fromIterable(jetbrains.mps.project.persistence.JDOMUtil.children(rootElement, "library"))) {
+          for (Element b : Sequence.fromIterable(XmlUtil.children(rootElement, "library"))) {
             result_wu2j1h_a0a0d0c0a.getLibraries().add(b.getAttributeValue("jar"));
           }
 
-          Element sources = jetbrains.mps.project.persistence.JDOMUtil.first(rootElement, "sources");
+          Element sources = XmlUtil.first(rootElement, "sources");
           if (sources != null) {
             final String result_wu2j1h_a0a01a0a0d0c0a = sources.getAttributeValue("jar");
             result_wu2j1h_a0a0d0c0a.setSourcesJar(result_wu2j1h_a0a01a0a0d0c0a);

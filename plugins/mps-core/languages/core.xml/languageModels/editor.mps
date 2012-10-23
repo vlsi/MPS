@@ -527,6 +527,19 @@
                   <property name="flag" nameId="tpc2.1186414551515" value="true" />
                 </node>
                 <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1622293396948968271" />
+                <node role="nodeFactory" roleId="tpc2.1176897874615" type="tpc2.QueryFunction_NodeFactory" typeId="tpc2.1176897764478" id="2132783325237920796">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2132783325237920797">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2132783325237920798">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2132783325237920799">
+                        <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="2132783325237920801">
+                          <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2132783325237920802">
+                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="iuxj.1622293396948952339" resolveInfo="XmlText" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1622293396948968281">
                 <property name="text" nameId="tpc2.1073389577007" value="&lt;/" />
@@ -584,6 +597,19 @@
                     <property name="text" nameId="tpc2.1073389577007" value="" />
                     <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1622293396948973032">
                       <property name="flag" nameId="tpc2.1186414551515" value="true" />
+                    </node>
+                  </node>
+                  <node role="nodeFactory" roleId="tpc2.1176897874615" type="tpc2.QueryFunction_NodeFactory" typeId="tpc2.1176897764478" id="2132783325237920832">
+                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2132783325237920833">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2132783325237920834">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2132783325237920835">
+                          <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="2132783325237920837">
+                            <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2132783325237920838">
+                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="iuxj.1622293396948952339" resolveInfo="XmlText" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -825,6 +851,19 @@
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
           </node>
+          <node role="nodeFactory" roleId="tpc2.1176897874615" type="tpc2.QueryFunction_NodeFactory" typeId="tpc2.1176897764478" id="2132783325237951130">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2132783325237951131">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2132783325237951132">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2132783325237951133">
+                  <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="2132783325237951135">
+                    <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2132783325237951136">
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="iuxj.6666499814681541919" resolveInfo="XmlTextValue" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6666499814681447941">
           <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
@@ -880,6 +919,19 @@
               <property name="text" nameId="tpc2.1073389577007" value="" />
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="3080189811177276744">
                 <property name="flag" nameId="tpc2.1186414551515" value="true" />
+              </node>
+            </node>
+            <node role="nodeFactory" roleId="tpc2.1176897874615" type="tpc2.QueryFunction_NodeFactory" typeId="tpc2.1176897764478" id="2132783325237951123">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2132783325237951124">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2132783325237951125">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2132783325237951126">
+                    <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="2132783325237951128">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2132783325237951129">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="iuxj.6666499814681541919" resolveInfo="XmlTextValue" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2367,8 +2419,8 @@
           </node>
         </node>
         <node role="ifFalseCellModel" roleId="tpc2.1088612973955" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8886258982030585087">
-          <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+          <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="iuxj.1622293396948953704" resolveInfo="value" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="6999033275467483755">
             <property name="tag" nameId="tpc2.1214320119174" value="default_RTransform" />
@@ -2517,8 +2569,8 @@
   </root>
   <root id="6999033275467594468">
     <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="6999033275467594469">
-      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <property name="description" nameId="tpc2.1139537298254" value="full notation" />
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="6999033275467594470">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6999033275467594471">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6999033275467594472">
@@ -2982,13 +3034,13 @@
             </node>
           </node>
           <node role="ifTrueCellModel" roleId="tpc2.1088612958265" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2133624044437592828">
-            <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
             <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+            <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="iuxj.5228786488744844115" resolveInfo="value" />
           </node>
           <node role="ifFalseCellModel" roleId="tpc2.1088612973955" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4949246799590050406">
-            <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
             <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+            <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="iuxj.5228786488744844115" resolveInfo="value" />
           </node>
         </node>

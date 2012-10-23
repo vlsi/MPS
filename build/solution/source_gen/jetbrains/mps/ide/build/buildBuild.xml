@@ -375,8 +375,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.gtext.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.gtext.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
@@ -420,8 +420,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.gtext.jar" />
+        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.gtext.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />

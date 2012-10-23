@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
-import jetbrains.mps.project.persistence.JDOMUtil;
+import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import junit.framework.Assert;
@@ -17,6 +17,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import java.io.IOException;
 import org.jdom.JDOMException;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -28,20 +29,20 @@ public class FacetDescriptorsIO_Test extends TestCase {
     IFile moduleFile = TestUtils.dataFile("module.iml");
     Element module = this.readRoot(moduleFile);
 
-    Iterable<Element> components = JDOMUtil.children(module, "component");
+    Iterable<Element> components = XmlUtil.children(module, "component");
     Element facetManager = Sequence.fromIterable(components).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element it) {
         return "FacetManager".equals(it.getAttributeValue("name"));
       }
     });
     Assert.assertNotNull(facetManager);
-    Element mpsFacet = Sequence.fromIterable(JDOMUtil.children(facetManager, "facet")).findFirst(new IWhereFilter<Element>() {
+    Element mpsFacet = Sequence.fromIterable(XmlUtil.children(facetManager, "facet")).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element fct) {
         return "MPS".equals(fct.getAttributeValue("name"));
       }
     });
     Assert.assertNotNull(mpsFacet);
-    Element cfg = JDOMUtil.first(mpsFacet, "configuration");
+    Element cfg = XmlUtil.first(mpsFacet, "configuration");
     MPSFacetConfiguration mpsCfg = new MPSFacetConfiguration();
     mpsCfg.readFromXml(cfg);
     this.assertMpsCfg(mpsCfg);
@@ -74,7 +75,7 @@ public class FacetDescriptorsIO_Test extends TestCase {
   }
 
   private Element readRoot(IFile moduleFile) throws IOException, JDOMException {
-    return jetbrains.mps.util.JDOMUtil.loadDocument(moduleFile).getRootElement();
+    return JDOMUtil.loadDocument(moduleFile).getRootElement();
   }
 
   private void assertMpsCfg(MPSFacetConfiguration mpsCfg) {
