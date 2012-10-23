@@ -122,7 +122,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
 
   void synchronizeViewWithModel();
 
-  SNode getSNode(); 
+  SNode getSNode();
 
   SNode getSNodeWRTReference();
   String getCellRole();

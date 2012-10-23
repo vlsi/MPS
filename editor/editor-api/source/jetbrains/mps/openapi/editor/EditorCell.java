@@ -33,4 +33,6 @@ public interface EditorCell {
   String getCellId();
 
   SNode getSNode();
+
+  boolean isSingleNodeCell();
 }
