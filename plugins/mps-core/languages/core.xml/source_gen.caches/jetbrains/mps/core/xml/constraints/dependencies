@@ -217,7 +217,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.constraints.XmlValuePart_Constraints" file="XmlValuePart_Constraints.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.constraints.XmlWhitespace_Constraints" file="XmlWhitespace_Constraints.java">

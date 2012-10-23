@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_Behavior" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -40,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
