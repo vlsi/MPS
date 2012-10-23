@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.stubManagers;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
@@ -26,12 +27,15 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 
 public class JavaSourceStubModelDS extends StubModelDataSource implements FastFindSupportProvider {
+  private static Logger LOG = Logger.getLogger(JavaSourceStubModelDS.class);
+
   private String myRoot;
   private boolean myModelLoaded = false;
 
@@ -81,11 +85,8 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
         for (SNode n : ListSequence.fromList(nodes)) {
           model.addRoot(n);
         }
-
-      } catch (RuntimeException e) {
-        // TODO handle errors. Is there a place in MPS where we post errors nicely? 
-        System.err.println("Error while parsing " + path);
-        e.printStackTrace();
+      } catch (JavaParseException e) {
+        LOG.error("Error while parsing java file " + path + ": " + e.getMessage());
       }
     }
 
@@ -94,7 +95,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
-  public List<SNode> parseFile(String contents, SModel model) {
+  public List<SNode> parseFile(String contents, SModel model) throws JavaParseException {
     JavaParser parser = new JavaParser();
     return parser.parse(contents, SModelOperations.getModelName(model), FeatureKind.CLASS_STUB, true).getNodes();
   }

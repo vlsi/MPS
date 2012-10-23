@@ -12,9 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 @MPSLaunch
 public class RoundTrip_Test extends BaseTransformationTest4 {
   @Test
-  public void test_Simplest() throws Throwable {
+  public void test_Simple() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
-    this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Simplest", true);
+    this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Simple", true);
   }
 
   @Test
@@ -37,7 +37,7 @@ public class RoundTrip_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_Simplest() throws Exception {
+    public void test_Simple() throws Exception {
       this.addNodeById("4795297196607456975");
       this.addNodeById("4795297196607508738");
       this.addNodeById("8083368042256391113");

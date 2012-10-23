@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.stubManagers;
 
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.NodesNavigationContributor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import java.util.Collection;
@@ -17,8 +18,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 
 public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
+  private static Logger LOG = Logger.getLogger(JavaSourceStubModelDescriptor.class);
+
   public JavaSourceStubModelDescriptor(SModelReference modelReference, JavaSourceStubModelDS source, IModule module) {
     super(modelReference, source, module);
   }
@@ -37,35 +41,35 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
     // therefore we take write at once 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        try {
+          final SModel myModel = getSModel();
+          List<SNode> nodes = ((JavaSourceStubModelDS) ds).parseFile(contents, myModel);
 
-        final SModel myModel = getSModel();
-        List<SNode> nodes = ((JavaSourceStubModelDS) ds).parseFile(contents, myModel);
+          // replace existing nodes with matching names 
+          List<SNode> roots = SModelOperations.getRoots(myModel, null);
+          for (SNode node : ListSequence.fromList(nodes)) {
 
-        // replace existing nodes with matching names 
-        List<SNode> roots = SModelOperations.getRoots(myModel, null);
-        for (SNode node : ListSequence.fromList(nodes)) {
+            SNodeId nodeId = node.getSNodeId();
+            final SNode root = myModel.getNodeById(nodeId);
 
-          SNodeId nodeId = node.getSNodeId();
-          final SNode root = myModel.getNodeById(nodeId);
+            final SNode theNode = node;
 
-          final SNode theNode = node;
-
-          // FIXME MUST NOT be command 
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              if ((root == null)) {
-                SModelOperations.addRootNode(myModel, theNode);
-              } else {
-                SNodeOperations.detachNode(root);
-                // <node> 
-                SNodeOperations.deleteNode(root);
-                SModelOperations.addRootNode(myModel, theNode);
+            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+              public void run() {
+                if ((root == null)) {
+                  SModelOperations.addRootNode(myModel, theNode);
+                } else {
+                  SNodeOperations.detachNode(root);
+                  // <node> 
+                  SNodeOperations.deleteNode(root);
+                  SModelOperations.addRootNode(myModel, theNode);
+                }
               }
-            }
-          });
-          // <node> 
-          // <node> 
+            }, null);
+          }
 
+        } catch (JavaParseException e) {
+          LOG.error("Error while parsing java file: " + e.getMessage());
         }
       }
     });

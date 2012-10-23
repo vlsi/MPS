@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS;
@@ -62,25 +63,30 @@ public class Utils {
    * Currently doesn't work very well: DynamicReference resolving doesn't seem to happen.
    */
   public static void checkString(String code, SNode expected) {
-    JavaParser parser = new JavaParser();
-    ModuleReference mref = new ModuleReference("jetbrains.mps.ide.java.tests");
-    SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b")).getModuleReference());
+    try {
+      JavaParser parser = new JavaParser();
+      ModuleReference mref = new ModuleReference("jetbrains.mps.ide.java.tests");
+      SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b")).getModuleReference());
 
-    SModel mdl = new SModel(modRef);
-    List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true).getNodes();
-    Assert.assertSame(ListSequence.fromList(res).count(), 1);
+      SModel mdl = new SModel(modRef);
+      List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true).getNodes();
+      Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
-    SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
 
-    NodePatcher.removeStatements(expected);
-    NodePatcher.fixNonStatic(expected);
-    NodePatcher.fixNonStatic(result);
+      NodePatcher.removeStatements(expected);
+      NodePatcher.fixNonStatic(expected);
+      NodePatcher.fixNonStatic(result);
 
-    Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    buildClassifierNodeMap(result, expected, nodeMap);
-    NodeDifference diff = NodesMatcher.matchNodes(result, expected, nodeMap);
+      Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      buildClassifierNodeMap(result, expected, nodeMap);
+      NodeDifference diff = NodesMatcher.matchNodes(result, expected, nodeMap);
 
-    Assert.assertEquals(null, diff);
+      Assert.assertEquals(null, diff);
+
+    } catch (JavaParseException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public static void checkFileAsString(File source, SNode expected) {
@@ -134,19 +140,24 @@ public class Utils {
   }
 
   public static void checkSourceModel(String dirPath, SModel expected) {
-    // FIXME  
-    DirParser dirParser = new DirParser(ourModule, null, null);
-    SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.tests.placeholder", "")).getSModel();
-    List<SNode> nodes = dirParser.parseDir(new File(dirPath));
+    try {
+      // FIXME  
+      DirParser dirParser = new DirParser(ourModule, null, null);
+      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.tests.placeholder", "")).getSModel();
+      List<SNode> nodes = dirParser.parseDir(new File(dirPath));
 
-    for (SNode n : ListSequence.fromList(nodes)) {
-      SModelOperations.addRootNode(result, n);
+      for (SNode n : ListSequence.fromList(nodes)) {
+        SModelOperations.addRootNode(result, n);
+      }
+      Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      buildModelNodeMap(result, expected, referentMap);
+
+      boolean wereErrors = compare2models(result, expected, referentMap);
+      Assert.assertFalse(wereErrors);
+
+    } catch (JavaParseException e) {
+      throw new RuntimeException(e);
     }
-    Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    buildModelNodeMap(result, expected, referentMap);
-
-    boolean wereErrors = compare2models(result, expected, referentMap);
-    Assert.assertFalse(wereErrors);
   }
 
   public static void compareBinAndSrcStubs(String binPath, String sourcePath) {
