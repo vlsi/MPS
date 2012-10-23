@@ -120,7 +120,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushInputNode(SNode node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(node)));
+    push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(node.getOldModel().getSModelReference(), node.getSNodeId())));
   }
 
   @Override

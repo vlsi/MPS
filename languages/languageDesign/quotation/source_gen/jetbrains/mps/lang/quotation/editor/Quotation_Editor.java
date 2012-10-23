@@ -135,21 +135,21 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_29llnk_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_29llnk_c3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_29llnk_d3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(((jetbrains.mps.nodeEditor.EditorContext) editorContext), node, "id =");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "id =");
     editorCell.setCellId("Constant_29llnk_d3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_29llnk_f3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(((jetbrains.mps.nodeEditor.EditorContext) editorContext), node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
     editorCell.setCellId("Constant_29llnk_f3a");
     editorCell.setDefaultText("");
     return editorCell;

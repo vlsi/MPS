@@ -4829,8 +4829,6 @@ public class ApiTransformations {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeUtil.getDebugText(org.jetbrains.mps.openapi.model.SNode):java.lang.String")));
-        quotedNode1_3.setReference("classConcept", SReference.create("classConcept", quotedNode1_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeUtil")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;

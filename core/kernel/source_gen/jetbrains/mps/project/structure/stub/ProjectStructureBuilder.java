@@ -123,7 +123,7 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(org.jetbrains.mps.openapi.model.SModelReference source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelReference", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelReference");
     SPropertyOperations.set(result, "uuid", source.getModelId().toString());
     String modelName = source.getModelName();
     int atIndex = modelName.indexOf('@');
