@@ -24,18 +24,6 @@
     <scopeInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_buildScript_tests.java" startLine="11" startPosition="57" endLine="13" endPosition="3" />
     <unitInfo nodeId="2684968190509519315" fileName="TestModule_jetbrains_mps_buildScript_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_buildScript_tests" />
   </root>
-  <root nodeId="2712670354707830840" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
-    <nodeInfo nodeId="2712670354707830840" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="11" startPosition="57" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_test#()V" />
-    <scopeInfo nodeId="2712670354707830840" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
-    <scopeInfo nodeId="2712670354707830840" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="11" startPosition="57" endLine="13" endPosition="3" />
-    <unitInfo nodeId="2712670354707830840" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test" />
-  </root>
-  <root nodeId="2712670354707832431" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
-    <nodeInfo nodeId="2712670354707832431" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="11" startPosition="61" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_unittest#()V" />
-    <scopeInfo nodeId="2712670354707832431" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="12" startPosition="59" endLine="12" endPosition="59" />
-    <scopeInfo nodeId="2712670354707832431" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="11" startPosition="61" endLine="13" endPosition="3" />
-    <unitInfo nodeId="2712670354707832431" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest" />
-  </root>
   <root nodeId="2712670354707832463" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
     <nodeInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="11" startPosition="39" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_closures_test#()V" />
     <scopeInfo nodeId="2712670354707832463" fileName="TestModule_closures_test.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
@@ -179,6 +167,60 @@
     <scopeInfo nodeId="4195712261513837590" fileName="TestModule_jetbrains_mps_testRead.java" startLine="12" startPosition="46" endLine="12" endPosition="46" />
     <scopeInfo nodeId="4195712261513837590" fileName="TestModule_jetbrains_mps_testRead.java" startLine="11" startPosition="48" endLine="13" endPosition="3" />
     <unitInfo nodeId="4195712261513837590" fileName="TestModule_jetbrains_mps_testRead.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_testRead" />
+  </root>
+  <root nodeId="4246614868164057743" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057743" fileName="TestModule_jetbrains_mps_lang_test_sandbox.java" startLine="11" startPosition="57" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_lang_test_sandbox#()V" />
+    <scopeInfo nodeId="4246614868164057743" fileName="TestModule_jetbrains_mps_lang_test_sandbox.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
+    <scopeInfo nodeId="4246614868164057743" fileName="TestModule_jetbrains_mps_lang_test_sandbox.java" startLine="11" startPosition="57" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057743" fileName="TestModule_jetbrains_mps_lang_test_sandbox.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_test_sandbox" />
+  </root>
+  <root nodeId="4246614868164057746" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="11" startPosition="53" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_ypath_runtime#()V" />
+    <scopeInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="12" startPosition="51" endLine="12" endPosition="51" />
+    <scopeInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="11" startPosition="53" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057746" fileName="TestModule_jetbrains_mps_ypath_runtime.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ypath_runtime" />
+  </root>
+  <root nodeId="4246614868164057750" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057750" fileName="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" startLine="11" startPosition="68" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_execution_impl_tests_sandbox#()V" />
+    <scopeInfo nodeId="4246614868164057750" fileName="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" startLine="12" startPosition="66" endLine="12" endPosition="66" />
+    <scopeInfo nodeId="4246614868164057750" fileName="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057750" fileName="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_execution_impl_tests_sandbox" />
+  </root>
+  <root nodeId="4246614868164057754" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057754" fileName="TestModule_jetbrains_mps_ide_vcs.java" startLine="11" startPosition="47" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_ide_vcs#()V" />
+    <scopeInfo nodeId="4246614868164057754" fileName="TestModule_jetbrains_mps_ide_vcs.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="4246614868164057754" fileName="TestModule_jetbrains_mps_ide_vcs.java" startLine="11" startPosition="47" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057754" fileName="TestModule_jetbrains_mps_ide_vcs.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ide_vcs" />
+  </root>
+  <root nodeId="4246614868164057759" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057759" fileName="TestModule_jetbrains_mps_samples_agreement_framework.java" startLine="11" startPosition="67" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_samples_agreement_framework#()V" />
+    <scopeInfo nodeId="4246614868164057759" fileName="TestModule_jetbrains_mps_samples_agreement_framework.java" startLine="12" startPosition="65" endLine="12" endPosition="65" />
+    <scopeInfo nodeId="4246614868164057759" fileName="TestModule_jetbrains_mps_samples_agreement_framework.java" startLine="11" startPosition="67" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057759" fileName="TestModule_jetbrains_mps_samples_agreement_framework.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_samples_agreement_framework" />
+  </root>
+  <root nodeId="4246614868164057769" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057769" fileName="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" startLine="11" startPosition="73" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_samples_secretCompartment_runtime#()V" />
+    <scopeInfo nodeId="4246614868164057769" fileName="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" startLine="12" startPosition="71" endLine="12" endPosition="71" />
+    <scopeInfo nodeId="4246614868164057769" fileName="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057769" fileName="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_samples_secretCompartment_runtime" />
+  </root>
+  <root nodeId="4246614868164057772" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="11" startPosition="49" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_testbench#()V" />
+    <scopeInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
+    <scopeInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="11" startPosition="49" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_testbench" />
+  </root>
+  <root nodeId="4246614868164094814" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164094814" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="11" startPosition="61" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_unittest#()V" />
+    <scopeInfo nodeId="4246614868164094814" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="12" startPosition="59" endLine="12" endPosition="59" />
+    <scopeInfo nodeId="4246614868164094814" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="11" startPosition="61" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164094814" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest" />
+  </root>
+  <root nodeId="4246614868164096671" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="4246614868164096671" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="11" startPosition="57" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_test#()V" />
+    <scopeInfo nodeId="4246614868164096671" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
+    <scopeInfo nodeId="4246614868164096671" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="11" startPosition="57" endLine="13" endPosition="3" />
+    <unitInfo nodeId="4246614868164096671" fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test" />
   </root>
   <root nodeId="5934496548013521234" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
     <nodeInfo nodeId="5934496548013521234" fileName="TestModule_jetbrains_mps_transformation_test_inputModels.java" startLine="11" startPosition="71" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_transformation_test_inputModels#()V" />
