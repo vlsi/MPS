@@ -40,7 +40,6 @@ public class JavaSourceStubs extends AbstractModelRootManager {
   /*package*/ void getModelDescriptors(List<SModelDescriptor> result, String pkg, IFile dir, String languageId, IModule module) {
     List<IFile> subdirs = ListSequence.fromList(new ArrayList<IFile>());
     List<IFile> files = ListSequence.fromList(new ArrayList<IFile>());
-
     for (IFile c : ListSequence.fromList(dir.getChildren())) {
       if (c.isDirectory()) {
         subdirs.add(c);

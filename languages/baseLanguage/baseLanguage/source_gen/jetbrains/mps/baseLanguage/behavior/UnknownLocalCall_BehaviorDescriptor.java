@@ -19,12 +19,20 @@ public class UnknownLocalCall_BehaviorDescriptor extends Expression_BehaviorDesc
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
+  }
+
   public _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
     return UnknownLocalCall_Behavior.virtual_evaluateSubst_8136348407761606764(thisNode);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
+  }
+
+  public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
   }
 
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {

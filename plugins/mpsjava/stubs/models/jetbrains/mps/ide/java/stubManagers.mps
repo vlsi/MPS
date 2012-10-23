@@ -112,7 +112,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2712995334858305322" />
         <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="2712995334858305323">
           <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="2712995334858305324">
             <property name="name" nameId="tpck.1169194664001" value="c" />
@@ -1011,7 +1010,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6869702494692960506" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6869702494692960507">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="6869702494692960508">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xpj.~BaseStubModelDescriptor%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelReference,jetbrains%dmps%dsmodel%ddescriptor%dsource%dModelDataSource,jetbrains%dmps%dproject%dIModule)" resolveInfo="BaseStubModelDescriptor" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xpj.~BaseStubModelDescriptor%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelReference,org%djetbrains%dmps%dopenapi%dpersistence%dDataSource,org%djetbrains%dmps%dopenapi%dmodule%dSModule)" resolveInfo="BaseStubModelDescriptor" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6869702494692960509">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6869702494692960512" resolveInfo="modelReference" />
           </node>
@@ -1687,7 +1686,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6869702494692960769" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6869702494692960770">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="6869702494692960771">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="omdc.~StubModelDataSource%d&lt;init&gt;(jetbrains%dmps%dproject%dstructure%dmodules%dModuleReference)" resolveInfo="StubModelDataSource" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="omdc.~StubModelDataSource%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference)" resolveInfo="StubModelDataSource" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6869702494692960772">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6869702494692960777" resolveInfo="origin" />
           </node>

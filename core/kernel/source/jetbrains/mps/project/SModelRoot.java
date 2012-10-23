@@ -49,7 +49,7 @@ public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRo
     return new DefaultModelRootManager();
   }
 
-  private IModelRootManager getManager() {
+  public IModelRootManager getManager() {
     return myManager;
   }
 
