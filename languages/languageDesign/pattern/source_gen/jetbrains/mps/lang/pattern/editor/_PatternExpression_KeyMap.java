@@ -402,9 +402,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      EditorCell selectedCell = editorContext.getSelectedCell();
+      jetbrains.mps.openapi.editor.EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
-      SNode linkNode = selectedCell.getLinkDeclaration();
+      SNode linkNode = ((EditorCell) selectedCell).getLinkDeclaration();
       if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
         return;
       }

@@ -38,8 +38,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.5617550519002745379" resolveInfo="BuildDependency" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7389400916848036998">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_containerElements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.4701820937132344003" resolveInfo="BuildLayout_Container" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7389400916848043095">
@@ -117,8 +117,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.3542413272732750877" resolveInfo="BuildAspect" />
     </node>
     <node type="tpc2.CellMenuComponent" typeId="tpc2.1166040637528" id="5481553824944764699">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <property name="name" nameId="tpck.1169194664001" value="complete_Path" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5481553824944787381">
@@ -170,8 +170,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.5248329904287794596" resolveInfo="BuildInputFiles" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="5248329904287967421">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="name" nameId="tpck.1169194664001" value="delete_Layout_Node" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5248329904287794587">
@@ -191,8 +191,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.5248329904288265468" resolveInfo="BuildSource_JavaSources" />
     </node>
     <node type="tpc2.CellKeyMapDeclaration" typeId="tpc2.1081293058843" id="6420586245471528312">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSimpleName_text" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <link role="applicableConcept" roleId="tpc2.1139445935125" targetNodeId="3ior.4903714810883702019" resolveInfo="BuildTextStringPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4380385936562003282">
@@ -200,8 +200,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.4380385936562003279" resolveInfo="BuildString" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="631271972589748166">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <property name="name" nameId="tpck.1169194664001" value="delete_BuildStringPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.4903714810883702015" resolveInfo="BuildStringPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="841011766565753077">
@@ -253,8 +253,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.3717132724153084007" resolveInfo="BuildSource_JavaJars" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="7259033139236546331">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.2754769020641646247" resolveInfo="BuildSource_JavaDependencyModule" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7866279537988667200">
@@ -266,8 +266,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2303926226081001727" resolveInfo="BuildInputSingleFolder" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="5979287180587351167">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyLibrary" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.4993211115183250894" resolveInfo="BuildSource_JavaDependencyLibrary" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8654221991637384185">
@@ -279,8 +279,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2591537044435828004" resolveInfo="BuildLayout_CompileOutputOf" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="8169228734285428615">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyJar" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.3717132724152589376" resolveInfo="BuildSource_JavaDependencyJar" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6859736767834557910">
@@ -288,8 +288,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="6859736767834590441">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyImportedJar" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.6859736767834557908" resolveInfo="BuildSource_JavaDependencyExternalJar" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7181125477683216402">
@@ -373,8 +373,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.6977615362525721939" resolveInfo="BuildLayout_CopyFlattenMapper" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="6977615362526188084">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="name" nameId="tpck.1169194664001" value="delete_CustomCopy" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.9184644532456495794" resolveInfo="BuildLayout_CustomCopy" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7801138212747054662">
@@ -430,8 +430,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2750015747481074431" resolveInfo="BuildLayout_Files" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1222746468862108406">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <property name="name" nameId="tpck.1169194664001" value="forbid_Insert" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.4380385936562003279" resolveInfo="BuildString" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="342830306171234545">
@@ -447,8 +447,8 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.4964617264469642724" resolveInfo="GeneratorInternal_BuildSource_JavaJar" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="342830306171239665">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <property name="name" nameId="tpck.1169194664001" value="delete_reexport_inJavaDependencyImportedJarFromFolder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Dependencies" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.342830306171203038" resolveInfo="BuildSource_JavaDependencyExternalJarInFolder" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4964617264469642572">
@@ -2850,8 +2850,8 @@
   <root id="8618885170173601780">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8618885170173601782">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8618885170173690678">
-        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.8618885170173601779" resolveInfo="head" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="841084130032779764">
           <node role="query" roleId="tpc2.1186403803051" type="tpc2.QueryFunction_Color" typeId="tpc2.1176809959526" id="841084130032779765">
@@ -3837,7 +3837,7 @@
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6666499814681587785">
                       <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="6666499814681587784" />
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6666499814681587789">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorContext%dgetSelectedCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getSelectedCell" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srng.~EditorContext%dgetSelectedCell()%cjetbrains%dmps%dopenapi%deditor%dEditorCell" resolveInfo="getSelectedCell" />
                       </node>
                     </node>
                   </node>
@@ -4019,7 +4019,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6666499814681590135">
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="6666499814681590134" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6666499814681590139">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorContext%dselectWRTFocusPolicy(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="selectWRTFocusPolicy" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srng.~EditorContext%dselectWRTFocusPolicy(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="selectWRTFocusPolicy" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6666499814681590140">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6666499814681590111" resolveInfo="newRef" />
                 </node>
@@ -4046,7 +4046,7 @@
                 <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6666499814681618751">
                   <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="6666499814681618752" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6666499814681618753">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorContext%dgetSelectedCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getSelectedCell" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srng.~EditorContext%dgetSelectedCell()%cjetbrains%dmps%dopenapi%deditor%dEditorCell" resolveInfo="getSelectedCell" />
                   </node>
                 </node>
               </node>
@@ -4916,8 +4916,8 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1277685309310622667" resolveInfo="projectPartKeyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="927724900262155815">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;project default&gt;" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;project default&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.927724900262033859" resolveInfo="optionsName" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="927724900262155818">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
@@ -4952,8 +4952,8 @@
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="927724900262398952">
-          <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default&gt;" />
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+          <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default&gt;" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.927724900262398947" resolveInfo="heapSize" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="927724900262398953">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
@@ -5308,8 +5308,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="9184644532457106527">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no flags&gt;" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no flags&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.9184644532457106508" resolveInfo="flags" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
       </node>
@@ -5445,8 +5445,8 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7801138212747054674">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default (755)&gt;" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default (755)&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.7801138212747054661" resolveInfo="dirmode" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7801138212747206008">
@@ -5721,8 +5721,8 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="9126048691954817056" resolveInfo="comment" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="9126048691954700813">
-        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.9126048691954700811" resolveInfo="text" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="9126048691954817056" resolveInfo="comment" />
       </node>
@@ -5755,8 +5755,8 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="9126048691955221342">
-          <property name="noTargetText" nameId="tpc2.1139852716018" value="644" />
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+          <property name="noTargetText" nameId="tpc2.1139852716018" value="644" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.9126048691955221291" resolveInfo="filemode" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="9126048691955221340">
@@ -5918,7 +5918,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7555663668002303377">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="7555663668002303378" />
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7555663668002303379">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorContext%dgetEditorComponent()%cjetbrains%dmps%dopenapi%deditor%dEditorComponent" resolveInfo="getEditorComponent" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srng.~EditorContext%dgetEditorComponent()%cjetbrains%dmps%dopenapi%deditor%dEditorComponent" resolveInfo="getEditorComponent" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7555663668002303380">
@@ -6078,7 +6078,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222746468862206038">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1222746468862206039" />
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222746468862206040">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorContext%dgetEditorComponent()%cjetbrains%dmps%dopenapi%deditor%dEditorComponent" resolveInfo="getEditorComponent" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srng.~EditorContext%dgetEditorComponent()%cjetbrains%dmps%dopenapi%deditor%dEditorComponent" resolveInfo="getEditorComponent" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222746468862206041">
