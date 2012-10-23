@@ -34,7 +34,6 @@
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1622293396948983511">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="iuxj.6666499814681299051" resolveInfo="XmlContent" />
-      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="iuxj.1622293396948952339" resolveInfo="XmlText" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1622293396948985398">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="iuxj.6666499814681299066" resolveInfo="XmlCDATA" />
