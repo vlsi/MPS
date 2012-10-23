@@ -15835,17 +15835,18 @@
   </root>
   <root nodeId="9100188248702352810" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="8504030010050377088" fileName="UnknownConsCall_Behavior.java" startLine="12" startPosition="121" endLine="13" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3714965267451301020" fileName="UnknownConsCall_Behavior.java" startLine="13" startPosition="56" endLine="14" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="8" startPosition="39" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
+    <nodeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_evaluateSubst_8136348407761606764#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
     <scopeInfo nodeId="9100188248702352812" fileName="UnknownConsCall_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8136348407761606777" fileName="UnknownConsCall_Behavior.java" startLine="12" startPosition="121" endLine="13" endPosition="56" />
+    <scopeInfo nodeId="8136348407761606777" fileName="UnknownConsCall_Behavior.java" startLine="12" startPosition="121" endLine="14" endPosition="14" />
     <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="8" startPosition="39" endLine="11" endPosition="0">
       <varInfo nodeId="9100188248702352810" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="9100188248702352810" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior" />
+    <unitInfo nodeId="9100188248702352810" fileName="UnknownConsCall_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_Behavior" />
   </root>
   <root nodeId="9103527268106341892" modelId="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)">
     <nodeInfo nodeId="9103527268106341898" fileName="ResolveUtil.java" startLine="29" startPosition="96" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
