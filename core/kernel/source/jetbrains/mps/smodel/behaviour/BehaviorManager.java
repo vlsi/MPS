@@ -18,7 +18,10 @@ package jetbrains.mps.smodel.behaviour;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 
+@Deprecated
 public final class BehaviorManager {
+  // remove after MPS 3.0
+  // use BehaviorReflection instead
 
   private final static BehaviorManager INSTANCE = new BehaviorManager();
 
@@ -29,12 +32,14 @@ public final class BehaviorManager {
   private BehaviorManager() {
   }
 
+  @Deprecated
   public void initNode(SNode node) {
-    ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).initNode(node);
+    BehaviorReflection.initNode(node);
   }
 
+  @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+    return BehaviorReflection.invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
   @Deprecated
@@ -42,7 +47,8 @@ public final class BehaviorManager {
     return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
 
+  @Deprecated
   public <T> T invokeSuperNew(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(returnType, node, methodName, parametersTypes, parameters);
+    return BehaviorReflection.invokeSuper(returnType, node, targetSuperFqName, methodName, parametersTypes, parameters);
   }
 }
