@@ -28,10 +28,6 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-java" />
-    <mkdir dir="${build.layout}/plugins/mps-java/auxArtifact" />
-    <jar destfile="${build.layout}/plugins/mps-java/auxArtifact/mpsjava-core.jar">
-      <fileset dir="${build.tmp}/java/out/mps-java" />
-    </jar>
     <mkdir dir="${build.layout}/plugins/mps-java/lib" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar/META-INF" />

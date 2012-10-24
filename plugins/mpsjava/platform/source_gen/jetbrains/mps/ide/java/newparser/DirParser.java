@@ -50,9 +50,8 @@ public class DirParser {
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<File>(), sourceDir);
   }
 
-  public List<SNode> parseDir(File dir) throws JavaParseException {
+  public List<SNode> parseDir(JavaParser parser, File dir) throws JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
-    JavaParser parser = new JavaParser();
 
     if (dir == null || !(dir.exists()) || !(dir.isDirectory())) {
       throw new IllegalArgumentException("Bad directory");
@@ -65,7 +64,7 @@ public class DirParser {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(oneFileRoots));
       }
     }
-    parser.tryResolveRoots(result);
+    // <node> 
     return result;
   }
 

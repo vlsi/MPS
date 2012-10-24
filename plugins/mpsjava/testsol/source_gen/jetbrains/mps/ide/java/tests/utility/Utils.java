@@ -13,11 +13,9 @@ import jetbrains.mps.build.ant.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.java.parser.FeatureKind;
@@ -31,6 +29,8 @@ import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS;
 import java.util.ArrayList;
@@ -40,7 +40,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -65,14 +64,13 @@ public class Utils {
   public static void checkString(String code, SNode expected) {
     try {
       JavaParser parser = new JavaParser();
-      ModuleReference mref = new ModuleReference("jetbrains.mps.ide.java.tests");
-      SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b")).getModuleReference());
-
-      SModel mdl = new SModel(modRef);
+      SModel mdl;
+      mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
       List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
       SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SModelOperations.addRootNode(mdl, result);
 
       NodePatcher.removeStatements(expected);
       NodePatcher.fixNonStatic(expected);
@@ -142,13 +140,16 @@ public class Utils {
   public static void checkSourceModel(String dirPath, SModel expected) {
     try {
       // FIXME  
+      JavaParser parser = new JavaParser();
       DirParser dirParser = new DirParser(ourModule, null, null);
       SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
-      List<SNode> nodes = dirParser.parseDir(new File(dirPath));
+      List<SNode> nodes = dirParser.parseDir(parser, new File(dirPath));
 
       for (SNode n : ListSequence.fromList(nodes)) {
         SModelOperations.addRootNode(result, n);
       }
+      parser.tryResolveRoots(nodes);
+
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildModelNodeMap(result, expected, referentMap);
 
