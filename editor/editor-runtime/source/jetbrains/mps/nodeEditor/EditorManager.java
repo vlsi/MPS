@@ -87,14 +87,14 @@ public class EditorManager {
     return new ArrayList<Pair<SNode, SNodePointer>>(result);
   }
 
-  public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  public EditorCell createRootCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
   }
 
-  private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
+  private EditorCell createRootCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     try {
-      context.pushTracerTask("Creating " + (isInspectorCell ? "inspector" : "root") + " cell", true);
-      EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
+      EditorComponent nodeEditorComponent = getEditorComponent(context);
       EditorCell rootCell = nodeEditorComponent.getRootCell();
       ReferencedNodeContext nodeRefContext = ReferencedNodeContext.createNodeContext(node);
       List<Pair<SNode, SNodePointer>> modifications = convert(events);
@@ -108,7 +108,7 @@ public class EditorManager {
       return createEditorCell(context, modifications, nodeRefContext);
     } finally {
       myContextToOldCellMap.pop();
-      context.popTracerTask();
+      popTask(context);
     }
   }
 
@@ -147,14 +147,6 @@ public class EditorManager {
 
   public EditorCell getCurrentAttributedNodeCell() {
     return getCurrentAttributedCellWithRole(AttributeKind.Node.class);
-  }
-
-  /**
-   * @deprecated in MPS 3.0 Is here only for the compatibility with generated editor code.
-   */
-  @Deprecated
-  public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
-    return createRoleAttributeCell((jetbrains.mps.openapi.editor.EditorContext) context, roleAttribute, attributeKind, cellWithRole);
   }
 
   public EditorCell createRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
@@ -200,7 +192,7 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /*package*/ jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
+  /*package*/ jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
@@ -215,7 +207,7 @@ public class EditorManager {
     return result;
   }
 
-  public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
+  public EditorCell createNodeAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode attribute, EditorCell nodeCell) {
     return createRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell);
   }
 
@@ -232,10 +224,8 @@ public class EditorManager {
     return !myCreatingInspectedCell;
   }
 
-  /*package*/ EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodePointer>> modifications, ReferencedNodeContext refContext) {
-    if (context.isTracing()) {
-      context.pushTracerTask("?" + refContext.toString(), true);
-    }
+  /*package*/ EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext context, List<Pair<SNode, SNodePointer>> modifications, ReferencedNodeContext refContext) {
+    pushTask(context, "?" + refContext.toString());
     try {
       SNode node = refContext.getNode();
 
@@ -256,7 +246,7 @@ public class EditorManager {
         }
       }
 
-      EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      EditorComponent nodeEditorComponent = getEditorComponent(context);
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
       if (modifications != null) {
         EditorCell oldCell = myContextToOldCellMap.peek().get(refContext);
@@ -302,9 +292,7 @@ public class EditorManager {
         }
       }
     } finally {
-      if (context.isTracing()) {
-        context.popTracerTask();
-      }
+      popTask(context);
     }
   }
 
@@ -322,10 +310,8 @@ public class EditorManager {
     return myCreatingInspectedCell;
   }
 
-  private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
-    if (context.isTracing()) {
-      context.pushTracerTask("+" + refContext.toString(), true);
-    }
+  private EditorCell createEditorCell_internal(final jetbrains.mps.openapi.editor.EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
+    pushTask(context, "+" + refContext.toString());
     try {
       final SNode node = refContext.getNode();
 
@@ -333,7 +319,7 @@ public class EditorManager {
       myCreatingInspectedCell = false;
 
       INodeEditor editor = getEditor(context, node);
-      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorComponent editorComponent = getEditorComponent(context);
       EditorCell nodeCell = null;
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
@@ -370,9 +356,7 @@ public class EditorManager {
       assert nodeCell != null;
       return nodeCell;
     } finally {
-      if (context.isTracing()) {
-        context.popTracerTask();
-      }
+      popTask(context);
     }
   }
 
@@ -385,8 +369,8 @@ public class EditorManager {
     return myLastAttributedCell == nodeCell;
   }
 
-  private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, EditorContext editorContext) {
-    EditorComponent editor = editorContext.getNodeEditorComponent();
+  private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, jetbrains.mps.openapi.editor.EditorContext editorContext) {
+    EditorComponent editor = getEditorComponent(editorContext);
     editor.putCellAndNodesToDependOn(cell, listener.getNodesToDependOn(), listener.getRefTargetsToDependOn());
     for (Pair<SNodePointer, String> pair : listener.getDirtilyReadAccessedProperties()) {
       editor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
@@ -396,10 +380,10 @@ public class EditorManager {
     }
   }
 
-  private EditorCell addSideTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context, final CellSide side) {
+  private EditorCell addSideTransformHintCell(final SNode node, EditorCell nodeCell, final jetbrains.mps.openapi.editor.EditorContext context, final CellSide side) {
     // create the hint cell
     final EditorCell_STHint sideTransformHintCell = new EditorCell_STHint(context, node, side);
-    final CellInfo nodeCellInfo = context.getNodeEditorComponent().getRecentlySelectedCellInfo();
+    final CellInfo nodeCellInfo = getEditorComponent(context).getRecentlySelectedCellInfo();
 
     // delete the hint when pressed ctrl-delete, delete or backspace
     sideTransformHintCell.setAction(CellActionType.DELETE, new EditorCellAction() {
@@ -561,11 +545,11 @@ public class EditorManager {
     }
   }
 
-  EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, true);
   }
 
-  private INodeEditor getEditor(EditorContext context, SNode node) {
+  private INodeEditor getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
     INodeEditor editor = null;
 
     editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
@@ -573,6 +557,24 @@ public class EditorManager {
       editor = new DefaultNodeEditor();
     }
     return editor;
+  }
+
+  private EditorComponent getEditorComponent(jetbrains.mps.openapi.editor.EditorContext context) {
+    return ((EditorContext) context).getNodeEditorComponent();
+  }
+
+  private void pushTask(jetbrains.mps.openapi.editor.EditorContext context, String message) {
+    EditorContext editorContextImpl = (EditorContext) context;
+    if (editorContextImpl.isTracing()) {
+      editorContextImpl.pushTracerTask(message, true);
+    }
+  }
+
+  private void popTask(jetbrains.mps.openapi.editor.EditorContext context) {
+    EditorContext editorContextImpl = (EditorContext) context;
+    if (editorContextImpl.isTracing()) {
+      editorContextImpl.popTracerTask();
+    }
   }
 
   private static class STHintCellInfo extends DefaultCellInfo {
