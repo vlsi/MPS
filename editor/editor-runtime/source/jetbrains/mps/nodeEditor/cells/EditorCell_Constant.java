@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
-
-import java.awt.*;
-
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 /**

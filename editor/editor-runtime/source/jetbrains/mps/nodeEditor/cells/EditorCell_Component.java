@@ -16,15 +16,16 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import javax.swing.border.Border;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -33,7 +34,7 @@ public class EditorCell_Component extends EditorCell_Basic {
 
   public EditorCell_Component(EditorContext editorContext, SNode node, JComponent component) {
     super(editorContext, node);
-    final EditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
+    final EditorComponent nodeEditorComponent = getEditor();
     myComponent = component;
 
     myComponent.addKeyListener(new KeyAdapter() {
@@ -94,8 +95,8 @@ public class EditorCell_Component extends EditorCell_Basic {
     return ascent;
   }
 
-  public static EditorCell createComponentCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node, JComponent component, String cellId) {
-    EditorCell_Component editorCell_component = new EditorCell_Component((EditorContext) context, node, component);
+  public static EditorCell createComponentCell(EditorContext context, SNode node, JComponent component, String cellId) {
+    EditorCell_Component editorCell_component = new EditorCell_Component(context, node, component);
     return editorCell_component;
   }
 

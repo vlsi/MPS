@@ -22,28 +22,49 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.NameUtil;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Set;
 
 /**
  * Author: Sergey Dmitriev
@@ -92,7 +113,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorComponent getEditor() {
-    return getEditorContext().getNodeEditorComponent();
+    return ((jetbrains.mps.nodeEditor.EditorContext) getContext()).getNodeEditorComponent();
   }
 
   public boolean isErrorState() {
@@ -135,14 +156,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     if (matchingActions.size() != 1) {
       if (canActivatePopup) {
-        myEditorContext.getNodeEditorComponent().activateNodeSubstituteChooser(this, false);
+        getEditor().activateNodeSubstituteChooser(this, false);
       } else {
         return false;
       }
       return true;
     }
 
-    matchingActions.get(0).substitute(myEditorContext, pattern);
+    matchingActions.get(0).substitute(getContext(), pattern);
     return true;
   }
 
@@ -194,13 +215,13 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (action == null) return false;
 
     if (action.executeInCommand()) {
-      getEditorContext().executeCommand(new Runnable() {
+      getContext().executeCommand(new Runnable() {
         public void run() {
-          action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
+          action.execute(getContext());
         }
       });
     } else {
-      action.execute((jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
+      action.execute(getContext());
     }
     return true;
   }
@@ -209,7 +230,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell current = this;
     while (current != null) {
       EditorCellAction currentAction = current.getAction(type);
-      if (currentAction != null && currentAction.canExecute(myEditorContext)) {
+      if (currentAction != null && currentAction.canExecute(getContext())) {
         if (type == CellActionType.INSERT) {
           return getInsertAction(current, type);
         } else {
@@ -218,8 +239,8 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
       current = current.getParent();
     }
-    EditorCellAction action = myEditorContext.getNodeEditorComponent().getComponentAction(type);
-    if (action != null && action.canExecute(myEditorContext)) {
+    EditorCellAction action = getEditor().getComponentAction(type);
+    if (action != null && action.canExecute(getContext())) {
       return action;
     }
     return null;
@@ -439,17 +460,21 @@ public abstract class EditorCell_Basic implements EditorCell {
     myUserObjects.put(key, value);
   }
 
-  public EditorContext getEditorContext() {
-    return myEditorContext;
+  /**
+   * @deprecated since MPS 3.0 use getContext() instead
+   */
+  @Deprecated
+  public jetbrains.mps.nodeEditor.EditorContext getEditorContext() {
+    return (jetbrains.mps.nodeEditor.EditorContext) getContext();
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.EditorContext getContext() {
+  public EditorContext getContext() {
     return myEditorContext;
   }
 
   public IOperationContext getOperationContext() {
-    return myEditorContext.getOperationContext();
+    return getContext().getOperationContext();
   }
 
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
@@ -477,9 +502,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (!UIUtil.isReallyTypedEvent(e)) return false;
 
-    getEditorContext().executeCommand(new Runnable() {
+    getContext().executeCommand(new Runnable() {
       public void run() {
-        EditorComponent editor = getEditorContext().getNodeEditorComponent();
+        EditorComponent editor = getEditor();
         SNode oldNode = getSNode();
         SNode newNode = replaceWithDefault();
         if (newNode == null) {
@@ -509,7 +534,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   private SNode replaceWithDefault() {
-    EditorContext editorContext = getEditorContext();
     SNode node = getSNode();
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
@@ -522,7 +546,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
     org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
-    editorContext.flushEvents();
+    getContext().flushEvents();
     return newNode;
   }
 

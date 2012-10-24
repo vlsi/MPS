@@ -429,7 +429,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
-    final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getEditorContext().getOperationContext());
+    final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
     NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
       protected List<INodeSubstituteAction> createActions() {
         return helper.createActions();

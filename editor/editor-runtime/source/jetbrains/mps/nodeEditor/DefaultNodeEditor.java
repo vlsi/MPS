@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -53,7 +53,7 @@ public class DefaultNodeEditor implements INodeEditor {
   }
 
   public static class DefaultInspectorCell extends EditorCell_Constant {
-    public DefaultInspectorCell(@NotNull EditorContext editorContext, SNode node, String text, boolean editable) {
+    public DefaultInspectorCell(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text, boolean editable) {
       super(editorContext, node, text, editable);
     }
   }

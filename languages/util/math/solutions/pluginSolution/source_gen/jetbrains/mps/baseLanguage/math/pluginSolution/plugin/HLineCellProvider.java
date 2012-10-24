@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.math.pluginSolution.plugin;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;

@@ -510,7 +510,7 @@ public class EditorManager {
     private EditorCell myAnchorCell;
     private CellSide mySide;
 
-    protected EditorCell_STHint(EditorContext editorContext, SNode node, CellSide side) {
+    protected EditorCell_STHint(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, CellSide side) {
       super(editorContext, node, "");
       setCellId("STHint");
       setDefaultText(" ");

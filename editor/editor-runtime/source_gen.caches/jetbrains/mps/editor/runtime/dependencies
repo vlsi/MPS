@@ -23,7 +23,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellSide" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.TextLine" />

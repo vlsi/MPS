@@ -30,7 +30,7 @@ public class URLCellProvider extends PropertyCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext context) {    
-    EditorCell_URL editorCell = EditorCell_URL.create((jetbrains.mps.nodeEditor.EditorContext) context, getSNode(), getPropertyName());
+    EditorCell_URL editorCell = EditorCell_URL.create(context, getSNode(), getPropertyName());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), getPropertyName()));

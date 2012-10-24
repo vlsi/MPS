@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Author: Sergey Dmitriev
