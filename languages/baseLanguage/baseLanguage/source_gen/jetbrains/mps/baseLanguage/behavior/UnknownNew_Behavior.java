@@ -4,17 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import java.lang.reflect.Constructor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
-import java.lang.reflect.Method;
 
 public class UnknownNew_Behavior {
   public static void init(SNode thisNode) {
@@ -22,52 +11,5 @@ public class UnknownNew_Behavior {
 
   public static _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
     return ResolveUnknownUtil.resolveNew(thisNode);
-  }
-
-  public static SNode findClass_4175350419479594579(SNode from, String className) {
-    SNode res = null;
-
-    ClassifiersScope scope = new ClassifiersScope(SNodeOperations.getModel(from), new GlobalScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()), className);
-
-    SNode claz = scope.resolve(from, className);
-    if ((claz == null)) {
-      System.out.println("Clazz not found");
-      return null;
-    }
-
-    if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      System.out.println("Clazz is not really a classifier");
-      return null;
-    }
-    System.out.println("FOUND class");
-
-    return SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.Classifier");
-  }
-
-  public static SNode findClass2_3564968026865770666(SNode from, String className) {
-    IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"));
-    Class c = mod.getClass("jetbrains.mps.baseLanguage.scopes.ClassifiersScope");
-    if (c == null) {
-      System.out.println("DEBUG: no such class");
-    } else {
-      System.out.println("DEBUG: FOUND class");
-    }
-    SNode res = null;
-    try {
-      Constructor cons = c.getConstructor(SModel.class, IScope.class, String.class);
-      Method m = c.getMethod("resolve", SNode.class, String.class);
-      Object scope = cons.newInstance(SNodeOperations.getModel(from), new GlobalScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()), className);
-      Object x = m.invoke(scope, from, className);
-      res = SNodeOperations.cast(SNode.class.cast(x), "jetbrains.mps.baseLanguage.structure.Classifier");
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    if (res == null) {
-      System.out.println("DEBUG: no result");
-    } else {
-      System.out.println("DEBUG: FOUND node");
-    }
-
-    return res;
   }
 }

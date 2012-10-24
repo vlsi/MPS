@@ -120,7 +120,7 @@ public class ResolveUnknownUtil {
   }
 
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveNew(final SNode x) {
-    SNode typ = UnknownNew_Behavior.findClass_4175350419479594579(x, SPropertyOperations.getString(x, "className"));
+    SNode typ = findClass(x, SPropertyOperations.getString(x, "className"));
     if ((typ == null)) {
       return null;
     }
@@ -161,8 +161,6 @@ public class ResolveUnknownUtil {
       final SNode target = SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Classifier");
 
       if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-        // show proper error message 
-        // <node> 
         return null;
       }
 
@@ -319,7 +317,7 @@ public class ResolveUnknownUtil {
     // try the longest name first, the shortest last 
     for (int p = dotPositions.length - 1; p >= 0; p--) {
       String className = sb.substring(0, dotPositions[p]);
-      SNode cls = UnknownNew_Behavior.findClass_4175350419479594579(x, className);
+      SNode cls = findClass(x, className);
       if ((cls != null)) {
 
         return MultiTuple.<SNode,Integer>from(cls, p + 1);
