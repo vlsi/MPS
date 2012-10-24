@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.style.StyleAttribute;
 
 public abstract class StyleClassItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public StyleClassItem_BehaviorDescriptor() {
@@ -21,4 +22,6 @@ public abstract class StyleClassItem_BehaviorDescriptor extends BaseConcept_Beha
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleClassItem";
   }
+
+  public abstract StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode);
 }
