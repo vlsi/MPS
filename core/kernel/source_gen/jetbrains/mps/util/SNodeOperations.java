@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import java.util.Set;
@@ -71,13 +71,10 @@ public class SNodeOperations {
   }
 
   public static Map<String, String> getProperties(SNode node) {
-    final Map<String, String> result = new HashMap<String, String>();
-    node.visitProperties(new SNode.PropertyVisitor() {
-      public boolean visitProperty(String name, String value) {
-        result.put(name, value);
-        return true;
-      }
-    });
+    Map<String, String> result = new HashMap<String, String>();
+    for (String name : Sequence.fromIterable(node.getPropertyNames())) {
+      result.put(name, node.getProperty(name));
+    }
     return result;
   }
 
@@ -201,7 +198,6 @@ public class SNodeOperations {
 
   public static void copyProperties(SNode from, final SNode to) {
     ((jetbrains.mps.smodel.SNode) to).putProperties(((jetbrains.mps.smodel.SNode) from));
-    // <node> 
   }
 
   public static Language getLanguage(SNode node) {

@@ -120,13 +120,7 @@ public interface SNode {
 
   //visitors
 
-  void visitProperties(PropertyVisitor v);
-
   void visitUserObjects(UserObjectVisitor v);
-
-  public interface PropertyVisitor {
-    boolean visitProperty(String name, String value);
-  }
 
   public interface UserObjectVisitor {
     boolean visitObject(Object key, Object value);

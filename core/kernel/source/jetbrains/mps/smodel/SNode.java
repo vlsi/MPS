@@ -593,7 +593,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
   public Set<String> getPropertyNames() {
-    HashSet<String> result = new HashSet<String>();
+    LinkedHashSet<String> result = new LinkedHashSet<String>();
     if (myProperties == null) return result;
     for (int i = 0; i < myProperties.length; i += 2) {
       result.add(myProperties[i]);
@@ -2000,4 +2000,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private interface ReferenceVisitor {
     boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref);
   }
+
+  private interface PropertyVisitor {
+    boolean visitProperty(String name, String value);
+  }
+
 }

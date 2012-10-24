@@ -47,7 +47,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import javax.swing.SwingUtilities;
 import java.io.File;

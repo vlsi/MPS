@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -416,18 +417,15 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351886802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    _context.getNode().visitProperties(new org.jetbrains.mps.openapi.model.SNode.PropertyVisitor() {
-      public boolean visitProperty(String n, String v) {
-        if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), n)) != null)) {
-          return true;
-        }
-        SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        propertyNode.setProperty("propertyName", n);
-        propertyNode.setProperty("propertyValue", v);
-        ListSequence.fromList(result).addElement(propertyNode);
-        return true;
+    for (String name : SetSequence.fromSet(_context.getNode().getPropertyNames())) {
+      if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), name)) != null)) {
+        continue;
       }
-    });
+      SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
+      propertyNode.setProperty("propertyName", name);
+      propertyNode.setProperty("propertyValue", _context.getNode().getProperty(name));
+      ListSequence.fromList(result).addElement(propertyNode);
+    }
     return result;
   }
 
