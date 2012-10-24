@@ -543,12 +543,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
           int myIndex = 0;
 
           public boolean hasNext() {
-            return myIndex + 2 < myUserObjects.length;
+            return myIndex < myUserObjects.length;
           }
 
           public String next() {
             myIndex += 2;
-            return (String) myUserObjects[myIndex - 1];
+            return (String) myUserObjects[myIndex - 2];
           }
 
           public void remove() {
