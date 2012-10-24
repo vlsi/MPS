@@ -805,12 +805,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static Set<String> ourReported = new THashSet<String>();
 
   public SModel getOldModel() {
-    Throwable t = new Throwable();
-    String s = t.toString();
-    if (!ourReported.contains(s)) {
-      ourReported.add(s);
-      LOG.error("DO NOT USE!!!", t);
-    }
+//    Throwable t = new Throwable();
+//    String s = t.toString();
+//    if (!ourReported.contains(s)) {
+//      ourReported.add(s);
+//      LOG.error("DO NOT USE!!!", t);
+//    }
     return myOldModel;
   }
   //----------------------------------------------------------
