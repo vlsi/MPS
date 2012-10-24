@@ -541,13 +541,14 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       public Iterator<String> iterator() {
         return new Iterator<String>() {
           int myIndex = 0;
+
           public boolean hasNext() {
-            return myIndex+2<myProperties.length;
+            return myIndex + 2 < myUserObjects.length;
           }
 
           public String next() {
-            myIndex +=2;
-            return myProperties[myIndex-1];
+            myIndex += 2;
+            return (String) myUserObjects[myIndex - 1];
           }
 
           public void remove() {
