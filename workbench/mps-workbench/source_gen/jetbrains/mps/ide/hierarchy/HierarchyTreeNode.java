@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -34,15 +35,24 @@ public class HierarchyTreeNode extends MPSTreeNode {
       return;
     }
     setIcon(IconManager.getIconFor(node));
-    setAdditionalText(calculateAdditionalText());
+    String addText = calculateAdditionalText();
+    if (addText != null) {
+      setAdditionalText(addText);
+    }
     setAutoExpandable(false);
   }
 
   protected String calculateAdditionalText() {
     if (getNode() == null) {
-      return "null";
+      return null;
     }
-    return SNodeOperations.getModel(getNode()).getSModelFqName().toString();
+
+    SModel model = SNodeOperations.getModel(getNode());
+    if (model == null) {
+      return null;
+    }
+
+    return model.getSModelFqName().toString();
   }
 
   public int getToggleClickCount() {
