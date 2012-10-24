@@ -116,5 +116,5 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
-  Iterable<String> getUserObjectKeys();
+  Iterable<Object> getUserObjectKeys();
 }

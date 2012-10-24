@@ -111,7 +111,7 @@ public class NodesWriter {
   protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
     // write user objects here
     final ArrayList<Object> knownUserObject = new ArrayList<Object>();
-    for (String key:node.getUserObjectKeys()){
+    for (Object key:node.getUserObjectKeys()){
       Object value = node.getUserObject(key);
       if (isKnownUserObject(key) && isKnownUserObject(value)) {
         knownUserObject.add(key);

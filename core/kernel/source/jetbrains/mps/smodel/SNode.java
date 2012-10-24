@@ -535,20 +535,20 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getParent().getNextChild(this);
   }
 
-  public Iterable<String> getUserObjectKeys() {
+  public Iterable<Object> getUserObjectKeys() {
     if (myUserObjects == null || myUserObjects.length == 0) return EmptyIterable.getInstance();
-    return new Iterable<String>() {
-      public Iterator<String> iterator() {
-        return new Iterator<String>() {
+    return new Iterable<Object>() {
+      public Iterator<Object> iterator() {
+        return new Iterator<Object>() {
           int myIndex = 0;
 
           public boolean hasNext() {
             return myIndex < myUserObjects.length;
           }
 
-          public String next() {
+          public Object next() {
             myIndex += 2;
-            return (String) myUserObjects[myIndex - 2];
+            return myUserObjects[myIndex - 2];
           }
 
           public void remove() {
@@ -1400,7 +1400,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void putUserObjects(SNode fromNode) {
     if (fromNode == null) return;
-    for (String key : fromNode.getUserObjectKeys()) {
+    for (Object key : fromNode.getUserObjectKeys()) {
       putUserObject(key, fromNode.getUserObject(key));
     }
   }
@@ -1696,7 +1696,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Map<Object, Object> getUserObjects() {
     final Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
-    for (String key : getUserObjectKeys()) {
+    for (Object key : getUserObjectKeys()) {
       userObjects.put(key, getUserObject(key));
     }
     return userObjects;
