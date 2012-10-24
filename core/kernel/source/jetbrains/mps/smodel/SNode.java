@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescripto
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.migration.annotations.LongTermMigration;
@@ -568,6 +569,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   public Iterable<String> getUserObjectKeys() {
+    if (myProperties == null) return EmptyIterable.getInstance();
     return new Iterable<String>() {
       public Iterator<String> iterator() {
         return new Iterator<String>() {
@@ -592,7 +594,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
   public Set<String> getPropertyNames() {
     HashSet<String> result = new HashSet<String>();
-    for (int i = 0;i<myProperties.length;i+=2){
+    if (myProperties == null) return result;
+    for (int i = 0; i < myProperties.length; i += 2) {
       result.add(myProperties[i]);
     }
     return result;
@@ -1614,14 +1617,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
-    visitChildren(new ChildVisitor() {
-      public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-        if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
-          augend.add(role);
-        }
-        return true;
+    for (SNode child:getChildren()){
+      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
+        augend.add(child.getRoleInParent());
       }
-    });
+    }
     return augend;
   }
 
@@ -1991,5 +1991,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void setBooleanProperty(String propertyName, boolean value) {
     setProperty(propertyName, value ? "" + value : null);
+  }
+
+  private interface ChildVisitor {
+    boolean visitChild(String role, SNode child);
+  }
+
+  private interface ReferenceVisitor {
+    boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref);
   }
 }

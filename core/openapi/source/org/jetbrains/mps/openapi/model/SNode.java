@@ -120,21 +120,9 @@ public interface SNode {
 
   //visitors
 
-  void visitChildren(ChildVisitor v);
-
-  void visitReferences(ReferenceVisitor v);
-
   void visitProperties(PropertyVisitor v);
 
   void visitUserObjects(UserObjectVisitor v);
-
-  public interface ChildVisitor {
-    boolean visitChild(String role, SNode child);
-  }
-
-  public interface ReferenceVisitor {
-    boolean visitReference(String role, SReference ref);
-  }
 
   public interface PropertyVisitor {
     boolean visitProperty(String name, String value);

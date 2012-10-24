@@ -47,9 +47,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SNode.ChildVisitor;
 import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
-import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -299,34 +297,26 @@ public class CheckProjectStructureHelper {
         continue;
       }
 
-      node.visitProperties(new PropertyVisitor() {
-        public boolean visitProperty(String name, String value) {
-          if (concept.findProperty(name) == null) {
-            result.add("unknown property: `" + name + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
-          }
-          return true;
+      for (String name: node.getPropertyNames()){
+        if (concept.findProperty(name) == null) {
+          result.add("unknown property: `" + name + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
-      });
+      }
 
-      node.visitReferences(new ReferenceVisitor() {
-        public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-          SLink link = concept.findLink(ref.getRole());
-          if (link == null || !link.isReference()) {
-            result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
-          }
-          return true;
+      for (SReference ref:node.getReferences()){
+        SLink link = concept.findLink(ref.getRole());
+        if (link == null || !link.isReference()) {
+          result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
-      });
+      }
 
-      node.visitChildren(new ChildVisitor() {
-        public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-          SLink link = concept.findLink(role);
-          if (link == null || link.isReference()) {
-            result.add("unknown child role: `" + role + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
-          }
-          return true;
+      for (SNode child:node.getChildren()){
+        String role = child.getRoleInParent();
+        SLink link = concept.findLink(role);
+        if (link == null || link.isReference()) {
+          result.add("unknown child role: `" + role + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
-      });
+      }
     }
   }
 

@@ -52,7 +52,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.SwitchQuotation__switch" file="SwitchQuotation__switch.java">
     <classNode dependClassName="java.lang.Iterable" />

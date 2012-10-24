@@ -449,25 +449,22 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    _context.getNode().visitReferences(new org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-        if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role)) != null)) {
-          return true;
-        }
-        SNode targetNode = ((SNode) ref.getTargetNode());
-        if (SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
-          return true;
-        }
-        SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        referenceNode.setProperty("targetModel", ((SReference) ref).getTargetSModelReference().toString());
-        referenceNode.setProperty("role", ref.getRole());
-        if (targetNode != null) {
-          referenceNode.setProperty("targetNodeId", targetNode.getSNodeId().toString());
-        }
-        ListSequence.fromList(result).addElement(referenceNode);
-        return true;
+    for (SReference ref : ListSequence.fromList(_context.getNode().getReferences())) {
+      if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref.getRole())) != null)) {
+        continue;
       }
-    });
+      SNode targetNode = ((SNode) ref.getTargetNode());
+      if (SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
+        continue;
+      }
+      SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
+      referenceNode.setProperty("targetModel", ((SReference) ref).getTargetSModelReference().toString());
+      referenceNode.setProperty("role", ref.getRole());
+      if (targetNode != null) {
+        referenceNode.setProperty("targetNodeId", targetNode.getSNodeId().toString());
+      }
+      ListSequence.fromList(result).addElement(referenceNode);
+    }
     return result;
   }
 
