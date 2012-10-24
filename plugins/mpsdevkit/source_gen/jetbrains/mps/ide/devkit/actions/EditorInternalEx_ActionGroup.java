@@ -18,7 +18,6 @@ public class EditorInternalEx_ActionGroup extends GeneratedActionGroup {
       EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action");
       EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.PrintNodeID_Action");
       EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action");
-      EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.LanguagePaths_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

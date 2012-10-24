@@ -486,44 +486,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
   }
 
-  //todo check this code. Wy not to do it where we add jars?
-  protected void updatePackagedDescriptorClasspath() {
-    super.updatePackagedDescriptorClasspath();
-
-    if (!isPackaged()) return;
-
-    if (myLanguageDescriptor != null) {
-      IFile bundleParent = getBundleHome().getParent();
-      String jarName = getModuleName() + ".jar";
-      IFile bundleHomeFile = bundleParent.getDescendant(jarName);
-
-      if (!bundleHomeFile.exists()) return;
-
-      for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
-        g.getModelRoots().removeAll(myLanguageDescriptor.getRuntimeStubModels());
-      }
-      myLanguageDescriptor.getRuntimeStubModels().clear();
-
-      DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
-      if (dd == null) return;
-
-      for (String jarFile : dd.getRuntimeJars()) {
-        IFile jar = jarFile.startsWith("/")
-          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-          : bundleParent.getDescendant(jarFile);
-        if (jar.exists()) {
-          ClassPathEntry jarEntry = new ClassPathEntry();
-          jarEntry.setPath(jar.getPath());
-          ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
-          myLanguageDescriptor.getRuntimeStubModels().add(mr);
-          for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
-            g.getModelRoots().add(mr);
-          }
-        }
-      }
-    }
-  }
-
   @Override
   public boolean isHidden() {
     return false;

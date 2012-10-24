@@ -268,9 +268,7 @@ public class TestMain {
 
   public static void updateLanguageClasspath(Language l, String classpath) {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
-    ClassPathEntry cpEntry = new ClassPathEntry();
-    cpEntry.setPath(classpath);
-    languageDescriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(cpEntry));
+    languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
     l.setLanguageDescriptor(languageDescriptor, false);
   }
 

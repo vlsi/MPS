@@ -22,6 +22,7 @@ import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
 import java.util.UUID;
@@ -156,28 +157,43 @@ public class ModuleDescriptorPersistence {
     }.invoke();
   }
 
-  public static List<ModelRoot> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
-    return Sequence.fromIterable(XmlUtil.children(stubModelEntriesElement, "stubModelEntry")).select(new ISelector<Element, ModelRoot>() {
-      public ModelRoot select(Element mre) {
-        return loadModelEntry(mre, macroHelper);
+  public static List<String> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
+    return Sequence.fromIterable(XmlUtil.children(stubModelEntriesElement, "stubModelEntry")).select(new ISelector<Element, String>() {
+      public String select(Element mre) {
+        return loadStubModelEntry(mre, macroHelper);
+      }
+    }).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return it != null;
       }
     }).toListSequence();
+  }
+
+  private static String loadStubModelEntry(Element modelRootElement, MacroHelper macroHelper) {
+    Element manager = XmlUtil.first(modelRootElement, "manager");
+    if (manager != null) {
+      String className = XmlUtil.stringWithDefault(manager, "className", "");
+      if (!("jetbrains.mps.baseLanguage.stubs.JavaStubs".equals(className))) {
+        return null;
+      }
+    }
+    return macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
   }
 
   private static ModelRoot loadModelEntry(final Element modelRootElement, final MacroHelper macroHelper) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a7 = macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
-        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
+        final ModelRoot result_dxyzb6_a0a0a8 = new ModelRoot();
+        final String result_dxyzb6_a0a0a0a8 = macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
+        result_dxyzb6_a0a0a8.setPath(result_dxyzb6_a0a0a0a8);
         Element manager = XmlUtil.first(modelRootElement, "manager");
-        final ModelRootManager result_dxyzb6_a2a0a0a7 = new ModelRootManager();
-        final String result_dxyzb6_a0a2a0a0a7 = XmlUtil.stringWithDefault(manager, "moduleId", "");
-        result_dxyzb6_a2a0a0a7.setModuleId(result_dxyzb6_a0a2a0a0a7);
-        final String result_dxyzb6_a1a2a0a0a7 = XmlUtil.stringWithDefault(manager, "className", "");
-        result_dxyzb6_a2a0a0a7.setClassName(result_dxyzb6_a1a2a0a0a7);
-        result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a2a0a0a7);
-        return result_dxyzb6_a0a0a7;
+        final ModelRootManager result_dxyzb6_a2a0a0a8 = new ModelRootManager();
+        final String result_dxyzb6_a0a2a0a0a8 = XmlUtil.stringWithDefault(manager, "moduleId", "");
+        result_dxyzb6_a2a0a0a8.setModuleId(result_dxyzb6_a0a2a0a0a8);
+        final String result_dxyzb6_a1a2a0a0a8 = XmlUtil.stringWithDefault(manager, "className", "");
+        result_dxyzb6_a2a0a0a8.setClassName(result_dxyzb6_a1a2a0a0a8);
+        result_dxyzb6_a0a0a8.setManager(result_dxyzb6_a2a0a0a8);
+        return result_dxyzb6_a0a0a8;
       }
     }.invoke();
   }
@@ -196,14 +212,13 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void saveStubModelEntries(Element result, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
-    for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
+  public static void saveStubModelEntries(Element result, Collection<String> entries, MacroHelper macroHelper) {
+    for (String root : CollectionSequence.fromCollection(entries)) {
       Element stubModelEntry = new Element("stubModelEntry");
-      stubModelEntry.setAttribute("path", macroHelper.shrinkPath((root.getPath() == null ?
+      stubModelEntry.setAttribute("path", macroHelper.shrinkPath((root == null ?
         "" :
-        root.getPath()
+        root
       )));
-      XmlUtil.tagWithAttributes(stubModelEntry, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
       result.addContent(stubModelEntry);
     }
   }

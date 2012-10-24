@@ -15,7 +15,7 @@ public class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoRe
   public URL getResource(IModule module, String resourceName) {
     IClassPathItem classPathItem;
     ModuleDescriptor descriptor = module.getModuleDescriptor();
-    if (module.isCompileInMPS() || descriptor != null && !(descriptor.getStubModelEntries().isEmpty())) {
+    if (module.isCompileInMPS() || descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
       classPathItem = module.getClassPathItem();
     } else {
       classPathItem = CommonPaths.getMPSClassPath();

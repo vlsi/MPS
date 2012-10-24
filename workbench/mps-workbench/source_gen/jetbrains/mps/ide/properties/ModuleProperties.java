@@ -6,7 +6,6 @@ import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
@@ -21,8 +20,7 @@ public class ModuleProperties {
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
   private List<String> mySourcePaths;
-  private List<ClassPathEntry> myClassPaths;
-  private List<ModelRoot> myStubModels;
+  private List<String> myAdditionalJavaStubModels;
 
   public ModuleProperties() {
     myModelRoots = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
@@ -30,8 +28,7 @@ public class ModuleProperties {
     myUsedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myUsedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     mySourcePaths = (List) ListsFactory.create(ListsFactory.COMPARABLE_COMPARATOR);
-    myClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
-    myStubModels = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
+    myAdditionalJavaStubModels = (List) ListsFactory.create(ListsFactory.COMPARABLE_COMPARATOR);
   }
 
   public String getNamespace() {
@@ -82,20 +79,12 @@ public class ModuleProperties {
     mySourcePaths = sourcePaths;
   }
 
-  public List<ClassPathEntry> getClassPaths() {
-    return myClassPaths;
+  public List<String> getStubModels() {
+    return myAdditionalJavaStubModels;
   }
 
-  public void setClassPaths(List<ClassPathEntry> classPaths) {
-    myClassPaths = classPaths;
-  }
-
-  public List<ModelRoot> getStubModels() {
-    return myStubModels;
-  }
-
-  public void setStubModels(List<ModelRoot> stubModels) {
-    myStubModels = stubModels;
+  public void setStubModels(List<String> stubModels) {
+    myAdditionalJavaStubModels = stubModels;
   }
 
   public void loadFrom(ModuleDescriptor descriptor) {
@@ -117,11 +106,8 @@ public class ModuleProperties {
     for (String p : descriptor.getSourcePaths()) {
       mySourcePaths.add(p);
     }
-    for (ModelRoot entry : descriptor.getStubModelEntries()) {
-      myStubModels.add((entry != null ?
-        entry.getCopy() :
-        null
-      ));
+    for (String path : descriptor.getAdditionalJavaStubPaths()) {
+      myAdditionalJavaStubModels.add(path);
     }
   }
 
@@ -137,7 +123,7 @@ public class ModuleProperties {
     descriptor.getUsedDevkits().addAll(myUsedDevkits);
     descriptor.getSourcePaths().clear();
     descriptor.getSourcePaths().addAll(mySourcePaths);
-    descriptor.getStubModelEntries().clear();
-    descriptor.getStubModelEntries().addAll(myStubModels);
+    descriptor.getAdditionalJavaStubPaths().clear();
+    descriptor.getAdditionalJavaStubPaths().addAll(myAdditionalJavaStubModels);
   }
 }

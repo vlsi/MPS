@@ -35,7 +35,7 @@ public class ModuleDescriptor {
   private Collection<Dependency> myDependencies;
   private Collection<ModuleReference> myUsedLanguages;
   private Collection<ModuleReference> myUsedDevkits;
-  private Collection<ModelRoot> myStubModels;
+  private Collection<String> myAdditionalJavaStubPaths;
   private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
 
@@ -47,7 +47,7 @@ public class ModuleDescriptor {
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myStubModels = new LinkedHashSet<ModelRoot>();
+    myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
 
@@ -129,8 +129,8 @@ public class ModuleDescriptor {
     return myUsedDevkits;
   }
 
-  public Collection<ModelRoot> getStubModelEntries() {
-    return myStubModels;
+  public Collection<String> getAdditionalJavaStubPaths() {
+    return myAdditionalJavaStubPaths;
   }
 
   public Collection<String> getSourcePaths() {

@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -73,9 +73,6 @@ public abstract class ProjectStructureBuilder {
     }
     for (ModuleReference dep : source.getRuntimeModules()) {
       SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
-    }
-    for (ModelRoot entry : source.getRuntimeStubModels()) {
-      SLinkOperations.getTargets(result, "runtimeStubModels", true).add(convert(entry));
     }
     for (StubSolution sol : source.getStubSolutions()) {
       SLinkOperations.getTargets(result, "stubSolutions", true).add(convert(sol));
@@ -154,8 +151,10 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference ref : source.getUsedLanguages()) {
       SLinkOperations.getTargets(module, "usedLanguages", true).add(convert(ref));
     }
-    for (ModelRoot entry : source.getStubModelEntries()) {
-      SLinkOperations.getTargets(module, "stubModels", true).add(convert(entry));
+    for (String path : source.getAdditionalJavaStubPaths()) {
+      SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.StubEntry", null);
+      SPropertyOperations.set(node, "path", path);
+      SLinkOperations.getTargets(module, "stubModels", true).add(node);
     }
     for (String s : source.getSourcePaths()) {
       SLinkOperations.getTargets(module, "sourcePaths", true).add(convertSourcePath(s));

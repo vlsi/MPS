@@ -133,14 +133,14 @@ public class Solution extends ClassLoadingModule {
 
     List<String> javaCP = CommonPaths.getMPSPaths(classType);
     descriptor.getModelRoots().clear();
-    descriptor.getStubModelEntries().clear();
+    descriptor.getAdditionalJavaStubPaths().clear();
 
     for (String path : javaCP) {
       ClassPathEntry entry = new ClassPathEntry();
       entry.setPath(path);
       ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(entry);
-      descriptor.getStubModelEntries().add(mr);
       descriptor.getModelRoots().add(mr);
+      descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
     }
   }
 
