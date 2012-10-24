@@ -102,11 +102,14 @@ public class ConceptPropertiesHelper {
               SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(new ConceptPropertiesHelper.QuotationClass_azpnkk_a0a0a0a1a0a0a0a0a0a0b0a01a2().createNode(), "operation", true));
             }
             refactoringViewItem.close();
+            makeAll(searchResults);
           }
         });
       }
     }, searchResults, false, "remove alias");
+  }
 
+  private void makeAll(final SearchResults searchResults) {
     final Set<SModel> sourceModels = searchResults.getAffectedModels();
     if (sourceModels.isEmpty()) {
       return;
@@ -138,11 +141,6 @@ public class ConceptPropertiesHelper {
         }
       }
     }.start();
-
-
-
-
-
   }
 
   private void migrateAlias(List<SNode> affectedNodes) {
