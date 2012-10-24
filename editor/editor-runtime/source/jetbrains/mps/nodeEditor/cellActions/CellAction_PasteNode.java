@@ -31,6 +31,7 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.SwingUtilities;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -74,7 +75,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     // sometimes model is not in repository (paste in merge dialog)
     final boolean inRepository = model.getModelDescriptor() == selectedNodePointer.getModel();
 
-      PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
+    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
     if (data == null || data.getNodes().isEmpty()) {
       data = CopyPasteUtil.getConvertedFromClipboard(model, context.getOperationContext().getProject());
       if (data == null || data.getNodes().isEmpty()) return;
@@ -120,12 +121,18 @@ public class CellAction_PasteNode extends EditorCellAction {
             assert selectedCell != null;
 
             List<SNode> pasteNodes = pasteNodeData.getNodes();
-            Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
             if (canPasteBefore(selectedCell, pasteNodes)) {
               new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
             } else {
               new NodePaster(pasteNodes).paste(selectedCell);
+            }
+
+            Set<SReference> requireResolveReferences = new HashSet<SReference>();
+            for (SReference ref : pasteNodeData.getRequireResolveReferences()) {
+              //ref can be detached from model while using copy/paste handlers
+              if (ref.getSourceNode() == null || ref.getSourceNode().getModel() == null) continue;
+              requireResolveReferences.add(ref);
             }
 
             ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getOperationContext());

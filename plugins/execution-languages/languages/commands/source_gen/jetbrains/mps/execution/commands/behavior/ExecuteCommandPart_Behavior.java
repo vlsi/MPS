@@ -121,7 +121,7 @@ public class ExecuteCommandPart_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution(MPS.Platform/com.intellij.execution@java_stub)"), SNodeId.fromString("~ExecutionException")));
         result = quotedNode1_2;
@@ -141,15 +141,15 @@ public class ExecuteCommandPart_Behavior {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode_1.addChild("argument", quotedNode1_5);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
           quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.process(MPS.Platform/com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);

@@ -1706,7 +1706,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("descriptor", SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
         result = quotedNode1_2;
@@ -1724,7 +1724,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1741,7 +1741,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1758,7 +1758,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1775,7 +1775,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1792,7 +1792,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1810,10 +1810,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1833,10 +1833,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1856,10 +1856,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1879,10 +1879,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1902,10 +1902,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1925,10 +1925,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1948,10 +1948,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -1970,7 +1970,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -1987,7 +1987,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2005,10 +2005,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2027,7 +2027,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2045,10 +2045,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2068,10 +2068,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2091,10 +2091,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2114,10 +2114,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2137,10 +2137,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2159,7 +2159,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2176,7 +2176,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2194,10 +2194,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2216,7 +2216,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2233,7 +2233,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2251,10 +2251,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2274,10 +2274,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2296,7 +2296,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2313,7 +2313,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2330,7 +2330,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2347,7 +2347,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2364,7 +2364,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2381,7 +2381,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2398,7 +2398,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2415,7 +2415,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2432,7 +2432,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2449,7 +2449,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2466,7 +2466,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2483,7 +2483,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2500,7 +2500,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", "0");
         result = quotedNode1_2;
@@ -2518,7 +2518,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), SNodeId.fromString("~BigDecimal")));
         quotedNode1_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), SNodeId.fromString("~BigDecimal.ZERO")));
@@ -2537,7 +2537,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867284")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867286")));
@@ -2556,7 +2556,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867284")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867287")));
@@ -2575,7 +2575,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867284")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867288")));
@@ -2594,7 +2594,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867284")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702867289")));
@@ -2613,7 +2613,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2631,10 +2631,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2654,10 +2654,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2676,7 +2676,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2693,7 +2693,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2710,7 +2710,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2727,7 +2727,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2745,10 +2745,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2768,10 +2768,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode_1.addChild("elementType", quotedNode1_4);
         }
@@ -2790,7 +2790,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2807,7 +2807,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2824,7 +2824,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2841,7 +2841,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -2860,7 +2860,7 @@ public class QueriesGenerated {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_7;
@@ -2876,7 +2876,7 @@ public class QueriesGenerated {
           }
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
           quotedNode1_6.setProperty("value", "0");
           quotedNode_1.addChild("leftExpression", quotedNode1_6);
@@ -2898,7 +2898,7 @@ public class QueriesGenerated {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_7;
@@ -2914,7 +2914,7 @@ public class QueriesGenerated {
           }
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
           quotedNode1_6.setProperty("value", "0");
           quotedNode_1.addChild("leftExpression", quotedNode1_6);
@@ -2934,7 +2934,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", "1");
         result = quotedNode1_2;
@@ -2954,7 +2954,7 @@ public class QueriesGenerated {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_7;
@@ -2970,7 +2970,7 @@ public class QueriesGenerated {
           }
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
           quotedNode1_6.setProperty("value", "0");
           quotedNode_1.addChild("leftExpression", quotedNode1_6);
@@ -2990,7 +2990,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", "1");
         result = quotedNode1_2;
@@ -3008,7 +3008,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setProperty("value", "-1");
         result = quotedNode1_2;

@@ -490,6 +490,16 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1196350915663">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3r.1196350785115" />
         </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3180306201267182935">
+          <property name="text" nameId="tpc2.1073389577007" value=";" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3180306201267182963">
+          <property name="text" nameId="tpc2.1073389577007" value="id =" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="3180306201267182991">
+          <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;default&gt;" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3r.3180306201267182597" />
+        </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1196350915664">
           <property name="text" nameId="tpc2.1073389577007" value="]" />
         </node>
@@ -1152,7 +1162,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="1196350915916">
                 <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="1196350915917">
-                  <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.1084199179705" resolveInfo="aggregation" />
+                  <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.1084199179705" />
                 </node>
               </node>
             </node>

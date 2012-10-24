@@ -78,12 +78,12 @@ public class XmlTextValue_text extends EditorCellKeyMap {
 
       String currText = SPropertyOperations.getString(node, "text");
       if (index < currText.length()) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.core.xml.structure.XmlTextValue", null);
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlTextValue");
         SPropertyOperations.set(newText, "text", currText.substring(index));
         SPropertyOperations.set(node, "text", currText.substring(0, index));
         ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.core.xml.structure.XmlEntityRefValue", null);
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlEntityRefValue");
       SPropertyOperations.set(newRef, "entityName", "amp");
       ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
@@ -149,12 +149,12 @@ public class XmlTextValue_text extends EditorCellKeyMap {
 
       String currText = SPropertyOperations.getString(node, "text");
       if (index < currText.length()) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.core.xml.structure.XmlTextValue", null);
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlTextValue");
         SPropertyOperations.set(newText, "text", currText.substring(index));
         SPropertyOperations.set(node, "text", currText.substring(0, index));
         ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.core.xml.structure.XmlEntityRefValue", null);
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlEntityRefValue");
       ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }

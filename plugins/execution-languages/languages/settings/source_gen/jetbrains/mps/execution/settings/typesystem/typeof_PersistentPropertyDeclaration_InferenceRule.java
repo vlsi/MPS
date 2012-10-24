@@ -55,7 +55,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("descriptor", SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
         result = quotedNode1_2;
@@ -68,7 +68,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("descriptor", SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
         result = quotedNode1_2;
@@ -91,22 +91,22 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setReference("classifier", SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
           quotedNode_1.addChild("argument", quotedNode1_8);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
           quotedNode1_9.setReference("classifier", SReference.create("classifier", quotedNode1_9, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Enum")));
           quotedNode_1.addChild("argument", quotedNode1_9);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_4;
           quotedNode1_10.setReference("classifier", SReference.create("classifier", quotedNode1_10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
           quotedNode_1.addChild("argument", quotedNode1_10);
@@ -125,7 +125,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           }
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_6;
           quotedNode_1.addChild("argument", quotedNode1_12);
         }
@@ -144,22 +144,22 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setReference("classifier", SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
           quotedNode_1.addChild("argument", quotedNode1_8);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
           quotedNode1_9.setReference("classifier", SReference.create("classifier", quotedNode1_9, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Enum")));
           quotedNode_1.addChild("argument", quotedNode1_9);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_4;
           quotedNode1_10.setReference("classifier", SReference.create("classifier", quotedNode1_10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
           quotedNode_1.addChild("argument", quotedNode1_10);
@@ -178,7 +178,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           }
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_6;
           quotedNode_1.addChild("argument", quotedNode1_12);
         }

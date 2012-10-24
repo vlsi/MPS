@@ -68,7 +68,7 @@ public class ReferenceConceptUtil {
               return link;
             }
           }
-          LOG.warning("the '" + alias + "' doesn't match any reference link in " + concept.getDebugText());
+          LOG.warning("the '" + alias + "' doesn't match any reference link in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(concept));
         } else {
           // if concept declares exactly ONE REQUIRED reference link...
           if (links.size() == 1) {

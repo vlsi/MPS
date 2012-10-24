@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, 
                 if (oldChild == null) {
                   parentNode.addChild(role, newChild);
                 } else {
-                  parentNode.replaceChild(oldChild, newChild);
+                  SNodeUtil.replaceWithAnother(oldChild, newChild);
                 }
                 return newChild;
               }

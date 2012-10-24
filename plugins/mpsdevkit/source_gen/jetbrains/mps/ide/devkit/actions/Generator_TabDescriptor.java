@@ -213,7 +213,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           SLinkOperations.setTarget(mappingRule, "applicableConcept", node, false);
           SLinkOperations.setTarget(mappingRule, "ruleConsequence", SNodeOperations.cast(result.value, "jetbrains.mps.lang.generator.structure.RuleConsequence"), true);
         } else {
-          SNode rootTemplateNode = SModelOperations.createNewNode(model, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", null);
+          SNode rootTemplateNode = SModelOperations.createNewNode(model, null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
           SLinkOperations.setTarget(rootTemplateNode, "applicableConcept", node, false);
           AttributeOperations.setAttribute(result.value, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), rootTemplateNode);
           SPropertyOperations.set(SNodeOperations.cast(result.value, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", SPropertyOperations.getString(node, "name"));

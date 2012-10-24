@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ReferencePersister4 implements IReferencePersister {
 
@@ -118,13 +119,13 @@ public class ReferencePersister4 implements IReferencePersister {
         importedModelReference = SModelOperations.getImportedModelUID(model, getImportIndex());
       }
       if (importedModelReference == null) {
-        LOG.error("couldn't create reference '" + this.getRole() + "' from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
+        LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(this.getSourceNode()) + " : import for index [" + getImportIndex() + "] not found");
         return null;
       }
     }
 
     if (this.getTargetId() == null) {
-      LOG.error("couldn't create reference '" + this.getRole() + "' from " + this.getSourceNode().getDebugText() + " : target node id is null");
+      LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(this.getSourceNode()) + " : target node id is null");
       return null;
     }
 
@@ -174,7 +175,7 @@ public class ReferencePersister4 implements IReferencePersister {
           }
         } else {
           LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
-          LOG.error("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
+          LOG.error("-- was reference " + reference + " in " + SNodeUtil.getDebugText(reference.getSourceNode()));
         }
       }
     }

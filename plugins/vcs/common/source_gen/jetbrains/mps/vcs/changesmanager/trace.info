@@ -745,7 +745,7 @@
     <nodeInfo nodeId="3285276019551792305" fileName="ChangesTracking.java" startLine="434" startPosition="58" endLine="435" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3285276019551792318" fileName="ChangesTracking.java" startLine="439" startPosition="52" endLine="440" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3285276019551792508" fileName="ChangesTracking.java" startLine="447" startPosition="93" endLine="448" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3285276019551792601" fileName="ChangesTracking.java" startLine="449" startPosition="31" endLine="450" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3285276019551792601" fileName="ChangesTracking.java" startLine="449" startPosition="38" endLine="450" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3285276019551792526" fileName="ChangesTracking.java" startLine="451" startPosition="7" endLine="452" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3285276019551792883" fileName="ChangesTracking.java" startLine="452" startPosition="52" endLine="453" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3285276019551792887" fileName="ChangesTracking.java" startLine="453" startPosition="0" endLine="454" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -985,7 +985,7 @@
     <scopeInfo nodeId="3285276019551792354" fileName="ChangesTracking.java" startLine="426" startPosition="35" endLine="427" endPosition="15" />
     <scopeInfo nodeId="3285276019551792304" fileName="ChangesTracking.java" startLine="434" startPosition="58" endLine="435" endPosition="47" />
     <scopeInfo nodeId="3285276019551792317" fileName="ChangesTracking.java" startLine="439" startPosition="52" endLine="440" endPosition="72" />
-    <scopeInfo nodeId="3285276019551792545" fileName="ChangesTracking.java" startLine="449" startPosition="31" endLine="450" endPosition="15" />
+    <scopeInfo nodeId="3285276019551792545" fileName="ChangesTracking.java" startLine="449" startPosition="38" endLine="450" endPosition="15" />
     <scopeInfo nodeId="3285276019551792811" fileName="ChangesTracking.java" startLine="460" startPosition="64" endLine="461" endPosition="15" />
     <scopeInfo nodeId="3285276019551792849" fileName="ChangesTracking.java" startLine="462" startPosition="14" endLine="463" endPosition="62" />
     <scopeInfo nodeId="3285276019551792418" fileName="ChangesTracking.java" startLine="469" startPosition="38" endLine="470" endPosition="54" />

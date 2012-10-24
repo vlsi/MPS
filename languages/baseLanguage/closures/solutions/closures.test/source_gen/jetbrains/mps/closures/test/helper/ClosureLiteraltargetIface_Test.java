@@ -80,17 +80,17 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
         SNode quotedNode_6 = null;
         SNode quotedNode_7 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_1;
           quotedNode1_8.setReference("classifier", SReference.create("classifier", quotedNode1_8, SModelReference.fromString("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)"), SNodeId.fromString("7178287329507546171")));
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_2;
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_4;
               {
-                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_11 = quotedNode_6;
                 quotedNode1_11.setReference("classifier", SReference.create("classifier", quotedNode1_11, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
                 quotedNode_4.addChild("bound", quotedNode1_11);
@@ -100,13 +100,13 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
             quotedNode_1.addChild("parameter", quotedNode1_9);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_12 = quotedNode_3;
             {
-              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, GlobalScope.getInstance(), false);
+              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_13 = quotedNode_5;
               {
-                quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+                quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_14 = quotedNode_7;
                 quotedNode1_14.setReference("classifier", SReference.create("classifier", quotedNode1_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Integer")));
                 quotedNode_5.addChild("bound", quotedNode1_14);
@@ -132,17 +132,17 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
         SNode quotedNode_2 = null;
         SNode quotedNode_3 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_1;
           quotedNode1_4.setReference("classifier", SReference.create("classifier", quotedNode1_4, SModelReference.fromString("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)"), SNodeId.fromString("7178287329507546171")));
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_5 = quotedNode_2;
             quotedNode1_5.setReference("classifier", SReference.create("classifier", quotedNode1_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
             quotedNode_1.addChild("parameter", quotedNode1_5);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Integer")));
             quotedNode_1.addChild("parameter", quotedNode1_6);
@@ -165,14 +165,14 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
         SNode quotedNode_3 = null;
         SNode quotedNode_4 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_1;
           quotedNode1_5.setReference("classifier", SReference.create("classifier", quotedNode1_5, SModelReference.fromString("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)"), SNodeId.fromString("7178287329507546171")));
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_2;
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_7 = quotedNode_4;
               quotedNode1_7.setReference("classifier", SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
               quotedNode_2.addChild("bound", quotedNode1_7);
@@ -180,7 +180,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
             quotedNode_1.addChild("parameter", quotedNode1_6);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_3;
             quotedNode1_8.setReference("classifier", SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Integer")));
             quotedNode_1.addChild("parameter", quotedNode1_8);
@@ -202,17 +202,17 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
         SNode quotedNode_2 = null;
         SNode quotedNode_3 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_1;
           quotedNode1_4.setReference("classifier", SReference.create("classifier", quotedNode1_4, SModelReference.fromString("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)"), SNodeId.fromString("7178287329507546171")));
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_5 = quotedNode_2;
             quotedNode1_5.setReference("classifier", SReference.create("classifier", quotedNode1_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
             quotedNode_1.addChild("parameter", quotedNode1_5);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Integer")));
             quotedNode_1.addChild("parameter", quotedNode1_6);

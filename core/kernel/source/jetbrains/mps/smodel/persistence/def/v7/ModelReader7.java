@@ -29,6 +29,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -181,7 +182,7 @@ public class ModelReader7 implements IModelReader {
       SNode childNode = readNode(child, node.getModel(), false);
       String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+        LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));
       } else {
         node.addChild(role, childNode);
         myLinkMap.addRoleLocation(myHelper.readLinkId(child.getAttributeValue(ModelPersistence.ROLE_ID)), childNode);

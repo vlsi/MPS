@@ -32,7 +32,7 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_File", null);
+        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_File");
         SNodeOperations.replaceWithAnother(node, file);
         SLinkOperations.setTarget(file, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), true);
       }
@@ -59,7 +59,7 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_Files", null);
+        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_Files");
         SNodeOperations.replaceWithAnother(node, files);
         SLinkOperations.setTarget(files, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true), true);
         ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "selectors", true)));
@@ -87,7 +87,7 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_File", null);
+        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_File");
         SNodeOperations.replaceWithAnother(node, file);
         SLinkOperations.setTarget(file, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), true);
         ListSequence.fromList(SLinkOperations.getTargets(file, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "handlers", true)));
@@ -115,7 +115,7 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_Files", null);
+        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_Files");
         SNodeOperations.replaceWithAnother(node, files);
         SLinkOperations.setTarget(files, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true), true);
         ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "selectors", true)));

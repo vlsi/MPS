@@ -2260,7 +2260,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="1221239862991">
               <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="1221239862992">
-                <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpc2.1130847833453" resolveInfo="underlined" />
+                <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpc2.1130847833453" />
               </node>
             </node>
           </node>
@@ -4200,7 +4200,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="1219409905119">
               <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="1219409905120">
-                <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.1084199179705" resolveInfo="aggregation" />
+                <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.1084199179705" />
               </node>
             </node>
           </node>
@@ -5225,7 +5225,7 @@
                     <node role="leftExpression" roleId="tp25.1145404616321" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1239623950168" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1239623950169">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetOldModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getOldModel" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1239623950170">

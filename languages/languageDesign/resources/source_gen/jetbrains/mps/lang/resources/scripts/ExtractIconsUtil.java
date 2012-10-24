@@ -88,7 +88,7 @@ public class ExtractIconsUtil {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceExpression", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_5;
@@ -118,7 +118,7 @@ public class ExtractIconsUtil {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("declaration", (SNode) parameter_3);
         result = quotedNode1_2;

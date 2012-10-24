@@ -75,7 +75,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
+            SNode res = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
             SLinkOperations.setTarget(res, "folder", nodeToWrap, true);
             return res;
           }

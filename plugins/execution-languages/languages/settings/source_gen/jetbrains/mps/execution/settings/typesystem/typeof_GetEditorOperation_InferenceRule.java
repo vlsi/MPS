@@ -57,7 +57,7 @@ public class typeof_GetEditorOperation_InferenceRule extends AbstractInferenceRu
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -70,7 +70,7 @@ public class typeof_GetEditorOperation_InferenceRule extends AbstractInferenceRu
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -88,7 +88,7 @@ public class typeof_GetEditorOperation_InferenceRule extends AbstractInferenceRu
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("configuration", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -101,7 +101,7 @@ public class typeof_GetEditorOperation_InferenceRule extends AbstractInferenceRu
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("configuration", (SNode) parameter_3);
         result = quotedNode1_2;
