@@ -445,7 +445,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
             if (isErrorState() && side != null) {
               if (allowsIntelligentInputKeyStroke(keyEvent)) {
                 String pattern = getRenderedText();
-                IntelligentInputUtil.processCell(EditorCell_Label.this, (jetbrains.mps.nodeEditor.EditorContext) getContext(), pattern, side);
+                IntelligentInputUtil.processCell(EditorCell_Label.this, getContext(), pattern, side);
               }
             }
 
@@ -467,7 +467,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         }
       });
       if (!pattern.equals(getRenderedText()) && side != null) {
-        return IntelligentInputUtil.processCell(this, (jetbrains.mps.nodeEditor.EditorContext) getContext(), pattern, side);
+        return IntelligentInputUtil.processCell(this, getContext(), pattern, side);
       }
     }
     return false;

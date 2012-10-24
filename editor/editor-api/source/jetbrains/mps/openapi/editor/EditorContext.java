@@ -42,6 +42,8 @@ public interface EditorContext {
    */
   void selectWRTFocusPolicy(SNode node, boolean force);
 
+  void selectWRTFocusPolicy(EditorCell editorCell);
+
   void select(SNode node);
 
   void select(SNode node, String cellId);
