@@ -169,22 +169,22 @@ public class DirParser {
 
   private SModel createModel(String packageName) {
     // first check if it is possible 
-    if (getRootToCreateModel(SModelFqName.fromString(packageName)) == null) {
+    if (getRootToCreateModel(packageName) == null) {
       LOG.error("Cannot create model " + packageName + " in module " + myModule.getModuleFqName());
       return null;
     }
 
     SModelFqName modelFqName = SModelFqName.fromString(packageName);
-    SModelDescriptor modelDescr = myModule.createModel(modelFqName, getRootToCreateModel(modelFqName), null);
+    SModelDescriptor modelDescr = myModule.createModel(modelFqName, getRootToCreateModel(packageName), null);
     assert modelDescr != null;
 
     return modelDescr.getSModel();
   }
 
   @Nullable
-  private SModelRoot getRootToCreateModel(SModelFqName modelFqName) {
+  private SModelRoot getRootToCreateModel(String packageName) {
     for (SModelRoot root : CollectionSequence.fromCollection(myModule.getSModelRoots())) {
-      if (root.getManager().canCreateModel(myModule, root.getModelRoot(), modelFqName)) {
+      if (root.canCreateModel(packageName)) {
         return root;
       }
     }
