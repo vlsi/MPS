@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -38,7 +38,7 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
     editorCell.setCellId("Constant_ehpdiz_b0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsNullOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_8()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IsNullOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_8()}));
     return editorCell;
   }
 

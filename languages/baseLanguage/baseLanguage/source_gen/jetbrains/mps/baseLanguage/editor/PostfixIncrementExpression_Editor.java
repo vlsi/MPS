@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -37,9 +36,6 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     AbstractUnariOperationActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

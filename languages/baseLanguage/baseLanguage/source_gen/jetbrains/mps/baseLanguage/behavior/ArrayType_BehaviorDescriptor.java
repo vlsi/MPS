@@ -14,6 +14,10 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor implem
     return ArrayType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }
 
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  }
+
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }
@@ -54,12 +58,12 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor implem
     return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions);
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
 
   @Override

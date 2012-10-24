@@ -25,7 +25,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode cp = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildLayout_Copy", null);
+        SNode cp = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildLayout_Copy");
         SLinkOperations.setTarget(cp, "fileset", _context.getSourceNode(), true);
         return cp;
       }
@@ -40,7 +40,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaFiles", null);
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
         SLinkOperations.setTarget(nn, "resset", _context.getSourceNode(), true);
         return nn;
       }
@@ -55,7 +55,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", null);
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
         SLinkOperations.setTarget(nn, "jar", _context.getSourceNode(), true);
         return nn;
       }
@@ -70,7 +70,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", null);
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
         SLinkOperations.setTarget(nn, "classpath", _context.getSourceNode(), true);
         return nn;
       }

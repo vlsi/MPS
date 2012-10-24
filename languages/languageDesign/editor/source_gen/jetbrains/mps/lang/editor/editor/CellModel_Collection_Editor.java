@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -516,7 +516,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesFolding");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_a0a1c3a(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_b0a1c3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_a0a1c3a(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_b0a1c3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -575,7 +575,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public CellModel_Collection_usesFolding_cellMenu_a0a1c3a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
@@ -584,7 +584,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public CellModel_Collection_generic_cellMenu_b0a1c3a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
     }
 

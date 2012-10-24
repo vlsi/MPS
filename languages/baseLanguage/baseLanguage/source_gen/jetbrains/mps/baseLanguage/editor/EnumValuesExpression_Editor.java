@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -50,7 +50,7 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_igwct4_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new EnumValuesExpression_Editor.EnumValuesExpression_customReplace_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EnumValuesExpression_Editor.EnumValuesExpression_customReplace_cellMenu_a0c0()}));
     return editorCell;
   }
 
@@ -76,15 +76,15 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     public EnumValuesExpression_customReplace_cellMenu_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
     }
 
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject, node);
     }
 

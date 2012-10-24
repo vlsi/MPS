@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEditor {
@@ -88,7 +88,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_ShowMessageBase_Editor.ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new GenerationContextOp_ShowMessageBase_Editor.ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

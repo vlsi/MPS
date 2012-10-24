@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -64,7 +64,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -82,7 +82,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_color");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -101,7 +101,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -133,15 +133,15 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "color", SEnumOperations.getEnumMemberValue(parameterObject));
     }
@@ -155,15 +155,15 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_a0d0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       SPropertyOperations.set(node, "color", SEnumOperations.getEnumMemberValue(parameterObject));
     }
@@ -177,7 +177,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_b0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
     }
 
@@ -190,7 +190,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_c0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     }
 
@@ -203,7 +203,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_b0d0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
     }
 
@@ -216,7 +216,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_c0d0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     }
 

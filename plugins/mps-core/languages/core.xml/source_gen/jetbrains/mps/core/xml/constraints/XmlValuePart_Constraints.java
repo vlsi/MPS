@@ -8,8 +8,4 @@ public class XmlValuePart_Constraints extends BaseConstraintsDescriptor {
   public XmlValuePart_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlValuePart");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.core.xml.structure.XmlTextValue";
-  }
 }

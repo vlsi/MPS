@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -255,7 +255,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SwitchMacro_Editor.SwitchMacro_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SwitchMacro_Editor.SwitchMacro_component_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -334,14 +334,14 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SwitchMacro_component_cellMenu_a0a0 implements SubstituteInfoPart {
+  public static class SwitchMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
 
     public SwitchMacro_component_cellMenu_a0a0() {
       this.myComponent = new replace_node_macro();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

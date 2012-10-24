@@ -446,7 +446,7 @@ public class ChangesTracking {
 
     private void processChild(SModelChildEvent event, Map<SNode, Set<String>> childChanged) {
       SNode parent = event.getParent();
-      if (parent.isDeleted()) {
+      if (parent.getModel() == null) {
         return;
       }
       final String childRole = event.getChildRole();

@@ -159,30 +159,30 @@ public class GenerateSetters_Action extends BaseAction {
       SNode quotedNode_9 = null;
       SNode quotedNode_10 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_11 = quotedNode_1;
         quotedNode1_11.setProperty("name", (String) parameter_24);
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_2;
           quotedNode_1.addChild("returnType", quotedNode1_12);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_13 = quotedNode_3;
           quotedNode_1.addChild("visibility", quotedNode1_13);
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_14 = quotedNode_4;
           {
-            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, GlobalScope.getInstance(), false);
+            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_15 = quotedNode_6;
             {
-              quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, GlobalScope.getInstance(), false);
+              quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_16 = quotedNode_8;
               {
-                quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
+                quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_17 = quotedNode_9;
                 quotedNode_8.addChild("rValue", quotedNode1_17);
               }
@@ -206,7 +206,7 @@ public class GenerateSetters_Action extends BaseAction {
           quotedNode_1.addChild("body", quotedNode1_14);
         }
         {
-          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_19 = quotedNode_5;
           quotedNode1_19.setProperty("name", (String) parameter_23);
           {

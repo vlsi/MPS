@@ -30,17 +30,43 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(CompositeSubstituteInfo.class);
 
   private CellContext myCellContext;
+  /**
+   * @deprecated starting from MPS 3.0 was replaced with <code>myExtParts</code> all usages should
+   * be removed in the next release
+   */
+  @Deprecated
   private SubstituteInfoPart[] myParts;
+  private SubstituteInfoPartExt[] myExtParts;
 
-
+  /**
+   * @deprecated starting from MPS 3.0 another constructor should be used:
+   * <code>CompositeSubstituteInfo(... jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt parts)</code>
+   */
+  @Deprecated
   public CompositeSubstituteInfo(EditorContext editorContext, CellContext cellContext, SubstituteInfoPart[] parts) {
     super(editorContext);
     myCellContext = cellContext;
     myParts = parts;
   }
 
+  public CompositeSubstituteInfo(EditorContext editorContext, CellContext cellContext, SubstituteInfoPartExt[] parts) {
+    super(editorContext);
+    myCellContext = cellContext;
+    myExtParts = parts;
+  }
+
   protected List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    if (myExtParts != null) {
+      for (SubstituteInfoPartExt menuPart : myExtParts) {
+        try {
+          actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
+        } catch (Throwable e) {
+          LOG.error(e);
+        }
+      }
+      return actions;
+    }
     for (SubstituteInfoPart menuPart : myParts) {
       try {
         actions.addAll(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));

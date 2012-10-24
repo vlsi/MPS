@@ -216,14 +216,14 @@ public class ClassifierType_Behavior {
     return SLinkOperations.getTargets(thisNode, "parameter", true);
   }
 
-  public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+  public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       return thisNode;
     }
     if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).isEmpty()) {
       return thisNode;
     }
-    return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions);
+    return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions, expTrace);
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
@@ -313,7 +313,7 @@ public class ClassifierType_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -428,7 +428,7 @@ public class ClassifierType_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -445,9 +445,9 @@ public class ClassifierType_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -113,7 +113,7 @@ public class CopyPasteUtil {
       result.add(nodeToPaste);
     }
     for (SNode nodeToPaste : result) {
-      nodeToPaste.changeModel(model);
+      nodeToPaste.changeModel(null);
     }
     CopyPasteUtil.processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
     return new PasteNodeData(result, referencesRequireResolve, sourceModule, modelProperties, necessaryLanguages, necessaryModels);

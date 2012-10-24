@@ -101,19 +101,19 @@ public class BuildLayout_Jar_Behavior {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode1_6.setProperty("tagName", "mkdir");
           quotedNode1_6.setProperty("shortEmptyNotation", "true");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
             quotedNode1_7.setProperty("attrName", "dir");
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
               quotedNode1_8.setProperty("text", (String) parameter_9);
               quotedNode_3.addChild("value", quotedNode1_8);
@@ -142,19 +142,19 @@ public class BuildLayout_Jar_Behavior {
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
           quotedNode1_8.setProperty("tagName", "unzip");
           quotedNode1_8.setProperty("shortEmptyNotation", "true");
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
             quotedNode1_9.setProperty("attrName", "src");
             {
-              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_5;
               quotedNode1_10.setProperty("text", (String) parameter_13);
               quotedNode_3.addChild("value", quotedNode1_10);
@@ -162,11 +162,11 @@ public class BuildLayout_Jar_Behavior {
             quotedNode_2.addChild("attributes", quotedNode1_9);
           }
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_11 = quotedNode_4;
             quotedNode1_11.setProperty("attrName", "dest");
             {
-              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_12 = quotedNode_6;
               quotedNode1_12.setProperty("text", (String) parameter_14);
               quotedNode_4.addChild("value", quotedNode1_12);

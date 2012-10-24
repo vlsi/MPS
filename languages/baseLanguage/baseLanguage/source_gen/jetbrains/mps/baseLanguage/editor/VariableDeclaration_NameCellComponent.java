@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
@@ -62,7 +62,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     if (renderingCondition_j36akn_a0(node, editorContext, editorContext.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -86,7 +86,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     public VariableDeclaration_name_postfixCellMenu_a0a() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {

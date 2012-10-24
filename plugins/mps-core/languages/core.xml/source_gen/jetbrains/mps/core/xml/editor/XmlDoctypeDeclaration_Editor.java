@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -139,7 +139,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_a0c1a(), new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_b0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_a0c1a(), new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_b0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -189,7 +189,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (true));
       return newId;
@@ -208,7 +208,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (false));
       return newId;

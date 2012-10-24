@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -143,7 +143,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CreateBreakpointOperation_Editor.CreateBreakpointOperation_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CreateBreakpointOperation_Editor.CreateBreakpointOperation_generic_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -158,7 +158,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     public CreateBreakpointOperation_generic_cellMenu_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
       if (debuggerType != null && isNotEmpty_vi48ux_a0a1a0a(SPropertyOperations.getString(debuggerType, "name"))) {
         IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
@@ -169,11 +169,11 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       return ListSequence.fromList(new ArrayList<IBreakpointKind>());
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((IBreakpointKind) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(IBreakpointKind parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(IBreakpointKind parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "kindName", parameterObject.getName());
       SPropertyOperations.set(node, "kindPresentation", parameterObject.getPresentation());
     }

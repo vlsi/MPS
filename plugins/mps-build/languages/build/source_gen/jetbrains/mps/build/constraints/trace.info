@@ -399,14 +399,10 @@
   </root>
   <root nodeId="4380385936562359245" modelId="r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)">
     <nodeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="7" startPosition="76" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildStringPart_Constraints#()V" />
-    <nodeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultConcreteConceptFqName#()Ljava/lang/String;" />
     <scopeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="59" />
-    <scopeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="63" />
     <scopeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="7" startPosition="76" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
-    <unitInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildStringPart_Constraints" />
+    <unitInfo nodeId="4380385936562359245" fileName="BuildStringPart_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildStringPart_Constraints" />
   </root>
   <root nodeId="4903714810883713094" modelId="r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)">
     <nodeInfo nodeId="4903714810883713094" fileName="BuildVarRefStringPart_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_99t0ze_a0a0a0a0a1a0b0a1a0" />

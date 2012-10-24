@@ -16,7 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -120,7 +120,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu_a0a3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu_a0a3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -135,15 +135,15 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     public StaticMethodCall_customReplace_cellMenu_a0a3a() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "classConcept", false), node);
     }
 
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classConcept", false), parameterObject, node);
     }
 

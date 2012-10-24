@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
@@ -171,7 +171,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     buildStyles_StyleSheet.getOutputLayout(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

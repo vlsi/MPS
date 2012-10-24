@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -93,7 +93,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
     }
     BuildSourceArchiveRelativePath_Delete.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildSourceArchiveRelativePath_Editor.BuildSourceArchiveRelativePath_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSourceArchiveRelativePath_Editor.BuildSourceArchiveRelativePath_generic_cellMenu_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -108,7 +108,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     public BuildSourceArchiveRelativePath_generic_cellMenu_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(node, Context.defaultContext()));
       if (!(file.exists())) {
         return ListSequence.fromList(new ArrayList<String>());
@@ -129,11 +129,11 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       }, true).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       if ((SLinkOperations.getTarget(node, "compositePart", true) == null)) {
         SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
       }

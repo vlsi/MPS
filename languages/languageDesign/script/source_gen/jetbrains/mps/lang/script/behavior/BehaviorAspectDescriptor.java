@@ -7,27 +7,33 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", "jetbrains.mps.lang.script.structure.MigrationScriptPart_node", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", "jetbrains.mps.lang.script.structure.MigrationScriptPart_node", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 1:
-        return new MigrationScript_BehaviorDescriptor();
-      case 2:
-        return new MigrationScriptPart_Instance_BehaviorDescriptor();
       case 3:
-        return new MigrationScriptPart_Instance_Predicate_BehaviorDescriptor();
-      case 5:
-        return new MigrationScriptPart_node_BehaviorDescriptor();
+        return new MigrationScript_BehaviorDescriptor();
       case 4:
-        return new MigrationScriptPart_Instance_Updater_BehaviorDescriptor();
-      case 0:
-        return new FactoryMigrationScriptPart_BehaviorDescriptor();
+        return new MigrationScriptPart_Instance_BehaviorDescriptor();
+      case 5:
+        return new MigrationScriptPart_Instance_Predicate_BehaviorDescriptor();
+      case 7:
+        return new MigrationScriptPart_node_BehaviorDescriptor();
       case 6:
+        return new MigrationScriptPart_Instance_Updater_BehaviorDescriptor();
+      case 2:
+        return new FactoryMigrationScriptPart_BehaviorDescriptor();
+      case 9:
         return new WhitespaceMigrationScriptPart_BehaviorDescriptor();
+      case 0:
+        return new CommentMigrationScriptPart_BehaviorDescriptor();
+      case 1:
+        return new ExtractInterfaceMigration_BehaviorDescriptor();
+      case 8:
+        return new PullUpMethod_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

@@ -252,7 +252,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildString");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode init = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString", null);
+            SNode init = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
             SLinkOperations.setTarget(init, "value", nodeToWrap, true);
             return init;
           }
@@ -382,7 +382,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode n = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildSource_JavaFiles", null);
+            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
             SLinkOperations.setTarget(n, "resset", nodeToWrap, true);
             return n;
           }
@@ -416,7 +416,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaJar");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode n = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", null);
+            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
             SLinkOperations.setTarget(n, "jar", nodeToWrap, true);
             return n;
           }
@@ -450,7 +450,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaCP");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode n = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", null);
+            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
             SLinkOperations.setTarget(n, "classpath", nodeToWrap, true);
             return n;
           }
@@ -896,7 +896,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -914,10 +914,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", (String) parameter_5);
           quotedNode_1.addChild("parts", quotedNode1_4);
@@ -938,10 +938,10 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", (String) parameter_5);
           quotedNode_1.addChild("parts", quotedNode1_4);

@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -35,10 +36,11 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart {
+public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart, SubstituteInfoPartExt {
   private static final Logger LOG = Logger.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
 
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  @Override
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     final SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
     if (property == null) {
@@ -46,7 +48,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     }
     final IOperationContext context = editorContext.getOperationContext();
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    List<String> postfixes = getPostfixes(node, context.getScope(), context);
+    List<String> postfixes = getPostfixes(node, context.getScope(), context, editorContext);
     if (postfixes == null) {
       postfixes = new ArrayList<String>();
     }
@@ -64,11 +66,29 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     for (final String postfix : postfixes) {
       actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup,
         propertySupport, property.getName(), context.getScope(), editorContext));
-    }    
+    }
     return (List) actions;
   }
 
-  public abstract List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext);
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    return createActions(cellContext, (EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>getPostfixes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+    throw new UnsupportedOperationException();
+  }
+
+  /**
+   * should become abstract after MPS 3.0
+   */
+  public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    return getPostfixes(node, scope, operationContext);
+  }
 
   public static class PostfixGroup {
     private List<String> myPostfixes;

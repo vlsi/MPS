@@ -17,7 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
@@ -267,7 +267,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_a0h2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_a0h2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -308,7 +308,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     public BuildSource_JavaOptions_compiler_cellMenu_a0h2a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
     }
   }

@@ -59,7 +59,7 @@ public class LinePart_Actions extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode selectedNode = editorContext.getSelectedNode();
       if (SNodeOperations.isInstanceOf(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart")) {
-        EditorCell editorCell = editorContext.getNodeEditorComponent().getDeepestSelectedCell();
+        jetbrains.mps.openapi.editor.EditorCell editorCell = editorContext.getEditorComponent().getDeepestSelectedCell();
         if (editorCell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) editorCell;
           String textBC = label.getTextBeforeCaret();

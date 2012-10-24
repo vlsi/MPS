@@ -143,7 +143,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (columnNumber <= 0) {
               return;
             }
-            SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).removeElementAt(columnNumber - 1);
+            SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(columnNumber - 1);
             for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
               if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", false) == event) {
                 SNodeOperations.deleteNode(transition);
@@ -210,7 +210,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
-            SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).removeElementAt(rowNumber - 1);
+            SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(rowNumber - 1);
             for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
               if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", false) == state) {
                 SNodeOperations.deleteNode(transition);

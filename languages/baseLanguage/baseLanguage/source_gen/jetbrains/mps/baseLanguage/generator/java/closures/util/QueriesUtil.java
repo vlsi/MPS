@@ -31,7 +31,7 @@ public class QueriesUtil {
       enclosingClass = getJavaLangObject();
     }
     SModel outputModel = generator.getOutputModel();
-    SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode outputClassType = SModelOperations.createNewNode(outputModel, null, "jetbrains.mps.baseLanguage.structure.ClassifierType");
     SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
     for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true))) {
       SNode typeVarRef = SLinkOperations.addNewChild(outputClassType, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
@@ -91,16 +91,16 @@ public class QueriesUtil {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         quotedNode1_4.setProperty("fieldName", "_enclosingClass");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode_1.addChild("instance", quotedNode1_5);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
           quotedNode_1.addChild("fieldType", quotedNode1_6);
         }
@@ -119,7 +119,7 @@ public class QueriesUtil {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;

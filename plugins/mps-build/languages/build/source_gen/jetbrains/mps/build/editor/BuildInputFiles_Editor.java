@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -52,7 +52,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1i9du0_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new BuildInputFiles_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputFiles_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_a0a0()}));
     return editorCell;
   }
 

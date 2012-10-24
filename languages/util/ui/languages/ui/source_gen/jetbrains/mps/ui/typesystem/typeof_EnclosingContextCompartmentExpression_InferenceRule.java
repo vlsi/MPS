@@ -63,7 +63,7 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("container", (SNode) parameter_3);
         quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_4);
@@ -77,7 +77,7 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferenceTarget("container", (SNode) parameter_3);
         quotedNode1_2.setReferenceTarget("uiObject", (SNode) parameter_4);

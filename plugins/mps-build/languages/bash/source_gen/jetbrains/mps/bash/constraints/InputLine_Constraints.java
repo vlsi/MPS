@@ -8,8 +8,4 @@ public class InputLine_Constraints extends BaseConstraintsDescriptor {
   public InputLine_Constraints() {
     super("jetbrains.mps.bash.structure.InputLine");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.bash.structure.CommandList";
-  }
 }

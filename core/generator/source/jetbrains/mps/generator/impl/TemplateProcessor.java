@@ -145,7 +145,7 @@ public class TemplateProcessor {
       }
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
-        myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + templateNode.getDebugText());
+        myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(templateNode));
         continue;
       }
       if (templateReferentNode.getModel() == templateModel) { // internal reference

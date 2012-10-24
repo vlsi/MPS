@@ -8,8 +8,4 @@ public class XmlContent_Constraints extends BaseConstraintsDescriptor {
   public XmlContent_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlContent");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.core.xml.structure.XmlText";
-  }
 }

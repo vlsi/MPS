@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
@@ -94,7 +94,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnaryRegexp_Editor.ReplaceWith_UnaryRegexp_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UnaryRegexp_Editor.ReplaceWith_UnaryRegexp_cellMenu_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

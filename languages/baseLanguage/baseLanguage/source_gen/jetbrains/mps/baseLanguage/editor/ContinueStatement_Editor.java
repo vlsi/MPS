@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -124,7 +124,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     ContinueStatement_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu_a0a1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu_a0a1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -147,7 +147,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     public ContinueStatement_generic_cellMenu_a0a1a() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
           return new Iterable<String>() {
@@ -193,11 +193,11 @@ __switch__:
       }).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "label", parameterObject);
     }
 

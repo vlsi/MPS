@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
@@ -91,7 +91,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
       style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -114,7 +114,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
       style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -129,7 +129,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     public CellKeyMapKeystroke_modifiers_cellMenu_a0b0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
     }
   }
@@ -138,7 +138,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     public CellKeyMapKeystroke_keycode_cellMenu_a0d0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> keycodes = ListSequence.fromListAndArray(new ArrayList<String>(), EditorCellKeyMap.KEY_CODE_DIGIT, EditorCellKeyMap.KEY_CODE_LETTER, EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT, EditorCellKeyMap.KEY_CODE_SPACE, EditorCellKeyMap.KEY_CODE_CHAR);
       ListSequence.fromList(keycodes).addSequence(ListSequence.fromList(EditorCellKeyMap.getVirtualKeycodes()));
       return keycodes;

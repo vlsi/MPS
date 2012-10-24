@@ -223,6 +223,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMap" />

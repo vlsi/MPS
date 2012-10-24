@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
@@ -47,7 +47,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ForEachVariable_Editor.ForEachVariable_name_postfixCellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ForEachVariable_Editor.ForEachVariable_name_postfixCellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -62,7 +62,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     public ForEachVariable_name_postfixCellMenu_a0a0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
         ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"))));

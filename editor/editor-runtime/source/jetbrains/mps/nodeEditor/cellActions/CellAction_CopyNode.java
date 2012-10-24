@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
 
@@ -63,10 +64,10 @@ public class CellAction_CopyNode extends EditorCellAction {
     if (selectedCells.size() > 1) {
       LOG.debug("Copy " + selectedCells.size() + " nodes : ");
       for (EditorCell aCell : selectedCells) {
-        LOG.debug("    " + aCell.getSNode().getDebugText());
+        LOG.debug("    " + SNodeUtil.getDebugText(aCell.getSNode()));
       }
     } else {
-      LOG.debug("Copy node : " + selectedCells.get(0).getSNode().getDebugText());
+      LOG.debug("Copy node : " + SNodeUtil.getDebugText(selectedCells.get(0).getSNode()));
     }
 
     List<SNode> copyNodeList = new ArrayList<SNode>();

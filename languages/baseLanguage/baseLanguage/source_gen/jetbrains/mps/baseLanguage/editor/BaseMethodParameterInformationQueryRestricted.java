@@ -27,7 +27,7 @@ public class BaseMethodParameterInformationQueryRestricted extends ParametersInf
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
   }
 
-  private SNode getSelectedActualArgument(EditorContext editorContext, final SNode methodCall) {
+  private SNode getSelectedActualArgument(jetbrains.mps.openapi.editor.EditorContext editorContext, final SNode methodCall) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
       return null;

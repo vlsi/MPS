@@ -17,10 +17,11 @@ package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
@@ -37,12 +38,12 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteInfoPart {
-
+public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteInfoPart, SubstituteInfoPartExt {
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
-    List parameterObjects = createParameterObjects(node, context.getScope(), context);
+    List parameterObjects = createParameterObjects(node, context.getScope(), context, editorContext);
     if (parameterObjects == null) {
       return new LinkedList<INodeSubstituteAction>();
     }
@@ -73,6 +74,10 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
     return actions;
   }
 
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    return createActions(cellContext, (EditorContext) editorContext);
+  }
+
   protected String getMatchingText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) parameterObject, isReferentPresentation());
@@ -95,15 +100,36 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
     return IdeIcons.DEFAULT_ICON;
   }
 
-  protected abstract List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext);
-
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>createParameterObjects(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
   @Deprecated
-  protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+  protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
     throw new UnsupportedOperationException();
   }
 
+  /**
+   * should become abstract after MPS 3.0
+   */
+  protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    return createParameterObjects(node, scope, operationContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>handleAction(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    throw new UnsupportedOperationException();
+  }
+
+  /**
+   * should become abstract after MPS 3.0
+   */
   protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-    handleAction(parameterObject, node, model, scope, operationContext);
+    handleAction(parameterObject, node, model, scope, operationContext, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
 
   protected abstract boolean isReferentPresentation();

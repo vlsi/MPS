@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -53,7 +53,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cqz3y2_a0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MatchParensRegexp_Editor.ReplaceWith_MatchParensRegexp_cellMenu_a0a0(), new MatchParensRegexp_Editor.MatchParensRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchParensRegexp_Editor.ReplaceWith_MatchParensRegexp_cellMenu_a0a0(), new MatchParensRegexp_Editor.MatchParensRegexp_customReplace_cellMenu_b0a0()}));
     return editorCell;
   }
 
@@ -122,7 +122,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     public MatchParensRegexp_customReplace_cellMenu_b0a0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> res = ListSequence.fromList(new LinkedList<SNode>());
       ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
       ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"));
@@ -132,11 +132,11 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
       return res;
     }
 
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
     }
 

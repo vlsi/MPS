@@ -439,8 +439,8 @@
     <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="133" startPosition="42" endLine="134" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="135" startPosition="5" endLine="136" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="136" startPosition="72" endLine="137" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="137" startPosition="34" endLine="138" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="138" startPosition="189" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="137" startPosition="34" endLine="138" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="138" startPosition="192" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912330337" fileName="NodeMacro_Editor.java" startLine="142" startPosition="89" endLine="143" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200912330337" fileName="NodeMacro_Editor.java" startLine="143" startPosition="81" endLine="144" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200912330337" fileName="NodeMacro_Editor.java" startLine="144" startPosition="37" endLine="145" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -455,9 +455,9 @@
     <nodeInfo nodeId="1200912330337" fileName="NodeMacro_Editor.java" startLine="154" startPosition="78" endLine="155" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912330337" fileName="NodeMacro_Editor.java" startLine="156" startPosition="10" endLine="157" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1207673442944" fileName="NodeMacro_Editor.java" startLine="160" startPosition="112" endLine="161" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="164" startPosition="87" endLine="165" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="164" startPosition="90" endLine="165" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="167" startPosition="48" endLine="168" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="171" startPosition="133" endLine="172" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="171" startPosition="108" endLine="172" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="177" startPosition="35" endLine="178" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="181" startPosition="69" endLine="182" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="185" startPosition="81" endLine="186" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -491,7 +491,7 @@
     <nodeInfo nodeId="1200912330336" fileName="NodeMacro_Editor.java" startLine="119" startPosition="49" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1149865868009" fileName="NodeMacro_Editor.java" startLine="131" startPosition="66" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207673437177" fileName="NodeMacro_Editor.java" startLine="159" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_e7cx8x_a0c0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912330339" fileName="NodeMacro_Editor.java" startLine="196" startPosition="44" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -535,7 +535,7 @@
     <scopeInfo nodeId="1089126148391" fileName="NodeMacro_Editor.java" startLine="89" startPosition="150" endLine="90" endPosition="47" />
     <scopeInfo nodeId="1207673437178" fileName="NodeMacro_Editor.java" startLine="160" startPosition="112" endLine="161" endPosition="74" />
     <scopeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="167" startPosition="48" endLine="168" endPosition="50" />
-    <scopeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="171" startPosition="133" endLine="172" endPosition="72" />
+    <scopeInfo nodeId="2265407187494450845" fileName="NodeMacro_Editor.java" startLine="171" startPosition="108" endLine="172" endPosition="72" />
     <scopeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="177" startPosition="35" endLine="178" endPosition="14" />
     <scopeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="181" startPosition="69" endLine="182" endPosition="67" />
     <scopeInfo nodeId="1200912330338" fileName="NodeMacro_Editor.java" startLine="185" startPosition="81" endLine="186" endPosition="68" />
@@ -1196,14 +1196,14 @@
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="204" startPosition="58" endLine="205" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="206" startPosition="5" endLine="207" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="207" startPosition="42" endLine="208" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="209" startPosition="5" endLine="210" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="210" startPosition="205" endLine="211" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="209" startPosition="5" endLine="210" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="210" startPosition="208" endLine="211" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="211" startPosition="57" endLine="212" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="213" startPosition="35" endLine="214" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="214" startPosition="72" endLine="215" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="215" startPosition="78" endLine="216" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="217" startPosition="10" endLine="218" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183548097936" fileName="TemplateDeclaration_Editor.java" startLine="225" startPosition="105" endLine="226" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1183548097936" fileName="TemplateDeclaration_Editor.java" startLine="225" startPosition="134" endLine="226" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1183548125363" fileName="TemplateDeclaration_Editor.java" startLine="227" startPosition="82" endLine="228" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183548193884" fileName="TemplateDeclaration_Editor.java" startLine="228" startPosition="161" endLine="229" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183548186113" fileName="TemplateDeclaration_Editor.java" startLine="230" startPosition="7" endLine="231" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1277,12 +1277,12 @@
     <nodeInfo nodeId="1168623810822" fileName="TemplateDeclaration_Editor.java" startLine="262" startPosition="61" endLine="268" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1805153994416198152" fileName="TemplateDeclaration_Editor.java" startLine="281" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1805153994416150451" fileName="TemplateDeclaration_Editor.java" startLine="113" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pyph5i_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="203" startPosition="26" endLine="210" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="203" startPosition="26" endLine="210" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1168623810822" fileName="TemplateDeclaration_Editor.java" startLine="253" startPosition="28" endLine="260" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1805153994416198152" fileName="TemplateDeclaration_Editor.java" startLine="287" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1168623810819" fileName="TemplateDeclaration_Editor.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pyph5i_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1805153994416150457" fileName="TemplateDeclaration_Editor.java" startLine="120" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pyph5i_d0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1183548083857" fileName="TemplateDeclaration_Editor.java" startLine="224" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1183548083857" fileName="TemplateDeclaration_Editor.java" startLine="224" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1805153994416198152" fileName="TemplateDeclaration_Editor.java" startLine="295" startPosition="132" endLine="304" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1092060948912" fileName="TemplateDeclaration_Editor.java" startLine="43" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pyph5i_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1168286052181" fileName="TemplateDeclaration_Editor.java" startLine="128" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pyph5i_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1418,7 +1418,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1168623804744" fileName="TemplateDeclaration_Editor.java" startLine="95" startPosition="135" endLine="101" endPosition="5" />
     <scopeInfo nodeId="1092061173513" fileName="TemplateDeclaration_Editor.java" startLine="141" startPosition="140" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="1183548083859" fileName="TemplateDeclaration_Editor.java" startLine="225" startPosition="105" endLine="231" endPosition="20">
+    <scopeInfo nodeId="1183548083859" fileName="TemplateDeclaration_Editor.java" startLine="225" startPosition="134" endLine="231" endPosition="20">
       <varInfo nodeId="1183548097937" varName="values" />
     </scopeInfo>
     <scopeInfo nodeId="1805153994416198152" fileName="TemplateDeclaration_Editor.java" startLine="281" startPosition="0" endLine="287" endPosition="0">
@@ -1432,7 +1432,7 @@
       <varInfo nodeId="1805153994416150451" varName="editorContext" />
       <varInfo nodeId="1805153994416150451" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="203" startPosition="26" endLine="210" endPosition="205" />
+    <scopeInfo nodeId="1168623804745" fileName="TemplateDeclaration_Editor.java" startLine="203" startPosition="26" endLine="210" endPosition="208" />
     <scopeInfo nodeId="1168623810822" fileName="TemplateDeclaration_Editor.java" startLine="253" startPosition="28" endLine="260" endPosition="75" />
     <scopeInfo nodeId="1805153994416198152" fileName="TemplateDeclaration_Editor.java" startLine="287" startPosition="0" endLine="294" endPosition="0">
       <varInfo nodeId="1805153994416198152" varName="editorContext" />
@@ -1466,6 +1466,7 @@
       <varInfo nodeId="1805153994416198152" varName="handler" />
     </scopeInfo>
     <scopeInfo nodeId="1183548083857" fileName="TemplateDeclaration_Editor.java" startLine="224" startPosition="0" endLine="233" endPosition="0">
+      <varInfo nodeId="1183548083857" varName="editorContext" />
       <varInfo nodeId="1183548083857" varName="node" />
       <varInfo nodeId="1183548083857" varName="operationContext" />
       <varInfo nodeId="1183548083857" varName="scope" />
@@ -4476,8 +4477,8 @@
     <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="253" startPosition="15" endLine="254" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="255" startPosition="5" endLine="256" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="256" startPosition="72" endLine="257" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="257" startPosition="34" endLine="258" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="258" startPosition="193" endLine="259" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="257" startPosition="34" endLine="258" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149865971863" fileName="SwitchMacro_Editor.java" startLine="258" startPosition="196" endLine="259" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912349157" fileName="SwitchMacro_Editor.java" startLine="262" startPosition="89" endLine="263" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200912349157" fileName="SwitchMacro_Editor.java" startLine="263" startPosition="81" endLine="264" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200912349157" fileName="SwitchMacro_Editor.java" startLine="264" startPosition="37" endLine="265" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4532,9 +4533,9 @@
     <nodeInfo nodeId="8696125237882104168" fileName="SwitchMacro_Editor.java" startLine="330" startPosition="72" endLine="331" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8696125237882104168" fileName="SwitchMacro_Editor.java" startLine="331" startPosition="78" endLine="332" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8696125237882104168" fileName="SwitchMacro_Editor.java" startLine="333" startPosition="10" endLine="334" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="337" startPosition="89" endLine="338" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="337" startPosition="92" endLine="338" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="340" startPosition="50" endLine="341" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="344" startPosition="133" endLine="345" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="344" startPosition="108" endLine="345" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="350" startPosition="35" endLine="351" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="354" startPosition="69" endLine="355" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="358" startPosition="81" endLine="359" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4598,7 +4599,7 @@
     <nodeInfo nodeId="1168380594944" fileName="SwitchMacro_Editor.java" startLine="218" startPosition="48" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1168380594946" fileName="SwitchMacro_Editor.java" startLine="229" startPosition="49" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1168380600468" fileName="SwitchMacro_Editor.java" startLine="240" startPosition="49" endLine="244" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="343" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="343" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="353" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="357" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912349159" fileName="SwitchMacro_Editor.java" startLine="367" startPosition="28" endLine="371" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4689,7 +4690,7 @@
     <scopeInfo nodeId="1168380594947" fileName="SwitchMacro_Editor.java" startLine="287" startPosition="15" endLine="288" endPosition="65" />
     <scopeInfo nodeId="8696125237882104168" fileName="SwitchMacro_Editor.java" startLine="324" startPosition="58" endLine="325" endPosition="45" />
     <scopeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="340" startPosition="50" endLine="341" endPosition="50" />
-    <scopeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="344" startPosition="133" endLine="345" endPosition="72" />
+    <scopeInfo nodeId="8399143188353024651" fileName="SwitchMacro_Editor.java" startLine="344" startPosition="108" endLine="345" endPosition="72" />
     <scopeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="350" startPosition="35" endLine="351" endPosition="14" />
     <scopeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="354" startPosition="69" endLine="355" endPosition="67" />
     <scopeInfo nodeId="1200912349158" fileName="SwitchMacro_Editor.java" startLine="358" startPosition="81" endLine="359" endPosition="68" />
@@ -5977,8 +5978,8 @@
     <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="277" startPosition="15" endLine="278" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="279" startPosition="5" endLine="280" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="280" startPosition="72" endLine="281" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="281" startPosition="34" endLine="282" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="282" startPosition="186" endLine="283" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="281" startPosition="34" endLine="282" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4828431014037075719" fileName="IfMacro_Editor.java" startLine="282" startPosition="189" endLine="283" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4828431014037075725" fileName="IfMacro_Editor.java" startLine="286" startPosition="89" endLine="287" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4828431014037075725" fileName="IfMacro_Editor.java" startLine="287" startPosition="128" endLine="288" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4828431014037075725" fileName="IfMacro_Editor.java" startLine="287" startPosition="128" endLine="288" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6061,9 +6062,9 @@
     <nodeInfo nodeId="8696125237882104126" fileName="IfMacro_Editor.java" startLine="397" startPosition="10" endLine="398" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4828431014037075797" fileName="IfMacro_Editor.java" startLine="401" startPosition="112" endLine="402" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4828431014037075751" fileName="IfMacro_Editor.java" startLine="405" startPosition="111" endLine="406" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="409" startPosition="86" endLine="410" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="409" startPosition="89" endLine="410" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="412" startPosition="47" endLine="413" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="416" startPosition="133" endLine="417" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="416" startPosition="108" endLine="417" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="422" startPosition="35" endLine="423" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="426" startPosition="69" endLine="427" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="430" startPosition="81" endLine="431" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6116,7 +6117,7 @@
     <nodeInfo nodeId="4828431014037075727" fileName="IfMacro_Editor.java" startLine="296" startPosition="66" endLine="300" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4828431014037075795" fileName="IfMacro_Editor.java" startLine="400" startPosition="0" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_t4g6n2_a2a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="4828431014037075749" fileName="IfMacro_Editor.java" startLine="404" startPosition="0" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_t4g6n2_a1a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="415" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="415" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="425" startPosition="0" endLine="429" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="429" startPosition="0" endLine="433" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912276147" fileName="IfMacro_Editor.java" startLine="439" startPosition="28" endLine="443" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6219,7 +6220,7 @@
     <scopeInfo nodeId="4828431014037075796" fileName="IfMacro_Editor.java" startLine="401" startPosition="112" endLine="402" endPosition="85" />
     <scopeInfo nodeId="4828431014037075750" fileName="IfMacro_Editor.java" startLine="405" startPosition="111" endLine="406" endPosition="85" />
     <scopeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="412" startPosition="47" endLine="413" endPosition="50" />
-    <scopeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="416" startPosition="133" endLine="417" endPosition="72" />
+    <scopeInfo nodeId="4828431014037075721" fileName="IfMacro_Editor.java" startLine="416" startPosition="108" endLine="417" endPosition="72" />
     <scopeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="422" startPosition="35" endLine="423" endPosition="14" />
     <scopeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="426" startPosition="69" endLine="427" endPosition="67" />
     <scopeInfo nodeId="1200912276146" fileName="IfMacro_Editor.java" startLine="430" startPosition="81" endLine="431" endPosition="68" />
@@ -6718,8 +6719,8 @@
     <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="209" startPosition="15" endLine="210" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="211" startPosition="5" endLine="212" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="212" startPosition="72" endLine="213" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="213" startPosition="34" endLine="214" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="214" startPosition="203" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="213" startPosition="34" endLine="214" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="214" startPosition="206" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912270591" fileName="CopySrcListMacro_Editor.java" startLine="218" startPosition="89" endLine="219" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200912270591" fileName="CopySrcListMacro_Editor.java" startLine="219" startPosition="81" endLine="220" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200912270591" fileName="CopySrcListMacro_Editor.java" startLine="220" startPosition="37" endLine="221" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6761,9 +6762,9 @@
     <nodeInfo nodeId="8696125237882104133" fileName="CopySrcListMacro_Editor.java" startLine="268" startPosition="72" endLine="269" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8696125237882104133" fileName="CopySrcListMacro_Editor.java" startLine="269" startPosition="78" endLine="270" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8696125237882104133" fileName="CopySrcListMacro_Editor.java" startLine="271" startPosition="10" endLine="272" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="275" startPosition="94" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="275" startPosition="97" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="278" startPosition="55" endLine="279" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="282" startPosition="133" endLine="283" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="282" startPosition="108" endLine="283" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="288" startPosition="35" endLine="289" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="292" startPosition="69" endLine="293" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="296" startPosition="81" endLine="297" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6803,7 +6804,7 @@
     <nodeInfo nodeId="1168278698449" fileName="CopySrcListMacro_Editor.java" startLine="181" startPosition="49" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1168278698450" fileName="CopySrcListMacro_Editor.java" startLine="192" startPosition="49" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1149865948823" fileName="CopySrcListMacro_Editor.java" startLine="204" startPosition="66" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="291" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912270593" fileName="CopySrcListMacro_Editor.java" startLine="305" startPosition="28" endLine="309" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6873,7 +6874,7 @@
     <scopeInfo nodeId="1168278698451" fileName="CopySrcListMacro_Editor.java" startLine="242" startPosition="15" endLine="243" endPosition="65" />
     <scopeInfo nodeId="8696125237882104133" fileName="CopySrcListMacro_Editor.java" startLine="262" startPosition="58" endLine="263" endPosition="45" />
     <scopeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="278" startPosition="55" endLine="279" endPosition="50" />
-    <scopeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="282" startPosition="133" endLine="283" endPosition="72" />
+    <scopeInfo nodeId="8399143188353018631" fileName="CopySrcListMacro_Editor.java" startLine="282" startPosition="108" endLine="283" endPosition="72" />
     <scopeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="288" startPosition="35" endLine="289" endPosition="14" />
     <scopeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="292" startPosition="69" endLine="293" endPosition="67" />
     <scopeInfo nodeId="1200912270592" fileName="CopySrcListMacro_Editor.java" startLine="296" startPosition="81" endLine="297" endPosition="68" />
@@ -7152,17 +7153,17 @@
     <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="59" startPosition="15" endLine="60" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="61" startPosition="5" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="64" startPosition="203" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="68" startPosition="94" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="64" startPosition="206" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="68" startPosition="97" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="71" startPosition="55" endLine="72" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="75" startPosition="133" endLine="76" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="75" startPosition="108" endLine="76" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="58" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="70" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopySrcNodeMacro_component_cellMenu_a0a0#()V" />
     <nodeInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="22" startPosition="64" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1118773368750" fileName="CopySrcNodeMacro_Editor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="54" startPosition="66" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1184865678180" fileName="CopySrcNodeMacro_Editor.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_jiideg_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1184214434098" fileName="CopySrcNodeMacro_Editor.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_jiideg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1149866056564" fileName="CopySrcNodeMacro_Editor.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jiideg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -7177,7 +7178,7 @@
     <scopeInfo nodeId="1149866056564" fileName="CopySrcNodeMacro_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="82" />
     <scopeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="59" startPosition="15" endLine="60" endPosition="60" />
     <scopeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="71" startPosition="55" endLine="72" endPosition="50" />
-    <scopeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="75" startPosition="133" endLine="76" endPosition="72" />
+    <scopeInfo nodeId="8399143188353018632" fileName="CopySrcNodeMacro_Editor.java" startLine="75" startPosition="108" endLine="76" endPosition="72" />
     <scopeInfo nodeId="1216152679070" fileName="CopySrcNodeMacro_Editor.java" startLine="55" startPosition="5" endLine="57" endPosition="57">
       <varInfo nodeId="1216152679070" varName="style" />
     </scopeInfo>
@@ -7356,8 +7357,8 @@
     <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="209" startPosition="15" endLine="210" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="211" startPosition="5" endLine="212" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="212" startPosition="72" endLine="213" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="213" startPosition="34" endLine="214" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="214" startPosition="189" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="213" startPosition="34" endLine="214" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="214" startPosition="192" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912287268" fileName="LoopMacro_Editor.java" startLine="218" startPosition="89" endLine="219" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200912287268" fileName="LoopMacro_Editor.java" startLine="219" startPosition="81" endLine="220" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200912287268" fileName="LoopMacro_Editor.java" startLine="220" startPosition="37" endLine="221" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -7399,9 +7400,9 @@
     <nodeInfo nodeId="8696125237882104147" fileName="LoopMacro_Editor.java" startLine="268" startPosition="72" endLine="269" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8696125237882104147" fileName="LoopMacro_Editor.java" startLine="269" startPosition="78" endLine="270" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8696125237882104147" fileName="LoopMacro_Editor.java" startLine="271" startPosition="10" endLine="272" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="275" startPosition="87" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="275" startPosition="90" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="278" startPosition="48" endLine="279" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="282" startPosition="133" endLine="283" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="282" startPosition="108" endLine="283" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="288" startPosition="35" endLine="289" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="292" startPosition="69" endLine="293" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="296" startPosition="81" endLine="297" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -7441,7 +7442,7 @@
     <nodeInfo nodeId="1167952224486" fileName="LoopMacro_Editor.java" startLine="181" startPosition="49" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167952224487" fileName="LoopMacro_Editor.java" startLine="192" startPosition="49" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1149866040638" fileName="LoopMacro_Editor.java" startLine="204" startPosition="66" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="291" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912287270" fileName="LoopMacro_Editor.java" startLine="305" startPosition="28" endLine="309" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7511,7 +7512,7 @@
     <scopeInfo nodeId="1167952224504" fileName="LoopMacro_Editor.java" startLine="242" startPosition="15" endLine="243" endPosition="65" />
     <scopeInfo nodeId="8696125237882104147" fileName="LoopMacro_Editor.java" startLine="262" startPosition="58" endLine="263" endPosition="45" />
     <scopeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="278" startPosition="48" endLine="279" endPosition="50" />
-    <scopeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="282" startPosition="133" endLine="283" endPosition="72" />
+    <scopeInfo nodeId="8399143188353018635" fileName="LoopMacro_Editor.java" startLine="282" startPosition="108" endLine="283" endPosition="72" />
     <scopeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="288" startPosition="35" endLine="289" endPosition="14" />
     <scopeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="292" startPosition="69" endLine="293" endPosition="67" />
     <scopeInfo nodeId="1200912287269" fileName="LoopMacro_Editor.java" startLine="296" startPosition="81" endLine="297" endPosition="68" />
@@ -7943,8 +7944,8 @@
     <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="281" startPosition="15" endLine="282" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="283" startPosition="5" endLine="284" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="284" startPosition="72" endLine="285" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="285" startPosition="34" endLine="286" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="286" startPosition="201" endLine="287" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="285" startPosition="34" endLine="286" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="286" startPosition="204" endLine="287" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912323549" fileName="MapSrcNodeMacro_Editor.java" startLine="290" startPosition="89" endLine="291" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200912323549" fileName="MapSrcNodeMacro_Editor.java" startLine="291" startPosition="81" endLine="292" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200912323549" fileName="MapSrcNodeMacro_Editor.java" startLine="292" startPosition="37" endLine="293" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8010,9 +8011,9 @@
     <nodeInfo nodeId="8696125237882104161" fileName="MapSrcNodeMacro_Editor.java" startLine="374" startPosition="72" endLine="375" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8696125237882104161" fileName="MapSrcNodeMacro_Editor.java" startLine="375" startPosition="78" endLine="376" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8696125237882104161" fileName="MapSrcNodeMacro_Editor.java" startLine="377" startPosition="10" endLine="378" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="381" startPosition="93" endLine="382" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="381" startPosition="96" endLine="382" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="384" startPosition="54" endLine="385" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="388" startPosition="133" endLine="389" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="388" startPosition="108" endLine="389" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="394" startPosition="35" endLine="395" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="398" startPosition="69" endLine="399" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="402" startPosition="81" endLine="403" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -8060,7 +8061,7 @@
     <nodeInfo nodeId="1225229368546" fileName="MapSrcNodeMacro_Editor.java" startLine="253" startPosition="49" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225229368548" fileName="MapSrcNodeMacro_Editor.java" startLine="264" startPosition="49" endLine="268" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1149866022646" fileName="MapSrcNodeMacro_Editor.java" startLine="276" startPosition="66" endLine="280" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="387" startPosition="0" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="387" startPosition="0" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="397" startPosition="0" endLine="401" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="401" startPosition="0" endLine="405" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912323551" fileName="MapSrcNodeMacro_Editor.java" startLine="411" startPosition="28" endLine="415" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8156,7 +8157,7 @@
     <scopeInfo nodeId="1168281881385" fileName="MapSrcNodeMacro_Editor.java" startLine="314" startPosition="15" endLine="315" endPosition="65" />
     <scopeInfo nodeId="8696125237882104161" fileName="MapSrcNodeMacro_Editor.java" startLine="368" startPosition="58" endLine="369" endPosition="45" />
     <scopeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="384" startPosition="54" endLine="385" endPosition="50" />
-    <scopeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="388" startPosition="133" endLine="389" endPosition="72" />
+    <scopeInfo nodeId="8399143188353018637" fileName="MapSrcNodeMacro_Editor.java" startLine="388" startPosition="108" endLine="389" endPosition="72" />
     <scopeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="394" startPosition="35" endLine="395" endPosition="14" />
     <scopeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="398" startPosition="69" endLine="399" endPosition="67" />
     <scopeInfo nodeId="1200912323550" fileName="MapSrcNodeMacro_Editor.java" startLine="402" startPosition="81" endLine="403" endPosition="68" />
@@ -8682,8 +8683,8 @@
     <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="277" startPosition="15" endLine="278" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="279" startPosition="5" endLine="280" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="280" startPosition="72" endLine="281" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="281" startPosition="34" endLine="282" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="282" startPosition="201" endLine="283" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="281" startPosition="34" endLine="282" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149865915190" fileName="MapSrcListMacro_Editor.java" startLine="282" startPosition="204" endLine="283" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912293385" fileName="MapSrcListMacro_Editor.java" startLine="286" startPosition="89" endLine="287" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200912293385" fileName="MapSrcListMacro_Editor.java" startLine="287" startPosition="81" endLine="288" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200912293385" fileName="MapSrcListMacro_Editor.java" startLine="288" startPosition="37" endLine="289" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8749,9 +8750,9 @@
     <nodeInfo nodeId="8696125237882104154" fileName="MapSrcListMacro_Editor.java" startLine="370" startPosition="72" endLine="371" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8696125237882104154" fileName="MapSrcListMacro_Editor.java" startLine="371" startPosition="78" endLine="372" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8696125237882104154" fileName="MapSrcListMacro_Editor.java" startLine="373" startPosition="10" endLine="374" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="377" startPosition="93" endLine="378" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="377" startPosition="96" endLine="378" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="380" startPosition="54" endLine="381" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="384" startPosition="133" endLine="385" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="384" startPosition="108" endLine="385" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="390" startPosition="35" endLine="391" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="394" startPosition="69" endLine="395" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="398" startPosition="81" endLine="399" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -8798,7 +8799,7 @@
     <nodeInfo nodeId="1170898922303" fileName="MapSrcListMacro_Editor.java" startLine="242" startPosition="49" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225229726220" fileName="MapSrcListMacro_Editor.java" startLine="253" startPosition="49" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225229726222" fileName="MapSrcListMacro_Editor.java" startLine="264" startPosition="49" endLine="268" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="383" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="383" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="393" startPosition="0" endLine="397" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="397" startPosition="0" endLine="401" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912293387" fileName="MapSrcListMacro_Editor.java" startLine="407" startPosition="28" endLine="411" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8894,7 +8895,7 @@
     <scopeInfo nodeId="1168291602966" fileName="MapSrcListMacro_Editor.java" startLine="310" startPosition="15" endLine="311" endPosition="65" />
     <scopeInfo nodeId="8696125237882104154" fileName="MapSrcListMacro_Editor.java" startLine="364" startPosition="58" endLine="365" endPosition="45" />
     <scopeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="380" startPosition="54" endLine="381" endPosition="50" />
-    <scopeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="384" startPosition="133" endLine="385" endPosition="72" />
+    <scopeInfo nodeId="8399143188353018636" fileName="MapSrcListMacro_Editor.java" startLine="384" startPosition="108" endLine="385" endPosition="72" />
     <scopeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="390" startPosition="35" endLine="391" endPosition="14" />
     <scopeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="394" startPosition="69" endLine="395" endPosition="67" />
     <scopeInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="398" startPosition="81" endLine="399" endPosition="68" />
@@ -14621,8 +14622,8 @@
     <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="138" startPosition="15" endLine="139" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="140" startPosition="5" endLine="141" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="141" startPosition="72" endLine="142" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="142" startPosition="34" endLine="143" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="143" startPosition="195" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="142" startPosition="34" endLine="143" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194566483567" fileName="IncludeMacro_Editor.java" startLine="143" startPosition="198" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1194566535682" fileName="IncludeMacro_Editor.java" startLine="147" startPosition="90" endLine="148" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1194566535682" fileName="IncludeMacro_Editor.java" startLine="148" startPosition="140" endLine="149" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1194566535682" fileName="IncludeMacro_Editor.java" startLine="150" startPosition="5" endLine="151" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14743,9 +14744,9 @@
     <nodeInfo nodeId="8696125237882104140" fileName="IncludeMacro_Editor.java" startLine="330" startPosition="72" endLine="331" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8696125237882104140" fileName="IncludeMacro_Editor.java" startLine="331" startPosition="78" endLine="332" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8696125237882104140" fileName="IncludeMacro_Editor.java" startLine="333" startPosition="10" endLine="334" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="337" startPosition="90" endLine="338" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="337" startPosition="93" endLine="338" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="340" startPosition="51" endLine="341" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="344" startPosition="133" endLine="345" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="344" startPosition="108" endLine="345" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="350" startPosition="35" endLine="351" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="354" startPosition="69" endLine="355" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="358" startPosition="81" endLine="359" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -14809,7 +14810,7 @@
     <nodeInfo nodeId="1194566535730" fileName="IncludeMacro_Editor.java" startLine="231" startPosition="48" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194566535732" fileName="IncludeMacro_Editor.java" startLine="242" startPosition="49" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1194566535733" fileName="IncludeMacro_Editor.java" startLine="253" startPosition="49" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="343" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="343" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="353" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="357" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1200912281138" fileName="IncludeMacro_Editor.java" startLine="367" startPosition="28" endLine="371" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -14900,7 +14901,7 @@
     <scopeInfo nodeId="1194566535734" fileName="IncludeMacro_Editor.java" startLine="287" startPosition="15" endLine="288" endPosition="65" />
     <scopeInfo nodeId="8696125237882104140" fileName="IncludeMacro_Editor.java" startLine="324" startPosition="58" endLine="325" endPosition="45" />
     <scopeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="340" startPosition="51" endLine="341" endPosition="50" />
-    <scopeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="344" startPosition="133" endLine="345" endPosition="72" />
+    <scopeInfo nodeId="8399143188353018634" fileName="IncludeMacro_Editor.java" startLine="344" startPosition="108" endLine="345" endPosition="72" />
     <scopeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="350" startPosition="35" endLine="351" endPosition="14" />
     <scopeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="354" startPosition="69" endLine="355" endPosition="67" />
     <scopeInfo nodeId="1200912281137" fileName="IncludeMacro_Editor.java" startLine="358" startPosition="81" endLine="359" endPosition="68" />
@@ -17052,11 +17053,11 @@
     <nodeInfo nodeId="1231693361386" fileName="PropertyMacroActions.java" startLine="31" startPosition="75" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694249737" fileName="PropertyMacroActions.java" startLine="32" startPosition="61" endLine="33" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5965639138332836190" fileName="PropertyMacroActions.java" startLine="33" startPosition="158" endLine="34" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1231694378057" fileName="PropertyMacroActions.java" startLine="34" startPosition="75" endLine="35" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1231694378057" fileName="PropertyMacroActions.java" startLine="34" startPosition="75" endLine="35" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694382085" fileName="PropertyMacroActions.java" startLine="36" startPosition="25" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1231694405061" fileName="PropertyMacroActions.java" startLine="38" startPosition="7" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="22" startPosition="0" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyMacroActions_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5850139268204690384" fileName="PropertyMacroActions.java" startLine="35" startPosition="196" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5850139268204690384" fileName="PropertyMacroActions.java" startLine="35" startPosition="180" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="15" startPosition="35" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
@@ -17168,8 +17169,8 @@
     <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="127" startPosition="15" endLine="128" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="129" startPosition="5" endLine="130" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="130" startPosition="72" endLine="131" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="131" startPosition="34" endLine="132" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="132" startPosition="193" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="131" startPosition="34" endLine="132" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1311078761699602339" fileName="InsertMacro_Editor.java" startLine="132" startPosition="196" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1311078761699602346" fileName="InsertMacro_Editor.java" startLine="136" startPosition="90" endLine="137" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1311078761699602346" fileName="InsertMacro_Editor.java" startLine="137" startPosition="144" endLine="138" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1311078761699602346" fileName="InsertMacro_Editor.java" startLine="139" startPosition="5" endLine="140" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -17259,9 +17260,9 @@
     <nodeInfo nodeId="1311078761699602357" fileName="InsertMacro_Editor.java" startLine="268" startPosition="72" endLine="269" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1311078761699602357" fileName="InsertMacro_Editor.java" startLine="269" startPosition="78" endLine="270" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1311078761699602357" fileName="InsertMacro_Editor.java" startLine="271" startPosition="10" endLine="272" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="275" startPosition="89" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="275" startPosition="92" endLine="276" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="278" startPosition="50" endLine="279" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="282" startPosition="133" endLine="283" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="282" startPosition="108" endLine="283" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="288" startPosition="35" endLine="289" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="292" startPosition="69" endLine="293" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="296" startPosition="81" endLine="297" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -17301,7 +17302,7 @@
     <nodeInfo nodeId="1311078761699602362" fileName="InsertMacro_Editor.java" startLine="187" startPosition="49" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1311078761699602370" fileName="InsertMacro_Editor.java" startLine="198" startPosition="49" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1311078761699602372" fileName="InsertMacro_Editor.java" startLine="209" startPosition="49" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="291" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1311078761699602366" fileName="InsertMacro_Editor.java" startLine="305" startPosition="28" endLine="309" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -17371,7 +17372,7 @@
     <scopeInfo nodeId="1311078761699602374" fileName="InsertMacro_Editor.java" startLine="242" startPosition="15" endLine="243" endPosition="65" />
     <scopeInfo nodeId="1311078761699602357" fileName="InsertMacro_Editor.java" startLine="262" startPosition="58" endLine="263" endPosition="45" />
     <scopeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="278" startPosition="50" endLine="279" endPosition="50" />
-    <scopeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="282" startPosition="133" endLine="283" endPosition="72" />
+    <scopeInfo nodeId="1311078761699602341" fileName="InsertMacro_Editor.java" startLine="282" startPosition="108" endLine="283" endPosition="72" />
     <scopeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="288" startPosition="35" endLine="289" endPosition="14" />
     <scopeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="292" startPosition="69" endLine="293" endPosition="67" />
     <scopeInfo nodeId="1311078761699602365" fileName="InsertMacro_Editor.java" startLine="296" startPosition="81" endLine="297" endPosition="68" />
@@ -17729,8 +17730,8 @@
     <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="152" startPosition="15" endLine="153" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="154" startPosition="5" endLine="155" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="155" startPosition="72" endLine="156" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="156" startPosition="34" endLine="157" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="157" startPosition="205" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="156" startPosition="34" endLine="157" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1510949579266871960" fileName="TemplateCallMacro_Editor.java" startLine="157" startPosition="208" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1510949579266878831" fileName="TemplateCallMacro_Editor.java" startLine="161" startPosition="90" endLine="162" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1510949579266878831" fileName="TemplateCallMacro_Editor.java" startLine="162" startPosition="146" endLine="163" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1510949579266878831" fileName="TemplateCallMacro_Editor.java" startLine="164" startPosition="5" endLine="165" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -17851,9 +17852,9 @@
     <nodeInfo nodeId="1510949579266878842" fileName="TemplateCallMacro_Editor.java" startLine="344" startPosition="72" endLine="345" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1510949579266878842" fileName="TemplateCallMacro_Editor.java" startLine="345" startPosition="78" endLine="346" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1510949579266878842" fileName="TemplateCallMacro_Editor.java" startLine="347" startPosition="10" endLine="348" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="351" startPosition="95" endLine="352" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="351" startPosition="98" endLine="352" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="354" startPosition="56" endLine="355" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="358" startPosition="133" endLine="359" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="358" startPosition="108" endLine="359" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="364" startPosition="35" endLine="365" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="368" startPosition="69" endLine="369" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="372" startPosition="81" endLine="373" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -17917,7 +17918,7 @@
     <nodeInfo nodeId="1510949579266878862" fileName="TemplateCallMacro_Editor.java" startLine="245" startPosition="48" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1510949579266878865" fileName="TemplateCallMacro_Editor.java" startLine="256" startPosition="49" endLine="260" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1510949579266878867" fileName="TemplateCallMacro_Editor.java" startLine="267" startPosition="49" endLine="271" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="357" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="357" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="367" startPosition="0" endLine="371" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="371" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1510949579266878851" fileName="TemplateCallMacro_Editor.java" startLine="381" startPosition="28" endLine="385" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -18014,7 +18015,7 @@
     <scopeInfo nodeId="1510949579266878869" fileName="TemplateCallMacro_Editor.java" startLine="301" startPosition="15" endLine="302" endPosition="65" />
     <scopeInfo nodeId="1510949579266878842" fileName="TemplateCallMacro_Editor.java" startLine="338" startPosition="58" endLine="339" endPosition="45" />
     <scopeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="354" startPosition="56" endLine="355" endPosition="50" />
-    <scopeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="358" startPosition="133" endLine="359" endPosition="72" />
+    <scopeInfo nodeId="8399143188353075103" fileName="TemplateCallMacro_Editor.java" startLine="358" startPosition="108" endLine="359" endPosition="72" />
     <scopeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="364" startPosition="35" endLine="365" endPosition="14" />
     <scopeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="368" startPosition="69" endLine="369" endPosition="67" />
     <scopeInfo nodeId="1510949579266878850" fileName="TemplateCallMacro_Editor.java" startLine="372" startPosition="81" endLine="373" endPosition="68" />
@@ -19424,13 +19425,13 @@
     <unitInfo nodeId="1805153994416878873" fileName="PatternReduction_MappingRule_Editor.java" startLine="24" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PatternReduction_MappingRule_Editor" />
   </root>
   <root nodeId="2265407187494399846" modelId="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)">
-    <nodeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8399143188353015590" fileName="replace_node_macro.java" startLine="33" startPosition="41" endLine="34" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="39" startPosition="162" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2265407187494450833" fileName="replace_node_macro.java" startLine="43" startPosition="163" endLine="44" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2265407187494450788" fileName="replace_node_macro.java" startLine="44" startPosition="101" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7140126992650775710" fileName="replace_node_macro.java" startLine="45" startPosition="54" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7140126992650775315" fileName="replace_node_macro.java" startLine="46" startPosition="48" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7140126992650775315" fileName="replace_node_macro.java" startLine="46" startPosition="48" endLine="47" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="50" startPosition="45" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="54" startPosition="59" endLine="55" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2265407187494450818" fileName="replace_node_macro.java" startLine="58" startPosition="67" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -19439,17 +19440,17 @@
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="27" startPosition="96" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeMacro_generic_cellMenu_a0#()V" />
     <nodeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="22" startPosition="67" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="replace_node_macro#()V" />
     <nodeInfo nodeId="8399143188353015585" fileName="replace_node_macro.java" startLine="32" startPosition="240" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#(Ljava/lang/Object;)Ljava/lang/String;" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText_internal#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#(Ljava/lang/Object;)Ljava/lang/String;" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText_internal#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8399143188352920642" fileName="replace_node_macro.java" startLine="31" startPosition="105" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8399143188352920642" fileName="replace_node_macro.java" startLine="31" startPosition="134" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="28" startPosition="44" endLine="28" endPosition="44" />
-    <scopeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="92" />
+    <scopeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="95" />
     <scopeInfo nodeId="8399143188353015586" fileName="replace_node_macro.java" startLine="33" startPosition="41" endLine="34" endPosition="74" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="39" startPosition="162" endLine="40" endPosition="107" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="50" startPosition="45" endLine="51" endPosition="19" />
@@ -19470,7 +19471,7 @@
       <varInfo nodeId="2265407187494399848" varName="parameterObject" />
       <varInfo nodeId="2265407187494399848" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="2265407187494399852" fileName="replace_node_macro.java" startLine="43" startPosition="163" endLine="47" endPosition="36">
+    <scopeInfo nodeId="2265407187494399852" fileName="replace_node_macro.java" startLine="43" startPosition="163" endLine="47" endPosition="79">
       <varInfo nodeId="2265407187494450834" varName="macro" />
     </scopeInfo>
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
@@ -19486,7 +19487,7 @@
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="2265407187494399848" varName="parameterObject" />
     </scopeInfo>
-    <scopeInfo nodeId="2265407187494399850" fileName="replace_node_macro.java" startLine="31" startPosition="105" endLine="36" endPosition="26" />
+    <scopeInfo nodeId="2265407187494399850" fileName="replace_node_macro.java" startLine="31" startPosition="134" endLine="36" endPosition="26" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="2265407187494399848" varName="editorContext" />
       <varInfo nodeId="2265407187494399848" varName="model" />
@@ -19496,6 +19497,7 @@
       <varInfo nodeId="2265407187494399848" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2265407187494399848" varName="editorContext" />
       <varInfo nodeId="2265407187494399848" varName="node" />
       <varInfo nodeId="2265407187494399848" varName="operationContext" />
       <varInfo nodeId="2265407187494399848" varName="scope" />
@@ -19581,8 +19583,8 @@
     <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="122" startPosition="15" endLine="123" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="124" startPosition="5" endLine="125" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="125" startPosition="72" endLine="126" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="126" startPosition="34" endLine="127" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="127" startPosition="191" endLine="128" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="126" startPosition="34" endLine="127" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3118009927543452578" fileName="TraceMacro_Editor.java" startLine="127" startPosition="194" endLine="128" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3118009927543452585" fileName="TraceMacro_Editor.java" startLine="131" startPosition="90" endLine="132" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3118009927543452585" fileName="TraceMacro_Editor.java" startLine="132" startPosition="143" endLine="133" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3118009927543452585" fileName="TraceMacro_Editor.java" startLine="134" startPosition="5" endLine="135" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -19665,9 +19667,9 @@
     <nodeInfo nodeId="3118009927543452596" fileName="TraceMacro_Editor.java" startLine="249" startPosition="72" endLine="250" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3118009927543452596" fileName="TraceMacro_Editor.java" startLine="250" startPosition="78" endLine="251" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3118009927543452596" fileName="TraceMacro_Editor.java" startLine="252" startPosition="10" endLine="253" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="256" startPosition="88" endLine="257" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="256" startPosition="91" endLine="257" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="259" startPosition="49" endLine="260" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="263" startPosition="133" endLine="264" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="263" startPosition="108" endLine="264" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="269" startPosition="35" endLine="270" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="273" startPosition="69" endLine="274" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="277" startPosition="81" endLine="278" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -19704,7 +19706,7 @@
     <nodeInfo nodeId="3118009927543452594" fileName="TraceMacro_Editor.java" startLine="164" startPosition="49" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3118009927543452601" fileName="TraceMacro_Editor.java" startLine="182" startPosition="49" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3118009927543458385" fileName="TraceMacro_Editor.java" startLine="193" startPosition="49" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="262" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="262" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="272" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="276" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3118009927543452605" fileName="TraceMacro_Editor.java" startLine="286" startPosition="28" endLine="290" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -19770,7 +19772,7 @@
     <scopeInfo nodeId="3118009927543452600" fileName="TraceMacro_Editor.java" startLine="174" startPosition="140" endLine="175" endPosition="49" />
     <scopeInfo nodeId="3118009927543452596" fileName="TraceMacro_Editor.java" startLine="243" startPosition="58" endLine="244" endPosition="45" />
     <scopeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="259" startPosition="49" endLine="260" endPosition="50" />
-    <scopeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="263" startPosition="133" endLine="264" endPosition="72" />
+    <scopeInfo nodeId="3118009927543452580" fileName="TraceMacro_Editor.java" startLine="263" startPosition="108" endLine="264" endPosition="72" />
     <scopeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="269" startPosition="35" endLine="270" endPosition="14" />
     <scopeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="273" startPosition="69" endLine="274" endPosition="67" />
     <scopeInfo nodeId="3118009927543452604" fileName="TraceMacro_Editor.java" startLine="277" startPosition="81" endLine="278" endPosition="68" />
@@ -20102,8 +20104,8 @@
     <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="145" startPosition="15" endLine="146" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="147" startPosition="5" endLine="148" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="148" startPosition="72" endLine="149" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="149" startPosition="34" endLine="150" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="150" startPosition="191" endLine="151" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="149" startPosition="34" endLine="150" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3462145372628083189" fileName="WeaveMacro_Editor.java" startLine="150" startPosition="194" endLine="151" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3462145372628083224" fileName="WeaveMacro_Editor.java" startLine="154" startPosition="90" endLine="155" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3462145372628083224" fileName="WeaveMacro_Editor.java" startLine="155" startPosition="138" endLine="156" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3462145372628083224" fileName="WeaveMacro_Editor.java" startLine="157" startPosition="5" endLine="158" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -20217,9 +20219,9 @@
     <nodeInfo nodeId="3462145372628083235" fileName="WeaveMacro_Editor.java" startLine="325" startPosition="72" endLine="326" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3462145372628083235" fileName="WeaveMacro_Editor.java" startLine="326" startPosition="78" endLine="327" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3462145372628083235" fileName="WeaveMacro_Editor.java" startLine="328" startPosition="10" endLine="329" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="332" startPosition="88" endLine="333" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="332" startPosition="91" endLine="333" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="335" startPosition="49" endLine="336" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="339" startPosition="133" endLine="340" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="339" startPosition="108" endLine="340" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="345" startPosition="35" endLine="346" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="349" startPosition="69" endLine="350" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="353" startPosition="81" endLine="354" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -20265,7 +20267,7 @@
     <nodeInfo nodeId="3462145372628083270" fileName="WeaveMacro_Editor.java" startLine="227" startPosition="49" endLine="231" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3462145372628083256" fileName="WeaveMacro_Editor.java" startLine="238" startPosition="49" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3462145372628083258" fileName="WeaveMacro_Editor.java" startLine="249" startPosition="49" endLine="253" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="338" startPosition="0" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="338" startPosition="0" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="348" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="352" startPosition="0" endLine="356" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3462145372628083244" fileName="WeaveMacro_Editor.java" startLine="362" startPosition="28" endLine="366" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -20347,7 +20349,7 @@
     <scopeInfo nodeId="3462145372628083272" fileName="WeaveMacro_Editor.java" startLine="282" startPosition="15" endLine="283" endPosition="65" />
     <scopeInfo nodeId="3462145372628083235" fileName="WeaveMacro_Editor.java" startLine="319" startPosition="58" endLine="320" endPosition="45" />
     <scopeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="335" startPosition="49" endLine="336" endPosition="50" />
-    <scopeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="339" startPosition="133" endLine="340" endPosition="72" />
+    <scopeInfo nodeId="3462145372628083191" fileName="WeaveMacro_Editor.java" startLine="339" startPosition="108" endLine="340" endPosition="72" />
     <scopeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="345" startPosition="35" endLine="346" endPosition="14" />
     <scopeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="349" startPosition="69" endLine="350" endPosition="67" />
     <scopeInfo nodeId="3462145372628083243" fileName="WeaveMacro_Editor.java" startLine="353" startPosition="81" endLine="354" endPosition="68" />
@@ -21270,8 +21272,8 @@
     <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="140" startPosition="15" endLine="141" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="142" startPosition="5" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="143" startPosition="72" endLine="144" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="144" startPosition="34" endLine="145" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="145" startPosition="187" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="144" startPosition="34" endLine="145" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="145" startPosition="190" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="149" startPosition="90" endLine="150" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="150" startPosition="141" endLine="151" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="152" startPosition="5" endLine="153" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -21399,9 +21401,9 @@
     <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="333" startPosition="72" endLine="334" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="334" startPosition="78" endLine="335" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="336" startPosition="10" endLine="337" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="340" startPosition="86" endLine="341" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="340" startPosition="89" endLine="341" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="343" startPosition="47" endLine="344" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="347" startPosition="133" endLine="348" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="347" startPosition="108" endLine="348" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="353" startPosition="35" endLine="354" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="357" startPosition="69" endLine="358" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="361" startPosition="81" endLine="362" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -21441,7 +21443,7 @@
     <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="200" startPosition="49" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="218" startPosition="49" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="236" startPosition="49" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="346" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="346" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="356" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="360" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="370" startPosition="28" endLine="374" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -21529,7 +21531,7 @@
     <scopeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="228" startPosition="132" endLine="229" endPosition="49" />
     <scopeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="327" startPosition="58" endLine="328" endPosition="45" />
     <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="343" startPosition="47" endLine="344" endPosition="50" />
-    <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="347" startPosition="133" endLine="348" endPosition="72" />
+    <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="347" startPosition="108" endLine="348" endPosition="72" />
     <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="353" startPosition="35" endLine="354" endPosition="14" />
     <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="357" startPosition="69" endLine="358" endPosition="67" />
     <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="361" startPosition="81" endLine="362" endPosition="68" />
@@ -22284,8 +22286,8 @@
     <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="108" startPosition="15" endLine="109" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="110" startPosition="5" endLine="111" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="111" startPosition="72" endLine="112" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="112" startPosition="34" endLine="113" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="113" startPosition="191" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="112" startPosition="34" endLine="113" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133195082121477323" fileName="LabelMacro_Editor.java" startLine="113" startPosition="194" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133195082121477334" fileName="LabelMacro_Editor.java" startLine="117" startPosition="90" endLine="118" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5133195082121477334" fileName="LabelMacro_Editor.java" startLine="118" startPosition="143" endLine="119" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133195082121477334" fileName="LabelMacro_Editor.java" startLine="120" startPosition="5" endLine="121" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -22350,9 +22352,9 @@
     <nodeInfo nodeId="5133195082121477345" fileName="LabelMacro_Editor.java" startLine="207" startPosition="72" endLine="208" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5133195082121477345" fileName="LabelMacro_Editor.java" startLine="208" startPosition="78" endLine="209" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133195082121477345" fileName="LabelMacro_Editor.java" startLine="210" startPosition="10" endLine="211" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="214" startPosition="88" endLine="215" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="214" startPosition="91" endLine="215" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="217" startPosition="49" endLine="218" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="221" startPosition="133" endLine="222" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="221" startPosition="108" endLine="222" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="227" startPosition="35" endLine="228" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="231" startPosition="69" endLine="232" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="235" startPosition="81" endLine="236" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -22386,7 +22388,7 @@
     <nodeInfo nodeId="5133195082121477338" fileName="LabelMacro_Editor.java" startLine="132" startPosition="47" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5133195082121477343" fileName="LabelMacro_Editor.java" startLine="150" startPosition="49" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5133195082121477350" fileName="LabelMacro_Editor.java" startLine="168" startPosition="49" endLine="172" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="220" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="220" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="230" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="234" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5133195082121477354" fileName="LabelMacro_Editor.java" startLine="244" startPosition="28" endLine="248" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -22442,7 +22444,7 @@
     <scopeInfo nodeId="5133195082121477349" fileName="LabelMacro_Editor.java" startLine="160" startPosition="140" endLine="161" endPosition="49" />
     <scopeInfo nodeId="5133195082121477345" fileName="LabelMacro_Editor.java" startLine="201" startPosition="58" endLine="202" endPosition="45" />
     <scopeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="217" startPosition="49" endLine="218" endPosition="50" />
-    <scopeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="221" startPosition="133" endLine="222" endPosition="72" />
+    <scopeInfo nodeId="5133195082121477325" fileName="LabelMacro_Editor.java" startLine="221" startPosition="108" endLine="222" endPosition="72" />
     <scopeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="227" startPosition="35" endLine="228" endPosition="14" />
     <scopeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="231" startPosition="69" endLine="232" endPosition="67" />
     <scopeInfo nodeId="5133195082121477353" fileName="LabelMacro_Editor.java" startLine="235" startPosition="81" endLine="236" endPosition="68" />
@@ -22722,7 +22724,7 @@
     <nodeInfo nodeId="7386719926921898033" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="21" startPosition="78" endLine="22" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7386719926921920095" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="25" startPosition="137" endLine="26" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7386719926921899963" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="29" startPosition="98" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7386719926921899976" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="33" startPosition="98" endLine="34" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7386719926921899976" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="33" startPosition="127" endLine="34" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7386719926921899984" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="35" startPosition="31" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7386719926921900000" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="39" startPosition="39" endLine="40" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7386719926921915393" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="46" startPosition="77" endLine="47" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -22751,7 +22753,7 @@
     <nodeInfo nodeId="7386719926921899989" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="37" startPosition="5" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7386719926921915391" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="45" startPosition="124" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7386719926921915521" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="63" startPosition="7" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7386719926921899969" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="32" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedActualArgument#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7386719926921899969" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="32" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedActualArgument#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7386719926921915490" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="56" startPosition="27" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7386719926921915345" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="44" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillPresentation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/editor/runtime/StyledTextPrinter;)V" />
     <scopeInfo nodeId="7386719926921893550" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="18" startPosition="57" endLine="18" endPosition="57" />
@@ -22786,7 +22788,7 @@
     <scopeInfo nodeId="7386719926921899998" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="38" startPosition="171" endLine="42" endPosition="0">
       <varInfo nodeId="7386719926921899998" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7386719926921899975" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="33" startPosition="98" endLine="42" endPosition="7">
+    <scopeInfo nodeId="7386719926921899975" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="33" startPosition="127" endLine="42" endPosition="7">
       <varInfo nodeId="7386719926921899977" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="7386719926921899969" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="32" startPosition="0" endLine="44" endPosition="0">

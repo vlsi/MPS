@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -184,7 +184,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
     IfStatement_elseDelete_action.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfStatement_Editor.IfStatement_generic_cellMenu_a0a6a(), new IfStatement_Editor.IfStatement_generic_cellMenu_b0a6a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfStatement_Editor.IfStatement_generic_cellMenu_a0a6a(), new IfStatement_Editor.IfStatement_generic_cellMenu_b0a6a()}));
     return editorCell;
   }
 
@@ -271,7 +271,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public IfStatement_generic_cellMenu_a0a6a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
     }
 
     public String getMatchingText() {
@@ -283,7 +283,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public IfStatement_generic_cellMenu_b0a6a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
     }
 

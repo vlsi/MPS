@@ -31,7 +31,7 @@ public class UnrestrictedClosureLiteral_Behavior {
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_6 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_9;

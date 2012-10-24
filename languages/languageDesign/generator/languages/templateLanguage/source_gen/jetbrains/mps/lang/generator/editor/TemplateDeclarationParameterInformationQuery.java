@@ -30,7 +30,7 @@ public class TemplateDeclarationParameterInformationQuery extends ParametersInfo
     return true;
   }
 
-  private SNode getSelectedActualArgument(EditorContext editorContext, final SNode templateCall) {
+  private SNode getSelectedActualArgument(jetbrains.mps.openapi.editor.EditorContext editorContext, final SNode templateCall) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
       return null;

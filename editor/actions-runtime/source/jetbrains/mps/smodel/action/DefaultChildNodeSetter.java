@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
  * User: Igor Alshannikov
@@ -45,14 +46,14 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
     if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConcept().getId() +
-        " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + parentNode.getDebugText());
+        " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + SNodeUtil.getDebugText(parentNode));
       return newChild;
     }
 
     if (oldChild == null) {
       parentNode.addChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
     } else {
-      parentNode.replaceChild(oldChild, newChild);
+      SNodeUtil.replaceWithAnother(oldChild, newChild);
       oldChild.delete();
     }
 

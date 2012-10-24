@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -43,7 +43,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_gl82dd_a0a_0(editorContext, node);
     }
     TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -137,15 +137,15 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     public TreeNodeKindProperty_generic_cellMenu_a0a0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "default", "" + (parameterObject));
     }
 

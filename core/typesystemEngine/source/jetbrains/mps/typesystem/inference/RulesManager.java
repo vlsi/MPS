@@ -103,7 +103,7 @@ public class RulesManager {
       try {
         typesystem = language.getTypesystem();
       } catch (Throwable t) {
-        LOG.error("Error while loading language: " + t);
+        LOG.error("Error while loading language: " + t, new Throwable(t));
       }
       if (typesystem == null) {
         success = false;

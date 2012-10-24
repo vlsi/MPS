@@ -203,14 +203,14 @@ public class QueriesGenerated {
     SModel targetModel = _context.getOutputModel();
     if (SPropertyOperations.hasValue(memberDataType, "name", "string")) {
       if (internalValue == null) {
-        targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
+        targetInternalValueExpression = SModelOperations.createNewNode(targetModel, null, "jetbrains.mps.baseLanguage.structure.NullLiteral");
       } else {
-        targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+        targetInternalValueExpression = SModelOperations.createNewNode(targetModel, null, "jetbrains.mps.baseLanguage.structure.StringLiteral");
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", internalValue);
       }
     } else
     if (SPropertyOperations.hasValue(memberDataType, "name", "boolean")) {
-      targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+      targetInternalValueExpression = SModelOperations.createNewNode(targetModel, null, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
       if (internalValue == null) {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (true));
       } else {
@@ -218,7 +218,7 @@ public class QueriesGenerated {
       }
     } else
     if (SPropertyOperations.hasValue(memberDataType, "name", "integer")) {
-      targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+      targetInternalValueExpression = SModelOperations.createNewNode(targetModel, null, "jetbrains.mps.baseLanguage.structure.IntegerConstant");
       if (internalValue == null) {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
       } else {
@@ -286,7 +286,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

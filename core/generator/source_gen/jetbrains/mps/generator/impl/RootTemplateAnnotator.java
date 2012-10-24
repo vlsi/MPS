@@ -26,7 +26,7 @@ public class RootTemplateAnnotator implements CoreComponent {
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
           if (node.getNodeLanguage() != BootstrapLanguages.generatorLanguage() && node.getNodeLanguage() != BootstrapLanguages.generatorParametersLanguage()) {
             if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null)) {
-              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", null));
+              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
             }
           }
         }

@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -109,7 +109,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SequenceType_Editor.SequenceType_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SequenceType_Editor.SequenceType_component_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -124,14 +124,14 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "elementType", true) != null);
   }
 
-  public static class SequenceType_component_cellMenu_a0a0 implements SubstituteInfoPart {
+  public static class SequenceType_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
     private replace_withAnotherSequenceType myComponent;
 
     public SequenceType_component_cellMenu_a0a0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

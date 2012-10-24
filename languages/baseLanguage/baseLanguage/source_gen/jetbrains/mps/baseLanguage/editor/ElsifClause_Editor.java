@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -57,7 +57,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -145,7 +145,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     public ElsifClause_generic_cellMenu_a0a0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       // todo: this is quite a hackish stuff but we need it 
       // todo: but we need it since we can't enable/disable 
       // todo: menu items by condition 
@@ -158,11 +158,11 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       return result;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       if ("else".equals(parameterObject)) {
         ElsifClause_Behavior.call_convertToElseClause_1217846674032(node);
       }

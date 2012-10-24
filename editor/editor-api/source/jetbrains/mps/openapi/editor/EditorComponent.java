@@ -27,8 +27,6 @@ import java.util.List;
  * evgeny, 11/17/11
  */
 public interface EditorComponent {
-  JComponent getEditorComponent();
-
   SNode getEditedNode();
 
   SNodePointer getEditedNodePointer();

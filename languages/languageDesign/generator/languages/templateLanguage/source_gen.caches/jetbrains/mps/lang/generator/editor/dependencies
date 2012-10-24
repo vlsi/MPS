@@ -87,7 +87,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.CopySrcNodeMacro_Editor" file="CopySrcNodeMacro_Editor.java">
     <classNode dependClassName="java.util.List" />
@@ -111,7 +111,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor" file="CreateRootRule_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -300,7 +300,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor" file="IncludeMacro_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -332,7 +332,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.InlineSwitch_Case_Editor" file="InlineSwitch_Case_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -440,7 +440,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.LabelMacro_Editor" file="LabelMacro_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -471,7 +471,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.LoopMacro_Editor" file="LoopMacro_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -503,7 +503,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions" file="MacroSymbol_Actions.java">
     <classNode dependClassName="java.lang.String" />
@@ -559,7 +559,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.MapSrcNodeMacro_Editor" file="MapSrcNodeMacro_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -591,7 +591,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.MappingConfiguration_Editor" file="MappingConfiguration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -708,7 +708,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.NodeMacro_postfix" file="NodeMacro_postfix.java">
     <classNode dependClassName="java.lang.Class" />
@@ -770,8 +770,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -976,7 +976,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor" file="TemplateArgumentLinkPatternRefExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1089,7 +1089,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery" file="TemplateDeclarationParameterInformationQuery.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -1102,6 +1102,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.ParametersInformation" />
   </dependency>
@@ -1143,7 +1144,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
@@ -1276,7 +1277,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.VarMacro_Editor" file="VarMacro_Editor.java">
     <classNode dependClassName="java.awt.Color" />
@@ -1310,7 +1311,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.WeaveEach_RuleConsequence_Editor" file="WeaveEach_RuleConsequence_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1362,7 +1363,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" file="Weaving_MappingRule_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1399,7 +1400,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

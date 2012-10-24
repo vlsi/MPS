@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8lv0nthdz2yw3qc5gamu5ddbhjde4xh">
+<dependencies version="2" modelHash="bpm5l8tzdjl5ob7wfspdm9ighcx2egt">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5adz33y0tgg1k47pmhud90912h9x4de" />
@@ -242,7 +242,7 @@
   <source id="1143234257716" name="Node_GetModelOperation" hash="498kttfftav5e2nm6uo7sfumfa8hmib">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1143235216708" name="Model_CreateNewNodeOperation" hash="-dy0d86rjsy8s6lwt3eb0h73evd7im49">
+  <source id="1143235216708" name="Model_CreateNewNodeOperation" hash="-20ddmnv6lduqnvfz79g6bhe0cu4of31">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1143511969223" name="Node_GetPrevSiblingOperation" hash="drzxk8tepnqnhxf6qieds3guz9igieu">

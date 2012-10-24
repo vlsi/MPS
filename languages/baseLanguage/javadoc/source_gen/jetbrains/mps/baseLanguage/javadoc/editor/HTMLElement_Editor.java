@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
@@ -170,7 +170,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -216,7 +216,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -235,7 +235,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     public HTMLElement_name_cellMenu_a0b0a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
@@ -244,7 +244,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     public HTMLElement_name_cellMenu_a0b0a_0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }

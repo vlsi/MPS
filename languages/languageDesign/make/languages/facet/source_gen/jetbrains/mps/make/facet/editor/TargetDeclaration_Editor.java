@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -460,7 +460,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TargetDeclaration_Editor.TargetDeclaration_component_cellMenu_a0b0b1h0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDeclaration_Editor.TargetDeclaration_component_cellMenu_a0b0b1h0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -507,14 +507,14 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "parameters", true) != null);
   }
 
-  public static class TargetDeclaration_component_cellMenu_a0b0b1h0 implements SubstituteInfoPart {
+  public static class TargetDeclaration_component_cellMenu_a0b0b1h0 implements SubstituteInfoPartExt {
     private TargetDeclaration_resourcesPolicy myComponent;
 
     public TargetDeclaration_component_cellMenu_a0b0b1h0() {
       this.myComponent = new TargetDeclaration_resourcesPolicy();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

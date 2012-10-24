@@ -40,8 +40,8 @@ abstract class SReferenceBase extends SReference {
       if (targetModelReference != null) {
         try {
           SModelId id = targetModelReference.getSModelId();
-          SModelId nid = StubMigrationHelper.convertModelId(id,false);
-          if (nid!=null){
+          SModelId nid = StubMigrationHelper.convertModelId(id, false);
+          if (nid != null) {
             targetModelReference = new SModelReference(targetModelReference.getSModelFqName(), nid);
           }
         } catch (Throwable t) {
@@ -61,25 +61,36 @@ abstract class SReferenceBase extends SReference {
   }
 
   public boolean isExternal() {
-    return !(getSourceNode().getModel().getSModelReference().equals(getTargetSModelReference()));
+    SModel m = getSourceNode().getModel();
+    if (m == null) return true;
+
+    return !(m.getSModelReference().equals(getTargetSModelReference()));
   }
 
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || mature()) return myTargetModelReference;
-    return immatureNode.getModel().getSModelReference();
+    if (immatureNode == null || makeIndirect()) return myTargetModelReference;
+    SModel model = immatureNode.getModel();
+    return model == null ? null : model.getSModelReference();
   }
 
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    if (!mature()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
+    if (!makeIndirect()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
     myTargetModelReference = modelReference;
   }
 
-  protected final boolean mature() {
-    return mature(false);
+  public final boolean makeIndirect() {
+    return makeIndirect(false);
   }
 
-  protected synchronized final boolean mature(boolean force) {
+  public void makeDirect() {
+    myImmatureTargetNode = getTargetNodeSilently();
+    if (myImmatureTargetNode != null) {
+      ImmatureReferences.getInstance().add(this);
+    }
+  }
+
+  protected synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
       if (jetbrains.mps.util.SNodeOperations.isRegistered(getSourceNode()) && jetbrains.mps.util.SNodeOperations.isRegistered(myImmatureTargetNode) &&
         !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {
@@ -117,14 +128,13 @@ abstract class SReferenceBase extends SReference {
   }
 
   protected synchronized void makeMature() {
-    if (myImmatureTargetNode != null) {
-      ImmatureReferences.getInstance().remove(this);
-      final SNode immatureNode = myImmatureTargetNode;
-      myImmatureTargetNode = null;
-      adjustMature(immatureNode);
-      setTargetSModelReference(immatureNode.getModel().getSModelReference());
-      setResolveInfo(immatureNode.getResolveInfo());
-    }
+    if (myImmatureTargetNode == null) return;
+    ImmatureReferences.getInstance().remove(this);
+    final SNode immatureNode = myImmatureTargetNode;
+    myImmatureTargetNode = null;
+    adjustMature(immatureNode);
+    setTargetSModelReference(immatureNode.getModel().getSModelReference());
+    setResolveInfo(immatureNode.getResolveInfo());
   }
 
   protected void adjustMature(SNode immatureTarget) {

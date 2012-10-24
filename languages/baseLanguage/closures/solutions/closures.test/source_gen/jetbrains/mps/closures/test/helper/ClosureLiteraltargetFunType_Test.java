@@ -63,17 +63,17 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest4 {
         SNode quotedNode_2 = null;
         SNode quotedNode_3 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_1;
           quotedNode1_4.setReference("classifier", SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~_FunctionTypes$_void_P0_E2")));
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_5 = quotedNode_2;
             quotedNode1_5.setReference("classifier", SReference.create("classifier", quotedNode1_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~InterruptedException")));
             quotedNode_1.addChild("parameter", quotedNode1_5);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_6 = quotedNode_3;
             quotedNode1_6.setReference("classifier", SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~IllegalAccessException")));
             quotedNode_1.addChild("parameter", quotedNode1_6);

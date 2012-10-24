@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -72,7 +73,7 @@ public class EditorManager {
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(eventNode) {
+      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(event.getModel().getSModelReference(),eventNode.getSNodeId()) {
         int myHashCode = -1;
         @Override
         public int hashCode() {
@@ -199,7 +200,7 @@ public class EditorManager {
     return attributeCell;
   }
 
-  jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, jetbrains.mps.openapi.editor.EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
+  /*package*/ jetbrains.mps.openapi.editor.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
@@ -355,8 +356,8 @@ public class EditorManager {
           return nodeCell;
         }
       } catch (Throwable e) {
-        LOG.error("Failed to create cell for node " + node.getDebugText(), e);
-        nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
+        LOG.error("Failed to create cell for node " + SNodeUtil.getDebugText(node), e);
+        nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         if (nodeCell != null && !isAttributedCell(nodeCell)) {

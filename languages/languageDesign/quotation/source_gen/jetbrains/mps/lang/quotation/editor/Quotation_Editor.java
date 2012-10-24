@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -67,6 +67,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_29llnk_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_29llnk_b3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_29llnk_c3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_29llnk_d3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_29llnk_e3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_29llnk_f3a(editorContext, node));
     return editorCell;
   }
 
@@ -132,8 +135,22 @@ public class Quotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_29llnk_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
     editorCell.setCellId("Constant_29llnk_c3a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_29llnk_d3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "id =");
+    editorCell.setCellId("Constant_29llnk_d3a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_29llnk_f3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    editorCell.setCellId("Constant_29llnk_f3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -153,7 +170,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   private EditorCell createError_29llnk_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<not specified>");
     editorCell.setCellId("Error_29llnk_c0a");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new Quotation_Editor.Quotation_component_cellMenu_a0c0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Quotation_Editor.Quotation_component_cellMenu_a0c0a()}));
     return editorCell;
   }
 
@@ -174,7 +191,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new Quotation_Editor.Quotation_component_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Quotation_Editor.Quotation_component_cellMenu_a0b0a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_29llnk_b0a");
     return editorCell;
   }
@@ -213,6 +230,23 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_29llnk_e3a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("nodeId");
+    provider.setNoTargetText("<default>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition_29llnk_a3a(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
   }
@@ -225,26 +259,26 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "quotedNode", true) == null;
   }
 
-  public static class Quotation_component_cellMenu_a0b0a implements SubstituteInfoPart {
+  public static class Quotation_component_cellMenu_a0b0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
 
     public Quotation_component_cellMenu_a0b0a() {
       this.myComponent = new Quotation_quotedNode();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class Quotation_component_cellMenu_a0c0a implements SubstituteInfoPart {
+  public static class Quotation_component_cellMenu_a0c0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
 
     public Quotation_component_cellMenu_a0c0a() {
       this.myComponent = new Quotation_quotedNode();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

@@ -9,15 +9,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -50,7 +49,7 @@ public class PasteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    boolean searchPanelInactive = ((Editor) MapSequence.fromMap(_params).get("editor")) == null || !(((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent().getEditorComponent()).isSearchPanelVisible());
+    boolean searchPanelInactive = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null || !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible());
     return searchPanelInactive && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
   }
 
@@ -76,7 +75,6 @@ public class PasteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.MPS_EDITOR));
     MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;

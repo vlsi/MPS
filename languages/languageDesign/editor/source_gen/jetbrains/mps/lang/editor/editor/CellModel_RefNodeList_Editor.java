@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
@@ -743,7 +743,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no separatorTextQuery>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_a0c6d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_a0c6d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -856,7 +856,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesFolding");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a(), new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_b0a1e3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a(), new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_b0a1e3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -881,7 +881,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
       style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_a0b6d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_a0b6d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -968,7 +968,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
@@ -977,17 +977,17 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public CellModel_RefNodeList_generic_cellMenu_a0b6d0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
       return result;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setTarget(node, "separatorTextQuery", parameterObject, true);
     }
 
@@ -1008,17 +1008,17 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public CellModel_RefNodeList_generic_cellMenu_a0c6d0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "separatorText"));
       return result;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "separatorTextQuery", true));
     }
 
@@ -1047,7 +1047,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public CellModel_RefNodeList_generic_cellMenu_b0a1e3a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
     }
 

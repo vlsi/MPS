@@ -133,7 +133,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   public void projectOpened() {
     if (myThread != null && myThread.isAlive()) {
-      LOG.error("trying to initialize a Highlighter being already initialized");
+      LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
       return;
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
@@ -483,7 +483,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) return false;
 
           SNode node = editor.getEditedNode();
-          if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return false;
+          if (node == null || node.getModel()==null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return false;
           if (node.getModel().getModelDescriptor() == null) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.

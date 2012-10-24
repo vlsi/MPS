@@ -376,7 +376,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
         quotedNode1_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655558")));
@@ -395,7 +395,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
         quotedNode1_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655546")));
@@ -414,7 +414,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
         quotedNode1_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655552")));
@@ -433,7 +433,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654333")));
@@ -452,7 +452,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654334")));
@@ -471,7 +471,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("enumClass", SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
         quotedNode1_2.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654335")));

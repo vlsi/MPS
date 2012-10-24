@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -34,7 +34,7 @@ public class Operation_Editor extends DefaultNodeEditor {
     EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
     editorCell.setCellId("Error_ujw05e_b0");
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new Operation_Editor.ReplaceWith_Operation_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Operation_Editor.ReplaceWith_Operation_cellMenu_a0b0()}));
     return editorCell;
   }
 

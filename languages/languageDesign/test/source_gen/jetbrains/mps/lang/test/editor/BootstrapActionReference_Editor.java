@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
@@ -60,7 +60,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BootstrapActionReference_Editor.BootstrapActionReference_actionId_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BootstrapActionReference_Editor.BootstrapActionReference_actionId_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,7 +75,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     public BootstrapActionReference_actionId_cellMenu_a0b0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       for (List<String> ext : ExtensionPoint.<List<String>>generify(new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs", List.class)).getObjects()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ext));

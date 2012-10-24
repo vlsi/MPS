@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -78,7 +78,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
         }
       });
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -97,7 +97,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     public BaseMethodDeclaration_name_postfixCellMenu_a0a0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if (nodeType != null) {

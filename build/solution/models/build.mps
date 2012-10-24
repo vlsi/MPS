@@ -388,6 +388,9 @@
         <property name="reexport" nameId="3ior.5979287180587196968" value="true" />
         <link role="library" roleId="3ior.4993211115183250895" targetNodeId="7926701909975931629" resolveInfo="core-libraries" />
       </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="5684100268546999050">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="1930569293341276834" resolveInfo="mps-core" />
+      </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="1930569293341276834">
       <property name="name" nameId="tpck.1169194664001" value="mps-core" />
@@ -1252,16 +1255,16 @@
             </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="2540145662854758401">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="2540145662854758402">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="2540145662854758403">
+                <property name="text" nameId="3ior.4903714810883755350" value="xml" />
+              </node>
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="1879829234682512525">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5875180246328869238" resolveInfo="jetbrains.mps.core.xml" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="1879829234682519060">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1879829234682499364" resolveInfo="jetbrains.mps.core.xml.sax" />
-            </node>
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="2540145662854758402">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="2540145662854758403">
-                <property name="text" nameId="3ior.4903714810883755350" value="xml" />
-              </node>
             </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="2540145662854758360">
@@ -1285,14 +1288,14 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758367">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535841" resolveInfo="jetbrains.mps.lang.constraints" />
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758364">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758368">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535847" resolveInfo="jetbrains.mps.lang.dataFlow" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758363">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048536494" resolveInfo="jetbrains.mps.lang.dataFlow.analyzers" />
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758364">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758375">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535944" resolveInfo="jetbrains.mps.lang.descriptor" />
@@ -1817,7 +1820,7 @@
       </node>
     </node>
     <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="7926701909975931661" />
-    <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="3378040914523382551" />
+    <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="868032131020298364" />
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="1500819558096109484">
       <property name="name" nameId="tpck.1169194664001" value="bootstrap" />
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="413682502717652307">
@@ -6880,10 +6883,10 @@
             <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1265949165890610427" resolveInfo="languages" />
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="6592112598314058644">
-            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6503539749405386440" resolveInfo="languages" />
+            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6503539749405386440" />
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="614687982853436670">
-            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="614687982853436658" resolveInfo="languages" />
+            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="614687982853436658" />
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="5148601452480491563">
@@ -7145,7 +7148,7 @@
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="6592112598314058642">
-        <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8524659923334108616" resolveInfo="plugins" />
+        <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8524659923334108616" />
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="3616801584907636042">
         <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3616801584907636043">
@@ -8443,7 +8446,7 @@
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4301118715654325731">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1392391688313033161" resolveInfo="languages" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1392391688313033161" />
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4301118715654325704">
@@ -8453,10 +8456,10 @@
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="1392391688313556043">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1392391688313033167" resolveInfo="lib" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1392391688313033167" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="8706695667516968454">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="5115063890373938259" resolveInfo="lib" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="5115063890373938259" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="7753544965996745406">
           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996745407">
@@ -8513,7 +8516,7 @@
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="1348803421063031340">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1348803421063031332" resolveInfo="license" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1348803421063031332" />
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4301118715654325697">
@@ -8540,43 +8543,43 @@
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="614687982853436673">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1392391688313033194" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1392391688313033194" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4061567211001166764">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4061567211001166741" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4061567211001166741" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="6391307088354381141">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6391307088354381137" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6391307088354381137" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="6265574260762011196">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6265574260762011077" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6265574260762011077" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="5548512857136673488">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="5548512857136492255" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="5548512857136492255" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="6275906111973436109">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8524659923334108616" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8524659923334108616" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="8227093612176368124">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8227093612176368035" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="8227093612176368035" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="1545517825663028535">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1545517825663017350" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="1545517825663017350" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="5548512857137206938">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="5548512857137206923" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="5548512857137206923" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="5115063890373639745">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4301118715654818719" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4301118715654818719" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="5115063890373639746">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4301118715654818715" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4301118715654818715" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4197214709894300290">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4197214709894135422" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4197214709894135422" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="8019104635608853954">
-          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="2075442863766409112" resolveInfo="plugins" />
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="2075442863766409112" />
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="1890976590445582744">

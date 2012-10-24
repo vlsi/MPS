@@ -164,6 +164,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private void updateModificationStamp(SNode rootNode) {
+    if (rootNode.getModel() == null) return;
     MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(rootNode.getTopmostAncestor()));
     if (vf != null) {
       vf.setModificationStamp(LocalTimeCounter.currentTime());
@@ -200,7 +201,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void visitRootEvent(SModelRootEvent event) {
       if (!event.isRemoved()) return;
 
-      SNodePointer rootNodePointer = new SNodePointer(event.getRoot());
+      SNode root = event.getRoot();
+      SNodePointer rootNodePointer = new SNodePointer(event.getModel().getSModelReference(), root.getSNodeId());
       MPSNodeVirtualFile vf = myVirtualFiles.get(rootNodePointer);
       if (vf != null) {
         myDeletedFiles.add(vf);
@@ -210,7 +212,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void visitPropertyEvent(final SModelPropertyEvent event) {
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
-      MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
+      MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getModel().getSModelReference(), event.getNode().getSNodeId()));
       if (!event.getNode().isRoot() || vf == null) return;
       String newName = event.getNode().getPresentation();
       if (!newName.equals(vf.getName())) {
