@@ -41,9 +41,9 @@ public class IGenericType_Behavior {
     QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(expanded, "jetbrains.mps.baseLanguage.structure.IGenericType", false, new String[]{})));
     while (!(QueueSequence.fromQueue(queue).isEmpty())) {
       SNode next = QueueSequence.fromQueue(queue).removeFirstElement();
-      SNode exNext = IGenericType_Behavior.call_expandGenerics_4122274986016348613(next, substitutions, expTrace);
+      SNode exNext = IGenericType_Behavior.call_expandGenerics_4122274986016348613(next, substitutions, ListSequence.fromList(new ArrayList<SNode>(expTrace)));
       if (exNext != next) {
-        SNodeOperations.replaceWithAnother(next, exNext);
+        SNodeOperations.replaceWithAnother(next, SNodeOperations.copyNode(exNext));
         for (SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(next, "jetbrains.mps.baseLanguage.structure.IGenericType", false, new String[]{}))) {
           QueueSequence.fromQueue(queue).addLastElement(dsc);
         }
