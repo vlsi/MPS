@@ -13,6 +13,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.MPSProject;
+import java.util.Collection;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -62,15 +64,16 @@ public class ConvertLanguageRuntimes_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (Language language : ((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(Language.class)) {
-        if (language.getRuntimeModelsEntries().isEmpty()) {
+        Collection<ModelRoot> runtimeModelsEntries = language.getModuleDescriptor().getRuntimeStubModels();
+        if (runtimeModelsEntries.isEmpty()) {
           continue;
         }
         Solution runtime = NewModuleUtil.createSolution(language.getModuleFqName() + ".runtime", language.getBundleHome().getDescendant("solutions").getDescendant("runtime").getPath(), ((MPSProject) MapSequence.fromMap(_params).get("project")));
         SolutionDescriptor sd = runtime.getModuleDescriptor();
         sd.setCompileInMPS(false);
         sd.setKind(SolutionKind.PLUGIN_CORE);
-        sd.getStubModelEntries().addAll(language.getRuntimeModelsEntries());
-        sd.getModelRoots().addAll(language.getRuntimeModelsEntries());
+        sd.getStubModelEntries().addAll(runtimeModelsEntries);
+        sd.getModelRoots().addAll(runtimeModelsEntries);
         runtime.setSolutionDescriptor(sd, false);
         runtime.save();
         LanguageDescriptor ld = language.getModuleDescriptor();

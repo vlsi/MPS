@@ -459,16 +459,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return null;
   }
 
-  public Collection<String> getRuntimeStubPaths() {
-    Set<String> result = new LinkedHashSet<String>();
-
-    for (ModelRoot me : getRuntimeModelsEntries()) {
-      result.add(me.getPath());
-    }
-
-    return result;
-  }
-
   @Override
   public boolean isCompileInMPS() {
     // language is always compiled in MPS
@@ -493,31 +483,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     super.invalidateClassPath();
     synchronized (LOCK) {
       myLanguageRuntimeClasspathCache = null;
-    }
-  }
-
-  public IClassPathItem getLanguageRuntimeClasspath() {
-    synchronized (LOCK) {
-      if (myLanguageRuntimeClasspathCache == null) {
-        myLanguageRuntimeClasspathCache = new CompositeClassPathItem();
-        myLanguageRuntimeClasspathCache.addInvalidationAction(myClasspathInvalidator);
-        for (ModelRoot entry : getRuntimeModelsEntries()) {
-          String s = entry.getPath();
-          try {
-            IFile file = FileSystem.getInstance().getFileByPath(s);
-            if (!file.exists()) {
-              LOG.debug("Can't find " + s);
-              continue;
-            }
-
-            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleName()));
-          } catch (IOException e) {
-            LOG.debug(e.getMessage());
-          }
-        }
-      }
-
-      return myLanguageRuntimeClasspathCache;
     }
   }
 
@@ -557,10 +522,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         }
       }
     }
-  }
-
-  public Collection<ModelRoot> getRuntimeModelsEntries() {
-    return myLanguageDescriptor.getRuntimeStubModels();
   }
 
   @Override
