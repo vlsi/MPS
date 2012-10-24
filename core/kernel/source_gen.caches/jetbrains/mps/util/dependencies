@@ -55,7 +55,6 @@
   </dependency>
   <dependency className="jetbrains.mps.util.SNodeOperations" file="SNodeOperations.java">
     <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />

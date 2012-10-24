@@ -205,9 +205,8 @@ public class SNodeOperations {
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {
-    for (String key:from.getUserObjectKeys()){
-      Object value = from.getUserObject(key);
-      to.putUserObject(key, value);
+    for (String key : Sequence.fromIterable(from.getUserObjectKeys())) {
+      to.putUserObject(key, from.getUserObject(key));
     }
   }
 
