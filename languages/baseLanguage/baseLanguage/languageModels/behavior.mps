@@ -41555,12 +41555,12 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5748105936088739718">
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type=".jetbrains.mps.baseLanguage.structure.LocalMethodCall" id="1492869406909186665">
-              <link role="baseMethodDeclaration" targetNodeId="8504030010051008191" resolveInfo="findClass" />
-              <node role="actualArgument" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186666">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1492869406909186665">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8504030010051008191" resolveInfo="findClass" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186666">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8504030010050785549" resolveInfo="x" />
               </node>
-              <node role="actualArgument" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1492869406909186692">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1492869406909186692">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186669">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8504030010050785549" resolveInfo="x" />
                 </node>
@@ -43148,12 +43148,12 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8504030010051008139">
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type=".jetbrains.mps.baseLanguage.structure.LocalMethodCall" id="1492869406909186704">
-                  <link role="baseMethodDeclaration" targetNodeId="8504030010051008191" resolveInfo="findClass" />
-                  <node role="actualArgument" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186708">
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1492869406909186704">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8504030010051008191" resolveInfo="findClass" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186708">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8504030010051008027" resolveInfo="x" />
                   </node>
-                  <node role="actualArgument" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186711">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1492869406909186711">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8504030010051008128" resolveInfo="className" />
                   </node>
                 </node>
