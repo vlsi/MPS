@@ -136,16 +136,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     setProperty(propertyName, propertyValue, true);
   }
 
-  public void visitProperties(PropertyVisitor v) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-
-    if (myProperties == null) return;
-    for (int i = 0; i < myProperties.length; i += 2) {
-      v.visitProperty(myProperties[i], myProperties[i + 1]);
-    }
-  }
-
   final public SNode getParent() {
     //todo: ModelAccess.assertLegalRead(this);
     return treeParent();
@@ -335,16 +325,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public void visitReferences(ReferenceVisitor v) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-
-    if (myReferences == null) return;
-    for (SReference ref : myReferences) {
-      v.visitReference(ref.getRole(), ref);
-    }
-  }
-
   /**
    * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
    */
@@ -441,12 +421,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return "<no role>";
   }
 
-  public void visitChildren(ChildVisitor v) {
-    for (SNode child : getChildren()) {
-      if (!v.visitChild(getRoleOf(child), child)) return;
-    }
-  }
-
   public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
     String childRole = ((SNode) child).getRole();
     assert childRole != null : "role must be not null";
@@ -530,13 +504,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myUserObjects = newarr;
   }
 
-  public void visitUserObjects(UserObjectVisitor v) {
-    if (myUserObjects == null) return;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      v.visitObject(myUserObjects[i], myUserObjects[i + 1]);
-    }
-  }
-
   public List<SNode> getChildren() {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -574,14 +541,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       public Iterator<String> iterator() {
         return new Iterator<String>() {
           int myIndex = 0;
-
           public boolean hasNext() {
-            return myIndex < myUserObjects.length;
+            return myIndex+2<myProperties.length;
           }
 
           public String next() {
-            myIndex += 2;
-            return (String) myUserObjects[myIndex - 2];
+            myIndex +=2;
+            return myProperties[myIndex-1];
           }
 
           public void remove() {
@@ -1433,12 +1399,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void putUserObjects(SNode fromNode) {
     if (fromNode == null) return;
-    fromNode.visitUserObjects(new UserObjectVisitor() {
-      public boolean visitObject(Object key, Object value) {
-        putUserObject(key, value);
-        return true;
-      }
-    });
+    for (String key : fromNode.getUserObjectKeys()) {
+      putUserObject(key, fromNode.getUserObject(key));
+    }
   }
 
   @Deprecated
@@ -1732,12 +1695,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Map<Object, Object> getUserObjects() {
     final Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
-    visitUserObjects(new UserObjectVisitor() {
-      public boolean visitObject(Object key, Object value) {
-        userObjects.put(key, value);
-        return true;
-      }
-    });
+    for (String key : getUserObjectKeys()) {
+      userObjects.put(key, getUserObject(key));
+    }
     return userObjects;
   }
 
@@ -1992,21 +1952,5 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void setBooleanProperty(String propertyName, boolean value) {
     setProperty(propertyName, value ? "" + value : null);
-  }
-
-  private interface ChildVisitor {
-    boolean visitChild(String role, SNode child);
-  }
-
-  private interface ReferenceVisitor {
-    boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref);
-  }
-
-  private interface PropertyVisitor {
-    boolean visitProperty(String name, String value);
-  }
-
-  public interface UserObjectVisitor {
-    boolean visitObject(Object key, Object value);
   }
 }
