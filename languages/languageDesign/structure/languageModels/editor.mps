@@ -1259,7 +1259,7 @@
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5092175715804935378">
               <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
               <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no alias&gt;" />
-              <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.5092175715804935370" resolveInfo="conceptAlias" />
+              <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.5092175715804935370" resolveInfo="conceptAlias" />
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="5092175715804935381">
                 <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
               </node>

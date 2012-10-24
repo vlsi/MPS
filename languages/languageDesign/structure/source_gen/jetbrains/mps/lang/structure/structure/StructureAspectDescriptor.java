@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"}, new String[]{"helpURL"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"}, new String[]{"helpURL", "conceptAlias"}, new String[]{});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLink", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptLink"}, new String[]{}, new String[]{"aggregationConceptLinkDeclaration"});
       case 2:
