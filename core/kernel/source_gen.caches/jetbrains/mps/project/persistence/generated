@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4xlibgtp28suvb4m9sotsuqx0401qkq">
+<dependencies version="2" modelHash="-4vf82ufd11tkhnf0fggdfcc6c17etyy">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -37,10 +37,10 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="842994667883030054" name="ModuleDescriptorsBuilders" hash="b0rko26j3gwauhl1kqfgn59yin6r930">
+  <source id="842994667883030054" name="ModuleDescriptorsBuilders" hash="-4ifcfw2gjtws7ht09eat40xldo4ddf5">
     <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" />
   </source>
-  <source id="842994667883030151" name="DevkitDescriptorPersistence" hash="ea30wlmnpje29r50ew2dn1xsiaua1nr">
+  <source id="842994667883030151" name="DevkitDescriptorPersistence" hash="1q1vjz2nyt3rzfb6g3m7mjk2c5bwnug">
     <dep root="9015822011646764030" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -107,7 +107,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GeneratorDescriptorPersistence.java" />
   </source>
-  <source id="842994667883031167" name="LanguageDescriptorPersistence" hash="-13zqvlzdbeex717kqcxhfuni2ra7ran" dependsOnNodes="true">
+  <source id="842994667883031167" name="LanguageDescriptorPersistence" hash="ddegsraxbyyl24u4hfbkugmqah55k3a" dependsOnNodes="true">
     <dep root="1986682148700850462" />
     <dep root="2709156219364650064" />
     <dep root="5932019537937719012" />
@@ -153,7 +153,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LanguageDescriptorPersistence.java" />
   </source>
-  <source id="842994667883031742" name="ModuleDescriptorPersistence" hash="-5ygy1svv1ll67b3df3lju955wcq6utg" dependsOnNodes="true">
+  <source id="842994667883031742" name="ModuleDescriptorPersistence" hash="dvoixs7a8n2bo5h9dy84d57xv8d431g" dependsOnNodes="true">
     <dep root="1986682148700850462" />
     <dep root="2709156219364650064" />
     <dep root="5932019537937719012" />
@@ -223,7 +223,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ProjectDescriptorPersistence.java" />
   </source>
-  <source id="842994667883032842" name="SolutionDescriptorPersistence" hash="4p78kli677w244tl2axflvp0ndvvcls">
+  <source id="842994667883032842" name="SolutionDescriptorPersistence" hash="e11t8w0u173qh0ffvhp4o6pzm4n0wg">
     <dep root="9015822011646763988" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -252,7 +252,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="ModuleReadException.java" />
   </source>
-  <source id="9015822011646763875" name="LanguageDescriptorsBuilders" hash="-8zjnj49ym5wexayhyc9rf9uhlag17ph">
+  <source id="9015822011646763875" name="LanguageDescriptorsBuilders" hash="8gzwbrbzjztkrhbp1r3n5wmy6eaz4ey">
     <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" />
   </source>
   <source id="9015822011646763988" name="SolutionDescriptorsBuilders" hash="-awj54yqlvt3f191elh0zbddv9u5sw1i">

@@ -180,24 +180,6 @@ public class ModuleDescriptorPersistence {
     return macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
   }
 
-  private static ModelRoot loadModelEntry(final Element modelRootElement, final MacroHelper macroHelper) {
-    return new _FunctionTypes._return_P0_E0<ModelRoot>() {
-      public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a8 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a8 = macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
-        result_dxyzb6_a0a0a8.setPath(result_dxyzb6_a0a0a0a8);
-        Element manager = XmlUtil.first(modelRootElement, "manager");
-        final ModelRootManager result_dxyzb6_a2a0a0a8 = new ModelRootManager();
-        final String result_dxyzb6_a0a2a0a0a8 = XmlUtil.stringWithDefault(manager, "moduleId", "");
-        result_dxyzb6_a2a0a0a8.setModuleId(result_dxyzb6_a0a2a0a0a8);
-        final String result_dxyzb6_a1a2a0a0a8 = XmlUtil.stringWithDefault(manager, "className", "");
-        result_dxyzb6_a2a0a0a8.setClassName(result_dxyzb6_a1a2a0a0a8);
-        result_dxyzb6_a0a0a8.setManager(result_dxyzb6_a2a0a0a8);
-        return result_dxyzb6_a0a0a8;
-      }
-    }.invoke();
-  }
-
   public static void saveModelRoots(Element result, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
     for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
       Element modelRoot = new Element("modelRoot");
