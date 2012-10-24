@@ -117,12 +117,4 @@ public interface SNode {
   void putUserObject(Object key, @Nullable Object value);
 
   Iterable<String> getUserObjectKeys();
-
-  //visitors
-
-  void visitUserObjects(UserObjectVisitor v);
-
-  public interface UserObjectVisitor {
-    boolean visitObject(Object key, Object value);
-  }
 }

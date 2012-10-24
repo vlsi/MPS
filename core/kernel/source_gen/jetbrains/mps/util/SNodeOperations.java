@@ -205,12 +205,10 @@ public class SNodeOperations {
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {
-    from.visitUserObjects(new SNode.UserObjectVisitor() {
-      public boolean visitObject(Object object, Object object1) {
-        to.putUserObject(object, object1);
-        return true;
-      }
-    });
+    for (String key:from.getUserObjectKeys()){
+      Object value = from.getUserObject(key);
+      to.putUserObject(key, value);
+    }
   }
 
   private static class DescendantsIterable implements Iterator<jetbrains.mps.smodel.SNode>, Iterable<jetbrains.mps.smodel.SNode> {

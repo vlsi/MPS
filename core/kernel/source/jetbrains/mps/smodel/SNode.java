@@ -558,29 +558,30 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myRoleInParent;
   }
 
-  public SNode getPrevSibling(){
-    if (getParent()==null) return null;
+  public SNode getPrevSibling() {
+    if (getParent() == null) return null;
     return getParent().getPrevChild(this);
   }
 
-  public SNode getNextSibling(){
-    if (getParent()==null) return null;
+  public SNode getNextSibling() {
+    if (getParent() == null) return null;
     return getParent().getNextChild(this);
   }
 
   public Iterable<String> getUserObjectKeys() {
-    if (myProperties == null) return EmptyIterable.getInstance();
+    if (myUserObjects == null || myUserObjects.length == 0) return EmptyIterable.getInstance();
     return new Iterable<String>() {
       public Iterator<String> iterator() {
         return new Iterator<String>() {
           int myIndex = 0;
+
           public boolean hasNext() {
-            return myIndex+2<myProperties.length;
+            return myIndex < myUserObjects.length;
           }
 
           public String next() {
-            myIndex +=2;
-            return myProperties[myIndex-1];
+            myIndex += 2;
+            return (String) myUserObjects[myIndex - 2];
           }
 
           public void remove() {
@@ -1617,7 +1618,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
-    for (SNode child:getChildren()){
+    for (SNode child : getChildren()) {
       if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
         augend.add(child.getRoleInParent());
       }
@@ -2005,4 +2006,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     boolean visitProperty(String name, String value);
   }
 
+  public interface UserObjectVisitor {
+    boolean visitObject(Object key, Object value);
+  }
 }
