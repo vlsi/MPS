@@ -84,7 +84,7 @@ public abstract class AbstractModule implements IModule {
 
   public final EditableSModelDescriptor createModel(String name, org.jetbrains.mps.openapi.persistence.ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation() + "[" + root.getKind() + "]");
+      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
     }
 
@@ -312,12 +312,6 @@ public abstract class AbstractModule implements IModule {
     }
 
     return Collections.emptySet();
-  }
-
-  protected Collection<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return descriptor.getStubModelEntries();
   }
 
   //----classpath

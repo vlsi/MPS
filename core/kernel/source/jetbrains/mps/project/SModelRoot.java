@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.persistence.ModelRootBase;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -29,15 +30,18 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import java.util.Collection;
 import java.util.Collections;
 
-public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRoot {
-  private final SModule myModule;
+public class SModelRoot extends ModelRootBase implements org.jetbrains.mps.openapi.persistence.ModelRoot {
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
 
+  public SModelRoot() {
+    // TODO
+  }
+
   public SModelRoot(SModule module, ModelRoot root) throws ManagerNotFoundException {
-    myModule = module;
     myModelRoot = root;
     myManager = createManager();
+    setModule(module);
   }
 
   private IModelRootManager createManager() throws ManagerNotFoundException {
@@ -67,18 +71,13 @@ public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRo
   }
 
   @Override
-  public String getKind() {
-    return getManager().getClass().getSimpleName();
+  public String getType() {
+    return "default";
   }
 
   @Override
   public String getPresentation() {
-    return getPath();
-  }
-
-  @Override
-  public SModule getModule() {
-    return myModule;
+    return getPath() + " (" + getManager().getClass().getSimpleName() + ")";
   }
 
   @Override
@@ -93,23 +92,23 @@ public class SModelRoot implements org.jetbrains.mps.openapi.persistence.ModelRo
     //model with model root manager not yet loaded - should be loaded after classes reloading
     if (manager == null) return Collections.emptyList();
 
-    Collection<SModelDescriptor> models = manager.load(myModelRoot, (IModule) myModule);
+    Collection<SModelDescriptor> models = manager.load(myModelRoot, (IModule) getModule());
     return (Iterable) models;
   }
 
   @Override
   public boolean isReadOnly() {
-    return myModule.isPackaged() || !getManager().canCreateModel((IModule) myModule, myModelRoot, null);
+    return getModule().isPackaged() || !getManager().canCreateModel((IModule) getModule(), myModelRoot, null);
   }
 
   @Override
   public boolean canCreateModel(String modelName) {
-    return getManager().canCreateModel((IModule) myModule, myModelRoot, SModelFqName.fromString(modelName));
+    return getManager().canCreateModel((IModule) getModule(), myModelRoot, SModelFqName.fromString(modelName));
   }
 
   @Override
   public SModel createModel(String modelName) {
-    return getManager().createModel((IModule) myModule, myModelRoot, SModelFqName.fromString(modelName));
+    return getManager().createModel((IModule) getModule(), myModelRoot, SModelFqName.fromString(modelName));
   }
 
   @Override

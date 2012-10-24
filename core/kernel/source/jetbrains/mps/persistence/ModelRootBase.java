@@ -31,6 +31,6 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void setModule(SModule module) {
-    // TODO check and set
+    myModule = module;
   }
 }

@@ -13,31 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence;
+package jetbrains.mps.ide.persistence;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-public interface ModelRoot {
+/**
+ * evgeny, 10/24/12
+ */
+public interface ModelRootSettingsProvider {
 
-  String getType();
-
-  String getPresentation();
-
-  SModule getModule();
-
-  SModel getModel(SModelId id);
-
-  Iterable<SModel> getModels();
-
-  boolean isReadOnly();
-
-  boolean canCreateModel(String modelName);
-
-  SModel createModel(String modelName);
-
-  void save(Memento memento);
-
-  void load(Memento memento);
+  void show(Project project, ModelRoot modelRoot);
 }

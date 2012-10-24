@@ -16,8 +16,10 @@
 package jetbrains.mps.project.structure.model;
 
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
 //should implement Comparable in order to be saved from idea-plugin
+@Deprecated
 public class ModelRoot implements Comparable<ModelRoot> {
   public static final String PATH = "path";
   public static final String MANAGER = "manager";
@@ -70,6 +72,25 @@ public class ModelRoot implements Comparable<ModelRoot> {
     int result = myPath != null ? myPath.hashCode() : 0;
     result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
     return result;
+  }
+
+  public void load(Memento memento) {
+    setPath(memento.getPath("path"));
+    Memento manager = memento.getChild("manager");
+    if (manager != null) {
+      String moduleId = manager.get("moduleId");
+      String className = manager.get("className");
+      setManager(new ModelRootManager(moduleId != null ? moduleId : "", className != null ? className : ""));
+    }
+  }
+
+  public void save(Memento memento) {
+    memento.putPath("path", getPath());
+    if (myManager != null) {
+      Memento manager = memento.createChild("manager");
+      manager.put("moduleId", myManager.getModuleId());
+      manager.put("className", myManager.getClassName());
+    }
   }
 
   public ModelRoot getCopy() {
