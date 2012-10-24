@@ -23,11 +23,11 @@ public class BehaviorReflection {
     ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).initNode(node);
   }
 
-  public static <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+  public static <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
-  public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object... parameters) {
+  public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 }
