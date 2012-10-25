@@ -134,7 +134,6 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         return methodsToCall;
       }
     });
-
   }
 
   @Deprecated

@@ -96,7 +96,6 @@ public final class BehaviorManager {
     });
   }
 
-  @Deprecated
   private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, @NotNull String conceptFqName, boolean includeSelf, String methodName, Class[] parametersTypes, Object... parameters) {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (concept == null) {
