@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 public interface BehaviorDescriptor {
+  public static final String VIRTUAL_METHOD_PREFIX = "virtual_";
+  public static final String NON_VIRTUAL_METHOD_PREFIX = "call_";
+
   String getConceptFqName();
 
   public void initNode(SNode node);

@@ -30,10 +30,25 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
   public CompiledBehaviorDescriptor(String conceptFqName) {
     super(conceptFqName);
 
-    Method[] methods = this.getClass().getMethods();
-    this.methods = new HashMap<String, Method>(methods.length * 2);
-    for (Method method : methods) {
-      this.methods.put(method.getName(), method);
+    Method[] virtualMethods = this.getClass().getMethods();
+    Method[] nonVirtualMethods;
+    try {
+      nonVirtualMethods = this.getClass().getClassLoader().loadClass(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
+    } catch (ClassNotFoundException e) {
+      // it's okay? just class without behavior?
+      nonVirtualMethods = new Method[0];
+    }
+
+    this.methods = new HashMap<String, Method>((virtualMethods.length + nonVirtualMethods.length) * 2);
+    for (Method method : virtualMethods) {
+      if (method.getName().startsWith(VIRTUAL_METHOD_PREFIX)) {
+        this.methods.put(method.getName(), method);
+      }
+    }
+    for (Method method : nonVirtualMethods) {
+      if (method.getName().startsWith(NON_VIRTUAL_METHOD_PREFIX)) {
+        this.methods.put(method.getName(), method);
+      }
     }
   }
 
@@ -44,32 +59,27 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
-    if (methodName.startsWith("virtual_")) {
-      Object[] params = new Object[parameters.length + 1];
-      params[0] = node;
-      System.arraycopy(parameters, 0, params, 1, parameters.length);
+    Object[] params = new Object[parameters.length + 1];
+    params[0] = node;
+    System.arraycopy(parameters, 0, params, 1, parameters.length);
 
-      Method method = methods.get(methodName);
-      if (method == null) {
-        throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
-      }
+    Method method = methods.get(methodName);
+    if (method == null) {
+      throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
+    }
 
-      try {
-        return method.invoke(this, params);
-      } catch (IllegalAccessException e) {
-        throw new RuntimeException(e);
-      } catch (InvocationTargetException e) {
-        Throwable cause = e.getCause();
-        if (cause instanceof RuntimeException) {
-          throw (RuntimeException) cause;
-        } else if (cause instanceof Error) {
-          throw (Error) cause;
-        }
-        throw new RuntimeException(e);
+    try {
+      return method.invoke(this, params);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(e);
+    } catch (InvocationTargetException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof RuntimeException) {
+        throw (RuntimeException) cause;
+      } else if (cause instanceof Error) {
+        throw (Error) cause;
       }
-    } else {
-      // todo: !
-      return super.invoke(node, methodName, parameters);
+      throw new RuntimeException(e);
     }
   }
 }
