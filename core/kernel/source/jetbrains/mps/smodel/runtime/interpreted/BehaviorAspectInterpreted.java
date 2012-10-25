@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -27,7 +28,7 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
 
   // todo: remove?
   private Map<String, BehaviorDescriptor> pool = new ConcurrentHashMap<String, BehaviorDescriptor>();
-  private BehaviorDescriptor NULL_BEHAVIOR_DESCRIPTOR = new InterpretedBehaviorDescriptor(null);
+  private BehaviorDescriptor NULL_BEHAVIOR_DESCRIPTOR = NullSafeIllegalBehaviorDescriptor.INSTANCE;
 
   private BehaviorAspectInterpreted() {
   }

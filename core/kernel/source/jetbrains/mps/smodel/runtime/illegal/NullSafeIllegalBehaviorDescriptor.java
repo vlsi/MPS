@@ -16,38 +16,48 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 
-public class IllegalBehaviorDescriptor implements BehaviorDescriptor {
-  private final String fqName;
+public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
+  public static NullSafeIllegalBehaviorDescriptor INSTANCE = new NullSafeIllegalBehaviorDescriptor();
 
-  public IllegalBehaviorDescriptor(String fqName) {
-    this.fqName = fqName;
+  private NullSafeIllegalBehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return fqName;
+    return null;
   }
 
   @Override
   public void initNode(SNode node) {
-    throw new UnsupportedOperationException();
+    if (node != null) {
+      throw new IllegalArgumentException();
+    }
   }
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
-    throw new UnsupportedOperationException();
+    throw new IllegalArgumentException();
   }
 
   @Override
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    throw new UnsupportedOperationException();
+    if (node != null) {
+      throw new IllegalArgumentException();
+    } else {
+      return BehaviorReflection.defaultValue(returnType);
+    }
   }
 
   @Override
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    throw new UnsupportedOperationException();
+    if (node != null) {
+      throw new IllegalArgumentException();
+    } else {
+      return BehaviorReflection.defaultValue(returnType);
+    }
   }
 }
