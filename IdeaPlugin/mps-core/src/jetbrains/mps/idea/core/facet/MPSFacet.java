@@ -21,7 +21,9 @@ import com.intellij.facet.FacetType;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.internal.statistic.UsageTrigger;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.messages.MessagesViewTool;
@@ -71,18 +73,14 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
             repository.registerModule(mySolution = solution, myMpsProject);
             myMpsProject.addModule(mySolution.getModuleReference());
-
             LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
             IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
             String version = descriptor == null ? null : descriptor.getVersion();
             UsageTrigger.trigger("MPS.initFacet."+version);
           }
         });
-
       }
     });
-
-
   }
 
   @Override

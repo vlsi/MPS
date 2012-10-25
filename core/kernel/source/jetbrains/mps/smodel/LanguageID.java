@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class LanguageID {
   public static final String JAVA = "java";
+  // TODO move JavaStub -> core?
   public static final ModelRootManager JAVA_MANAGER = new ModelRootManager(BootstrapLanguages.BASE_LANGUAGE.getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs");
 }
