@@ -463,18 +463,18 @@
     <unitInfo nodeId="4106919528499268085" fileName="TreeHighlighterFactory.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" />
   </root>
   <root nodeId="4225526609875760407" modelId="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)">
-    <nodeInfo nodeId="4225526609875774710" fileName="ChangesTreeCreationHandler.java" startLine="8" startPosition="75" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreesHighlighter" />
+    <nodeInfo nodeId="4225526609875774710" fileName="ChangesTreeCreationHandler.java" startLine="8" startPosition="74" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreesHighlighter" />
     <nodeInfo nodeId="391123256063776964" fileName="ChangesTreeCreationHandler.java" startLine="11" startPosition="78" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="391123256063776971" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="41" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="391123256063776971" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="39" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="391123256063776957" fileName="ChangesTreeCreationHandler.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesTreeCreationHandler#(Ljetbrains/mps/vcs/changesmanager/tree/TreeHighlighterFactory;)V" />
-    <nodeInfo nodeId="4225526609875764848" fileName="ChangesTreeCreationHandler.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeCreated#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="3499818918522499385" fileName="ChangesTreeCreationHandler.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
     <scopeInfo nodeId="391123256063776961" fileName="ChangesTreeCreationHandler.java" startLine="11" startPosition="78" endLine="12" endPosition="42" />
-    <scopeInfo nodeId="4225526609875764853" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="41" endLine="16" endPosition="51" />
+    <scopeInfo nodeId="3499818918522499391" fileName="ChangesTreeCreationHandler.java" startLine="15" startPosition="39" endLine="16" endPosition="51" />
     <scopeInfo nodeId="391123256063776957" fileName="ChangesTreeCreationHandler.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
       <varInfo nodeId="391123256063776962" varName="treesHighlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="4225526609875764848" fileName="ChangesTreeCreationHandler.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="4225526609875764851" varName="tree" />
+    <scopeInfo nodeId="3499818918522499385" fileName="ChangesTreeCreationHandler.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="3499818918522499389" varName="tree" />
     </scopeInfo>
     <unitInfo nodeId="4225526609875760407" fileName="ChangesTreeCreationHandler.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler" />
   </root>

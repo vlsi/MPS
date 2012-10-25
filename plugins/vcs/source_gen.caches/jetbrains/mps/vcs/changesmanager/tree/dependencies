@@ -3,7 +3,7 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler" file="ChangesTreeCreationHandler.java">
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeCreationHandler" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.TreeHighlighterExtension" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" file="FeatureForestMap.java">
     <classNode dependClassName="java.lang.InterruptedException" />
