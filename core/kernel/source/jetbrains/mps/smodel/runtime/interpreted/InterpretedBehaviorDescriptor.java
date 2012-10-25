@@ -15,29 +15,101 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
-import static jetbrains.mps.smodel.behaviour.BehaviorReflection.defaultValue;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.*;
 
 public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
+  private final Map<String, Method> methods;
+
   public InterpretedBehaviorDescriptor(String fqName) {
     super(fqName);
+    methods = collectMethods(fqName);
   }
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
-    // todo: !
-    return null;
+    Method method = methods.get(methodName);
+    if (method == null) {
+      throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
+    }
+
+    try {
+      return method.invoke(this, parameters);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(e);
+    } catch (InvocationTargetException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof RuntimeException) {
+        throw (RuntimeException) cause;
+      } else if (cause instanceof Error) {
+        throw (Error) cause;
+      }
+      throw new RuntimeException(e);
+    }
   }
 
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeWithConceptFqName(returnType, node, getConceptFqName(), methodName, parametersTypes, parameters);
-  }
+  private static Map<String, Method> collectMethods(final String conceptFqName) {
+    // todo: use SConcept here
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Map<String, Method>>() {
+      @Override
+      public Map<String, Method> compute() {
+        Map<String, Method> methods = new HashMap<String, Method>();
 
-  public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+        String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
+        final Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+
+        Set<SNode> processed = new HashSet<SNode>();
+
+        List<SNode> concepts = Collections.singletonList(SConceptOperations.findConceptDeclaration(conceptFqName));
+        while (!concepts.isEmpty()) {
+          List<SNode> newFrontier = new ArrayList<SNode>();
+          for (SNode currentConcept : concepts) {
+            assert currentConcept != null;
+            if (processed.contains(currentConcept)) {
+              continue;
+            }
+            String fqName = NameUtil.nodeFQName(currentConcept);
+            String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+            Class cls = language.getClass(behaviorClass);
+            if (cls != null) {
+              for (Method method : cls.getMethods()) {
+                if (!methods.containsKey(method.getName())) {
+                  methods.put(method.getName(), method);
+                }
+              }
+            }
+
+            if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
+              for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(currentConcept)) {
+                if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
+                newFrontier.add(interfaceConcept);
+              }
+              SNode parentConcept = SNodeUtil.getConceptDeclaration_Extends(currentConcept);
+              if (parentConcept != null && !processed.contains(parentConcept)) {
+                newFrontier.add(parentConcept);
+              }
+            } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(currentConcept)) {
+              for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(currentConcept)) {
+                if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
+                newFrontier.add(interfaceConcept);
+              }
+            }
+            processed.add(currentConcept);
+          }
+          concepts = newFrontier;
+        }
+
+        return methods;
+      }
+    });
   }
 }
