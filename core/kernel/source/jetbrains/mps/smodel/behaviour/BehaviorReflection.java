@@ -17,17 +17,52 @@ package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class BehaviorReflection {
+  private static final Map<Class, Object> OUR_DEFAULT_VALUE = new HashMap<Class, Object>();
+
+  static {
+    OUR_DEFAULT_VALUE.put(Byte.class, (byte) 0);
+    OUR_DEFAULT_VALUE.put(Short.class, (short) 0);
+    OUR_DEFAULT_VALUE.put(Integer.class, (int) 0);
+    OUR_DEFAULT_VALUE.put(Long.class, (long) 0);
+    OUR_DEFAULT_VALUE.put(Float.class, (float) 0);
+    OUR_DEFAULT_VALUE.put(Double.class, (double) 0);
+    OUR_DEFAULT_VALUE.put(Boolean.class, false);
+    OUR_DEFAULT_VALUE.put(Void.class, null);
+  }
+
   public static void initNode(SNode node) {
     ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).initNode(node);
   }
 
-  public static <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+  public static Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(node, methodName, parameters);
+
   }
 
-  public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(returnType, node, methodName, parametersTypes, parameters);
+  public static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
+  }
+
+  // todo: move to SNodeOperation? this methods for null safety
+  public static <T> T invoke(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
+    return node == null ? defaultValue(returnType) : (T) invoke(node, methodName, parameters);
+  }
+
+  public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
+    return node == null ? defaultValue(returnType) : (T) invokeSuper(node, targetSuperFqName, methodName, parameters);
+  }
+
+  public static <T> T defaultValue(Class<T> returnValueClass) {
+    if (OUR_DEFAULT_VALUE.containsKey(returnValueClass)) {
+      return (T) OUR_DEFAULT_VALUE.get(returnValueClass);
+    } else {
+      return null;
+    }
   }
 }

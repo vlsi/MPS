@@ -39,7 +39,7 @@ public final class BehaviorManager {
 
   @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return BehaviorReflection.invoke(returnType, node, methodName, parametersTypes, parameters);
+    return BehaviorReflection.invoke(returnType, node, methodName, parameters);
   }
 
   @Deprecated
@@ -49,6 +49,6 @@ public final class BehaviorManager {
 
   @Deprecated
   public <T> T invokeSuperNew(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return BehaviorReflection.invokeSuper(returnType, node, targetSuperFqName, methodName, parametersTypes, parameters);
+    return BehaviorReflection.invokeSuper(returnType, node, targetSuperFqName, methodName, parameters);
   }
 }

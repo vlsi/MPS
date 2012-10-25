@@ -16,12 +16,16 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 public interface BehaviorDescriptor {
   String getConceptFqName();
 
   public void initNode(SNode node);
 
+  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters);
+
+  @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters);
 
   @Deprecated

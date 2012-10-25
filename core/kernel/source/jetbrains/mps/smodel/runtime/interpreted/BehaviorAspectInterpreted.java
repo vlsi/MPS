@@ -20,10 +20,13 @@ import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import static jetbrains.mps.smodel.behaviour.BehaviorReflection.defaultValue;
 
 public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
   private static BehaviorAspectInterpreted INSTANCE = new BehaviorAspectInterpreted();
@@ -71,6 +74,12 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
       } else {
         OldBehaviorManager.getInstance().initNode(node);
       }
+    }
+
+    @Override
+    public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+      // todo: !
+      return null;
     }
 
     public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {

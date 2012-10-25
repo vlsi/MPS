@@ -24,6 +24,8 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static jetbrains.mps.smodel.behaviour.BehaviorReflection.defaultValue;
+
 public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDescriptor {
   private Map<String, Method> methods;
   private final Object lock = new Object();

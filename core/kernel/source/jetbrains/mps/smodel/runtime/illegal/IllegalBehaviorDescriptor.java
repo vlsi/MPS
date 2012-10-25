@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import org.jetbrains.annotations.NotNull;
 
 public class IllegalBehaviorDescriptor implements BehaviorDescriptor {
   private final String fqName;
@@ -32,6 +33,11 @@ public class IllegalBehaviorDescriptor implements BehaviorDescriptor {
 
   @Override
   public void initNode(SNode node) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
     throw new UnsupportedOperationException();
   }
 
