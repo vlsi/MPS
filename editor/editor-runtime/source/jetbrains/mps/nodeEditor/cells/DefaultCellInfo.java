@@ -44,7 +44,7 @@ public class DefaultCellInfo implements CellInfo {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode n = cell.getSNode();
-        myNodePointer = n.getModel() == null ? null : new SNodePointer(n);
+        myNodePointer = (n == null || n.getModel() == null) ? null : new SNodePointer(n);
       }
     });
 
