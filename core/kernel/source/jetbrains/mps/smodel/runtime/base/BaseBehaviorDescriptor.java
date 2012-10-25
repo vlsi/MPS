@@ -16,20 +16,40 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
-  @Override
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return (T) BehaviorReflection.invoke(returnType, node, methodName, parameters);
+  private final String conceptFqName;
+
+  public BaseBehaviorDescriptor(String conceptFqName) {
+    this.conceptFqName = conceptFqName;
   }
 
   @Override
+  public String getConceptFqName() {
+    return conceptFqName;
+  }
+
+  @Override
+  public void initNode(SNode node) {
+    // todo: !
+  }
+
+  @Deprecated
+  @Override
+  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    if (node == null) {
+      return BehaviorReflection.defaultValue(returnType);
+    } else {
+      return (T) invoke(node, methodName, parameters);
+    }
+  }
+
+  @Deprecated
+  @Override
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return BehaviorManager.getInstance().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
 }

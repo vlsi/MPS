@@ -56,38 +56,5 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
     }
   }
 
-  public static class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
-    private final String fqName;
 
-    public InterpretedBehaviorDescriptor(String fqName) {
-      this.fqName = fqName;
-    }
-
-    @Override
-    public String getConceptFqName() {
-      return fqName;
-    }
-
-    public void initNode(SNode node) {
-      if (node == null) {
-        throw new IllegalArgumentException("initNode on null node");
-      } else {
-        OldBehaviorManager.getInstance().initNode(node);
-      }
-    }
-
-    @Override
-    public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
-      // todo: !
-      return null;
-    }
-
-    public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-      return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeWithConceptFqName(returnType, node, getConceptFqName(), methodName, parametersTypes, parameters);
-    }
-
-    public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-      return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
-    }
-  }
 }

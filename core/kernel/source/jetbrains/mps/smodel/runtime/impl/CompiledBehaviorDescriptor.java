@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted.InterpretedBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
@@ -30,6 +30,11 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
   private Map<String, Method> methods;
   private final Object lock = new Object();
 
+  public CompiledBehaviorDescriptor(String conceptFqName) {
+    super(conceptFqName);
+  }
+
+  @Deprecated
   public CompiledBehaviorDescriptor() {
     super(null);
   }
