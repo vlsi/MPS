@@ -56,7 +56,6 @@ public class MigrateAttributeConstant_MigrationScript extends BaseMigrationScrip
         }), "jetbrains.mps.lang.structure.structure.AggregationConceptLink");
 
         ListSequence.fromList(SLinkOperations.getTargets(behavior, "method", true)).addElement(ListSequence.fromList(SLinkOperations.getTargets(new MigrateAttributeConstant_MigrationScript.QuotationClass_l7go3b_a0a0a0a4a4a0a0a0a1a0().createNode(SLinkOperations.getTarget(link, "target", true)), "method", true)).first());
-        SNodeOperations.deleteNode(link);
       }
 
       public boolean isShowAsIntention() {
