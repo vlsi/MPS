@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -136,9 +137,9 @@ public class Solution extends ClassLoadingModule {
     descriptor.getAdditionalJavaStubPaths().clear();
 
     for (String path : javaCP) {
-      ClassPathEntry entry = new ClassPathEntry();
-      entry.setPath(path);
-      ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(entry);
+      ModelRoot mr = new ModelRoot();
+      mr.setPath(path);
+      mr.setManager(LanguageID.JAVA_MANAGER);
       descriptor.getModelRoots().add(mr);
       descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
     }

@@ -39,7 +39,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;

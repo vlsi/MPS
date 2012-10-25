@@ -381,9 +381,9 @@ public abstract class AbstractModule implements IModule {
     descriptor.getModelRoots().removeAll(toRemove);
 
     if (addBundleAsModelRoot) {
-      ClassPathEntry jarEntry = new ClassPathEntry();
-      jarEntry.setPath(bundleHomeFile.getPath());
-      ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+      ModelRoot mr = new ModelRoot();
+      mr.setPath(bundleHomeFile.getPath());
+      mr.setManager(LanguageID.JAVA_MANAGER);
       if (!descriptor.getModelRoots().contains(mr)) {
         descriptor.getModelRoots().add(mr);
       }
@@ -397,9 +397,9 @@ public abstract class AbstractModule implements IModule {
         ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
         : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
-        ClassPathEntry jarEntry = new ClassPathEntry();
-        jarEntry.setPath(jar.getPath());
-        ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+        ModelRoot mr = new ModelRoot();
+        mr.setPath(jar.getPath());
+        mr.setManager(LanguageID.JAVA_MANAGER);
         descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
         descriptor.getModelRoots().add(mr);
       }
