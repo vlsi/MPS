@@ -22,7 +22,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -275,7 +275,7 @@ public class QueriesGenerated {
     // remove this method at all 
     SNode returnType = SLinkOperations.getTarget(_context.getNode(), "returnType", true);
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty()) || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.StringType")) {
-      return BehaviorReflection.invoke((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
+      return BehaviorManager.getInstance().invoke((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
     } else {
       return new QueriesGenerated.QuotationClass_x583g4_a0a0a2a15().createNode(returnType);
     }
@@ -283,7 +283,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1902094167074144918(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     try {
-      return BehaviorReflection.invoke((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
+      return BehaviorManager.getInstance().invoke((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
     } catch (Exception e) {
       return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a25().createNode();
     }
