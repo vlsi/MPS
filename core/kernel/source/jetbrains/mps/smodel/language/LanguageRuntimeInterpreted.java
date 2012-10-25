@@ -35,7 +35,6 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * evgeny, 4/28/11
  */
 public class LanguageRuntimeInterpreted extends LanguageRuntime {
-  public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = new InterpretedBehaviorProvider();
   public static final DescriptorProvider<FacetDescriptor> FACET_PROVIDER = new InterpretedFacetProvider();
 
   private final Language myLanguage;
