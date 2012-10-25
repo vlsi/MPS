@@ -26,18 +26,23 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
-  private final Map<String, Method> methods;
+  private final Map<String, Method> methods = new ConcurrentHashMap<String, Method>();
 
   public InterpretedBehaviorDescriptor(String fqName) {
     super(fqName);
-    methods = collectMethods(getConceptFqName());
   }
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
     Method method = methods.get(methodName);
+    if (method == null) {
+      method = findMethod(getConceptFqName(), methodName);
+      methods.put(methodName, method);
+    }
+
     if (method == null) {
       throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
     }
@@ -61,11 +66,11 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     }
   }
 
-  private static Map<String, Method> collectMethods(final String conceptFqName) {
+  private static Method findMethod(final String conceptFqName, final String methodName) {
     // todo: use SConcept here
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Map<String, Method>>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
       @Override
-      public Map<String, Method> compute() {
+      public Method compute() {
         Map<String, Method> methods = new HashMap<String, Method>();
 
         String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
@@ -87,10 +92,8 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
             Class cls = language.getClass(behaviorClass);
             if (cls != null) {
               for (Method method : cls.getMethods()) {
-                if (method.getName().startsWith("call_") || method.getName().startsWith("virtual_")) {
-                  if (!methods.containsKey(method.getName())) {
-                    methods.put(method.getName(), method);
-                  }
+                if (method.getName().equals(methodName)) {
+                  return method;
                 }
               }
             }
@@ -120,7 +123,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
           concepts = newFrontier;
         }
 
-        return methods;
+        return null;
       }
     });
   }

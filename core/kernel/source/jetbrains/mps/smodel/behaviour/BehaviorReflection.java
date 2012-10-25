@@ -42,7 +42,6 @@ public class BehaviorReflection {
 
   public static Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(node, methodName, parameters);
-
   }
 
   public static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
