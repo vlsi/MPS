@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -149,14 +148,11 @@ public class NodeExplorerComponent {
 
     protected void doInit() {
       SNode node = myNode.getNode();
-      node.visitProperties(new PropertyVisitor() {
-        public boolean visitProperty(String name, String value) {
-          TextTreeNode node = new TextTreeNode(name + " : " + value);
-          node.setIcon(Icons.DEFAULT_ICON);
-          add(node);
-          return true;
-        }
-      });
+      for (String name : node.getPropertyNames()) {
+        TextTreeNode tn = new TextTreeNode(name + " : " + node.getProperty(name));
+        tn.setIcon(Icons.DEFAULT_ICON);
+        add(tn);
+      }
       myIsInitialized = true;
     }
 

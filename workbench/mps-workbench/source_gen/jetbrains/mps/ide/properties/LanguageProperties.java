@@ -5,8 +5,6 @@ package jetbrains.mps.ide.properties;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -20,17 +18,13 @@ public class LanguageProperties extends ModuleProperties {
   private List<SModelReference> myAccessoryModels;
   private List<ModuleReference> myExtendedLanguages;
   private List<ModuleReference> myRuntimeModules;
-  private List<ClassPathEntry> myRuntimeClassPaths;
-  private List<ModelRoot> myRuntimeStubModels;
   private List<StubSolution> myStubSolutions;
 
   public LanguageProperties() {
     myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
     myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myRuntimeModules = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-    myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
-    myRuntimeStubModels = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
   }
 
   public String getGenPath() {
@@ -57,14 +51,6 @@ public class LanguageProperties extends ModuleProperties {
     return myStubSolutions;
   }
 
-  public List<ClassPathEntry> getRuntimeClassPaths() {
-    return myRuntimeClassPaths;
-  }
-
-  public List<ModelRoot> getRuntimeStubModels() {
-    return myRuntimeStubModels;
-  }
-
   @Override
   public void loadFrom(ModuleDescriptor descriptor) {
     assert descriptor instanceof LanguageDescriptor;
@@ -77,12 +63,6 @@ public class LanguageProperties extends ModuleProperties {
     for (StubSolution ss : d.getStubSolutions()) {
       myStubSolutions.add((ss != null ?
         ss.getCopy() :
-        null
-      ));
-    }
-    for (ModelRoot entry : d.getRuntimeStubModels()) {
-      myRuntimeStubModels.add((entry != null ?
-        entry.getCopy() :
         null
       ));
     }
@@ -102,7 +82,5 @@ public class LanguageProperties extends ModuleProperties {
     d.getRuntimeModules().addAll(myRuntimeModules);
     d.getStubSolutions().clear();
     d.getStubSolutions().addAll(myStubSolutions);
-    d.getRuntimeStubModels().clear();
-    d.getRuntimeStubModels().addAll(myRuntimeStubModels);
   }
 }

@@ -94,7 +94,9 @@ public class LibrariesLoader implements CoreComponent {
         root.setPath(path);
         root.setManager(d.getManager());
         sd.getModelRoots().add(root);
-        sd.getStubModelEntries().add(root);
+        if(LanguageID.JAVA_MANAGER.equals(d.getManager())) {
+          sd.getAdditionalJavaStubPaths().add(root.getPath());
+        }
       }
 
       d.init(sd);

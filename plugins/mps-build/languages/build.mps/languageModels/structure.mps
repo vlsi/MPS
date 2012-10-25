@@ -23,123 +23,123 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5253498789149585690">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyOnModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5253498789149588970">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleJavaSource" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731840247">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_Solution" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149381388" resolveInfo="BuildMps_Module" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731840248">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_Language" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149381388" resolveInfo="BuildMps_Module" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731903991">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleRuntime" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731922642">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyUseLanguage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731928315">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyOnJavaModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3189788309731981027">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleSolutionRuntime" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3189788309731903991" resolveInfo="BuildMps_ModuleRuntime" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4278635856200794926">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyExtendLanguage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4278635856200804496">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleJarRuntime" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3189788309731903991" resolveInfo="BuildMps_ModuleRuntime" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4278635856200817744">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleModelRoot" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4278635856200826393">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyJar" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710375794190">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_DevKit" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="322010710375871467" resolveInfo="BuildMps_AbstractModule" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710375805242">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_DevKitRef" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710375805251">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_DevKitExport" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710375832938">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_DevKitExportLanguage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="322010710375805251" resolveInfo="BuildMps_DevKitExport" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710375832954">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_DevKitExportSolution" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="322010710375805251" resolveInfo="BuildMps_DevKitExport" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710375871467">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_AbstractModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710376037449">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyOnDevKit" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1500819558095907805">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_Group" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1692280246134781712">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_ModuleSources" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7259033139236285166">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ExtractedModuleDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2105528055260548241">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_FolderWithSources" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1692280246134781712" resolveInfo="BuildMpsLayout_ModuleSources" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1265949165890536423">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_ModuleJars" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="868032131020265945">
@@ -147,89 +147,89 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.6647099934206689694" resolveInfo="BuildPlugin" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7655580649838764660">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_ModuleXml" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4356762679305675652">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_ModuleXml_CustomJarLocation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7753544965996377997">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Branding" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_Branding" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Branding" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7753544965996489991">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Branding" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_BrandingUpdateSite" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Branding" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7753544965996489992">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Branding" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_BrandingHelp" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Branding" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314498926">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_Plugin" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848004876" resolveInfo="BuildLayout_AbstractContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314498932">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPlugin" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/plugin.png" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPlugin" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314499027">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314499036">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6592112598314499051" resolveInfo="BuildMps_IdeaPluginContent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314499051">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginContent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="6592112598314529916">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="qualifiedName" />
       <property name="constraint" nameId="tpce.1083066089218" value="[a-zA-Z_][a-zA-Z_0-9]*(\\.[a-zA-Z_][a-zA-Z_0-9]*)*" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314586625">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginGroup" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6592112598314499051" resolveInfo="BuildMps_IdeaPluginContent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314795900">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMpsLayout_PluginDescriptor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4034578608468929319">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginGroupCustomModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7832771629084799699">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginVendor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469340623">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
       <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildMps_Module" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469340766">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
       <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSourcePath" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -388,6 +388,7 @@
       <property name="value" nameId="tpce.1105725733873" value="jar" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5221322343055467603" />
   </root>
   <root id="4278635856200817744">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4278635856200817746">

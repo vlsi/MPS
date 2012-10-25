@@ -71,9 +71,6 @@ public class DependencyUtil {
         addDeps(result, lang.getExtendedLanguages(), DependencyUtil.Role.UsedExtLanguage, DependencyUtil.LinkType.ExtendsLanguage);
         if (trackRuntime) {
           addDeps(result, lang.getRuntimeModules(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExportsRuntime);
-          if (!(lang.getRuntimeStubModels().isEmpty())) {
-            ListSequence.fromList(result).addElement(new DependencyUtil.Link(module, DependencyUtil.Role.RTLibraries, DependencyUtil.LinkType.ExportsRuntimeLib));
-          }
         }
         break;
 

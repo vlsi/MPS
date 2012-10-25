@@ -18,8 +18,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.library.ModelsMiner;
 import jetbrains.mps.library.ModelsMiner.ModelHandle;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
@@ -28,6 +27,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,32 +36,34 @@ import java.util.List;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
+  public Collection<SModelDescriptor> load(@NotNull SModelRoot root) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
     ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), models);
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {
-      SModelDescriptor modelDescriptor = getInstance(module, new RegularModelDataSource(module.getModuleReference(), handle.getFile()), handle.getReference(), handle.getLoadResult());
+      SModelDescriptor modelDescriptor = getInstance(root.getModule(), new RegularModelDataSource(root.getModule().getModuleReference(), handle.getFile()), handle.getReference(), handle.getLoadResult());
       LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath());
       result.add(modelDescriptor);
     }
     return result;
   }
 
-  public boolean canCreateModel(IModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName) {
+  @Override
+  public boolean canCreateModel(@Nullable SModelRoot root, @Nullable SModelFqName fqName) {
     if (root == null) return true;
-    if (fqName == null) return !RegularModelDataSource.isUnderLanguageModels(module, root);
+    if (fqName == null) return !RegularModelDataSource.isUnderLanguageModels(root.getModule(), root);
     return true;
   }
 
-  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
-    ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, module);
+  @Override
+  public SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
+    ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, root.getModule());
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
-    return new DefaultSModelDescriptor(module, modelSource, ref, new DescriptorLoadResult());
+    return new DefaultSModelDescriptor(root.getModule(), modelSource, ref, new DescriptorLoadResult());
   }
 
-  private static SModelDescriptor getInstance(IModule module, RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  private static SModelDescriptor getInstance(SModule module, RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     LOG.debug("Getting model " + modelReference + " from " + source);
 
     SModelRepository modelRepository = SModelRepository.getInstance();

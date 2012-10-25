@@ -16,7 +16,6 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -75,14 +74,14 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
         }
       }
     }
-    if (descriptor.getStubModelEntries() != null) {
-      for (ModelRoot stubModelsEntry : descriptor.getStubModelEntries()) {
-        IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
+    if (descriptor.getAdditionalJavaStubPaths() != null) {
+      for (String path : descriptor.getAdditionalJavaStubPaths()) {
+        IFile file = FileSystem.getInstance().getFileByPath(path);
         if (file == null || !file.exists()) {
-          if (new File(stubModelsEntry.getPath()).exists()) {
-            errors.add("Idea VFS is not up-to-date. Can't find library: " + stubModelsEntry.getPath());
+          if (new File(path).exists()) {
+            errors.add("Idea VFS is not up-to-date. Can't find library: " + path);
           } else {
-            errors.add("Can't find library: " + stubModelsEntry.getPath());
+            errors.add("Can't find library: " + path);
           }
         }
       }

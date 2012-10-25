@@ -7,9 +7,7 @@
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${module}/lib/swingx-1.6.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
+    <stubModelEntry path="${module}/lib/swingx-1.6.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

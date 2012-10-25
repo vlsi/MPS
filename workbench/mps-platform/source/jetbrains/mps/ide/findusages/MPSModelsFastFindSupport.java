@@ -80,7 +80,10 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
         IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
         if (modelFile == null) continue;
 
-        scopeFiles.addLink(sm, VirtualFileUtils.getVirtualFile(modelFile));
+        VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
+        if (vf==null) continue; //paranoid check due to http://youtrack.jetbrains.com/issue/MPS-16954
+
+        scopeFiles.addLink(sm, vf);
       }
 
       //filter files with usages

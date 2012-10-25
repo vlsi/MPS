@@ -53,19 +53,6 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     return true;
   }
 
-  protected String getErrorString() {
-    String errors;
-    errors = checkStubModels(myProperties.getStubModels());
-    if (errors != null) {
-      return errors;
-    }
-    errors = checkStubModels(myProperties.getRuntimeStubModels());
-    if (errors != null) {
-      return errors;
-    }
-    return null;
-  }
-
   public void dispose() {
     super.dispose();
     Disposer.dispose(myDisposable);

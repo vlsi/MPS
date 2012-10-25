@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -35,7 +36,7 @@ public class StubModelsResolver {
     return ourInstance;
   }
 
-  private Map<Pair<ModuleReference, SModelFqName>, Set<SModelReference>> myStubModulesCache = new HashMap<Pair<ModuleReference, SModelFqName>, Set<SModelReference>>();
+  private Map<Pair<SModuleReference, SModelFqName>, Set<SModelReference>> myStubModulesCache = new HashMap<Pair<SModuleReference, SModelFqName>, Set<SModelReference>>();
 
   private StubModelsResolver() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
@@ -46,8 +47,8 @@ public class StubModelsResolver {
     });
   }
 
-  public synchronized Set<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
-    Pair<ModuleReference, SModelFqName> key = new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name);
+  public synchronized Set<SModelReference> resolveModel(SModule module, SModelFqName name, @Nullable SNodeId nodeId) {
+    Pair<SModuleReference, SModelFqName> key = new Pair<SModuleReference, SModelFqName>(module.getModuleReference(), name);
     ensureInitialized(key);
 
     Set<SModelReference> models = myStubModulesCache.get(key);
@@ -64,16 +65,16 @@ public class StubModelsResolver {
     return result;
   }
 
-  private void ensureInitialized(Pair<ModuleReference, SModelFqName> key) {
+  private void ensureInitialized(Pair<SModuleReference, SModelFqName> key) {
     if (myStubModulesCache.containsKey(key)) return;
 
-    IModule module = MPSModuleRepository.getInstance().getModule(key.o1);
+    IModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
     Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
 
     fillCacheWithModels(key, visibleModels);
   }
 
-  private void fillCacheWithModels(Pair<ModuleReference, SModelFqName> key, Iterable<SModelDescriptor> models) {
+  private void fillCacheWithModels(Pair<SModuleReference, SModelFqName> key, Iterable<SModelDescriptor> models) {
     if (!myStubModulesCache.containsKey(key)) {
       myStubModulesCache.put(key, new HashSet<SModelReference>());
     }

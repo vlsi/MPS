@@ -14,11 +14,11 @@ import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import java.util.HashSet;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public abstract class AbstractHierarchyTree extends MPSTree {
   protected IOperationContext myOperationContext;
@@ -130,7 +130,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
           if (n == null) {
             return false;
           }
-          return !(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(n)));
+          return !(isInGeneratorModel(n));
         }
       });
     }
@@ -146,7 +146,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       return null;
     }
     if (!(myShowGeneratorModels)) {
-      while (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(result))) {
+      while (isInGeneratorModel(result)) {
         result = getParent(result);
         if (result == null) {
           return null;
@@ -197,6 +197,10 @@ public abstract class AbstractHierarchyTree extends MPSTree {
 
   public boolean doubleClick(HierarchyTreeNode hierarchyTreeNode) {
     return false;
+  }
+
+  private boolean isInGeneratorModel(SNode n) {
+    return SNodeOperations.getModel(n) != null && SModelStereotype.isGeneratorModel(SNodeOperations.getModel(n));
   }
 
   protected class RootTextTreeNode extends TextTreeNode {

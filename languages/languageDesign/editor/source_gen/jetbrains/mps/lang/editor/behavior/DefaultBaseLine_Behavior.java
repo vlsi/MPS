@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.style.StyleAttribute;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class DefaultBaseLine_Behavior {
   public static void init(SNode thisNode) {
@@ -39,5 +41,9 @@ public class DefaultBaseLine_Behavior {
         }
       }
     }
+  }
+
+  public static StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
+    return StyleAttributes.DEFAULT_BASE_LINE;
   }
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
@@ -108,18 +107,6 @@ public final class ListsFactory {
       IModule m1 = MPSModuleRepository.getInstance().getModule(o1.getModuleRef());
       IModule m2 = MPSModuleRepository.getInstance().getModule(o2.getModuleRef());
       return EqualUtil.equals(m1, m2);
-    }
-  };
-  public static final ListsFactory.ListComparator<ClassPathEntry> CLASSPATH_ENTRY_COMPARATOR = new ListsFactory.ListComparator<ClassPathEntry>() {
-    public int compare(ClassPathEntry o1, ClassPathEntry o2) {
-      return o1.getPath().compareTo(o2.getPath());
-    }
-
-    public boolean isEqual(ClassPathEntry o1, ClassPathEntry o2) {
-      if (super.isEqual(o1, o2)) {
-        return true;
-      }
-      return EqualUtil.equals(o1.getPath(), o2.getPath());
     }
   };
   public static final ListsFactory.ListComparator<StubSolution> STUB_SOLUTIONS_ENTRY_COMPARATOR = new ListsFactory.ListComparator<StubSolution>() {

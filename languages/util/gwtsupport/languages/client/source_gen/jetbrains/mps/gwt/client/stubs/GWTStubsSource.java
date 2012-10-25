@@ -71,7 +71,8 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, gwtModule));
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), root, module) {
-      public StubModelDataSource createStubsSource(ModuleReference origin, ModelRoot loc) {
+      @Override
+      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
         return new GWTStubsSource(origin, loc);
       }
     };

@@ -39,7 +39,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -268,9 +267,7 @@ public class TestMain {
 
   public static void updateLanguageClasspath(Language l, String classpath) {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
-    ClassPathEntry cpEntry = new ClassPathEntry();
-    cpEntry.setPath(classpath);
-    languageDescriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(cpEntry));
+    languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
     l.setLanguageDescriptor(languageDescriptor, false);
   }
 

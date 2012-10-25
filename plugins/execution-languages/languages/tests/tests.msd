@@ -8,9 +8,7 @@
     <modelRoot path="${module}/models" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/execution-configurations/languages/plugin/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/execution-configurations/languages/plugin/classes" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

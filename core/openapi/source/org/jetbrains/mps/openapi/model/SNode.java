@@ -116,31 +116,5 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
-  Iterable<String> getUserObjectKeys();
-
-  //visitors
-
-  void visitChildren(ChildVisitor v);
-
-  void visitReferences(ReferenceVisitor v);
-
-  void visitProperties(PropertyVisitor v);
-
-  void visitUserObjects(UserObjectVisitor v);
-
-  public interface ChildVisitor {
-    boolean visitChild(String role, SNode child);
-  }
-
-  public interface ReferenceVisitor {
-    boolean visitReference(String role, SReference ref);
-  }
-
-  public interface PropertyVisitor {
-    boolean visitProperty(String name, String value);
-  }
-
-  public interface UserObjectVisitor {
-    boolean visitObject(Object key, Object value);
-  }
+  Iterable<Object> getUserObjectKeys();
 }
