@@ -16,13 +16,23 @@
 package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.openapi.extensions.Extensions;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Evgeny Gerashchenko
  * @since 11/23/11
  */
-public interface MPSTreeCreationHandler {
-  ExtensionPointName<MPSTreeCreationHandler> EP_NAME = new ExtensionPointName<MPSTreeCreationHandler>("com.intellij.mps.treeCreationHandler");
+public abstract class TreeHighlighterExtension {
+  protected static ExtensionPointName<TreeHighlighterExtension> EP_NAME = new ExtensionPointName<TreeHighlighterExtension>("com.intellij.mps.treeCreationHandler");
 
-  void treeCreated(MPSTree tree);
+  public static void attachHighlighters(MPSTree tree, @NotNull Project project) {
+    if (project.isDefault()) return;
+    for (TreeHighlighterExtension handler : Extensions.getExtensions(EP_NAME, project)) {
+      handler.attach(tree);
+    }
+  }
+
+  protected abstract void attach(MPSTree tree);
 }

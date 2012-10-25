@@ -5858,8 +5858,13 @@
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4246614868164066821">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4246614868164066822">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4246614868164067002" resolveInfo="SomeMapper" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4246614868164066823">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4246614868164066804" resolveInfo="source" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5449655299302478046">
+                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5449655299302478053">
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+                          </node>
+                          <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4246614868164066823">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4246614868164066804" resolveInfo="source" />
+                          </node>
                         </node>
                       </node>
                     </node>

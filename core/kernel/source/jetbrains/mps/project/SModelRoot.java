@@ -92,23 +92,23 @@ public class SModelRoot extends ModelRootBase implements org.jetbrains.mps.opena
     //model with model root manager not yet loaded - should be loaded after classes reloading
     if (manager == null) return Collections.emptyList();
 
-    Collection<SModelDescriptor> models = manager.load(myModelRoot, (IModule) getModule());
+    Collection<SModelDescriptor> models = manager.load(this);
     return (Iterable) models;
   }
 
   @Override
   public boolean isReadOnly() {
-    return getModule().isPackaged() || !getManager().canCreateModel((IModule) getModule(), myModelRoot, null);
+    return getModule().isPackaged() || !getManager().canCreateModel(this, null);
   }
 
   @Override
   public boolean canCreateModel(String modelName) {
-    return getManager().canCreateModel((IModule) getModule(), myModelRoot, SModelFqName.fromString(modelName));
+    return getManager().canCreateModel(this, SModelFqName.fromString(modelName));
   }
 
   @Override
   public SModel createModel(String modelName) {
-    return getManager().createModel((IModule) getModule(), myModelRoot, SModelFqName.fromString(modelName));
+    return getManager().createModel(this, SModelFqName.fromString(modelName));
   }
 
   @Override

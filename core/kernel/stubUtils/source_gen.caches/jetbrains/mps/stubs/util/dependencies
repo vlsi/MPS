@@ -77,10 +77,10 @@
   </dependency>
   <dependency className="jetbrains.mps.stubs.util.JavaStubModelDescriptor" file="JavaStubModelDescriptor.java">
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.NodeDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.NodesNavigationContributor" />
     <classNode extendsClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
   </dependency>
@@ -145,6 +145,8 @@
     <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.util.MultiRootModelDataSource" />
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItem" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
 </dependenciesRoot>
 

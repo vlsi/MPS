@@ -78,7 +78,8 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
       }
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), roots, module) {
-      public StubModelDataSource createStubsSource(ModuleReference origin, ModelRoot loc) {
+      @Override
+      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
         return new ConfStubSource(origin, loc);
       }
     };

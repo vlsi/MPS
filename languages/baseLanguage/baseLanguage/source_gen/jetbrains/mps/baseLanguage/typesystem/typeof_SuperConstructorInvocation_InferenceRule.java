@@ -38,7 +38,6 @@ public class typeof_SuperConstructorInvocation_InferenceRule extends AbstractInf
       return;
     }
 
-
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     SNode thisType = Classifier_Behavior.call_getThisType_3305065273710880775(thisClassifier);
     IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(thisType, subs);
@@ -78,7 +77,7 @@ public class typeof_SuperConstructorInvocation_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = sci;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243956895", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243956872", true), (SNode) new typeof_SuperConstructorInvocation_InferenceRule.QuotationClass_tm50ix_a0a41a0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243956872", true), (SNode) new typeof_SuperConstructorInvocation_InferenceRule.QuotationClass_tm50ix_a0a31a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -97,8 +96,8 @@ public class typeof_SuperConstructorInvocation_InferenceRule extends AbstractInf
     return true;
   }
 
-  public static class QuotationClass_tm50ix_a0a41a0 {
-    public QuotationClass_tm50ix_a0a41a0() {
+  public static class QuotationClass_tm50ix_a0a31a0 {
+    public QuotationClass_tm50ix_a0a31a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

@@ -5,12 +5,12 @@ package jetbrains.mps.stubs.util;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.NodesNavigationContributor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 
 public class JavaStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
-  public JavaStubModelDescriptor(SModelReference modelReference, JavaStubModelDataSource source, IModule module) {
+  public JavaStubModelDescriptor(SModelReference modelReference, JavaStubModelDataSource source, SModule module) {
     super(modelReference, source, module);
   }
 

@@ -47,6 +47,7 @@ import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -63,9 +64,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import java.awt.Component;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @State(
@@ -226,7 +225,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         }
       });
     }
-    tree.fireTreeCreated(myProject);
+    TreeHighlighterExtension.attachHighlighters(tree, myProject);
     fireComponentCreated();
     return myScrollPane;
   }
