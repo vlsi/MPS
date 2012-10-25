@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.project.stubs.ProjectStubs" file="ProjectStubs.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -10,8 +11,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
+    <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
@@ -22,7 +22,8 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.AbstractModelRootManager" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.smodel.persistence.ModelRootManagerBase" />
   </dependency>
 </dependenciesRoot>
 
