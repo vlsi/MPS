@@ -47,7 +47,7 @@ public class MigrateAttributeConstant_MigrationScript extends BaseMigrationScrip
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode behavior = SNodeOperations.cast(MigrationUtil.createNewConceptAspectInstance(LanguageAspect.BEHAVIOR, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior")), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+        SNode behavior = SNodeOperations.cast(MigrationUtil.getOrCreateConceptAspectInstance(LanguageAspect.BEHAVIOR, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior")), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
 
         SNode link = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "conceptLink", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
