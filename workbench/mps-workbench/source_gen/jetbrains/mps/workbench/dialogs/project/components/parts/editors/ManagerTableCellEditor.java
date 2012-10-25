@@ -53,10 +53,8 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
       public void run() {
         for (SNode node : ListSequence.fromList(getManagerNodes(context))) {
           Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
-          // <node> 
 
           ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor().getId().toString(), SNodeOperations.getModel(node).getLongName() + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
-
 
           ListSequence.fromList(result).addElement(manager);
         }
@@ -90,7 +88,6 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
             for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(s)) {
               if (smd.getLongName().endsWith(".stubManagers")) {
                 SModel m = smd.getSModel();
-                System.err.println("DEBUG: found stubManagers model " + SModelOperations.getModelName(m));
                 ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration")));
               }
             }
