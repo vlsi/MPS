@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.java.stubManagers.JavaSourceStubs;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.java.newparser.DirParser;
@@ -118,23 +119,28 @@ public class Utils {
   }
 
   public static void checkStubModels(String dirPath, List<SModel> expected) {
-    JavaSourceStubs stubMgr = new JavaSourceStubs();
+    try {
+      JavaSourceStubs stubMgr = new JavaSourceStubs();
 
-    Collection<SModelDescriptor> mds = stubMgr.load(new ModelRoot(dirPath), ourModule);
-    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModelDescriptor md : CollectionSequence.fromCollection(mds)) {
-      SModel m = md.getSModel();
-      ListSequence.fromList(models).addElement(m);
-    }
-
-    for (SModel m : ListSequence.fromList(expected)) {
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
-        NodePatcher.removeStatements(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"));
-        // <node> 
+      Collection<SModelDescriptor> mds = stubMgr.load(new SModelRoot(ourModule, new ModelRoot(dirPath)));
+      List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+      for (SModelDescriptor md : CollectionSequence.fromCollection(mds)) {
+        SModel m = md.getSModel();
+        ListSequence.fromList(models).addElement(m);
       }
-    }
 
-    compare(models, expected);
+      for (SModel m : ListSequence.fromList(expected)) {
+        for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+          NodePatcher.removeStatements(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          // <node> 
+        }
+      }
+
+      compare(models, expected);
+
+    } catch (SModelRoot.ManagerNotFoundException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public static void checkSourceModel(String dirPath, SModel expected) {
@@ -162,50 +168,55 @@ public class Utils {
   }
 
   public static void compareBinAndSrcStubs(String binPath, String sourcePath) {
-    JavaStubs bin = new JavaStubs();
-    JavaSourceStubs src = new JavaSourceStubs();
+    try {
+      JavaStubs bin = new JavaStubs();
+      JavaSourceStubs src = new JavaSourceStubs();
 
-    // just 2 distinct modules 
-    IModule mod1 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b"));
-    IModule mod2 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
+      // just 2 distinct modules 
+      IModule mod1 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b"));
+      IModule mod2 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
 
-    List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
-    Collection<SModelDescriptor> binStubModels = bin.load(new ModelRoot(binPath), mod1);
-    for (SModelDescriptor md : CollectionSequence.fromCollection(binStubModels)) {
-      SModel m = md.getSModel();
-      ListSequence.fromList(binModels).addElement(m);
+      List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
+      Collection<SModelDescriptor> binStubModels = bin.load(new SModelRoot(mod1, new ModelRoot(binPath)));
+      for (SModelDescriptor md : CollectionSequence.fromCollection(binStubModels)) {
+        SModel m = md.getSModel();
+        ListSequence.fromList(binModels).addElement(m);
 
-      for (SNode binRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
-        NodePatcher.fixNonStatic(binRoot);
-        NodePatcher.removeConstructorName(binRoot);
-        NodePatcher.removeExtendsObject(binRoot);
-        NodePatcher.removeInitializers(binRoot);
+        for (SNode binRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+          NodePatcher.fixNonStatic(binRoot);
+          NodePatcher.removeConstructorName(binRoot);
+          NodePatcher.removeExtendsObject(binRoot);
+          NodePatcher.removeInitializers(binRoot);
 
-        NodePatcher.sortNestedClass(SNodeOperations.cast(binRoot, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          NodePatcher.sortNestedClass(SNodeOperations.cast(binRoot, "jetbrains.mps.baseLanguage.structure.Classifier"));
 
-        // FIXME should be fixed in java source stubs 
-        NodePatcher.removeStatements(binRoot);
+          // FIXME should be fixed in java source stubs 
+          NodePatcher.removeStatements(binRoot);
+        }
       }
-    }
 
-    List<SModel> srcModels = ListSequence.fromList(new ArrayList<SModel>());
-    Collection<SModelDescriptor> srcStubModels;
-    srcStubModels = src.load(new ModelRoot(sourcePath), mod2);
-    for (SModelDescriptor md : CollectionSequence.fromCollection(srcStubModels)) {
-      SModel m = md.getSModel();
-      ListSequence.fromList(srcModels).addElement(m);
+      List<SModel> srcModels = ListSequence.fromList(new ArrayList<SModel>());
+      Collection<SModelDescriptor> srcStubModels;
+      srcStubModels = src.load(new SModelRoot(mod2, new ModelRoot(sourcePath)));
+      for (SModelDescriptor md : CollectionSequence.fromCollection(srcStubModels)) {
+        SModel m = md.getSModel();
+        ListSequence.fromList(srcModels).addElement(m);
+        // <node> 
+
+        for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+          NodePatcher.fixNonStatic(srcRoot);
+          NodePatcher.removeSourceLevelAnnotations(srcRoot);
+
+          NodePatcher.sortNestedClass(SNodeOperations.cast(srcRoot, "jetbrains.mps.baseLanguage.structure.Classifier"));
+        }
+      }
+
+      compare(binModels, srcModels);
       // <node> 
 
-      for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
-        NodePatcher.fixNonStatic(srcRoot);
-        NodePatcher.removeSourceLevelAnnotations(srcRoot);
-
-        NodePatcher.sortNestedClass(SNodeOperations.cast(srcRoot, "jetbrains.mps.baseLanguage.structure.Classifier"));
-      }
+    } catch (SModelRoot.ManagerNotFoundException e) {
+      throw new RuntimeException(e);
     }
-
-    compare(binModels, srcModels);
-    // <node> 
   }
 
   public static void compare(Iterable<SModel> leftModels, Iterable<SModel> rightModels) {
