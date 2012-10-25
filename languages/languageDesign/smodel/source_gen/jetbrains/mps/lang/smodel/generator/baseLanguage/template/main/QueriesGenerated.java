@@ -325,7 +325,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_5850694276437213950(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) && !(SPropertyOperations.getBoolean(_context.getNode(), "directCall"));
+    return !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) && !(SPropertyOperations.getBoolean(_context.getNode(), "directCall")) && !(Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_5850694276437457225(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -768,8 +768,14 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1423329322227367871(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode leftExpression = SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
-    return BehaviorReflection.invokeVirtual(String.class, SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(leftExpression), "virtual_getFqName_1213877404258", new Object[]{});
+    if (Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode())) {
+      SNode leftExpression = SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+      return BehaviorReflection.invokeVirtual(String.class, SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(leftExpression), "virtual_getFqName_1213877404258", new Object[]{});
+    } else {
+      // node non virtual method call 
+      SNode behavior = SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      return NameUtil.nodeFQName(behavior);
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_1423329322227367888(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -893,11 +899,13 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1423329322227367931(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-    return (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression") ?
-      "invokeSuper" :
-      "invokeVirtual"
-    );
+    if (Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode())) {
+      return "invokeSuper";
+    }
+    if (Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) {
+      return "invokeVirtual";
+    }
+    return "invokeNonVirtual";
   }
 
   public static Object referenceMacro_GetReferent_2832018561208930317(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -932,8 +940,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1423329322227367857(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
-    return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+    return Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()) || !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_8317913688490056938(final IOperationContext operationContext, final IfMacroContext _context) {

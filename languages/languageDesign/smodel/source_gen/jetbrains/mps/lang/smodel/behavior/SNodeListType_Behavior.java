@@ -12,7 +12,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -68,7 +68,7 @@ public class SNodeListType_Behavior {
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(new SNodeListType_Behavior.QuotationClass_r176b6_a0a0a8().createNode(), substitutions);
+    BehaviorReflection.invokeVirtual(Void.class, new SNodeListType_Behavior.QuotationClass_r176b6_a1a0a8().createNode(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
   }
 
   public static class QuotationClass_r176b6_a0a0f {
@@ -89,8 +89,8 @@ public class SNodeListType_Behavior {
     }
   }
 
-  public static class QuotationClass_r176b6_a0a0a8 {
-    public QuotationClass_r176b6_a0a0a8() {
+  public static class QuotationClass_r176b6_a1a0a8 {
+    public QuotationClass_r176b6_a1a0a8() {
     }
 
     public SNode createNode() {
