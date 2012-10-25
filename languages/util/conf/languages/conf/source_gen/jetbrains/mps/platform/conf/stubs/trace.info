@@ -785,7 +785,7 @@
     <nodeInfo nodeId="4372437818008128852" fileName="ConfStubSource.java" startLine="72" startPosition="187" endLine="73" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4372437818008128858" fileName="ConfStubSource.java" startLine="73" startPosition="24" endLine="74" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4372437818008128867" fileName="ConfStubSource.java" startLine="74" startPosition="68" endLine="75" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4372437818008128878" fileName="ConfStubSource.java" startLine="76" startPosition="9" endLine="77" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3003222830079983146" fileName="ConfStubSource.java" startLine="75" startPosition="62" endLine="76" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4372437818008129127" fileName="ConfStubSource.java" startLine="81" startPosition="91" endLine="82" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4372437818008128909" fileName="ConfStubSource.java" startLine="86" startPosition="60" endLine="87" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4372437818008128918" fileName="ConfStubSource.java" startLine="90" startPosition="60" endLine="91" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -811,8 +811,8 @@
     <nodeInfo nodeId="350283079053288408" fileName="ConfStubSource.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFastFindSupport#()Ljetbrains/mps/findUsages/fastfind/FastFindSupport;" />
     <nodeInfo nodeId="4372437818008128706" fileName="ConfStubSource.java" startLine="47" startPosition="0" endLine="52" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfStubSource#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Ljetbrains/mps/project/structure/model/ModelRoot;)V" />
     <nodeInfo nodeId="4372437818008128890" fileName="ConfStubSource.java" startLine="79" startPosition="5" endLine="84" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4372437818008128843" fileName="ConfStubSource.java" startLine="70" startPosition="50" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4372437818008128975" fileName="ConfStubSource.java" startLine="103" startPosition="7" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4372437818008128843" fileName="ConfStubSource.java" startLine="70" startPosition="50" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4372437818008128931" fileName="ConfStubSource.java" startLine="95" startPosition="28" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4372437818008128900" fileName="ConfStubSource.java" startLine="84" startPosition="6" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4372437818008128818" fileName="ConfStubSource.java" startLine="67" startPosition="61" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -844,7 +844,6 @@
     <scopeInfo nodeId="4372437818008128732" fileName="ConfStubSource.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="4372437818008128741" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="4372437818008128844" fileName="ConfStubSource.java" startLine="71" startPosition="28" endLine="75" endPosition="62" />
     <scopeInfo nodeId="4372437818008129090" fileName="ConfStubSource.java" startLine="80" startPosition="129" endLine="84" endPosition="0">
       <varInfo nodeId="4372437818008129093" varName="loc" />
       <varInfo nodeId="4372437818008129091" varName="origin" />
@@ -866,7 +865,8 @@
       <varInfo nodeId="4372437818008128727" varName="origin" />
       <varInfo nodeId="4372437818008128729" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="4372437818008128824" fileName="ConfStubSource.java" startLine="68" startPosition="70" endLine="77" endPosition="118">
+    <scopeInfo nodeId="4372437818008128844" fileName="ConfStubSource.java" startLine="71" startPosition="28" endLine="76" endPosition="120" />
+    <scopeInfo nodeId="4372437818008128824" fileName="ConfStubSource.java" startLine="68" startPosition="70" endLine="77" endPosition="9">
       <varInfo nodeId="4372437818008128834" varName="doc" />
       <varInfo nodeId="4372437818008128826" varName="id" />
     </scopeInfo>
