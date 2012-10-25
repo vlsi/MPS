@@ -21,7 +21,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
@@ -55,7 +56,15 @@ public final class BehaviorManager {
 
   @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return BehaviorReflection.invoke(returnType, node, methodName, parameters);
+    if (methodName.startsWith(BehaviorDescriptor.VIRTUAL_METHOD_PREFIX)) {
+      return BehaviorReflection.invokeVirtual(returnType, node, methodName, parameters);
+    } else {
+      if (node != null) {
+        return (T) new InterpretedBehaviorDescriptor(node.getConcept().getId()).invoke(node, methodName, parameters);
+      } else {
+        return BehaviorReflection.defaultValue(returnType);
+      }
+    }
   }
 
   @Deprecated

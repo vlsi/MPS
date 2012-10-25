@@ -40,8 +40,12 @@ public class BehaviorReflection {
     ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).initNode(node);
   }
 
-  public static Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+  public static Object invokeVirtual(@NotNull SNode node, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(node, methodName, parameters);
+  }
+
+  public static Object invokeNonVirtual(@NotNull SNode node, String conceptFqName, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
   }
 
   public static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
@@ -49,8 +53,12 @@ public class BehaviorReflection {
   }
 
   // todo: move to SNodeOperation? this methods for null safety
-  public static <T> T invoke(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
-    return node == null ? defaultValue(returnType) : (T) invoke(node, methodName, parameters);
+  public static <T> T invokeVirtual(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
+    return node == null ? defaultValue(returnType) : (T) invokeVirtual(node, methodName, parameters);
+  }
+
+  public static <T> T invokeNonVirtual(Class<T> returnType, SNode node, String conceptFqName, String methodName, Object[] parameters) {
+    return node == null ? defaultValue(returnType) : (T) invokeNonVirtual(node, conceptFqName, methodName, parameters);
   }
 
   public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
