@@ -16,18 +16,10 @@
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/lib/icons.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/resources.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/resources_en.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/lib/trove4j.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/lib/icons.jar" />
+    <stubModelEntry path="${mps_home}/lib/resources.jar" />
+    <stubModelEntry path="${mps_home}/lib/resources_en.jar" />
+    <stubModelEntry path="${mps_home}/lib/trove4j.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

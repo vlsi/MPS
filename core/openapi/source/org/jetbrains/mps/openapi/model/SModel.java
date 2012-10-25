@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import java.io.IOException;
+
 public interface SModel {
 
   SModelId getModelId();
@@ -43,4 +45,10 @@ public interface SModel {
   DataSource getSource();
 
   boolean isLoaded();
+
+  void load() throws IOException;
+
+  void save() throws IOException;
+
+  void unload();
 }

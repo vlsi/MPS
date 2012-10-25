@@ -84,7 +84,7 @@ public abstract class AbstractModule implements IModule {
 
   public final EditableSModelDescriptor createModel(String name, org.jetbrains.mps.openapi.persistence.ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation() + "[" + root.getKind() + "]");
+      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
     }
 
@@ -292,32 +292,15 @@ public abstract class AbstractModule implements IModule {
   public Collection<String> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
-
-    Collection<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-    Collection<String> result = new LinkedHashSet<String>(stubModelEntries.size());
-    for (ModelRoot entry : stubModelEntries) {
-      result.add(entry.getPath());
-    }
-    return result;
+    return descriptor.getAdditionalJavaStubPaths();
   }
 
   public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
-      Collection<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-      Collection<String> result = new LinkedHashSet<String>(stubModelEntries.size());
-      for (ModelRoot entry : stubModelEntries) {
-        result.add(entry.getPath());
-      }
-      return result;
+      return descriptor.getAdditionalJavaStubPaths();
     }
 
     return Collections.emptySet();
-  }
-
-  protected Collection<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return descriptor.getStubModelEntries();
   }
 
   //----classpath
@@ -353,9 +336,8 @@ public abstract class AbstractModule implements IModule {
     String libPath = dd == null ? FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase() : null;
 
     // stub libraries
-    List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
-    for (ModelRoot sme : descriptor.getStubModelEntries()) {
-      String path = sme.getPath();
+    List<String> toRemovePaths = new ArrayList<String>();
+    for (String path : descriptor.getAdditionalJavaStubPaths()) {
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
@@ -364,12 +346,12 @@ public abstract class AbstractModule implements IModule {
       if (dd == null && canonicalPath.startsWith(libPath)) {
         continue;
       }
-      toRemove.add(sme);
+      toRemovePaths.add(path);
     }
-    descriptor.getStubModelEntries().removeAll(toRemove);
+    descriptor.getAdditionalJavaStubPaths().removeAll(toRemovePaths);
 
     // stub model roots
-    toRemove.clear();
+    List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getModelRoots()) {
       if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
       String path = sme.getPath();
@@ -418,7 +400,7 @@ public abstract class AbstractModule implements IModule {
         ClassPathEntry jarEntry = new ClassPathEntry();
         jarEntry.setPath(jar.getPath());
         ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
-        descriptor.getStubModelEntries().add(mr);
+        descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
         descriptor.getModelRoots().add(mr);
       }
     }
@@ -477,22 +459,6 @@ public abstract class AbstractModule implements IModule {
   public void onModuleLoad() {
     updateSModelReferences();
     updateModuleReferences();
-
-    if (!isPackaged()) {
-      Set<ModelRoot> visited = new HashSet<ModelRoot>();
-      List<ModelRoot> remove = new ArrayList<ModelRoot>();
-      ModuleDescriptor descriptor = getModuleDescriptor();
-      if (descriptor == null) return;
-      for (ModelRoot e : descriptor.getStubModelEntries()) {
-        if (visited.contains(e)) {
-          remove.add(e);
-        }
-
-        visited.add(e);
-      }
-
-      descriptor.getStubModelEntries().removeAll(remove);
-    }
   }
 
   @Override

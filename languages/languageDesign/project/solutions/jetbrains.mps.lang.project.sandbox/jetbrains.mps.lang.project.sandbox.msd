@@ -6,11 +6,6 @@
       <manager moduleId="86ef8290-12bb-4ca7-947f-093788f263a9" className="jetbrains.mps.lang.project.stubs.ProjectStubs" />
     </modelRoot>
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/languages/util">
-      <manager moduleId="86ef8290-12bb-4ca7-947f-093788f263a9" className="jetbrains.mps.lang.project.stubs.ProjectStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
   <sourcePath />
   <usedLanguages>
     <usedLanguage>86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)</usedLanguage>

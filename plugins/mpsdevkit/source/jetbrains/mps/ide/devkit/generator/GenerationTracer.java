@@ -126,13 +126,13 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void closeInputNode(SNode node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.INPUT, new SNodePointer(node));
+    closeBranch(TracerNode.Kind.INPUT, new SNodePointer(node.getOldModel().getSModelReference(), node.getSNodeId()));
   }
 
   @Override
   public void popInputNode(SNode node) {
     if (!myActive) return;
-    pop(TracerNode.Kind.INPUT, new SNodePointer(node));
+    pop(TracerNode.Kind.INPUT, new SNodePointer(node.getOldModel().getSModelReference(), node.getSNodeId()));
   }
 
   @Override

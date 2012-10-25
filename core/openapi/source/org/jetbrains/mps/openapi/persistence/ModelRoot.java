@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public interface ModelRoot {
 
-  String getKind();
+  String getType();
 
   String getPresentation();
 
@@ -36,4 +36,8 @@ public interface ModelRoot {
   boolean canCreateModel(String modelName);
 
   SModel createModel(String modelName);
+
+  void save(Memento memento);
+
+  void load(Memento memento);
 }

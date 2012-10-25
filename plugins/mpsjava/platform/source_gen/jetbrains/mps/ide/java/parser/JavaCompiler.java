@@ -46,10 +46,8 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.core.compiler.IProblem;
 import javax.swing.JOptionPane;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.project.structure.model.ModelRootUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Comparator;
@@ -351,17 +349,17 @@ public class JavaCompiler {
         if (!(list.isEmpty())) {
           for (IClassPathItem classpath : list) {
             myClassPathItem.add(classpath);
-            ClassPathEntry cpe = new ClassPathEntry();
+            String cpe;
             if (classpath instanceof FileClassPathItem) {
-              cpe.setPath(((FileClassPathItem) classpath).getPath());
+              cpe = ((FileClassPathItem) classpath).getPath();
             } else
             if (classpath instanceof JarFileClassPathItem) {
-              cpe.setPath(((JarFileClassPathItem) classpath).getFile().getAbsolutePath());
+              cpe = ((JarFileClassPathItem) classpath).getFile().getAbsolutePath();
             } else {
               cpe = null;
             }
             if (cpe != null) {
-              myModule.getModuleDescriptor().getStubModelEntries().add(ModelRootUtil.fromClassPathEntry(cpe));
+              myModule.getModuleDescriptor().getAdditionalJavaStubPaths().add(cpe);
             }
           }
           return true;

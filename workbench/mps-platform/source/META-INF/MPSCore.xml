@@ -70,6 +70,8 @@
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
     <extensionPoint qualifiedName="com.intellij.mps.VisibleModuleMask" beanClass="jetbrains.mps.VisibleModuleMask"/>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootFactory" beanClass="jetbrains.mps.ide.persistence.ModelRootFactoryEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootSettings" beanClass="jetbrains.mps.ide.persistence.ModelRootSettingsEP"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

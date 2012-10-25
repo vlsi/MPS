@@ -814,7 +814,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Branding", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_38 = quotedNode_1;
         quotedNode1_38.setProperty("minor", "0");
-        quotedNode1_38.setProperty("name", "MPS");
+        quotedNode1_38.setProperty("name", "Standalone");
         quotedNode1_38.setProperty("major", "1");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);

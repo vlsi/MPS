@@ -33,14 +33,10 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -630,14 +626,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
-    node.visitReferences(new ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference reference) {
-        if (reference instanceof PostponedReference) {
-          ((PostponedReference) reference).validateAndReplace();
-        }
-        return true;
-      }
-    });
+    for (SReference ref : node.getReferences()) {
+      if (!(ref instanceof PostponedReference)) continue;
+      ((PostponedReference) ref).validateAndReplace();
+    }
 
     for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       revalidateAllReferences(((SNode) child));

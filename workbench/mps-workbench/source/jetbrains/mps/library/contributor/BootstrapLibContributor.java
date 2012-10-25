@@ -16,6 +16,7 @@
 package jetbrains.mps.library.contributor;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.PathManager;
@@ -25,6 +26,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BootstrapLibContributor implements LibraryContributor, ApplicationComponent {
+
+  public BootstrapLibContributor(MPSCoreComponents coreComponents) {
+  }
+
   //not public
   public Set<LibDescriptor> getLibraries() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();

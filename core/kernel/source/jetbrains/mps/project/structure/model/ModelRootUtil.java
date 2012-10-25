@@ -18,19 +18,7 @@ package jetbrains.mps.project.structure.model;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.smodel.LanguageID;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class ModelRootUtil {
-  public static List<ModelRoot> filterJava(Iterable<ModelRoot> list) {
-    List<ModelRoot> result = new ArrayList<ModelRoot>();
-    for (ModelRoot e : list) {
-      if (LanguageID.JAVA_MANAGER.equals(e.getManager())) {
-        result.add(e);
-      }
-    }
-    return result;
-  }
 
   public static ModelRoot fromClassPathEntry(ClassPathEntry cpe) {
     ModelRoot result = new ModelRoot();

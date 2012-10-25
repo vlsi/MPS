@@ -15,13 +15,15 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class ShowNodeType_Action extends BaseAction {
@@ -76,26 +78,34 @@ public class ShowNodeType_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<TypeCheckingContext> typeCheckingContext = new Wrappers._T<TypeCheckingContext>();
-      final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          typeCheckingContext.value = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
-          type.value = typeCheckingContext.value.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
-        }
-      });
-      if (type.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
-        return;
-      }
-      MyBaseNodeDialog dialog;
       final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+      final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
+      try {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            typeCheckingContext.value = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
+            type.value = typeCheckingContext.value.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+            reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+
+            if (type.value != null) {
+              SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+              auxModel.addRoot(type.value);
+            }
+          }
+        });
+
+        if (type.value == null) {
+          JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+          return;
         }
-      });
-      dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value);
-      dialog.showDialog();
+
+        new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).showDialog();
+      } finally {
+        if (type.value != null) {
+          SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
+          auxModel.removeRoot(type.value);
+        }
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowNodeType", t);

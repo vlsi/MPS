@@ -47,7 +47,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ImplementBehaviorMethod_Action());
     addAction(new InstallIDEAPlugin_Action());
     addAction(new LanguageHierarchy_Action());
-    addAction(new LanguagePaths_Action());
     addAction(new NavigateToGeneratedQuery_Action());
     addAction(new NewAccessoryModel_Action());
     addAction(new NewDevKit_Action());

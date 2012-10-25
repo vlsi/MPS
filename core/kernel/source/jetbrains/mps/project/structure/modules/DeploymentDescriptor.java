@@ -53,6 +53,7 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     myType = type;
   }
 
+  @Deprecated
   public List<String> getRuntimeJars() {
     return myRuntime;
   }

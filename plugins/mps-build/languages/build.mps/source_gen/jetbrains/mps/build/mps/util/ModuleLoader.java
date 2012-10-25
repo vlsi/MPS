@@ -36,13 +36,11 @@ import java.util.HashSet;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.ProjectPathUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
@@ -434,25 +432,6 @@ public class ModuleLoader {
       SLinkOperations.setTarget(ul, "solution", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).addElement(ul);
     }
-    for (ModelRoot entry : descriptor.getRuntimeStubModels()) {
-      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
-        continue;
-      }
-
-      String path = entry.getPath();
-      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
-      if (p == null) {
-        continue;
-      }
-
-      if (path.endsWith(".jar")) {
-        SNode jar = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", null);
-        SLinkOperations.setTarget(jar, "path", p, true);
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).addElement(jar);
-      } else {
-        report("only jar runtimes are supported in runtime stubs, found: " + path, myOriginalModule);
-      }
-    }
   }
 
   private void checkRuntime() {
@@ -470,36 +449,6 @@ public class ModuleLoader {
       }))) {
 
         report("runtime solution should be extracted into build script: " + module.toString(), myOriginalModule);
-      }
-    }
-    for (ModelRoot entry : descriptor.getRuntimeStubModels()) {
-      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
-        continue;
-      }
-
-      String path = entry.getPath();
-      List<SNode> p = convertPath(path, myOriginalModule);
-      if (p == null) {
-        continue;
-      }
-
-      if (path.endsWith(".jar")) {
-        final Set<String> localPath = SetSequence.fromSet(new HashSet<String>());
-        ListSequence.fromList(p).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            SetSequence.fromSet(localPath).addElement(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(it));
-          }
-        });
-        if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime") && SetSequence.fromSet(localPath).contains(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"), "path", true)));
-          }
-        }))) {
-          report("runtime jar should be extracted into build script: " + path, myOriginalModule);
-        }
-
-      } else {
-        report("only jar runtimes are supported in runtime stubs, found: " + path, myOriginalModule);
       }
     }
   }
@@ -644,12 +593,7 @@ public class ModuleLoader {
     }
 
     // java stubs: jars 
-    for (ModelRoot entry : myModuleDescriptor.getStubModelEntries()) {
-      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
-        continue;
-      }
-
-      String path = entry.getPath();
+    for (String path : myModuleDescriptor.getAdditionalJavaStubPaths()) {
       SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
@@ -663,7 +607,7 @@ public class ModuleLoader {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0g0r0q(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true)), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0q(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true)), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -727,12 +671,7 @@ public class ModuleLoader {
     }
 
     // java stubs: jars 
-    for (ModelRoot entry : myModuleDescriptor.getStubModelEntries()) {
-      if (!(LanguageID.JAVA_MANAGER.equals(entry.getManager()))) {
-        continue;
-      }
-
-      String path = entry.getPath();
+    for (String path : myModuleDescriptor.getAdditionalJavaStubPaths()) {
       SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
@@ -851,7 +790,7 @@ public class ModuleLoader {
     ));
   }
 
-  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0g0r0q(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0q(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
