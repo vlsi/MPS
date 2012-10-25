@@ -16,7 +16,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -43,12 +46,24 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         null
       );
       if (!(it.hasNext()) && (mtd != null)) {
-        List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
+        List<SNode> paramTypes = new ArrayList<SNode>();
+
+        Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(ct, subs);
+
         for (SNode p : SLinkOperations.getTargets(mtd, "parameter", true)) {
-          ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
+          SNode pt = SLinkOperations.getTarget(p, "type", true);
+          if (SNodeOperations.isInstanceOf(pt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+            pt = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+          }
+          ListSequence.fromList(paramTypes).addElement(pt);
         }
-        SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), ct);
-        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0d0e0c0a().createNode(paramTypes, resType, typeCheckingContext));
+
+        SNode rt = SLinkOperations.getTarget(mtd, "returnType", true);
+        if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          rt = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+        }
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0j0e0c0a().createNode(paramTypes, rt, typeCheckingContext));
       }
     }
     return supertypes;
@@ -69,8 +84,8 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     return true;
   }
 
-  public static class QuotationClass_qen718_a1a0d0e0c0a {
-    public QuotationClass_qen718_a1a0d0e0c0a() {
+  public static class QuotationClass_qen718_a1a0j0e0c0a {
+    public QuotationClass_qen718_a1a0j0e0c0a() {
     }
 
     public SNode createNode(Object parameter_6, Object parameter_7, final TypeCheckingContext typeCheckingContext) {
