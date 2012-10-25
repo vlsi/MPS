@@ -43,7 +43,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
 
   public BaseBehaviorDescriptor(String conceptFqName) {
     this.conceptFqName = conceptFqName;
-    this.constructors = calculateConstructors(conceptFqName);
+    this.constructors = calculateConstructors(getConceptFqName());
   }
 
   @Override

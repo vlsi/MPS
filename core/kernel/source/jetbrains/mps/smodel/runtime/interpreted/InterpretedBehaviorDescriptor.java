@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
@@ -31,7 +32,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
 
   public InterpretedBehaviorDescriptor(String fqName) {
     super(fqName);
-    methods = collectMethods(fqName);
+    methods = collectMethods(getConceptFqName());
   }
 
   @Override
@@ -41,8 +42,12 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
       throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
     }
 
+    Object[] params = new Object[parameters.length + 1];
+    params[0] = node;
+    System.arraycopy(parameters, 0, params, 1, parameters.length);
+
     try {
-      return method.invoke(this, parameters);
+      return method.invoke(this, params);
     } catch (IllegalAccessException e) {
       throw new RuntimeException(e);
     } catch (InvocationTargetException e) {
@@ -82,8 +87,10 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
             Class cls = language.getClass(behaviorClass);
             if (cls != null) {
               for (Method method : cls.getMethods()) {
-                if (!methods.containsKey(method.getName())) {
-                  methods.put(method.getName(), method);
+                if (method.getName().startsWith("call_") || method.getName().startsWith("virtual_")) {
+                  if (!methods.containsKey(method.getName())) {
+                    methods.put(method.getName(), method);
+                  }
                 }
               }
             }
@@ -105,6 +112,11 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
             }
             processed.add(currentConcept);
           }
+
+          if (newFrontier.size() == 0 && !processed.contains(SModelUtil.getBaseConcept())) {
+            newFrontier.add(SModelUtil.getBaseConcept());
+          }
+
           concepts = newFrontier;
         }
 
