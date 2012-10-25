@@ -15,8 +15,24 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+
+import static jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.behaviorClassByConceptFqName;
 
 @Deprecated
 public final class BehaviorManager {
@@ -44,11 +60,80 @@ public final class BehaviorManager {
 
   @Deprecated
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+    return _invokeInternal(returnType, node, callerConceptFqName, false, methodName, parametersTypes, parameters);
   }
 
   @Deprecated
   public <T> T invokeSuperNew(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Class[] parametersTypes, Object... parameters) {
     return BehaviorReflection.invokeSuper(returnType, node, targetSuperFqName, methodName, parameters);
+  }
+
+  private Method getMethod(final SNode concept, final String methodName, final Class[] parameterTypes) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
+      public Method compute() {
+        Language l = SModelUtil.getDeclaringLanguage(concept);
+
+        Method method = null;
+        String fqName = InternUtil.intern(NameUtil.nodeFQName(concept));
+
+        String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+        try {
+          Class cls = l.getClass(behaviorClass);
+          if (cls != null) {
+            method = cls.getMethod(methodName, parameterTypes);
+          }
+        } catch (NoSuchMethodException e) {
+          //ignore too
+        }
+
+        if (method != null) {
+          method.setAccessible(true);
+        }
+
+        return method;
+      }
+    });
+  }
+
+  @Deprecated
+  private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, @NotNull String conceptFqName, boolean includeSelf, String methodName, Class[] parametersTypes, Object... parameters) {
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (concept == null) {
+      concept = SModelUtil.getBaseConcept();
+    }
+
+    List<SNode> superConcepts;
+    if (includeSelf) {
+      superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
+    } else {
+      superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(concept));
+      superConcepts.remove(concept);
+    }
+
+    Method method = null;
+    Class[] parameterTypeArray = parametersTypes;
+
+    for (SNode conceptDeclaration : superConcepts) {
+      method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
+      if (method != null) {
+        break;
+      }
+    }
+
+    if (method != null) {
+      Object[] params = new Object[parameters.length + 1];
+      params[0] = node;
+      System.arraycopy(parameters, 0, params, 1, parameters.length);
+      try {
+        return (T) method.invoke(null, params);
+      } catch (IllegalAccessException e) {
+        throw new RuntimeException(e);
+      } catch (InvocationTargetException e) {
+        throw new RuntimeException(e);
+      }
+    }
+
+    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConcept().getId() + ", conceptNode == null: " + (concept == null));
   }
 }
