@@ -27,14 +27,6 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     super(fqName);
   }
 
-  public void initNode(SNode node) {
-    if (node == null) {
-      throw new IllegalArgumentException("initNode on null node");
-    } else {
-      OldBehaviorManager.getInstance().initNode(node);
-    }
-  }
-
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
     // todo: !

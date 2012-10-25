@@ -36,10 +36,10 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class OldBehaviorManager implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(OldBehaviorManager.class);
+import static jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.behaviorClassByConceptFqName;
 
-  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
+public final class OldBehaviorManager implements CoreComponent {
+
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
@@ -81,92 +81,6 @@ public final class OldBehaviorManager implements CoreComponent {
     myConstructors.clear();
   }
 
-  private static List<Method> calculateConstructors(SNode concept, Language language) {
-    List<Method> methodsToCall = new ArrayList<Method>();
-    Set<SNode> processed = new HashSet<SNode>();
-
-    List<SNode> concepts = Collections.singletonList(concept);
-    while (!concepts.isEmpty()) {
-      List<SNode> newFrontier = new ArrayList<SNode>();
-      for (SNode currentConcept : concepts) {
-        assert currentConcept != null;
-        if (processed.contains(currentConcept)) {
-          continue;
-        }
-        String fqName = NameUtil.nodeFQName(currentConcept);
-        String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-        try {
-          Class cls = language.getClass(behaviorClass);
-          if (cls != null) {
-            Method method = cls.getMethod("init", SNode.class);
-            method.setAccessible(true);
-            methodsToCall.add(method);
-          }
-        } catch (NoSuchMethodException e) {
-          //ignore
-        }
-
-        if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
-          for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(currentConcept)) {
-            if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-            newFrontier.add(interfaceConcept);
-          }
-          SNode parentConcept = SNodeUtil.getConceptDeclaration_Extends(currentConcept);
-          if (parentConcept != null && !processed.contains(parentConcept)) {
-            newFrontier.add(parentConcept);
-          }
-        } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(currentConcept)) {
-          for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(currentConcept)) {
-            if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-            newFrontier.add(interfaceConcept);
-          }
-        }
-        processed.add(currentConcept);
-      }
-      concepts = newFrontier;
-    }
-
-    return methodsToCall;
-  }
-
-  public void initNode(@NotNull final SNode node) {
-    String conceptFqName = InternUtil.intern(node.getConcept().getId());
-    String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConcept().getId());
-    final Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-
-    List<Method> methodsToCall;
-
-    methodsToCall = myConstructors.get(conceptFqName);
-    if (methodsToCall == null) {
-      methodsToCall = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<Method>>() {
-        @Override
-        public List<Method> compute() {
-          return calculateConstructors(((SConceptNodeAdapter) node.getConcept()).getConcept(), language);
-        }
-      });
-      myConstructors.putIfAbsent(conceptFqName, methodsToCall);
-    }
-
-    for (int i = methodsToCall.size() - 1; i >= 0; i--) {
-      try {
-        methodsToCall.get(i).invoke(null, node);
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        e.printStackTrace();
-      }
-    }
-  }
-
-  private static String behaviorClassByConceptFqName(@NotNull String fqName) {
-    Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    if (m.matches()) {
-      return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
-    } else {
-      throw new RuntimeException();
-    }
-  }
 
   public void reloadAll() {
   }
