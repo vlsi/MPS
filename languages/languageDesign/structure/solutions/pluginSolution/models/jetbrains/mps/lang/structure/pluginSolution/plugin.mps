@@ -75,13 +75,13 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841902894">
       <property name="name" nameId="tpck.1169194664001" value="ShowHelpForNode" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Help for Node" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Help for Node" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841902928">
       <property name="name" nameId="tpck.1169194664001" value="ShowDefaultHelp" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Default Help" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Default Help" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5487985028841902996">
       <property name="name" nameId="tpck.1169194664001" value="ShowHelp" />
@@ -92,13 +92,13 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841903284">
       <property name="name" nameId="tpck.1169194664001" value="ShowHelpForRoot" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Help for Root" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Help for Root" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841903318">
       <property name="name" nameId="tpck.1169194664001" value="ShowHelpForAspect" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Help for Aspect" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Help for Aspect" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="5487985028841903359">
       <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
@@ -107,8 +107,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841904024">
       <property name="name" nameId="tpck.1169194664001" value="MoveProperyUp" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Property Up" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5487985028841904090">
       <property name="name" nameId="tpck.1169194664001" value="RefactoringAdditions" />
@@ -117,32 +117,32 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841904101">
       <property name="name" nameId="tpck.1169194664001" value="RenameConcept" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Concept" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841904169">
       <property name="name" nameId="tpck.1169194664001" value="RenameProperty" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Property" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841904214">
       <property name="name" nameId="tpck.1169194664001" value="MoveLinkUp" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Link Up" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841904319">
       <property name="name" nameId="tpck.1169194664001" value="RenameLink" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Link" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841904387">
       <property name="name" nameId="tpck.1169194664001" value="MoveConcepts" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Concepts" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="7972144475523791621">
       <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="tpcc.7972144475523726200" resolveInfo="NodeRenamer" />
@@ -153,8 +153,8 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967702201" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2928721655729225312">
       <property name="name" nameId="tpck.1169194664001" value="RemoveConceptProperties" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Get rid of concept properties" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2928721655729253202">
       <property name="name" nameId="tpck.1169194664001" value="ConceptPropertiesHelper" />
@@ -4287,14 +4287,6 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2900100530630701242">
-                                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2900100530630701262">
-                                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2900100530630701243">
-                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2900100530630701231" resolveInfo="alias" />
-                                      </node>
-                                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_DeleteOperation" typeId="tp25.1140133623887" id="2900100530630701268" />
-                                    </node>
-                                  </node>
                                 </node>
                               </node>
                               <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="2928721655729489804">
@@ -4343,11 +4335,15 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8443932866380789609">
-                                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8443932866380789610">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8443932866380740887" resolveInfo="makeAll" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8443932866380789611">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8189222906566646477" resolveInfo="searchResults" />
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="9024044263100952168">
+                                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="9024044263100952169">
+                                  <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8443932866380789609">
+                                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8443932866380789610">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8443932866380740887" resolveInfo="makeAll" />
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8443932866380789611">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8189222906566646477" resolveInfo="searchResults" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>

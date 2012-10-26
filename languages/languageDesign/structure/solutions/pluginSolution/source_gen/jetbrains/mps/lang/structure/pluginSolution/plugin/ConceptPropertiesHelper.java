@@ -111,7 +111,6 @@ public class ConceptPropertiesHelper {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
                 }
               });
-              SNodeOperations.deleteNode(alias);
             }
             for (SNode node : SetSequence.fromSet(accessUsages)) {
               replaceAccessUsages(node);
@@ -120,7 +119,7 @@ public class ConceptPropertiesHelper {
               replaceCellUsages(node);
             }
             refactoringViewItem.close();
-            makeAll(searchResults);
+            // <node> 
           }
         });
       }
