@@ -937,7 +937,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu_a0g1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu_a0i1c0()}));
       }
     }
 
@@ -981,7 +981,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu_a0j1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new ConceptDeclaration_Editor.ConceptDeclaration_generic_cellMenu_a0l1c0()}));
       }
     }
 
