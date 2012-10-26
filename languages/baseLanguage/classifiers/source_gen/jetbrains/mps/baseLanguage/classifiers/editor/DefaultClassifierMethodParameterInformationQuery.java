@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.editor;
 
 import jetbrains.mps.editor.runtime.ParametersInformation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -52,7 +52,7 @@ public class DefaultClassifierMethodParameterInformationQuery extends Parameters
     return SLinkOperations.getTarget(node, "member", false) == parameterObject;
   }
 
-  private SNode getSelectedActualArgument(jetbrains.mps.openapi.editor.EditorContext editorContext) {
+  private SNode getSelectedActualArgument(EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
       return null;
