@@ -24,6 +24,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class ManagerTableCellEditor extends DefaultCellEditor {
   private JComboBox myCombo;
@@ -50,7 +53,9 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
       public void run() {
         for (SNode node : ListSequence.fromList(getManagerNodes(context))) {
           Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
-          ModelRootManager manager = new ModelRootManager(language.getModuleReference().getModuleId().toString(), SNodeOperations.getModel(node).getLongName() + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
+
+          ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor().getId().toString(), SNodeOperations.getModel(node).getLongName() + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
+
           ListSequence.fromList(result).addElement(manager);
         }
       }
@@ -73,6 +78,20 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
           }
           SModel model = stubsAspect.getSModel();
           result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
+        }
+
+        // plus solutions 
+        for (Solution s : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
+          if (!(SolutionKind.NONE.equals(s.getModuleDescriptor().getKind()))) {
+            // a plugin solution 
+
+            for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(s)) {
+              if (smd.getLongName().endsWith(".stubManagers")) {
+                SModel m = smd.getSModel();
+                ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration")));
+              }
+            }
+          }
         }
       }
     });

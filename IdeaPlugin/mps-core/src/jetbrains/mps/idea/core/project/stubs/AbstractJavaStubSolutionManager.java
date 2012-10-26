@@ -20,8 +20,10 @@ import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
@@ -32,14 +34,27 @@ import org.jetbrains.annotations.NotNull;
  * Date: 4/30/12
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
-  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
+
+  private static ModelRootManager defaultStubMgr = LanguageID.JAVA_MANAGER;
+
+  protected ModelRootManager getModelRootManager() {
+    // default stub model root manager
+    return defaultStubMgr;
+  }
+
+  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots, ModelRootManager rootMgr) {
     for (VirtualFile f : roots) {
-      ModelRoot modelRoot = new ModelRoot(getLocalPath(f), LanguageID.JAVA_MANAGER);
+      ModelRoot modelRoot = new ModelRoot(getLocalPath(f), rootMgr);
       if (solutionDescriptor.getModelRoots().contains(modelRoot)) {
         continue;
       }
       solutionDescriptor.getModelRoots().add(modelRoot);
     }
+  }
+
+  protected void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
+    ModelRootManager rootMgr = getModelRootManager();
+    addModelRoots(solutionDescriptor, roots, rootMgr);
   }
 
   private static String getLocalPath(VirtualFile f) {
@@ -79,12 +94,12 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
   protected abstract void dispose();
 
-  protected void addSolution(String name, VirtualFile[] roots) {
+  protected Solution addSolution(String name, VirtualFile[] roots) {
     SolutionDescriptor sd = new SolutionDescriptor();
     sd.setNamespace(name);
     sd.setId(ModuleId.foreign(name));
     addModelRoots(sd, roots);
-    StubSolution.newInstance(sd, this);
+    return StubSolution.newInstance(sd, this);
   }
 
   protected void removeSolution(String name) {

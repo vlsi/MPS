@@ -78,6 +78,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.findUsages.SearchType" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.TreeHighlighterExtension" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScopeMinusTransient" />
@@ -171,6 +172,7 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.HierarchyModelListener" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.TreeHighlighterExtension" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />

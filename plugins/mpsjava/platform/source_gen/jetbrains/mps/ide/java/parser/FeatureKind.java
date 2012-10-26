@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.parser;
 
 
 public enum FeatureKind {
+  CLASS_STUB(),
   CLASS(),
   NESTED_CLASS(),
   FIELD(),
