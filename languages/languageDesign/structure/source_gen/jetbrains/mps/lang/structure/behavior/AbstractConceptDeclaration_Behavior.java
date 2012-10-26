@@ -19,9 +19,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -125,6 +125,13 @@ public class AbstractConceptDeclaration_Behavior {
     }
 
     return result;
+  }
+
+  public static String call_getPresentation_2450081617266859256(SNode thisNode) {
+    return (SPropertyOperations.getString(thisNode, "conceptAlias") != null ?
+      SPropertyOperations.getString(thisNode, "conceptAlias") :
+      SPropertyOperations.getString(thisNode, "name")
+    );
   }
 
   public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context) {
