@@ -20,7 +20,6 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;

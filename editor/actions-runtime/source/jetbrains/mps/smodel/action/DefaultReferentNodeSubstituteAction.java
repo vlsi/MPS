@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -99,12 +98,8 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode sourceNodePeer = getSourceNode();
     SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
-    if (!nodeCopyRoot.isRoot()) {
-      auxModel.addRoot(nodeCopyRoot);
-    }
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
     SNode sourceNode = mapping.get(sourceNodePeer);
     SNode nodeToEquatePeer = sourceNodePeer;
@@ -122,10 +117,6 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     }
     sourceNode.setReferenceTarget(role, (SNode) getParameterObject());
     SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
-    auxModel.addRoot(nodeToEquateCopy);
-    SNode type = TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
-    auxModel.removeRoot(nodeToEquateCopy);
-    auxModel.removeRoot(nodeCopyRoot);
-    return type;
+    return TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
   }
 }

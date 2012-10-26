@@ -484,7 +484,7 @@ public class State {
 
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-      myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+      null, GlobalScope.getInstance(), false);
     //todo this code should be moved into MPS
     typeVar.setProperty(SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
@@ -534,7 +534,7 @@ public class State {
   public void initHole(SNode hole) {
     SNode holeVar = typeOf(hole, null);
     SNode holeType = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType",
-      myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+      null, GlobalScope.getInstance(), false);
     myNodeMaps.addNodeToType(hole, holeVar, null);
     myEquations.addEquation(holeVar, holeType, null);
     myHole = hole;

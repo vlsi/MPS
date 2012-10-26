@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 public final class SConceptOperations {
   private SConceptOperations() {
@@ -136,11 +135,11 @@ public final class SConceptOperations {
   }
 
   public static SNode createNewNode(String conceptFqName) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(AuxilaryRuntimeModel.getDescriptor().getSModel(), conceptFqName);
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
   }
 
   @Deprecated
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(AuxilaryRuntimeModel.getDescriptor().getSModel(), conceptFqName);
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
   }
 }
