@@ -28,25 +28,6 @@ import java.util.List;
  * Evgeny Gryaznov, Feb 17, 2010
  */
 public class NullGenerationTracer implements IGenerationTracer {
-  @Override
-  public void pushInputNode(SNode node) {
-
-  }
-
-  @Override
-  public void closeInputNode(SNode node) {
-
-  }
-
-  @Override
-  public void popInputNode(SNode node) {
-
-  }
-
-  @Override
-  public void pushOutputNode(SNode node) {
-
-  }
 
   public final static IGenerationTracer INSTANCE = new NullGenerationTracer();
 
