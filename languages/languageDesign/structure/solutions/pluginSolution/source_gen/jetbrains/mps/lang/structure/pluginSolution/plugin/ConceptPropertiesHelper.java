@@ -43,12 +43,6 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
@@ -109,12 +103,6 @@ public class ConceptPropertiesHelper {
           public void run() {
             for (SNode concept : SetSequence.fromSet(conceptUsages)) {
               SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
-              SNode alias = ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptProperty", true)).findFirst(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
-                }
-              });
-              SNodeOperations.deleteNode(alias);
             }
             for (SNode node : SetSequence.fromSet(accessUsages)) {
               replaceAccessUsages(node);
@@ -124,6 +112,14 @@ public class ConceptPropertiesHelper {
             }
             refactoringViewItem.close();
             makeAll(searchResults);
+            for (SNode concept : SetSequence.fromSet(conceptUsages)) {
+              SNode alias = ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptProperty", true)).findFirst(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
+                }
+              });
+              SNodeOperations.deleteNode(alias);
+            }
           }
         });
       }
@@ -206,51 +202,6 @@ public class ConceptPropertiesHelper {
       return false;
     }
     return true;
-  }
-
-  private void migrateAlias(List<SNode> affectedNodes) {
-    Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-    List<SModel> modelsToGenerate = ListSequence.fromList(new LinkedList<SModel>());
-    for (SNode node : ListSequence.fromList(affectedNodes)) {
-      SetSequence.fromSet(results).addElement(new SearchResult<SNode>(node, ""));
-      ListSequence.fromList(modelsToGenerate).addElement(node.getModel());
-    }
-    SearchResults searchResults = new SearchResults(SetSequence.fromSet(new HashSet()), SetSequence.fromSet(results).toListSequence());
-    RefactoringViewAction okAction = new RefactoringViewAction() {
-      public void performAction(final RefactoringViewItem refactoringViewItem) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          public void run() {
-
-            refactoringViewItem.close();
-          }
-        });
-      }
-    };
-    RefactoringAccess.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(project), okAction, searchResults, false, "Remove Alias");
-
-  }
-
-  public Set<SNode> affectedNodes() {
-    Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
-    for (IModule module : ListSequence.fromList(project.getModules())) {
-      if (!(module instanceof Language)) {
-        continue;
-      }
-      ModuleDescriptor descriptor = module.getModuleDescriptor();
-      if (descriptor == null) {
-        continue;
-      }
-
-      for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        SModel model = modelDescriptor.getSModel();
-        for (SNode node : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          if (node.findConceptProperty("alias") != null) {
-            SetSequence.fromSet(results).addElement(node);
-          }
-        }
-      }
-    }
-    return results;
   }
 
   public static class QuotationClass_azpnkk_a0a0a0e0c {
