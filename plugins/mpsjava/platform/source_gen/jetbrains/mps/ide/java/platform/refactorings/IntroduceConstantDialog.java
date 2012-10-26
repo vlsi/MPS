@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.platform.refactorings;
 
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;

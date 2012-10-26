@@ -5,9 +5,9 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorCell;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.ModelAccess;
@@ -49,7 +49,7 @@ public class ChangesStripActionsHelper {
     if (group == null) {
       return;
     }
-    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     goToY(editorComponent, (int) group.getBounds(true).end());
     goToY(editorComponent, (int) group.getBounds(true).start());
     check_ikrecr_a5a2(getPainter(editorContext), group);
@@ -64,7 +64,7 @@ public class ChangesStripActionsHelper {
 
   @Nullable
   private static EditorHighlighter getHighlighter(EditorContext editorContext) {
-    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
+    EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     return check_ikrecr_a1a4(editorContext.getOperationContext().getComponent(EditorHighlighterFactory.class), editorComponent);
   }
 

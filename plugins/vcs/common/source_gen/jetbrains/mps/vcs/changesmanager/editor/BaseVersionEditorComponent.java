@@ -24,7 +24,7 @@ import javax.swing.BorderFactory;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BaseVersionEditorComponent extends EditorComponent implements EditorMessageOwner {

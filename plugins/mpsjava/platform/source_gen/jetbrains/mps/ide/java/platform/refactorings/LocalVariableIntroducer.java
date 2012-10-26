@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.platform.refactorings;
 
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Frame;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -79,6 +79,6 @@ public class LocalVariableIntroducer {
   }
 
   private RelativePoint getRelativePoint() {
-    return new RelativePoint(myEditorComponent, myEditorContext.getContextCell().getBounds().getLocation());
+    return new RelativePoint(myEditorComponent, ((EditorCell) myEditorContext.getContextCell()).getBounds().getLocation());
   }
 }

@@ -206,11 +206,11 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) context, node, "    ");
+      return new EditorCell_Error(context, node, "    ");
     }
 
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
-      return new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
+      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }

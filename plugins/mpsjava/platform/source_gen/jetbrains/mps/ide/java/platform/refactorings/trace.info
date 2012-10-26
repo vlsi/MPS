@@ -23,7 +23,7 @@
     <nodeInfo nodeId="2370003301081653" fileName="IntroduceConstantDialog.java" startLine="43" startPosition="33" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2370003301081620" fileName="IntroduceConstantDialog.java" startLine="36" startPosition="26" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2370003301081571" fileName="IntroduceConstantDialog.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoring#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceVariableRefactoring;" />
-    <nodeInfo nodeId="2370003301081659" fileName="IntroduceConstantDialog.java" startLine="16" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceConstantDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceConstantRefactoring;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2370003301081659" fileName="IntroduceConstantDialog.java" startLine="16" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceConstantDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceConstantRefactoring;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2370003301081579" fileName="IntroduceConstantDialog.java" startLine="26" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
     <scopeInfo nodeId="2370003301081574" fileName="IntroduceConstantDialog.java" startLine="23" startPosition="56" endLine="24" endPosition="30" />
     <scopeInfo nodeId="2370003301081621" fileName="IntroduceConstantDialog.java" startLine="37" startPosition="43" endLine="38" endPosition="31" />
@@ -98,7 +98,7 @@
     <nodeInfo nodeId="2370003301081868" fileName="IntroduceFieldDialog.java" startLine="61" startPosition="48" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2370003301082001" fileName="IntroduceFieldDialog.java" startLine="92" startPosition="26" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2370003301081708" fileName="IntroduceFieldDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoring#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceVariableRefactoring;" />
-    <nodeInfo nodeId="2370003301081685" fileName="IntroduceFieldDialog.java" startLine="24" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceFieldDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceFieldRefactoring;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2370003301081685" fileName="IntroduceFieldDialog.java" startLine="24" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceFieldDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceFieldRefactoring;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2370003301081769" fileName="IntroduceFieldDialog.java" startLine="41" startPosition="104" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2370003301081862" fileName="IntroduceFieldDialog.java" startLine="60" startPosition="51" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
     <nodeInfo nodeId="2370003301081854" fileName="IntroduceFieldDialog.java" startLine="59" startPosition="22" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -216,7 +216,7 @@
     <nodeInfo nodeId="2370003301082134" fileName="IntroduceVariableDialog.java" startLine="57" startPosition="56" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="2370003301082404" fileName="IntroduceVariableDialog.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2309025945974889332" fileName="IntroduceVariableDialog.java" startLine="150" startPosition="64" endLine="154" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2370003301082352" fileName="IntroduceVariableDialog.java" startLine="37" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceVariableDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2370003301082352" fileName="IntroduceVariableDialog.java" startLine="37" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceVariableDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2370003301082124" fileName="IntroduceVariableDialog.java" startLine="56" startPosition="31" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2370003301082277" fileName="IntroduceVariableDialog.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addIsFinal#(Ljava/awt/GridBagConstraints;)V" />
     <nodeInfo nodeId="2370003301082300" fileName="IntroduceVariableDialog.java" startLine="91" startPosition="57" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -322,11 +322,11 @@
     <nodeInfo nodeId="2370003301082695" fileName="LocalVariableIntroducer.java" startLine="72" startPosition="45" endLine="73" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2370003301082702" fileName="LocalVariableIntroducer.java" startLine="73" startPosition="57" endLine="74" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2370003301082721" fileName="LocalVariableIntroducer.java" startLine="75" startPosition="14" endLine="76" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082765" fileName="LocalVariableIntroducer.java" startLine="81" startPosition="44" endLine="82" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2370003301082765" fileName="LocalVariableIntroducer.java" startLine="81" startPosition="44" endLine="82" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2370003301082636" fileName="LocalVariableIntroducer.java" startLine="53" startPosition="10" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2370003301082719" fileName="LocalVariableIntroducer.java" startLine="75" startPosition="12" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2370003301082762" fileName="LocalVariableIntroducer.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRelativePoint#()Lcom/intellij/ui/awt/RelativePoint;" />
-    <nodeInfo nodeId="2370003301082738" fileName="LocalVariableIntroducer.java" startLine="30" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableIntroducer#(Ljava/awt/Frame;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceLocalVariableRefactoring;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="2370003301082738" fileName="LocalVariableIntroducer.java" startLine="30" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalVariableIntroducer#(Ljava/awt/Frame;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceLocalVariableRefactoring;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2370003301082570" fileName="LocalVariableIntroducer.java" startLine="39" startPosition="71" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <nodeInfo nodeId="2370003301082591" fileName="LocalVariableIntroducer.java" startLine="45" startPosition="173" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <nodeInfo nodeId="2370003301082663" fileName="LocalVariableIntroducer.java" startLine="62" startPosition="67" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -342,7 +342,7 @@
     <scopeInfo nodeId="2370003301082637" fileName="LocalVariableIntroducer.java" startLine="53" startPosition="12" endLine="54" endPosition="16" />
     <scopeInfo nodeId="2370003301082682" fileName="LocalVariableIntroducer.java" startLine="69" startPosition="23" endLine="70" endPosition="43" />
     <scopeInfo nodeId="2370003301082720" fileName="LocalVariableIntroducer.java" startLine="75" startPosition="14" endLine="76" endPosition="67" />
-    <scopeInfo nodeId="2370003301082764" fileName="LocalVariableIntroducer.java" startLine="81" startPosition="44" endLine="82" endPosition="108" />
+    <scopeInfo nodeId="2370003301082764" fileName="LocalVariableIntroducer.java" startLine="81" startPosition="44" endLine="82" endPosition="123" />
     <scopeInfo nodeId="2370003301082575" fileName="LocalVariableIntroducer.java" startLine="40" startPosition="54" endLine="42" endPosition="20" />
     <scopeInfo nodeId="2370003301082596" fileName="LocalVariableIntroducer.java" startLine="46" startPosition="54" endLine="48" endPosition="20" />
     <scopeInfo nodeId="2370003301082664" fileName="LocalVariableIntroducer.java" startLine="63" startPosition="25" endLine="65" endPosition="62" />
@@ -626,7 +626,7 @@
     <nodeInfo nodeId="4507335185602804154" fileName="ExtractMethodDialog.java" startLine="308" startPosition="139" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAcceptable#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4507335185602804183" fileName="ExtractMethodDialog.java" startLine="316" startPosition="25" endLine="320" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602804329" fileName="ExtractMethodDialog.java" startLine="358" startPosition="41" endLine="362" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602802786" fileName="ExtractMethodDialog.java" startLine="374" startPosition="0" endLine="378" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMethodDuplicatesProcessor#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4507335185602802786" fileName="ExtractMethodDialog.java" startLine="374" startPosition="0" endLine="378" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMethodDuplicatesProcessor#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4507335185602802803" fileName="ExtractMethodDialog.java" startLine="379" startPosition="0" endLine="383" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="substitute#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;)V" />
     <nodeInfo nodeId="4507335185602802827" fileName="ExtractMethodDialog.java" startLine="393" startPosition="0" endLine="397" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChooseContainerPanel#()V" />
     <nodeInfo nodeId="4507335185602804247" fileName="ExtractMethodDialog.java" startLine="78" startPosition="57" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -666,7 +666,7 @@
     <nodeInfo nodeId="4507335185602803200" fileName="ExtractMethodDialog.java" startLine="101" startPosition="52" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4507335185602803745" fileName="ExtractMethodDialog.java" startLine="209" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParametersPanel#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="4507335185602802959" fileName="ExtractMethodDialog.java" startLine="417" startPosition="63" endLine="432" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4507335185602804207" fileName="ExtractMethodDialog.java" startLine="69" startPosition="0" endLine="85" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractMethodDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoring;)V" />
+    <nodeInfo nodeId="4507335185602804207" fileName="ExtractMethodDialog.java" startLine="69" startPosition="0" endLine="85" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractMethodDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoring;)V" />
     <nodeInfo nodeId="4507335185602802958" fileName="ExtractMethodDialog.java" startLine="416" startPosition="34" endLine="432" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602803983" fileName="ExtractMethodDialog.java" startLine="264" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDeclareStaticCheckBox#()Ljavax/swing/JCheckBox;" />
     <nodeInfo nodeId="4507335185602802950" fileName="ExtractMethodDialog.java" startLine="414" startPosition="70" endLine="434" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
@@ -1771,65 +1771,67 @@
     <unitInfo nodeId="4507335185602817336" fileName="BaseChooseNodeDialog.java" startLine="42" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog" />
   </root>
   <root nodeId="4507335185602819506" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
-    <nodeInfo nodeId="4507335185602819637" fileName="DuplicatesProcessor.java" startLine="11" startPosition="46" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
-    <nodeInfo nodeId="4507335185602819645" fileName="DuplicatesProcessor.java" startLine="14" startPosition="53" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819511" fileName="DuplicatesProcessor.java" startLine="18" startPosition="60" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602819523" fileName="DuplicatesProcessor.java" startLine="21" startPosition="26" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602819531" fileName="DuplicatesProcessor.java" startLine="22" startPosition="76" endLine="23" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819542" fileName="DuplicatesProcessor.java" startLine="23" startPosition="91" endLine="24" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602819549" fileName="DuplicatesProcessor.java" startLine="24" startPosition="72" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819553" fileName="DuplicatesProcessor.java" startLine="25" startPosition="22" endLine="26" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602819563" fileName="DuplicatesProcessor.java" startLine="27" startPosition="71" endLine="28" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819574" fileName="DuplicatesProcessor.java" startLine="29" startPosition="9" endLine="30" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819584" fileName="DuplicatesProcessor.java" startLine="31" startPosition="66" endLine="32" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819594" fileName="DuplicatesProcessor.java" startLine="33" startPosition="69" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819599" fileName="DuplicatesProcessor.java" startLine="34" startPosition="37" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819608" fileName="DuplicatesProcessor.java" startLine="36" startPosition="72" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4507335185602819614" fileName="DuplicatesProcessor.java" startLine="39" startPosition="14" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602819612" fileName="DuplicatesProcessor.java" startLine="39" startPosition="12" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4507335185602819624" fileName="DuplicatesProcessor.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorMessages#(null)Ljava/util/List;" />
-    <nodeInfo nodeId="4507335185602819631" fileName="DuplicatesProcessor.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="substitute#(null)V" />
-    <nodeInfo nodeId="4507335185602819641" fileName="DuplicatesProcessor.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DuplicatesProcessor#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="4507335185602819559" fileName="DuplicatesProcessor.java" startLine="26" startPosition="70" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602819582" fileName="DuplicatesProcessor.java" startLine="30" startPosition="105" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602819519" fileName="DuplicatesProcessor.java" startLine="20" startPosition="59" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602819515" fileName="DuplicatesProcessor.java" startLine="19" startPosition="31" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602819507" fileName="DuplicatesProcessor.java" startLine="17" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/util/List;Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="4507335185602819644" fileName="DuplicatesProcessor.java" startLine="14" startPosition="53" endLine="15" endPosition="35" />
-    <scopeInfo nodeId="4507335185602819562" fileName="DuplicatesProcessor.java" startLine="27" startPosition="71" endLine="28" endPosition="94" />
-    <scopeInfo nodeId="4507335185602819583" fileName="DuplicatesProcessor.java" startLine="31" startPosition="66" endLine="32" endPosition="37" />
-    <scopeInfo nodeId="4507335185602819607" fileName="DuplicatesProcessor.java" startLine="36" startPosition="72" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="4507335185602819613" fileName="DuplicatesProcessor.java" startLine="39" startPosition="14" endLine="40" endPosition="35" />
-    <scopeInfo nodeId="4507335185602819593" fileName="DuplicatesProcessor.java" startLine="33" startPosition="69" endLine="35" endPosition="28" />
-    <scopeInfo nodeId="4507335185602819624" fileName="DuplicatesProcessor.java" startLine="44" startPosition="0" endLine="46" endPosition="0">
+    <nodeInfo nodeId="4507335185602819637" fileName="DuplicatesProcessor.java" startLine="13" startPosition="46" endLine="14" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
+    <nodeInfo nodeId="4507335185602819645" fileName="DuplicatesProcessor.java" startLine="16" startPosition="53" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819511" fileName="DuplicatesProcessor.java" startLine="20" startPosition="60" endLine="21" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602819523" fileName="DuplicatesProcessor.java" startLine="23" startPosition="26" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="648724407929893535" fileName="DuplicatesProcessor.java" startLine="24" startPosition="76" endLine="25" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602819531" fileName="DuplicatesProcessor.java" startLine="25" startPosition="127" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819542" fileName="DuplicatesProcessor.java" startLine="26" startPosition="40" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602819549" fileName="DuplicatesProcessor.java" startLine="27" startPosition="72" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819553" fileName="DuplicatesProcessor.java" startLine="28" startPosition="22" endLine="29" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602819563" fileName="DuplicatesProcessor.java" startLine="30" startPosition="71" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819574" fileName="DuplicatesProcessor.java" startLine="32" startPosition="9" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819584" fileName="DuplicatesProcessor.java" startLine="34" startPosition="66" endLine="35" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819594" fileName="DuplicatesProcessor.java" startLine="36" startPosition="69" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819599" fileName="DuplicatesProcessor.java" startLine="37" startPosition="37" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819608" fileName="DuplicatesProcessor.java" startLine="39" startPosition="72" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4507335185602819614" fileName="DuplicatesProcessor.java" startLine="42" startPosition="14" endLine="43" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602819612" fileName="DuplicatesProcessor.java" startLine="42" startPosition="12" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4507335185602819624" fileName="DuplicatesProcessor.java" startLine="47" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorMessages#(null)Ljava/util/List;" />
+    <nodeInfo nodeId="4507335185602819631" fileName="DuplicatesProcessor.java" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="substitute#(null)V" />
+    <nodeInfo nodeId="4507335185602819641" fileName="DuplicatesProcessor.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DuplicatesProcessor#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4507335185602819559" fileName="DuplicatesProcessor.java" startLine="29" startPosition="70" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602819582" fileName="DuplicatesProcessor.java" startLine="33" startPosition="59" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4507335185602819519" fileName="DuplicatesProcessor.java" startLine="22" startPosition="59" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4507335185602819515" fileName="DuplicatesProcessor.java" startLine="21" startPosition="31" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602819507" fileName="DuplicatesProcessor.java" startLine="19" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/util/List;Lcom/intellij/openapi/project/Project;)V" />
+    <scopeInfo nodeId="4507335185602819644" fileName="DuplicatesProcessor.java" startLine="16" startPosition="53" endLine="17" endPosition="35" />
+    <scopeInfo nodeId="4507335185602819562" fileName="DuplicatesProcessor.java" startLine="30" startPosition="71" endLine="31" endPosition="43" />
+    <scopeInfo nodeId="4507335185602819583" fileName="DuplicatesProcessor.java" startLine="34" startPosition="66" endLine="35" endPosition="37" />
+    <scopeInfo nodeId="4507335185602819607" fileName="DuplicatesProcessor.java" startLine="39" startPosition="72" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="4507335185602819613" fileName="DuplicatesProcessor.java" startLine="42" startPosition="14" endLine="43" endPosition="35" />
+    <scopeInfo nodeId="4507335185602819593" fileName="DuplicatesProcessor.java" startLine="36" startPosition="69" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="4507335185602819624" fileName="DuplicatesProcessor.java" startLine="47" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="4507335185602819629" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819631" fileName="DuplicatesProcessor.java" startLine="46" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="4507335185602819631" fileName="DuplicatesProcessor.java" startLine="49" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="4507335185602819635" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819641" fileName="DuplicatesProcessor.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+    <scopeInfo nodeId="4507335185602819641" fileName="DuplicatesProcessor.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="4507335185602819651" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819559" fileName="DuplicatesProcessor.java" startLine="26" startPosition="70" endLine="29" endPosition="9">
+    <scopeInfo nodeId="4507335185602819559" fileName="DuplicatesProcessor.java" startLine="29" startPosition="70" endLine="32" endPosition="9">
       <varInfo nodeId="4507335185602819560" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819522" fileName="DuplicatesProcessor.java" startLine="21" startPosition="26" endLine="38" endPosition="9">
+    <scopeInfo nodeId="4507335185602819522" fileName="DuplicatesProcessor.java" startLine="23" startPosition="26" endLine="41" endPosition="9">
       <varInfo nodeId="4507335185602819543" varName="dialog" />
+      <varInfo nodeId="648724407929893536" varName="highlightManager" />
       <varInfo nodeId="4507335185602819524" varName="messages" />
       <varInfo nodeId="4507335185602819554" varName="shouldSubstitute" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819518" fileName="DuplicatesProcessor.java" startLine="20" startPosition="59" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="4507335185602819515" fileName="DuplicatesProcessor.java" startLine="19" startPosition="31" endLine="42" endPosition="5">
+    <scopeInfo nodeId="4507335185602819518" fileName="DuplicatesProcessor.java" startLine="22" startPosition="59" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="4507335185602819515" fileName="DuplicatesProcessor.java" startLine="21" startPosition="31" endLine="45" endPosition="5">
       <varInfo nodeId="4507335185602819516" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819510" fileName="DuplicatesProcessor.java" startLine="18" startPosition="60" endLine="42" endPosition="5">
+    <scopeInfo nodeId="4507335185602819510" fileName="DuplicatesProcessor.java" startLine="20" startPosition="60" endLine="45" endPosition="5">
       <varInfo nodeId="4507335185602819512" varName="replaceAll" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819507" fileName="DuplicatesProcessor.java" startLine="17" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="4507335185602819507" fileName="DuplicatesProcessor.java" startLine="19" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="4507335185602819619" varName="duplicates" />
       <varInfo nodeId="4507335185602819622" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="4507335185602819506" fileName="DuplicatesProcessor.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.DuplicatesProcessor" />
+    <unitInfo nodeId="4507335185602819506" fileName="DuplicatesProcessor.java" startLine="13" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.DuplicatesProcessor" />
   </root>
   <root nodeId="4507335185602819654" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="4507335185602819663" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="90" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -1837,7 +1839,7 @@
     <nodeInfo nodeId="4507335185602819680" fileName="MethodDuplicatesProcessor.java" startLine="23" startPosition="77" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4507335185602819692" fileName="MethodDuplicatesProcessor.java" startLine="25" startPosition="68" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602819704" fileName="MethodDuplicatesProcessor.java" startLine="27" startPosition="5" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602819655" fileName="MethodDuplicatesProcessor.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodDuplicatesProcessor#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="4507335185602819655" fileName="MethodDuplicatesProcessor.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodDuplicatesProcessor#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="4507335185602819686" fileName="MethodDuplicatesProcessor.java" startLine="24" startPosition="49" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4507335185602819673" fileName="MethodDuplicatesProcessor.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorMessages#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;)Ljava/util/List;" />
     <scopeInfo nodeId="4507335185602819658" fileName="MethodDuplicatesProcessor.java" startLine="19" startPosition="59" endLine="20" endPosition="19" />
@@ -1861,7 +1863,7 @@
     <nodeInfo nodeId="4507335185602819715" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="4507335185602819711" fileName="VariableDuplicatesProcessor.java" startLine="18" startPosition="61" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4507335185602819732" fileName="VariableDuplicatesProcessor.java" startLine="22" startPosition="71" endLine="23" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602819707" fileName="VariableDuplicatesProcessor.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariableDuplicatesProcessor#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="4507335185602819707" fileName="VariableDuplicatesProcessor.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariableDuplicatesProcessor#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="4507335185602819725" fileName="VariableDuplicatesProcessor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorMessages#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="4507335185602819710" fileName="VariableDuplicatesProcessor.java" startLine="18" startPosition="61" endLine="19" endPosition="19" />
     <scopeInfo nodeId="4507335185602819731" fileName="VariableDuplicatesProcessor.java" startLine="22" startPosition="71" endLine="23" endPosition="127" />

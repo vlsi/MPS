@@ -18,11 +18,11 @@ import java.util.HashMap;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -139,7 +139,7 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            ((EditorContext) editor.getEditorContext()).select(node);
+            editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
             query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
