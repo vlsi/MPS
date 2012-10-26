@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class NodePatcher {
   public NodePatcher() {
@@ -104,5 +106,12 @@ public class NodePatcher {
     }, true));
     ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).clear();
     ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addSequence(ListSequence.fromList(nested));
+  }
+
+  public static void removeSModelAttrs(SNode node) {
+    for (SNode attr : ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()))) {
+      SNodeOperations.detachNode(attr);
+      SNodeOperations.deleteNode(attr);
+    }
   }
 }

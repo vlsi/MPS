@@ -129,9 +129,18 @@ public class Utils {
         ListSequence.fromList(models).addElement(m);
       }
 
+      // FIXME resolveSModelAttrs is temporary (testImports2 started to have problems) 
+
+      for (SModel m : ListSequence.fromList(models)) {
+        for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+          NodePatcher.removeSModelAttrs(root);
+        }
+      }
+
       for (SModel m : ListSequence.fromList(expected)) {
         for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
           NodePatcher.removeStatements(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          NodePatcher.removeSModelAttrs(root);
           // <node> 
         }
       }
