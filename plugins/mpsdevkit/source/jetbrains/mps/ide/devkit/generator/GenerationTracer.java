@@ -54,6 +54,26 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @Override
+  public void pushInputNode(SNode node) {
+
+  }
+
+  @Override
+  public void closeInputNode(SNode node) {
+
+  }
+
+  @Override
+  public void popInputNode(SNode node) {
+
+  }
+
+  @Override
+  public void pushOutputNode(SNode node) {
+
+  }
+
+  @Override
   public void startTracing() {
     myActive = true;
     myTracingDataByInputModel = new HashMap<String, List<TracerNode>>();

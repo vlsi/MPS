@@ -29,6 +29,17 @@ import java.util.List;
  * Evgeny Gryaznov, Feb 17, 2010
  */
 public interface IGenerationTracer {
+
+  void pushInputNode(SNode node);
+
+  void closeInputNode(SNode node);
+
+  void popInputNode(SNode node);
+
+  void pushOutputNode(SNode node);
+
+
+
   void pushInputNode(SNodePointer node);
 
   void closeInputNode(SNodePointer node);
