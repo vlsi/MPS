@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.editor.runtime.ParametersInformation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,7 +27,7 @@ public class BaseMethodParameterInformationQueryRestricted extends ParametersInf
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
   }
 
-  private SNode getSelectedActualArgument(jetbrains.mps.openapi.editor.EditorContext editorContext, final SNode methodCall) {
+  private SNode getSelectedActualArgument(EditorContext editorContext, final SNode methodCall) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
       return null;
