@@ -156,12 +156,10 @@ public class VmCreator extends AbstractDebugSessionCreator {
     final Semaphore semaphore = new Semaphore();
     // semaphore - maybe not to call this method multiple times when a VM is not ready 
     semaphore.down();
-    final boolean[] connectorIsReady = {false};
     final DebugProcessMulticaster processMulticaster = myEventsProcessor.getMulticaster();
     processMulticaster.addListener(new DebugProcessAdapter() {
       public void connectorIsReady() {
         VmCreator.LOG.debug("Connector is ready.");
-        connectorIsReady[0] = true;
         semaphore.up();
         processMulticaster.removeListener(this);
       }
