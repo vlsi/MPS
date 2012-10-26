@@ -26,14 +26,30 @@ public class BehaviorReflection {
   private static final Map<Class, Object> OUR_DEFAULT_VALUE = new HashMap<Class, Object>();
 
   static {
+    // todo: move to SNodeSomething
     OUR_DEFAULT_VALUE.put(Byte.class, (byte) 0);
+    OUR_DEFAULT_VALUE.put(byte.class, (byte) 0);
+
     OUR_DEFAULT_VALUE.put(Short.class, (short) 0);
+    OUR_DEFAULT_VALUE.put(short.class, (short) 0);
+
     OUR_DEFAULT_VALUE.put(Integer.class, (int) 0);
+    OUR_DEFAULT_VALUE.put(int.class, (int) 0);
+
     OUR_DEFAULT_VALUE.put(Long.class, (long) 0);
+    OUR_DEFAULT_VALUE.put(long.class, (long) 0);
+
     OUR_DEFAULT_VALUE.put(Float.class, (float) 0);
+    OUR_DEFAULT_VALUE.put(float.class, (float) 0);
+
     OUR_DEFAULT_VALUE.put(Double.class, (double) 0);
+    OUR_DEFAULT_VALUE.put(double.class, (double) 0);
+
     OUR_DEFAULT_VALUE.put(Boolean.class, false);
+    OUR_DEFAULT_VALUE.put(boolean.class, false);
+
     OUR_DEFAULT_VALUE.put(Void.class, null);
+    OUR_DEFAULT_VALUE.put(void.class, null);
   }
 
   public static void initNode(SNode node) {
