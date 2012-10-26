@@ -4,8 +4,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Closureoid_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor;
 
-public class WhenConcreteStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements Closureoid_BehaviorDescriptor {
+public class WhenConcreteStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements Closureoid_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor {
   public WhenConcreteStatement_BehaviorDescriptor() {
   }
 
