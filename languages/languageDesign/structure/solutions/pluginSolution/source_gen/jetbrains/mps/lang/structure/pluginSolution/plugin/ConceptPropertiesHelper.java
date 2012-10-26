@@ -92,12 +92,14 @@ public class ConceptPropertiesHelper {
       SNode source = usage.getSourceNode();
       if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
         SetSequence.fromSet(conceptUsages).addElement(SNodeOperations.getAncestor(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", false, false));
+        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
       } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess") && needToMigrate(source)) {
         SetSequence.fromSet(accessUsages).addElement(SNodeOperations.getParent(source));
+        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
       } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty")) {
         SetSequence.fromSet(cellUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
+        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
       }
-      SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
     }
 
     final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
