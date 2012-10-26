@@ -149,6 +149,9 @@ public class Utils {
       JavaParser parser = new JavaParser();
       DirParser dirParser = new DirParser(ourModule, null, null);
       SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
+      for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
+        SNodeOperations.detachNode(r);
+      }
       List<SNode> nodes = dirParser.parseDir(parser, new File(dirPath));
 
       for (SNode n : ListSequence.fromList(nodes)) {
@@ -276,7 +279,7 @@ public class Utils {
     List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
     if (diff != null) {
       wereErrors = true;
-      // <node> 
+      System.err.println("Diff: " + diff);
     }
     return wereErrors;
   }
