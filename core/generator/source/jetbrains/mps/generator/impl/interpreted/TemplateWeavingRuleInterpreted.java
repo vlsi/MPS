@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.*;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -158,11 +159,11 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
                                         SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws GenerationFailureException, GenerationCanceledException {
 
-    environment.getTracer().pushInputNode(context.getInput());
+    environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
     try {
       weaveTemplateDeclaration_intern(template, outputContextNode, context, environment);
     } finally {
-      environment.getTracer().closeInputNode(context.getInput());
+      environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
     }
   }
 
