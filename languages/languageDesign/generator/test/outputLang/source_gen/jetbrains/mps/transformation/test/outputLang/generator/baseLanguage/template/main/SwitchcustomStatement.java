@@ -14,6 +14,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import java.util.Collections;
+import jetbrains.mps.generator.GenerationTracerUtil;
 
 public class SwitchcustomStatement implements TemplateSwitchMapping {
   private static SNodePointer reductionRule_68cped_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088657");
@@ -82,13 +83,13 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a4a);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.NullLiteral", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a4a);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090602");
 
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_68cped_a0a0a2a4a);
       }
       return TemplateUtil.singletonList(tnode1);
@@ -129,14 +130,14 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a4b);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a4b);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090625");
         tnode1.setProperty("value", "1");
 
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_68cped_a0a0a2a4b);
       }
       return TemplateUtil.singletonList(tnode1);

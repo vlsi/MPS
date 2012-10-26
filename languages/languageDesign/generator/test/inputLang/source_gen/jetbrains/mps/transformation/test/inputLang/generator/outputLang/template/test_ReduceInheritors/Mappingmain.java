@@ -22,6 +22,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461848250");
@@ -128,14 +129,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4a);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4a);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206461864724");
         tnode1.setProperty("text", "output from InputNode_B");
 
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a4a);
       }
       return TemplateUtil.singletonList(tnode1);
@@ -176,14 +177,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4b);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4b);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460444836");
         tnode1.setProperty("text", "output from InputNode_A");
 
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a4b);
       }
       return TemplateUtil.singletonList(tnode1);
@@ -224,14 +225,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4c);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4c);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460409521");
         tnode1.setProperty("text", "output from base InputNode");
 
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a4c);
       }
       return TemplateUtil.singletonList(tnode1);

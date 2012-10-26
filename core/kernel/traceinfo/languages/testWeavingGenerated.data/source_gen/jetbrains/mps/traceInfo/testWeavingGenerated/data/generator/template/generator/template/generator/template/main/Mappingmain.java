@@ -23,6 +23,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.GenerationTracerUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_a0a0a = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)", "6186432342008486853");
@@ -179,7 +180,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         boolean inputChanged1 = context.getInput() != itnode1;
         try {
           if (inputChanged1) {
-            environment.getTracer().pushInputNode(itnode1);
+            environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
           TemplateContext context1 = context.subContext(null, itnode1);
           Collection<SNode> innerResult1 = new Templateweave__ChildConceptWeave().weave(environment, context1, outputContextNode);
@@ -189,7 +190,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           }
         } finally {
           if (inputChanged1) {
-            environment.getTracer().closeInputNode(itnode1);
+            environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
         }
       }
@@ -232,7 +233,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         boolean inputChanged1 = context.getInput() != itnode1;
         try {
           if (inputChanged1) {
-            environment.getTracer().pushInputNode(itnode1);
+            environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
           TemplateContext context1 = context.subContext(null, itnode1);
           Collection<SNode> innerResult1 = new Templateweave__ChildConceptWeave().weave(environment, context1, outputContextNode);
@@ -242,7 +243,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           }
         } finally {
           if (inputChanged1) {
-            environment.getTracer().closeInputNode(itnode1);
+            environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
         }
       }
@@ -285,7 +286,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         boolean inputChanged1 = context.getInput() != itnode1;
         try {
           if (inputChanged1) {
-            environment.getTracer().pushInputNode(itnode1);
+            environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
           TemplateContext context1 = context.subContext(null, itnode1);
           Collection<SNode> innerResult1 = new Templateweave__ChildConceptWeaveMany().weave(environment, context1, outputContextNode);
@@ -295,7 +296,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           }
         } finally {
           if (inputChanged1) {
-            environment.getTracer().closeInputNode(itnode1);
+            environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
         }
       }
@@ -338,7 +339,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         boolean inputChanged1 = context.getInput() != itnode1;
         try {
           if (inputChanged1) {
-            environment.getTracer().pushInputNode(itnode1);
+            environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
           TemplateContext context1 = context.subContext(null, itnode1);
           Collection<SNode> innerResult1 = new Templateweave__ChildConceptWeaveMany().weave(environment, context1, outputContextNode);
@@ -348,7 +349,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           }
         } finally {
           if (inputChanged1) {
-            environment.getTracer().closeInputNode(itnode1);
+            environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
         }
       }

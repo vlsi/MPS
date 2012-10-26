@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.GenerationTracerUtil;
 
 public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_eum2xg_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617074");
@@ -43,13 +44,13 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
+    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_eum2xg_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617074");
 
       {
-        final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", false);
+        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.MulAssignmentExpression");
         try {
           environment.getTracer().pushTemplateNode(templateNode_eum2xg_a0a0a1a3a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617076");
@@ -83,7 +84,7 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
             // TODO validate child 
           }
         } finally {
-          environment.getTracer().pushOutputNode(tnode2);
+          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
           environment.getTracer().closeTemplateNode(templateNode_eum2xg_a0a0a1a3a1a2);
         }
         if (tnode2 != null) {
@@ -92,7 +93,7 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(tnode1);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
       environment.getTracer().closeTemplateNode(templateNode_eum2xg_a0a0a1a2);
     }
     return tnode1;

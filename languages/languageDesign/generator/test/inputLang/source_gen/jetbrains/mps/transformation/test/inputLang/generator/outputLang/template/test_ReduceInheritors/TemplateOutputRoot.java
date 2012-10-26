@@ -13,6 +13,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
@@ -33,7 +34,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+    final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460153890");
@@ -66,7 +67,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
               boolean inputChanged3 = context.getInput() != itnode3;
               try {
                 if (inputChanged3) {
-                  environment.getTracer().pushInputNode(itnode3);
+                  environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode3));
                 }
                 environment.getTracer().pushRuleConsequence(weaveMacroConsequence_q702qm_a0a1a2a2a4a1a5a1a1);
                 TemplateContext weaveContext3 = context.subContext(null, itnode3);
@@ -74,7 +75,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
 
               } finally {
                 if (inputChanged3) {
-                  environment.getTracer().closeInputNode(itnode3);
+                  environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode3));
                 }
               }
             }
@@ -105,14 +106,14 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final SNode tnode7 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+        final SNode tnode7 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a7a1a1);
           environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f9/8014813979421777297");
           tnode7.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "foobar", propertyMacro_q702qm_c0b0b0a2a1a7a1a1, context, environment.getGenerator()))));
 
         } finally {
-          environment.getTracer().pushOutputNode(tnode7);
+          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
           environment.getTracer().closeTemplateNode(templateNode_q702qm_a0a0a1a7a1a1);
         }
         if (tnode7 != null) {
@@ -121,7 +122,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(tnode1);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
       environment.getTracer().closeTemplateNode(templateNode_q702qm_a0a0a1a1);
     }
     return TemplateUtil.singletonList(tnode1);

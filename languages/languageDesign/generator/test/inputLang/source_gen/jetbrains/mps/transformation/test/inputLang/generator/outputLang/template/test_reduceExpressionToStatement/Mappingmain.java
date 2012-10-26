@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150610748");
@@ -122,20 +123,20 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4a);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4a);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150725887");
 
         {
-          final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
+          final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a2a4a);
             environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150737045");
             tnode2.setProperty("value", "my expression");
 
           } finally {
-            environment.getTracer().pushOutputNode(tnode2);
+            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a4a);
           }
           if (tnode2 != null) {
@@ -144,7 +145,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           // TODO validate child 
         }
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a4a);
       }
       return TemplateUtil.singletonList(tnode1);
