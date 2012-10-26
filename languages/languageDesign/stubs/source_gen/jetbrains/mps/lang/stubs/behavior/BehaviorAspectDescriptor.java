@@ -7,16 +7,16 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.BaseCreatorType", "jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.GetRootsBlock", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.InitModuleBlock", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Stereotype", "jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", "jetbrains.mps.lang.stubs.structure.StubsCreatorType", "jetbrains.mps.lang.stubs.structure.UpdateModelBlock"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.BaseCreatorType", "jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.GetRootsBlock", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.InitModuleBlock", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Stereotype", "jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", "jetbrains.mps.lang.stubs.structure.StubsCreatorType", "jetbrains.mps.lang.stubs.structure.UpdateModelBlock"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 21:
+      case 22:
         return new StubsCreatorDeclaration_BehaviorDescriptor();
-      case 23:
+      case 24:
         return new UpdateModelBlock_BehaviorDescriptor();
       case 11:
         return new ModelDescriptorsBlock_BehaviorDescriptor();
@@ -26,7 +26,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ModelCreationSettings_BehaviorDescriptor();
       case 15:
         return new RootNodeDescriptorsBlock_BehaviorDescriptor();
-      case 19:
+      case 20:
         return new StubLocation_ConceptFunctionParameter_BehaviorDescriptor();
       case 14:
         return new Model_ConceptFunctionParameter_BehaviorDescriptor();
@@ -36,15 +36,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new LibraryStubDescriptor_BehaviorDescriptor();
       case 5:
         return new GetRootsBlock_BehaviorDescriptor();
-      case 18:
+      case 19:
         return new Stereotype_BehaviorDescriptor();
       case 7:
         return new InitModuleBlock_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new Solution_ConceptFunctionParameter_BehaviorDescriptor();
-      case 20:
+      case 21:
         return new StubSource_ConcteptFunctionParameter_BehaviorDescriptor();
-      case 22:
+      case 23:
         return new StubsCreatorType_BehaviorDescriptor();
       case 0:
         return new BaseCreatorType_BehaviorDescriptor();
@@ -62,6 +62,8 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new SModelFqName_ConceptFunctionParameter_BehaviorDescriptor();
       case 1:
         return new CanCreateFunction_BehaviorDescriptor();
+      case 17:
+        return new SModelRoot_ConceptFunctionParameter_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

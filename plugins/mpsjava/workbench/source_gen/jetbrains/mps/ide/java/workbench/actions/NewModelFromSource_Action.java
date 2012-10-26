@@ -29,9 +29,10 @@ import java.io.File;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
 
@@ -40,7 +41,7 @@ public class NewModelFromSource_Action extends BaseAction {
   protected static Log log = LogFactory.getLog(NewModelFromSource_Action.class);
 
   public NewModelFromSource_Action() {
-    super("Model from Source", "", ICON);
+    super("Models from Java Sources", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -159,8 +160,26 @@ public class NewModelFromSource_Action extends BaseAction {
         }
         IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
         if (resultFile != null) {
-          JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(resultFile.getPath()), false, sModel, ((Project) MapSequence.fromMap(_params).get("project")));
-          javaCompiler.compile();
+          // <node> 
+          // <node> 
+
+          final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), sModel, new File(resultFile.getPath()));
+          // we cannot take write action inside try, because it's implemented through 
+          // ... Runnable() { void run() } 
+          // Also I don't want to show error dialog while in write action 
+          final Wrappers._T<JavaParseException> parseException = new Wrappers._T<JavaParseException>(null);
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              try {
+                dirParser.parseDirs();
+              } catch (JavaParseException e) {
+                parseException.value = e;
+              }
+            }
+          });
+          if (parseException.value != null) {
+            JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.value.getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
+          }
         }
         SModelDescriptor modelDescriptor = result;
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);

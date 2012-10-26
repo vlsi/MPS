@@ -24,9 +24,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({
-  "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
-  "jetbrains.mps.tests.TestModule_closures_test",
+@SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
   "jetbrains.mps.tests.TestModule_collections_trove_test",
   "jetbrains.mps.tests.TestModule_collections_unittest",
   "jetbrains.mps.tests.TestModule_dates_unittest",
@@ -42,8 +40,11 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_execution_impl_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_graphLayout_test",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_ide_java_tests",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_extension_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_smodel_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_traceable_operations_test",

@@ -504,62 +504,82 @@
     <unitInfo nodeId="6219666460876673637" fileName="DisposeMPSStatement.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.DisposeMPSStatement" />
   </root>
   <root nodeId="6791703723376742374" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
-    <nodeInfo nodeId="6791703723376742538" fileName="MakeRunner.java" startLine="20" startPosition="40" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescription" />
-    <nodeInfo nodeId="6791703723376742541" fileName="MakeRunner.java" startLine="23" startPosition="38" endLine="24" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743113" fileName="MakeRunner.java" startLine="27" startPosition="47" endLine="28" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743130" fileName="MakeRunner.java" startLine="30" startPosition="25" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6791703723376743135" fileName="MakeRunner.java" startLine="31" startPosition="46" endLine="32" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6791703723376743151" fileName="MakeRunner.java" startLine="33" startPosition="77" endLine="34" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743172" fileName="MakeRunner.java" startLine="37" startPosition="7" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6791703723376743197" fileName="MakeRunner.java" startLine="43" startPosition="31" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743206" fileName="MakeRunner.java" startLine="49" startPosition="38" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743218" fileName="MakeRunner.java" startLine="51" startPosition="43" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743226" fileName="MakeRunner.java" startLine="53" startPosition="5" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743235" fileName="MakeRunner.java" startLine="57" startPosition="39" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6791703723376742376" fileName="MakeRunner.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeRunner#(Ljava/lang/Class;)V" />
-    <nodeInfo nodeId="6791703723376743149" fileName="MakeRunner.java" startLine="32" startPosition="167" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6791703723376743193" fileName="MakeRunner.java" startLine="42" startPosition="64" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6791703723376743231" fileName="MakeRunner.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Lorg/junit/runner/Description;" />
-    <nodeInfo nodeId="6791703723376743185" fileName="MakeRunner.java" startLine="41" startPosition="27" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743126" fileName="MakeRunner.java" startLine="29" startPosition="57" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6791703723376743181" fileName="MakeRunner.java" startLine="40" startPosition="51" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6791703723376743118" fileName="MakeRunner.java" startLine="28" startPosition="44" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743175" fileName="MakeRunner.java" startLine="39" startPosition="9" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791703723376743173" fileName="MakeRunner.java" startLine="38" startPosition="0" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6791703723376743107" fileName="MakeRunner.java" startLine="26" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
-    <scopeInfo nodeId="6791703723376742379" fileName="MakeRunner.java" startLine="23" startPosition="38" endLine="24" endPosition="72" />
-    <scopeInfo nodeId="6791703723376743150" fileName="MakeRunner.java" startLine="33" startPosition="77" endLine="34" endPosition="122" />
-    <scopeInfo nodeId="6791703723376743196" fileName="MakeRunner.java" startLine="43" startPosition="31" endLine="44" endPosition="59" />
-    <scopeInfo nodeId="6791703723376743202" fileName="MakeRunner.java" startLine="49" startPosition="0" endLine="50" endPosition="62">
+    <nodeInfo nodeId="6791703723376742538" fileName="MakeRunner.java" startLine="21" startPosition="40" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescription" />
+    <nodeInfo nodeId="6791703723376742541" fileName="MakeRunner.java" startLine="24" startPosition="38" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743113" fileName="MakeRunner.java" startLine="28" startPosition="47" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743130" fileName="MakeRunner.java" startLine="31" startPosition="25" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6791703723376743135" fileName="MakeRunner.java" startLine="32" startPosition="46" endLine="33" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6791703723376743151" fileName="MakeRunner.java" startLine="34" startPosition="77" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743172" fileName="MakeRunner.java" startLine="38" startPosition="7" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8870759086759599503" fileName="MakeRunner.java" startLine="39" startPosition="0" endLine="40" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8870759086759599506" fileName="MakeRunner.java" startLine="40" startPosition="71" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8870759086759599510" fileName="MakeRunner.java" startLine="41" startPosition="80" endLine="42" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8870759086759599513" fileName="MakeRunner.java" startLine="42" startPosition="86" endLine="43" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8870759086759599517" fileName="MakeRunner.java" startLine="43" startPosition="94" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8870759086759599487" fileName="MakeRunner.java" startLine="48" startPosition="49" endLine="49" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8870759086759599492" fileName="MakeRunner.java" startLine="50" startPosition="11" endLine="51" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6777470455727554250" fileName="MakeRunner.java" startLine="54" startPosition="7" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6791703723376743197" fileName="MakeRunner.java" startLine="60" startPosition="31" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743206" fileName="MakeRunner.java" startLine="66" startPosition="38" endLine="67" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743218" fileName="MakeRunner.java" startLine="68" startPosition="43" endLine="69" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743226" fileName="MakeRunner.java" startLine="70" startPosition="5" endLine="71" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743235" fileName="MakeRunner.java" startLine="74" startPosition="39" endLine="75" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6791703723376742376" fileName="MakeRunner.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeRunner#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="6791703723376743149" fileName="MakeRunner.java" startLine="33" startPosition="167" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8870759086759599485" fileName="MakeRunner.java" startLine="47" startPosition="79" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6791703723376743193" fileName="MakeRunner.java" startLine="59" startPosition="64" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6791703723376743231" fileName="MakeRunner.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Lorg/junit/runner/Description;" />
+    <nodeInfo nodeId="6791703723376743185" fileName="MakeRunner.java" startLine="58" startPosition="27" endLine="63" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8870759086759599476" fileName="MakeRunner.java" startLine="46" startPosition="25" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6791703723376743126" fileName="MakeRunner.java" startLine="30" startPosition="57" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6791703723376743181" fileName="MakeRunner.java" startLine="57" startPosition="51" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6791703723376743118" fileName="MakeRunner.java" startLine="29" startPosition="44" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6642723731440602320" fileName="MakeRunner.java" startLine="45" startPosition="58" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6791703723376743175" fileName="MakeRunner.java" startLine="56" startPosition="9" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6777470455727554251" fileName="MakeRunner.java" startLine="44" startPosition="61" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6791703723376743173" fileName="MakeRunner.java" startLine="55" startPosition="0" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6791703723376743107" fileName="MakeRunner.java" startLine="27" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
+    <scopeInfo nodeId="6791703723376742379" fileName="MakeRunner.java" startLine="24" startPosition="38" endLine="25" endPosition="72" />
+    <scopeInfo nodeId="6791703723376743150" fileName="MakeRunner.java" startLine="34" startPosition="77" endLine="35" endPosition="122" />
+    <scopeInfo nodeId="8870759086759599486" fileName="MakeRunner.java" startLine="48" startPosition="49" endLine="49" endPosition="21" />
+    <scopeInfo nodeId="6791703723376743196" fileName="MakeRunner.java" startLine="60" startPosition="31" endLine="61" endPosition="59" />
+    <scopeInfo nodeId="6791703723376743202" fileName="MakeRunner.java" startLine="66" startPosition="0" endLine="67" endPosition="62">
       <varInfo nodeId="6791703723376743203" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6791703723376743205" fileName="MakeRunner.java" startLine="49" startPosition="38" endLine="50" endPosition="62" />
-    <scopeInfo nodeId="6791703723376743214" fileName="MakeRunner.java" startLine="51" startPosition="0" endLine="52" endPosition="62">
+    <scopeInfo nodeId="6791703723376743205" fileName="MakeRunner.java" startLine="66" startPosition="38" endLine="67" endPosition="62" />
+    <scopeInfo nodeId="6791703723376743214" fileName="MakeRunner.java" startLine="68" startPosition="0" endLine="69" endPosition="62">
       <varInfo nodeId="6791703723376743215" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6791703723376743217" fileName="MakeRunner.java" startLine="51" startPosition="43" endLine="52" endPosition="62" />
-    <scopeInfo nodeId="6791703723376743234" fileName="MakeRunner.java" startLine="57" startPosition="39" endLine="58" endPosition="25" />
-    <scopeInfo nodeId="6791703723376742376" fileName="MakeRunner.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+    <scopeInfo nodeId="6791703723376743217" fileName="MakeRunner.java" startLine="68" startPosition="43" endLine="69" endPosition="62" />
+    <scopeInfo nodeId="6791703723376743234" fileName="MakeRunner.java" startLine="74" startPosition="39" endLine="75" endPosition="25" />
+    <scopeInfo nodeId="6791703723376742376" fileName="MakeRunner.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="6791703723376743237" varName="class_" />
     </scopeInfo>
-    <scopeInfo nodeId="6791703723376743193" fileName="MakeRunner.java" startLine="42" startPosition="64" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6791703723376743231" fileName="MakeRunner.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="6791703723376743129" fileName="MakeRunner.java" startLine="30" startPosition="25" endLine="35" endPosition="9">
+    <scopeInfo nodeId="8870759086759599477" fileName="MakeRunner.java" startLine="47" startPosition="79" endLine="51" endPosition="51" />
+    <scopeInfo nodeId="6791703723376743193" fileName="MakeRunner.java" startLine="59" startPosition="64" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="6791703723376743231" fileName="MakeRunner.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="6791703723376743129" fileName="MakeRunner.java" startLine="31" startPosition="25" endLine="36" endPosition="9">
       <varInfo nodeId="6791703723376743136" varName="compilationResult" />
       <varInfo nodeId="6791703723376743131" varName="maker" />
     </scopeInfo>
-    <scopeInfo nodeId="6791703723376743184" fileName="MakeRunner.java" startLine="41" startPosition="27" endLine="46" endPosition="13" />
-    <scopeInfo nodeId="6791703723376743126" fileName="MakeRunner.java" startLine="29" startPosition="57" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="6791703723376743181" fileName="MakeRunner.java" startLine="40" startPosition="51" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6791703723376743174" fileName="MakeRunner.java" startLine="39" startPosition="9" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="6791703723376743112" fileName="MakeRunner.java" startLine="27" startPosition="47" endLine="54" endPosition="45" />
-    <scopeInfo nodeId="6791703723376743107" fileName="MakeRunner.java" startLine="26" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="6791703723376743184" fileName="MakeRunner.java" startLine="58" startPosition="27" endLine="63" endPosition="13" />
+    <scopeInfo nodeId="6642723731440602323" fileName="MakeRunner.java" startLine="46" startPosition="25" endLine="52" endPosition="9" />
+    <scopeInfo nodeId="8870759086759599476" fileName="MakeRunner.java" startLine="46" startPosition="25" endLine="52" endPosition="9">
+      <varInfo nodeId="8870759086759599479" varName="mod" />
+    </scopeInfo>
+    <scopeInfo nodeId="6791703723376743126" fileName="MakeRunner.java" startLine="30" startPosition="57" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6791703723376743181" fileName="MakeRunner.java" startLine="57" startPosition="51" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="6642723731440602320" fileName="MakeRunner.java" startLine="45" startPosition="58" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6791703723376743174" fileName="MakeRunner.java" startLine="56" startPosition="9" endLine="65" endPosition="9" />
+    <scopeInfo nodeId="6791703723376743112" fileName="MakeRunner.java" startLine="28" startPosition="47" endLine="71" endPosition="45" />
+    <scopeInfo nodeId="6791703723376743107" fileName="MakeRunner.java" startLine="27" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="6791703723376743110" varName="notifier" />
     </scopeInfo>
-    <unitInfo nodeId="6791703723376743191" fileName="MakeRunner.java" startLine="42" startPosition="52" endLine="46" endPosition="11" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$3" />
-    <unitInfo nodeId="6791703723376743124" fileName="MakeRunner.java" startLine="29" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$1" />
-    <unitInfo nodeId="6791703723376743179" fileName="MakeRunner.java" startLine="40" startPosition="39" endLine="48" endPosition="7" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$2" />
-    <unitInfo nodeId="6791703723376742374" fileName="MakeRunner.java" startLine="20" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
+    <unitInfo nodeId="6791703723376743191" fileName="MakeRunner.java" startLine="59" startPosition="52" endLine="63" endPosition="11" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$4" />
+    <unitInfo nodeId="6791703723376743124" fileName="MakeRunner.java" startLine="30" startPosition="45" endLine="38" endPosition="5" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$1" />
+    <unitInfo nodeId="6791703723376743179" fileName="MakeRunner.java" startLine="57" startPosition="39" endLine="65" endPosition="7" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$3" />
+    <unitInfo nodeId="6642723731440602318" fileName="MakeRunner.java" startLine="45" startPosition="46" endLine="54" endPosition="5" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner$2" />
+    <unitInfo nodeId="6791703723376742374" fileName="MakeRunner.java" startLine="21" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
   </root>
   <root nodeId="6791703723376744293" modelId="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
     <nodeInfo nodeId="6791703723376744310" fileName="WatchingSuiteWithMake.java" startLine="11" startPosition="58" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />

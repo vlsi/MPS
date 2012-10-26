@@ -63,8 +63,8 @@ public abstract class ModelListener {
   private class RootRemovedAdapter extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
       SNode root = event.getRoot();
-      SNodePointer nodePointer = new SNodePointer(root);
-      SModelReference modelRef = root.getModel().getSModelReference();
+      SModelReference modelRef = event.getModel().getSModelReference();
+      SNodePointer nodePointer = new SNodePointer(modelRef, root.getSNodeId());
 
       if (!myImportantNodes.get(modelRef).contains(nodePointer)) return;
 

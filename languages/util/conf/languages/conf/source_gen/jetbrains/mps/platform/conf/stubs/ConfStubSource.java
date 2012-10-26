@@ -73,12 +73,13 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
           doc.setId(id);
           SPropertyOperations.set(doc, "name", pi.baseName(docres));
           SModelOperations.addRootNode(((SModel) model), doc);
+          ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode,PathItem>from(pkg, docres, doc, pi));
         }
-        ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode,PathItem>from(pkg, docres, doc, pi));
       }
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), roots, module) {
-      public StubModelDataSource createStubsSource(ModuleReference origin, ModelRoot loc) {
+      @Override
+      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
         return new ConfStubSource(origin, loc);
       }
     };

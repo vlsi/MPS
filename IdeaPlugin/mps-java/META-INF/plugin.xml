@@ -51,6 +51,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.sourceStubs.ProjectJavaSourceImporter</implementation-class>
+    </component>
   </project-components>
 
   <actions>

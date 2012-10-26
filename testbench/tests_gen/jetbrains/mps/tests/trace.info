@@ -228,6 +228,12 @@
     <scopeInfo nodeId="5934496548013521234" fileName="TestModule_jetbrains_mps_transformation_test_inputModels.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
     <unitInfo nodeId="5934496548013521234" fileName="TestModule_jetbrains_mps_transformation_test_inputModels.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels" />
   </root>
+  <root nodeId="7092489630493754343" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
+    <nodeInfo nodeId="7092489630493754343" fileName="TestModule_jetbrains_mps_ide_java_tests.java" startLine="11" startPosition="54" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_ide_java_tests#()V" />
+    <scopeInfo nodeId="7092489630493754343" fileName="TestModule_jetbrains_mps_ide_java_tests.java" startLine="12" startPosition="52" endLine="12" endPosition="52" />
+    <scopeInfo nodeId="7092489630493754343" fileName="TestModule_jetbrains_mps_ide_java_tests.java" startLine="11" startPosition="54" endLine="13" endPosition="3" />
+    <unitInfo nodeId="7092489630493754343" fileName="TestModule_jetbrains_mps_ide_java_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ide_java_tests" />
+  </root>
   <root nodeId="7327404875649061237" modelId="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
     <nodeInfo nodeId="7327404875649061237" fileName="TestModule_jetbrains_mps_lang_traceable_operations_test.java" startLine="11" startPosition="70" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_lang_traceable_operations_test#()V" />
     <scopeInfo nodeId="7327404875649061237" fileName="TestModule_jetbrains_mps_lang_traceable_operations_test.java" startLine="12" startPosition="68" endLine="12" endPosition="68" />

@@ -103,4 +103,8 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       }
     });
   }
+
+  // FIXME temporary solution
+  public void reparseOneFile(String content) {}
+
 }

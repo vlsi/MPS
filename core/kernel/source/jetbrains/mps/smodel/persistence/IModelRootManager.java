@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 
 public interface IModelRootManager {
-  Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module);
+  Collection<SModelDescriptor> load(@NotNull SModelRoot root);
 
   //null in parameter means "are you able to create with ANY parameter at this place?"
-  boolean canCreateModel(IModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName);
+  boolean canCreateModel(@Nullable SModelRoot root, @Nullable SModelFqName fqName);
 
-  SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
+  SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName);
 }

@@ -5,18 +5,19 @@ package jetbrains.mps.samples.plainText.stubs;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.project.IModule;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
   private SModel myModel = null;
-  private IModule myModule;
+  private SModule myModule;
   private boolean isChanged = false;
 
-  public TextModelDescriptor(IModule module, TextModelDataSource source) {
+  public TextModelDescriptor(SModule module, TextModelDataSource source) {
     super(TextPersistenceUtil.refByModule(module.getModuleReference()), source);
     this.myModule = module;
     updateDiskTimestamp();
@@ -74,7 +75,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   public synchronized SModel getSModel() {
     if (myModel == null) {
-      myModel = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+      myModel = getSource().loadSModel((IModule) myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
       myModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }

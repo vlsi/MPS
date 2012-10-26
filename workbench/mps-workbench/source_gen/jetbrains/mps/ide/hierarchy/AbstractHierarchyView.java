@@ -100,7 +100,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     };
     myHierarchyTree.setRootVisible(true);
-    myHierarchyTree.fireTreeCreated(getProject());
     final JPanel panel = new JPanel(new BorderLayout());
     this.myComponent = new AbstractHierarchyView.RootPanel();
     myComponent.add(panel, BorderLayout.NORTH);
