@@ -24,9 +24,8 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
@@ -86,14 +85,13 @@ public class ConceptPropertiesHelper {
       SNode source = usage.getSourceNode();
       if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
         SetSequence.fromSet(conceptUsages).addElement(SNodeOperations.getAncestor(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", false, false));
-        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
       } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess") && needToMigrate(source)) {
         SetSequence.fromSet(accessUsages).addElement(SNodeOperations.getParent(source));
-        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
       } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty")) {
         SetSequence.fromSet(cellUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
-        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
       }
+      SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
+
     }
 
     final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
@@ -112,14 +110,6 @@ public class ConceptPropertiesHelper {
             }
             refactoringViewItem.close();
             makeAll(searchResults);
-            for (SNode concept : SetSequence.fromSet(conceptUsages)) {
-              SNode alias = ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptProperty", true)).findFirst(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
-                }
-              });
-              SNodeOperations.deleteNode(alias);
-            }
           }
         });
       }
@@ -171,11 +161,13 @@ public class ConceptPropertiesHelper {
     SModelRepository.getInstance().saveAll();
     //  save all before launching make 
     for (SModel model : sourceModels) {
+      if (model == null) {
+        continue;
+      }
       if (!(model.isDisposed()) && model.getModelDescriptor().isGeneratable()) {
         descriptors.add(model.getModelDescriptor());
       }
     }
-
     final IOperationContext operationContext = new ProjectOperationContext(project);
     new Thread() {
       public void run() {
