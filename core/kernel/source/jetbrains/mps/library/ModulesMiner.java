@@ -21,6 +21,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.LanguageID;
@@ -206,8 +208,9 @@ public class ModulesMiner {
       }
     }
 
-    for (jetbrains.mps.project.structure.model.ModelRoot root : descriptor.getModelRoots()) {
-      if (root.getManager() != null && root.getManager() != LanguageID.JAVA_MANAGER) {
+    for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
+      ModelRoot root = rootDescriptor.getRoot();
+      if (root == null || root.getManager() != null && root.getManager() != LanguageID.JAVA_MANAGER) {
         continue;
       }
 
@@ -215,11 +218,17 @@ public class ModulesMiner {
     }
 
     IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile);
-    if (classesGen != null) {
+    if (classesGen != null)
+
+    {
       excludes.add(classesGen);
     }
 
-    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
+    for (
+      String entry
+      : descriptor.getAdditionalJavaStubPaths())
+
+    {
       excludes.add(FileSystem.getInstance().getFileByPath(entry));
     }
   }

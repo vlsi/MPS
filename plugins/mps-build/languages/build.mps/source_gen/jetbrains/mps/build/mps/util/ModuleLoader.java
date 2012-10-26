@@ -40,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.ProjectPathUtil;
 import org.jetbrains.annotations.Nullable;
@@ -691,18 +692,19 @@ public class ModuleLoader {
 
   private void collectSources(boolean checkOnly, boolean importOnly) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    Iterable<ModelRoot> modelRoots = myModuleDescriptor.getModelRoots();
+    Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
     boolean hasModels = false;
     if (myModuleDescriptor instanceof LanguageDescriptor) {
       Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
-      modelRoots = Sequence.fromIterable(modelRoots).concat(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModelRoot>() {
-        public Iterable<ModelRoot> translate(GeneratorDescriptor it) {
-          return it.getModelRoots();
+      modelRoots = Sequence.fromIterable(modelRoots).concat(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModelRootDescriptor>() {
+        public Iterable<ModelRootDescriptor> translate(GeneratorDescriptor it) {
+          return it.getModelRootDescriptors();
         }
       }));
     }
-    for (ModelRoot modelRoot : modelRoots) {
-      if (modelRoot.getManager() != null) {
+    for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
+      ModelRoot modelRoot = modelRootDescriptor.getRoot();
+      if (modelRoot == null || modelRoot.getManager() != null) {
         continue;
       }
 

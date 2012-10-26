@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;
@@ -27,7 +29,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<GeneratorDescriptor> myGenerators;
   private Set<ModuleReference> myExtendedLanguages;
   private Set<ModuleReference> myRuntimeModules;
-  private Set<ModelRoot> myRuntimeStubModels;
   private Set<StubSolution> myStubSolutions;
 
   public LanguageDescriptor() {
@@ -36,7 +37,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myGenerators = new ArrayList<GeneratorDescriptor>();
     myExtendedLanguages = new LinkedHashSet<ModuleReference>();
     myRuntimeModules = new LinkedHashSet<ModuleReference>();
-    myRuntimeStubModels = new LinkedHashSet<ModelRoot>();
     myStubSolutions = new LinkedHashSet<StubSolution>();
   }
 

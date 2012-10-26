@@ -33,11 +33,10 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.creators.Depende
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer;
 import javax.swing.JComponent;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
@@ -215,17 +214,14 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list, final IFile bundleHome) {
-    return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
-      public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
+  public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRootDescriptor> list, final IFile bundleHome) {
+    return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
+      public BoundListPanel invoke() {
+        final BoundListPanel result_wf5hwp_a0a0a8 = new BoundListPanel(owner, caption, list);
         final Computable result_wf5hwp_a0a0a0a8 = new ModelRootChooser(owner, bundleHome);
         result_wf5hwp_a0a0a8.setChooser(result_wf5hwp_a0a0a0a8);
-
-        final ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 250);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a8 = new ModelRootRenderer();
+        result_wf5hwp_a0a0a8.setCellRenderer(result_wf5hwp_a1a0a0a8);
         result_wf5hwp_a0a0a8.init();
         return result_wf5hwp_a0a0a8;
       }
@@ -259,7 +255,7 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<String> libs, final List<ModelRoot> modelRoots) {
+  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<String> libs, final List<ModelRootDescriptor> modelRoots) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a01 = new BoundListPanel(owner, caption, libs);

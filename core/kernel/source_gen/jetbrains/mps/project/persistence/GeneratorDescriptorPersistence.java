@@ -53,10 +53,10 @@ public class GeneratorDescriptorPersistence {
 
         Element models = XmlUtil.first(generatorElement, "models");
         if (models != null) {
-          result_wk2vdq_a0a0a0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(models, "modelRoot"), macroHelper));
+          result_wk2vdq_a0a0a0a.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(models, "modelRoot"), macroHelper));
         } else {
           // old - for backwards compatibility 
-          result_wk2vdq_a0a0a0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(generatorElement, "modelRoot"), macroHelper));
+          result_wk2vdq_a0a0a0a.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(generatorElement, "modelRoot"), macroHelper));
         }
 
 
@@ -116,7 +116,7 @@ public class GeneratorDescriptorPersistence {
     }
 
     Element models = new Element("models");
-    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRoots(), macroHelper);
+    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
     generator.addContent(models);
 
     // "depends on" generators 

@@ -16,12 +16,19 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.persistence.ModelRootBase;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
+import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -31,26 +38,27 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class SModelRoot extends ModelRootBase implements org.jetbrains.mps.openapi.persistence.ModelRoot {
+  @NotNull
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
 
-  public SModelRoot() {
-    // TODO
+  public SModelRoot(@Nullable ModelRootManager manager) {
+    myModelRoot = new ModelRoot(null, manager);
+    myManager = createManager();
   }
 
-  public SModelRoot(SModule module, ModelRoot root) throws ManagerNotFoundException {
+  public SModelRoot(SModule module, ModelRoot root) {
     myModelRoot = root;
     myManager = createManager();
     setModule(module);
   }
 
-  private IModelRootManager createManager() throws ManagerNotFoundException {
+  private IModelRootManager createManager() {
     if (myModelRoot.getManager() != null) {
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
       return create(moduleId, className);
     }
-
     return new DefaultModelRootManager();
   }
 
@@ -113,37 +121,37 @@ public class SModelRoot extends ModelRootBase implements org.jetbrains.mps.opena
 
   @Override
   public void save(Memento memento) {
-
+    myModelRoot.save(memento);
   }
 
   @Override
   public void load(Memento memento) {
-
+    myModelRoot.load(memento);
+    myManager = createManager();
   }
 
-  private static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
+  public ModelRootDescriptor toDescriptor() {
+    ModelRootDescriptor result = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+    save(result.getMemento());
+    return result;
+  }
+
+
+  private static IModelRootManager create(String moduleId, String className) {
     IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
-    if (mod == null) return null;
+    if (mod == null) {
+      return new InvalidModelRootManager(moduleId, className, "module is absent");
+    }
 
     Class managerClass = mod.getClass(className);
     if (managerClass == null) {
-      throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());
+      return new InvalidModelRootManager(moduleId, className, "class is absent");
     }
 
     try {
       return (IModelRootManager) managerClass.newInstance();
     } catch (Throwable t) {
-      throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
-    }
-  }
-
-  public static class ManagerNotFoundException extends Exception {
-    public ManagerNotFoundException(String message) {
-      super(message);
-    }
-
-    public ManagerNotFoundException(String message, Throwable cause) {
-      super(message, cause);
+      return new InvalidModelRootManager(moduleId, className, "exception: " + t.getMessage());
     }
   }
 }

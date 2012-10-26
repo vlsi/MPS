@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.project.structure.model;
 
-import org.jetbrains.mps.openapi.persistence.Memento;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import jetbrains.mps.persistence.PersistenceRegistry;
 
 /**
  * evgeny, 10/24/12
@@ -23,9 +24,9 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 public class ModelRootDescriptor {
 
   private String type;
-  private Memento memento;
+  private PathAwareJDOMMemento memento;
 
-  public ModelRootDescriptor(String type, Memento memento) {
+  public ModelRootDescriptor(String type, PathAwareJDOMMemento memento) {
     this.type = type;
     this.memento = memento;
   }
@@ -34,11 +35,14 @@ public class ModelRootDescriptor {
     return type;
   }
 
-  public Memento getMemento() {
+  public PathAwareJDOMMemento getMemento() {
     return memento;
   }
 
   public ModelRoot getRoot() {
+    if (type != null && type.length() > 0 && !type.equals(PersistenceRegistry.DEFAULT_MODEL_ROOT)) {
+      return null;
+    }
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.load(memento);
     return modelRoot;

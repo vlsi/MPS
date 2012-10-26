@@ -36,6 +36,10 @@ import java.util.List;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
+  public DefaultModelRootManager() {
+  }
+
+  @Override
   public Collection<SModelDescriptor> load(@NotNull SModelRoot root) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
     ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), models);

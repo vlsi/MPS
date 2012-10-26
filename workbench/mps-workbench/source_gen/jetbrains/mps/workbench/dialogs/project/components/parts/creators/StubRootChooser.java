@@ -5,13 +5,14 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor;
@@ -20,10 +21,10 @@ import jetbrains.mps.util.NameUtil;
 
 public class StubRootChooser implements Computable<List<String>> {
   private final IBindedDialog myOwner;
-  private List<ModelRoot> myRoots;
+  private List<ModelRootDescriptor> myRoots;
   private boolean myJavaOnly;
 
-  public StubRootChooser(IBindedDialog owner, List<ModelRoot> roots, boolean javaOnly) {
+  public StubRootChooser(IBindedDialog owner, List<ModelRootDescriptor> roots, boolean javaOnly) {
     myOwner = owner;
     myRoots = roots;
     myJavaOnly = javaOnly;
@@ -45,12 +46,11 @@ public class StubRootChooser implements Computable<List<String>> {
     if (myJavaOnly) {
       int res = Messages.showYesNoDialog(myOwner.getMainComponent(), "MPS can try creating models for the specified locations, so that class files can be referenced from MPS models directly. Would you like to import models for the specified locations?", "Model Roots", Messages.getQuestionIcon());
       if (res == Messages.YES) {
-        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRoot>() {
-          public ModelRoot select(String it) {
-            ModelRoot sme = new ModelRoot();
+        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
+          public ModelRootDescriptor select(String it) {
+            SModelRoot sme = new SModelRoot(LanguageID.JAVA_MANAGER);
             sme.setPath(it);
-            sme.setManager(LanguageID.JAVA_MANAGER);
-            return sme;
+            return sme.toDescriptor();
           }
         }));
       }
@@ -76,12 +76,11 @@ public class StubRootChooser implements Computable<List<String>> {
             return shortName(it).equals(ListSequence.fromList(managerNames).getElement(res));
           }
         });
-        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRoot>() {
-          public ModelRoot select(String it) {
-            ModelRoot sme = new ModelRoot();
+        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
+          public ModelRootDescriptor select(String it) {
+            SModelRoot sme = new SModelRoot(manager);
             sme.setPath(it);
-            sme.setManager(manager);
-            return sme;
+            return sme.toDescriptor();
           }
         }));
       }

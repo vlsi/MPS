@@ -17,11 +17,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
@@ -90,11 +86,10 @@ public class LibrariesLoader implements CoreComponent {
       SolutionDescriptor sd = library.getModuleDescriptor();
 
       for (String path : d.getPaths()) {
-        ModelRoot root = new ModelRoot();
+        SModelRoot root = new SModelRoot(d.getManager());
         root.setPath(path);
-        root.setManager(d.getManager());
-        sd.getModelRoots().add(root);
-        if(LanguageID.JAVA_MANAGER.equals(d.getManager())) {
+        sd.getModelRootDescriptors().add(root.toDescriptor());
+        if (LanguageID.JAVA_MANAGER.equals(d.getManager())) {
           sd.getAdditionalJavaStubPaths().add(root.getPath());
         }
       }
