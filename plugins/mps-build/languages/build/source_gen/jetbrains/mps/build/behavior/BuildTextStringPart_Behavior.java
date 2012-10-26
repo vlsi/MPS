@@ -5,6 +5,8 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildTextStringPart_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +14,13 @@ public class BuildTextStringPart_Behavior {
 
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     return SPropertyOperations.getString(thisNode, "text");
+  }
+
+  @Nullable
+  public static SNode call_getContainer_6083230236994622122(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildString") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), "jetbrains.mps.build.structure.BuildStringContainer")) {
+      return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), "jetbrains.mps.build.structure.BuildStringContainer");
+    }
+    return null;
   }
 }

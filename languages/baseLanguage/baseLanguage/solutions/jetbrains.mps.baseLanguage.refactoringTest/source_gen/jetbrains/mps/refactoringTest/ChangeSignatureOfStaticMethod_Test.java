@@ -38,7 +38,7 @@ public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest4 
       ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p1);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052903099"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       List<SNode> ussages = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903086"), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"));
+      ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903086"), "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
       ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903093"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       ref.setUsages(ussages);
       ref.doRefactoring();

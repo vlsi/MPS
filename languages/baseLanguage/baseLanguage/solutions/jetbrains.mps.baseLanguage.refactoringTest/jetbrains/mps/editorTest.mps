@@ -4050,10 +4050,10 @@
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4497978391706445248" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4497978391706445249" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4497978391706445250">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4497978391706577504">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="4497978391706577505">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7047854634821571081">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="7047854634821571082">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4497978391706445242" resolveInfo="method" />
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2576168041330121748">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7047854634821571083">
                 <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
                 <property name="cellId" nameId="tp5g.1229194968595" value="Constant_arlg9k_a1a" />
                 <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -4819,8 +4819,8 @@
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4439253381394559656" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4439253381394559657" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4439253381394559660">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8468908930184126938">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="8468908930184126939">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7059828622922200245">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="7059828622922200246">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4439253381394559644" resolveInfo="method" />
             </node>
           </node>
@@ -5203,17 +5203,17 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1574561129028805655" />
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1574561129028805657">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixDecrementExpression" typeId="tpee.1239709577448" id="1574561129028805659">
-            <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1574561129028805660">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4033292513212080062">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixDecrementExpression" typeId="tpee.1239709577448" id="4033292513212080065">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4033292513212080063">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1574561129028805654" resolveInfo="t" />
-            </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2576168041330176910">
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="Constant_oco0i1_a0" />
-              <property name="caretPosition" nameId="tp5g.1229194968596" value="1" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
-              <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4033292513212080067">
+                <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+                <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+                <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+                <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+              </node>
             </node>
           </node>
         </node>
@@ -8264,19 +8264,19 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4507831107787992276">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixIncrementExpression" typeId="tpee.1239709250944" id="4507831107787992280">
-            <node role="expression" roleId="tpee.1239714902950" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="4507831107787992278">
-              <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4507831107787992279">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4033292513212079018">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixIncrementExpression" typeId="tpee.1239709250944" id="4033292513212079040">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="4033292513212079036">
+              <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4033292513212079037">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4507831107787903382" resolveInfo="i" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4033292513212079042">
+                  <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+                  <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+                  <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+                  <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                  <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                </node>
               </node>
-            </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4507831107787992282">
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="Constant_d3u5ln_a0" />
-              <property name="caretPosition" nameId="tp5g.1229194968596" value="1" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
-              <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             </node>
           </node>
         </node>
@@ -8327,19 +8327,19 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4507831107788070698">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixDecrementExpression" typeId="tpee.1239709577448" id="4507831107788070704">
-            <node role="expression" roleId="tpee.1239714902950" type="tpee.PostfixDecrementExpression" typeId="tpee.1214918975462" id="4507831107788070699">
-              <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4507831107788070700">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4033292513212078992">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixDecrementExpression" typeId="tpee.1239709577448" id="4033292513212079014">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.PostfixDecrementExpression" typeId="tpee.1214918975462" id="4033292513212079010">
+              <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4033292513212079011">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4507831107788070695" resolveInfo="i" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4033292513212079016">
+                  <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+                  <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+                  <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+                  <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                  <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                </node>
               </node>
-            </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4507831107788070706">
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="Constant_oco0i1_a0" />
-              <property name="caretPosition" nameId="tp5g.1229194968596" value="1" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
-              <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             </node>
           </node>
         </node>
@@ -8940,22 +8940,22 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6042072087468738498">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixDecrementExpression" typeId="tpee.1239709577448" id="6042072087468738503">
-            <node role="expression" roleId="tpee.1239714902950" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6042072087468738499">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6042072087468738500">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4033292513212079044">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PrefixDecrementExpression" typeId="tpee.1239709577448" id="4033292513212080055">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4033292513212079062">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4033292513212079045">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6042072087468738494" resolveInfo="testClass" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4033292513212080057">
+                  <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
+                  <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+                  <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
+                  <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                  <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="6042072087468738502">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="4033292513212080052">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4507831107788309243" resolveInfo="i" />
               </node>
-            </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6042072087468738505">
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="Constant_oco0i1_a0" />
-              <property name="caretPosition" nameId="tp5g.1229194968596" value="1" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
-              <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             </node>
           </node>
         </node>

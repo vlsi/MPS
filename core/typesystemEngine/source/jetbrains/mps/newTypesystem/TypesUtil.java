@@ -24,12 +24,12 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.*;
 
@@ -107,12 +107,9 @@ public class TypesUtil {
 
   public static List<SNode> getNodeReferents(SNode node) {
     final List<SNode> result = new ArrayList<SNode>();
-    node.visitReferences(new ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-        result.add(((SNode) ref.getTargetNode()));
-        return true;
-      }
-    });
+    for(SReference ref:node.getReferences()){
+      result.add(ref.getTargetNode());
+    }
     return result;
   }
 

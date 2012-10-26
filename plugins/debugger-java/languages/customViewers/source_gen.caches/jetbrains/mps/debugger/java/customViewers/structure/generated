@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3k262i8hol62ycbvtmrx7vqlsuwlv3k">
+<dependencies version="2" modelHash="-chjc5pyzfmiqi3514pqwes4s7ar1b07">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="44lzlq1u85ktrzs2pfmlcov6gdlbsb6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5adz33y0tgg1k47pmhud90912h9x4de" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6hh98xngdbah9vcaahb3pvwhjzrl9ha" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6md5g2h2acbyqtqsfqzg1ljuryigg5c" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="ec3gznkwxykcw7q10wncyfqe3at1s9u" />
   <dep model="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)" hash="-4tepq5e5eapetf2tyj6zzbcoau0vzrn" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
@@ -39,13 +39,13 @@
   <source id="5117350825036234483" name="CustomWatchable" hash="6p0gp1tiy1iyqqyo4mkct5wfx41xqdp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5117350825036256317" name="CustomWatchablesContainer" hash="rspn31oliti99o1bl4hfawc76h3747">
+  <source id="5117350825036256317" name="CustomWatchablesContainer" hash="1684j20z9p6b1odqthtqyh81vvp31o8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5117350825036256333" name="WatchableType" hash="8oorjdkcvu6jcbfahgog8q9xq2ciwsq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="680105146889009728" name="HighLevelCustomViewer" hash="aulrdrpkrq0fd84ckffa7i48hhjn2uq">
+  <source id="680105146889009728" name="HighLevelCustomViewer" hash="4tsujsxtx185ypoo7b6twawf65fxpac">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="43370322128194514" name="GetHighLevelValuePresentation_ConceptFunction" hash="4qk7beln78pimrtkia4gigkf5rw0mup">
@@ -66,7 +66,7 @@
   <source id="1842653058274900914" name="WatchablesListCreator" hash="-c4gssaokq5k6txpr8p7py8pr6jkgqo4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1842653058274900915" name="WatchableListType" hash="-8wf9ax8lscrjn4lmt92shuo375grtyd">
+  <source id="1842653058274900915" name="WatchableListType" hash="-5egc8sf2nzm7k0cks4vpwgx8jng550e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="721063219978402832" name="ToProcessMethod" hash="-7jtusnc924lelaniwvzc59dqsntqcuk">

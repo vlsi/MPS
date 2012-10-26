@@ -21,13 +21,23 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public interface ModelRoot {
 
+  String getType();
+
+  String getPresentation();
+
   SModule getModule();
 
   SModel getModel(SModelId id);
 
   Iterable<SModel> getModels();
 
-  SModel canCreateModel(String modelName);
+  boolean isReadOnly();
+
+  boolean canCreateModel(String modelName);
 
   SModel createModel(String modelName);
+
+  void save(Memento memento);
+
+  void load(Memento memento);
 }

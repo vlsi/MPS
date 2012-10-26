@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
@@ -47,7 +47,7 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -62,7 +62,7 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     public ActionParameter_name_postfixCellMenu_a0a() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
       SNode nodeType = ActionParameter_Behavior.call_getType_1171743928471337193(node);
       if (nodeType != null) {

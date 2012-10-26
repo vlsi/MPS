@@ -52,7 +52,7 @@ public class typeof_FacetReferenceExpression_InferenceRule extends AbstractInfer
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)"), SNodeId.fromString("6168415856807657097")));
         result = quotedNode1_2;
@@ -65,7 +65,7 @@ public class typeof_FacetReferenceExpression_InferenceRule extends AbstractInfer
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)"), SNodeId.fromString("6168415856807657097")));
         result = quotedNode1_2;

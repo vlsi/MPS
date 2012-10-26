@@ -65,7 +65,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlElement", null);
+                SNode res = SModelOperations.createNewNode(model, null, "jetbrains.mps.core.xml.structure.XmlElement");
                 SPropertyOperations.set(res, "tagName", (item));
                 SPropertyOperations.set(res, "shortEmptyNotation", "" + (true));
                 return res;
@@ -95,7 +95,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfFileSet", null);
+            SNode cp = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfFileSet");
             ListSequence.fromList(SLinkOperations.getTargets(cp, "elements", true)).addElement(nodeToWrap);
             return cp;
           }
@@ -129,7 +129,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
+            SNode cp = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
             SLinkOperations.setTarget(cp, "classpath", nodeToWrap, true);
             return cp;
           }
@@ -160,7 +160,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "before", true)).addElement(SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", null));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "before", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
           return _context.getSourceNode();
         }
 
@@ -182,7 +182,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "after", true)).addElement(SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", null));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "after", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
           return _context.getSourceNode();
         }
 
@@ -204,7 +204,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTask");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "dependencies", true)).addElement(SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfTaskDependency", null));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "dependencies", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"));
           return _context.getSourceNode();
         }
 
@@ -226,7 +226,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "additionalDependencies", true)).addElement(SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfTaskDependency", null));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "additionalDependencies", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"));
           return _context.getSourceNode();
         }
 

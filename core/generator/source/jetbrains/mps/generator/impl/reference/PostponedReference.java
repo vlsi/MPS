@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
  * Igor Alshannikov
@@ -102,9 +103,11 @@ public class PostponedReference extends SReference {
 
       SNode templateNode = myReferenceInfo instanceof ReferenceInfo_Macro ? ((ReferenceInfo_Macro) myReferenceInfo).getMacroNode() : null;
       SNode inputNode = myReferenceInfo.getInputNode();
-      if (inputNode != null || templateNode != null) {
-        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, inputNode != null ? new SNodePointer(inputNode) : null));
+      boolean validInputNode = inputNode != null && inputNode.getModel() != null;
+      if (validInputNode || templateNode != null) {
+        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, validInputNode ? new SNodePointer(inputNode) : null));
       }
+
       myReplacementReference = dynamicReference;
 
     } else {
@@ -123,7 +126,7 @@ public class PostponedReference extends SReference {
         }
       } else if (myReferenceInfo.isRequired()) {
         myGenerator.getLogger().error(myReferenceInfo.getOutputSourceNode(),
-          "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + myReferenceInfo.getOutputSourceNode().getDebugText(),
+          "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + SNodeUtil.getDebugText(myReferenceInfo.getOutputSourceNode()),
           myReferenceInfo.getErrorDescriptions());
 
         myReplacementReference = new StaticReference(
@@ -161,13 +164,13 @@ public class PostponedReference extends SReference {
     if (referentNodeModel != outputNode.getModel()) {
       if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
         // references on template nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a generator model: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText(),
+        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a generator model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
           myReferenceInfo.getErrorDescriptions());
         return false;
       }
       if (referentNodeModel instanceof TransientSModel) {
         // references on transient nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText(),
+        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
           myReferenceInfo.getErrorDescriptions());
         return false;
       }

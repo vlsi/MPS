@@ -15,7 +15,7 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -93,7 +93,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     BinaryOperation_Symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new CastExpression_KeyMap());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BinaryOperation_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0(), new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_b0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BinaryOperation_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0(), new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_b0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -117,7 +117,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     public BinaryOperation_generic_cellMenu_b0b0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       // hack before actions are refactored 
       List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
         protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
@@ -132,11 +132,11 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       return actions;
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((INodeSubstituteAction) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(INodeSubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(INodeSubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
     }
 

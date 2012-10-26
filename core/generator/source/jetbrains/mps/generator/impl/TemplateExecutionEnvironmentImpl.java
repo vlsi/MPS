@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -140,25 +139,21 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   private void validateReferences(SNode node, final SNode inputNode) {
-    node.visitReferences(new ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-        SReference reference = (SReference) ref;
-        // reference to input model - illegal
-        if (generator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
-          // replace
-          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-            reference.getRole(),
-            reference.getSourceNode(),
-            inputNode,
-            reference.getTargetNode());
-          PostponedReference postponedReference = new PostponedReference(
-            refInfo,
-            generator);
-          reference.getSourceNode().setReference(reference.getRole(), postponedReference);
-        }
-        return true;
+    for (SReference ref: node.getReferences()){
+      // reference to input model - illegal
+      if (generator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
+        // replace
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+          ref.getRole(),
+          ref.getSourceNode(),
+          inputNode,
+          ref.getTargetNode());
+        PostponedReference postponedReference = new PostponedReference(
+          refInfo,
+          generator);
+        ref.getSourceNode().setReference(ref.getRole(), postponedReference);
       }
-    });
+    }
     for (SNode child : node.getChildren()) {
       validateReferences(child, inputNode);
     }

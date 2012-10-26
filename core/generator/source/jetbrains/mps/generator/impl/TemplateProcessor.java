@@ -37,7 +37,6 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -145,7 +144,7 @@ public class TemplateProcessor {
       }
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
-        myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + templateNode.getDebugText());
+        myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(templateNode));
         continue;
       }
       if (templateReferentNode.getModel() == templateModel) { // internal reference
@@ -615,25 +614,21 @@ public class TemplateProcessor {
   }
 
   private void validateReferences(SNode node, final SNode inputNode) {
-    node.visitReferences(new ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-        SReference reference = (SReference) ref;
-        // reference to input model - illegal
-        if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
-          // replace
-          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-            reference.getRole(),
-            reference.getSourceNode(),
-            inputNode,
-            reference.getTargetNode());
-          PostponedReference postponedReference = new PostponedReference(
-            refInfo,
-            myGenerator);
-          reference.getSourceNode().setReference(reference.getRole(), postponedReference);
-        }
-        return true;
+    for (SReference ref:node.getReferences()){
+      // reference to input model - illegal
+      if (myGenerator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
+        // replace
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+          ref.getRole(),
+          ref.getSourceNode(),
+          inputNode,
+          ref.getTargetNode());
+        PostponedReference postponedReference = new PostponedReference(
+          refInfo,
+          myGenerator);
+        ref.getSourceNode().setReference(ref.getRole(), postponedReference);
       }
-    });
+    }
 
     for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       validateReferences(((SNode) child), inputNode);

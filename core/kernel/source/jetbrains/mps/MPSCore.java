@@ -26,6 +26,7 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
@@ -71,12 +72,14 @@ public class MPSCore extends ComponentPlugin {
   public void init() {
     super.init();
 
+    init(new PersistenceRegistry());
+    init(new ConceptRepository());
+
     // repositories
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
     myModelRepository = init(new SModelRepository(classLoaderManager));
     myModuleRepository = init(new MPSModuleRepository(classLoaderManager));
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
-    init(new ConceptRepository());
 
     init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));
@@ -88,7 +91,6 @@ public class MPSCore extends ComponentPlugin {
     init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
     init(new AuxilaryRuntimeModel(myModelRepository));
     init(new ImmatureReferences(myModelRepository));
-    init(new CommandEventsManager(myModelRepository, myGlobalSModelEventsManager));
     init(new LibrariesLoader(myModuleRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));

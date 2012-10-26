@@ -21,8 +21,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.LanguageID;
@@ -221,12 +219,8 @@ public class ModulesMiner {
       excludes.add(classesGen);
     }
 
-    for (ModelRoot entry : descriptor.getStubModelEntries()) {
-      if (entry.getManager() != LanguageID.JAVA_MANAGER) {
-        continue;
-      }
-
-      excludes.add(FileSystem.getInstance().getFileByPath(entry.getPath()));
+    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
+      excludes.add(FileSystem.getInstance().getFileByPath(entry));
     }
   }
 

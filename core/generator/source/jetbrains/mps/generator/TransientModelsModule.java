@@ -224,7 +224,7 @@ public class TransientModelsModule extends ClassLoadingModule   {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
-      super(new SModelReference(fqName, SModelId.generate()), false);
+      super(new SModelReference(fqName, SModelId.generate()));
       myLongName = longName;
     }
 

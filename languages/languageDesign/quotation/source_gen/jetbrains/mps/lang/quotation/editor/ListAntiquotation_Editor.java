@@ -138,7 +138,6 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_yxrtdc_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode parent = SNodeOperations.getParent(node);
         if ((SNodeOperations.getParent(node) != null)) {
           return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "name");
         } else {

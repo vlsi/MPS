@@ -7843,10 +7843,10 @@
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7879,46 +7879,47 @@
     <nodeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="70" startPosition="72" endLine="71" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="71" startPosition="78" endLine="72" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="73" startPosition="10" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="77" startPosition="95" endLine="78" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="78" startPosition="89" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="79" startPosition="30" endLine="80" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="80" startPosition="43" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="81" startPosition="26" endLine="82" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="82" startPosition="58" endLine="83" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="82" startPosition="58" endLine="83" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="83" startPosition="50" endLine="84" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="84" startPosition="73" endLine="85" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="85" startPosition="57" endLine="86" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="87" startPosition="35" endLine="88" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="88" startPosition="72" endLine="89" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="89" startPosition="78" endLine="90" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="91" startPosition="10" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="77" startPosition="88" endLine="78" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="78" startPosition="82" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="79" startPosition="30" endLine="80" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="80" startPosition="43" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="81" startPosition="26" endLine="82" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="82" startPosition="58" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="83" startPosition="43" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="84" startPosition="74" endLine="85" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="85" startPosition="73" endLine="86" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="86" startPosition="57" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="88" startPosition="35" endLine="89" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="89" startPosition="72" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="92" startPosition="10" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="64" startPosition="26" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="81" startPosition="26" endLine="84" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="82" startPosition="58" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855825934" fileName="DateTimeZoneCreator_Editor.java" startLine="20" startPosition="67" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238855930656" fileName="DateTimeZoneCreator_Editor.java" startLine="51" startPosition="72" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="81" startPosition="26" endLine="85" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855926716" fileName="DateTimeZoneCreator_Editor.java" startLine="38" startPosition="72" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855930656" fileName="DateTimeZoneCreator_Editor.java" startLine="49" startPosition="128" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="68" startPosition="59" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="86" startPosition="59" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="87" startPosition="59" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238855926716" fileName="DateTimeZoneCreator_Editor.java" startLine="36" startPosition="128" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_owc583_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238855930656" fileName="DateTimeZoneCreator_Editor.java" startLine="47" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_owc583_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238855926716" fileName="DateTimeZoneCreator_Editor.java" startLine="34" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_owc583_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="59" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_owc583_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="76" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_owc583_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="76" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_owc583_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="65" startPosition="58" endLine="65" endPosition="58" />
     <scopeInfo nodeId="1238855825934" fileName="DateTimeZoneCreator_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
     <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" />
-    <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" />
-    <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" />
+    <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="81" />
+    <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" />
     <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" />
     <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="82" startPosition="58" endLine="83" endPosition="50" />
     <scopeInfo nodeId="1238855930656" fileName="DateTimeZoneCreator_Editor.java" startLine="52" startPosition="5" endLine="54" endPosition="56">
       <varInfo nodeId="1238855930656" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="64" startPosition="26" endLine="66" endPosition="73" />
+    <scopeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="82" startPosition="58" endLine="84" endPosition="74" />
     <scopeInfo nodeId="1238855926716" fileName="DateTimeZoneCreator_Editor.java" startLine="39" startPosition="5" endLine="42" endPosition="57">
       <varInfo nodeId="1238855926716" varName="style" />
     </scopeInfo>
@@ -7926,15 +7927,15 @@
       <varInfo nodeId="1238855997833" varName="manager" />
       <varInfo nodeId="1238855997833" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="81" startPosition="26" endLine="84" endPosition="73" />
-    <scopeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="87" startPosition="35" endLine="90" endPosition="105">
-      <varInfo nodeId="5791296166730876738" varName="manager" />
-      <varInfo nodeId="5791296166730876738" varName="opContext" />
+    <scopeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105">
+      <varInfo nodeId="1238855905745" varName="manager" />
+      <varInfo nodeId="1238855905745" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="1238855825934" fileName="DateTimeZoneCreator_Editor.java" startLine="20" startPosition="67" endLine="24" endPosition="0">
       <varInfo nodeId="1238855825934" varName="editorContext" />
       <varInfo nodeId="1238855825934" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="81" startPosition="26" endLine="85" endPosition="73" />
     <scopeInfo nodeId="1238855930656" fileName="DateTimeZoneCreator_Editor.java" startLine="49" startPosition="128" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1238855862538" fileName="DateTimeZoneCreator_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
       <varInfo nodeId="1238855862538" varName="editorCell" />
@@ -7964,21 +7965,21 @@
       <varInfo nodeId="1238855997833" varName="editorCell" />
       <varInfo nodeId="1238855997833" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="77" startPosition="95" endLine="92" endPosition="22">
-      <varInfo nodeId="5791296166730876738" varName="attributeConcept" />
-      <varInfo nodeId="5791296166730876738" varName="attributeKind" />
-      <varInfo nodeId="5791296166730876738" varName="editorCell" />
-      <varInfo nodeId="5791296166730876738" varName="provider" />
+    <scopeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="77" startPosition="88" endLine="93" endPosition="22">
+      <varInfo nodeId="1238855905745" varName="attributeConcept" />
+      <varInfo nodeId="1238855905745" varName="attributeKind" />
+      <varInfo nodeId="1238855905745" varName="editorCell" />
+      <varInfo nodeId="1238855905745" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="1238855997833" fileName="DateTimeZoneCreator_Editor.java" startLine="59" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1238855997833" varName="editorContext" />
       <varInfo nodeId="1238855997833" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5791296166730876738" fileName="DateTimeZoneCreator_Editor.java" startLine="76" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="5791296166730876738" varName="editorContext" />
-      <varInfo nodeId="5791296166730876738" varName="node" />
+    <scopeInfo nodeId="1238855905745" fileName="DateTimeZoneCreator_Editor.java" startLine="76" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1238855905745" varName="editorContext" />
+      <varInfo nodeId="1238855905745" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1238855825934" fileName="DateTimeZoneCreator_Editor.java" startLine="20" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.editor.DateTimeZoneCreator_Editor" />
+    <unitInfo nodeId="1238855825934" fileName="DateTimeZoneCreator_Editor.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.editor.DateTimeZoneCreator_Editor" />
   </root>
   <root nodeId="1239016010540" modelId="r:00000000-0000-4000-0000-011c895903d0(jetbrains.mps.baseLanguage.dates.editor)">
     <nodeInfo nodeId="1239016016396" fileName="ConstantTimeZoneRef_Editor.java" startLine="40" startPosition="58" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -11059,14 +11060,14 @@
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="39" startPosition="26" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="40" startPosition="58" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="41" startPosition="49" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="42" startPosition="67" endLine="43" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="43" startPosition="212" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="42" startPosition="67" endLine="43" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="43" startPosition="215" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4555537781927941463" fileName="TimeZoneIDExpression_Editor.java" startLine="58" startPosition="105" endLine="59" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4555537781927941463" fileName="TimeZoneIDExpression_Editor.java" startLine="58" startPosition="134" endLine="59" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4555537781927941465" fileName="TimeZoneIDExpression_Editor.java" startLine="59" startPosition="37" endLine="60" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4555537781927941474" fileName="TimeZoneIDExpression_Editor.java" startLine="61" startPosition="56" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4555537781927941483" fileName="TimeZoneIDExpression_Editor.java" startLine="63" startPosition="7" endLine="64" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -11074,10 +11075,10 @@
     <nodeInfo nodeId="4555537781927941460" fileName="TimeZoneIDExpression_Editor.java" startLine="54" startPosition="114" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TimeZoneIDExpression_timezone_id_cellMenu_a0a0#()V" />
     <nodeInfo nodeId="4555537781927941472" fileName="TimeZoneIDExpression_Editor.java" startLine="60" startPosition="75" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4555537781927648372" fileName="TimeZoneIDExpression_Editor.java" startLine="23" startPosition="68" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="39" startPosition="26" endLine="43" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="39" startPosition="26" endLine="43" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4555537781927648374" fileName="TimeZoneIDExpression_Editor.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dukjzk_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4555537781927941460" fileName="TimeZoneIDExpression_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="4555537781927941460" fileName="TimeZoneIDExpression_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="34" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_dukjzk_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="4555537781927941460" fileName="TimeZoneIDExpression_Editor.java" startLine="55" startPosition="61" endLine="55" endPosition="61" />
     <scopeInfo nodeId="4555537781927648372" fileName="TimeZoneIDExpression_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
@@ -11100,8 +11101,8 @@
     <scopeInfo nodeId="4555537781927648374" fileName="TimeZoneIDExpression_Editor.java" startLine="28" startPosition="89" endLine="32" endPosition="22">
       <varInfo nodeId="4555537781927648374" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="39" startPosition="26" endLine="43" endPosition="212" />
-    <scopeInfo nodeId="4555537781927941462" fileName="TimeZoneIDExpression_Editor.java" startLine="58" startPosition="105" endLine="64" endPosition="20">
+    <scopeInfo nodeId="4555537781927678420" fileName="TimeZoneIDExpression_Editor.java" startLine="39" startPosition="26" endLine="43" endPosition="215" />
+    <scopeInfo nodeId="4555537781927941462" fileName="TimeZoneIDExpression_Editor.java" startLine="58" startPosition="134" endLine="64" endPosition="20">
       <varInfo nodeId="4555537781927941466" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4555537781927648374" fileName="TimeZoneIDExpression_Editor.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
@@ -11109,6 +11110,7 @@
       <varInfo nodeId="4555537781927648374" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4555537781927941460" fileName="TimeZoneIDExpression_Editor.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="4555537781927941460" varName="editorContext" />
       <varInfo nodeId="4555537781927941460" varName="node" />
       <varInfo nodeId="4555537781927941460" varName="operationContext" />
       <varInfo nodeId="4555537781927941460" varName="scope" />
@@ -12825,8 +12827,8 @@
     <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="233" startPosition="26" endLine="234" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="234" startPosition="58" endLine="235" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="235" startPosition="46" endLine="236" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="236" startPosition="72" endLine="237" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="237" startPosition="211" endLine="238" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="236" startPosition="72" endLine="237" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="237" startPosition="214" endLine="238" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="238" startPosition="57" endLine="239" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="240" startPosition="35" endLine="241" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="241" startPosition="72" endLine="242" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -12847,7 +12849,7 @@
     <nodeInfo nodeId="5293902215864721213" fileName="TimeZoneNameOperation_Editor.java" startLine="260" startPosition="78" endLine="261" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5293902215864721213" fileName="TimeZoneNameOperation_Editor.java" startLine="262" startPosition="10" endLine="263" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5293902215864698589" fileName="TimeZoneNameOperation_Editor.java" startLine="266" startPosition="111" endLine="267" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8736588939154832752" fileName="TimeZoneNameOperation_Editor.java" startLine="274" startPosition="105" endLine="275" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8736588939154832752" fileName="TimeZoneNameOperation_Editor.java" startLine="274" startPosition="134" endLine="275" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8736588939154856888" fileName="TimeZoneNameOperation_Editor.java" startLine="275" startPosition="71" endLine="276" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8736588939154856906" fileName="TimeZoneNameOperation_Editor.java" startLine="276" startPosition="50" endLine="277" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8736588939154856943" fileName="TimeZoneNameOperation_Editor.java" startLine="277" startPosition="56" endLine="278" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -12909,7 +12911,7 @@
     <nodeInfo nodeId="5293902215864698576" fileName="TimeZoneNameOperation_Editor.java" startLine="123" startPosition="77" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5293902215864721335" fileName="TimeZoneNameOperation_Editor.java" startLine="142" startPosition="48" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5293902215864721337" fileName="TimeZoneNameOperation_Editor.java" startLine="153" startPosition="48" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="233" startPosition="26" endLine="237" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="233" startPosition="26" endLine="237" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5293902215864698587" fileName="TimeZoneNameOperation_Editor.java" startLine="265" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_vkak8k_a5a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="5293902215864942501" fileName="TimeZoneNameOperation_Editor.java" startLine="286" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5293902215864942501" fileName="TimeZoneNameOperation_Editor.java" startLine="290" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -12932,7 +12934,7 @@
     <nodeInfo nodeId="5293902215864698574" fileName="TimeZoneNameOperation_Editor.java" startLine="108" startPosition="128" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5293902215864721201" fileName="TimeZoneNameOperation_Editor.java" startLine="161" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vkak8k_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5293902215864721210" fileName="TimeZoneNameOperation_Editor.java" startLine="168" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vkak8k_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="8736588939154832749" fileName="TimeZoneNameOperation_Editor.java" startLine="273" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="8736588939154832749" fileName="TimeZoneNameOperation_Editor.java" startLine="273" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="5293902215864721195" fileName="TimeZoneNameOperation_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vkak8k_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="8736588939154832747" fileName="TimeZoneNameOperation_Editor.java" startLine="98" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vkak8k_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5293902215864721192" fileName="TimeZoneNameOperation_Editor.java" startLine="131" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vkak8k_a5a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -13063,13 +13065,13 @@
     <scopeInfo nodeId="5293902215864721210" fileName="TimeZoneNameOperation_Editor.java" startLine="169" startPosition="89" endLine="173" endPosition="22">
       <varInfo nodeId="5293902215864721210" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="233" startPosition="26" endLine="237" endPosition="211" />
+    <scopeInfo nodeId="8736588939154832162" fileName="TimeZoneNameOperation_Editor.java" startLine="233" startPosition="26" endLine="237" endPosition="214" />
     <scopeInfo nodeId="5293902215864698587" fileName="TimeZoneNameOperation_Editor.java" startLine="265" startPosition="0" endLine="269" endPosition="0">
       <varInfo nodeId="5293902215864698587" varName="editorContext" />
       <varInfo nodeId="5293902215864698587" varName="node" />
       <varInfo nodeId="5293902215864698587" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8736588939154832751" fileName="TimeZoneNameOperation_Editor.java" startLine="274" startPosition="105" endLine="278" endPosition="15">
+    <scopeInfo nodeId="8736588939154832751" fileName="TimeZoneNameOperation_Editor.java" startLine="274" startPosition="134" endLine="278" endPosition="15">
       <varInfo nodeId="8736588939154832753" varName="l" />
     </scopeInfo>
     <scopeInfo nodeId="5293902215864942501" fileName="TimeZoneNameOperation_Editor.java" startLine="286" startPosition="0" endLine="290" endPosition="0">
@@ -13111,6 +13113,7 @@
       <varInfo nodeId="5293902215864721210" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8736588939154832749" fileName="TimeZoneNameOperation_Editor.java" startLine="273" startPosition="0" endLine="280" endPosition="0">
+      <varInfo nodeId="8736588939154832749" varName="editorContext" />
       <varInfo nodeId="8736588939154832749" varName="node" />
       <varInfo nodeId="8736588939154832749" varName="operationContext" />
       <varInfo nodeId="8736588939154832749" varName="scope" />

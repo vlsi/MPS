@@ -87,7 +87,8 @@ class TypeSystemComponent extends CheckingComponent {
     while (!currentNodesToInvalidate_A.isEmpty() || !currentNodesToInvalidate_B.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate_A) {
         if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
-        invalidateNodeTypeSystem(nodeToInvalidate, true);
+        boolean recalc = nodeToInvalidate.getModel() != null;
+        invalidateNodeTypeSystem(nodeToInvalidate, recalc);
         invalidatedNodes_A.add(nodeToInvalidate);
         Set<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
@@ -265,7 +266,7 @@ class TypeSystemComponent extends CheckingComponent {
           }
           type = getType(initialNode);
           if (type == null && node != initialNode && myTypeChecker.isGenerationMode()) {
-            LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
+            LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
           }
           return type;
         }

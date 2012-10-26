@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -119,7 +119,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     editorCell.setCellId("Constant_2konf7_b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0b1a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0b1a_0()}));
     return editorCell;
   }
 
@@ -131,7 +131,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c1a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c1a_0()}));
     return editorCell;
   }
 
@@ -140,7 +140,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     editorCell.setCellId("Constant_2konf7_a1c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0a1c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0a1c0()}));
     return editorCell;
   }
 
@@ -152,7 +152,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c2a()}));
     return editorCell;
   }
 
@@ -203,7 +203,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     public RunConfigurationExecutor_generic_cellMenu_a0b1a_0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (false));
     }
 
@@ -216,7 +216,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     public RunConfigurationExecutor_generic_cellMenu_a0c1a_0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (true));
     }
 
@@ -229,7 +229,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     public RunConfigurationExecutor_generic_cellMenu_a0a1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "debuggerConfiguration", true));
     }
 
@@ -242,7 +242,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     public RunConfigurationExecutor_generic_cellMenu_a0c2a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration");
     }
 

@@ -6,24 +6,24 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jdom.Element;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.util.xml.XmlUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.FileUtil;
 import java.util.UUID;
 import java.io.InputStreamReader;
@@ -39,15 +39,15 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
-    descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
+    descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
 
-    descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {
         return ModuleReference.fromString(ul.getText());
       }
     }).toListSequence());
 
-    descriptor.getUsedDevkits().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedDevKits")).first(), "usedDevKit")).select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedDevkits().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element udk) {
         return ModuleReference.fromString(udk.getText());
       }
@@ -55,119 +55,77 @@ public class ModuleDescriptorPersistence {
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
-      // old 
-      Element runtimeXML = ListSequence.fromList(AttributeUtils.elementChildren(root, "runtime")).first();
+      Element runtimeXML = XmlUtil.first(root, "runtime");
       if (runtimeXML != null) {
         for (Dependency dep : ListSequence.fromList(loadDependenciesList(runtimeXML))) {
           ld.getRuntimeModules().add(dep.getModuleRef());
         }
       }
-
-      // new 
-      Element runtimeModulesXML = ListSequence.fromList(AttributeUtils.elementChildren(((Element) root), "runtimeModules")).first();
-      if (runtimeModulesXML != null) {
-        ld.getRuntimeModules().addAll(parseModuleRefList(runtimeModulesXML));
-      }
     }
-  }
-
-  private static List<ModuleReference> parseModuleRefList(Element runtimeXML) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(runtimeXML, "module")).select(new ISelector<Element, ModuleReference>() {
-      public ModuleReference select(Element d) {
-        return new ModuleReference(AttributeUtils.stringWithDefault(d.getAttributeValue("name"), ""), AttributeUtils.stringWithDefault(d.getAttributeValue("id"), ""));
-      }
-    }).toListSequence();
   }
 
   public static void saveDependencies(Element result, ModuleDescriptor descriptor) {
-    Element result_dxyzb6_a0a2 = result;
     if (!(descriptor.getDependencies().isEmpty())) {
-      final Element result_dxyzb6_a0a0a0a2 = new Element("dependencies");
-      saveDependencyList(result_dxyzb6_a0a0a0a2, descriptor.getDependencies());
-      result_dxyzb6_a0a2.addContent(result_dxyzb6_a0a0a0a2);
+      Element dependencies = new Element("dependencies");
+      saveDependencyList(dependencies, descriptor.getDependencies());
+      result.addContent(dependencies);
     }
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
-      final Element result_dxyzb6_a0a2a0a2 = new Element("usedLanguages");
+      Element usedLanguages = new Element("usedLanguages");
       for (ModuleReference langRef : CollectionSequence.fromCollection(descriptor.getUsedLanguages())) {
-        final Element result_dxyzb6_a0a0a0a2a0a2 = new Element("usedLanguage");
-        final String result_dxyzb6_a0a0a0a0a2a0a2 = langRef.toString();
-        result_dxyzb6_a0a0a0a2a0a2.setText(result_dxyzb6_a0a0a0a0a2a0a2);
-        result_dxyzb6_a0a2a0a2.addContent(result_dxyzb6_a0a0a0a2a0a2);
+        XmlUtil.tagWithText(usedLanguages, "usedLanguage", langRef.toString());
       }
-      result_dxyzb6_a0a2.addContent(result_dxyzb6_a0a2a0a2);
+      result.addContent(usedLanguages);
     }
-
     if (!(descriptor.getUsedDevkits().isEmpty())) {
-      final Element result_dxyzb6_a0a4a0a2 = new Element("usedDevKits");
+      Element usedDevKits = new Element("usedDevKits");
       for (ModuleReference dkRef : CollectionSequence.fromCollection(descriptor.getUsedDevkits())) {
-        final Element result_dxyzb6_a0a0a0a4a0a2 = new Element("usedDevKit");
-        final String result_dxyzb6_a0a0a0a0a4a0a2 = dkRef.toString();
-        result_dxyzb6_a0a0a0a4a0a2.setText(result_dxyzb6_a0a0a0a0a4a0a2);
-        result_dxyzb6_a0a4a0a2.addContent(result_dxyzb6_a0a0a0a4a0a2);
+        XmlUtil.tagWithText(usedDevKits, "usedDevKit", dkRef.toString());
       }
-      result_dxyzb6_a0a2.addContent(result_dxyzb6_a0a4a0a2);
+      result.addContent(usedDevKits);
     }
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
-      Element result_dxyzb6_a1a2a2 = result;
       if (!(ld.getRuntimeModules().isEmpty())) {
-        final Element result_dxyzb6_a0a0a1a2a2 = new Element("runtime");
+        Element runtime = new Element("runtime");
         Set<ModuleReference> runtimeModules = ld.getRuntimeModules();
-        saveDependencyList(result_dxyzb6_a0a0a1a2a2, SetSequence.fromSet(runtimeModules).select(new ISelector<ModuleReference, Dependency>() {
+        saveDependencyList(runtime, SetSequence.fromSet(runtimeModules).select(new ISelector<ModuleReference, Dependency>() {
           public Dependency select(ModuleReference it) {
             return new Dependency(it, false);
           }
         }).toListSequence());
-        result_dxyzb6_a1a2a2.addContent(result_dxyzb6_a0a0a1a2a2);
+        result.addContent(runtime);
       }
     }
   }
 
   public static List<Dependency> loadDependenciesList(Element depElement) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(depElement, "dependency")).select(new ISelector<Element, Dependency>() {
+    return Sequence.fromIterable(XmlUtil.children(depElement, "dependency")).select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
-            final Dependency result_dxyzb6_a0a0a0a0a0a3 = new Dependency();
-            final ModuleReference result_dxyzb6_a0a0a0a0a0a0a3 = ModuleReference.fromString(d.getText());
-            result_dxyzb6_a0a0a0a0a0a3.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a3);
-            final boolean result_dxyzb6_a1a0a0a0a0a0a3 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
-            result_dxyzb6_a0a0a0a0a0a3.setReexport(result_dxyzb6_a1a0a0a0a0a0a3);
-            return result_dxyzb6_a0a0a0a0a0a3;
+            final Dependency result_dxyzb6_a0a0a0a0a0a2 = new Dependency();
+            final ModuleReference result_dxyzb6_a0a0a0a0a0a0a2 = ModuleReference.fromString(d.getText());
+            result_dxyzb6_a0a0a0a0a0a2.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a2);
+            final boolean result_dxyzb6_a1a0a0a0a0a0a2 = XmlUtil.booleanWithDefault(d, "reexport", true);
+            result_dxyzb6_a0a0a0a0a0a2.setReexport(result_dxyzb6_a1a0a0a0a0a0a2);
+            return result_dxyzb6_a0a0a0a0a0a2;
           }
         }.invoke();
       }
     }).toListSequence();
   }
 
-  private static void saveDependencyList(Element depElement, Collection<Dependency> dependencies) {
-    Element result_dxyzb6_a0a4 = depElement;
+  private static void saveDependencyList(Element result, Collection<Dependency> dependencies) {
     for (Dependency md : CollectionSequence.fromCollection(dependencies)) {
-      final Element result_dxyzb6_a0a0a0a4 = new Element("dependency");
-      final String result_dxyzb6_a0a0a0a0a4 = md.getModuleRef().toString();
-      result_dxyzb6_a0a0a0a4.setText(result_dxyzb6_a0a0a0a0a4);
-      final boolean result_dxyzb6_a1a0a0a0a4 = md.isReexport();
-      result_dxyzb6_a0a0a0a4.setAttribute("reexport", "" + result_dxyzb6_a1a0a0a0a4);
-      result_dxyzb6_a0a4.addContent(result_dxyzb6_a0a0a0a4);
+      XmlUtil.tagWithAttributeAndText(result, "dependency", "reexport", Boolean.toString(md.isReexport()), md.getModuleRef().toString());
     }
   }
 
-  private static void saveModuleRefList(Element depElement, List<ModuleReference> dependencies) {
-    Element result_dxyzb6_a0a5 = depElement;
-    for (ModuleReference md : ListSequence.fromList(dependencies)) {
-      final Element result_dxyzb6_a0a0a0a5 = new Element("module");
-      final String result_dxyzb6_a0a0a0a0a5 = md.getModuleId().toString();
-      result_dxyzb6_a0a0a0a5.setAttribute("id", "" + result_dxyzb6_a0a0a0a0a5);
-      final String result_dxyzb6_a1a0a0a0a5 = md.getModuleFqName();
-      result_dxyzb6_a0a0a0a5.setAttribute("name", "" + result_dxyzb6_a1a0a0a0a5);
-      result_dxyzb6_a0a5.addContent(result_dxyzb6_a0a0a0a5);
-    }
-  }
-
-  public static List<ModelRoot> loadModelRoots(List<Element> modelRootElements, final MacroHelper macroHelper) {
-    return ListSequence.fromList(modelRootElements).select(new ISelector<Element, ModelRoot>() {
+  public static List<ModelRoot> loadModelRoots(Iterable<Element> modelRootElements, final MacroHelper macroHelper) {
+    return Sequence.fromIterable(modelRootElements).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelRoot(mre, macroHelper);
       }
@@ -177,100 +135,73 @@ public class ModuleDescriptorPersistence {
   private static ModelRoot loadModelRoot(final Element modelRootElement, final MacroHelper macroHelper) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
+        final ModelRoot result_dxyzb6_a0a0a5 = new ModelRoot();
         String pathName = modelRootElement.getAttributeValue("path");
         if (pathName == null) {
           // left for compatibility 
-          pathName = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("rootPath"), "");
+          pathName = XmlUtil.stringWithDefault(modelRootElement, "rootPath", "");
         }
-        final String result_dxyzb6_a2a0a0a7 = macroHelper.expandPath(pathName);
-        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a2a0a0a7);
-        if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
-          final ModelRootManager result_dxyzb6_a0a3a0a0a7 = new ModelRootManager();
-          Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
-          final String result_dxyzb6_a1a0a3a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
-          result_dxyzb6_a0a3a0a0a7.setModuleId(result_dxyzb6_a1a0a3a0a0a7);
-          final String result_dxyzb6_a2a0a3a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
-          result_dxyzb6_a0a3a0a0a7.setClassName(result_dxyzb6_a2a0a3a0a0a7);
-          result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a0a3a0a0a7);
+        final String result_dxyzb6_a2a0a0a5 = macroHelper.expandPath(pathName);
+        result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a2a0a0a5);
+        Element manager = XmlUtil.first(modelRootElement, "manager");
+        if (manager != null) {
+          final ModelRootManager result_dxyzb6_a0a4a0a0a5 = new ModelRootManager();
+          final String result_dxyzb6_a0a0a4a0a0a5 = XmlUtil.stringWithDefault(manager, "moduleId", "");
+          result_dxyzb6_a0a4a0a0a5.setModuleId(result_dxyzb6_a0a0a4a0a0a5);
+          final String result_dxyzb6_a1a0a4a0a0a5 = XmlUtil.stringWithDefault(manager, "className", "");
+          result_dxyzb6_a0a4a0a0a5.setClassName(result_dxyzb6_a1a0a4a0a0a5);
+          result_dxyzb6_a0a0a5.setManager(result_dxyzb6_a0a4a0a0a5);
         }
-        return result_dxyzb6_a0a0a7;
+        return result_dxyzb6_a0a0a5;
       }
     }.invoke();
   }
 
-  public static List<ModelRoot> loadStubModelEntries(List<Element> stubModelEntryElements, final MacroHelper macroHelper) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).select(new ISelector<Element, ModelRoot>() {
-      public ModelRoot select(Element mre) {
-        return loadModelEntry(mre, macroHelper);
+  public static List<String> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
+    return Sequence.fromIterable(XmlUtil.children(stubModelEntriesElement, "stubModelEntry")).select(new ISelector<Element, String>() {
+      public String select(Element mre) {
+        return loadStubModelEntry(mre, macroHelper);
+      }
+    }).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return it != null;
       }
     }).toListSequence();
   }
 
-  private static ModelRoot loadModelEntry(final Element modelRootElement, final MacroHelper macroHelper) {
-    return new _FunctionTypes._return_P0_E0<ModelRoot>() {
-      public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a9 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a9 = macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
-        result_dxyzb6_a0a0a9.setPath(result_dxyzb6_a0a0a0a9);
-        final ModelRootManager result_dxyzb6_a1a0a0a9 = new ModelRootManager();
-        final String result_dxyzb6_a0a1a0a0a9 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
-        result_dxyzb6_a1a0a0a9.setModuleId(result_dxyzb6_a0a1a0a0a9);
-        final String result_dxyzb6_a1a1a0a0a9 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
-        result_dxyzb6_a1a0a0a9.setClassName(result_dxyzb6_a1a1a0a0a9);
-        result_dxyzb6_a0a0a9.setManager(result_dxyzb6_a1a0a0a9);
-        return result_dxyzb6_a0a0a9;
+  private static String loadStubModelEntry(Element modelRootElement, MacroHelper macroHelper) {
+    Element manager = XmlUtil.first(modelRootElement, "manager");
+    if (manager != null) {
+      String className = XmlUtil.stringWithDefault(manager, "className", "");
+      if (!("jetbrains.mps.baseLanguage.stubs.JavaStubs".equals(className))) {
+        return null;
       }
-    }.invoke();
+    }
+    return macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
   }
 
-  public static void saveModelRoots(Element modelsElement, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
-    Element result_dxyzb6_a0a01 = modelsElement;
+  public static void saveModelRoots(Element result, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
     for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
-      final Element result_dxyzb6_a0a0a0a01 = new Element("modelRoot");
-      final String result_dxyzb6_a0a0a0a0a01 = macroHelper.shrinkPath((root.getPath() == null ?
+      Element modelRoot = new Element("modelRoot");
+      modelRoot.setAttribute("path", macroHelper.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
-      ));
-      result_dxyzb6_a0a0a0a01.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a01);
+      )));
       if (root.getManager() != null) {
-        final Element result_dxyzb6_a0a1a0a0a0a01 = new Element("manager");
-        final String result_dxyzb6_a0a0a1a0a0a0a01 = root.getManager().getModuleId();
-        result_dxyzb6_a0a1a0a0a0a01.setAttribute("moduleId", "" + result_dxyzb6_a0a0a1a0a0a0a01);
-        final String result_dxyzb6_a1a0a1a0a0a0a01 = root.getManager().getClassName();
-        result_dxyzb6_a0a1a0a0a0a01.setAttribute("className", "" + result_dxyzb6_a1a0a1a0a0a0a01);
-        result_dxyzb6_a0a0a0a01.addContent(result_dxyzb6_a0a1a0a0a0a01);
+        XmlUtil.tagWithAttributes(modelRoot, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
       }
-      result_dxyzb6_a0a01.addContent(result_dxyzb6_a0a0a0a01);
+      result.addContent(modelRoot);
     }
   }
 
-  public static void saveStubModelEntries(Element modelsElement, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
-    Element result_dxyzb6_a0a11 = modelsElement;
-    for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
-      final Element result_dxyzb6_a0a0a0a11 = new Element("stubModelEntry");
-      final String result_dxyzb6_a0a0a0a0a11 = macroHelper.shrinkPath((root.getPath() == null ?
+  public static void saveStubModelEntries(Element result, Collection<String> entries, MacroHelper macroHelper) {
+    for (String root : CollectionSequence.fromCollection(entries)) {
+      Element stubModelEntry = new Element("stubModelEntry");
+      stubModelEntry.setAttribute("path", macroHelper.shrinkPath((root == null ?
         "" :
-        root.getPath()
-      ));
-      result_dxyzb6_a0a0a0a11.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a11);
-      final Element result_dxyzb6_a1a0a0a0a11 = new Element("manager");
-      final String result_dxyzb6_a0a1a0a0a0a11 = root.getManager().getModuleId();
-      result_dxyzb6_a1a0a0a0a11.setAttribute("moduleId", "" + result_dxyzb6_a0a1a0a0a0a11);
-      final String result_dxyzb6_a1a1a0a0a0a11 = root.getManager().getClassName();
-      result_dxyzb6_a1a0a0a0a11.setAttribute("className", "" + result_dxyzb6_a1a1a0a0a0a11);
-      result_dxyzb6_a0a0a0a11.addContent(result_dxyzb6_a1a0a0a0a11);
-      result_dxyzb6_a0a11.addContent(result_dxyzb6_a0a0a0a11);
-    }
-  }
-
-  public static String getLanguageNamespace(IFile file) {
-    // This method has no usages, probably it can be removed 
-    try {
-      Document document = JDOMUtil.loadDocument(file);
-      return ((Element) document.getRootElement()).getAttributeValue("namespace");
-    } catch (Exception e) {
-      throw new RuntimeException(e);
+        root
+      )));
+      result.addContent(stubModelEntry);
     }
   }
 

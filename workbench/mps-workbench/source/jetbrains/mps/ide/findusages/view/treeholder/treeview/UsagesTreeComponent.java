@@ -39,6 +39,7 @@ import jetbrains.mps.ide.navigation.ModelNavigatable;
 import jetbrains.mps.ide.navigation.ModuleNavigatable;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
@@ -108,7 +109,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
     };
 
-    myTree.fireTreeCreated(UsagesTreeComponent.this.getProject());
+    TreeHighlighterExtension.attachHighlighters(myTree, UsagesTreeComponent.this.getProject());
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
     JScrollPane treePane = ScrollPaneFactory.createScrollPane(myTree);

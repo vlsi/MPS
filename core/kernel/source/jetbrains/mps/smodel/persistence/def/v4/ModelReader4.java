@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +45,6 @@ public class ModelReader4 implements IModelReader {
 
   protected ReferencePersister4 createReferencePersister() {
     return new ReferencePersister4();
-  }
-
-  protected String upgradeStereotype(String stereotype) {
-    if (SModelStereotype.TEMPLATES.equals(stereotype)) {
-      return SModelStereotype.GENERATOR;
-    }
-    return stereotype;
   }
 
   @Override
@@ -143,7 +137,6 @@ public class ModelReader4 implements IModelReader {
       }
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
-      importedModelReference = upgradeModelUID(importedModelReference);
       model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
@@ -179,10 +172,6 @@ public class ModelReader4 implements IModelReader {
     }
   }
 
-  public SModelReference upgradeModelUID(SModelReference modelReference) {
-    return new SModelReference(new SModelFqName(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype())), modelReference.getSModelId());
-  }
-
   protected void readLanguageAspects(SModel model, List<Element> aspectElements) {
     for (Element aspectElement : aspectElements) {
       String aspectModelUID = aspectElement.getAttributeValue(ModelPersistence.MODEL_UID);
@@ -196,7 +185,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(upgradeModelUID(SModelReference.fromString(aspectModelUID)), version);
+        model.addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
       }
     }
   }
@@ -268,7 +257,7 @@ public class ModelReader4 implements IModelReader {
       String role = VersionUtil.getRole(rawRole);
       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
       if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+        LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));
       } else {
         node.addChild(role, childNode);
         VersionUtil.fetchChildNodeRoleVersion(rawRole, childNode, versionsInfo);

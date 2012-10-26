@@ -24,7 +24,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -38,6 +37,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.File;
 import java.util.Collection;
@@ -50,7 +51,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
 
   private IFile myFile;
 
-  public RegularModelDataSource(ModuleReference origin, @NotNull IFile file) {
+  public RegularModelDataSource(SModuleReference origin, @NotNull IFile file) {
     super(origin);
     myFile = file;
   }
@@ -161,8 +162,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     }
     IFile oldFile = dsm.getModelFile();
     SModelRoot root = ModelRootUtil.getSModelRoot(sm);
-    ModelRoot mr = root.getModelRoot();
-    IFile newFile = createFileForModelUID(mr, modelFqName, isLanguageAspect(mr, sm.getModule(), modelFqName));
+    IFile newFile = createFileForModelUID(root, modelFqName, isLanguageAspect(root, sm.getModule(), modelFqName));
     newFile.getParent().mkdirs();
     newFile.createNewFile();
     dsm.changeModelFile(newFile);
@@ -170,7 +170,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     oldFile.delete();
   }
 
-  private static IFile createFileForModelUID(ModelRoot root, SModelFqName fqName, boolean languageModel) {
+  private static IFile createFileForModelUID(SModelRoot root, SModelFqName fqName, boolean languageModel) {
     String path = root.getPath();
 
     String filenameSuffix = fqName.getLongName();
@@ -184,15 +184,15 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
   }
 
-  public static RegularModelDataSource createSourceForModelUID(ModelRoot root, SModelFqName fqName, IModule module) {
+  public static RegularModelDataSource createSourceForModelUID(SModelRoot root, SModelFqName fqName, SModule module) {
     IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
     return new RegularModelDataSource(module.getModuleReference(), file);
   }
 
-  public static boolean isLanguageAspect(ModelRoot root, IModule module, SModelFqName modelFqName) {
+  public static boolean isLanguageAspect(SModelRoot root, SModule module, SModelFqName modelFqName) {
     if (!isUnderLanguageModels(module, root)) return false;
     //prefixed with language namespace
-    if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleFqName())) return false;
+    if (!NameUtil.namespaceFromLongName(modelFqName.getLongName()).equals(module.getModuleName())) return false;
     //is aspect model name
     String name = NameUtil.shortNameFromLongName(modelFqName.getLongName());
     for (LanguageAspect la : LanguageAspect.values()) {
@@ -203,7 +203,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     //if (modelFqName.getStereotype() != null && !modelFqName.getStereotype().equals("")) return false;
   }
 
-  public static boolean isUnderLanguageModels(IModule module, ModelRoot root) {
+  public static boolean isUnderLanguageModels(SModule module, SModelRoot root) {
     //in language
     if (!(module instanceof Language)) return false;
     //is under languageModels

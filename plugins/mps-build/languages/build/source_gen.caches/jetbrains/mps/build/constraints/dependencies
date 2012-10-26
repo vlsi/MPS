@@ -171,6 +171,28 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.constraints.BuildLayout_JarManifest_Constraints" file="BuildLayout_JarManifest_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.constraints.BuildLayout_JarManifest_Section_Constraints" file="BuildLayout_JarManifest_Section_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildLayout_NamedContainer_Constraints" file="BuildLayout_NamedContainer_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -394,7 +416,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildStringPart_Constraints" file="BuildStringPart_Constraints.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildTextStringPart_Constraints" file="BuildTextStringPart_Constraints.java">
@@ -404,6 +425,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildTextStringPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
@@ -482,6 +504,8 @@
     <classNode dependClassName="jetbrains.mps.build.constraints.BuildLayout_FilesOf_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints" />
+    <classNode dependClassName="jetbrains.mps.build.constraints.BuildLayout_JarManifest_Constraints" />
+    <classNode dependClassName="jetbrains.mps.build.constraints.BuildLayout_JarManifest_Section_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.constraints.BuildLayout_NamedContainer_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints" />

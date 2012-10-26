@@ -82,10 +82,11 @@ public class ModelDependenciesManager {
       this.myCachedDeps = Collections.unmodifiableSet(result);
       myCacheInitGuard.countDown();
     }
-    try {
-      myCacheInitGuard.await();
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
+    while(true) {
+      try {
+        myCacheInitGuard.await();
+        break;
+      } catch (InterruptedException e) {}
     }
     return myCachedDeps;
   }

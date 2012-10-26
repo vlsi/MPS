@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.samples.plainText.stubs.PlainText" file="PlainText.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
     <classNode dependClassName="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" />
     <classNode dependClassName="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -16,7 +17,9 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.AbstractModelRootManager" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode extendsClassName="jetbrains.mps.smodel.persistence.ModelRootManagerBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" file="TextModelDataSource.java">
     <classNode dependClassName="java.io.IOException" />
@@ -30,7 +33,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -41,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DescriptorLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor" file="TextModelDescriptor.java">
@@ -55,14 +58,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptorWithSource" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" file="TextPersistenceUtil.java">
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
 </dependenciesRoot>
 

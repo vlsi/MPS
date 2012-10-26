@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,42 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class AbstractModelRootManager implements IModelRootManager {
+import java.util.Collection;
+
+@Deprecated
+public class AbstractModelRootManager implements IModelRootManager {
+
+  public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
+    throw new RuntimeException("not implemented");
+  }
+
   public boolean canCreateModel(IModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName) {
     return false;
   }
 
   public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
+  }
+
+  @Override
+  public Collection<SModelDescriptor> load(@NotNull SModelRoot root) {
+    return load(root.getModelRoot(), (IModule) root.getModule());
+  }
+
+  @Override
+  public boolean canCreateModel(@Nullable SModelRoot root, @Nullable SModelFqName fqName) {
+    return canCreateModel((IModule) root.getModule(), root.getModelRoot(), fqName);
+  }
+
+  @Override
+  public SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
+    return createModel((IModule) root.getModule(), root.getModelRoot(), fqName);
   }
 }

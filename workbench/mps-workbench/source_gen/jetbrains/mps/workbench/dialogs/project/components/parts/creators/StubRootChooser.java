@@ -4,21 +4,21 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
 
-public class StubRootChooser implements Computable<List<ModelRoot>> {
+public class StubRootChooser implements Computable<List<String>> {
   private final IBindedDialog myOwner;
   private List<ModelRoot> myRoots;
   private boolean myJavaOnly;
@@ -29,16 +29,13 @@ public class StubRootChooser implements Computable<List<ModelRoot>> {
     myJavaOnly = javaOnly;
   }
 
-  public List<ModelRoot> compute() {
+  public List<String> compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
     List<IFile> files = chooser.showMultiSelectionDialog(myOwner.getMainComponent());
-    List<ModelRoot> result = new ArrayList<ModelRoot>();
+    List<String> result = new ArrayList<String>();
     for (IFile file : files) {
-      ModelRoot sme = new ModelRoot();
-      sme.setPath(file.getPath());
-      sme.setManager(LanguageID.JAVA_MANAGER);
-      ListSequence.fromList(result).addElement(sme);
+      ListSequence.fromList(result).addElement(file.getPath());
     }
     if (ListSequence.fromList(result).isEmpty()) {
       return result;
@@ -48,7 +45,14 @@ public class StubRootChooser implements Computable<List<ModelRoot>> {
     if (myJavaOnly) {
       int res = Messages.showYesNoDialog(myOwner.getMainComponent(), "MPS can try creating models for the specified locations, so that class files can be referenced from MPS models directly. Would you like to import models for the specified locations?", "Model Roots", Messages.getQuestionIcon());
       if (res == Messages.YES) {
-        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result));
+        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRoot>() {
+          public ModelRoot select(String it) {
+            ModelRoot sme = new ModelRoot();
+            sme.setPath(it);
+            sme.setManager(LanguageID.JAVA_MANAGER);
+            return sme;
+          }
+        }));
       }
     } else {
       List<ModelRootManager> managers = ListSequence.fromList(ManagerTableCellEditor.getManagers(myOwner.getOperationContext())).where(new IWhereFilter<ModelRootManager>() {
@@ -72,11 +76,12 @@ public class StubRootChooser implements Computable<List<ModelRoot>> {
             return shortName(it).equals(ListSequence.fromList(managerNames).getElement(res));
           }
         });
-        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<ModelRoot, ModelRoot>() {
-          public ModelRoot select(ModelRoot it) {
-            ModelRoot copy = it.getCopy();
-            copy.setManager(manager);
-            return copy;
+        ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRoot>() {
+          public ModelRoot select(String it) {
+            ModelRoot sme = new ModelRoot();
+            sme.setPath(it);
+            sme.setManager(manager);
+            return sme;
           }
         }));
       }

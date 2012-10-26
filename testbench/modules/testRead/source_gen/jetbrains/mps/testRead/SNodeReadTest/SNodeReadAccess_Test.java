@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
 import java.util.HashMap;
 import java.lang.reflect.Method;
@@ -132,30 +131,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
   public void test_setReferenceTarget() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReferenceTarget", true);
-  }
-
-  @Test
-  public void test_visitChildren() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_visitChildren", true);
-  }
-
-  @Test
-  public void test_visitProperties() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_visitProperties", true);
-  }
-
-  @Test
-  public void test_visitReferences() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_visitReferences", true);
-  }
-
-  @Test
-  public void test_visitUserObjects() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_visitUserObjects", true);
   }
 
   @Test
@@ -426,77 +401,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       sNode.setReferenceTarget("localVariableDeclaration", SNodeOperations.cast(this.getNodeById("4195712261513781527"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
 
       this.assertMethod("public void jetbrains.mps.smodel.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
-    }
-
-    public void test_visitChildren() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("8150353254540236424"), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      org.jetbrains.mps.openapi.model.SNode.ChildVisitor visitor = new org.jetbrains.mps.openapi.model.SNode.ChildVisitor() {
-        public boolean visitChild(String p0, org.jetbrains.mps.openapi.model.SNode p1) {
-          return true;
-        }
-      };
-      sNode.visitChildren(visitor);
-
-      this.assertMethod("public void jetbrains.mps.smodel.SNode.visitChildren(org.jetbrains.mps.openapi.model.SNode$ChildVisitor)", listener.getResults().o1);
-    }
-
-    public void test_visitProperties() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("4195712261513743413"), "jetbrains.mps.baseLanguage.structure.IfStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      org.jetbrains.mps.openapi.model.SNode.PropertyVisitor visitor = new org.jetbrains.mps.openapi.model.SNode.PropertyVisitor() {
-        public boolean visitProperty(String p0, String p1) {
-          return true;
-        }
-      };
-      sNode.visitProperties(visitor);
-
-      this.assertMethod("public void jetbrains.mps.smodel.SNode.visitProperties(org.jetbrains.mps.openapi.model.SNode$PropertyVisitor)", listener.getResults().o1);
-    }
-
-    public void test_visitReferences() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("4195712261513781536"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor visitor = new org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor() {
-        public boolean visitReference(String p0, SReference p1) {
-          return true;
-        }
-      };
-      sNode.visitReferences(visitor);
-
-      this.assertMethod("public void jetbrains.mps.smodel.SNode.visitReferences(org.jetbrains.mps.openapi.model.SNode$ReferenceVisitor)", listener.getResults().o1);
-    }
-
-    public void test_visitUserObjects() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("4195712261513743413"), "jetbrains.mps.baseLanguage.structure.IfStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      sNode.setProperty("forceOneLine", "true");
-
-      this.assertMethod("public void jetbrains.mps.smodel.SNode.visitUserObjects(org.jetbrains.mps.openapi.model.SNode$UserObjectVisitor)", listener.getResults().o1);
     }
 
     public void test_parameterLessMethods() throws Exception {

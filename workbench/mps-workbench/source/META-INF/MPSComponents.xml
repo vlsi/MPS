@@ -9,6 +9,9 @@
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
+    </component>
+    <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
     </component>
     <component>

@@ -47,8 +47,8 @@ public interface SNode {
    * If the given role is single and currently has a child in it, the current child is replaced
    * with a new one. Last parameter is ignored in this case.<br/>
    *
-   * @param role a role to insert new child into
-   * @param child a node to insert
+   * @param role   a role to insert new child into
+   * @param child  a node to insert
    * @param anchor a new child node will be inserted after this node. If specified,
    *               anchor must be in the same role as inserted child. If not specified,
    *               a new child is inserted into first position in the given role
@@ -64,8 +64,16 @@ public interface SNode {
 
   SNode getParent();
 
+  //complex queries
+
   @NotNull
   SNode getTopmostAncestor();
+
+  String getRoleInParent();
+
+  SNode getPrevSibling();
+
+  SNode getNextSibling();
 
   //non-modifiable
   Iterable<? extends SNode> getChildren(String role);
@@ -76,9 +84,7 @@ public interface SNode {
 
   String getRoleOf(SNode child);
 
-  public Iterable<? extends SNode> getChildren();  //?needed
-
-  void visitChildren(ChildVisitor v);
+  public Iterable<? extends SNode> getChildren();
 
   // refs
 
@@ -92,9 +98,7 @@ public interface SNode {
 
   void setReference(String role, SReference reference);
 
-  public Iterable<? extends SReference> getReferences();  //?needed
-
-  void visitReferences(ReferenceVisitor v);
+  public Iterable<? extends SReference> getReferences();
 
   // props
 
@@ -104,7 +108,7 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
-  void visitProperties(PropertyVisitor v);
+  Iterable<String> getPropertyNames();
 
   // user objects
 
@@ -112,23 +116,5 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
-  void visitUserObjects(UserObjectVisitor v);
-
-  //visitors
-
-  public interface ChildVisitor {
-    boolean visitChild(String role, SNode child);
-  }
-
-  public interface ReferenceVisitor {
-    boolean visitReference(String role, SReference ref);
-  }
-
-  public interface PropertyVisitor {
-    boolean visitProperty(String name, String value);
-  }
-
-  public interface UserObjectVisitor {
-    boolean visitObject(Object key, Object value);
-  }
+  Iterable<Object> getUserObjectKeys();
 }

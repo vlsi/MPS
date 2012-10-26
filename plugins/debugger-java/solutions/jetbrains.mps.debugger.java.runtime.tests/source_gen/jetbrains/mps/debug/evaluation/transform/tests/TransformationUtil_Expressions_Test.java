@@ -2075,7 +2075,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
         SNode quotedNode_1 = null;
         SNode quotedNode_2 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_3 = quotedNode_1;
           {
             List<SNode> nodes = (List<SNode>) parameter_4;
@@ -2099,7 +2099,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
         SNode quotedNode_1 = null;
         SNode quotedNode_2 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_3 = quotedNode_1;
           {
             List<SNode> nodes = (List<SNode>) parameter_4;

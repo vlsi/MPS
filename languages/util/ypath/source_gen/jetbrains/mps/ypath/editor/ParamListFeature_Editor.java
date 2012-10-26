@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -56,7 +56,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_ldpt8g_a0a0_0(editorContext, node);
     }
     IFeature_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamListFeature_Editor.ParamListFeature_generic_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParamListFeature_Editor.ParamListFeature_generic_cellMenu_a0a0a()}));
     return editorCell;
   }
 
@@ -405,7 +405,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ldpt8g_a0a5a0");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamListFeature_Editor.ParamListFeature_component_cellMenu_a0a0a5a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParamListFeature_Editor.ParamListFeature_component_cellMenu_a0a0a5a0()}));
     return editorCell;
   }
 
@@ -415,7 +415,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamListFeature_Editor.ParamListFeature_component_cellMenu_a0a0a5a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParamListFeature_Editor.ParamListFeature_component_cellMenu_a0a0a5a0_0()}));
     return editorCell;
   }
 
@@ -425,7 +425,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParamListFeature_Editor.ParamListFeature_component_cellMenu_a0b0a5a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParamListFeature_Editor.ParamListFeature_component_cellMenu_a0b0a5a0()}));
     return editorCell;
   }
 
@@ -749,15 +749,15 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     public ParamListFeature_generic_cellMenu_a0a0a() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "default", "" + (parameterObject));
     }
 
@@ -788,38 +788,38 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ParamListFeature_component_cellMenu_a0a0a5a0 implements SubstituteInfoPart {
+  public static class ParamListFeature_component_cellMenu_a0a0a5a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
     public ParamListFeature_component_cellMenu_a0a0a5a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class ParamListFeature_component_cellMenu_a0a0a5a0_0 implements SubstituteInfoPart {
+  public static class ParamListFeature_component_cellMenu_a0a0a5a0_0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
     public ParamListFeature_component_cellMenu_a0a0a5a0_0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 
-  public static class ParamListFeature_component_cellMenu_a0b0a5a0 implements SubstituteInfoPart {
+  public static class ParamListFeature_component_cellMenu_a0b0a5a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
     public ParamListFeature_component_cellMenu_a0b0a5a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
   }

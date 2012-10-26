@@ -15,53 +15,23 @@
  */
 package jetbrains.mps.smodel.persistence.def.v3;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
-import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
+import jetbrains.mps.util.xml.XMLSAXHandler;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class ModelPersistence3 implements IModelPersistence {
-  public IModelWriter getModelWriter() {
-    return new ModelWriter3();
-  }
-
-  public IModelReader getModelReader() {
-    return new ModelReader3();
-  }
+public abstract class ModelPersistence3 implements IModelPersistence {
 
   public IHashProvider getHashProvider() {
     return new HashProvider3();
-  }
-
-  public boolean needsRecreating(IFile file) {
-    String fileName = file.getName();
-    int index = fileName.indexOf('.');
-    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
-    String modelStereotype = "";
-    int index1 = rawModelName.indexOf("@");
-    if (index1 >= 0) {
-      modelStereotype = rawModelName.substring(index1 + 1);
-    }
-    return SModelStereotype.TEMPLATES.equals(modelStereotype);
-  }
-
-  protected String upgradeStereotype(String stereotype) {
-    if (SModelStereotype.TEMPLATES.equals(stereotype)) {
-      return SModelStereotype.GENERATOR;
-    }
-    return stereotype;
   }
 
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
@@ -70,10 +40,6 @@ public class ModelPersistence3 implements IModelPersistence {
 
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return null;
-  }
-
-  public SModelReference upgradeModelUID(SModelReference modelReference) {
-    return new SModelReference(new SModelFqName(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype())), modelReference.getSModelId());
   }
 
   @Override

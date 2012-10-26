@@ -58,7 +58,6 @@
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8457058248751872362">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="u9e0.8457058248751600625" resolveInfo="InputLine" />
-      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="u9e0.3321051580269894529" resolveInfo="CommandList" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8474643070110067631">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="commandlist" />

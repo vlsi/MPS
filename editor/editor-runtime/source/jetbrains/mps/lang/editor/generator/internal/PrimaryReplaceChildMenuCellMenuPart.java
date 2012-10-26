@@ -17,15 +17,17 @@ package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -33,8 +35,8 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Dec 1, 2006
  */
-public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart {
-
+public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, SubstituteInfoPartExt {
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
@@ -49,11 +51,15 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart {
                 if (oldChild == null) {
                   parentNode.addChild(role, newChild);
                 } else {
-                  parentNode.replaceChild(oldChild, newChild);
+                  SNodeUtil.replaceWithAnother(oldChild, newChild);
                 }
                 return newChild;
               }
             },
             editorContext.getOperationContext());
+  }
+
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    return createActions(cellContext, (EditorContext) editorContext);
   }
 }

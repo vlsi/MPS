@@ -655,7 +655,7 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(it, "name");
       }
     }, true)) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module");
       SLinkOperations.setTarget(loopnode, "targetModule", mod, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -666,7 +666,7 @@ public class QueriesGenerated {
     MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((MPSModulesClosure) _context.getVariable("var:mdeps")).getRequiredJava();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : requiredAndReexp.getModules()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule", null);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule");
       SLinkOperations.setTarget(loopnode, "targetModule", mod, false);
       SPropertyOperations.set(loopnode, "targetReexport", "" + (requiredAndReexp.isReexported(mod)));
       ListSequence.fromList(result).addElement(loopnode);
@@ -767,7 +767,7 @@ public class QueriesGenerated {
     }
     return ListSequence.fromList(result).distinct().select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", null);
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath");
         SLinkOperations.setTarget(loopnode, "targetPath", it, false);
         return loopnode;
       }
@@ -815,7 +815,7 @@ public class QueriesGenerated {
     }
     return ListSequence.fromList(result).distinct().select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile", null);
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile");
         SLinkOperations.setTarget(loopnode, "targetFile", SLinkOperations.getTarget(it, "jar", false), false);
         return loopnode;
       }
@@ -849,7 +849,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", null);
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath");
         SLinkOperations.setTarget(loopnode, "targetPath", it, false);
         return loopnode;
       }
@@ -875,7 +875,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", null);
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath");
         SLinkOperations.setTarget(loopnode, "targetPath", it, false);
         return loopnode;
       }
@@ -937,7 +937,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", null);
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module");
         SLinkOperations.setTarget(loopnode, "targetModule", it, false);
         return loopnode;
       }

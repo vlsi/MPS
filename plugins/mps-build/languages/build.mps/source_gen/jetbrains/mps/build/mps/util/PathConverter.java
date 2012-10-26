@@ -63,9 +63,9 @@ public class PathConverter {
   private SNode buildRelative(String currPath, SNode macro, SModel model) {
     SNode relPath;
     if (macro == null) {
-      relPath = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null);
+      relPath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath");
     } else {
-      relPath = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null);
+      relPath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath");
       SLinkOperations.setTarget(SNodeOperations.cast(relPath, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), "macro", macro, false);
     }
     buildCompositePath(relPath, currPath, model);
@@ -117,7 +117,7 @@ public class PathConverter {
     SNode last = null;
     for (String fname : path.split("/")) {
       if ((fname != null && fname.length() > 0)) {
-        SNode npath = SModelOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildCompositePath", null);
+        SNode npath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildCompositePath");
         SPropertyOperations.set(npath, "head", fname);
         if (last == null) {
           SLinkOperations.setTarget(result, "compositePart", npath, true);

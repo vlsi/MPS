@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Quotation_DataFlow extends DataFlowBuilder {
   public Quotation_DataFlow() {
@@ -16,5 +17,7 @@ public class Quotation_DataFlow extends DataFlowBuilder {
     for (SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
       _context.getBuilder().build((SNode) antiquotation);
     }
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeId", true));
   }
 }

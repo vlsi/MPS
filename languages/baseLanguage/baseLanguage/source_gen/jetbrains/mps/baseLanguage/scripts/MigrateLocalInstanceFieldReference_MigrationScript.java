@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateLocalInstanceFieldReference_MigrationScript extends BaseMigrationScript {
   public MigrateLocalInstanceFieldReference_MigrationScript(IOperationContext operationContext) {
-    super("Migrate local instance reference smodel usages");
-    for (AbstractMigrationRefactoring refactoring : MigrationsFactory.migrateVariableReferenceSModelUsages(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+    super("Migrate LocalInstanceFieldReference to VariableReference");
+    for (AbstractMigrationRefactoring refactoring : VariableUnifyingMigration.forConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
       this.addRefactoring(refactoring);
     }
   }

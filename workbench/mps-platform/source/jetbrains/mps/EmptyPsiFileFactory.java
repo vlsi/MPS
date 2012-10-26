@@ -15,25 +15,17 @@
  */
 package jetbrains.mps;
 
-import com.intellij.lang.*;
-import com.intellij.lexer.Lexer;
+import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeRegistry;
-import com.intellij.openapi.fileTypes.LanguageFileType;
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.*;
-import com.intellij.psi.impl.GeneratedMarkerVisitor;
-import com.intellij.psi.impl.source.DummyHolder;
-import com.intellij.psi.impl.source.DummyHolderFactory;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiFileFactory;
+import com.intellij.psi.PsiManager;
+import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.impl.source.PsiPlainTextFileImpl;
-import com.intellij.psi.impl.source.codeStyle.CodeEditUtil;
-import com.intellij.psi.impl.source.tree.FileElement;
-import com.intellij.psi.impl.source.tree.TreeElement;
-import com.intellij.psi.tree.IElementType;
 import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.text.CharSequenceSubSequence;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,7 +39,7 @@ public class EmptyPsiFileFactory extends PsiFileFactory {
   @Override
   @NotNull
   public PsiFile createFileFromText(@NotNull String name, @NotNull FileType fileType, @NotNull CharSequence text,
-                                    long modificationStamp, final boolean physical) {
+                    long modificationStamp, final boolean physical) {
     return createFileFromText(name, fileType, text, modificationStamp, physical, true);
   }
 
@@ -58,28 +50,28 @@ public class EmptyPsiFileFactory extends PsiFileFactory {
 
   @Override
   public PsiFile createFileFromText(@NotNull String name, @NotNull Language language, @NotNull CharSequence text, boolean physical,
-                                    final boolean markAsCopy) {
+                    final boolean markAsCopy) {
     return null;
   }
 
   @Override
   public PsiFile createFileFromText(@NotNull String name,
-                                    @NotNull Language language,
-                                    @NotNull CharSequence text,
-                                    boolean physical,
-                                    boolean markAsCopy,
-                                    boolean noSizeLimit) {
+                    @NotNull Language language,
+                    @NotNull CharSequence text,
+                    boolean physical,
+                    boolean markAsCopy,
+                    boolean noSizeLimit) {
     return null;
   }
 
   @Override
   @NotNull
   public PsiFile createFileFromText(@NotNull String name,
-                                    @NotNull FileType fileType,
-                                    @NotNull CharSequence text,
-                                    long modificationStamp,
-                                    final boolean physical,
-                                    boolean markAsCopy) {
+                    @NotNull FileType fileType,
+                    @NotNull CharSequence text,
+                    long modificationStamp,
+                    final boolean physical,
+                    boolean markAsCopy) {
     final LightVirtualFile virtualFile = new LightVirtualFile(name, fileType, text, modificationStamp);
     final SingleRootFileViewProvider singleRootFileViewProvider =
       new SingleRootFileViewProvider(myManager, virtualFile, physical);
@@ -89,11 +81,11 @@ public class EmptyPsiFileFactory extends PsiFileFactory {
 
   @NotNull
   public PsiFile createFileFromText(@NotNull String name,
-                                    @NotNull FileType fileType, final Language language, @NotNull Language targetLanguage, @NotNull CharSequence text,
-                                    long modificationStamp,
-                                    final boolean physical,
-                                    boolean markAsCopy) {
-    return createFileFromText(name, fileType,text,modificationStamp,physical,markAsCopy);
+                    @NotNull FileType fileType, final Language language, @NotNull Language targetLanguage, @NotNull CharSequence text,
+                    long modificationStamp,
+                    final boolean physical,
+                    boolean markAsCopy) {
+    return createFileFromText(name, fileType, text, modificationStamp, physical, markAsCopy);
   }
 
   @Override
@@ -104,7 +96,7 @@ public class EmptyPsiFileFactory extends PsiFileFactory {
 
   @Override
   @NotNull
-  public PsiFile createFileFromText(@NotNull String name, @NotNull String text){
+  public PsiFile createFileFromText(@NotNull String name, @NotNull String text) {
     FileType type = FileTypeRegistry.getInstance().getFileTypeByFileName(name);
     if (type.isBinary()) {
       throw new RuntimeException("Cannot create binary files from text: name " + name + ", file type " + type);
@@ -114,7 +106,7 @@ public class EmptyPsiFileFactory extends PsiFileFactory {
 
   @Override
   public PsiFile createFileFromText(FileType fileType, final String fileName, CharSequence chars, int startOffset, int endOffset) {
-    final CharSequence text = startOffset == 0 && endOffset == chars.length()?chars:new CharSequenceSubSequence(chars, startOffset, endOffset);
+    final CharSequence text = startOffset == 0 && endOffset == chars.length() ? chars : new CharSequenceSubSequence(chars, startOffset, endOffset);
     return createFileFromText(fileName, fileType, text);
   }
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ejpoldo78jiafabf9vy61r93lv6f8w9">
+<dependencies version="2" modelHash="4gc253yg56euhgelpounosjip33i9su">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="44lzlq1u85ktrzs2pfmlcov6gdlbsb6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5adz33y0tgg1k47pmhud90912h9x4de" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6hh98xngdbah9vcaahb3pvwhjzrl9ha" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6md5g2h2acbyqtqsfqzg1ljuryigg5c" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3dak0br4zy0kdlet4vcbpbps4f0f1hj" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
@@ -43,13 +43,13 @@
     <file name="Project_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="6370754048397540894" name="Module" hash="-cojq10q2y7z7m4rey577hwxroee3gay">
+  <source id="6370754048397540894" name="Module" hash="43jnkpawuxg3kb48g05spkdk55q98yb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6370754048397540895" name="Language" hash="4ilhw2n9wi9kntdz4rvgewt4c16uzmu">
+  <source id="6370754048397540895" name="Language" hash="-1l4f1cfxfttcgobz89hae468y6v0hgx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6370754048397540896" name="Solution" hash="3175f02dpym2cyiujwbpzvbl06eo267">
+  <source id="6370754048397540896" name="Solution" hash="cf0a1fyb0h95m4hp82i26t31zmwve83">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6370754048397540897" name="Generator" hash="dzzutp9xmmv6xwq330tg1zito649rp6">
@@ -61,13 +61,13 @@
   <source id="6370754048397540904" name="ModuleDependency" hash="elb9g2xu2bo2kf7tn3i4fbp869cxqe1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6370754048397540911" name="DevKit" hash="6rbst9zwkh5zzo0bidt8mfpkdbn0a96">
+  <source id="6370754048397540911" name="DevKit" hash="-8dvk2f617z5hfebvhku4a3j5sckzp67">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6370754048397540920" name="MappingPriorityRule" hash="crr69cwb8bd4ddrjuzbhftplwc0cinq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6370754048397540921" name="RuleType" hash="-35wpsrb86gebnijzh54ey04icq2qj0x">
+  <source id="6370754048397540921" name="RuleType" hash="-5l1s2ii9krc0rcwh27rr3ugfuvv6q0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -83,7 +83,7 @@
   <source id="1855399583446016268" name="ModuleReference" hash="cxh62s5jdexexvvat59f5cmqykampnf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1855399583446017058" name="StubEntry" hash="-dt4zqhk71cd7ckqkjdkiixmclwxt609">
+  <source id="1855399583446017058" name="StubEntry" hash="6i8tbn8g4rzazpy79vy34giqxbesvd0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1855399583446017062" name="ModelRoot" hash="-2d8zt78a805wn8uktj0ww1j9pc3f6id">
@@ -92,22 +92,22 @@
   <source id="1855399583446017063" name="ModelRootManager" hash="-eofzxbyq6wtfm24rsasvz5k8v4c8d5f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721285250110256909" name="MappingConfigRefBase" hash="-3y22eph9egu19b1y2ur35ex82y9dmzy">
+  <source id="2721285250110256909" name="MappingConfigRefBase" hash="7h8q5guveuitjdl0pvalem92niqid8k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721285250110256911" name="MappingConfigRefAllGlobal" hash="4kabpw80xtz9c9zh2mtddaamswvsq6j">
+  <source id="2721285250110256911" name="MappingConfigRefAllGlobal" hash="-bx70r5sj3cw8ti93j78h2eritljjw7w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721285250110390996" name="MappingConfigRefAllLocal" hash="-chiksrrki5f10dxi4i644ed63mk118e">
+  <source id="2721285250110390996" name="MappingConfigRefAllLocal" hash="crjeuj9zii1whwavj52rxxkanldsg27">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721285250110391051" name="MappingConfigRefSet" hash="-6km84go8blf401c9jlxxukj2o1he9zo">
+  <source id="2721285250110391051" name="MappingConfigRefSet" hash="-b36gq0dirveh9l7zy535u12zckqp761">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721285250110400375" name="MappingConfigNormalRef" hash="68tf8c1tj9iv2pc8mo5qr82tq1c12vi">
+  <source id="2721285250110400375" name="MappingConfigNormalRef" hash="-b5s2v635ca43wxqopi4jiwumpmh4xos">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721285250110400481" name="MappingConfigExternalRef" hash="e1e841imc4ufqc84tpus5cyoqltpbmr">
+  <source id="2721285250110400481" name="MappingConfigExternalRef" hash="17qwd53t08o2ar2bc1x9kiekxrr9d53">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="269654322145263495" name="StubSolution" hash="-ctn2pg8ckkhyewdnzjo7axvrxxug5wj">

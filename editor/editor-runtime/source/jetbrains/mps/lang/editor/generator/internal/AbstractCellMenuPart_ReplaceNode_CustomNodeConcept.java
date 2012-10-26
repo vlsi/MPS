@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -24,20 +25,20 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.*;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPart, IChildNodeSetter {
-
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
+public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPart, SubstituteInfoPartExt, IChildNodeSetter {
+  @Override
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     SNode parent = node.getParent();
     if (parent == null) {
@@ -60,7 +61,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
           }
 
           SNode result = super.substitute(context, pattern);
-          
+
           if (selectedCellId != null) {
             EditorCell toSelect = ((jetbrains.mps.nodeEditor.EditorContext) context).getNodeEditorComponent().findCellWithId(result, selectedCellId);
             if (toSelect != null) {
@@ -74,8 +75,12 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
           return result;
         }
       });
-    }    
+    }
     return result;
+  }
+
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    return createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected abstract String getReplacementConceptName();
@@ -84,7 +89,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
    * implements IChildNodeSetter
    */
   public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope) {
-    parentNode.replaceChild(oldNode, newNode);
+    SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
   }
 }

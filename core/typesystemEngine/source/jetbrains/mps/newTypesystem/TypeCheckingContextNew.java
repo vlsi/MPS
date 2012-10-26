@@ -21,12 +21,11 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
-import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
-import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
@@ -40,10 +39,12 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SNodeOperations;
 
 import java.util.*;
 
 public class TypeCheckingContextNew extends TypeCheckingContext {
+  private static Logger LOG = Logger.getLogger(TypeCheckingContextNew.class);
 
   public final Object TYPECHECKING_LOCK = new Object();
   private State myState;
@@ -136,7 +137,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly,
-                         int inequationPriority, QuickFixProvider intentionProvider) {
+                                             int inequationPriority, QuickFixProvider intentionProvider) {
     myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider), true);
   }
@@ -187,17 +188,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
     return getBaseNodeTypesComponent().getErrors(node);
-  }
-
-  @Override
-  public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (myIsSingleTypeComputation) return;
-    if (nodeWithError == null) {
-      myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
-      return;//todo
-    }
-    getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
-    getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
   }
 
   @Override
@@ -331,7 +321,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
         return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
       }
     });
-    TypeSystemReporter.getInstance().reportTypeOf(node,(System.nanoTime() - start));
+    TypeSystemReporter.getInstance().reportTypeOf(node, (System.nanoTime() - start));
     return result;
   }
 
@@ -421,6 +411,10 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
+    if (nodeWithError.getModel() == null) {
+      LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithError), new Throwable());
+      return reporter;
+    }
     reportMessage(nodeWithError, reporter);
     return reporter;
   }
@@ -429,6 +423,10 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
+    if (nodeWithError.getModel() == null) {
+      LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithError), new Throwable());
+      return reporter;
+    }
     reportMessage(nodeWithError, reporter);
     return reporter;
   }
@@ -437,8 +435,23 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
+    if (nodeWithInfo.getModel() == null) {
+      LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithInfo), new Throwable());
+      return reporter;
+    }
     reportMessage(nodeWithInfo, reporter);
     return reporter;
+  }
+
+  @Override
+  public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (myIsSingleTypeComputation) return;
+    if (nodeWithError == null) {
+      myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
+      return;//todo
+    }
+    getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
+    getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
   }
 
   @Override

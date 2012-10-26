@@ -13,6 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.junit.runner.notification.Failure;
+import jetbrains.mps.project.AbstractModule;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import java.lang.reflect.InvocationTargetException;
@@ -32,6 +33,22 @@ public class MakeRunner extends Runner {
         MPSCompilationResult compilationResult = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
         if (compilationResult != null && compilationResult.getErrors() > 0) {
           notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
+        }
+      }
+    });
+
+    // Danya: added re-load of all changed (or new) models after make. 
+    // The problem was: I had a stub model whose source was the classes_gen dir 
+    // of a module. That classes_gen got populated only during make. But by that time 
+    // model repository had already been filled and obviosly it didn't have those stub models 
+    // as there were no class files there at the moment yet. 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+          if (!(mod instanceof AbstractModule)) {
+            continue;
+          }
+          ((AbstractModule) mod).updateModelsSet();
         }
       }
     });

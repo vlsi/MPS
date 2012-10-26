@@ -48,7 +48,6 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.ide.datatransfer.SModelDataFlavor" file="SModelDataFlavor.java">
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />

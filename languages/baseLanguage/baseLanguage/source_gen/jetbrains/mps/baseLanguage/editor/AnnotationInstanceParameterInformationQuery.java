@@ -58,7 +58,7 @@ public class AnnotationInstanceParameterInformationQuery extends ParametersInfor
     return SLinkOperations.getTarget(node, "annotation", false) == parameterObject;
   }
 
-  private SNode getSelectedAnnotationMethod(EditorContext editorContext, SNode annotationInstance) {
+  private SNode getSelectedAnnotationMethod(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode annotationInstance) {
     for (SNode argument = editorContext.getSelectedNode(); argument != null; argument = SNodeOperations.getParent(argument)) {
       if (SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue") && SNodeOperations.getParent(argument) == annotationInstance) {
         return SLinkOperations.getTarget(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), "key", false);

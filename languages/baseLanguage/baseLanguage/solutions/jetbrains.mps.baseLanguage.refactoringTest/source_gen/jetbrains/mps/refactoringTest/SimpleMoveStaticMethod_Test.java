@@ -29,7 +29,7 @@ public class SimpleMoveStaticMethod_Test extends BaseTransformationTest4 {
       this.addNodeById("3014415391767789181");
       MoveStaticMethodRefactoring refactoring = new MoveStaticMethodRefactoring(SNodeOperations.cast(this.getNodeById("3014415391767789137"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SNodeOperations.cast(this.getNodeById("3014415391767789150"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       SearchResults<SNode> results = new SearchResults();
-      results.getSearchResults().add(new SearchResult(SNodeOperations.cast(this.getNodeById("3014415391767789131"), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), "usage"));
+      results.getSearchResults().add(new SearchResult(SNodeOperations.cast(this.getNodeById("3014415391767789131"), "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "usage"));
       refactoring.setUssages(results);
       refactoring.doRefactoring();
     }

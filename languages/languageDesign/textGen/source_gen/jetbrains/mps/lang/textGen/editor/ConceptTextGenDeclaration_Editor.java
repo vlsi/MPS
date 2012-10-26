@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -260,7 +260,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("utf-8");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_a0c8a(), new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_b0c8a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_a0c8a(), new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_b0c8a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -308,15 +308,15 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     public ConceptTextGenDeclaration_generic_cellMenu_b0c8a() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return Sequence.fromIterable(((Iterable<String>) Charset.availableCharsets().keySet())).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingLiteral");
       SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(node, "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingLiteral"), "encoding", parameterObject);
     }
@@ -330,7 +330,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     public ConceptTextGenDeclaration_generic_cellMenu_a0c8a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration");
     }
 

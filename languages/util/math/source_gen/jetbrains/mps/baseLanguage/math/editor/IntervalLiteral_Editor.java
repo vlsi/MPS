@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import java.awt.Color;
@@ -102,7 +102,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0a0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0a0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_a0");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0e0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0e0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_a0e0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_b0e0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_e0");
     return editorCell;
   }
@@ -225,7 +225,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_a0a0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "startIncluded", "" + (false));
     }
 
@@ -238,7 +238,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_b0a0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "startIncluded", "" + (true));
     }
 
@@ -251,7 +251,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_a0e0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "endIncluded", "" + (false));
     }
 
@@ -264,7 +264,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_b0e0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "endIncluded", "" + (true));
     }
 

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.stubs.javastub.classpath;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class StubHelper {
   public StubHelper() {
@@ -28,28 +28,28 @@ public class StubHelper {
   }
 
   @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack, String languageId, ModuleReference moduleRef) {
+  public static SModelReference uidForPackageInStubs(String pack, String languageId, SModuleReference moduleRef) {
     return uidForPackageInStubs(pack, languageId, moduleRef, false);
   }
 
   @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack, String languageId, ModuleReference moduleRef, boolean forceResolve) {
+  public static SModelReference uidForPackageInStubs(String pack, String languageId, SModuleReference moduleRef, boolean forceResolve) {
     String stereo = SModelStereotype.getStubStereotypeForId(languageId);
     return uidForPackageInStubs(new SModelFqName(pack, stereo), moduleRef, forceResolve);
   }
 
-  public static SModelReference uidForPackageInStubs(SModelFqName name, ModuleReference moduleRef, boolean forceResolve) {
-    String moduleFqName = null;
+  public static SModelReference uidForPackageInStubs(SModelFqName name, SModuleReference moduleRef, boolean forceResolve) {
+    String moduleName = null;
     SModelId id;
 
     if (moduleRef != null) {
-      moduleFqName = moduleRef.getModuleFqName();
+      moduleName = moduleRef.getModuleName();
       id = SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
     } else {
       id = StubMigrationHelper.convertModelUIDAny(name.getStereotype() + "#" + name.getLongName(), forceResolve);
     }
 
-    SModelFqName fqName = new SModelFqName(moduleFqName, name.getLongName(), name.getStereotype());
+    SModelFqName fqName = new SModelFqName(moduleName, name.getLongName(), name.getStereotype());
     return new SModelReference(fqName, id);
   }
 }

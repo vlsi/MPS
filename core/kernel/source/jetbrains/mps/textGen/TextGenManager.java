@@ -132,7 +132,7 @@ public class TextGenManager {
       buffer.append("???");
 
       if (contextNode != null) {
-        buffer.foundError("possible broken reference in " + contextNode.getDebugText(), contextNode, null);
+        buffer.foundError("possible broken reference in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(contextNode), contextNode, null);
       }
 
       return;
@@ -140,7 +140,7 @@ public class TextGenManager {
 
     SNodeTextGen nodeTextGen = loadNodeTextGen(context, node);
     if (nodeTextGen == null) {
-      buffer.foundError("couldn't find text generator for " + node.getDebugText(), node, null);
+      buffer.foundError("couldn't find text generator for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, null);
     }
     assert nodeTextGen != null;
 
@@ -150,7 +150,7 @@ public class TextGenManager {
       nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
     } catch (Exception e) {
-      buffer.foundError("failed to generate text for " + node.getDebugText(), node, e);
+      buffer.foundError("failed to generate text for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, e);
     }
   }
 

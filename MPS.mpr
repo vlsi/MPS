@@ -67,7 +67,7 @@
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/scopes.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />
-      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage.unitTest" />
+      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/blTypes/blTypes.mpl" folder="baseLanguage" />
@@ -265,6 +265,7 @@
       <modulePath path="${project}/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/jetbrains.mps.xml.tests.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xml/xml.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlInternal/xmlInternal.mpl" folder="languages.xml" />
+      <modulePath path="${project}/languages/util/xml/xmlQuery/runtime/runtime.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlQuery/xmlQuery.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlSchema/xmlSchema.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" folder="languages.xml" />
@@ -308,6 +309,7 @@
       <modulePath path="${project}/plugins/execution-languages/languages/demo/pluginSolution/pluginSolution.msd" folder="languages.execution.demo" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated.runtime/runtime.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/deprecated/runConfigurations.mpl" folder="languages.execution.languages-plugin" />
+      <modulePath path="${project}/plugins/execution-languages/languages/devkit/devkit.devkit" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="languages.execution" />
       <modulePath path="${project}/plugins/execution-languages/languages/library/jetbrains.mps.execution.lib.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/plugin/languages.msd" folder="languages.execution.languages-plugin" />
@@ -329,10 +331,11 @@
       <modulePath path="${project}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml.sax/sax.mpl" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="core.langs" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="core.langs" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/custommps/custommps.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/dependency/dependency.mpl" folder="languages.build" />
@@ -354,6 +357,8 @@
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
+      <modulePath path="${project}/plugins/mpsjava/stubs/sources.msd" folder="plugins.mpsjava" />
+      <modulePath path="${project}/plugins/mpsjava/testsol/tests.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsolution/testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/workbench/java.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="plugins" />

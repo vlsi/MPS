@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
@@ -33,9 +34,9 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInfoPart {
+public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInfoPart, SubstituteInfoPartExt {
 
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
 
@@ -55,7 +56,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
       }
 
       public SNode doSubstitute(String pattern) {
-        handleAction(node, node.getModel(), context.getScope(), context);
+        handleAction(node, node.getModel(), context.getScope(), context, editorContext);
         return node;
       }
     });
@@ -63,7 +64,25 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
     return actions;
   }
 
-  protected abstract void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext);
+  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    return createActions(cellContext, (EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>handleAction(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  protected void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    throw new UnsupportedOperationException();
+  }
+
+  /**
+   * should become abstract after MPS 3.0
+   */
+  protected void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    handleAction(node, model, scope, operationContext);
+  }
 
   protected abstract String getMatchingText();
 }

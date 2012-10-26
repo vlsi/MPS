@@ -8,8 +8,4 @@ public class BuildStringPart_Constraints extends BaseConstraintsDescriptor {
   public BuildStringPart_Constraints() {
     super("jetbrains.mps.build.structure.BuildStringPart");
   }
-
-  public String getDefaultConcreteConceptFqName() {
-    return "jetbrains.mps.build.structure.BuildTextStringPart";
-  }
 }

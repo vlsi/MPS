@@ -179,7 +179,7 @@ public class DiffTemporaryModule extends AbstractModule {
     private boolean myEditable;
 
     private DiffSModelDescriptor(IModule module, SModel model, boolean editable) {
-      super(model.getSModelReference(), false);
+      super(model.getSModelReference());
       myModule = module;
       mySModel = model;
       myEditable = editable;

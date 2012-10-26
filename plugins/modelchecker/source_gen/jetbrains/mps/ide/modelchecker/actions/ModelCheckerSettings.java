@@ -192,12 +192,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   public static class MyState {
-    private boolean myCheckUnresolvedReferences = true;
-    private boolean myCheckConstraints = true;
-    private boolean myCheckModelProperties = true;
-    private boolean myCheckTypesystem = true;
-    private boolean myCheckBeforeCommit = true;
-    private boolean myCheckStubs = false;
+    public boolean myCheckUnresolvedReferences = true;
+    public boolean myCheckConstraints = true;
+    public boolean myCheckModelProperties = true;
+    public boolean myCheckTypesystem = true;
+    public boolean myCheckBeforeCommit = true;
+    public boolean myCheckStubs = false;
 
     public MyState() {
     }

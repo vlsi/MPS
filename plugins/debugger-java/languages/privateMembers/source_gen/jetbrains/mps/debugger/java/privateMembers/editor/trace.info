@@ -42,21 +42,21 @@
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="88" startPosition="5" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="89" startPosition="42" endLine="90" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="91" startPosition="5" endLine="92" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="92" startPosition="83" endLine="93" endPosition="427" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="93" startPosition="427" endLine="94" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="92" startPosition="83" endLine="93" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="93" startPosition="430" endLine="94" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="94" startPosition="57" endLine="95" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="96" startPosition="35" endLine="97" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="97" startPosition="72" endLine="98" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="98" startPosition="78" endLine="99" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="100" startPosition="10" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767544462" fileName="PrivateStaticFieldReference_Editor.java" startLine="111" startPosition="51" endLine="112" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="117" startPosition="140" endLine="118" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="117" startPosition="169" endLine="118" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159261" fileName="PrivateStaticFieldReference_Editor.java" startLine="122" startPosition="262" endLine="123" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159333" fileName="PrivateStaticFieldReference_Editor.java" startLine="123" startPosition="154" endLine="124" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159233" fileName="PrivateStaticFieldReference_Editor.java" startLine="124" startPosition="134" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5619723216767159101" fileName="PrivateStaticFieldReference_Editor.java" startLine="126" startPosition="7" endLine="127" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="130" startPosition="45" endLine="131" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5619723216767159069" fileName="PrivateStaticFieldReference_Editor.java" startLine="144" startPosition="106" endLine="145" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5619723216767159069" fileName="PrivateStaticFieldReference_Editor.java" startLine="144" startPosition="135" endLine="145" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5619723216767159075" fileName="PrivateStaticFieldReference_Editor.java" startLine="145" startPosition="128" endLine="146" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5619723216767159083" fileName="PrivateStaticFieldReference_Editor.java" startLine="146" startPosition="113" endLine="147" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="150" startPosition="37" endLine="151" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -108,7 +108,7 @@
     <nodeInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="39" startPosition="75" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5619723216767159058" fileName="PrivateStaticFieldReference_Editor.java" startLine="66" startPosition="26" endLine="70" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="87" startPosition="58" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReplacementNode#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReplacementNode#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
     <nodeInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
     <nodeInfo nodeId="5619723216767159059" fileName="PrivateStaticFieldReference_Editor.java" startLine="159" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -117,20 +117,20 @@
     <nodeInfo nodeId="5619723216767159063" fileName="PrivateStaticFieldReference_Editor.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="87" startPosition="58" endLine="92" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5619723216767159218" fileName="PrivateStaticFieldReference_Editor.java" startLine="109" startPosition="198" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5619723216767159231" fileName="PrivateStaticFieldReference_Editor.java" startLine="121" startPosition="144" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5619723216767159231" fileName="PrivateStaticFieldReference_Editor.java" startLine="121" startPosition="173" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5619723216767159064" fileName="PrivateStaticFieldReference_Editor.java" startLine="207" startPosition="60" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5619723216767159058" fileName="PrivateStaticFieldReference_Editor.java" startLine="72" startPosition="59" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="95" startPosition="59" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5619723216767159093" fileName="PrivateStaticFieldReference_Editor.java" startLine="108" startPosition="105" endLine="114" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="143" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5619723216767159093" fileName="PrivateStaticFieldReference_Editor.java" startLine="108" startPosition="134" endLine="114" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="143" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5619723216767159060" fileName="PrivateStaticFieldReference_Editor.java" startLine="178" startPosition="61" endLine="184" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5619723216767159064" fileName="PrivateStaticFieldReference_Editor.java" startLine="215" startPosition="61" endLine="221" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5619723216767159064" fileName="PrivateStaticFieldReference_Editor.java" startLine="206" startPosition="28" endLine="213" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="85" startPosition="26" endLine="93" endPosition="427" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="85" startPosition="26" endLine="93" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="43" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_62ivzp_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5619723216767159061" fileName="PrivateStaticFieldReference_Editor.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_62ivzp_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="120" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReplacementNode_impl#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="120" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReplacementNode_impl#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5619723216767159058" fileName="PrivateStaticFieldReference_Editor.java" startLine="61" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_62ivzp_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5619723216767159060" fileName="PrivateStaticFieldReference_Editor.java" startLine="167" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_62ivzp_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="80" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_62ivzp_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -145,7 +145,7 @@
     <scopeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="80" />
     <scopeInfo nodeId="5619723216767159058" fileName="PrivateStaticFieldReference_Editor.java" startLine="68" startPosition="58" endLine="69" endPosition="81" />
     <scopeInfo nodeId="5619723216767159223" fileName="PrivateStaticFieldReference_Editor.java" startLine="111" startPosition="51" endLine="112" endPosition="22" />
-    <scopeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="117" startPosition="140" endLine="118" endPosition="108" />
+    <scopeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="117" startPosition="169" endLine="118" endPosition="123" />
     <scopeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="130" startPosition="45" endLine="131" endPosition="18" />
     <scopeInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="150" startPosition="37" endLine="151" endPosition="21" />
     <scopeInfo nodeId="5619723216767159059" fileName="PrivateStaticFieldReference_Editor.java" startLine="156" startPosition="33" endLine="157" endPosition="14" />
@@ -174,7 +174,7 @@
     <scopeInfo nodeId="5619723216767159232" fileName="PrivateStaticFieldReference_Editor.java" startLine="122" startPosition="262" endLine="125" endPosition="0">
       <varInfo nodeId="5619723216767159262" varName="newNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5619723216767159068" fileName="PrivateStaticFieldReference_Editor.java" startLine="144" startPosition="106" endLine="147" endPosition="53">
+    <scopeInfo nodeId="5619723216767159068" fileName="PrivateStaticFieldReference_Editor.java" startLine="144" startPosition="135" endLine="147" endPosition="53">
       <varInfo nodeId="5619723216767159070" varName="expr" />
     </scopeInfo>
     <scopeInfo nodeId="5619723216767159059" fileName="PrivateStaticFieldReference_Editor.java" startLine="155" startPosition="69" endLine="158" endPosition="5" />
@@ -194,6 +194,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5619723216767159058" fileName="PrivateStaticFieldReference_Editor.java" startLine="66" startPosition="26" endLine="70" endPosition="73" />
     <scopeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="5619723216767159089" varName="editorContext" />
       <varInfo nodeId="5619723216767159089" varName="model" />
       <varInfo nodeId="5619723216767159089" varName="node" />
       <varInfo nodeId="5619723216767159089" varName="operationContext" />
@@ -227,16 +228,17 @@
     <scopeInfo nodeId="5619723216767159061" fileName="PrivateStaticFieldReference_Editor.java" startLine="53" startPosition="88" endLine="59" endPosition="22">
       <varInfo nodeId="5619723216767159061" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5619723216767159092" fileName="PrivateStaticFieldReference_Editor.java" startLine="108" startPosition="105" endLine="114" endPosition="63" />
-    <scopeInfo nodeId="5619723216767159100" fileName="PrivateStaticFieldReference_Editor.java" startLine="121" startPosition="144" endLine="127" endPosition="132" />
+    <scopeInfo nodeId="5619723216767159092" fileName="PrivateStaticFieldReference_Editor.java" startLine="108" startPosition="134" endLine="114" endPosition="63" />
+    <scopeInfo nodeId="5619723216767159100" fileName="PrivateStaticFieldReference_Editor.java" startLine="121" startPosition="173" endLine="127" endPosition="132" />
     <scopeInfo nodeId="5619723216767159066" fileName="PrivateStaticFieldReference_Editor.java" startLine="143" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="5619723216767159066" varName="editorContext" />
       <varInfo nodeId="5619723216767159066" varName="model" />
       <varInfo nodeId="5619723216767159066" varName="node" />
       <varInfo nodeId="5619723216767159066" varName="operationContext" />
       <varInfo nodeId="5619723216767159066" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5619723216767159064" fileName="PrivateStaticFieldReference_Editor.java" startLine="206" startPosition="28" endLine="213" endPosition="75" />
-    <scopeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="85" startPosition="26" endLine="93" endPosition="427" />
+    <scopeInfo nodeId="5619723216767159062" fileName="PrivateStaticFieldReference_Editor.java" startLine="85" startPosition="26" endLine="93" endPosition="430" />
     <scopeInfo nodeId="5619723216767159057" fileName="PrivateStaticFieldReference_Editor.java" startLine="43" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5619723216767159057" varName="editorContext" />
       <varInfo nodeId="5619723216767159057" varName="node" />
@@ -246,11 +248,13 @@
       <varInfo nodeId="5619723216767159061" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="5619723216767159089" varName="editorContext" />
       <varInfo nodeId="5619723216767159089" varName="node" />
       <varInfo nodeId="5619723216767159089" varName="operationContext" />
       <varInfo nodeId="5619723216767159089" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="5619723216767159089" fileName="PrivateStaticFieldReference_Editor.java" startLine="120" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="5619723216767159089" varName="editorContext" />
       <varInfo nodeId="5619723216767159089" varName="model" />
       <varInfo nodeId="5619723216767159089" varName="node" />
       <varInfo nodeId="5619723216767159089" varName="operationContext" />

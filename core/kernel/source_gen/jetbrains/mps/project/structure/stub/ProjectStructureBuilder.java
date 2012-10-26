@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -74,9 +74,6 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference dep : source.getRuntimeModules()) {
       SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
     }
-    for (ModelRoot entry : source.getRuntimeStubModels()) {
-      SLinkOperations.getTargets(result, "runtimeStubModels", true).add(convert(entry));
-    }
     for (StubSolution sol : source.getStubSolutions()) {
       SLinkOperations.getTargets(result, "stubSolutions", true).add(convert(sol));
     }
@@ -116,17 +113,25 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(StubSolution source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.StubSolution", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.StubSolution");
     SPropertyOperations.set(result, "name", source.getName());
     SPropertyOperations.set(result, "uuid", source.getId().toString());
     return result;
   }
 
-  private SNode convert(SModelReference source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelReference", null);
-    SPropertyOperations.set(result, "uuid", source.getSModelId().toString());
-    SPropertyOperations.set(result, "qualifiedName", source.getSModelFqName().getLongName());
-    SPropertyOperations.set(result, "stereotype", source.getSModelFqName().getStereotype());
+  private SNode convert(org.jetbrains.mps.openapi.model.SModelReference source) {
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelReference");
+    SPropertyOperations.set(result, "uuid", source.getModelId().toString());
+    String modelName = source.getModelName();
+    int atIndex = modelName.indexOf('@');
+    SPropertyOperations.set(result, "qualifiedName", (atIndex == -1 ?
+      modelName :
+      modelName.substring(0, atIndex)
+    ));
+    SPropertyOperations.set(result, "stereotype", (atIndex == -1 ?
+      "" :
+      modelName.substring(atIndex + 1)
+    ));
     return result;
   }
 
@@ -146,8 +151,10 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference ref : source.getUsedLanguages()) {
       SLinkOperations.getTargets(module, "usedLanguages", true).add(convert(ref));
     }
-    for (ModelRoot entry : source.getStubModelEntries()) {
-      SLinkOperations.getTargets(module, "stubModels", true).add(convert(entry));
+    for (String path : source.getAdditionalJavaStubPaths()) {
+      SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.StubEntry", null);
+      SPropertyOperations.set(node, "path", path);
+      SLinkOperations.getTargets(module, "stubModels", true).add(node);
     }
     for (String s : source.getSourcePaths()) {
       SLinkOperations.getTargets(module, "sourcePaths", true).add(convertSourcePath(s));
@@ -155,7 +162,7 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(ModelRoot source) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRoot", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRoot");
     SPropertyOperations.set(result, "path", source.getPath());
     SLinkOperations.setTarget(result, "manager", convert(source.getManager()), true);
     return result;
@@ -165,27 +172,27 @@ public abstract class ProjectStructureBuilder {
     if (source == null) {
       return null;
     }
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRootManager", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRootManager");
     SPropertyOperations.set(result, "moduleId", source.getModuleId());
     SPropertyOperations.set(result, "className", source.getClassName());
     return result;
   }
 
   private SNode convertSourcePath(String s) {
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.SourcePath", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.SourcePath");
     SPropertyOperations.set(result, "value", s);
     return result;
   }
 
   private SNode convert(Dependency source) {
-    SNode dep = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleDependency", null);
+    SNode dep = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModuleDependency");
     SPropertyOperations.set(dep, "reexport", "" + (source.isReexport()));
     SLinkOperations.setTarget(dep, "moduleRef", convert(source.getModuleRef()), true);
     return dep;
   }
 
   private SNode convert(GeneratorDescriptor source) {
-    SNode generator = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.Generator", null);
+    SNode generator = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.Generator");
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
@@ -204,7 +211,7 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(MappingPriorityRule source) {
-    SNode rule = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingPriorityRule", null);
+    SNode rule = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingPriorityRule");
     switch (source.getType()) {
       case BEFORE_OR_TOGETHER:
         SPropertyOperations.set(rule, "type", "before_or_together");
@@ -230,7 +237,7 @@ public abstract class ProjectStructureBuilder {
     if (ref == null) {
       return null;
     }
-    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleReference", null);
+    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModuleReference");
     SPropertyOperations.set(result, "uuid", (ref.getModuleId() != null ?
       ref.getModuleId().toString() :
       null
@@ -241,22 +248,22 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convert(MappingConfig_AbstractRef source) {
     if (source instanceof MappingConfig_RefAllGlobal) {
-      return SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", null);
+      return SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal");
     } else if (source instanceof MappingConfig_RefAllLocal) {
-      return SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", null);
+      return SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal");
     } else if (source instanceof MappingConfig_RefSet) {
-      SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigRefSet", null);
+      SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigRefSet");
       for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) source).getMappingConfigs()) {
         SLinkOperations.getTargets(result, "refs", true).add(convert(ref));
       }
       return result;
     } else if (source instanceof MappingConfig_ExternalRef) {
-      SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", null);
+      SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef");
       SLinkOperations.setTarget(result, "generator", convert(((MappingConfig_ExternalRef) source).getGenerator()), true);
       SLinkOperations.setTarget(result, "innerRef", convert(((MappingConfig_ExternalRef) source).getMappingConfig()), true);
       return result;
     } else if (source instanceof MappingConfig_SimpleRef) {
-      SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", null);
+      SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef");
       SPropertyOperations.set(result, "modelUID", ((MappingConfig_SimpleRef) source).getModelUID());
       SPropertyOperations.set(result, "nodeID", ((MappingConfig_SimpleRef) source).getNodeID());
       return result;
@@ -265,12 +272,12 @@ public abstract class ProjectStructureBuilder {
   }
 
   protected void collectModels(SNode module, ModuleDescriptor descriptor) {
-    for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
+    for (org.jetbrains.mps.openapi.model.SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
       ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
     }
   }
 
-  public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
+  public abstract Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 
   public static boolean isNotEmpty_5cil7k_a0a0e0l(String str) {
     return str != null && str.length() > 0;

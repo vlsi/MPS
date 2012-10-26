@@ -22,14 +22,14 @@ import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.XmlStringUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import jetbrains.mps.util.StringUtil;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -56,13 +56,19 @@ public class ModelReader7 implements IModelReader {
       String name = ((Attribute) att).getQualifiedName();
       String value = ((Attribute) att).getValue();
       if (SModelHeader.VERSION.equals(name)) {
-        model.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(value, -1));
+        int result;
+        try {
+          result = value == null ? -1 : Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+          result = -1;
+        }
+        model.getSModelHeader().setVersion(result);
       }
       else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
-        model.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(value, false));
+        model.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
       }
       else if (!ModelPersistence.MODEL_UID.equals(name)) {
-        model.getSModelHeader().setOptionalProperty(name, XmlStringUtil.unescapeXml(value));
+        model.getSModelHeader().setOptionalProperty(name, StringUtil.unescapeXml(value));
       }
     }
 
@@ -176,7 +182,7 @@ public class ModelReader7 implements IModelReader {
       SNode childNode = readNode(child, node.getModel(), false);
       String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+        LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));
       } else {
         node.addChild(role, childNode);
         myLinkMap.addRoleLocation(myHelper.readLinkId(child.getAttributeValue(ModelPersistence.ROLE_ID)), childNode);

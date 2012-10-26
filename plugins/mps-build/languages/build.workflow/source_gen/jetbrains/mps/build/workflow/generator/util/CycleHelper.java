@@ -102,7 +102,7 @@ public class CycleHelper {
       });
       SNode first = cycle.get(0).getModule();
       SModel model = SNodeOperations.getModel(first);
-      SNode cycleX = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModule", null);
+      SNode cycleX = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
       cyclesToName.add(cycleX);
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
       SPropertyOperations.set(cycleX, "noWarnings", "" + (true));
@@ -156,7 +156,7 @@ public class CycleHelper {
           }
         }
 
-        SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
+        SNode mref = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference");
         SLinkOperations.setTarget(mref, "target", cycleX, false);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(mref);
 
@@ -179,22 +179,22 @@ public class CycleHelper {
         }
       }));
       for (SNode dep : deps) {
-        SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
+        SNode cp = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
         SLinkOperations.setTarget(cp, "classpath", CopyUtil.copy(dep), true);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(cp);
       }
       for (SNode jl : seenLibraries) {
-        SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", null);
+        SNode mref = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference");
         SLinkOperations.setTarget(mref, "target", jl, false);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(mref);
       }
       for (SNode jm : seenModules) {
-        SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
+        SNode mref = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference");
         SLinkOperations.setTarget(mref, "target", jm, false);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(mref);
       }
       for (SNode task : taskDependency) {
-        SNode dependency = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfTaskDependency", null);
+        SNode dependency = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfTaskDependency");
         SLinkOperations.setTarget(dependency, "target", task, false);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "taskDeps", true)).addElement(dependency);
       }

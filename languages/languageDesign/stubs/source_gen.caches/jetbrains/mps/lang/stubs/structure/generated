@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5h7oeo85z6udmx3wybu0ehof5qh1q5r">
+<dependencies version="2" modelHash="2aggrxunocgmu8r3yv8hlrvzaesorze">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="44lzlq1u85ktrzs2pfmlcov6gdlbsb6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5adz33y0tgg1k47pmhud90912h9x4de" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6hh98xngdbah9vcaahb3pvwhjzrl9ha" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6md5g2h2acbyqtqsfqzg1ljuryigg5c" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-dc6w9uc1ttmgbe9oyvqwa9lb5sm0hin" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3dak0br4zy0kdlet4vcbpbps4f0f1hj" />
@@ -25,6 +25,7 @@
     <dep root="4063774604867508743" />
     <dep root="4063774604867651403" />
     <dep root="444366895203603703" />
+    <dep root="4852427478417697644" />
     <dep root="5260048301994369926" />
     <dep root="5260048301994378815" />
     <dep root="5516999836374121342" />
@@ -59,7 +60,7 @@
   <source id="368569065472982597" name="LanguageRef" hash="-3h429xw2l73qwr1i1gpnwtxo5hywc1d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="368569065472982598" name="ModelCreationSettings" hash="ky8es7kj64o4kf8a18wntxycjqyha3">
+  <source id="368569065472982598" name="ModelCreationSettings" hash="-ad0lkviib7bo0layauwtd0kn3a41v6s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="368569065472982602" name="RootNodeDescriptorsBlock" hash="atpm2mp5dxam98rickd6dl121n8zh9p">
@@ -74,10 +75,10 @@
   <source id="5553449326502549575" name="AbstractModelCreator" hash="-5v61l1gungyzxbb8sj1q425bt55dhnw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5553449326502622462" name="ModelManagerDeclaration" hash="4t4nf0iqmodbiifwi1tws9u86xaaovm">
+  <source id="5553449326502622462" name="ModelManagerDeclaration" hash="-56cmriylzkf93hztnfylpfraugvll7k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8529737993487825733" name="LibraryStubDescriptor" hash="5pqe7rqvo5vbutrotoz1ziaj2bn7qub">
+  <source id="8529737993487825733" name="LibraryStubDescriptor" hash="c09486uwn6l0gvjfo98e0uquumtkr73">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8529737993487825737" name="GetRootsBlock" hash="atoqnst8pce8twxs50prptd54pshwh4">
@@ -86,13 +87,13 @@
   <source id="972176972348203840" name="Stereotype" hash="-53onuq22m5ngpxsaliojb8eaux8y4y5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5260048301994369926" name="InitModuleBlock" hash="-70qspb5q1d812g90zenbuwxjglxei8v">
+  <source id="5260048301994369926" name="InitModuleBlock" hash="9m45c8jvr5lkni2cndzlr4hc0y0vx8g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5260048301994378815" name="Solution_ConceptFunctionParameter" hash="-2gnvw6hl9nha0pdijiupz4rpxpomd3j">
+  <source id="5260048301994378815" name="Solution_ConceptFunctionParameter" hash="-331n2wn5neu0bls2ohr3vmvur7xj2z0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6478429522210270207" name="StubSource_ConcteptFunctionParameter" hash="28lnuwm5klhhcpiov97va4kxxpzrfy4">
+  <source id="6478429522210270207" name="StubSource_ConcteptFunctionParameter" hash="-7j0hrov4hbyk2cst4c2e4k8ygfroefq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5516999836374121342" name="StubsCreatorType" hash="cto86576pceh0ec5mkj0vnvh8l9kpr9">
@@ -101,25 +102,28 @@
   <source id="5553449326502622463" name="BaseCreatorType" hash="-ajyrqur9jvbcsnn8c60rvs1gik7sfg2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867483299" name="DescriptorsFunction" hash="dh5e56xyp16vlmbpvrxn1lclbed3l79">
+  <source id="4063774604867483299" name="DescriptorsFunction" hash="-e6s25cjsn6i4tm3j1c56k3wesyjc3s8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867508728" name="CreateBlock" hash="e2ewew3ieltn4kycdno1nkofxzhnr8p">
+  <source id="4063774604867508728" name="CreateBlock" hash="cdx9uxtndkqnaov8fo0p9m38qqs9fcs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867508730" name="CreateFunction" hash="-5aygwa7hepzcy7zeleqyni5dyhpbxp">
+  <source id="4063774604867508730" name="CreateFunction" hash="-7scu0p66as3zd8a7jnips1lwyc5aak3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867508731" name="ModelRoot_ConceptFunctionParameter" hash="7b3vzqbihdtqs6qz1pn6lql7ymm4vnp">
+  <source id="4063774604867508731" name="ModelRoot_ConceptFunctionParameter" hash="abmzxf0qlgfequlya40kf012qposldg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867508742" name="IModule_ConceptFunctionParameter" hash="-rvik3vor0oo3wkhft3wn9dpeq380bl">
+  <source id="4063774604867508742" name="IModule_ConceptFunctionParameter" hash="7hpk20345amjclufenrgjahv74a70wv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867508743" name="SModelFqName_ConceptFunctionParameter" hash="-6bihsxfh9kl4sf7ggr3afo5hs9ajwtq">
+  <source id="4063774604867508743" name="SModelFqName_ConceptFunctionParameter" hash="abybpqj07pjz5g8f4r44urqfs9e3ik6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4063774604867651403" name="CanCreateFunction" hash="45ff5jhwv6350qlmi5dux6xhtq2hqyp">
+  <source id="4063774604867651403" name="CanCreateFunction" hash="e5yidnl0q3af3ebtfxysvobmhjlhtm8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4852427478417697644" name="SModelRoot_ConceptFunctionParameter" hash="-ejxha7equjixjfnm8ddkl6ekwyort4i">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

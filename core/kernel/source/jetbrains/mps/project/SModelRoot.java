@@ -15,18 +15,33 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.persistence.ModelRootBase;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
-public class SModelRoot {
+import java.util.Collection;
+import java.util.Collections;
+
+public class SModelRoot extends ModelRootBase implements org.jetbrains.mps.openapi.persistence.ModelRoot {
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
 
-  public SModelRoot(ModelRoot root) throws ManagerNotFoundException {
+  public SModelRoot() {
+    // TODO
+  }
+
+  public SModelRoot(SModule module, ModelRoot root) throws ManagerNotFoundException {
     myModelRoot = root;
     myManager = createManager();
+    setModule(module);
   }
 
   private IModelRootManager createManager() throws ManagerNotFoundException {
@@ -39,23 +54,7 @@ public class SModelRoot {
     return new DefaultModelRootManager();
   }
 
-  private IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
-    IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
-    if (mod == null) return null;
-
-    Class managerClass = mod.getClass(className);
-    if (managerClass == null) {
-      throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());
-    }
-
-    try {
-      return (IModelRootManager) managerClass.newInstance();
-    } catch (Throwable t) {
-      throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
-    }
-  }
-
-  public IModelRootManager getManager() {
+  private IModelRootManager getManager() {
     return myManager;
   }
 
@@ -69,6 +68,73 @@ public class SModelRoot {
 
   public ModelRoot getModelRoot() {
     return myModelRoot;
+  }
+
+  @Override
+  public String getType() {
+    return "default";
+  }
+
+  @Override
+  public String getPresentation() {
+    return getPath() + " (" + getManager().getClass().getSimpleName() + ")";
+  }
+
+  @Override
+  public SModel getModel(SModelId id) {
+    // TODO implement
+    return null;
+  }
+
+  @Override
+  public Iterable<SModel> getModels() {
+    IModelRootManager manager = getManager();
+    //model with model root manager not yet loaded - should be loaded after classes reloading
+    if (manager == null) return Collections.emptyList();
+
+    Collection<SModelDescriptor> models = manager.load(this);
+    return (Iterable) models;
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    return getModule().isPackaged() || !getManager().canCreateModel(this, null);
+  }
+
+  @Override
+  public boolean canCreateModel(String modelName) {
+    return getManager().canCreateModel(this, SModelFqName.fromString(modelName));
+  }
+
+  @Override
+  public SModel createModel(String modelName) {
+    return getManager().createModel(this, SModelFqName.fromString(modelName));
+  }
+
+  @Override
+  public void save(Memento memento) {
+
+  }
+
+  @Override
+  public void load(Memento memento) {
+
+  }
+
+  private static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
+    IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
+    if (mod == null) return null;
+
+    Class managerClass = mod.getClass(className);
+    if (managerClass == null) {
+      throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());
+    }
+
+    try {
+      return (IModelRootManager) managerClass.newInstance();
+    } catch (Throwable t) {
+      throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
+    }
   }
 
   public static class ManagerNotFoundException extends Exception {

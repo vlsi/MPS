@@ -4,14 +4,34 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import java.util.Map;
+import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 
-public class MeetType_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor {
+public class MeetType_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor, IGenericType_BehaviorDescriptor {
   public MeetType_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  }
+
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return MeetType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  }
+
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   @Override

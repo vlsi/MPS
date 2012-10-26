@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
@@ -73,7 +73,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     }
     editorCell.addKeyMap(new XmlTextValue_text());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_a0a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -94,7 +94,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text_1");
     XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
     editorCell.addKeyMap(new XmlTextValue_text());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_a0a0a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_a0a0a_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -4,11 +4,19 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,8 +30,11 @@ public class TypeVariableReference_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode decl = SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false);
-    if (decl != null) {
+    if (ListSequence.fromList(SNodeOperations.getAncestors(thisNode, null, false)).contains(decl)) {
       return SPropertyOperations.getString(decl, "name");
+    }
+    if (decl != null) {
+      return "@" + BaseConcept_Behavior.call_getPresentation_1213877396640(decl);
     }
     return "?typevar_ref?";
   }
@@ -49,6 +60,36 @@ public class TypeVariableReference_Behavior {
 
   }
 
+  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
+      return;
+    }
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+      MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), thisNode);
+    } else {
+      IGenericType_Behavior.callSuperNew_collectGenericSubstitutions_4107091686347010321(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions);
+    }
+  }
+
+  public static SNode virtual_expandGenerics_4122274986016348613(final SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
+      SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
+      if (ListSequence.fromList(expTrace).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return MatchingUtil.matchNodes(thisNode, it);
+        }
+      })) {
+        return exp;
+      }
+      if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        ListSequence.fromList(expTrace).addElement(thisNode);
+        exp = IGenericType_Behavior.call_expandGenerics_4122274986016348613(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
+      }
+      return exp;
+    }
+    return thisNode;
+  }
+
   public static class QuotationClass_6i211a_a0b0c {
     public QuotationClass_6i211a_a0b0c() {
     }
@@ -58,9 +99,9 @@ public class TypeVariableReference_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;

@@ -15,15 +15,22 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 
 import java.util.List;
 
 /**
+ * @deprecated starting from MPS 3.0 <code>SubstituteInfoPartExt</code> should be used
+ *
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
+@Deprecated
 public interface SubstituteInfoPart {
+  /**
+   * @deprecated starting from MPS 3.0 <code>SubstituteInfoPartExt</code> should be used
+   */
+  @Deprecated
   List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext);
 }

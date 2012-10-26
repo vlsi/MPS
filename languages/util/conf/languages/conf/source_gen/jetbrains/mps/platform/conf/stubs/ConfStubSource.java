@@ -7,7 +7,7 @@ import jetbrains.mps.stubs.util.MultiRootModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -44,7 +45,7 @@ import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 public class ConfStubSource extends StubModelDataSource implements MultiRootModelDataSource, FastFindSupportProvider {
   private List<ModelRoot> roots;
 
-  public ConfStubSource(ModuleReference origin, ModelRoot root) {
+  public ConfStubSource(SModuleReference origin, ModelRoot root) {
     super(origin);
     this.roots = ListSequence.fromList(new ArrayList<ModelRoot>());
     ListSequence.fromList(this.roots).addElement(root);
@@ -72,12 +73,13 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
           doc.setId(id);
           SPropertyOperations.set(doc, "name", pi.baseName(docres));
           SModelOperations.addRootNode(((SModel) model), doc);
+          ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode,PathItem>from(pkg, docres, doc, pi));
         }
-        ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode,PathItem>from(pkg, docres, doc, pi));
       }
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), roots, module) {
-      public StubModelDataSource createStubsSource(ModuleReference origin, ModelRoot loc) {
+      @Override
+      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
         return new ConfStubSource(origin, loc);
       }
     };

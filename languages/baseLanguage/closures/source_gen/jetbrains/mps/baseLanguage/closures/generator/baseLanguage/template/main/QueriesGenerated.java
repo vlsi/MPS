@@ -2612,8 +2612,8 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_8665905049776863912(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode bmc;
     if (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) {
-      bmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", null);
-      SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), "baseMethodDeclaration", SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), false);
+      bmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
+      SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), false);
     } else {
       bmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
@@ -2977,7 +2977,7 @@ public class QueriesGenerated {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
         result = quotedNode1_2;

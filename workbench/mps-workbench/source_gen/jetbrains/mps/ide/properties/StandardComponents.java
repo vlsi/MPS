@@ -45,7 +45,6 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import java.awt.Component;
@@ -260,15 +259,14 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<ModelRoot> libs, final List<ModelRoot> modelRoots) {
-    return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
-      public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a01 = new BoundTablePanel(owner, caption, libs);
+  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<String> libs, final List<ModelRoot> modelRoots) {
+    return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
+      public BoundListPanel invoke() {
+        final BoundListPanel result_wf5hwp_a0a0a01 = new BoundListPanel(owner, caption, libs);
         final Computable result_wf5hwp_a0a0a0a01 = new StubRootChooser(owner, modelRoots, javaLib);
         result_wf5hwp_a0a0a01.setMultipleChooser(result_wf5hwp_a0a0a0a01);
-
-        final ColumnDescriptor result_wf5hwp_a2a0a0a01 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
-        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a2a0a0a01);
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a01 = new StringPathRenderer();
+        result_wf5hwp_a0a0a01.setCellRenderer(result_wf5hwp_a1a0a0a01);
         result_wf5hwp_a0a0a01.init();
         return result_wf5hwp_a0a0a01;
       }

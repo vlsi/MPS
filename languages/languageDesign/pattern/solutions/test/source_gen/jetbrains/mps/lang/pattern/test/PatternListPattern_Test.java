@@ -79,27 +79,27 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
         SNode quotedNode_4 = null;
         SNode quotedNode_5 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_1;
           {
-            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_2;
             quotedNode1_7.setReference("classifier", SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
             quotedNode1_7.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode1_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
             quotedNode_1.addChild("operand", quotedNode1_7);
           }
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_3;
             quotedNode1_8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.wait(long,int):void")));
             {
-              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_9 = quotedNode_4;
               quotedNode1_9.setProperty("value", "10");
               quotedNode_3.addChild("actualArgument", quotedNode1_9);
             }
             {
-              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
               SNode quotedNode1_10 = quotedNode_5;
               quotedNode1_10.setProperty("value", "10");
               quotedNode_3.addChild("actualArgument", quotedNode1_10);
@@ -223,7 +223,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
         SNode quotedNode_1 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
           quotedNode1_2.setProperty("value", "10");
           result = quotedNode1_2;
@@ -241,7 +241,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
         SNode quotedNode_1 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
           quotedNode1_2.setProperty("value", "10");
           result = quotedNode1_2;

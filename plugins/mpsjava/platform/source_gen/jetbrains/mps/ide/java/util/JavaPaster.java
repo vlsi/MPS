@@ -14,20 +14,22 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
-import java.io.File;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.java.newparser.JavaParser;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.java.parser.ConversionFailedException;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
+import java.io.File;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.java.parser.ConversionFailedException;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
@@ -81,9 +83,13 @@ public class JavaPaster {
 
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     IModule module = model.getModelDescriptor().getModule();
-    JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, (File) null, false, model, ProjectHelper.toIdeaProject(project));
+    // <node> 
+    // new parser 
+    JavaParser parser = new JavaParser();
+
     try {
-      List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
+      List<SNode> nodes = nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
+
       if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
@@ -108,6 +114,8 @@ public class JavaPaster {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"));
             } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Annotation", "annotationMethod"));
             } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"));
             }
@@ -120,7 +128,7 @@ public class JavaPaster {
           break;
         default:
       }
-    } catch (ConversionFailedException ex) {
+    } catch (JavaParseException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }
   }

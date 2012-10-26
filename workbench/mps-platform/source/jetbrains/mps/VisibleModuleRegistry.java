@@ -17,8 +17,6 @@ package jetbrains.mps;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
-import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -53,7 +51,7 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     }
     String moduleFqName = module.getModuleFqName();
     Boolean result = myCache.get(moduleFqName);
-    if (result != null) return  result;
+    if (result != null) return result;
     result = matchesMask(module);
     myCache.put(moduleFqName, result);
     return result;
@@ -62,7 +60,7 @@ public class VisibleModuleRegistry implements ApplicationComponent {
   private boolean matchesMask(final IModule module) {
     //satisfying a mask
     VisibleModuleMask[] extensions = VisibleModuleMask.EP_VISIBLE_MODULES.getExtensions();
-    for (VisibleModuleMask e:extensions) {
+    for (VisibleModuleMask e : extensions) {
       Pattern p = Pattern.compile(e.mask);
       if (p.matcher(module.getModuleFqName()).matches()) {
         return true;
@@ -71,7 +69,7 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     return false;
   }
 
-  public static VisibleModuleRegistry getInstance(){
+  public static VisibleModuleRegistry getInstance() {
     return ApplicationManager.getApplication().getComponent(VisibleModuleRegistry.class);
   }
 

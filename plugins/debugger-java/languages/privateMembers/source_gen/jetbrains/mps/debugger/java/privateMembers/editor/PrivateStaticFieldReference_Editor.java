@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -90,7 +90,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_generic_cellMenu_a0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_b0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_customReplace_cellMenu_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_generic_cellMenu_a0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_b0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_customReplace_cellMenu_c0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -105,7 +105,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     public PrivateStaticFieldReference_customReplace_cellMenu_c0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(node, "classifier", false), node, IClassifiersSearchScope.STATIC_MEMBER) {
         @Override
         protected boolean isVisible(SNode member) {
@@ -114,11 +114,11 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
       }, SLinkOperations.getTarget(node, "classifier", false));
     }
 
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") && !(VisibilityUtil.isVisible(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
         SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", null);
         return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, SLinkOperations.getTarget(node, "classifier", false), node);
@@ -141,7 +141,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     public PrivateStaticFieldReference_generic_cellMenu_a0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
       SLinkOperations.setTarget(expr, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
       SNodeOperations.replaceWithAnother(node, expr);

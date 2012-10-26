@@ -22,9 +22,9 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
-import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class EvaluationAuxModule extends AbstractModule {
   protected static Log log = LogFactory.getLog(EvaluationAuxModule.class);
@@ -86,18 +86,17 @@ public class EvaluationAuxModule extends AbstractModule {
 
   @Override
   public Set<SModelRoot> doUpdateModelsSet() {
-    HashSet<SModelRoot> result = new HashSet<SModelRoot>();
+    Set<SModelRoot> result = new HashSet<SModelRoot>();
     SModelRepository repo = SModelRepository.getInstance();
     for (String stub : SetSequence.fromSet(myStubPaths)) {
       ModelRoot root = new ModelRoot();
       root.setPath(stub);
       root.setManager(LanguageID.JAVA_MANAGER);
       try {
-        SModelRoot smodelRoot = new SModelRoot(root);
-        Collection<SModelDescriptor> loaded = smodelRoot.getManager().load(root, this);
-        for (SModelDescriptor descriptor : CollectionSequence.fromCollection(loaded)) {
-          if (repo.getModelDescriptor(descriptor.getSModelReference()) == null) {
-            repo.registerModelDescriptor(descriptor, this);
+        SModelRoot smodelRoot = new SModelRoot(this, root);
+        for (SModel descriptor : Sequence.fromIterable(smodelRoot.getModels())) {
+          if (repo.getModelDescriptor(descriptor.getModelReference()) == null) {
+            repo.registerModelDescriptor((SModelDescriptor) descriptor, this);
           }
         }
         result.add(smodelRoot);

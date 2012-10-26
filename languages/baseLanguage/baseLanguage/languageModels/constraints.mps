@@ -231,6 +231,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7812454656619472116">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.refs" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
+    </node>
   </roots>
   <root id="1213104836688">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104836689">
@@ -1432,8 +1436,21 @@
   <root id="1213104859410">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104859411">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.1172058436957" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7898359107948137261">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1081236700938" resolveInfo="StaticMethodDeclaration" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.ConstraintFunction_ReferentSearchScope_Scope" typeId="tp1t.5676632058862809931" id="575279248907340029">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="575279248907340030">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="575279248907340035">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="575279248907340041">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.575279248907028830" resolveInfo="forMethods" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.304895491241625072" resolveInfo="MigrationScopes" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="575279248907340042">
+                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1081236700938" resolveInfo="StaticMethodDeclaration" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_contextNode" typeId="tp1t.8966504967485224688" id="575279248907340043" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_contextRole" typeId="tp1t.4656991770397278586" id="575279248907340044" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_position" typeId="tp1t.4656991770397278600" id="575279248907340045" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>
@@ -2518,8 +2535,21 @@
   <root id="3066917033203129867">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3066917033203129868">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.3066917033203112509" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7898359107948137258">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.ConstraintFunction_ReferentSearchScope_Scope" typeId="tp1t.5676632058862809931" id="575279248907340046">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="575279248907340047">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="575279248907340048">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="575279248907340049">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.575279248907028830" resolveInfo="forMethods" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.304895491241625072" resolveInfo="MigrationScopes" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="575279248907340050">
+                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_contextNode" typeId="tp1t.8966504967485224688" id="575279248907340051" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_contextRole" typeId="tp1t.4656991770397278586" id="575279248907340052" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_position" typeId="tp1t.4656991770397278600" id="575279248907340053" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>
@@ -2684,6 +2714,14 @@
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.1068581517664" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1791178592936928836">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+      </node>
+    </node>
+  </root>
+  <root id="7812454656619472116">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7812454656619472117">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.7812454656619025415" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7812454656619472118">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.7812454656619025416" resolveInfo="MethodDeclaration" />
       </node>
     </node>
   </root>

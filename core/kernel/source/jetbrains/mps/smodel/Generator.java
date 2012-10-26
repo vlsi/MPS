@@ -112,7 +112,7 @@ public class Generator extends AbstractModule {
 
   @Override
   public Collection<String> getStubPaths() {
-    return getSourceLanguage().getRuntimeStubPaths();
+    return Collections.emptyList();
   }
 
   public List<SModelDescriptor> getOwnTemplateModels() {

@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.AnonymousClass_CurlyBraces;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -284,7 +284,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
     editorCell.setCellId("Constant_lqrwoi_a6b0");
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_a0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_b0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_c0a6b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_a0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_b0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_c0a6b0()}));
     return editorCell;
   }
 
@@ -425,7 +425,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_a0a6b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "field", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
 
@@ -438,7 +438,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_b0a6b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     }
 
@@ -451,7 +451,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_c0a6b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
     }
 
