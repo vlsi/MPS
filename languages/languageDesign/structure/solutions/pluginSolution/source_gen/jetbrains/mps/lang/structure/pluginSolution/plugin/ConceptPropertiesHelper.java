@@ -27,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import java.util.ArrayList;
@@ -107,7 +108,7 @@ public class ConceptPropertiesHelper {
               SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
               SNode alias = ListSequence.fromList(SLinkOperations.getTargets(concept, "conceptProperty", true)).findFirst(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value").equals("alias");
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
                 }
               });
               SNodeOperations.deleteNode(alias);
@@ -148,7 +149,7 @@ public class ConceptPropertiesHelper {
       private void replaceAccessUsages(SNode node) {
         SNode parent = SNodeOperations.getParent(node);
         SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-        if (eq_azpnkk_a0a2a2a0b0a21a2(operand.getConcept().getId(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || eq_azpnkk_a0a2a2a0b0a21a2_0(operand.getConcept().getId(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+        if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(operand)) {
           SNodeOperations.replaceWithAnother(node, new ConceptPropertiesHelper.QuotationClass_azpnkk_a1a0a2a2a0b0a21a2().createNode(operand));
         } else {
           SNodeOperations.replaceWithAnother(node, new ConceptPropertiesHelper.QuotationClass_azpnkk_a1a0a0c0c0a1a0m0c().createNode(operand));
@@ -246,20 +247,6 @@ public class ConceptPropertiesHelper {
       }
     }
     return results;
-  }
-
-  private static boolean eq_azpnkk_a0a2a2a0b0a21a2(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_azpnkk_a0a2a2a0b0a21a2_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public static class QuotationClass_azpnkk_a0a0a0e0c {
