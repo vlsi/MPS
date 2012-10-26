@@ -17,7 +17,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_7tiwfz_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<choose menu part>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose menu part>");
     editorCell.setCellId("Error_7tiwfz_a");
     {
       Style style = editorCell.getStyle();

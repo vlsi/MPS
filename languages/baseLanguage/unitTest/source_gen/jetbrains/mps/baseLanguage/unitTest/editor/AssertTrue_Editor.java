@@ -43,7 +43,7 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_h8u2a4_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "assert true");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert true");
     editorCell.setCellId("Constant_h8u2a4_a0");
     {
       Style style = editorCell.getStyle();
@@ -54,7 +54,7 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_h8u2a4_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_h8u2a4_d0");
     {
       Style style = editorCell.getStyle();

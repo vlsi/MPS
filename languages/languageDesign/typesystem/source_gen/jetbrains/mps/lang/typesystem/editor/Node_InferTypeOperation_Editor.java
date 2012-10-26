@@ -25,7 +25,7 @@ public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ljpfyw_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "inferType");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inferType");
     editorCell.setCellId("Constant_ljpfyw_a");
     editorCell.setDefaultText("");
     return editorCell;

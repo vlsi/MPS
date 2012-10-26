@@ -34,28 +34,28 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_36vx3e_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "link acc<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "link acc<");
     editorCell.setCellId("Constant_36vx3e_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_36vx3e_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",singular:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",singular:");
     editorCell.setCellId("Constant_36vx3e_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_36vx3e_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",aggregation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",aggregation:");
     editorCell.setCellId("Constant_36vx3e_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_36vx3e_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_36vx3e_g0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -28,7 +28,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aipk5v_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "code");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code");
     editorCell.setCellId("Constant_aipk5v_a0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -36,7 +36,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aipk5v_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_aipk5v_b0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

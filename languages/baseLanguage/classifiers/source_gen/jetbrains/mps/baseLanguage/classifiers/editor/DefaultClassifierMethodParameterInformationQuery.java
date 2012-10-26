@@ -52,7 +52,7 @@ public class DefaultClassifierMethodParameterInformationQuery extends Parameters
     return SLinkOperations.getTarget(node, "member", false) == parameterObject;
   }
 
-  private SNode getSelectedActualArgument(EditorContext editorContext) {
+  private SNode getSelectedActualArgument(jetbrains.mps.openapi.editor.EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
       return null;

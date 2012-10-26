@@ -60,7 +60,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yq81ip_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_yq81ip_c0");
     {
       Style style = editorCell.getStyle();
@@ -71,14 +71,14 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_yq81ip_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "start incuded:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "start incuded:");
     editorCell.setCellId("Constant_yq81ip_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_yq81ip_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "end included:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end included:");
     editorCell.setCellId("Constant_yq81ip_c0_0");
     editorCell.setDefaultText("");
     return editorCell;

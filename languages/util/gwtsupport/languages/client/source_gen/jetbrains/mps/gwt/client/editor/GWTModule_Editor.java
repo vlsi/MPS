@@ -103,14 +103,14 @@ public class GWTModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qbj93y_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_qbj93y_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qbj93y_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_qbj93y_a4a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -125,17 +125,17 @@ public class GWTModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qbj93y_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qbj93y_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qbj93y_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -231,7 +231,7 @@ public class GWTModule_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

@@ -87,7 +87,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_bx3ota_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Broken references:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Broken references:");
     editorCell.setCellId("Constant_bx3ota_a0a0");
     {
       Style style = editorCell.getStyle();

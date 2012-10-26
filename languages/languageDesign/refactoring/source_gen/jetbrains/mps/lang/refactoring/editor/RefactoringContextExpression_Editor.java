@@ -15,7 +15,7 @@ public class RefactoringContextExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dd4ev6_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "refactoringContext");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "refactoringContext");
     editorCell.setCellId("Constant_dd4ev6_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

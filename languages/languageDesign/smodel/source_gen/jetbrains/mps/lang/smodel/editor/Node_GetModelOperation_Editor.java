@@ -19,7 +19,7 @@ public class Node_GetModelOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aoz7m2_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_aoz7m2_a");
     {
       Style style = editorCell.getStyle();

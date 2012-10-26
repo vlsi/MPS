@@ -79,49 +79,49 @@ public class ContainerItemIterator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_97htgl_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_97htgl_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97htgl_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_97htgl_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97htgl_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_97htgl_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97htgl_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "modifying_iterator<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifying_iterator<");
     editorCell.setCellId("Constant_97htgl_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97htgl_f0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_97htgl_f0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97htgl_g0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_97htgl_g0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97htgl_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_97htgl_a2a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -146,7 +146,7 @@ public class ContainerItemIterator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_97htgl_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

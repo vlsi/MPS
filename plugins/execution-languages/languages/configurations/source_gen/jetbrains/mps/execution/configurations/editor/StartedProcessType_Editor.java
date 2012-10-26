@@ -34,7 +34,7 @@ public class StartedProcessType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e2341u_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_e2341u_b0");
     RunConfigurations_StyleSheet.getLessThen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -42,7 +42,7 @@ public class StartedProcessType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e2341u_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_e2341u_d0");
     RunConfigurations_StyleSheet.getGreaterThen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

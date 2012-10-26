@@ -56,7 +56,7 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5huibn_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "&#");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
     editorCell.setCellId("Constant_5huibn_a0a");
     XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
     {
@@ -68,7 +68,7 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5huibn_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "&#");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
     editorCell.setCellId("Constant_5huibn_a0a_0");
     XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
     {
@@ -81,7 +81,7 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5huibn_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_5huibn_a2a");
     XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
     {
@@ -93,7 +93,7 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5huibn_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_5huibn_a2a_0");
     XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
     {

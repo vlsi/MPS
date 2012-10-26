@@ -45,14 +45,14 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u416ht_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_u416ht_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_u416ht_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  chooser (deprecated):");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  chooser (deprecated):");
     editorCell.setCellId("Constant_u416ht_a3a");
     editorCell.setDefaultText("");
     return editorCell;

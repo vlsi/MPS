@@ -54,7 +54,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nmve34_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "final");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_nmve34_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     NTCD_delete_final.setCellActions(editorCell, node, editorContext);
@@ -63,7 +63,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nmve34_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_nmve34_e0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

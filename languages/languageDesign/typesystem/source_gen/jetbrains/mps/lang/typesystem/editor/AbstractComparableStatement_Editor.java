@@ -104,28 +104,28 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2gd5o_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2gd5o_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2gd5o_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node to check =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node to check =");
     editorCell.setCellId("Constant_2gd5o_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2gd5o_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "error string =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error string =");
     editorCell.setCellId("Constant_2gd5o_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2gd5o_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2gd5o_c0");
     {
       Style style = editorCell.getStyle();
@@ -136,14 +136,14 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2gd5o_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "inference");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inference");
     editorCell.setCellId("Constant_2gd5o_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2gd5o_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2gd5o_e0");
     {
       Style style = editorCell.getStyle();
@@ -154,7 +154,7 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2gd5o_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "intention to fix error");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix error");
     editorCell.setCellId("Constant_2gd5o_a5a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -270,7 +270,7 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -286,7 +286,7 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_2gd5o_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_2gd5o_a0b0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else {

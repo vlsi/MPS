@@ -40,7 +40,7 @@ public class ModelCreationSettings_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ioe0e8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "import on creation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import on creation:");
     editorCell.setCellId("Constant_ioe0e8_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -55,7 +55,7 @@ public class ModelCreationSettings_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ioe0e8_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

@@ -102,35 +102,35 @@ public class EventPropertyGetter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_w9w689_a0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_w9w689_a0b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_w9w689_b0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_w9w689_b0b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_w9w689_c0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_w9w689_c0b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_w9w689_e0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_w9w689_e0b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_w9w689_a2b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_w9w689_a2b0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -155,7 +155,7 @@ public class EventPropertyGetter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_w9w689_a1b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

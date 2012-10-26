@@ -107,7 +107,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_2konf7_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can:");
     editorCell.setCellId("Constant_2konf7_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -115,7 +115,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_2konf7_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "run");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run");
     editorCell.setCellId("Constant_2konf7_b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -124,7 +124,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_2konf7_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can't run");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't run");
     editorCell.setCellId("Constant_2konf7_c1a");
     {
       Style style = editorCell.getStyle();
@@ -136,7 +136,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_2konf7_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "debug under");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debug under");
     editorCell.setCellId("Constant_2konf7_a1c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -145,7 +145,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_2konf7_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can't debug");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't debug");
     editorCell.setCellId("Constant_2konf7_c2a");
     {
       Style style = editorCell.getStyle();
@@ -157,12 +157,12 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_2konf7_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_2konf7_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

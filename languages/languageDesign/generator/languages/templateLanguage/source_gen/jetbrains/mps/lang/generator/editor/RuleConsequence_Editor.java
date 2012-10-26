@@ -14,7 +14,7 @@ public class RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_grd82q_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "choose consequence");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "choose consequence");
     editorCell.setCellId("Error_grd82q_a");
     return editorCell;
   }

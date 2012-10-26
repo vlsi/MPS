@@ -17,7 +17,7 @@ public class Command_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5th3tc_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5th3tc_a");
     BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
     {

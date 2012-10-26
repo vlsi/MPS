@@ -73,7 +73,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -89,7 +89,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
   }
 

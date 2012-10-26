@@ -47,7 +47,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qcnn3y_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "manifest:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "manifest:");
     editorCell.setCellId("Constant_qcnn3y_a0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qcnn3y_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

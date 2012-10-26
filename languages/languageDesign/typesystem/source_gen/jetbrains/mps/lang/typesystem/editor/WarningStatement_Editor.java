@@ -59,7 +59,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "warning");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "warning");
     editorCell.setCellId("Constant_spok58_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -67,7 +67,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_spok58_c0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -75,7 +75,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_spok58_e0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -83,7 +83,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node feature to highlight(optional)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_spok58_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -94,7 +94,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_spok58_c0_0");
     {
       Style style = editorCell.getStyle();
@@ -106,7 +106,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "intention to fix a warning(optional)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix a warning(optional)");
     editorCell.setCellId("Constant_spok58_d0");
     {
       Style style = editorCell.getStyle();
@@ -117,7 +117,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_spok58_f0");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_spok58_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "foreign message source(optional)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreign message source(optional)");
     editorCell.setCellId("Constant_spok58_g0");
     {
       Style style = editorCell.getStyle();

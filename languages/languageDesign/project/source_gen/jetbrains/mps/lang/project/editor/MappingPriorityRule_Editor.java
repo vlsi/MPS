@@ -35,7 +35,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6p5nan_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "priority rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "priority rule");
     editorCell.setCellId("Constant_6p5nan_a0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -43,7 +43,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6p5nan_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6p5nan_b0");
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6p5nan_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "apply");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
     editorCell.setCellId("Constant_6p5nan_d0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -69,7 +69,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6p5nan_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6p5nan_g0");
     {
       Style style = editorCell.getStyle();

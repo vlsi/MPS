@@ -66,7 +66,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zfkwl8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "coerce");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "coerce");
     editorCell.setCellId("Constant_zfkwl8_a0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CoerceExpression_Editor.ReplaceWith_CoerceExpression_cellMenu_a0a0()}));
@@ -74,7 +74,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zfkwl8_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_zfkwl8_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -82,14 +82,14 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zfkwl8_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<");
     editorCell.setCellId("Constant_zfkwl8_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zfkwl8_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_zfkwl8_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -97,7 +97,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zfkwl8_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "strong:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strong:");
     editorCell.setCellId("Constant_zfkwl8_a0a");
     editorCell.setDefaultText("");
     return editorCell;

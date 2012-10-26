@@ -60,14 +60,14 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ymj9mh_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "event");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "event");
     editorCell.setCellId("Constant_ymj9mh_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ymj9mh_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ymj9mh_c0a");
     {
       Style style = editorCell.getStyle();
@@ -79,7 +79,7 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ymj9mh_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ymj9mh_e0a");
     {
       Style style = editorCell.getStyle();
@@ -91,7 +91,7 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ymj9mh_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_ymj9mh_a1a");
     {
       Style style = editorCell.getStyle();
@@ -223,7 +223,7 @@ public class Event_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_ymj9mh_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "press <Ctrl>+<Enter> to add Posting Rule");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Posting Rule");
       editorCell.setCellId("Constant_ymj9mh_a1b0");
       {
         Style style = editorCell.getStyle();

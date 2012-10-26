@@ -35,42 +35,42 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xr2yug_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "vendor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vendor");
     editorCell.setCellId("Constant_xr2yug_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xr2yug_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_xr2yug_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xr2yug_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_xr2yug_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xr2yug_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "url=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "url=");
     editorCell.setCellId("Constant_xr2yug_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xr2yug_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "email=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "email=");
     editorCell.setCellId("Constant_xr2yug_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xr2yug_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "logo=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "logo=");
     editorCell.setCellId("Constant_xr2yug_i0");
     editorCell.setDefaultText("");
     return editorCell;

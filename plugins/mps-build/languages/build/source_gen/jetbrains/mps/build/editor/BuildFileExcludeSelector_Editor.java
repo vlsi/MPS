@@ -27,7 +27,7 @@ public class BuildFileExcludeSelector_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lyttlq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "exclude");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exclude");
     editorCell.setCellId("Constant_lyttlq_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

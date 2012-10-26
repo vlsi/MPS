@@ -35,14 +35,14 @@ public class ColumnLayoutConstraint_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9m8wrr_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "col");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "col");
     editorCell.setCellId("Constant_9m8wrr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9m8wrr_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "span");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "span");
     editorCell.setCellId("Constant_9m8wrr_c0");
     editorCell.setDefaultText("");
     return editorCell;

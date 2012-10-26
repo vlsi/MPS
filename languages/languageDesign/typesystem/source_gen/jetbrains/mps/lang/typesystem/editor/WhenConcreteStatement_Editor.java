@@ -54,7 +54,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "when concrete");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "when concrete");
     editorCell.setCellId("Constant_u56bem_a0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -62,7 +62,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_u56bem_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -70,7 +70,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "as");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_u56bem_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -82,7 +82,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_u56bem_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -90,7 +90,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_u56bem_g0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -102,7 +102,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_u56bem_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -114,14 +114,14 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u56bem_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is shallow:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is shallow:");
     editorCell.setCellId("Constant_u56bem_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_u56bem_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "skips error:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skips error:");
     editorCell.setCellId("Constant_u56bem_c0");
     editorCell.setDefaultText("");
     return editorCell;

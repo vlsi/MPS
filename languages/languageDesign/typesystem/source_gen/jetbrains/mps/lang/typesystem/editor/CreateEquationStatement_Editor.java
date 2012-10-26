@@ -100,7 +100,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_mi4qyq_a0a");
     {
       Style style = editorCell.getStyle();
@@ -111,7 +111,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -122,7 +122,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_mi4qyq_b0a");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
@@ -134,7 +134,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -145,7 +145,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_f0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_mi4qyq_f0a");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
@@ -157,7 +157,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -168,7 +168,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_mi4qyq_c0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -176,7 +176,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_mi4qyq_b0");
     {
       Style style = editorCell.getStyle();
@@ -188,7 +188,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "advanced:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "advanced:");
     editorCell.setCellId("Constant_mi4qyq_c0_0");
     {
       Style style = editorCell.getStyle();
@@ -199,7 +199,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_mi4qyq_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "direction =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "direction =");
     editorCell.setCellId("Constant_mi4qyq_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -339,15 +339,15 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "checkOnly"));
   }
 
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0a0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mi4qyq_a0a0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0b0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mi4qyq_a0b0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0f0a(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mi4qyq_a0f0a(SNode node, EditorContext editorContext) {
     return MPSColors.DARK_BLUE;
   }
 

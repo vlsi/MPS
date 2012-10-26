@@ -50,7 +50,7 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_74pwef_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "x");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_74pwef_b0");
     {
       Style style = editorCell.getStyle();

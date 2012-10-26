@@ -44,7 +44,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2wy5mi_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "assert");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
     editorCell.setCellId("Constant_2wy5mi_a0");
     {
       Style style = editorCell.getStyle();
@@ -55,7 +55,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2wy5mi_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is null");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is null");
     editorCell.setCellId("Constant_2wy5mi_c0");
     {
       Style style = editorCell.getStyle();
@@ -66,7 +66,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2wy5mi_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2wy5mi_e0");
     {
       Style style = editorCell.getStyle();

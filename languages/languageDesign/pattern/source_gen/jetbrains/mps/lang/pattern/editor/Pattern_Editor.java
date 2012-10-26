@@ -14,7 +14,7 @@ public class Pattern_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_28q3ku_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<undefined pattern>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<undefined pattern>");
     editorCell.setCellId("Error_28q3ku_a");
     return editorCell;
   }

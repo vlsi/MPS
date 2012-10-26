@@ -27,7 +27,7 @@ public class SinceBlockDocTag_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jbrn6z_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@since");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@since");
     editorCell.setCellId("Constant_jbrn6z_a0");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

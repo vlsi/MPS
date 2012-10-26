@@ -58,7 +58,7 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kpooje_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extract");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_kpooje_a0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -66,7 +66,7 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kpooje_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_kpooje_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -74,7 +74,7 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kpooje_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "to constant");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to constant");
     editorCell.setCellId("Constant_kpooje_d0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -82,7 +82,7 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kpooje_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_kpooje_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -90,7 +90,7 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kpooje_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "make unique");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make unique");
     editorCell.setCellId("Constant_kpooje_a0a");
     editorCell.setDefaultText("");
     return editorCell;

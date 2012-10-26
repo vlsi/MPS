@@ -34,7 +34,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nb4xc9_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "< abstract cell >");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "< abstract cell >");
     editorCell.setCellId("Constant_nb4xc9_a0");
     {
       Style style = editorCell.getStyle();
@@ -47,7 +47,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_nb4xc9_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<choose cell model>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose cell model>");
     editorCell.setCellId("Error_nb4xc9_a");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     return editorCell;

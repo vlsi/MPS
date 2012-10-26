@@ -50,7 +50,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gw6hs4_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "use from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");
     editorCell.setCellId("Constant_gw6hs4_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

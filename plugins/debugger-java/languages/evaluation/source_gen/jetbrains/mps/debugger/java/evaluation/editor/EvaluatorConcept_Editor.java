@@ -123,7 +123,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "context");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_6rl195_a0a");
     EvaluationStyles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -131,7 +131,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_b0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "static context type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static context type");
     editorCell.setCellId("Constant_6rl195_b0b0a");
     EvaluationStyles_StyleSheet.getContextKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -139,7 +139,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_b1b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "this type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this type");
     editorCell.setCellId("Constant_6rl195_b1b0a");
     EvaluationStyles_StyleSheet.getContextKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -147,7 +147,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_b2b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "visible variables");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "visible variables");
     editorCell.setCellId("Constant_6rl195_b2b0a");
     EvaluationStyles_StyleSheet.getContextKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -155,7 +155,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6rl195_c0a");
     {
       Style style = editorCell.getStyle();
@@ -166,7 +166,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "statements to evaluate");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statements to evaluate");
     editorCell.setCellId("Constant_6rl195_b0");
     EvaluationStyles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -174,7 +174,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6rl195_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "show context:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show context:");
     editorCell.setCellId("Constant_6rl195_a0");
     EvaluationStyles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -194,17 +194,17 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_6rl195_a0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_6rl195_a1b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_6rl195_a2b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

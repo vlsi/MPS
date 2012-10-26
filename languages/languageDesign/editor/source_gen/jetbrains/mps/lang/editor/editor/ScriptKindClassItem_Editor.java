@@ -32,7 +32,7 @@ public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8gq3xs_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "script-kind");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "script-kind");
     editorCell.setCellId("Constant_8gq3xs_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8gq3xs_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8gq3xs_b0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -242,7 +242,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_e8odqw_a0b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -250,7 +250,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "codename");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "codename");
     editorCell.setCellId("Constant_e8odqw_a1b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -258,7 +258,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "version");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
     editorCell.setCellId("Constant_e8odqw_a2b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -266,7 +266,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_c2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_e8odqw_c2b1a");
     {
       Style style = editorCell.getStyle();
@@ -278,7 +278,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_e2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "eap");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "eap");
     editorCell.setCellId("Constant_e8odqw_e2b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -286,7 +286,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "full name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "full name");
     editorCell.setCellId("Constant_e8odqw_a3b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -294,7 +294,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "build number");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build number");
     editorCell.setCellId("Constant_e8odqw_a4b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -302,7 +302,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "icons");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icons");
     editorCell.setCellId("Constant_e8odqw_a5b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -310,7 +310,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a0b5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "size 32");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "size 32");
     editorCell.setCellId("Constant_e8odqw_a0b5b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -318,7 +318,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a1b5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "size 16");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "size 16");
     editorCell.setCellId("Constant_e8odqw_a1b5b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -326,7 +326,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a2b5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "size 32 opaque");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "size 32 opaque");
     editorCell.setCellId("Constant_e8odqw_a2b5b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -334,7 +334,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a6b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "splash screen");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "splash screen");
     editorCell.setCellId("Constant_e8odqw_a6b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -342,7 +342,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a2g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "textcolor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "textcolor");
     editorCell.setCellId("Constant_e8odqw_a2g1b0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -350,7 +350,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e8odqw_a7b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "about screen");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "about screen");
     editorCell.setCellId("Constant_e8odqw_a7b1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -358,7 +358,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_e8odqw_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

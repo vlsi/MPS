@@ -83,7 +83,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
               cell.getSNode()
             ), (cell == null ?
               null :
-              cell.getEditorContext()
+              cell.getContext()
             ));
           }
         });
@@ -94,7 +94,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
               cell.getSNode()
             ), (cell == null ?
               null :
-              cell.getEditorContext()
+              cell.getContext()
             ));
           }
         });
@@ -110,7 +110,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private static int _StyleParameter_QueryFunction_ge17fi_a1a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    private static int _StyleParameter_QueryFunction_ge17fi_a1a0a0(SNode node, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         if (IClassifierMember_Behavior.call_isStatic_7405920559687241224(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
           return MPSFonts.BOLD_ITALIC;
@@ -122,7 +122,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static Color _StyleParameter_QueryFunction_ge17fi_a0a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    private static Color _StyleParameter_QueryFunction_ge17fi_a0a0a0(SNode node, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         return MPSColors.DARK_MAGENTA;
       } else {

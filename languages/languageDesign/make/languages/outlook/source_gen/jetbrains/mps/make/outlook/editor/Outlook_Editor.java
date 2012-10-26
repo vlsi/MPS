@@ -63,14 +63,14 @@ public class Outlook_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qlzo2n_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "make outlook");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make outlook");
     editorCell.setCellId("Constant_qlzo2n_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_qlzo2n_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_qlzo2n_c0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -85,7 +85,7 @@ public class Outlook_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qlzo2n_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -147,7 +147,7 @@ public class Outlook_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_qlzo2n_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_qlzo2n_a1b0");
       editorCell.setDefaultText("<no facets>");
       return editorCell;

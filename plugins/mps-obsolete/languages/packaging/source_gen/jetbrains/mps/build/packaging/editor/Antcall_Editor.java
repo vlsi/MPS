@@ -113,14 +113,14 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xq8xtf_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_xq8xtf_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xq8xtf_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "excludes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_xq8xtf_a0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -128,7 +128,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xq8xtf_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "includes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_xq8xtf_a1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -149,7 +149,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xq8xtf_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -352,7 +352,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_xq8xtf_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<entries>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
       editorCell.setCellId("Constant_xq8xtf_a1b0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

@@ -28,7 +28,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7y7tj3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "split with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "split with");
     editorCell.setCellId("Constant_7y7tj3_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

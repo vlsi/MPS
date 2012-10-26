@@ -61,7 +61,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jug38p_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "super");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
     editorCell.setCellId("Constant_jug38p_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -73,7 +73,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jug38p_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_jug38p_b0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     {
@@ -85,7 +85,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jug38p_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_jug38p_e0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -93,7 +93,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jug38p_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_jug38p_g0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (renderingCondition_jug38p_a6a(node, editorContext, editorContext.getScope())) {
@@ -215,7 +215,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -223,7 +223,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_jug38p_a5a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_jug38p_a5a");
       {
         Style style = editorCell.getStyle();

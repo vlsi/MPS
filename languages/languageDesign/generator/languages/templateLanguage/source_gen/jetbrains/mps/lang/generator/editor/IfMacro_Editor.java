@@ -163,7 +163,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "if-macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if-macro");
     editorCell.setCellId("Constant_t4g6n2_a0");
     {
       Style style = editorCell.getStyle();
@@ -176,7 +176,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_t4g6n2_b0");
     {
       Style style = editorCell.getStyle();
@@ -187,14 +187,14 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_t4g6n2_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_t4g6n2_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -205,14 +205,14 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_t4g6n2_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_t4g6n2_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -223,7 +223,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "condition");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_t4g6n2_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -234,7 +234,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b2c0");
     {
       Style style = editorCell.getStyle();
@@ -245,7 +245,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_a3c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "alternative");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alternative");
     editorCell.setCellId("Constant_t4g6n2_a3c0");
     {
       Style style = editorCell.getStyle();
@@ -256,7 +256,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_b3c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b3c0");
     {
       Style style = editorCell.getStyle();
@@ -267,7 +267,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$IF$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$IF$");
     editorCell.setCellId("Constant_t4g6n2_a0a");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -284,14 +284,14 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t4g6n2_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_t4g6n2_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_t4g6n2_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$ELSE$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ELSE$");
     editorCell.setCellId("Constant_t4g6n2_a1a");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {

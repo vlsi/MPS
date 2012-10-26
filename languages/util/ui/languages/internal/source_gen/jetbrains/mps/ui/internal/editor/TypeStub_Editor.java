@@ -37,14 +37,14 @@ public class TypeStub_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8bqx4y_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_8bqx4y_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8bqx4y_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_8bqx4y_d0");
     editorCell.setDefaultText("");
     return editorCell;

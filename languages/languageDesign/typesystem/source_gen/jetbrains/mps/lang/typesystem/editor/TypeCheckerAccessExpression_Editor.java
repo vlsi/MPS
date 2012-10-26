@@ -14,7 +14,7 @@ public class TypeCheckerAccessExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hy16x6_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "typechecker");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "typechecker");
     editorCell.setCellId("Constant_hy16x6_a");
     editorCell.setDefaultText("");
     return editorCell;

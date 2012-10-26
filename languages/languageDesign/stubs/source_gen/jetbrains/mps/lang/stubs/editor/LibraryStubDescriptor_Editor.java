@@ -159,14 +159,14 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y9570a_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "library descriptor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "library descriptor");
     editorCell.setCellId("Constant_y9570a_a0a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_y9570a_b0a");
     {
       Style style = editorCell.getStyle();
@@ -179,49 +179,49 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y9570a_a0a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "module:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module:");
     editorCell.setCellId("Constant_y9570a_a0a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_a1a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "creator:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "creator:");
     editorCell.setCellId("Constant_y9570a_a1a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_a2a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "manager:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "manager:");
     editorCell.setCellId("Constant_y9570a_a2a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_a3a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "export:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
     editorCell.setCellId("Constant_y9570a_a3a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_y9570a_b1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_d1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_y9570a_d1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_y9570a_c0");
     {
       Style style = editorCell.getStyle();
@@ -234,7 +234,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_y9570a_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

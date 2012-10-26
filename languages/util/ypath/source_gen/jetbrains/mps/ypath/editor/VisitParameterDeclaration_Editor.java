@@ -32,7 +32,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kxrg6g_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_kxrg6g_c0");
     {
       Style style = editorCell.getStyle();

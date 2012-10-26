@@ -148,7 +148,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "facet");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "facet");
     editorCell.setCellId("Constant_aj8zjo_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -156,7 +156,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_aj8zjo_c0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -164,7 +164,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_aj8zjo_e0a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -172,7 +172,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Required:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Required:");
     editorCell.setCellId("Constant_aj8zjo_a0b1a");
     {
       Style style = editorCell.getStyle();
@@ -185,7 +185,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_aj8zjo_b1b0");
     {
       Style style = editorCell.getStyle();
@@ -197,7 +197,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Optional:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Optional:");
     editorCell.setCellId("Constant_aj8zjo_a2b1a");
     {
       Style style = editorCell.getStyle();
@@ -210,7 +210,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_d1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_aj8zjo_d1b0");
     {
       Style style = editorCell.getStyle();
@@ -222,7 +222,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_e1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Targets:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Targets:");
     editorCell.setCellId("Constant_aj8zjo_e1b0");
     {
       Style style = editorCell.getStyle();
@@ -235,7 +235,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aj8zjo_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_aj8zjo_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -275,12 +275,12 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aj8zjo_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_aj8zjo_a0f1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -368,7 +368,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -376,7 +376,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_aj8zjo_a3a0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_aj8zjo_a3a0");
       editorCell.setDefaultText("<none>");
       return editorCell;
@@ -425,7 +425,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -433,7 +433,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_aj8zjo_a1a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_aj8zjo_a1a1b0");
       editorCell.setDefaultText("<no required facets>");
       return editorCell;
@@ -482,7 +482,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -490,7 +490,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_aj8zjo_a1c1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_aj8zjo_a1c1b0");
       editorCell.setDefaultText("<no optional facets>");
       return editorCell;
@@ -539,7 +539,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), " ");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -547,7 +547,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_aj8zjo_a1f1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_aj8zjo_a1f1b0");
       editorCell.setDefaultText("<no targets>");
       return editorCell;

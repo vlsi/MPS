@@ -131,14 +131,14 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_30aiet_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "root");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_30aiet_a0a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_30aiet_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_30aiet_b0a");
     {
       Style style = editorCell.getStyle();
@@ -151,7 +151,7 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_30aiet_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "child_0_n:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child_0_n:");
     editorCell.setCellId("Constant_30aiet_a1b0");
     {
       Style style = editorCell.getStyle();
@@ -162,7 +162,7 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_30aiet_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "child_1_n:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child_1_n:");
     editorCell.setCellId("Constant_30aiet_c1b0");
     {
       Style style = editorCell.getStyle();
@@ -173,7 +173,7 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_30aiet_e1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "childSubConcept_0_n:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "childSubConcept_0_n:");
     editorCell.setCellId("Constant_30aiet_e1b0");
     {
       Style style = editorCell.getStyle();
@@ -184,7 +184,7 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_30aiet_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_30aiet_c0");
     {
       Style style = editorCell.getStyle();
@@ -225,22 +225,22 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_30aiet_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_30aiet_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_30aiet_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_30aiet_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -310,7 +310,7 @@ public class Root_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_30aiet_a1b1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<empty>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_30aiet_a1b1b0");
       {
         Style style = editorCell.getStyle();
@@ -361,7 +361,7 @@ public class Root_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_30aiet_a1d1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<empty>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_30aiet_a1d1b0");
       {
         Style style = editorCell.getStyle();

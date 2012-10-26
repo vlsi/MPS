@@ -48,7 +48,7 @@ public class BuilderCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1hbqnh_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_1hbqnh_a1a");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
@@ -60,7 +60,7 @@ public class BuilderCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1hbqnh_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_1hbqnh_c1a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {

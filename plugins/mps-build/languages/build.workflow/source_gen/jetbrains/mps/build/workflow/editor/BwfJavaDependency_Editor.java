@@ -14,7 +14,7 @@ public class BwfJavaDependency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_c51cvr_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no dependency>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no dependency>");
     editorCell.setCellId("Error_c51cvr_a");
     return editorCell;
   }

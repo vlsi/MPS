@@ -72,21 +72,21 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5ofldg_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_5ofldg_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5ofldg_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "default");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_5ofldg_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5ofldg_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5ofldg_c0");
     {
       Style style = editorCell.getStyle();
@@ -97,7 +97,7 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5ofldg_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "handler");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "handler");
     editorCell.setCellId("Constant_5ofldg_a3a");
     editorCell.setDefaultText("");
     return editorCell;

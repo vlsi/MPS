@@ -28,14 +28,14 @@ public class ThreadPool_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a5430j_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "thread pool with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "thread pool with");
     editorCell.setCellId("Constant_a5430j_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_a5430j_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "threads");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "threads");
     editorCell.setCellId("Constant_a5430j_c0");
     editorCell.setDefaultText("");
     return editorCell;

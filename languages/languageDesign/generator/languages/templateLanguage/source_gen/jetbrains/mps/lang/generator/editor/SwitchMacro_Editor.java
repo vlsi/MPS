@@ -132,7 +132,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "switch-macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "switch-macro");
     editorCell.setCellId("Constant_31t0mi_a0");
     {
       Style style = editorCell.getStyle();
@@ -145,7 +145,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_31t0mi_b0");
     {
       Style style = editorCell.getStyle();
@@ -156,14 +156,14 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_31t0mi_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_31t0mi_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_31t0mi_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -174,14 +174,14 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_31t0mi_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_31t0mi_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_31t0mi_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -192,7 +192,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapped node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
     editorCell.setCellId("Constant_31t0mi_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -203,7 +203,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_31t0mi_b2c0");
     {
       Style style = editorCell.getStyle();
@@ -214,7 +214,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_31t0mi_d2a");
     {
       Style style = editorCell.getStyle();
@@ -225,7 +225,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_a4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "template switch");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template switch");
     editorCell.setCellId("Constant_31t0mi_a4c0");
     {
       Style style = editorCell.getStyle();
@@ -236,7 +236,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_b4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_31t0mi_b4c0");
     {
       Style style = editorCell.getStyle();
@@ -247,7 +247,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_31t0mi_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$SWITCH$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$SWITCH$");
     editorCell.setCellId("Constant_31t0mi_a0_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {

@@ -28,7 +28,7 @@ public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellPr
   }
 
   private EditorCell createConstant_2ccpf5_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{...}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
     editorCell.setCellId("Constant_2ccpf5_a");
     BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

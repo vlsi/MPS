@@ -14,7 +14,7 @@ public class BaseInlineDocTag_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_1fmxww_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "...");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "...");
     editorCell.setCellId("Error_1fmxww_a");
     return editorCell;
   }

@@ -39,7 +39,7 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ylb7pt_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Get node 'containingRole' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get node 'containingRole' operation");
     editorCell.setCellId("Constant_ylb7pt_a0");
     {
       Style style = editorCell.getStyle();
@@ -51,14 +51,14 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ylb7pt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ylb7pt_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ylb7pt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns aggregation link role defined in concept of parent node and representing containment reference for this node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns aggregation link role defined in concept of parent node and representing containment reference for this node");
     editorCell.setCellId("Constant_ylb7pt_c0");
     {
       Style style = editorCell.getStyle();

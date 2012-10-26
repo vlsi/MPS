@@ -34,7 +34,7 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_obn5mp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ExtensionPoint");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ExtensionPoint");
     editorCell.setCellId("Constant_obn5mp_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -42,7 +42,7 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_obn5mp_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_obn5mp_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -54,7 +54,7 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_obn5mp_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_obn5mp_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

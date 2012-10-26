@@ -14,7 +14,7 @@ public class EnumMember_NameOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_sf2kiy_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_sf2kiy_a");
     editorCell.setDefaultText("");
     return editorCell;

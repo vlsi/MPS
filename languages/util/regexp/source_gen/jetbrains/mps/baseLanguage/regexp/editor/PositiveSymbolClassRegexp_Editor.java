@@ -36,7 +36,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4p4aum_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4p4aum_a0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
@@ -46,7 +46,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4p4aum_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4p4aum_c0");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());

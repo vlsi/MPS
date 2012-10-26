@@ -57,7 +57,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private EditorCell createConstant_ourakl_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "replace node (custom node concept)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace node (custom node concept)");
     editorCell.setCellId("Constant_ourakl_a0a");
     {
       Style style = editorCell.getStyle();
@@ -69,7 +69,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private EditorCell createConstant_ourakl_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ourakl_a1a");
     {
       Style style = editorCell.getStyle();
@@ -80,7 +80,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private EditorCell createConstant_ourakl_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "replace with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace with");
     editorCell.setCellId("Constant_ourakl_b1a");
     {
       Style style = editorCell.getStyle();
@@ -91,7 +91,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   private EditorCell createConstant_ourakl_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ourakl_c1a");
     {
       Style style = editorCell.getStyle();

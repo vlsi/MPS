@@ -21,30 +21,30 @@
     <nodeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="37" startPosition="88" endLine="38" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="38" startPosition="134" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="37" startPosition="88" endLine="38" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="38" startPosition="93" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="39" startPosition="47" endLine="40" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="40" startPosition="74" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="41" startPosition="34" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="45" startPosition="88" endLine="46" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="46" startPosition="128" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="45" startPosition="88" endLine="46" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="46" startPosition="87" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="47" startPosition="47" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="48" startPosition="76" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="49" startPosition="34" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="53" startPosition="88" endLine="54" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="54" startPosition="128" endLine="55" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="53" startPosition="88" endLine="54" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="54" startPosition="87" endLine="55" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="55" startPosition="47" endLine="56" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="56" startPosition="77" endLine="57" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="57" startPosition="34" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="61" startPosition="88" endLine="62" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="62" startPosition="128" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="61" startPosition="88" endLine="62" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="62" startPosition="87" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="63" startPosition="47" endLine="64" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="65" startPosition="5" endLine="66" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="66" startPosition="42" endLine="67" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="68" startPosition="5" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="73" startPosition="88" endLine="74" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="74" startPosition="128" endLine="75" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="73" startPosition="88" endLine="74" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="74" startPosition="87" endLine="75" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="75" startPosition="47" endLine="76" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="76" startPosition="77" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="77" startPosition="34" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -74,16 +74,16 @@
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="112" startPosition="72" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="113" startPosition="78" endLine="114" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="115" startPosition="10" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="38" startPosition="134" endLine="40" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="46" startPosition="128" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="54" startPosition="128" endLine="56" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="74" startPosition="128" endLine="76" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="38" startPosition="93" endLine="40" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="46" startPosition="87" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="54" startPosition="87" endLine="56" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="74" startPosition="87" endLine="76" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627243" fileName="UnlessStatement_Editor.java" startLine="85" startPosition="26" endLine="87" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627231" fileName="UnlessStatement_Editor.java" startLine="19" startPosition="63" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="64" startPosition="76" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="103" startPosition="58" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="103" startPosition="58" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="62" startPosition="128" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="62" startPosition="87" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627243" fileName="UnlessStatement_Editor.java" startLine="89" startPosition="59" endLine="95" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="102" startPosition="26" endLine="108" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="110" startPosition="59" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -105,13 +105,13 @@
     <scopeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" />
     <scopeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" />
     <scopeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" />
-    <scopeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="38" startPosition="134" endLine="40" endPosition="74" />
-    <scopeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="46" startPosition="128" endLine="48" endPosition="76" />
-    <scopeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="54" startPosition="128" endLine="56" endPosition="77" />
+    <scopeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="38" startPosition="93" endLine="40" endPosition="74" />
+    <scopeInfo nodeId="393299394024627241" fileName="UnlessStatement_Editor.java" startLine="46" startPosition="87" endLine="48" endPosition="76" />
+    <scopeInfo nodeId="393299394024627245" fileName="UnlessStatement_Editor.java" startLine="54" startPosition="87" endLine="56" endPosition="77" />
     <scopeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="65" startPosition="5" endLine="67" endPosition="62">
       <varInfo nodeId="393299394024627247" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="74" startPosition="128" endLine="76" endPosition="77" />
+    <scopeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="74" startPosition="87" endLine="76" endPosition="77" />
     <scopeInfo nodeId="393299394024627243" fileName="UnlessStatement_Editor.java" startLine="85" startPosition="26" endLine="87" endPosition="73" />
     <scopeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="104" startPosition="5" endLine="106" endPosition="60">
       <varInfo nodeId="393299394024627249" varName="style" />
@@ -141,7 +141,7 @@
     <scopeInfo nodeId="393299394024627252" fileName="UnlessStatement_Editor.java" startLine="73" startPosition="88" endLine="78" endPosition="22">
       <varInfo nodeId="393299394024627252" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="62" startPosition="128" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="393299394024627247" fileName="UnlessStatement_Editor.java" startLine="62" startPosition="87" endLine="68" endPosition="5" />
     <scopeInfo nodeId="393299394024627249" fileName="UnlessStatement_Editor.java" startLine="102" startPosition="26" endLine="108" endPosition="73" />
     <scopeInfo nodeId="393299394024627239" fileName="UnlessStatement_Editor.java" startLine="36" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="393299394024627239" varName="editorContext" />
@@ -220,25 +220,25 @@
     <nodeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="36" startPosition="83" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="36" startPosition="83" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="41" startPosition="88" endLine="42" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="42" startPosition="144" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="41" startPosition="88" endLine="42" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="42" startPosition="103" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="44" startPosition="5" endLine="45" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="45" startPosition="42" endLine="46" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="47" startPosition="5" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="48" startPosition="34" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="52" startPosition="88" endLine="53" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="53" startPosition="128" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="53" startPosition="128" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="52" startPosition="88" endLine="53" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="53" startPosition="87" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="53" startPosition="87" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="54" startPosition="47" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="55" startPosition="34" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075974226" fileName="MyIfStatement_Editor.java" startLine="59" startPosition="90" endLine="60" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075974226" fileName="MyIfStatement_Editor.java" startLine="60" startPosition="115" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572076037518" fileName="MyIfStatement_Editor.java" startLine="64" startPosition="90" endLine="65" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572076037518" fileName="MyIfStatement_Editor.java" startLine="65" startPosition="115" endLine="66" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572076037520" fileName="MyIfStatement_Editor.java" startLine="69" startPosition="90" endLine="70" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572076037520" fileName="MyIfStatement_Editor.java" startLine="70" startPosition="115" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="954830572075998493" fileName="MyIfStatement_Editor.java" startLine="74" startPosition="90" endLine="75" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="954830572075998493" fileName="MyIfStatement_Editor.java" startLine="75" startPosition="115" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572075974226" fileName="MyIfStatement_Editor.java" startLine="59" startPosition="90" endLine="60" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075974226" fileName="MyIfStatement_Editor.java" startLine="60" startPosition="74" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572076037518" fileName="MyIfStatement_Editor.java" startLine="64" startPosition="90" endLine="65" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572076037518" fileName="MyIfStatement_Editor.java" startLine="65" startPosition="74" endLine="66" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572076037520" fileName="MyIfStatement_Editor.java" startLine="69" startPosition="90" endLine="70" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572076037520" fileName="MyIfStatement_Editor.java" startLine="70" startPosition="74" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="954830572075998493" fileName="MyIfStatement_Editor.java" startLine="74" startPosition="90" endLine="75" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="954830572075998493" fileName="MyIfStatement_Editor.java" startLine="75" startPosition="74" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572075973688" fileName="MyIfStatement_Editor.java" startLine="79" startPosition="87" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="954830572075973688" fileName="MyIfStatement_Editor.java" startLine="80" startPosition="81" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="954830572075973688" fileName="MyIfStatement_Editor.java" startLine="81" startPosition="34" endLine="82" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -285,7 +285,7 @@
     <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="43" startPosition="47" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="954830572075973688" fileName="MyIfStatement_Editor.java" startLine="84" startPosition="58" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="954830572075973688" fileName="MyIfStatement_Editor.java" startLine="84" startPosition="58" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="42" startPosition="144" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="42" startPosition="103" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="954830572075974226" fileName="MyIfStatement_Editor.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_a1fgw3_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="954830572076037518" fileName="MyIfStatement_Editor.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_a1fgw3_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="954830572076037520" fileName="MyIfStatement_Editor.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_a1fgw3_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -315,7 +315,7 @@
     <scopeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="83" />
     <scopeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="35" startPosition="83" endLine="36" endPosition="83" />
     <scopeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="36" startPosition="83" endLine="37" endPosition="80" />
-    <scopeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="53" startPosition="128" endLine="54" endPosition="47" />
+    <scopeInfo nodeId="954830572075998491" fileName="MyIfStatement_Editor.java" startLine="53" startPosition="87" endLine="54" endPosition="47" />
     <scopeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="44" startPosition="5" endLine="46" endPosition="66">
       <varInfo nodeId="954830572075973686" varName="style" />
     </scopeInfo>
@@ -358,7 +358,7 @@
       <varInfo nodeId="954830572075998491" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="954830572075973688" fileName="MyIfStatement_Editor.java" startLine="84" startPosition="58" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="42" startPosition="144" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="954830572075973686" fileName="MyIfStatement_Editor.java" startLine="42" startPosition="103" endLine="47" endPosition="5" />
     <scopeInfo nodeId="954830572075974226" fileName="MyIfStatement_Editor.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="954830572075974226" varName="editorContext" />
       <varInfo nodeId="954830572075974226" varName="node" />

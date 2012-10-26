@@ -198,14 +198,14 @@
     <nodeInfo nodeId="43370322128311455" fileName="HighLevelWatchableCreator_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="43370322128311455" fileName="HighLevelWatchableCreator_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128311455" fileName="HighLevelWatchableCreator_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="37" startPosition="128" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="37" startPosition="128" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="38" startPosition="47" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="39" startPosition="34" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="43" startPosition="88" endLine="44" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="44" startPosition="128" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="44" startPosition="128" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="43" startPosition="88" endLine="44" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="44" startPosition="87" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="44" startPosition="87" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="45" startPosition="47" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="46" startPosition="34" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128311457" fileName="HighLevelWatchableCreator_Editor.java" startLine="50" startPosition="87" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -293,8 +293,8 @@
     <scopeInfo nodeId="43370322128311455" fileName="HighLevelWatchableCreator_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" />
     <scopeInfo nodeId="43370322128311455" fileName="HighLevelWatchableCreator_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" />
     <scopeInfo nodeId="43370322128311455" fileName="HighLevelWatchableCreator_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" />
-    <scopeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="37" startPosition="128" endLine="38" endPosition="47" />
-    <scopeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="44" startPosition="128" endLine="45" endPosition="47" />
+    <scopeInfo nodeId="43370322128311460" fileName="HighLevelWatchableCreator_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="47" />
+    <scopeInfo nodeId="43370322128311462" fileName="HighLevelWatchableCreator_Editor.java" startLine="44" startPosition="87" endLine="45" endPosition="47" />
     <scopeInfo nodeId="43370322128311456" fileName="HighLevelWatchableCreator_Editor.java" startLine="90" startPosition="58" endLine="91" endPosition="50" />
     <scopeInfo nodeId="43370322128311458" fileName="HighLevelWatchableCreator_Editor.java" startLine="104" startPosition="33" endLine="105" endPosition="14" />
     <scopeInfo nodeId="43370322128311458" fileName="HighLevelWatchableCreator_Editor.java" startLine="108" startPosition="69" endLine="109" endPosition="67" />
@@ -447,49 +447,49 @@
     <nodeInfo nodeId="5116701553466333985" fileName="HighLevelCustomViewer_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5116701553466333985" fileName="HighLevelCustomViewer_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5116701553466333985" fileName="HighLevelCustomViewer_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="62" startPosition="89" endLine="63" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="63" startPosition="140" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="63" startPosition="140" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="62" startPosition="89" endLine="63" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="63" startPosition="99" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="63" startPosition="99" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="64" startPosition="48" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="70" startPosition="127" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="70" startPosition="127" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="70" startPosition="86" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="70" startPosition="86" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="71" startPosition="47" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="76" startPosition="89" endLine="77" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="77" startPosition="136" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="77" startPosition="136" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="76" startPosition="89" endLine="77" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="77" startPosition="95" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="77" startPosition="95" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="78" startPosition="48" endLine="79" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="79" startPosition="34" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="83" startPosition="88" endLine="84" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="84" startPosition="127" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="84" startPosition="127" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="83" startPosition="88" endLine="84" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="84" startPosition="86" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="84" startPosition="86" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="85" startPosition="47" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="86" startPosition="34" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="90" startPosition="88" endLine="91" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="91" startPosition="136" endLine="92" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="91" startPosition="136" endLine="92" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="90" startPosition="88" endLine="91" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="91" startPosition="95" endLine="92" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="91" startPosition="95" endLine="92" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="92" startPosition="47" endLine="93" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="93" startPosition="34" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="97" startPosition="88" endLine="98" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="98" startPosition="127" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="98" startPosition="127" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="97" startPosition="88" endLine="98" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="98" startPosition="86" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="98" startPosition="86" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="99" startPosition="47" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="100" startPosition="34" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="104" startPosition="88" endLine="105" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="105" startPosition="144" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="105" startPosition="144" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="104" startPosition="88" endLine="105" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="105" startPosition="103" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="105" startPosition="103" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="106" startPosition="47" endLine="107" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="107" startPosition="34" endLine="108" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="111" startPosition="88" endLine="112" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="127" endLine="113" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="127" endLine="113" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="111" startPosition="88" endLine="112" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="86" endLine="113" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="86" endLine="113" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="113" startPosition="47" endLine="114" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="114" startPosition="34" endLine="115" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="118" startPosition="88" endLine="119" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="148" endLine="120" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="148" endLine="120" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="118" startPosition="88" endLine="119" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="107" endLine="120" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="107" endLine="120" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="120" startPosition="47" endLine="121" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="121" startPosition="34" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5116701553466333988" fileName="HighLevelCustomViewer_Editor.java" startLine="125" startPosition="88" endLine="126" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -607,15 +607,15 @@
     <scopeInfo nodeId="5116701553466333985" fileName="HighLevelCustomViewer_Editor.java" startLine="55" startPosition="99" endLine="56" endPosition="49" />
     <scopeInfo nodeId="5116701553466333985" fileName="HighLevelCustomViewer_Editor.java" startLine="56" startPosition="49" endLine="57" endPosition="82" />
     <scopeInfo nodeId="5116701553466333985" fileName="HighLevelCustomViewer_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="81" />
-    <scopeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="63" startPosition="140" endLine="64" endPosition="48" />
-    <scopeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="70" startPosition="127" endLine="71" endPosition="47" />
-    <scopeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="77" startPosition="136" endLine="78" endPosition="48" />
-    <scopeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="84" startPosition="127" endLine="85" endPosition="47" />
-    <scopeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="91" startPosition="136" endLine="92" endPosition="47" />
-    <scopeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="98" startPosition="127" endLine="99" endPosition="47" />
-    <scopeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="105" startPosition="144" endLine="106" endPosition="47" />
-    <scopeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="127" endLine="113" endPosition="47" />
-    <scopeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="148" endLine="120" endPosition="47" />
+    <scopeInfo nodeId="43370322128323853" fileName="HighLevelCustomViewer_Editor.java" startLine="63" startPosition="99" endLine="64" endPosition="48" />
+    <scopeInfo nodeId="5116701553466333983" fileName="HighLevelCustomViewer_Editor.java" startLine="70" startPosition="86" endLine="71" endPosition="47" />
+    <scopeInfo nodeId="5116701553466333984" fileName="HighLevelCustomViewer_Editor.java" startLine="77" startPosition="95" endLine="78" endPosition="48" />
+    <scopeInfo nodeId="43370322128323858" fileName="HighLevelCustomViewer_Editor.java" startLine="84" startPosition="86" endLine="85" endPosition="47" />
+    <scopeInfo nodeId="43370322128323860" fileName="HighLevelCustomViewer_Editor.java" startLine="91" startPosition="95" endLine="92" endPosition="47" />
+    <scopeInfo nodeId="43370322128323864" fileName="HighLevelCustomViewer_Editor.java" startLine="98" startPosition="86" endLine="99" endPosition="47" />
+    <scopeInfo nodeId="43370322128323866" fileName="HighLevelCustomViewer_Editor.java" startLine="105" startPosition="103" endLine="106" endPosition="47" />
+    <scopeInfo nodeId="43370322128323870" fileName="HighLevelCustomViewer_Editor.java" startLine="112" startPosition="86" endLine="113" endPosition="47" />
+    <scopeInfo nodeId="43370322128323872" fileName="HighLevelCustomViewer_Editor.java" startLine="119" startPosition="107" endLine="120" endPosition="47" />
     <scopeInfo nodeId="43370322128323855" fileName="HighLevelCustomViewer_Editor.java" startLine="198" startPosition="58" endLine="199" endPosition="42" />
     <scopeInfo nodeId="43370322128323849" fileName="HighLevelCustomViewer_Editor.java" startLine="45" startPosition="5" endLine="47" endPosition="51">
       <varInfo nodeId="43370322128323849" varName="style" />
@@ -832,19 +832,19 @@
     <nodeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="88" startPosition="84" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="92" startPosition="89" endLine="93" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="93" startPosition="136" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="93" startPosition="136" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="92" startPosition="89" endLine="93" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="93" startPosition="95" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="93" startPosition="95" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="94" startPosition="48" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="95" startPosition="34" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="99" startPosition="89" endLine="100" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="132" endLine="101" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="99" startPosition="89" endLine="100" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="91" endLine="101" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="102" startPosition="5" endLine="103" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="103" startPosition="42" endLine="104" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="105" startPosition="5" endLine="106" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="106" startPosition="34" endLine="107" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="110" startPosition="90" endLine="111" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="136" endLine="112" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="110" startPosition="90" endLine="111" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="95" endLine="112" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="113" startPosition="5" endLine="114" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="114" startPosition="42" endLine="115" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="116" startPosition="5" endLine="117" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -908,8 +908,8 @@
     <nodeInfo nodeId="5117350825036235742" fileName="CustomWatchable_Editor.java" startLine="56" startPosition="99" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5117350825036256254" fileName="CustomWatchable_Editor.java" startLine="68" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="81" startPosition="99" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="132" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="136" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="91" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="95" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5117350825036256296" fileName="CustomWatchable_Editor.java" startLine="122" startPosition="32" endLine="127" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256306" fileName="CustomWatchable_Editor.java" startLine="132" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_rpujt6_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5117350825036235748" fileName="CustomWatchable_Editor.java" startLine="148" startPosition="59" endLine="154" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -940,7 +940,7 @@
     <scopeInfo nodeId="5117350825036256254" fileName="CustomWatchable_Editor.java" startLine="75" startPosition="85" endLine="76" endPosition="84" />
     <scopeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="86" startPosition="5" endLine="87" endPosition="81" />
     <scopeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="87" startPosition="81" endLine="88" endPosition="84" />
-    <scopeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="93" startPosition="136" endLine="94" endPosition="48" />
+    <scopeInfo nodeId="5117350825036235746" fileName="CustomWatchable_Editor.java" startLine="93" startPosition="95" endLine="94" endPosition="48" />
     <scopeInfo nodeId="5117350825036256298" fileName="CustomWatchable_Editor.java" startLine="124" startPosition="30" endLine="125" endPosition="63" />
     <scopeInfo nodeId="5117350825036256296" fileName="CustomWatchable_Editor.java" startLine="127" startPosition="16" endLine="128" endPosition="47" />
     <scopeInfo nodeId="5117350825036256306" fileName="CustomWatchable_Editor.java" startLine="134" startPosition="188" endLine="135" endPosition="50" />
@@ -994,8 +994,8 @@
     <scopeInfo nodeId="5117350825036235742" fileName="CustomWatchable_Editor.java" startLine="56" startPosition="99" endLine="61" endPosition="5" />
     <scopeInfo nodeId="5117350825036256254" fileName="CustomWatchable_Editor.java" startLine="68" startPosition="99" endLine="73" endPosition="5" />
     <scopeInfo nodeId="5117350825036256295" fileName="CustomWatchable_Editor.java" startLine="81" startPosition="99" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="132" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="136" endLine="116" endPosition="5" />
+    <scopeInfo nodeId="5117350825036256255" fileName="CustomWatchable_Editor.java" startLine="100" startPosition="91" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="5117350825036256293" fileName="CustomWatchable_Editor.java" startLine="111" startPosition="95" endLine="116" endPosition="5" />
     <scopeInfo nodeId="5117350825036256306" fileName="CustomWatchable_Editor.java" startLine="132" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="5117350825036256306" varName="editorContext" />
       <varInfo nodeId="5117350825036256306" varName="node" />
@@ -1111,14 +1111,14 @@
     <nodeInfo nodeId="4089989733346843029" fileName="CustomWatchablesContainer_Editor.java" startLine="47" startPosition="82" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4089989733346843029" fileName="CustomWatchablesContainer_Editor.java" startLine="47" startPosition="82" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4089989733346843029" fileName="CustomWatchablesContainer_Editor.java" startLine="48" startPosition="82" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="52" startPosition="89" endLine="53" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="144" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="144" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="52" startPosition="89" endLine="53" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="103" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="103" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="54" startPosition="48" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="55" startPosition="34" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="127" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="127" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="86" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="86" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="61" startPosition="47" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="62" startPosition="34" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5117350825036256327" fileName="CustomWatchablesContainer_Editor.java" startLine="66" startPosition="91" endLine="67" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1180,8 +1180,8 @@
     <scopeInfo nodeId="5117350825036256321" fileName="CustomWatchablesContainer_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="84" />
     <scopeInfo nodeId="4089989733346843029" fileName="CustomWatchablesContainer_Editor.java" startLine="46" startPosition="5" endLine="47" endPosition="82" />
     <scopeInfo nodeId="4089989733346843029" fileName="CustomWatchablesContainer_Editor.java" startLine="47" startPosition="82" endLine="48" endPosition="82" />
-    <scopeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="144" endLine="54" endPosition="48" />
-    <scopeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="127" endLine="61" endPosition="47" />
+    <scopeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="103" endLine="54" endPosition="48" />
+    <scopeInfo nodeId="5117350825036256330" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="86" endLine="61" endPosition="47" />
     <scopeInfo nodeId="5117350825036256327" fileName="CustomWatchablesContainer_Editor.java" startLine="68" startPosition="108" endLine="69" endPosition="50" />
     <scopeInfo nodeId="4089989733346843035" fileName="CustomWatchablesContainer_Editor.java" startLine="79" startPosition="58" endLine="80" endPosition="42" />
     <scopeInfo nodeId="5117350825036256327" fileName="CustomWatchablesContainer_Editor.java" startLine="93" startPosition="101" endLine="94" endPosition="50" />

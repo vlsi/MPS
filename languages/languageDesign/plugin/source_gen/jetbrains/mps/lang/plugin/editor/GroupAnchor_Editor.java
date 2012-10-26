@@ -27,7 +27,7 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gu53j0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_gu53j0_a0");
     editorCell.setDefaultText("");
     return editorCell;

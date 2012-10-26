@@ -31,7 +31,7 @@ public class AppendingOutputRedirection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k7i96c_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">>");
     editorCell.setCellId("Constant_k7i96c_b0");
     {
       Style style = editorCell.getStyle();

@@ -101,7 +101,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n2wc8f_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_n2wc8f_a1a");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -109,7 +109,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n2wc8f_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_n2wc8f_c1a");
     {
       Style style = editorCell.getStyle();
@@ -120,7 +120,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n2wc8f_e1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_n2wc8f_e1a");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
@@ -133,7 +133,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n2wc8f_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_n2wc8f_a3a");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -141,7 +141,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_n2wc8f_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_n2wc8f_c3a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

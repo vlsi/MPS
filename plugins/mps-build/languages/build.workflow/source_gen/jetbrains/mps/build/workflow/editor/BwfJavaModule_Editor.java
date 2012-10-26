@@ -85,7 +85,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "compile java module");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compile java module");
     editorCell.setCellId("Constant_y27sly_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -93,7 +93,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "depends on");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on");
     editorCell.setCellId("Constant_y27sly_c0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -101,7 +101,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "source");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source");
     editorCell.setCellId("Constant_y27sly_a4a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -113,7 +113,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_c4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "resources");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resources");
     editorCell.setCellId("Constant_y27sly_c4a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -125,7 +125,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_e4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dependencies");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
     editorCell.setCellId("Constant_y27sly_e4a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -137,7 +137,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_g4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "output");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
     editorCell.setCellId("Constant_y27sly_g4a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -149,14 +149,14 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_y27sly_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y27sly_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate debug info");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate debug info");
     editorCell.setCellId("Constant_y27sly_a0_0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -164,7 +164,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "generate no warnings");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate no warnings");
     editorCell.setCellId("Constant_y27sly_c0_0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -172,7 +172,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "maximum heap size (MB)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "maximum heap size (MB)");
     editorCell.setCellId("Constant_y27sly_e0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -180,7 +180,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "compiler");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compiler");
     editorCell.setCellId("Constant_y27sly_g0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

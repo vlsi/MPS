@@ -41,7 +41,7 @@ public class IntefaceExtensionPoint_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wfmmwk_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "interface=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface=");
     editorCell.setCellId("Constant_wfmmwk_b0");
     editorCell.setDefaultText("");
     return editorCell;

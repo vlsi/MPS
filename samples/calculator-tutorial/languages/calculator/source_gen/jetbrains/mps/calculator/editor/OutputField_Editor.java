@@ -27,7 +27,7 @@ public class OutputField_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_57hct5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "output");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
     editorCell.setCellId("Constant_57hct5_a0");
     editorCell.setDefaultText("");
     return editorCell;

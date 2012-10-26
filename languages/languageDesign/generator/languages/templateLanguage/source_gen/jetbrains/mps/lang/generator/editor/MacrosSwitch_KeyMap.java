@@ -175,7 +175,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
+      return QueriesUtil.isPropertyMacroApplicable(node, (EditorCell) editorContext.getSelectedCell());
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -226,11 +226,11 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
+      return QueriesUtil.isReferenceMacroApplicable(node, (EditorCell) editorContext.getSelectedCell());
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
+      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, (EditorCell) editorContext.getSelectedCell());
       // set caret 
       editorContext.selectAndSetCaret(referenceMacro, 2);
       EditorInspector inspector = editorContext.getInspector();

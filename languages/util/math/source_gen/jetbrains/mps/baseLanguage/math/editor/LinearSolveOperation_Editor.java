@@ -88,7 +88,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kydwvz_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "final");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_kydwvz_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
@@ -97,21 +97,21 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kydwvz_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kydwvz_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kydwvz_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "*");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
     editorCell.setCellId("Constant_kydwvz_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kydwvz_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_kydwvz_i0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -73,7 +73,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6puhak_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "subtask");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "subtask");
     editorCell.setCellId("Constant_6puhak_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -81,7 +81,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6puhak_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "after");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
     editorCell.setCellId("Constant_6puhak_a2a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -89,7 +89,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6puhak_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "before");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before");
     editorCell.setCellId("Constant_6puhak_a3a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -97,7 +97,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6puhak_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6puhak_f0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -203,7 +203,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -249,7 +249,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

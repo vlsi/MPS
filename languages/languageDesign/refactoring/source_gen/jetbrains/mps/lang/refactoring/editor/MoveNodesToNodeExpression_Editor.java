@@ -32,7 +32,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdn18r_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "moveNodes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "moveNodes");
     editorCell.setCellId("Constant_tdn18r_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -40,7 +40,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdn18r_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "to");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
     editorCell.setCellId("Constant_tdn18r_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -48,7 +48,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tdn18r_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "withRole");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "withRole");
     editorCell.setCellId("Constant_tdn18r_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

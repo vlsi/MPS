@@ -32,7 +32,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c45jqi_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "?");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_c45jqi_b0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
@@ -44,7 +44,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_c45jqi_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_c45jqi_d0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {

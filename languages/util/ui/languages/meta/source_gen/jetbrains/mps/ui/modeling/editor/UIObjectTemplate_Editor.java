@@ -187,49 +187,49 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tx8k3j_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "code template");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code template");
     editorCell.setCellId("Constant_tx8k3j_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tx8k3j_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_tx8k3j_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tx8k3j_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type:");
     editorCell.setCellId("Constant_tx8k3j_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tx8k3j_a0e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "factories");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "factories");
     editorCell.setCellId("Constant_tx8k3j_a0e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tx8k3j_a01a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "property accessors");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property accessors");
     editorCell.setCellId("Constant_tx8k3j_a01a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tx8k3j_a31a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "action handlers");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action handlers");
     editorCell.setCellId("Constant_tx8k3j_a31a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_tx8k3j_a61a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "container compartments");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container compartments");
     editorCell.setCellId("Constant_tx8k3j_a61a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -268,57 +268,57 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tx8k3j_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_a1e0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_a11a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_a41a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_tx8k3j_a71a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

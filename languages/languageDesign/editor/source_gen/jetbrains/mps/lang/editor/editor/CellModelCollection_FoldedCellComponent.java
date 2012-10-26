@@ -42,7 +42,7 @@ public class CellModelCollection_FoldedCellComponent extends AbstractCellProvide
   }
 
   private EditorCell createConstant_9yikpc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/folded cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/folded cell:");
     editorCell.setCellId("Constant_9yikpc_a0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

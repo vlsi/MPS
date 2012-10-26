@@ -27,7 +27,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5uinjc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept =");
     editorCell.setCellId("Constant_5uinjc_a0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

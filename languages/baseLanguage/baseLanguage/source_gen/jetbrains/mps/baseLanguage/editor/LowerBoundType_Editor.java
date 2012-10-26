@@ -31,7 +31,7 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d2fqsq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "?");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_d2fqsq_a0");
     {
       Style style = editorCell.getStyle();
@@ -42,7 +42,7 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d2fqsq_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "super");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
     editorCell.setCellId("Constant_d2fqsq_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

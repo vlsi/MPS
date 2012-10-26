@@ -66,7 +66,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tl5ft1_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_tl5ft1_b0a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -74,7 +74,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tl5ft1_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_tl5ft1_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -90,7 +90,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tl5ft1_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

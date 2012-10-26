@@ -34,7 +34,7 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xvugzj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "string");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "string");
     editorCell.setCellId("Constant_xvugzj_a0");
     {
       Style style = editorCell.getStyle();
@@ -46,7 +46,7 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xvugzj_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<inheritable:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<inheritable:");
     editorCell.setCellId("Constant_xvugzj_c0");
     {
       Style style = editorCell.getStyle();
@@ -58,7 +58,7 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xvugzj_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_xvugzj_e0");
     {
       Style style = editorCell.getStyle();

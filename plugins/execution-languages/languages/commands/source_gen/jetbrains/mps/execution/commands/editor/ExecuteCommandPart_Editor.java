@@ -61,7 +61,7 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6c2ht_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "execute");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
     editorCell.setCellId("Constant_6c2ht_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -69,7 +69,7 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6c2ht_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6c2ht_b0a");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -77,7 +77,7 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6c2ht_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6c2ht_d0a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -100,7 +100,7 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_6c2ht_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

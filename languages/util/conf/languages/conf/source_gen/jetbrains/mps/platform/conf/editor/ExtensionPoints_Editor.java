@@ -61,7 +61,7 @@ public class ExtensionPoints_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cw3nt1_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

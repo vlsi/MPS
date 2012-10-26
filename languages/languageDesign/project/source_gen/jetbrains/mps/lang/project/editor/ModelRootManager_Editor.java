@@ -33,7 +33,7 @@ public class ModelRootManager_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cyusth_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_cyusth_b0");
     {
       Style style = editorCell.getStyle();
@@ -45,7 +45,7 @@ public class ModelRootManager_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cyusth_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "module");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
     editorCell.setCellId("Constant_cyusth_c0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class ModelRootManager_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cyusth_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_cyusth_d0");
     {
       Style style = editorCell.getStyle();
@@ -64,7 +64,7 @@ public class ModelRootManager_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cyusth_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_cyusth_f0");
     {
       Style style = editorCell.getStyle();

@@ -172,7 +172,7 @@ public class BuildLayout_ImportContent_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_roxgcf_a2a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_roxgcf_a2a");
       {
         Style style = editorCell.getStyle();

@@ -69,7 +69,7 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_698n2d_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_698n2d_a0");
     {
       Style style = editorCell.getStyle();
@@ -81,7 +81,7 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_698n2d_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_698n2d_a1a");
     {
       Style style = editorCell.getStyle();
@@ -94,7 +94,7 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_698n2d_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parent:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent:");
     editorCell.setCellId("Constant_698n2d_a0_0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

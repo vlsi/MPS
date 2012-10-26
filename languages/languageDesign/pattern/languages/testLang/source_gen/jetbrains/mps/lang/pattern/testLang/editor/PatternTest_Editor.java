@@ -110,14 +110,14 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Pattern test");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pattern test");
     editorCell.setCellId("Constant_kasahx_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kasahx_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_d0");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_f0");
     {
       Style style = editorCell.getStyle();
@@ -141,14 +141,14 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "matches:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matches:");
     editorCell.setCellId("Constant_kasahx_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kasahx_a0i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_a0i0");
     {
       Style style = editorCell.getStyle();
@@ -160,7 +160,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_b0i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Pattern variables matches:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pattern variables matches:");
     editorCell.setCellId("Constant_kasahx_b0i0");
     {
       Style style = editorCell.getStyle();
@@ -171,7 +171,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_a1i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_a1i0");
     {
       Style style = editorCell.getStyle();
@@ -183,7 +183,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_b1i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Pattern properties matches:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pattern properties matches:");
     editorCell.setCellId("Constant_kasahx_b1i0");
     {
       Style style = editorCell.getStyle();
@@ -194,7 +194,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_a2i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_a2i0");
     {
       Style style = editorCell.getStyle();
@@ -206,7 +206,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kasahx_b2i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "List pattern matches:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "List pattern matches:");
     editorCell.setCellId("Constant_kasahx_b2i0");
     {
       Style style = editorCell.getStyle();

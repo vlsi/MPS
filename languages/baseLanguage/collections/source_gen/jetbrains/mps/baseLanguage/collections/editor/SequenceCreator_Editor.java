@@ -37,7 +37,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u7mc2o_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "sequence");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sequence");
     editorCell.setCellId("Constant_u7mc2o_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -49,7 +49,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u7mc2o_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_u7mc2o_b0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -57,7 +57,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u7mc2o_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_u7mc2o_d0");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
@@ -69,7 +69,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u7mc2o_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_u7mc2o_e0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -77,7 +77,7 @@ public class SequenceCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u7mc2o_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_u7mc2o_g0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {

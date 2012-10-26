@@ -64,14 +64,14 @@ public class ExpectedOption_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_97k2fj_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_97k2fj_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_97k2fj_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "one of...");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "one of...");
     editorCell.setCellId("Constant_97k2fj_a2a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -73,7 +73,7 @@ public class BeforeTasksComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_3w3ux3_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "before:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before:");
     editorCell.setCellId("Constant_3w3ux3_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -89,12 +89,12 @@ public class BeforeTasksComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_3w3ux3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_3w3ux3_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

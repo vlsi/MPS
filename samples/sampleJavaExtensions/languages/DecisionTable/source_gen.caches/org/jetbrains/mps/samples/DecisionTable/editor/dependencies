@@ -8,7 +8,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.XYCTableModel" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />

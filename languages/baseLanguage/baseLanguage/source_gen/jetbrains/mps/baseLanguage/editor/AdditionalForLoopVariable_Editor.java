@@ -52,7 +52,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_165sw5_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_165sw5_a1a");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);

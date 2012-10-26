@@ -51,14 +51,14 @@ public class Calculator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_uh00px_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "calculator");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "calculator");
     editorCell.setCellId("Constant_uh00px_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_uh00px_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_uh00px_c0");
     editorCell.setDefaultText("");
     return editorCell;

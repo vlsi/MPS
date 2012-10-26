@@ -92,7 +92,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bqk3nx_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_bqk3nx_a0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -104,7 +104,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bqk3nx_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_bqk3nx_c0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -112,7 +112,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bqk3nx_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " throws");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " throws");
     editorCell.setCellId("Constant_bqk3nx_a4a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -120,7 +120,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bqk3nx_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_bqk3nx_f0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -132,7 +132,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bqk3nx_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ifc");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ifc");
     editorCell.setCellId("Constant_bqk3nx_g0");
     {
       Style style = editorCell.getStyle();
@@ -145,7 +145,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bqk3nx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "runtime interface:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runtime interface:");
     editorCell.setCellId("Constant_bqk3nx_a0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -289,7 +289,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -297,7 +297,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_bqk3nx_a1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_bqk3nx_a1a");
       {
         Style style = editorCell.getStyle();
@@ -347,7 +347,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

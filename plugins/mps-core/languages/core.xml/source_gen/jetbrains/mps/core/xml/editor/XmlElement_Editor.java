@@ -153,7 +153,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_vc3gub_a0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -166,7 +166,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_vc3gub_a0d0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -179,7 +179,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_b0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_b0d0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -192,7 +192,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_a0a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_a0a0d0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -205,7 +205,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_c0a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "</");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</");
     editorCell.setCellId("Constant_vc3gub_c0a0d0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -217,7 +217,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_a0a0a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_a0a0a3a");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -231,7 +231,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_c0a0a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "</");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</");
     editorCell.setCellId("Constant_vc3gub_c0a0a3a");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -244,7 +244,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vc3gub_c0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_c0d0");
     XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
     {
@@ -466,7 +466,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_vc3gub_a1a0a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_vc3gub_a1a0a0d0");
       {
         Style style = editorCell.getStyle();

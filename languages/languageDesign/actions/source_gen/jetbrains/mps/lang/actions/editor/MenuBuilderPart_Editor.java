@@ -14,7 +14,7 @@ public class MenuBuilderPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_yx9opa_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "menu builder part");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "menu builder part");
     editorCell.setCellId("Error_yx9opa_a");
     return editorCell;
   }

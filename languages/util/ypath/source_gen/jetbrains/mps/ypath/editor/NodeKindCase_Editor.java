@@ -14,7 +14,7 @@ public class NodeKindCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_32nbdv_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "select case");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "select case");
     editorCell.setCellId("Error_32nbdv_a");
     return editorCell;
   }

@@ -44,14 +44,14 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zc6mlp_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Set");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Set");
     editorCell.setCellId("Constant_zc6mlp_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zc6mlp_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "of actions disabled while indexing");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "of actions disabled while indexing");
     editorCell.setCellId("Constant_zc6mlp_c0a");
     editorCell.setDefaultText("");
     return editorCell;

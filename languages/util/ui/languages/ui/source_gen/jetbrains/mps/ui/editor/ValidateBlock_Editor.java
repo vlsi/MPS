@@ -48,21 +48,21 @@ public class ValidateBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xpt42y_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xpt42y_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xpt42y_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xpt42y_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xpt42y_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_xpt42y_d0");
     {
       Style style = editorCell.getStyle();
@@ -73,7 +73,7 @@ public class ValidateBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xpt42y_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "boolean");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "boolean");
     editorCell.setCellId("Constant_xpt42y_e0");
     {
       Style style = editorCell.getStyle();
@@ -84,7 +84,7 @@ public class ValidateBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xpt42y_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_xpt42y_f0");
     {
       Style style = editorCell.getStyle();
@@ -96,7 +96,7 @@ public class ValidateBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xpt42y_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_xpt42y_h0");
     editorCell.setDefaultText("");
     return editorCell;

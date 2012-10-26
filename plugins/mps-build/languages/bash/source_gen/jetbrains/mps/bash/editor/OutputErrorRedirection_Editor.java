@@ -29,7 +29,7 @@ public class OutputErrorRedirection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tsrew3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "&>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&>");
     editorCell.setCellId("Constant_tsrew3_a0");
     {
       Style style = editorCell.getStyle();

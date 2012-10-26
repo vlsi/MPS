@@ -54,7 +54,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pn47sh_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pn47sh_a0");
     {
       Style style = editorCell.getStyle();
@@ -66,7 +66,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pn47sh_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "custom constructor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom constructor");
     editorCell.setCellId("Constant_pn47sh_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -74,21 +74,21 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pn47sh_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "short description:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "short description:");
     editorCell.setCellId("Constant_pn47sh_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pn47sh_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_pn47sh_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pn47sh_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "separator:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "separator:");
     editorCell.setCellId("Constant_pn47sh_l0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -103,7 +103,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "abstract");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_lq4ak4_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -111,7 +111,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "test case");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test case");
     editorCell.setCellId("Constant_lq4ak4_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -119,7 +119,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extends");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_lq4ak4_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -127,7 +127,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_lq4ak4_a6a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -139,7 +139,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_a1g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lq4ak4_a1g0");
     {
       Style style = editorCell.getStyle();
@@ -151,7 +151,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_d1g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lq4ak4_d1g0");
     {
       Style style = editorCell.getStyle();
@@ -163,7 +163,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_g1g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lq4ak4_g1g0");
     {
       Style style = editorCell.getStyle();
@@ -175,7 +175,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_i1g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lq4ak4_i1g0");
     {
       Style style = editorCell.getStyle();
@@ -187,7 +187,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lq4ak4_c6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_lq4ak4_c6a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -379,7 +379,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_lq4ak4_a1b6a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<static fields>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<static fields>>");
       editorCell.setCellId("Constant_lq4ak4_a1b6a");
       {
         Style style = editorCell.getStyle();
@@ -431,7 +431,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_lq4ak4_a2b6a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_lq4ak4_a2b6a");
       {
         Style style = editorCell.getStyle();
@@ -482,7 +482,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_lq4ak4_a9b6a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<methods>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<methods>>");
       editorCell.setCellId("Constant_lq4ak4_a9b6a");
       {
         Style style = editorCell.getStyle();

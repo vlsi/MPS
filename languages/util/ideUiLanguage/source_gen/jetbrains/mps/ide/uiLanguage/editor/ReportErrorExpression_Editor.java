@@ -28,7 +28,7 @@ public class ReportErrorExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hb5xrk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "reportError");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reportError");
     editorCell.setCellId("Constant_hb5xrk_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

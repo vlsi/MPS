@@ -81,7 +81,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "static");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_82dbmy_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -89,7 +89,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "container");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container");
     editorCell.setCellId("Constant_82dbmy_d0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -101,7 +101,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_82dbmy_e0");
     {
       Style style = editorCell.getStyle();
@@ -114,7 +114,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_82dbmy_a6a");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
@@ -127,7 +127,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_c6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_82dbmy_c6a");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
@@ -139,7 +139,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_82dbmy_h0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -151,7 +151,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_82dbmy_i0");
     {
       Style style = editorCell.getStyle();
@@ -163,7 +163,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_82dbmy_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_82dbmy_k0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -284,7 +284,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -332,7 +332,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_82dbmy_a9a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_82dbmy_a9a");
       {
         Style style = editorCell.getStyle();

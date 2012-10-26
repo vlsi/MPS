@@ -50,7 +50,7 @@ public class OverrideAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9raxvs_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@Override");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Override");
     editorCell.setCellId("Constant_9raxvs_a0a");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

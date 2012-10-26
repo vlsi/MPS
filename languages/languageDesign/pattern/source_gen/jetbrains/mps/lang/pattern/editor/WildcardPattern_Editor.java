@@ -26,7 +26,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4sx1p7_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "_");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "_");
     editorCell.setCellId("Constant_4sx1p7_a0");
     {
       Style style = editorCell.getStyle();

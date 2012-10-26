@@ -56,7 +56,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d13tpt_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "0");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "0");
     editorCell.setCellId("Constant_d13tpt_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -64,7 +64,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d13tpt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "x");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_d13tpt_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -76,21 +76,21 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_d13tpt_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "square");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "square");
     editorCell.setCellId("Constant_d13tpt_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_d13tpt_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "rows");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rows");
     editorCell.setCellId("Constant_d13tpt_c0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_d13tpt_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "columns");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "columns");
     editorCell.setCellId("Constant_d13tpt_e0");
     editorCell.setDefaultText("");
     return editorCell;

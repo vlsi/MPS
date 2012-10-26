@@ -68,7 +68,7 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
   }
 
   private EditorCell createConstant_qws93t_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "include in");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include in");
     editorCell.setCellId("Constant_qws93t_a0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -129,7 +129,7 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -137,7 +137,7 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
     }
 
     private EditorCell createConstant_qws93t_a1a0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<any configuration>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<any configuration>");
       editorCell.setCellId("Constant_qws93t_a1a0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

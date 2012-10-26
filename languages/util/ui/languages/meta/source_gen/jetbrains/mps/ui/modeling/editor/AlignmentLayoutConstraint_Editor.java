@@ -30,21 +30,21 @@ public class AlignmentLayoutConstraint_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cceuep_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "|");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
     editorCell.setCellId("Constant_cceuep_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_cceuep_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_cceuep_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_cceuep_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "|");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
     editorCell.setCellId("Constant_cceuep_e0");
     editorCell.setDefaultText("");
     return editorCell;

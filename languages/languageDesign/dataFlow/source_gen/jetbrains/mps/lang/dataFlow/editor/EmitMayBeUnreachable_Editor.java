@@ -30,7 +30,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3gfc5i_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_3gfc5i_a0");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
     {
@@ -43,7 +43,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3gfc5i_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_3gfc5i_c0");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
     {

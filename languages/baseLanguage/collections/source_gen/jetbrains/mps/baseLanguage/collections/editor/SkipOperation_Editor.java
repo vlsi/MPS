@@ -34,7 +34,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tp3vyq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "skip");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip");
     editorCell.setCellId("Constant_tp3vyq_a0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -43,7 +43,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tp3vyq_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_tp3vyq_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -51,7 +51,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_tp3vyq_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_tp3vyq_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

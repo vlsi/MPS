@@ -33,7 +33,7 @@ public class ChangeFeatureNameExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4dl4h_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "changeFeatureName(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "changeFeatureName(");
     editorCell.setCellId("Constant_e4dl4h_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,14 +41,14 @@ public class ChangeFeatureNameExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4dl4h_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_e4dl4h_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_e4dl4h_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_e4dl4h_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -56,7 +56,7 @@ public class ChangeFeatureNameExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_e4dl4h_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_e4dl4h_g0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

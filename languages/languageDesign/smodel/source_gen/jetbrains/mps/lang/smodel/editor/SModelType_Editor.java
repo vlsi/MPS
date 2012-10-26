@@ -19,7 +19,7 @@ public class SModelType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t3o53y_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "model");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_t3o53y_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

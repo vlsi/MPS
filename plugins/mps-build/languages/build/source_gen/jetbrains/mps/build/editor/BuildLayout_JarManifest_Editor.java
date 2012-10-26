@@ -57,7 +57,7 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gnweac_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gnweac_b2a");
     {
       Style style = editorCell.getStyle();
@@ -166,7 +166,7 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_gnweac_a0c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_gnweac_a0c0");
       {
         Style style = editorCell.getStyle();

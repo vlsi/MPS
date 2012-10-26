@@ -30,14 +30,14 @@ public class VarDecl_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_v9cial_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "var");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var");
     editorCell.setCellId("Constant_v9cial_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_v9cial_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_v9cial_c0");
     editorCell.setDefaultText("");
     return editorCell;

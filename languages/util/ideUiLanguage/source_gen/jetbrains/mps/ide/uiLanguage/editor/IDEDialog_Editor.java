@@ -106,7 +106,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8w6pz1_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "IDEDialog");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IDEDialog");
     editorCell.setCellId("Constant_8w6pz1_a0");
     Stylesheet_StyleSheet.getComponent(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -114,21 +114,21 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8w6pz1_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "title");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title");
     editorCell.setCellId("Constant_8w6pz1_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8w6pz1_b1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_8w6pz1_b1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8w6pz1_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8w6pz1_c1b0");
     {
       Style style = editorCell.getStyle();
@@ -139,14 +139,14 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8w6pz1_d1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "content pane:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content pane:");
     editorCell.setCellId("Constant_8w6pz1_d1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8w6pz1_f1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8w6pz1_f1b0");
     {
       Style style = editorCell.getStyle();
@@ -157,14 +157,14 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8w6pz1_g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "buttons");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "buttons");
     editorCell.setCellId("Constant_8w6pz1_g1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_8w6pz1_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "stretch");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stretch");
     editorCell.setCellId("Constant_8w6pz1_a0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -179,7 +179,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_8w6pz1_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

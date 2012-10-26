@@ -99,7 +99,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_ksgn1c_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_ksgn1c_a0");
     {
       Style style = editorCell.getStyle();
@@ -109,7 +109,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_ksgn1c_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_ksgn1c_c0");
     {
       Style style = editorCell.getStyle();

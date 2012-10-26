@@ -67,14 +67,14 @@
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="130" startPosition="34" endLine="131" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="131" startPosition="95" endLine="132" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="134" startPosition="131" endLine="135" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="141" startPosition="84" endLine="142" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="142" startPosition="141" endLine="143" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="141" startPosition="84" endLine="142" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="142" startPosition="100" endLine="143" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="143" startPosition="38" endLine="144" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="144" startPosition="71" endLine="145" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="145" startPosition="72" endLine="146" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="149" startPosition="91" endLine="150" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="150" startPosition="129" endLine="151" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="150" startPosition="129" endLine="151" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="149" startPosition="91" endLine="150" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="150" startPosition="88" endLine="151" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="150" startPosition="88" endLine="151" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="151" startPosition="50" endLine="152" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="152" startPosition="36" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="100" startPosition="86" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="componentTypeListHandler_kdtlb1_b0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -110,7 +110,7 @@
     <scopeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="101" startPosition="105" endLine="102" endPosition="50" />
     <scopeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="123" startPosition="89" endLine="124" endPosition="65" />
     <scopeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="134" startPosition="131" endLine="135" endPosition="139" />
-    <scopeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="150" startPosition="129" endLine="151" endPosition="50" />
+    <scopeInfo nodeId="1238853742805" fileName="IndexedTupleType_Editor.java" startLine="150" startPosition="88" endLine="151" endPosition="50" />
     <scopeInfo nodeId="1238852518782" fileName="IndexedTupleType_Editor.java" startLine="105" startPosition="66" endLine="107" endPosition="93">
       <varInfo nodeId="1238852518782" varName="listOwner" />
     </scopeInfo>
@@ -287,14 +287,14 @@
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="127" startPosition="34" endLine="128" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="128" startPosition="95" endLine="129" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="131" startPosition="131" endLine="132" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="138" startPosition="84" endLine="139" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="139" startPosition="141" endLine="140" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="138" startPosition="84" endLine="139" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="139" startPosition="100" endLine="140" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="140" startPosition="38" endLine="141" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="141" startPosition="71" endLine="142" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="142" startPosition="72" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="146" startPosition="91" endLine="147" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="147" startPosition="129" endLine="148" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="147" startPosition="129" endLine="148" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="146" startPosition="91" endLine="147" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="147" startPosition="88" endLine="148" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="147" startPosition="88" endLine="148" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="148" startPosition="50" endLine="149" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="149" startPosition="36" endLine="150" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="97" startPosition="82" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="componentListHandler_rvpzqy_b0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -330,7 +330,7 @@
     <scopeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="98" startPosition="101" endLine="99" endPosition="50" />
     <scopeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="120" startPosition="89" endLine="121" endPosition="65" />
     <scopeInfo nodeId="1238853905857" fileName="IndexedTupleLiteral_Editor.java" startLine="131" startPosition="131" endLine="132" endPosition="139" />
-    <scopeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="147" startPosition="129" endLine="148" endPosition="50" />
+    <scopeInfo nodeId="1238853909939" fileName="IndexedTupleLiteral_Editor.java" startLine="147" startPosition="88" endLine="148" endPosition="50" />
     <scopeInfo nodeId="1238853881325" fileName="IndexedTupleLiteral_Editor.java" startLine="59" startPosition="5" endLine="61" endPosition="59">
       <varInfo nodeId="1238853881325" varName="style" />
     </scopeInfo>
@@ -458,13 +458,13 @@
     <nodeInfo nodeId="1238857803574" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238857803574" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857803574" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="33" startPosition="128" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="32" startPosition="88" endLine="33" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="33" startPosition="87" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="34" startPosition="47" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="35" startPosition="85" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="36" startPosition="34" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="40" startPosition="88" endLine="41" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="41" startPosition="128" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="40" startPosition="88" endLine="41" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="41" startPosition="87" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="42" startPosition="47" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="43" startPosition="79" endLine="44" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="44" startPosition="34" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -492,8 +492,8 @@
     <nodeInfo nodeId="1238857851135" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="75" startPosition="72" endLine="76" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238857851135" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="76" startPosition="78" endLine="77" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238857851135" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="78" startPosition="10" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="33" startPosition="128" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="41" startPosition="128" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="33" startPosition="87" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="41" startPosition="87" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238857818448" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="52" startPosition="26" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238857851135" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="69" startPosition="26" endLine="71" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238857796064" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="17" startPosition="82" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -512,8 +512,8 @@
     <scopeInfo nodeId="1238857803574" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="25" startPosition="80" endLine="26" endPosition="81" />
     <scopeInfo nodeId="1238857803574" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" />
     <scopeInfo nodeId="1238857803574" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="81" />
-    <scopeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="33" startPosition="128" endLine="35" endPosition="85" />
-    <scopeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="41" startPosition="128" endLine="43" endPosition="79" />
+    <scopeInfo nodeId="1238857821361" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="33" startPosition="87" endLine="35" endPosition="85" />
+    <scopeInfo nodeId="1238857856472" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="41" startPosition="87" endLine="43" endPosition="79" />
     <scopeInfo nodeId="1238857818448" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="52" startPosition="26" endLine="54" endPosition="73" />
     <scopeInfo nodeId="1238857851135" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="69" startPosition="26" endLine="71" endPosition="73" />
     <scopeInfo nodeId="1238857818448" fileName="IndexedTupleMemberAccessExpression_Editor.java" startLine="57" startPosition="35" endLine="60" endPosition="105">
@@ -659,26 +659,26 @@
     <nodeInfo nodeId="7166312718652875152" fileName="NamedTupleDeclaration_Editor.java" startLine="138" startPosition="90" endLine="139" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7166312718652875152" fileName="NamedTupleDeclaration_Editor.java" startLine="139" startPosition="91" endLine="140" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7166312718652875152" fileName="NamedTupleDeclaration_Editor.java" startLine="140" startPosition="69" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="144" startPosition="88" endLine="145" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="145" startPosition="133" endLine="146" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="144" startPosition="88" endLine="145" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="145" startPosition="92" endLine="146" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="146" startPosition="47" endLine="147" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="147" startPosition="74" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="148" startPosition="34" endLine="149" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="152" startPosition="88" endLine="153" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="153" startPosition="132" endLine="154" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="152" startPosition="88" endLine="153" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="153" startPosition="91" endLine="154" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="154" startPosition="47" endLine="155" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="155" startPosition="74" endLine="156" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="156" startPosition="34" endLine="157" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="160" startPosition="89" endLine="161" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="161" startPosition="128" endLine="162" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="160" startPosition="89" endLine="161" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="161" startPosition="87" endLine="162" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="162" startPosition="48" endLine="163" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="164" startPosition="5" endLine="165" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="165" startPosition="42" endLine="166" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="166" startPosition="56" endLine="167" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="168" startPosition="5" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="169" startPosition="34" endLine="170" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="173" startPosition="89" endLine="174" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="174" startPosition="128" endLine="175" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="173" startPosition="89" endLine="174" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="174" startPosition="87" endLine="175" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="175" startPosition="48" endLine="176" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="177" startPosition="5" endLine="178" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="178" startPosition="42" endLine="179" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -686,30 +686,30 @@
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="180" startPosition="50" endLine="181" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="182" startPosition="5" endLine="183" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="183" startPosition="34" endLine="184" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="187" startPosition="89" endLine="188" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="188" startPosition="134" endLine="189" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="187" startPosition="89" endLine="188" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="188" startPosition="93" endLine="189" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="189" startPosition="48" endLine="190" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="190" startPosition="74" endLine="191" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="191" startPosition="34" endLine="192" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="195" startPosition="89" endLine="196" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="196" startPosition="137" endLine="197" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="195" startPosition="89" endLine="196" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="196" startPosition="96" endLine="197" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="197" startPosition="48" endLine="198" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="198" startPosition="74" endLine="199" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="199" startPosition="34" endLine="200" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="203" startPosition="89" endLine="204" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="204" startPosition="128" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="203" startPosition="89" endLine="204" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="204" startPosition="87" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="205" startPosition="48" endLine="206" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="207" startPosition="5" endLine="208" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="208" startPosition="42" endLine="209" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="210" startPosition="5" endLine="211" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="211" startPosition="34" endLine="212" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="215" startPosition="89" endLine="216" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="216" startPosition="128" endLine="217" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="215" startPosition="89" endLine="216" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="216" startPosition="87" endLine="217" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="217" startPosition="48" endLine="218" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="218" startPosition="77" endLine="219" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="219" startPosition="34" endLine="220" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="223" startPosition="88" endLine="224" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="224" startPosition="139" endLine="225" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="223" startPosition="88" endLine="224" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="224" startPosition="98" endLine="225" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="226" startPosition="5" endLine="227" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="227" startPosition="42" endLine="228" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="229" startPosition="5" endLine="230" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -801,14 +801,14 @@
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="376" startPosition="34" endLine="377" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="377" startPosition="95" endLine="378" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="380" startPosition="131" endLine="381" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="387" startPosition="84" endLine="388" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="388" startPosition="141" endLine="389" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="387" startPosition="84" endLine="388" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="388" startPosition="100" endLine="389" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="389" startPosition="38" endLine="390" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="390" startPosition="71" endLine="391" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="391" startPosition="72" endLine="392" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="395" startPosition="92" endLine="396" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="396" startPosition="129" endLine="397" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="396" startPosition="129" endLine="397" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="395" startPosition="92" endLine="396" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="396" startPosition="88" endLine="397" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="396" startPosition="88" endLine="397" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="397" startPosition="51" endLine="398" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="398" startPosition="42" endLine="399" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="404" startPosition="103" endLine="405" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -826,14 +826,14 @@
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="433" startPosition="34" endLine="434" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="434" startPosition="95" endLine="435" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="437" startPosition="131" endLine="438" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="444" startPosition="84" endLine="445" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="445" startPosition="141" endLine="446" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="444" startPosition="84" endLine="445" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="445" startPosition="100" endLine="446" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="446" startPosition="38" endLine="447" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="447" startPosition="71" endLine="448" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="448" startPosition="72" endLine="449" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="452" startPosition="92" endLine="453" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="453" startPosition="129" endLine="454" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="453" startPosition="129" endLine="454" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="452" startPosition="92" endLine="453" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="453" startPosition="88" endLine="454" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="453" startPosition="88" endLine="454" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="454" startPosition="51" endLine="455" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="455" startPosition="42" endLine="456" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="461" startPosition="102" endLine="462" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -850,8 +850,8 @@
     <nodeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="488" startPosition="96" endLine="489" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="490" startPosition="34" endLine="491" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="493" startPosition="131" endLine="494" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="499" startPosition="92" endLine="500" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="500" startPosition="129" endLine="501" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="499" startPosition="92" endLine="500" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="500" startPosition="88" endLine="501" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="502" startPosition="7" endLine="503" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="503" startPosition="44" endLine="504" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="505" startPosition="7" endLine="506" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -870,8 +870,8 @@
     <nodeInfo nodeId="1500000307918332109" fileName="NamedTupleDeclaration_Editor.java" startLine="539" startPosition="96" endLine="540" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500000307918332109" fileName="NamedTupleDeclaration_Editor.java" startLine="541" startPosition="34" endLine="542" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500000307918332109" fileName="NamedTupleDeclaration_Editor.java" startLine="544" startPosition="131" endLine="545" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="550" startPosition="92" endLine="551" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="551" startPosition="129" endLine="552" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="550" startPosition="92" endLine="551" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="551" startPosition="88" endLine="552" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="553" startPosition="7" endLine="554" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="554" startPosition="44" endLine="555" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="556" startPosition="7" endLine="557" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -889,11 +889,11 @@
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="586" startPosition="96" endLine="587" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="588" startPosition="34" endLine="589" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="591" startPosition="131" endLine="592" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="145" startPosition="133" endLine="147" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="153" startPosition="132" endLine="155" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="188" startPosition="134" endLine="190" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="196" startPosition="137" endLine="198" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="216" startPosition="128" endLine="218" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="145" startPosition="92" endLine="147" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="153" startPosition="91" endLine="155" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="188" startPosition="93" endLine="190" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="196" startPosition="96" endLine="198" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="216" startPosition="87" endLine="218" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="322547369016009798" fileName="NamedTupleDeclaration_Editor.java" startLine="298" startPosition="26" endLine="300" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239459636679" fileName="NamedTupleDeclaration_Editor.java" startLine="50" startPosition="82" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239459636679" fileName="NamedTupleDeclaration_Editor.java" startLine="50" startPosition="82" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -937,21 +937,21 @@
     <nodeInfo nodeId="2423993921025725807" fileName="NamedTupleDeclaration_Editor.java" startLine="91" startPosition="96" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239529835289" fileName="NamedTupleDeclaration_Editor.java" startLine="115" startPosition="96" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="163" startPosition="76" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="224" startPosition="139" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="224" startPosition="98" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="284" startPosition="106" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239529278554" fileName="NamedTupleDeclaration_Editor.java" startLine="317" startPosition="42" endLine="322" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="350" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="407" startPosition="0" endLine="412" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="464" startPosition="0" endLine="469" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="500" startPosition="129" endLine="505" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="500" startPosition="88" endLine="505" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1500000307918332109" fileName="NamedTupleDeclaration_Editor.java" startLine="515" startPosition="0" endLine="520" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="551" startPosition="129" endLine="556" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="551" startPosition="88" endLine="556" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="566" startPosition="0" endLine="571" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8856861289653952666" fileName="NamedTupleDeclaration_Editor.java" startLine="125" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_955wzk_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1239459873182" fileName="NamedTupleDeclaration_Editor.java" startLine="131" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_955wzk_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="7166312718652875152" fileName="NamedTupleDeclaration_Editor.java" startLine="137" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_955wzk_a8a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="176" startPosition="77" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="204" startPosition="128" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="204" startPosition="87" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="322547369016009798" fileName="NamedTupleDeclaration_Editor.java" startLine="302" startPosition="59" endLine="308" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239529278554" fileName="NamedTupleDeclaration_Editor.java" startLine="316" startPosition="58" endLine="322" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239529278554" fileName="NamedTupleDeclaration_Editor.java" startLine="325" startPosition="59" endLine="331" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -960,7 +960,7 @@
     <nodeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="469" startPosition="0" endLine="475" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1500000307918332109" fileName="NamedTupleDeclaration_Editor.java" startLine="520" startPosition="0" endLine="526" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="571" startPosition="0" endLine="577" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="161" startPosition="128" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="161" startPosition="87" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="361" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="394" startPosition="0" endLine="401" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_955wzk_a1f0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="418" startPosition="0" endLine="425" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -970,7 +970,7 @@
     <nodeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="577" startPosition="0" endLine="584" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="143" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_955wzk_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="151" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_955wzk_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="174" startPosition="128" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="174" startPosition="87" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="186" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_955wzk_a6a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="194" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_955wzk_a7a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="214" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_955wzk_d8a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1048,11 +1048,11 @@
     <scopeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="347" startPosition="116" endLine="348" endPosition="50" />
     <scopeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="369" startPosition="89" endLine="370" endPosition="66" />
     <scopeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="380" startPosition="131" endLine="381" endPosition="139" />
-    <scopeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="396" startPosition="129" endLine="397" endPosition="51" />
+    <scopeInfo nodeId="1500000307918477150" fileName="NamedTupleDeclaration_Editor.java" startLine="396" startPosition="88" endLine="397" endPosition="51" />
     <scopeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="404" startPosition="103" endLine="405" endPosition="50" />
     <scopeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="426" startPosition="89" endLine="427" endPosition="66" />
     <scopeInfo nodeId="2423993921025725817" fileName="NamedTupleDeclaration_Editor.java" startLine="437" startPosition="131" endLine="438" endPosition="139" />
-    <scopeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="453" startPosition="129" endLine="454" endPosition="51" />
+    <scopeInfo nodeId="5338502249698184798" fileName="NamedTupleDeclaration_Editor.java" startLine="453" startPosition="88" endLine="454" endPosition="51" />
     <scopeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="461" startPosition="102" endLine="462" endPosition="50" />
     <scopeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="483" startPosition="89" endLine="484" endPosition="66" />
     <scopeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="490" startPosition="34" endLine="491" endPosition="95" />
@@ -1076,14 +1076,14 @@
     <scopeInfo nodeId="1239529835289" fileName="NamedTupleDeclaration_Editor.java" startLine="117" startPosition="5" endLine="119" endPosition="51">
       <varInfo nodeId="1239529835289" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="145" startPosition="133" endLine="147" endPosition="74" />
-    <scopeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="153" startPosition="132" endLine="155" endPosition="74" />
-    <scopeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="188" startPosition="134" endLine="190" endPosition="74" />
-    <scopeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="196" startPosition="137" endLine="198" endPosition="74" />
+    <scopeInfo nodeId="1239460104353" fileName="NamedTupleDeclaration_Editor.java" startLine="145" startPosition="92" endLine="147" endPosition="74" />
+    <scopeInfo nodeId="1239529245183" fileName="NamedTupleDeclaration_Editor.java" startLine="153" startPosition="91" endLine="155" endPosition="74" />
+    <scopeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="188" startPosition="93" endLine="190" endPosition="74" />
+    <scopeInfo nodeId="2423993921025725812" fileName="NamedTupleDeclaration_Editor.java" startLine="196" startPosition="96" endLine="198" endPosition="74" />
     <scopeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="207" startPosition="5" endLine="209" endPosition="62">
       <varInfo nodeId="1239529284293" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="216" startPosition="128" endLine="218" endPosition="77" />
+    <scopeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="216" startPosition="87" endLine="218" endPosition="77" />
     <scopeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="226" startPosition="5" endLine="228" endPosition="62">
       <varInfo nodeId="1239529882519" varName="style" />
     </scopeInfo>
@@ -1264,7 +1264,7 @@
     <scopeInfo nodeId="1239529823095" fileName="NamedTupleDeclaration_Editor.java" startLine="215" startPosition="89" endLine="220" endPosition="22">
       <varInfo nodeId="1239529823095" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="224" startPosition="139" endLine="229" endPosition="5" />
+    <scopeInfo nodeId="1239529882519" fileName="NamedTupleDeclaration_Editor.java" startLine="224" startPosition="98" endLine="229" endPosition="5" />
     <scopeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="234" startPosition="92" endLine="239" endPosition="22">
       <varInfo nodeId="1240501425780" varName="editorCell" />
       <varInfo nodeId="1240501425780" varName="handler" />
@@ -1289,11 +1289,11 @@
     <scopeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="464" startPosition="0" endLine="469" endPosition="0">
       <varInfo nodeId="1239529544053" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="500" startPosition="129" endLine="505" endPosition="7" />
+    <scopeInfo nodeId="1239529544054" fileName="NamedTupleDeclaration_Editor.java" startLine="500" startPosition="88" endLine="505" endPosition="7" />
     <scopeInfo nodeId="1500000307918332109" fileName="NamedTupleDeclaration_Editor.java" startLine="515" startPosition="0" endLine="520" endPosition="0">
       <varInfo nodeId="1500000307918332109" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="551" startPosition="129" endLine="556" endPosition="7" />
+    <scopeInfo nodeId="1500000307918332110" fileName="NamedTupleDeclaration_Editor.java" startLine="551" startPosition="88" endLine="556" endPosition="7" />
     <scopeInfo nodeId="1239529882521" fileName="NamedTupleDeclaration_Editor.java" startLine="566" startPosition="0" endLine="571" endPosition="0">
       <varInfo nodeId="1239529882521" varName="editorContext" />
     </scopeInfo>
@@ -1309,7 +1309,7 @@
       <varInfo nodeId="7166312718652875152" varName="editorContext" />
       <varInfo nodeId="7166312718652875152" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="204" startPosition="128" endLine="210" endPosition="5" />
+    <scopeInfo nodeId="1239529284293" fileName="NamedTupleDeclaration_Editor.java" startLine="204" startPosition="87" endLine="210" endPosition="5" />
     <scopeInfo nodeId="1239529544053" fileName="NamedTupleDeclaration_Editor.java" startLine="254" startPosition="5" endLine="260" endPosition="70">
       <varInfo nodeId="1239529544053" varName="style" />
     </scopeInfo>
@@ -1337,7 +1337,7 @@
       <varInfo nodeId="1239529882521" varName="editorContext" />
       <varInfo nodeId="1239529882521" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="161" startPosition="128" endLine="168" endPosition="5" />
+    <scopeInfo nodeId="1240501425777" fileName="NamedTupleDeclaration_Editor.java" startLine="161" startPosition="87" endLine="168" endPosition="5" />
     <scopeInfo nodeId="1240501425780" fileName="NamedTupleDeclaration_Editor.java" startLine="361" startPosition="0" endLine="368" endPosition="0">
       <varInfo nodeId="1240501425780" varName="editorContext" />
     </scopeInfo>
@@ -1372,7 +1372,7 @@
       <varInfo nodeId="1239529245183" varName="editorContext" />
       <varInfo nodeId="1239529245183" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="174" startPosition="128" endLine="182" endPosition="5" />
+    <scopeInfo nodeId="1240501425782" fileName="NamedTupleDeclaration_Editor.java" startLine="174" startPosition="87" endLine="182" endPosition="5" />
     <scopeInfo nodeId="3142843783245527731" fileName="NamedTupleDeclaration_Editor.java" startLine="186" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="3142843783245527731" varName="editorContext" />
       <varInfo nodeId="3142843783245527731" varName="node" />
@@ -1595,14 +1595,14 @@
     <nodeInfo nodeId="8856861289654164814" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="50" startPosition="89" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8856861289654164814" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="51" startPosition="80" endLine="52" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8856861289654164814" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="52" startPosition="69" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="57" startPosition="132" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="57" startPosition="91" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="58" startPosition="47" endLine="59" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="59" startPosition="74" endLine="60" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="60" startPosition="70" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="65" startPosition="88" endLine="66" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="128" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="65" startPosition="88" endLine="66" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="87" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="67" startPosition="47" endLine="68" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="68" startPosition="76" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1644,12 +1644,12 @@
     <nodeInfo nodeId="7376433222636454287" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="129" startPosition="45" endLine="130" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1239463555305" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="131" startPosition="64" endLine="132" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239463555317" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="133" startPosition="7" endLine="134" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="128" endLine="68" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="87" endLine="68" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239463555269" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="116" startPosition="130" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NamedTupleComponentDeclaration_name_postfixCellMenu_a0d0#()V" />
     <nodeInfo nodeId="1239463555293" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="126" startPosition="12" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239463472762" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="40" startPosition="82" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239463472762" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="40" startPosition="82" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="57" startPosition="132" endLine="60" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="57" startPosition="91" endLine="60" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239463533524" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="98" startPosition="26" endLine="101" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239463555303" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="130" startPosition="26" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239463226387" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="32" startPosition="78" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1681,7 +1681,7 @@
     <scopeInfo nodeId="1239463555283" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="124" startPosition="29" endLine="125" endPosition="80" />
     <scopeInfo nodeId="1239463555294" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="126" startPosition="14" endLine="127" endPosition="64" />
     <scopeInfo nodeId="1239463555304" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="131" startPosition="64" endLine="132" endPosition="94" />
-    <scopeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="128" endLine="68" endPosition="76" />
+    <scopeInfo nodeId="1239550525847" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="87" endLine="68" endPosition="76" />
     <scopeInfo nodeId="1239463516032" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="79" startPosition="5" endLine="81" endPosition="67">
       <varInfo nodeId="1239463516032" varName="style" />
     </scopeInfo>
@@ -1691,7 +1691,7 @@
       <varInfo nodeId="8856861289654164814" varName="editorCell" />
       <varInfo nodeId="8856861289654164814" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="57" startPosition="132" endLine="60" endPosition="70" />
+    <scopeInfo nodeId="1240400925607" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="57" startPosition="91" endLine="60" endPosition="70" />
     <scopeInfo nodeId="1239463516032" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="86" startPosition="35" endLine="89" endPosition="105">
       <varInfo nodeId="1239463516032" varName="manager" />
       <varInfo nodeId="1239463516032" varName="opContext" />
@@ -1843,28 +1843,28 @@
     <nodeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="141" startPosition="82" endLine="142" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="141" startPosition="82" endLine="142" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="142" startPosition="81" endLine="143" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="146" startPosition="89" endLine="147" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="147" startPosition="128" endLine="148" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="146" startPosition="89" endLine="147" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="147" startPosition="87" endLine="148" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="148" startPosition="48" endLine="149" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="150" startPosition="5" endLine="151" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="151" startPosition="42" endLine="152" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="152" startPosition="57" endLine="153" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="154" startPosition="5" endLine="155" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="155" startPosition="34" endLine="156" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="159" startPosition="89" endLine="160" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="160" startPosition="128" endLine="161" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="159" startPosition="89" endLine="160" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="160" startPosition="87" endLine="161" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="161" startPosition="48" endLine="162" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="163" startPosition="5" endLine="164" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="164" startPosition="42" endLine="165" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="166" startPosition="5" endLine="167" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="167" startPosition="34" endLine="168" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="171" startPosition="89" endLine="172" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="172" startPosition="139" endLine="173" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="172" startPosition="139" endLine="173" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="171" startPosition="89" endLine="172" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="172" startPosition="98" endLine="173" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="172" startPosition="98" endLine="173" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="173" startPosition="48" endLine="174" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="174" startPosition="34" endLine="175" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="178" startPosition="89" endLine="179" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="179" startPosition="138" endLine="180" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="178" startPosition="89" endLine="179" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="179" startPosition="97" endLine="180" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="181" startPosition="5" endLine="182" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="182" startPosition="42" endLine="183" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="184" startPosition="5" endLine="185" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2037,8 +2037,8 @@
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="536" startPosition="34" endLine="537" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="537" startPosition="95" endLine="538" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="540" startPosition="131" endLine="541" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="547" startPosition="84" endLine="548" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="548" startPosition="141" endLine="549" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="547" startPosition="84" endLine="548" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="548" startPosition="100" endLine="549" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="549" startPosition="38" endLine="550" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="550" startPosition="71" endLine="551" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="551" startPosition="72" endLine="552" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2105,12 +2105,12 @@
     <nodeInfo nodeId="1239547239689" fileName="NamedTupleType_Editor.java" startLine="114" startPosition="96" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239547271570" fileName="NamedTupleType_Editor.java" startLine="126" startPosition="96" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="149" startPosition="83" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="179" startPosition="138" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="179" startPosition="97" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239550778846" fileName="NamedTupleType_Editor.java" startLine="387" startPosition="74" endLine="392" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239883957876" fileName="NamedTupleType_Editor.java" startLine="444" startPosition="101" endLine="449" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="514" startPosition="0" endLine="519" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1239881184376" fileName="NamedTupleType_Editor.java" startLine="100" startPosition="96" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="160" startPosition="128" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="160" startPosition="87" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239549235573" fileName="NamedTupleType_Editor.java" startLine="225" startPosition="59" endLine="231" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239547301474" fileName="NamedTupleType_Editor.java" startLine="243" startPosition="59" endLine="249" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239883956208" fileName="NamedTupleType_Editor.java" startLine="261" startPosition="59" endLine="267" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2121,7 +2121,7 @@
     <nodeInfo nodeId="1239547306966" fileName="NamedTupleType_Editor.java" startLine="420" startPosition="61" endLine="426" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239883957876" fileName="NamedTupleType_Editor.java" startLine="455" startPosition="0" endLine="461" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_2ojjgh_a0a2a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="519" startPosition="0" endLine="525" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="147" startPosition="128" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="147" startPosition="87" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="170" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_2ojjgh_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2912004279740714738" fileName="NamedTupleType_Editor.java" startLine="487" startPosition="52" endLine="494" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="525" startPosition="0" endLine="532" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -2188,7 +2188,7 @@
     <scopeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="139" startPosition="96" endLine="140" endPosition="51" />
     <scopeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="140" startPosition="51" endLine="141" endPosition="82" />
     <scopeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="141" startPosition="82" endLine="142" endPosition="81" />
-    <scopeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="172" startPosition="139" endLine="173" endPosition="48" />
+    <scopeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="172" startPosition="98" endLine="173" endPosition="48" />
     <scopeInfo nodeId="322547369016095092" fileName="NamedTupleType_Editor.java" startLine="191" startPosition="31" endLine="192" endPosition="77" />
     <scopeInfo nodeId="322547369016095089" fileName="NamedTupleType_Editor.java" startLine="198" startPosition="44" endLine="199" endPosition="46" />
     <scopeInfo nodeId="322547369016095089" fileName="NamedTupleType_Editor.java" startLine="203" startPosition="205" endLine="204" endPosition="61" />
@@ -2409,7 +2409,7 @@
     <scopeInfo nodeId="1239551050660" fileName="NamedTupleType_Editor.java" startLine="138" startPosition="92" endLine="143" endPosition="22">
       <varInfo nodeId="1239551050660" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="179" startPosition="138" endLine="184" endPosition="5" />
+    <scopeInfo nodeId="1239551095385" fileName="NamedTupleType_Editor.java" startLine="179" startPosition="97" endLine="184" endPosition="5" />
     <scopeInfo nodeId="1239881184381" fileName="NamedTupleType_Editor.java" startLine="208" startPosition="92" endLine="213" endPosition="22">
       <varInfo nodeId="1239881184381" varName="editorCell" />
       <varInfo nodeId="1239881184381" varName="handler" />
@@ -2423,7 +2423,7 @@
       <varInfo nodeId="1239881184381" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1239881184376" fileName="NamedTupleType_Editor.java" startLine="100" startPosition="96" endLine="106" endPosition="5" />
-    <scopeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="160" startPosition="128" endLine="166" endPosition="5" />
+    <scopeInfo nodeId="1239881184383" fileName="NamedTupleType_Editor.java" startLine="160" startPosition="87" endLine="166" endPosition="5" />
     <scopeInfo nodeId="1239547222114" fileName="NamedTupleType_Editor.java" startLine="312" startPosition="58" endLine="318" endPosition="5" />
     <scopeInfo nodeId="1239883957876" fileName="NamedTupleType_Editor.java" startLine="455" startPosition="0" endLine="461" endPosition="0">
       <varInfo nodeId="1239883957876" varName="editorContext" />
@@ -2433,7 +2433,7 @@
       <varInfo nodeId="1239881184381" varName="editorContext" />
       <varInfo nodeId="1239881184381" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="147" startPosition="128" endLine="154" endPosition="5" />
+    <scopeInfo nodeId="1239881184377" fileName="NamedTupleType_Editor.java" startLine="147" startPosition="87" endLine="154" endPosition="5" />
     <scopeInfo nodeId="1239547284725" fileName="NamedTupleType_Editor.java" startLine="170" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="1239547284725" varName="editorContext" />
       <varInfo nodeId="1239547284725" varName="node" />
@@ -2664,9 +2664,9 @@
     <nodeInfo nodeId="1239560855695" fileName="NamedTupleComponentReference_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239560855695" fileName="NamedTupleComponentReference_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239560855695" fileName="NamedTupleComponentReference_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="35" startPosition="88" endLine="36" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="36" startPosition="128" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="36" startPosition="128" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="35" startPosition="88" endLine="36" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="36" startPosition="87" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="36" startPosition="87" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="37" startPosition="47" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="38" startPosition="34" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239560878450" fileName="NamedTupleComponentReference_Editor.java" startLine="42" startPosition="87" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2737,7 +2737,7 @@
     <scopeInfo nodeId="1239560855695" fileName="NamedTupleComponentReference_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="80" />
     <scopeInfo nodeId="1239560855695" fileName="NamedTupleComponentReference_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" />
     <scopeInfo nodeId="1239560855695" fileName="NamedTupleComponentReference_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="36" startPosition="128" endLine="37" endPosition="47" />
+    <scopeInfo nodeId="1239560888309" fileName="NamedTupleComponentReference_Editor.java" startLine="36" startPosition="87" endLine="37" endPosition="47" />
     <scopeInfo nodeId="1239560878451" fileName="NamedTupleComponentReference_Editor.java" startLine="78" startPosition="33" endLine="79" endPosition="14" />
     <scopeInfo nodeId="1239560878451" fileName="NamedTupleComponentReference_Editor.java" startLine="82" startPosition="69" endLine="83" endPosition="67" />
     <scopeInfo nodeId="1239560878451" fileName="NamedTupleComponentReference_Editor.java" startLine="86" startPosition="81" endLine="87" endPosition="66" />
@@ -2859,13 +2859,13 @@
     <nodeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="77" startPosition="84" endLine="78" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="77" startPosition="84" endLine="78" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="78" startPosition="81" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="82" startPosition="89" endLine="83" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="83" startPosition="139" endLine="84" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="83" startPosition="139" endLine="84" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="82" startPosition="89" endLine="83" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="83" startPosition="98" endLine="84" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="83" startPosition="98" endLine="84" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="84" startPosition="48" endLine="85" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="85" startPosition="34" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="89" startPosition="91" endLine="90" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="90" startPosition="138" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="89" startPosition="91" endLine="90" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="90" startPosition="97" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="92" startPosition="5" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="93" startPosition="42" endLine="94" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="95" startPosition="5" endLine="96" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2981,14 +2981,14 @@
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="282" startPosition="34" endLine="283" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="283" startPosition="95" endLine="284" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="286" startPosition="131" endLine="287" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="293" startPosition="84" endLine="294" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="294" startPosition="141" endLine="295" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="293" startPosition="84" endLine="294" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="294" startPosition="100" endLine="295" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="295" startPosition="38" endLine="296" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="296" startPosition="71" endLine="297" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="297" startPosition="72" endLine="298" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="301" startPosition="91" endLine="302" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="302" startPosition="129" endLine="303" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="302" startPosition="129" endLine="303" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="301" startPosition="91" endLine="302" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="302" startPosition="88" endLine="303" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="302" startPosition="88" endLine="303" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="303" startPosition="50" endLine="304" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="304" startPosition="50" endLine="305" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239567806108" fileName="NamedTupleLiteral_Editor.java" startLine="310" startPosition="105" endLine="311" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -3033,7 +3033,7 @@
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="281" startPosition="134" endLine="285" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239567806094" fileName="NamedTupleLiteral_Editor.java" startLine="51" startPosition="96" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239567806096" fileName="NamedTupleLiteral_Editor.java" startLine="63" startPosition="96" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="90" startPosition="138" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="90" startPosition="97" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239567806108" fileName="NamedTupleLiteral_Editor.java" startLine="241" startPosition="108" endLine="246" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="256" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1239567806108" fileName="NamedTupleLiteral_Editor.java" startLine="313" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
@@ -3081,7 +3081,7 @@
     <scopeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="75" startPosition="96" endLine="76" endPosition="49" />
     <scopeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="76" startPosition="49" endLine="77" endPosition="84" />
     <scopeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="77" startPosition="84" endLine="78" endPosition="81" />
-    <scopeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="83" startPosition="139" endLine="84" endPosition="48" />
+    <scopeInfo nodeId="1239567806098" fileName="NamedTupleLiteral_Editor.java" startLine="83" startPosition="98" endLine="84" endPosition="48" />
     <scopeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="102" startPosition="110" endLine="103" endPosition="53" />
     <scopeInfo nodeId="1239567806100" fileName="NamedTupleLiteral_Editor.java" startLine="187" startPosition="34" endLine="188" endPosition="14" />
     <scopeInfo nodeId="1239567806100" fileName="NamedTupleLiteral_Editor.java" startLine="191" startPosition="69" endLine="192" endPosition="67" />
@@ -3095,7 +3095,7 @@
     <scopeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="253" startPosition="104" endLine="254" endPosition="50" />
     <scopeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="275" startPosition="89" endLine="276" endPosition="65" />
     <scopeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="286" startPosition="131" endLine="287" endPosition="139" />
-    <scopeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="302" startPosition="129" endLine="303" endPosition="50" />
+    <scopeInfo nodeId="1239561014302" fileName="NamedTupleLiteral_Editor.java" startLine="302" startPosition="88" endLine="303" endPosition="50" />
     <scopeInfo nodeId="1239567806108" fileName="NamedTupleLiteral_Editor.java" startLine="310" startPosition="105" endLine="311" endPosition="50" />
     <scopeInfo nodeId="1239567806108" fileName="NamedTupleLiteral_Editor.java" startLine="335" startPosition="34" endLine="336" endPosition="95" />
     <scopeInfo nodeId="1239567806108" fileName="NamedTupleLiteral_Editor.java" startLine="338" startPosition="131" endLine="339" endPosition="139" />
@@ -3212,7 +3212,7 @@
     <scopeInfo nodeId="1239567806103" fileName="NamedTupleLiteral_Editor.java" startLine="74" startPosition="90" endLine="79" endPosition="22">
       <varInfo nodeId="1239567806103" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="90" startPosition="138" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="1239567806104" fileName="NamedTupleLiteral_Editor.java" startLine="90" startPosition="97" endLine="95" endPosition="5" />
     <scopeInfo nodeId="1239561001885" fileName="NamedTupleLiteral_Editor.java" startLine="100" startPosition="91" endLine="105" endPosition="22">
       <varInfo nodeId="1239561001885" varName="editorCell" />
       <varInfo nodeId="1239561001885" varName="handler" />

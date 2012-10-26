@@ -30,7 +30,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pg66x0_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "instanceof");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instanceof");
     editorCell.setCellId("Constant_pg66x0_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

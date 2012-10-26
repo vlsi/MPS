@@ -39,7 +39,7 @@ public class Node_GetContainingLinkOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5d67ir_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Get node 'containingLink' operation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get node 'containingLink' operation");
     editorCell.setCellId("Constant_5d67ir_a0");
     {
       Style style = editorCell.getStyle();
@@ -51,14 +51,14 @@ public class Node_GetContainingLinkOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5d67ir_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5d67ir_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5d67ir_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Returns aggregation LinkDeclararion defined in concept of parent node and representing containment reference for this node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns aggregation LinkDeclararion defined in concept of parent node and representing containment reference for this node");
     editorCell.setCellId("Constant_5d67ir_c0");
     {
       Style style = editorCell.getStyle();

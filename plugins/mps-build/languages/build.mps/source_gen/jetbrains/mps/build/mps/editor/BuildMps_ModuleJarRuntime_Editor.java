@@ -47,7 +47,7 @@ public class BuildMps_ModuleJarRuntime_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hazz8z_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "jar");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "jar");
     editorCell.setCellId("Constant_hazz8z_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -55,7 +55,7 @@ public class BuildMps_ModuleJarRuntime_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_hazz8z_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "use from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");
     editorCell.setCellId("Constant_hazz8z_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

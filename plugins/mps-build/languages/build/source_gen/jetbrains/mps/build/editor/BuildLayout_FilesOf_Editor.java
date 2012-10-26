@@ -30,7 +30,7 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1i5f76_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "files of");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "files of");
     editorCell.setCellId("Constant_1i5f76_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

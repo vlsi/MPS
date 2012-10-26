@@ -59,7 +59,7 @@ public class File_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jqfb9k_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_jqfb9k_c0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

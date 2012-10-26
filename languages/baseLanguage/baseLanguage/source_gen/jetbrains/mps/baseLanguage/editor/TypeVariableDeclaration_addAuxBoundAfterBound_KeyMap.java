@@ -61,7 +61,7 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends Editor
       }
 
       // Next cell should belong to some other SNode, not our typeVarDeclaration 
-      EditorCell selectedCell = editorContext.getSelectedCell();
+      EditorCell selectedCell = (EditorCell) editorContext.getSelectedCell();
       EditorCell nextLeaf = selectedCell.getNextLeaf();
       if (nextLeaf == null) {
         return false;

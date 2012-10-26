@@ -84,7 +84,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_bc5hcd_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<<test methods>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<test methods>>");
       editorCell.setCellId("Constant_bc5hcd_a0a");
       {
         Style style = editorCell.getStyle();

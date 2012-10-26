@@ -108,7 +108,7 @@ public class QueriesUtil {
     return nodeMacro;
   }
 
-  public static SNode addPropertyMacro(SNode node, EditorCell cell) {
+  public static SNode addPropertyMacro(SNode node, jetbrains.mps.openapi.editor.EditorCell cell) {
     // surround with <TF> if necessary 
     if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
       if (!(QueriesUtil.isInsideTemplateFragment(node))) {
@@ -165,7 +165,7 @@ public class QueriesUtil {
     });
   }
 
-  public static String getEditedPropertyName(EditorCell cell) {
+  public static String getEditedPropertyName(jetbrains.mps.openapi.editor.EditorCell cell) {
     if (cell instanceof EditorCell_Property) {
       ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
       if (modelAccessor instanceof PropertyAccessor) {

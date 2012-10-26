@@ -14,7 +14,7 @@ public class StandalonePluginDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lfvdu_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "standalone descriptor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "standalone descriptor");
     editorCell.setCellId("Constant_lfvdu_a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -73,7 +73,7 @@ public class EditorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_8q27zs_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "editor:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "editor:");
     editorCell.setCellId("Constant_8q27zs_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -81,12 +81,12 @@ public class EditorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_8q27zs_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
