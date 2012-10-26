@@ -30,14 +30,14 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
-      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -803,6 +803,9 @@
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841678">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselect(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="select" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="648724407925493129">
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectRange(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="selectRange" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3123233722122453196">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselect(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="select" />

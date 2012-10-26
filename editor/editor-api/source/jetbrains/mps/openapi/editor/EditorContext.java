@@ -46,6 +46,8 @@ public interface EditorContext {
 
   void select(SNode node);
 
+  void selectRange(SNode first, SNode last);
+
   void select(SNode node, String cellId);
 
   void selectBefore(SNode node);
