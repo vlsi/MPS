@@ -135,7 +135,9 @@
     <nodeInfo nodeId="8984393347190228215" fileName="NodesMatcher.java" startLine="146" startPosition="64" endLine="147" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228227" fileName="NodesMatcher.java" startLine="148" startPosition="34" endLine="149" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8984393347190228236" fileName="NodesMatcher.java" startLine="149" startPosition="60" endLine="150" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228260" fileName="NodesMatcher.java" startLine="151" startPosition="57" endLine="152" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218582063869173809" fileName="NodesMatcher.java" startLine="151" startPosition="45" endLine="152" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1218582063869173853" fileName="NodesMatcher.java" startLine="154" startPosition="45" endLine="155" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8984393347190228260" fileName="NodesMatcher.java" startLine="157" startPosition="57" endLine="158" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227558" fileName="NodesMatcher.java" startLine="14" startPosition="27" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodesMatcher#()V" />
     <nodeInfo nodeId="8984393347190227605" fileName="NodesMatcher.java" startLine="26" startPosition="10" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8984393347190227669" fileName="NodesMatcher.java" startLine="38" startPosition="45" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
@@ -150,7 +152,9 @@
     <nodeInfo nodeId="8984393347190228059" fileName="NodesMatcher.java" startLine="112" startPosition="40" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190228045" fileName="NodesMatcher.java" startLine="116" startPosition="14" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190228180" fileName="NodesMatcher.java" startLine="136" startPosition="92" endLine="139" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228245" fileName="NodesMatcher.java" startLine="150" startPosition="60" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218582063869173768" fileName="NodesMatcher.java" startLine="150" startPosition="60" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218582063869173811" fileName="NodesMatcher.java" startLine="153" startPosition="7" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228245" fileName="NodesMatcher.java" startLine="156" startPosition="7" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190227928" fileName="NodesMatcher.java" startLine="91" startPosition="96" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190228043" fileName="NodesMatcher.java" startLine="116" startPosition="12" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8984393347190228132" fileName="NodesMatcher.java" startLine="130" startPosition="50" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -158,16 +162,16 @@
     <nodeInfo nodeId="8984393347190227615" fileName="NodesMatcher.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Ljava/util/List;Ljava/util/List;)Ljava/util/ArrayList;" />
     <nodeInfo nodeId="8984393347190227724" fileName="NodesMatcher.java" startLine="46" startPosition="93" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190228155" fileName="NodesMatcher.java" startLine="134" startPosition="7" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8984393347190228222" fileName="NodesMatcher.java" startLine="147" startPosition="64" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8984393347190227917" fileName="NodesMatcher.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchConcepts#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/ArrayList;)Z" />
     <nodeInfo nodeId="8984393347190227704" fileName="NodesMatcher.java" startLine="44" startPosition="29" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8984393347190228038" fileName="NodesMatcher.java" startLine="111" startPosition="7" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190227792" fileName="NodesMatcher.java" startLine="63" startPosition="51" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8984393347190227562" fileName="NodesMatcher.java" startLine="17" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
-    <nodeInfo nodeId="8984393347190228190" fileName="NodesMatcher.java" startLine="143" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchProperties#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/ArrayList;)V" />
+    <nodeInfo nodeId="8984393347190228222" fileName="NodesMatcher.java" startLine="147" startPosition="64" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8984393347190227852" fileName="NodesMatcher.java" startLine="76" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
     <nodeInfo nodeId="8984393347190228111" fileName="NodesMatcher.java" startLine="127" startPosition="51" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8984393347190227991" fileName="NodesMatcher.java" startLine="102" startPosition="55" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8984393347190228190" fileName="NodesMatcher.java" startLine="143" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchProperties#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/ArrayList;)V" />
     <nodeInfo nodeId="8984393347190227747" fileName="NodesMatcher.java" startLine="56" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
     <nodeInfo nodeId="8984393347190228075" fileName="NodesMatcher.java" startLine="123" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchChildren#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;Ljava/util/ArrayList;)V" />
     <nodeInfo nodeId="8984393347190227640" fileName="NodesMatcher.java" startLine="35" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Ljava/util/List;Ljava/util/List;Ljava/util/Map;)Ljava/util/ArrayList;" />
@@ -187,7 +191,9 @@
     <scopeInfo nodeId="8984393347190228066" fileName="NodesMatcher.java" startLine="113" startPosition="48" endLine="114" endPosition="62" />
     <scopeInfo nodeId="8984393347190228049" fileName="NodesMatcher.java" startLine="117" startPosition="39" endLine="118" endPosition="63" />
     <scopeInfo nodeId="8984393347190228184" fileName="NodesMatcher.java" startLine="137" startPosition="24" endLine="138" endPosition="28" />
-    <scopeInfo nodeId="8984393347190228259" fileName="NodesMatcher.java" startLine="151" startPosition="57" endLine="152" endPosition="52" />
+    <scopeInfo nodeId="1218582063869173769" fileName="NodesMatcher.java" startLine="151" startPosition="45" endLine="152" endPosition="17" />
+    <scopeInfo nodeId="1218582063869173812" fileName="NodesMatcher.java" startLine="154" startPosition="45" endLine="155" endPosition="17" />
+    <scopeInfo nodeId="8984393347190228259" fileName="NodesMatcher.java" startLine="157" startPosition="57" endLine="158" endPosition="52" />
     <scopeInfo nodeId="8984393347190227558" fileName="NodesMatcher.java" startLine="14" startPosition="27" endLine="16" endPosition="3" />
     <scopeInfo nodeId="8984393347190227625" fileName="NodesMatcher.java" startLine="31" startPosition="84" endLine="33" endPosition="46">
       <varInfo nodeId="8984393347190227627" varName="map" />
@@ -208,18 +214,11 @@
       <varInfo nodeId="8984393347190227622" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227927" fileName="NodesMatcher.java" startLine="91" startPosition="96" endLine="96" endPosition="17" />
-    <scopeInfo nodeId="8984393347190228226" fileName="NodesMatcher.java" startLine="148" startPosition="34" endLine="153" endPosition="7">
-      <varInfo nodeId="8984393347190228228" varName="p1" />
-      <varInfo nodeId="8984393347190228237" varName="p2" />
-    </scopeInfo>
     <scopeInfo nodeId="8984393347190228155" fileName="NodesMatcher.java" startLine="134" startPosition="7" endLine="140" endPosition="7">
       <varInfo nodeId="8984393347190228161" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227712" fileName="NodesMatcher.java" startLine="45" startPosition="56" endLine="52" endPosition="7">
       <varInfo nodeId="8984393347190227714" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228222" fileName="NodesMatcher.java" startLine="147" startPosition="64" endLine="154" endPosition="5">
-      <varInfo nodeId="8984393347190228224" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227796" fileName="NodesMatcher.java" startLine="64" startPosition="31" endLine="72" endPosition="7">
       <varInfo nodeId="8984393347190227798" varName="children1" />
@@ -238,11 +237,12 @@
     <scopeInfo nodeId="8984393347190227792" fileName="NodesMatcher.java" startLine="63" startPosition="51" endLine="73" endPosition="5">
       <varInfo nodeId="8984393347190227794" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228200" fileName="NodesMatcher.java" startLine="144" startPosition="95" endLine="154" endPosition="5">
-      <varInfo nodeId="8984393347190228202" varName="propertes" />
-    </scopeInfo>
     <scopeInfo nodeId="8984393347190227863" fileName="NodesMatcher.java" startLine="77" startPosition="84" endLine="88" endPosition="16">
       <varInfo nodeId="8984393347190227865" varName="difference" />
+    </scopeInfo>
+    <scopeInfo nodeId="8984393347190228226" fileName="NodesMatcher.java" startLine="148" startPosition="34" endLine="159" endPosition="7">
+      <varInfo nodeId="8984393347190228228" varName="p1" />
+      <varInfo nodeId="8984393347190228237" varName="p2" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190228115" fileName="NodesMatcher.java" startLine="128" startPosition="31" endLine="140" endPosition="7">
       <varInfo nodeId="8984393347190228117" varName="children1" />
@@ -252,10 +252,8 @@
       <varInfo nodeId="8984393347190227565" varName="a" />
       <varInfo nodeId="8984393347190227567" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228190" fileName="NodesMatcher.java" startLine="143" startPosition="0" endLine="156" endPosition="0">
-      <varInfo nodeId="8984393347190228193" varName="a" />
-      <varInfo nodeId="8984393347190228195" varName="b" />
-      <varInfo nodeId="8984393347190228197" varName="difference" />
+    <scopeInfo nodeId="8984393347190228222" fileName="NodesMatcher.java" startLine="147" startPosition="64" endLine="160" endPosition="5">
+      <varInfo nodeId="8984393347190228224" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227852" fileName="NodesMatcher.java" startLine="76" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="8984393347190227855" varName="a" />
@@ -264,6 +262,9 @@
     </scopeInfo>
     <scopeInfo nodeId="8984393347190228111" fileName="NodesMatcher.java" startLine="127" startPosition="51" endLine="141" endPosition="5">
       <varInfo nodeId="8984393347190228113" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="8984393347190228200" fileName="NodesMatcher.java" startLine="144" startPosition="95" endLine="160" endPosition="5">
+      <varInfo nodeId="8984393347190228202" varName="propertes" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227758" fileName="NodesMatcher.java" startLine="57" startPosition="70" endLine="74" endPosition="18">
       <varInfo nodeId="8984393347190227772" varName="roles" />
@@ -282,6 +283,11 @@
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227991" fileName="NodesMatcher.java" startLine="102" startPosition="55" endLine="121" endPosition="5">
       <varInfo nodeId="8984393347190227993" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="8984393347190228190" fileName="NodesMatcher.java" startLine="143" startPosition="0" endLine="162" endPosition="0">
+      <varInfo nodeId="8984393347190228193" varName="a" />
+      <varInfo nodeId="8984393347190228195" varName="b" />
+      <varInfo nodeId="8984393347190228197" varName="difference" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190227747" fileName="NodesMatcher.java" startLine="56" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8984393347190227750" varName="a" />
@@ -308,7 +314,7 @@
       <varInfo nodeId="8984393347190227966" varName="difference" />
       <varInfo nodeId="8984393347190227962" varName="map" />
     </scopeInfo>
-    <unitInfo nodeId="8984393347190227556" fileName="NodesMatcher.java" startLine="14" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    <unitInfo nodeId="8984393347190227556" fileName="NodesMatcher.java" startLine="14" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
   </root>
   <root nodeId="8984393347190228267" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
     <nodeInfo nodeId="8984393347190228270" fileName="PropertyDifferense.java" startLine="6" startPosition="56" endLine="7" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperty" />

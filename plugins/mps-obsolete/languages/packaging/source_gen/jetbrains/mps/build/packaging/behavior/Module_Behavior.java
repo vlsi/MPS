@@ -152,15 +152,13 @@ public class Module_Behavior {
 
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions, boolean includeHomeLib) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
-    if (module instanceof Language) {
-      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
-      if (includeRuntimeSolutions) {
-        for (ModuleReference runtimeDependency : CollectionSequence.fromCollection(((Language) module).getRuntimeModulesReferences())) {
-          IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
-          if (runtimeDependencyModule instanceof Solution) {
-            // TODO proper module in holder? 
-            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, (Solution) runtimeDependencyModule))).toListSequence(), true)));
-          }
+    if (module instanceof Language && includeRuntimeSolutions) {
+      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+      for (ModuleReference runtimeDependency : CollectionSequence.fromCollection(((Language) module).getRuntimeModulesReferences())) {
+        IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
+        if (runtimeDependencyModule instanceof Solution) {
+          // TODO proper module in holder? 
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, (Solution) runtimeDependencyModule))).toListSequence(), true)));
         }
       }
       return result;

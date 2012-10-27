@@ -26,6 +26,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -57,6 +58,13 @@ public class TypeContextManager implements CoreComponent {
   private ThreadLocal<Set<SNode>> myResolveNodes = new ThreadLocal<Set<SNode>>();
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
+    @Override
+    public void beforeRootRemoved(SModelRootEvent event) {
+      synchronized (myLock) {
+        removeContextForNode(new SNodePointer(event.getModel().getSModelReference(), event.getRoot().getSNodeId()));
+      }
+    }
+
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
@@ -192,8 +200,8 @@ public class TypeContextManager implements CoreComponent {
 
   public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
-    if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return;
-    //if node is disposed, then context was removed by beforeModelDisposed listener
+    if (node == null || node.getModel() == null) return;
+    //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
     synchronized (myLock) {
       SNodePointer nodePointer = new SNodePointer(node);
       Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);

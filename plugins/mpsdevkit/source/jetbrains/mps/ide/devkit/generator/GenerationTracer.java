@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -120,19 +121,34 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushInputNode(SNode node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(node.getOldModel().getSModelReference(), node.getSNodeId())));
+    push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(getModelRef(node), node.getSNodeId())));
+  }
+
+  private SModelReference getModelRef(SNode node) {
+    SModel model = node.getModel();
+
+    if (model==null){
+      model = node.getOldModel();
+    }
+
+    //this is a hack to somehow show input nodes created during generation (e.g. .type.copy)
+    //actually, we should put another TracerNode here. showing the node is not from an input model at all
+    if (model == null) {
+      model = AuxilaryRuntimeModel.getDescriptor().getSModel();
+    }
+    return model.getSModelReference();
   }
 
   @Override
   public void closeInputNode(SNode node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.INPUT, new SNodePointer(node));
+    closeBranch(TracerNode.Kind.INPUT, new SNodePointer(getModelRef(node), node.getSNodeId()));
   }
 
   @Override
   public void popInputNode(SNode node) {
     if (!myActive) return;
-    pop(TracerNode.Kind.INPUT, new SNodePointer(node));
+    pop(TracerNode.Kind.INPUT, new SNodePointer(getModelRef(node), node.getSNodeId()));
   }
 
   @Override
@@ -174,7 +190,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void pushOutputNode(SNode node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.OUTPUT, new SNodePointer(node.getOldModel().getSModelReference(), node.getSNodeId())));
+    push(new TracerNode(TracerNode.Kind.OUTPUT, new SNodePointer(getModelRef(node), node.getSNodeId())));
   }
 
   @Override

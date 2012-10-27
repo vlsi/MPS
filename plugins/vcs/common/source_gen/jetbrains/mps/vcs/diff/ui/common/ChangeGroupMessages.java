@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.MessagesGutter;
-import com.intellij.openapi.application.ApplicationManager;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.SimpleEditorMessage;
@@ -30,7 +30,7 @@ public class ChangeGroupMessages {
   public void startMaintaining() {
     myLayout.addInvalidateListener(new ChangeGroupInvalidateListener() {
       public void changeGroupsInvalidated() {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             rebuildGutterMessages();
           }

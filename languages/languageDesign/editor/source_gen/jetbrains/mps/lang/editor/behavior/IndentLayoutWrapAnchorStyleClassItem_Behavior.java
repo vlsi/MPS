@@ -5,6 +5,8 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.style.StyleAttribute;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class IndentLayoutWrapAnchorStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
@@ -12,5 +14,9 @@ public class IndentLayoutWrapAnchorStyleClassItem_Behavior {
 
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") || SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+  }
+
+  public static StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
+    return StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR;
   }
 }

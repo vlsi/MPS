@@ -87,6 +87,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     boolean finished = false;
     // we need to repeat replacing instance/static method calls, array operations 
     // because operand they are applied to might change and suddenly become ValueProxy during those changes 
+    int count = 0;
     while (!(finished)) {
 
       finished = replaceInstanceMethodCalls();
@@ -105,6 +106,9 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       finished &= replaceLocalVariableDeclarations();
       finished &= replaceForeachVariable();
       finished &= replaceCasts();
+      if (count++ > 100) {
+        break;
+      }
     }
 
     replaceInstanceofs();
@@ -500,6 +504,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
             finished = false;
           } else {
             SLinkOperations.setTarget(binaryOperation, "leftExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a0a0c0b0q().createNode(((SNode) binaryOperation.getUserObject(LTYPE)), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
+            SNodeOperations.deleteNode(AttributeOperations.getAttribute(binaryOperation, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"))));
             finished = false;
           }
         }
@@ -510,6 +515,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
 
           } else {
             SLinkOperations.setTarget(binaryOperation, "rightExpression", new TransformatorImpl.QuotationClass_s72qk1_a0a0a0a0a1a0c0b0q().createNode(((SNode) binaryOperation.getUserObject(RTYPE)), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
+            SNodeOperations.deleteNode(AttributeOperations.getAttribute(binaryOperation, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"))));
             finished = false;
           }
         }

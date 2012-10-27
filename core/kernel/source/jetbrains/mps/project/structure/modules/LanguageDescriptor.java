@@ -64,10 +64,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
     return myRuntimeModules;
   }
 
-  public Set<ModelRoot> getRuntimeStubModels() {
-    return myRuntimeStubModels;
-  }
-
   public Set<StubSolution> getStubSolutions() {
     return myStubSolutions;
   }

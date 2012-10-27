@@ -15,6 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 
 public class HierarchyViewTool extends AbstractHierarchyView {
   private List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
@@ -74,7 +75,9 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    return new ConceptHierarchyTree(myCoreComponents.getLanguageHierarchyCache(), this, isParentHierarchy);
+    ConceptHierarchyTree tree = new ConceptHierarchyTree(myCoreComponents.getLanguageHierarchyCache(), this, isParentHierarchy);
+    TreeHighlighterExtension.attachHighlighters(tree, getProject());
+    return tree;
   }
 
   protected void doRegister() {

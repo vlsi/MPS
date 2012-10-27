@@ -25,13 +25,17 @@ import java.awt.Font;
 public class NodePresentationUtil {
 
   public static boolean isLocalTo(SNode referenceNode, SNode referentNode) {
-    IModule referenceModule = toLanguage(referenceNode.getModel().getModelDescriptor().getModule());
+    SModel toModel = referenceNode.getModel();
+    if (toModel == null) return false;
+
+    IModule referenceModule = toLanguage(toModel.getModelDescriptor().getModule());
+    SModel fromModel = referentNode.getModel();
     if (referenceModule instanceof Language) {
-      IModule referentModule = toLanguage(referentNode.getModel().getModelDescriptor().getModule());
+      IModule referentModule = toLanguage(fromModel.getModelDescriptor().getModule());
       return referentModule == referenceModule;
-    } else {
-      return referentNode.getModel() == referenceNode.getModel();
     }
+
+    return toModel == fromModel;
   }
 
   public static int getFontStyle(SNode referenceNode, SNode referentNode) {

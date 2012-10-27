@@ -97,16 +97,6 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find runtime module: " + ref.getModuleFqName());
       }
     }
-    for (ModelRoot stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
-      IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
-      if (file == null || !file.exists()) {
-        if (new File(stubModelsEntry.getPath()).exists()) {
-          errors.add("Idea VFS is not up-to-date. Can't find library: " + stubModelsEntry.getPath());
-        } else {
-          errors.add("Can't find library: " + stubModelsEntry.getPath());
-        }
-      }
-    }
     return errors;
   }
 

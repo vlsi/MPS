@@ -73,17 +73,17 @@ public class TypeVariableReference_Behavior {
 
   public static SNode virtual_expandGenerics_4122274986016348613(final SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
-      SNode exp = SNodeOperations.copyNode(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false)));
+      SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
       if (ListSequence.fromList(expTrace).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return MatchingUtil.matchNodes(thisNode, it);
         }
       })) {
-        return thisNode;
+        return exp;
       }
-      ListSequence.fromList(expTrace).addElement(thisNode);
       if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        return IGenericType_Behavior.call_expandGenerics_4122274986016348613(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
+        ListSequence.fromList(expTrace).addElement(thisNode);
+        exp = IGenericType_Behavior.call_expandGenerics_4122274986016348613(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
       }
       return exp;
     }

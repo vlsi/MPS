@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import java.util.Map;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
@@ -70,13 +71,10 @@ public class SNodeOperations {
   }
 
   public static Map<String, String> getProperties(SNode node) {
-    final Map<String, String> result = new HashMap<String, String>();
-    node.visitProperties(new SNode.PropertyVisitor() {
-      public boolean visitProperty(String name, String value) {
-        result.put(name, value);
-        return true;
-      }
-    });
+    Map<String, String> result = new HashMap<String, String>();
+    for (String name : Sequence.fromIterable(node.getPropertyNames())) {
+      result.put(name, node.getProperty(name));
+    }
     return result;
   }
 
@@ -86,16 +84,13 @@ public class SNodeOperations {
     return res;
   }
 
-  private static void collectDescendants(SNode node, final List<jetbrains.mps.smodel.SNode> list, final Condition<jetbrains.mps.smodel.SNode> condition) {
-    node.visitChildren(new SNode.ChildVisitor() {
-      public boolean visitChild(String role, SNode child) {
-        if (condition == null || condition == Condition.TRUE_CONDITION || (child instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) child)))) {
-          ListSequence.fromList(list).addElement(((jetbrains.mps.smodel.SNode) child));
-        }
-        collectDescendants(child, list, condition);
-        return true;
+  private static void collectDescendants(SNode node, List<jetbrains.mps.smodel.SNode> list, Condition<jetbrains.mps.smodel.SNode> condition) {
+    for (SNode child : Sequence.fromIterable(node.getChildren())) {
+      if (condition == null || condition == Condition.TRUE_CONDITION || (child instanceof jetbrains.mps.smodel.SNode && condition.met(((jetbrains.mps.smodel.SNode) child)))) {
+        ListSequence.fromList(list).addElement(((jetbrains.mps.smodel.SNode) child));
       }
-    });
+      collectDescendants(child, list, condition);
+    }
   }
 
   /**
@@ -109,13 +104,10 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static Set<String> getChildRoles(SNode n) {
-    final Set<String> res = SetSequence.fromSet(new HashSet<String>());
-    n.visitChildren(new SNode.ChildVisitor() {
-      public boolean visitChild(String role, SNode child) {
-        SetSequence.fromSet(res).addElement(role);
-        return true;
-      }
-    });
+    Set<String> res = SetSequence.fromSet(new HashSet<String>());
+    for (SNode child : Sequence.fromIterable(n.getChildren())) {
+      SetSequence.fromSet(res).addElement(child.getRoleInParent());
+    }
     return res;
   }
 
@@ -123,13 +115,10 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static List<SReference> getReferences(SNode n) {
-    final List<SReference> res = new LinkedList<SReference>();
-    n.visitReferences(new SNode.ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference reference) {
-        res.add(((SReference) reference));
-        return true;
-      }
-    });
+    List<SReference> res = new LinkedList<SReference>();
+    for (org.jetbrains.mps.openapi.model.SReference ref : Sequence.fromIterable(n.getReferences())) {
+      res.add(((SReference) ref));
+    }
     return res;
   }
 
@@ -137,13 +126,10 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static List<jetbrains.mps.smodel.SNode> getChildren(SNode n) {
-    final List<jetbrains.mps.smodel.SNode> res = ListSequence.fromList(new ArrayList<jetbrains.mps.smodel.SNode>());
-    n.visitChildren(new SNode.ChildVisitor() {
-      public boolean visitChild(String role, SNode child) {
-        ListSequence.fromList(res).addElement(((jetbrains.mps.smodel.SNode) child));
-        return true;
-      }
-    });
+    List<jetbrains.mps.smodel.SNode> res = ListSequence.fromList(new ArrayList<jetbrains.mps.smodel.SNode>());
+    for (SNode child : Sequence.fromIterable(n.getChildren())) {
+      ListSequence.fromList(res).addElement((jetbrains.mps.smodel.SNode) child);
+    }
     return res;
   }
 
@@ -151,13 +137,10 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static Set<String> getReferenceRoles(SNode n) {
-    final Set<String> res = SetSequence.fromSet(new HashSet<String>());
-    n.visitReferences(new SNode.ReferenceVisitor() {
-      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-        SetSequence.fromSet(res).addElement(role);
-        return true;
-      }
-    });
+    Set<String> res = SetSequence.fromSet(new HashSet<String>());
+    for (org.jetbrains.mps.openapi.model.SReference ref : Sequence.fromIterable(n.getReferences())) {
+      SetSequence.fromSet(res).addElement(ref.getRole());
+    }
     return res;
   }
 
@@ -215,7 +198,6 @@ public class SNodeOperations {
 
   public static void copyProperties(SNode from, final SNode to) {
     ((jetbrains.mps.smodel.SNode) to).putProperties(((jetbrains.mps.smodel.SNode) from));
-    // <node> 
   }
 
   public static Language getLanguage(SNode node) {
@@ -223,12 +205,9 @@ public class SNodeOperations {
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {
-    from.visitUserObjects(new SNode.UserObjectVisitor() {
-      public boolean visitObject(Object object, Object object1) {
-        to.putUserObject(object, object1);
-        return true;
-      }
-    });
+    for (Object key : Sequence.fromIterable(from.getUserObjectKeys())) {
+      to.putUserObject(key, from.getUserObject(key));
+    }
   }
 
   private static class DescendantsIterable implements Iterator<jetbrains.mps.smodel.SNode>, Iterable<jetbrains.mps.smodel.SNode> {

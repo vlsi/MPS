@@ -29,5 +29,7 @@ public interface MultiStreamDataSource extends DataSource {
 
   OutputStream openOutputStream(String name) throws IOException;
 
+  void rename(String oldName, String newName) throws IOException;
+
   void delete(String name) throws IOException;
 }

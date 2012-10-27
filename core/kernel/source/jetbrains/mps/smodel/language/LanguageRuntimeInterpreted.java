@@ -38,20 +38,9 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
   public static final DescriptorProvider<FacetDescriptor> FACET_PROVIDER = new InterpretedFacetProvider();
 
   private final Language myLanguage;
-  private final Collection<TemplateModule> myTemplateModules;
 
   public LanguageRuntimeInterpreted(Language language) {
     myLanguage = language;
-
-    Collection<Generator> generators = language.getGenerators();
-    if (generators.isEmpty()) {
-      myTemplateModules = null;
-    } else {
-      myTemplateModules = new ArrayList<TemplateModule>(generators.size());
-      for (Generator generator : generators) {
-        myTemplateModules.add(new TemplateModuleInterpreted(this, generator));
-      }
-    }
   }
 
   @Override
@@ -94,6 +83,15 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
 
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return myTemplateModules;
+    Collection<Generator> generators = myLanguage.getGenerators();
+    if (generators.isEmpty()) {
+      return null;
+    } else {
+      List<TemplateModule> templateModules = new ArrayList<TemplateModule>(generators.size());
+      for (Generator generator : generators) {
+        templateModules.add(new TemplateModuleInterpreted(this, generator));
+      }
+      return templateModules;
+    }
   }
 }

@@ -3,7 +3,7 @@
   <root nodeId="3483822302719455901" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
     <nodeInfo nodeId="3483822302719455925" fileName="JavaTraceInfoResourceProvider.java" startLine="15" startPosition="63" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3483822302719455928" fileName="JavaTraceInfoResourceProvider.java" startLine="16" startPosition="33" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3483822302719455956" fileName="JavaTraceInfoResourceProvider.java" startLine="18" startPosition="105" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3483822302719455956" fileName="JavaTraceInfoResourceProvider.java" startLine="18" startPosition="112" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3483822302719455951" fileName="JavaTraceInfoResourceProvider.java" startLine="20" startPosition="12" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3483822302719455967" fileName="JavaTraceInfoResourceProvider.java" startLine="23" startPosition="32" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3483822302719455982" fileName="JavaTraceInfoResourceProvider.java" startLine="25" startPosition="5" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -13,7 +13,7 @@
     <nodeInfo nodeId="3483822302719455934" fileName="JavaTraceInfoResourceProvider.java" startLine="17" startPosition="63" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3483822302719455911" fileName="JavaTraceInfoResourceProvider.java" startLine="14" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResource#(Ljetbrains/mps/project/IModule;Ljava/lang/String;)Ljava/net/URL;" />
     <scopeInfo nodeId="3483822302719455906" fileName="JavaTraceInfoResourceProvider.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
-    <scopeInfo nodeId="3483822302719455955" fileName="JavaTraceInfoResourceProvider.java" startLine="18" startPosition="105" endLine="19" endPosition="48" />
+    <scopeInfo nodeId="3483822302719455955" fileName="JavaTraceInfoResourceProvider.java" startLine="18" startPosition="112" endLine="19" endPosition="48" />
     <scopeInfo nodeId="3483822302719455950" fileName="JavaTraceInfoResourceProvider.java" startLine="20" startPosition="12" endLine="21" endPosition="52" />
     <scopeInfo nodeId="3483822302719455966" fileName="JavaTraceInfoResourceProvider.java" startLine="23" startPosition="32" endLine="24" endPosition="18" />
     <scopeInfo nodeId="3483822302719455903" fileName="JavaTraceInfoResourceProvider.java" startLine="11" startPosition="96" endLine="13" endPosition="3" />

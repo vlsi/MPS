@@ -459,16 +459,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return null;
   }
 
-  public Collection<String> getRuntimeStubPaths() {
-    Set<String> result = new LinkedHashSet<String>();
-
-    for (ModelRoot me : getRuntimeModelsEntries()) {
-      result.add(me.getPath());
-    }
-
-    return result;
-  }
-
   @Override
   public boolean isCompileInMPS() {
     // language is always compiled in MPS
@@ -494,80 +484,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     synchronized (LOCK) {
       myLanguageRuntimeClasspathCache = null;
     }
-  }
-
-  public IClassPathItem getLanguageRuntimeClasspath() {
-    synchronized (LOCK) {
-      if (myLanguageRuntimeClasspathCache == null) {
-        myLanguageRuntimeClasspathCache = new CompositeClassPathItem();
-        myLanguageRuntimeClasspathCache.addInvalidationAction(myClasspathInvalidator);
-        for (ModelRoot entry : getRuntimeModelsEntries()) {
-          String s = entry.getPath();
-          try {
-            IFile file = FileSystem.getInstance().getFileByPath(s);
-            if (!file.exists()) {
-              LOG.debug("Can't find " + s);
-              continue;
-            }
-
-            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleName()));
-          } catch (IOException e) {
-            LOG.debug(e.getMessage());
-          }
-        }
-      }
-
-      return myLanguageRuntimeClasspathCache;
-    }
-  }
-
-  //todo check this code. Wy not to do it where we add jars?
-  protected void updatePackagedDescriptorClasspath() {
-    super.updatePackagedDescriptorClasspath();
-
-    if (!isPackaged()) return;
-
-    if (myLanguageDescriptor != null) {
-      IFile bundleParent = getBundleHome().getParent();
-      String jarName = getModuleName() + ".jar";
-      IFile bundleHomeFile = bundleParent.getDescendant(jarName);
-
-      if (!bundleHomeFile.exists()) return;
-
-      for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
-        g.getModelRoots().removeAll(myLanguageDescriptor.getRuntimeStubModels());
-      }
-      myLanguageDescriptor.getRuntimeStubModels().clear();
-
-      DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
-      if (dd == null) return;
-
-      for (String jarFile : dd.getRuntimeJars()) {
-        IFile jar = jarFile.startsWith("/")
-          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-          : bundleParent.getDescendant(jarFile);
-        if (jar.exists()) {
-          ClassPathEntry jarEntry = new ClassPathEntry();
-          jarEntry.setPath(jar.getPath());
-          ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
-          myLanguageDescriptor.getRuntimeStubModels().add(mr);
-          for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
-            g.getModelRoots().add(mr);
-          }
-        }
-      }
-    }
-  }
-
-  public Collection<ModelRoot> getRuntimeModelsEntries() {
-    return myLanguageDescriptor.getRuntimeStubModels();
-  }
-
-  protected Collection<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
-    LinkedHashSet<ModelRoot> res = new LinkedHashSet<ModelRoot>();
-    res.addAll(super.getStubModelEntriesToIncludeOrExclude());
-    res.addAll(getRuntimeModelsEntries());
-    return res;
   }
 
   @Override

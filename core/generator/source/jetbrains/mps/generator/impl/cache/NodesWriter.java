@@ -18,8 +18,6 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
-import org.jetbrains.mps.openapi.model.SNode.UserObjectVisitor;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -100,12 +98,9 @@ public class NodesWriter {
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
     final Map<String, String> properties = new HashMap<String, String>();
-    node.visitProperties(new PropertyVisitor() {
-      public boolean visitProperty(String name, String value) {
-        properties.put(name,value);
-        return true;
-      }
-    });
+    for (String name : node.getPropertyNames()) {
+      properties.put(name, node.getProperty(name));
+    }
     os.writeInt(properties.size());
     for (Entry<String, String> entry : properties.entrySet()) {
       os.writeString(entry.getKey());
@@ -116,15 +111,13 @@ public class NodesWriter {
   protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
     // write user objects here
     final ArrayList<Object> knownUserObject = new ArrayList<Object>();
-    node.visitUserObjects(new UserObjectVisitor() {
-      public boolean visitObject(Object key, Object value) {
-        if (isKnownUserObject(key) && isKnownUserObject(value)) {
-          knownUserObject.add(key);
-          knownUserObject.add(value);
-        }
-        return true;
+    for (Object key:node.getUserObjectKeys()){
+      Object value = node.getUserObject(key);
+      if (isKnownUserObject(key) && isKnownUserObject(value)) {
+        knownUserObject.add(key);
+        knownUserObject.add(value);
       }
-    });
+    }
 
     os.writeInt(knownUserObject.size());
     for (int i = 0; i < knownUserObject.size(); i += 2) {
@@ -156,8 +149,7 @@ public class NodesWriter {
       try {
         ObjectOutputStream dummy = new ObjectOutputStream(NullOutputStream.INSTANCE);
         dummy.writeObject(object);
-      }
-      catch (NotSerializableException ignore) {
+      } catch (NotSerializableException ignore) {
         object = null;
       }
       os.writeInt(USER_SERIALIZABLE);
@@ -175,7 +167,7 @@ public class NodesWriter {
       || object instanceof SModelReference;
   }
 
-  private static class NullOutputStream extends  OutputStream {
+  private static class NullOutputStream extends OutputStream {
 
     private static NullOutputStream INSTANCE = new NullOutputStream();
 

@@ -14,9 +14,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.OutputStream;
 
@@ -67,17 +65,14 @@ public class SolutionDescriptorPersistence {
 
           Element stubModelEntries = XmlUtil.first(rootElement, "stubModelEntries");
           if (stubModelEntries != null) {
-            List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
-            result_8ckma3_a0a0f0b0a.getStubModelEntries().addAll(roots);
+            List<String> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
+            result_8ckma3_a0a0f0b0a.getAdditionalJavaStubPaths().addAll(roots);
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0f0b0a, rootElement);
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "runtimeClassPath"), "entry")))) {
             // runtime classpath left for compatibility 
-            ModelRoot entry = new ModelRoot();
-            entry.setPath(macroHelper.expandPath(entryElement.getAttributeValue("path")));
-            entry.setManager(LanguageID.JAVA_MANAGER);
-            result_8ckma3_a0a0f0b0a.getStubModelEntries().add(entry);
+            result_8ckma3_a0a0f0b0a.getAdditionalJavaStubPaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
 
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, SOURCE_PATH), SOURCE_PATH_SOURCE))) {
@@ -120,9 +115,9 @@ public class SolutionDescriptorPersistence {
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRoots(), macroHelper);
     result.addContent(models);
 
-    if (!(descriptor.getStubModelEntries().isEmpty())) {
+    if (!(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
       Element stubModelEntries = new Element("stubModelEntries");
-      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, descriptor.getStubModelEntries(), macroHelper);
+      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, descriptor.getAdditionalJavaStubPaths(), macroHelper);
       result.addContent(stubModelEntries);
     }
 

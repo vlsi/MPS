@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescripto
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.migration.annotations.LongTermMigration;
@@ -133,16 +134,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public void setProperty(final String propertyName, String propertyValue) {
     setProperty(propertyName, propertyValue, true);
-  }
-
-  public void visitProperties(PropertyVisitor v) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-
-    if (myProperties == null) return;
-    for (int i = 0; i < myProperties.length; i += 2) {
-      v.visitProperty(myProperties[i], myProperties[i + 1]);
-    }
   }
 
   final public SNode getParent() {
@@ -334,16 +325,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  public void visitReferences(ReferenceVisitor v) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-
-    if (myReferences == null) return;
-    for (SReference ref : myReferences) {
-      v.visitReference(ref.getRole(), ref);
-    }
-  }
-
   /**
    * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
    */
@@ -440,12 +421,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return "<no role>";
   }
 
-  public void visitChildren(ChildVisitor v) {
-    for (SNode child : getChildren()) {
-      if (!v.visitChild(getRoleOf(child), child)) return;
-    }
-  }
-
   public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
     String childRole = ((SNode) child).getRole();
     assert childRole != null : "role must be not null";
@@ -529,13 +504,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myUserObjects = newarr;
   }
 
-  public void visitUserObjects(UserObjectVisitor v) {
-    if (myUserObjects == null) return;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      v.visitObject(myUserObjects[i], myUserObjects[i + 1]);
-    }
-  }
-
   public List<SNode> getChildren() {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -557,28 +525,30 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myRoleInParent;
   }
 
-  public SNode getPrevSibling(){
-    if (getParent()==null) return null;
+  public SNode getPrevSibling() {
+    if (getParent() == null) return null;
     return getParent().getPrevChild(this);
   }
 
-  public SNode getNextSibling(){
-    if (getParent()==null) return null;
+  public SNode getNextSibling() {
+    if (getParent() == null) return null;
     return getParent().getNextChild(this);
   }
 
-  public Iterable<String> getUserObjectKeys() {
-    return new Iterable<String>() {
-      public Iterator<String> iterator() {
-        return new Iterator<String>() {
+  public Iterable<Object> getUserObjectKeys() {
+    if (myUserObjects == null || myUserObjects.length == 0) return EmptyIterable.getInstance();
+    return new Iterable<Object>() {
+      public Iterator<Object> iterator() {
+        return new Iterator<Object>() {
           int myIndex = 0;
+
           public boolean hasNext() {
-            return myIndex+2<myProperties.length;
+            return myIndex < myUserObjects.length;
           }
 
-          public String next() {
-            myIndex +=2;
-            return myProperties[myIndex-1];
+          public Object next() {
+            myIndex += 2;
+            return myUserObjects[myIndex - 2];
           }
 
           public void remove() {
@@ -591,8 +561,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
   public Set<String> getPropertyNames() {
-    HashSet<String> result = new HashSet<String>();
-    for (int i = 0;i<myProperties.length;i+=2){
+    LinkedHashSet<String> result = new LinkedHashSet<String>();
+    if (myProperties == null) return result;
+    for (int i = 0; i < myProperties.length; i += 2) {
       result.add(myProperties[i]);
     }
     return result;
@@ -1429,12 +1400,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void putUserObjects(SNode fromNode) {
     if (fromNode == null) return;
-    fromNode.visitUserObjects(new UserObjectVisitor() {
-      public boolean visitObject(Object key, Object value) {
-        putUserObject(key, value);
-        return true;
-      }
-    });
+    for (Object key : fromNode.getUserObjectKeys()) {
+      putUserObject(key, fromNode.getUserObject(key));
+    }
   }
 
   @Deprecated
@@ -1614,14 +1582,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
-    visitChildren(new ChildVisitor() {
-      public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-        if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
-          augend.add(role);
-        }
-        return true;
+    for (SNode child : getChildren()) {
+      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
+        augend.add(child.getRoleInParent());
       }
-    });
+    }
     return augend;
   }
 
@@ -1731,12 +1696,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public Map<Object, Object> getUserObjects() {
     final Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
-    visitUserObjects(new UserObjectVisitor() {
-      public boolean visitObject(Object key, Object value) {
-        userObjects.put(key, value);
-        return true;
-      }
-    });
+    for (Object key : getUserObjectKeys()) {
+      userObjects.put(key, getUserObject(key));
+    }
     return userObjects;
   }
 

@@ -20,7 +20,7 @@ import jetbrains.mps.project.SModelRoot;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
-import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyAdapter;
@@ -88,10 +88,8 @@ public class NewModelDialog extends BaseDialog {
     myModelRoots.setRenderer(new DefaultListCellRenderer() {
       @Override
       public Component getListCellRendererComponent(JList list, Object object, int i, boolean b, boolean b1) {
-        if (object instanceof SModelRoot) {
-          SModelRoot mr = (SModelRoot) object;
-          String manager = NameUtil.shortNameFromLongName(mr.getKind());
-          object = mr.getModelRoot().getPath() + " (" + manager + ")";
+        if (object instanceof ModelRoot) {
+          object = ((ModelRoot) object).getPresentation();
         }
         return super.getListCellRendererComponent(list, object, i, b, b1);
       }

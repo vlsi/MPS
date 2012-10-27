@@ -27,10 +27,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
+
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   private boolean myRegistered;
@@ -265,5 +267,20 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public boolean isTransient() {
     return false;
+  }
+
+  @Override
+  public void load() throws IOException {
+    // TODO implement
+  }
+
+  @Override
+  public void save() throws IOException {
+    // TODO implement
+  }
+
+  @Override
+  public void unload() {
+    // TODO implement
   }
 }

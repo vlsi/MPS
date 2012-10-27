@@ -4,7 +4,6 @@
     <action id="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action" class="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action" class="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action"></action>
-    <action id="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" class="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"></action>
@@ -26,7 +25,6 @@
     <group id="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" text="Migrations 2.5" popup="true">
       <separator />
       <reference ref="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action" />
-      <reference ref="jetbrains.mps.ide.migration.migration25.AddStubsToModelRoots_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.AddSourcesToModelRoots_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.AddPluginDependencies_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.AddGenerationSupportLanguages_Action" />

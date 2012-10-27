@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.EqualUtil;
-import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import java.util.*;
 
@@ -41,14 +40,9 @@ public class MatchingUtil {
 
     //properties
     final Set<String> propertyNames = new HashSet<String>();
-    PropertyVisitor collector = new PropertyVisitor() {
-      public boolean visitProperty(String name, String value) {
-        propertyNames.add(name);
-        return true;
-      }
-    };
-    node1.visitProperties(collector);
-    node2.visitProperties(collector);
+
+    propertyNames.addAll(node1.getPropertyNames());
+    propertyNames.addAll(node2.getPropertyNames());
 
     SNode typeDeclaration = node1.getConceptDeclarationNode();
 
