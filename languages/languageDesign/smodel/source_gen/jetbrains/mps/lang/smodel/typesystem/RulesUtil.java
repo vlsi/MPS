@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -63,7 +63,7 @@ public class RulesUtil {
     if (SConceptPropertyOperations.getBoolean(op, "applicableToLink")) {
       SNode linkAccess = SNodeOperations.as(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
       if (linkAccess != null) {
-        isGood = ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess);
+        isGood = BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{});
         if (isGood) {
           // some of ops applicable to 'link' require left-expr to be a concept 
           if (SConceptPropertyOperations.getBoolean(op, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(op, "applicableToNode"))) {
@@ -75,7 +75,7 @@ public class RulesUtil {
     if (SConceptPropertyOperations.getBoolean(op, "applicableToLinkList")) {
       SNode linkAccess = SNodeOperations.as(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
       if (linkAccess != null) {
-        isGood = !(ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess));
+        isGood = !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{}));
       }
     }
     // =========== 
@@ -113,7 +113,7 @@ public class RulesUtil {
     final SNode leftExpressionOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
     boolean isGood = false;
     if (SNodeOperations.isInstanceOf(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
-      if (ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.cast(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), "virtual_isAggregation_4024382256428848854", new Object[]{})) {
         isGood = true;
       }
     }
@@ -131,7 +131,7 @@ public class RulesUtil {
     SNode leftExpressionOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
     boolean isGood = true;
     if (SNodeOperations.isInstanceOf(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
-      if (!(ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.cast(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess")))) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess"), "virtual_isAggregation_4024382256428848854", new Object[]{}))) {
         isGood = false;
       }
     }
@@ -197,7 +197,7 @@ public class RulesUtil {
     SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     SNode conceptDeclaration = null;
     if (SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
-      conceptDeclaration = ILinkAccess_Behavior.call_getTargetConcept_4024382256428848859(SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
+      conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess"), "virtual_getTargetConcept_4024382256428848859", new Object[]{});
     } else
     if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
       conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);

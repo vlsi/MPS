@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -214,7 +214,7 @@ public class TransformationUtil {
     if (ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).contains(classConcept)) {
       fqNameNode = new TransformationUtil.QuotationClass_crriw5_a0a0a2a02().createNode();
     } else {
-      fqNameNode = createStringLiteral(((String) BehaviorManager.getInstance().invoke(Object.class, classConcept, "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
+      fqNameNode = createStringLiteral(BehaviorReflection.invokeVirtual(String.class, classConcept, "virtual_getFqName_1213877404258", new Object[]{}));
     }
     return fqNameNode;
   }
@@ -304,20 +304,20 @@ public class TransformationUtil {
       // we have to deal with the fact that inners in stubs are not inners 
       String realFqName;
       if (SPropertyOperations.getString(classifier, "name").contains(".")) {
-        String fqName = ((String) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+        String fqName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
         realFqName = fqName.substring(0, fqName.length() - SPropertyOperations.getString(classifier, "name").length()) + SPropertyOperations.getString(classifier, "name").replace(".", "$");
       } else {
         SNode rootClassifier = classifier;
         String suffix = "";
-        while (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, rootClassifier, "call_isInner_521412098689998677", new Class[]{SNode.class}))) {
+        while (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, rootClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_isInner_521412098689998677", new Object[]{})) {
           suffix = "$" + SPropertyOperations.getString(rootClassifier, "name");
           rootClassifier = SNodeOperations.cast(SNodeOperations.getParent(rootClassifier), "jetbrains.mps.baseLanguage.structure.Classifier");
         }
-        realFqName = (((String) BehaviorManager.getInstance().invoke(Object.class, rootClassifier, "virtual_getFqName_1213877404258", new Class[]{SNode.class})).replace(".", "/")) + suffix;
+        realFqName = (BehaviorReflection.invokeVirtual(String.class, rootClassifier, "virtual_getFqName_1213877404258", new Object[]{}).replace(".", "/")) + suffix;
       }
       return "L" + realFqName + ";";
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return getJniSignatureFromType(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "virtual_getJavaType_1213877337345", new Class[]{SNode.class})));
+      return getJniSignatureFromType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "virtual_getJavaType_1213877337345", new Object[]{}));
     } else {
       LOG.error("Unknown type, assuming it's void", type);
     }
@@ -422,7 +422,7 @@ public class TransformationUtil {
     } else
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
       SNode conceptFunction = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-      returnType = ((SNode) BehaviorManager.getInstance().invoke(Object.class, conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}));
+      returnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     } else if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       SNode closure = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
       returnType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(closure), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), false), "resultType", true);

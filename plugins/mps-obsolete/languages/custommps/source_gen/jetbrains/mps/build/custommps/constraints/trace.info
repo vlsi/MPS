@@ -14,13 +14,13 @@
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="50" startPosition="37" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="55" startPosition="56" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1233156647633" fileName="MPSBuild_Constraints.java" startLine="57" startPosition="71" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233156647640" fileName="MPSBuild_Constraints.java" startLine="59" startPosition="9" endLine="60" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233156647640" fileName="MPSBuild_Constraints.java" startLine="59" startPosition="9" endLine="60" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="62" startPosition="7" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240846456213" fileName="MPSBuild_Constraints.java" startLine="68" startPosition="39" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSBuild_Constraints#()V" />
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="37" startPosition="0" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1233156647631" fileName="MPSBuild_Constraints.java" startLine="56" startPosition="37" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="56" startPosition="37" endLine="60" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="56" startPosition="37" endLine="60" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240846456211" fileName="MPSBuild_Constraints.java" startLine="67" startPosition="202" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
     <nodeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="48" startPosition="80" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
@@ -37,13 +37,13 @@
     <scopeInfo nodeId="1233156647632" fileName="MPSBuild_Constraints.java" startLine="57" startPosition="71" endLine="58" endPosition="20" />
     <scopeInfo nodeId="1240846456212" fileName="MPSBuild_Constraints.java" startLine="68" startPosition="39" endLine="69" endPosition="100" />
     <scopeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="1233156640381" fileName="MPSBuild_Constraints.java" startLine="56" startPosition="37" endLine="60" endPosition="118" />
+    <scopeInfo nodeId="1233156640381" fileName="MPSBuild_Constraints.java" startLine="56" startPosition="37" endLine="60" endPosition="160" />
     <scopeInfo nodeId="1240846456211" fileName="MPSBuild_Constraints.java" startLine="67" startPosition="202" endLine="71" endPosition="0">
       <varInfo nodeId="1240846456211" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="48" startPosition="80" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="55" startPosition="56" endLine="60" endPosition="118">
+    <scopeInfo nodeId="1233156632875" fileName="MPSBuild_Constraints.java" startLine="55" startPosition="56" endLine="60" endPosition="160">
       <varInfo nodeId="1233156632875" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="1239989584661" fileName="MPSBuild_Constraints.java" startLine="66" startPosition="148" endLine="71" endPosition="21" />

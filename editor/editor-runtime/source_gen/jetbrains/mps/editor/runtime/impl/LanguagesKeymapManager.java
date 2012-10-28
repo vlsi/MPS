@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
@@ -104,7 +104,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private Class<EditorCellKeyMap> findKeyMapClassByDeclaration(SNode declaration) {
-    String fqName = ((String) BehaviorManager.getInstance().invoke(Object.class, declaration, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    String fqName = BehaviorReflection.invokeVirtual(String.class, declaration, "virtual_getFqName_1213877404258", new Object[]{});
     String namespace = NameUtil.namespaceFromLongName(fqName);
     assert namespace.endsWith(".editor");
     String languageNamespace = namespace.substring(0, namespace.length() - ".editor".length());

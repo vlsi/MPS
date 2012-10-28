@@ -12,11 +12,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
@@ -193,7 +192,7 @@ public class VisibleArtifacts {
     }
     for (SNode artifact : this.getArtifacts()) {
       assert !(SNodeOperations.getModel(artifact).isTransient());
-      if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, id)) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, artifact, "virtual_exports_6547494638219603457", new Object[]{id})) {
         dependenciesHelper.artifacts().put(id, artifact);
         return artifact;
       }
@@ -211,18 +210,18 @@ public class VisibleArtifacts {
     StringBuilder suffix = new StringBuilder();
     SNode current = SNodeOperations.as(path, "jetbrains.mps.build.structure.BuildRelativePath");
     if (current != null) {
-      suffix.append("/").append(BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, null));
-      current = SNodeOperations.as(BuildSourcePath_Behavior.call_getParent_8654221991637145399(current), "jetbrains.mps.build.structure.BuildRelativePath");
+      suffix.append("/").append(BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{null}));
+      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
     }
     SNode containingRoot = SNodeOperations.getContainingRoot(path);
     while (current != null) {
-      result = findArtifact(new LocalSourcePathArtifact(containingRoot, BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(current), true));
+      result = findArtifact(new LocalSourcePathArtifact(containingRoot, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getRelativePath_5481553824944787371", new Object[]{}), true));
       if (result != null) {
         return MultiTuple.<SNode,String>from(result, suffix.toString());
       }
 
-      suffix.insert(0, BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(current, null)).insert(0, "/");
-      current = SNodeOperations.as(BuildSourcePath_Behavior.call_getParent_8654221991637145399(current), "jetbrains.mps.build.structure.BuildRelativePath");
+      suffix.insert(0, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getLastSegment_1368030936106771141", new Object[]{null})).insert(0, "/");
+      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
     }
 
     return MultiTuple.<SNode,String>from((SNode) null, (String) null);

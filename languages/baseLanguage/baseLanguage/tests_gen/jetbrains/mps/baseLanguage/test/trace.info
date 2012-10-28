@@ -4,11 +4,11 @@
     <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1216231238662#()V" />
     <nodeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="14" startPosition="80" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1216231238662#()V" />
     <scopeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="133" />
-    <scopeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1217271585456" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1217271585456" fileName="OnlyStatementsCanUnreachable_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -62,11 +62,11 @@
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1216895632608#()V" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="14" startPosition="73" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1216895632608#()V" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="126" />
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1217271586138" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -81,7 +81,7 @@
     <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="23" startPosition="116" endLine="24" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="29" startPosition="52" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="33" startPosition="65" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="34" startPosition="135" endLine="35" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="34" startPosition="135" endLine="35" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReadAction#()V" />
     <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1216549241562#()V" />
     <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="14" startPosition="62" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReadAction#()V" />
@@ -89,7 +89,7 @@
     <scopeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="29" startPosition="52" endLine="30" endPosition="40" />
     <scopeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="16" startPosition="50" endLine="18" endPosition="102" />
     <scopeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="22" startPosition="63" endLine="24" endPosition="115" />
-    <scopeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="33" startPosition="65" endLine="35" endPosition="179">
+    <scopeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="33" startPosition="65" endLine="35" endPosition="148">
       <varInfo nodeId="1217271586324" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1225979300041" fileName="ReadAction_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
@@ -134,7 +134,7 @@
     <nodeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="23" startPosition="116" endLine="24" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="29" startPosition="67" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="33" startPosition="71" endLine="34" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="34" startPosition="141" endLine="35" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="34" startPosition="141" endLine="35" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UnusedVariableDeclaration#()V" />
     <nodeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck5684597377559856228#()V" />
     <nodeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="14" startPosition="77" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UnusedVariableDeclaration#()V" />
@@ -142,7 +142,7 @@
     <scopeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="29" startPosition="67" endLine="30" endPosition="40" />
     <scopeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="16" startPosition="65" endLine="18" endPosition="132" />
     <scopeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="22" startPosition="69" endLine="24" endPosition="136" />
-    <scopeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="33" startPosition="71" endLine="35" endPosition="179">
+    <scopeInfo nodeId="1217271587023" fileName="UnusedVariableDeclaration_Test.java" startLine="33" startPosition="71" endLine="35" endPosition="148">
       <varInfo nodeId="1217271587023" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1225979305492" fileName="UnusedVariableDeclaration_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
@@ -173,7 +173,7 @@
     <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="23" startPosition="116" endLine="24" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="29" startPosition="63" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="33" startPosition="65" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="34" startPosition="135" endLine="35" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="34" startPosition="135" endLine="35" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_VariableUninitialized#()V" />
     <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1216893950801#()V" />
     <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="14" startPosition="73" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_VariableUninitialized#()V" />
@@ -181,7 +181,7 @@
     <scopeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="29" startPosition="63" endLine="30" endPosition="40" />
     <scopeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="16" startPosition="61" endLine="18" endPosition="124" />
     <scopeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="22" startPosition="63" endLine="24" endPosition="126" />
-    <scopeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="33" startPosition="65" endLine="35" endPosition="179">
+    <scopeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="33" startPosition="65" endLine="35" endPosition="148">
       <varInfo nodeId="1217271587656" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1225979303302" fileName="VariableUninitialized_Test.java" startLine="28" startPosition="53" endLine="32" endPosition="0" />
@@ -211,19 +211,19 @@
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="22" startPosition="63" endLine="23" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="23" startPosition="116" endLine="24" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="29" startPosition="65" endLine="30" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="30" startPosition="135" endLine="31" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="30" startPosition="135" endLine="31" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="34" startPosition="65" endLine="35" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="35" startPosition="135" endLine="36" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="35" startPosition="135" endLine="36" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="28" startPosition="53" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1217864879944#()V" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1217864892290#()V" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="14" startPosition="79" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1217864879944#()V" />
     <nodeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1217864892290#()V" />
     <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="132" />
     <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="22" startPosition="63" endLine="24" endPosition="132" />
-    <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="29" startPosition="65" endLine="31" endPosition="179">
+    <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="29" startPosition="65" endLine="31" endPosition="148">
       <varInfo nodeId="1217861204623" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="34" startPosition="65" endLine="36" endPosition="179">
+    <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="34" startPosition="65" endLine="36" endPosition="148">
       <varInfo nodeId="1217861204623" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1217861204623" fileName="IfStatementWrongUnreachable_Test.java" startLine="28" startPosition="53" endLine="33" endPosition="0" />
@@ -237,11 +237,11 @@
     <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1217866439753#()V" />
     <nodeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="14" startPosition="74" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1217866439753#()V" />
     <scopeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="127" />
-    <scopeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1217866056908" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1217866056908" fileName="UnusedAssignmentWithIF_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -253,11 +253,11 @@
     <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1220012521451#()V" />
     <nodeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="14" startPosition="77" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1220012521451#()V" />
     <scopeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="130" />
-    <scopeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1220012417777" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1220012417777" fileName="CatchingUnthrownException_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -269,11 +269,11 @@
     <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1220013512724#()V" />
     <nodeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="14" startPosition="74" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1220013512724#()V" />
     <scopeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="127" />
-    <scopeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1220013369431" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1220013369431" fileName="IfStatementWithReturns_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -285,11 +285,11 @@
     <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1220265437276#()V" />
     <nodeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="14" startPosition="68" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1220265437276#()V" />
     <scopeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="121" />
-    <scopeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1220265193995" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1220265193995" fileName="UnusedParameters_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -301,11 +301,11 @@
     <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1222443330005#()V" />
     <nodeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="14" startPosition="75" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1222443330005#()V" />
     <scopeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="128" />
-    <scopeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1222443174371" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1222443174371" fileName="ListWithConceptFunction_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -317,11 +317,11 @@
     <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1226936244308#()V" />
     <nodeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="14" startPosition="75" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1226936244308#()V" />
     <scopeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="128" />
-    <scopeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1226936033402" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1226936033402" fileName="CommentCanBeUnreachable_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -333,11 +333,11 @@
     <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="16" startPosition="63" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="23" startPosition="65" endLine="24" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="24" startPosition="135" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1229350096076#()V" />
     <nodeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="14" startPosition="77" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck1229350096076#()V" />
     <scopeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="16" startPosition="63" endLine="18" endPosition="130" />
-    <scopeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="179">
+    <scopeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="23" startPosition="65" endLine="25" endPosition="148">
       <varInfo nodeId="1229349783966" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1229349783966" fileName="CommandDataflowWithReturn_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -442,15 +442,15 @@
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="40" startPosition="69" endLine="41" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="41" startPosition="116" endLine="42" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="47" startPosition="71" endLine="48" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="48" startPosition="141" endLine="49" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="48" startPosition="141" endLine="49" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="52" startPosition="71" endLine="53" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="53" startPosition="141" endLine="54" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="53" startPosition="141" endLine="54" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="57" startPosition="71" endLine="58" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="58" startPosition="141" endLine="59" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="58" startPosition="141" endLine="59" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="62" startPosition="71" endLine="63" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="63" startPosition="141" endLine="64" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="63" startPosition="141" endLine="64" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="67" startPosition="71" endLine="68" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="68" startPosition="141" endLine="69" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="68" startPosition="141" endLine="69" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="46" startPosition="53" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4246614868164066795#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4246614868164066847#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4246614868164066877#()V" />
@@ -466,19 +466,19 @@
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="28" startPosition="69" endLine="30" endPosition="119" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="34" startPosition="69" endLine="36" endPosition="119" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="40" startPosition="69" endLine="42" endPosition="119" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="47" startPosition="71" endLine="49" endPosition="185">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="47" startPosition="71" endLine="49" endPosition="154">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="52" startPosition="71" endLine="54" endPosition="185">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="52" startPosition="71" endLine="54" endPosition="154">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="57" startPosition="71" endLine="59" endPosition="185">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="57" startPosition="71" endLine="59" endPosition="154">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="62" startPosition="71" endLine="64" endPosition="185">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="62" startPosition="71" endLine="64" endPosition="154">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="67" startPosition="71" endLine="69" endPosition="185">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="67" startPosition="71" endLine="69" endPosition="154">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="46" startPosition="53" endLine="51" endPosition="0" />
@@ -519,11 +519,11 @@
     <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4395293866213260523#()V" />
     <nodeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="14" startPosition="68" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4395293866213260523#()V" />
     <scopeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="127" />
-    <scopeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="185">
+    <scopeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
       <varInfo nodeId="4395293866213195826" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="4395293866213195826" fileName="TestExpectedType_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -535,11 +535,11 @@
     <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4705425356438246964#()V" />
     <nodeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="14" startPosition="64" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck4705425356438246964#()V" />
     <scopeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="123" />
-    <scopeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="185">
+    <scopeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
       <varInfo nodeId="4705425356438246924" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="4705425356438246924" fileName="FinalVarRefs_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -567,23 +567,23 @@
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="64" startPosition="47" endLine="65" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="65" startPosition="116" endLine="66" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="71" startPosition="49" endLine="72" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="72" startPosition="141" endLine="73" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="72" startPosition="141" endLine="73" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="76" startPosition="50" endLine="77" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="77" startPosition="141" endLine="78" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="77" startPosition="141" endLine="78" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="81" startPosition="61" endLine="82" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="82" startPosition="140" endLine="83" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="82" startPosition="140" endLine="83" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="86" startPosition="54" endLine="87" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="87" startPosition="141" endLine="88" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="87" startPosition="141" endLine="88" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="91" startPosition="63" endLine="92" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="92" startPosition="141" endLine="93" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="92" startPosition="141" endLine="93" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="96" startPosition="55" endLine="97" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="97" startPosition="141" endLine="98" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="97" startPosition="141" endLine="98" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="101" startPosition="47" endLine="102" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="102" startPosition="141" endLine="103" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="102" startPosition="141" endLine="103" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="106" startPosition="46" endLine="107" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="107" startPosition="141" endLine="108" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="107" startPosition="141" endLine="108" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="111" startPosition="49" endLine="112" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="112" startPosition="141" endLine="113" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="112" startPosition="141" endLine="113" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="70" startPosition="53" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testBinaryOp#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOp#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="80" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testLeastCommonSuperType#()V" />
@@ -611,31 +611,31 @@
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="52" startPosition="45" endLine="54" endPosition="99" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="58" startPosition="44" endLine="60" endPosition="98" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="64" startPosition="47" endLine="66" endPosition="101" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="71" startPosition="49" endLine="73" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="71" startPosition="49" endLine="73" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="76" startPosition="50" endLine="78" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="76" startPosition="50" endLine="78" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="81" startPosition="61" endLine="83" endPosition="184">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="81" startPosition="61" endLine="83" endPosition="153">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="86" startPosition="54" endLine="88" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="86" startPosition="54" endLine="88" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="91" startPosition="63" endLine="93" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="91" startPosition="63" endLine="93" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="96" startPosition="55" endLine="98" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="96" startPosition="55" endLine="98" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="101" startPosition="47" endLine="103" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="101" startPosition="47" endLine="103" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="106" startPosition="46" endLine="108" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="106" startPosition="46" endLine="108" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="111" startPosition="49" endLine="113" endPosition="185">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="111" startPosition="49" endLine="113" endPosition="154">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="70" startPosition="53" endLine="75" endPosition="0" />
@@ -701,31 +701,31 @@
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="88" startPosition="47" endLine="89" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="89" startPosition="116" endLine="90" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="44" endLine="96" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="96" startPosition="141" endLine="97" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="96" startPosition="141" endLine="97" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="43" endLine="101" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="141" endLine="102" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="101" startPosition="141" endLine="102" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="46" endLine="106" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="141" endLine="107" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="106" startPosition="141" endLine="107" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="46" endLine="111" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="141" endLine="112" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="111" startPosition="141" endLine="112" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="48" endLine="116" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="141" endLine="117" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="116" startPosition="141" endLine="117" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="54" endLine="121" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="141" endLine="122" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="121" startPosition="141" endLine="122" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="56" endLine="126" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="141" endLine="127" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="126" startPosition="141" endLine="127" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="57" endLine="131" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="141" endLine="132" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="131" startPosition="141" endLine="132" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="49" endLine="136" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="141" endLine="137" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="136" startPosition="141" endLine="137" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="50" endLine="141" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="141" endLine="142" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="141" startPosition="141" endLine="142" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="61" endLine="146" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="141" endLine="147" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="146" startPosition="141" endLine="147" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="49" endLine="151" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="141" endLine="152" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="151" startPosition="141" endLine="152" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="49" endLine="156" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="141" endLine="157" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="156" startPosition="141" endLine="157" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="94" startPosition="53" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testDot#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testIf#()V" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="104" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testWhile#()V" />
@@ -765,43 +765,43 @@
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="76" startPosition="59" endLine="78" endPosition="117" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="82" startPosition="47" endLine="84" endPosition="105" />
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="88" startPosition="47" endLine="90" endPosition="105" />
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="44" endLine="97" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="95" startPosition="44" endLine="97" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="43" endLine="102" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="100" startPosition="43" endLine="102" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="46" endLine="107" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="105" startPosition="46" endLine="107" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="46" endLine="112" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="110" startPosition="46" endLine="112" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="48" endLine="117" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="115" startPosition="48" endLine="117" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="54" endLine="122" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="120" startPosition="54" endLine="122" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="56" endLine="127" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="125" startPosition="56" endLine="127" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="57" endLine="132" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="130" startPosition="57" endLine="132" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="49" endLine="137" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="135" startPosition="49" endLine="137" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="50" endLine="142" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="140" startPosition="50" endLine="142" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="61" endLine="147" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="145" startPosition="61" endLine="147" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="49" endLine="152" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="150" startPosition="49" endLine="152" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="49" endLine="157" endPosition="185">
+    <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="155" startPosition="49" endLine="157" endPosition="154">
       <varInfo nodeId="6011730950863071455" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="94" startPosition="53" endLine="99" endPosition="0" />
@@ -865,11 +865,11 @@
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7868761255934329326#()V" />
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="14" startPosition="62" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7868761255934329326#()V" />
     <scopeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="121" />
-    <scopeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="185">
+    <scopeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
       <varInfo nodeId="7868761255934329294" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -881,11 +881,11 @@
     <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7970711249077314345#()V" />
     <nodeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="14" startPosition="64" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7970711249077314345#()V" />
     <scopeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="123" />
-    <scopeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="185">
+    <scopeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
       <varInfo nodeId="7970711249077196600" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="7970711249077196600" fileName="PrivateField_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -897,11 +897,11 @@
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="16" startPosition="68" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="23" startPosition="70" endLine="24" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="24" startPosition="140" endLine="25" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="24" startPosition="140" endLine="25" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck843236768048178247#()V" />
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="14" startPosition="73" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck843236768048178247#()V" />
     <scopeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="16" startPosition="68" endLine="18" endPosition="131" />
-    <scopeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="23" startPosition="70" endLine="25" endPosition="184">
+    <scopeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="23" startPosition="70" endLine="25" endPosition="153">
       <varInfo nodeId="843236768048177679" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
@@ -913,11 +913,11 @@
     <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck9092976468699800071#()V" />
     <nodeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="14" startPosition="71" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck9092976468699800071#()V" />
     <scopeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="130" />
-    <scopeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="185">
+    <scopeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
       <varInfo nodeId="9092976468699800028" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />

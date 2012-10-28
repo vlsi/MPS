@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public final class LastStatementUtil {
   private LastStatementUtil() {
@@ -44,7 +44,7 @@ public final class LastStatementUtil {
     } else
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
       SNode conceptFunction = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-      returnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(conceptFunction);
+      returnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     }
     if (returnType != null && !(SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       canAdjust = true;

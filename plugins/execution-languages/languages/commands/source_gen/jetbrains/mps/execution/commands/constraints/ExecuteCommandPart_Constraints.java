@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
@@ -43,7 +43,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return !(IDeprecatable_Behavior.call_isDeprecated_1224609060727(it));
+            return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDeprecated_1224609060727", new Object[]{}));
           }
         });
       }

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +41,7 @@ public class BuildMpsLayout_Plugin_Constraints extends BaseConstraintsDescriptor
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(node);
+        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getApproximateName_5610619299014531547", new Object[]{});
       }
     });
     return properties;

@@ -9,7 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class ThrowStatement_DataFlow extends DataFlowBuilder {
@@ -21,7 +22,7 @@ public class ThrowStatement_DataFlow extends DataFlowBuilder {
     SNode interrupt = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
     SNode tryCatch = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false);
     if (tryCatch != null && (interrupt == null || ListSequence.fromList(SNodeOperations.getAncestors(tryCatch, null, false)).contains(interrupt))) {
-      for (SNode catchClause : ITryCatchStatement_Behavior.call_getCatchClauses_3718132079121388582(tryCatch)) {
+      for (SNode catchClause : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), tryCatch, "virtual_getCatchClauses_3718132079121388582", new Object[]{})) {
         SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
         if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "throwable", true)), caughtType)) {
           _context.getBuilder().emitJump(_context.getBuilder().before(catchClause));

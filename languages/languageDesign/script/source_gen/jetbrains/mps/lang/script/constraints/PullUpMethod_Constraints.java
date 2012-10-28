@@ -19,7 +19,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
@@ -71,7 +72,7 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
-              return new SimpleScope(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(SLinkOperations.getTarget(ancestor, "oldClassifier", false))).where(new IWhereFilter<SNode>() {
+              return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(ancestor, "oldClassifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
                 }
@@ -105,7 +106,7 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
-              return new SimpleScope(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(SLinkOperations.getTarget(ancestor, "newClassifier", false))).where(new IWhereFilter<SNode>() {
+              return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(ancestor, "newClassifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
                 }

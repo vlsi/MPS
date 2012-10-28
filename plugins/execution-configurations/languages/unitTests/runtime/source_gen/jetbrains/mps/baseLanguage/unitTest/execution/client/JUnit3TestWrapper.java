@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit3TestWrapper(SNode classConcept) {
@@ -50,7 +50,7 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
 
   private static String check_qb7e7i_a0a1(SNode checkedDotOperand, JUnit3TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ((String) BehaviorManager.getInstance().invoke(Object.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+      return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
     }
     return null;
   }

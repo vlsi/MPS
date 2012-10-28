@@ -98,7 +98,7 @@
     <nodeInfo nodeId="2476748692227884949" fileName="TransformatorImpl.java" startLine="193" startPosition="88" endLine="194" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227884952" fileName="TransformatorImpl.java" startLine="195" startPosition="5" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2476748692227884953" fileName="TransformatorImpl.java" startLine="196" startPosition="0" endLine="197" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2476748692227884955" fileName="TransformatorImpl.java" startLine="197" startPosition="70" endLine="198" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2476748692227884955" fileName="TransformatorImpl.java" startLine="197" startPosition="70" endLine="198" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2476748692227884963" fileName="TransformatorImpl.java" startLine="199" startPosition="63" endLine="200" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227884971" fileName="TransformatorImpl.java" startLine="201" startPosition="5" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2476748692227884987" fileName="TransformatorImpl.java" startLine="207" startPosition="39" endLine="208" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1140,7 +1140,7 @@
     <nodeInfo nodeId="2476748692227884682" fileName="TransformatorImpl.java" startLine="134" startPosition="29" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2476748692227884702" fileName="TransformatorImpl.java" startLine="141" startPosition="24" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2476748692227884728" fileName="TransformatorImpl.java" startLine="150" startPosition="49" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2476748692227884961" fileName="TransformatorImpl.java" startLine="198" startPosition="167" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2476748692227884961" fileName="TransformatorImpl.java" startLine="198" startPosition="168" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5984472236404998914" fileName="TransformatorImpl.java" startLine="364" startPosition="60" endLine="367" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2476748692227885885" fileName="TransformatorImpl.java" startLine="471" startPosition="20" endLine="474" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2476748692227886285" fileName="TransformatorImpl.java" startLine="534" startPosition="119" endLine="537" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3451,7 +3451,7 @@
     <nodeInfo nodeId="2476748692227888207" fileName="TransformationUtil.java" startLine="211" startPosition="79" endLine="212" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2476748692227888210" fileName="TransformationUtil.java" startLine="212" startPosition="21" endLine="213" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2476748692227888214" fileName="TransformationUtil.java" startLine="214" startPosition="140" endLine="215" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2476748692227888229" fileName="TransformationUtil.java" startLine="216" startPosition="12" endLine="217" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2476748692227888229" fileName="TransformationUtil.java" startLine="216" startPosition="12" endLine="217" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227888236" fileName="TransformationUtil.java" startLine="218" startPosition="5" endLine="219" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2476748692227888244" fileName="TransformationUtil.java" startLine="223" startPosition="110" endLine="224" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227888291" fileName="TransformationUtil.java" startLine="226" startPosition="95" endLine="227" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3490,15 +3490,15 @@
     <nodeInfo nodeId="2476748692227888548" fileName="TransformationUtil.java" startLine="302" startPosition="159" endLine="303" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="2476748692227888552" fileName="TransformationUtil.java" startLine="303" startPosition="32" endLine="304" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2476748692227888554" fileName="TransformationUtil.java" startLine="304" startPosition="75" endLine="305" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2476748692227888559" fileName="TransformationUtil.java" startLine="306" startPosition="76" endLine="307" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2476748692227888565" fileName="TransformationUtil.java" startLine="307" startPosition="159" endLine="308" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2476748692227888559" fileName="TransformationUtil.java" startLine="306" startPosition="76" endLine="307" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2476748692227888565" fileName="TransformationUtil.java" startLine="307" startPosition="134" endLine="308" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227888597" fileName="TransformationUtil.java" startLine="309" startPosition="14" endLine="310" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2476748692227888601" fileName="TransformationUtil.java" startLine="310" startPosition="42" endLine="311" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2476748692227888610" fileName="TransformationUtil.java" startLine="312" startPosition="158" endLine="313" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2476748692227888610" fileName="TransformationUtil.java" startLine="312" startPosition="185" endLine="313" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227888618" fileName="TransformationUtil.java" startLine="313" startPosition="79" endLine="314" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2476748692227888625" fileName="TransformationUtil.java" startLine="315" startPosition="9" endLine="316" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2476748692227888625" fileName="TransformationUtil.java" startLine="315" startPosition="9" endLine="316" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227888638" fileName="TransformationUtil.java" startLine="317" startPosition="7" endLine="318" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2476748692227888658" fileName="TransformationUtil.java" startLine="319" startPosition="114" endLine="320" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2476748692227888658" fileName="TransformationUtil.java" startLine="319" startPosition="114" endLine="320" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2476748692227888646" fileName="TransformationUtil.java" startLine="321" startPosition="12" endLine="322" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227888664" fileName="TransformationUtil.java" startLine="323" startPosition="5" endLine="324" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2476748692227888672" fileName="TransformationUtil.java" startLine="327" startPosition="57" endLine="328" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3544,7 +3544,7 @@
     <nodeInfo nodeId="2476748692227889118" fileName="TransformationUtil.java" startLine="419" startPosition="109" endLine="420" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2476748692227889123" fileName="TransformationUtil.java" startLine="420" startPosition="123" endLine="421" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227889102" fileName="TransformationUtil.java" startLine="423" startPosition="103" endLine="424" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2476748692227889107" fileName="TransformationUtil.java" startLine="424" startPosition="115" endLine="425" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2476748692227889107" fileName="TransformationUtil.java" startLine="424" startPosition="115" endLine="425" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6030503662138680996" fileName="TransformationUtil.java" startLine="426" startPosition="118" endLine="427" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6030503662138681022" fileName="TransformationUtil.java" startLine="427" startPosition="115" endLine="428" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227889144" fileName="TransformationUtil.java" startLine="430" startPosition="125" endLine="431" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5993,7 +5993,7 @@
     <scopeInfo nodeId="2476748692227888186" fileName="TransformationUtil.java" startLine="202" startPosition="12" endLine="203" endPosition="21" />
     <scopeInfo nodeId="2476748692227888193" fileName="TransformationUtil.java" startLine="207" startPosition="51" endLine="208" endPosition="77" />
     <scopeInfo nodeId="2476748692227888213" fileName="TransformationUtil.java" startLine="214" startPosition="140" endLine="215" endPosition="89" />
-    <scopeInfo nodeId="2476748692227888228" fileName="TransformationUtil.java" startLine="216" startPosition="12" endLine="217" endPosition="177" />
+    <scopeInfo nodeId="2476748692227888228" fileName="TransformationUtil.java" startLine="216" startPosition="12" endLine="217" endPosition="152" />
     <scopeInfo nodeId="2476748692227888243" fileName="TransformationUtil.java" startLine="223" startPosition="110" endLine="224" endPosition="149" />
     <scopeInfo nodeId="2476748692227888290" fileName="TransformationUtil.java" startLine="226" startPosition="95" endLine="227" endPosition="81" />
     <scopeInfo nodeId="2476748692227888257" fileName="TransformationUtil.java" startLine="228" startPosition="108" endLine="229" endPosition="83" />
@@ -6016,7 +6016,7 @@
     <scopeInfo nodeId="2476748692227888491" fileName="TransformationUtil.java" startLine="293" startPosition="102" endLine="294" endPosition="171" />
     <scopeInfo nodeId="2476748692227888520" fileName="TransformationUtil.java" startLine="297" startPosition="102" endLine="298" endPosition="50" />
     <scopeInfo nodeId="2476748692227888532" fileName="TransformationUtil.java" startLine="299" startPosition="14" endLine="300" endPosition="210" />
-    <scopeInfo nodeId="2476748692227888657" fileName="TransformationUtil.java" startLine="319" startPosition="114" endLine="320" endPosition="252" />
+    <scopeInfo nodeId="2476748692227888657" fileName="TransformationUtil.java" startLine="319" startPosition="114" endLine="320" endPosition="253" />
     <scopeInfo nodeId="2476748692227888645" fileName="TransformationUtil.java" startLine="321" startPosition="12" endLine="322" endPosition="58" />
     <scopeInfo nodeId="2476748692227888691" fileName="TransformationUtil.java" startLine="333" startPosition="79" endLine="334" endPosition="241" />
     <scopeInfo nodeId="2476748692227888710" fileName="TransformationUtil.java" startLine="337" startPosition="67" endLine="338" endPosition="207" />
@@ -6170,14 +6170,14 @@
     <scopeInfo nodeId="2476748692227888558" fileName="TransformationUtil.java" startLine="306" startPosition="76" endLine="308" endPosition="189">
       <varInfo nodeId="2476748692227888560" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="2476748692227888609" fileName="TransformationUtil.java" startLine="312" startPosition="158" endLine="314" endPosition="142" />
+    <scopeInfo nodeId="2476748692227888609" fileName="TransformationUtil.java" startLine="312" startPosition="185" endLine="314" endPosition="142" />
     <scopeInfo nodeId="2476748692227888773" fileName="TransformationUtil.java" startLine="350" startPosition="382" endLine="352" endPosition="19" />
     <scopeInfo nodeId="2476748692227888828" fileName="TransformationUtil.java" startLine="358" startPosition="389" endLine="360" endPosition="19" />
     <scopeInfo nodeId="2476748692227888848" fileName="TransformationUtil.java" startLine="361" startPosition="389" endLine="363" endPosition="19" />
     <scopeInfo nodeId="2476748692227889117" fileName="TransformationUtil.java" startLine="419" startPosition="109" endLine="421" endPosition="84">
       <varInfo nodeId="2476748692227889119" varName="methodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2476748692227889101" fileName="TransformationUtil.java" startLine="423" startPosition="103" endLine="425" endPosition="170">
+    <scopeInfo nodeId="2476748692227889101" fileName="TransformationUtil.java" startLine="423" startPosition="103" endLine="425" endPosition="171">
       <varInfo nodeId="2476748692227889103" varName="conceptFunction" />
     </scopeInfo>
     <scopeInfo nodeId="6030503662138680945" fileName="TransformationUtil.java" startLine="426" startPosition="118" endLine="428" endPosition="279">
@@ -6819,7 +6819,7 @@
       <varInfo nodeId="2476748692227887898" varName="expression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227888028" fileName="TransformationUtil.java" startLine="160" startPosition="72" endLine="167" endPosition="17" />
-    <scopeInfo nodeId="2476748692227888596" fileName="TransformationUtil.java" startLine="309" startPosition="14" endLine="316" endPosition="189">
+    <scopeInfo nodeId="2476748692227888596" fileName="TransformationUtil.java" startLine="309" startPosition="14" endLine="316" endPosition="164">
       <varInfo nodeId="2476748692227888598" varName="rootClassifier" />
       <varInfo nodeId="2476748692227888602" varName="suffix" />
     </scopeInfo>

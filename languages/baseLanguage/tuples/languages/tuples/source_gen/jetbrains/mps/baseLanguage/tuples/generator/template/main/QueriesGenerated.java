@@ -6,13 +6,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Keys;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Values;
@@ -55,7 +54,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_8836955480108787719(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    Object idx = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(_context.getNode(), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
     List<SNode> components = SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
     return idx instanceof Integer && ListSequence.fromList(components).count() > (Integer) idx && SNodeOperations.isInstanceOf(ListSequence.fromList(components).getElement((Integer) idx), "jetbrains.mps.baseLanguage.structure.PrimitiveType");
   }
@@ -85,19 +84,19 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238919799353(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.Tuples".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_INTERFACES_GENERATED) == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.Tuples".equals(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{})) && _context.getSessionObject(Keys.RUNTIME_INTERFACES_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1238927275010(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_IMPL_GENERATED) == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{})) && _context.getSessionObject(Keys.RUNTIME_IMPL_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1238931738408(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_FROM_GENERATED) == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{})) && _context.getSessionObject(Keys.RUNTIME_FROM_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_1238950442311(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode())) && _context.getSessionObject(Keys.RUNTIME_EMPTY_GENERATED) == null;
+    return "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple".equals(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{})) && _context.getSessionObject(Keys.RUNTIME_EMPTY_GENERATED) == null;
   }
 
   public static boolean baseMappingRule_Condition_6392574240232875552(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -141,11 +140,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8836955480108787905(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_" + Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(_context.getNode(), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    return "_" + BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
   }
 
   public static Object propertyMacro_GetPropertyValue_8836955480108787964(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_" + Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(_context.getNode(), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    return "_" + BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
   }
 
   public static Object propertyMacro_GetPropertyValue_1241263972196(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -203,11 +202,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2682363017137697551(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "classifier", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2682363017137737229(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "tupleDeclaration", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "tupleDeclaration", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2682363017137795876(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -223,7 +222,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1241018440944(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), "classifier", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1239636922662(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -345,7 +344,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1238938164854(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_" + Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    return "_" + BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
   }
 
   public static Object referenceMacro_GetReferent_1241263972236(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -740,12 +739,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8836955480108787790(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    Object idx = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(_context.getNode(), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).getElement((Integer) idx);
   }
 
   public static SNode sourceNodeQuery_8836955480108787840(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    Object idx = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(_context.getNode(), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).getElement((Integer) idx);
   }
 
@@ -754,7 +753,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8836955480108788054(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    Object idx = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(_context.getNode(), "index", true), SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule());
+    Object idx = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(_context.getNode(), "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(_context.getNode()).getModelDescriptor().getModule()});
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tuple", true)), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).getElement((Integer) idx);
   }
 

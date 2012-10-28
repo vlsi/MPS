@@ -21,7 +21,7 @@
     <nodeInfo nodeId="7517860079983491883" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="34" startPosition="59" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7517860079983492007" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="39" startPosition="235" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7517860079983491925" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="43" startPosition="144" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7517860079983491950" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="48" startPosition="140" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7517860079983491950" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="48" startPosition="213" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7517860079983491853" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="21" startPosition="76" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="7517860079983491853" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
     <nodeInfo nodeId="7517860079983491853" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
@@ -41,7 +41,7 @@
     <scopeInfo nodeId="7517860079983491926" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="44" startPosition="165" endLine="45" endPosition="23" />
     <scopeInfo nodeId="7517860079983491959" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="49" startPosition="123" endLine="50" endPosition="27" />
     <scopeInfo nodeId="7517860079983491853" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="64" startPosition="42" endLine="65" endPosition="20" />
-    <scopeInfo nodeId="7517860079983491949" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="48" startPosition="140" endLine="51" endPosition="13" />
+    <scopeInfo nodeId="7517860079983491949" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="48" startPosition="213" endLine="51" endPosition="13" />
     <scopeInfo nodeId="7517860079983491855" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="58" startPosition="52" endLine="61" endPosition="187">
       <varInfo nodeId="7517860079983491857" varName="methodCall" />
     </scopeInfo>

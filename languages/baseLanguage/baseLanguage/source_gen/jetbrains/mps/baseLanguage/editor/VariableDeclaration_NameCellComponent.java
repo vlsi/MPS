@@ -19,13 +19,12 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
@@ -76,7 +75,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext, IScope scope) {
     boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.Type")) {
-      return condition && !(Type_Behavior.call_hasMissingParameters_3508583411997314206(SLinkOperations.getTarget(node, "type", true)));
+      return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "type", true), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));
     } else {
       return condition;
     }
@@ -90,11 +89,11 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
-        List<String> names = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
+        List<String> names = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
         Project project = operationContext.getProject();
         for (String name : names) {
-          String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(node, project);
-          String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(node, project);
+          String prefix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPrefix_3012473318495495520", new Object[]{project});
+          String suffix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSuffix_3012473318495499856", new Object[]{project});
           String mainName = ((prefix == null || prefix.length() == 0) ?
             name :
             NameUtil.capitalize(name)

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -45,8 +45,8 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
           SNode fieldType = SLinkOperations.getTarget(fieldDecl, "type", true);
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType") && SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
             Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
-            IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
-            fieldType = IGenericType_Behavior.call_expandGenerics_4107091686347199582(SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), subs);
+            BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
           }
 
           {

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AnnotationInstanceParameterInformationQuery extends ParametersInformation<SNode> {
   public AnnotationInstanceParameterInformationQuery() {
@@ -41,7 +41,7 @@ public class AnnotationInstanceParameterInformationQuery extends ParametersInfor
         styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(annotationMethod, "returnType", true) != null) {
-        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(annotationMethod, "returnType", true)));
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(annotationMethod, "returnType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         styledText.append("???");
       }

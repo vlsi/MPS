@@ -9,7 +9,7 @@ import jetbrains.mps.ui.multiplexing.VariantsUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
-import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
@@ -22,6 +22,6 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_1251509410704075124(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setTarget(_context.getOutputNode(), "template", HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()), false);
+    SLinkOperations.setTarget(_context.getOutputNode(), "template", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()}), false);
   }
 }

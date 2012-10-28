@@ -57,7 +57,7 @@
     <nodeInfo nodeId="4544608336420687769" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="62" startPosition="142" endLine="63" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4544608336420687730" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="63" startPosition="214" endLine="64" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6036237525966325251" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="64" startPosition="207" endLine="65" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6036237525966325260" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="65" startPosition="121" endLine="66" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966325260" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="65" startPosition="121" endLine="66" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="70" startPosition="61" endLine="71" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="75" startPosition="7" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6036237525966325310" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="79" startPosition="148" endLine="80" endPosition="610" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -80,7 +80,7 @@
     <scopeInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="70" startPosition="61" endLine="71" endPosition="58" />
     <scopeInfo nodeId="6036237525966325226" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="79" startPosition="148" endLine="80" endPosition="610" />
     <scopeInfo nodeId="6036237525966325224" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="6036237525966325250" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="62" startPosition="142" endLine="66" endPosition="160">
+    <scopeInfo nodeId="6036237525966325250" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="62" startPosition="142" endLine="66" endPosition="232">
       <varInfo nodeId="4544608336420687731" varName="classifier" />
       <varInfo nodeId="6036237525966325252" varName="enclosingClass" />
       <varInfo nodeId="4544608336420687770" varName="thisNode" />

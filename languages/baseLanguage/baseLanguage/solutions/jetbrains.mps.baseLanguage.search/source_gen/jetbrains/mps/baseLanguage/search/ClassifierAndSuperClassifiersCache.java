@@ -26,7 +26,7 @@ import java.util.LinkedHashSet;
 import java.util.Iterator;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 @Deprecated
@@ -391,7 +391,7 @@ forEachInAllMethods:
           result.append(',');
         }
         if (type != null) {
-          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
+          result.append(BehaviorReflection.invokeVirtual(String.class, type, "virtual_getErasureSignature_1213877337313", new Object[]{}));
         } else {
           result.append("");
         }

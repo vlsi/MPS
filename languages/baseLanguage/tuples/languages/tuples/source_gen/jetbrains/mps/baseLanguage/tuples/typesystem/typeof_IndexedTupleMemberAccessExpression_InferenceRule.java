@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,7 +26,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
   }
 
   public void applyRule(final SNode mae, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(mae, "index", true)))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(mae, "index", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", null, errorTarget);
     }
@@ -35,8 +35,8 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857999186", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode) new typeof_IndexedTupleMemberAccessExpression_InferenceRule.QuotationClass_290su0_a0a1a0().createNode(typeCheckingContext), false, true, _info_12389875345);
     }
-    if (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(mae, "index", true))) {
-      Object idxValue = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(mae, "index", true), SNodeOperations.getModel(SLinkOperations.getTarget(mae, "index", true)).getModelDescriptor().getModule());
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(mae, "index", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
+      Object idxValue = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(mae, "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(SLinkOperations.getTarget(mae, "index", true)).getModelDescriptor().getModule()});
       final int index = (idxValue instanceof Integer ?
         ((Integer) idxValue).intValue() :
         -1

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class VariableReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_3k454j_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "7125334522320417175");
@@ -45,7 +45,7 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
             List<SNode> nodes = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", true);
             List<SNode> result = new ArrayList<SNode>();
             for (SNode node : nodes) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(VariableOwner_Behavior.call_getVariables_8981808925914841576(node)));
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getVariables_8981808925914841576", new Object[]{})));
             }
             return result;
           }

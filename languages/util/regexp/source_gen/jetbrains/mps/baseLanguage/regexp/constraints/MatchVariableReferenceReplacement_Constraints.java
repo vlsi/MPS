@@ -19,7 +19,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MatchVariableReferenceReplacement_Constraints extends BaseConstraintsDescriptor {
@@ -60,7 +60,7 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
             List<SNode> matches = new ArrayList<SNode>();
             SNode top = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", true, false);
             if ((top != null)) {
-              Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(top, "search", true), matches);
+              BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(top, "search", true), "virtual_getString_1222432436326", new Object[]{matches});
             }
             return matches;
           }

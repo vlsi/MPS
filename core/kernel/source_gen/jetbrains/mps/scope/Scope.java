@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -69,7 +69,7 @@ public abstract class Scope {
     SNode prev = fromChild;
     while (curr != null) {
       if (SNodeOperations.isInstanceOf(curr, "jetbrains.mps.lang.core.structure.ScopeProvider")) {
-        Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(curr, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Class[]{SNode.class, SNode.class, SNode.class}, kind, prev));
+        Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(curr, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Object[]{kind, prev});
         if (scope != null) {
           return scope;
         }
@@ -85,7 +85,7 @@ public abstract class Scope {
    */
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.ScopeProvider")) {
-      Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_7722139651431880752", new Class[]{SNode.class, SNode.class, String.class, Integer.TYPE}, kind, role, index));
+      Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
       if (scope != null) {
         return scope;
       }

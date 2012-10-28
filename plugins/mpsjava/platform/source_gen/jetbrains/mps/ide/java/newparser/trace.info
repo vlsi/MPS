@@ -3443,7 +3443,7 @@
     <nodeInfo nodeId="6072020170586257594" fileName="JavaParser.java" startLine="247" startPosition="53" endLine="248" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8504030010051279153" fileName="JavaParser.java" startLine="249" startPosition="57" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6072020170586273153" fileName="JavaParser.java" startLine="250" startPosition="0" endLine="251" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6072020170586257636" fileName="JavaParser.java" startLine="251" startPosition="34" endLine="252" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6072020170586257636" fileName="JavaParser.java" startLine="251" startPosition="34" endLine="252" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8504030010051279150" fileName="JavaParser.java" startLine="253" startPosition="28" endLine="254" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8504030010051279154" fileName="JavaParser.java" startLine="255" startPosition="9" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8504030010051279068" fileName="JavaParser.java" startLine="258" startPosition="29" endLine="259" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3477,7 +3477,7 @@
     <nodeInfo nodeId="586875493276852864" fileName="JavaParser.java" startLine="202" startPosition="12" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3493766494546492336" fileName="JavaParser.java" startLine="211" startPosition="37" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3493766494546492414" fileName="JavaParser.java" startLine="230" startPosition="27" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8504030010051279121" fileName="JavaParser.java" startLine="252" startPosition="245" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8504030010051279121" fileName="JavaParser.java" startLine="252" startPosition="246" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4901369180371273333" fileName="JavaParser.java" startLine="268" startPosition="70" endLine="271" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2229106483906299090" fileName="JavaParser.java" startLine="284" startPosition="32" endLine="287" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3908372348891050631" fileName="JavaParser.java" startLine="160" startPosition="122" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/ide/java/newparser/ASTConverter/CodeBlock;Ljetbrains/mps/ide/java/newparser/ASTConverter/CodeBlock;)I" />

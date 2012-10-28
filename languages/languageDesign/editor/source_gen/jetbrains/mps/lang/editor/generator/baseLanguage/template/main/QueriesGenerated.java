@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior;
@@ -13,7 +13,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
@@ -21,11 +20,9 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
@@ -35,9 +32,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
-import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.Set;
@@ -58,7 +53,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_7533883740977705975(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && !(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(_context.getNode(), "query", true)));
+    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_isFunction_1225463329531", new Object[]{}));
   }
 
   public static boolean baseMappingRule_Condition_7533883740977705993(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -66,7 +61,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_7533883740977706005(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(_context.getNode(), "query", true));
+    return (SLinkOperations.getTarget(_context.getNode(), "query", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_isFunction_1225463329531", new Object[]{});
   }
 
   public static boolean baseMappingRule_Condition_7533883740977706124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -182,7 +177,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1767562947360483777(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CellModel_WithRole_Behavior.call_getRoleForCell_1216377898846(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getRoleForCell_1216377898846", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1210365041467(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -281,11 +276,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2452012055413885362(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CellModel_WithRole_Behavior.call_getCellProviderClassName_1216378357889(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getCellProviderClassName_1216378357889", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1212799753486(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CellModel_WithRole_Behavior.call_getRoleForCell_1216377898846(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getRoleForCell_1216377898846", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1183066536097(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -293,7 +288,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1214493579975(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "<no " + CellModel_WithRole_Behavior.call_getRoleForCell_1216377898846(_context.getNode()) + ">";
+    return "<no " + BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getRoleForCell_1216377898846", new Object[]{}) + ">";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210363886097(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -382,7 +377,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1200437135988(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedProperty = CellMenuUtil.getEditedFeature(_context.getNode());
     String propertyName = editedProperty.getName();
     String result = name + "_" + propertyName + "_cellMenu";
@@ -391,7 +386,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1184144008723(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedProperty = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedProperty, "name") + "_postfixCellMenu";
     return _context.createUniqueName(result, null);
@@ -410,14 +405,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210379154130(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_customReplace_cellMenu";
     return _context.createUniqueName(result, null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210380392692(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
     return _context.createUniqueName(result, null);
@@ -425,7 +420,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1184144840586(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String editedConceptName = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String editedConceptName = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String name = editedConceptName + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
     return _context.createUniqueName(name, null);
@@ -433,7 +428,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210380040272(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
     return _context.createUniqueName(result, null);
@@ -449,7 +444,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210380199307(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
     return _context.createUniqueName(result, null);
@@ -457,7 +452,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210380235683(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
     return _context.createUniqueName(result, null);
@@ -465,7 +460,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210379467196(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_generic_cellMenu";
     return _context.createUniqueName(result, null);
   }
@@ -476,14 +471,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210379574199(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_generic_cellMenu";
     return _context.createUniqueName(result, null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210379733937(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(component), "name");
+    String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_component_cellMenu";
     return _context.createUniqueName(result, null);
   }
@@ -506,7 +501,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7533883740977706505(final IOperationContext operationContext, final PropertyMacroContext _context) {
     try {
-      return Integer.parseInt(IQueryFunction_Color_Behavior.call_getRGBValue_1225468086082(SLinkOperations.getTarget(_context.getNode(), "query", true)), 16);
+      return Integer.parseInt(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_getRGBValue_1225468086082", new Object[]{}), 16);
     } catch (NumberFormatException nfe) {
       return 0;
     }
@@ -641,7 +636,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5170495790389308440(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_createCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
+    return QueriesUtil.getUnicName(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_createCellId_1216737839993", new Object[]{_context}), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
 
   public static Object propertyMacro_GetPropertyValue_5170495790389308466(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -653,11 +648,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5913000247864739362(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5913000247864923130(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_996730828437274956(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -673,7 +668,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5102468593878051201(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_4755152624710446386(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1294,7 +1289,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5170495790389308453(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(EditorCellModel_Behavior.call_isCellIdInitialized_1229948571177(_context.getNode()));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isCellIdInitialized_1229948571177", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_5170495790389308488(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1522,11 +1517,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7533883740977706495(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7533883740977706405(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1198505160491(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1598,11 +1593,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3297276508416497773(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false), "virtual_toBaseLanguageType_1213877229718", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_3297276508416540907(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false), "virtual_toBaseLanguageType_1213877229718", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1225901798862(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1610,7 +1605,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1226676047185(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1229342979273(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1626,15 +1621,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7533883740977706431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7533883740977706597(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7533883740977706533(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_5913000247864739386(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

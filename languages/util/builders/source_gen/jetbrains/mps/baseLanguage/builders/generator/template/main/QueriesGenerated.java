@@ -11,6 +11,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import java.util.Set;
@@ -45,7 +46,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7057666463730728106(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Builder_Behavior.call_getResultType_7057666463730718251(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7057666463730783295(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -53,7 +54,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8009360033694992840(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Builder_Behavior.call_getResultType_7057666463730718251(_context.getNode());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_8009360033695057975(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -79,14 +80,14 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_5867364036373952047(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode context = Builder_Behavior.call_getContextBuilder_7057666463730306577(_context.getNode());
     SNode ref = new QueriesGenerated.QuotationClass_x583g4_a0a1a41().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(context, "builderVar"));
-    return Builder_Behavior.call_getCreatorExpression_7057666463730727863(_context.getNode(), ref);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getCreatorExpression_7057666463730727863", new Object[]{ref});
   }
 
   public static SNode mapSrcMacro_mapper_5867364036373950596(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode childRef = new QueriesGenerated.QuotationClass_x583g4_a0a0a51().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "builder", true), "builderVar"));
     SNode parentBuilder = Builder_Behavior.call_getContextBuilder_7057666463730306577(SLinkOperations.getTarget(_context.getNode(), "builder", true));
     SNode parentRef = new QueriesGenerated.QuotationClass_x583g4_a0a2a51().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
-    return Builder_Behavior.call_getAttachStatement_7288041816792215495(parentBuilder, SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parentBuilder, "virtual_getAttachStatement_7288041816792215495", new Object[]{SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef});
   }
 
   public static class QuotationClass_x583g4_a0a1a41 {

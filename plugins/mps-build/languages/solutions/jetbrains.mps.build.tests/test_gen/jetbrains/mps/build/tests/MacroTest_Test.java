@@ -8,7 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -62,50 +63,50 @@ public class MacroTest_Test extends BaseTransformationTest4 {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.build.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")));
+      Assert.assertTrue(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.build.structure.BuildFolderMacro")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")));
     }
 
     public void test_onlySeePreviouslyDeclaredMacro() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.build.structure.BuildFolderMacro")));
+      Assert.assertFalse(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.build.structure.BuildFolderMacro")));
     }
 
     public void test_doNotSeeItsefl() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")));
+      Assert.assertFalse(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")));
     }
 
     public void test_doNotSeeImported() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")));
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.build.structure.BuildFolderMacro")));
+      Assert.assertFalse(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.build.structure.BuildFolderMacro")));
+      Assert.assertFalse(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.build.structure.BuildFolderMacro")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.build.structure.BuildFolderMacro")));
     }
 
     public void test_seeImportedVariableInScope() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("384280137912153739"), "jetbrains.mps.build.structure.BuildVarRefStringPart")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), "jetbrains.mps.build.structure.BuildVariableMacro")));
+      Assert.assertTrue(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("384280137912153739"), "jetbrains.mps.build.structure.BuildVarRefStringPart")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), "jetbrains.mps.build.structure.BuildVariableMacro")));
     }
 
     public void test_doNotSeeForwardVariabletInScope() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("384280137912153758"), "jetbrains.mps.build.structure.BuildVarRefStringPart")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.build.structure.BuildVariableMacro")));
+      Assert.assertFalse(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("384280137912153758"), "jetbrains.mps.build.structure.BuildVarRefStringPart")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.build.structure.BuildVariableMacro")));
     }
 
     public void test_seeBackwardVariableInScope() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(Sequence.fromIterable(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("384280137912153762"), "jetbrains.mps.build.structure.BuildVarRefStringPart")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.build.structure.BuildVariableMacro")));
+      Assert.assertTrue(Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.build.structure.BuildProject"), "virtual_getScope_3734116213129936182", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), SNodeOperations.cast(this.getNodeById("384280137912153762"), "jetbrains.mps.build.structure.BuildVarRefStringPart")}).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.build.structure.BuildVariableMacro")));
     }
   }
 }

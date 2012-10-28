@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -74,7 +74,7 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
   }
 
   public void setTargetConcept(SNode targetConcept) {
-    myTargetConcept = ((String) BehaviorManager.getInstance().invoke(Object.class, targetConcept, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    myTargetConcept = BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> getAcceptor() {

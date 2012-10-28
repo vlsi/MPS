@@ -4020,7 +4020,7 @@
     <unitInfo nodeId="4146564171992617065" fileName="TemplateconvertMult.java" startLine="19" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateconvertMult" />
   </root>
   <root nodeId="5857536350883030947" modelId="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)">
-    <nodeInfo nodeId="5857536350883039221" fileName="QueriesGenerated.java" startLine="77" startPosition="154" endLine="78" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5857536350883039221" fileName="QueriesGenerated.java" startLine="77" startPosition="154" endLine="78" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="22" startPosition="75" endLine="23" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_nofsa1_a0a0a1a2" />
     <nodeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="23" startPosition="236" endLine="24" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_nofsa1_a0a0a1a3a1a2" />
     <nodeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="24" startPosition="240" endLine="25" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_nofsa1_a0a0a1a4a1a2" />
@@ -4114,7 +4114,7 @@
     <nodeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="69" startPosition="7" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="49" startPosition="127" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="47" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="5857536350883039220" fileName="QueriesGenerated.java" startLine="77" startPosition="154" endLine="78" endPosition="107" />
+    <scopeInfo nodeId="5857536350883039220" fileName="QueriesGenerated.java" startLine="77" startPosition="154" endLine="78" endPosition="155" />
     <scopeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="34" startPosition="40" endLine="35" endPosition="23" />
     <scopeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="38" startPosition="41" endLine="39" endPosition="186" />
     <scopeInfo nodeId="5857536350883030947" fileName="Templateprocess42.java" startLine="65" startPosition="29" endLine="66" endPosition="52" />

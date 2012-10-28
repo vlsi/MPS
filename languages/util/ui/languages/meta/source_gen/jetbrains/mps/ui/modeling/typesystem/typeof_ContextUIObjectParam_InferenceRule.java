@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -24,7 +24,7 @@ public class typeof_ContextUIObjectParam_InferenceRule extends AbstractInference
   public void applyRule(final SNode param, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode ctx = SLinkOperations.getTarget(SNodeOperations.getAncestor(param, "jetbrains.mps.ui.modeling.structure.UIObjectFactory", false, false), "context", true);
     if ((SLinkOperations.getTarget(ctx, "uiObject", false) != null)) {
-      SNode ctpl = HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(ctx, "uiObject", false), SNodeOperations.getModel(ctx), GlobalScope.getInstance());
+      SNode ctpl = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ctx, "uiObject", false), "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(ctx), GlobalScope.getInstance()});
       {
         SNode _nodeToCheck_1029348928467 = param;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739191439", 0, null);

@@ -10,14 +10,12 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 
@@ -62,7 +60,7 @@ public class MembersPopulatingContext {
   }
 
   public boolean enterClassifierInternal(SNode classifierType) {
-    SNode classifier = IClassifierType_Behavior.call_getClassifier_7405920559687237513(classifierType);
+    SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
 
     // recursion preventing 
     if (classifiers.contains(classifier)) {
@@ -71,9 +69,9 @@ public class MembersPopulatingContext {
     classifiers.add(classifier);
 
     // set types variables 
-    Iterable<SNode> typeParams = IClassifierType_Behavior.call_getTypeParameters_7405920559687237518(classifierType);
+    Iterable<SNode> typeParams = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{});
     if (Sequence.fromIterable(typeParams).isNotEmpty()) {
-      Iterator<SNode> typeVars = Sequence.fromIterable(IClassifier_Behavior.call_getTypeVariables_7405920559687237503(classifier)).iterator();
+      Iterator<SNode> typeVars = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "virtual_getTypeVariables_7405920559687237503", new Object[]{})).iterator();
       for (SNode typeParm : typeParams) {
         if (!(typeVars.hasNext())) {
           break;
@@ -97,7 +95,7 @@ public class MembersPopulatingContext {
   }
 
   public void exitClassifierInternal(SNode classifier) {
-    assert classifiers.pop() == ((SNode) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class}));
+    assert classifiers.pop() == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getClassifier_7405920559687237513", new Object[]{});
   }
 
   public boolean isPackageProtectedVisible() {

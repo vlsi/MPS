@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.io.File;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
@@ -63,7 +63,7 @@ public class CustomMPSApplication_Configuration_RunProfileState implements RunPr
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode mpsbuild = ListSequence.fromList(SNodeOperations.getDescendants(layout, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first();
-        isMPSBuildIncluded.value = ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, mpsbuild, "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, configuration));
+        isMPSBuildIncluded.value = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, mpsbuild, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "call_included_1213877333807", new Object[]{configuration});
       }
     });
 

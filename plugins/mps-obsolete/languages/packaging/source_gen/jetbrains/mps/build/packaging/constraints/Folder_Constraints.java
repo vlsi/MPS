@@ -10,8 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.packaging.behavior.Path_Behavior;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class Folder_Constraints extends BaseConstraintsDescriptor {
   public Folder_Constraints() {
@@ -31,12 +30,12 @@ public class Folder_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
         if ((SLinkOperations.getTarget(node, "sourcePath", true) != null) && ((SLinkOperations.getTarget(node, "title", true) == null))) {
-          return Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true));
+          return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "sourcePath", true), "virtual_getName_1221141245424", new Object[]{});
         }
         if ((SLinkOperations.getTarget(node, "title", true) == null)) {
           return "";
         }
-        return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(node, "title", true));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "title", true), "virtual_getValue_1213877173054", new Object[]{});
       }
     });
     return properties;

@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class TemplateDeclarationParameterInformationQuery extends ParametersInformation<SNode> {
   public TemplateDeclarationParameterInformationQuery() {
@@ -62,7 +62,7 @@ public class TemplateDeclarationParameterInformationQuery extends ParametersInfo
         styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(param, "type", true) != null) {
-        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(param, "type", true)));
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         styledText.append("???");
       }

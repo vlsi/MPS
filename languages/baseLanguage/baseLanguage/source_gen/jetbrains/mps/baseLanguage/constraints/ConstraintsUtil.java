@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ConstraintsUtil {
   private static Set<String> javaKeywordsAndConstants = SetSequence.fromSetAndArray(new HashSet<String>(), new String[]{"abstract", "continue", "for", "new", "switch", "assert", "default", "if", "package", "synchronized", "boolean", "do", "goto", "private", "this", "break", "double", "implements", "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum", "instanceof", "return", "transient", "catch", "extends", "int", "short", "try", "char", "final", "interface", "static", "void", "class", "finally", "long", "strictfp", "volatile", "const", "float", "native", "super", "while", "true", "false", "null"});
@@ -23,7 +23,7 @@ public class ConstraintsUtil {
     }
     return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(ClassifierMember_Behavior.call_isStatic_8986964027630462944(it));
+        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_8986964027630462944", new Object[]{}));
       }
     }).isNotEmpty();
   }

@@ -379,7 +379,7 @@
     <nodeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4228794276713909369" fileName="LinkRefQualifier_Constraints.java" startLine="41" startPosition="142" endLine="42" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906110183022538952" fileName="LinkRefQualifier_Constraints.java" startLine="42" startPosition="158" endLine="43" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906110183022538952" fileName="LinkRefQualifier_Constraints.java" startLine="42" startPosition="158" endLine="43" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="47" startPosition="61" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkRefQualifier_Constraints#()V" />
@@ -393,7 +393,7 @@
     <scopeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="23" startPosition="41" endLine="24" endPosition="66" />
     <scopeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
     <scopeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="47" startPosition="61" endLine="48" endPosition="58" />
-    <scopeInfo nodeId="1213104859123" fileName="LinkRefQualifier_Constraints.java" startLine="41" startPosition="142" endLine="43" endPosition="122">
+    <scopeInfo nodeId="1213104859123" fileName="LinkRefQualifier_Constraints.java" startLine="41" startPosition="142" endLine="43" endPosition="187">
       <varInfo nodeId="4228794276713909370" varName="qualifierContainer" />
     </scopeInfo>
     <scopeInfo nodeId="1213104859120" fileName="LinkRefQualifier_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />

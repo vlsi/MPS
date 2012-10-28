@@ -4773,7 +4773,7 @@
   </root>
   <root nodeId="4347515475159511344" modelId="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)">
     <nodeInfo nodeId="4347515475159511353" fileName="InvokeFunctionOperation_parameters.java" startLine="19" startPosition="78" endLine="20" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4347515475159511382" fileName="InvokeFunctionOperation_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4347515475159511382" fileName="InvokeFunctionOperation_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4347515475159511380" fileName="InvokeFunctionOperation_parameters.java" startLine="27" startPosition="98" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4347515475159511344" fileName="InvokeFunctionOperation_parameters.java" startLine="15" startPosition="86" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeFunctionOperation_parameters#()V" />
     <nodeInfo nodeId="4347515475159511344" fileName="InvokeFunctionOperation_parameters.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/Iterable;" />
@@ -4781,7 +4781,7 @@
     <nodeInfo nodeId="4347515475159511344" fileName="InvokeFunctionOperation_parameters.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMethodCurrent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="4347515475159511344" fileName="InvokeFunctionOperation_parameters.java" startLine="16" startPosition="47" endLine="16" endPosition="47" />
     <scopeInfo nodeId="4347515475159511347" fileName="InvokeFunctionOperation_parameters.java" startLine="19" startPosition="78" endLine="20" endPosition="213" />
-    <scopeInfo nodeId="4347515475159511349" fileName="InvokeFunctionOperation_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="96" />
+    <scopeInfo nodeId="4347515475159511349" fileName="InvokeFunctionOperation_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="144" />
     <scopeInfo nodeId="4347515475159511351" fileName="InvokeFunctionOperation_parameters.java" startLine="27" startPosition="98" endLine="28" endPosition="16" />
     <scopeInfo nodeId="4347515475159511344" fileName="InvokeFunctionOperation_parameters.java" startLine="15" startPosition="86" endLine="17" endPosition="3" />
     <scopeInfo nodeId="4347515475159511344" fileName="InvokeFunctionOperation_parameters.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
@@ -4803,7 +4803,7 @@
   </root>
   <root nodeId="4347515475159511413" modelId="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)">
     <nodeInfo nodeId="4347515475159511422" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="19" startPosition="78" endLine="20" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4347515475159511448" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4347515475159511448" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4347515475159511455" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="27" startPosition="98" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4347515475159511413" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="15" startPosition="94" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompactInvokeFunctionExpression_parameters#()V" />
     <nodeInfo nodeId="4347515475159511413" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/Iterable;" />
@@ -4811,7 +4811,7 @@
     <nodeInfo nodeId="4347515475159511413" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMethodCurrent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="4347515475159511413" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="16" startPosition="55" endLine="16" endPosition="55" />
     <scopeInfo nodeId="4347515475159511416" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="19" startPosition="78" endLine="20" endPosition="207" />
-    <scopeInfo nodeId="4347515475159511418" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="96" />
+    <scopeInfo nodeId="4347515475159511418" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="23" startPosition="137" endLine="24" endPosition="144" />
     <scopeInfo nodeId="4347515475159511420" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="27" startPosition="98" endLine="28" endPosition="16" />
     <scopeInfo nodeId="4347515475159511413" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="15" startPosition="94" endLine="17" endPosition="3" />
     <scopeInfo nodeId="4347515475159511413" fileName="CompactInvokeFunctionExpression_parameters.java" startLine="18" startPosition="0" endLine="22" endPosition="0">

@@ -4,7 +4,7 @@ package jetbrains.mps.typesystemEngine.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CoerceUtil {
   public CoerceUtil() {
@@ -15,7 +15,7 @@ public class CoerceUtil {
       return true;
     }
     return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.Type") ?
-      ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_canBeCoerced_6321644624958501287", new Class[]{SNode.class, String.class}, conceptFqName)) :
+      BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_canBeCoerced_6321644624958501287", new Object[]{conceptFqName}) :
       true
     );
   }

@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -32,7 +32,7 @@ public class typeof_RemoveWhereOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = rwo;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5380162141339074462", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) IContainerOperation_Behavior.call_expectedOperandType_2141797557973018589(rwo, typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_3055999550620863371)), (SNode) typeCheckingContext.getRepresentative(OPERAND_TYPE_typevar_3055999550620867612), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), rwo, "virtual_expectedOperandType_2141797557973018589", new Object[]{typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_3055999550620863371)}), (SNode) typeCheckingContext.getRepresentative(OPERAND_TYPE_typevar_3055999550620867612), false, true, _info_12389875345);
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {

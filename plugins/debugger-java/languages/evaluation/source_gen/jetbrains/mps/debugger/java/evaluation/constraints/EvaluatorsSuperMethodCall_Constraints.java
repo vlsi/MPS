@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior;
 import jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325225");
@@ -63,7 +63,7 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
             SNode thisNode = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true);
             SNode classifier = SLinkOperations.getTarget(DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(thisNode, "debuggedType", true)), "classifier", false);
             SNode enclosingClass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-            return new SuperMethodCall_InstanceMethodScope(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass), _context.getEnclosingNode());
+            return new SuperMethodCall_InstanceMethodScope(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), enclosingClass, "virtual_getSuperclass_1240936569950", new Object[]{}), _context.getEnclosingNode());
           }
 
           @Override

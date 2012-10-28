@@ -11,13 +11,10 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.build.packaging.behavior.Util;
-import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.io.File;
-import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
-import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.IModule;
@@ -27,7 +24,6 @@ import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
-import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior;
 import jetbrains.mps.build.packaging.behavior.Plugin_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -37,12 +33,13 @@ import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
+import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.build.packaging.behavior.PluginModule_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -95,11 +92,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203614993869(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203620045650(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203614794462(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -107,23 +104,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622940784(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622771003(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622819102(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204107873448(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getExcludes_1213877279373", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1206440132165(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getIncludes_1213877279430", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1239624197384(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -133,29 +130,29 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1239624236213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String result = "";
     for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true))) {
-      result += IStringExpression_Behavior.call_getValue_1213877173054(v);
+      result += BehaviorReflection.invokeVirtual(String.class, v, "virtual_getValue_1213877173054", new Object[]{});
     }
     return result;
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622549331(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204107836203(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getExcludes_1213877279373", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1206440112827(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getIncludes_1213877279430", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1233320407385(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204016660715(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204107798457(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -167,15 +164,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1209893088423(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1209893108623(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getExcludes_1213877279373", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1209893126195(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getIncludes_1213877279430", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1209915395009(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -187,7 +184,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204018667699(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1204022349926(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -339,15 +336,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204122982909(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.packaging.structure.ICompositeComponent")).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1205332632356(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210846061742(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(_context.getNode()).replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}).replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210846095008(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -383,11 +380,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1219156215258(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1219158078257(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1203622327849(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -428,11 +425,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234272879020(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1234272879041(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(SNodeOperations.getParent(_context.getNode())).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, SNodeOperations.getParent(_context.getNode()), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_1234272627885(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -453,7 +450,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3497141547781549835(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((SLinkOperations.getTarget(_context.getNode(), "codename", true) != null) ?
-      IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "codename", true)) :
+      BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "codename", true), "virtual_getValue_1213877173054", new Object[]{}) :
       "MPS"
     );
   }
@@ -477,83 +474,83 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8795525031433494625(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "updateChannel", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "updateChannel", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344535871158(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "buildNumber", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "buildNumber", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537197103(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "splashScreen", true));
+    return _context.getTemplateValue() + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "splashScreen", true), "virtual_getName_1221141245424", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8795525031433494646(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "textColor", true) != null)) {
       try {
-        String res = IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "textColor", true));
+        String res = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "textColor", true), "virtual_getValue_1213877173054", new Object[]{});
         Integer.parseInt(res, 16);
         return res;
       } catch (Exception ex) {
-        _context.showErrorMessage(_context.getNode(), "bad text color: " + IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "textColor", true)));
+        _context.showErrorMessage(_context.getNode(), "bad text color: " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "textColor", true), "virtual_getValue_1213877173054", new Object[]{}));
       }
     }
     return "002387";
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537229298(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "aboutScreen", true));
+    return _context.getTemplateValue() + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "aboutScreen", true), "virtual_getName_1221141245424", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537372669(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon32", true));
+    return _context.getTemplateValue() + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "icon32", true), "virtual_getName_1221141245424", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537372688(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon16", true));
+    return _context.getTemplateValue() + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "icon16", true), "virtual_getName_1221141245424", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537372707(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getTemplateValue() + (((SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true) == null) ?
-      Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon32", true)) :
-      Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true))
+      BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "icon32", true), "virtual_getName_1221141245424", new Object[]{}) :
+      BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true), "virtual_getName_1221141245424", new Object[]{})
     ));
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344535871127(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "shortName", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "shortName", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344535871142(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "fullName", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "fullName", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537335263(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "checkUrl", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "checkUrl", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537372584(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "updateUrl", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "updateUrl", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537372620(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "caption", true));
+    return _context.getTemplateValue() + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "caption", true), "virtual_getName_1221141245424", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537372640(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "slogan", true));
+    return _context.getTemplateValue() + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "slogan", true), "virtual_getName_1221141245424", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344536578759(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "file", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "file", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344536578780(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "root", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "root", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344536578802(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "url", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "url", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537179243(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -570,7 +567,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344535742220(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+    return Util.SEPARATOR + BehaviorReflection.invokeVirtual(File.class, _context.getNode(), "virtual_getPath_1213877333777", new Object[]{}).getPath().replace(File.separator, Util.SEPARATOR);
   }
 
   public static Object propertyMacro_GetPropertyValue_437343344536148053(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -898,7 +895,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226346367196(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0bg(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
+    return isNotEmpty_x583g4_a0a0bg(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getIncludes_1213877279430", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_1239624138320(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -906,11 +903,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226346311970(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0dg(ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()));
+    return isNotEmpty_x583g4_a0a0dg(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getExcludes_1213877279373", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_1226346323637(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0eg(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
+    return isNotEmpty_x583g4_a0a0eg(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getIncludes_1213877279430", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_1203622509516(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -930,11 +927,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226345902716(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0jg(ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()));
+    return isNotEmpty_x583g4_a0a0jg(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getExcludes_1213877279373", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_1226345946802(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0kg(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
+    return isNotEmpty_x583g4_a0a0kg(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getIncludes_1213877279430", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_1209915520020(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -999,7 +996,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1219157474820(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode layout = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false);
-    return (layout == null) || (!(ListSequence.fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false))) && ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
+    return (layout == null) || (!(ListSequence.fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false))) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), layout, "virtual_getAllVariable_1234864693585", new Object[]{})).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
   }
 
   public static boolean ifMacro_Condition_1220026604203(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1440,7 +1437,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067771918(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(IMacroHolder_Behavior.call_getPath_1234976932856(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPath_1234976932856", new Object[]{}), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
@@ -1712,7 +1709,7 @@ __switch__:
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
     for (SNode holder : ListSequence.fromList(holders)) {
       ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).clear();
-      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addSequence(ListSequence.fromList(IMacroHolder_Behavior.call_getMacro_1107726059764558743(holder)));
+      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), holder, "virtual_getMacro_1107726059764558743", new Object[]{})));
     }
   }
 

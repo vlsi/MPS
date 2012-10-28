@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -26,7 +26,7 @@ public class supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule 
   public SNode getSubOrSuperType(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode et = SLinkOperations.getTarget(ct, "elementType", true);
     if (SNodeOperations.isInstanceOf(et, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      et = Type_Behavior.call_getUnboxedType_1213877337320(et);
+      et = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), et, "virtual_getUnboxedType_1213877337320", new Object[]{});
     }
     return new supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.QuotationClass_pn6k9h_a0c0a().createNode(et, typeCheckingContext);
   }

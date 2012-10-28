@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class JUnitTests_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration_Factory";
@@ -210,7 +210,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(source));
       boolean containsTest = false;
       for (SNode testCase : source) {
-        if (ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, testCase, "virtual_getTestMethods_2148145109766218395", new Class[]{SNode.class}))).isNotEmpty()) {
+        if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), testCase, "virtual_getTestMethods_2148145109766218395", new Object[]{})).isNotEmpty()) {
           containsTest = true;
           break;
         }
@@ -250,7 +250,7 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
       setSourceElement(new MPSPsiElement(source));
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration(((String) BehaviorManager.getInstance().invoke(Object.class, ListSequence.fromList(source).first(), "virtual_getTestName_1216136419751", new Class[]{SNode.class})) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration(BehaviorReflection.invokeVirtual(String.class, ListSequence.fromList(source).first(), "virtual_getTestName_1216136419751", new Object[]{}) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.METHOD);
       configuration.getJUnitSettings().setTestMethods(TestUtils.nodesToCloneableList(source));
       return configuration;

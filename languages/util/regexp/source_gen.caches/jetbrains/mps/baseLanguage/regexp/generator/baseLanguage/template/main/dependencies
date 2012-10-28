@@ -7,7 +7,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags" />
@@ -26,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
 </dependenciesRoot>
 

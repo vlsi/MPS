@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil;
 import jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 import java.util.List;
@@ -60,7 +60,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6717546899049700876(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(_context.getNode(), "regexp", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "regexp", true), "virtual_toString_1213877429451", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6717546899049700886(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -95,7 +95,7 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = RegexUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = new ArrayList<SNode>();
-    Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
+    BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), "virtual_getString_1222432436326", new Object[]{parensList});
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 
@@ -123,7 +123,7 @@ public class QueriesGenerated {
     SNode parens = SLinkOperations.getTarget(_context.getNode(), "match", false);
     SNode c = RegexUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = new ArrayList<SNode>();
-    Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
+    BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), "virtual_getString_1222432436326", new Object[]{parensList});
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 
@@ -132,7 +132,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6717546899049792853(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), "search", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), "search", true), "virtual_toString_1213877429451", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6717546899049792866(final IOperationContext operationContext, final PropertyMacroContext _context) {

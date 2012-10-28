@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1217433547506");
@@ -43,7 +44,7 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     if (classifier == null) {
       return false;
     }
-    boolean hasSuper = IClassifier_Behavior.call_createSuperType_1217433657148(classifier) != null;
+    boolean hasSuper = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_createSuperType_1217433657148", new Object[]{}) != null;
     if (!(hasSuper)) {
       return false;
     }

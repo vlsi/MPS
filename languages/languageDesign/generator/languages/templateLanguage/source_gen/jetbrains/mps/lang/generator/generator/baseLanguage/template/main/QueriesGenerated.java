@@ -31,7 +31,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -44,8 +44,6 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior;
-import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3076445114127780910(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -2890,7 +2888,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8371596541809530209(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode typeNode = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SLinkOperations.getTarget(_context.getNode(), "query", true));
+    SNode typeNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     if (SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.Type")) {
       SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.cast(typeNode, "jetbrains.mps.baseLanguage.structure.Type"));
       return ((classifierType != null) ?
@@ -4013,13 +4011,13 @@ public class QueriesGenerated {
       // references in 'get prev input by label' 
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
       for (SNode op : ops) {
-        SNode patternVar = GenerationContextOp_PatternRef_Behavior.call_getTarget_1758784108620114792(op);
+        SNode patternVar = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), op, "virtual_getTarget_1758784108620114792", new Object[]{});
         if (patternVar == null) {
           _context.showErrorMessage(op, "reference on pattern variable is broken");
           continue;
         }
         SPropertyOperations.set(op, "name_intern", PatternVarsUtil.getFieldName(patternVar));
-        GenerationContextOp_PatternRef_Behavior.call_setTarget_1758784108620254533(op, null);
+        BehaviorReflection.invokeVirtual(Void.class, op, "virtual_setTarget_1758784108620254533", new Object[]{null});
       }
     }
     {
@@ -4035,7 +4033,7 @@ public class QueriesGenerated {
         if (SNodeOperations.getModel(paramDeclaration) == _context.getInputModel()) {
           paramDeclaration = SNodeOperations.cast(_context.getOriginalCopiedInputNode(paramDeclaration), "jetbrains.mps.lang.generator.structure.IGeneratorParameter");
         }
-        SPropertyOperations.set(op, "name_intern", IGeneratorParameter_Behavior.call_getUniqueId_650531548511609559(paramDeclaration));
+        SPropertyOperations.set(op, "name_intern", BehaviorReflection.invokeVirtual(String.class, paramDeclaration, "virtual_getUniqueId_650531548511609559", new Object[]{}));
         SLinkOperations.setTarget(op, "importClause", null, false);
       }
     }

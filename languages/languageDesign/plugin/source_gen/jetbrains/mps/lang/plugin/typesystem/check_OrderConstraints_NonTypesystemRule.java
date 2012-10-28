@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.plugin.behavior.OrderConstraints_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,7 +22,7 @@ public class check_OrderConstraints_NonTypesystemRule extends AbstractNonTypesys
     if ((SNodeOperations.getParent(c) == null)) {
       return;
     }
-    if (OrderConstraints_Behavior.call_presents_1499919975383879508(c, SNodeOperations.getAncestor(c, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false))) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, c, "virtual_presents_1499919975383879508", new Object[]{SNodeOperations.getAncestor(c, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false)})) {
       return;
     }
     {

@@ -5,7 +5,7 @@ package jetbrains.mps.build.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LocalArtifacts extends VisibleArtifacts {
   public LocalArtifacts(SNode project, TemplateQueryContext genContext) {
@@ -18,7 +18,7 @@ public class LocalArtifacts extends VisibleArtifacts {
 
   public SNode findArtifact(Object id) {
     for (SNode artifact : this.getArtifacts()) {
-      if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, id)) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, artifact, "virtual_exports_6547494638219603457", new Object[]{id})) {
         return artifact;
       }
     }

@@ -9,13 +9,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Arrays;
 import jetbrains.mps.ide.ThreadUtils;
@@ -30,7 +30,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        refactoring.value = RefactoringUtil.getRefactoringByClassName(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "3068114543317961454"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
+        refactoring.value = RefactoringUtil.getRefactoringByClassName(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "3068114543317961454"), "virtual_getFqName_1213877404258", new Object[]{}));
       }
     });
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);

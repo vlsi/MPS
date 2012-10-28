@@ -10,8 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -31,13 +30,13 @@ public class check_StringSwitchStatement_NonTypesystemRule extends AbstractNonTy
     }
 
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
         return;
       }
     }
 
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")) {
-      if (Classifier_Behavior.call_isDescendant_7165541881557222913(IWillBeClassifier_Behavior.call_baseClassifier_4125795553993767872(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
         return;
       }
     }

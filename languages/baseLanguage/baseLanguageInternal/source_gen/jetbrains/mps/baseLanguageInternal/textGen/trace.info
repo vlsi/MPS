@@ -386,7 +386,7 @@
     <nodeInfo nodeId="3421461530438560664" fileName="InternalAnonymousClass_TextGen.java" startLine="54" startPosition="25" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3421461530438560664" fileName="InternalAnonymousClass_TextGen.java" startLine="54" startPosition="25" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="57" startPosition="7" endLine="58" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="59" startPosition="13" endLine="60" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="59" startPosition="13" endLine="60" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="61" startPosition="31" endLine="62" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="63" startPosition="9" endLine="64" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="20" startPosition="42" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -413,7 +413,7 @@
     <scopeInfo nodeId="3421461530438560657" fileName="InternalAnonymousClass_TextGen.java" startLine="50" startPosition="5" endLine="51" endPosition="22" />
     <scopeInfo nodeId="3421461530438560661" fileName="InternalAnonymousClass_TextGen.java" startLine="52" startPosition="25" endLine="53" endPosition="45" />
     <scopeInfo nodeId="3421461530438560664" fileName="InternalAnonymousClass_TextGen.java" startLine="54" startPosition="25" endLine="55" endPosition="31" />
-    <scopeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="59" startPosition="13" endLine="60" endPosition="161" />
+    <scopeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="59" startPosition="13" endLine="60" endPosition="209" />
     <scopeInfo nodeId="3421461530438560565" fileName="InternalAnonymousClass_TextGen.java" startLine="61" startPosition="0" endLine="62" endPosition="77">
       <varInfo nodeId="3421461530438560565" varName="t" />
     </scopeInfo>

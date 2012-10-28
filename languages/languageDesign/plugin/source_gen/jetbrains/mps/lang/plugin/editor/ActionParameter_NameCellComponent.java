@@ -15,8 +15,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -64,9 +63,9 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
-      SNode nodeType = ActionParameter_Behavior.call_getType_1171743928471337193(node);
+      SNode nodeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getType_1171743928471337193", new Object[]{});
       if (nodeType != null) {
-        result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
+        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
