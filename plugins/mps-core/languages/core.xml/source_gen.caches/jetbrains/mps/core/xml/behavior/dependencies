@@ -28,9 +28,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" file="XmlAttribute_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlAttribute_BehaviorDescriptor" file="XmlAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -49,8 +51,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_BehaviorDescriptor" file="XmlBaseAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -77,12 +78,10 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlBasePrologElement_BehaviorDescriptor" file="XmlBasePrologElement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -135,13 +134,11 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlContent_BehaviorDescriptor" file="XmlContent_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -241,8 +238,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor" file="XmlPart_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -316,8 +312,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlValuePart_BehaviorDescriptor" file="XmlValuePart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -328,11 +323,14 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlWhitespace_Behavior" file="XmlWhitespace_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlWhitespace_BehaviorDescriptor" file="XmlWhitespace_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

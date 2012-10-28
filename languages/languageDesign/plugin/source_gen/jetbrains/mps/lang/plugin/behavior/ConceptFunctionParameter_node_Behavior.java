@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +20,7 @@ public class ConceptFunctionParameter_node_Behavior {
       SNode editorTab = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false);
       return new ConceptFunctionParameter_node_Behavior.QuotationClass_luv170_a0b0a0b().createNode(SLinkOperations.getTarget(editorTab, "baseNodeConcept", false));
     } else {
-      return ConceptFunctionParameter_Behavior.callSuperNew_getType_2443692612523876968(thisNode, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType");
+      return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "virtual_getType_2443692612523876968", new Object[]{});
     }
   }
 

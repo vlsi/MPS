@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ClassCreator_Behavior {
   public static void init(SNode thisNode) {
@@ -47,6 +48,6 @@ public class ClassCreator_Behavior {
   }
 
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return IMethodCall_Behavior.callSuperNew_isInTypeInferenceContext_4837286298388660615(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
   }
 }

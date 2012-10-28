@@ -4,13 +4,10 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class XMLSAXNodeCreator_Behavior {
-  private static Class[] PARAMETERS_2264311582634140591 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,17 +16,13 @@ public class XMLSAXNodeCreator_Behavior {
     return XMLSAXNodeRule_Behavior.call_getType_2264311582634140653(rule);
   }
 
+  @Deprecated
   public static SNode call_getExpectedReturnType_2264311582634140591(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2264311582634140591, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getExpectedReturnType_2264311582634140591(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2264311582634140591, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getExpectedReturnType_2264311582634140591(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2264311582634140591, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
   }
 }

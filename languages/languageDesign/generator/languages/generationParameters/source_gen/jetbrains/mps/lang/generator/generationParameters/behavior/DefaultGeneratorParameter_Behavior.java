@@ -5,13 +5,10 @@ package jetbrains.mps.lang.generator.generationParameters.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DefaultGeneratorParameter_Behavior {
-  private static Class[] PARAMETERS_8484425748929510087 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,17 +20,13 @@ public class DefaultGeneratorParameter_Behavior {
     return SNodeOperations.getModel(thisNode).getSModelId() + "." + containerName + "." + SPropertyOperations.getString(thisNode, "name");
   }
 
+  @Deprecated
   public static String call_getUniqueId_8484425748929510087(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087, new Object[]{});
-  }
-
-  public static String callSuperNew_getUniqueId_8484425748929510087(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUniqueId_650531548511609559", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getUniqueId_8484425748929510087(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", PARAMETERS_8484425748929510087, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", new Class[]{SNode.class}, new Object[]{});
   }
 }

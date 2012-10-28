@@ -14,13 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.IModule;
 import javax.swing.ImageIcon;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IconResource_Behavior {
-  private static Class[] PARAMETERS_8974276187400029990 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -67,17 +64,13 @@ public class IconResource_Behavior {
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
   }
 
+  @Deprecated
   public static void call_generate_8974276187400029990(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990, new Object[]{});
-  }
-
-  public static void callSuperNew_generate_8974276187400029990(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), callerConceptFqName, "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990, new Object[]{});
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_generate_8974276187400030152", new Object[]{});
   }
 
   @Deprecated
   public static void callSuper_generate_8974276187400029990(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), callerConceptFqName, "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990, new Object[]{});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), callerConceptFqName, "virtual_generate_8974276187400030152", new Class[]{SNode.class}, new Object[]{});
   }
 }

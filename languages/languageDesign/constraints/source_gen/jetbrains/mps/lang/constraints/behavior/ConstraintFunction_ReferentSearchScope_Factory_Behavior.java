@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,7 +39,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
         return false;
       }
     }
-    SNode lastStmt = IMethodLike_Behavior.call_getLastStatement_1239354409446(thisNode);
+    SNode lastStmt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLastStatement_1239354409446", new Object[]{});
     if (SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), sequenceType);
     }

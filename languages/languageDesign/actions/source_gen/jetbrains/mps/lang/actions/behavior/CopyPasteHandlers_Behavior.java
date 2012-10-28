@@ -12,15 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CopyPasteHandlers_Behavior {
-  private static Class[] PARAMETERS_5948027493682791350 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345978344 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -47,31 +43,23 @@ public class CopyPasteHandlers_Behavior {
     SPropertyOperations.set(thisNode, "name", NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
   }
 
+  @Deprecated
   public static List<SNode> call_getBaseConceptCollection_5948027493682791350(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5948027493682791350, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
   }
 
+  @Deprecated
   public static void call_setBaseConcept_6261424444345978344(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978344, new Object[]{baseConcept});
-  }
-
-  public static List<SNode> callSuperNew_getBaseConceptCollection_5948027493682791350(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5948027493682791350, new Object[]{});
-  }
-
-  public static void callSuperNew_setBaseConcept_6261424444345978344(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978344, new Object[]{baseConcept});
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getBaseConceptCollection_5948027493682791350(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5948027493682791350, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static void callSuper_setBaseConcept_6261424444345978344(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978344, new Object[]{baseConcept});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
   }
 }

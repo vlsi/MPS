@@ -8,13 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CustomContainerCreator_Behavior {
-  private static Class[] PARAMETERS_1331913329176106428 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -34,17 +31,13 @@ public class CustomContainerCreator_Behavior {
     return res;
   }
 
+  @Deprecated
   public static SNode call_createType_1331913329176106428(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428, new Object[]{});
-  }
-
-  public static SNode callSuperNew_createType_1331913329176106428(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1331913329176106428, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1237722437229", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createType_1331913329176106428(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1331913329176106428, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", new Class[]{SNode.class}, new Object[]{});
   }
 }

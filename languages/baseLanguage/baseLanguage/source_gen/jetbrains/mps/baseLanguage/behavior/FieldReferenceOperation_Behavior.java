@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class FieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -62,7 +63,7 @@ public class FieldReferenceOperation_Behavior {
       return false;
     }
     while (classifier != declarationClassifier) {
-      for (SNode fieldDeclaration : Members.visibleInstanceFields(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), thisNode)) {
+      for (SNode fieldDeclaration : Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
         if (SPropertyOperations.getString(fieldDeclaration, "name") != null && SPropertyOperations.getString(fieldDeclaration, "name").equals(SPropertyOperations.getString(field, "name"))) {
           return false;
         }

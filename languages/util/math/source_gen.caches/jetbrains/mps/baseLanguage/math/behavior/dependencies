@@ -310,10 +310,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MathUtil" file="MathUtil.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -326,6 +326,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_Behavior" file="MatrixConstructor_Behavior.java">
@@ -396,10 +397,11 @@
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorInitializer_BehaviorDescriptor" file="MatrixOrVectorInitializer_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorType_BehaviorDescriptor" file="MatrixOrVectorType_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixType_Behavior" file="MatrixType_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixType_BehaviorDescriptor" file="MatrixType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

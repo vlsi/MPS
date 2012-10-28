@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PrivateFieldReferenceOperation_Behavior {
@@ -13,7 +13,7 @@ public class PrivateFieldReferenceOperation_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "fieldDeclaration", false) == null)) {
-      return BaseConcept_Behavior.callSuperNew_getPresentation_1213877396640(thisNode, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
+      return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "virtual_getPresentation_1213877396640", new Object[]{});
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
   }

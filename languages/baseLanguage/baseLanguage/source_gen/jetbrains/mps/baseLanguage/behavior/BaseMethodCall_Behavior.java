@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 
@@ -17,7 +18,7 @@ public class BaseMethodCall_Behavior {
   public static Object[] call_getActualArguments_1213877339153(SNode thisNode, final IModule module) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return Expression_Behavior.call_eval_1213877519769(it, module);
+        return BehaviorReflection.invokeVirtual(Object.class, it, "virtual_eval_1213877519769", new Object[]{module});
       }
     }).toGenericArray(Object.class);
   }
@@ -43,6 +44,6 @@ public class BaseMethodCall_Behavior {
   }
 
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return IMethodCall_Behavior.callSuperNew_isInTypeInferenceContext_4837286298388660615(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
   }
 }

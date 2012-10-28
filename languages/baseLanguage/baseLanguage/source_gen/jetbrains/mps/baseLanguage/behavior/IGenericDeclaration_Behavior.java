@@ -5,14 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IGenericDeclaration_Behavior {
-  private static Class[] PARAMETERS_8277080359323274918 = {SNode.class, Map.class, List.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,17 +17,13 @@ public class IGenericDeclaration_Behavior {
     // do nothing by default 
   }
 
+  @Deprecated
   public static void call_collectGenericSubstitutions_8277080359323274918(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> applications) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericDeclaration"), "virtual_collectGenericSubstitutions_8277080359323274918", PARAMETERS_8277080359323274918, new Object[]{substitutions, applications});
-  }
-
-  public static void callSuperNew_collectGenericSubstitutions_8277080359323274918(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> substitutions, List<SNode> applications) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericDeclaration"), callerConceptFqName, "virtual_collectGenericSubstitutions_8277080359323274918", PARAMETERS_8277080359323274918, new Object[]{substitutions, applications});
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectGenericSubstitutions_8277080359323274918", new Object[]{substitutions, applications});
   }
 
   @Deprecated
   public static void callSuper_collectGenericSubstitutions_8277080359323274918(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> substitutions, List<SNode> applications) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericDeclaration"), callerConceptFqName, "virtual_collectGenericSubstitutions_8277080359323274918", PARAMETERS_8277080359323274918, new Object[]{substitutions, applications});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericDeclaration"), callerConceptFqName, "virtual_collectGenericSubstitutions_8277080359323274918", new Class[]{SNode.class, Map.class, List.class}, new Object[]{substitutions, applications});
   }
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
@@ -34,8 +35,8 @@ public class EnumClass_Behavior {
   }
 
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    List<SNode> extended = Classifier_Behavior.callSuperNew_getExtendedClassifierTypes_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SNode enumType = Classifier_Behavior.call_getThisType_3305065273710880775(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"));
+    List<SNode> extended = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
+    SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
     if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
       ListSequence.fromList(extended).addElement(enumType);
@@ -44,7 +45,7 @@ public class EnumClass_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = IMemberContainer_Behavior.callSuperNew_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMembers_1213877531970", new Object[]{});
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)));
     return members;
   }

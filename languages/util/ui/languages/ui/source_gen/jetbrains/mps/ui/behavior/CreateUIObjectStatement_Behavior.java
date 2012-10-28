@@ -4,18 +4,15 @@ package jetbrains.mps.ui.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CreateUIObjectStatement_Behavior {
-  private static Class[] PARAMETERS_6410919744913642010 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,18 +20,14 @@ public class CreateUIObjectStatement_Behavior {
     return new CreateUIObjectStatement_Behavior.QuotationClass_qpbyzc_a0a0b().createNode(SLinkOperations.getTarget(thisNode, "uiObject", false));
   }
 
+  @Deprecated
   public static SNode call_getType_6410919744913642010(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getType_6410919744913642010(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_6410919744913609596", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getType_6410919744913642010(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), callerConceptFqName, "virtual_getType_6410919744913609596", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_qpbyzc_a0a0b {

@@ -4,15 +4,11 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GenerationContextOp_PropertyPatternRef_Behavior {
-  private static Class[] PARAMETERS_1758784108620115432 = {SNode.class};
-  private static Class[] PARAMETERS_1758784108620254578 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,31 +20,23 @@ public class GenerationContextOp_PropertyPatternRef_Behavior {
     SLinkOperations.setTarget(thisNode, "propertyPatternVar", null, false);
   }
 
+  @Deprecated
   public static SNode call_getTarget_1758784108620115432(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTarget_1758784108620114792", new Object[]{});
   }
 
+  @Deprecated
   public static void call_setTarget_1758784108620254578(SNode thisNode, SNode target) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, new Object[]{target});
-  }
-
-  public static SNode callSuperNew_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432, new Object[]{});
-  }
-
-  public static void callSuperNew_setTarget_1758784108620254578(SNode thisNode, String callerConceptFqName, SNode target) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, new Object[]{target});
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setTarget_1758784108620254533", new Object[]{target});
   }
 
   @Deprecated
   public static SNode callSuper_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", PARAMETERS_1758784108620115432, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static void callSuper_setTarget_1758784108620254578(SNode thisNode, String callerConceptFqName, SNode target) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_setTarget_1758784108620254533", PARAMETERS_1758784108620254578, new Object[]{target});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_setTarget_1758784108620254533", new Class[]{SNode.class, SNode.class}, new Object[]{target});
   }
 }

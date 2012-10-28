@@ -6,14 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseMappingRule_Behavior {
-  private static Class[] PARAMETERS_1213877498511 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -39,17 +36,13 @@ public class BaseMappingRule_Behavior {
     return null;
   }
 
+  @Deprecated
   public static SNode call_getTemplateType_1213877498511(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getTemplateType_1213877498511(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTemplateType_1213877498511", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getTemplateType_1213877498511(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", new Class[]{SNode.class}, new Object[]{});
   }
 }

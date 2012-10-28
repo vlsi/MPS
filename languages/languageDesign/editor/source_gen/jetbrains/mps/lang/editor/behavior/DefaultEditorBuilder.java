@@ -6,6 +6,7 @@ import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -31,7 +32,7 @@ public class DefaultEditorBuilder {
 
   public DefaultEditorBuilder(SNode node) {
     editorNode = node;
-    conceptDeclaration = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(node);
+    conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
   }
 
   public void buildStatementLike() {

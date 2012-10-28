@@ -5,7 +5,7 @@ package jetbrains.mps.lang.constraints.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +20,7 @@ public class ConstraintFunction_PropertyGetter_Behavior {
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (dataType != null) {
-      return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     }
     return new ConstraintFunction_PropertyGetter_Behavior.QuotationClass_25x9xv_a0e0b().createNode();
   }

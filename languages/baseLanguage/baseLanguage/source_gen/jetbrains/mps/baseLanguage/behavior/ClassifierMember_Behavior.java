@@ -15,14 +15,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierMember_Behavior {
-  private static Class[] PARAMETERS_8986964027630462944 = {SNode.class};
-  private static Class[] PARAMETERS_8083692786967482069 = {SNode.class, SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -87,39 +83,31 @@ public class ClassifierMember_Behavior {
   }
 
   public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_Behavior.call_isVisible_8083692786967482069(thisNode, SNodeOperations.cast(IClassifierType_Behavior.call_getClassifier_7405920559687237513(contextClassifierType), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode);
+    return ClassifierMember_Behavior.call_isVisible_8083692786967482069(thisNode, SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifierType, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode);
   }
 
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.call_isStatic_8986964027630462944(thisNode);
   }
 
+  @Deprecated
   public static boolean call_isStatic_8986964027630462944(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
   }
 
+  @Deprecated
   public static boolean call_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, new Object[]{contextClassifier, contextNode});
-  }
-
-  public static boolean callSuperNew_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextClassifier, SNode contextNode) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, new Object[]{contextClassifier, contextNode});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode});
   }
 
   @Deprecated
   public static boolean callSuper_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextClassifier, SNode contextNode) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, new Object[]{contextClassifier, contextNode});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{contextClassifier, contextNode});
   }
 
   private static boolean eq_i8o263_a0a0l0c(Object a, Object b) {

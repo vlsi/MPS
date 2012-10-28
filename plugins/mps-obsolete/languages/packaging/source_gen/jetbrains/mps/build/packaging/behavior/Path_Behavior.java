@@ -8,14 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Path_Behavior {
-  private static Class[] PARAMETERS_1221141245424 = {SNode.class};
-
   public static void init(SNode thisNode) {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
     SLinkOperations.setTarget(thisNode, "macro", ref, true);
@@ -71,18 +68,14 @@ public class Path_Behavior {
     return isNotEmpty_jfcfx2_a0a0h(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name"));
   }
 
+  @Deprecated
   public static String call_getName_1221141245424(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), "virtual_getName_1221141245424", PARAMETERS_1221141245424, new Object[]{});
-  }
-
-  public static String callSuperNew_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1221141245424", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static boolean isNotEmpty_jfcfx2_a0a0h(String str) {

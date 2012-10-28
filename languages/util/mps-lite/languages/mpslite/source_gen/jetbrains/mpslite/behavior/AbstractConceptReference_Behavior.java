@@ -4,28 +4,21 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractConceptReference_Behavior {
-  private static Class[] PARAMETERS_1238594571574 = {SNode.class, Map.class};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static SNode call_getConcept_1238594571574(SNode thisNode, Map<SNode, SNode> conceptsToTargets) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, new Object[]{conceptsToTargets});
-  }
-
-  public static SNode callSuperNew_getConcept_1238594571574(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), callerConceptFqName, "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, new Object[]{conceptsToTargets});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getConcept_1238594571574", new Object[]{conceptsToTargets});
   }
 
   @Deprecated
   public static SNode callSuper_getConcept_1238594571574(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), callerConceptFqName, "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, new Object[]{conceptsToTargets});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), callerConceptFqName, "virtual_getConcept_1238594571574", new Class[]{SNode.class, Map.class}, new Object[]{conceptsToTargets});
   }
 }

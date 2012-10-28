@@ -5,6 +5,7 @@ package jetbrains.mpslite.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LineList_Behavior {
   public static void init(SNode thisNode) {
@@ -13,7 +14,7 @@ public class LineList_Behavior {
   public static void call_fillConceptStructure_1238593666753(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     for (SNode line : SLinkOperations.getTargets(thisNode, "line", true)) {
       for (SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
-        LinePart_Behavior.call_fillConceptStructure_1238593834306(linePart, concept, conceptsToTargets, partsToLinks);
+        BehaviorReflection.invokeVirtual(Void.class, linePart, "virtual_fillConceptStructure_1238593834306", new Object[]{concept, conceptsToTargets, partsToLinks});
       }
     }
   }

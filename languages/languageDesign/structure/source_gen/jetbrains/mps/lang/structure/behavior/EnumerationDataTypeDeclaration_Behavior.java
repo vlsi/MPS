@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -13,7 +14,7 @@ public class EnumerationDataTypeDeclaration_Behavior {
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     SNode memberDataType = SLinkOperations.getTarget(thisNode, "memberDataType", false);
-    return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(memberDataType);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), memberDataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
   }
 
   public static SNode call_getDefaultMember_1213877397785(SNode thisNode) {

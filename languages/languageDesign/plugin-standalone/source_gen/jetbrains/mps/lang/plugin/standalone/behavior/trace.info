@@ -43,11 +43,11 @@
     <unitInfo nodeId="481983775135178933" fileName="ProjectPluginDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_Behavior" />
   </root>
   <root nodeId="481983775135178981" modelId="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)">
-    <nodeInfo nodeId="481983775135178986" fileName="ProjectPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178986" fileName="ProjectPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="481983775135178981" fileName="ProjectPluginType_Behavior.java" startLine="10" startPosition="41" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="481983775135178981" fileName="ProjectPluginType_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMembers_1213877402148#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="481983775135178983" fileName="ProjectPluginType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="481983775135178985" fileName="ProjectPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="129" />
+    <scopeInfo nodeId="481983775135178985" fileName="ProjectPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="206" />
     <scopeInfo nodeId="481983775135178981" fileName="ProjectPluginType_Behavior.java" startLine="10" startPosition="41" endLine="13" endPosition="0">
       <varInfo nodeId="481983775135178981" varName="thisNode" />
     </scopeInfo>
@@ -58,11 +58,11 @@
     <unitInfo nodeId="481983775135178981" fileName="ProjectPluginType_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_Behavior" />
   </root>
   <root nodeId="481983775135178997" modelId="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)">
-    <nodeInfo nodeId="481983775135179000" fileName="ApplicationPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135179000" fileName="ApplicationPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="481983775135178997" fileName="ApplicationPluginType_Behavior.java" startLine="10" startPosition="45" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="481983775135178997" fileName="ApplicationPluginType_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMembers_1213877402148#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="481983775135179012" fileName="ApplicationPluginType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="481983775135178999" fileName="ApplicationPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="129" />
+    <scopeInfo nodeId="481983775135178999" fileName="ApplicationPluginType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="206" />
     <scopeInfo nodeId="481983775135178997" fileName="ApplicationPluginType_Behavior.java" startLine="10" startPosition="45" endLine="13" endPosition="0">
       <varInfo nodeId="481983775135178997" varName="thisNode" />
     </scopeInfo>

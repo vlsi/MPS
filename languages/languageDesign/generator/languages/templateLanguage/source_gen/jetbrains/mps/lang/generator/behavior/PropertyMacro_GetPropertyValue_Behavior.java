@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +20,7 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     SNode propertyMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.PropertyMacro", false, false);
     SNode dataType = SLinkOperations.getTarget(AttributeOperations.getPropertyDeclaration(propertyMacro), "dataType", false);
     if (dataType != null) {
-      return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     }
     return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_90g9ox_a0d0b().createNode();
   }

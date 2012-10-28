@@ -5,12 +5,9 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -21,10 +18,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class InternalAnonymousClass_Behavior {
-  private static Class[] PARAMETERS_3421461530438560389 = {SNode.class};
-  private static Class[] PARAMETERS_3421461530438560275 = {SNode.class};
-  private static Class[] PARAMETERS_3421461530438560303 = {SNode.class};
-
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "nonStatic", "" + (true));
   }
@@ -36,9 +29,9 @@ public class InternalAnonymousClass_Behavior {
   public static String call_getJavaName_3421461530438560397(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
     if ((ancestor == null)) {
-      return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+      return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
     }
-    return INamedConcept_Behavior.call_getFqName_1213877404258(ancestor) + "$" + InternalAnonymousClass_Behavior.call_getIndexInContainingClass_3421461530438560434(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, ancestor, "virtual_getFqName_1213877404258", new Object[]{}) + "$" + InternalAnonymousClass_Behavior.call_getIndexInContainingClass_3421461530438560434(thisNode);
   }
 
   public static int call_getIndexInContainingClass_3421461530438560434(SNode thisNode) {
@@ -58,16 +51,16 @@ public class InternalAnonymousClass_Behavior {
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return (containingClassifier != null ?
-      InternalAnonymousClass_Behavior.call_getAnonymousClassPresentation_3421461530438560331(thisNode, containingClassifier) + Classifier_Behavior.call_getNestedName_8540045600162184125(containingClassifier) :
-      Classifier_Behavior.callSuperNew_getNestedName_8540045600162184125(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")
+      InternalAnonymousClass_Behavior.call_getAnonymousClassPresentation_3421461530438560331(thisNode, containingClassifier) + BehaviorReflection.invokeVirtual(String.class, containingClassifier, "virtual_getNestedName_8540045600162184125", new Object[]{}) :
+      BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getNestedName_8540045600162184125", new Object[]{})
     );
   }
 
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return (containingClassifier != null ?
-      InternalAnonymousClass_Behavior.call_getAnonymousClassPresentation_3421461530438560331(thisNode, containingClassifier) + INamedConcept_Behavior.call_getFqName_1213877404258(containingClassifier) :
-      INamedConcept_Behavior.callSuperNew_getFqName_1213877404258(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")
+      InternalAnonymousClass_Behavior.call_getAnonymousClassPresentation_3421461530438560331(thisNode, containingClassifier) + BehaviorReflection.invokeVirtual(String.class, containingClassifier, "virtual_getFqName_1213877404258", new Object[]{}) :
+      BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getFqName_1213877404258", new Object[]{})
     );
   }
 
@@ -80,46 +73,34 @@ public class InternalAnonymousClass_Behavior {
     return result;
   }
 
+  @Deprecated
   public static String call_getUnitName_3421461530438560389(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_5067982036267369911", new Object[]{});
   }
 
+  @Deprecated
   public static String call_getNestedName_3421461530438560275(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getNestedName_8540045600162184125", new Object[]{});
   }
 
+  @Deprecated
   public static String call_getFqName_3421461530438560303(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303, new Object[]{});
-  }
-
-  public static String callSuperNew_getUnitName_3421461530438560389(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389, new Object[]{});
-  }
-
-  public static String callSuperNew_getNestedName_3421461530438560275(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275, new Object[]{});
-  }
-
-  public static String callSuperNew_getFqName_3421461530438560303(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getUnitName_3421461530438560389(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getNestedName_3421461530438560275(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getFqName_3421461530438560303(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_bwi1fo_a0a0e {

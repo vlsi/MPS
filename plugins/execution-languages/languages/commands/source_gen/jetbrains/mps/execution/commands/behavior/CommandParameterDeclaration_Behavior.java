@@ -5,16 +5,12 @@ package jetbrains.mps.execution.commands.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandParameterDeclaration_Behavior {
-  private static Class[] PARAMETERS_8478830098674441876 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -38,20 +34,6 @@ public class CommandParameterDeclaration_Behavior {
     return CommandParameterDeclaration_Behavior.getFieldName_7327337331549086089(SPropertyOperations.getString(thisNode, "name")) + "_" + CommandParameterDeclaration_Behavior.getTypeSuffix_3754131050835992327(SLinkOperations.getTarget(thisNode, "type", true));
   }
 
-  public static boolean call_generateField_8478830098674441876(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876, new Object[]{});
-  }
-
-  public static boolean callSuperNew_generateField_8478830098674441876(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876, new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_generateField_8478830098674441876(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876, new Object[]{});
-  }
-
   public static String getUpperCaseName_7327337331549086070(String name) {
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
@@ -61,6 +43,16 @@ public class CommandParameterDeclaration_Behavior {
   }
 
   public static String getTypeSuffix_3754131050835992327(SNode type) {
-    return IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(BaseConcept_Behavior.call_getPresentation_1213877396640(type));
+    return IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(BehaviorReflection.invokeVirtual(String.class, type, "virtual_getPresentation_1213877396640", new Object[]{}));
+  }
+
+  @Deprecated
+  public static boolean call_generateField_8478830098674441876(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_generateField_8478830098674441876", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_generateField_8478830098674441876(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", new Class[]{SNode.class}, new Object[]{});
   }
 }

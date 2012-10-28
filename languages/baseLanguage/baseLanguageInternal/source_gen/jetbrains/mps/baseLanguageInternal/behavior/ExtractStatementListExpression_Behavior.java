@@ -7,14 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractStatementListExpression_Behavior {
-  private static Class[] PARAMETERS_3196918548952834932 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,17 +22,13 @@ public class ExtractStatementListExpression_Behavior {
     return elems;
   }
 
+  @Deprecated
   public static List<SNode> call_getLocalVariableElements_3196918548952834932(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_3196918548952834932, new Object[]{});
-  }
-
-  public static List<SNode> callSuperNew_getLocalVariableElements_3196918548952834932(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_3196918548952834932, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getLocalVariableElements_3196918548952834932(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_3196918548952834932, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}, new Object[]{});
   }
 }
