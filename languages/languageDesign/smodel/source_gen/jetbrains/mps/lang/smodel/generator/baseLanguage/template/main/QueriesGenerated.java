@@ -774,7 +774,7 @@ public class QueriesGenerated {
     } else {
       // node non virtual method call 
       SNode behavior = SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-      return NameUtil.nodeFQName(behavior);
+      return NameUtil.nodeFQName(SLinkOperations.getTarget(behavior, "concept", false));
     }
   }
 
