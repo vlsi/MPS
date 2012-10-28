@@ -5,9 +5,6 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,10 +18,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AttributeQualifier_Behavior {
-  private static Class[] PARAMETERS_6407023681583066586 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -34,20 +31,6 @@ public class AttributeQualifier_Behavior {
 
   public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");
-  }
-
-  public static SNode call_getTargetConcept_6407023681583066586(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
   }
 
   public static Iterable<SNode> getApplicableRoles_959482772563105834(SNode enclosingNode, String attributeType, SModel model, final IScope scope) {
@@ -82,5 +65,15 @@ public class AttributeQualifier_Behavior {
         });
       }
     });
+  }
+
+  @Deprecated
+  public static SNode call_getTargetConcept_6407023681583066586(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetConcept_6407023681583066586", new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", new Class[]{SNode.class}, new Object[]{});
   }
 }
