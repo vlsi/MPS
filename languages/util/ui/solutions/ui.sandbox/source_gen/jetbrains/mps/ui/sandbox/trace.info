@@ -498,7 +498,7 @@
     <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="7" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="6" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <unitInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ui.sandbox.UIDemo$gwt.xml" />
+    <unitInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.ui.sandbox.UIDemo$gwt$xml" />
   </root>
 </debugInfo>
 
