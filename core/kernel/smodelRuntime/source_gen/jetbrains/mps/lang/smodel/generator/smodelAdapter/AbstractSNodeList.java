@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.Collection;
+import java.util.Iterator;
 
 /*package*/ abstract class AbstractSNodeList extends ArrayList<SNode> {
   protected final SNode myReferenceContainer;
@@ -112,6 +113,34 @@ import java.util.Collection;
     SNode result = super.remove(index);
     removeReference(result);
     return result;
+  }
+
+  @Override
+  public boolean removeAll(Collection<?> collection) {
+    // we have to keep this methods to make sure that our remove method is used which actually modifies the node 
+    boolean modified = false;
+    Iterator<SNode> e = iterator();
+    while (e.hasNext()) {
+      if (collection.contains(e.next())) {
+        e.remove();
+        modified = true;
+      }
+    }
+    return modified;
+  }
+
+  @Override
+  public boolean retainAll(Collection<?> collection) {
+    // we have to keep this methods to make sure that our remove method is used which actually modifies the node 
+    boolean modified = false;
+    Iterator<SNode> it = iterator();
+    while (it.hasNext()) {
+      if (!(collection.contains(it.next()))) {
+        it.remove();
+        modified = true;
+      }
+    }
+    return modified;
   }
 
   @Override
