@@ -41,7 +41,6 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 
@@ -90,7 +89,6 @@ public class MPSCore extends ComponentPlugin {
     init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
     init(new AuxilaryRuntimeModel(myModelRepository));
     init(new ImmatureReferences(myModelRepository));
-    init(new LibrariesLoader(myModuleRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());

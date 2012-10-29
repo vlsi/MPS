@@ -39,6 +39,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     return new BaseStubModelDescriptor(myModelReference, getSource(), myModule);
   }
 
+  @Override
   @NotNull
   public ModelDataSource getSource() {
     return super.getSource();
@@ -77,6 +78,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   /**
    * This method should be called either in EDT, inside WriteAction or in any other thread
    */
+  @Override
   public void reloadFromDiskSafe() {
     ModelAccess.assertLegalWrite();
 
