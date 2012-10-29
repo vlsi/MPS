@@ -782,7 +782,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+    LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
 
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
