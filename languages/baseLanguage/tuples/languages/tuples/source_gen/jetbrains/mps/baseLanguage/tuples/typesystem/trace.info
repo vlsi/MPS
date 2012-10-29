@@ -396,185 +396,190 @@
     <unitInfo nodeId="1238857867840" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_IndexedTupleMemberAccessExpression_InferenceRule" />
   </root>
   <root nodeId="1239579059907" modelId="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)">
-    <nodeInfo nodeId="2912004279740801484" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="52" endLine="37" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="10" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="58" endLine="41" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239900353090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239900488863" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="44" startPosition="107" endLine="45" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="7" endLine="47" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="47" startPosition="92" endLine="48" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="48" startPosition="212" endLine="49" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239895282057" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="51" startPosition="5" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239967995591" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="169" endLine="54" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239968089672" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="61" endLine="55" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="57" startPosition="9" endLine="58" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="58" startPosition="53" endLine="59" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="59" startPosition="208" endLine="60" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239968121987" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="62" startPosition="7" endLine="63" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="65" startPosition="5" endLine="66" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="66" startPosition="49" endLine="67" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="67" startPosition="204" endLine="68" endPosition="421" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901043357" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="69" startPosition="5" endLine="70" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="73" startPosition="46" endLine="74" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="78" startPosition="5" endLine="79" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="79" startPosition="119" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="84" startPosition="30" endLine="85" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="92" startPosition="116" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="93" startPosition="26" endLine="94" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="94" startPosition="67" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="95" startPosition="32" endLine="96" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="97" startPosition="7" endLine="98" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="98" startPosition="176" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="99" startPosition="43" endLine="100" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="101" startPosition="9" endLine="102" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="103" startPosition="37" endLine="104" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="106" startPosition="9" endLine="107" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="108" startPosition="7" endLine="109" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="112" startPosition="69" endLine="113" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="113" startPosition="26" endLine="114" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="114" startPosition="67" endLine="115" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="115" startPosition="32" endLine="116" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="117" startPosition="7" endLine="118" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="118" startPosition="176" endLine="119" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="119" startPosition="43" endLine="120" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="121" startPosition="9" endLine="122" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="123" startPosition="37" endLine="124" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="126" startPosition="9" endLine="127" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="128" startPosition="7" endLine="129" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="30" startPosition="124" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_NamedTupleLiteral_InferenceRule#()V" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="88" startPosition="52" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcpcms_a0a5a0#()V" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="102" startPosition="56" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="122" startPosition="56" endLine="125" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="318" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="77" startPosition="68" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="45" startPosition="225" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="54" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="64" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="100" startPosition="76" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="100" startPosition="76" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="120" startPosition="76" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="120" startPosition="76" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239968034088" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="55" startPosition="100" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="120" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="43" startPosition="90" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="48" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="96" startPosition="32" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="96" startPosition="32" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="116" startPosition="32" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="116" startPosition="32" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="91" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="111" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="33" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="31" startPosition="51" endLine="31" endPosition="51" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="89" startPosition="43" endLine="89" endPosition="43" />
-    <scopeInfo nodeId="2912004279740801476" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="52" endLine="37" endPosition="101" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="73" startPosition="46" endLine="74" endPosition="75" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="84" startPosition="30" endLine="85" endPosition="17" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="103" startPosition="37" endLine="104" endPosition="98" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="123" startPosition="37" endLine="124" endPosition="77" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="30" startPosition="124" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="39" startPosition="10" endLine="41" endPosition="242">
+    <nodeInfo nodeId="2912004279740801484" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="37" startPosition="52" endLine="38" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="10" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="41" startPosition="58" endLine="42" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117625608859683570" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5117625608860210200" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="44" startPosition="0" endLine="45" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117625608860220647" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="26" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5117625608860220650" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="48" startPosition="5" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2062135263152099290" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="49" startPosition="0" endLine="50" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4340163696372956435" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="50" startPosition="84" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4340163696368051056" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="37" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4340163696371151180" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="54" startPosition="105" endLine="55" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4340163696365984474" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="55" startPosition="90" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212781606027" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="58" startPosition="24" endLine="59" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2062135263152099425" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="59" startPosition="144" endLine="60" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2062135263152096678" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="60" startPosition="137" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5117625608861531570" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="62" startPosition="105" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117625608861533086" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="64" startPosition="100" endLine="65" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117625608861536660" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="67" startPosition="7" endLine="68" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117625608861536660" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="68" startPosition="90" endLine="69" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5117625608861536660" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="69" startPosition="212" endLine="70" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2062135263152102070" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="73" startPosition="5" endLine="74" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2062135263152102070" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="74" startPosition="49" endLine="75" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2062135263152102070" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="75" startPosition="210" endLine="76" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="80" startPosition="46" endLine="81" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="85" startPosition="5" endLine="86" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="86" startPosition="119" endLine="87" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="91" startPosition="30" endLine="92" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="99" startPosition="116" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="100" startPosition="26" endLine="101" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="101" startPosition="67" endLine="102" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="102" startPosition="32" endLine="103" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="104" startPosition="7" endLine="105" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="105" startPosition="176" endLine="106" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="106" startPosition="43" endLine="107" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="108" startPosition="9" endLine="109" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="110" startPosition="37" endLine="111" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="113" startPosition="9" endLine="114" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="115" startPosition="7" endLine="116" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="119" startPosition="69" endLine="120" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="120" startPosition="26" endLine="121" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="121" startPosition="67" endLine="122" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="122" startPosition="32" endLine="123" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="124" startPosition="7" endLine="125" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="125" startPosition="176" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="126" startPosition="43" endLine="127" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="128" startPosition="9" endLine="129" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="130" startPosition="37" endLine="131" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="133" startPosition="9" endLine="134" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="135" startPosition="7" endLine="136" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="31" startPosition="124" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_NamedTupleLiteral_InferenceRule#()V" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="95" startPosition="52" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_bcpcms_a0a8a0#()V" />
+    <nodeInfo nodeId="5117625608860213097" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="45" startPosition="80" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5117625608861531773" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="63" startPosition="123" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="109" startPosition="56" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="129" startPosition="56" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="318" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="84" startPosition="68" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="5117625608861536660" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="66" startPosition="7" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2062135263152102070" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="72" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4340163696365984464" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="156" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="107" startPosition="76" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="107" startPosition="76" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="127" startPosition="76" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="127" startPosition="76" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4340163696365984458" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="51" startPosition="52" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="120" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5117625608861521097" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="61" startPosition="0" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="103" startPosition="32" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="103" startPosition="32" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="123" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="123" startPosition="32" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="98" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="118" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="32" startPosition="51" endLine="32" endPosition="51" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="96" startPosition="43" endLine="96" endPosition="43" />
+    <scopeInfo nodeId="2912004279740801476" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="37" startPosition="52" endLine="38" endPosition="101" />
+    <scopeInfo nodeId="5117625608860213099" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="26" endLine="47" endPosition="13" />
+    <scopeInfo nodeId="5117625608861531775" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="64" startPosition="100" endLine="65" endPosition="234" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="80" startPosition="46" endLine="81" endPosition="75" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="91" startPosition="30" endLine="92" endPosition="17" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="110" startPosition="37" endLine="111" endPosition="98" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="130" startPosition="37" endLine="131" endPosition="77" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="31" startPosition="124" endLine="33" endPosition="3" />
+    <scopeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="10" endLine="42" endPosition="242">
       <varInfo nodeId="1239579091243" varName="_reporter_2309309498" />
       <varInfo nodeId="1239579091243" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="78" startPosition="5" endLine="80" endPosition="45">
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="85" startPosition="5" endLine="87" endPosition="45">
       <varInfo nodeId="1239579059907" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="88" startPosition="52" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="7" endLine="49" endPosition="287">
-      <varInfo nodeId="1901065672425830131" varName="_info_12389875345" />
-      <varInfo nodeId="1901065672425830131" varName="_nodeToCheck_1029348928467" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="95" startPosition="52" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="4340163696365984465" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="37" endLine="56" endPosition="19">
+      <varInfo nodeId="4340163696368051056" varName="TP_typevar_4340163696368051056" />
+      <varInfo nodeId="4340163696371151181" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="57" startPosition="9" endLine="60" endPosition="186">
-      <varInfo nodeId="1239968096090" varName="_info_12389875345" />
-      <varInfo nodeId="1239968096090" varName="_nodeToCheck_1029348928467" />
+    <scopeInfo nodeId="5117625608861536660" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="67" startPosition="7" endLine="70" endPosition="283">
+      <varInfo nodeId="5117625608861536660" varName="_info_12389875345" />
+      <varInfo nodeId="5117625608861536660" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="65" startPosition="5" endLine="68" endPosition="421">
-      <varInfo nodeId="1239901165879" varName="_info_12389875345" />
-      <varInfo nodeId="1239901165879" varName="_nodeToCheck_1029348928467" />
+    <scopeInfo nodeId="2062135263152102070" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="73" startPosition="5" endLine="76" endPosition="258">
+      <varInfo nodeId="2062135263152102070" varName="_info_12389875345" />
+      <varInfo nodeId="2062135263152102070" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="102" startPosition="56" endLine="105" endPosition="11">
-      <varInfo nodeId="1239901178525" varName="child" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="109" startPosition="56" endLine="112" endPosition="11">
+      <varInfo nodeId="1212781606030" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="122" startPosition="56" endLine="125" endPosition="11">
-      <varInfo nodeId="1239901178525" varName="child" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="129" startPosition="56" endLine="132" endPosition="11">
+      <varInfo nodeId="1212781606030" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="318" endLine="39" endPosition="0">
+    <scopeInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="318" endLine="40" endPosition="0">
       <varInfo nodeId="2912004279740801475" varName="ntd" />
       <varInfo nodeId="2912004279740801475" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="77" startPosition="68" endLine="81" endPosition="5" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="101" startPosition="9" endLine="105" endPosition="11">
-      <varInfo nodeId="1239901178525" varName="nodes" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="84" startPosition="68" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="108" startPosition="9" endLine="112" endPosition="11">
+      <varInfo nodeId="1212781606030" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="121" startPosition="9" endLine="125" endPosition="11">
-      <varInfo nodeId="1239901178525" varName="nodes" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="128" startPosition="9" endLine="132" endPosition="11">
+      <varInfo nodeId="1212781606030" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1239968034089" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="54" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="1239894693061" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="44" startPosition="107" endLine="50" endPosition="7">
-      <varInfo nodeId="1239900488864" varName="matchedType" />
+    <scopeInfo nodeId="4340163696365984464" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="156" endLine="58" endPosition="0">
+      <varInfo nodeId="4340163696365984464" varName="tp" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="100" startPosition="76" endLine="106" endPosition="9" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="120" startPosition="76" endLine="126" endPosition="9" />
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="107" startPosition="76" endLine="113" endPosition="9" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="127" startPosition="76" endLine="133" endPosition="9" />
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1239579059907" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="43" startPosition="90" endLine="51" endPosition="5">
-      <varInfo nodeId="1239894693059" varName="cmpRef" />
+    <scopeInfo nodeId="5117625608861521103" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="62" startPosition="105" endLine="71" endPosition="7">
+      <varInfo nodeId="5117625608861531571" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1239967949950" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="169" endLine="63" endPosition="115">
-      <varInfo nodeId="1239968089672" varName="PTYPE_typevar_1239968089672" />
-      <varInfo nodeId="1239967995592" varName="nodes" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="104" startPosition="7" endLine="114" endPosition="31">
+      <varInfo nodeId="1212781606030" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="97" startPosition="7" endLine="107" endPosition="31">
-      <varInfo nodeId="1239901178525" varName="quotedNode1_3" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="124" startPosition="7" endLine="134" endPosition="31">
+      <varInfo nodeId="1212781606030" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="117" startPosition="7" endLine="127" endPosition="31">
-      <varInfo nodeId="1239901178525" varName="quotedNode1_3" />
+    <scopeInfo nodeId="5117625608861521097" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="61" startPosition="0" endLine="72" endPosition="5">
+      <varInfo nodeId="5117625608861521099" varName="cref" />
     </scopeInfo>
-    <scopeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="48" endLine="64" endPosition="5">
-      <varInfo nodeId="1239967949948" varName="foo" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="103" startPosition="32" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="123" startPosition="32" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="99" startPosition="116" endLine="116" endPosition="20">
+      <varInfo nodeId="1212781606030" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1212781606030" varName="quotedNode_1" />
+      <varInfo nodeId="1212781606030" varName="quotedNode_2" />
+      <varInfo nodeId="1212781606030" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="96" startPosition="32" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="116" startPosition="32" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="92" startPosition="116" endLine="109" endPosition="20">
-      <varInfo nodeId="1239901178525" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1239901178525" varName="quotedNode_1" />
-      <varInfo nodeId="1239901178525" varName="quotedNode_2" />
-      <varInfo nodeId="1239901178525" varName="result" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="119" startPosition="69" endLine="136" endPosition="20">
+      <varInfo nodeId="1212781606030" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1212781606030" varName="quotedNode_1" />
+      <varInfo nodeId="1212781606030" varName="quotedNode_2" />
+      <varInfo nodeId="1212781606030" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="112" startPosition="69" endLine="129" endPosition="20">
-      <varInfo nodeId="1239901178525" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1239901178525" varName="quotedNode_1" />
-      <varInfo nodeId="1239901178525" varName="quotedNode_2" />
-      <varInfo nodeId="1239901178525" varName="result" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="98" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1212781606030" varName="parameter_4" />
+      <varInfo nodeId="1212781606030" varName="parameter_5" />
+      <varInfo nodeId="1212781606030" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="91" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="1239901178525" varName="parameter_4" />
-      <varInfo nodeId="1239901178525" varName="parameter_5" />
-      <varInfo nodeId="1239901178525" varName="typeCheckingContext" />
+    <scopeInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="118" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="1212781606030" varName="parameter_4" />
+      <varInfo nodeId="1212781606030" varName="parameter_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="111" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="1239901178525" varName="parameter_4" />
-      <varInfo nodeId="1239901178525" varName="parameter_5" />
+    <scopeInfo nodeId="1239579059908" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="120" endLine="77" endPosition="5">
+      <varInfo nodeId="1212781606028" varName="newType" />
+      <varInfo nodeId="2062135263152099291" varName="subs" />
+      <varInfo nodeId="5117625608860210201" varName="tdecl" />
+      <varInfo nodeId="4340163696365984459" varName="typeParam" />
     </scopeInfo>
-    <scopeInfo nodeId="1239579059908" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="120" endLine="70" endPosition="97">
-      <varInfo nodeId="1239895282058" varName="PTYPES" />
-      <varInfo nodeId="1239900353091" varName="mmap" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="33" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="34" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1239579059907" varName="literal" />
       <varInfo nodeId="1239579059907" varName="status" />
       <varInfo nodeId="1239579059907" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="283" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule$1" />
-    <unitInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="88" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule$QuotationClass_bcpcms_a0a5a0" />
-    <unitInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="30" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule" />
+    <unitInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="283" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule$1" />
+    <unitInfo nodeId="4340163696365984464" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="129" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule$2" />
+    <unitInfo nodeId="1212781606030" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="95" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule$QuotationClass_bcpcms_a0a8a0" />
+    <unitInfo nodeId="1239579059907" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="31" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.typeof_NamedTupleLiteral_InferenceRule" />
   </root>
   <root nodeId="1239579497085" modelId="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)">
     <nodeInfo nodeId="1239968591797" fileName="namedTuple_assignableTo_namedTuple_InequationReplacementRule.java" startLine="28" startPosition="204" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

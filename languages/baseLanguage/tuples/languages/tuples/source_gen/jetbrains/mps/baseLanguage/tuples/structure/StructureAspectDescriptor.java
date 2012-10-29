@@ -32,7 +32,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"tupleDeclaration"});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", "jetbrains.mps.baseLanguage.structure.ClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"}, new String[]{}, new String[]{"tupleDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", "jetbrains.mps.baseLanguage.structure.ClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.IGenericType"}, new String[]{}, new String[]{"tupleDeclaration"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

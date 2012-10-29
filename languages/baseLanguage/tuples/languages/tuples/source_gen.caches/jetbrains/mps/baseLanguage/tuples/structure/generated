@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a2y05xsgpsj7ucsg694tugjcs1qiray">
+<dependencies version="2" modelHash="-ayh5jma7ir7zg4i5shqpmtjqb6dm4p7">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2zzibu7tqv74frgzpnz5uza1ucknhwm" />
@@ -38,13 +38,13 @@
   <source id="1238857743184" name="IndexedTupleMemberAccessExpression" hash="6vqv6jma1qsvqe76bap8ud3nrsf407x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1239360506533" name="NamedTupleDeclaration" hash="1bmhsvzsxy48rgkfnq98m5axpeqt6ls">
+  <source id="1239360506533" name="NamedTupleDeclaration" hash="-a5dzpgrvyulw9kffuuxbwlore13c3cg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1239462176079" name="NamedTupleComponentDeclaration" hash="310is9b425jr8cjdmhnlf6cs2zdpnc3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1239531918181" name="NamedTupleType" hash="-dv6ihj789stwh4xfhycsev6c3bp984n">
+  <source id="1239531918181" name="NamedTupleType" hash="se5y2oo7cxarqx5f5yfiz620xhyhc8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1239559992092" name="NamedTupleLiteral" hash="d1wskic1fcycqff83xajo0tcbl1xn8i">
