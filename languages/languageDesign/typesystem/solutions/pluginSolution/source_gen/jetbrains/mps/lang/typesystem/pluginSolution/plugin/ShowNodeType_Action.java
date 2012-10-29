@@ -102,8 +102,12 @@ public class ShowNodeType_Action extends BaseAction {
         });
         new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).showDialog();
       } finally {
-        tmpModel.getSModel().removeRoot(type.value);
-        tmpModel.unregister();
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            tmpModel.getSModel().removeRoot(type.value);
+            tmpModel.unregister();
+          }
+        });
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
