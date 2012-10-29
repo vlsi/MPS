@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NamedTupleType_Behavior {
@@ -22,14 +22,14 @@ public class NamedTupleType_Behavior {
         return SLinkOperations.getTargets(ntd, "component", true);
       }
     })) {
-      sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(ntcd, "type", true))).append(" ").append(SPropertyOperations.getString(ntcd, "name"));
+      sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(ntcd, "type", true), "virtual_getPresentation_1213877396640", new Object[]{})).append(" ").append(SPropertyOperations.getString(ntcd, "name"));
       sep = ", ";
     }
     sb.append(SConceptPropertyOperations.getString(thisNode, "rightBracket")).append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name"));
     sep = "<";
     String suffix = "";
     for (SNode t : SLinkOperations.getTargets(thisNode, "parameter", true)) {
-      sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(t));
+      sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ", ";
       suffix = ">";
     }

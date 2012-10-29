@@ -13,30 +13,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.runtime.adapter;
+package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import org.jetbrains.annotations.NotNull;
 
-public class BehaviorDescriptorAdapter extends BehaviorDescriptor {
-  private final jetbrains.mps.smodel.runtime.BehaviorDescriptor inner;
+public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
+  public static NullSafeIllegalBehaviorDescriptor INSTANCE = new NullSafeIllegalBehaviorDescriptor();
 
-  public BehaviorDescriptorAdapter(jetbrains.mps.smodel.runtime.BehaviorDescriptor behaviorDescriptor) {
-    this.inner = behaviorDescriptor;
+  private NullSafeIllegalBehaviorDescriptor() {
+  }
+
+  @Override
+  public String getConceptFqName() {
+    return null;
   }
 
   @Override
   public void initNode(SNode node) {
-    inner.initNode(node);
+    if (node != null) {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  @Override
+  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    throw new IllegalArgumentException();
   }
 
   @Override
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return inner.invoke(returnType, node, methodName, parametersTypes, parameters);
+    if (node != null) {
+      throw new IllegalArgumentException();
+    } else {
+      return BehaviorReflection.defaultValue(returnType);
+    }
   }
 
   @Override
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return inner.invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+    if (node != null) {
+      throw new IllegalArgumentException();
+    } else {
+      return BehaviorReflection.defaultValue(returnType);
+    }
   }
 }

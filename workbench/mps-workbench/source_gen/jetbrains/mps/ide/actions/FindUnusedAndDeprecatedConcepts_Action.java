@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 
 public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
@@ -80,7 +80,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               SNode concept = SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-              isOk.value = (concept != null) && (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, concept, "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})) || !(SetSequence.fromSet(usedConcepts).contains(NameUtil.nodeFQName(concept))));
+              isOk.value = (concept != null) && (BehaviorReflection.invokeVirtual(Boolean.TYPE, concept, "virtual_isDeprecated_1224609060727", new Object[]{}) || !(SetSequence.fromSet(usedConcepts).contains(NameUtil.nodeFQName(concept))));
             }
           });
           return isOk.value;

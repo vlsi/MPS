@@ -13,7 +13,7 @@ import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collections;
 
 public class UnpackHelper extends DependenciesHelper {
@@ -69,10 +69,10 @@ public class UnpackHelper extends DependenciesHelper {
 
     for (SNode n : required) {
       Collection<Object> artifacts = artifactIds.get(n);
-      BuildLayout_PathElement_Behavior.call_unpack_7128123785277710736(n, this, (artifacts != null ?
+      BehaviorReflection.invokeVirtual(Void.class, n, "virtual_unpack_7128123785277710736", new Object[]{this, (artifacts != null ?
         artifacts :
         Collections.emptyList()
-      ));
+      )});
     }
   }
 

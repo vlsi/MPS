@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +17,7 @@ public class check_ClosureLiteralDataFlow_NonTypesystemRule extends AbstractNonT
   }
 
   public void applyRule(final SNode closureLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(closureLiteral))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, closureLiteral, "virtual_isExecuteSynchronous_1230212745736", new Object[]{}))) {
       DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(closureLiteral, "body", true));
     }
   }

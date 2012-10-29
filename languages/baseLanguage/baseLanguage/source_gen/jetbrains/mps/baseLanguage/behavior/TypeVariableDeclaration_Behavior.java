@@ -9,12 +9,10 @@ import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -22,8 +20,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class TypeVariableDeclaration_Behavior {
-  private static Class[] PARAMETERS_1775412259244835270 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -49,33 +45,19 @@ public class TypeVariableDeclaration_Behavior {
     buff.append(".");
     buff.append(SPropertyOperations.getString(thisNode, "name"));
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
-      buff.append(" extends ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "bound", true)));
+      buff.append(" extends ").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "bound", true), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     for (SNode bound : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "auxBounds", true))) {
-      buff.append(" & ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(bound));
+      buff.append(" & ").append(BehaviorReflection.invokeVirtual(String.class, bound, "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return buff.toString();
-  }
-
-  public static String call_getPresentation_1775412259244835270(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270, new Object[]{});
-  }
-
-  public static String callSuperNew_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270, new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270, new Object[]{});
   }
 
   public static SNode getTypeWithConcreteUpperBounds_4346214032091504651(SNode inputType, Set<SNode> visitedVars) {
     if (SNodeOperations.isInstanceOf(inputType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
     }
-    SNode javaType = Type_Behavior.call_getJavaType_1213877337345(inputType);
+    SNode javaType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), inputType, "virtual_getJavaType_1213877337345", new Object[]{});
     if (SNodeOperations.isInstanceOf(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(result, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
@@ -83,6 +65,16 @@ public class TypeVariableDeclaration_Behavior {
     } else {
       return SNodeOperations.copyNode(javaType);
     }
+  }
+
+  @Deprecated
+  public static String call_getPresentation_1775412259244835270(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
+  }
+
+  @Deprecated
+  public static String callSuper_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_ct7zh2_a0a0a0c {

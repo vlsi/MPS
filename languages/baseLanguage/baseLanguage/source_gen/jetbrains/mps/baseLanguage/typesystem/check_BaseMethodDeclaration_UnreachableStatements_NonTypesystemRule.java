@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,14 +18,14 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(BaseMethodDeclaration_Behavior.call_isDataFlowChecked_1227714048980(nodeToCheck))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isDataFlowChecked_1227714048980", new Object[]{}))) {
       return;
     }
     boolean checkReturns = false;
     SNode parent = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(nodeToCheck)) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ISkipsReturn", false, new String[]{})).isEmpty()) {
-        if (!(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(nodeToCheck))) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isReturnsVoid_1234359555698", new Object[]{})) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ISkipsReturn", false, new String[]{})).isEmpty()) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isAbstract_1232982539764", new Object[]{}))) {
           checkReturns = true;
         }
       }

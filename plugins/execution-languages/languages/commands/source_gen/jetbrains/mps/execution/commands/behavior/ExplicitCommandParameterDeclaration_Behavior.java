@@ -4,14 +4,11 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExplicitCommandParameterDeclaration_Behavior {
-  private static Class[] PARAMETERS_856705193941282038 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,17 +24,13 @@ public class ExplicitCommandParameterDeclaration_Behavior {
     return !(ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(thisNode));
   }
 
+  @Deprecated
   public static boolean call_isInitializable_856705193941282038(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInitializable_1213877517488", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", new Class[]{SNode.class}, new Object[]{});
   }
 }

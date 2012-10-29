@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 
@@ -54,7 +54,7 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(node), "name") + "_Editor";
+        return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name") + "_Editor";
       }
     });
     return properties;

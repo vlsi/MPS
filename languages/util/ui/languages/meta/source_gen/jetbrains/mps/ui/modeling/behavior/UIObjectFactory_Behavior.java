@@ -10,14 +10,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UIObjectFactory_Behavior {
-  private static Class[] PARAMETERS_7655275107718262770 = {SNode.class};
-  private static Class[] PARAMETERS_1642651187739434868 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -44,31 +40,23 @@ public class UIObjectFactory_Behavior {
     return result;
   }
 
+  @Deprecated
   public static SNode call_getExpectedReturnType_7655275107718262770(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> call_getParameters_1642651187739434868(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getExpectedReturnType_7655275107718262770(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770, new Object[]{});
-  }
-
-  public static List<SNode> callSuperNew_getParameters_1642651187739434868(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getExpectedReturnType_7655275107718262770(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7655275107718262770, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getParameters_1642651187739434868(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_1642651187739434868, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.UIObjectFactory"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
   }
 }

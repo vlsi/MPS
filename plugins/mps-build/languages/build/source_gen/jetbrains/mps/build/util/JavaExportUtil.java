@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.annotations.Nullable;
 
 public class JavaExportUtil {
   public JavaExportUtil() {
@@ -165,6 +166,7 @@ public class JavaExportUtil {
     }
   }
 
+  @Nullable
   public static Tuples._2<SNode, Boolean> requireJar(VisibleArtifacts artifacts, SNode jar, SNode contextNode) {
     if (SNodeOperations.getContainingRoot(jar) == SNodeOperations.getContainingRoot(contextNode)) {
       return null;
@@ -184,9 +186,13 @@ public class JavaExportUtil {
       artifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
       withContent = isNotEmpty_4xqa58_a0a2a0h0c(resource._1());
     }
+    if (artifact == null) {
+      return null;
+    }
     return MultiTuple.<SNode,Boolean>from(artifact, withContent);
   }
 
+  @Nullable
   public static SNode requireJarFolder(VisibleArtifacts artifacts, SNode jarFolder, SNode contextNode) {
     if (SNodeOperations.getContainingRoot(jarFolder) == SNodeOperations.getContainingRoot(contextNode)) {
       return null;

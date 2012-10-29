@@ -27,7 +27,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.Set;
@@ -188,7 +188,7 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                return "custom control statement using " + INamedConcept_Behavior.call_getFqName_1213877404258((item));
+                return "custom control statement using " + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
               }
             });
           }

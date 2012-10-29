@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
@@ -31,7 +31,7 @@ public class SEnumOperations {
   }
 
   public static String getEnumMemberName(SNode member) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, ((SNode) member), "call_getName_1240169660918", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeNonVirtual(String.class, ((SNode) member), "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "call_getName_1240169660918", new Object[]{});
   }
 
   public static String getEnumMemberValue(SNode member) {
@@ -42,14 +42,14 @@ public class SEnumOperations {
     SNode enumNode = (SNode) enumm;
     return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumNode, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, it, "call_getName_1240169660918", new Class[]{SNode.class})).equals(name);
+        return BehaviorReflection.invokeNonVirtual(String.class, it, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "call_getName_1240169660918", new Object[]{}).equals(name);
       }
     }));
   }
 
   public static SNode enumMemberForValue(SNode enumm, final String value) {
     if (value == null) {
-      return ((SNode) ((SNode) BehaviorManager.getInstance().invoke(Object.class, enumm, "call_getDefaultMember_1213877397785", new Class[]{SNode.class})));
+      return ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "call_getDefaultMember_1213877397785", new Object[]{}));
     }
     return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumm, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

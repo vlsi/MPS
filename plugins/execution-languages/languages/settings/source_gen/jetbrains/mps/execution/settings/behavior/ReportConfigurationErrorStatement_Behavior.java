@@ -4,7 +4,7 @@ package jetbrains.mps.execution.settings.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
@@ -19,7 +19,7 @@ public class ReportConfigurationErrorStatement_Behavior {
   }
 
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    Statement_Behavior.callSuperNew_collectUncaughtMethodThrowables_5412515780383134223(thisNode, "jetbrains.mps.baseLanguage.structure.Statement", throwables, ignoreMayBeThrowables);
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.Statement", "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
     SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(new ReportConfigurationErrorStatement_Behavior.QuotationClass_3gtax0_a0a0a1a1().createNode(), "classifier", false));
   }
 

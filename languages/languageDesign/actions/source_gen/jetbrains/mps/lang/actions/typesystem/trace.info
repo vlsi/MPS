@@ -534,7 +534,7 @@
     <nodeInfo nodeId="1197895975949" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="25" startPosition="144" endLine="26" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197895921829" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="26" startPosition="93" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="30" startPosition="60" endLine="31" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="30" startPosition="60" endLine="31" endPosition="372" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197895626287" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="36" startPosition="46" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197895626287" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="41" startPosition="5" endLine="42" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197895626287" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="42" startPosition="119" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -551,7 +551,7 @@
     <scopeInfo nodeId="1197895626287" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="36" startPosition="46" endLine="37" endPosition="72" />
     <scopeInfo nodeId="1197895626287" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="47" startPosition="30" endLine="48" endPosition="17" />
     <scopeInfo nodeId="1197895626287" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="20" startPosition="139" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="31" endPosition="326">
+    <scopeInfo nodeId="1197896061431" fileName="check_ConceptSubstitutePart_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="31" endPosition="372">
       <varInfo nodeId="1197896061431" varName="_reporter_2309309498" />
       <varInfo nodeId="1197896061431" varName="errorTarget" />
     </scopeInfo>

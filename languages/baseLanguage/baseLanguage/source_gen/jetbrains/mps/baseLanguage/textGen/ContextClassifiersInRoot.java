@@ -13,7 +13,7 @@ import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ContextClassifiersInRoot {
   private static Logger LOG = Logger.getLogger(ContextClassifiersInRoot.class);
@@ -113,7 +113,7 @@ public class ContextClassifiersInRoot {
 
   private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
     String simpleName = SPropertyOperations.getString(classifier, "name");
-    String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
+    String fqName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
 
     if (!(bindings.containsKey(simpleName))) {
       bindings.put(simpleName, fqName);

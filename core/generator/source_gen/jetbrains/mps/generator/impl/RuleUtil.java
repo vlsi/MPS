@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class RuleUtil {
   public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
@@ -342,7 +342,7 @@ public class RuleUtil {
   }
 
   public static String getVarMacro_Name(SNode macro) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, macro, "call_getName_2721957369897649366", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeNonVirtual(String.class, macro, "jetbrains.mps.lang.generator.structure.VarMacro", "call_getName_2721957369897649366", new Object[]{});
   }
 
   public static SNode getVarMacro_Query(SNode macro) {

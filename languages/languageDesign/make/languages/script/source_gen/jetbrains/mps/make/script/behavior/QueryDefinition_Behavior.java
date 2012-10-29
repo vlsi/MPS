@@ -6,14 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueryDefinition_Behavior {
-  private static Class[] PARAMETERS_8486446835277382819 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,17 +18,13 @@ public class QueryDefinition_Behavior {
     return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
   }
 
+  @Deprecated
   public static String call_classifierName_8486446835277382819(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819, new Object[]{});
-  }
-
-  public static String callSuperNew_classifierName_8486446835277382819(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_classifierName_8486446835277382819(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), callerConceptFqName, "virtual_classifierName_4609636120081351397", new Class[]{SNode.class}, new Object[]{});
   }
 }

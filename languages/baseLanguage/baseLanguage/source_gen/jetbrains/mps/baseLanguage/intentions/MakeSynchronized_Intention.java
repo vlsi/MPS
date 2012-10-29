@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MakeSynchronized_Intention extends BaseIntention implements Intention {
   public MakeSynchronized_Intention() {
@@ -48,7 +48,7 @@ public class MakeSynchronized_Intention extends BaseIntention implements Intenti
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
       return false;
     }
-    if (BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(node)) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{})) {
       return false;
     }
     return true;

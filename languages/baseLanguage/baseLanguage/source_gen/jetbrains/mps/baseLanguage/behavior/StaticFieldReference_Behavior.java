@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class StaticFieldReference_Behavior {
@@ -43,8 +44,8 @@ public class StaticFieldReference_Behavior {
     if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
       return Expression_Behavior.call_eval_1213877519769(thisNode, module);
     } else {
-      return (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true)) ?
-        Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), module) :
+      return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ?
+        BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) :
         null
       );
     }

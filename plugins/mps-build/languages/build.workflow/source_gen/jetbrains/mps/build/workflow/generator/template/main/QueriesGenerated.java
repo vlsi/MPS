@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -318,7 +318,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1959471031855450829(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
-        return BwfProjectPart_Behavior.call_getPriority_2059109515400548718(it);
+        return BehaviorReflection.invokeVirtual(Integer.TYPE, it, "virtual_getPriority_2059109515400548718", new Object[]{});
       }
     }, true);
   }

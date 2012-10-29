@@ -5,7 +5,7 @@ package jetbrains.mps.gwt.client.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class GWTModule_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +14,7 @@ public class GWTModule_Behavior {
   public static String call_getLogicalName_1572321421814401058(SNode thisNode) {
     return ((SLinkOperations.getTarget(thisNode, "renameTo", true) != null) ?
       SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "renameTo", true), "value") :
-      INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)
+      BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{})
     );
   }
 }

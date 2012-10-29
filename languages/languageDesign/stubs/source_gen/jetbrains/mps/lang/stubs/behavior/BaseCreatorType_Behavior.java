@@ -4,34 +4,26 @@ package jetbrains.mps.lang.stubs.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseCreatorType_Behavior {
-  private static Class[] PARAMETERS_5553449326502623283 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return IClassifier_Behavior.call_getMembers_1213877528020(SLinkOperations.getTarget(thisNode, "declaration", false), contextNode);
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "declaration", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
   }
 
+  @Deprecated
   public static List<SNode> call_getMembers_5553449326502623283(SNode thisNode, SNode contextNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, new Object[]{contextNode});
-  }
-
-  public static List<SNode> callSuperNew_getMembers_5553449326502623283(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, new Object[]{contextNode});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877402148", new Object[]{contextNode});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getMembers_5553449326502623283(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_5553449326502623283, new Object[]{contextNode});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.BaseCreatorType"), callerConceptFqName, "virtual_getMembers_1213877402148", new Class[]{SNode.class, SNode.class}, new Object[]{contextNode});
   }
 }

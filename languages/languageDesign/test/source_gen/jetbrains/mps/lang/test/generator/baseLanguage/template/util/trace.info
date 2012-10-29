@@ -6,7 +6,7 @@
     <nodeInfo nodeId="882854394069504765" fileName="TestsUtil.java" startLine="23" startPosition="5" endLine="24" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="882854394069504775" fileName="TestsUtil.java" startLine="25" startPosition="22" endLine="26" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="882854394069504786" fileName="TestsUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="882854394069695316" fileName="TestsUtil.java" startLine="31" startPosition="61" endLine="32" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="882854394069695316" fileName="TestsUtil.java" startLine="31" startPosition="61" endLine="32" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="36" startPosition="36" endLine="37" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="38" startPosition="5" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="43" startPosition="36" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -23,7 +23,7 @@
     <scopeInfo nodeId="882854394069504732" fileName="TestsUtil.java" startLine="16" startPosition="22" endLine="16" endPosition="22" />
     <scopeInfo nodeId="882854394069504753" fileName="TestsUtil.java" startLine="21" startPosition="30" endLine="22" endPosition="25" />
     <scopeInfo nodeId="882854394069504774" fileName="TestsUtil.java" startLine="25" startPosition="22" endLine="26" endPosition="55" />
-    <scopeInfo nodeId="882854394069695312" fileName="TestsUtil.java" startLine="31" startPosition="61" endLine="32" endPosition="135" />
+    <scopeInfo nodeId="882854394069695312" fileName="TestsUtil.java" startLine="31" startPosition="61" endLine="32" endPosition="185" />
     <scopeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="36" startPosition="36" endLine="37" endPosition="49" />
     <scopeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="43" startPosition="36" endLine="44" endPosition="48" />
     <scopeInfo nodeId="882854394069504729" fileName="TestsUtil.java" startLine="15" startPosition="24" endLine="17" endPosition="3" />

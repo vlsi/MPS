@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -75,7 +75,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5857536350883039219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) _context.getVariable("node")));
+    return BehaviorReflection.invokeVirtual(String.class, ((SNode) _context.getVariable("node")), "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_3571912445009937377(final IOperationContext operationContext, final PropertyMacroContext _context) {

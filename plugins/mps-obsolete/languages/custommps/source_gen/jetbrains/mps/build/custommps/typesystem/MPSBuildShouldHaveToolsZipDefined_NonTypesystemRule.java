@@ -13,7 +13,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import java.io.File;
-import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -28,7 +28,7 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
       }
       return;
     }
-    File file = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true));
+    File file = BehaviorReflection.invokeVirtual(File.class, SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true), "virtual_getFile_1233322718999", new Object[]{});
     if (file != null && (!(file.exists()) || !(file.isFile()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

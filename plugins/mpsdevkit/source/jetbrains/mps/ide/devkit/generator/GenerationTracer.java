@@ -126,6 +126,11 @@ public class GenerationTracer implements IGenerationTracer {
 
   private SModelReference getModelRef(SNode node) {
     SModel model = node.getModel();
+
+    if (model==null){
+      model = node.getOldModel();
+    }
+
     //this is a hack to somehow show input nodes created during generation (e.g. .type.copy)
     //actually, we should put another TracerNode here. showing the node is not from an input model at all
     if (model == null) {

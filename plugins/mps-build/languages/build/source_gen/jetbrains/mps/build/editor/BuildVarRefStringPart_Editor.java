@@ -17,7 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.behavior.BuildStringPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -137,12 +137,12 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_ayjduv_a0a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return BuildStringPart_Behavior.call_isFirstPositionAllowed_624440001685459414(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{});
   }
 
   private static boolean renderingCondition_ayjduv_a2a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return BuildStringPart_Behavior.call_isLastPositionAllowed_624440001685490925(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_624440001685490925", new Object[]{});
   }
 
   public static class _Inline_ayjduv_a1a extends InlineCellProvider {

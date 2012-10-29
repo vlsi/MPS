@@ -8,7 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
 public class CommentCanBeUnreachable_Test extends BaseTransformationTest4 {
@@ -22,7 +22,7 @@ public class CommentCanBeUnreachable_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1226936244308() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1226936244308"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1226936071520"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1226936071520")});
     }
   }
 }

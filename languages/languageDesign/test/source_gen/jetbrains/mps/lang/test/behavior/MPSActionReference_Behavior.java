@@ -5,14 +5,11 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MPSActionReference_Behavior {
-  private static Class[] PARAMETERS_4239542196496960975 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,17 +17,13 @@ public class MPSActionReference_Behavior {
     return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(thisNode, "action", false));
   }
 
+  @Deprecated
   public static String call_getActionId_4239542196496960975(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.MPSActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_4239542196496960975, new Object[]{});
-  }
-
-  public static String callSuperNew_getActionId_4239542196496960975(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.MPSActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_4239542196496960975, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getActionId_1101347953350122762", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getActionId_4239542196496960975(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.MPSActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_4239542196496960975, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.MPSActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -37,8 +37,8 @@ public class ConstraintsChecker extends SpecificChecker {
       SNode concept = SNodeOperations.getConceptDeclaration(node);
 
       // Check links 
-      for (final SNode link : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, concept, "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
-        if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, link, "call_isAtLeastOneCardinality_3386205146660812199", new Class[]{SNode.class}))) {
+      for (final SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
+        if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isAtLeastOneCardinality_3386205146660812199", new Object[]{})) {
           if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
               addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
@@ -48,7 +48,7 @@ public class ConstraintsChecker extends SpecificChecker {
               addIssue(results, node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           }
-        } else if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, link, "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
+        } else if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{})) {
           if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
             addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
               public boolean doFix() {

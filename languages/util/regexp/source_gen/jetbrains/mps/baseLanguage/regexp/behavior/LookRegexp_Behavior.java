@@ -5,33 +5,26 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LookRegexp_Behavior {
-  private static Class[] PARAMETERS_1222861536253 = {SNode.class, List.class};
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SConceptPropertyOperations.getString(thisNode, "alias") + Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars) + ")";
+    return SConceptPropertyOperations.getString(thisNode, "alias") + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
   }
 
+  @Deprecated
   public static String call_getString_1222861536253(SNode thisNode, List<SNode> vars) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222861536253, new Object[]{vars});
-  }
-
-  public static String callSuperNew_getString_1222861536253(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222861536253, new Object[]{vars});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
   }
 
   @Deprecated
   public static String callSuper_getString_1222861536253(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222861536253, new Object[]{vars});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 }

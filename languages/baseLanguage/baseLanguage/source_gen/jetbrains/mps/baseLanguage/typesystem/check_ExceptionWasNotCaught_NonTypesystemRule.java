@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -29,7 +29,7 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode iTryCatchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> caughtExceptions = new ArrayList<SNode>();
-    for (SNode catchClause : ITryCatchStatement_Behavior.call_getCatchClauses_3718132079121388582(iTryCatchStatement)) {
+    for (SNode catchClause : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), iTryCatchStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{})) {
       SNode catchType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, new check_ExceptionWasNotCaught_NonTypesystemRule.QuotationClass_6gl2l4_a1a0b0b0a().createNode(typeCheckingContext))) {
         for (SNode caughtType : caughtExceptions) {

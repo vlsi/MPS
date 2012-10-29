@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,7 +24,7 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
   }
 
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode superMethod = BaseMethodDeclaration_Behavior.call_getNearestOverriddenMethod_5358895268254685434(method);
+    SNode superMethod = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((superMethod == null)) {
       return;
     }

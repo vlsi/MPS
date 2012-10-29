@@ -6,14 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IContainsStatementList_Behavior {
-  private static Class[] PARAMETERS_1237546012856 = {SNode.class};
-  private static Class[] PARAMETERS_1237546693016 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -33,31 +29,23 @@ public class IContainsStatementList_Behavior {
     return StatementList_Behavior.call_isOneLiner_1237538811451(IContainsStatementList_Behavior.call_getStatementList_1237545932619(thisNode));
   }
 
+  @Deprecated
   public static boolean call_isStatementListCompactable_1237546012856(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatementListCompactable_1237546012856", new Object[]{});
   }
 
+  @Deprecated
   public static boolean call_isStatementListCompact_1237546693016(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isStatementListCompactable_1237546012856(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isStatementListCompact_1237546693016(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatementListCompact_1237546693016", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isStatementListCompactable_1237546012856(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", PARAMETERS_1237546012856, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isStatementListCompact_1237546693016(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompact_1237546693016", new Class[]{SNode.class}, new Object[]{});
   }
 }

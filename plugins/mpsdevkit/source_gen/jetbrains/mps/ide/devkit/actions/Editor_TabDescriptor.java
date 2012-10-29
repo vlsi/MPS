@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -51,7 +51,7 @@ public class Editor_TabDescriptor extends RelationDescriptor {
 
   public List<SNode> getNodes(SNode node) {
     List<SNode> nodes = new ArrayList<SNode>();
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, node, "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR))));
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.EDITOR})));
     return ConceptEditorHelper.sortRootsByConcept(nodes, new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponent"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheet")});
   }
 

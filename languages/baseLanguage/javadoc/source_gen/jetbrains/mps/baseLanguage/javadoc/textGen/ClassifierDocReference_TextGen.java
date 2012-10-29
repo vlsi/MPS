@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ClassifierDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(node, "classifier", false)));
+    this.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}));
   }
 }

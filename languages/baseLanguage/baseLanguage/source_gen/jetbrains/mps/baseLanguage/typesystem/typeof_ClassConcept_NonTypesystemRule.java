@@ -14,7 +14,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -39,7 +40,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
     for (SNode m : SLinkOperations.getTargets(cls, "method", true)) {
       typeCheckingContext.addDependencyForCurrent(m);
     }
-    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(cls)).isNotEmpty()) {
+    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cls, "Class has unimplemented methods (press Ctrl+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", null, errorTarget);

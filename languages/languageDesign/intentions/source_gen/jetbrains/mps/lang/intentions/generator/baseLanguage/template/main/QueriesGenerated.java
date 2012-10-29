@@ -13,8 +13,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -42,11 +41,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1192804188826(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "forConcept", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "forConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1240406868383(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BaseIntentionDeclaration_Behavior.call_isParameterized_6263518417926802310(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isParameterized_6263518417926802310", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1193397361930(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -135,15 +134,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4945049520561168333(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BaseIntentionDeclaration_Behavior.call_isParameterized_6263518417926802310(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isParameterized_6263518417926802310", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_4945049520561168352(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BaseIntentionDeclaration_Behavior.call_isParameterized_6263518417926802310(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isParameterized_6263518417926802310", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_8499078905499803540(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BaseIntentionDeclaration_Behavior.call_isParameterized_6263518417926802310(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isParameterized_6263518417926802310", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_3618415754251195574(final IOperationContext operationContext, final IfMacroContext _context) {

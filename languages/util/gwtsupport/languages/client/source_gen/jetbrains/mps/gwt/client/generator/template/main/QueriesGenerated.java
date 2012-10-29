@@ -6,10 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.gwt.client.behavior.Element_Behavior;
-import jetbrains.mps.gwt.client.behavior.Attr_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -37,15 +35,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536881430(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "entryPoint", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "entryPoint", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536881446(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "module", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "module", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536878967(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Element_Behavior.call_getXmlElement_3852159904898386595(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getXmlElement_3852159904898386595", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536878977(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -56,7 +54,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536881405(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Element_Behavior.call_getXmlElement_3852159904898386595(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getXmlElement_3852159904898386595", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536881415(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -90,7 +88,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2968360207536879017(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Attr_Behavior.call_getXmlAttr_3852159904898525999(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getXmlAttr_3852159904898525999", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1220369573364066224(final IOperationContext operationContext, final ReferenceMacroContext _context) {

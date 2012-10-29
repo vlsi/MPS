@@ -5,7 +5,7 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -17,7 +17,7 @@ public class MeetType_Behavior {
     StringBuilder sb = new StringBuilder("meet(");
     List<SNode> nodes = SLinkOperations.getTargets(thisNode, "argument", true);
     for (SNode arg : nodes) {
-      sb.append(BaseConcept_Behavior.call_getPresentation_1213877396640(arg));
+      sb.append(BehaviorReflection.invokeVirtual(String.class, arg, "virtual_getPresentation_1213877396640", new Object[]{}));
       if (SNodeOperations.getIndexInParent(arg) < ListSequence.fromList(nodes).count() - 1) {
         sb.append(" & ");
       }

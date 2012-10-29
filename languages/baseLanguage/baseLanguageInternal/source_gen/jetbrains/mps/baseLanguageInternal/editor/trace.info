@@ -3125,7 +3125,7 @@
     <nodeInfo nodeId="1176743304856" fileName="InternalVariableReference_Editor.java" startLine="98" startPosition="10" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224155888025" fileName="InternalVariableReference_Editor.java" startLine="106" startPosition="129" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1224155888029" fileName="InternalVariableReference_Editor.java" startLine="107" startPosition="26" endLine="108" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224155888037" fileName="InternalVariableReference_Editor.java" startLine="109" startPosition="29" endLine="110" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224155888037" fileName="InternalVariableReference_Editor.java" startLine="109" startPosition="29" endLine="110" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1224155888048" fileName="InternalVariableReference_Editor.java" startLine="111" startPosition="14" endLine="112" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7376433222636453255" fileName="InternalVariableReference_Editor.java" startLine="113" startPosition="7" endLine="114" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7376433222636454359" fileName="InternalVariableReference_Editor.java" startLine="114" startPosition="45" endLine="115" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -3159,7 +3159,7 @@
     <scopeInfo nodeId="1176743257549" fileName="InternalVariableReference_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="80" />
     <scopeInfo nodeId="1176743257549" fileName="InternalVariableReference_Editor.java" startLine="38" startPosition="80" endLine="39" endPosition="81" />
     <scopeInfo nodeId="1176743257549" fileName="InternalVariableReference_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="81" />
-    <scopeInfo nodeId="1224155888036" fileName="InternalVariableReference_Editor.java" startLine="109" startPosition="29" endLine="110" endPosition="80" />
+    <scopeInfo nodeId="1224155888036" fileName="InternalVariableReference_Editor.java" startLine="109" startPosition="29" endLine="110" endPosition="167" />
     <scopeInfo nodeId="1224155888047" fileName="InternalVariableReference_Editor.java" startLine="111" startPosition="14" endLine="112" endPosition="64" />
     <scopeInfo nodeId="1224155888057" fileName="InternalVariableReference_Editor.java" startLine="116" startPosition="64" endLine="117" endPosition="94" />
     <scopeInfo nodeId="1176743259738" fileName="InternalVariableReference_Editor.java" startLine="47" startPosition="5" endLine="49" endPosition="63">

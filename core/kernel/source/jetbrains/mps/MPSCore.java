@@ -36,7 +36,6 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
@@ -99,7 +98,6 @@ public class MPSCore extends ComponentPlugin {
     init(new ExtensionRegistry(classLoaderManager, myModuleRepository));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
-    init(new OldBehaviorManager(classLoaderManager));
     init(new SModelUtil_new(classLoaderManager, myGlobalSModelEventsManager));
     init(new CachesManager(classLoaderManager, myModelRepository));
     init(new LanguageDescriptorModelProvider(myModuleRepository, myModelRepository));

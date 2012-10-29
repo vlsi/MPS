@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class RefTestClass_Behavior {
   public static void init(SNode thisNode) {
@@ -17,7 +17,7 @@ public class RefTestClass_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod")) {
       return CompositeScope.createComposite(SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "methods")), (SLinkOperations.getTarget(thisNode, "extends", false) != null ?
-        ScopeProvider_Behavior.call_getScope_3734116213129936182(SLinkOperations.getTarget(thisNode, "extends", false), kind, thisNode) :
+        BehaviorReflection.invokeVirtual(Scope.class, SLinkOperations.getTarget(thisNode, "extends", false), "virtual_getScope_3734116213129936182", new Object[]{kind, thisNode}) :
         null
       ));
     }

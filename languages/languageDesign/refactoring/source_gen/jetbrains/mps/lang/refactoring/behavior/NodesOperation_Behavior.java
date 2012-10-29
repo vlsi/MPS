@@ -5,8 +5,7 @@ package jetbrains.mps.lang.refactoring.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -14,8 +13,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodesOperation_Behavior {
-  private static Class[] PARAMETERS_7012097027058652513 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,18 +24,14 @@ public class NodesOperation_Behavior {
     return new NodesOperation_Behavior.QuotationClass_b95jz1_a0c0b().createNode();
   }
 
+  @Deprecated
   public static SNode call_createType_7012097027058652513(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652513, new Object[]{});
-  }
-
-  public static SNode callSuperNew_createType_7012097027058652513(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652513, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_7012097027058652452", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createType_7012097027058652513(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652513, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_b95jz1_a0a0b0b {

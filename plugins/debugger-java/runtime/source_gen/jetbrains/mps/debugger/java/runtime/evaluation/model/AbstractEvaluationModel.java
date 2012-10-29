@@ -37,7 +37,7 @@ import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -190,7 +190,7 @@ public abstract class AbstractEvaluationModel {
   public String getPresentation() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, getNodeToShow(), "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}));
+        return BehaviorReflection.invokeVirtual(String.class, getNodeToShow(), "virtual_getEvaluatorPresentation_9172312269976647295", new Object[]{});
       }
     });
   }

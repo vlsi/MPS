@@ -16,7 +16,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
@@ -44,7 +44,7 @@ public class QueriesGenerated {
         return SLinkOperations.getTargets(it, "operators", true);
       }
     }).toListSequence());
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getParent(op), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(op), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_3524394717035465440(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -5,15 +5,11 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_URL_Behavior {
-  private static Class[] PARAMETERS_3696012239575646497 = {SNode.class};
-  private static Class[] PARAMETERS_3696012239575646509 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -29,31 +25,23 @@ public class CellModel_URL_Behavior {
     return "}";
   }
 
+  @Deprecated
   public static String call_getOpeningText_3696012239575646497(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), "virtual_getOpeningText_1220339714057", PARAMETERS_3696012239575646497, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getOpeningText_1220339714057", new Object[]{});
   }
 
+  @Deprecated
   public static String call_getClosingText_3696012239575646509(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), "virtual_getClosingText_1220339738643", PARAMETERS_3696012239575646509, new Object[]{});
-  }
-
-  public static String callSuperNew_getOpeningText_3696012239575646497(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getOpeningText_1220339714057", PARAMETERS_3696012239575646497, new Object[]{});
-  }
-
-  public static String callSuperNew_getClosingText_3696012239575646509(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getClosingText_1220339738643", PARAMETERS_3696012239575646509, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClosingText_1220339738643", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getOpeningText_3696012239575646497(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getOpeningText_1220339714057", PARAMETERS_3696012239575646497, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getOpeningText_1220339714057", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getClosingText_3696012239575646509(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getClosingText_1220339738643", PARAMETERS_3696012239575646509, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getClosingText_1220339738643", new Class[]{SNode.class}, new Object[]{});
   }
 }

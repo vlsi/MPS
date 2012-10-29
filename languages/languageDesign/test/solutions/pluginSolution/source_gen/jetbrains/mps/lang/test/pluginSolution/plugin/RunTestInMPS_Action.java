@@ -19,8 +19,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
@@ -93,7 +93,7 @@ public class RunTestInMPS_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
+      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase"), "virtual_getTestSet_1216130724401", new Object[]{})).toListSequence());
       for (SNode test : SetSequence.fromSet(tests)) {
         RunTestInMPS_Action.this.runTest(test, _params);
       }
@@ -106,10 +106,10 @@ public class RunTestInMPS_Action extends BaseAction {
 
   /*package*/ void runTest(final SNode test, final Map<String, Object> _params) {
     try {
-      final String className = ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test));
-      final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
+      final String className = BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{});
+      final String testName = BehaviorReflection.invokeVirtual(String.class, test, "virtual_getTestName_1216136419751", new Object[]{});
       System.out.println("Test " + className + "." + testName);
-      final Class c = ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
+      final Class c = ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule().getClass(BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{}));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
       Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());

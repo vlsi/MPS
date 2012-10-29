@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LibraryFolder_Behavior {
   public static void init(SNode thisNode) {
@@ -16,7 +16,7 @@ public class LibraryFolder_Behavior {
   public static String call_getLibraryPathRelativeToMPSBuild_1240408519032(SNode thisNode) {
     String path = "";
     for (SNode p : ListSequence.fromList(MPSBuild_Behavior.call_getPathToLibrary_1233680013340(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.custommps.structure.MPSBuild", false, false), thisNode))) {
-      path += IStringExpression_Behavior.call_getValue_1213877173054(p);
+      path += BehaviorReflection.invokeVirtual(String.class, p, "virtual_getValue_1213877173054", new Object[]{});
       path += "/";
     }
     return path;

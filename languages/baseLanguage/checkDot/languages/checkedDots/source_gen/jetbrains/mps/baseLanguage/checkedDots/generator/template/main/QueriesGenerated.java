@@ -9,13 +9,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
@@ -43,7 +42,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3391577739833458953(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(IVariableReference_Behavior.call_getVariable_1023687332192481693(_context.getNode()), "name");
+    return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getVariable_1023687332192481693", new Object[]{}), "name");
   }
 
   public static Object referenceMacro_GetReferent_5665267283159127972(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -95,7 +94,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2319519288049976964(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Classifier_Behavior.call_getThisType_3305065273710880775(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getThisType_3305065273710880775", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7907427828436735258(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

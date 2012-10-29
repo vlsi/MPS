@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,7 +30,7 @@ public class ActionParameterDeclaration_Behavior {
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
       return SLinkOperations.getTarget(new ActionParameterDeclaration_Behavior.QuotationClass_ax10d1_a0a0a1a0c().createNode(), "variableDeclaration", false);
     }
-    throw new IllegalStateException("Action parameter has wrong type: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "type", true)));
+    throw new IllegalStateException("Action parameter has wrong type: " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
 
   public static class QuotationClass_ax10d1_a0a0a0a2 {

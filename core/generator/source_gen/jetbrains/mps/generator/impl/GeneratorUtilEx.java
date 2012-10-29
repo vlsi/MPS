@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.LinkedList;
@@ -59,7 +59,7 @@ public class GeneratorUtilEx {
   }
 
   public static String getPatternVariableName(SNode ref) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, ref, "virtual_getVariableName_2902001550281937661", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeVirtual(String.class, ref, "virtual_getVariableName_2902001550281937661", new Object[]{});
   }
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {

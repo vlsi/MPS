@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -48,7 +48,7 @@ public class NodeFactoryUtil {
       return;
     }
     try {
-      QueryMethodGenerated.invoke(((String) BehaviorManager.getInstance().invoke(Object.class, factory, "call_getQueryMethodName_1220279061997", new Class[]{SNode.class})), null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), SNodeOperations.getModel(factory));
+      QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, factory, "jetbrains.mps.lang.actions.structure.NodeFactory", "call_getQueryMethodName_1220279061997", new Object[]{}), null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), SNodeOperations.getModel(factory));
     } catch (Exception e) {
       LOG.error(e);
     }

@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -144,7 +144,7 @@ public class PropertyChangeHandlerSetup_Editor extends DefaultNodeEditor {
       public String getText() {
         SNode pt = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", false, false), "property", false), "dataType", true);
         SNode res = new PropertyChangeHandlerSetup_Editor.QuotationClass_mum76i_a0a1a0a0b0a0a31().createNode(pt);
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(res);
+        return BehaviorReflection.invokeVirtual(String.class, res, "virtual_getPresentation_1213877396640", new Object[]{});
       }
 
       public void setText(String s) {

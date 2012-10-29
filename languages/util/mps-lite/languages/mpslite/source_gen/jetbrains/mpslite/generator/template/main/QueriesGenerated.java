@@ -16,11 +16,10 @@ import java.util.List;
 import jetbrains.mpslite.behavior.ConceptContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mpslite.behavior.IMPSLiteConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mpslite.behavior.AbstractConceptReference_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mpslite.behavior.GenerationUtils;
 import jetbrains.mpslite.behavior.VariableConcept_Behavior;
@@ -42,8 +41,8 @@ public class QueriesGenerated {
     for (SNode conceptDeclaration : allConcepts) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));
-      SPropertyOperations.set(concept, "rootable", "" + (IMPSLiteConcept_Behavior.call_isRootable_1239714833738(conceptDeclaration)));
-      if (IMPSLiteConcept_Behavior.call_isAbstract_1239715026284(conceptDeclaration)) {
+      SPropertyOperations.set(concept, "rootable", "" + (BehaviorReflection.invokeVirtual(Boolean.TYPE, conceptDeclaration, "virtual_isRootable_1239714833738", new Object[]{})));
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, conceptDeclaration, "virtual_isAbstract_1239715026284", new Object[]{})) {
         SNode booleanConceptProperty = SLinkOperations.addNewChild(concept, "conceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty");
         SNode conceptProperty_Abstract = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "conceptPropertyDeclaration", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -56,25 +55,25 @@ public class QueriesGenerated {
     }
     // additional concepts 
     for (SNode conceptDeclaration : allConcepts) {
-      SNode concept = IMPSLiteConcept_Behavior.call_createAdditionalConcept_1239817368042(conceptDeclaration, conceptsToTargets, partsToLinkDeclarations);
+      SNode concept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "virtual_createAdditionalConcept_1239817368042", new Object[]{conceptsToTargets, partsToLinkDeclarations});
       if (concept != null) {
         MapSequence.fromMap(additionalConceptsToTargets).put(conceptDeclaration, concept);
       }
     }
     // extends 
     for (SNode conceptDeclaration : allConcepts) {
-      SLinkOperations.setTarget(((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), "extends", ((SNode) AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets)), false);
+      SLinkOperations.setTarget(((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), "extends", ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(conceptDeclaration, "extends", true), "virtual_getConcept_1238594571574", new Object[]{conceptsToTargets})), false);
     }
     // inner concept structure 
     for (SNode conceptDeclaration : allConcepts) {
-      IMPSLiteConcept_Behavior.call_fillConcept_1239891562930(conceptDeclaration, ((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations);
+      BehaviorReflection.invokeVirtual(Void.class, conceptDeclaration, "virtual_fillConcept_1239891562930", new Object[]{((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations});
     }
     // editor 
     SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
     SModel actionsModel = LanguageAspect.ACTIONS.get(language).getSModel();
     Map<SNode, SNode> conceptsToEditors = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode conceptDeclaration : allConcepts) {
-      SNode editor = IMPSLiteConcept_Behavior.call_createEditor_1239890004879(conceptDeclaration, conceptsToTargets, partsToLinkDeclarations);
+      SNode editor = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "virtual_createEditor_1239890004879", new Object[]{conceptsToTargets, partsToLinkDeclarations});
       if (editor == null) {
         continue;
       }
@@ -83,7 +82,7 @@ public class QueriesGenerated {
       MapSequence.fromMap(conceptsToEditors).put(mpsConcept, editor);
     }
     for (SNode additionalConcept : MapSequence.fromMap(additionalConceptsToTargets).keySet()) {
-      SNode editor = IMPSLiteConcept_Behavior.call_createAdditionalEditor_1239891670850(additionalConcept, conceptsToTargets, partsToLinkDeclarations);
+      SNode editor = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), additionalConcept, "virtual_createAdditionalEditor_1239891670850", new Object[]{conceptsToTargets, partsToLinkDeclarations});
       if (editor == null) {
         continue;
       }

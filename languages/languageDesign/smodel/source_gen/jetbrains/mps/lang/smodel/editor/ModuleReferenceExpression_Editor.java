@@ -23,9 +23,9 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
@@ -145,7 +145,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394404(node, scope);
+      return BehaviorReflection.invokeVirtual((Class<List<IModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

@@ -4,10 +4,10 @@ package jetbrains.mps.testbench.suite.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -16,7 +16,7 @@ import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String fqn = ITestRef_Behavior.call_fqClassName_2956932267233324537(_context.getNode());
+    String fqn = BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_fqClassName_2956932267233324537", new Object[]{});
     if ((fqn == null || fqn.length() == 0)) {
       _context.showErrorMessage(_context.getNode(), "no class name");
       return "NO CLASS NAME";
@@ -25,7 +25,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634161018296(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String tns = IterableUtils.join(Sequence.fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
+    String tns = IterableUtils.join(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) Object.class), _context.getNode(), "virtual_testNames_4089647634160960707", new Object[]{})), ",");
     if ((tns == null || tns.length() == 0)) {
       _context.showWarningMessage(_context.getNode(), "empty test case");
     }
@@ -33,7 +33,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634160960602(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IModuleRef_Behavior.call_moduleReference_1280144168199513544(SLinkOperations.getTarget(_context.getNode(), "moduleRef", true)).toString();
+    return BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(_context.getNode(), "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{}).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2956932267233340150(final IOperationContext operationContext, final PropertyMacroContext _context) {

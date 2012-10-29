@@ -5,7 +5,7 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
@@ -13,7 +13,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class XmlDoctypeDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     SNode left = SNodeOperations.getPrevSibling(node);
-    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPart") && XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPart"))) {
+    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPart"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
       this.appendNewLine();
       this.indentBuffer();
     }

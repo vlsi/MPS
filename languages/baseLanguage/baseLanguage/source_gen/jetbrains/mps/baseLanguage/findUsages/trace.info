@@ -469,7 +469,7 @@
     <nodeInfo nodeId="1200497698890" fileName="OverridingFields_Finder.java" startLine="50" startPosition="201" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200497698896" fileName="OverridingFields_Finder.java" startLine="52" startPosition="106" endLine="53" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200497698908" fileName="OverridingFields_Finder.java" startLine="54" startPosition="16" endLine="55" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200499570663" fileName="OverridingFields_Finder.java" startLine="58" startPosition="325" endLine="59" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200499570663" fileName="OverridingFields_Finder.java" startLine="58" startPosition="435" endLine="59" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="63" startPosition="15" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206463289829" fileName="OverridingFields_Finder.java" startLine="68" startPosition="45" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridingFields_Finder#()V" />
@@ -495,7 +495,7 @@
     <scopeInfo nodeId="1200497601862" fileName="OverridingFields_Finder.java" startLine="41" startPosition="209" endLine="42" endPosition="19" />
     <scopeInfo nodeId="1200497698895" fileName="OverridingFields_Finder.java" startLine="52" startPosition="106" endLine="53" endPosition="157" />
     <scopeInfo nodeId="1200497698907" fileName="OverridingFields_Finder.java" startLine="54" startPosition="16" endLine="55" endPosition="163" />
-    <scopeInfo nodeId="1200497698937" fileName="OverridingFields_Finder.java" startLine="58" startPosition="325" endLine="59" endPosition="62" />
+    <scopeInfo nodeId="1200497698937" fileName="OverridingFields_Finder.java" startLine="58" startPosition="435" endLine="59" endPosition="62" />
     <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="63" startPosition="15" endLine="64" endPosition="21" />
     <scopeInfo nodeId="1206463287421" fileName="OverridingFields_Finder.java" startLine="68" startPosition="45" endLine="69" endPosition="31" />
     <scopeInfo nodeId="1200420731716" fileName="OverridingFields_Finder.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />

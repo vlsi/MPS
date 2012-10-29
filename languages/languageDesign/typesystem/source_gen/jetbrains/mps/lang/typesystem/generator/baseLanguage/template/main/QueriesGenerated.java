@@ -17,14 +17,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.typesystem.behavior.SubtypingRule_Behavior;
@@ -33,7 +32,6 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.behavior.AbstractInequationStatement_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
@@ -128,7 +126,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4484478261143736241(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode condition = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, false);
     SNode parent = SNodeOperations.getParent(condition);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && condition == IRuleWithTwoNodes_Behavior.call_getSecondNodeCondition_4484478261143583672(SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"));
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && condition == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
   }
 
   public static boolean baseMappingRule_Condition_1177333630561(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -153,7 +151,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4484478261143736375(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode condition = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, false);
     SNode parent = SNodeOperations.getParent(condition);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && IRuleWithTwoNodes_Behavior.call_getSecondNodeCondition_4484478261143583672(SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes")) == condition;
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{}) == condition;
   }
 
   public static boolean baseMappingRule_Condition_1196962232050(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -178,7 +176,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4484478261143736493(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode condition = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, false);
     SNode parent = SNodeOperations.getParent(condition);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && IRuleWithTwoNodes_Behavior.call_getSecondNodeCondition_4484478261143583672(SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes")) == condition;
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{}) == condition;
   }
 
   public static boolean baseMappingRule_Condition_1196962272510(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -440,11 +438,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7806648416361396021(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "concept", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8124453027370845472(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "concept", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8124453027370845489(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -923,11 +921,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6981684633700629175(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_160921426017522098(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "blockingNodeConcept", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "blockingNodeConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6981684633700507644(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -967,7 +965,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4197825331980858370(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "replacementRule", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "replacementRule", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_3311531675558729898(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2166,7 +2164,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216643035001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1220358467477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2372,7 +2370,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5031556731835765842(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "operationConcept", true)).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(it, "concept", false));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
       }
     }, true);
   }
@@ -2388,7 +2386,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5031556731835765742(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "operationConcept", true)).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(it, "concept", false));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
       }
     }, true);
   }

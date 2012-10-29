@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -40,7 +40,7 @@ public class CommitUtil {
           )
         );
         refactoring = (refactoringNode != null ?
-          RefactoringUtil.getRefactoringByClassName(INamedConcept_Behavior.call_getFqName_1213877404258(refactoringNode)) :
+          RefactoringUtil.getRefactoringByClassName(BehaviorReflection.invokeVirtual(String.class, refactoringNode, "virtual_getFqName_1213877404258", new Object[]{})) :
           null
         );
         if (refactoring == null) {

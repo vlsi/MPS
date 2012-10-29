@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -175,19 +176,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234875781465(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return AbstractTextGenParameter_Behavior.call_getGetterName_1234885318469(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGetterName_1234885318469", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1234874573403(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SimpleTextGenOperation_Behavior.call_getMethodName_1234789420862(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getMethodName_1234789420862", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1234879337184(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return AbstractTextGenParameter_Behavior.call_getGetterName_1234885318469(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGetterName_1234885318469", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1234879458785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SimpleTextGenOperation_Behavior.call_getMethodName_1234789420862(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getMethodName_1234789420862", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1237469474662(final IOperationContext operationContext, final ReferenceMacroContext _context) {

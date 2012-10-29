@@ -165,7 +165,7 @@
     <nodeInfo nodeId="1182474588341" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="22" startPosition="96" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1212097666657" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1212097666657" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1212097666657" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="27" startPosition="203" endLine="28" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1212097666657" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="27" startPosition="203" endLine="28" endPosition="385" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1178176661317" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1178176661317" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178176661317" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="39" startPosition="119" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -185,7 +185,7 @@
     <scopeInfo nodeId="1178176661317" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
       <varInfo nodeId="1178176661317" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1212097666657" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="320">
+    <scopeInfo nodeId="1212097666657" fileName="typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="385">
       <varInfo nodeId="1212097666657" varName="_info_12389875345" />
       <varInfo nodeId="1212097666657" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>

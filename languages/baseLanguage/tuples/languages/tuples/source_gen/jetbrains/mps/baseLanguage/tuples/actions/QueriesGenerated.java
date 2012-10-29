@@ -33,7 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.Set;
@@ -123,7 +123,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return BaseConcept_Behavior.call_getPresentation_1213877396640((item)) + " literal";
+                return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{}) + " literal";
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -161,7 +161,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return BaseConcept_Behavior.call_getPresentation_1213877396640((item)) + " type";
+                return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{}) + " type";
               }
 
               public String getVisibleMatchingText(String pattern) {

@@ -635,209 +635,212 @@
     <unitInfo nodeId="3575782568432720360" fileName="TestToolbarPanel.java" startLine="22" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestToolbarPanel" />
   </root>
   <root nodeId="3575782568432720920" modelId="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)">
-    <nodeInfo nodeId="3575782568432721741" fileName="StatisticsRowRenderer.java" startLine="19" startPosition="65" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDENT" />
-    <nodeInfo nodeId="3575782568432720921" fileName="StatisticsRowRenderer.java" startLine="21" startPosition="0" endLine="22" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextPanel" />
-    <nodeInfo nodeId="3575782568432720924" fileName="StatisticsRowRenderer.java" startLine="22" startPosition="35" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
-    <nodeInfo nodeId="3575782568432720927" fileName="StatisticsRowRenderer.java" startLine="23" startPosition="30" endLine="24" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdvancedText" />
-    <nodeInfo nodeId="3575782568432720930" fileName="StatisticsRowRenderer.java" startLine="24" startPosition="38" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySimpleField" />
-    <nodeInfo nodeId="3575782568432720933" fileName="StatisticsRowRenderer.java" startLine="25" startPosition="37" endLine="26" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatePanel" />
-    <nodeInfo nodeId="3575782568432720936" fileName="StatisticsRowRenderer.java" startLine="26" startPosition="36" endLine="27" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccess" />
-    <nodeInfo nodeId="3575782568432720939" fileName="StatisticsRowRenderer.java" startLine="27" startPosition="33" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myError" />
-    <nodeInfo nodeId="3575782568432720942" fileName="StatisticsRowRenderer.java" startLine="28" startPosition="31" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailure" />
-    <nodeInfo nodeId="3575782568432720945" fileName="StatisticsRowRenderer.java" startLine="29" startPosition="33" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAloneSuccess" />
-    <nodeInfo nodeId="3575782568432720948" fileName="StatisticsRowRenderer.java" startLine="30" startPosition="38" endLine="31" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAloneError" />
-    <nodeInfo nodeId="3575782568432720951" fileName="StatisticsRowRenderer.java" startLine="31" startPosition="36" endLine="32" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAloneFailure" />
-    <nodeInfo nodeId="3575782568432720958" fileName="StatisticsRowRenderer.java" startLine="34" startPosition="34" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432720959" fileName="StatisticsRowRenderer.java" startLine="35" startPosition="0" endLine="36" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432720968" fileName="StatisticsRowRenderer.java" startLine="36" startPosition="49" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432720975" fileName="StatisticsRowRenderer.java" startLine="37" startPosition="26" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432720985" fileName="StatisticsRowRenderer.java" startLine="38" startPosition="47" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432720992" fileName="StatisticsRowRenderer.java" startLine="39" startPosition="34" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432720999" fileName="StatisticsRowRenderer.java" startLine="40" startPosition="45" endLine="41" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721009" fileName="StatisticsRowRenderer.java" startLine="41" startPosition="57" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721018" fileName="StatisticsRowRenderer.java" startLine="42" startPosition="57" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721019" fileName="StatisticsRowRenderer.java" startLine="43" startPosition="0" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721021" fileName="StatisticsRowRenderer.java" startLine="44" startPosition="24" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721022" fileName="StatisticsRowRenderer.java" startLine="45" startPosition="0" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721031" fileName="StatisticsRowRenderer.java" startLine="46" startPosition="53" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721039" fileName="StatisticsRowRenderer.java" startLine="47" startPosition="36" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721051" fileName="StatisticsRowRenderer.java" startLine="48" startPosition="72" endLine="49" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721062" fileName="StatisticsRowRenderer.java" startLine="49" startPosition="50" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721069" fileName="StatisticsRowRenderer.java" startLine="50" startPosition="32" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721070" fileName="StatisticsRowRenderer.java" startLine="51" startPosition="0" endLine="52" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721079" fileName="StatisticsRowRenderer.java" startLine="52" startPosition="53" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721086" fileName="StatisticsRowRenderer.java" startLine="53" startPosition="39" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721093" fileName="StatisticsRowRenderer.java" startLine="54" startPosition="32" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721094" fileName="StatisticsRowRenderer.java" startLine="55" startPosition="0" endLine="56" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721103" fileName="StatisticsRowRenderer.java" startLine="56" startPosition="51" endLine="57" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721110" fileName="StatisticsRowRenderer.java" startLine="57" startPosition="37" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721117" fileName="StatisticsRowRenderer.java" startLine="58" startPosition="30" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721118" fileName="StatisticsRowRenderer.java" startLine="59" startPosition="0" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721129" fileName="StatisticsRowRenderer.java" startLine="60" startPosition="52" endLine="61" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721139" fileName="StatisticsRowRenderer.java" startLine="61" startPosition="51" endLine="62" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721149" fileName="StatisticsRowRenderer.java" startLine="62" startPosition="53" endLine="63" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721159" fileName="StatisticsRowRenderer.java" startLine="63" startPosition="49" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721160" fileName="StatisticsRowRenderer.java" startLine="64" startPosition="0" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721162" fileName="StatisticsRowRenderer.java" startLine="65" startPosition="26" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721163" fileName="StatisticsRowRenderer.java" startLine="66" startPosition="0" endLine="67" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721172" fileName="StatisticsRowRenderer.java" startLine="67" startPosition="64" endLine="68" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721183" fileName="StatisticsRowRenderer.java" startLine="68" startPosition="55" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721190" fileName="StatisticsRowRenderer.java" startLine="69" startPosition="37" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721191" fileName="StatisticsRowRenderer.java" startLine="70" startPosition="0" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721200" fileName="StatisticsRowRenderer.java" startLine="71" startPosition="64" endLine="72" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721207" fileName="StatisticsRowRenderer.java" startLine="72" startPosition="44" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721214" fileName="StatisticsRowRenderer.java" startLine="73" startPosition="37" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3575782568432721215" fileName="StatisticsRowRenderer.java" startLine="74" startPosition="0" endLine="75" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721224" fileName="StatisticsRowRenderer.java" startLine="75" startPosition="61" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721231" fileName="StatisticsRowRenderer.java" startLine="76" startPosition="42" endLine="77" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721255" fileName="StatisticsRowRenderer.java" startLine="80" startPosition="137" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721261" fileName="StatisticsRowRenderer.java" startLine="81" startPosition="59" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721265" fileName="StatisticsRowRenderer.java" startLine="82" startPosition="29" endLine="83" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721269" fileName="StatisticsRowRenderer.java" startLine="83" startPosition="35" endLine="84" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721273" fileName="StatisticsRowRenderer.java" startLine="84" startPosition="33" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721283" fileName="StatisticsRowRenderer.java" startLine="87" startPosition="13" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721285" fileName="StatisticsRowRenderer.java" startLine="88" startPosition="16" endLine="89" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721293" fileName="StatisticsRowRenderer.java" startLine="90" startPosition="27" endLine="91" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721301" fileName="StatisticsRowRenderer.java" startLine="92" startPosition="9" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721308" fileName="StatisticsRowRenderer.java" startLine="93" startPosition="29" endLine="94" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721319" fileName="StatisticsRowRenderer.java" startLine="95" startPosition="37" endLine="96" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721332" fileName="StatisticsRowRenderer.java" startLine="97" startPosition="16" endLine="98" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721339" fileName="StatisticsRowRenderer.java" startLine="99" startPosition="9" endLine="100" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721345" fileName="StatisticsRowRenderer.java" startLine="100" startPosition="29" endLine="101" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721351" fileName="StatisticsRowRenderer.java" startLine="101" startPosition="28" endLine="102" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3575782568432721355" fileName="StatisticsRowRenderer.java" startLine="103" startPosition="13" endLine="104" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721357" fileName="StatisticsRowRenderer.java" startLine="104" startPosition="24" endLine="105" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721366" fileName="StatisticsRowRenderer.java" startLine="105" startPosition="52" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721370" fileName="StatisticsRowRenderer.java" startLine="106" startPosition="28" endLine="107" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3575782568432721374" fileName="StatisticsRowRenderer.java" startLine="108" startPosition="13" endLine="109" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721376" fileName="StatisticsRowRenderer.java" startLine="109" startPosition="23" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721385" fileName="StatisticsRowRenderer.java" startLine="110" startPosition="58" endLine="111" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721389" fileName="StatisticsRowRenderer.java" startLine="111" startPosition="28" endLine="112" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3575782568432721393" fileName="StatisticsRowRenderer.java" startLine="113" startPosition="13" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721395" fileName="StatisticsRowRenderer.java" startLine="114" startPosition="24" endLine="115" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721404" fileName="StatisticsRowRenderer.java" startLine="115" startPosition="59" endLine="116" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721408" fileName="StatisticsRowRenderer.java" startLine="116" startPosition="28" endLine="117" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3575782568432721412" fileName="StatisticsRowRenderer.java" startLine="118" startPosition="13" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721414" fileName="StatisticsRowRenderer.java" startLine="119" startPosition="23" endLine="120" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721423" fileName="StatisticsRowRenderer.java" startLine="120" startPosition="58" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721427" fileName="StatisticsRowRenderer.java" startLine="121" startPosition="28" endLine="122" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3575782568432721431" fileName="StatisticsRowRenderer.java" startLine="123" startPosition="13" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3575782568432721433" fileName="StatisticsRowRenderer.java" startLine="124" startPosition="19" endLine="125" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721439" fileName="StatisticsRowRenderer.java" startLine="125" startPosition="41" endLine="126" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721445" fileName="StatisticsRowRenderer.java" startLine="126" startPosition="37" endLine="127" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721498" fileName="StatisticsRowRenderer.java" startLine="140" startPosition="13" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721520" fileName="StatisticsRowRenderer.java" startLine="143" startPosition="22" endLine="144" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721531" fileName="StatisticsRowRenderer.java" startLine="146" startPosition="22" endLine="147" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721542" fileName="StatisticsRowRenderer.java" startLine="149" startPosition="22" endLine="150" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721550" fileName="StatisticsRowRenderer.java" startLine="152" startPosition="16" endLine="153" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721557" fileName="StatisticsRowRenderer.java" startLine="153" startPosition="36" endLine="154" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721563" fileName="StatisticsRowRenderer.java" startLine="155" startPosition="9" endLine="156" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721567" fileName="StatisticsRowRenderer.java" startLine="156" startPosition="30" endLine="157" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3575782568432721570" fileName="StatisticsRowRenderer.java" startLine="159" startPosition="5" endLine="160" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721581" fileName="StatisticsRowRenderer.java" startLine="162" startPosition="30" endLine="163" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721588" fileName="StatisticsRowRenderer.java" startLine="164" startPosition="7" endLine="165" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721602" fileName="StatisticsRowRenderer.java" startLine="167" startPosition="30" endLine="168" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721609" fileName="StatisticsRowRenderer.java" startLine="169" startPosition="7" endLine="170" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721618" fileName="StatisticsRowRenderer.java" startLine="172" startPosition="19" endLine="173" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721627" fileName="StatisticsRowRenderer.java" startLine="174" startPosition="12" endLine="175" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721636" fileName="StatisticsRowRenderer.java" startLine="176" startPosition="5" endLine="177" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721660" fileName="StatisticsRowRenderer.java" startLine="179" startPosition="22" endLine="180" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721666" fileName="StatisticsRowRenderer.java" startLine="180" startPosition="36" endLine="181" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721652" fileName="StatisticsRowRenderer.java" startLine="182" startPosition="14" endLine="183" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721679" fileName="StatisticsRowRenderer.java" startLine="185" startPosition="5" endLine="186" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432721683" fileName="StatisticsRowRenderer.java" startLine="189" startPosition="37" endLine="190" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721692" fileName="StatisticsRowRenderer.java" startLine="191" startPosition="20" endLine="192" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721700" fileName="StatisticsRowRenderer.java" startLine="193" startPosition="5" endLine="194" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721707" fileName="StatisticsRowRenderer.java" startLine="194" startPosition="32" endLine="195" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432721717" fileName="StatisticsRowRenderer.java" startLine="198" startPosition="45" endLine="199" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432721725" fileName="StatisticsRowRenderer.java" startLine="199" startPosition="52" endLine="200" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721732" fileName="StatisticsRowRenderer.java" startLine="200" startPosition="29" endLine="201" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432721330" fileName="StatisticsRowRenderer.java" startLine="97" startPosition="14" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3575782568432721625" fileName="StatisticsRowRenderer.java" startLine="174" startPosition="10" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3575782568432721650" fileName="StatisticsRowRenderer.java" startLine="182" startPosition="12" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3575782568432721291" fileName="StatisticsRowRenderer.java" startLine="89" startPosition="41" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721515" fileName="StatisticsRowRenderer.java" startLine="142" startPosition="38" endLine="145" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721526" fileName="StatisticsRowRenderer.java" startLine="145" startPosition="11" endLine="148" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721537" fileName="StatisticsRowRenderer.java" startLine="148" startPosition="11" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721548" fileName="StatisticsRowRenderer.java" startLine="152" startPosition="14" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3575782568432721577" fileName="StatisticsRowRenderer.java" startLine="161" startPosition="21" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721598" fileName="StatisticsRowRenderer.java" startLine="166" startPosition="12" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721687" fileName="StatisticsRowRenderer.java" startLine="190" startPosition="21" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721453" fileName="StatisticsRowRenderer.java" startLine="128" startPosition="24" endLine="132" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721468" fileName="StatisticsRowRenderer.java" startLine="132" startPosition="13" endLine="136" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721483" fileName="StatisticsRowRenderer.java" startLine="136" startPosition="13" endLine="140" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432721314" fileName="StatisticsRowRenderer.java" startLine="94" startPosition="61" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721596" fileName="StatisticsRowRenderer.java" startLine="166" startPosition="10" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3575782568432721616" fileName="StatisticsRowRenderer.java" startLine="171" startPosition="5" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721648" fileName="StatisticsRowRenderer.java" startLine="178" startPosition="29" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721715" fileName="StatisticsRowRenderer.java" startLine="197" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMemoryUsage#(J)Ljavax/swing/JLabel;" />
-    <nodeInfo nodeId="3575782568432721643" fileName="StatisticsRowRenderer.java" startLine="177" startPosition="41" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721681" fileName="StatisticsRowRenderer.java" startLine="188" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTime#(J)Ljavax/swing/JLabel;" />
-    <nodeInfo nodeId="3575782568432721575" fileName="StatisticsRowRenderer.java" startLine="160" startPosition="27" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432721451" fileName="StatisticsRowRenderer.java" startLine="127" startPosition="38" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432720954" fileName="StatisticsRowRenderer.java" startLine="33" startPosition="0" endLine="78" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StatisticsRowRenderer#()V" />
-    <nodeInfo nodeId="3575782568432721279" fileName="StatisticsRowRenderer.java" startLine="85" startPosition="61" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="3575782568432721239" fileName="StatisticsRowRenderer.java" startLine="79" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
-    <scopeInfo nodeId="3575782568432721569" fileName="StatisticsRowRenderer.java" startLine="158" startPosition="14" endLine="158" endPosition="14" />
-    <scopeInfo nodeId="3575782568432721292" fileName="StatisticsRowRenderer.java" startLine="90" startPosition="27" endLine="91" endPosition="31" />
-    <scopeInfo nodeId="3575782568432721318" fileName="StatisticsRowRenderer.java" startLine="95" startPosition="37" endLine="96" endPosition="62" />
-    <scopeInfo nodeId="3575782568432721331" fileName="StatisticsRowRenderer.java" startLine="97" startPosition="16" endLine="98" endPosition="37" />
-    <scopeInfo nodeId="3575782568432721519" fileName="StatisticsRowRenderer.java" startLine="143" startPosition="22" endLine="144" endPosition="36" />
-    <scopeInfo nodeId="3575782568432721530" fileName="StatisticsRowRenderer.java" startLine="146" startPosition="22" endLine="147" endPosition="36" />
-    <scopeInfo nodeId="3575782568432721541" fileName="StatisticsRowRenderer.java" startLine="149" startPosition="22" endLine="150" endPosition="34" />
-    <scopeInfo nodeId="3575782568432721580" fileName="StatisticsRowRenderer.java" startLine="162" startPosition="30" endLine="163" endPosition="61" />
-    <scopeInfo nodeId="3575782568432721601" fileName="StatisticsRowRenderer.java" startLine="167" startPosition="30" endLine="168" endPosition="52" />
-    <scopeInfo nodeId="3575782568432721617" fileName="StatisticsRowRenderer.java" startLine="172" startPosition="19" endLine="173" endPosition="78" />
-    <scopeInfo nodeId="3575782568432721626" fileName="StatisticsRowRenderer.java" startLine="174" startPosition="12" endLine="175" endPosition="68" />
-    <scopeInfo nodeId="3575782568432721651" fileName="StatisticsRowRenderer.java" startLine="182" startPosition="14" endLine="183" endPosition="44" />
-    <scopeInfo nodeId="3575782568432721691" fileName="StatisticsRowRenderer.java" startLine="191" startPosition="20" endLine="192" endPosition="52" />
-    <scopeInfo nodeId="3575782568432721549" fileName="StatisticsRowRenderer.java" startLine="152" startPosition="16" endLine="154" endPosition="33" />
-    <scopeInfo nodeId="3575782568432721659" fileName="StatisticsRowRenderer.java" startLine="179" startPosition="22" endLine="181" endPosition="80">
+    <nodeInfo nodeId="3575782568432721741" fileName="StatisticsRowRenderer.java" startLine="20" startPosition="65" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INDENT" />
+    <nodeInfo nodeId="3575782568432720921" fileName="StatisticsRowRenderer.java" startLine="22" startPosition="0" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextPanel" />
+    <nodeInfo nodeId="3575782568432720924" fileName="StatisticsRowRenderer.java" startLine="23" startPosition="35" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
+    <nodeInfo nodeId="3575782568432720927" fileName="StatisticsRowRenderer.java" startLine="24" startPosition="30" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdvancedText" />
+    <nodeInfo nodeId="3575782568432720930" fileName="StatisticsRowRenderer.java" startLine="25" startPosition="38" endLine="26" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySimpleField" />
+    <nodeInfo nodeId="3575782568432720933" fileName="StatisticsRowRenderer.java" startLine="26" startPosition="37" endLine="27" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatePanel" />
+    <nodeInfo nodeId="3575782568432720936" fileName="StatisticsRowRenderer.java" startLine="27" startPosition="36" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccess" />
+    <nodeInfo nodeId="3575782568432720939" fileName="StatisticsRowRenderer.java" startLine="28" startPosition="33" endLine="29" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myError" />
+    <nodeInfo nodeId="3575782568432720942" fileName="StatisticsRowRenderer.java" startLine="29" startPosition="31" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFailure" />
+    <nodeInfo nodeId="3575782568432720945" fileName="StatisticsRowRenderer.java" startLine="30" startPosition="33" endLine="31" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAloneSuccess" />
+    <nodeInfo nodeId="3575782568432720948" fileName="StatisticsRowRenderer.java" startLine="31" startPosition="38" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAloneError" />
+    <nodeInfo nodeId="3575782568432720951" fileName="StatisticsRowRenderer.java" startLine="32" startPosition="36" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAloneFailure" />
+    <nodeInfo nodeId="3575782568432720958" fileName="StatisticsRowRenderer.java" startLine="35" startPosition="34" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432720959" fileName="StatisticsRowRenderer.java" startLine="36" startPosition="0" endLine="37" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432720968" fileName="StatisticsRowRenderer.java" startLine="37" startPosition="49" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432720975" fileName="StatisticsRowRenderer.java" startLine="38" startPosition="26" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432720985" fileName="StatisticsRowRenderer.java" startLine="39" startPosition="47" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432720992" fileName="StatisticsRowRenderer.java" startLine="40" startPosition="34" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432720999" fileName="StatisticsRowRenderer.java" startLine="41" startPosition="45" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721009" fileName="StatisticsRowRenderer.java" startLine="42" startPosition="57" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721018" fileName="StatisticsRowRenderer.java" startLine="43" startPosition="57" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721019" fileName="StatisticsRowRenderer.java" startLine="44" startPosition="0" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721021" fileName="StatisticsRowRenderer.java" startLine="45" startPosition="24" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721022" fileName="StatisticsRowRenderer.java" startLine="46" startPosition="0" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721031" fileName="StatisticsRowRenderer.java" startLine="47" startPosition="53" endLine="48" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721039" fileName="StatisticsRowRenderer.java" startLine="48" startPosition="36" endLine="49" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721051" fileName="StatisticsRowRenderer.java" startLine="49" startPosition="72" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721062" fileName="StatisticsRowRenderer.java" startLine="50" startPosition="50" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721069" fileName="StatisticsRowRenderer.java" startLine="51" startPosition="32" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721070" fileName="StatisticsRowRenderer.java" startLine="52" startPosition="0" endLine="53" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721079" fileName="StatisticsRowRenderer.java" startLine="53" startPosition="53" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721086" fileName="StatisticsRowRenderer.java" startLine="54" startPosition="39" endLine="55" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721093" fileName="StatisticsRowRenderer.java" startLine="55" startPosition="32" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721094" fileName="StatisticsRowRenderer.java" startLine="56" startPosition="0" endLine="57" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721103" fileName="StatisticsRowRenderer.java" startLine="57" startPosition="51" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721110" fileName="StatisticsRowRenderer.java" startLine="58" startPosition="37" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721117" fileName="StatisticsRowRenderer.java" startLine="59" startPosition="30" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721118" fileName="StatisticsRowRenderer.java" startLine="60" startPosition="0" endLine="61" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721129" fileName="StatisticsRowRenderer.java" startLine="61" startPosition="52" endLine="62" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721139" fileName="StatisticsRowRenderer.java" startLine="62" startPosition="51" endLine="63" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721149" fileName="StatisticsRowRenderer.java" startLine="63" startPosition="53" endLine="64" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721159" fileName="StatisticsRowRenderer.java" startLine="64" startPosition="49" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721160" fileName="StatisticsRowRenderer.java" startLine="65" startPosition="0" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721162" fileName="StatisticsRowRenderer.java" startLine="66" startPosition="26" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721163" fileName="StatisticsRowRenderer.java" startLine="67" startPosition="0" endLine="68" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721172" fileName="StatisticsRowRenderer.java" startLine="68" startPosition="64" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721183" fileName="StatisticsRowRenderer.java" startLine="69" startPosition="55" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721190" fileName="StatisticsRowRenderer.java" startLine="70" startPosition="37" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721191" fileName="StatisticsRowRenderer.java" startLine="71" startPosition="0" endLine="72" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721200" fileName="StatisticsRowRenderer.java" startLine="72" startPosition="64" endLine="73" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721207" fileName="StatisticsRowRenderer.java" startLine="73" startPosition="44" endLine="74" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721214" fileName="StatisticsRowRenderer.java" startLine="74" startPosition="37" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3575782568432721215" fileName="StatisticsRowRenderer.java" startLine="75" startPosition="0" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721224" fileName="StatisticsRowRenderer.java" startLine="76" startPosition="61" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721231" fileName="StatisticsRowRenderer.java" startLine="77" startPosition="42" endLine="78" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2341665692859208620" fileName="StatisticsRowRenderer.java" startLine="82" startPosition="24" endLine="83" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721255" fileName="StatisticsRowRenderer.java" startLine="84" startPosition="5" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721261" fileName="StatisticsRowRenderer.java" startLine="85" startPosition="59" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721265" fileName="StatisticsRowRenderer.java" startLine="86" startPosition="29" endLine="87" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721269" fileName="StatisticsRowRenderer.java" startLine="87" startPosition="35" endLine="88" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721273" fileName="StatisticsRowRenderer.java" startLine="88" startPosition="33" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721283" fileName="StatisticsRowRenderer.java" startLine="91" startPosition="13" endLine="92" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721285" fileName="StatisticsRowRenderer.java" startLine="92" startPosition="16" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721293" fileName="StatisticsRowRenderer.java" startLine="94" startPosition="27" endLine="95" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721301" fileName="StatisticsRowRenderer.java" startLine="96" startPosition="9" endLine="97" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721308" fileName="StatisticsRowRenderer.java" startLine="97" startPosition="29" endLine="98" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721319" fileName="StatisticsRowRenderer.java" startLine="99" startPosition="37" endLine="100" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721332" fileName="StatisticsRowRenderer.java" startLine="101" startPosition="16" endLine="102" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721339" fileName="StatisticsRowRenderer.java" startLine="103" startPosition="9" endLine="104" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721345" fileName="StatisticsRowRenderer.java" startLine="104" startPosition="29" endLine="105" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721351" fileName="StatisticsRowRenderer.java" startLine="105" startPosition="28" endLine="106" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3575782568432721355" fileName="StatisticsRowRenderer.java" startLine="107" startPosition="13" endLine="108" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721357" fileName="StatisticsRowRenderer.java" startLine="108" startPosition="24" endLine="109" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721366" fileName="StatisticsRowRenderer.java" startLine="109" startPosition="52" endLine="110" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721370" fileName="StatisticsRowRenderer.java" startLine="110" startPosition="28" endLine="111" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3575782568432721374" fileName="StatisticsRowRenderer.java" startLine="112" startPosition="13" endLine="113" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721376" fileName="StatisticsRowRenderer.java" startLine="113" startPosition="23" endLine="114" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721385" fileName="StatisticsRowRenderer.java" startLine="114" startPosition="58" endLine="115" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721389" fileName="StatisticsRowRenderer.java" startLine="115" startPosition="28" endLine="116" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3575782568432721393" fileName="StatisticsRowRenderer.java" startLine="117" startPosition="13" endLine="118" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721395" fileName="StatisticsRowRenderer.java" startLine="118" startPosition="24" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721404" fileName="StatisticsRowRenderer.java" startLine="119" startPosition="59" endLine="120" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721408" fileName="StatisticsRowRenderer.java" startLine="120" startPosition="28" endLine="121" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3575782568432721412" fileName="StatisticsRowRenderer.java" startLine="122" startPosition="13" endLine="123" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721414" fileName="StatisticsRowRenderer.java" startLine="123" startPosition="23" endLine="124" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721423" fileName="StatisticsRowRenderer.java" startLine="124" startPosition="58" endLine="125" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721427" fileName="StatisticsRowRenderer.java" startLine="125" startPosition="28" endLine="126" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3575782568432721431" fileName="StatisticsRowRenderer.java" startLine="127" startPosition="13" endLine="128" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3575782568432721433" fileName="StatisticsRowRenderer.java" startLine="128" startPosition="19" endLine="129" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721439" fileName="StatisticsRowRenderer.java" startLine="129" startPosition="41" endLine="130" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721445" fileName="StatisticsRowRenderer.java" startLine="130" startPosition="37" endLine="131" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721498" fileName="StatisticsRowRenderer.java" startLine="144" startPosition="13" endLine="145" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721520" fileName="StatisticsRowRenderer.java" startLine="147" startPosition="22" endLine="148" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721531" fileName="StatisticsRowRenderer.java" startLine="150" startPosition="22" endLine="151" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721542" fileName="StatisticsRowRenderer.java" startLine="153" startPosition="22" endLine="154" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721550" fileName="StatisticsRowRenderer.java" startLine="156" startPosition="16" endLine="157" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721557" fileName="StatisticsRowRenderer.java" startLine="157" startPosition="36" endLine="158" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721563" fileName="StatisticsRowRenderer.java" startLine="159" startPosition="9" endLine="160" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721567" fileName="StatisticsRowRenderer.java" startLine="160" startPosition="30" endLine="161" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3575782568432721570" fileName="StatisticsRowRenderer.java" startLine="163" startPosition="5" endLine="164" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721581" fileName="StatisticsRowRenderer.java" startLine="166" startPosition="30" endLine="167" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721588" fileName="StatisticsRowRenderer.java" startLine="168" startPosition="7" endLine="169" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721602" fileName="StatisticsRowRenderer.java" startLine="171" startPosition="30" endLine="172" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721609" fileName="StatisticsRowRenderer.java" startLine="173" startPosition="7" endLine="174" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721618" fileName="StatisticsRowRenderer.java" startLine="176" startPosition="19" endLine="177" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721627" fileName="StatisticsRowRenderer.java" startLine="178" startPosition="12" endLine="179" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721636" fileName="StatisticsRowRenderer.java" startLine="180" startPosition="5" endLine="181" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721660" fileName="StatisticsRowRenderer.java" startLine="183" startPosition="22" endLine="184" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721666" fileName="StatisticsRowRenderer.java" startLine="184" startPosition="36" endLine="185" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721652" fileName="StatisticsRowRenderer.java" startLine="186" startPosition="14" endLine="187" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721679" fileName="StatisticsRowRenderer.java" startLine="189" startPosition="5" endLine="190" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432721683" fileName="StatisticsRowRenderer.java" startLine="193" startPosition="37" endLine="194" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721692" fileName="StatisticsRowRenderer.java" startLine="195" startPosition="20" endLine="196" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721700" fileName="StatisticsRowRenderer.java" startLine="197" startPosition="5" endLine="198" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721707" fileName="StatisticsRowRenderer.java" startLine="198" startPosition="32" endLine="199" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432721717" fileName="StatisticsRowRenderer.java" startLine="202" startPosition="45" endLine="203" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432721725" fileName="StatisticsRowRenderer.java" startLine="203" startPosition="52" endLine="204" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721732" fileName="StatisticsRowRenderer.java" startLine="204" startPosition="29" endLine="205" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432721330" fileName="StatisticsRowRenderer.java" startLine="101" startPosition="14" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3575782568432721625" fileName="StatisticsRowRenderer.java" startLine="178" startPosition="10" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3575782568432721650" fileName="StatisticsRowRenderer.java" startLine="186" startPosition="12" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2341665692859179648" fileName="StatisticsRowRenderer.java" startLine="81" startPosition="147" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721291" fileName="StatisticsRowRenderer.java" startLine="93" startPosition="41" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721515" fileName="StatisticsRowRenderer.java" startLine="146" startPosition="38" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721526" fileName="StatisticsRowRenderer.java" startLine="149" startPosition="11" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721537" fileName="StatisticsRowRenderer.java" startLine="152" startPosition="11" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721548" fileName="StatisticsRowRenderer.java" startLine="156" startPosition="14" endLine="159" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3575782568432721577" fileName="StatisticsRowRenderer.java" startLine="165" startPosition="21" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721598" fileName="StatisticsRowRenderer.java" startLine="170" startPosition="12" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721687" fileName="StatisticsRowRenderer.java" startLine="194" startPosition="21" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721453" fileName="StatisticsRowRenderer.java" startLine="132" startPosition="24" endLine="136" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721468" fileName="StatisticsRowRenderer.java" startLine="136" startPosition="13" endLine="140" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721483" fileName="StatisticsRowRenderer.java" startLine="140" startPosition="13" endLine="144" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432721314" fileName="StatisticsRowRenderer.java" startLine="98" startPosition="61" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721596" fileName="StatisticsRowRenderer.java" startLine="170" startPosition="10" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3575782568432721616" fileName="StatisticsRowRenderer.java" startLine="175" startPosition="5" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721648" fileName="StatisticsRowRenderer.java" startLine="182" startPosition="29" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721715" fileName="StatisticsRowRenderer.java" startLine="201" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMemoryUsage#(J)Ljavax/swing/JLabel;" />
+    <nodeInfo nodeId="3575782568432721643" fileName="StatisticsRowRenderer.java" startLine="181" startPosition="41" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721681" fileName="StatisticsRowRenderer.java" startLine="192" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTime#(J)Ljavax/swing/JLabel;" />
+    <nodeInfo nodeId="3575782568432721575" fileName="StatisticsRowRenderer.java" startLine="164" startPosition="27" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432721451" fileName="StatisticsRowRenderer.java" startLine="131" startPosition="38" endLine="159" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432720954" fileName="StatisticsRowRenderer.java" startLine="34" startPosition="0" endLine="79" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StatisticsRowRenderer#()V" />
+    <nodeInfo nodeId="3575782568432721279" fileName="StatisticsRowRenderer.java" startLine="89" startPosition="61" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3575782568432721239" fileName="StatisticsRowRenderer.java" startLine="80" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+    <scopeInfo nodeId="3575782568432721569" fileName="StatisticsRowRenderer.java" startLine="162" startPosition="14" endLine="162" endPosition="14" />
+    <scopeInfo nodeId="2341665692859179650" fileName="StatisticsRowRenderer.java" startLine="82" startPosition="24" endLine="83" endPosition="55" />
+    <scopeInfo nodeId="3575782568432721292" fileName="StatisticsRowRenderer.java" startLine="94" startPosition="27" endLine="95" endPosition="31" />
+    <scopeInfo nodeId="3575782568432721318" fileName="StatisticsRowRenderer.java" startLine="99" startPosition="37" endLine="100" endPosition="62" />
+    <scopeInfo nodeId="3575782568432721331" fileName="StatisticsRowRenderer.java" startLine="101" startPosition="16" endLine="102" endPosition="37" />
+    <scopeInfo nodeId="3575782568432721519" fileName="StatisticsRowRenderer.java" startLine="147" startPosition="22" endLine="148" endPosition="36" />
+    <scopeInfo nodeId="3575782568432721530" fileName="StatisticsRowRenderer.java" startLine="150" startPosition="22" endLine="151" endPosition="36" />
+    <scopeInfo nodeId="3575782568432721541" fileName="StatisticsRowRenderer.java" startLine="153" startPosition="22" endLine="154" endPosition="34" />
+    <scopeInfo nodeId="3575782568432721580" fileName="StatisticsRowRenderer.java" startLine="166" startPosition="30" endLine="167" endPosition="61" />
+    <scopeInfo nodeId="3575782568432721601" fileName="StatisticsRowRenderer.java" startLine="171" startPosition="30" endLine="172" endPosition="52" />
+    <scopeInfo nodeId="3575782568432721617" fileName="StatisticsRowRenderer.java" startLine="176" startPosition="19" endLine="177" endPosition="78" />
+    <scopeInfo nodeId="3575782568432721626" fileName="StatisticsRowRenderer.java" startLine="178" startPosition="12" endLine="179" endPosition="68" />
+    <scopeInfo nodeId="3575782568432721651" fileName="StatisticsRowRenderer.java" startLine="186" startPosition="14" endLine="187" endPosition="44" />
+    <scopeInfo nodeId="3575782568432721691" fileName="StatisticsRowRenderer.java" startLine="195" startPosition="20" endLine="196" endPosition="52" />
+    <scopeInfo nodeId="3575782568432721549" fileName="StatisticsRowRenderer.java" startLine="156" startPosition="16" endLine="158" endPosition="33" />
+    <scopeInfo nodeId="3575782568432721659" fileName="StatisticsRowRenderer.java" startLine="183" startPosition="22" endLine="185" endPosition="80">
       <varInfo nodeId="3575782568432721661" varName="font" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721716" fileName="StatisticsRowRenderer.java" startLine="198" startPosition="45" endLine="201" endPosition="25">
+    <scopeInfo nodeId="3575782568432721716" fileName="StatisticsRowRenderer.java" startLine="202" startPosition="45" endLine="205" endPosition="25">
       <varInfo nodeId="3575782568432721718" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721354" fileName="StatisticsRowRenderer.java" startLine="103" startPosition="13" endLine="107" endPosition="14" />
-    <scopeInfo nodeId="3575782568432721373" fileName="StatisticsRowRenderer.java" startLine="108" startPosition="13" endLine="112" endPosition="14" />
-    <scopeInfo nodeId="3575782568432721392" fileName="StatisticsRowRenderer.java" startLine="113" startPosition="13" endLine="117" endPosition="14" />
-    <scopeInfo nodeId="3575782568432721411" fileName="StatisticsRowRenderer.java" startLine="118" startPosition="13" endLine="122" endPosition="14" />
-    <scopeInfo nodeId="3575782568432721576" fileName="StatisticsRowRenderer.java" startLine="161" startPosition="21" endLine="165" endPosition="59" />
-    <scopeInfo nodeId="3575782568432721597" fileName="StatisticsRowRenderer.java" startLine="166" startPosition="12" endLine="170" endPosition="50" />
-    <scopeInfo nodeId="3575782568432721647" fileName="StatisticsRowRenderer.java" startLine="178" startPosition="29" endLine="184" endPosition="7" />
-    <scopeInfo nodeId="3575782568432721682" fileName="StatisticsRowRenderer.java" startLine="189" startPosition="37" endLine="195" endPosition="25">
+    <scopeInfo nodeId="3575782568432721354" fileName="StatisticsRowRenderer.java" startLine="107" startPosition="13" endLine="111" endPosition="14" />
+    <scopeInfo nodeId="3575782568432721373" fileName="StatisticsRowRenderer.java" startLine="112" startPosition="13" endLine="116" endPosition="14" />
+    <scopeInfo nodeId="3575782568432721392" fileName="StatisticsRowRenderer.java" startLine="117" startPosition="13" endLine="121" endPosition="14" />
+    <scopeInfo nodeId="3575782568432721411" fileName="StatisticsRowRenderer.java" startLine="122" startPosition="13" endLine="126" endPosition="14" />
+    <scopeInfo nodeId="3575782568432721576" fileName="StatisticsRowRenderer.java" startLine="165" startPosition="21" endLine="169" endPosition="59" />
+    <scopeInfo nodeId="3575782568432721597" fileName="StatisticsRowRenderer.java" startLine="170" startPosition="12" endLine="174" endPosition="50" />
+    <scopeInfo nodeId="3575782568432721647" fileName="StatisticsRowRenderer.java" startLine="182" startPosition="29" endLine="188" endPosition="7" />
+    <scopeInfo nodeId="3575782568432721682" fileName="StatisticsRowRenderer.java" startLine="193" startPosition="37" endLine="199" endPosition="25">
       <varInfo nodeId="3575782568432721684" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721715" fileName="StatisticsRowRenderer.java" startLine="197" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="3575782568432721715" fileName="StatisticsRowRenderer.java" startLine="201" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="3575782568432721737" varName="usage" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721514" fileName="StatisticsRowRenderer.java" startLine="142" startPosition="38" endLine="151" endPosition="11" />
-    <scopeInfo nodeId="3575782568432721681" fileName="StatisticsRowRenderer.java" startLine="188" startPosition="0" endLine="197" endPosition="0">
+    <scopeInfo nodeId="3575782568432721514" fileName="StatisticsRowRenderer.java" startLine="146" startPosition="38" endLine="155" endPosition="11" />
+    <scopeInfo nodeId="3575782568432721681" fileName="StatisticsRowRenderer.java" startLine="192" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="3575782568432721712" varName="time" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721452" fileName="StatisticsRowRenderer.java" startLine="128" startPosition="24" endLine="141" endPosition="32" />
-    <scopeInfo nodeId="3575782568432721282" fileName="StatisticsRowRenderer.java" startLine="87" startPosition="13" endLine="102" endPosition="14">
+    <scopeInfo nodeId="3575782568432721452" fileName="StatisticsRowRenderer.java" startLine="132" startPosition="24" endLine="145" endPosition="32" />
+    <scopeInfo nodeId="3575782568432721282" fileName="StatisticsRowRenderer.java" startLine="91" startPosition="13" endLine="106" endPosition="14">
       <varInfo nodeId="3575782568432721309" varName="additionalText" />
       <varInfo nodeId="3575782568432721286" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721430" fileName="StatisticsRowRenderer.java" startLine="123" startPosition="13" endLine="157" endPosition="14">
+    <scopeInfo nodeId="3575782568432721430" fileName="StatisticsRowRenderer.java" startLine="127" startPosition="13" endLine="161" endPosition="14">
       <varInfo nodeId="3575782568432721446" varName="e" />
       <varInfo nodeId="3575782568432721440" varName="f" />
       <varInfo nodeId="3575782568432721434" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432720957" fileName="StatisticsRowRenderer.java" startLine="34" startPosition="34" endLine="77" endPosition="35">
+    <scopeInfo nodeId="3575782568432720957" fileName="StatisticsRowRenderer.java" startLine="35" startPosition="34" endLine="78" endPosition="35">
       <varInfo nodeId="3575782568432721040" varName="boldFont" />
       <varInfo nodeId="3575782568432721032" varName="font" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432720954" fileName="StatisticsRowRenderer.java" startLine="33" startPosition="0" endLine="78" endPosition="3" />
-    <scopeInfo nodeId="3575782568432721254" fileName="StatisticsRowRenderer.java" startLine="80" startPosition="137" endLine="186" endPosition="18">
+    <scopeInfo nodeId="3575782568432720954" fileName="StatisticsRowRenderer.java" startLine="34" startPosition="0" endLine="79" endPosition="3" />
+    <scopeInfo nodeId="3575782568432721254" fileName="StatisticsRowRenderer.java" startLine="81" startPosition="147" endLine="190" endPosition="18">
       <varInfo nodeId="3575782568432721270" varName="adjustFont" />
       <varInfo nodeId="3575782568432721274" varName="container" />
       <varInfo nodeId="3575782568432721266" varName="keepForeground" />
       <varInfo nodeId="3575782568432721262" varName="result" />
       <varInfo nodeId="3575782568432721256" varName="rowValue" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432721239" fileName="StatisticsRowRenderer.java" startLine="79" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="3575782568432721239" fileName="StatisticsRowRenderer.java" startLine="80" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="3575782568432721252" varName="column" />
       <varInfo nodeId="3575782568432721248" varName="hasFocus" />
       <varInfo nodeId="3575782568432721246" varName="isSelected" />
@@ -845,7 +848,7 @@
       <varInfo nodeId="3575782568432721242" varName="table" />
       <varInfo nodeId="3575782568432721244" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="3575782568432720920" fileName="StatisticsRowRenderer.java" startLine="19" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsRowRenderer" />
+    <unitInfo nodeId="3575782568432720920" fileName="StatisticsRowRenderer.java" startLine="20" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsRowRenderer" />
   </root>
   <root nodeId="3575782568432721745" modelId="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)">
     <nodeInfo nodeId="3575782568432721746" fileName="UnitTestViewComponent.java" startLine="53" startPosition="73" endLine="54" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SPLITTER_SIZE_PROPERTY" />

@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.Context;
 import java.io.File;
 import java.io.IOException;
@@ -125,10 +125,10 @@ public class ModuleLoader {
   }
 
   private void loadFile() {
-    String moduleFilePath = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(myModule, "path", true), (genContext != null ?
+    String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(myModule, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
       Context.defaultContext(genContext) :
       Context.defaultContext()
-    ));
+    )});
     try {
       moduleFilePath = new File(moduleFilePath).getCanonicalPath();
     } catch (IOException ex) {
@@ -600,14 +600,14 @@ public class ModuleLoader {
       }
 
       if (path.endsWith(".jar")) {
-        final String relPath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(p);
+        final String relPath = BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{});
         if (!(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             SNode dep = (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0q(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true)), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0q(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -861,10 +861,10 @@ public class ModuleLoader {
           return path;
         }
 
-        String localPath = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(found, "defaultPath", true), (genContext != null ?
+        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, "defaultPath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
           Context.defaultContext(genContext) :
           Context.defaultContext()
-        ));
+        )});
         if (localPath == null) {
           if (genContext != null) {
             genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");

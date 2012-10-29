@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DeprecatedJavaDoc_Intention extends BaseIntention implements Intention {
@@ -30,7 +30,7 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention implements Intent
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
       return "Remove Deprecated javadoc";
     } else {
       return "Add Deprecated javadoc";

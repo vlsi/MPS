@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -31,7 +31,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     if (language == null) {
       return;
     }
-    List<SNode> superConcepts = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(cd);
+    List<SNode> superConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
     Set<Language> extendedLanguages = SetSequence.fromSet(new HashSet<Language>());
     language.getDependenciesManager().collectAllExtendedLanguages(extendedLanguages);
     for (SNode superConcept : superConcepts) {

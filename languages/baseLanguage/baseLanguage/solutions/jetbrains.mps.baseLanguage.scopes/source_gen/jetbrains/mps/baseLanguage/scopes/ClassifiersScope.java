@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -254,7 +254,7 @@ public class ClassifiersScope extends FilteringScope {
   public static Iterable<SNode> getClassifiersByModelAndSimpleNamePrefix(final SModel model, IScope scope, SNode concreteConcept, @Nullable String prefix) {
     // for simplicity - prefix is prefix for simple name 
     // todo: use FastNodeFinder directly 
-    return Sequence.fromIterable(new ModelPlusImportedScope(model, false, scope, INamedConcept_Behavior.call_getFqName_1213877404258(concreteConcept)) {
+    return Sequence.fromIterable(new ModelPlusImportedScope(model, false, scope, BehaviorReflection.invokeVirtual(String.class, concreteConcept, "virtual_getFqName_1213877404258", new Object[]{})) {
       @Override
       public String getReferenceText(SNode contextNode, SNode node) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {

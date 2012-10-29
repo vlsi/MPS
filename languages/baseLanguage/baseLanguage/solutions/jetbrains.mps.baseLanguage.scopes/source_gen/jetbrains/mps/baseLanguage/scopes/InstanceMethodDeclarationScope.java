@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
@@ -33,7 +33,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     // two variants: 
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       // as part of DotExpression 
-      SNode instanceType = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "call_getDotExpression_1224687669172", new Class[]{SNode.class})), "call_getOperandType_8871623299328377715", new Class[]{SNode.class})), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode instanceType = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "jetbrains.mps.baseLanguage.structure.IOperation", "call_getDotExpression_1224687669172", new Object[]{}), "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       Map<SNode, SNode> typeByTypeVar = ((SLinkOperations.getTarget(instanceType, "classifier", false) != null) ?
         MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true)) :
         Collections.<SNode,SNode>emptyMap()
@@ -51,7 +51,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     // if != nonAbstract - use it 
     Iterable<SNode> nonAbstractMethods = Sequence.fromIterable(groupWithEqualSignature).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class})));
+        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_isAbstract_1232982539764", new Object[]{}));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

@@ -4,14 +4,11 @@ package jetbrains.mps.lang.project.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MappingConfigNormalRef_Behavior {
-  private static Class[] PARAMETERS_2721285250110400383 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,18 +25,14 @@ public class MappingConfigNormalRef_Behavior {
     return true;
   }
 
+  @Deprecated
   public static boolean call_isComplete_2721285250110400383(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isComplete_2721285250110400383(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isComplete_2721285250110257005", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isComplete_2721285250110400383(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static boolean isEmpty_v108kq_a0a0b(String str) {

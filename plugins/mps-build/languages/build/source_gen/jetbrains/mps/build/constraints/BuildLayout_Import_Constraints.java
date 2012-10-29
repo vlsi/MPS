@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.EmptyScope;
 
@@ -58,7 +58,7 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
               }
             }
             if (target == null) {
-              target = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getParameterNode());
+              target = BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{});
             }
             return (_context.getSmartReference() ?
               "import " + target :

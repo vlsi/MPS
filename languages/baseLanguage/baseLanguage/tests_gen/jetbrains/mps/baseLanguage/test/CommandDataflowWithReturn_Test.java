@@ -8,7 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
 public class CommandDataflowWithReturn_Test extends BaseTransformationTest4 {
@@ -22,7 +22,7 @@ public class CommandDataflowWithReturn_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1229350096076() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1229350096076"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1229349840377"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1229349840377")});
     }
   }
 }

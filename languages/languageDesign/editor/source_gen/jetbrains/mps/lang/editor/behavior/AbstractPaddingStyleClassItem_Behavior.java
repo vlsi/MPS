@@ -4,13 +4,10 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractPaddingStyleClassItem_Behavior {
-  private static Class[] PARAMETERS_1226492824000 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,17 +19,13 @@ public class AbstractPaddingStyleClassItem_Behavior {
     return true;
   }
 
+  @Deprecated
   public static boolean call_canUseSpaces_1226492824000(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000, new Object[]{});
-  }
-
-  public static boolean callSuperNew_canUseSpaces_1226492824000(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), callerConceptFqName, "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canUseSpaces_1226492824000", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_canUseSpaces_1226492824000(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), callerConceptFqName, "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), callerConceptFqName, "virtual_canUseSpaces_1226492824000", new Class[]{SNode.class}, new Object[]{});
   }
 }

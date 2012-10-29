@@ -494,7 +494,7 @@
   <root nodeId="8029776554053057814" modelId="r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)">
     <nodeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="22" startPosition="45" endLine="23" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="23" startPosition="205" endLine="24" endPosition="385" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="23" startPosition="205" endLine="24" endPosition="454" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8029776554053057814" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8029776554053057814" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8029776554053057814" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="34" startPosition="119" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -513,7 +513,7 @@
     <scopeInfo nodeId="8029776554053057814" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="33" startPosition="5" endLine="35" endPosition="45">
       <varInfo nodeId="8029776554053057814" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="385">
+    <scopeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="454">
       <varInfo nodeId="7261386713308408619" varName="_info_12389875345" />
       <varInfo nodeId="7261386713308408619" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>

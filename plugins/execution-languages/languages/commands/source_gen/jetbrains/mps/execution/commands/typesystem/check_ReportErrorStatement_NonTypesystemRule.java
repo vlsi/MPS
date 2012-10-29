@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.execution.commands.behavior.ReportErrorStatement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ReportErrorStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -20,7 +20,7 @@ public class check_ReportErrorStatement_NonTypesystemRule extends AbstractNonTyp
 
   public void applyRule(final SNode reportStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SNodeOperations.getAncestor(reportStatement, "jetbrains.mps.execution.commands.structure.CommandMethod", false, false) != null)) {
-      RulesFunctions_BaseLanguage.check(typeCheckingContext, SetSequence.fromSetAndArray(new HashSet<SNode>(), ReportErrorStatement_Behavior.call_getException_856705193941282181(reportStatement)), reportStatement);
+      RulesFunctions_BaseLanguage.check(typeCheckingContext, SetSequence.fromSetAndArray(new HashSet<SNode>(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), reportStatement, "virtual_getException_856705193941282181", new Object[]{})), reportStatement);
     }
   }
 

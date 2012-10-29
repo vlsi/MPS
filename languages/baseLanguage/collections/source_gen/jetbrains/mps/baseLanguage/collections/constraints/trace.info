@@ -770,8 +770,8 @@
     <nodeInfo nodeId="1241447264880" fileName="HashMapCreator_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241447264880" fileName="HashMapCreator_Constraints.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1241447264880" fileName="HashMapCreator_Constraints.java" startLine="34" startPosition="0" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241447267829" fileName="HashMapCreator_Constraints.java" startLine="38" startPosition="148" endLine="39" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241447267841" fileName="HashMapCreator_Constraints.java" startLine="39" startPosition="267" endLine="40" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241447267829" fileName="HashMapCreator_Constraints.java" startLine="38" startPosition="148" endLine="39" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241447267841" fileName="HashMapCreator_Constraints.java" startLine="39" startPosition="336" endLine="40" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1241447264880" fileName="HashMapCreator_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HashMapCreator_Constraints#()V" />
     <nodeInfo nodeId="1241447264880" fileName="HashMapCreator_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1241447264880" fileName="HashMapCreator_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
@@ -814,8 +814,8 @@
     <nodeInfo nodeId="1241447282324" fileName="TreeMapCreator_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241447282324" fileName="TreeMapCreator_Constraints.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1241447282324" fileName="TreeMapCreator_Constraints.java" startLine="34" startPosition="0" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241447284982" fileName="TreeMapCreator_Constraints.java" startLine="38" startPosition="148" endLine="39" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241447284993" fileName="TreeMapCreator_Constraints.java" startLine="39" startPosition="267" endLine="40" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241447284982" fileName="TreeMapCreator_Constraints.java" startLine="38" startPosition="148" endLine="39" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241447284993" fileName="TreeMapCreator_Constraints.java" startLine="39" startPosition="336" endLine="40" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1241447282324" fileName="TreeMapCreator_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeMapCreator_Constraints#()V" />
     <nodeInfo nodeId="1241447282324" fileName="TreeMapCreator_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1241447282324" fileName="TreeMapCreator_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
@@ -865,7 +865,7 @@
     <nodeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="82" startPosition="61" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="87" startPosition="7" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomContainerCreator_Constraints#()V" />
-    <nodeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="312" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="381" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="40" startPosition="82" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
     <nodeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="58" startPosition="113" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
     <nodeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="80" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
@@ -888,7 +888,7 @@
       <varInfo nodeId="1331913329176292217" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="3" />
-    <scopeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="312" endLine="76" endPosition="0">
+    <scopeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="381" endLine="76" endPosition="0">
       <varInfo nodeId="9034802358628519915" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="40" startPosition="82" endLine="45" endPosition="0" />
@@ -915,7 +915,7 @@
       <varInfo nodeId="1331913329176292217" varName="references" />
     </scopeInfo>
     <scopeInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="54" startPosition="0" endLine="90" endPosition="0" />
-    <unitInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="289" endLine="76" endPosition="15" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$4" />
+    <unitInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_Constraints.java" startLine="72" startPosition="358" endLine="76" endPosition="15" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$4" />
     <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="40" startPosition="32" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$1" />
     <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="67" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$3" />
     <unitInfo nodeId="1331913329176292217" fileName="CustomContainerCreator_Constraints.java" startLine="58" startPosition="47" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_Constraints$2" />

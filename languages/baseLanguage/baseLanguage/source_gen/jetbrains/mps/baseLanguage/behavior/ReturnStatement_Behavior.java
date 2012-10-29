@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ReturnStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -38,7 +39,7 @@ public class ReturnStatement_Behavior {
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         type = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
       } else {
-        SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ConceptFunction"));
+        SNode expectedReturnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
         if (SNodeOperations.isInstanceOf(expectedReturnType, "jetbrains.mps.baseLanguage.structure.Type")) {
           type = SNodeOperations.cast(SNodeOperations.copyNode(expectedReturnType), "jetbrains.mps.baseLanguage.structure.Type");
         }
@@ -49,7 +50,7 @@ public class ReturnStatement_Behavior {
 
   public static SNode call_getReturnJumpTarget_1229351767970(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(container)) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, container, "virtual_isExecuteSynchronous_1230212745736", new Object[]{})) {
       return SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true);
     }
     return null;

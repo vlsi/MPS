@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
 public class TypesCheckOperation_Behavior {
@@ -28,7 +29,7 @@ public class TypesCheckOperation_Behavior {
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "operationName") == null || SPropertyOperations.getString(thisNode, "operationName").length() == 0) {
-      return ITestMethod_Behavior.callSuperNew_getTestName_1216136419751(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation");
+      return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", "virtual_getTestName_1216136419751", new Object[]{});
     } else {
       return SPropertyOperations.getString(thisNode, "operationName");
     }

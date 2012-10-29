@@ -22,7 +22,7 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -455,7 +455,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ucemm3_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BuildMps_AbstractModule_Behavior.call_isCompact_8369506495128693730(node));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{}));
   }
 
   private static boolean renderingCondition_ucemm3_a3a(SNode node, EditorContext editorContext, IScope scope) {
@@ -463,11 +463,11 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ucemm3_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BuildMps_AbstractModule_Behavior.call_isCompact_8369506495128693730(node));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{}));
   }
 
   private static boolean renderingCondition_ucemm3_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return BuildMps_AbstractModule_Behavior.call_isCompact_8369506495128693730(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{});
   }
 
   public static class ReplaceWith_BuildProjectPart_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

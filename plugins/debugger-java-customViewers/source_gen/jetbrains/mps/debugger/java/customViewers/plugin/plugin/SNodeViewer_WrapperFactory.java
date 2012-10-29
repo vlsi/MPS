@@ -71,10 +71,10 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         }
       }
 
-      IObjectValueProxy currentChild = (IObjectValueProxy) ((IObjectValueProxy) value.getFieldValue("first"));
+      IObjectValueProxy currentChild = ((IObjectValueProxy) value.getFieldValue("first"));
       while (!(ProxyEqualsUtil.javaEquals(currentChild, null))) {
         result.add(new SNodeWatchables.MyWatchable_child(ValueUtil.getInstance().fromJDI(currentChild.getJDIValue(), getThreadReference()), "child"));
-        currentChild = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava((IObjectValueProxy) ((IObjectValueProxy) currentChild.getFieldValue("next")), getVM()));
+        currentChild = ((IObjectValueProxy) currentChild.getFieldValue("next"));
       }
 
       IArrayValueProxy references = ((IArrayValueProxy) value.getFieldValue("myReferences"));

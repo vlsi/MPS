@@ -12,7 +12,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -494,7 +494,7 @@ public class SNodeOperations {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute")) {
         String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
-        if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(newChild), "call_findPropertyDeclaration_1219835742593", new Class[]{SNode.class, String.class}, propertyName)) == null)) {
+        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{propertyName}) == null)) {
           // no such property in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
@@ -502,7 +502,7 @@ public class SNodeOperations {
       }
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
         String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"));
-        if ((((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(newChild), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, linkRole)) == null)) {
+        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;

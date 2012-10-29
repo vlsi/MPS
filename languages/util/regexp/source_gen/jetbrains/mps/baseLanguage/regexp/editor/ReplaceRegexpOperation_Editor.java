@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -375,8 +375,8 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ldr481_w0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (Regexp_Behavior.call_isValid_4759120547781297301(SLinkOperations.getTarget(node, "search", true)) ?
-          "/" + Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(node, "search", true)) + "/" :
+        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "search", true), "virtual_isValid_4759120547781297301", new Object[]{}) ?
+          "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "search", true), "virtual_toString_1213877429451", new Object[]{}) + "/" :
           "<invalid>"
         );
       }

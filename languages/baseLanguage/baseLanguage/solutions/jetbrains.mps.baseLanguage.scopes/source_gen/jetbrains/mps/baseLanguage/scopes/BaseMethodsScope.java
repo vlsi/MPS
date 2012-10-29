@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -110,7 +110,7 @@ public abstract class BaseMethodsScope extends Scope {
 
     Map<String, Set<SNode>> groups = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (SNode extendedClassifier : Sequence.fromIterable(extendedClassifiers)) {
-      for (SNode method : Sequence.fromIterable(((Scope) BehaviorManager.getInstance().invoke(Object.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, classifier, kind)).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+      for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Object[]{classifier, kind}).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
         }

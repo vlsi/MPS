@@ -14,8 +14,8 @@
   <unitInfo fileName="WatchableType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchableType_BehaviorDescriptor" />
   <unitInfo fileName="WatchablesListCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchablesListCreator_BehaviorDescriptor" />
   <root nodeId="4246614868163974535" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
-    <nodeInfo nodeId="4246614868163975403" fileName="WatchableListType_Behavior.java" startLine="20" startPosition="127" endLine="21" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868163975411" fileName="WatchableListType_Behavior.java" startLine="21" startPosition="165" endLine="22" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868163975403" fileName="WatchableListType_Behavior.java" startLine="20" startPosition="127" endLine="21" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868163975411" fileName="WatchableListType_Behavior.java" startLine="21" startPosition="198" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="29" startPosition="31" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="30" startPosition="26" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="31" startPosition="67" endLine="32" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -28,7 +28,7 @@
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="40" startPosition="45" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="42" startPosition="9" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="44" startPosition="7" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="25" startPosition="52" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_za89pk_a0a1a1#()V" />
+    <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="25" startPosition="52" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_za89pk_a1a1a1#()V" />
     <nodeInfo nodeId="4246614868163974535" fileName="WatchableListType_Behavior.java" startLine="16" startPosition="41" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4246614868163974535" fileName="WatchableListType_Behavior.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_collectGenericSubstitutions_4107091686347010321#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="37" startPosition="241" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -38,7 +38,7 @@
     <nodeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="28" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4246614868163974537" fileName="WatchableListType_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="26" startPosition="43" endLine="26" endPosition="43" />
-    <scopeInfo nodeId="4246614868163975397" fileName="WatchableListType_Behavior.java" startLine="20" startPosition="127" endLine="22" endPosition="170" />
+    <scopeInfo nodeId="4246614868163975397" fileName="WatchableListType_Behavior.java" startLine="20" startPosition="127" endLine="22" endPosition="213" />
     <scopeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="25" startPosition="52" endLine="27" endPosition="5" />
     <scopeInfo nodeId="4246614868163974535" fileName="WatchableListType_Behavior.java" startLine="16" startPosition="41" endLine="19" endPosition="0">
       <varInfo nodeId="4246614868163974535" varName="thisNode" />
@@ -62,7 +62,7 @@
       <varInfo nodeId="4246614868163975412" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="28" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="25" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchableListType_Behavior$QuotationClass_za89pk_a0a1a1" />
+    <unitInfo nodeId="4246614868163975412" fileName="WatchableListType_Behavior.java" startLine="25" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchableListType_Behavior$QuotationClass_za89pk_a1a1a1" />
     <unitInfo nodeId="4246614868163974535" fileName="WatchableListType_Behavior.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchableListType_Behavior" />
   </root>
   <root nodeId="43370322128260019" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">

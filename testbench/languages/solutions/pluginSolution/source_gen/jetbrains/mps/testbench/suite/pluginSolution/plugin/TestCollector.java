@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class TestCollector {
   public TestCollector() {
@@ -197,7 +197,7 @@ public class TestCollector {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0b0a0a0a0a0a0a2a0a0a0a0a2a0c().createNode(), "classifier", false));
+              })) && BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0a0d0a0a0a0a0a0a2a0a0a0a0a2a0c().createNode(), "classifier", false)});
             }
           }).toListSequence();
         }
@@ -235,8 +235,8 @@ public class TestCollector {
       }
     }
 
-    public static class QuotationClass_rpw6il_a0b0a0a0a0a0a0a2a0a0a0a0a2a0c {
-      public QuotationClass_rpw6il_a0b0a0a0a0a0a0a2a0a0a0a0a2a0c() {
+    public static class QuotationClass_rpw6il_a0a0d0a0a0a0a0a0a2a0a0a0a0a2a0c {
+      public QuotationClass_rpw6il_a0a0d0a0a0a0a0a0a2a0a0a0a0a2a0c() {
       }
 
       public SNode createNode() {

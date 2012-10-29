@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ui.behavior.UIObjectStatement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class replace_UIObjectStatement_AppendUIObjectStatement_Intention extends BaseIntention implements Intention {
@@ -43,7 +43,7 @@ public class replace_UIObjectStatement_AppendUIObjectStatement_Intention extends
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.ui.structure.UIObjectStatement") && !(UIObjectStatement_Behavior.call_shouldReturnValue_7109250785404509292(node));
+    return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.ui.structure.UIObjectStatement") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_shouldReturnValue_7109250785404509292", new Object[]{}));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

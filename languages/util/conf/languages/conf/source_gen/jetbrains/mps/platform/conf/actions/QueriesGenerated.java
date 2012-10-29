@@ -25,11 +25,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.platform.conf.behavior.BeanUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
@@ -135,7 +134,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint"), "alias") + " " + "beanClass" + "=" + INamedConcept_Behavior.call_getFqName_1213877404258((item));
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint"), "alias") + " " + "beanClass" + "=" + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -179,7 +178,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint"), "alias") + " interface" + "=" + INamedConcept_Behavior.call_getFqName_1213877404258((item));
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint"), "alias") + " interface" + "=" + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getFqName_1213877404258", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -287,7 +286,7 @@ public class QueriesGenerated {
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cls) {
-                  return Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(iep, "iface", false));
+                  return BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(iep, "iface", false)});
                 }
               })) {
                 ListSequence.fromList(result).addElement(MultiTuple.<SNode,SNode>from(iep, cc));

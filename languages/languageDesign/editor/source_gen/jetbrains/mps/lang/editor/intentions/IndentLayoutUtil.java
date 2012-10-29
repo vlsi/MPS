@@ -12,7 +12,7 @@ import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IndentLayoutUtil {
   public IndentLayoutUtil() {
@@ -79,7 +79,7 @@ public class IndentLayoutUtil {
     if (editor == null) {
       return false;
     }
-    if (SNodeOperations.getModel(SLinkOperations.getTarget(((SNode) AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editor)), "extends", false)) != SNodeOperations.getModel(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"))) {
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editor, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{})), "extends", false)) != SNodeOperations.getModel(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"))) {
       return false;
     }
     return true;

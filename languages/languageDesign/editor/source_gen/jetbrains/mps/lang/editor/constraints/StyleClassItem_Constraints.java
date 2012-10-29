@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1214304867262");
@@ -39,7 +39,7 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
       SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(childConcept), null), "jetbrains.mps.lang.editor.structure.StyleClassItem");
-      return StyleClassItem_Behavior.call_isApplicableTo_1214304723440(testInstance, SNodeOperations.cast(parentNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, testInstance, "virtual_isApplicableTo_1214304723440", new Object[]{SNodeOperations.cast(parentNode, "jetbrains.mps.lang.editor.structure.EditorCellModel")});
     }
     return true;
   }

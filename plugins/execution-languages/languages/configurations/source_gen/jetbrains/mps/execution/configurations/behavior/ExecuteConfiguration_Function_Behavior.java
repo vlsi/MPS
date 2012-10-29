@@ -4,14 +4,12 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,14 +20,11 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class ExecuteConfiguration_Function_Behavior {
-  private static Class[] PARAMETERS_6538811202682334478 = {SNode.class};
-  private static Class[] PARAMETERS_3091009652595815824 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return ILocalVariableElementList_Behavior.call_getLocalVariableElements_1238805763253(SLinkOperations.getTarget(thisNode, "body", true));
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
@@ -43,32 +38,24 @@ public class ExecuteConfiguration_Function_Behavior {
     return new ExecuteConfiguration_Function_Behavior.QuotationClass_cw5ucd_a0a0d().createNode();
   }
 
+  @Deprecated
   public static List<SNode> call_getLocalVariableElements_6538811202682334478(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_6538811202682334478, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 
+  @Deprecated
   public static List<SNode> call_getParameters_3091009652595815824(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), "virtual_getParameters_1213877374450", PARAMETERS_3091009652595815824, new Object[]{});
-  }
-
-  public static List<SNode> callSuperNew_getLocalVariableElements_6538811202682334478(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_6538811202682334478, new Object[]{});
-  }
-
-  public static List<SNode> callSuperNew_getParameters_3091009652595815824(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_3091009652595815824, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getLocalVariableElements_6538811202682334478(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_6538811202682334478, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getParameters_3091009652595815824(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_3091009652595815824, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_cw5ucd_a0a0d {

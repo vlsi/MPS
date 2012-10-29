@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -115,11 +115,11 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_gu0qdg_a0a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return XmlValuePart_Behavior.call_isFirstPositionAllowed_3080189811177340436(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{});
   }
 
   private static boolean renderingCondition_gu0qdg_a2a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return XmlValuePart_Behavior.call_isLastPositionAllowed_3080189811177340441(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{});
   }
 }

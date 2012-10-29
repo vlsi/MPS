@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class RefExpressionParamUtil {
   public RefExpressionParamUtil() {
@@ -39,7 +39,7 @@ public class RefExpressionParamUtil {
     if (showParameters) {
       styledText.append(" : MPSProject project");
       for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(ref, "parameter", true))) {
-        styledText.append(", ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(param, "type", true))).append(" ").append(SPropertyOperations.getString(param, "name"));
+        styledText.append(", ").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, "type", true), "virtual_getPresentation_1213877396640", new Object[]{})).append(" ").append(SPropertyOperations.getString(param, "name"));
       }
     }
     styledText.append(")");

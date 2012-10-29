@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ParenthesizedExpression_Behavior {
@@ -11,6 +12,6 @@ public class ParenthesizedExpression_Behavior {
   }
 
   public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
-    return Expression_Behavior.call_eval_1213877519769(SLinkOperations.getTarget(thisNode, "expression", true), module);
+    return BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "expression", true), "virtual_eval_1213877519769", new Object[]{module});
   }
 }

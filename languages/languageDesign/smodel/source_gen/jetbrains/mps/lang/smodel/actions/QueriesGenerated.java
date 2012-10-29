@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.behavior.StaticConceptMethodCall_Behavior;
@@ -206,7 +206,7 @@ public class QueriesGenerated {
           SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
           SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
           result.myLinkAccess = linkAccess;
-          if ((linkAccess != null) && ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
+          if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -432,7 +432,7 @@ public class QueriesGenerated {
           SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
           SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
           result.myLinkAccess = linkAccess;
-          if ((linkAccess != null) && ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
+          if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -484,7 +484,7 @@ public class QueriesGenerated {
           // ========== 
           SNode linkAccess = appTypesInfo.myLinkAccess;
           if (linkAccess != null) {
-            if (ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
+            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
               // some ops are only applicable to 'link to concept' 
               if (SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"))) {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLink") && appTypesInfo.myLinkToConcept);
@@ -525,7 +525,7 @@ public class QueriesGenerated {
           SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
           SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
           result.myLinkAccess = linkAccess;
-          if ((linkAccess != null) && ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
+          if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -555,7 +555,7 @@ public class QueriesGenerated {
       Condition cond = new Condition() {
         public boolean met(Object object) {
           SNode linkAccess = appTypesInfo.myLinkAccess;
-          if (linkAccess != null && !(ILinkAccess_Behavior.call_isAggregation_4024382256428848854(linkAccess))) {
+          if (linkAccess != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isAggregation_4024382256428848854", new Object[]{}))) {
             //  some operations are only applicable to aggregation links 
             if (SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation")) {
               return true;

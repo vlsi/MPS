@@ -82,219 +82,217 @@
     <nodeInfo nodeId="4352118152439833805" fileName="VmCreator.java" startLine="155" startPosition="39" endLine="156" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4352118152439833810" fileName="VmCreator.java" startLine="156" startPosition="48" endLine="157" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4352118152439833812" fileName="VmCreator.java" startLine="157" startPosition="87" endLine="158" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833816" fileName="VmCreator.java" startLine="158" startPosition="21" endLine="159" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439833822" fileName="VmCreator.java" startLine="159" startPosition="47" endLine="160" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439833839" fileName="VmCreator.java" startLine="162" startPosition="38" endLine="163" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833844" fileName="VmCreator.java" startLine="163" startPosition="51" endLine="164" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833850" fileName="VmCreator.java" startLine="164" startPosition="35" endLine="165" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833854" fileName="VmCreator.java" startLine="165" startPosition="23" endLine="166" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833865" fileName="VmCreator.java" startLine="170" startPosition="28" endLine="171" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439833876" fileName="VmCreator.java" startLine="172" startPosition="13" endLine="173" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439833897" fileName="VmCreator.java" startLine="175" startPosition="17" endLine="176" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833901" fileName="VmCreator.java" startLine="176" startPosition="50" endLine="177" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833908" fileName="VmCreator.java" startLine="177" startPosition="50" endLine="178" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4352118152439833890" fileName="VmCreator.java" startLine="179" startPosition="35" endLine="180" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833893" fileName="VmCreator.java" startLine="180" startPosition="32" endLine="181" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4352118152439833871" fileName="VmCreator.java" startLine="184" startPosition="19" endLine="185" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833930" fileName="VmCreator.java" startLine="189" startPosition="31" endLine="190" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833941" fileName="VmCreator.java" startLine="192" startPosition="38" endLine="193" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833915" fileName="VmCreator.java" startLine="198" startPosition="16" endLine="199" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833948" fileName="VmCreator.java" startLine="203" startPosition="28" endLine="204" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833952" fileName="VmCreator.java" startLine="206" startPosition="7" endLine="207" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833988" fileName="VmCreator.java" startLine="212" startPosition="32" endLine="213" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439834029" fileName="VmCreator.java" startLine="215" startPosition="48" endLine="216" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834046" fileName="VmCreator.java" startLine="220" startPosition="11" endLine="221" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834049" fileName="VmCreator.java" startLine="221" startPosition="42" endLine="222" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834054" fileName="VmCreator.java" startLine="222" startPosition="37" endLine="223" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834059" fileName="VmCreator.java" startLine="223" startPosition="46" endLine="224" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834100" fileName="VmCreator.java" startLine="225" startPosition="13" endLine="226" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834105" fileName="VmCreator.java" startLine="226" startPosition="40" endLine="227" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439834068" fileName="VmCreator.java" startLine="228" startPosition="34" endLine="229" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439834094" fileName="VmCreator.java" startLine="232" startPosition="17" endLine="233" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834083" fileName="VmCreator.java" startLine="234" startPosition="50" endLine="235" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439834089" fileName="VmCreator.java" startLine="236" startPosition="60" endLine="237" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439834010" fileName="VmCreator.java" startLine="245" startPosition="11" endLine="246" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834023" fileName="VmCreator.java" startLine="247" startPosition="13" endLine="248" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439834016" fileName="VmCreator.java" startLine="249" startPosition="34" endLine="250" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439833963" fileName="VmCreator.java" startLine="253" startPosition="29" endLine="254" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439833971" fileName="VmCreator.java" startLine="255" startPosition="52" endLine="256" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439833978" fileName="VmCreator.java" startLine="257" startPosition="15" endLine="258" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834122" fileName="VmCreator.java" startLine="263" startPosition="28" endLine="264" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439834126" fileName="VmCreator.java" startLine="265" startPosition="5" endLine="266" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834137" fileName="VmCreator.java" startLine="267" startPosition="30" endLine="268" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439834141" fileName="VmCreator.java" startLine="269" startPosition="5" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4352118152439834142" fileName="VmCreator.java" startLine="270" startPosition="0" endLine="271" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439834164" fileName="VmCreator.java" startLine="276" startPosition="26" endLine="277" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834172" fileName="VmCreator.java" startLine="278" startPosition="5" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4352118152439834173" fileName="VmCreator.java" startLine="279" startPosition="0" endLine="280" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834185" fileName="VmCreator.java" startLine="281" startPosition="29" endLine="282" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834190" fileName="VmCreator.java" startLine="282" startPosition="31" endLine="283" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439834192" fileName="VmCreator.java" startLine="284" startPosition="5" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4352118152439834193" fileName="VmCreator.java" startLine="285" startPosition="0" endLine="286" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834202" fileName="VmCreator.java" startLine="287" startPosition="31" endLine="288" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834219" fileName="VmCreator.java" startLine="292" startPosition="83" endLine="293" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834234" fileName="VmCreator.java" startLine="294" startPosition="9" endLine="295" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834226" fileName="VmCreator.java" startLine="296" startPosition="23" endLine="297" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4352118152439834238" fileName="VmCreator.java" startLine="298" startPosition="5" endLine="299" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834273" fileName="VmCreator.java" startLine="300" startPosition="120" endLine="301" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834266" fileName="VmCreator.java" startLine="303" startPosition="120" endLine="304" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834263" fileName="VmCreator.java" startLine="305" startPosition="12" endLine="306" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439834289" fileName="VmCreator.java" startLine="308" startPosition="62" endLine="309" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834305" fileName="VmCreator.java" startLine="310" startPosition="51" endLine="311" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439834307" fileName="VmCreator.java" startLine="313" startPosition="5" endLine="314" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439834331" fileName="VmCreator.java" startLine="319" startPosition="38" endLine="320" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834325" fileName="VmCreator.java" startLine="321" startPosition="14" endLine="322" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834359" fileName="VmCreator.java" startLine="329" startPosition="38" endLine="330" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834353" fileName="VmCreator.java" startLine="331" startPosition="14" endLine="332" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834372" fileName="VmCreator.java" startLine="337" startPosition="63" endLine="338" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834378" fileName="VmCreator.java" startLine="338" startPosition="99" endLine="339" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834393" fileName="VmCreator.java" startLine="341" startPosition="68" endLine="342" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834401" fileName="VmCreator.java" startLine="347" startPosition="41" endLine="348" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439834407" fileName="VmCreator.java" startLine="351" startPosition="58" endLine="352" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439833405" fileName="VmCreator.java" startLine="355" startPosition="64" endLine="356" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunnable" />
-    <nodeInfo nodeId="4352118152439833408" fileName="VmCreator.java" startLine="356" startPosition="32" endLine="357" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="alreadyRun" />
-    <nodeInfo nodeId="4352118152439833418" fileName="VmCreator.java" startLine="359" startPosition="55" endLine="360" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833430" fileName="VmCreator.java" startLine="364" startPosition="26" endLine="365" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833434" fileName="VmCreator.java" startLine="365" startPosition="26" endLine="366" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833438" fileName="VmCreator.java" startLine="367" startPosition="7" endLine="368" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833447" fileName="VmCreator.java" startLine="371" startPosition="51" endLine="372" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833822" fileName="VmCreator.java" startLine="158" startPosition="21" endLine="159" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439833839" fileName="VmCreator.java" startLine="161" startPosition="38" endLine="162" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833850" fileName="VmCreator.java" startLine="162" startPosition="51" endLine="163" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833854" fileName="VmCreator.java" startLine="163" startPosition="23" endLine="164" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833865" fileName="VmCreator.java" startLine="168" startPosition="28" endLine="169" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439833876" fileName="VmCreator.java" startLine="170" startPosition="13" endLine="171" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439833897" fileName="VmCreator.java" startLine="173" startPosition="17" endLine="174" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833901" fileName="VmCreator.java" startLine="174" startPosition="50" endLine="175" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833908" fileName="VmCreator.java" startLine="175" startPosition="50" endLine="176" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4352118152439833890" fileName="VmCreator.java" startLine="177" startPosition="35" endLine="178" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833893" fileName="VmCreator.java" startLine="178" startPosition="32" endLine="179" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4352118152439833871" fileName="VmCreator.java" startLine="182" startPosition="19" endLine="183" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833930" fileName="VmCreator.java" startLine="187" startPosition="31" endLine="188" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833941" fileName="VmCreator.java" startLine="190" startPosition="38" endLine="191" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833915" fileName="VmCreator.java" startLine="196" startPosition="16" endLine="197" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833948" fileName="VmCreator.java" startLine="201" startPosition="28" endLine="202" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833952" fileName="VmCreator.java" startLine="204" startPosition="7" endLine="205" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833988" fileName="VmCreator.java" startLine="210" startPosition="32" endLine="211" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439834029" fileName="VmCreator.java" startLine="213" startPosition="48" endLine="214" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834046" fileName="VmCreator.java" startLine="218" startPosition="11" endLine="219" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834049" fileName="VmCreator.java" startLine="219" startPosition="42" endLine="220" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834054" fileName="VmCreator.java" startLine="220" startPosition="37" endLine="221" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834059" fileName="VmCreator.java" startLine="221" startPosition="46" endLine="222" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834100" fileName="VmCreator.java" startLine="223" startPosition="13" endLine="224" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834105" fileName="VmCreator.java" startLine="224" startPosition="40" endLine="225" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439834068" fileName="VmCreator.java" startLine="226" startPosition="34" endLine="227" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439834094" fileName="VmCreator.java" startLine="230" startPosition="17" endLine="231" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834083" fileName="VmCreator.java" startLine="232" startPosition="50" endLine="233" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439834089" fileName="VmCreator.java" startLine="234" startPosition="60" endLine="235" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439834010" fileName="VmCreator.java" startLine="243" startPosition="11" endLine="244" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834023" fileName="VmCreator.java" startLine="245" startPosition="13" endLine="246" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439834016" fileName="VmCreator.java" startLine="247" startPosition="34" endLine="248" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439833963" fileName="VmCreator.java" startLine="251" startPosition="29" endLine="252" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439833971" fileName="VmCreator.java" startLine="253" startPosition="52" endLine="254" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439833978" fileName="VmCreator.java" startLine="255" startPosition="15" endLine="256" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834122" fileName="VmCreator.java" startLine="261" startPosition="28" endLine="262" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439834126" fileName="VmCreator.java" startLine="263" startPosition="5" endLine="264" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834137" fileName="VmCreator.java" startLine="265" startPosition="30" endLine="266" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439834141" fileName="VmCreator.java" startLine="267" startPosition="5" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4352118152439834142" fileName="VmCreator.java" startLine="268" startPosition="0" endLine="269" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439834164" fileName="VmCreator.java" startLine="274" startPosition="26" endLine="275" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834172" fileName="VmCreator.java" startLine="276" startPosition="5" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4352118152439834173" fileName="VmCreator.java" startLine="277" startPosition="0" endLine="278" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834185" fileName="VmCreator.java" startLine="279" startPosition="29" endLine="280" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834190" fileName="VmCreator.java" startLine="280" startPosition="31" endLine="281" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439834192" fileName="VmCreator.java" startLine="282" startPosition="5" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4352118152439834193" fileName="VmCreator.java" startLine="283" startPosition="0" endLine="284" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834202" fileName="VmCreator.java" startLine="285" startPosition="31" endLine="286" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834219" fileName="VmCreator.java" startLine="290" startPosition="83" endLine="291" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834234" fileName="VmCreator.java" startLine="292" startPosition="9" endLine="293" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834226" fileName="VmCreator.java" startLine="294" startPosition="23" endLine="295" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4352118152439834238" fileName="VmCreator.java" startLine="296" startPosition="5" endLine="297" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834273" fileName="VmCreator.java" startLine="298" startPosition="120" endLine="299" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834266" fileName="VmCreator.java" startLine="301" startPosition="120" endLine="302" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834263" fileName="VmCreator.java" startLine="303" startPosition="12" endLine="304" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439834289" fileName="VmCreator.java" startLine="306" startPosition="62" endLine="307" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834305" fileName="VmCreator.java" startLine="308" startPosition="51" endLine="309" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439834307" fileName="VmCreator.java" startLine="311" startPosition="5" endLine="312" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439834331" fileName="VmCreator.java" startLine="317" startPosition="38" endLine="318" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834325" fileName="VmCreator.java" startLine="319" startPosition="14" endLine="320" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834359" fileName="VmCreator.java" startLine="327" startPosition="38" endLine="328" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834353" fileName="VmCreator.java" startLine="329" startPosition="14" endLine="330" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834372" fileName="VmCreator.java" startLine="335" startPosition="63" endLine="336" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834378" fileName="VmCreator.java" startLine="336" startPosition="99" endLine="337" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834393" fileName="VmCreator.java" startLine="339" startPosition="68" endLine="340" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834401" fileName="VmCreator.java" startLine="345" startPosition="41" endLine="346" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439834407" fileName="VmCreator.java" startLine="349" startPosition="58" endLine="350" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439833405" fileName="VmCreator.java" startLine="353" startPosition="64" endLine="354" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunnable" />
+    <nodeInfo nodeId="4352118152439833408" fileName="VmCreator.java" startLine="354" startPosition="32" endLine="355" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="alreadyRun" />
+    <nodeInfo nodeId="4352118152439833418" fileName="VmCreator.java" startLine="357" startPosition="55" endLine="358" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833430" fileName="VmCreator.java" startLine="362" startPosition="26" endLine="363" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833434" fileName="VmCreator.java" startLine="363" startPosition="26" endLine="364" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833438" fileName="VmCreator.java" startLine="365" startPosition="7" endLine="366" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833447" fileName="VmCreator.java" startLine="369" startPosition="51" endLine="370" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4352118152439833538" fileName="VmCreator.java" startLine="76" startPosition="10" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4352118152439833913" fileName="VmCreator.java" startLine="198" startPosition="14" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4352118152439834261" fileName="VmCreator.java" startLine="305" startPosition="10" endLine="307" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4352118152439834323" fileName="VmCreator.java" startLine="321" startPosition="12" endLine="323" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4352118152439834351" fileName="VmCreator.java" startLine="331" startPosition="12" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4352118152439833913" fileName="VmCreator.java" startLine="196" startPosition="14" endLine="198" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4352118152439834261" fileName="VmCreator.java" startLine="303" startPosition="10" endLine="305" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4352118152439834323" fileName="VmCreator.java" startLine="319" startPosition="12" endLine="321" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4352118152439834351" fileName="VmCreator.java" startLine="329" startPosition="12" endLine="331" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4352118152439833554" fileName="VmCreator.java" startLine="71" startPosition="99" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439833636" fileName="VmCreator.java" startLine="93" startPosition="9" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4352118152439833752" fileName="VmCreator.java" startLine="128" startPosition="87" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439833788" fileName="VmCreator.java" startLine="146" startPosition="25" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833983" fileName="VmCreator.java" startLine="211" startPosition="9" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834117" fileName="VmCreator.java" startLine="262" startPosition="86" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834132" fileName="VmCreator.java" startLine="266" startPosition="47" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834159" fileName="VmCreator.java" startLine="275" startPosition="6" endLine="278" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834200" fileName="VmCreator.java" startLine="286" startPosition="66" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834297" fileName="VmCreator.java" startLine="309" startPosition="50" endLine="312" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834386" fileName="VmCreator.java" startLine="340" startPosition="36" endLine="343" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833412" fileName="VmCreator.java" startLine="358" startPosition="0" endLine="361" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunsAfterProcessStarted#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="4352118152439833983" fileName="VmCreator.java" startLine="209" startPosition="9" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834117" fileName="VmCreator.java" startLine="260" startPosition="86" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834132" fileName="VmCreator.java" startLine="264" startPosition="47" endLine="267" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834159" fileName="VmCreator.java" startLine="273" startPosition="6" endLine="276" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834200" fileName="VmCreator.java" startLine="284" startPosition="66" endLine="287" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834297" fileName="VmCreator.java" startLine="307" startPosition="50" endLine="310" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834386" fileName="VmCreator.java" startLine="338" startPosition="36" endLine="341" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833412" fileName="VmCreator.java" startLine="356" startPosition="0" endLine="359" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunsAfterProcessStarted#(Ljava/lang/Runnable;)V" />
     <nodeInfo nodeId="4352118152439833485" fileName="VmCreator.java" startLine="55" startPosition="37" endLine="59" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessListeners" />
     <nodeInfo nodeId="4352118152439833622" fileName="VmCreator.java" startLine="89" startPosition="61" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833939" fileName="VmCreator.java" startLine="191" startPosition="75" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="4352118152439833946" fileName="VmCreator.java" startLine="202" startPosition="41" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="4352118152439834034" fileName="VmCreator.java" startLine="216" startPosition="60" endLine="220" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439833998" fileName="VmCreator.java" startLine="241" startPosition="14" endLine="245" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834144" fileName="VmCreator.java" startLine="271" startPosition="100" endLine="275" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439834180" fileName="VmCreator.java" startLine="280" startPosition="63" endLine="284" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834397" fileName="VmCreator.java" startLine="346" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debugger/java/runtime/state/DebugSession;" />
-    <nodeInfo nodeId="4352118152439834403" fileName="VmCreator.java" startLine="350" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConnectionSettings#()Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;" />
-    <nodeInfo nodeId="4352118152439833426" fileName="VmCreator.java" startLine="363" startPosition="36" endLine="367" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833441" fileName="VmCreator.java" startLine="370" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startNotified#(Lcom/intellij/execution/process/ProcessEvent;)V" />
+    <nodeInfo nodeId="4352118152439833939" fileName="VmCreator.java" startLine="189" startPosition="75" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="4352118152439833946" fileName="VmCreator.java" startLine="200" startPosition="41" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="4352118152439834034" fileName="VmCreator.java" startLine="214" startPosition="60" endLine="218" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439833998" fileName="VmCreator.java" startLine="239" startPosition="14" endLine="243" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834144" fileName="VmCreator.java" startLine="269" startPosition="100" endLine="273" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439834180" fileName="VmCreator.java" startLine="278" startPosition="63" endLine="282" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834397" fileName="VmCreator.java" startLine="344" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debugger/java/runtime/state/DebugSession;" />
+    <nodeInfo nodeId="4352118152439834403" fileName="VmCreator.java" startLine="348" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConnectionSettings#()Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;" />
+    <nodeInfo nodeId="4352118152439833426" fileName="VmCreator.java" startLine="361" startPosition="36" endLine="365" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833441" fileName="VmCreator.java" startLine="368" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startNotified#(Lcom/intellij/execution/process/ProcessEvent;)V" />
     <nodeInfo nodeId="4352118152439833501" fileName="VmCreator.java" startLine="62" startPosition="0" endLine="67" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VmCreator#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="4352118152439833680" fileName="VmCreator.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVmFailed#(Ljava/lang/Throwable;)V" />
     <nodeInfo nodeId="4352118152439833697" fileName="VmCreator.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVmFailed#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4352118152439833935" fileName="VmCreator.java" startLine="190" startPosition="62" endLine="195" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834013" fileName="VmCreator.java" startLine="246" startPosition="42" endLine="251" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4352118152439834223" fileName="VmCreator.java" startLine="293" startPosition="55" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4352118152439834251" fileName="VmCreator.java" startLine="302" startPosition="10" endLine="307" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834319" fileName="VmCreator.java" startLine="318" startPosition="39" endLine="323" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834347" fileName="VmCreator.java" startLine="328" startPosition="39" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439834381" fileName="VmCreator.java" startLine="339" startPosition="40" endLine="344" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833935" fileName="VmCreator.java" startLine="188" startPosition="62" endLine="193" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834013" fileName="VmCreator.java" startLine="244" startPosition="42" endLine="249" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4352118152439834223" fileName="VmCreator.java" startLine="291" startPosition="55" endLine="296" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4352118152439834251" fileName="VmCreator.java" startLine="300" startPosition="10" endLine="305" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834319" fileName="VmCreator.java" startLine="316" startPosition="39" endLine="321" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834347" fileName="VmCreator.java" startLine="326" startPosition="39" endLine="331" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439834381" fileName="VmCreator.java" startLine="337" startPosition="40" endLine="342" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439833785" fileName="VmCreator.java" startLine="145" startPosition="23" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4352118152439834279" fileName="VmCreator.java" startLine="307" startPosition="5" endLine="313" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4352118152439833835" fileName="VmCreator.java" startLine="161" startPosition="62" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="connectorIsReady#()V" />
-    <nodeInfo nodeId="4352118152439834080" fileName="VmCreator.java" startLine="231" startPosition="36" endLine="238" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4352118152439834316" fileName="VmCreator.java" startLine="317" startPosition="67" endLine="324" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4352118152439834344" fileName="VmCreator.java" startLine="327" startPosition="70" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4352118152439833828" fileName="VmCreator.java" startLine="160" startPosition="90" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833887" fileName="VmCreator.java" startLine="174" startPosition="75" endLine="182" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4352118152439834241" fileName="VmCreator.java" startLine="299" startPosition="20" endLine="307" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833422" fileName="VmCreator.java" startLine="362" startPosition="0" endLine="370" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4352118152439833835" fileName="VmCreator.java" startLine="160" startPosition="62" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="connectorIsReady#()V" />
+    <nodeInfo nodeId="4352118152439834279" fileName="VmCreator.java" startLine="305" startPosition="5" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4352118152439833828" fileName="VmCreator.java" startLine="159" startPosition="90" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834080" fileName="VmCreator.java" startLine="229" startPosition="36" endLine="236" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4352118152439834316" fileName="VmCreator.java" startLine="315" startPosition="67" endLine="322" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4352118152439834344" fileName="VmCreator.java" startLine="325" startPosition="70" endLine="332" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4352118152439833887" fileName="VmCreator.java" startLine="172" startPosition="75" endLine="180" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4352118152439834241" fileName="VmCreator.java" startLine="297" startPosition="20" endLine="305" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833422" fileName="VmCreator.java" startLine="360" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4352118152439833534" fileName="VmCreator.java" startLine="69" startPosition="114" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833926" fileName="VmCreator.java" startLine="188" startPosition="53" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4352118152439834075" fileName="VmCreator.java" startLine="230" startPosition="19" endLine="239" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833926" fileName="VmCreator.java" startLine="186" startPosition="53" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4352118152439834075" fileName="VmCreator.java" startLine="228" startPosition="19" endLine="237" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439833781" fileName="VmCreator.java" startLine="144" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fail#()V" />
-    <nodeInfo nodeId="4352118152439833880" fileName="VmCreator.java" startLine="173" startPosition="55" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4352118152439833921" fileName="VmCreator.java" startLine="187" startPosition="31" endLine="197" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439834310" fileName="VmCreator.java" startLine="316" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
-    <nodeInfo nodeId="4352118152439834338" fileName="VmCreator.java" startLine="326" startPosition="0" endLine="336" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
-    <nodeInfo nodeId="4352118152439834366" fileName="VmCreator.java" startLine="336" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeAfterProcessStarted#(Ljava/lang/Runnable;)V" />
-    <nodeInfo nodeId="4352118152439833996" fileName="VmCreator.java" startLine="241" startPosition="12" endLine="252" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4352118152439833880" fileName="VmCreator.java" startLine="171" startPosition="55" endLine="181" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4352118152439833921" fileName="VmCreator.java" startLine="185" startPosition="31" endLine="195" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439834310" fileName="VmCreator.java" startLine="314" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
+    <nodeInfo nodeId="4352118152439834338" fileName="VmCreator.java" startLine="324" startPosition="0" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
+    <nodeInfo nodeId="4352118152439834366" fileName="VmCreator.java" startLine="334" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeAfterProcessStarted#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="4352118152439833996" fileName="VmCreator.java" startLine="239" startPosition="12" endLine="250" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4352118152439833528" fileName="VmCreator.java" startLine="68" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createLocalConnectionSettings#(Lcom/intellij/execution/configurations/RunProfileState;)Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;" />
     <nodeInfo nodeId="4352118152439833744" fileName="VmCreator.java" startLine="127" startPosition="62" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processWillTerminate#(Lcom/intellij/execution/process/ProcessEvent;Z)V" />
-    <nodeInfo nodeId="4352118152439833909" fileName="VmCreator.java" startLine="186" startPosition="9" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833909" fileName="VmCreator.java" startLine="184" startPosition="9" endLine="198" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439833612" fileName="VmCreator.java" startLine="87" startPosition="9" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="4352118152439833737" fileName="VmCreator.java" startLine="126" startPosition="73" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833869" fileName="VmCreator.java" startLine="171" startPosition="85" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4352118152439834065" fileName="VmCreator.java" startLine="224" startPosition="62" endLine="240" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4352118152439833869" fileName="VmCreator.java" startLine="169" startPosition="85" endLine="184" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4352118152439834065" fileName="VmCreator.java" startLine="222" startPosition="62" endLine="238" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="4352118152439833601" fileName="VmCreator.java" startLine="86" startPosition="27" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4352118152439833720" fileName="VmCreator.java" startLine="120" startPosition="102" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439833712" fileName="VmCreator.java" startLine="119" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fixStopBugUnderLinux#(Lcom/intellij/execution/process/ProcessHandler;Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)V" />
-    <nodeInfo nodeId="4352118152439834213" fileName="VmCreator.java" startLine="291" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConnector#(Ljava/lang/String;)Lcom/sun/jdi/connect/Connector;" />
+    <nodeInfo nodeId="4352118152439834213" fileName="VmCreator.java" startLine="289" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConnector#(Ljava/lang/String;)Lcom/sun/jdi/connect/Connector;" />
     <nodeInfo nodeId="4352118152439833570" fileName="VmCreator.java" startLine="80" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startSession#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/ExecutionResult;" />
-    <nodeInfo nodeId="4352118152439834111" fileName="VmCreator.java" startLine="261" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillConnectorArguments#(Lcom/sun/jdi/connect/Connector;)V" />
-    <nodeInfo nodeId="4352118152439833863" fileName="VmCreator.java" startLine="169" startPosition="65" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="4352118152439833859" fileName="VmCreator.java" startLine="168" startPosition="7" endLine="206" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439833992" fileName="VmCreator.java" startLine="214" startPosition="7" endLine="252" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439833960" fileName="VmCreator.java" startLine="210" startPosition="77" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4352118152439833956" fileName="VmCreator.java" startLine="209" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCreateVirtualMachine#()Lcom/sun/jdi/VirtualMachine;" />
-    <nodeInfo nodeId="4352118152439833801" fileName="VmCreator.java" startLine="154" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVirtualMachine#()V" />
+    <nodeInfo nodeId="4352118152439834111" fileName="VmCreator.java" startLine="259" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillConnectorArguments#(Lcom/sun/jdi/connect/Connector;)V" />
+    <nodeInfo nodeId="4352118152439833863" fileName="VmCreator.java" startLine="167" startPosition="65" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="4352118152439833859" fileName="VmCreator.java" startLine="166" startPosition="7" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439833992" fileName="VmCreator.java" startLine="212" startPosition="7" endLine="250" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439833960" fileName="VmCreator.java" startLine="208" startPosition="77" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4352118152439833956" fileName="VmCreator.java" startLine="207" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCreateVirtualMachine#()Lcom/sun/jdi/VirtualMachine;" />
+    <nodeInfo nodeId="4352118152439833801" fileName="VmCreator.java" startLine="154" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVirtualMachine#()V" />
     <scopeInfo nodeId="4352118152439833558" fileName="VmCreator.java" startLine="72" startPosition="64" endLine="73" endPosition="58" />
     <scopeInfo nodeId="4352118152439833539" fileName="VmCreator.java" startLine="76" startPosition="12" endLine="77" endPosition="64" />
     <scopeInfo nodeId="4352118152439833640" fileName="VmCreator.java" startLine="94" startPosition="68" endLine="95" endPosition="84" />
     <scopeInfo nodeId="4352118152439833758" fileName="VmCreator.java" startLine="129" startPosition="60" endLine="130" endPosition="19" />
     <scopeInfo nodeId="4352118152439833790" fileName="VmCreator.java" startLine="147" startPosition="23" endLine="148" endPosition="15" />
-    <scopeInfo nodeId="4352118152439833870" fileName="VmCreator.java" startLine="184" startPosition="19" endLine="185" endPosition="25" />
-    <scopeInfo nodeId="4352118152439833940" fileName="VmCreator.java" startLine="192" startPosition="38" endLine="193" endPosition="55" />
-    <scopeInfo nodeId="4352118152439833914" fileName="VmCreator.java" startLine="198" startPosition="16" endLine="199" endPosition="35" />
-    <scopeInfo nodeId="4352118152439833947" fileName="VmCreator.java" startLine="203" startPosition="28" endLine="204" endPosition="23" />
-    <scopeInfo nodeId="4352118152439833987" fileName="VmCreator.java" startLine="212" startPosition="32" endLine="213" endPosition="60" />
-    <scopeInfo nodeId="4352118152439834066" fileName="VmCreator.java" startLine="228" startPosition="0" endLine="229" endPosition="43">
+    <scopeInfo nodeId="4352118152439833870" fileName="VmCreator.java" startLine="182" startPosition="19" endLine="183" endPosition="25" />
+    <scopeInfo nodeId="4352118152439833940" fileName="VmCreator.java" startLine="190" startPosition="38" endLine="191" endPosition="55" />
+    <scopeInfo nodeId="4352118152439833914" fileName="VmCreator.java" startLine="196" startPosition="16" endLine="197" endPosition="35" />
+    <scopeInfo nodeId="4352118152439833947" fileName="VmCreator.java" startLine="201" startPosition="28" endLine="202" endPosition="23" />
+    <scopeInfo nodeId="4352118152439833987" fileName="VmCreator.java" startLine="210" startPosition="32" endLine="211" endPosition="60" />
+    <scopeInfo nodeId="4352118152439834066" fileName="VmCreator.java" startLine="226" startPosition="0" endLine="227" endPosition="43">
       <varInfo nodeId="4352118152439834072" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834067" fileName="VmCreator.java" startLine="228" startPosition="34" endLine="229" endPosition="43" />
-    <scopeInfo nodeId="4352118152439834093" fileName="VmCreator.java" startLine="232" startPosition="17" endLine="233" endPosition="51" />
-    <scopeInfo nodeId="4352118152439834081" fileName="VmCreator.java" startLine="234" startPosition="0" endLine="235" endPosition="26">
+    <scopeInfo nodeId="4352118152439834067" fileName="VmCreator.java" startLine="226" startPosition="34" endLine="227" endPosition="43" />
+    <scopeInfo nodeId="4352118152439834093" fileName="VmCreator.java" startLine="230" startPosition="17" endLine="231" endPosition="51" />
+    <scopeInfo nodeId="4352118152439834081" fileName="VmCreator.java" startLine="232" startPosition="0" endLine="233" endPosition="26">
       <varInfo nodeId="4352118152439834085" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834082" fileName="VmCreator.java" startLine="234" startPosition="50" endLine="235" endPosition="26" />
-    <scopeInfo nodeId="4352118152439834087" fileName="VmCreator.java" startLine="236" startPosition="0" endLine="237" endPosition="26">
+    <scopeInfo nodeId="4352118152439834082" fileName="VmCreator.java" startLine="232" startPosition="50" endLine="233" endPosition="26" />
+    <scopeInfo nodeId="4352118152439834087" fileName="VmCreator.java" startLine="234" startPosition="0" endLine="235" endPosition="26">
       <varInfo nodeId="4352118152439834091" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834088" fileName="VmCreator.java" startLine="236" startPosition="60" endLine="237" endPosition="26" />
-    <scopeInfo nodeId="4352118152439834022" fileName="VmCreator.java" startLine="247" startPosition="13" endLine="248" endPosition="47" />
-    <scopeInfo nodeId="4352118152439834014" fileName="VmCreator.java" startLine="249" startPosition="0" endLine="250" endPosition="43">
+    <scopeInfo nodeId="4352118152439834088" fileName="VmCreator.java" startLine="234" startPosition="60" endLine="235" endPosition="26" />
+    <scopeInfo nodeId="4352118152439834022" fileName="VmCreator.java" startLine="245" startPosition="13" endLine="246" endPosition="47" />
+    <scopeInfo nodeId="4352118152439834014" fileName="VmCreator.java" startLine="247" startPosition="0" endLine="248" endPosition="43">
       <varInfo nodeId="4352118152439834020" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834015" fileName="VmCreator.java" startLine="249" startPosition="34" endLine="250" endPosition="43" />
-    <scopeInfo nodeId="4352118152439833961" fileName="VmCreator.java" startLine="253" startPosition="0" endLine="254" endPosition="38">
+    <scopeInfo nodeId="4352118152439834015" fileName="VmCreator.java" startLine="247" startPosition="34" endLine="248" endPosition="43" />
+    <scopeInfo nodeId="4352118152439833961" fileName="VmCreator.java" startLine="251" startPosition="0" endLine="252" endPosition="38">
       <varInfo nodeId="4352118152439833967" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833962" fileName="VmCreator.java" startLine="253" startPosition="29" endLine="254" endPosition="38" />
-    <scopeInfo nodeId="4352118152439833969" fileName="VmCreator.java" startLine="255" startPosition="0" endLine="256" endPosition="38">
+    <scopeInfo nodeId="4352118152439833962" fileName="VmCreator.java" startLine="251" startPosition="29" endLine="252" endPosition="38" />
+    <scopeInfo nodeId="4352118152439833969" fileName="VmCreator.java" startLine="253" startPosition="0" endLine="254" endPosition="38">
       <varInfo nodeId="4352118152439833975" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833970" fileName="VmCreator.java" startLine="255" startPosition="52" endLine="256" endPosition="38" />
-    <scopeInfo nodeId="4352118152439833977" fileName="VmCreator.java" startLine="257" startPosition="15" endLine="258" endPosition="25" />
-    <scopeInfo nodeId="4352118152439834121" fileName="VmCreator.java" startLine="263" startPosition="28" endLine="264" endPosition="64" />
-    <scopeInfo nodeId="4352118152439834136" fileName="VmCreator.java" startLine="267" startPosition="30" endLine="268" endPosition="59" />
-    <scopeInfo nodeId="4352118152439834163" fileName="VmCreator.java" startLine="276" startPosition="26" endLine="277" endPosition="73" />
-    <scopeInfo nodeId="4352118152439834201" fileName="VmCreator.java" startLine="287" startPosition="31" endLine="288" endPosition="64" />
-    <scopeInfo nodeId="4352118152439834233" fileName="VmCreator.java" startLine="294" startPosition="9" endLine="295" endPosition="64" />
-    <scopeInfo nodeId="4352118152439834224" fileName="VmCreator.java" startLine="296" startPosition="0" endLine="297" endPosition="61">
+    <scopeInfo nodeId="4352118152439833970" fileName="VmCreator.java" startLine="253" startPosition="52" endLine="254" endPosition="38" />
+    <scopeInfo nodeId="4352118152439833977" fileName="VmCreator.java" startLine="255" startPosition="15" endLine="256" endPosition="25" />
+    <scopeInfo nodeId="4352118152439834121" fileName="VmCreator.java" startLine="261" startPosition="28" endLine="262" endPosition="64" />
+    <scopeInfo nodeId="4352118152439834136" fileName="VmCreator.java" startLine="265" startPosition="30" endLine="266" endPosition="59" />
+    <scopeInfo nodeId="4352118152439834163" fileName="VmCreator.java" startLine="274" startPosition="26" endLine="275" endPosition="73" />
+    <scopeInfo nodeId="4352118152439834201" fileName="VmCreator.java" startLine="285" startPosition="31" endLine="286" endPosition="64" />
+    <scopeInfo nodeId="4352118152439834233" fileName="VmCreator.java" startLine="292" startPosition="9" endLine="293" endPosition="64" />
+    <scopeInfo nodeId="4352118152439834224" fileName="VmCreator.java" startLine="294" startPosition="0" endLine="295" endPosition="61">
       <varInfo nodeId="4352118152439834231" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834225" fileName="VmCreator.java" startLine="296" startPosition="23" endLine="297" endPosition="61" />
-    <scopeInfo nodeId="4352118152439834272" fileName="VmCreator.java" startLine="300" startPosition="120" endLine="301" endPosition="63" />
-    <scopeInfo nodeId="4352118152439834265" fileName="VmCreator.java" startLine="303" startPosition="120" endLine="304" endPosition="63" />
-    <scopeInfo nodeId="4352118152439834262" fileName="VmCreator.java" startLine="305" startPosition="12" endLine="306" endPosition="18" />
-    <scopeInfo nodeId="4352118152439834304" fileName="VmCreator.java" startLine="310" startPosition="51" endLine="311" endPosition="25" />
-    <scopeInfo nodeId="4352118152439834330" fileName="VmCreator.java" startLine="319" startPosition="38" endLine="320" endPosition="82" />
-    <scopeInfo nodeId="4352118152439834324" fileName="VmCreator.java" startLine="321" startPosition="14" endLine="322" endPosition="48" />
-    <scopeInfo nodeId="4352118152439834358" fileName="VmCreator.java" startLine="329" startPosition="38" endLine="330" endPosition="85" />
-    <scopeInfo nodeId="4352118152439834352" fileName="VmCreator.java" startLine="331" startPosition="14" endLine="332" endPosition="51" />
-    <scopeInfo nodeId="4352118152439834392" fileName="VmCreator.java" startLine="341" startPosition="68" endLine="342" endPosition="30" />
-    <scopeInfo nodeId="4352118152439834400" fileName="VmCreator.java" startLine="347" startPosition="41" endLine="348" endPosition="29" />
-    <scopeInfo nodeId="4352118152439834406" fileName="VmCreator.java" startLine="351" startPosition="58" endLine="352" endPosition="32" />
-    <scopeInfo nodeId="4352118152439833417" fileName="VmCreator.java" startLine="359" startPosition="55" endLine="360" endPosition="28" />
-    <scopeInfo nodeId="4352118152439833446" fileName="VmCreator.java" startLine="371" startPosition="51" endLine="372" endPosition="12" />
+    <scopeInfo nodeId="4352118152439834225" fileName="VmCreator.java" startLine="294" startPosition="23" endLine="295" endPosition="61" />
+    <scopeInfo nodeId="4352118152439834272" fileName="VmCreator.java" startLine="298" startPosition="120" endLine="299" endPosition="63" />
+    <scopeInfo nodeId="4352118152439834265" fileName="VmCreator.java" startLine="301" startPosition="120" endLine="302" endPosition="63" />
+    <scopeInfo nodeId="4352118152439834262" fileName="VmCreator.java" startLine="303" startPosition="12" endLine="304" endPosition="18" />
+    <scopeInfo nodeId="4352118152439834304" fileName="VmCreator.java" startLine="308" startPosition="51" endLine="309" endPosition="25" />
+    <scopeInfo nodeId="4352118152439834330" fileName="VmCreator.java" startLine="317" startPosition="38" endLine="318" endPosition="82" />
+    <scopeInfo nodeId="4352118152439834324" fileName="VmCreator.java" startLine="319" startPosition="14" endLine="320" endPosition="48" />
+    <scopeInfo nodeId="4352118152439834358" fileName="VmCreator.java" startLine="327" startPosition="38" endLine="328" endPosition="85" />
+    <scopeInfo nodeId="4352118152439834352" fileName="VmCreator.java" startLine="329" startPosition="14" endLine="330" endPosition="51" />
+    <scopeInfo nodeId="4352118152439834392" fileName="VmCreator.java" startLine="339" startPosition="68" endLine="340" endPosition="30" />
+    <scopeInfo nodeId="4352118152439834400" fileName="VmCreator.java" startLine="345" startPosition="41" endLine="346" endPosition="29" />
+    <scopeInfo nodeId="4352118152439834406" fileName="VmCreator.java" startLine="349" startPosition="58" endLine="350" endPosition="32" />
+    <scopeInfo nodeId="4352118152439833417" fileName="VmCreator.java" startLine="357" startPosition="55" endLine="358" endPosition="28" />
+    <scopeInfo nodeId="4352118152439833446" fileName="VmCreator.java" startLine="369" startPosition="51" endLine="370" endPosition="12" />
     <scopeInfo nodeId="4352118152439833626" fileName="VmCreator.java" startLine="90" startPosition="40" endLine="92" endPosition="22" />
     <scopeInfo nodeId="4352118152439833602" fileName="VmCreator.java" startLine="103" startPosition="0" endLine="105" endPosition="14">
       <varInfo nodeId="4352118152439833609" varName="e" />
@@ -302,32 +300,32 @@
     <scopeInfo nodeId="4352118152439833603" fileName="VmCreator.java" startLine="103" startPosition="36" endLine="105" endPosition="14" />
     <scopeInfo nodeId="4352118152439833685" fileName="VmCreator.java" startLine="110" startPosition="44" endLine="112" endPosition="39" />
     <scopeInfo nodeId="4352118152439833702" fileName="VmCreator.java" startLine="115" startPosition="47" endLine="117" endPosition="11" />
-    <scopeInfo nodeId="4352118152439833888" fileName="VmCreator.java" startLine="179" startPosition="0" endLine="181" endPosition="20">
+    <scopeInfo nodeId="4352118152439833888" fileName="VmCreator.java" startLine="177" startPosition="0" endLine="179" endPosition="20">
       <varInfo nodeId="4352118152439833894" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833889" fileName="VmCreator.java" startLine="179" startPosition="35" endLine="181" endPosition="20" />
-    <scopeInfo nodeId="4352118152439834099" fileName="VmCreator.java" startLine="225" startPosition="13" endLine="227" endPosition="47" />
-    <scopeInfo nodeId="4352118152439834184" fileName="VmCreator.java" startLine="281" startPosition="29" endLine="283" endPosition="23" />
-    <scopeInfo nodeId="4352118152439833429" fileName="VmCreator.java" startLine="364" startPosition="26" endLine="366" endPosition="25" />
+    <scopeInfo nodeId="4352118152439833889" fileName="VmCreator.java" startLine="177" startPosition="35" endLine="179" endPosition="20" />
+    <scopeInfo nodeId="4352118152439834099" fileName="VmCreator.java" startLine="223" startPosition="13" endLine="225" endPosition="47" />
+    <scopeInfo nodeId="4352118152439834184" fileName="VmCreator.java" startLine="279" startPosition="29" endLine="281" endPosition="23" />
+    <scopeInfo nodeId="4352118152439833429" fileName="VmCreator.java" startLine="362" startPosition="26" endLine="364" endPosition="25" />
     <scopeInfo nodeId="4352118152439833506" fileName="VmCreator.java" startLine="63" startPosition="37" endLine="66" endPosition="87" />
     <scopeInfo nodeId="4352118152439833636" fileName="VmCreator.java" startLine="93" startPosition="9" endLine="96" endPosition="9">
       <varInfo nodeId="4352118152439833638" varName="processListener" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833896" fileName="VmCreator.java" startLine="175" startPosition="17" endLine="178" endPosition="20" />
-    <scopeInfo nodeId="4352118152439834385" fileName="VmCreator.java" startLine="340" startPosition="36" endLine="343" endPosition="7" />
-    <scopeInfo nodeId="4352118152439833412" fileName="VmCreator.java" startLine="358" startPosition="0" endLine="361" endPosition="5">
+    <scopeInfo nodeId="4352118152439833838" fileName="VmCreator.java" startLine="161" startPosition="38" endLine="164" endPosition="48" />
+    <scopeInfo nodeId="4352118152439833896" fileName="VmCreator.java" startLine="173" startPosition="17" endLine="176" endPosition="20" />
+    <scopeInfo nodeId="4352118152439834385" fileName="VmCreator.java" startLine="338" startPosition="36" endLine="341" endPosition="7" />
+    <scopeInfo nodeId="4352118152439833412" fileName="VmCreator.java" startLine="356" startPosition="0" endLine="359" endPosition="5">
       <varInfo nodeId="4352118152439833415" varName="runnable" />
     </scopeInfo>
     <scopeInfo nodeId="4352118152439833787" fileName="VmCreator.java" startLine="146" startPosition="25" endLine="150" endPosition="24" />
-    <scopeInfo nodeId="4352118152439833838" fileName="VmCreator.java" startLine="162" startPosition="38" endLine="166" endPosition="48" />
-    <scopeInfo nodeId="4352118152439833939" fileName="VmCreator.java" startLine="191" startPosition="75" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="4352118152439833946" fileName="VmCreator.java" startLine="202" startPosition="41" endLine="206" endPosition="0" />
-    <scopeInfo nodeId="4352118152439834288" fileName="VmCreator.java" startLine="308" startPosition="62" endLine="312" endPosition="7">
+    <scopeInfo nodeId="4352118152439833939" fileName="VmCreator.java" startLine="189" startPosition="75" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="4352118152439833946" fileName="VmCreator.java" startLine="200" startPosition="41" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="4352118152439834288" fileName="VmCreator.java" startLine="306" startPosition="62" endLine="310" endPosition="7">
       <varInfo nodeId="4352118152439834290" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834397" fileName="VmCreator.java" startLine="346" startPosition="0" endLine="350" endPosition="0" />
-    <scopeInfo nodeId="4352118152439834403" fileName="VmCreator.java" startLine="350" startPosition="0" endLine="354" endPosition="0" />
-    <scopeInfo nodeId="4352118152439833441" fileName="VmCreator.java" startLine="370" startPosition="0" endLine="374" endPosition="0">
+    <scopeInfo nodeId="4352118152439834397" fileName="VmCreator.java" startLine="344" startPosition="0" endLine="348" endPosition="0" />
+    <scopeInfo nodeId="4352118152439834403" fileName="VmCreator.java" startLine="348" startPosition="0" endLine="352" endPosition="0" />
+    <scopeInfo nodeId="4352118152439833441" fileName="VmCreator.java" startLine="368" startPosition="0" endLine="372" endPosition="0">
       <varInfo nodeId="4352118152439833444" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="4352118152439833501" fileName="VmCreator.java" startLine="62" startPosition="0" endLine="67" endPosition="3">
@@ -342,42 +340,42 @@
     <scopeInfo nodeId="4352118152439833697" fileName="VmCreator.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="4352118152439833700" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834318" fileName="VmCreator.java" startLine="318" startPosition="39" endLine="323" endPosition="7" />
-    <scopeInfo nodeId="4352118152439834346" fileName="VmCreator.java" startLine="328" startPosition="39" endLine="333" endPosition="7" />
-    <scopeInfo nodeId="4352118152439833425" fileName="VmCreator.java" startLine="363" startPosition="36" endLine="368" endPosition="34" />
-    <scopeInfo nodeId="4352118152439833929" fileName="VmCreator.java" startLine="189" startPosition="31" endLine="195" endPosition="17" />
-    <scopeInfo nodeId="4352118152439834279" fileName="VmCreator.java" startLine="307" startPosition="5" endLine="313" endPosition="5">
+    <scopeInfo nodeId="4352118152439834318" fileName="VmCreator.java" startLine="316" startPosition="39" endLine="321" endPosition="7" />
+    <scopeInfo nodeId="4352118152439834346" fileName="VmCreator.java" startLine="326" startPosition="39" endLine="331" endPosition="7" />
+    <scopeInfo nodeId="4352118152439833425" fileName="VmCreator.java" startLine="361" startPosition="36" endLine="366" endPosition="34" />
+    <scopeInfo nodeId="4352118152439833835" fileName="VmCreator.java" startLine="160" startPosition="62" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="4352118152439833929" fileName="VmCreator.java" startLine="187" startPosition="31" endLine="193" endPosition="17" />
+    <scopeInfo nodeId="4352118152439834279" fileName="VmCreator.java" startLine="305" startPosition="5" endLine="311" endPosition="5">
       <varInfo nodeId="4352118152439834280" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="4352118152439833784" fileName="VmCreator.java" startLine="145" startPosition="23" endLine="152" endPosition="34" />
-    <scopeInfo nodeId="4352118152439833835" fileName="VmCreator.java" startLine="161" startPosition="62" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="4352118152439834079" fileName="VmCreator.java" startLine="231" startPosition="36" endLine="238" endPosition="13" />
-    <scopeInfo nodeId="4352118152439834315" fileName="VmCreator.java" startLine="317" startPosition="67" endLine="324" endPosition="5" />
-    <scopeInfo nodeId="4352118152439834343" fileName="VmCreator.java" startLine="327" startPosition="70" endLine="334" endPosition="5" />
-    <scopeInfo nodeId="4352118152439834371" fileName="VmCreator.java" startLine="337" startPosition="63" endLine="344" endPosition="5">
+    <scopeInfo nodeId="4352118152439834079" fileName="VmCreator.java" startLine="229" startPosition="36" endLine="236" endPosition="13" />
+    <scopeInfo nodeId="4352118152439834315" fileName="VmCreator.java" startLine="315" startPosition="67" endLine="322" endPosition="5" />
+    <scopeInfo nodeId="4352118152439834343" fileName="VmCreator.java" startLine="325" startPosition="70" endLine="332" endPosition="5" />
+    <scopeInfo nodeId="4352118152439834371" fileName="VmCreator.java" startLine="335" startPosition="63" endLine="342" endPosition="5">
       <varInfo nodeId="4352118152439834373" varName="processListener" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833886" fileName="VmCreator.java" startLine="174" startPosition="75" endLine="182" endPosition="13" />
-    <scopeInfo nodeId="4352118152439833422" fileName="VmCreator.java" startLine="362" startPosition="0" endLine="370" endPosition="0" />
+    <scopeInfo nodeId="4352118152439833886" fileName="VmCreator.java" startLine="172" startPosition="75" endLine="180" endPosition="13" />
+    <scopeInfo nodeId="4352118152439833422" fileName="VmCreator.java" startLine="360" startPosition="0" endLine="368" endPosition="0" />
     <scopeInfo nodeId="4352118152439833533" fileName="VmCreator.java" startLine="69" startPosition="114" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="4352118152439833926" fileName="VmCreator.java" startLine="188" startPosition="53" endLine="197" endPosition="0" />
-    <scopeInfo nodeId="4352118152439834074" fileName="VmCreator.java" startLine="230" startPosition="19" endLine="239" endPosition="11" />
+    <scopeInfo nodeId="4352118152439833926" fileName="VmCreator.java" startLine="186" startPosition="53" endLine="195" endPosition="0" />
+    <scopeInfo nodeId="4352118152439834074" fileName="VmCreator.java" startLine="228" startPosition="19" endLine="237" endPosition="11" />
     <scopeInfo nodeId="4352118152439833781" fileName="VmCreator.java" startLine="144" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="4352118152439833920" fileName="VmCreator.java" startLine="187" startPosition="31" endLine="197" endPosition="13" />
-    <scopeInfo nodeId="4352118152439833997" fileName="VmCreator.java" startLine="241" startPosition="14" endLine="251" endPosition="9">
+    <scopeInfo nodeId="4352118152439833920" fileName="VmCreator.java" startLine="185" startPosition="31" endLine="195" endPosition="13" />
+    <scopeInfo nodeId="4352118152439833997" fileName="VmCreator.java" startLine="239" startPosition="14" endLine="249" endPosition="9">
       <varInfo nodeId="4352118152439833999" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834310" fileName="VmCreator.java" startLine="316" startPosition="0" endLine="326" endPosition="0">
+    <scopeInfo nodeId="4352118152439834310" fileName="VmCreator.java" startLine="314" startPosition="0" endLine="324" endPosition="0">
       <varInfo nodeId="4352118152439834313" varName="processListener" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834338" fileName="VmCreator.java" startLine="326" startPosition="0" endLine="336" endPosition="0">
+    <scopeInfo nodeId="4352118152439834338" fileName="VmCreator.java" startLine="324" startPosition="0" endLine="334" endPosition="0">
       <varInfo nodeId="4352118152439834341" varName="processListener" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834366" fileName="VmCreator.java" startLine="336" startPosition="0" endLine="346" endPosition="0">
+    <scopeInfo nodeId="4352118152439834366" fileName="VmCreator.java" startLine="334" startPosition="0" endLine="344" endPosition="0">
       <varInfo nodeId="4352118152439834369" varName="run" />
     </scopeInfo>
     <scopeInfo nodeId="4352118152439833751" fileName="VmCreator.java" startLine="128" startPosition="87" endLine="139" endPosition="54" />
-    <scopeInfo nodeId="4352118152439833875" fileName="VmCreator.java" startLine="172" startPosition="13" endLine="183" endPosition="11">
+    <scopeInfo nodeId="4352118152439833875" fileName="VmCreator.java" startLine="170" startPosition="13" endLine="181" endPosition="11">
       <varInfo nodeId="4352118152439833877" varName="time" />
     </scopeInfo>
     <scopeInfo nodeId="4352118152439833528" fileName="VmCreator.java" startLine="68" startPosition="0" endLine="80" endPosition="0">
@@ -393,7 +391,7 @@
     <scopeInfo nodeId="4352118152439833611" fileName="VmCreator.java" startLine="87" startPosition="9" endLine="102" endPosition="7" />
     <scopeInfo nodeId="4352118152439833726" fileName="VmCreator.java" startLine="121" startPosition="62" endLine="141" endPosition="9" />
     <scopeInfo nodeId="4352118152439833719" fileName="VmCreator.java" startLine="120" startPosition="102" endLine="142" endPosition="5" />
-    <scopeInfo nodeId="4352118152439834218" fileName="VmCreator.java" startLine="292" startPosition="83" endLine="314" endPosition="16">
+    <scopeInfo nodeId="4352118152439834218" fileName="VmCreator.java" startLine="290" startPosition="83" endLine="312" endPosition="16">
       <varInfo nodeId="4352118152439834239" varName="connectors" />
       <varInfo nodeId="4352118152439834220" varName="virtualMachineManager" />
     </scopeInfo>
@@ -402,13 +400,13 @@
       <varInfo nodeId="4352118152439833715" varName="processHandler" />
       <varInfo nodeId="4352118152439833717" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834028" fileName="VmCreator.java" startLine="215" startPosition="48" endLine="240" endPosition="9">
+    <scopeInfo nodeId="4352118152439834028" fileName="VmCreator.java" startLine="213" startPosition="48" endLine="238" endPosition="9">
       <varInfo nodeId="4352118152439834035" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834213" fileName="VmCreator.java" startLine="291" startPosition="0" endLine="316" endPosition="0">
+    <scopeInfo nodeId="4352118152439834213" fileName="VmCreator.java" startLine="289" startPosition="0" endLine="314" endPosition="0">
       <varInfo nodeId="4352118152439834216" varName="connectorName" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834116" fileName="VmCreator.java" startLine="262" startPosition="86" endLine="289" endPosition="5">
+    <scopeInfo nodeId="4352118152439834116" fileName="VmCreator.java" startLine="260" startPosition="86" endLine="287" endPosition="5">
       <varInfo nodeId="4352118152439834194" varName="hostArgument" />
       <varInfo nodeId="4352118152439834145" varName="portArg" />
       <varInfo nodeId="4352118152439834174" varName="timeoutArg" />
@@ -419,30 +417,29 @@
       <varInfo nodeId="4352118152439833575" varName="runner" />
       <varInfo nodeId="4352118152439833577" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833864" fileName="VmCreator.java" startLine="170" startPosition="28" endLine="200" endPosition="9">
+    <scopeInfo nodeId="4352118152439833864" fileName="VmCreator.java" startLine="168" startPosition="28" endLine="198" endPosition="9">
       <varInfo nodeId="4352118152439833866" varName="vm" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439834111" fileName="VmCreator.java" startLine="261" startPosition="0" endLine="291" endPosition="0">
+    <scopeInfo nodeId="4352118152439834111" fileName="VmCreator.java" startLine="259" startPosition="0" endLine="289" endPosition="0">
       <varInfo nodeId="4352118152439834114" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833863" fileName="VmCreator.java" startLine="169" startPosition="65" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="4352118152439833982" fileName="VmCreator.java" startLine="211" startPosition="9" endLine="252" endPosition="7" />
-    <scopeInfo nodeId="4352118152439833959" fileName="VmCreator.java" startLine="210" startPosition="77" endLine="259" endPosition="5" />
-    <scopeInfo nodeId="4352118152439833804" fileName="VmCreator.java" startLine="155" startPosition="39" endLine="207" endPosition="24">
-      <varInfo nodeId="4352118152439833817" varName="connectorIsReady" />
+    <scopeInfo nodeId="4352118152439833863" fileName="VmCreator.java" startLine="167" startPosition="65" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="4352118152439833982" fileName="VmCreator.java" startLine="209" startPosition="9" endLine="250" endPosition="7" />
+    <scopeInfo nodeId="4352118152439833959" fileName="VmCreator.java" startLine="208" startPosition="77" endLine="257" endPosition="5" />
+    <scopeInfo nodeId="4352118152439833804" fileName="VmCreator.java" startLine="155" startPosition="39" endLine="205" endPosition="24">
       <varInfo nodeId="4352118152439833823" varName="processMulticaster" />
       <varInfo nodeId="4352118152439833806" varName="semaphore" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439833956" fileName="VmCreator.java" startLine="209" startPosition="0" endLine="261" endPosition="0" />
-    <scopeInfo nodeId="4352118152439833801" fileName="VmCreator.java" startLine="154" startPosition="0" endLine="209" endPosition="0" />
-    <unitInfo nodeId="4352118152439833939" fileName="VmCreator.java" startLine="191" startPosition="45" endLine="195" endPosition="15" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$5" />
-    <unitInfo nodeId="4352118152439833946" fileName="VmCreator.java" startLine="202" startPosition="11" endLine="206" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$4" />
-    <unitInfo nodeId="4352118152439833834" fileName="VmCreator.java" startLine="161" startPosition="39" endLine="168" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$2" />
-    <unitInfo nodeId="4352118152439833925" fileName="VmCreator.java" startLine="188" startPosition="41" endLine="197" endPosition="11" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$4" />
+    <scopeInfo nodeId="4352118152439833956" fileName="VmCreator.java" startLine="207" startPosition="0" endLine="259" endPosition="0" />
+    <scopeInfo nodeId="4352118152439833801" fileName="VmCreator.java" startLine="154" startPosition="0" endLine="207" endPosition="0" />
+    <unitInfo nodeId="4352118152439833939" fileName="VmCreator.java" startLine="189" startPosition="45" endLine="193" endPosition="15" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$5" />
+    <unitInfo nodeId="4352118152439833946" fileName="VmCreator.java" startLine="200" startPosition="11" endLine="204" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$4" />
+    <unitInfo nodeId="4352118152439833834" fileName="VmCreator.java" startLine="160" startPosition="39" endLine="166" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$2" />
+    <unitInfo nodeId="4352118152439833925" fileName="VmCreator.java" startLine="186" startPosition="41" endLine="195" endPosition="11" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$4" />
     <unitInfo nodeId="4352118152439833743" fileName="VmCreator.java" startLine="127" startPosition="44" endLine="141" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$1" />
-    <unitInfo nodeId="4352118152439833402" fileName="VmCreator.java" startLine="355" startPosition="0" endLine="375" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$RunsAfterProcessStarted" />
-    <unitInfo nodeId="4352118152439833863" fileName="VmCreator.java" startLine="169" startPosition="35" endLine="202" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$3" />
-    <unitInfo nodeId="4352118152439833399" fileName="VmCreator.java" startLine="44" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator" />
+    <unitInfo nodeId="4352118152439833402" fileName="VmCreator.java" startLine="353" startPosition="0" endLine="373" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$RunsAfterProcessStarted" />
+    <unitInfo nodeId="4352118152439833863" fileName="VmCreator.java" startLine="167" startPosition="35" endLine="200" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator$3" />
+    <unitInfo nodeId="4352118152439833399" fileName="VmCreator.java" startLine="44" startPosition="0" endLine="374" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.VmCreator" />
   </root>
   <root nodeId="8961922059449033006" modelId="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)">
     <nodeInfo nodeId="8961922059449033084" fileName="RequestManager.java" startLine="47" startPosition="56" endLine="48" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

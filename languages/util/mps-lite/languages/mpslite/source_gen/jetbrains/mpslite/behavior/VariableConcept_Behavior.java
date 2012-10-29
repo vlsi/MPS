@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -39,7 +40,7 @@ public class VariableConcept_Behavior {
     SPropertyOperations.set(typeLink, "metaClass", "aggregation");
     SPropertyOperations.set(typeLink, "sourceCardinality", "1");
     SPropertyOperations.set(typeLink, "role", SPropertyOperations.getString(thisNode, "typeRole"));
-    SLinkOperations.setTarget(typeLink, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "typeConcept", true), conceptsToTargets), false);
+    SLinkOperations.setTarget(typeLink, "target", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "typeConcept", true), "virtual_getConcept_1238594571574", new Object[]{conceptsToTargets}), false);
     SNode propertyDecl = SLinkOperations.addNewChild(conceptDeclaration, "propertyDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     SLinkOperations.setTarget(propertyDecl, "dataType", SLinkOperations.getTarget(new VariableConcept_Behavior.QuotationClass_mkovpu_a0c0h0d().createNode(), "dataType", false), false);
     SPropertyOperations.set(propertyDecl, "name", SPropertyOperations.getString(thisNode, "namePropertyName"));

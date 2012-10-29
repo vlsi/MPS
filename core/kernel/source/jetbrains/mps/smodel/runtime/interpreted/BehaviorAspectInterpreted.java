@@ -15,24 +15,13 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
   private static BehaviorAspectInterpreted INSTANCE = new BehaviorAspectInterpreted();
-  // todo: remove?
-  private Map<String, BehaviorDescriptor> pool = new ConcurrentHashMap<String, BehaviorDescriptor>();
-  private BehaviorDescriptor NULL_BEHAVIOR_DESCRIPTOR = new InterpretedBehaviorDescriptor(null);
-
-  private BehaviorAspectInterpreted() {
-  }
 
   public static BehaviorAspectInterpreted getInstance() {
     return INSTANCE;
@@ -40,45 +29,6 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
 
   @Override
   public BehaviorDescriptor getDescriptor(@Nullable String fqName) {
-    if (fqName == null) {
-      return NULL_BEHAVIOR_DESCRIPTOR;
-    }
-
-    if (pool.containsKey(fqName)) {
-      return pool.get(fqName);
-    } else {
-      BehaviorDescriptor descriptor = new InterpretedBehaviorDescriptor(fqName);
-      pool.put(fqName, descriptor);
-      return descriptor;
-    }
-  }
-
-  public static class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
-    private final String fqName;
-
-    public InterpretedBehaviorDescriptor(String fqName) {
-      this.fqName = fqName;
-    }
-
-    @Override
-    public String getConceptFqName() {
-      return fqName;
-    }
-
-    public void initNode(SNode node) {
-      if (node == null) {
-        throw new IllegalArgumentException("initNode on null node");
-      } else {
-        OldBehaviorManager.getInstance().initNode(node);
-      }
-    }
-
-    public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-      return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeWithConceptFqName(returnType, node, getConceptFqName(), methodName, parametersTypes, parameters);
-    }
-
-    public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-      return node == null ? defaultValue(returnType) : OldBehaviorManager.getInstance().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
-    }
+    return fqName != null ? new InterpretedBehaviorDescriptor(fqName) : NullSafeIllegalBehaviorDescriptor.INSTANCE;
   }
 }

@@ -17,7 +17,7 @@
     <nodeInfo nodeId="4288082098349207740" fileName="ModelTreeBuilder.java" startLine="56" startPosition="31" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4288082098349207748" fileName="ModelTreeBuilder.java" startLine="60" startPosition="63" endLine="61" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4288082098349207766" fileName="ModelTreeBuilder.java" startLine="64" startPosition="71" endLine="65" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4288082098349207784" fileName="ModelTreeBuilder.java" startLine="70" startPosition="40" endLine="71" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4288082098349207784" fileName="ModelTreeBuilder.java" startLine="70" startPosition="40" endLine="71" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4288082098349207809" fileName="ModelTreeBuilder.java" startLine="76" startPosition="129" endLine="77" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349207817" fileName="ModelTreeBuilder.java" startLine="79" startPosition="54" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4288082098349207825" fileName="ModelTreeBuilder.java" startLine="81" startPosition="38" endLine="82" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -55,7 +55,7 @@
     <scopeInfo nodeId="4288082098349207709" fileName="ModelTreeBuilder.java" startLine="52" startPosition="55" endLine="53" endPosition="53" />
     <scopeInfo nodeId="4288082098349207747" fileName="ModelTreeBuilder.java" startLine="60" startPosition="63" endLine="61" endPosition="107" />
     <scopeInfo nodeId="4288082098349207765" fileName="ModelTreeBuilder.java" startLine="64" startPosition="71" endLine="65" endPosition="89" />
-    <scopeInfo nodeId="4288082098349207783" fileName="ModelTreeBuilder.java" startLine="70" startPosition="40" endLine="71" endPosition="212" />
+    <scopeInfo nodeId="4288082098349207783" fileName="ModelTreeBuilder.java" startLine="70" startPosition="40" endLine="71" endPosition="187" />
     <scopeInfo nodeId="4288082098349207878" fileName="ModelTreeBuilder.java" startLine="96" startPosition="51" endLine="97" endPosition="26" />
     <scopeInfo nodeId="4288082098349207908" fileName="ModelTreeBuilder.java" startLine="24" startPosition="39" endLine="26" endPosition="42" />
     <scopeInfo nodeId="4288082098349207945" fileName="ModelTreeBuilder.java" startLine="33" startPosition="45" endLine="35" endPosition="42" />

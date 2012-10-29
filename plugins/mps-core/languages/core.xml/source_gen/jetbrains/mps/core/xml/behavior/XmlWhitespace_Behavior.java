@@ -5,6 +5,7 @@ package jetbrains.mps.core.xml.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlWhitespace_Behavior {
   public static void init(SNode thisNode) {
@@ -20,7 +21,7 @@ public class XmlWhitespace_Behavior {
   }
 
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
-    XmlPart_Behavior.callSuperNew_onNewLine_2133624044437631588(thisNode, "jetbrains.mps.core.xml.structure.XmlPrologElement");
+    BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.core.xml.structure.XmlPrologElement", "virtual_onNewLine_2133624044437631588", new Object[]{});
     if (isEmpty_vw0lry_a0a1a2(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlPart_Behavior.call_onNewLine_2133624044437631588(thisNode));
     }

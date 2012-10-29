@@ -12,12 +12,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.math.typesystem.MathTypeUtil;
-import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Set;
 import java.util.HashSet;
@@ -448,7 +447,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1237814500395(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
-      SNode formalType = TypeDerivable_Behavior.call_deriveType_1213877435747(method, _context.getNode());
+      SNode formalType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
       if (formalType != null) {
         boolean b = MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), formalType) != 0;
         return b;
@@ -463,7 +462,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1237814500499(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
-      SNode formalType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), _context.getNode());
+      SNode formalType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
       boolean b = MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), formalType) != 0;
       return b;
     }
@@ -578,7 +577,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1237814500380(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodCall"), _context.getNode()));
+    return MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()}));
   }
 
   public static Object propertyMacro_GetPropertyValue_1237814500476(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -586,7 +585,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1237814500537(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode formalType = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), _context.getNode());
+    SNode formalType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), formalType);
   }
 
@@ -634,11 +633,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4411518219012594581(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "elementType", true));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "elementType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_6389121991275245089(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(_context.getNode(), "elementType", true));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "elementType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1238318017957(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -915,7 +914,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6217769856310494724(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode())));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode())), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_6217769856310494735(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1014,7 +1013,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6217769856310651749(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_6217769856310651628(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1038,7 +1037,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6217769856310651825(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_6217769856310651666(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

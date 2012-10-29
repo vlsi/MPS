@@ -4,7 +4,7 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ActionType_Behavior {
@@ -12,6 +12,6 @@ public class ActionType_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return IClassifier_Behavior.call_getMembers_1213877528020(SLinkOperations.getTarget(thisNode, "action", false), contextNode);
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "action", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
   }
 }

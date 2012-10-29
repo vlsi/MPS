@@ -4,14 +4,11 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LiteralReplacement_Behavior {
-  private static Class[] PARAMETERS_3796137614137538916 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -86,18 +83,14 @@ public class LiteralReplacement_Behavior {
     return sb.toString();
   }
 
+  @Deprecated
   public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, new Object[]{search});
-  }
-
-  public static String callSuperNew_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, new Object[]{search});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_toString_3796137614137538905", new Object[]{search});
   }
 
   @Deprecated
   public static String callSuper_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, new Object[]{search});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", new Class[]{SNode.class, SNode.class}, new Object[]{search});
   }
 
   public static boolean isEmpty_r6ccyf_a0a0c(String str) {

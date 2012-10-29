@@ -15,7 +15,7 @@
     <nodeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="51" startPosition="44" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7342052348301788903" fileName="AuxObjectAccessOp_Constraints.java" startLine="60" startPosition="142" endLine="61" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7342052348301791478" fileName="AuxObjectAccessOp_Constraints.java" startLine="61" startPosition="151" endLine="62" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1412244996131808458" fileName="AuxObjectAccessOp_Constraints.java" startLine="66" startPosition="14" endLine="67" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1412244996131808458" fileName="AuxObjectAccessOp_Constraints.java" startLine="66" startPosition="14" endLine="67" endPosition="375" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="71" startPosition="61" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="76" startPosition="7" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="513490887686466209" fileName="AuxObjectAccessOp_Constraints.java" startLine="80" startPosition="148" endLine="81" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -55,7 +55,7 @@
     <scopeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="36" startPosition="200" endLine="43" endPosition="18">
       <varInfo nodeId="1412244996131807617" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1412244996131808160" fileName="AuxObjectAccessOp_Constraints.java" startLine="60" startPosition="142" endLine="67" endPosition="304">
+    <scopeInfo nodeId="1412244996131808160" fileName="AuxObjectAccessOp_Constraints.java" startLine="60" startPosition="142" endLine="67" endPosition="375">
       <varInfo nodeId="7342052348301791519" varName="uio" />
       <varInfo nodeId="7342052348301788904" varName="uiof" />
       <varInfo nodeId="7342052348301791479" varName="uiot" />

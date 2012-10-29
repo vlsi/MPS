@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -19,7 +19,7 @@ public class QueryFunction_Substitute_Handler_Behavior {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
       return false;
     }
-    return ConceptFunction_Behavior.callSuperNew_usesParameterObjectFor_1213877374432(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", parameter);
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_usesParameterObjectFor_1213877374432", new Object[]{parameter});
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -71,7 +72,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "nestedName";
-        return Classifier_Behavior.call_getNestedName_8540045600162184125(node);
+        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getNestedName_8540045600162184125", new Object[]{});
       }
     });
     properties.put("resolveInfo", new BasePropertyConstraintsDescriptor("resolveInfo", this) {
