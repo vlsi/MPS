@@ -5,10 +5,14 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildPlugin_Behavior {
+  private static Class[] PARAMETERS_3734116213129936182 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_1224588814561807654 = {SNode.class, SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -24,23 +28,31 @@ public class BuildPlugin_Behavior {
     return null;
   }
 
-  @Deprecated
   public static Scope call_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getProjectStructureScope_3734116213129936182", new Object[]{kind});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind});
   }
 
-  @Deprecated
   public static Scope call_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, new Object[]{kind});
+  }
+
+  public static Scope callSuperNew_getProjectStructureScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind) {
+    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind});
+  }
+
+  public static Scope callSuperNew_getLayoutScope_1224588814561807654(SNode thisNode, String callerConceptFqName, SNode kind) {
+    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, new Object[]{kind});
   }
 
   @Deprecated
   public static Scope callSuper_getProjectStructureScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getProjectStructureScope_3734116213129936182", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
+    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind});
   }
 
   @Deprecated
   public static Scope callSuper_getLayoutScope_1224588814561807654(SNode thisNode, String callerConceptFqName, SNode kind) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getLayoutScope_1224588814561807654", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
+    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, new Object[]{kind});
   }
 }

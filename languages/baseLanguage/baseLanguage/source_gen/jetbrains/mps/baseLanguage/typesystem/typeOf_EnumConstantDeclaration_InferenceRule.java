@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -22,7 +22,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
       return;
     }
 
-    SNode thisType = Classifier_Behavior.call_getThisType_3305065273710880775(enumClass);
+    SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), enumClass, "virtual_getThisType_3305065273710880775", new Object[]{});
     {
       SNode _nodeToCheck_1029348928467 = enumConstantDeclaration;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438604", 0, null);

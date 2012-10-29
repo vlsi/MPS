@@ -15,7 +15,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildCompositePath_Behavior {
   public static void init(SNode thisNode) {
@@ -75,7 +74,7 @@ public class BuildCompositePath_Behavior {
   }
 
   public static IFile call_getFile_841084130032784919(SNode thisNode, Context context) {
-    String basePath = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{context});
+    String basePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), context);
     if ((basePath == null || basePath.length() == 0)) {
       return null;
     }

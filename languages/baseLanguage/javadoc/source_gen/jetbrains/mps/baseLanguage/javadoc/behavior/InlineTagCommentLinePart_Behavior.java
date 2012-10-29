@@ -7,10 +7,13 @@ import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InlineTagCommentLinePart_Behavior {
+  private static Class[] PARAMETERS_3633133276124360200 = {SNode.class, Boolean.TYPE};
+
   public static void init(SNode thisNode) {
   }
 
@@ -26,13 +29,17 @@ public class InlineTagCommentLinePart_Behavior {
     }
   }
 
-  @Deprecated
   public static NodeCaretPair call_smartDelete_3633133276124360200(SNode thisNode, boolean isBegining) {
-    return BehaviorReflection.invokeVirtual(NodeCaretPair.class, thisNode, "virtual_smartDelete_9042833497008205283", new Object[]{isBegining});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (NodeCaretPair) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, new Object[]{isBegining});
+  }
+
+  public static NodeCaretPair callSuperNew_smartDelete_3633133276124360200(SNode thisNode, String callerConceptFqName, boolean isBegining) {
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, new Object[]{isBegining});
   }
 
   @Deprecated
   public static NodeCaretPair callSuper_smartDelete_3633133276124360200(SNode thisNode, String callerConceptFqName, boolean isBegining) {
-    return BehaviorManager.getInstance().invokeSuper(NodeCaretPair.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", new Class[]{SNode.class, Boolean.TYPE}, new Object[]{isBegining});
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_3633133276124360200, new Object[]{isBegining});
   }
 }

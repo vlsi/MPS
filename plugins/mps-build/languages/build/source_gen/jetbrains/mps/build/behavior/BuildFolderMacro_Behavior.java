@@ -8,7 +8,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildFolderMacro_Behavior {
@@ -28,7 +27,7 @@ public class BuildFolderMacro_Behavior {
     }
     SetSequence.fromSet(usedMacro).addElement(SPropertyOperations.getString(thisNode, "name"));
     try {
-      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "defaultPath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{context});
+      return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "defaultPath", true), context);
     } finally {
       SetSequence.fromSet(usedMacro).removeElement(SPropertyOperations.getString(thisNode, "name"));
     }

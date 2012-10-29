@@ -7,11 +7,16 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ReportErrorStatement_Behavior {
+  private static Class[] PARAMETERS_856705193941282181 = {SNode.class};
+  private static Class[] PARAMETERS_856705193941282185 = {SNode.class, Set.class, Boolean.TYPE};
+  private static Class[] PARAMETERS_856705193941282217 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -27,33 +32,45 @@ public class ReportErrorStatement_Behavior {
     return true;
   }
 
-  @Deprecated
   public static SNode call_getException_856705193941282181(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getException_856705193941282181", new Object[]{});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), "virtual_getException_856705193941282181", PARAMETERS_856705193941282181, new Object[]{});
   }
 
-  @Deprecated
   public static void call_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_856705193941282185, new Object[]{throwables, ignoreMayBeThrowables});
   }
 
-  @Deprecated
   public static boolean call_isGuardClauseStatement_856705193941282217(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_856705193941282217, new Object[]{});
+  }
+
+  public static SNode callSuperNew_getException_856705193941282181(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_getException_856705193941282181", PARAMETERS_856705193941282181, new Object[]{});
+  }
+
+  public static void callSuperNew_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, String callerConceptFqName, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_856705193941282185, new Object[]{throwables, ignoreMayBeThrowables});
+  }
+
+  public static boolean callSuperNew_isGuardClauseStatement_856705193941282217(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_856705193941282217, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getException_856705193941282181(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_getException_856705193941282181", new Class[]{SNode.class}, new Object[]{});
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_getException_856705193941282181", PARAMETERS_856705193941282181, new Object[]{});
   }
 
   @Deprecated
   public static void callSuper_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, String callerConceptFqName, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Class[]{SNode.class, Set.class, Boolean.TYPE}, new Object[]{throwables, ignoreMayBeThrowables});
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_856705193941282185, new Object[]{throwables, ignoreMayBeThrowables});
   }
 
   @Deprecated
   public static boolean callSuper_isGuardClauseStatement_856705193941282217(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", new Class[]{SNode.class}, new Object[]{});
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_856705193941282217, new Object[]{});
   }
 }

@@ -14,8 +14,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ChildAspect_Constraints extends BaseConstraintsDescriptor {
@@ -40,7 +39,7 @@ public class ChildAspect_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getAncestorWhereConceptInList(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement", true, false), new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContainer_8923564134258257521", new Object[]{}), "requiredAspect", true);
+            return SLinkOperations.getTargets(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.as(SNodeOperations.getAncestorWhereConceptInList(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement", true, false), new String[]{"jetbrains.mps.ui.structure.IUIObjectContextProvider", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider")), "requiredAspect", true);
           }
 
           @Override

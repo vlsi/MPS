@@ -4,11 +4,14 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildMps_AbstractModule_Behavior {
+  private static Class[] PARAMETERS_8369506495128693730 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -20,13 +23,17 @@ public class BuildMps_AbstractModule_Behavior {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "name") + ")";
   }
 
-  @Deprecated
   public static boolean call_isCompact_8369506495128693730(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCompact_8369506495128693730", new Object[]{});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
+  }
+
+  public static boolean callSuperNew_isCompact_8369506495128693730(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isCompact_8369506495128693730(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", new Class[]{SNode.class}, new Object[]{});
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
   }
 }

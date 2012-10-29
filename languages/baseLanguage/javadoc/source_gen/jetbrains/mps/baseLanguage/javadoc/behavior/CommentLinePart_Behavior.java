@@ -5,10 +5,13 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CommentLinePart_Behavior {
+  private static Class[] PARAMETERS_9042833497008205283 = {SNode.class, Boolean.TYPE};
+
   public static void init(SNode thisNode) {
   }
 
@@ -17,13 +20,17 @@ public class CommentLinePart_Behavior {
     return null;
   }
 
-  @Deprecated
   public static NodeCaretPair call_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
-    return BehaviorReflection.invokeVirtual(NodeCaretPair.class, thisNode, "virtual_smartDelete_9042833497008205283", new Object[]{isBeginning});
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (NodeCaretPair) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, new Object[]{isBeginning});
+  }
+
+  public static NodeCaretPair callSuperNew_smartDelete_9042833497008205283(SNode thisNode, String callerConceptFqName, boolean isBeginning) {
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, new Object[]{isBeginning});
   }
 
   @Deprecated
   public static NodeCaretPair callSuper_smartDelete_9042833497008205283(SNode thisNode, String callerConceptFqName, boolean isBeginning) {
-    return BehaviorManager.getInstance().invokeSuper(NodeCaretPair.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", new Class[]{SNode.class, Boolean.TYPE}, new Object[]{isBeginning});
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, new Object[]{isBeginning});
   }
 }

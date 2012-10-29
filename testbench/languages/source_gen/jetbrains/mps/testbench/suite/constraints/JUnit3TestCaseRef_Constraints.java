@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -66,7 +66,7 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
                 SNode testCase = SLinkOperations.getTarget(new JUnit3TestCaseRef_Constraints.QuotationClass_qx1fe9_a0a0a0a0a0b0a0a0a0b0a1a0b0a().createNode(), "classifier", false);
                 List<SNode> res = super.getClassifiers();
                 for (Iterator<SNode> it = ListSequence.fromList(res).iterator(); it.hasNext();) {
-                  if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, it.next(), "virtual_isDescendant_7165541881557222913", new Object[]{testCase}))) {
+                  if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(it.next(), testCase))) {
                     it.remove();
                   }
                 }
@@ -94,7 +94,7 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("classifier", SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
         result = quotedNode1_2;

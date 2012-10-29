@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class RunConfigurationProducer_Behavior {
   public static void init(SNode thisNode) {
@@ -30,7 +29,7 @@ public class RunConfigurationProducer_Behavior {
 
   private static String check_5u07ui_a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getBaseName_4366236229294148974", new Object[]{});
+      return IGeneratedToClass_Behavior.call_getBaseName_4366236229294148974(checkedDotOperand);
     }
     return null;
   }
