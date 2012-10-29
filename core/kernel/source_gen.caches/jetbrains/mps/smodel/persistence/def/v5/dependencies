@@ -52,6 +52,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.SAXVisibleModelElements" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
+    <classNode dependClassName="jetbrains.mps.util.InternUtil" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
     <classNode dependClassName="org.xml.sax.SAXException" />
