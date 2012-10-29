@@ -15,7 +15,6 @@ import jetbrains.mps.stubs.util.StubModelDescriptors;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.stubs.util.PathItem;
 
@@ -26,9 +25,9 @@ public class GWTModuleStubs extends ModelRootManagerBase {
   @Override
   public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
     List<SModelDescriptor> res = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    ListSequence.fromList(res).addSequence(SetSequence.fromSet(new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), modelRoot.getModelRoot(), modelRoot.getModule()) {
+    ListSequence.fromList(res).addSequence(SetSequence.fromSet(new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), modelRoot.getModelRoot().getPath(), modelRoot.getModule()) {
       @Override
-      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
+      public StubModelDataSource createStubsSource(SModuleReference origin, String loc) {
         return new GWTStubsSource(origin, loc);
       }
     }.getDescriptors(new _FunctionTypes._return_P1_E0<PathItem, String>() {
