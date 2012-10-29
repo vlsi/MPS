@@ -33,7 +33,8 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
     Method[] virtualMethods = this.getClass().getMethods();
     Method[] nonVirtualMethods;
     try {
-      nonVirtualMethods = Class.forName(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
+//      nonVirtualMethods = Class.forName(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
+      nonVirtualMethods = this.getClass().getClassLoader().loadClass(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
     } catch (ClassNotFoundException e) {
       // it's okay? just class without behavior?
       nonVirtualMethods = new Method[0];
