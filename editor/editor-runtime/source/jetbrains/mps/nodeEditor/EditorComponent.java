@@ -1053,7 +1053,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     popupMenu.show(EditorComponent.this, x, y);
   }
 
-  public void executeIntention(final Intention intention, final SNode node, final EditorContext context) {
+  public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
     context.executeCommand(new Runnable() {
       public void run() {
         try {
@@ -1070,7 +1070,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();
-        EditorContext editorContext = getEditorContext();
+        jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
         if (node != null && editorContext != null) {
           QueryDescriptor query = new QueryDescriptor();
           query.setIntentionClass(BaseIntention.class);

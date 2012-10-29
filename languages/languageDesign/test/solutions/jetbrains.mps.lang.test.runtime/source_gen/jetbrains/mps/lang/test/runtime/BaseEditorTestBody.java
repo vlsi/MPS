@@ -22,7 +22,6 @@ import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -143,10 +142,10 @@ public class BaseEditorTestBody extends BaseTestBody {
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
             query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
-            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, (EditorContext) editor.getEditorContext());
+            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
             for (Pair<Intention, SNode> intention : intentions) {
               if (intention.o1.getClass().getCanonicalName().equals(name)) {
-                intention.o1.execute(intention.o2, (EditorContext) editor.getEditorContext());
+                intention.o1.execute(intention.o2, editor.getEditorContext());
               }
             }
           }

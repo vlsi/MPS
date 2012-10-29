@@ -16,12 +16,12 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MigrationRefactoringAdapter extends BaseIntention {
   private AbstractMigrationRefactoring myRefactoring;
@@ -52,10 +52,6 @@ public class MigrationRefactoringAdapter extends BaseIntention {
     return false;
   }
 
-  public List parameter(SNode node, EditorContext editorContext) {
-    return null;
-  }
-
   public void execute(SNode node, EditorContext editorContext) {
     List<SNode> allParents = new ArrayList<SNode>();
     for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
@@ -83,11 +79,5 @@ public class MigrationRefactoringAdapter extends BaseIntention {
 
   public SNode getNodeByIntention() {
     return null;
-  }
-
-  public List<Intention> getParameterizedInstances(SNode node, EditorContext editorContext) {
-    List<Intention> list = new ArrayList<Intention>();
-    list.add(this);
-    return list;
   }
 }

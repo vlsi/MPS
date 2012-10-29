@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
 
 public interface Intention {
   String getConcept();

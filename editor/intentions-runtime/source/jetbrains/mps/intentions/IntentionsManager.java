@@ -27,8 +27,9 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -137,9 +138,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           try {
             method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
           } catch (NoSuchMethodException e) {
-            LOG.error(e);
+            try {
+              // Was introduced in MPS 3.0 for backward compatibility with generated code.
+              // Should be removed after MPS 3.0
+              method = intention.getClass().getMethod("instances", SNode.class, jetbrains.mps.nodeEditor.EditorContext.class);
+            } catch (NoSuchMethodException ex2) {
+              LOG.error(e);
+            }
           }
-          Object[] arguments = new Object[]{node, context};
+          // This cast to jetbrains.mps.nodeEditor.EditorContext was introduced in MPS 3.0 for backward compatibility with generated code.
+          // Should be removed after MPS 3.0
+          Object[] arguments = new Object[]{node, (jetbrains.mps.nodeEditor.EditorContext) context};
           try {
             List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
             intentions.addAll(parameterizedIntentions);
@@ -176,7 +185,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     }
 
-    List<EditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
+    List<EditorMessage> messages = ((EditorComponent) context.getEditorComponent()).getHighlightManager().getMessagesFor(node);
     for (EditorMessage message : messages) {
       List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
       for (QuickFixProvider intentionProvider : intentionProviders) {

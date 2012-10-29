@@ -15,19 +15,56 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
 
 public abstract class AbstractIntention implements Intention {
   public abstract String getConcept();
 
-  public abstract String getDescription(SNode node, EditorContext editorContext);
+  /**
+   * should become abstract after MPS 3.0
+   */
+  public String getDescription(SNode node, EditorContext editorContext) {
+    return getDescription(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public String getDescription(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+    throw new UnsupportedOperationException();
+  }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
+    return isApplicable(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public boolean isApplicable(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return true;
   }
 
-  public abstract void execute(SNode node, EditorContext editorContext);
+  /**
+   * should become abstract after MPS 3.0
+   */
+  public void execute(SNode node, EditorContext editorContext) {
+    execute(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public void execute(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+
+  }
 
   public boolean isErrorIntention() {
     return false;
