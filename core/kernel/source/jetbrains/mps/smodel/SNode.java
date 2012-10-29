@@ -711,21 +711,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
   }
 
-  @Deprecated
-  /**
-   * Use<br/>
-   * n = new SNode(concept);<br/>
-   * model.addNode(n)<br/>
-   * or<br/>
-   * n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   *
-   * @Deprecated in 3.0
-   */
-  public SNode(SModel model, String conceptFqName) {
-    this(InternUtil.intern(conceptFqName));
-  }
-
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -782,7 +767,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-    LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+    LOG.assertLog(myModel == null, "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
 
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
@@ -1151,6 +1136,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Use<br/>
+   * n = new SNode(concept);<br/>
+   * model.addNode(n)<br/>
+   * or<br/>
+   * n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   *
+   * @Deprecated in 3.0
+   */
+  public SNode(SModel model, String conceptFqName) {
+    this(InternUtil.intern(conceptFqName));
+  }
 
 
   @Deprecated

@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -89,7 +90,7 @@ public class ModelReader6 implements IModelReader {
   @Nullable
   protected SNode readNode(Element nodeElement, SModel model) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
-    SNode node = new SNode(model, conceptFqName);
+    SNode node = new SNode(InternUtil.intern(conceptFqName));
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {
