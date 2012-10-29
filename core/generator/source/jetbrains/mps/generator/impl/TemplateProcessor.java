@@ -126,7 +126,7 @@ public class TemplateProcessor {
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(new SNodePointer(templateNode));
-    SNode outputNode = new SNode(myOutputModel, templateNode.getConcept().getId(), false);
+    SNode outputNode = new SNode(templateNode.getConcept().getId());
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
     for (SNode historyInputNode : context.getInputHistory()) {

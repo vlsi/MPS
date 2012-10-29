@@ -695,22 +695,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null;
   }
 
-  @Deprecated
-  /**
-   * Use<br/>
-   * n = new SNode(concept);<br/>
-   * model.addNode(n)<br/>
-   * or<br/>
-   * n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   * InternUtil.intern should be done in outer code
-   *
-   * @Deprecated in 3.0
-   */
-  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
-    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
-  }
-
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -1136,6 +1120,22 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Use<br/>
+   * n = new SNode(concept);<br/>
+   * model.addNode(n)<br/>
+   * or<br/>
+   * n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   * InternUtil.intern should be done in outer code
+   *
+   * @Deprecated in 3.0
+   */
+  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
+    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
+  }
 
   @Deprecated
   /**
