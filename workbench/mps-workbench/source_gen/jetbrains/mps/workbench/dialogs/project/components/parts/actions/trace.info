@@ -204,26 +204,34 @@
     <nodeInfo nodeId="1560298786499497514" fileName="ListEditAction.java" startLine="12" startPosition="37" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499497518" fileName="ListEditAction.java" startLine="13" startPosition="38" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499497530" fileName="ListEditAction.java" startLine="18" startPosition="39" endLine="19" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497533" fileName="ListEditAction.java" startLine="19" startPosition="20" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497555" fileName="ListEditAction.java" startLine="23" startPosition="48" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497559" fileName="ListEditAction.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doEdit#()V" />
+    <nodeInfo nodeId="1560298786499497533" fileName="ListEditAction.java" startLine="19" startPosition="20" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8156633209088098085" fileName="ListEditAction.java" startLine="23" startPosition="36" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499497555" fileName="ListEditAction.java" startLine="27" startPosition="48" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8156633209087166437" fileName="ListEditAction.java" startLine="31" startPosition="26" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499497559" fileName="ListEditAction.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doEdit#()V" />
     <nodeInfo nodeId="1560298786499497509" fileName="ListEditAction.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListEditAction#(Ljavax/swing/JList;)V" />
-    <nodeInfo nodeId="1560298786499497549" fileName="ListEditAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="8156633209088098094" fileName="ListEditAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#()Z" />
+    <nodeInfo nodeId="1560298786499497549" fileName="ListEditAction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="8156633209087164974" fileName="ListEditAction.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getList#()Ljavax/swing/JList;" />
     <nodeInfo nodeId="1560298786499497524" fileName="ListEditAction.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <scopeInfo nodeId="1560298786499497554" fileName="ListEditAction.java" startLine="23" startPosition="48" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="8156633209088098084" fileName="ListEditAction.java" startLine="23" startPosition="36" endLine="24" endPosition="51" />
+    <scopeInfo nodeId="1560298786499497554" fileName="ListEditAction.java" startLine="27" startPosition="48" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="8156633209087164977" fileName="ListEditAction.java" startLine="31" startPosition="26" endLine="32" endPosition="18" />
     <scopeInfo nodeId="1560298786499497513" fileName="ListEditAction.java" startLine="12" startPosition="37" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="1560298786499497529" fileName="ListEditAction.java" startLine="18" startPosition="39" endLine="20" endPosition="76" />
-    <scopeInfo nodeId="1560298786499497559" fileName="ListEditAction.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1560298786499497529" fileName="ListEditAction.java" startLine="18" startPosition="39" endLine="20" endPosition="51" />
+    <scopeInfo nodeId="1560298786499497559" fileName="ListEditAction.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1560298786499497509" fileName="ListEditAction.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="1560298786499497511" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499497549" fileName="ListEditAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="8156633209088098094" fileName="ListEditAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1560298786499497549" fileName="ListEditAction.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1560298786499497552" varName="e" />
     </scopeInfo>
+    <scopeInfo nodeId="8156633209087164974" fileName="ListEditAction.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1560298786499497524" fileName="ListEditAction.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1560298786499497527" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499497503" fileName="ListEditAction.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction" />
+    <unitInfo nodeId="1560298786499497503" fileName="ListEditAction.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction" />
   </root>
 </debugInfo>
 

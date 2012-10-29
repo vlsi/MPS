@@ -66,14 +66,14 @@ public class StubRootChooser implements Computable<List<String>> {
 
       final List<String> managerNames = ListSequence.fromList(managers).select(new ISelector<ModelRootManager, String>() {
         public String select(ModelRootManager it) {
-          return shortName(it);
+          return NameUtil.shortNameFromLongName(it.getClassName());
         }
       }).toListSequence();
       final int res = Messages.showChooseDialog(myOwner.getMainComponent(), "MPS can try creating models for the specified locations,\n" + "so that class files can be referenced from MPS models directly.\n" + "Would you like to import models for the specified locations?", "Model Roots", ListSequence.fromList(managerNames).toGenericArray(String.class), ListSequence.fromList(managerNames).first(), Messages.getQuestionIcon());
       if (res >= 0) {
         final ModelRootManager manager = ListSequence.fromList(managers).findFirst(new IWhereFilter<ModelRootManager>() {
           public boolean accept(ModelRootManager it) {
-            return shortName(it).equals(ListSequence.fromList(managerNames).getElement(res));
+            return NameUtil.shortNameFromLongName(it.getClassName()).equals(ListSequence.fromList(managerNames).getElement(res));
           }
         });
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
@@ -87,9 +87,5 @@ public class StubRootChooser implements Computable<List<String>> {
     }
 
     return result;
-  }
-
-  private String shortName(ModelRootManager it) {
-    return NameUtil.shortNameFromLongName(it.getClassName());
   }
 }
