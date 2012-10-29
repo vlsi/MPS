@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.stubs.structure.Stereotype"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.LanguageRef"};
 
   public ConstraintsAspectDescriptor() {
   }
@@ -16,10 +16,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
       case 0:
         return new LanguageRef_Constraints();
-      case 1:
-        return new LibraryStubDescriptor_Constraints();
-      case 2:
-        return new Stereotype_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
