@@ -1845,7 +1845,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="780982041803943084">
         <property name="name" nameId="tpck.1169194664001" value="concept" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="780982041803943085">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
         </node>
       </node>
     </node>
@@ -2154,7 +2154,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="8642756583112042633">
               <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="8642756583112042634">
-                <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.1084199179704" resolveInfo="reference" />
+                <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.1084199179704" />
               </node>
             </node>
           </node>
