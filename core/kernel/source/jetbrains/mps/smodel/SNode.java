@@ -686,15 +686,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel;
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return myModel != null;
-  }
-
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -1150,6 +1141,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public SNode(SModel model, String conceptFqName) {
     this(InternUtil.intern(conceptFqName));
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return getModel() != null;
   }
 
   @Deprecated

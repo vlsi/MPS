@@ -62,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_6592112598315069773(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(_context.getNode().isRegistered());
+    return !(_context.getNode().getModel() != null);
   }
 
   public static boolean baseMappingRule_Condition_4034578608468849381(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -70,7 +70,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_6592112598315069890(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(_context.getNode().isRegistered());
+    return !(_context.getNode().getModel() != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1500819558096225938(final IOperationContext operationContext, final PropertyMacroContext _context) {

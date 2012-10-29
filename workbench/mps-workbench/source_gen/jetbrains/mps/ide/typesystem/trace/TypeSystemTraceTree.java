@@ -599,7 +599,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
           return rule;
         }
-        if (source != null && source.isRegistered()) {
+        if (source != null && source.getModel() != null) {
           if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
             return source;
           }
