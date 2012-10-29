@@ -65,8 +65,8 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePoint
             SNode node = getNode();
             if (
               node == null ||
-                node.isDisposed() ||
                 node.getModel() == null ||
+                node.getModel().isDisposed() ||
                 node.getModel().getModelDescriptor() != null) {
               return;
             }
