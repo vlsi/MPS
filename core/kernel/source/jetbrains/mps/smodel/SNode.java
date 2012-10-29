@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
@@ -694,7 +692,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isRegistered() {
-    return myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel);
+    return myModel != null;
   }
 
   @Deprecated
@@ -735,7 +733,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void setId(@Nullable SNodeId id) {
     if (EqualUtil.equals(id, myId)) return;
 
-    if (myModel == null || AuxilaryRuntimeModel.isAuxModel(myModel)) {
+    if (myModel == null) {
       myId = id;
     } else {
       LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
@@ -831,7 +829,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------private (SNode and SModel usages)-------
 
   void unRegisterFromModel() {
-    if (myModel == null || AuxilaryRuntimeModel.isAuxModel(myModel)) return;
+    if (myModel == null) return;
 
     for (SReference ref : myReferences) {
       ref.makeDirect();
@@ -848,7 +846,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   void registerInModel(SModel model) {
     if (model != myModel) {
-      if (myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel)) {
+      if (myModel != null) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
         return;
       }
