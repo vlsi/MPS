@@ -43,7 +43,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * <code>isApplicable(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public boolean isApplicable(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
@@ -59,7 +59,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public void execute(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {

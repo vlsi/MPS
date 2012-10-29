@@ -15,15 +15,33 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
 
 public abstract class GenerateIntention extends AbstractIntention {
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
+    return executeUI(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext, intentionContext);
+  }
+  
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public boolean executeUI(final SNode node, final jetbrains.mps.nodeEditor.EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
+    execute(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext, intentionContext);
+  }
+
+  /**
+   * @deprecated starting from MPS 3.0 another method should be used:
+   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   */
+  @Deprecated
+  public void execute(final SNode node, final jetbrains.mps.nodeEditor.EditorContext editorContext, IntentionContext intentionContext) {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
