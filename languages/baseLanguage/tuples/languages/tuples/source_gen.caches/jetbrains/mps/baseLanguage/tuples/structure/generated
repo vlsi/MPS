@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ayh5jma7ir7zg4i5shqpmtjqb6dm4p7">
+<dependencies version="2" modelHash="904bi7j7o5mz28wkftf8lygniotvtvv">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2zzibu7tqv74frgzpnz5uza1ucknhwm" />
@@ -29,7 +29,7 @@
     <file name="StructureAspectDescriptor.java" />
     <file name="Tuples_Language.java" />
   </common>
-  <source id="1238852151516" name="IndexedTupleType" hash="-237nglalmxbbw07wvqa4r63td7nlnab">
+  <source id="1238852151516" name="IndexedTupleType" hash="84g50cjdsa8shk42o4fsveu3swcfhqz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1238853782547" name="IndexedTupleLiteral" hash="8jxrhuemamay4fejx2snl02uilaii86">

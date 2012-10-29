@@ -75,6 +75,9 @@
       <property name="value" nameId="tpce.1105725733873" value="]" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1238852467039" resolveInfo="rightBracket" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9033423951286858655">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.4107091686347010317" resolveInfo="IGenericType" />
+    </node>
   </root>
   <root id="1238853782547">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1238853845806">

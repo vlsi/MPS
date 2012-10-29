@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Map;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IndexedTupleType_Behavior {
   public static void init(SNode thisNode) {
@@ -48,5 +50,13 @@ public class IndexedTupleType_Behavior {
         ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) + "tuple");
     }
     return suffixes;
+  }
+
+  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    for (SNode ct : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true))) {
+      if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(ct, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+      }
+    }
   }
 }
