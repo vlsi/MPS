@@ -6,15 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildStringContainer_Behavior {
-  private static Class[] PARAMETERS_9184644532456897464 = {SNode.class, String.class, String.class};
-  private static Class[] PARAMETERS_6083230236994422116 = {SNode.class, String.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,31 +19,23 @@ public class BuildStringContainer_Behavior {
     return null;
   }
 
+  @Deprecated
   public static boolean call_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, new Object[]{propertyValue, role});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValidPart_9184644532456897464", new Object[]{propertyValue, role});
   }
 
+  @Deprecated
   public static Color call_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Color) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_getColorForTextPart_6083230236994422116", PARAMETERS_6083230236994422116, new Object[]{role});
-  }
-
-  public static boolean callSuperNew_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, new Object[]{propertyValue, role});
-  }
-
-  public static Color callSuperNew_getColorForTextPart_6083230236994422116(SNode thisNode, String callerConceptFqName, @NonNls String role) {
-    return (Color) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_getColorForTextPart_6083230236994422116", PARAMETERS_6083230236994422116, new Object[]{role});
+    return BehaviorReflection.invokeVirtual(Color.class, thisNode, "virtual_getColorForTextPart_6083230236994422116", new Object[]{role});
   }
 
   @Deprecated
   public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, new Object[]{propertyValue, role});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", new Class[]{SNode.class, String.class, String.class}, new Object[]{propertyValue, role});
   }
 
   @Deprecated
   public static Color callSuper_getColorForTextPart_6083230236994422116(SNode thisNode, String callerConceptFqName, @NonNls String role) {
-    return (Color) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_getColorForTextPart_6083230236994422116", PARAMETERS_6083230236994422116, new Object[]{role});
+    return BehaviorManager.getInstance().invokeSuper(Color.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_getColorForTextPart_6083230236994422116", new Class[]{SNode.class, String.class}, new Object[]{role});
   }
 }

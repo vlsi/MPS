@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildString_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +15,7 @@ public class BuildString_Behavior {
   public static String call_getText_4380385936562005550(SNode thisNode, MacroHelper helper) {
     StringBuilder sb = new StringBuilder();
     for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parts", true))) {
-      sb.append(BuildStringPart_Behavior.call_getText_4380385936562037054(n, helper));
+      sb.append(BehaviorReflection.invokeVirtual(String.class, n, "virtual_getText_4380385936562037054", new Object[]{helper}));
     }
     return sb.toString();
   }

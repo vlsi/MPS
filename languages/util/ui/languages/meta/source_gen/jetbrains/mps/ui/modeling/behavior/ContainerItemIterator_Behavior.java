@@ -5,8 +5,7 @@ package jetbrains.mps.ui.modeling.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -15,8 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ContainerItemIterator_Behavior {
-  private static Class[] PARAMETERS_7798684637310718747 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,18 +22,14 @@ public class ContainerItemIterator_Behavior {
     return new ContainerItemIterator_Behavior.QuotationClass_4yrdx3_a0b0b().createNode(itype);
   }
 
+  @Deprecated
   public static SNode call_getExpectedReturnType_7798684637310718747(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getExpectedReturnType_7798684637310718747(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getExpectedReturnType_7798684637310718747(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7798684637310718747, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.ContainerItemIterator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_4yrdx3_a0b0b {
@@ -49,7 +42,7 @@ public class ContainerItemIterator_Behavior {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_5;

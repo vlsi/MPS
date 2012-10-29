@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildMps_IdeaPluginGroup_Behavior {
   public static void init(SNode thisNode) {
@@ -18,6 +19,6 @@ public class BuildMps_IdeaPluginGroup_Behavior {
         return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "group", false), "modules", true)).contains(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
       }
     }
-    return BuildMps_IdeaPluginContent_Behavior.callSuperNew_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", object);
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "virtual_exports_6547494638219603457", new Object[]{object});
   }
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
@@ -30,7 +31,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
 
   @Nullable
   public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "archivePath", true), context) + "!";
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{context}) + "!";
   }
 
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
@@ -39,13 +40,13 @@ public class BuildSourceArchiveRelativePath_Behavior {
   }
 
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
-    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(thisNode, "archivePath", true)) + "!/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}) + "!/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
   }
 
   public static String virtual_getAntPath_8563603456895173701(SNode thisNode, Context context) {
     String unpackPath = BuildSourceArchiveRelativePath_Behavior.call_getUnpackPath_8563603456895534343(thisNode, context);
     if ((unpackPath == null || unpackPath.length() == 0)) {
-      return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(thisNode);
+      return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRelativePath_5481553824944787371", new Object[]{});
     }
     return unpackPath + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
   }
@@ -67,15 +68,15 @@ public class BuildSourceArchiveRelativePath_Behavior {
 
   public static String call_calculateUnpackPath_715289236985547394(SNode thisNode, Context context) {
     SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildNamedLayout", true, false);
-    return context.getTempPath(thisNode, BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(thisNode, "archivePath", true), context.getMacros(thisNode)).replace(".", "_"), ((nlayout != null) ?
+    return context.getTempPath(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getLastSegment_1368030936106771141", new Object[]{context.getMacros(thisNode)}).replace(".", "_"), ((nlayout != null) ?
       SPropertyOperations.getString(nlayout, "name") :
       "default"
     ));
   }
 
   public static SNode call_getUnpackTask_8990969321156029654(SNode thisNode, Context context) {
-    String archivePath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(thisNode, "archivePath", true));
-    SNode unpackTask = new BuildSourceArchiveRelativePath_Behavior.QuotationClass_ll2z5f_a0a1a7().createNode(BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(thisNode, "archivePath", true), context), BuildSourceArchiveRelativePath_Behavior.call_getUnpackPath_8563603456895534343(thisNode, context));
+    String archivePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getRelativePath_5481553824944787371", new Object[]{});
+    SNode unpackTask = new BuildSourceArchiveRelativePath_Behavior.QuotationClass_ll2z5f_a0a1a7().createNode(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{context}), BuildSourceArchiveRelativePath_Behavior.call_getUnpackPath_8563603456895534343(thisNode, context));
     if (archivePath.endsWith(".jar")) {
       SPropertyOperations.set(unpackTask, "tagName", "unjar");
     } else if (archivePath.endsWith(".war")) {
@@ -108,16 +109,16 @@ public class BuildSourceArchiveRelativePath_Behavior {
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_6 = quotedNode_1;
         quotedNode1_6.setProperty("tagName", "unzip");
         quotedNode1_6.setProperty("shortEmptyNotation", "true");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_2;
           quotedNode1_7.setProperty("attrName", "src");
           {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
             quotedNode1_8.setProperty("text", (String) parameter_11);
             quotedNode_2.addChild("value", quotedNode1_8);
@@ -125,11 +126,11 @@ public class BuildSourceArchiveRelativePath_Behavior {
           quotedNode_1.addChild("attributes", quotedNode1_7);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
           quotedNode1_9.setProperty("attrName", "dest");
           {
-            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_10 = quotedNode_5;
             quotedNode1_10.setProperty("text", (String) parameter_12);
             quotedNode_3.addChild("value", quotedNode1_10);
@@ -152,11 +153,11 @@ public class BuildSourceArchiveRelativePath_Behavior {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("attrName", "compression");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", "gzip");
           quotedNode_1.addChild("value", quotedNode1_4);
@@ -177,11 +178,11 @@ public class BuildSourceArchiveRelativePath_Behavior {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.setProperty("attrName", "compression");
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
           quotedNode1_4.setProperty("text", "bzip2");
           quotedNode_1.addChild("value", quotedNode1_4);
@@ -201,7 +202,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReference("target", SReference.create("target", quotedNode1_2, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
         result = quotedNode1_2;
