@@ -238,7 +238,8 @@ public class ApiMigrationHelper {
         if (!(needMigration(n))) {
           continue;
         }
-        if (!(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(n)), "jetbrains.mps.baseLanguage.structure.DotExpression") && (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null))) {
+        boolean isCorrectConcept = SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(n)), "jetbrains.mps.baseLanguage.structure.DotExpression") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.ClassCreator");
+        if (!(isCorrectConcept) || (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) != null)) {
           SetSequence.fromSet(unknown).addElement(n);
           continue;
         }

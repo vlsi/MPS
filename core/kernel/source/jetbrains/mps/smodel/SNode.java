@@ -1152,7 +1152,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     this(InternUtil.intern(conceptFqName));
   }
 
-
   @Deprecated
   /**
    *  replace with getModel==null
