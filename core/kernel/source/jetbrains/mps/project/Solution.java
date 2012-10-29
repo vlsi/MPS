@@ -133,14 +133,13 @@ public class Solution extends ClassLoadingModule {
     if (classType == null) return;
 
     List<String> javaCP = CommonPaths.getMPSPaths(classType);
-    descriptor.getModelRoots().clear();
+    descriptor.getModelRootDescriptors().clear();
     descriptor.getAdditionalJavaStubPaths().clear();
 
     for (String path : javaCP) {
-      ModelRoot mr = new ModelRoot();
+      SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
       mr.setPath(path);
-      mr.setManager(LanguageID.JAVA_MANAGER);
-      descriptor.getModelRoots().add(mr);
+      descriptor.getModelRootDescriptors().add(mr.toDescriptor());
       descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
     }
   }

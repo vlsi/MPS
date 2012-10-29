@@ -27,10 +27,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -277,10 +274,10 @@ public class TestMakeOnRealProject {
     solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
 
-    ModelRoot modelRoot = new ModelRoot();
+    SModelRoot modelRoot = new SModelRoot(null);
     modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
 
-    solutionDescriptor.getModelRoots().add(modelRoot);
+    solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
@@ -296,10 +293,10 @@ public class TestMakeOnRealProject {
     d.setNamespace(languageNamespace);
     d.getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
 
-    ModelRoot modelRoot = new ModelRoot();
+    SModelRoot modelRoot = new SModelRoot(null);
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
     modelRoot.setPath(languageModels.getPath());
-    d.getModelRoots().add(modelRoot);
+    d.getModelRootDescriptors().add(modelRoot.toDescriptor());
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
 
@@ -318,10 +315,10 @@ public class TestMakeOnRealProject {
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
-    ModelRoot modelRoot = new ModelRoot();
+    SModelRoot modelRoot = new SModelRoot(null);
     modelRoot.setPath(descriptorFile.getParent().getPath());
 
-    solutionDescriptor.getModelRoots().add(modelRoot);
+    solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
 

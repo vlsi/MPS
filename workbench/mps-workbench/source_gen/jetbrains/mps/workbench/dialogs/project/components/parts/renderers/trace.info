@@ -559,5 +559,33 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499498265" fileName="GeneratorRenderer.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.GeneratorRenderer" />
   </root>
+  <root nodeId="262971659834150299" modelId="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)">
+    <nodeInfo nodeId="262971659834182173" fileName="ModelRootRenderer.java" startLine="17" startPosition="134" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="262971659834276215" fileName="ModelRootRenderer.java" startLine="18" startPosition="64" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="262971659834271119" fileName="ModelRootRenderer.java" startLine="30" startPosition="6" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="262971659834182179" fileName="ModelRootRenderer.java" startLine="31" startPosition="0" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="262971659834182208" fileName="ModelRootRenderer.java" startLine="32" startPosition="113" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="262971659834150301" fileName="ModelRootRenderer.java" startLine="13" startPosition="64" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelRootRenderer#()V" />
+    <nodeInfo nodeId="262971659834298692" fileName="ModelRootRenderer.java" startLine="19" startPosition="41" endLine="23" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="262971659834271220" fileName="ModelRootRenderer.java" startLine="23" startPosition="6" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="262971659834182159" fileName="ModelRootRenderer.java" startLine="16" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+    <scopeInfo nodeId="262971659834150304" fileName="ModelRootRenderer.java" startLine="14" startPosition="30" endLine="14" endPosition="30" />
+    <scopeInfo nodeId="262971659834150301" fileName="ModelRootRenderer.java" startLine="13" startPosition="64" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="262971659834182172" fileName="ModelRootRenderer.java" startLine="17" startPosition="134" endLine="33" endPosition="18">
+      <varInfo nodeId="262971659834298693" varName="manager" />
+      <varInfo nodeId="262971659834182174" varName="modelRoot" />
+      <varInfo nodeId="262971659834271221" varName="representation" />
+      <varInfo nodeId="262971659834182180" varName="result" />
+      <varInfo nodeId="262971659834276216" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="262971659834182159" fileName="ModelRootRenderer.java" startLine="16" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="262971659834182170" varName="cellHasFocus" />
+      <varInfo nodeId="262971659834182166" varName="index" />
+      <varInfo nodeId="262971659834182168" varName="isSelected" />
+      <varInfo nodeId="262971659834182162" varName="list" />
+      <varInfo nodeId="262971659834182164" varName="value" />
+    </scopeInfo>
+    <unitInfo nodeId="262971659834150299" fileName="ModelRootRenderer.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer" />
+  </root>
 </debugInfo>
 

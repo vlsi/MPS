@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -24,6 +25,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Evgeny Gryaznov, Feb 15, 2010
@@ -69,7 +71,7 @@ public class WeavingProcessor {
           myGenerator.setChanged();
 
           boolean someOutputGenerated = true;
-          myGenerationTracer.pushInputNode(applicableNode);
+          myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(applicableNode));
           myGenerationTracer.pushRule(rule.getRuleNode());
           try {
             someOutputGenerated = rule.apply(environment, context, outputContextNode);
@@ -80,9 +82,9 @@ public class WeavingProcessor {
             environment.getGenerator().showErrorMessage(context.getInput(), null, rule.getRuleNode().getNode(), "weaving rule: error processing template fragment");
           } finally {
             if (someOutputGenerated) {
-              myGenerationTracer.closeInputNode(applicableNode);
+              myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(applicableNode));
             } else {
-              myGenerationTracer.popInputNode(applicableNode);
+              myGenerationTracer.popInputNode(GenerationTracerUtil.getSNodePointer(applicableNode));
             }
           }
         }

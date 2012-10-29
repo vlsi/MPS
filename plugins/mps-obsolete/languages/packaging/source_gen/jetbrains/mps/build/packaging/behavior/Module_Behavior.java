@@ -15,6 +15,7 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -75,9 +76,13 @@ public class Module_Behavior {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
-    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRoot>) Module_Behavior.call_getModule_1213877515148(thisNode).getModuleDescriptor().getModelRoots())).where(new IWhereFilter<ModelRoot>() {
+    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRootDescriptor>) Module_Behavior.call_getModule_1213877515148(thisNode).getModuleDescriptor().getModelRootDescriptors())).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
+      public ModelRoot select(ModelRootDescriptor it) {
+        return it.getRoot();
+      }
+    }).where(new IWhereFilter<ModelRoot>() {
       public boolean accept(ModelRoot it) {
-        return LanguageID.JAVA_MANAGER.equals(it.getManager()) && !(it.getPath().endsWith(".jar"));
+        return it != null && LanguageID.JAVA_MANAGER.equals(it.getManager()) && !(it.getPath().endsWith(".jar"));
       }
     }).isNotEmpty();
   }

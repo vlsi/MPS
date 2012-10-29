@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
@@ -37,19 +38,19 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
+    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_54ml0j_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731890");
 
       {
-        final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StatementList", false);
+        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_54ml0j_a0a0a1a3a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731891");
 
         } finally {
-          environment.getTracer().pushOutputNode(tnode2);
+          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
           environment.getTracer().closeTemplateNode(templateNode_54ml0j_a0a0a1a3a1a2);
         }
         if (tnode2 != null) {
@@ -58,7 +59,7 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(tnode1);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
       environment.getTracer().closeTemplateNode(templateNode_54ml0j_a0a0a1a2);
     }
     return tnode1;

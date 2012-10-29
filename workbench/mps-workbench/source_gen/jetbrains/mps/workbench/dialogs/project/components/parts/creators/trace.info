@@ -222,71 +222,69 @@
     <unitInfo nodeId="1560298786499493158" fileName="SolutionChooser.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SolutionChooser" />
   </root>
   <root nodeId="1560298786499495733" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
-    <nodeInfo nodeId="1560298786499495738" fileName="StubRootChooser.java" startLine="21" startPosition="66" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
-    <nodeInfo nodeId="3986605908471588804" fileName="StubRootChooser.java" startLine="22" startPosition="38" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoots" />
-    <nodeInfo nodeId="3986605908471602088" fileName="StubRootChooser.java" startLine="23" startPosition="34" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaOnly" />
-    <nodeInfo nodeId="1560298786499495746" fileName="StubRootChooser.java" startLine="26" startPosition="88" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3986605908471588808" fileName="StubRootChooser.java" startLine="27" startPosition="20" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3986605908471602091" fileName="StubRootChooser.java" startLine="28" startPosition="20" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499495757" fileName="StubRootChooser.java" startLine="32" startPosition="33" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495762" fileName="StubRootChooser.java" startLine="33" startPosition="52" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499495767" fileName="StubRootChooser.java" startLine="34" startPosition="64" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495779" fileName="StubRootChooser.java" startLine="35" startPosition="85" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495803" fileName="StubRootChooser.java" startLine="37" startPosition="30" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3986605908471602202" fileName="StubRootChooser.java" startLine="40" startPosition="50" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3986605908471602219" fileName="StubRootChooser.java" startLine="42" startPosition="5" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3986605908471606621" fileName="StubRootChooser.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3986605908471602134" fileName="StubRootChooser.java" startLine="45" startPosition="21" endLine="46" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495791" fileName="StubRootChooser.java" startLine="49" startPosition="46" endLine="50" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495796" fileName="StubRootChooser.java" startLine="50" startPosition="44" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8571970830724245316" fileName="StubRootChooser.java" startLine="51" startPosition="28" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="51233936270812438" fileName="StubRootChooser.java" startLine="52" startPosition="52" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499495738" fileName="StubRootChooser.java" startLine="22" startPosition="66" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
+    <nodeInfo nodeId="3986605908471588804" fileName="StubRootChooser.java" startLine="23" startPosition="38" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoots" />
+    <nodeInfo nodeId="3986605908471602088" fileName="StubRootChooser.java" startLine="24" startPosition="44" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaOnly" />
+    <nodeInfo nodeId="1560298786499495746" fileName="StubRootChooser.java" startLine="27" startPosition="98" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3986605908471588808" fileName="StubRootChooser.java" startLine="28" startPosition="20" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3986605908471602091" fileName="StubRootChooser.java" startLine="29" startPosition="20" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499495757" fileName="StubRootChooser.java" startLine="33" startPosition="33" endLine="34" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495762" fileName="StubRootChooser.java" startLine="34" startPosition="52" endLine="35" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499495767" fileName="StubRootChooser.java" startLine="35" startPosition="64" endLine="36" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495779" fileName="StubRootChooser.java" startLine="36" startPosition="85" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495803" fileName="StubRootChooser.java" startLine="38" startPosition="30" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3986605908471602202" fileName="StubRootChooser.java" startLine="41" startPosition="50" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3986605908471602219" fileName="StubRootChooser.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3986605908471606621" fileName="StubRootChooser.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3986605908471602134" fileName="StubRootChooser.java" startLine="46" startPosition="21" endLine="47" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495791" fileName="StubRootChooser.java" startLine="50" startPosition="56" endLine="51" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495796" fileName="StubRootChooser.java" startLine="51" startPosition="69" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="51233936270812438" fileName="StubRootChooser.java" startLine="52" startPosition="28" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5092733366023628298" fileName="StubRootChooser.java" startLine="59" startPosition="52" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3986605908471604116" fileName="StubRootChooser.java" startLine="63" startPosition="54" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3986605908471604076" fileName="StubRootChooser.java" startLine="65" startPosition="7" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3986605908471606995" fileName="StubRootChooser.java" startLine="68" startPosition="51" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8156633209088154075" fileName="StubRootChooser.java" startLine="68" startPosition="51" endLine="69" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3986605908471602253" fileName="StubRootChooser.java" startLine="71" startPosition="26" endLine="72" endPosition="427" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3986605908471614754" fileName="StubRootChooser.java" startLine="75" startPosition="54" endLine="76" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="51233936270836476" fileName="StubRootChooser.java" startLine="80" startPosition="46" endLine="81" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="51233936270836481" fileName="StubRootChooser.java" startLine="81" startPosition="44" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="51233936270836486" fileName="StubRootChooser.java" startLine="82" startPosition="28" endLine="83" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="51233936270836493" fileName="StubRootChooser.java" startLine="83" startPosition="36" endLine="84" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3986605908471602208" fileName="StubRootChooser.java" startLine="88" startPosition="5" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1560298786499495808" fileName="StubRootChooser.java" startLine="89" startPosition="0" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3986605908471606943" fileName="StubRootChooser.java" startLine="93" startPosition="49" endLine="94" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="36" startPosition="50" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3986605908471588817" fileName="StubRootChooser.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3986605908471614754" fileName="StubRootChooser.java" startLine="75" startPosition="54" endLine="76" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="51233936270836476" fileName="StubRootChooser.java" startLine="80" startPosition="56" endLine="81" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="51233936270836481" fileName="StubRootChooser.java" startLine="81" startPosition="53" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="51233936270836493" fileName="StubRootChooser.java" startLine="82" startPosition="28" endLine="83" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3986605908471602208" fileName="StubRootChooser.java" startLine="87" startPosition="5" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560298786499495808" fileName="StubRootChooser.java" startLine="88" startPosition="0" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="37" startPosition="50" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3986605908471588817" fileName="StubRootChooser.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3986605908471604083" fileName="StubRootChooser.java" startLine="62" startPosition="26" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5092733366023539231" fileName="StubRootChooser.java" startLine="58" startPosition="173" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/model/ModelRootManager;)Z" />
     <nodeInfo nodeId="3986605908471603947" fileName="StubRootChooser.java" startLine="67" startPosition="122" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/model/ModelRootManager;)Ljava/lang/String;" />
     <nodeInfo nodeId="3986605908471614752" fileName="StubRootChooser.java" startLine="74" startPosition="121" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/model/ModelRootManager;)Z" />
-    <nodeInfo nodeId="3986605908471606937" fileName="StubRootChooser.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shortName#(Ljetbrains/mps/project/structure/model/ModelRootManager;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="25" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubRootChooser#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/util/List;Z)V" />
+    <nodeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="26" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubRootChooser#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/util/List;Z)V" />
     <nodeInfo nodeId="3986605908471602332" fileName="StubRootChooser.java" startLine="57" startPosition="12" endLine="62" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3986605908471603911" fileName="StubRootChooser.java" startLine="66" startPosition="0" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3986605908471606877" fileName="StubRootChooser.java" startLine="73" startPosition="21" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="51233936270800027" fileName="StubRootChooser.java" startLine="48" startPosition="124" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRoot;" />
-    <nodeInfo nodeId="3986605908471604174" fileName="StubRootChooser.java" startLine="79" startPosition="124" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRoot;" />
-    <nodeInfo nodeId="3986605908471602226" fileName="StubRootChooser.java" startLine="47" startPosition="32" endLine="55" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3986605908471602267" fileName="StubRootChooser.java" startLine="78" startPosition="11" endLine="86" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3986605908471602153" fileName="StubRootChooser.java" startLine="46" startPosition="297" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3986605908471602265" fileName="StubRootChooser.java" startLine="72" startPosition="427" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3986605908471602118" fileName="StubRootChooser.java" startLine="57" startPosition="10" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3986605908471602109" fileName="StubRootChooser.java" startLine="44" startPosition="0" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="31" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/util/List;" />
-    <scopeInfo nodeId="1560298786499495790" fileName="StubRootChooser.java" startLine="37" startPosition="30" endLine="38" endPosition="63" />
-    <scopeInfo nodeId="3986605908471602190" fileName="StubRootChooser.java" startLine="40" startPosition="50" endLine="41" endPosition="20" />
+    <nodeInfo nodeId="51233936270800027" fileName="StubRootChooser.java" startLine="49" startPosition="134" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
+    <nodeInfo nodeId="3986605908471604174" fileName="StubRootChooser.java" startLine="79" startPosition="134" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
+    <nodeInfo nodeId="3986605908471602226" fileName="StubRootChooser.java" startLine="48" startPosition="32" endLine="55" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3986605908471602267" fileName="StubRootChooser.java" startLine="78" startPosition="11" endLine="85" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3986605908471602153" fileName="StubRootChooser.java" startLine="47" startPosition="297" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3986605908471602265" fileName="StubRootChooser.java" startLine="72" startPosition="427" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3986605908471602118" fileName="StubRootChooser.java" startLine="57" startPosition="10" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3986605908471602109" fileName="StubRootChooser.java" startLine="45" startPosition="0" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="32" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/util/List;" />
+    <scopeInfo nodeId="1560298786499495790" fileName="StubRootChooser.java" startLine="38" startPosition="30" endLine="39" endPosition="63" />
+    <scopeInfo nodeId="3986605908471602190" fileName="StubRootChooser.java" startLine="41" startPosition="50" endLine="42" endPosition="20" />
     <scopeInfo nodeId="5092733366023539232" fileName="StubRootChooser.java" startLine="59" startPosition="52" endLine="60" endPosition="28" />
     <scopeInfo nodeId="3986605908471604084" fileName="StubRootChooser.java" startLine="63" startPosition="54" endLine="64" endPosition="22" />
-    <scopeInfo nodeId="3986605908471603948" fileName="StubRootChooser.java" startLine="68" startPosition="51" endLine="69" endPosition="31" />
-    <scopeInfo nodeId="3986605908471614753" fileName="StubRootChooser.java" startLine="75" startPosition="54" endLine="76" endPosition="93" />
-    <scopeInfo nodeId="3986605908471606942" fileName="StubRootChooser.java" startLine="93" startPosition="49" endLine="94" endPosition="61" />
-    <scopeInfo nodeId="1560298786499495745" fileName="StubRootChooser.java" startLine="26" startPosition="88" endLine="29" endPosition="26" />
-    <scopeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="36" startPosition="50" endLine="39" endPosition="5">
+    <scopeInfo nodeId="3986605908471603948" fileName="StubRootChooser.java" startLine="68" startPosition="51" endLine="69" endPosition="67" />
+    <scopeInfo nodeId="3986605908471614753" fileName="StubRootChooser.java" startLine="75" startPosition="54" endLine="76" endPosition="129" />
+    <scopeInfo nodeId="1560298786499495745" fileName="StubRootChooser.java" startLine="27" startPosition="98" endLine="30" endPosition="26" />
+    <scopeInfo nodeId="1560298786499495786" fileName="StubRootChooser.java" startLine="37" startPosition="50" endLine="40" endPosition="5">
       <varInfo nodeId="1560298786499495788" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="51233936270800028" fileName="StubRootChooser.java" startLine="49" startPosition="46" endLine="53" endPosition="23">
+    <scopeInfo nodeId="51233936270800028" fileName="StubRootChooser.java" startLine="50" startPosition="56" endLine="53" endPosition="38">
       <varInfo nodeId="1560298786499495792" varName="sme" />
+    </scopeInfo>
+    <scopeInfo nodeId="3986605908471604175" fileName="StubRootChooser.java" startLine="80" startPosition="56" endLine="83" endPosition="38">
+      <varInfo nodeId="51233936270836477" varName="sme" />
     </scopeInfo>
     <scopeInfo nodeId="5092733366023539231" fileName="StubRootChooser.java" startLine="58" startPosition="173" endLine="62" endPosition="0">
       <varInfo nodeId="5092733366023539231" varName="it" />
@@ -297,47 +295,41 @@
     <scopeInfo nodeId="3986605908471614752" fileName="StubRootChooser.java" startLine="74" startPosition="121" endLine="78" endPosition="0">
       <varInfo nodeId="3986605908471614752" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3986605908471604175" fileName="StubRootChooser.java" startLine="80" startPosition="46" endLine="84" endPosition="23">
-      <varInfo nodeId="51233936270836477" varName="sme" />
-    </scopeInfo>
-    <scopeInfo nodeId="3986605908471606937" fileName="StubRootChooser.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="3986605908471606936" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="25" startPosition="0" endLine="30" endPosition="3">
+    <scopeInfo nodeId="1560298786499495741" fileName="StubRootChooser.java" startLine="26" startPosition="0" endLine="31" endPosition="3">
       <varInfo nodeId="3986605908471602085" varName="javaOnly" />
       <varInfo nodeId="1560298786499495743" varName="owner" />
       <varInfo nodeId="3986605908471588799" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="51233936270800027" fileName="StubRootChooser.java" startLine="48" startPosition="124" endLine="55" endPosition="0">
+    <scopeInfo nodeId="51233936270800027" fileName="StubRootChooser.java" startLine="49" startPosition="134" endLine="55" endPosition="0">
       <varInfo nodeId="51233936270800027" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3986605908471604174" fileName="StubRootChooser.java" startLine="79" startPosition="124" endLine="86" endPosition="0">
+    <scopeInfo nodeId="3986605908471604174" fileName="StubRootChooser.java" startLine="79" startPosition="134" endLine="85" endPosition="0">
       <varInfo nodeId="3986605908471604174" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3986605908471602154" fileName="StubRootChooser.java" startLine="47" startPosition="32" endLine="55" endPosition="12" />
-    <scopeInfo nodeId="3986605908471602110" fileName="StubRootChooser.java" startLine="45" startPosition="21" endLine="56" endPosition="7">
+    <scopeInfo nodeId="3986605908471602154" fileName="StubRootChooser.java" startLine="48" startPosition="32" endLine="55" endPosition="12" />
+    <scopeInfo nodeId="3986605908471602110" fileName="StubRootChooser.java" startLine="46" startPosition="21" endLine="56" endPosition="7">
       <varInfo nodeId="3986605908471602135" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="3986605908471602266" fileName="StubRootChooser.java" startLine="73" startPosition="21" endLine="86" endPosition="12">
+    <scopeInfo nodeId="3986605908471602266" fileName="StubRootChooser.java" startLine="73" startPosition="21" endLine="85" endPosition="12">
       <varInfo nodeId="3986605908471606878" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="3986605908471602119" fileName="StubRootChooser.java" startLine="57" startPosition="12" endLine="87" endPosition="7">
+    <scopeInfo nodeId="3986605908471602119" fileName="StubRootChooser.java" startLine="57" startPosition="12" endLine="86" endPosition="7">
       <varInfo nodeId="3986605908471603912" varName="managerNames" />
       <varInfo nodeId="3986605908471602333" varName="managers" />
       <varInfo nodeId="3986605908471602254" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499495756" fileName="StubRootChooser.java" startLine="32" startPosition="33" endLine="90" endPosition="18">
+    <scopeInfo nodeId="1560298786499495756" fileName="StubRootChooser.java" startLine="33" startPosition="33" endLine="89" endPosition="18">
       <varInfo nodeId="1560298786499495758" varName="chooser" />
       <varInfo nodeId="1560298786499495768" varName="files" />
       <varInfo nodeId="1560298786499495780" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="31" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1560298786499495752" fileName="StubRootChooser.java" startLine="32" startPosition="0" endLine="91" endPosition="0" />
     <unitInfo nodeId="5092733366023539231" fileName="StubRootChooser.java" startLine="58" startPosition="139" endLine="62" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$2" />
     <unitInfo nodeId="3986605908471603947" fileName="StubRootChooser.java" startLine="67" startPosition="83" endLine="71" endPosition="7" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$3" />
     <unitInfo nodeId="3986605908471614752" fileName="StubRootChooser.java" startLine="74" startPosition="87" endLine="78" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$4" />
-    <unitInfo nodeId="51233936270800027" fileName="StubRootChooser.java" startLine="48" startPosition="92" endLine="55" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$1" />
-    <unitInfo nodeId="3986605908471604174" fileName="StubRootChooser.java" startLine="79" startPosition="92" endLine="86" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$5" />
-    <unitInfo nodeId="1560298786499495733" fileName="StubRootChooser.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser" />
+    <unitInfo nodeId="51233936270800027" fileName="StubRootChooser.java" startLine="49" startPosition="92" endLine="55" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$1" />
+    <unitInfo nodeId="3986605908471604174" fileName="StubRootChooser.java" startLine="79" startPosition="92" endLine="85" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser$5" />
+    <unitInfo nodeId="1560298786499495733" fileName="StubRootChooser.java" startLine="22" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser" />
   </root>
   <root nodeId="1560298786499495913" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
     <nodeInfo nodeId="1560298786499495918" fileName="DependencyChooser.java" startLine="19" startPosition="72" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -390,34 +382,34 @@
     <unitInfo nodeId="1560298786499495913" fileName="DependencyChooser.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.DependencyChooser" />
   </root>
   <root nodeId="1560298786499496008" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
-    <nodeInfo nodeId="1560298786499496012" fileName="ModelRootChooser.java" startLine="11" startPosition="64" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
-    <nodeInfo nodeId="8126194856994007480" fileName="ModelRootChooser.java" startLine="12" startPosition="38" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBundleHome" />
-    <nodeInfo nodeId="1560298786499496020" fileName="ModelRootChooser.java" startLine="15" startPosition="66" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8126194856994007483" fileName="ModelRootChooser.java" startLine="16" startPosition="20" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499496030" fileName="ModelRootChooser.java" startLine="20" startPosition="30" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8126194856994007491" fileName="ModelRootChooser.java" startLine="21" startPosition="52" endLine="22" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499496035" fileName="ModelRootChooser.java" startLine="22" startPosition="41" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499496040" fileName="ModelRootChooser.java" startLine="23" startPosition="64" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499496056" fileName="ModelRootChooser.java" startLine="25" startPosition="22" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499496058" fileName="ModelRootChooser.java" startLine="27" startPosition="5" endLine="28" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499496063" fileName="ModelRootChooser.java" startLine="28" startPosition="39" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499496070" fileName="ModelRootChooser.java" startLine="29" startPosition="34" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499496051" fileName="ModelRootChooser.java" startLine="24" startPosition="63" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499496015" fileName="ModelRootChooser.java" startLine="14" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelRootChooser#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="1560298786499496026" fileName="ModelRootChooser.java" startLine="19" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/structure/model/ModelRoot;" />
-    <scopeInfo nodeId="1560298786499496055" fileName="ModelRootChooser.java" startLine="25" startPosition="22" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="1560298786499496019" fileName="ModelRootChooser.java" startLine="15" startPosition="66" endLine="17" endPosition="30" />
-    <scopeInfo nodeId="1560298786499496015" fileName="ModelRootChooser.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
+    <nodeInfo nodeId="1560298786499496012" fileName="ModelRootChooser.java" startLine="12" startPosition="74" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
+    <nodeInfo nodeId="8126194856994007480" fileName="ModelRootChooser.java" startLine="13" startPosition="38" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBundleHome" />
+    <nodeInfo nodeId="1560298786499496020" fileName="ModelRootChooser.java" startLine="16" startPosition="66" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8126194856994007483" fileName="ModelRootChooser.java" startLine="17" startPosition="20" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499496030" fileName="ModelRootChooser.java" startLine="21" startPosition="40" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8126194856994007491" fileName="ModelRootChooser.java" startLine="22" startPosition="52" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499496035" fileName="ModelRootChooser.java" startLine="23" startPosition="41" endLine="24" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499496040" fileName="ModelRootChooser.java" startLine="24" startPosition="64" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499496056" fileName="ModelRootChooser.java" startLine="26" startPosition="22" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499496058" fileName="ModelRootChooser.java" startLine="28" startPosition="5" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499496063" fileName="ModelRootChooser.java" startLine="29" startPosition="45" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="262971659834429384" fileName="ModelRootChooser.java" startLine="30" startPosition="34" endLine="31" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499496051" fileName="ModelRootChooser.java" startLine="25" startPosition="63" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499496015" fileName="ModelRootChooser.java" startLine="15" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelRootChooser#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljetbrains/mps/vfs/IFile;)V" />
+    <nodeInfo nodeId="1560298786499496026" fileName="ModelRootChooser.java" startLine="20" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
+    <scopeInfo nodeId="1560298786499496055" fileName="ModelRootChooser.java" startLine="26" startPosition="22" endLine="27" endPosition="18" />
+    <scopeInfo nodeId="1560298786499496019" fileName="ModelRootChooser.java" startLine="16" startPosition="66" endLine="18" endPosition="30" />
+    <scopeInfo nodeId="1560298786499496015" fileName="ModelRootChooser.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="8126194856994007477" varName="bundleHome" />
       <varInfo nodeId="1560298786499496017" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496029" fileName="ModelRootChooser.java" startLine="20" startPosition="30" endLine="30" endPosition="18">
+    <scopeInfo nodeId="1560298786499496029" fileName="ModelRootChooser.java" startLine="21" startPosition="40" endLine="31" endPosition="33">
       <varInfo nodeId="1560298786499496031" varName="chooser" />
       <varInfo nodeId="1560298786499496041" varName="dir" />
       <varInfo nodeId="1560298786499496059" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496026" fileName="ModelRootChooser.java" startLine="19" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="1560298786499496008" fileName="ModelRootChooser.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser" />
+    <scopeInfo nodeId="1560298786499496026" fileName="ModelRootChooser.java" startLine="20" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="1560298786499496008" fileName="ModelRootChooser.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser" />
   </root>
   <root nodeId="1560298786499497434" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
     <nodeInfo nodeId="1560298786499497441" fileName="ModulePathChooser.java" startLine="12" startPosition="60" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />

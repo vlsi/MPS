@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -28,12 +29,21 @@ import java.util.List;
  * Evgeny Gryaznov, Feb 17, 2010
  */
 public interface IGenerationTracer {
+  void pushInputNode(SNodePointer node);
 
-  void pushInputNode(SNode node);
+  void closeInputNode(SNodePointer node);
 
-  void closeInputNode(SNode node);
+  void popInputNode(SNodePointer node);
 
-  void popInputNode(SNode node);
+  void pushOutputNode(SNodePointer node);
+
+  void pushOutputNodeToReplaceLater(SNode node);
+
+  void replaceOutputNode(SNode node, SNode newOutputNode);
+
+  void pushTemplateNode(SNodePointer node);
+
+  void closeTemplateNode(SNodePointer node);
 
   void pushRule(SNodePointer node);
 
@@ -46,16 +56,6 @@ public interface IGenerationTracer {
   void pushMacro(SNodePointer node);
 
   void closeMacro(SNodePointer node);
-
-  void pushOutputNode(SNode node);
-
-  void pushOutputNodeToReplaceLater(SNode node);
-
-  void replaceOutputNode(SNode node, SNode newOutputNode);
-
-  void pushTemplateNode(SNodePointer node);
-
-  void closeTemplateNode(SNodePointer node);
 
   void pushCopyOperation();
 

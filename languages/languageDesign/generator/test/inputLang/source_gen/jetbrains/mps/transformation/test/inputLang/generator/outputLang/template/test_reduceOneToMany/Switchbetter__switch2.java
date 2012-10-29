@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Switchbetter__switch2 implements TemplateSwitchMapping {
@@ -34,13 +35,13 @@ public class Switchbetter__switch2 implements TemplateSwitchMapping {
 
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     environment.getTracer().pushRuleConsequence(conseq_r4cs19_a0a0a3);
-    final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.NullLiteral", false);
+    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
     try {
       environment.getTracer().pushTemplateNode(templateNode_r4cs19_a0a0a2a3);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/8371596541809075903");
 
     } finally {
-      environment.getTracer().pushOutputNode(tnode1);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
       environment.getTracer().closeTemplateNode(templateNode_r4cs19_a0a0a2a3);
     }
     return TemplateUtil.singletonList(tnode1);

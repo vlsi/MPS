@@ -13,6 +13,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingAware {
@@ -48,17 +49,17 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
         boolean inputChanged1 = context.getInput() != itnode1;
         try {
           if (inputChanged1) {
-            environment.getTracer().pushInputNode(itnode1);
+            environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
           TemplateContext context1 = context.subContext(null, itnode1);
-          final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+          final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a3a2a2a1a1);
             environment.nodeCopied(context1, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");
             tnode2.setProperty("text", "child #1");
 
           } finally {
-            environment.getTracer().pushOutputNode(tnode2);
+            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
             environment.getTracer().closeTemplateNode(templateNode_b8tv7e_a0a0a3a2a2a1a1);
           }
           if (tnode2 != null) {
@@ -66,7 +67,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
           }
         } finally {
           if (inputChanged1) {
-            environment.getTracer().closeInputNode(itnode1);
+            environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
         }
       }
@@ -77,14 +78,14 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+    final SNode tnode3 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a1a2);
       environment.nodeCopied(context, tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
       tnode3.setProperty("text", "child #2");
 
     } finally {
-      environment.getTracer().pushOutputNode(tnode3);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
       environment.getTracer().closeTemplateNode(templateNode_b8tv7e_a0a0a1a2);
     }
     return tnode3;
@@ -115,13 +116,13 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
         environment.getTracer().pushSwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a4);
         tlist5 = environment.trySwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a4, null, context);
         if (tlist5 == null) {
-          final SNode tnode6 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+          final SNode tnode6 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a1a2a1a1a4);
             environment.nodeCopied(context, tnode6, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");
 
           } finally {
-            environment.getTracer().pushOutputNode(tnode6);
+            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
             environment.getTracer().closeTemplateNode(templateNode_b8tv7e_a0a0a1a2a1a1a4);
           }
           if (tnode6 != null) {

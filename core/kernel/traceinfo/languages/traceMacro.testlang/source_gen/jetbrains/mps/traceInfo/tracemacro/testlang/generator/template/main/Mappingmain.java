@@ -22,6 +22,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
@@ -129,7 +130,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4a);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4a);
         environment.nodeCopied(context, tnode1, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587788171");
@@ -169,14 +170,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
             // calculate input 
             final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_7980748436587793693(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), traceMacro_417xrn_a0a0a1a5a2a4a, context, environment.getGenerator()));
             // calculate output 
-            final SNode tnode7 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", false);
+            final SNode tnode7 = new SNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable");
             try {
               environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a5a1a5a2a4a);
               environment.nodeCopied(context, tnode7, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587793601");
               tnode7.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "var", propertyMacro_417xrn_c0b0b0a2a5a1a5a2a4a, context, environment.getGenerator()))));
 
             } finally {
-              environment.getTracer().pushOutputNode(tnode7);
+              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
               environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a5a1a5a2a4a);
             }
             tlist6 = TemplateUtil.singletonList(tnode7);
@@ -193,7 +194,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           // TODO validate child 
         }
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a4a);
       }
       environment.registerLabel(context.getInput(), tnode1, "GeneratedForeach");
@@ -235,7 +236,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4b);
-      final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false);
+      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4b);
         environment.nodeCopied(context, tnode1, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587793724");
@@ -254,7 +255,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         }, tnode1, "variable", context);
 
       } finally {
-        environment.getTracer().pushOutputNode(tnode1);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a4b);
       }
       return TemplateUtil.singletonList(tnode1);

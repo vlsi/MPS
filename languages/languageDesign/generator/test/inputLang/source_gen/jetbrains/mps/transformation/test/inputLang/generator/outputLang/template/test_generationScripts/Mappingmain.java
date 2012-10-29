@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 
@@ -139,27 +140,27 @@ public class Mappingmain implements TemplateMappingConfiguration {
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_1195172400866(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0e0, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2a4a);
-        final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+        final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2a4a);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172462490");
           tnode2.setProperty("text", "<input option : 1>");
 
         } finally {
-          environment.getTracer().pushOutputNode(tnode2);
+          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
           environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a2a4a);
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0c0e0);
-        final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+        final SNode tnode3 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0c0e0);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172359599");
           tnode3.setProperty("text", "<input option : default>");
 
         } finally {
-          environment.getTracer().pushOutputNode(tnode3);
+          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
           environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a0c0e0);
         }
         tlist1 = TemplateUtil.singletonList(tnode3);

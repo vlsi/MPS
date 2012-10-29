@@ -81,6 +81,7 @@
     <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />

@@ -19,9 +19,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
@@ -124,37 +124,17 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static List<ModelRoot> loadModelRoots(Iterable<Element> modelRootElements, final MacroHelper macroHelper) {
-    return Sequence.fromIterable(modelRootElements).select(new ISelector<Element, ModelRoot>() {
-      public ModelRoot select(Element mre) {
+  public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, final MacroHelper macroHelper) {
+    return Sequence.fromIterable(modelRootElements).select(new ISelector<Element, ModelRootDescriptor>() {
+      public ModelRootDescriptor select(Element mre) {
         return loadModelRoot(mre, macroHelper);
       }
     }).toListSequence();
   }
 
-  private static ModelRoot loadModelRoot(final Element modelRootElement, final MacroHelper macroHelper) {
-    return new _FunctionTypes._return_P0_E0<ModelRoot>() {
-      public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a5 = new ModelRoot();
-        String pathName = modelRootElement.getAttributeValue("path");
-        if (pathName == null) {
-          // left for compatibility 
-          pathName = XmlUtil.stringWithDefault(modelRootElement, "rootPath", "");
-        }
-        final String result_dxyzb6_a2a0a0a5 = macroHelper.expandPath(pathName);
-        result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a2a0a0a5);
-        Element manager = XmlUtil.first(modelRootElement, "manager");
-        if (manager != null) {
-          final ModelRootManager result_dxyzb6_a0a4a0a0a5 = new ModelRootManager();
-          final String result_dxyzb6_a0a0a4a0a0a5 = XmlUtil.stringWithDefault(manager, "moduleId", "");
-          result_dxyzb6_a0a4a0a0a5.setModuleId(result_dxyzb6_a0a0a4a0a0a5);
-          final String result_dxyzb6_a1a0a4a0a0a5 = XmlUtil.stringWithDefault(manager, "className", "");
-          result_dxyzb6_a0a4a0a0a5.setClassName(result_dxyzb6_a1a0a4a0a0a5);
-          result_dxyzb6_a0a0a5.setManager(result_dxyzb6_a0a4a0a0a5);
-        }
-        return result_dxyzb6_a0a0a5;
-      }
-    }.invoke();
+  private static ModelRootDescriptor loadModelRoot(Element modelRootElement, final MacroHelper macroHelper) {
+    Element elem = (Element) modelRootElement.clone();
+    return new ModelRootDescriptor(modelRootElement.getAttributeValue("type"), new PathAwareJDOMMemento(elem, macroHelper));
   }
 
   public static List<String> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
@@ -180,15 +160,15 @@ public class ModuleDescriptorPersistence {
     return macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
   }
 
-  public static void saveModelRoots(Element result, Collection<ModelRoot> modelRoots, MacroHelper macroHelper) {
-    for (ModelRoot root : CollectionSequence.fromCollection(modelRoots)) {
-      Element modelRoot = new Element("modelRoot");
-      modelRoot.setAttribute("path", macroHelper.shrinkPath((root.getPath() == null ?
-        "" :
-        root.getPath()
-      )));
-      if (root.getManager() != null) {
-        XmlUtil.tagWithAttributes(modelRoot, "manager", "moduleId", root.getManager().getModuleId(), "className", root.getManager().getClassName());
+  public static void saveModelRoots(Element result, Collection<ModelRootDescriptor> modelRoots, MacroHelper macroHelper) {
+    for (ModelRootDescriptor root : CollectionSequence.fromCollection(modelRoots)) {
+      PathAwareJDOMMemento memento = root.getMemento();
+      Element modelRoot = memento.cloneElement(macroHelper);
+      String type = root.getType();
+      if ((type != null && type.length() > 0) && !("default".equals(type))) {
+        modelRoot.setAttribute("type", type);
+      } else {
+        modelRoot.removeAttribute("type");
       }
       result.addContent(modelRoot);
     }
