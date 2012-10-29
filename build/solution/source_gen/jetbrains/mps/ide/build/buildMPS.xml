@@ -165,6 +165,19 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="build/buildStandalone.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildDates.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildDevKit.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildExperimental.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildMakePlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildBuildUI.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/buildObsolete.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="build/buildStandalone.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDates.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDevKit.xml" inheritAll="false" useNativeBasedir="true" />

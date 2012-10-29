@@ -155,6 +155,18 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildMakePlugin.xml" />
     </node>
+    <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4416206207494300367">
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+      <property name="name" nameId="tpck.1169194664001" value="buildDeprecatedBuildlanguage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDeprecatedBuildlanguage.xml" />
+    </node>
+    <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4416206207494713671">
+      <property name="name" nameId="tpck.1169194664001" value="buildAdditionalPlugins" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildAdditionalPlugins.xml" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
+    </node>
   </roots>
   <root id="7926701909975931624">
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="927724900262328564">
@@ -15265,9 +15277,6 @@
       </node>
       <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="4034578608468419610">
         <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="4197214709894135282" resolveInfo="build" />
-        <node role="customPackaging" roleId="kdzh.4034578608468929327" type="kdzh.BuildMps_IdeaPluginGroupCustomModule" typeId="kdzh.4034578608468929319" id="4034578608469051588">
-          <link role="target" roleId="kdzh.4034578608468929320" targetNodeId="4197214709894135331" resolveInfo="jetbrains.mps.build.generictasks" />
-        </node>
       </node>
       <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="4034578608468419612">
         <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="2794582399917560293" resolveInfo="xml" />
@@ -15280,6 +15289,9 @@
       </node>
       <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="4034578608468482715">
         <link role="target" roleId="kdzh.6592112598314499066" targetNodeId="6592112598314738250" />
+      </node>
+      <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="4416206207494713689">
+        <link role="target" roleId="kdzh.6592112598314499066" targetNodeId="4416206207494300370" />
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="4197214709894135268">
@@ -15457,58 +15469,6 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="4197214709894135282">
       <property name="name" nameId="tpck.1169194664001" value="build" />
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4197214709894135283">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.buildlanguage" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="0b608d44-1308-418d-8715-22d040c3b3cc" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4197214709894135284">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135285">
-            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135286">
-              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135287">
-                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135288">
-                  <property name="head" nameId="3ior.8618885170173601779" value="buildlanguage" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135289">
-                    <property name="head" nameId="3ior.8618885170173601779" value="buildlanguage.mpl" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5548512857136300075">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5548512857136300076">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2569834391839970945" resolveInfo="MPS.Workbench" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5548512857136300077">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5548512857136300078">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4197214709894135331" resolveInfo="jetbrains.mps.build.generictasks" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5548512857136300079">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5548512857136300080">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2794582399917560264" resolveInfo="jetbrains.mps.xml.deprecated" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5548512857136300081">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5548512857136300082">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5548512857136300083">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5548512857136300084">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="2794582399917560264" resolveInfo="jetbrains.mps.xml.deprecated" />
-          </node>
-        </node>
-      </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4197214709894135300">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.custommps" />
@@ -15568,73 +15528,12 @@
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135327">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135328">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4197214709894135283" resolveInfo="jetbrains.mps.buildlanguage" />
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4416206207494300447" resolveInfo="jetbrains.mps.buildlanguage" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135329">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135330">
             <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
-          </node>
-        </node>
-      </node>
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4197214709894135331">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="fba399db-f591-45dc-a279-e2a2a986e262" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.generictasks" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4197214709894135332">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135333">
-            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135334">
-              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135335">
-                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135336">
-                  <property name="head" nameId="3ior.8618885170173601779" value="generictasks" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135337">
-                    <property name="head" nameId="3ior.8618885170173601779" value="generictasks.mpl" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135338">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="4197214709894135339">
-            <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4197214709894135340">
-              <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135341">
-                <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135342">
-                  <property name="head" nameId="3ior.8618885170173601779" value="ant" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135343">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135344">
-                      <property name="head" nameId="3ior.8618885170173601779" value="ant-launcher.jar" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="customLocation" roleId="kdzh.2798275735916344703" type="3ior.BuildSource_JavaExternalJarRef" typeId="3ior.5610619299014309452" id="8706695667516079831">
-              <link role="jar" roleId="3ior.5610619299014309453" targetNodeId="202934866058874807" />
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135345">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135346">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4197214709894135283" resolveInfo="jetbrains.mps.buildlanguage" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135347">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135348">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535526" resolveInfo="jetbrains.mps.baseLanguage.classifiers" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135349">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135350">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
           </node>
         </node>
       </node>
@@ -15721,13 +15620,13 @@
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135375">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="4197214709894135376">
             <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4197214709894135405" resolveInfo="jetbrains.mps.build.property" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4416206207494300543" resolveInfo="jetbrains.mps.build.property" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135377">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="4197214709894135378">
             <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4197214709894135283" resolveInfo="jetbrains.mps.buildlanguage" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4416206207494300447" resolveInfo="jetbrains.mps.buildlanguage" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135379">
@@ -15738,12 +15637,12 @@
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135381">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135382">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4197214709894135283" resolveInfo="jetbrains.mps.buildlanguage" />
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4416206207494300447" resolveInfo="jetbrains.mps.buildlanguage" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135383">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135384">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4197214709894135405" resolveInfo="jetbrains.mps.build.property" />
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4416206207494300543" resolveInfo="jetbrains.mps.build.property" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135385">
@@ -15752,72 +15651,9 @@
           </node>
         </node>
       </node>
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4197214709894135405">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.property" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4197214709894135406">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135407">
-            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135408">
-              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135409">
-                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135410">
-                  <property name="head" nameId="3ior.8618885170173601779" value="property" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135411">
-                    <property name="head" nameId="3ior.8618885170173601779" value="property.mpl" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135412">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135413">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4197214709894135283" resolveInfo="jetbrains.mps.buildlanguage" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4197214709894135414">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4197214709894135415">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8189062720279434723" resolveInfo="jetbrains.mps.gtext" />
-          </node>
-        </node>
-      </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="2794582399917560293">
       <property name="name" nameId="tpck.1169194664001" value="xml" />
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="2794582399917560264">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.xml.deprecated" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="823d79c6-2e26-4b0e-92a0-e1884a10bba9" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="2794582399917560265">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2794582399917560266">
-            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2794582399917560267">
-              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2794582399917560268">
-                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2794582399917560269">
-                  <property name="head" nameId="3ior.8618885170173601779" value="xmlDeprecated" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5548512857136300071">
-                    <property name="head" nameId="3ior.8618885170173601779" value="languageDescriptor.mpl" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7894549194406347032">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="7894549194406347033">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
-          </node>
-        </node>
-      </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="2794582399917560278">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.xml.deprecated.pluginSolution" />
@@ -15899,14 +15735,11 @@
             <property name="text" nameId="3ior.4903714810883755350" value="plugins" />
           </node>
         </node>
-        <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_Plugin" typeId="kdzh.6592112598314498926" id="4034578608468664442">
-          <link role="plugin" roleId="kdzh.6592112598314801433" targetNodeId="4034578608468419595" resolveInfo="jetbrains.mps.obsolete" />
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4197214709894135571">
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4197214709894135572">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4197214709894135573">
-                <property name="text" nameId="3ior.4903714810883755350" value="lib" />
-              </node>
-            </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494713693">
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4416206207494753788">
+            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4416206207494300591" resolveInfo="mps-build-deprecated" />
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494713697">
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4197214709894135574">
               <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4197214709894135575">
                 <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4197214709894135576">
@@ -15927,33 +15760,94 @@
                 </node>
               </node>
             </node>
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494713698">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494713699">
+                <property name="text" nameId="3ior.4903714810883755350" value="lib" />
+              </node>
+            </node>
           </node>
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4034578608468838346">
-            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4197214709894135588">
-              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4197214709894135331" resolveInfo="jetbrains.mps.build.generictasks" />
-              <node role="jarLocations" roleId="kdzh.4356762679305730677" type="kdzh.BuildMpsLayout_ModuleXml_CustomJarLocation" typeId="kdzh.4356762679305675652" id="4197214709894135589">
-                <property name="packagedLocation" nameId="kdzh.4356762679305675654" value="/lib/ant/lib/ant-launcher.jar" />
-                <node role="path" roleId="kdzh.4356762679305675653" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4197214709894135590">
-                  <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
-                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135591">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135592">
-                      <property name="head" nameId="3ior.8618885170173601779" value="ant" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135593">
-                        <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4197214709894135594">
-                          <property name="head" nameId="3ior.8618885170173601779" value="ant-launcher.jar" />
-                        </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494713705">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494713706">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494713707">
+                <property name="text" nameId="3ior.4903714810883755350" value="META-INF" />
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="4416206207494713709">
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4416206207494713711">
+                <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4197214709894135417" resolveInfo="mps_home" />
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494713712">
+                  <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494713713">
+                    <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494713714">
+                      <property name="head" nameId="3ior.8618885170173601779" value="META-INF" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494713715">
+                        <property name="head" nameId="3ior.8618885170173601779" value="plugin.xml" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4034578608468838347">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4034578608468838348">
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494713701">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494713702">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494713703">
                 <property name="text" nameId="3ior.4903714810883755350" value="languages" />
               </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494753789">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494753790">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494753791">
+                  <property name="text" nameId="3ior.4903714810883755350" value="build" />
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753801">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4197214709894135300" resolveInfo="jetbrains.mps.build.custommps" />
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753802">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4197214709894135320" resolveInfo="jetbrains.mps.build.dependency" />
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753803">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4197214709894135351" resolveInfo="jetbrains.mps.build.generictasks.pluginSolution" />
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753804">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4197214709894135360" resolveInfo="jetbrains.mps.build.mpsdist" />
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753805">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="4197214709894135368" resolveInfo="jetbrains.mps.build.packaging" />
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494753793">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494753794">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494753795">
+                  <property name="text" nameId="3ior.4903714810883755350" value="mpslite" />
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753806">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="2794582399917681342" resolveInfo="jetbrains.mps.nanoj" />
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753808">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="2794582399917681324" resolveInfo="jetbrains.mpslite" />
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753809">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="2794582399917681332" resolveInfo="jetbrains.mpslite.pluginSolution" />
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494753797">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494753798">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494753799">
+                  <property name="text" nameId="3ior.4903714810883755350" value="xml" />
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="4416206207494753800">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="2794582399917560278" resolveInfo="jetbrains.mps.xml.deprecated.pluginSolution" />
+              </node>
+            </node>
+          </node>
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494713694">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494713695">
+              <property name="text" nameId="3ior.4903714810883755350" value="mps-obsolete" />
             </node>
           </node>
         </node>
@@ -15987,6 +15881,9 @@
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894135614">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="buildBuild" />
+    </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494713687">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4416206207494300367" resolveInfo="buildDeprecatedBuildlanguage" />
     </node>
   </root>
   <root id="4061567211001166715">
@@ -17151,6 +17048,272 @@
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6265574260762011191">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+    </node>
+  </root>
+  <root id="4416206207494300367">
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4416206207494300368">
+      <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
+      <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4416206207494300369">
+        <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_IdeaPlugin" typeId="kdzh.6592112598314498932" id="4416206207494300370">
+      <property name="id" nameId="kdzh.6592112598314498927" value="jetbrains.mps.build.deprecated" />
+      <node role="name" roleId="kdzh.6592112598314499021" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494300371">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494300372">
+          <property name="text" nameId="3ior.4903714810883755350" value="MPS Depreacted XML and Build Languages" />
+        </node>
+      </node>
+      <node role="containerName" roleId="kdzh.6592112598314855574" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494300373">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494300374">
+          <property name="text" nameId="3ior.4903714810883755350" value="mps-build-deprecated" />
+        </node>
+      </node>
+      <node role="version" roleId="kdzh.6592112598314498931" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494300375">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="4416206207494300376">
+          <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="6592112598314709133" resolveInfo="version" />
+        </node>
+      </node>
+      <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="4416206207494300383">
+        <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="4416206207494300446" resolveInfo="build" />
+      </node>
+      <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="4416206207494300385">
+        <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="4416206207494300554" resolveInfo="xml" />
+      </node>
+      <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="4416206207494300387">
+        <link role="target" roleId="kdzh.6592112598314499066" targetNodeId="4973949960459588488" resolveInfo="jetbrains.mps.core" />
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="4416206207494300446">
+      <property name="name" nameId="tpck.1169194664001" value="build" />
+      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4416206207494300447">
+        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.buildlanguage" />
+        <property name="uuid" nameId="kdzh.322010710375892619" value="0b608d44-1308-418d-8715-22d040c3b3cc" />
+        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4416206207494300448">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4416206207494300583" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300449">
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300450">
+              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300451">
+                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300452">
+                  <property name="head" nameId="3ior.8618885170173601779" value="buildlanguage" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300453">
+                    <property name="head" nameId="3ior.8618885170173601779" value="buildlanguage.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300456">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="4416206207494300457">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4416206207494300486" resolveInfo="jetbrains.mps.build.generictasks" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300458">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="4416206207494300459">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4416206207494300555" resolveInfo="jetbrains.mps.xml.deprecated" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300460">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494300461">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300462">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494300463">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4416206207494300555" resolveInfo="jetbrains.mps.xml.deprecated" />
+          </node>
+        </node>
+      </node>
+      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4416206207494300486">
+        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
+        <property name="uuid" nameId="kdzh.322010710375892619" value="fba399db-f591-45dc-a279-e2a2a986e262" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.generictasks" />
+        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4416206207494300487">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4416206207494300583" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300488">
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300489">
+              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300490">
+                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300491">
+                  <property name="head" nameId="3ior.8618885170173601779" value="generictasks" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300492">
+                    <property name="head" nameId="3ior.8618885170173601779" value="generictasks.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494483222">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494483223">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4416206207494300447" resolveInfo="jetbrains.mps.buildlanguage" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494483224">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494483225">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535526" resolveInfo="jetbrains.mps.baseLanguage.classifiers" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494483226">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494483227">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
+      </node>
+      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4416206207494300543">
+        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
+        <property name="uuid" nameId="kdzh.322010710375892619" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.property" />
+        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4416206207494300544">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4416206207494300583" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300545">
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300546">
+              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300547">
+                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300548">
+                  <property name="head" nameId="3ior.8618885170173601779" value="property" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300549">
+                    <property name="head" nameId="3ior.8618885170173601779" value="property.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300550">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494300551">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="4416206207494300447" resolveInfo="jetbrains.mps.buildlanguage" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300552">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494300553">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8189062720279434723" resolveInfo="jetbrains.mps.gtext" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="4416206207494300554">
+      <property name="name" nameId="tpck.1169194664001" value="xml" />
+      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="4416206207494300555">
+        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.xml.deprecated" />
+        <property name="uuid" nameId="kdzh.322010710375892619" value="823d79c6-2e26-4b0e-92a0-e1884a10bba9" />
+        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4416206207494300556">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4416206207494300583" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300557">
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300558">
+              <property name="head" nameId="3ior.8618885170173601779" value="mps-obsolete" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300559">
+                <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300560">
+                  <property name="head" nameId="3ior.8618885170173601779" value="xmlDeprecated" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300561">
+                    <property name="head" nameId="3ior.8618885170173601779" value="languageDescriptor.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4416206207494300562">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4416206207494300563">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="4416206207494300582">
+      <property name="name" nameId="tpck.1169194664001" value="idea_home" />
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="4416206207494300583">
+      <property name="name" nameId="tpck.1169194664001" value="mps_home" />
+      <node role="defaultPath" roleId="3ior.7389400916848144618" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4416206207494300584" />
+    </node>
+    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4416206207494300585">
+      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207494300586">
+        <property name="head" nameId="3ior.8618885170173601779" value="build" />
+      </node>
+    </node>
+    <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4416206207494300587">
+      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494300588">
+        <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494300589">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494300590">
+            <property name="text" nameId="3ior.4903714810883755350" value="plugins" />
+          </node>
+        </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_Plugin" typeId="kdzh.6592112598314498926" id="4416206207494300591">
+          <link role="plugin" roleId="kdzh.6592112598314801433" targetNodeId="4416206207494300370" />
+        </node>
+      </node>
+    </node>
+    <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="4416206207494300613" />
+    <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="4416206207494300614" />
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="4416206207494300615">
+      <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="7181125477683264500" resolveInfo="IDEA" />
+      <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4416206207494300616">
+        <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4416206207494300582" resolveInfo="idea_home" />
+      </node>
+    </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494300617">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildCore" />
+    </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494300618">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCoreEx" />
+    </node>
+  </root>
+  <root id="4416206207494713671">
+    <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4416206207494713673">
+      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="4416206207494939409">
+        <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494939410">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="4416206207494939411">
+            <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="1051774332673624330" resolveInfo="plugin.version" />
+          </node>
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494939412">
+            <property name="text" nameId="3ior.4903714810883755350" value="-additional-plugin.zip" />
+          </node>
+        </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4416206207494939413">
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4061567211001166741" resolveInfo="plugins" />
+        </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4416206207494939414">
+          <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4416206207494300588" resolveInfo="plugins" />
+        </node>
+      </node>
+    </node>
+    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4416206207495032253">
+      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4416206207495032254">
+        <property name="head" nameId="3ior.8618885170173601779" value="IdeaPlugin" />
+      </node>
+    </node>
+    <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="4416206207494713677" />
+    <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="4416206207494713679" />
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494939405">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5148601452480491524" resolveInfo="buildPlugin" />
+    </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494713680">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4061567211001166715" resolveInfo="buildDates" />
+    </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494713682">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4416206207494300367" resolveInfo="buildDeprecatedBuildlanguage" />
     </node>
   </root>
 </model>
