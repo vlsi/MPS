@@ -553,38 +553,37 @@ public abstract class AbstractModule implements IModule {
     List<org.jetbrains.mps.openapi.model.SModelReference> allLoadedModels = new ArrayList<org.jetbrains.mps.openapi.model.SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    if (descriptor != null) {
-      SModelRepository smRepo = SModelRepository.getInstance();
-      Collection<ModelRootDescriptor> roots = descriptor.getModelRootDescriptors();
-      for (ModelRootDescriptor modelRoot : roots) {
-        try {
-          ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
-          if (modelRootFactory == null) {
-            LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
-            continue;
-          }
+    if (descriptor == null) return result;
 
-          ModelRoot root = modelRootFactory.create();
-          root.load(modelRoot.getMemento());
-          ((ModelRootBase) root).setModule(this);
-          result.add(root);
-
-          for (SModel model : root.getModels()) {
-            allLoadedModels.add(model.getModelReference());
-            if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
-              smRepo.registerModelDescriptor((SModelDescriptor) model, this);
-            }
-          }
-        } catch (Exception e) {
-          LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
+    SModelRepository smRepo = SModelRepository.getInstance();
+    for (ModelRootDescriptor modelRoot : descriptor.getModelRootDescriptors()) {
+      try {
+        ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
+        if (modelRootFactory == null) {
+          LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
+          continue;
         }
-      }
 
-      for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
-        if (allLoadedModels.contains(md.getSModelReference())) continue;
-        if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
-        smRepo.unRegisterModelDescriptor(md, this);
+        ModelRoot root = modelRootFactory.create();
+        root.load(modelRoot.getMemento());
+        ((ModelRootBase) root).setModule(this);
+        result.add(root);
+
+        for (SModel model : root.getModels()) {
+          allLoadedModels.add(model.getModelReference());
+          if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
+            smRepo.registerModelDescriptor((SModelDescriptor) model, this);
+          }
+        }
+      } catch (Exception e) {
+        LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
       }
+    }
+
+    for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
+      if (allLoadedModels.contains(md.getSModelReference())) continue;
+      if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
+      smRepo.unRegisterModelDescriptor(md, this);
     }
     return result;
   }
