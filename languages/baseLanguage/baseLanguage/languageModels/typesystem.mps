@@ -9431,8 +9431,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~ArrayList" resolveInfo="ArrayList" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5449655299304737753">
                 <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
-                <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5449655299304737754">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5449655299304728317" resolveInfo="classifier" />
+                <node role="expression" roleId="tp3r.1196350785111" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="9033423951292235881">
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1194623838238" resolveInfo="anonymousClass" />
                 </node>
               </node>
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="5449655299304737755">

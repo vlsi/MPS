@@ -75,7 +75,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
         return tmp;
       }
     }).toListSequence();
-    SNode newType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a21a0().createNode(classifier, typeParam, typeCheckingContext);
+    SNode newType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a21a0().createNode(anonymousClass, typeParam, typeCheckingContext);
     BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
     List<SNode> argl = SLinkOperations.getTargets(anonymousClass, "actualArgument", true);
