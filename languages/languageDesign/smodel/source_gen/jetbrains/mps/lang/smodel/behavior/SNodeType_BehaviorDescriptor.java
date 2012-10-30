@@ -10,20 +10,16 @@ public class SNodeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SNodeType_BehaviorDescriptor() {
   }
 
-  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
-    return SNodeType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
+  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
+    return SNodeType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }
 
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return SNodeType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return SNodeType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
 
   public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return SNodeType_Behavior.virtual_getErasure_702942408396803226(thisNode);
-  }
-
-  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    return SNodeType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }
 
   public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
@@ -34,8 +30,12 @@ public class SNodeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
     return SNodeType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return SNodeType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+    return SNodeType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
+  }
+
+  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return SNodeType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
   }
 
   @Override

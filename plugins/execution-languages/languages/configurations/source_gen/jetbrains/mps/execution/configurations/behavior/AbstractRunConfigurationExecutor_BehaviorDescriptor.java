@@ -8,32 +8,32 @@ import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescrip
 import jetbrains.mps.execution.settings.behavior.PersistentConfigurationAssistent_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import org.jetbrains.annotations.NonNls;
 
 public abstract class AbstractRunConfigurationExecutor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor, PersistentConfigurationAssistent_BehaviorDescriptor {
   public AbstractRunConfigurationExecutor_BehaviorDescriptor() {
-  }
-
-  public String virtual_getFullName_946964771156905503(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
 
   public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
   }
 
-  @NonNls
-  public String virtual_getSuffix_946964771156905483(SNode thisNode) {
-    return AbstractRunConfigurationExecutor_Behavior.virtual_getSuffix_946964771156905483(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  public String virtual_getFullName_946964771156905503(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
+  }
+
   public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
     return AbstractRunConfigurationExecutor_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
+  }
+
+  @NonNls
+  public String virtual_getSuffix_946964771156905483(SNode thisNode) {
+    return AbstractRunConfigurationExecutor_Behavior.virtual_getSuffix_946964771156905483(thisNode);
   }
 
   @Override

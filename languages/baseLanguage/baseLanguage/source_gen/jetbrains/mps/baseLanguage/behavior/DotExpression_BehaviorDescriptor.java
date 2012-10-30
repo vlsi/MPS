@@ -9,16 +9,8 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
   public DotExpression_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
-    return DotExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-
   public boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return DotExpression_Behavior.virtual_allowsNullOperand_4585239809762176541(thisNode);
-  }
-
-  public boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    return DotExpression_Behavior.virtual_isLValue_1213877519786(thisNode);
   }
 
   public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
@@ -27,6 +19,14 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
 
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return DotExpression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
+  }
+
+  public boolean virtual_isLValue_1213877519786(SNode thisNode) {
+    return DotExpression_Behavior.virtual_isLValue_1213877519786(thisNode);
+  }
+
+  public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return DotExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
 
   @Override

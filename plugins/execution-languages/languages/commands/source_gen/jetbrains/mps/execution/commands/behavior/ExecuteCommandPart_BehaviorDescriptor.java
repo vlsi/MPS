@@ -7,49 +7,49 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior;
 import java.util.List;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ExecuteCommandPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
   public ExecuteCommandPart_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_getBody_1239354440022(SNode thisNode) {
+    return ExecuteCommandPart_Behavior.virtual_getBody_1239354440022(thisNode);
   }
 
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return ExecuteCommandPart_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
   }
 
-  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
-  }
-
-  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
-  }
-
-  public String virtual_getMessage_1225207468592(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
     return IMethodLike_Behavior.virtual_getLastStatement_1239354409446(thisNode);
   }
 
+  public String virtual_getMessage_1225207468592(SNode thisNode) {
+    return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  }
+
   public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return ExecuteCommandPart_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
+  }
+
+  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
   }
 
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  }
-
-  public SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return ExecuteCommandPart_Behavior.virtual_getBody_1239354440022(thisNode);
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
 
   @Override

@@ -9,38 +9,38 @@ import jetbrains.mps.baseLanguage.behavior.TypeDerivable_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.TypeAnnotable_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
-import jetbrains.mps.baseLanguage.behavior.TypeAnnotable_Behavior;
-import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
+import java.util.List;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.TypeAnnotable_Behavior;
 
 public class NamedTupleComponentDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public NamedTupleComponentDeclaration_BehaviorDescriptor() {
-  }
-
-  public SNode virtual_deriveType_4555537781928374706(SNode thisNode, SNode expression, SNode link) {
-    return TypeDerivable_Behavior.virtual_deriveType_4555537781928374706(thisNode, expression, link);
-  }
-
-  public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
-    return TypeAnnotable_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
-  }
-
-  public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    return TypeDerivable_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
-  }
-
-  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
 
+  public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
+    return TypeDerivable_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
+  }
+
+  public SNode virtual_deriveType_4555537781928374706(SNode thisNode, SNode expression, SNode link) {
+    return TypeDerivable_Behavior.virtual_deriveType_4555537781928374706(thisNode, expression, link);
+  }
+
+  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
+    return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
+    return TypeAnnotable_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }
 
   @Override

@@ -9,16 +9,16 @@ public class LinkDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public LinkDeclaration_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
+  public String virtual_getMessage_1225207468592(SNode thisNode) {
+    return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return LinkDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
-  public String virtual_getMessage_1225207468592(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
+    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
   @Override

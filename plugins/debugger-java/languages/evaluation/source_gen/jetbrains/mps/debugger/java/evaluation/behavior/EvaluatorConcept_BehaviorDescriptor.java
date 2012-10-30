@@ -5,39 +5,39 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import java.util.List;
 
 public class EvaluatorConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IEvaluatorConcept_BehaviorDescriptor {
   public EvaluatorConcept_BehaviorDescriptor() {
   }
 
-  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return EvaluatorConcept_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
+  public SNode virtual_getBody_1239354440022(SNode thisNode) {
+    return EvaluatorConcept_Behavior.virtual_getBody_1239354440022(thisNode);
   }
 
   public String virtual_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
     return EvaluatorConcept_Behavior.virtual_getEvaluatorPresentation_9172312269976647295(thisNode);
   }
 
-  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return EvaluatorConcept_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
-  }
-
-  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
-  }
-
-  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
-    return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
+  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
+    return EvaluatorConcept_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
   }
 
   public SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
     return IMethodLike_Behavior.virtual_getLastStatement_1239354409446(thisNode);
   }
 
-  public SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return EvaluatorConcept_Behavior.virtual_getBody_1239354440022(thisNode);
+  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return EvaluatorConcept_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
+  }
+
+  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
+  }
+
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
 
   @Override
