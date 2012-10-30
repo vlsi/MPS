@@ -88,6 +88,47 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
+        return "Replacing InstanceMethodCallOperations using jetbrains.mps.nodeEditor.EditorContext as a parameter with jetbrains.mps.openapi.editor.EditorContext";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing InstanceMethodCallOperations using jetbrains.mps.nodeEditor.EditorContext as a parameter with jetbrains.mps.openapi.editor.EditorContext";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
+        if (reference == null || reference.getTargetNodeSilently() != null) {
+          return false;
+        }
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (targetNodeId == null) {
+          return false;
+        }
+        return targetNodeId.toString().contains("jetbrains.mps.nodeEditor.EditorContext");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
+        SNodeId oldNodeId = oldReference.getTargetNodeId();
+        SNodeId newNodeId = SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.EditorContext", "jetbrains.mps.openapi.editor.EditorContext"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, oldReference.getResolveInfo());
+        node.removeReference(oldReference);
+        node.setReference("instanceMethodDeclaration", newReference);
+
+        node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
         return "Pull up methods from jetbrains.mps.nodeEditor.EditorContext to jetbrains.mps.openapi.editor.EditorContext";
       }
 
