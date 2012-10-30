@@ -15,8 +15,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpd5" modelUID="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" version="-1" />
   <import index="tpeh" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="ua2a" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
@@ -24,6 +22,8 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" implicit="yes" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1175521864623">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_PatternCondition" />
@@ -74,8 +74,8 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ComparisonRule" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1193734278188">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_FindSourceBlockParameter" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_FindSourceBlockParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dependency" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195217152344">
@@ -115,8 +115,8 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_WhenConcreteVariableReference" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1205767996646">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_WhenConcreteVariableDeclaration" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_WhenConcreteVariableDeclaration" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1206297681151">
       <property name="name" nameId="tpck.1169194664001" value="check_MethodDeclaration" />
@@ -135,9 +135,6 @@
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207316078727">
       <property name="name" nameId="tpck.1169194664001" value="check_SubtypingRule_ExpectedReturns" />
-    </node>
-    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1207316363415">
-      <property name="name" nameId="tpck.1169194664001" value="check_WhenConcreteStatement_DF" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1210785545106">
       <property name="name" nameId="tpck.1169194664001" value="typeof_TypesystemIntentionArgument" />
@@ -161,16 +158,16 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_QuickFixArgumentReference" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236083321142">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_rightOperandConcept_parameter" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_rightOperandConcept_parameter" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236083426633">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_leftOperandConcept_parameter" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_leftOperandConcept_parameter" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236083447582">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_operationConcept_parameter" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_operationConcept_parameter" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1236163379378">
       <property name="name" nameId="tpck.1169194664001" value="typeof_GetOperationType" />
@@ -200,12 +197,12 @@
       <property name="name" nameId="tpck.1169194664001" value="check_NodeTypeOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8058965347377019251">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_DependentComputationNode" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_DependentComputationNode" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6807484249529698278">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_BlockingComputationNode" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_BlockingComputationNode" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8090891477833033257">
       <property name="name" nameId="tpck.1169194664001" value="typeof_QuickFixField" />
@@ -2035,28 +2032,6 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1175147670730" resolveInfo="SubtypingRule" />
     </node>
   </root>
-  <root id="1207316363415">
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1207316363416">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1223643119238">
-        <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1223643122162">
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpeh.1223640197349" resolveInfo="DataFlowUtil" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeh.8249991444799099355" resolveInfo="checkDataFlow" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1223643125554">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1223643125555">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1207316366308" resolveInfo="whenConcreteStatement" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1223643125556">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpd4.1185805047793" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1207316366308">
-      <property name="name" nameId="tpck.1169194664001" value="whenConcreteStatement" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1185805035213" resolveInfo="WhenConcreteStatement" />
-    </node>
-  </root>
   <root id="1210785545106">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210785545107">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1210785557538">
@@ -3453,8 +3428,8 @@
             <property name="name" nameId="tpck.1169194664001" value="elementType" />
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="8290446284380616564">
-            <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
             <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
+            <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
             <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="8290446284380616565">
               <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="8290446284380616566">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="8290446284380616567">

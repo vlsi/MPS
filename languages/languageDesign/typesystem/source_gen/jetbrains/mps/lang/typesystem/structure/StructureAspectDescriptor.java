@@ -258,7 +258,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 120:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
       case 121:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.Closureoid"}, new String[]{"isShallow", "skipsError"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.Closureoid", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"}, new String[]{"isShallow", "skipsError"}, new String[]{});
       case 122:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{});
       case 123:

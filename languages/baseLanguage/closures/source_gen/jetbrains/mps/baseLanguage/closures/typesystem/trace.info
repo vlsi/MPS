@@ -872,195 +872,210 @@
     <unitInfo nodeId="1201614755266" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="29" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule" />
   </root>
   <root nodeId="1202212837508" modelId="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)">
-    <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="119" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="75" endLine="32" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4616312228468046977" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="40" endLine="37" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="9" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="46" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202741535643" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="49" startPosition="9" endLine="50" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235274483" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="50" startPosition="111" endLine="51" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202742759568" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="53" startPosition="5" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="57" startPosition="46" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="62" startPosition="5" endLine="63" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="63" startPosition="119" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="68" startPosition="27" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="76" startPosition="116" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="77" startPosition="26" endLine="78" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="78" startPosition="67" endLine="79" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="79" startPosition="32" endLine="80" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="80" startPosition="32" endLine="81" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="82" startPosition="7" endLine="83" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="83" startPosition="176" endLine="84" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="85" startPosition="9" endLine="86" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="87" startPosition="37" endLine="88" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="91" startPosition="9" endLine="92" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="92" startPosition="45" endLine="93" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="94" startPosition="66" endLine="95" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="96" startPosition="18" endLine="97" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="97" startPosition="57" endLine="98" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="100" startPosition="38" endLine="101" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="103" startPosition="9" endLine="104" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="105" startPosition="7" endLine="106" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="109" startPosition="69" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="110" startPosition="26" endLine="111" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="111" startPosition="67" endLine="112" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="112" startPosition="32" endLine="113" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="113" startPosition="32" endLine="114" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="115" startPosition="7" endLine="116" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="116" startPosition="176" endLine="117" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="118" startPosition="9" endLine="119" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="120" startPosition="37" endLine="121" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="124" startPosition="9" endLine="125" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="125" startPosition="45" endLine="126" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="127" startPosition="66" endLine="128" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="129" startPosition="18" endLine="130" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="130" startPosition="57" endLine="131" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="133" startPosition="38" endLine="134" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="136" startPosition="9" endLine="137" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="138" startPosition="7" endLine="139" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="26" startPosition="120" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_ClassifierType_SubtypingRule#()V" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="72" startPosition="57" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qen718_a1a0d0e0c0a#()V" />
-    <nodeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="79" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="86" startPosition="56" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="96" startPosition="16" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="99" startPosition="11" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="119" startPosition="56" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="129" startPosition="16" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="132" startPosition="11" endLine="135" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="94" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4616312228468046991" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="40" startPosition="67" endLine="44" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="4616312228468046968" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="83" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="84" startPosition="43" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="84" startPosition="43" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="93" startPosition="30" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="117" startPosition="43" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="117" startPosition="43" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="126" startPosition="30" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="4616312228468046998" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="44" startPosition="8" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="90" startPosition="9" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="90" startPosition="9" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="123" startPosition="9" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="123" startPosition="9" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1202212971747" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="32" startPosition="74" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="81" startPosition="32" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="81" startPosition="32" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="114" startPosition="32" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="114" startPosition="32" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="29" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperTypes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="75" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="108" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="27" startPosition="54" endLine="27" endPosition="54" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="73" startPosition="48" endLine="73" endPosition="48" />
-    <scopeInfo nodeId="4616312228468046976" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="40" endLine="37" endPosition="129" />
-    <scopeInfo nodeId="1202741494411" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="57" startPosition="46" endLine="58" endPosition="65" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="68" startPosition="27" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="87" startPosition="37" endLine="88" endPosition="102" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="94" startPosition="66" endLine="95" endPosition="85" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="100" startPosition="38" endLine="101" endPosition="107" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="120" startPosition="37" endLine="121" endPosition="81" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="127" startPosition="66" endLine="128" endPosition="64" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="133" startPosition="38" endLine="134" endPosition="86" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="26" startPosition="120" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="62" startPosition="5" endLine="64" endPosition="45">
+    <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="119" endLine="34" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="34" startPosition="75" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="237" endLine="37" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4616312228468046977" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="40" endLine="40" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="42" startPosition="9" endLine="43" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="48" startPosition="45" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3409985583786026509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="49" startPosition="56" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6405155471901853826" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="50" startPosition="0" endLine="51" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3409985583786043394" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="51" startPosition="82" endLine="52" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3409985583786046051" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="52" startPosition="136" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3409985583786050007" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="54" startPosition="76" endLine="55" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3409985583786051512" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="56" startPosition="102" endLine="57" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="58" startPosition="11" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3409985583786120664" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="60" startPosition="9" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3409985583786120863" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="61" startPosition="0" endLine="62" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3409985583786122569" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="63" startPosition="100" endLine="64" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235274483" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="65" startPosition="9" endLine="66" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1202742759568" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="68" startPosition="5" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="72" startPosition="46" endLine="73" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="77" startPosition="5" endLine="78" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="78" startPosition="119" endLine="79" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="83" startPosition="27" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="91" startPosition="116" endLine="92" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="92" startPosition="26" endLine="93" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="93" startPosition="67" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="94" startPosition="32" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="95" startPosition="32" endLine="96" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="97" startPosition="7" endLine="98" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="98" startPosition="176" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="100" startPosition="9" endLine="101" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="102" startPosition="37" endLine="103" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="106" startPosition="9" endLine="107" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="107" startPosition="45" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="109" startPosition="66" endLine="110" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="111" startPosition="18" endLine="112" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="112" startPosition="57" endLine="113" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="115" startPosition="38" endLine="116" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="118" startPosition="9" endLine="119" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="120" startPosition="7" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="124" startPosition="69" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="125" startPosition="26" endLine="126" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="126" startPosition="67" endLine="127" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="127" startPosition="32" endLine="128" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="128" startPosition="32" endLine="129" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="130" startPosition="7" endLine="131" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="131" startPosition="176" endLine="132" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="133" startPosition="9" endLine="134" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="135" startPosition="37" endLine="136" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="139" startPosition="9" endLine="140" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="140" startPosition="45" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="142" startPosition="66" endLine="143" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="144" startPosition="18" endLine="145" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="145" startPosition="57" endLine="146" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="148" startPosition="38" endLine="149" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="151" startPosition="9" endLine="152" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="153" startPosition="7" endLine="154" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="29" startPosition="120" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_ClassifierType_SubtypingRule#()V" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="87" startPosition="57" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_qen718_a1a0j0e0c0a#()V" />
+    <nodeInfo nodeId="3409985583786050049" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="55" startPosition="64" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3409985583786121036" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="62" startPosition="70" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="101" startPosition="56" endLine="104" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="111" startPosition="16" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="114" startPosition="11" endLine="117" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="134" startPosition="56" endLine="137" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="144" startPosition="16" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="147" startPosition="11" endLine="150" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="38" startPosition="94" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4616312228468046991" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="43" startPosition="67" endLine="47" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="76" startPosition="68" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="4616312228468046968" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="37" startPosition="83" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="99" startPosition="43" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="99" startPosition="43" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="108" startPosition="30" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="132" startPosition="43" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="132" startPosition="43" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="141" startPosition="30" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="53" startPosition="0" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="105" startPosition="9" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="105" startPosition="9" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="138" startPosition="9" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="138" startPosition="9" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4616312228468046998" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="8" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="96" startPosition="32" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="96" startPosition="32" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="129" startPosition="32" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="129" startPosition="32" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1202212971747" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="74" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="90" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="123" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="32" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperTypes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="54" endLine="30" endPosition="54" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="88" startPosition="48" endLine="88" endPosition="48" />
+    <scopeInfo nodeId="4616312228468046976" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="40" endLine="40" endPosition="129" />
+    <scopeInfo nodeId="3409985583786050051" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="56" startPosition="102" endLine="57" endPosition="234" />
+    <scopeInfo nodeId="3409985583786121038" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="63" startPosition="100" endLine="64" endPosition="232" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="72" startPosition="46" endLine="73" endPosition="65" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="83" startPosition="27" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="102" startPosition="37" endLine="103" endPosition="102" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="109" startPosition="66" endLine="110" endPosition="85" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="115" startPosition="38" endLine="116" endPosition="107" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="135" startPosition="37" endLine="136" endPosition="81" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="142" startPosition="66" endLine="143" endPosition="64" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="148" startPosition="38" endLine="149" endPosition="86" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="29" startPosition="120" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="77" startPosition="5" endLine="79" endPosition="45">
       <varInfo nodeId="1202212837508" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="72" startPosition="57" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="96" startPosition="18" endLine="98" endPosition="41" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="129" startPosition="18" endLine="131" endPosition="41" />
-    <scopeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="46" startPosition="79" endLine="49" endPosition="9">
-      <varInfo nodeId="1202741494414" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="86" startPosition="56" endLine="89" endPosition="11">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="87" startPosition="57" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="111" startPosition="18" endLine="113" endPosition="41" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="144" startPosition="18" endLine="146" endPosition="41" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="101" startPosition="56" endLine="104" endPosition="11">
       <varInfo nodeId="1240235300016" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="119" startPosition="56" endLine="122" endPosition="11">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="134" startPosition="56" endLine="137" endPosition="11">
       <varInfo nodeId="1240235300016" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="94" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="38" startPosition="94" endLine="42" endPosition="0">
       <varInfo nodeId="4616312228468046975" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="85" startPosition="9" endLine="89" endPosition="11">
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="76" startPosition="68" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="100" startPosition="9" endLine="104" endPosition="11">
       <varInfo nodeId="1240235300016" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="118" startPosition="9" endLine="122" endPosition="11">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="133" startPosition="9" endLine="137" endPosition="11">
       <varInfo nodeId="1240235300016" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4616312228468046999" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="51" endPosition="211">
-      <varInfo nodeId="1202741469356" varName="paramTypes" />
-      <varInfo nodeId="1202741535644" varName="resType" />
+    <scopeInfo nodeId="1202741494411" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="54" startPosition="76" endLine="59" endPosition="59">
+      <varInfo nodeId="3409985583786050008" varName="pt" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="84" startPosition="43" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="117" startPosition="43" endLine="123" endPosition="9" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="60" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="99" startPosition="43" endLine="105" endPosition="9" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="132" startPosition="43" endLine="138" endPosition="9" />
+    <scopeInfo nodeId="1202741494410" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="53" startPosition="0" endLine="60" endPosition="9">
+      <varInfo nodeId="1202741494414" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1202212837508" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="91" startPosition="9" endLine="102" endPosition="11">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="106" startPosition="9" endLine="117" endPosition="11">
       <varInfo nodeId="1240235300016" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="124" startPosition="9" endLine="135" endPosition="11">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="139" startPosition="9" endLine="150" endPosition="11">
       <varInfo nodeId="1240235300016" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="90" startPosition="9" endLine="103" endPosition="9" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="123" startPosition="9" endLine="136" endPosition="9" />
-    <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="52" endPosition="7">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="105" startPosition="9" endLine="118" endPosition="9" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="138" startPosition="9" endLine="151" endPosition="9" />
+    <scopeInfo nodeId="4616312228468046999" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="48" startPosition="45" endLine="66" endPosition="206">
+      <varInfo nodeId="1202741469356" varName="paramTypes" />
+      <varInfo nodeId="3409985583786120864" varName="rt" />
+      <varInfo nodeId="6405155471901853827" varName="subs" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="97" startPosition="7" endLine="119" endPosition="31">
+      <varInfo nodeId="1240235300016" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="130" startPosition="7" endLine="152" endPosition="31">
+      <varInfo nodeId="1240235300016" varName="quotedNode1_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="96" startPosition="32" endLine="120" endPosition="7" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="129" startPosition="32" endLine="153" endPosition="7" />
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="91" startPosition="116" endLine="121" endPosition="20">
+      <varInfo nodeId="1240235300016" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1240235300016" varName="quotedNode_1" />
+      <varInfo nodeId="1240235300016" varName="quotedNode_2" />
+      <varInfo nodeId="1240235300016" varName="quotedNode_3" />
+      <varInfo nodeId="1240235300016" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="124" startPosition="69" endLine="154" endPosition="20">
+      <varInfo nodeId="1240235300016" varName="_parameterValues_129834374" />
+      <varInfo nodeId="1240235300016" varName="quotedNode_1" />
+      <varInfo nodeId="1240235300016" varName="quotedNode_2" />
+      <varInfo nodeId="1240235300016" varName="quotedNode_3" />
+      <varInfo nodeId="1240235300016" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="237" endLine="67" endPosition="7">
       <varInfo nodeId="4616312228468046969" varName="cands" />
       <varInfo nodeId="1983923772552990132" varName="it" />
       <varInfo nodeId="1202741408807" varName="methods" />
       <varInfo nodeId="4616312228468046992" varName="mtd" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="82" startPosition="7" endLine="104" endPosition="31">
-      <varInfo nodeId="1240235300016" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="115" startPosition="7" endLine="137" endPosition="31">
-      <varInfo nodeId="1240235300016" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="1202212837509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="119" endLine="54" endPosition="22">
-      <varInfo nodeId="1202212965866" varName="classifier" />
-      <varInfo nodeId="1202745678706" varName="supertypes" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="81" startPosition="32" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="114" startPosition="32" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="29" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="1202212837508" varName="ct" />
-      <varInfo nodeId="1202212837508" varName="status" />
-      <varInfo nodeId="1202212837508" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="76" startPosition="116" endLine="106" endPosition="20">
-      <varInfo nodeId="1240235300016" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1240235300016" varName="quotedNode_1" />
-      <varInfo nodeId="1240235300016" varName="quotedNode_2" />
-      <varInfo nodeId="1240235300016" varName="quotedNode_3" />
-      <varInfo nodeId="1240235300016" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="109" startPosition="69" endLine="139" endPosition="20">
-      <varInfo nodeId="1240235300016" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1240235300016" varName="quotedNode_1" />
-      <varInfo nodeId="1240235300016" varName="quotedNode_2" />
-      <varInfo nodeId="1240235300016" varName="quotedNode_3" />
-      <varInfo nodeId="1240235300016" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="75" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="90" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1240235300016" varName="parameter_6" />
       <varInfo nodeId="1240235300016" varName="parameter_7" />
       <varInfo nodeId="1240235300016" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="108" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="123" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="1240235300016" varName="parameter_6" />
       <varInfo nodeId="1240235300016" varName="parameter_7" />
     </scopeInfo>
-    <unitInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="35" startPosition="71" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
-    <unitInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="72" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$QuotationClass_qen718_a1a0d0e0c0a" />
-    <unitInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="26" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule" />
+    <scopeInfo nodeId="1202212837509" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="119" endLine="69" endPosition="22">
+      <varInfo nodeId="1202212965866" varName="classifier" />
+      <varInfo nodeId="1202745678706" varName="supertypes" />
+    </scopeInfo>
+    <scopeInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="32" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1202212837508" varName="ct" />
+      <varInfo nodeId="1202212837508" varName="status" />
+      <varInfo nodeId="1202212837508" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4616312228468046975" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="38" startPosition="71" endLine="42" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
+    <unitInfo nodeId="1240235300016" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="87" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$QuotationClass_qen718_a1a0j0e0c0a" />
+    <unitInfo nodeId="1202212837508" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="29" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule" />
   </root>
   <root nodeId="1202742148675" modelId="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)">
     <nodeInfo nodeId="8701449112292711081" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="32" startPosition="97" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

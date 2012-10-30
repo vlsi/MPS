@@ -13,7 +13,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="5tpqavnn7qp5euphfxt4sz08qtubs1h" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-76kmadccipeu7rm6iosvfbyef3q4tq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="673fcfhmamjpet575o77f91lfyg3i47" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-crtg4vs6yxraskvde9q8ts2cdallgek" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="3ccoowm8ygsaoot7ql9tazl5iv0a6t7" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-1te08t6bay9jx2d45ipi8nmzo85at3q" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2zzibu7tqv74frgzpnz5uza1ucknhwm" />
@@ -27,7 +27,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="-cq9ah5so892er3k6c18f76prti55is1" />
   <dep model="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" hash="-acmg78lf1im0ztyw1ylltiv7nep7q7e" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-dw7ruhqnkmij5k89yc8amdru7vrffey" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="50z2wgnmpqi7r2j1cief5kawlt93ujz" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
   <common hash="-v3fkcqnx3jjhkif9wcyw9cen7kofv" dependsOnNodes="true">
     <dep root="2975785153735208385" />

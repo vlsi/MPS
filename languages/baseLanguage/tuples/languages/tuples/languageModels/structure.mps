@@ -20,9 +20,9 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1239360506533">
-      <property name="name" nameId="tpck.1169194664001" value="NamedTupleDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/namedTuple.png" />
+      <property name="name" nameId="tpck.1169194664001" value="NamedTupleDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1239462176079">
@@ -74,6 +74,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1238852478218">
       <property name="value" nameId="tpce.1105725733873" value="]" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1238852467039" resolveInfo="rightBracket" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9033423951286858655">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.4107091686347010317" resolveInfo="IGenericType" />
     </node>
   </root>
   <root id="1238853782547">
@@ -245,6 +248,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1239360506533" resolveInfo="NamedTupleDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1107535924139" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9160639926734969758">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.4107091686347010317" resolveInfo="IGenericType" />
     </node>
   </root>
   <root id="1239559992092">
