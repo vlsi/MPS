@@ -47,14 +47,14 @@
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="1084197782722">
       <property name="memberIdentifierPolicy" nameId="1197591154882" value="derive_from_internal_value" />
-      <property name="hasNoDefaultMember" nameId="1212080844762" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="Cardinality" />
+      <property name="hasNoDefaultMember" nameId="1212080844762" value="false" />
       <link role="memberDataType" roleId="1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="1084199179703">
       <property name="memberIdentifierPolicy" nameId="1197591154882" value="derive_from_internal_value" />
-      <property name="hasNoDefaultMember" nameId="1212080844762" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="LinkMetaclass" />
+      <property name="hasNoDefaultMember" nameId="1212080844762" value="false" />
       <link role="memberDataType" roleId="1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105725006687">
@@ -570,6 +570,10 @@
     </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="5092175715804935370">
       <property name="name" nameId="tpck.1169194664001" value="conceptAlias" />
+      <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="4628067390765907488">
+      <property name="name" nameId="tpck.1169194664001" value="conceptShortDescription" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1169197806875">
