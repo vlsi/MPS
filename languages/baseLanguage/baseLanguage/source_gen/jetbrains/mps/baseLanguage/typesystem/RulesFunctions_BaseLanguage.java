@@ -48,7 +48,11 @@ public class RulesFunctions_BaseLanguage {
   public RulesFunctions_BaseLanguage() {
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void comparisonOp(final TypeCheckingContext typeCheckingContext, SNode binOp) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -164,7 +168,11 @@ __switch__:
     return returnStatements;
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_InstanceMethodCallOperation(final TypeCheckingContext typeCheckingContext, SNode imco, SNode returnType, SNode instanceType, SNode methodClassifier) {
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, returnType, mmap);
@@ -173,12 +181,20 @@ __switch__:
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     inference_matchConcreteTypesWithTypeVariablesInternal(typeCheckingContext, genericClassifier, instanceType, mmap, null);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_matchConcreteTypesWithTypeVariablesInternal(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap, SNode nodeToCheck) {
     if ((genericClassifier != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
@@ -204,7 +220,11 @@ __switch__:
     match_forInnerClassifiers(typeCheckingContext, genericClassifier, instanceType, mmap);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void match_forInnerClassifiers(final TypeCheckingContext typeCheckingContext, SNode declClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     SNode parentFC = SNodeOperations.getAncestor(declClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (parentFC == null) {
@@ -226,7 +246,11 @@ __switch__:
     inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, parentFC, constructedType, mmap);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_matchConcreteTypesWithMethodTypeVariables(final TypeCheckingContext typeCheckingContext, SNode methodCall, Map<SNode, List<SNode>> mmap) {
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty() && (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       {
@@ -251,7 +275,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     if (returnType != null) {
       SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, returnType, mmap);
@@ -359,7 +387,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   private static void matchedType_supertypeOf_argument(final TypeCheckingContext typeCheckingContext, final SNode matchedType, final SNode arg) {
     {
       final SNode TARG = typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5380162141339274300", true);
@@ -375,7 +407,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_setConcreteUpperBorders(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
       for (SNode tvd : MapSequence.fromMap(mmap).keySet()) {
@@ -391,7 +427,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_equateMatchingTypeVariables(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
       for (List<SNode> nodes : MapSequence.fromMap(mmap).values()) {
@@ -410,7 +450,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @CheckingMethod
+  @Deprecated
   public static SNode inference_matchTypeWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -425,6 +469,7 @@ __switch__:
   }
 
   @CheckingMethod
+  @Deprecated
   private static void inference_mapTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -439,10 +484,12 @@ __switch__:
     }
   }
 
+  @Deprecated
   private static void inference_mapTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     putTypeVariable(tvd, tvar, mmap);
   }
 
+  @Deprecated
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
     if (nodes == null) {
@@ -452,6 +499,10 @@ __switch__:
     ListSequence.fromList(nodes).addElement(tvar);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
+  @Deprecated
   public static boolean isWithinStatic(SNode node) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     if (ancestor != null && (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
