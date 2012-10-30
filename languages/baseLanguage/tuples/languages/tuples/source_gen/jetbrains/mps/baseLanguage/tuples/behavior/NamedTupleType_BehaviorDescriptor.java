@@ -12,12 +12,12 @@ public class NamedTupleType_BehaviorDescriptor extends ClassifierType_BehaviorDe
   public NamedTupleType_BehaviorDescriptor() {
   }
 
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return NamedTupleType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
-  }
-
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     NamedTupleType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return NamedTupleType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {

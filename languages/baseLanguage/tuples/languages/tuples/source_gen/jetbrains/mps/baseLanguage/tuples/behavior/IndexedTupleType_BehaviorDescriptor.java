@@ -13,28 +13,28 @@ public class IndexedTupleType_BehaviorDescriptor extends Type_BehaviorDescriptor
   public IndexedTupleType_BehaviorDescriptor() {
   }
 
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
-  }
-
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return IndexedTupleType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  }
-
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     IndexedTupleType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }
 
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return IndexedTupleType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
     return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  }
+
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return IndexedTupleType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+    return IndexedTupleType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
 
   @Override

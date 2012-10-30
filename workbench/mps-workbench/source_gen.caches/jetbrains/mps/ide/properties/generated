@@ -73,7 +73,7 @@
   <dep model="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)" hash="62vzf1pyxqtj4iqq8bfr8qivg696ind" />
   <dep model="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" hash="b44qcrmw0pzdelly3tfsirqttfa08hi" />
   <dep model="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)" hash="ctn2ywzosaqh4q7fgah1agzzpd7xzxl" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="1m268469z2jolbzdk218of5h3pdnsg9" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="3j8swkvcch2sio6hsv1bzbyihem4oj4" />
   <dep model="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)" hash="-6hsug2ol80phjpq0dsuv8ccgqovizzt" />
   <dep model="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)" hash="4xcakavmu6b9j599rlih5v3zg65jnx8" />
   <dep model="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" hash="-9krv06b0cs6386k8hset7ne2jw9gn5d" />
