@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ExtensionDescriptor" />
+  <root nodeId="2776899927893123017" modelId="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)">
+    <nodeInfo nodeId="2776899927893187521" fileName="ConceptPropertiesMigrationDialog.java" startLine="23" startPosition="69" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="1685972956014330008" fileName="ConceptPropertiesMigrationDialog.java" startLine="24" startPosition="25" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />
+    <nodeInfo nodeId="1685972956014330013" fileName="ConceptPropertiesMigrationDialog.java" startLine="25" startPosition="42" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgressBar" />
+    <nodeInfo nodeId="2776899927893366628" fileName="ConceptPropertiesMigrationDialog.java" startLine="26" startPosition="58" endLine="27" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMigrateAction" />
+    <nodeInfo nodeId="2776899927893386394" fileName="ConceptPropertiesMigrationDialog.java" startLine="27" startPosition="33" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="step" />
+    <nodeInfo nodeId="2776899927893186829" fileName="ConceptPropertiesMigrationDialog.java" startLine="30" startPosition="60" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2776899927893387413" fileName="ConceptPropertiesMigrationDialog.java" startLine="31" startPosition="19" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927893187448" fileName="ConceptPropertiesMigrationDialog.java" startLine="32" startPosition="13" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7525874833919627304" fileName="ConceptPropertiesMigrationDialog.java" startLine="33" startPosition="11" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927893192590" fileName="ConceptPropertiesMigrationDialog.java" startLine="38" startPosition="44" endLine="39" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330047" fileName="ConceptPropertiesMigrationDialog.java" startLine="39" startPosition="46" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014330052" fileName="ConceptPropertiesMigrationDialog.java" startLine="40" startPosition="52" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330058" fileName="ConceptPropertiesMigrationDialog.java" startLine="41" startPosition="16" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330064" fileName="ConceptPropertiesMigrationDialog.java" startLine="42" startPosition="16" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330070" fileName="ConceptPropertiesMigrationDialog.java" startLine="43" startPosition="18" endLine="44" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330076" fileName="ConceptPropertiesMigrationDialog.java" startLine="44" startPosition="51" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927894212856" fileName="ConceptPropertiesMigrationDialog.java" startLine="45" startPosition="38" endLine="46" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330087" fileName="ConceptPropertiesMigrationDialog.java" startLine="46" startPosition="29" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330093" fileName="ConceptPropertiesMigrationDialog.java" startLine="47" startPosition="28" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330094" fileName="ConceptPropertiesMigrationDialog.java" startLine="48" startPosition="0" endLine="49" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330099" fileName="ConceptPropertiesMigrationDialog.java" startLine="49" startPosition="33" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330100" fileName="ConceptPropertiesMigrationDialog.java" startLine="50" startPosition="0" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330106" fileName="ConceptPropertiesMigrationDialog.java" startLine="51" startPosition="43" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330112" fileName="ConceptPropertiesMigrationDialog.java" startLine="52" startPosition="16" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330118" fileName="ConceptPropertiesMigrationDialog.java" startLine="53" startPosition="16" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330124" fileName="ConceptPropertiesMigrationDialog.java" startLine="54" startPosition="18" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330130" fileName="ConceptPropertiesMigrationDialog.java" startLine="55" startPosition="18" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330141" fileName="ConceptPropertiesMigrationDialog.java" startLine="56" startPosition="38" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330142" fileName="ConceptPropertiesMigrationDialog.java" startLine="57" startPosition="0" endLine="58" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330148" fileName="ConceptPropertiesMigrationDialog.java" startLine="58" startPosition="51" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7525874833919864312" fileName="ConceptPropertiesMigrationDialog.java" startLine="59" startPosition="34" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330155" fileName="ConceptPropertiesMigrationDialog.java" startLine="60" startPosition="54" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2776899927893601473" fileName="ConceptPropertiesMigrationDialog.java" startLine="61" startPosition="19" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2776899927893572724" fileName="ConceptPropertiesMigrationDialog.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014264597" fileName="ConceptPropertiesMigrationDialog.java" startLine="66" startPosition="38" endLine="67" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014264609" fileName="ConceptPropertiesMigrationDialog.java" startLine="67" startPosition="74" endLine="68" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927893627347" fileName="ConceptPropertiesMigrationDialog.java" startLine="68" startPosition="65" endLine="69" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264614" fileName="ConceptPropertiesMigrationDialog.java" startLine="69" startPosition="63" endLine="70" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014264624" fileName="ConceptPropertiesMigrationDialog.java" startLine="74" startPosition="41" endLine="75" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264626" fileName="ConceptPropertiesMigrationDialog.java" startLine="75" startPosition="33" endLine="76" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927893739031" fileName="ConceptPropertiesMigrationDialog.java" startLine="80" startPosition="36" endLine="81" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7525874833919598000" fileName="ConceptPropertiesMigrationDialog.java" startLine="82" startPosition="11" endLine="83" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7525874833919617397" fileName="ConceptPropertiesMigrationDialog.java" startLine="83" startPosition="27" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014264547" fileName="ConceptPropertiesMigrationDialog.java" startLine="91" startPosition="28" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264552" fileName="ConceptPropertiesMigrationDialog.java" startLine="92" startPosition="32" endLine="93" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927893384675" fileName="ConceptPropertiesMigrationDialog.java" startLine="96" startPosition="52" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2776899927893376517" fileName="ConceptPropertiesMigrationDialog.java" startLine="90" startPosition="54" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateAction#()V" />
+    <nodeInfo nodeId="2776899927893380159" fileName="ConceptPropertiesMigrationDialog.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="7525874833919617396" fileName="ConceptPropertiesMigrationDialog.java" startLine="81" startPosition="52" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2776899927893130962" fileName="ConceptPropertiesMigrationDialog.java" startLine="29" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptPropertiesMigrationDialog#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="1685972956014264620" fileName="ConceptPropertiesMigrationDialog.java" startLine="72" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultActions#()V" />
+    <nodeInfo nodeId="1685972956014264594" fileName="ConceptPropertiesMigrationDialog.java" startLine="65" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="2776899927893721104" fileName="ConceptPropertiesMigrationDialog.java" startLine="79" startPosition="28" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="2776899927893381561" fileName="ConceptPropertiesMigrationDialog.java" startLine="78" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMigrate#()V" />
+    <nodeInfo nodeId="2776899927893184017" fileName="ConceptPropertiesMigrationDialog.java" startLine="36" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="7525874833919617399" fileName="ConceptPropertiesMigrationDialog.java" startLine="85" startPosition="0" endLine="85" endPosition="29">
+      <varInfo nodeId="7525874833919617401" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7525874833919617405" fileName="ConceptPropertiesMigrationDialog.java" startLine="85" startPosition="29" endLine="85" endPosition="29" />
+    <scopeInfo nodeId="2776899927893380170" fileName="ConceptPropertiesMigrationDialog.java" startLine="96" startPosition="52" endLine="97" endPosition="18" />
+    <scopeInfo nodeId="1685972956014264623" fileName="ConceptPropertiesMigrationDialog.java" startLine="74" startPosition="41" endLine="76" endPosition="75" />
+    <scopeInfo nodeId="7525874833919617398" fileName="ConceptPropertiesMigrationDialog.java" startLine="82" startPosition="11" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="2776899927893376520" fileName="ConceptPropertiesMigrationDialog.java" startLine="91" startPosition="28" endLine="93" endPosition="45" />
+    <scopeInfo nodeId="2776899927893130965" fileName="ConceptPropertiesMigrationDialog.java" startLine="30" startPosition="60" endLine="34" endPosition="24" />
+    <scopeInfo nodeId="1685972956014264596" fileName="ConceptPropertiesMigrationDialog.java" startLine="66" startPosition="38" endLine="70" endPosition="71">
+      <varInfo nodeId="1685972956014264598" varName="actions" />
+    </scopeInfo>
+    <scopeInfo nodeId="2776899927893376517" fileName="ConceptPropertiesMigrationDialog.java" startLine="90" startPosition="54" endLine="94" endPosition="5" />
+    <scopeInfo nodeId="2776899927893380159" fileName="ConceptPropertiesMigrationDialog.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="2776899927893380163" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2776899927893130962" fileName="ConceptPropertiesMigrationDialog.java" startLine="29" startPosition="0" endLine="35" endPosition="3">
+      <varInfo nodeId="2776899927893185734" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014264620" fileName="ConceptPropertiesMigrationDialog.java" startLine="72" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="2776899927893721106" fileName="ConceptPropertiesMigrationDialog.java" startLine="80" startPosition="36" endLine="86" endPosition="7" />
+    <scopeInfo nodeId="1685972956014264594" fileName="ConceptPropertiesMigrationDialog.java" startLine="65" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="2776899927893381564" fileName="ConceptPropertiesMigrationDialog.java" startLine="79" startPosition="28" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="2776899927893721104" fileName="ConceptPropertiesMigrationDialog.java" startLine="79" startPosition="28" endLine="87" endPosition="5">
+      <varInfo nodeId="2776899927893721105" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="2776899927893381561" fileName="ConceptPropertiesMigrationDialog.java" startLine="78" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="2776899927893184022" fileName="ConceptPropertiesMigrationDialog.java" startLine="38" startPosition="44" endLine="63" endPosition="0">
+      <varInfo nodeId="1685972956014330048" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="2776899927893184017" fileName="ConceptPropertiesMigrationDialog.java" startLine="36" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="2776899927893376515" fileName="ConceptPropertiesMigrationDialog.java" startLine="90" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesMigrationDialog$MigrateAction" />
+    <unitInfo nodeId="2776899927893123017" fileName="ConceptPropertiesMigrationDialog.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesMigrationDialog" />
+  </root>
   <root nodeId="2928721655729225312" modelId="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)">
     <nodeInfo nodeId="2928721655729225312" fileName="RemoveConceptProperties_Action.java" startLine="16" startPosition="64" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2928721655729225312" fileName="RemoveConceptProperties_Action.java" startLine="17" startPosition="40" endLine="18" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
