@@ -15,8 +15,8 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1192794744107">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="IntentionDeclaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/intention.png" />
+      <property name="name" nameId="tpck.1169194664001" value="IntentionDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1192794782375">
@@ -46,8 +46,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1240395258925">
-      <property name="name" nameId="tpck.1169194664001" value="ParameterizedIntentionDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ParameterizedIntentionDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameterized" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1192794744107" resolveInfo="IntentionDeclaration" />
     </node>
@@ -68,28 +68,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BaseIntentionDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2522969319638198292">
-      <property name="name" nameId="tpck.1169194664001" value="GenerateIntentionDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/generate_intention.png" />
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2522969319638198293">
-      <property name="name" nameId="tpck.1169194664001" value="SurroundWithIntentionDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/surround_with_intention.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/surround_with_intention.png" />
+      <property name="name" nameId="tpck.1169194664001" value="SurroundWithIntentionDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5180116501958013177">
-      <property name="name" nameId="tpck.1169194664001" value="ExecuteUIBlock" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4359456199357017245">
-      <property name="name" nameId="tpck.1169194664001" value="IntentionContextParameterDeclaration" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4359456199357025372">
-      <property name="name" nameId="tpck.1169194664001" value="IntentionContextParamReference" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </roots>
   <root id="1192794744107">
@@ -312,78 +295,10 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1192795911897" resolveInfo="ExecuteBlock" />
     </node>
   </root>
-  <root id="2522969319638198292">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4388908255921339902">
-      <property name="value" nameId="tpce.1105725733873" value="Generate Intention" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4359456199356557608">
-      <property name="name" nameId="tpck.1169194664001" value="isAlwaysVisible" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="2192675361909415787" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5180116501957618330">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="executeUI" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5180116501958013177" resolveInfo="ExecuteUIBlock" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4359456199356557540">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="parameter" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7158603332051554563" />
-  </root>
   <root id="2522969319638198293">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4388908255921339900">
       <property name="value" nameId="tpce.1105725733873" value="Surround-With Intention" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="5180116501958013177">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="5180116501958013181">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.BooleanType" typeId="tpee.1070534644030" id="926291610756260162" />
-    </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5180116501958013183">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
-    </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5180116501958013184">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="1192796902958" resolveInfo="ConceptFunctionParameter_node" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5180116501958013178">
-      <property name="value" nameId="tpce.1105725733873" value="execute UI" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="5180116501958013180">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7158603332051554564" />
-  </root>
-  <root id="4359456199357017245">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4359456199357188671">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="type" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4359456199357188672">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root id="4359456199357025372">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1349940517677186262">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="parameterDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1349940517677473350">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1146528679895" resolveInfo="lvalue" />
     </node>
   </root>
 </model>

@@ -33,7 +33,9 @@ public class BaseIntentionDeclaration_Behavior {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(thisNode, "forConcept", false));
   }
 
+  @Deprecated
   public static boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
+    // Was deprecated in MPS 3.0 should be removed after MPS 3.0 
     return false;
   }
 

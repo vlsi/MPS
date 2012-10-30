@@ -21,6 +21,7 @@ public class BaseIntentionDeclaration_BehaviorDescriptor extends BaseConcept_Beh
     return IConceptAspect_Behavior.virtual_isApplicable_7839831476331657915(thisNode, candidate);
   }
 
+  @Deprecated
   public boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
     return BaseIntentionDeclaration_Behavior.virtual_isParameterized_6263518417926802310(thisNode);
   }
