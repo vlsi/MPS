@@ -42,6 +42,11 @@ public abstract class ModelChange {
   @NotNull
   public abstract ChangeType getType();
 
+  public boolean isNonConflicting() {
+    // true - change can never conflict with other change and should be ignored if connected change exists (e.g. resolveInfo change) 
+    return false;
+  }
+
   @Override
   public abstract String toString();
 

@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -19,6 +19,7 @@ public class SetReferenceChange extends NodeChange {
   private SModelReference myTargetModelReference;
   private SNodeId myTargetNodeId;
   private String myResolveInfo;
+  private boolean myResolveInfoOnly;
 
   public SetReferenceChange(@NotNull ChangeSet changeSet, @NotNull SNodeId sourceNodeId, @NotNull String role, @Nullable SModelReference targetModelReference, @Nullable SNodeId targetNodeId, @Nullable String resolveInfo) {
     super(changeSet, sourceNodeId);
@@ -27,6 +28,10 @@ public class SetReferenceChange extends NodeChange {
     // if target node id is null and resolve info is not-null it's dynamic reference 
     myTargetNodeId = targetNodeId;
     myResolveInfo = resolveInfo;
+
+    // check if only resolve info for static reference changed - then it cannot conflict with other changes 
+    SReference oldRef = check_mgdhcs_a0i0a(changeSet.getOldModel().getNodeById(getAffectedNodeId()), myRole, this);
+    myResolveInfoOnly = eq_mgdhcs_a0a0a9a0(check_mgdhcs_a0a0a9a0(oldRef), targetModelReference) && eq_mgdhcs_a0a0a9a0_0(check_mgdhcs_a0a0a9a0_0(oldRef), targetNodeId) && targetNodeId != null;
   }
 
   @NotNull
@@ -71,6 +76,11 @@ public class SetReferenceChange extends NodeChange {
   }
 
   @Override
+  public boolean isNonConflicting() {
+    return myResolveInfoOnly;
+  }
+
+  @Override
   public String toString() {
     String targetString = (myTargetModelReference == null ?
       "" + myTargetNodeId :
@@ -91,21 +101,21 @@ public class SetReferenceChange extends NodeChange {
     }
     String what = "target";
     _FunctionTypes._return_P1_E0<? extends String, ? super SReference> formatRef = null;
-    if (neq_mgdhcs_a0h0g(oldRef.getTargetSModelReference(), newRef.getTargetSModelReference())) {
+    if (neq_mgdhcs_a0h0h(oldRef.getTargetSModelReference(), newRef.getTargetSModelReference())) {
       formatRef = new _FunctionTypes._return_P1_E0<String, SReference>() {
         public String invoke(SReference ref) {
           return String.format("[model=%s,\n  id=%s, resolveInfo=%s]", ref.getTargetSModelReference(), ref.getTargetNodeId(), ref.getResolveInfo());
         }
       };
     }
-    if (neq_mgdhcs_a0i0g(oldRef.getTargetNodeId(), newRef.getTargetNodeId())) {
+    if (neq_mgdhcs_a0i0h(oldRef.getTargetNodeId(), newRef.getTargetNodeId())) {
       formatRef = new _FunctionTypes._return_P1_E0<String, SReference>() {
         public String invoke(SReference ref) {
           return String.format("[id=%s, resolveInfo=%s]", ref.getTargetNodeId(), ref.getTargetNodeId());
         }
       };
     }
-    if (neq_mgdhcs_a0j0g(oldRef.getResolveInfo(), newRef.getResolveInfo())) {
+    if (neq_mgdhcs_a0j0h(oldRef.getResolveInfo(), newRef.getResolveInfo())) {
       what = "resolve info";
       formatRef = new _FunctionTypes._return_P1_E0<String, SReference>() {
         public String invoke(SReference ref) {
@@ -125,58 +135,93 @@ public class SetReferenceChange extends NodeChange {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;
     SReference ref = node.getReference(getRole());
-    SModelReference targetModel = check_mgdhcs_a0d0h(ref);
-    if (eq_mgdhcs_a0e0h(getChangeSet().getOldModel().getSModelReference(), targetModel)) {
+    SModelReference targetModel = check_mgdhcs_a0d0i(ref);
+    if (eq_mgdhcs_a0e0i(getChangeSet().getOldModel().getSModelReference(), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }
 
-    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a7(ref), check_mgdhcs_f0a6a7(ref));
+    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a8(ref), check_mgdhcs_f0a6a8(ref));
   }
 
-  private static SModelReference check_mgdhcs_a0d0h(SReference checkedDotOperand) {
+  private static SReference check_mgdhcs_a0i0a(SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference(myRole);
+    }
+    return null;
+  }
+
+  private static SModelReference check_mgdhcs_a0a0a9a0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static SNodeId check_mgdhcs_e0a6a7(SReference checkedDotOperand) {
+  private static SNodeId check_mgdhcs_a0a0a9a0_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetNodeId();
     }
     return null;
   }
 
-  private static String check_mgdhcs_f0a6a7(SReference checkedDotOperand) {
+  private static SModelReference check_mgdhcs_a0d0i(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetSModelReference();
+    }
+    return null;
+  }
+
+  private static SNodeId check_mgdhcs_e0a6a8(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetNodeId();
+    }
+    return null;
+  }
+
+  private static String check_mgdhcs_f0a6a8(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static boolean neq_mgdhcs_a0h0g(Object a, Object b) {
+  private static boolean eq_mgdhcs_a0a0a9a0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_mgdhcs_a0a0a9a0_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean neq_mgdhcs_a0h0h(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_mgdhcs_a0i0g(Object a, Object b) {
+  private static boolean neq_mgdhcs_a0i0h(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_mgdhcs_a0j0g(Object a, Object b) {
+  private static boolean neq_mgdhcs_a0j0h(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_mgdhcs_a0e0h(Object a, Object b) {
+  private static boolean eq_mgdhcs_a0e0i(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
