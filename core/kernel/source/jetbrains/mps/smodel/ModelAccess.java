@@ -173,9 +173,11 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   protected void onCommandStarted() {
     UnregisteredNodes.instance().enable();
+    ImmatureReferences.getInstance().enable();
   }
 
   protected void onCommandFinished() {
+    ImmatureReferences.getInstance().disable();
     UnregisteredNodes.instance().disable();
   }
 

@@ -86,6 +86,7 @@ public class MPSCore extends ComponentPlugin {
     init(new LibraryInitializer(myModuleRepository, classLoaderManager));
     init(new GlobalScope(myModuleRepository, myModelRepository));
     init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
+    init(new ImmatureReferences(myModelRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());

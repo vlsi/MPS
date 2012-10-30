@@ -54,6 +54,9 @@ abstract class SReferenceBase extends SReference {
     myTargetModelReference = targetModelReference;
 
     // 'young' reference
+    if (immatureTargetNode != null) {
+      ImmatureReferences.getInstance().add(this);
+    }
     myImmatureTargetNode = immatureTargetNode;
   }
 
@@ -82,6 +85,9 @@ abstract class SReferenceBase extends SReference {
 
   public void makeDirect() {
     myImmatureTargetNode = getTargetNodeSilently();
+    if (myImmatureTargetNode != null) {
+      ImmatureReferences.getInstance().add(this);
+    }
   }
 
   protected synchronized final boolean makeIndirect(boolean force) {
@@ -123,6 +129,7 @@ abstract class SReferenceBase extends SReference {
 
   protected synchronized void makeMature() {
     if (myImmatureTargetNode == null) return;
+    ImmatureReferences.getInstance().remove(this);
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
