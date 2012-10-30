@@ -35,7 +35,7 @@ public class IGenericType_Behavior {
     QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(expanded, "jetbrains.mps.baseLanguage.structure.IGenericType", false, new String[]{})));
     while (!(QueueSequence.fromQueue(queue).isEmpty())) {
       SNode next = QueueSequence.fromQueue(queue).removeFirstElement();
-      SNode exNext = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), next, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromList(new ArrayList<SNode>(expTrace))});
+      SNode exNext = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), next, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
       if (exNext != next) {
         SNodeOperations.replaceWithAnother(next, SNodeOperations.copyNode(exNext));
         for (SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(next, "jetbrains.mps.baseLanguage.structure.IGenericType", false, new String[]{}))) {
