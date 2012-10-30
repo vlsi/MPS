@@ -172,7 +172,6 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildMPS.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="build/buildMPS.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

@@ -59,10 +59,6 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
-    <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
-    <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
-    <ant antfile="build/buildMakePlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
