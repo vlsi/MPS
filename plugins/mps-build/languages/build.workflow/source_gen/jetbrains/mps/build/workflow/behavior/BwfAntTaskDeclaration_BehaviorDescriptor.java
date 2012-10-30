@@ -10,12 +10,12 @@ public class BwfAntTaskDeclaration_BehaviorDescriptor extends BwfProjectPart_Beh
   public BwfAntTaskDeclaration_BehaviorDescriptor() {
   }
 
-  public int virtual_getPriority_2059109515400548718(SNode thisNode) {
-    return BwfAntTaskDeclaration_Behavior.virtual_getPriority_2059109515400548718(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public int virtual_getPriority_2059109515400548718(SNode thisNode) {
+    return BwfAntTaskDeclaration_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
 
   @Override

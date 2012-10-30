@@ -17,10 +17,9 @@
 package jetbrains.mps.idea.core;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.stubs.LibrariesLoader;
 import org.jetbrains.annotations.NotNull;
 
 public class IdeaLibLoader implements ProjectComponent {
@@ -29,7 +28,7 @@ public class IdeaLibLoader implements ProjectComponent {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            LibrariesLoader.getInstance().loadNewLibs();
+            ClassLoaderManager.getInstance().updateModels();
           }
         });
       }

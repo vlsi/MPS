@@ -10,24 +10,24 @@ public class ParameterDeclaration_BehaviorDescriptor extends VariableDeclaration
   public ParameterDeclaration_BehaviorDescriptor() {
   }
 
-  public SNode virtual_getValue_1224857430232(SNode thisNode) {
-    return ParameterDeclaration_Behavior.virtual_getValue_1224857430232(thisNode);
-  }
-
-  public String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    return ParameterDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
+  public SNode virtual_createReference_1213877517482(SNode thisNode) {
+    return ParameterDeclaration_Behavior.virtual_createReference_1213877517482(thisNode);
   }
 
   public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     return ParameterDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
 
-  public boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
-    return ParameterDeclaration_Behavior.virtual_isCanBeUnused_1223985713603(thisNode);
+  public String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
+    return ParameterDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
   }
 
-  public SNode virtual_createReference_1213877517482(SNode thisNode) {
-    return ParameterDeclaration_Behavior.virtual_createReference_1213877517482(thisNode);
+  public SNode virtual_getValue_1224857430232(SNode thisNode) {
+    return ParameterDeclaration_Behavior.virtual_getValue_1224857430232(thisNode);
+  }
+
+  public boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
+    return ParameterDeclaration_Behavior.virtual_isCanBeUnused_1223985713603(thisNode);
   }
 
   @Override

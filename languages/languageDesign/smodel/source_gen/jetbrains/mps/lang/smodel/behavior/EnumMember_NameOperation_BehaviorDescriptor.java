@@ -10,20 +10,20 @@ public class EnumMember_NameOperation_BehaviorDescriptor extends BaseConcept_Beh
   public EnumMember_NameOperation_BehaviorDescriptor() {
   }
 
-  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
-    return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
+  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
+    return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
   }
 
   public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
   }
 
-  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
-  }
-
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+  }
+
+  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
+    return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
   }
 
   @Override

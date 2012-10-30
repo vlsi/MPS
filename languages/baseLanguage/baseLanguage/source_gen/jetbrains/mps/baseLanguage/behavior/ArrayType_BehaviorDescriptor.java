@@ -10,60 +10,60 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor implem
   public ArrayType_BehaviorDescriptor() {
   }
 
-  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
-    return ArrayType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
-  }
-
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
-  }
-
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
-  }
-
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
-  }
-
-  public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
-    return ArrayType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
-  }
-
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  }
-
-  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getErasure_702942408396803226(thisNode);
-  }
-
-  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
-  }
-
-  public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
-    return ArrayType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
-  }
-
-  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
-    return ArrayType_Behavior.virtual_getJavaType_1213877337345(thisNode);
-  }
-
-  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
   public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
+  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  }
+
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  }
+
+  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
+  }
+
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return ArrayType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  }
+
+  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
+  }
+
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
+  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getJavaType_1213877337345(thisNode);
+  }
+
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
+  }
+
+  public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return ArrayType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
+  }
+
+  public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    return ArrayType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
+  }
+
+  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return ArrayType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }
 
   @Override

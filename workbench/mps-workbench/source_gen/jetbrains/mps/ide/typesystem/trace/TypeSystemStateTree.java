@@ -237,7 +237,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           }
           for (SNode var : vars) {
             SNode node = check_x8yvv7_a0a0d0c0a0a0a0b0n(maps, var);
-            if (node != null && node.isRegistered()) {
+            if (node != null && node.getModel() != null) {
               EditorCell nodeCell = myEditorComponent.findNodeCell(node);
               if (nodeCell != null) {
                 messages.add(new TypeSystemStateTree.TypeEditorMessage(nodeCell, String.valueOf(var)));

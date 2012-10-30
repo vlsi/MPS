@@ -8,16 +8,16 @@ public class IntegerType_BehaviorDescriptor extends PrimitiveType_BehaviorDescri
   public IntegerType_BehaviorDescriptor() {
   }
 
-  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
-    return IntegerType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return IntegerType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
 
   public SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
     return IntegerType_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
   }
 
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return IntegerType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return IntegerType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }
 
   @Override

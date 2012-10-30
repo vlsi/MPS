@@ -5,19 +5,15 @@ package jetbrains.mps.build.mps.behavior;
 import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
   public BuildMps_IdeaPlugin_BehaviorDescriptor() {
-  }
-
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
-    return BuildMps_IdeaPlugin_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
   @Nullable
@@ -27,6 +23,10 @@ public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_Beh
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
+    return BuildMps_IdeaPlugin_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
   @Override

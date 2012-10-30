@@ -6,44 +6,44 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 
 public class MapType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public MapType_BehaviorDescriptor() {
   }
 
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return MapType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
   }
 
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }
 
-  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
-    return MapType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
-  }
-
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return MapType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
 
   public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
     return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
-  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
-    return MapType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
+    return MapType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
   }
 
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return MapType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  }
+
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return MapType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
   @Override

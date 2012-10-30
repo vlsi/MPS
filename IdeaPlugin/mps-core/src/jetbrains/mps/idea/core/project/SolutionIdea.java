@@ -32,13 +32,13 @@ import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -122,27 +122,18 @@ public class SolutionIdea extends Solution {
       myDependencies.addAll(myAddedDependencies);
 
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
-      for (Map.Entry<ModuleId, ModuleReference> e : LibrariesLoader.getInstance().getLoadedSolutions().entrySet()) {
-        ModuleReference lang = e.getValue();
-        if (getUsedLanguagesReferences().contains(lang)) {
-          Dependency dep = new Dependency();
-          dep.setModuleRef(new ModuleReference(null, e.getKey()));
-          dep.setReexport(false);
-          myDependencies.add(dep);
-        }
-      }
 
       /*
-      // project hasn't been opened yet, this will not work
+                     // project hasn't been opened yet, this will not work
 
-      Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
-      if (sourceStubSol!=null) {
-        Dependency dep = new Dependency();
-        dep.setModuleRef(sourceStubSol.getModuleReference());
-        dep.setReexport(false);
-        myDependencies.add(dep);
-      }
-      */
+                     Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
+                     if (sourceStubSol!=null) {
+                         Dependency dep = new Dependency();
+                         dep.setModuleRef(sourceStubSol.getModuleReference());
+                         dep.setReexport(false);
+                         myDependencies.add(dep);
+                     }
+                     */
 
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
@@ -263,8 +254,10 @@ public class SolutionIdea extends Solution {
 
   private void addLibs(SolutionDescriptor solutionDescriptor) {
     // removing all existing libraries
-    for (Iterator<ModelRoot> i = solutionDescriptor.getModelRoots().iterator(); i.hasNext(); ) {
-      if (i.next().getManager() == null) continue;//regular model
+    for (Iterator<ModelRootDescriptor> i = solutionDescriptor.getModelRootDescriptors().iterator(); i.hasNext(); ) {
+      ModelRootDescriptor next = i.next();
+      ModelRoot root = next.getRoot();
+      if (root == null || root.getManager() == null) continue;//regular model
       i.remove();
     }
 
@@ -282,7 +275,7 @@ public class SolutionIdea extends Solution {
     }
   }
 
-  public Module getIdeaModule(){
+  public Module getIdeaModule() {
     return myModule;
   }
 }

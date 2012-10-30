@@ -11,12 +11,12 @@ public class DataTypeDeclaration_BehaviorDescriptor extends BaseConcept_Behavior
   public DataTypeDeclaration_BehaviorDescriptor() {
   }
 
-  public SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return DataTypeDeclaration_Behavior.virtual_toBaseLanguageType_1213877229718(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
+    return DataTypeDeclaration_Behavior.virtual_toBaseLanguageType_1213877229718(thisNode);
   }
 
   @Override

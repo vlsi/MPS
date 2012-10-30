@@ -11,12 +11,12 @@ public class InvokeFunctionExpression_BehaviorDescriptor extends Expression_Beha
   public InvokeFunctionExpression_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return InvokeFunctionExpression_Behavior.virtual_isDeprecated_1224609060727(thisNode);
-  }
-
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  }
+
+  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
+    return InvokeFunctionExpression_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
   @Override

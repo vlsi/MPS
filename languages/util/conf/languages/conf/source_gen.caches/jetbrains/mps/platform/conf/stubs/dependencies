@@ -58,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.platform.conf.stubs.ConfReader" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -95,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.platform.conf.stubs.ConfPathItem" />
     <classNode dependClassName="jetbrains.mps.platform.conf.stubs.ConfStubSource" />
     <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />

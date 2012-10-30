@@ -51,6 +51,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.vcs.changes.Change;
 import jetbrains.mps.vcs.concrete.GitUtils;
 import com.intellij.openapi.vcs.VcsException;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -374,7 +375,7 @@ public class ChangesManagerTest {
   }
 
   private SNode createNewRoot(SModel modelContent) {
-    SNode root = (SNode) new SNode(modelContent, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode root = (SNode) new SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.ClassConcept"));
     SPropertyOperations.set(root, "name", "NewRoot");
     SModelOperations.addRootNode(modelContent, root);
     return root;
@@ -700,7 +701,7 @@ public class ChangesManagerTest {
     });
     doSomethingAndUndo(myUiDiff, true, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode ifBefore = (SNode) new SNode(SNodeOperations.getModel(root.value), "jetbrains.mps.baseLanguage.structure.IfStatement");
+        SNode ifBefore = (SNode) new SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.IfStatement"));
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
         return root.value;
       }

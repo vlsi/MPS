@@ -9,12 +9,12 @@ public class SeqRegexp_BehaviorDescriptor extends BinaryRegexp_BehaviorDescripto
   public SeqRegexp_BehaviorDescriptor() {
   }
 
-  public boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
-    return SeqRegexp_Behavior.virtual_needParentheses_1353467374623880338(thisNode);
-  }
-
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return SeqRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
+  }
+
+  public boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
+    return SeqRegexp_Behavior.virtual_needParentheses_1353467374623880338(thisNode);
   }
 
   @Override

@@ -9,6 +9,10 @@ public class BuildLayout_Tar_BehaviorDescriptor extends BuildLayout_NamedContain
   public BuildLayout_Tar_BehaviorDescriptor() {
   }
 
+  public String virtual_getFileSetExtension_6408167411310575216(SNode thisNode) {
+    return BuildLayout_Tar_Behavior.virtual_getFileSetExtension_6408167411310575216(thisNode);
+  }
+
   public boolean virtual_hasFileModeAttribute_6408167411310575237(SNode thisNode) {
     return BuildLayout_Tar_Behavior.virtual_hasFileModeAttribute_6408167411310575237(thisNode);
   }
@@ -17,16 +21,12 @@ public class BuildLayout_Tar_BehaviorDescriptor extends BuildLayout_NamedContain
     return BuildLayout_Tar_Behavior.virtual_hasPrefixAttribute_6408167411310575232(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    BuildLayout_Tar_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
-
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return BuildLayout_Tar_Behavior.virtual_isFile_1368030936106753986(thisNode);
   }
 
-  public String virtual_getFileSetExtension_6408167411310575216(SNode thisNode) {
-    return BuildLayout_Tar_Behavior.virtual_getFileSetExtension_6408167411310575216(thisNode);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_Tar_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   @Override

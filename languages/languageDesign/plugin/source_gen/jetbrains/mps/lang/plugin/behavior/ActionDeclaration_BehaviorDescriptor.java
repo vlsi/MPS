@@ -7,29 +7,49 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescr
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
-import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
+import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ActionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClassifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ActionDeclaration_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
+    return IClassifier_Behavior.virtual_createSuperType_1217433657148(thisNode);
   }
 
   public SNode virtual_createType_1213877527970(SNode thisNode) {
     return ActionDeclaration_Behavior.virtual_createType_1213877527970(thisNode);
   }
 
-  public List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
-    return IClassifier_Behavior.virtual_getMembers_1213877528124(thisNode);
+  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+    return ICheckedNamePolicy_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
+  }
+
+  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
+    return ICheckedNamePolicy_Behavior.virtual_getDescendantsToCheck_4844813484172611413(thisNode);
+  }
+
+  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
+    return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     return IClassifier_Behavior.virtual_getMembers_1213877528020(thisNode, contextNode);
+  }
+
+  public List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
+    return IClassifier_Behavior.virtual_getMembers_1213877528124(thisNode);
   }
 
   public List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
@@ -40,36 +60,16 @@ public class ActionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDe
     return ICheckedNamePolicy_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
   }
 
-  public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
-    return IClassifier_Behavior.virtual_createSuperType_1217433657148(thisNode);
-  }
-
-  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
-    return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
-  }
-
   public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return ActionDeclaration_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
-  }
-
-  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
-
-  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantsToCheck_4844813484172611413(thisNode);
-  }
-
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return ActionDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
-  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
 
   @Override

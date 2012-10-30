@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -28,10 +27,7 @@ public class GenerationTracerUtil {
   public static SNodePointer getSNodePointer(SModel model, SNode node) {
     //this is a hack to somehow show input nodes created during generation (e.g. .type.copy)
     //actually, we should put another TracerNode here. showing the node is not from an input model at all
-    if (model == null) {
-      model = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    }
-    return new SNodePointer(model.getSModelReference(), node.getSNodeId());
+    return new SNodePointer(model == null ? null : model.getSModelReference(), node.getSNodeId());
   }
 
 }

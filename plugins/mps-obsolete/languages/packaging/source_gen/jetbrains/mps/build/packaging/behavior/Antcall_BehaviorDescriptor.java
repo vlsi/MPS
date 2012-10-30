@@ -9,16 +9,16 @@ public class Antcall_BehaviorDescriptor extends AbstractProjectComponent_Behavio
   public Antcall_BehaviorDescriptor() {
   }
 
+  public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
+    return Antcall_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
+  }
+
   public String virtual_getExcludes_1213877279373(SNode thisNode) {
     return ICompositeComponent_Behavior.virtual_getExcludes_1213877279373(thisNode);
   }
 
   public String virtual_getIncludes_1213877279430(SNode thisNode) {
     return ICompositeComponent_Behavior.virtual_getIncludes_1213877279430(thisNode);
-  }
-
-  public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
-    return Antcall_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
   }
 
   public List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {

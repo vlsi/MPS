@@ -34,8 +34,6 @@ import java.util.Set;
 public abstract class TypeCheckingContext {
   public abstract SubtypingManager getSubtypingManager();
 
-  public abstract SModel getRuntimeTypesModel();
-
   public abstract Map<SNode, SNode> getMainContext();
 
   public abstract SNode getRepresentative(SNode node);

@@ -5,26 +5,26 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 import java.util.Set;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 
 public class Statement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ICanSuppressErrors_BehaviorDescriptor {
   public Statement_BehaviorDescriptor() {
   }
 
-  @Nullable
-  public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return TraceableConcept_Behavior.virtual_getTraceableProperty_5067982036267369901(thisNode);
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    Statement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
 
   public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
     return ILocalVariableElement_Behavior.virtual_getLocalVariableDeclaration_1238803857389(thisNode);
   }
 
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    Statement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  @Nullable
+  public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
+    return TraceableConcept_Behavior.virtual_getTraceableProperty_5067982036267369901(thisNode);
   }
 
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {

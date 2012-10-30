@@ -9,12 +9,12 @@ public class CopySrcNodeMacro_BehaviorDescriptor extends SourceSubstituteMacro_B
   public CopySrcNodeMacro_BehaviorDescriptor() {
   }
 
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return CopySrcNodeMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return CopySrcNodeMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
+  }
+
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return CopySrcNodeMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   @Override

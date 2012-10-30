@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -120,7 +121,7 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    SNode targetNode = new SNode(sourceNode.getModel(), sourceNode.getConcept().getId());
+    SNode targetNode = new SNode(InternUtil.intern(sourceNode.getConcept().getId()));
     targetNode.setId(SNodeId.fromString(sourceNode.getSNodeId().toString()));
     targetNode.putProperties(sourceNode);
     sourceNodesToNewNodes.put(sourceNode, targetNode);

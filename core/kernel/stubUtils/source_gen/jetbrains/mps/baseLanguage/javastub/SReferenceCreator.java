@@ -15,8 +15,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.StubModelsResolver;
 
 public class SReferenceCreator implements SReferenceHandler {
@@ -51,7 +49,6 @@ public class SReferenceCreator implements SReferenceHandler {
 
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, model.getStereotype()), moduleRef, false);
-    assert !(AuxilaryRuntimeModel.isAuxModel(SNodeOperations.getModel(source)));
     model.addModelImport(SetSequence.fromSet(models).first(), false);
     return SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }

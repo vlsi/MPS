@@ -23,7 +23,6 @@ import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelFqName;
@@ -292,10 +291,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   public SModelFqName getRuntimeTypesModelUID() {
     return TYPES_MODEL_UID;
-  }
-
-  public SModel getRuntimeTypesModel() {
-    return AuxilaryRuntimeModel.getDescriptor().getSModel();
   }
 
   public boolean isGlobalIncrementalMode() {

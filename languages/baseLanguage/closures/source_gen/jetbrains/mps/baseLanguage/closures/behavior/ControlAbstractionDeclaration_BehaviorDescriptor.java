@@ -7,41 +7,41 @@ import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
-import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
+import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor {
   public ControlAbstractionDeclaration_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
-  }
-
-  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
-  }
-
-  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+    return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  }
+
+  public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
-  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
-    return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   @Override

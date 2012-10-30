@@ -8,8 +8,8 @@ public class XmlText_BehaviorDescriptor extends XmlContent_BehaviorDescriptor {
   public XmlText_BehaviorDescriptor() {
   }
 
-  public boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
-    return XmlText_Behavior.virtual_onNewLine_2133624044437631588(thisNode);
+  public boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
+    return XmlText_Behavior.virtual_hasNewLineAfter_2133624044437631594(thisNode);
   }
 
   public boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
@@ -20,8 +20,8 @@ public class XmlText_BehaviorDescriptor extends XmlContent_BehaviorDescriptor {
     return XmlText_Behavior.virtual_isLastPositionAllowed_2133624044437631519(thisNode);
   }
 
-  public boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
-    return XmlText_Behavior.virtual_hasNewLineAfter_2133624044437631594(thisNode);
+  public boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
+    return XmlText_Behavior.virtual_onNewLine_2133624044437631588(thisNode);
   }
 
   @Override

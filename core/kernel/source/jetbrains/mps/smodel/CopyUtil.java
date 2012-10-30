@@ -136,7 +136,7 @@ public final class CopyUtil {
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     if (node == null) return null;
 
-    SNode result = new SNode(null, node.getConcept().getId(), false);
+    SNode result = new SNode(node.getConcept().getId());
     mapping.put(node, result);
     jetbrains.mps.util.SNodeOperations.copyProperties(node, result);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(node, result);

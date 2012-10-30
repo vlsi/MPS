@@ -5,34 +5,34 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
-import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.checkedName.PropertyReference;
 
 public class EditorTab_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor {
   public EditorTab_BehaviorDescriptor() {
   }
 
-  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
+  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+    return ICheckedNamePolicy_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
   }
 
   public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
     return ICheckedNamePolicy_Behavior.virtual_getDescendantsToCheck_4844813484172611413(thisNode);
   }
 
-  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    return EditorTab_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
-  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
+  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
+    return EditorTab_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
+  }
+
+  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
+    return ICheckedNamePolicy_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
   }
 
   @Override

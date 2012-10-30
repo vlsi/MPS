@@ -8,12 +8,12 @@ public class GenerationContextOp_LinkPatternRef_BehaviorDescriptor extends Gener
   public GenerationContextOp_LinkPatternRef_BehaviorDescriptor() {
   }
 
-  public void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
-    GenerationContextOp_LinkPatternRef_Behavior.virtual_setTarget_1758784108620254533(thisNode, target);
-  }
-
   public SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
     return GenerationContextOp_LinkPatternRef_Behavior.virtual_getTarget_1758784108620114792(thisNode);
+  }
+
+  public void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
+    GenerationContextOp_LinkPatternRef_Behavior.virtual_setTarget_1758784108620254533(thisNode, target);
   }
 
   @Override

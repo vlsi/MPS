@@ -18,16 +18,18 @@ package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StubSolution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 /**
  * User: shatalin
@@ -43,12 +45,18 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
   }
 
   public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots, ModelRootManager rootMgr) {
-    for (VirtualFile f : roots) {
-      ModelRoot modelRoot = new ModelRoot(getLocalPath(f), rootMgr);
-      if (solutionDescriptor.getModelRoots().contains(modelRoot)) {
-        continue;
+    Set<String> seenPaths = new HashSet<String>();
+    for (ModelRootDescriptor d : solutionDescriptor.getModelRootDescriptors()) {
+      ModelRoot root = d.getRoot();
+      if (root != null && EqualUtil.equals(root.getManager(), rootMgr)) {
+        seenPaths.add(root.getPath());
       }
-      solutionDescriptor.getModelRoots().add(modelRoot);
+    }
+    for (VirtualFile f : roots) {
+      SModelRoot modelRoot = new SModelRoot(rootMgr);
+      modelRoot.setPath(getLocalPath(f));
+      if (!seenPaths.add(modelRoot.getPath())) continue;
+      solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     }
   }
 

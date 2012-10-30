@@ -5,19 +5,15 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.build.util.MacroHelper;
 
 public abstract class BuildStringPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public BuildStringPart_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
-    return BuildStringPart_Behavior.virtual_isLastPositionAllowed_624440001685490925(thisNode);
-  }
-
-  public boolean virtual_punctuationLeft_5096397858823356723(SNode thisNode) {
-    return BuildStringPart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
@@ -28,8 +24,12 @@ public abstract class BuildStringPart_BehaviorDescriptor extends BaseConcept_Beh
     return BuildStringPart_Behavior.virtual_isFirstPositionAllowed_624440001685459414(thisNode);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
+    return BuildStringPart_Behavior.virtual_isLastPositionAllowed_624440001685490925(thisNode);
+  }
+
+  public boolean virtual_punctuationLeft_5096397858823356723(SNode thisNode) {
+    return BuildStringPart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
   }
 
   @Override

@@ -473,7 +473,11 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "isAbstract")) && ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(it).startsWith("virtual_");
       }
-    });
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_7923290658387314629(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

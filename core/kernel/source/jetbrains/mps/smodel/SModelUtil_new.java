@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -124,11 +123,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
-    if (model == null) {
-      model = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    }
-    assert model != null;
-    boolean isNotProjectModel = !ProjectModels.isProjectModel(model.getSModelReference());
+    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getSModelReference());
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
       if (fqName != null) {

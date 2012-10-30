@@ -8,12 +8,12 @@ public class CellModel_ModelAccess_BehaviorDescriptor extends CellModel_Abstract
   public CellModel_ModelAccess_BehaviorDescriptor() {
   }
 
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_ModelAccess_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_ModelAccess_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_ModelAccess_Behavior.virtual_getOpeningText_1220339714057(thisNode);
   }
 
   @Override

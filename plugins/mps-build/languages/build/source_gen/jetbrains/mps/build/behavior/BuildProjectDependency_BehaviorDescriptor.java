@@ -10,16 +10,16 @@ public class BuildProjectDependency_BehaviorDescriptor extends BuildDependency_B
   public BuildProjectDependency_BehaviorDescriptor() {
   }
 
+  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    BuildProjectDependency_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  }
+
   public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return BuildProjectDependency_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
   }
 
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildProjectDependency_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
-
-  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    BuildProjectDependency_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
 
   @Override

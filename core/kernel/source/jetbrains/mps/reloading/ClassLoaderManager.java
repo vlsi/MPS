@@ -19,15 +19,19 @@ import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -43,6 +47,8 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Map<String, ModuleReference> myLoadedClasses = new THashMap<String, ModuleReference>();
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
+
+  private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
 
   public ClassLoaderManager() {
 
@@ -77,12 +83,7 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.advance(1);
 
       monitor.step("Updating stub models...");
-      safeInvoke(new Runnable() {
-        @Override
-        public void run() {
-          LibrariesLoader.getInstance().loadNewLibs();
-        }
-      });
+      updateModels();
       monitor.advance(1);
 
       monitor.step("Updating language registry...");
@@ -104,6 +105,21 @@ public class ClassLoaderManager implements CoreComponent {
     } finally {
       monitor.done();
     }
+  }
+
+  public void updateModels() {
+    // TODO remove hack: model root managers are "reloadable", so models can be updated only on reload
+    safeInvoke(new Runnable() {
+      @Override
+      public void run() {
+        for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
+          if (!(m instanceof AbstractModule)) continue;
+          if (myLoadedModules.contains(m.getModuleReference())) continue;
+          myLoadedModules.add(m.getModuleReference());
+          ((AbstractModule) m).updateModelsSet();
+        }
+      }
+    });
   }
 
   public void unloadAll(@NotNull ProgressMonitor monitor) {
