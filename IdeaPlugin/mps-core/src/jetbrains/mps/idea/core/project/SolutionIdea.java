@@ -39,7 +39,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -123,27 +122,18 @@ public class SolutionIdea extends Solution {
       myDependencies.addAll(myAddedDependencies);
 
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
-      for (Map.Entry<ModuleId, ModuleReference> e : LibrariesLoader.getInstance().getLoadedSolutions().entrySet()) {
-        ModuleReference lang = e.getValue();
-        if (getUsedLanguagesReferences().contains(lang)) {
-          Dependency dep = new Dependency();
-          dep.setModuleRef(new ModuleReference(null, e.getKey()));
-          dep.setReexport(false);
-          myDependencies.add(dep);
-        }
-      }
 
       /*
-          // project hasn't been opened yet, this will not work
+                     // project hasn't been opened yet, this will not work
 
-          Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
-          if (sourceStubSol!=null) {
-            Dependency dep = new Dependency();
-            dep.setModuleRef(sourceStubSol.getModuleReference());
-            dep.setReexport(false);
-            myDependencies.add(dep);
-          }
-          */
+                     Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
+                     if (sourceStubSol!=null) {
+                         Dependency dep = new Dependency();
+                         dep.setModuleRef(sourceStubSol.getModuleReference());
+                         dep.setReexport(false);
+                         myDependencies.add(dep);
+                     }
+                     */
 
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
