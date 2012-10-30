@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -114,14 +113,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   }
 
   public SNode getActionType(String pattern) {
-    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    SNode type = null;
-    SNode node = createChildNode(getParameterObject(), auxModel, pattern);
-    if (!node.isRoot()) {
-      auxModel.addRoot(node);
-    }
-    type = ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);
-    auxModel.removeRoot(node);
-    return type;
+    SNode node = createChildNode(getParameterObject(), null, pattern);
+    return ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);
   }
 }

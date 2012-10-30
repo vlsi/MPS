@@ -161,7 +161,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static boolean isRegistered(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).isRegistered();
+    return ((jetbrains.mps.smodel.SNode) node).getModel() != null;
   }
 
   /**

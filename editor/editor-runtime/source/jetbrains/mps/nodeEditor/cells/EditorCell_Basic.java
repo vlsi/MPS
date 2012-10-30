@@ -31,11 +31,9 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.*;
 
 import java.awt.Color;
@@ -520,7 +518,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }
-    SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
+    SNode newNode = new SNode(InternUtil.intern(concreteConceptFqName));
     org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
     editorContext.flushEvents();
     return newNode;

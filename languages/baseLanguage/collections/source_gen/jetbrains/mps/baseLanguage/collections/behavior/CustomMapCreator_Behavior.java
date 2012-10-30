@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -18,9 +17,6 @@ public class CustomMapCreator_Behavior {
   public static SNode call_createType_1576845966386891475(SNode thisNode) {
     SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
     //  workaround an SModel's dumbness 
-    if (res != null) {
-      res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
-    }
     final List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
     if ((SLinkOperations.getTarget(thisNode, "keyType", true) != null)) {
       ListSequence.fromList(params).addElement(SLinkOperations.getTarget(thisNode, "keyType", true));

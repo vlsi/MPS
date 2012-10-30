@@ -126,6 +126,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.util.InternUtil" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.NodeGroupChange" file="NodeGroupChange.java">
     <classNode dependClassName="java.lang.Object" />

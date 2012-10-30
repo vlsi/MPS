@@ -170,7 +170,7 @@ public class TypesUtil {
 
   public static SNode createRuntimeErrorType() {
     return SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType",
-      TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+      null, GlobalScope.getInstance(), false);
   }
 
 }

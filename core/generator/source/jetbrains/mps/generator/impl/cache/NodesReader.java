@@ -51,7 +51,7 @@ public class NodesReader {
       throw new IOException("bad stream, no '{'");
     }
 
-    SNode node = new SNode(model, conceptFqName, true);
+    SNode node = new SNode(InternUtil.intern(conceptFqName));
     node.setId(nodeId);
 
     readProperties(is, node);

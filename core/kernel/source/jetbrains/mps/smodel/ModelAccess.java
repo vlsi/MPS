@@ -161,7 +161,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   protected static boolean isInRegisteredModel(SNode node) {
     SModel model = node.getModelInternal();
-    if (model==null) return false;
+    if (model == null) return false;
     return model.isRegistered();
   }
 
@@ -173,11 +173,9 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   protected void onCommandStarted() {
     UnregisteredNodes.instance().enable();
-    ImmatureReferences.getInstance().enable();
   }
 
   protected void onCommandFinished() {
-    ImmatureReferences.getInstance().disable();
     UnregisteredNodes.instance().disable();
   }
 

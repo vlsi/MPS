@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
@@ -437,7 +438,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      SNode node = new SNode(fieldmodel, conceptFQName);
+      SNode node = new SNode(InternUtil.intern(conceptFQName));
       VersionUtil.fetchConceptVersion(rawFqName, node, fieldversionsInfo);
       return node;
     }

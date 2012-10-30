@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -18,9 +17,6 @@ public class CustomContainerCreator_Behavior {
   public static SNode virtual_createType_1237722437229(final SNode thisNode) {
     SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
     //  workaround an SModel's dumbness 
-    if (res != null) {
-      res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
-    }
     ListSequence.fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode chld) {
         if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {

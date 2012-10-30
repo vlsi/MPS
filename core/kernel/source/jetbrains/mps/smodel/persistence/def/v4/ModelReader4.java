@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -218,7 +219,7 @@ public class ModelReader4 implements IModelReader {
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     String conceptFqName = VersionUtil.getConceptFQName(rawFqName);
-    SNode node = new SNode(model, conceptFqName);
+    SNode node = new SNode(InternUtil.intern(conceptFqName));
     VersionUtil.fetchConceptVersion(rawFqName, node, versionsInfo);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);

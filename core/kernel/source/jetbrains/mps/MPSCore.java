@@ -27,7 +27,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.PathMacros;
@@ -87,8 +86,6 @@ public class MPSCore extends ComponentPlugin {
     init(new LibraryInitializer(myModuleRepository, classLoaderManager));
     init(new GlobalScope(myModuleRepository, myModelRepository));
     init(new GlobalScopeMinusTransient(myModuleRepository, myModelRepository));
-    init(new AuxilaryRuntimeModel(myModelRepository));
-    init(new ImmatureReferences(myModelRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());

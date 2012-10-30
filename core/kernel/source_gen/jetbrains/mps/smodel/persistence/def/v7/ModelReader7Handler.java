@@ -455,7 +455,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SNode(null, fieldhelper.readType(attrs.getValue("type")));
+      return new SNode(fieldhelper.readType(attrs.getValue("type")));
     }
 
     @Override

@@ -147,7 +147,7 @@
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="443" startPosition="9" endLine="444" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="445" startPosition="7" endLine="446" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="450" startPosition="78" endLine="451" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="286176397450364390" fileName="ModelReader7Handler.java" startLine="457" startPosition="52" endLine="458" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="286176397450364390" fileName="ModelReader7Handler.java" startLine="457" startPosition="52" endLine="458" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="462" startPosition="45" endLine="463" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="467" startPosition="104" endLine="468" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="469" startPosition="32" endLine="470" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -393,7 +393,7 @@
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="422" startPosition="30" endLine="423" endPosition="15" />
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="430" startPosition="35" endLine="431" endPosition="27" />
     <scopeInfo nodeId="2301870845769311888" fileName="ModelReader7Handler.java" startLine="441" startPosition="28" endLine="442" endPosition="50" />
-    <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="457" startPosition="52" endLine="458" endPosition="75" />
+    <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="457" startPosition="52" endLine="458" endPosition="69" />
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="462" startPosition="45" endLine="463" endPosition="32" />
     <scopeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="469" startPosition="32" endLine="470" endPosition="15" />
     <scopeInfo nodeId="286176397450364368" fileName="ModelReader7Handler.java" startLine="486" startPosition="25" endLine="487" endPosition="59" />
