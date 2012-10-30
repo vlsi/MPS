@@ -11,12 +11,12 @@ public class RuntimeTypeVariable_BehaviorDescriptor extends Type_BehaviorDescrip
   public RuntimeTypeVariable_BehaviorDescriptor() {
   }
 
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return RuntimeTypeVariable_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return RuntimeTypeVariable_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
   @Override

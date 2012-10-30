@@ -12,16 +12,16 @@ public abstract class AbstractConceptDeclaration_BehaviorDescriptor extends Base
   public AbstractConceptDeclaration_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
+    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
   @Override

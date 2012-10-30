@@ -18,16 +18,16 @@ public abstract class NodeOperation_BehaviorDescriptor extends BaseConcept_Behav
     return NodeOperation_Behavior.virtual_getTestCase_1216134500045(thisNode);
   }
 
+  public String virtual_getTestName_1216136419751(SNode thisNode) {
+    return NodeOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
+  }
+
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return NodeOperation_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   public void virtual_perform_1215601182156(SNode thisNode, SNode node) {
     NodeOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
-  }
-
-  public String virtual_getTestName_1216136419751(SNode thisNode) {
-    return NodeOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
 
   @Override

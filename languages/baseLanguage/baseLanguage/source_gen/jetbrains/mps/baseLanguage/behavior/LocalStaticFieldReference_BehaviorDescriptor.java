@@ -9,16 +9,16 @@ public class LocalStaticFieldReference_BehaviorDescriptor extends VariableRefere
   public LocalStaticFieldReference_BehaviorDescriptor() {
   }
 
+  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+    return LocalStaticFieldReference_Behavior.virtual_eval_1213877519769(thisNode, module);
+  }
+
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return LocalStaticFieldReference_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 
   public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return LocalStaticFieldReference_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
-  }
-
-  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
-    return LocalStaticFieldReference_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
 
   @Override

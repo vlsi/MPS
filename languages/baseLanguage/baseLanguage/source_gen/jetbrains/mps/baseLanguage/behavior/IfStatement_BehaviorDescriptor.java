@@ -9,16 +9,16 @@ public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor
   public IfStatement_BehaviorDescriptor() {
   }
 
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    IfStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  }
+
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
   }
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IfStatement_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
-  }
-
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    IfStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
 
   @Override

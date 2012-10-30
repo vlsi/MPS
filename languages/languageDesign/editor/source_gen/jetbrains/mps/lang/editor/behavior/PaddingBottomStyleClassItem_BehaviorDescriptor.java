@@ -8,12 +8,12 @@ public class PaddingBottomStyleClassItem_BehaviorDescriptor extends AbstractPadd
   public PaddingBottomStyleClassItem_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return PaddingBottomStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  }
-
   public boolean virtual_canUseSpaces_1226492824000(SNode thisNode) {
     return PaddingBottomStyleClassItem_Behavior.virtual_canUseSpaces_1226492824000(thisNode);
+  }
+
+  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
+    return PaddingBottomStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
   }
 
   @Override

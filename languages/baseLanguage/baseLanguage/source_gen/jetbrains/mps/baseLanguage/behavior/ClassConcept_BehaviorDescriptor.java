@@ -4,34 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
-import java.util.List;
-import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
+import java.util.List;
+import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ClassConcept_BehaviorDescriptor() {
-  }
-
-  public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
-  }
-
-  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
-  }
-
-  public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
-    return ClassConcept_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
-  }
-
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
-  }
-
-  public String virtual_getMessage_1225207468592(SNode thisNode) {
-    return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
@@ -42,24 +22,28 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
   }
 
-  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
+  public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
   }
 
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return ClassConcept_Behavior.virtual_getMembers_1213877531970(thisNode);
   }
 
-  public boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
+  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+    return ClassConcept_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
 
-  public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getSuperclass_1240936569950(thisNode);
+  public String virtual_getMessage_1225207468592(SNode thisNode) {
+    return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
 
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  }
+
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
   }
 
   public List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
@@ -70,12 +54,28 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
-  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
-    return ClassConcept_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
+  public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_getSuperclass_1240936569950(thisNode);
   }
 
-  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
+  }
+
+  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
+  }
+
+  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
+    return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
+  }
+
+  public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
+    return ClassConcept_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
+  }
+
+  public boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
   }
 
   @Override

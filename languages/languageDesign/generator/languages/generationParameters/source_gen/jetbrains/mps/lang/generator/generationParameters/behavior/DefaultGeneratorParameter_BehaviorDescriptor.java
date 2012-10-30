@@ -12,12 +12,12 @@ public class DefaultGeneratorParameter_BehaviorDescriptor extends BaseConcept_Be
   public DefaultGeneratorParameter_BehaviorDescriptor() {
   }
 
-  public String virtual_getUniqueId_650531548511609559(SNode thisNode) {
-    return DefaultGeneratorParameter_Behavior.virtual_getUniqueId_650531548511609559(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public String virtual_getUniqueId_650531548511609559(SNode thisNode) {
+    return DefaultGeneratorParameter_Behavior.virtual_getUniqueId_650531548511609559(thisNode);
   }
 
   @Override

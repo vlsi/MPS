@@ -11,12 +11,12 @@ public class AsBuilderStatement_BehaviorDescriptor extends Statement_BehaviorDes
   public AsBuilderStatement_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
-    return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
-  }
-
   public boolean virtual_isLeaf_932644095877881871(SNode thisNode) {
     return BuilderContainer_Behavior.virtual_isLeaf_932644095877881871(thisNode);
+  }
+
+  public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
+    return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
   }
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {

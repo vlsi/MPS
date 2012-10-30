@@ -11,12 +11,12 @@ public abstract class BuildMacro_BehaviorDescriptor extends BaseConcept_Behavior
   public BuildMacro_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isPublic_6547494638219688113(SNode thisNode) {
-    return BuildMacro_Behavior.virtual_isPublic_6547494638219688113(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public boolean virtual_isPublic_6547494638219688113(SNode thisNode) {
+    return BuildMacro_Behavior.virtual_isPublic_6547494638219688113(thisNode);
   }
 
   @Override

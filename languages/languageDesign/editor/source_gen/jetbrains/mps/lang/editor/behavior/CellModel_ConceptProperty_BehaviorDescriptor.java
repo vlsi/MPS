@@ -9,10 +9,6 @@ public class CellModel_ConceptProperty_BehaviorDescriptor extends CellModel_With
   public CellModel_ConceptProperty_BehaviorDescriptor() {
   }
 
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_ConceptProperty_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
   public String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return CellModel_ConceptProperty_Behavior.virtual_createCellId_1216737839993(thisNode, gc);
   }
@@ -21,12 +17,16 @@ public class CellModel_ConceptProperty_BehaviorDescriptor extends CellModel_With
     return CellModel_ConceptProperty_Behavior.virtual_getClosingText_1220339738643(thisNode);
   }
 
-  public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
-    return CellModel_ConceptProperty_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
-  }
-
   public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return CellModel_ConceptProperty_Behavior.virtual_getDefaultFontStyle_1221472292001(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_ConceptProperty_Behavior.virtual_getOpeningText_1220339714057(thisNode);
+  }
+
+  public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
+    return CellModel_ConceptProperty_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
   }
 
   @Override

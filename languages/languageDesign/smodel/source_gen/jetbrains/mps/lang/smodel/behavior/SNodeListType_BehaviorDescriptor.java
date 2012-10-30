@@ -10,28 +10,28 @@ public class SNodeListType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SNodeListType_BehaviorDescriptor() {
   }
 
-  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
-    return SNodeListType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
-  }
-
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return SNodeListType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return SNodeListType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
   }
 
   public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return SNodeListType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }
 
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return SNodeListType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SNodeListType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
-  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
-    return SNodeListType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+    return SNodeListType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
 
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return SNodeListType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return SNodeListType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
   }
 
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {

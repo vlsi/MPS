@@ -5,11 +5,31 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import jetbrains.mps.scope.Scope;
 import java.util.List;
+import jetbrains.mps.scope.Scope;
 
 public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
   public Interface_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
+    return Interface_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
+  }
+
+  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    return Interface_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
+  }
+
+  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
+    return Interface_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
+  }
+
+  public String virtual_getMessage_1225207468592(SNode thisNode) {
+    return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  }
+
+  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
+    return Interface_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
   }
 
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
@@ -18,26 +38,6 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
 
   public boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
     return Interface_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
-  }
-
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return Interface_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
-  }
-
-  public String virtual_getMessage_1225207468592(SNode thisNode) {
-    return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
-  }
-
-  public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
-    return Interface_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
-  }
-
-  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
-    return Interface_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
-  }
-
-  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    return Interface_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
   }
 
   @Override

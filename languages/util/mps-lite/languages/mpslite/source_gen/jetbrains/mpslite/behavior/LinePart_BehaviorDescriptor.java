@@ -10,12 +10,12 @@ public abstract class LinePart_BehaviorDescriptor extends BaseConcept_BehaviorDe
   public LinePart_BehaviorDescriptor() {
   }
 
-  public void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    LinePart_Behavior.virtual_fillConceptStructure_1238593834306(thisNode, concept, conceptsToTargets, partsToLinks);
-  }
-
   public SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     return LinePart_Behavior.virtual_createCellModel_1238614099938(thisNode, partsToLinks);
+  }
+
+  public void virtual_fillConceptStructure_1238593834306(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
+    LinePart_Behavior.virtual_fillConceptStructure_1238593834306(thisNode, concept, conceptsToTargets, partsToLinks);
   }
 
   @Override

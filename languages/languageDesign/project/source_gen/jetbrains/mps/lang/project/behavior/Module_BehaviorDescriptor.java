@@ -10,16 +10,16 @@ public abstract class Module_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public Module_BehaviorDescriptor() {
   }
 
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return Module_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
   public String virtual_getModuleReference_9020561928507315628(SNode thisNode) {
     return Module_Behavior.virtual_getModuleReference_9020561928507315628(thisNode);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return Module_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return Module_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   @Override

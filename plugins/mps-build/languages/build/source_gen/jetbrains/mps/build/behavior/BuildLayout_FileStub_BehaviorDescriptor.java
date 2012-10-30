@@ -9,10 +9,6 @@ public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_Be
   public BuildLayout_FileStub_BehaviorDescriptor() {
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    BuildLayout_FileStub_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
-
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildLayout_FileStub_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
@@ -23,6 +19,10 @@ public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_Be
 
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return BuildLayout_FileStub_Behavior.virtual_isFile_1368030936106753986(thisNode);
+  }
+
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_FileStub_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   @Override

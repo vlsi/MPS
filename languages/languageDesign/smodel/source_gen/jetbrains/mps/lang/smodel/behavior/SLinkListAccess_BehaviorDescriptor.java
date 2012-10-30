@@ -8,20 +8,20 @@ public class SLinkListAccess_BehaviorDescriptor extends SNodeOperation_BehaviorD
   public SLinkListAccess_BehaviorDescriptor() {
   }
 
-  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    return SLinkListAccess_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
-  }
-
-  public boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return SLinkListAccess_Behavior.virtual_isSingularCardinality_4024382256428848847(thisNode);
-  }
-
   public SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
     return SLinkListAccess_Behavior.virtual_getTargetConcept_4024382256428848859(thisNode);
   }
 
+  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
+    return SLinkListAccess_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
+  }
+
   public boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return SLinkListAccess_Behavior.virtual_isAggregation_4024382256428848854(thisNode);
+  }
+
+  public boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
+    return SLinkListAccess_Behavior.virtual_isSingularCardinality_4024382256428848847(thisNode);
   }
 
   @Override

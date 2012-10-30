@@ -9,12 +9,12 @@ public class CommandBuilderExpression_BehaviorDescriptor extends Expression_Beha
   public CommandBuilderExpression_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
-    return CommandBuilderExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return CommandBuilderExpression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
+  }
+
+  public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return CommandBuilderExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
 
   @Override

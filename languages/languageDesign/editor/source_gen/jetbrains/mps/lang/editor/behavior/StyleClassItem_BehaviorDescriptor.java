@@ -9,12 +9,12 @@ public abstract class StyleClassItem_BehaviorDescriptor extends BaseConcept_Beha
   public StyleClassItem_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return StyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  }
-
   public SNode virtual_getStyleConstant_1215703564594(SNode thisNode) {
     return StyleClassItem_Behavior.virtual_getStyleConstant_1215703564594(thisNode);
+  }
+
+  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
+    return StyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
   }
 
   @Override

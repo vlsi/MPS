@@ -9,20 +9,20 @@ public class CellModel_Component_BehaviorDescriptor extends EditorCellModel_Beha
   public CellModel_Component_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
-    return CellModel_Component_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
-  }
-
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_Component_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
   public String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return CellModel_Component_Behavior.virtual_createCellId_1216737839993(thisNode, gc);
   }
 
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_Component_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_Component_Behavior.virtual_getOpeningText_1220339714057(thisNode);
+  }
+
+  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+    return CellModel_Component_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
   }
 
   @Override

@@ -10,16 +10,16 @@ public class _LinkAccessT_BehaviorDescriptor extends Type_BehaviorDescriptor imp
   public _LinkAccessT_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return _LinkAccessT_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return _LinkAccessT_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
   public SNode virtual_getPublicType_1213877443338(SNode thisNode) {
     return _LinkAccessT_Behavior.virtual_getPublicType_1213877443338(thisNode);
-  }
-
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return _LinkAccessT_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
 
   @Override

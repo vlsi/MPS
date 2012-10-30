@@ -5,11 +5,15 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
+import jetbrains.mps.smodel.SModel;
 
 public class OptionType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IWillBeClassifier_BehaviorDescriptor {
   public OptionType_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
+    return IWillBeClassifier_Behavior.virtual_baseClassifier_4125795553993767872(thisNode);
   }
 
   public String virtual_classifierName_4609636120081351397(SNode thisNode) {
@@ -18,10 +22,6 @@ public class OptionType_BehaviorDescriptor extends Type_BehaviorDescriptor imple
 
   public SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
     return IWillBeClassifier_Behavior.virtual_resolve_4609636120081469956(thisNode, targetModel);
-  }
-
-  public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
-    return IWillBeClassifier_Behavior.virtual_baseClassifier_4125795553993767872(thisNode);
   }
 
   @Override

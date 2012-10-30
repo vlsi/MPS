@@ -8,24 +8,24 @@ public abstract class ConceptFunctionParameter_BehaviorDescriptor extends Expres
   public ConceptFunctionParameter_BehaviorDescriptor() {
   }
 
-  public boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_needConceptFunction_1236687728308(thisNode);
+  public SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
+    return ConceptFunctionParameter_Behavior.virtual_getDeclaration_1225282371351(thisNode);
   }
 
   public boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return ConceptFunctionParameter_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
   }
 
+  public String virtual_getParameterName_1225280611056(SNode thisNode) {
+    return ConceptFunctionParameter_Behavior.virtual_getParameterName_1225280611056(thisNode);
+  }
+
   public boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
     return ConceptFunctionParameter_Behavior.virtual_isParameterObjectUsed_1213877522926(thisNode);
   }
 
-  public SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_getDeclaration_1225282371351(thisNode);
-  }
-
-  public String virtual_getParameterName_1225280611056(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_getParameterName_1225280611056(thisNode);
+  public boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
+    return ConceptFunctionParameter_Behavior.virtual_needConceptFunction_1236687728308(thisNode);
   }
 
   @Override
