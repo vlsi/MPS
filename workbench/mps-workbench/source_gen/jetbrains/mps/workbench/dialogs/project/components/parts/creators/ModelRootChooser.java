@@ -6,8 +6,20 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.openapi.ui.Messages;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
+import jetbrains.mps.ide.persistence.PersistenceComponent;
+import javax.swing.JDialog;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import org.jdom.Element;
 
 public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   private final IBindedDialog myOwner;
@@ -19,15 +31,40 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   }
 
   public ModelRootDescriptor compute() {
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setInitialFile(myBundleHome);
-    chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-    IFile dir = chooser.showDialog(myOwner.getMainComponent());
-    if (dir == null) {
+    PersistenceFacade pReg = PersistenceRegistry.getInstance();
+    Iterable<String> ti = pReg.getTypeIds();
+    ti = Sequence.fromIterable(ti).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "default")));
+    int index = Messages.showChooseDialog("select", "type", Sequence.fromIterable(ti).toGenericArray(String.class), Sequence.fromIterable(ti).first(), null);
+    if (index == -1) {
       return null;
     }
-    SModelRoot result = new SModelRoot(null);
-    result.setPath(dir.getPath());
-    return result.toDescriptor();
+
+    String selectedType = Sequence.fromIterable(ti).take(index).last();
+    ModelRoot mr = pReg.getModelRootFactory(selectedType).create();
+
+    if (selectedType.equals("default")) {
+      TreeFileChooser chooser = new TreeFileChooser();
+      chooser.setInitialFile(myBundleHome);
+      chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
+      IFile dir = chooser.showDialog(myOwner.getMainComponent());
+      if (dir == null) {
+        return null;
+      }
+
+      SModelRoot result = new SModelRoot(null);
+      result.setPath(dir.getPath());
+      return result.toDescriptor();
+    }
+
+    ModelRootSettingsEditor editor = PersistenceComponent.getModelRootSettingsEditor(mr.getType());
+    editor.reset(null, mr);
+    JDialog d = new JDialog();
+    d.add(editor.getComponent());
+    d.show();
+    editor.apply(mr);
+
+    PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);
+    mr.save(memento);
+    return new ModelRootDescriptor(mr.getType(), memento);
   }
 }
