@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -100,19 +101,8 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
             continue;
           }
-        }
 
-        // editor 
-        if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
-          if (SLinkOperations.getTarget(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "relationDeclaration", false) == node) {
-            continue;
-          }
-        }
-
-        // .link is not needed as list 
-        if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.smodel.structure.SLinkListAccess")) {
-          SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
-
+          // logic based on expected type 
           // calc expected type 
           SNode expectedType = null;
 
@@ -138,7 +128,7 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "list", true) == dotExpression) {
-            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a11a6a0a1a3().createNode();
+            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a22a0a0a1a3().createNode();
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.OperationCall")) {
@@ -148,7 +138,21 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
             }
           }
 
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
+            SNode method = SNodeOperations.getAncestor(dotExpression, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+            if ((method != null)) {
+              expectedType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+            }
+          }
+
           if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
+            continue;
+          }
+        }
+
+        // editor 
+        if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
+          if (SLinkOperations.getTarget(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "relationDeclaration", false) == node) {
             continue;
           }
         }
@@ -160,8 +164,8 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
     }
   }
 
-  public static class QuotationClass_cbnudw_a0a0a11a6a0a1a3 {
-    public QuotationClass_cbnudw_a0a0a11a6a0a1a3() {
+  public static class QuotationClass_cbnudw_a0a0a22a0a0a1a3 {
+    public QuotationClass_cbnudw_a0a0a22a0a0a1a3() {
     }
 
     public SNode createNode() {
