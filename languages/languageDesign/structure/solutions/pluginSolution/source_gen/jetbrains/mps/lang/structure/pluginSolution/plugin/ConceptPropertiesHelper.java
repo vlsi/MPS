@@ -122,7 +122,7 @@ public class ConceptPropertiesHelper {
 
       private void replaceConceptUsages(SNode concept) {
         SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
-        SPropertyOperations.set(concept, "shortDescription", SConceptPropertyOperations.getString(concept, "shortDescription"));
+        SPropertyOperations.set(concept, "conceptShortDescription", SConceptPropertyOperations.getString(concept, "shortDescription"));
         SPropertyOperations.set(concept, "abstract", "" + (SConceptPropertyOperations.getBoolean(concept, "abstract")));
         SPropertyOperations.set(concept, "final", "" + (SConceptPropertyOperations.getBoolean(concept, "final")));
       }
