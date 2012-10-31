@@ -10,11 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -37,8 +36,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
     String errorMsg;
-    List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-    Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
+    Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
       }
@@ -51,7 +50,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     if (it.hasNext()) {
       errorMsg = ": more than one abstract method";
     } else if (mtd != null) {
-      SNode md = ListSequence.fromList(methods).getElement(0);
+      SNode md = Sequence.fromIterable(methods).first();
       if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
         SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
         if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
@@ -97,8 +96,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     {
       SNode classifier = SLinkOperations.getTarget(supertype, "classifier", false);
       String errorMsg;
-      List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
+      Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
           return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
         }
@@ -111,7 +110,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       if (it.hasNext()) {
         errorMsg = ": more than one abstract method";
       } else if (mtd != null) {
-        SNode md = ListSequence.fromList(methods).getElement(0);
+        SNode md = Sequence.fromIterable(methods).first();
         if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
           SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {

@@ -316,7 +316,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       List<SNode> allMethods = new ArrayList<SNode>();
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
-        allMethods.addAll(SLinkOperations.getTargets(classifier, "method", true));
+        ListSequence.fromList(allMethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)));
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           ListSequence.fromList(allMethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true)));
         }
