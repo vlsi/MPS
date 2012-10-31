@@ -14,6 +14,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -66,6 +68,11 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       final SNode IT = typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338);
       typeCheckingContext.whenConcrete(IT, new Runnable() {
         public void run() {
+          // ensure it's a classifier type 
+          SNode ctype = typeCheckingContext.getExpandedNode(IT);
+          if (!(SNodeOperations.isInstanceOf(ctype, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+            ctype = TypeChecker.getInstance().getRuntimeSupport().coerce_(ctype, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true, typeCheckingContext);
+          }
           final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
           // check the inference context 
           if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, methodCall, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{}))) {
@@ -94,7 +101,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
             for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
               // assume all unbound type vars outside an inference context are Object or its bound 
               MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
-                new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0b0a1a2a2a31a0().createNode(typeCheckingContext) :
+                new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0b0a1a2a5a31a0().createNode(typeCheckingContext) :
                 SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
               ));
             }
@@ -123,8 +130,8 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
             }
           }
 
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-            BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+          if (SNodeOperations.isInstanceOf(ctype, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+            BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(ctype, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
           }
 
           List<SNode> typel = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), mdecl, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count()});
@@ -165,7 +172,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                         typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                       }
                     }
-                  }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3058438378413428023", true, false);
+                  }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3058438378413428023", false, false);
                 }
               } else {
                 if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -229,8 +236,8 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     }
   }
 
-  public static class QuotationClass_ecn83h_a0b0a1a2a2a31a0 {
-    public QuotationClass_ecn83h_a0b0a1a2a2a31a0() {
+  public static class QuotationClass_ecn83h_a0b0a1a2a5a31a0 {
+    public QuotationClass_ecn83h_a0b0a1a2a5a31a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

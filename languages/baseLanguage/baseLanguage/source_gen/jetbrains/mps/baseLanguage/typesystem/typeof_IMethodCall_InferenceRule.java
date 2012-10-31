@@ -131,7 +131,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
                   typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                 }
               }
-            }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951293505962", true, false);
+            }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951293505962", false, false);
           }
         } else {
           if (!(typeCheckingContext.isSingleTypeComputation())) {
