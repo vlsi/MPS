@@ -25,7 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
 public class JavaClassStubsModelRoot extends ModelRootBase {
-  private String myPath;
+  private String myPath = "";
 
   public JavaClassStubsModelRoot() {
   }

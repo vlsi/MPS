@@ -66,7 +66,7 @@
     <unitInfo nodeId="5592980646743690876" fileName="JavaClassStubModelRootSettingsProvider.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootSettingsProvider" />
   </root>
   <root nodeId="8482273916971826666" modelId="r:9d5ad648-2a2f-4732-b5cc-88e82d6b053f(jetbrains.mps.ide.java.stubs)">
-    <nodeInfo nodeId="8482273916972500088" fileName="JavaClassStubsModelRoot.java" startLine="27" startPosition="60" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPath" />
+    <nodeInfo nodeId="8482273916972500088" fileName="JavaClassStubsModelRoot.java" startLine="27" startPosition="60" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPath" />
     <nodeInfo nodeId="8482273916972686808" fileName="JavaClassStubsModelRoot.java" startLine="33" startPosition="27" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8482273916972515228" fileName="JavaClassStubsModelRoot.java" startLine="37" startPosition="35" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8482273916972699865" fileName="JavaClassStubsModelRoot.java" startLine="41" startPosition="39" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

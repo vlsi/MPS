@@ -50,6 +50,9 @@
   <root id="8482273916971826666">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8482273916972500088">
       <property name="name" nameId="tpck.1169194664001" value="myPath" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="810618249838131488">
+        <property name="value" nameId="tpee.1070475926801" value="" />
+      </node>
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8482273916972500466">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
       </node>
