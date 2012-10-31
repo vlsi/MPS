@@ -16,7 +16,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode bmd : ExtractStaticMethod_CallExpression_Behavior.getMethods_5857910569715993654(thisNode)) {
       if (SPropertyOperations.getString(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name").equals(methodName)) {
@@ -44,12 +44,12 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> call_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String methodName) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+  public static Iterable<SNode> call_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String methodName) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String callerConceptFqName, String methodName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, new Object[]{methodName});
+  public static Iterable<SNode> callSuper_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String callerConceptFqName, String methodName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, new Object[]{methodName});
   }
 }

@@ -64,7 +64,7 @@ public class VisibleClassConstructorsScope extends Scope {
     }
 
     // resolve only by name 
-    List<SNode> constructors = SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
+    List<SNode> constructors = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).toListSequence();
     if ((int) ListSequence.fromList(constructors).count() == 1) {
       return ListSequence.fromList(constructors).first();
     }

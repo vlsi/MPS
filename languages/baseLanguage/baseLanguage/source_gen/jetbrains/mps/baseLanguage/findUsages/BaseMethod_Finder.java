@@ -16,6 +16,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
 public class BaseMethod_Finder extends GeneratedFinder {
@@ -64,7 +65,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
       }
       Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
       for (SNode ancestor : ListSequence.fromList(allAncestors)) {
-        List<SNode> classMethods = null;
+        Iterable<SNode> classMethods = null;
         if (isStatic) {
           if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
@@ -76,7 +77,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
             classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"), "method", true);
           }
         }
-        for (SNode classMethod : ListSequence.fromList(classMethods)) {
+        for (SNode classMethod : Sequence.fromIterable(classMethods)) {
           if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classMethod, method)) {
             SetSequence.fromSet(results).addElement(classMethod);
           }

@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.Set;
 import java.util.HashSet;
@@ -235,8 +236,8 @@ public class QueriesGenerated {
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184375448947(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-    for (SNode method : ListSequence.fromList(methods)) {
+    Iterable<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+    for (SNode method : Sequence.fromIterable(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -245,8 +246,8 @@ public class QueriesGenerated {
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184375942612(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-    for (SNode method : ListSequence.fromList(methods)) {
+    Iterable<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+    for (SNode method : Sequence.fromIterable(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -255,8 +256,8 @@ public class QueriesGenerated {
   }
 
   public static SNode templateFragment_ContextNodeQuery_1184375906184(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-    for (SNode method : ListSequence.fromList(methods)) {
+    Iterable<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
+    for (SNode method : Sequence.fromIterable(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
