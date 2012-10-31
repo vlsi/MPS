@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -178,10 +179,10 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     // FIXME make proper dependencies
     Dependency dep = new Dependency();
-    dep.setModuleRef(moduleRef);
+    dep.setModuleRef((ModuleReference) moduleRef);
     dep.setReexport(false); // overriding parameter
     myAddedDependencies.add(dep);
   }
