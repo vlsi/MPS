@@ -12,37 +12,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
@@ -52,11 +47,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -163,7 +157,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null && VariableDeclaration_Behavior.call_isInitializable_1213877517488(_context.getSourceNode());
+    return SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null && BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getSourceNode(), "virtual_isInitializable_1213877517488", new Object[]{});
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1235059530927(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -261,7 +255,7 @@ __switch__:
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return false;
     }
-    return Classifier_Behavior.call_hasStaticMemebers_1214840444586(SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false));
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), "virtual_hasStaticMemebers_1214840444586", new Object[]{});
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IfStatement_1215434787647(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -493,7 +487,7 @@ __switch__:
         if ((originalExpression != null)) {
           SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
           if ((expectedType != null)) {
-            SNode abstractCreator = Type_Behavior.call_getAbstractCreator_1213877337340(expectedType);
+            SNode abstractCreator = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expectedType, "virtual_getAbstractCreator_1213877337340", new Object[]{});
             if ((abstractCreator != null)) {
               SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
             }
@@ -513,8 +507,6 @@ __switch__:
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
       if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
-        SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
-        SModelOperations.addRootNode(auxModel, expression);
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(expression), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
           SLinkOperations.setTarget(_context.getNewNode(), "condition", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), true);
           SNodeOperations.deleteNode(_context.getSampleNode());
@@ -817,9 +809,9 @@ __switch__:
                 }
                 SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (!(Sequence.fromIterable(Members.visibleInstanceFields(IClassifier_Behavior.call_getThisType_7405920559687254782(ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode())), _context.getParentNode())).contains((item)))) {
+                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-                  while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(IClassifier_Behavior.call_getThisType_7405920559687254782(concept), _context.getParentNode())).contains((item)))) {
+                  while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), concept, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   }
                   SLinkOperations.setTarget(thisExpression, "classConcept", concept, false);
@@ -847,7 +839,7 @@ __switch__:
             }
           }).first();
           if (parentFunction != null) {
-            return ConceptFunction_Behavior.call_getParameters_1213877374450(parentFunction);
+            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentFunction, "virtual_getParameters_1213877374450", new Object[]{});
           } else {
             return ListSequence.fromList(new ArrayList<SNode>());
           }
@@ -935,7 +927,7 @@ __switch__:
           }
 
           public boolean returnSmallPart(SNode nodeToWrap) {
-            return Type_Behavior.call_selectOnVariableCreation_1213877337352(nodeToWrap);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToWrap, "virtual_selectOnVariableCreation_1213877337352", new Object[]{});
           }
 
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
@@ -1296,7 +1288,7 @@ __switch__:
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
                   }).toListSequence();
-                  for (SNode baseMethodDeclaration : IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+                  for (SNode baseMethodDeclaration : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})) {
                     ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
                   }
                 } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -1680,7 +1672,7 @@ __switch__:
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
                 if ((expectedType != null)) {
-                  return Type_Behavior.call_getAbstractCreators_7602110602933317830(expectedType, _context.getModel());
+                  return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), expectedType, "virtual_getAbstractCreators_7602110602933317830", new Object[]{_context.getModel()});
                 }
               }
             }
@@ -1698,7 +1690,7 @@ __switch__:
               }
 
               public String getMatchingText(String pattern) {
-                return "new " + BaseConcept_Behavior.call_getPresentation_1213877396640((item));
+                return "new " + BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -1796,7 +1788,7 @@ __switch__:
               SNode var;
               if (instanceOf != null) {
                 if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-                  typeName = BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+                  typeName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_getPresentation_1213877396640", new Object[]{});
                 }
                 var = (_context.getCurrentTargetNode() == null || SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
                   SLinkOperations.getTarget(instanceOf, "leftExpression", true) :
@@ -3308,7 +3300,7 @@ __switch__:
         }
 
         public String getMatchingText(String pattern) {
-          return BaseConcept_Behavior.call_getPresentation_1213877396640(type);
+          return BehaviorReflection.invokeVirtual(String.class, type, "virtual_getPresentation_1213877396640", new Object[]{});
         }
 
         public String getVisibleMatchingText(String pattern) {

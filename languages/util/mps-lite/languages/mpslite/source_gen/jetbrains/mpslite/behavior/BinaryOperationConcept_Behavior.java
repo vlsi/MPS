@@ -5,6 +5,7 @@ package jetbrains.mpslite.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,8 +21,8 @@ public class BinaryOperationConcept_Behavior {
     SNode conceptDeclaration = ((SNode) concept);
     SNode leftLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode rightLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    SLinkOperations.setTarget(leftLink, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "leftTarget", true), conceptsToTargets), false);
-    SLinkOperations.setTarget(rightLink, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "rightTarget", true), conceptsToTargets), false);
+    SLinkOperations.setTarget(leftLink, "target", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "leftTarget", true), "virtual_getConcept_1238594571574", new Object[]{conceptsToTargets}), false);
+    SLinkOperations.setTarget(rightLink, "target", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "rightTarget", true), "virtual_getConcept_1238594571574", new Object[]{conceptsToTargets}), false);
     SPropertyOperations.set(leftLink, "role", SPropertyOperations.getString(thisNode, "leftTargetRole"));
     SPropertyOperations.set(rightLink, "role", SPropertyOperations.getString(thisNode, "rightTargetRole"));
     SPropertyOperations.set(leftLink, "metaClass", "aggregation");

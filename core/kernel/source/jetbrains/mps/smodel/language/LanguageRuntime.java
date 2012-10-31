@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.EditorAspectDescriptorInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
-import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
@@ -42,7 +41,6 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
-  private DescriptorProvider<BehaviorDescriptor> _behaviorDescriptor;
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
 
   private StructureAspectDescriptor structureDescriptor;
@@ -69,14 +67,6 @@ public abstract class LanguageRuntime {
     String className = getNamespace() + "." + aspectName;
     DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, DescriptorProvider.class, getNamespace(), true);
     return compiled != null ? compiled : defaultProvider;
-  }
-
-  @Deprecated
-  public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
-    if (_behaviorDescriptor == null) {
-      _behaviorDescriptor = getDescriptorProvider("behavior.BehaviorAspectDescriptor", LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER);
-    }
-    return _behaviorDescriptor;
   }
 
   public DescriptorProvider<FacetDescriptor> getFacetProvider() {

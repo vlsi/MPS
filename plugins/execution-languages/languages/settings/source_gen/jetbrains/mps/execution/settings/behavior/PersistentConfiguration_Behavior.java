@@ -9,21 +9,16 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PersistentConfiguration_Behavior {
-  private static Class[] PARAMETERS_946964771156066501 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -65,29 +60,15 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    List<SNode> allMemebers = IClassifier_Behavior.callSuperNew_getMembers_1213877528020(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", contextNode);
+    List<SNode> allMemebers = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "virtual_getMembers_1213877528020", new Object[]{contextNode});
     if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
       return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(IMember_Behavior.call_getVisiblity_1213877352965(it), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
         }
       }).toListSequence();
     }
     return allMemebers;
-  }
-
-  public static SNode call_createType_946964771156066501(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
-  }
-
-  public static SNode callSuperNew_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
   }
 
   public static SNode getContextPersistentConfigurationType_946964771156066389(SNode node) {
@@ -98,7 +79,7 @@ public class PersistentConfiguration_Behavior {
         configuration = SLinkOperations.getTarget(executor, "configuration", false);
       }
     }
-    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0m().createNode(configuration);
+    return new PersistentConfiguration_Behavior.QuotationClass_4ves9l_a0c0j().createNode(configuration);
   }
 
   public static List<SNode> getContextPersistentProperties_946964771156066434(SNode node) {
@@ -111,6 +92,16 @@ public class PersistentConfiguration_Behavior {
 
   public static String getCheckMethodName_946964771156066466() {
     return "checkConfiguration";
+  }
+
+  @Deprecated
+  public static SNode call_createType_946964771156066501(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_4ves9l_a0a0e {
@@ -131,8 +122,8 @@ public class PersistentConfiguration_Behavior {
     }
   }
 
-  public static class QuotationClass_4ves9l_a0c0m {
-    public QuotationClass_4ves9l_a0c0m() {
+  public static class QuotationClass_4ves9l_a0c0j {
+    public QuotationClass_4ves9l_a0c0j() {
     }
 
     public SNode createNode(Object parameter_3) {

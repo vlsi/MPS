@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
@@ -43,7 +43,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends BaseIntention imple
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Replace with instance of  " + BaseConcept_Behavior.call_getPresentation_1213877396640(this.myParameter) + " concept";
+    return "Replace with instance of  " + BehaviorReflection.invokeVirtual(String.class, this.myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " concept";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

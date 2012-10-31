@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
@@ -102,7 +102,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           SModelRepository.getInstance().saveAll();
-          baseMethod.value = ((SNode) BehaviorManager.getInstance().invoke(Object.class, ((SNode) MapSequence.fromMap(_params).get("method")), "call_getBaseMethod_5014346297260519893", new Class[]{SNode.class}));
+          baseMethod.value = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((SNode) MapSequence.fromMap(_params).get("method")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getBaseMethod_5014346297260519893", new Object[]{});
           if (baseMethod.value != null) {
             message.value = "Method " + ((SNode) MapSequence.fromMap(_params).get("method")).getPresentation() + " overrides method from " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), "jetbrains.mps.baseLanguage.structure.Classifier"), "name") + ".\n";
             message.value += "Do you want to change signature of this method instead?";

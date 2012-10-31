@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -36,7 +36,7 @@ public class TreeMapCreator_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode dtype = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(parentNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
+    SNode dtype = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(parentNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.Expression")});
     return (dtype == null) || SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), "jetbrains.mps.baseLanguage.collections.structure.SortedMapType");
   }
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ReplaceRegexpOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -13,7 +14,7 @@ public class ReplaceRegexpOperation_Behavior {
     StringBuilder sb = new StringBuilder();
     for (SNode rep : SLinkOperations.getTargets(thisNode, "replacement", true)) {
       if ((rep != null)) {
-        sb.append(Replacement_Behavior.call_toString_3796137614137538905(rep, SLinkOperations.getTarget(thisNode, "search", true)));
+        sb.append(BehaviorReflection.invokeVirtual(String.class, rep, "virtual_toString_3796137614137538905", new Object[]{SLinkOperations.getTarget(thisNode, "search", true)}));
       }
     }
     return sb.toString();

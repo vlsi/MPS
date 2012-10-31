@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleAfterDotExpression extends DataFlowConstructor {
@@ -18,7 +16,7 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
   }
 
   public boolean isApplicable(SNode node) {
-    return SModelUtil_new.isAssignableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getConceptDeclaration(node)), getApplicableConceptFqName());
+    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
 
   public String getApplicableConceptFqName() {
@@ -26,7 +24,7 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
   }
 
   public void performActions(Program o, SNode node) {
-    if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true))) && !(DotExpression_Behavior.call_allowsNullOperand_4585239809762176541(node))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "operation", true), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
       {
         Object object = SLinkOperations.getTarget(node, "operand", true);
         if (((Program) o).contains(object)) {

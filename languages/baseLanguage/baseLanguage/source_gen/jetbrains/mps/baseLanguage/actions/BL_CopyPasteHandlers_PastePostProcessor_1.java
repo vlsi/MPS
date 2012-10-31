@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SReference;
 import java.util.List;
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProcessor {
@@ -28,7 +27,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
     if (ListSequence.fromList(SNodeOperations.getAncestors(pastedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(ClassifierMember_Behavior.call_isStatic_8986964027630462944(it));
+        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_8986964027630462944", new Object[]{}));
       }
     }).isEmpty()) {
       return;
@@ -57,7 +56,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
         }
 
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
-          if (Sequence.fromIterable(Members.visibleInstanceFields(IClassifier_Behavior.call_getThisType_7405920559687254782(nextClassConcept), pastedNode)).where(new IWhereFilter<SNode>() {
+          if (Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nextClassConcept, "virtual_getThisType_7405920559687254782", new Object[]{}), pastedNode)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString(it, "name").equals(resolveInfo);
             }

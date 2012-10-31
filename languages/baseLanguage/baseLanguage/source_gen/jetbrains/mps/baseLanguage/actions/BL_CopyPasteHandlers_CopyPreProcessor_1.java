@@ -6,7 +6,7 @@ import jetbrains.mps.datatransfer.CopyPreProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPreProcessor {
@@ -16,6 +16,6 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPreProcessor
 
   public void preProcesNode(SNode copy, SNode original) {
     // todo: remove after MPS 3.0 
-    SNodeOperations.replaceWithAnother(copy, VariableDeclaration_Behavior.call_getQualifiedReference_4598334504606213641(SLinkOperations.getTarget(copy, "variableDeclaration", false)));
+    SNodeOperations.replaceWithAnother(copy, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(copy, "variableDeclaration", false), "virtual_getQualifiedReference_4598334504606213641", new Object[]{}));
   }
 }

@@ -6,20 +6,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PersistentPropertyDeclaration_Behavior {
-  private static Class[] PARAMETERS_946964771156066897 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -38,7 +34,7 @@ public class PersistentPropertyDeclaration_Behavior {
 
   public static String call_getTypeFqName_946964771156066903(SNode thisNode) {
     SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_946964771156066964(thisNode);
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(template);
+    return BehaviorReflection.invokeVirtual(String.class, template, "virtual_getFullName_946964771156905503", new Object[]{});
   }
 
   public static String call_getTypeEditorFqName_946964771156066917(SNode thisNode) {
@@ -49,20 +45,6 @@ public class PersistentPropertyDeclaration_Behavior {
   public static SNode call_getTemplate_946964771156066964(SNode thisNode) {
     assert PersistentPropertyDeclaration_Behavior.call_isTemplate_946964771156066860(thisNode);
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"), true), "persistentConfiguration", false);
-  }
-
-  public static boolean call_isInitializable_946964771156066897(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isInitializable_946964771156066897(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897, new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isInitializable_946964771156066897(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897, new Object[]{});
   }
 
   public static String removeMyPrefix_946964771156066836(String name) {
@@ -88,6 +70,16 @@ public class PersistentPropertyDeclaration_Behavior {
       name = prefix + name;
     }
     return name;
+  }
+
+  @Deprecated
+  public static boolean call_isInitializable_946964771156066897(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInitializable_1213877517488", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_isInitializable_946964771156066897(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_ex141d_a1a0a0b {

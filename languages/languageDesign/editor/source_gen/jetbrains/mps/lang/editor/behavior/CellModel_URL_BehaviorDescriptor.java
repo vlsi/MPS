@@ -8,12 +8,12 @@ public class CellModel_URL_BehaviorDescriptor extends CellModel_WithRole_Behavio
   public CellModel_URL_BehaviorDescriptor() {
   }
 
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_URL_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_URL_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_URL_Behavior.virtual_getOpeningText_1220339714057(thisNode);
   }
 
   public String virtual_getRoleForCell_1216377898846(SNode thisNode) {

@@ -9,16 +9,16 @@ public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDes
   public VariableReference_BehaviorDescriptor() {
   }
 
+  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+    return VariableReference_Behavior.virtual_eval_1213877519769(thisNode, module);
+  }
+
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return VariableReference_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 
   public SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
     return VariableReference_Behavior.virtual_getDeclaration_3262277503800831941(thisNode);
-  }
-
-  public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
-    return VariableReference_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
@@ -29,8 +29,8 @@ public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDes
     return VariableReference_Behavior.virtual_getVariable_1023687332192481693(thisNode);
   }
 
-  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
-    return VariableReference_Behavior.virtual_eval_1213877519769(thisNode, module);
+  public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return VariableReference_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
   }
 
   @Override

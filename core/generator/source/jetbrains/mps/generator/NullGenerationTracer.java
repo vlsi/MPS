@@ -32,15 +32,15 @@ public class NullGenerationTracer implements IGenerationTracer {
   public final static IGenerationTracer INSTANCE = new NullGenerationTracer();
 
   @Override
-  public void pushInputNode(SNode node) {
+  public void pushInputNode(SNodePointer node) {
   }
 
   @Override
-  public void closeInputNode(SNode node) {
+  public void closeInputNode(SNodePointer node) {
   }
 
   @Override
-  public void popInputNode(SNode node) {
+  public void popInputNode(SNodePointer node) {
   }
 
   @Override
@@ -68,7 +68,7 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushOutputNode(SNode node) {
+  public void pushOutputNode(SNodePointer node) {
   }
 
   @Override

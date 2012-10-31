@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlContent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -97,10 +97,10 @@ public class XmlContent_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_91idit_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlPart_Behavior.call_onNewLine_2133624044437631588(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
   }
 
   private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 }

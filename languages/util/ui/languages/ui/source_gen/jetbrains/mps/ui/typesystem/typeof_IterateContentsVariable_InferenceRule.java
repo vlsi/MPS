@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,7 +21,7 @@ public class typeof_IterateContentsVariable_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode icvar, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode oexp = IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(icvar, "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    SNode oexp = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(icvar, "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{});
     if ((oexp != null)) {
       final SNode UIOT_typevar_2459884175397753215 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
@@ -35,7 +35,7 @@ public class typeof_IterateContentsVariable_InferenceRule extends AbstractInfere
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753227", true), (SNode) new typeof_IterateContentsVariable_InferenceRule.QuotationClass_dmnw7g_a0a2a1a0().createNode(typeCheckingContext.getRepresentative(UIOT_typevar_2459884175397753215), typeCheckingContext), _info_12389875345);
       }
     } else {
-      SNode uio = SLinkOperations.getTarget(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(icvar, "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), "allows", false);
+      SNode uio = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(icvar, "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{}), "allows", false);
       {
         SNode _nodeToCheck_1029348928467 = icvar;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397578629", 0, null);

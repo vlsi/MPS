@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Stack;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.util.Pair;
@@ -80,7 +80,7 @@ public class FileSetUtil {
     while (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       contextContainer = SNodeOperations.as(SNodeOperations.getParent(contextContainer), "jetbrains.mps.build.structure.BuildLayout_Node");
     }
-    if (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
+    if (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
       return SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet");
     }
     return null;
@@ -99,7 +99,7 @@ public class FileSetUtil {
       }
       container = SNodeOperations.getParent(container);
     }
-    if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
+    if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
       StringBuilder sb = new StringBuilder();
       while (!(stack.isEmpty())) {
         String folderName = stack.pop();
@@ -128,7 +128,7 @@ public class FileSetUtil {
       }
       parent = SNodeOperations.getParent(parent);
     }
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasFileModeAttribute_6408167411310575237(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{})) {
       return (dirmode != null || filemode != null ?
         new Pair(dirmode, filemode) :
         null

@@ -19,10 +19,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Collection;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -64,7 +68,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
     try {
       MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModules());
-      for (IModule module : ListSequence.fromList(allModules)) {
+      for (final IModule module : ListSequence.fromList(allModules)) {
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {
           continue;
@@ -75,14 +79,23 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
           continue;
         }
 
-        ModelRoot mr = new ModelRoot();
-        mr.setPath(module.getClassesGen().getPath());
-        mr.setManager(new ModelRootManager(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs"));
-
-        Collection<ModelRoot> mrs = descriptor.getModelRoots();
-        if (!(mrs.contains(mr))) {
-          mrs.add(mr);
+        Collection<ModelRootDescriptor> mrs = descriptor.getModelRootDescriptors();
+        boolean exist = CollectionSequence.fromCollection(mrs).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
+          public ModelRoot select(ModelRootDescriptor it) {
+            return it.getRoot();
+          }
+        }).where(new IWhereFilter<ModelRoot>() {
+          public boolean accept(ModelRoot it) {
+            return it != null && LanguageID.JAVA_MANAGER.equals(it.getManager()) && EqualUtil.equals(it.getPath(), module.getClassesGen().getPath());
+          }
+        }).isNotEmpty();
+        if (exist) {
+          continue;
         }
+
+        SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
+        mr.setPath(module.getClassesGen().getPath());
+        CollectionSequence.fromCollection(mrs).addElement(mr.toDescriptor());
 
         module.setModuleDescriptor(descriptor, false);
         module.save();

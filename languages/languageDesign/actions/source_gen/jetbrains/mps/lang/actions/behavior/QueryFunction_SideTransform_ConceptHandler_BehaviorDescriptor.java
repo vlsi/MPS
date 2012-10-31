@@ -9,12 +9,12 @@ public class QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor exten
   public QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor() {
   }
 
-  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return QueryFunction_SideTransform_ConceptHandler_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
-  }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_SideTransform_ConceptHandler_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return QueryFunction_SideTransform_ConceptHandler_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }
 
   @Override

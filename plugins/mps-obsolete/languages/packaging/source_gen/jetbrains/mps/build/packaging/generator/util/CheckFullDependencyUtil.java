@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.packaging.behavior.IPlugin_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.build.packaging.behavior.Plugin_Behavior;
@@ -127,11 +127,11 @@ public class CheckFullDependencyUtil {
 
   private static List<String> getDependency(SNode plugin) {
     if (!(SNodeOperations.isInstanceOf(plugin, "jetbrains.mps.build.packaging.structure.Plugin"))) {
-      return IPlugin_Behavior.call_getDependency_3033860308390155295(plugin);
+      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), plugin, "virtual_getDependency_3033860308390155295", new Object[]{});
     }
     IdeaPluginDescriptor descriptor = CheckFullDependencyUtil.findIdeaPlugin(plugin);
     if (descriptor == null) {
-      return IPlugin_Behavior.call_getDependency_3033860308390155295(plugin);
+      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), plugin, "virtual_getDependency_3033860308390155295", new Object[]{});
     }
 
     return Sequence.fromIterable(Sequence.fromArray(descriptor.getDependentPluginIds())).select(new ISelector<PluginId, String>() {
@@ -143,11 +143,11 @@ public class CheckFullDependencyUtil {
 
   public static String getId(SNode plugin) {
     if (!(SNodeOperations.isInstanceOf(plugin, "jetbrains.mps.build.packaging.structure.Plugin"))) {
-      return IPlugin_Behavior.call_getId_3033860308390151510(plugin);
+      return BehaviorReflection.invokeVirtual(String.class, plugin, "virtual_getId_3033860308390151510", new Object[]{});
     }
     IdeaPluginDescriptor descriptor = CheckFullDependencyUtil.findIdeaPlugin(plugin);
     if (descriptor == null) {
-      return IPlugin_Behavior.call_getId_3033860308390151510(plugin);
+      return BehaviorReflection.invokeVirtual(String.class, plugin, "virtual_getId_3033860308390151510", new Object[]{});
     }
 
     return descriptor.getPluginId().getIdString();

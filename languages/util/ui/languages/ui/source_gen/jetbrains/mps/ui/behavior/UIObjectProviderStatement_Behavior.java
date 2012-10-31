@@ -4,18 +4,11 @@ package jetbrains.mps.ui.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UIObjectProviderStatement_Behavior {
-  private static Class[] PARAMETERS_5197527271413739393 = {SNode.class};
-  private static Class[] PARAMETERS_5197527271413739447 = {SNode.class};
-  private static Class[] PARAMETERS_5197527271413739455 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,11 +17,11 @@ public class UIObjectProviderStatement_Behavior {
     if (!(SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
       return false;
     }
-    if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Object[]{})) {
       return false;
     }
-    SNode expRT = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"));
-    return (expRT != null) && IMethodLike_Behavior.call_getLastStatement_1239354409446(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike")) == thisNode && !(SNodeOperations.isInstanceOf(expRT, "jetbrains.mps.baseLanguage.structure.VoidType"));
+    SNode expRT = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getExpectedRetType_1239354342632", new Object[]{});
+    return (expRT != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getLastStatement_1239354409446", new Object[]{}) == thisNode && !(SNodeOperations.isInstanceOf(expRT, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
   public static SNode virtual_getContextExpression_8923564134258345446(SNode thisNode) {
@@ -39,45 +32,33 @@ public class UIObjectProviderStatement_Behavior {
     return null;
   }
 
+  @Deprecated
   public static boolean call_shouldReturnValue_5197527271413739393(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_5197527271413739393, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_shouldReturnValue_8923564134259848103", new Object[]{});
   }
 
+  @Deprecated
   public static SNode call_getContextExpression_5197527271413739447(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_5197527271413739447, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
+  @Deprecated
   public static SNode call_getContainer_5197527271413739455(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), "virtual_getContainer_8923564134258257521", PARAMETERS_5197527271413739455, new Object[]{});
-  }
-
-  public static boolean callSuperNew_shouldReturnValue_5197527271413739393(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_5197527271413739393, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getContextExpression_5197527271413739447(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", PARAMETERS_5197527271413739447, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getContainer_5197527271413739455(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_5197527271413739455, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getContainer_8923564134258257521", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_shouldReturnValue_5197527271413739393(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_5197527271413739393, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getContextExpression_5197527271413739447(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", PARAMETERS_5197527271413739447, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getContainer_5197527271413739455(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_5197527271413739455, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.UIObjectProviderStatement"), callerConceptFqName, "virtual_getContainer_8923564134258257521", new Class[]{SNode.class}, new Object[]{});
   }
 }

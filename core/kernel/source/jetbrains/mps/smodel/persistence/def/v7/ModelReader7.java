@@ -22,6 +22,7 @@ import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Attribute;
@@ -126,7 +127,7 @@ public class ModelReader7 implements IModelReader {
   @Nullable
   protected SNode readNode(Element nodeElement, SModel model, boolean isRootStub) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
-    SNode node = new SNode(model, conceptFqName);
+    SNode node = new SNode(InternUtil.intern(conceptFqName));
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {

@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
   private int type;
@@ -12,9 +12,9 @@ public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
 
   public SPrimitiveDataTypeAdapter(SNode datatype) {
     this.datatype = datatype;
-    this.type = (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, datatype, "call_isBoolean_1220268791641", new Class[]{SNode.class})) ?
+    this.type = (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isBoolean_1220268791641", new Object[]{}) ?
       BOOL :
-      (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, datatype, "call_isInteger_1220268780075", new Class[]{SNode.class})) ?
+      (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isInteger_1220268780075", new Object[]{}) ?
         INT :
         STRING
       )

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExpressionStatement_Behavior {
@@ -13,11 +14,11 @@ public class ExpressionStatement_Behavior {
   public static boolean call_canServeAsReturn_1239355137616(SNode thisNode) {
     SNode methodLike = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     if (SNodeOperations.isInstanceOf(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
-      if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(SNodeOperations.cast(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Object[]{})) {
         return false;
       }
     }
-    SNode retType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(methodLike);
+    SNode retType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getExpectedRetType_1239354342632", new Object[]{});
     SNode methodCall = null;
     SNode expression = SLinkOperations.getTarget(thisNode, "expression", true);
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
@@ -29,6 +30,6 @@ public class ExpressionStatement_Behavior {
     if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;
     }
-    return IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 }

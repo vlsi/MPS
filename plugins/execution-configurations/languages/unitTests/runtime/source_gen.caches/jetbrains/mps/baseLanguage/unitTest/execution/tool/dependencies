@@ -64,6 +64,7 @@
     <classNode dependClassName="javax.swing.UIManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestContainerRow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestStatisticsRow" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsTableModel" file="StatisticsTableModel.java">

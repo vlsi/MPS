@@ -4,14 +4,11 @@ package jetbrains.mps.lang.traceable.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TraceableConcept_Behavior {
-  private static Class[] PARAMETERS_5067982036267369901 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,17 +17,13 @@ public class TraceableConcept_Behavior {
     return null;
   }
 
+  @Deprecated
   public static String call_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
-  }
-
-  public static String callSuperNew_getTraceableProperty_5067982036267369901(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getTraceableProperty_5067982036267369901(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}, new Object[]{});
   }
 }

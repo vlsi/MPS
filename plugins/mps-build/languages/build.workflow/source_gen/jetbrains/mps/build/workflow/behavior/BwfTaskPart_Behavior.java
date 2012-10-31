@@ -7,7 +7,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.SimpleRoleScope;
 
 public class BwfTaskPart_Behavior {
@@ -18,7 +18,7 @@ public class BwfTaskPart_Behavior {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask")) {
       SNode task = SLinkOperations.getTarget(thisNode, "task", false);
       if (task != null && SNodeOperations.getParent(task) == SNodeOperations.getParent(thisNode)) {
-        return ScopeProvider_Behavior.call_getScope_3734116213129936182(task, kind, null);
+        return BehaviorReflection.invokeVirtual(Scope.class, task, "virtual_getScope_3734116213129936182", new Object[]{kind, null});
       }
       return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks"));
     }

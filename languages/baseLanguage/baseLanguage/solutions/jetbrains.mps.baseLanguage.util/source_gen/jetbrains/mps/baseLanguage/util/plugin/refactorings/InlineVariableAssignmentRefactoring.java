@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class InlineVariableAssignmentRefactoring extends InlineVariableRefactoring {
   private Program myProgram;
@@ -68,7 +68,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     if (SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
       return body;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer") && !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Class[]{SNode.class})))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Object[]{}))) {
       return body;
     }
     return findStatementList(body);

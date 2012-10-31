@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.scripts;
 
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public abstract class SimpleMigration extends AbstractMigrationRefactoring {
   private final SNode applicableConcept;
@@ -20,7 +20,7 @@ public abstract class SimpleMigration extends AbstractMigrationRefactoring {
   }
 
   public String getFqNameOfConceptToSearchInstances() {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(applicableConcept);
+    return BehaviorReflection.invokeVirtual(String.class, applicableConcept, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public String getAdditionalInfo() {

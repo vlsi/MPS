@@ -47,7 +47,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -370,7 +370,7 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
             ObjectReference object = (ObjectReference) value;
             IObjectValueProxy valueProxy = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(object);
             SNode toString = new EvaluationUtilsImpl.QuotationClass_wi3cqi_a0a2a0a0a0a0a0a0a0y().createNode();
-            IValueProxy result = valueProxy.invokeMethod(SPropertyOperations.getString(toString, "name"), ((String) BehaviorManager.getInstance().invoke(Object.class, toString, "virtual_jniSignature_8847328628797656446", new Class[]{SNode.class})), threadReference);
+            IValueProxy result = valueProxy.invokeMethod(SPropertyOperations.getString(toString, "name"), BehaviorReflection.invokeVirtual(String.class, toString, "virtual_jniSignature_8847328628797656446", new Object[]{}), threadReference);
             return getStringPresentation(result.getJDIValue(), threadReference);
           }
         }, null);

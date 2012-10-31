@@ -15,6 +15,7 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -28,6 +29,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
@@ -74,9 +76,13 @@ public class Module_Behavior {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
-    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRoot>) Module_Behavior.call_getModule_1213877515148(thisNode).getModuleDescriptor().getModelRoots())).where(new IWhereFilter<ModelRoot>() {
+    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRootDescriptor>) Module_Behavior.call_getModule_1213877515148(thisNode).getModuleDescriptor().getModelRootDescriptors())).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
+      public ModelRoot select(ModelRootDescriptor it) {
+        return it.getRoot();
+      }
+    }).where(new IWhereFilter<ModelRoot>() {
       public boolean accept(ModelRoot it) {
-        return LanguageID.JAVA_MANAGER.equals(it.getManager()) && !(it.getPath().endsWith(".jar"));
+        return it != null && LanguageID.JAVA_MANAGER.equals(it.getManager()) && !(it.getPath().endsWith(".jar"));
       }
     }).isNotEmpty();
   }
@@ -224,7 +230,7 @@ public class Module_Behavior {
 
   public static String call_getChildrenTargetDir_1213877514970(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
-      return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) + File.separator + Module_Behavior.call_getTemporalDir_1213877514765(thisNode);
+      return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"), "virtual_getChildrenTargetDir_1237389224202", new Object[]{}) + File.separator + Module_Behavior.call_getTemporalDir_1213877514765(thisNode);
     }
     return Module_Behavior.call_getTemporalDir_1213877514765(thisNode);
   }

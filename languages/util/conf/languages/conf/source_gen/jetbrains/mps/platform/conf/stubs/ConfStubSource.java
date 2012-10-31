@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.util.MultiRootModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import java.util.List;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -43,16 +42,17 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 
 public class ConfStubSource extends StubModelDataSource implements MultiRootModelDataSource, FastFindSupportProvider {
-  private List<ModelRoot> roots;
+  private List<String> roots;
 
-  public ConfStubSource(SModuleReference origin, ModelRoot root) {
+  public ConfStubSource(SModuleReference origin, String path) {
     super(origin);
-    this.roots = ListSequence.fromList(new ArrayList<ModelRoot>());
-    ListSequence.fromList(this.roots).addElement(root);
+    this.roots = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(this.roots).addElement(path);
   }
 
-  public void addRoot(ModelRoot root) {
-    ListSequence.fromList(roots).addElement(root);
+  @Override
+  public void addRoot(String path) {
+    ListSequence.fromList(roots).addElement(path);
   }
 
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
@@ -63,8 +63,8 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
     String pkg = model.getSModelFqName().getLongName();
     List<Tuples._4<String, String, SNode, PathItem>> doclst = ListSequence.fromList(new ArrayList<Tuples._4<String, String, SNode, PathItem>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
-    for (ModelRoot root : roots) {
-      PathItem pi = ConfPathItem.getPathItem(root.getPath());
+    for (String path : roots) {
+      PathItem pi = ConfPathItem.getPathItem(path);
       for (String docres : ListSequence.fromList(pi.resources(pkg))) {
         SNodeId id = ConfReader.createForeignId(pi.baseName(docres));
         SNode doc = (SNode) model.getNodeById(id);
@@ -79,8 +79,8 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), roots, module) {
       @Override
-      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
-        return new ConfStubSource(origin, loc);
+      public StubModelDataSource createStubsSource(SModuleReference origin, String path) {
+        return new ConfStubSource(origin, path);
       }
     };
     ConfReader reader = new ConfReader(new ConfReader.Resolver() {

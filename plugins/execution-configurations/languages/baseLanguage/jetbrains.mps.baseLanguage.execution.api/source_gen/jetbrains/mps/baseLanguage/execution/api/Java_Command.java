@@ -31,7 +31,7 @@ import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -214,7 +214,7 @@ public class Java_Command {
           } else {
             className.value = TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
               public Boolean invoke(TraceablePositionInfo position) {
-                return (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c_0(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}))));
+                return (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a1a0a0a1a0c0a0a0a0b0c().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
               }
             });
           }
@@ -438,8 +438,8 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  public static class QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2 {
-    public QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2() {
+  public static class QuotationClass_kk96hj_a1a0a0a0a0a1a0a0a1a0c0a0a0a0b0c {
+    public QuotationClass_kk96hj_a1a0a0a0a0a1a0a0a1a0c0a0a0a0b0c() {
     }
 
     public SNode createNode() {

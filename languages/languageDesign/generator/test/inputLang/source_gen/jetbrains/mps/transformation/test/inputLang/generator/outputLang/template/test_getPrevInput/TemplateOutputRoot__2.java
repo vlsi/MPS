@@ -13,6 +13,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.runtime.NodeMapper;
@@ -43,7 +44,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+    final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338159177");
@@ -62,7 +63,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
             boolean inputChanged2 = context.getInput() != itnode2;
             try {
               if (inputChanged2) {
-                environment.getTracer().pushInputNode(itnode2);
+                environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode2));
               }
               TemplateContext context2 = context.subContext("LEVEL 1", itnode2);
               final List<SNode> tlist3 = new ArrayList();
@@ -76,7 +77,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                   boolean inputChanged3 = context2.getInput() != itnode3;
                   try {
                     if (inputChanged3) {
-                      environment.getTracer().pushInputNode(itnode3);
+                      environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode3));
                     }
                     TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
                     final List<SNode> tlist4 = new ArrayList();
@@ -90,10 +91,10 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                         boolean inputChanged4 = context3.getInput() != itnode4;
                         try {
                           if (inputChanged4) {
-                            environment.getTracer().pushInputNode(itnode4);
+                            environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode4));
                           }
                           TemplateContext context4 = context3.subContext(null, itnode4);
-                          final SNode tnode5 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                          final SNode tnode5 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a3a2a2a3a2a2a3a2a2a1a5a1a1);
                             environment.nodeCopied(context4, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");
@@ -183,7 +184,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                               // TODO validate child 
                             }
                           } finally {
-                            environment.getTracer().pushOutputNode(tnode5);
+                            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode5));
                             environment.getTracer().closeTemplateNode(templateNode_ewlaka_a0a0a3a2a2a3a2a2a3a2a2a1a5a1a1);
                           }
                           if (tnode5 != null) {
@@ -191,7 +192,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                           }
                         } finally {
                           if (inputChanged4) {
-                            environment.getTracer().closeInputNode(itnode4);
+                            environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode4));
                           }
                         }
                       }
@@ -204,7 +205,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                     }
                   } finally {
                     if (inputChanged3) {
-                      environment.getTracer().closeInputNode(itnode3);
+                      environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode3));
                     }
                   }
                 }
@@ -217,7 +218,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
               }
             } finally {
               if (inputChanged2) {
-                environment.getTracer().closeInputNode(itnode2);
+                environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(itnode2));
               }
             }
           }
@@ -230,7 +231,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(tnode1);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
       environment.getTracer().closeTemplateNode(templateNode_ewlaka_a0a0a1a1);
     }
     return TemplateUtil.singletonList(tnode1);

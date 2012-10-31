@@ -8,10 +8,6 @@ public class AttributeAccess_BehaviorDescriptor extends SNodeOperation_BehaviorD
   public AttributeAccess_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return AttributeAccess_Behavior.virtual_isSingularCardinality_4024382256428848847(thisNode);
-  }
-
   public SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
     return AttributeAccess_Behavior.virtual_getTargetConcept_4024382256428848859(thisNode);
   }
@@ -22,6 +18,10 @@ public class AttributeAccess_BehaviorDescriptor extends SNodeOperation_BehaviorD
 
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return AttributeAccess_Behavior.virtual_isLValue_1213877410080(thisNode);
+  }
+
+  public boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
+    return AttributeAccess_Behavior.virtual_isSingularCardinality_4024382256428848847(thisNode);
   }
 
   @Override

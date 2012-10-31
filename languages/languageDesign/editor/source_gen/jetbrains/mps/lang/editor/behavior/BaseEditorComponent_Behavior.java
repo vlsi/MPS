@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,11 +18,11 @@ public class BaseEditorComponent_Behavior {
   }
 
   public static List<SNode> call_getApplicableComponents_1213877372457(SNode thisNode, IScope scope) {
-    final SNode conceptDeclaration = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(thisNode);
+    final SNode conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
     List<SNode> editorComponents = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(thisNode), scope, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
     return ListSequence.fromList(editorComponents).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SConceptOperations.isSuperConceptOf(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(it), NameUtil.nodeFQName(conceptDeclaration));
+        return SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(conceptDeclaration));
       }
     }).toListSequence();
   }

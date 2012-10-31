@@ -12,12 +12,12 @@ public class XmlFile_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor i
   public XmlFile_BehaviorDescriptor() {
   }
 
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return XmlFile_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
+    return XmlFile_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
   }
 
   @Override

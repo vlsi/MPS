@@ -30,11 +30,16 @@ import java.util.Map;
  */
 public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.PersistenceFacade implements CoreComponent {
 
+  public static final String DEFAULT_MODEL_ROOT = "default";
+
   private Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
   private Map<String, ModelFactory> myExtensionToModelFactoryMap = new HashMap<String, ModelFactory>();
 
   @Override
   public ModelRootFactory getModelRootFactory(String type) {
+    if (type == null || type.length() == 0) {
+      type = DEFAULT_MODEL_ROOT;
+    }
     return myRootFactories.get(type);
   }
 
@@ -71,10 +76,10 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     }
     INSTANCE = this;
 
-    setModelRootFactory("default", new ModelRootFactory() {
+    setModelRootFactory(DEFAULT_MODEL_ROOT, new ModelRootFactory() {
       @Override
       public ModelRoot create() {
-        return new SModelRoot();
+        return new SModelRoot(null);
       }
     });
   }

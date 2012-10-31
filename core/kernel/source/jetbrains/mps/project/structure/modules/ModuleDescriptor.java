@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.persistence.JDOMMemento;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jdom.Element;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 public class ModuleDescriptor {
   private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
@@ -31,7 +31,7 @@ public class ModuleDescriptor {
   private String myNamespace;
   private String myTimestamp;
 
-  private Collection<ModelRoot> myModelRoots;
+  private Collection<ModelRootDescriptor> myModelRoots;
   private Collection<Dependency> myDependencies;
   private Collection<ModuleReference> myUsedLanguages;
   private Collection<ModuleReference> myUsedDevkits;
@@ -43,7 +43,7 @@ public class ModuleDescriptor {
   private boolean myUseTransientOutput;
 
   public ModuleDescriptor() {
-    myModelRoots = new LinkedHashSet<ModelRoot>();
+    myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
@@ -100,20 +100,6 @@ public class ModuleDescriptor {
 
 
   public Collection<ModelRootDescriptor> getModelRootDescriptors() {
-    Collection<ModelRootDescriptor> descriptors = new ArrayList<ModelRootDescriptor>();
-    for (ModelRoot root : myModelRoots) {
-      JDOMMemento memento = new JDOMMemento(new Element("modelRoot"));
-      root.save(memento);
-      descriptors.add(new ModelRootDescriptor("default", memento));
-    }
-    return descriptors;
-  }
-
-  /**
-   * @deprecated use getModelRootDescriptors()
-   */
-  @Deprecated
-  public Collection<ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 

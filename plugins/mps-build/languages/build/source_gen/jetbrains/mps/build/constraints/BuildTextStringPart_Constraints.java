@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
-import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
@@ -46,7 +46,7 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
         {
           SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
           if (container != null) {
-            return BuildStringContainer_Behavior.call_isValidPart_9184644532456897464(container, (SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRole());
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, container, "virtual_isValidPart_9184644532456897464", new Object[]{(SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRole()});
           }
           return !((SPropertyOperations.getString(propertyValue)).contains("$"));
         }

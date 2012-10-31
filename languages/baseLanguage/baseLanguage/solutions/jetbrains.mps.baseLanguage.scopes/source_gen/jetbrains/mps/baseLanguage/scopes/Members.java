@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class Members {
   private Members() {
@@ -23,7 +23,7 @@ public class Members {
   }
 
   public static Iterable<SNode> visibleStaticFields(SNode classifier, SNode contextNode) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), contextNode)).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       }
@@ -39,7 +39,7 @@ public class Members {
   }
 
   public static Iterable<SNode> visibleStaticMethods(SNode classifier, SNode contextNode) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), contextNode)).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
@@ -47,7 +47,7 @@ public class Members {
   }
 
   public static Iterable<SNode> visibleEnumConstants(SNode classifier) {
-    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier))).where(new IWhereFilter<SNode>() {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }

@@ -27,7 +27,7 @@
     <nodeInfo nodeId="7939206742749757507" fileName="AbstractAntiquotation_Behavior.java" startLine="23" startPosition="112" endLine="24" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="751310489368692729" fileName="AbstractAntiquotation_Behavior.java" startLine="27" startPosition="85" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="751310489368693033" fileName="AbstractAntiquotation_Behavior.java" startLine="28" startPosition="26" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="751310489368693129" fileName="AbstractAntiquotation_Behavior.java" startLine="31" startPosition="102" endLine="32" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="751310489368693129" fileName="AbstractAntiquotation_Behavior.java" startLine="31" startPosition="102" endLine="32" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="751310489368693455" fileName="AbstractAntiquotation_Behavior.java" startLine="34" startPosition="33" endLine="35" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="751310489368693294" fileName="AbstractAntiquotation_Behavior.java" startLine="36" startPosition="7" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="751310489368693245" fileName="AbstractAntiquotation_Behavior.java" startLine="39" startPosition="25" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -45,7 +45,7 @@
     <scopeInfo nodeId="201537367881178505" fileName="AbstractAntiquotation_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="13" />
     <scopeInfo nodeId="7939206742749757143" fileName="AbstractAntiquotation_Behavior.java" startLine="19" startPosition="101" endLine="20" endPosition="92" />
     <scopeInfo nodeId="7939206742749757157" fileName="AbstractAntiquotation_Behavior.java" startLine="23" startPosition="112" endLine="24" endPosition="92" />
-    <scopeInfo nodeId="751310489368693099" fileName="AbstractAntiquotation_Behavior.java" startLine="31" startPosition="102" endLine="32" endPosition="180" />
+    <scopeInfo nodeId="751310489368693099" fileName="AbstractAntiquotation_Behavior.java" startLine="31" startPosition="102" endLine="32" endPosition="222" />
     <scopeInfo nodeId="751310489368693427" fileName="AbstractAntiquotation_Behavior.java" startLine="34" startPosition="33" endLine="35" endPosition="14" />
     <scopeInfo nodeId="751310489368693214" fileName="AbstractAntiquotation_Behavior.java" startLine="39" startPosition="25" endLine="40" endPosition="30" />
     <scopeInfo nodeId="3981318653438276804" fileName="AbstractAntiquotation_Behavior.java" startLine="11" startPosition="45" endLine="14" endPosition="0">

@@ -4,28 +4,21 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseClassifierType_Behavior {
-  private static Class[] PARAMETERS_1213877402148 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static List<SNode> call_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), "virtual_getMembers_1213877402148", PARAMETERS_1213877402148, new Object[]{contextNode});
-  }
-
-  public static List<SNode> callSuperNew_getMembers_1213877402148(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_1213877402148, new Object[]{contextNode});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877402148", new Object[]{contextNode});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getMembers_1213877402148(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), callerConceptFqName, "virtual_getMembers_1213877402148", PARAMETERS_1213877402148, new Object[]{contextNode});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), callerConceptFqName, "virtual_getMembers_1213877402148", new Class[]{SNode.class, SNode.class}, new Object[]{contextNode});
   }
 }

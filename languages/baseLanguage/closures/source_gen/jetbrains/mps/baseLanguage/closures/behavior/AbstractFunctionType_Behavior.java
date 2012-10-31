@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractFunctionType_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +14,10 @@ public class AbstractFunctionType_Behavior {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
-      sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(pt));
+      sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, pt, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ",";
     }
-    sb.append("~~>").append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "resultType", true)));
+    sb.append("~~>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "resultType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
     return sb.append("}").toString();
   }
 }

@@ -15,14 +15,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import java.util.ArrayList;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 
 public class ScopeUtil {
   public ScopeUtil() {
@@ -66,7 +64,7 @@ public class ScopeUtil {
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return ScopeProvider_Behavior.call_getScope_3734116213129936182(it, concept, child);
+        return BehaviorReflection.invokeVirtual(Scope.class, it, "virtual_getScope_3734116213129936182", new Object[]{concept, child});
       }
     });
   }
@@ -116,7 +114,7 @@ public class ScopeUtil {
     private Iterable<SNode> getAllNodes() {
       Iterable<SNode> seq = Sequence.fromIterable(artifacts.getArtifacts()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return BuildLayout_Node_Behavior.call_isFile_1368030936106753986(it) || BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(it);
+          return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isFile_1368030936106753986", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isFolder_1368030936106753980", new Object[]{});
         }
       });
       if (includeLayoutRoots) {
@@ -173,7 +171,7 @@ public class ScopeUtil {
       if ((parent != null)) {
         appendName(parent, sb);
       }
-      BuildLayout_PathElement_Behavior.call_appendName_1368030936106665465(node, parent, sb);
+      BehaviorReflection.invokeVirtual(Void.class, node, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
     }
   }
 

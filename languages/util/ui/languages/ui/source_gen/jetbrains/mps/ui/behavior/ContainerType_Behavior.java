@@ -5,7 +5,7 @@ package jetbrains.mps.ui.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ContainerType_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +13,10 @@ public class ContainerType_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SConceptPropertyOperations.getString(thisNode, "alias") + "<" + (((SLinkOperations.getTarget(thisNode, "container", false) != null) ?
-      BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "container", false)) :
+      BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "container", false), "virtual_getPresentation_1213877396640", new Object[]{}) :
       ""
     )) + (((SLinkOperations.getTarget(thisNode, "uiObject", false) != null) ?
-      "@" + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "uiObject", false)) :
+      "@" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "uiObject", false), "virtual_getPresentation_1213877396640", new Object[]{}) :
       ""
     )) + ">";
   }

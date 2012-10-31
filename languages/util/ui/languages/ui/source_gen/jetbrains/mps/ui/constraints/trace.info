@@ -585,41 +585,41 @@
     <unitInfo nodeId="6410919744913609621" fileName="UIObjectReference_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ui.constraints.UIObjectReference_Constraints" />
   </root>
   <root nodeId="6424935405034937409" modelId="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)">
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="20" startPosition="72" endLine="21" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_uubskl_a0a1a0a0a1a0b0a1a0" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="23" startPosition="36" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1055897155339717857" fileName="ChildAspect_Constraints.java" startLine="41" startPosition="142" endLine="42" endPosition="531" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="46" startPosition="61" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="51" startPosition="7" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChildAspect_Constraints#()V" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="30" startPosition="93" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="39" startPosition="49" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="38" startPosition="56" endLine="49" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="29" startPosition="75" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="26" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="23" startPosition="36" endLine="24" endPosition="52" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="6424935405034937412" fileName="ChildAspect_Constraints.java" startLine="41" startPosition="142" endLine="42" endPosition="531" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="46" startPosition="61" endLine="47" endPosition="58" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="30" startPosition="93" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="39" startPosition="49" endLine="44" endPosition="0">
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="21" startPosition="72" endLine="22" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_uubskl_a0a1a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="24" startPosition="36" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1055897155339717857" fileName="ChildAspect_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="591" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="47" startPosition="61" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChildAspect_Constraints#()V" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="31" startPosition="93" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="40" startPosition="49" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="39" startPosition="56" endLine="50" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="36" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="30" startPosition="75" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="27" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="24" startPosition="36" endLine="25" endPosition="52" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="6424935405034937412" fileName="ChildAspect_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="591" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="47" startPosition="61" endLine="48" endPosition="58" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="31" startPosition="93" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="40" startPosition="49" endLine="45" endPosition="0">
       <varInfo nodeId="6424935405034937409" varName="_context" />
       <varInfo nodeId="6424935405034937409" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="38" startPosition="56" endLine="49" endPosition="10" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="35" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="28" startPosition="83" endLine="52" endPosition="22">
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="39" startPosition="56" endLine="50" endPosition="10" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="36" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="29" startPosition="83" endLine="53" endPosition="22">
       <varInfo nodeId="6424935405034937409" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="26" startPosition="0" endLine="54" endPosition="0" />
-    <unitInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="39" startPosition="19" endLine="49" endPosition="9" unitName="jetbrains.mps.ui.constraints.ChildAspect_Constraints$2" />
-    <unitInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="30" startPosition="37" endLine="51" endPosition="5" unitName="jetbrains.mps.ui.constraints.ChildAspect_Constraints$1" />
-    <unitInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="20" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ui.constraints.ChildAspect_Constraints" />
+    <scopeInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="27" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="40" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.ui.constraints.ChildAspect_Constraints$2" />
+    <unitInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="31" startPosition="37" endLine="52" endPosition="5" unitName="jetbrains.mps.ui.constraints.ChildAspect_Constraints$1" />
+    <unitInfo nodeId="6424935405034937409" fileName="ChildAspect_Constraints.java" startLine="21" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ui.constraints.ChildAspect_Constraints" />
   </root>
   <root nodeId="8115675450774399835" modelId="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)">
     <nodeInfo nodeId="8115675450774399835" fileName="ViewBinding_Constraints.java" startLine="23" startPosition="72" endLine="24" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_w3orvv_a0a1a0a0a1a0b0a1a0" />

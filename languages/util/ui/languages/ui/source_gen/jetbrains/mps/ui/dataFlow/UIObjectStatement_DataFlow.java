@@ -8,7 +8,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ui.behavior.UIObjectStatement_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UIObjectStatement_DataFlow extends DataFlowBuilder {
   public UIObjectStatement_DataFlow() {
@@ -27,7 +27,7 @@ public class UIObjectStatement_DataFlow extends DataFlowBuilder {
     for (SNode as : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "aspect", true))) {
       _context.getBuilder().build((SNode) as);
     }
-    if (UIObjectStatement_Behavior.call_shouldReturnValue_7109250785404509292(_context.getNode())) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_shouldReturnValue_7109250785404509292", new Object[]{})) {
       _context.getBuilder().emitRet();
     }
   }

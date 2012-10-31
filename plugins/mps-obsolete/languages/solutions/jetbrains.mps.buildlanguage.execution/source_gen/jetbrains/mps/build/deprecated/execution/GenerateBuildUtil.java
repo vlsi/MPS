@@ -5,7 +5,7 @@ package jetbrains.mps.build.deprecated.execution;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.io.File;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
@@ -36,7 +36,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<String> folder = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        folder.value = ((String) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, configuration, "call_getLayout_1213877261819", new Class[]{SNode.class})), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class}));
+        folder.value = BehaviorReflection.invokeNonVirtual(String.class, BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), configuration, "jetbrains.mps.build.packaging.structure.Configuration", "call_getLayout_1213877261819", new Object[]{}), "jetbrains.mps.build.packaging.structure.Layout", "call_getFolderToGenerate_1229522949966", new Object[]{});
       }
     });
     return folder.value;
@@ -46,7 +46,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<String> fileName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        fileName.value = ((String) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, configuration, "call_getLayout_1213877261819", new Class[]{SNode.class})), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class})) + File.separator + ((String) BehaviorManager.getInstance().invoke(Object.class, configuration, "call_getBuildFileName_1230217425313", new Class[]{SNode.class})) + ".xml";
+        fileName.value = BehaviorReflection.invokeNonVirtual(String.class, BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), configuration, "jetbrains.mps.build.packaging.structure.Configuration", "call_getLayout_1213877261819", new Object[]{}), "jetbrains.mps.build.packaging.structure.Layout", "call_getFolderToGenerate_1229522949966", new Object[]{}) + File.separator + BehaviorReflection.invokeNonVirtual(String.class, configuration, "jetbrains.mps.build.packaging.structure.Configuration", "call_getBuildFileName_1230217425313", new Object[]{}) + ".xml";
       }
     });
     return fileName.value;
@@ -68,7 +68,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        baseFolder.value = ((String) BehaviorManager.getInstance().invoke(Object.class, layout, "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class}));
+        baseFolder.value = BehaviorReflection.invokeNonVirtual(String.class, layout, "jetbrains.mps.build.packaging.structure.Layout", "call_getFolderToGenerate_1229522949966", new Object[]{});
         descriptor.value = SNodeOperations.getModel(layout).getModelDescriptor();
       }
     });

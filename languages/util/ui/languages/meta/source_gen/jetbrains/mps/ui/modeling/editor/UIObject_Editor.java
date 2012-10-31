@@ -18,7 +18,7 @@ import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -345,7 +345,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
           }
         });
         return ((bt != null) ?
-          BaseConcept_Behavior.call_getPresentation_1213877396640(bt) :
+          BehaviorReflection.invokeVirtual(String.class, bt, "virtual_getPresentation_1213877396640", new Object[]{}) :
           "<none>"
         );
       }

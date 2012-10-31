@@ -6,14 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ILocalDeclaration_Behavior {
-  private static Class[] PARAMETERS_3262277503800823422 = {SNode.class};
-  private static Class[] PARAMETERS_1644061362849513751 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,13 +20,13 @@ public class ILocalDeclaration_Behavior {
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref_var) == thisNode) {
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
           SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
           while (referenceContainer != null) {
             if (referenceContainer == container) {
               return false;
             }
-            if (IStatementListContainer_Behavior.call_isClosure_3262277503800835439(SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false))) {
+            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false), "virtual_isClosure_3262277503800835439", new Object[]{})) {
               return true;
             }
             referenceContainer = SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
@@ -48,7 +44,7 @@ public class ILocalDeclaration_Behavior {
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref_var) == thisNode) {
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
           SNode interrupter = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
           if (interrupter == container || ListSequence.fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
             return true;
@@ -59,31 +55,23 @@ public class ILocalDeclaration_Behavior {
     return false;
   }
 
+  @Deprecated
   public static boolean call_isReferencedInClosure_3262277503800823422(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInClosure_3262277503800823422", new Object[]{});
   }
 
+  @Deprecated
   public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Class[]{SNode.class}, new Object[]{});
   }
 }

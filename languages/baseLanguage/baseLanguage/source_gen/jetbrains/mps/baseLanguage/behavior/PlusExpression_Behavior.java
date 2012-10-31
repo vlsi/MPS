@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PlusExpression_Behavior {
@@ -12,8 +13,8 @@ public class PlusExpression_Behavior {
 
   public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     Object result;
-    Object leftExpression = Expression_Behavior.call_eval_1213877519769(SLinkOperations.getTarget(thisNode, "leftExpression", true), module);
-    Object rightExpression = Expression_Behavior.call_eval_1213877519769(SLinkOperations.getTarget(thisNode, "rightExpression", true), module);
+    Object leftExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "leftExpression", true), "virtual_eval_1213877519769", new Object[]{module});
+    Object rightExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "rightExpression", true), "virtual_eval_1213877519769", new Object[]{module});
     if (leftExpression instanceof String) {
       result = "" + leftExpression + rightExpression;
     } else {

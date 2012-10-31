@@ -15,7 +15,7 @@
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="45" startPosition="44" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="119022571402326711" fileName="ResourceClassifierType_Constraints.java" startLine="59" startPosition="128" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="119022571402219080" fileName="ResourceClassifierType_Constraints.java" startLine="66" startPosition="45" endLine="67" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="119022571402219080" fileName="ResourceClassifierType_Constraints.java" startLine="66" startPosition="45" endLine="67" endPosition="366" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="73" startPosition="61" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="78" startPosition="7" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="86" startPosition="31" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -26,7 +26,7 @@
     <nodeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="92" startPosition="43" endLine="93" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="93" startPosition="240" endLine="94" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="95" startPosition="7" endLine="96" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="82" startPosition="76" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0#()V" />
+    <nodeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="82" startPosition="78" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_ymgo28_a0a0d0a0a0a0a0a0a2a0a0a1a0b0a1a0#()V" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourceClassifierType_Constraints#()V" />
     <nodeInfo nodeId="119022571402219075" fileName="ResourceClassifierType_Constraints.java" startLine="65" startPosition="188" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="43" startPosition="93" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
@@ -42,14 +42,14 @@
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="48" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="42" startPosition="75" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="39" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="83" startPosition="67" endLine="83" endPosition="67" />
+    <scopeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="83" startPosition="69" endLine="83" endPosition="69" />
     <scopeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="36" startPosition="47" endLine="37" endPosition="71" />
     <scopeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="45" startPosition="44" endLine="46" endPosition="20" />
     <scopeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="24" />
     <scopeInfo nodeId="119022571402326322" fileName="ResourceClassifierType_Constraints.java" startLine="59" startPosition="128" endLine="60" endPosition="63" />
-    <scopeInfo nodeId="119022571402219076" fileName="ResourceClassifierType_Constraints.java" startLine="66" startPosition="45" endLine="67" endPosition="317" />
+    <scopeInfo nodeId="119022571402219076" fileName="ResourceClassifierType_Constraints.java" startLine="66" startPosition="45" endLine="67" endPosition="366" />
     <scopeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="73" startPosition="61" endLine="74" endPosition="58" />
-    <scopeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="82" startPosition="76" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="82" startPosition="78" endLine="84" endPosition="5" />
     <scopeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="3" />
     <scopeInfo nodeId="119022571402219075" fileName="ResourceClassifierType_Constraints.java" startLine="65" startPosition="188" endLine="69" endPosition="0">
       <varInfo nodeId="119022571402219075" varName="cls" />
@@ -83,7 +83,7 @@
     </scopeInfo>
     <scopeInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="39" startPosition="0" endLine="81" endPosition="0" />
     <unitInfo nodeId="119022571402219075" fileName="ResourceClassifierType_Constraints.java" startLine="65" startPosition="168" endLine="69" endPosition="13" unitName="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$3" />
-    <unitInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="82" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0" />
+    <unitInfo nodeId="119022571402307898" fileName="ResourceClassifierType_Constraints.java" startLine="82" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$QuotationClass_ymgo28_a0a0d0a0a0a0a0a0a2a0a0a1a0b0a1a0" />
     <unitInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="52" startPosition="19" endLine="76" endPosition="9" unitName="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$2" />
     <unitInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="43" startPosition="37" endLine="78" endPosition="5" unitName="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1" />
     <unitInfo nodeId="119022571402207414" fileName="ResourceClassifierType_Constraints.java" startLine="33" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints" />

@@ -21912,7 +21912,7 @@
     <nodeInfo nodeId="5540778578667478324" fileName="GeneratorParameterReference_Editor.java" startLine="132" startPosition="136" endLine="133" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5540778578667478324" fileName="GeneratorParameterReference_Editor.java" startLine="133" startPosition="48" endLine="134" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5540778578667478324" fileName="GeneratorParameterReference_Editor.java" startLine="134" startPosition="34" endLine="135" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5540778578667766068" fileName="GeneratorParameterReference_Editor.java" startLine="140" startPosition="31" endLine="141" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5540778578667766068" fileName="GeneratorParameterReference_Editor.java" startLine="140" startPosition="31" endLine="141" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540778578667766064" fileName="GeneratorParameterReference_Editor.java" startLine="147" startPosition="44" endLine="148" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540778578667766064" fileName="GeneratorParameterReference_Editor.java" startLine="150" startPosition="13" endLine="151" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5540778578667766064" fileName="GeneratorParameterReference_Editor.java" startLine="151" startPosition="72" endLine="152" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -22030,7 +22030,7 @@
     <scopeInfo nodeId="5540778578667766062" fileName="GeneratorParameterReference_Editor.java" startLine="96" startPosition="128" endLine="97" endPosition="48" />
     <scopeInfo nodeId="5540778578667478305" fileName="GeneratorParameterReference_Editor.java" startLine="114" startPosition="135" endLine="115" endPosition="48" />
     <scopeInfo nodeId="5540778578667478324" fileName="GeneratorParameterReference_Editor.java" startLine="132" startPosition="136" endLine="133" endPosition="48" />
-    <scopeInfo nodeId="5540778578667766067" fileName="GeneratorParameterReference_Editor.java" startLine="140" startPosition="31" endLine="141" endPosition="167" />
+    <scopeInfo nodeId="5540778578667766067" fileName="GeneratorParameterReference_Editor.java" startLine="140" startPosition="31" endLine="141" endPosition="215" />
     <scopeInfo nodeId="5540778578667766064" fileName="GeneratorParameterReference_Editor.java" startLine="147" startPosition="44" endLine="148" endPosition="46" />
     <scopeInfo nodeId="5540778578667766064" fileName="GeneratorParameterReference_Editor.java" startLine="151" startPosition="72" endLine="152" endPosition="61" />
     <scopeInfo nodeId="5540778578667478326" fileName="GeneratorParameterReference_Editor.java" startLine="179" startPosition="58" endLine="180" endPosition="48" />
@@ -22733,7 +22733,7 @@
     <nodeInfo nodeId="7386719926921915485" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="55" startPosition="6" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7386719926921915499" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="58" startPosition="56" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7386719926921915511" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="61" startPosition="69" endLine="62" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7386719926921915523" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="64" startPosition="67" endLine="65" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7386719926921915523" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="64" startPosition="67" endLine="65" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7386719926921915539" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="66" startPosition="14" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7386719926921915546" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="69" startPosition="65" endLine="70" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7386719926921915560" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="71" startPosition="7" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -22766,7 +22766,7 @@
     <scopeInfo nodeId="7386719926921915406" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="48" startPosition="12" endLine="49" endPosition="37" />
     <scopeInfo nodeId="7386719926921915498" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="58" startPosition="56" endLine="59" endPosition="32" />
     <scopeInfo nodeId="7386719926921915510" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="61" startPosition="69" endLine="62" endPosition="33" />
-    <scopeInfo nodeId="7386719926921915522" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="64" startPosition="67" endLine="65" endPosition="131" />
+    <scopeInfo nodeId="7386719926921915522" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="64" startPosition="67" endLine="65" endPosition="179" />
     <scopeInfo nodeId="7386719926921915538" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="66" startPosition="14" endLine="67" endPosition="33" />
     <scopeInfo nodeId="7386719926921915545" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="69" startPosition="65" endLine="70" endPosition="78" />
     <scopeInfo nodeId="7386719926921893550" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="17" startPosition="96" endLine="19" endPosition="3" />

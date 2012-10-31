@@ -8,20 +8,20 @@ public class UnrestrictedFunctionType_BehaviorDescriptor extends FunctionType_Be
   public UnrestrictedFunctionType_BehaviorDescriptor() {
   }
 
-  public String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
-    return UnrestrictedFunctionType_Behavior.virtual_getRuntimeSignature_1213877404927(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return UnrestrictedFunctionType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
   public String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
     return UnrestrictedFunctionType_Behavior.virtual_getRuntimeClassName_1230472987259(thisNode);
   }
 
-  public SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
-    return UnrestrictedFunctionType_Behavior.virtual_getTerminateType_1232032188607(thisNode);
+  public String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
+    return UnrestrictedFunctionType_Behavior.virtual_getRuntimeSignature_1213877404927(thisNode);
   }
 
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return UnrestrictedFunctionType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
+    return UnrestrictedFunctionType_Behavior.virtual_getTerminateType_1232032188607(thisNode);
   }
 
   @Override

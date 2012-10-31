@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PrivateStaticFieldReference_Behavior {
@@ -13,11 +13,11 @@ public class PrivateStaticFieldReference_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "variableDeclaration", false) == null)) {
-      return BaseConcept_Behavior.callSuperNew_getPresentation_1213877396640(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+      return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "virtual_getPresentation_1213877396640", new Object[]{});
     }
     String classifierPresentation = "";
     if ((SLinkOperations.getTarget(thisNode, "classifier", false) != null)) {
-      classifierPresentation = BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "classifier", false)) + ".";
+      classifierPresentation = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_getPresentation_1213877396640", new Object[]{}) + ".";
     }
     return classifierPresentation + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "name");
   }

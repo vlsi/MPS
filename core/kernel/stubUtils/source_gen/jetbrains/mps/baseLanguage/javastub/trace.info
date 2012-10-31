@@ -2853,60 +2853,59 @@
     <unitInfo nodeId="4558608847800740951" fileName="ClassifierLoader.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierLoader" />
   </root>
   <root nodeId="5423843815843235918" modelId="r:aa7e8178-3b66-4295-bcce-165c85d78006(jetbrains.mps.baseLanguage.javastub)">
-    <nodeInfo nodeId="5423843815843263901" fileName="SReferenceCreator.java" startLine="22" startPosition="61" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
-    <nodeInfo nodeId="5423843815843266243" fileName="SReferenceCreator.java" startLine="23" startPosition="25" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" />
-    <nodeInfo nodeId="5423843815843263904" fileName="SReferenceCreator.java" startLine="26" startPosition="58" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5423843815843266246" fileName="SReferenceCreator.java" startLine="27" startPosition="25" endLine="28" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3633685240070180768" fileName="SReferenceCreator.java" startLine="32" startPosition="43" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3633685240070180783" fileName="SReferenceCreator.java" startLine="34" startPosition="36" endLine="35" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="412741235118844343" fileName="SReferenceCreator.java" startLine="37" startPosition="5" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3337801829813899367" fileName="SReferenceCreator.java" startLine="38" startPosition="0" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="711884569791035488" fileName="SReferenceCreator.java" startLine="39" startPosition="80" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="711884569791035480" fileName="SReferenceCreator.java" startLine="41" startPosition="48" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="711884569791035489" fileName="SReferenceCreator.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3337801829813899327" fileName="SReferenceCreator.java" startLine="46" startPosition="40" endLine="47" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3337801829813899360" fileName="SReferenceCreator.java" startLine="48" startPosition="7" endLine="49" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3337801829813899365" fileName="SReferenceCreator.java" startLine="50" startPosition="5" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3337801829813900291" fileName="SReferenceCreator.java" startLine="51" startPosition="0" endLine="52" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5700691190903453152" fileName="SReferenceCreator.java" startLine="52" startPosition="152" endLine="53" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6256594769885917049" fileName="SReferenceCreator.java" startLine="53" startPosition="123" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3337801829813899329" fileName="SReferenceCreator.java" startLine="54" startPosition="80" endLine="55" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3337801829813899376" fileName="SReferenceCreator.java" startLine="55" startPosition="69" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3337801829813899339" fileName="SReferenceCreator.java" startLine="59" startPosition="92" endLine="60" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3633685240070179369" fileName="SReferenceCreator.java" startLine="33" startPosition="62" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="711884569791035470" fileName="SReferenceCreator.java" startLine="40" startPosition="0" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3337801829813899320" fileName="SReferenceCreator.java" startLine="45" startPosition="50" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5423843815843235920" fileName="SReferenceCreator.java" startLine="25" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SReferenceCreator#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="2566197375814064451" fileName="SReferenceCreator.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReferencesFor#(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Set;" />
-    <nodeInfo nodeId="412741235118844345" fileName="SReferenceCreator.java" startLine="31" startPosition="145" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3337801829813897911" fileName="SReferenceCreator.java" startLine="44" startPosition="0" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3337801829813899346" fileName="SReferenceCreator.java" startLine="30" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SReference;" />
-    <scopeInfo nodeId="3633685240070179370" fileName="SReferenceCreator.java" startLine="34" startPosition="36" endLine="35" endPosition="102" />
-    <scopeInfo nodeId="711884569791035471" fileName="SReferenceCreator.java" startLine="41" startPosition="48" endLine="42" endPosition="78" />
-    <scopeInfo nodeId="3337801829813899321" fileName="SReferenceCreator.java" startLine="46" startPosition="40" endLine="47" endPosition="39" />
-    <scopeInfo nodeId="2566197375814064454" fileName="SReferenceCreator.java" startLine="59" startPosition="92" endLine="60" endPosition="118" />
-    <scopeInfo nodeId="5423843815843235923" fileName="SReferenceCreator.java" startLine="26" startPosition="58" endLine="28" endPosition="23" />
-    <scopeInfo nodeId="3337801829813899320" fileName="SReferenceCreator.java" startLine="45" startPosition="50" endLine="48" endPosition="7">
+    <nodeInfo nodeId="5423843815843263901" fileName="SReferenceCreator.java" startLine="20" startPosition="61" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
+    <nodeInfo nodeId="5423843815843266243" fileName="SReferenceCreator.java" startLine="21" startPosition="25" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" />
+    <nodeInfo nodeId="5423843815843263904" fileName="SReferenceCreator.java" startLine="24" startPosition="58" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5423843815843266246" fileName="SReferenceCreator.java" startLine="25" startPosition="25" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3633685240070180768" fileName="SReferenceCreator.java" startLine="30" startPosition="43" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3633685240070180783" fileName="SReferenceCreator.java" startLine="32" startPosition="36" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="412741235118844343" fileName="SReferenceCreator.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3337801829813899367" fileName="SReferenceCreator.java" startLine="36" startPosition="0" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="711884569791035488" fileName="SReferenceCreator.java" startLine="37" startPosition="80" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="711884569791035480" fileName="SReferenceCreator.java" startLine="39" startPosition="48" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="711884569791035489" fileName="SReferenceCreator.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3337801829813899327" fileName="SReferenceCreator.java" startLine="44" startPosition="40" endLine="45" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3337801829813899360" fileName="SReferenceCreator.java" startLine="46" startPosition="7" endLine="47" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3337801829813899365" fileName="SReferenceCreator.java" startLine="48" startPosition="5" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3337801829813900291" fileName="SReferenceCreator.java" startLine="49" startPosition="0" endLine="50" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5700691190903453152" fileName="SReferenceCreator.java" startLine="50" startPosition="152" endLine="51" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3337801829813899329" fileName="SReferenceCreator.java" startLine="51" startPosition="123" endLine="52" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3337801829813899376" fileName="SReferenceCreator.java" startLine="52" startPosition="69" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3337801829813899339" fileName="SReferenceCreator.java" startLine="56" startPosition="92" endLine="57" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3633685240070179369" fileName="SReferenceCreator.java" startLine="31" startPosition="62" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="711884569791035470" fileName="SReferenceCreator.java" startLine="38" startPosition="0" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3337801829813899320" fileName="SReferenceCreator.java" startLine="43" startPosition="50" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5423843815843235920" fileName="SReferenceCreator.java" startLine="23" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SReferenceCreator#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="2566197375814064451" fileName="SReferenceCreator.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReferencesFor#(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Set;" />
+    <nodeInfo nodeId="412741235118844345" fileName="SReferenceCreator.java" startLine="29" startPosition="145" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3337801829813897911" fileName="SReferenceCreator.java" startLine="42" startPosition="0" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3337801829813899346" fileName="SReferenceCreator.java" startLine="28" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SReference;" />
+    <scopeInfo nodeId="3633685240070179370" fileName="SReferenceCreator.java" startLine="32" startPosition="36" endLine="33" endPosition="102" />
+    <scopeInfo nodeId="711884569791035471" fileName="SReferenceCreator.java" startLine="39" startPosition="48" endLine="40" endPosition="78" />
+    <scopeInfo nodeId="3337801829813899321" fileName="SReferenceCreator.java" startLine="44" startPosition="40" endLine="45" endPosition="39" />
+    <scopeInfo nodeId="2566197375814064454" fileName="SReferenceCreator.java" startLine="56" startPosition="92" endLine="57" endPosition="118" />
+    <scopeInfo nodeId="5423843815843235923" fileName="SReferenceCreator.java" startLine="24" startPosition="58" endLine="26" endPosition="23" />
+    <scopeInfo nodeId="3337801829813899320" fileName="SReferenceCreator.java" startLine="43" startPosition="50" endLine="46" endPosition="7">
       <varInfo nodeId="3337801829813899323" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5423843815843235920" fileName="SReferenceCreator.java" startLine="25" startPosition="0" endLine="29" endPosition="3">
+    <scopeInfo nodeId="5423843815843235920" fileName="SReferenceCreator.java" startLine="23" startPosition="0" endLine="27" endPosition="3">
       <varInfo nodeId="5423843815843266222" varName="model" />
       <varInfo nodeId="5423843815843263899" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="412741235118844346" fileName="SReferenceCreator.java" startLine="32" startPosition="43" endLine="36" endPosition="7">
+    <scopeInfo nodeId="412741235118844346" fileName="SReferenceCreator.java" startLine="30" startPosition="43" endLine="34" endPosition="7">
       <varInfo nodeId="3633685240070180769" varName="nodeInSameModel" />
     </scopeInfo>
-    <scopeInfo nodeId="3337801829813897912" fileName="SReferenceCreator.java" startLine="45" startPosition="50" endLine="49" endPosition="111" />
-    <scopeInfo nodeId="2566197375814064451" fileName="SReferenceCreator.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="3337801829813897912" fileName="SReferenceCreator.java" startLine="43" startPosition="50" endLine="47" endPosition="111" />
+    <scopeInfo nodeId="2566197375814064451" fileName="SReferenceCreator.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="7945956986386958449" varName="pack" />
       <varInfo nodeId="5423843815843310625" varName="rootPresentation" />
     </scopeInfo>
-    <scopeInfo nodeId="3337801829813899349" fileName="SReferenceCreator.java" startLine="31" startPosition="145" endLine="56" endPosition="75">
+    <scopeInfo nodeId="3337801829813899349" fileName="SReferenceCreator.java" startLine="29" startPosition="145" endLine="53" endPosition="75">
       <varInfo nodeId="3337801829813899368" varName="models" />
       <varInfo nodeId="3337801829813900292" varName="moduleRef" />
       <varInfo nodeId="5700691190903453153" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="3337801829813899346" fileName="SReferenceCreator.java" startLine="30" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="3337801829813899346" fileName="SReferenceCreator.java" startLine="28" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7945956986386958442" varName="pack" />
       <varInfo nodeId="3337801829813899398" varName="resolveInfo" />
       <varInfo nodeId="3337801829813899388" varName="role" />
@@ -2914,7 +2913,7 @@
       <varInfo nodeId="5700691190903453121" varName="source" />
       <varInfo nodeId="3337801829813899353" varName="targetNodeId" />
     </scopeInfo>
-    <unitInfo nodeId="5423843815843235918" fileName="SReferenceCreator.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.SReferenceCreator" />
+    <unitInfo nodeId="5423843815843235918" fileName="SReferenceCreator.java" startLine="20" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.SReferenceCreator" />
   </root>
   <root nodeId="5423843815843235924" modelId="r:aa7e8178-3b66-4295-bcce-165c85d78006(jetbrains.mps.baseLanguage.javastub)">
     <nodeInfo nodeId="5423843815843236182" fileName="SReferenceHandler.java" startLine="9" startPosition="36" endLine="10" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SReference;" />

@@ -24,7 +24,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.Members;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -79,7 +79,7 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
 
             Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {
-              Iterable<SNode> methods = Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), _context.getEnclosingNode());
+              Iterable<SNode> methods = Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getEnclosingNode());
 
               for (SNode method : methods) {
                 if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {

@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
@@ -32,6 +31,7 @@ public class ImmatureReferences implements CoreComponent {
   private static final Object PRESENT = new Object();
 
   private static ImmatureReferences INSTANCE;
+  private static final SModelReference VIRTUAL_REF = new SModelReference(new SModelFqName("$ImmatureRefsModelRef$", ""), SModelId.generate());
 
   static ImmatureReferences getInstance() {
     return INSTANCE;
@@ -94,7 +94,7 @@ public class ImmatureReferences implements CoreComponent {
   void add(SReferenceBase ref) {
     if (myDisabled) return;
     SModel model = ref.getSourceNode().getModel();
-    SModelReference modelRef = model==null? AuxilaryRuntimeModel.getDescriptor().getSModelReference():model.getSModelReference();
+    SModelReference modelRef = model == null ? VIRTUAL_REF : model.getSModelReference();
     ConcurrentMap<SReferenceBase, Object> refSet = getOrCreateRefSet(modelRef);
     refSet.put(ref, PRESENT);
   }

@@ -29,7 +29,7 @@ import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -121,7 +121,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return Classifier_Behavior.call_getNestedName_8540045600162184125((item));
+                return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getNestedName_8540045600162184125", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -182,7 +182,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return Classifier_Behavior.call_getNestedName_8540045600162184125((item));
+                return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getNestedName_8540045600162184125", new Object[]{});
               }
 
               public String getVisibleMatchingText(String pattern) {

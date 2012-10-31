@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UnavailableConceptsChecker extends SpecificChecker {
   public UnavailableConceptsChecker() {
@@ -28,7 +28,7 @@ public class UnavailableConceptsChecker extends SpecificChecker {
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       if (concept == null) {
-        addIssue(results, node, "Cannot find concept \"" + ((String) BehaviorManager.getInstance().invoke(Object.class, concept, "virtual_getFqName_1213877404258", new Class[]{SNode.class})) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
+        addIssue(results, node, "Cannot find concept \"" + BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{}) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
       }
     }
     monitor.done();

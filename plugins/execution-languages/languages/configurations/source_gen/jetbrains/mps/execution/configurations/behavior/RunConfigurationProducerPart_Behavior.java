@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -19,6 +19,6 @@ public class RunConfigurationProducerPart_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "source", true) == null)) {
       return "";
     }
-    return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "source", true)), "jetbrains.mps.lang.core.structure.BaseConcept")));
+    return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "source", true)), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
 }

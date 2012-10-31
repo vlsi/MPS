@@ -18,13 +18,16 @@ package jetbrains.mps.project;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
+import jetbrains.mps.persistence.ModelRootBase;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -39,6 +42,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +57,7 @@ public abstract class AbstractModule implements IModule {
 
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
-  private Set<SModelRoot> mySModelRoots = new LinkedHashSet<SModelRoot>();
+  private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private ModuleScope myScope = createScope();
 
   private final Object LOCK = new Object();
@@ -82,7 +88,7 @@ public abstract class AbstractModule implements IModule {
     return createModel(name.toString(), root, adj);
   }
 
-  public final EditableSModelDescriptor createModel(String name, org.jetbrains.mps.openapi.persistence.ModelRoot root, ModelAdjuster adj) {
+  public final EditableSModelDescriptor createModel(String name, ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
@@ -196,6 +202,7 @@ public abstract class AbstractModule implements IModule {
 
   //----adding different deps
 
+  @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
@@ -221,6 +228,7 @@ public abstract class AbstractModule implements IModule {
     setChanged();
   }
 
+  @Override
   public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
@@ -233,6 +241,7 @@ public abstract class AbstractModule implements IModule {
     setChanged();
   }
 
+  @Override
   public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
@@ -247,10 +256,12 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
+  @Override
   public DependenciesManager getDependenciesManager() {
     return new ModuleDependenciesManager(this);
   }
 
+  @Override
   public List<Dependency> getDependencies() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<Dependency>();
@@ -259,12 +270,14 @@ public abstract class AbstractModule implements IModule {
 
   //----languages & devkits
 
+  @Override
   public Collection<ModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
   }
 
+  @Override
   public Collection<ModuleReference> getUsedDevkitReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
@@ -351,9 +364,10 @@ public abstract class AbstractModule implements IModule {
     descriptor.getAdditionalJavaStubPaths().removeAll(toRemovePaths);
 
     // stub model roots
-    List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
-    for (ModelRoot sme : descriptor.getModelRoots()) {
-      if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
+    List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
+    for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
+      jetbrains.mps.project.structure.model.ModelRoot sme = mrd.getRoot();
+      if (sme == null || !LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
       String path = sme.getPath();
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
 
@@ -376,17 +390,14 @@ public abstract class AbstractModule implements IModule {
       if (dd == null && canonicalPath.startsWith(libPath)) {
         continue;
       }
-      toRemove.add(sme);
+      toRemove.add(mrd);
     }
-    descriptor.getModelRoots().removeAll(toRemove);
+    descriptor.getModelRootDescriptors().removeAll(toRemove);
 
     if (addBundleAsModelRoot) {
-      ModelRoot mr = new ModelRoot();
+      SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
       mr.setPath(bundleHomeFile.getPath());
-      mr.setManager(LanguageID.JAVA_MANAGER);
-      if (!descriptor.getModelRoots().contains(mr)) {
-        descriptor.getModelRoots().add(mr);
-      }
+      descriptor.getModelRootDescriptors().add(mr.toDescriptor());
     }
     if (dd == null) {
       return;
@@ -397,15 +408,15 @@ public abstract class AbstractModule implements IModule {
         ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
         : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
-        ModelRoot mr = new ModelRoot();
+        SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
         mr.setPath(jar.getPath());
-        mr.setManager(LanguageID.JAVA_MANAGER);
         descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
-        descriptor.getModelRoots().add(mr);
+        descriptor.getModelRootDescriptors().add(mr.toDescriptor());
       }
     }
   }
 
+  @Override
   public IClassPathItem getClassPathItem() {
     synchronized (LOCK) {
       if (myCachedClassPathItem == null) {
@@ -426,6 +437,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  @Override
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
     return getDependenciesClasspath(CollectionUtil.set((IModule) this), false);
   }
@@ -442,12 +454,12 @@ public abstract class AbstractModule implements IModule {
 
   @Deprecated
   public Collection<SModelRoot> getSModelRoots() {
-    return Collections.unmodifiableCollection(mySModelRoots);
+    return (Collection) Collections.unmodifiableCollection(mySModelRoots);
   }
 
   @Override
-  public Iterable<org.jetbrains.mps.openapi.persistence.ModelRoot> getModelRoots() {
-    return Collections.<org.jetbrains.mps.openapi.persistence.ModelRoot>unmodifiableCollection(mySModelRoots);
+  public Iterable<ModelRoot> getModelRoots() {
+    return Collections.unmodifiableCollection(mySModelRoots);
   }
 
   protected void reloadAfterDescriptorChange() {
@@ -536,16 +548,24 @@ public abstract class AbstractModule implements IModule {
     fireModuleInitialized();
   }
 
-  protected Set<SModelRoot> doUpdateModelsSet() {
+  protected Set<ModelRoot> doUpdateModelsSet() {
     List<org.jetbrains.mps.openapi.model.SModelReference> allLoadedModels = new ArrayList<org.jetbrains.mps.openapi.model.SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    Set<SModelRoot> result = new jetbrains.mps.util.misc.hash.HashSet<SModelRoot>();
+    Set<ModelRoot> result = new HashSet<ModelRoot>();
     if (descriptor != null) {
       SModelRepository smRepo = SModelRepository.getInstance();
-      Collection<ModelRoot> roots = descriptor.getModelRoots();
-      for (ModelRoot modelRoot : roots) {
+      Collection<ModelRootDescriptor> roots = descriptor.getModelRootDescriptors();
+      for (ModelRootDescriptor modelRoot : roots) {
         try {
-          SModelRoot root = new SModelRoot(this, modelRoot);
+          ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
+          if (modelRootFactory == null) {
+            LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
+            continue;
+          }
+
+          ModelRoot root = modelRootFactory.create();
+          root.load(modelRoot.getMemento());
+          ((ModelRootBase) root).setModule(this);
           result.add(root);
 
           for (SModel model : root.getModels()) {
@@ -554,10 +574,8 @@ public abstract class AbstractModule implements IModule {
               smRepo.registerModelDescriptor((SModelDescriptor) model, this);
             }
           }
-        } catch (ManagerNotFoundException e) {
-          //LOG.warning("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         } catch (Exception e) {
-          LOG.error("Error loading models from root: " + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+          LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
         }
       }
 
@@ -578,8 +596,9 @@ public abstract class AbstractModule implements IModule {
     return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
 
+  @Override
   public Collection<String> getIndexablePaths() {
-    ArrayList<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<String>();
 
     IFile home = getBundleHome();
     if (home != null) {
@@ -590,7 +609,10 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor d = getModuleDescriptor();
     if (d == null) return result;
 
-    for (ModelRoot root : d.getModelRoots()) {
+    for (ModelRootDescriptor rootDescriptor : d.getModelRootDescriptors()) {
+      jetbrains.mps.project.structure.model.ModelRoot root = rootDescriptor.getRoot();
+      if (root == null) continue;
+
       String path = root.getPath();
       String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
       result.add(path + suffix);
@@ -599,18 +621,22 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  @Override
   public boolean isCompileInMPS() {
     return false;
   }
 
+  @Override
   public boolean reloadClassesAfterGeneration() {
     return true;
   }
 
+  @Override
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }
 
+  @Override
   public boolean needReloading() {
     if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
       return false;
@@ -634,6 +660,7 @@ public abstract class AbstractModule implements IModule {
     return timestamp != myDescriptorFile.lastModified();
   }
 
+  @Override
   public String getOutputFor(SModelDescriptor model) {
     if (SModelStereotype.isTestModel(model)) {
       return getTestsGeneratorOutputPath();
@@ -642,6 +669,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  @Override
   public void reloadFromDisk(boolean reloadClasses) {
     ModelAccess.instance().checkWriteAccess();
     try {

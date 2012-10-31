@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -41,7 +41,7 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
     if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")) {
-      if (SNodeOperations.isInstanceOf(IWillBeClassifier_Behavior.call_baseClassifier_4125795553993767872(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
         return;
       }
 

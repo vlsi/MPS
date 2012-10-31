@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -49,11 +48,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(mySourceNode.getContainingRoot()), mapping).get(0);
-    if (!nodeCopyRoot.isRoot()) {
-      auxModel.addRoot(nodeCopyRoot);
-    }
     SNode nodeToEquatePeer = mySourceNode;
     TypeChecker typeChecker = TypeChecker.getInstance();
     while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
@@ -67,10 +62,9 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     if (parent == null) {
       return null;
     }
-    SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", null, GlobalScope.getInstance());
     SNodeUtil.replaceWithAnother(nodeToEquate, hole);
     InequalitySystem inequalitiesForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, false);
-    auxModel.removeRoot(nodeCopyRoot);
     return inequalitiesForHole;
   }
 

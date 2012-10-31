@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -33,12 +34,12 @@ public class GenerationUtils {
     } else if ((int) ListSequence.fromList(lines).count() == 1) {
       List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.fromList(lines).first(), "linePart", true);
       if ((int) ListSequence.fromList(lineParts).count() == 1) {
-        return LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.fromList(lineParts).first(), partsToLinks);
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ListSequence.fromList(lineParts).first(), "virtual_createCellModel_1238614099938", new Object[]{partsToLinks});
       } else {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
         for (SNode linePart : lineParts) {
-          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
+          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), linePart, "virtual_createCellModel_1238614099938", new Object[]{partsToLinks}));
         }
         return hCollection;
       }
@@ -50,7 +51,7 @@ public class GenerationUtils {
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
         ListSequence.fromList(SLinkOperations.getTargets(vCollection, "childCellModel", true)).addElement(hCollection);
         for (SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
+          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), linePart, "virtual_createCellModel_1238614099938", new Object[]{partsToLinks}));
         }
       }
       return vCollection;

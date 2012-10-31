@@ -1871,7 +1871,7 @@
     <nodeInfo nodeId="1234526064884" fileName="UtilityMethodDeclaration_Editor.java" startLine="168" startPosition="111" endLine="169" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234525698197" fileName="UtilityMethodDeclaration_Editor.java" startLine="176" startPosition="129" endLine="177" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234525698201" fileName="UtilityMethodDeclaration_Editor.java" startLine="177" startPosition="26" endLine="178" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234525698209" fileName="UtilityMethodDeclaration_Editor.java" startLine="179" startPosition="29" endLine="180" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234525698209" fileName="UtilityMethodDeclaration_Editor.java" startLine="179" startPosition="29" endLine="180" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234525698220" fileName="UtilityMethodDeclaration_Editor.java" startLine="181" startPosition="14" endLine="182" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234525698226" fileName="UtilityMethodDeclaration_Editor.java" startLine="183" startPosition="7" endLine="184" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234525743998" fileName="UtilityMethodDeclaration_Editor.java" startLine="189" startPosition="101" endLine="190" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1963,7 +1963,7 @@
     <scopeInfo nodeId="1234525743998" fileName="UtilityMethodDeclaration_Editor.java" startLine="123" startPosition="106" endLine="124" endPosition="50" />
     <scopeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="135" startPosition="15" endLine="136" endPosition="65" />
     <scopeInfo nodeId="1234526063195" fileName="UtilityMethodDeclaration_Editor.java" startLine="168" startPosition="111" endLine="169" endPosition="55" />
-    <scopeInfo nodeId="1234525698208" fileName="UtilityMethodDeclaration_Editor.java" startLine="179" startPosition="29" endLine="180" endPosition="80" />
+    <scopeInfo nodeId="1234525698208" fileName="UtilityMethodDeclaration_Editor.java" startLine="179" startPosition="29" endLine="180" endPosition="167" />
     <scopeInfo nodeId="1234525698219" fileName="UtilityMethodDeclaration_Editor.java" startLine="181" startPosition="14" endLine="182" endPosition="64" />
     <scopeInfo nodeId="1234525743998" fileName="UtilityMethodDeclaration_Editor.java" startLine="189" startPosition="101" endLine="190" endPosition="50" />
     <scopeInfo nodeId="1234525743998" fileName="UtilityMethodDeclaration_Editor.java" startLine="211" startPosition="89" endLine="212" endPosition="65" />

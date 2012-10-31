@@ -19,7 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -270,7 +270,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ls0i5e_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(node));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
   }
 
   private static class bodyListHandler_ls0i5e_b0 extends RefNodeListHandler {

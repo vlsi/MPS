@@ -26,7 +26,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -129,9 +129,9 @@ public class NewModuleUtil {
     }
 
     //  default descriptorModel roots 
-    ModelRoot modelRoot = new ModelRoot();
+    SModelRoot modelRoot = new SModelRoot(null);
     modelRoot.setPath(modelsDir.getPath());
-    descriptor.getModelRoots().add(modelRoot);
+    descriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     return descriptor;
   }
 
@@ -151,9 +151,9 @@ public class NewModuleUtil {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");
     }
     //  default descriptorModel roots 
-    ModelRoot modelRoot = new ModelRoot();
+    SModelRoot modelRoot = new SModelRoot(null);
     modelRoot.setPath(languageModels.getPath());
-    languageDescriptor.getModelRoots().add(modelRoot);
+    languageDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     return languageDescriptor;
   }
 

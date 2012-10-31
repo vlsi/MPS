@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -31,7 +31,7 @@ public class ConceptEditorHelper {
     for (SNode root : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       if (SConceptOperations.isSubConceptOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect") && SPropertyOperations.getBoolean(root, "rootable")) {
         SNode candidate = (SNode) root;
-        if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", new Class[]{SNode.class, SNode.class}, node))) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", new Object[]{node})) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }
@@ -49,7 +49,7 @@ public class ConceptEditorHelper {
 
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
     SNode conceptAspect = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
-    BehaviorManager.getInstance().invoke(Object.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, applicableNode);
+    BehaviorReflection.invokeVirtual(Void.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Object[]{applicableNode});
     SModelOperations.addRootNode(model, conceptAspect);
 
     return conceptAspect;

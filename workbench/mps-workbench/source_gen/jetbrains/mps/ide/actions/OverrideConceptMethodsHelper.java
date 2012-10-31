@@ -7,7 +7,7 @@ import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -38,10 +38,10 @@ public class OverrideConceptMethodsHelper {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
-      SNode method = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept)), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
+      SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      SLinkOperations.setTarget(method, "overriddenMethod", ((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getOverridenMethod_1225196403956", new Class[]{SNode.class})), false);
+      SLinkOperations.setTarget(method, "overriddenMethod", BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}), false);
       SPropertyOperations.set(method, "isVirtual", "" + (false));
 
       if (insertion) {
@@ -65,7 +65,7 @@ public class OverrideConceptMethodsHelper {
 
     SNode defaultExpr;
     if (isInterfaceMethod) {
-      defaultExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
+      defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
     } else {
       SNode sourceMethodConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
       if (SNodeOperations.isInstanceOf(sourceMethodConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
@@ -76,7 +76,7 @@ public class OverrideConceptMethodsHelper {
           return new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a0a0a0a0a2a0e0b().createNode(it);
         }
       });
-      defaultExpr = new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a3a0e0b().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), ((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getOverridenMethod_1225196403956", new Class[]{SNode.class})));
+      defaultExpr = new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a3a0e0b().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}));
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {

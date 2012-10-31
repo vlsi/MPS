@@ -4,7 +4,8 @@ package jetbrains.mps.lang.checkedName.typesystem;
 
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.checkedName.PropertyReference;
@@ -18,10 +19,10 @@ public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    for (SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_4844813484172611413(((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]))) {
+    for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
       SPropertyOperations.set(s, "value", NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, "value")));
     }
-    for (PropertyReference p : ICheckedNamePolicy_Behavior.call_getPropertiesToCheck_4844813484172611445(((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]))) {
+    for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
       String value = p.getNode().getProperty(p.getProperty());
       String newValue = NameUtil.captionWithNamingPolicy(value);
       p.getNode().setProperty(p.getProperty(), newValue);

@@ -10,12 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.execution.commands.behavior.ReportErrorStatement_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -65,7 +63,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_865001690840232874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode command = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.commands.structure.CommandType"), true), "classifier", false);
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(command);
+    return BehaviorReflection.invokeVirtual(String.class, command, "virtual_getFullName_946964771156905503", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840232894(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -101,7 +99,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472933(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -114,7 +112,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_865001690840233239(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode commandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.commands.structure.CommandType"), true);
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(commandType, "classifier", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(commandType, "classifier", false), "virtual_getFullName_946964771156905503", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233281(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -126,7 +124,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233635(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ReportErrorStatement_Behavior.call_getException_856705193941282181(_context.getNode()), "classifier", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getException_856705193941282181", new Object[]{}), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8980950851470008467(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -336,7 +334,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_865001690840233061(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it));
+        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_generateField_8478830098674441876", new Object[]{}));
       }
     });
   }
@@ -368,7 +366,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_865001690840233303(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(SLinkOperations.getTarget(it, "parameterDeclaration", false)));
+        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, "parameterDeclaration", false), "virtual_generateField_8478830098674441876", new Object[]{}));
       }
     }).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
@@ -394,10 +392,10 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_865001690840233348(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a28().createNode(IGeneratedToClass_Behavior.call_getFullName_946964771156905503(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(_context.getNode(), "commandPart", false))));
+    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a28().createNode(BehaviorReflection.invokeVirtual(String.class, ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(_context.getNode(), "commandPart", false)), "virtual_getFullName_946964771156905503", new Object[]{}));
     for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(SLinkOperations.getTarget(it, "parameterDeclaration", false));
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, "parameterDeclaration", false), "virtual_generateField_8478830098674441876", new Object[]{});
       }
     })) {
       SNode ref = new QueriesGenerated.QuotationClass_x583g4_a0a0a1a28().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(argument, "CommandParameterAssignmentToLocalVariable"));

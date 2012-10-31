@@ -4,28 +4,21 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ITypeApplicable_Behavior {
-  private static Class[] PARAMETERS_8277080359323839095 = {SNode.class, Integer.TYPE};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static List<SNode> call_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), "virtual_getTypeApplicationParameters_8277080359323839095", PARAMETERS_8277080359323839095, new Object[]{actualArgs});
-  }
-
-  public static List<SNode> callSuperNew_getTypeApplicationParameters_8277080359323839095(SNode thisNode, String callerConceptFqName, int actualArgs) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), callerConceptFqName, "virtual_getTypeApplicationParameters_8277080359323839095", PARAMETERS_8277080359323839095, new Object[]{actualArgs});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{actualArgs});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getTypeApplicationParameters_8277080359323839095(SNode thisNode, String callerConceptFqName, int actualArgs) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), callerConceptFqName, "virtual_getTypeApplicationParameters_8277080359323839095", PARAMETERS_8277080359323839095, new Object[]{actualArgs});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), callerConceptFqName, "virtual_getTypeApplicationParameters_8277080359323839095", new Class[]{SNode.class, Integer.TYPE}, new Object[]{actualArgs});
   }
 }

@@ -6,59 +6,46 @@
   <unitInfo fileName="ParentScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
   <unitInfo fileName="UniformScopeProvider_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_BehaviorDescriptor" />
   <root nodeId="2995585510566823813" modelId="r:82bd480c-456f-4470-ab12-9f4f3dd67824(jetbrains.mps.lang.scopes.behavior)">
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="13" startPosition="44" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2995585510566823862" />
-    <nodeInfo nodeId="2995585510566833899" fileName="UniformScopeProvider_Behavior.java" startLine="19" startPosition="103" endLine="20" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566833907" fileName="UniformScopeProvider_Behavior.java" startLine="23" startPosition="112" endLine="24" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="27" startPosition="115" endLine="28" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="28" startPosition="113" endLine="29" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="32" startPosition="151" endLine="33" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="37" startPosition="148" endLine="38" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_7722139651431880752#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getScope_2995585510566823862#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/scopes/runtime/ScopeProviderContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getScope_2995585510566823862#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/scopes/runtime/ScopeProviderContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getScope_2995585510566823862#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/scopes/runtime/ScopeProviderContext;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="2995585510566823815" fileName="UniformScopeProvider_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="2995585510566823818" fileName="UniformScopeProvider_Behavior.java" startLine="19" startPosition="103" endLine="20" endPosition="135" />
-    <scopeInfo nodeId="2995585510566823834" fileName="UniformScopeProvider_Behavior.java" startLine="23" startPosition="112" endLine="24" endPosition="147" />
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="32" startPosition="151" endLine="33" endPosition="292" />
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="37" startPosition="148" endLine="38" endPosition="289" />
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="27" startPosition="115" endLine="29" endPosition="244">
-      <varInfo nodeId="2995585510566823813" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="2995585510566833899" fileName="UniformScopeProvider_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995585510566833907" fileName="UniformScopeProvider_Behavior.java" startLine="20" startPosition="112" endLine="21" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="25" startPosition="115" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="30" startPosition="148" endLine="31" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="12" startPosition="44" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_7722139651431880752#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getScope_2995585510566823862#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/scopes/runtime/ScopeProviderContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getScope_2995585510566823862#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/scopes/runtime/ScopeProviderContext;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="2995585510566823815" fileName="UniformScopeProvider_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="2995585510566823818" fileName="UniformScopeProvider_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="135" />
+    <scopeInfo nodeId="2995585510566823834" fileName="UniformScopeProvider_Behavior.java" startLine="20" startPosition="112" endLine="21" endPosition="147" />
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="25" startPosition="115" endLine="26" endPosition="136" />
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="30" startPosition="148" endLine="31" endPosition="315" />
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="12" startPosition="44" endLine="15" endPosition="0">
       <varInfo nodeId="2995585510566823813" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="2995585510566823821" varName="context" />
       <varInfo nodeId="2995585510566823819" varName="kind" />
       <varInfo nodeId="2995585510566823813" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="2995585510566823839" varName="index" />
       <varInfo nodeId="2995585510566823835" varName="kind" />
       <varInfo nodeId="2995585510566823837" varName="role" />
       <varInfo nodeId="2995585510566823813" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2995585510566823869" varName="context" />
+      <varInfo nodeId="2995585510566823867" varName="kind" />
+      <varInfo nodeId="2995585510566823813" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="2995585510566823813" varName="callerConceptFqName" />
       <varInfo nodeId="2995585510566823869" varName="context" />
       <varInfo nodeId="2995585510566823867" varName="kind" />
       <varInfo nodeId="2995585510566823813" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="2995585510566823869" varName="context" />
-      <varInfo nodeId="2995585510566823867" varName="kind" />
-      <varInfo nodeId="2995585510566823813" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="2995585510566823813" varName="callerConceptFqName" />
-      <varInfo nodeId="2995585510566823869" varName="context" />
-      <varInfo nodeId="2995585510566823867" varName="kind" />
-      <varInfo nodeId="2995585510566823813" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_Behavior" />
+    <unitInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_Behavior" />
   </root>
 </debugInfo>
 

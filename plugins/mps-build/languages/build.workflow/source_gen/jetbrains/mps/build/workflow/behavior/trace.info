@@ -28,42 +28,31 @@
   <unitInfo fileName="BwfTaskPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskPart_BehaviorDescriptor" />
   <unitInfo fileName="BwfTask_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
   <root nodeId="2059109515400548715" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="11" startPosition="38" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2059109515400548718" />
-    <nodeInfo nodeId="2059109515400548723" fileName="BwfProjectPart_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="26" startPosition="110" endLine="27" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="31" startPosition="107" endLine="32" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuperNew_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
-    <scopeInfo nodeId="2059109515400548717" fileName="BwfProjectPart_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="2059109515400548721" fileName="BwfProjectPart_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="15" />
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="26" startPosition="110" endLine="27" endPosition="282" />
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="31" startPosition="107" endLine="32" endPosition="279" />
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="21" startPosition="74" endLine="23" endPosition="234">
-      <varInfo nodeId="2059109515400548715" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="2059109515400548723" fileName="BwfProjectPart_Behavior.java" startLine="14" startPosition="77" endLine="15" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="19" startPosition="74" endLine="20" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="24" startPosition="107" endLine="25" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="10" startPosition="38" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
+    <scopeInfo nodeId="2059109515400548717" fileName="BwfProjectPart_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="2059109515400548721" fileName="BwfProjectPart_Behavior.java" startLine="14" startPosition="77" endLine="15" endPosition="15" />
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="19" startPosition="74" endLine="20" endPosition="127" />
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="24" startPosition="107" endLine="25" endPosition="262" />
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="10" startPosition="38" endLine="13" endPosition="0">
       <varInfo nodeId="2059109515400548715" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2059109515400548715" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="2059109515400548715" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="2059109515400548715" varName="callerConceptFqName" />
       <varInfo nodeId="2059109515400548715" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="2059109515400548715" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="2059109515400548715" varName="callerConceptFqName" />
-      <varInfo nodeId="2059109515400548715" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior" />
+    <unitInfo nodeId="2059109515400548715" fileName="BwfProjectPart_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProjectPart_Behavior" />
   </root>
   <root nodeId="2059109515400548735" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="2059109515400548747" fileName="BwfMacro_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -159,7 +148,7 @@
   </root>
   <root nodeId="3961775458390352366" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="3961775458390497445" fileName="BwfTaskPart_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3961775458390497491" fileName="BwfTaskPart_Behavior.java" startLine="20" startPosition="99" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497491" fileName="BwfTaskPart_Behavior.java" startLine="20" startPosition="99" endLine="21" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3961775458390352387" fileName="BwfTaskPart_Behavior.java" startLine="22" startPosition="7" endLine="23" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3961775458390352394" fileName="BwfTaskPart_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="13" startPosition="35" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -167,7 +156,7 @@
     <nodeInfo nodeId="3961775458390352385" fileName="BwfTaskPart_Behavior.java" startLine="17" startPosition="101" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="3961775458390352368" fileName="BwfTaskPart_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3961775458390497454" fileName="BwfTaskPart_Behavior.java" startLine="20" startPosition="99" endLine="21" endPosition="90" />
+    <scopeInfo nodeId="3961775458390497454" fileName="BwfTaskPart_Behavior.java" startLine="20" startPosition="99" endLine="21" endPosition="133" />
     <scopeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="13" startPosition="35" endLine="16" endPosition="0">
       <varInfo nodeId="3961775458390352366" varName="thisNode" />
     </scopeInfo>

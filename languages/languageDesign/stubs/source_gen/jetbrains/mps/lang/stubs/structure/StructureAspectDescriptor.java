@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.AbstractModelCreator", "jetbrains.mps.lang.stubs.structure.BaseCreatorType", "jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.GetRootsBlock", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.InitModuleBlock", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Stereotype", "jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter", "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", "jetbrains.mps.lang.stubs.structure.StubsCreatorType", "jetbrains.mps.lang.stubs.structure.UpdateModelBlock"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter"};
 
   public StructureAspectDescriptor() {
   }
@@ -16,57 +16,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.AbstractModelCreator", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"}, new String[]{}, new String[]{});
-      case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.BaseCreatorType", "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"}, new String[]{}, new String[]{"declaration"});
-      case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 3:
+      case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 4:
+      case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 5:
+      case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.GetRootsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 7:
+      case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.InitModuleBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 9:
+      case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"languageId", "languageFqName"}, new String[]{});
-      case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"moduleName", "moduleId"}, new String[]{"creator", "manager"});
-      case 11:
+      case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 13:
+      case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"}, new String[]{}, new String[]{});
-      case 14:
+      case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 15:
+      case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 17:
+      case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 18:
+      case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.Solution_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.Stereotype", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.StubSource_ConcteptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", "jetbrains.mps.lang.stubs.structure.AbstractModelCreator", false, new String[]{"jetbrains.mps.lang.stubs.structure.AbstractModelCreator"}, new String[]{}, new String[]{});
-      case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.StubsCreatorType", "jetbrains.mps.lang.stubs.structure.BaseCreatorType", false, new String[]{"jetbrains.mps.lang.stubs.structure.BaseCreatorType"}, new String[]{}, new String[]{"creatorDeclaration"});
-      case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.UpdateModelBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

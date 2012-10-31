@@ -4,7 +4,7 @@ package jetbrains.mps.core.xml.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.xml.behavior.XmlBaseAttribute_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -12,7 +12,7 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class XmlAttribute_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (XmlBaseAttribute_Behavior.call_isMultiline_3080189811177259788(node)) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMultiline_3080189811177259788", new Object[]{})) {
       this.appendNewLine();
       this.indentBuffer();
       this.append("\t");

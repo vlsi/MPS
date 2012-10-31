@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import java.util.Set;
 import java.util.HashSet;
@@ -223,7 +223,7 @@ public class MathUtil {
           }
         }
         if (matches_30uc9x_a0a5) {
-          return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true));
+          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
         } else {
           boolean matches_30uc9x_b0a5 = false;
           {
@@ -233,7 +233,7 @@ public class MathUtil {
             }
           }
           if (matches_30uc9x_b0a5) {
-            return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true));
+            return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(matchedNode_30uc9x_a0f, "elementType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
           } else
           return null;
         }

@@ -33,11 +33,24 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.creators.Depende
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer;
+import javax.swing.JList;
+import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
+import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
+import org.jdom.Element;
 import javax.swing.JComponent;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
@@ -71,13 +84,10 @@ import java.awt.GridBagConstraints;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer;
-import javax.swing.JList;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
@@ -215,17 +225,65 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list, final IFile bundleHome) {
-    return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
-      public BoundTablePanel invoke() {
-        final BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
+  public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRootDescriptor> list, final IFile bundleHome) {
+    return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
+      public BoundListPanel invoke() {
+        final BoundListPanel result_wf5hwp_a0a0a8 = new BoundListPanel(owner, caption, list);
         final Computable result_wf5hwp_a0a0a0a8 = new ModelRootChooser(owner, bundleHome);
         result_wf5hwp_a0a0a8.setChooser(result_wf5hwp_a0a0a0a8);
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a8 = new ModelRootRenderer();
+        result_wf5hwp_a0a0a8.setCellRenderer(result_wf5hwp_a1a0a0a8);
+        final JList uiList = result_wf5hwp_a0a0a8.getList();
+        final BaseValidatedAction result_wf5hwp_a3a0a0a8 = new ListEditAction(uiList) {
+          public void doEdit() {
+            Object value = getList().getSelectedValue();
+            if (!(value instanceof ModelRootDescriptor)) {
+              return;
+            }
+            ModelRootDescriptor desc = (ModelRootDescriptor) value;
+            ModelRoot root = desc.getRoot();
+            if (root != null) {
+              String currentManager = (root.getManager() != null ?
+                NameUtil.shortNameFromLongName(root.getManager().getClassName()) :
+                "Default"
+              );
+              List<ModelRootManager> managers = ListSequence.fromList(ManagerTableCellEditor.getManagers(owner.getOperationContext())).where(new IWhereFilter<ModelRootManager>() {
+                public boolean accept(ModelRootManager it) {
+                  return it != null;
+                }
+              }).toListSequence();
+              if (ListSequence.fromList(managers).isEmpty()) {
+                return;
+              }
 
-        final ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 250);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
+              List<String> managerNames = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "Default")).concat(ListSequence.fromList(managers).select(new ISelector<ModelRootManager, String>() {
+                public String select(ModelRootManager it) {
+                  return NameUtil.shortNameFromLongName(it.getClassName());
+                }
+              })).toListSequence();
+              int res = Messages.showChooseDialog(owner.getMainComponent(), "Choose model root manager for `" + root.getPath() + "'", "Edit model root", ListSequence.fromList(managerNames).toGenericArray(String.class), currentManager, Messages.getQuestionIcon());
+              if (res >= 0) {
+                final String newManagerName = ListSequence.fromList(managerNames).getElement(res);
+                if (neq_wf5hwp_a0b0g0e0a0a0a6a0a0a0a0i(newManagerName, currentManager)) {
+                  ModelRootManager manager = (newManagerName.equals("Default") ?
+                    null :
+                    ListSequence.fromList(managers).findFirst(new IWhereFilter<ModelRootManager>() {
+                      public boolean accept(ModelRootManager it) {
+                        return NameUtil.shortNameFromLongName(it.getClassName()).equals(newManagerName);
+                      }
+                    })
+                  );
+                  ModelRootDescriptor newDescr = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+                  root.setManager(manager);
+                  root.save(newDescr.getMemento());
+                  list.add(list.indexOf(desc), newDescr);
+                  list.remove(desc);
+                }
+              }
+            }
+          }
+        };
+        result_wf5hwp_a0a0a8.setEditAction(result_wf5hwp_a3a0a0a8);
         result_wf5hwp_a0a0a8.init();
         return result_wf5hwp_a0a0a8;
       }
@@ -259,7 +317,7 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<String> libs, final List<ModelRoot> modelRoots) {
+  public static JPanel createStubRootsPanel(final IBindedDialog owner, final boolean javaLib, final String caption, final List<String> libs, final List<ModelRootDescriptor> modelRoots) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a01 = new BoundListPanel(owner, caption, libs);
@@ -508,6 +566,13 @@ public class StandardComponents {
 
   private static GridBagConstraints createConstraints(int gridx, int gridy, int gridwidth, int gridheight, double weightx, double weighty, int anchor, int fill) {
     return new GridBagConstraints(gridx, gridy, gridwidth, gridheight, weightx, weighty, anchor, fill, new Insets(0, 0, 0, 0), 0, 0);
+  }
+
+  private static boolean neq_wf5hwp_a0b0g0e0a0a0a6a0a0a0a0i(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 
   public static class CheckboxDescriptor {

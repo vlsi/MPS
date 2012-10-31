@@ -11,20 +11,20 @@ public class InternalAnonymousClass_BehaviorDescriptor extends ClassConcept_Beha
   public InternalAnonymousClass_BehaviorDescriptor() {
   }
 
-  public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return InternalAnonymousClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return InternalAnonymousClass_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     return InternalAnonymousClass_Behavior.virtual_getNestedName_8540045600162184125(thisNode);
   }
 
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return InternalAnonymousClass_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
+  public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
+    return InternalAnonymousClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return InternalAnonymousClass_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
+    return InternalAnonymousClass_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
   }
 
   @Override

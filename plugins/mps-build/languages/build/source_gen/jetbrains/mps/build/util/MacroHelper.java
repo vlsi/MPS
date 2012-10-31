@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.behavior.BuildMacro_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,7 +42,7 @@ public final class MacroHelper {
       if (usedNames.contains(SPropertyOperations.getString(m, "name"))) {
         context.reportProblem("duplicate macro name", m);
       }
-      add(m, null, (BuildMacro_Behavior.call_isPublic_6547494638219688113(m) ?
+      add(m, null, (BehaviorReflection.invokeVirtual(Boolean.TYPE, m, "virtual_isPublic_6547494638219688113", new Object[]{}) ?
         SPropertyOperations.getString(project, "name") + "." + SPropertyOperations.getString(m, "name") :
         null
       ));

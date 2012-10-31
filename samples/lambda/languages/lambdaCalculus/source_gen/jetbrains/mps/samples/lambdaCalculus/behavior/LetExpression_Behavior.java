@@ -7,14 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LetExpression_Behavior {
-  private static Class[] PARAMETERS_8981808925914844606 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,17 +21,13 @@ public class LetExpression_Behavior {
     return result;
   }
 
+  @Deprecated
   public static List<SNode> call_getVariables_8981808925914844606(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914844606, new Object[]{});
-  }
-
-  public static List<SNode> callSuperNew_getVariables_8981808925914844606(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), callerConceptFqName, "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914844606, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getVariables_8981808925914841576", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getVariables_8981808925914844606(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), callerConceptFqName, "virtual_getVariables_8981808925914841576", PARAMETERS_8981808925914844606, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), callerConceptFqName, "virtual_getVariables_8981808925914841576", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,7 +35,7 @@ public class AdaptableClassifierTarget {
     List<SNode> trgList = getOrCreateTargets(adaptable);
     if (!(ListSequence.fromList(trgList).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode cr) {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(target, "classifier", false)).equals(INamedConcept_Behavior.call_getFqName_1213877404258(cr));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(target, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));
       }
     }))) {
       ListSequence.fromList(trgList).addElement(SLinkOperations.getTarget(target, "classifier", false));
@@ -44,10 +44,10 @@ public class AdaptableClassifierTarget {
   }
 
   private List<SNode> getOrCreateTargets(SNode adaptable) {
-    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
+    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{})));
     if (trgList == null) {
       trgList = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))), trgList);
+      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{})), trgList);
     }
     return trgList;
   }
@@ -79,7 +79,7 @@ public class AdaptableClassifierTarget {
     final String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);
     SNode target = ListSequence.fromList(getTargets(SLinkOperations.getTarget(ntype, "classifier", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cr) {
-        return trgFQname.equals(INamedConcept_Behavior.call_getFqName_1213877404258(cr));
+        return trgFQname.equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));
       }
     });
     assert Values.ADAPTABLE.get(genContext, target) != null;
@@ -87,7 +87,7 @@ public class AdaptableClassifierTarget {
   }
 
   public List<SNode> getTargets(SNode adaptable) {
-    return (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(adaptable)));
+    return (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, adaptable, "virtual_getFqName_1213877404258", new Object[]{})));
   }
 
   public List<SNode> getAllAdaptable() {

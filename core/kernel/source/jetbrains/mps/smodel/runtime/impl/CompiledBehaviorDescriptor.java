@@ -16,106 +16,71 @@
 package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted.InterpretedBehaviorDescriptor;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDescriptor {
-  private Map<String, Method> methods;
-  private final Object lock = new Object();
+  private final Map<String, Method> methods;
 
+  public CompiledBehaviorDescriptor(String conceptFqName) {
+    super(conceptFqName);
+
+    Method[] virtualMethods = this.getClass().getMethods();
+    Method[] nonVirtualMethods;
+    try {
+//      nonVirtualMethods = Class.forName(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
+      nonVirtualMethods = this.getClass().getClassLoader().loadClass(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
+    } catch (ClassNotFoundException e) {
+      // it's okay? just class without behavior?
+      nonVirtualMethods = new Method[0];
+    }
+
+    this.methods = new HashMap<String, Method>((virtualMethods.length + nonVirtualMethods.length) * 2);
+    for (Method method : virtualMethods) {
+      if (method.getName().startsWith(VIRTUAL_METHOD_PREFIX)) {
+        this.methods.put(method.getName(), method);
+      }
+    }
+    for (Method method : nonVirtualMethods) {
+      if (method.getName().startsWith(NON_VIRTUAL_METHOD_PREFIX)) {
+        this.methods.put(method.getName(), method);
+      }
+    }
+  }
+
+  @Deprecated
   public CompiledBehaviorDescriptor() {
-    super(null);
+    this(null);
   }
 
   @Override
-  public abstract String getConceptFqName();
+  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    Object[] params = new Object[parameters.length + 1];
+    params[0] = node;
+    System.arraycopy(parameters, 0, params, 1, parameters.length);
 
-  @Nullable
-  private Method getMethod(String methodName, Class[] parametersTypes) {
-    // memory visibility is not a problem: synchronized block below is memory barrier +
-    // it's okay to calculate method twice
-    if (methods != null && methods.containsKey(methodName)) {
-      return methods.get(methodName);
+    Method method = methods.get(methodName);
+    if (method == null) {
+      throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
     }
 
-    synchronized (lock) {
-      if (methods == null) {
-        methods = new ConcurrentHashMap<String, Method>();
+    try {
+      return method.invoke(this, params);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(e);
+    } catch (InvocationTargetException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof RuntimeException) {
+        throw (RuntimeException) cause;
+      } else if (cause instanceof Error) {
+        throw (Error) cause;
       }
-
-      Method method;
-      try {
-        method = this.getClass().getMethod(methodName, parametersTypes);
-      } catch (NoSuchMethodException e) {
-        // find by name
-        for (Method iMethod : this.getClass().getMethods()) {
-          if (iMethod.getName().equals(methodName)) {
-            return iMethod;
-          }
-        }
-        return null;
-      }
-
-      methods.put(methodName, method);
-
-      return method;
-    }
-  }
-
-  private static String getParameterTypesLogInfo(Class[] parametersTypes) {
-    StringBuilder result = new StringBuilder();
-    boolean isFirst = true;
-    for (Class parameterType : parametersTypes) {
-      if (!isFirst) {
-        result.append(", ");
-      } else {
-        isFirst = false;
-      }
-      result.append(String.format("%s(%s)", parameterType.getSimpleName(), String.valueOf(parameterType.getClassLoader())));
-    }
-    return result.toString();
-  }
-
-  @Override
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    if (node == null) {
-      return defaultValue(returnType);
-    }
-
-    if (methodName.startsWith("virtual_")) {
-      Object[] params = new Object[parameters.length + 1];
-      params[0] = node;
-      System.arraycopy(parameters, 0, params, 1, parameters.length);
-
-      Method method = getMethod(methodName, parametersTypes);
-      if (method == null) {
-        throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
-      }
-
-      try {
-        return (T) method.invoke(this, params);
-      } catch (IllegalArgumentException e) {
-        throw new IllegalArgumentException(
-          String.format("Declared method arguments differ from caller method arguments. Declared arguments: [%s], caller arguments: [%s]",
-            getParameterTypesLogInfo(method.getParameterTypes()), getParameterTypesLogInfo(parametersTypes)));
-      } catch (IllegalAccessException e) {
-        throw new RuntimeException(e);
-      } catch (InvocationTargetException e) {
-        Throwable cause = e.getCause();
-        if (cause instanceof RuntimeException) {
-          throw (RuntimeException) cause;
-        } else if (cause instanceof Error) {
-          throw (Error) cause;
-        }
-        throw new RuntimeException(e);
-      }
-    } else {
-      return super.invoke(returnType, node, methodName, parametersTypes, parameters);
+      throw new RuntimeException(e);
     }
   }
 }

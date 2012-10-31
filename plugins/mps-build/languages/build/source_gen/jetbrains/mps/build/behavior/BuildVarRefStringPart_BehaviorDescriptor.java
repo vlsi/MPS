@@ -9,16 +9,16 @@ public class BuildVarRefStringPart_BehaviorDescriptor extends BuildStringPart_Be
   public BuildVarRefStringPart_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
-    return BuildVarRefStringPart_Behavior.virtual_isLastPositionAllowed_624440001685490925(thisNode);
-  }
-
   public String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     return BuildVarRefStringPart_Behavior.virtual_getText_4380385936562037054(thisNode, helper);
   }
 
   public boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
     return BuildVarRefStringPart_Behavior.virtual_isFirstPositionAllowed_624440001685459414(thisNode);
+  }
+
+  public boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
+    return BuildVarRefStringPart_Behavior.virtual_isLastPositionAllowed_624440001685490925(thisNode);
   }
 
   @Override

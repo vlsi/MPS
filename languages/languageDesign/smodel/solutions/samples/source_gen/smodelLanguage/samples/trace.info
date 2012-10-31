@@ -247,8 +247,8 @@
     <unitInfo nodeId="1145579089043" fileName="TypeCast.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="smodelLanguage.samples.TypeCast" />
   </root>
   <root nodeId="1145580307798" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
-    <nodeInfo nodeId="1180478737036" fileName="Children.java" startLine="17" startPosition="55" endLine="18" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1145581051477" fileName="Children.java" startLine="18" startPosition="75" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180478737036" fileName="Children.java" startLine="17" startPosition="55" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1145581051477" fileName="Children.java" startLine="18" startPosition="123" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145581102186" fileName="Children.java" startLine="19" startPosition="109" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1171504714290" fileName="Children.java" startLine="20" startPosition="90" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1171504740787" fileName="Children.java" startLine="21" startPosition="59" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

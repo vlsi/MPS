@@ -7,14 +7,13 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.build.util.FileSetUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildLayout_File_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.build.behavior.BuildLayout_Container_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior;
@@ -23,8 +22,6 @@ import jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.behavior.BuildVariableMacroInitValue_Behavior;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.RelativePathHelper;
@@ -32,12 +29,8 @@ import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.DependenciesHelper;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
-import jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior;
-import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.util.JavaModulesClosure;
 import jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_Behavior;
@@ -51,7 +44,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
-import jetbrains.mps.build.behavior.IWorkflowParticipant_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -87,7 +79,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1556400259614055524(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "target", false), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "target", false), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFolder_1368030936106753980", new Object[]{});
   }
 
   public static boolean baseMappingRule_Condition_2750015747481190656(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -111,23 +103,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963267883(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268263(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963364006(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358439(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358405(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268231(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -144,7 +136,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394521(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394625(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -160,19 +152,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963351294(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268242(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358510(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358520(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358535(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -180,7 +172,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394825(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394845(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -196,19 +188,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358569(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358598(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952472(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952501(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952543(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -220,7 +212,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394903(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747394923(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -236,31 +228,31 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952577(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_8577651205286952606(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747391977(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(_context.getNode(), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747392029(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7801138212747392100(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2913098736709502287(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2913098736709502392(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288079307(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -268,7 +260,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "parent should be layout container");
       return "???";
     }
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288131577(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -280,7 +272,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "parent should be layout container");
       return "???";
     }
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_9184644532456968281(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -366,9 +358,9 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "parent should be layout container");
       return "???";
     }
-    String result = BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), Context.defaultContext(_context));
-    if (BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
-      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)) + "'");
+    String result = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFolder_1368030936106753980", new Object[]{})) {
+      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "'");
     }
     return result;
   }
@@ -382,7 +374,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "parent should be layout container");
       return "???";
     }
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013114691(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -398,7 +390,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963307392(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "defaultPath", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "defaultPath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963307395(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -438,7 +430,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_244868996532711387(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "fileName", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "fileName", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_244868996532711449(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -498,7 +490,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7926701909975671869(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true), Context.defaultContext(_context)) + "/" + SPropertyOperations.getString(_context.getNode(), "relativePath");
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)}) + "/" + SPropertyOperations.getString(_context.getNode(), "relativePath");
   }
 
   public static Object propertyMacro_GetPropertyValue_144710003695560915(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -506,27 +498,27 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288079406(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "dir", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_7866279537988669079(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "dir", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288079452(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "path", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_2303926226081012727(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "path", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_3717132724152837101(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "path", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_3717132724152837217(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "dir", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288082868(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -587,7 +579,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4129895186893528776(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "artifacts", true) != null)) {
-      return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "artifacts", true), Context.defaultContext(_context));
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "artifacts", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
     }
     if (((String) _context.getVariable("var:basePath")) == null) {
       return ".";
@@ -618,7 +610,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7181125477683419247(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), "artifacts", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), "artifacts", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_6520682027041002227(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -638,11 +630,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_9126048691954996125(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SLinkOperations.getTarget(_context.getNode(), "layout", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "layout", true), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_9126048691954994112(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SLinkOperations.getTarget(_context.getNode(), "layout", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "layout", true), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5662391463398094397(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -703,7 +695,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013114897(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (!(BuildLayout_Node_Behavior.call_isFile_1368030936106753986(SLinkOperations.getTarget(_context.getNode(), "target", false)))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFile_1368030936106753986", new Object[]{}))) {
       _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
     }
     return "file";
@@ -746,7 +738,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310621645(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "dir", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656150(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -766,7 +758,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310621703(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(_context.getNode(), "path", true), Context.defaultContext(_context));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
 
   public static Object propertyMacro_GetPropertyValue_6408167411310656275(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -794,7 +786,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name") + " was not found in the layout");
       return "???";
     }
-    String val = BuildLayout_PathElement_Behavior.call_location_7117056644539862594(layoutNode, helper, artifact);
+    String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, artifact});
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name"));
       return "???";
@@ -804,7 +796,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8169228734285529581(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SNodeOperations.getContainingRoot(((SNode) _context.getVariable("jar"))) == SNodeOperations.getContainingRoot(_context.getNode())) {
-      return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), Context.defaultContext(_context));
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
     }
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
     if (project == null) {
@@ -814,12 +806,12 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), _context));
     if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "file " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true)) + " was not found in the layout");
+      _context.showErrorMessage(_context.getNode(), "file " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}) + " was not found in the layout");
       return "???";
     }
     String val = helper.locations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for jar " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true)));
+      _context.showErrorMessage(_context.getNode(), "no location for jar " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       return "???";
     }
     return val;
@@ -843,13 +835,13 @@ public class QueriesGenerated {
         targetFile
       ), _context));
       if (layoutNode == null) {
-        _context.showErrorMessage(_context.getNode(), "file " + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(targetFile) + " was not found in the layout");
+        _context.showErrorMessage(_context.getNode(), "file " + BehaviorReflection.invokeVirtual(String.class, targetFile, "virtual_getApproximateName_5610619299013425878", new Object[]{}) + " was not found in the layout");
         return "???";
       }
     }
     String val = helper.locations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for jar " + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(targetFile));
+      _context.showErrorMessage(_context.getNode(), "no location for jar " + BehaviorReflection.invokeVirtual(String.class, targetFile, "virtual_getApproximateName_5610619299013425878", new Object[]{}));
       return "???";
     }
     return val;
@@ -873,13 +865,13 @@ public class QueriesGenerated {
         targetFolder
       ), _context));
       if (layoutNode == null) {
-        _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder) + " was not found in the layout");
+        _context.showErrorMessage(_context.getNode(), "folder " + BehaviorReflection.invokeVirtual(String.class, targetFolder, "virtual_getApproximateName_5610619299014531547", new Object[]{}) + " was not found in the layout");
         return "???";
       }
     }
     String val = helper.contentLocations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder));
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BehaviorReflection.invokeVirtual(String.class, targetFolder, "virtual_getApproximateName_5610619299014531547", new Object[]{}));
       return "???";
     }
     return val;
@@ -894,7 +886,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
       return "";
     }
     int lastSlash = val.lastIndexOf('/');
@@ -927,13 +919,13 @@ public class QueriesGenerated {
         targetFolder
       ), _context));
       if (layoutNode == null) {
-        _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder) + " was not found in the layout");
+        _context.showErrorMessage(_context.getNode(), "folder " + BehaviorReflection.invokeVirtual(String.class, targetFolder, "virtual_getApproximateName_5610619299014531547", new Object[]{}) + " was not found in the layout");
         return "???";
       }
     }
     String val = helper.contentLocations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(targetFolder));
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BehaviorReflection.invokeVirtual(String.class, targetFolder, "virtual_getApproximateName_5610619299014531547", new Object[]{}));
       return "???";
     }
     return val + "/" + ((String) _context.getVariable("suffix"));
@@ -948,107 +940,107 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1117643560963363815(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1117643560963363967(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1117643560963360514(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1117643560963363928(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1117643560963363847(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_1117643560963363898(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_8577651205286952528(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_8577651205286952635(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_7801138212747392057(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_7801138212747392071(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_2913098736709502314(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_2913098736709502421(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_5248329904288129346(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_5248329904288129316(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_9184644532456968241(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_9184644532456968271(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_4643216374596142975(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_4643216374596143005(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_202934866059116793(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_202934866059116823(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_4701820937132270603(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_4701820937132270633(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_5610619299013114811(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_5610619299013114841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_6837653846148442003(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_6837653846148442033(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_6854204111265839188(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1076,18 +1068,18 @@ public class QueriesGenerated {
     while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       parent = SNodeOperations.getParent(parent);
     }
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
       return FileSetUtil.hasExplicitFilesets(_context.getNode());
     }
     return true;
   }
 
   public static boolean ifMacro_Condition_1117643560963363812(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_1117643560963363971(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_1117643560963369195(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1095,7 +1087,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1117643560963359504(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_6837653846148504892(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1123,7 +1115,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1117643560963363924(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_1117643560963369175(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1131,7 +1123,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1117643560963363844(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_7801138212747394835(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1151,7 +1143,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1117643560963363876(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_8577651205286952481(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1159,7 +1151,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8577651205286952509(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_1979010778009294646(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1183,7 +1175,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8577651205286952616(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_7801138212747391986(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1195,34 +1187,34 @@ public class QueriesGenerated {
       }
       parent = SNodeOperations.getParent(parent);
     }
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasFileModeAttribute_6408167411310575237(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && (!(hasPrefix) || BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")))) {
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{}) && (!(hasPrefix) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{}))) {
       return FileSetUtil.hasExplicitFilesets(_context.getNode());
     }
     return false;
   }
 
   public static boolean ifMacro_Condition_7801138212747392038(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_7801138212747392081(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_2913098736709502295(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_2913098736709502402(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_5248329904288129327(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_5248329904288129297(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_9184644532456968297(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1242,11 +1234,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_9184644532456968222(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_9184644532456968252(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_4198392933254627394(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1258,35 +1250,35 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4643216374596142956(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_4643216374596142986(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_202934866059116774(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_202934866059116804(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_4701820937132270584(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_4701820937132270614(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_5610619299013114792(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_5610619299013114822(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_6520682027041189779(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1302,11 +1294,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6837653846148441984(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_6837653846148442014(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container")) != null;
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
 
   public static boolean ifMacro_Condition_9126048691954996134(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1700,7 +1692,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), "resset", true), "path", true), Context.defaultContext(_context));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), "resset", true), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
       }
     });
     folders = Sequence.fromIterable(folders).concat(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
@@ -1710,7 +1702,7 @@ public class QueriesGenerated {
     }).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
         SNode croot = SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot");
-        final String relativePath = BuildSourcePath_Behavior.call_getAntPath_8563603456895173701(SLinkOperations.getTarget(croot, "basePath", true), Context.defaultContext(_context));
+        final String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(croot, "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
         return ListSequence.fromList(SLinkOperations.getTargets(croot, "folders", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode ifolder) {
             return SPropertyOperations.hasValue(ifolder, "kind", "source", null);
@@ -1847,7 +1839,7 @@ public class QueriesGenerated {
     Map<SNode, SNode> participantForTask = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode participant : ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.structure.IWorkflowParticipant", false, new String[]{})).reversedList()) {
-      SNode targetTask = IWorkflowParticipant_Behavior.call_getTargetTask_6854204111265837872(participant);
+      SNode targetTask = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), participant, "virtual_getTargetTask_6854204111265837872", new Object[]{});
       if (MapSequence.fromMap(participantForTask).get(targetTask) == null) {
         MapSequence.fromMap(participantForTask).put(targetTask, SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants", null));
         SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), "for", targetTask, false);
@@ -2030,7 +2022,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return val;
   }
@@ -2044,7 +2036,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return val;
   }
@@ -2107,9 +2099,9 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
-    } else if (BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
-      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)) + "'");
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
+    } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFolder_1368030936106753980", new Object[]{})) {
+      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "'");
     }
     return val;
   }
@@ -2121,7 +2113,7 @@ public class QueriesGenerated {
     Pair<String, String> filemode = FileSetUtil.getFilemode(_context.getNode(), macros);
     if ((prefix != null && prefix.length() > 0) || filemode != null) {
       SNode filesetContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Node"));
-      fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
+      fsetExt = BehaviorReflection.invokeVirtual(String.class, filesetContainer, "virtual_getFileSetExtension_6408167411310575216", new Object[]{});
     }
     return MultiTuple.<String,String,String,String>from(fsetExt, prefix, (filemode != null ?
       filemode.o1 :
@@ -2141,7 +2133,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no content location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return val;
   }
@@ -2153,7 +2145,7 @@ public class QueriesGenerated {
     Pair<String, String> filemode = FileSetUtil.getFilemode(_context.getNode(), macros);
     if ((prefix != null && prefix.length() > 0) || filemode != null) {
       SNode filesetContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Node"));
-      fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
+      fsetExt = BehaviorReflection.invokeVirtual(String.class, filesetContainer, "virtual_getFileSetExtension_6408167411310575216", new Object[]{});
     }
     return MultiTuple.<String,String,String,String>from(fsetExt, prefix, (filemode != null ?
       filemode.o1 :
@@ -2174,7 +2166,7 @@ public class QueriesGenerated {
       Pair<String, String> filemode = FileSetUtil.getFilemode(copyContainer, macros);
       if ((prefix != null && prefix.length() > 0) || filemode != null) {
         SNode filesetContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(copyContainer), "jetbrains.mps.build.structure.BuildLayout_Node"));
-        fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
+        fsetExt = BehaviorReflection.invokeVirtual(String.class, filesetContainer, "virtual_getFileSetExtension_6408167411310575216", new Object[]{});
       }
       return MultiTuple.<String,String,String,String>from(fsetExt, prefix, (filemode != null ?
         filemode.o1 :
@@ -2197,7 +2189,7 @@ public class QueriesGenerated {
       Pair<String, String> filemode = FileSetUtil.getFilemode(copyContainer, macros);
       if ((prefix != null && prefix.length() > 0) || filemode != null && filemode.o2 != null) {
         SNode filesetContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(copyContainer), "jetbrains.mps.build.structure.BuildLayout_Node"));
-        fsetExt = BuildLayout_ContainerAcceptingFileSet_Behavior.call_getFileSetExtension_6408167411310575216(filesetContainer);
+        fsetExt = BehaviorReflection.invokeVirtual(String.class, filesetContainer, "virtual_getFileSetExtension_6408167411310575216", new Object[]{});
       }
       return MultiTuple.<String,String,String>from(fsetExt, prefix, (filemode != null ?
         filemode.o2 :

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,7 +16,7 @@ public class typeOf_ConceptFunctionParameter_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode conceptFunctionParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = ConceptFunctionParameter_Behavior.call_getType_2443692612523876968(conceptFunctionParameter);
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptFunctionParameter, "virtual_getType_2443692612523876968", new Object[]{});
     if ((type != null)) {
       {
         SNode _nodeToCheck_1029348928467 = conceptFunctionParameter;

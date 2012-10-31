@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -170,11 +170,11 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlPart_Behavior.call_isFirstPositionAllowed_2133624044437631446(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
   private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlPart_Behavior.call_isLastPositionAllowed_2133624044437631519(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 
   public static class XmlDoctypeDeclaration_externalId_cellMenu_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {

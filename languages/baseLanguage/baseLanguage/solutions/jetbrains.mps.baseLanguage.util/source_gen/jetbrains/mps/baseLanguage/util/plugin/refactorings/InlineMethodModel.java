@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
@@ -31,7 +31,7 @@ public class InlineMethodModel {
           myCall = new MethodCallAdapter(node);
           myMethod = myCall.getMethodDeclaration();
         }
-        myMethodPresentation = ((String) BehaviorManager.getInstance().invoke(Object.class, myMethod, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+        myMethodPresentation = BehaviorReflection.invokeVirtual(String.class, myMethod, "virtual_getPresentation_1213877396640", new Object[]{});
         myIsContainsSelfCalls = isContainsSelfCalls();
       }
     });

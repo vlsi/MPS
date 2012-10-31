@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
@@ -216,7 +216,7 @@ public class ApiMigrationHelper {
       return false;
     }
     SNode root = SNodeOperations.getContainingRoot(n);
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(jetbrains.mps.util.SNodeOperations.class.getName())) {
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Object[]{}).equals(jetbrains.mps.util.SNodeOperations.class.getName())) {
       return false;
     }
     return true;
@@ -238,7 +238,8 @@ public class ApiMigrationHelper {
         if (!(needMigration(n))) {
           continue;
         }
-        if (!(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(n)), "jetbrains.mps.baseLanguage.structure.DotExpression") && (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null))) {
+        boolean isCorrectConcept = SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(n)), "jetbrains.mps.baseLanguage.structure.DotExpression") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.ClassCreator");
+        if (!(isCorrectConcept) || (SNodeOperations.getAncestor(n, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) != null)) {
           SetSequence.fromSet(unknown).addElement(n);
           continue;
         }

@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -66,7 +66,7 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
                 SNode testCase = SLinkOperations.getTarget(new JUnit3TestCaseRef_Constraints.QuotationClass_qx1fe9_a0a0a0a0a0b0a0a0a0b0a1a0b0a().createNode(), "classifier", false);
                 List<SNode> res = super.getClassifiers();
                 for (Iterator<SNode> it = ListSequence.fromList(res).iterator(); it.hasNext();) {
-                  if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(it.next(), testCase))) {
+                  if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, it.next(), "virtual_isDescendant_7165541881557222913", new Object[]{testCase}))) {
                     it.remove();
                   }
                 }

@@ -10,7 +10,7 @@ import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.library.BuiltInLibrariesIO;
 import java.io.File;
@@ -58,7 +58,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8716889635481488890(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "libraryName", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "libraryName", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8716889635481488910(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -82,7 +82,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4514696390934965627(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "libraryName", true));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "libraryName", true), "virtual_getValue_1213877173054", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_4514696390934965644(final IOperationContext operationContext, final PropertyMacroContext _context) {

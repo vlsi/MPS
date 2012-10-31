@@ -57,6 +57,14 @@ public class MergeConflictsBuilder {
     collectConflicts();
   }
 
+  private void addPossibleConflict(ModelChange a, ModelChange b) {
+    if (a.isNonConflicting() || b.isNonConflicting()) {
+      addSymmetric(a, b);
+    } else {
+      addConflict(a, b);
+    }
+  }
+
   private void addConflict(ModelChange a, ModelChange b) {
     addChangeLink(myConflictingChanges, a, b);
   }
@@ -108,7 +116,7 @@ public class MergeConflictsBuilder {
         if (SNodeOperations.getParent(node) == null) {
           DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(node.getSNodeId());
           if (conflicting != null) {
-            addConflict(change, conflicting);
+            addPossibleConflict(change, conflicting);
           }
         } else {
           Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getSNodeId(), SNodeOperations.getContainingLinkRole(node));
@@ -119,7 +127,7 @@ public class MergeConflictsBuilder {
             }
           });
           if (conflicting != null) {
-            addConflict(change, conflicting);
+            addPossibleConflict(change, conflicting);
             break;
           }
         }
@@ -141,7 +149,7 @@ public class MergeConflictsBuilder {
       if (EqualUtil.equals(mineChange.getNewValue(), repositoryChange.getNewValue())) {
         addSymmetric(mineChange, repositoryChange);
       } else {
-        addConflict(mineChange, repositoryChange);
+        addPossibleConflict(mineChange, repositoryChange);
       }
     }
   }
@@ -159,7 +167,7 @@ public class MergeConflictsBuilder {
       if (EqualUtil.equals(mineChange.getTargetNodeId(), repositoryChange.getTargetNodeId()) && EqualUtil.equals(mineChange.getTargetModelReference(), repositoryChange.getTargetModelReference()) && EqualUtil.equals(mineChange.getResolveInfo(), repositoryChange.getResolveInfo())) {
         addSymmetric(mineChange, repositoryChange);
       } else {
-        addConflict(mineChange, repositoryChange);
+        addPossibleConflict(mineChange, repositoryChange);
       }
     }
   }
@@ -185,7 +193,7 @@ public class MergeConflictsBuilder {
       if (SNodeCompare.nodeEquals(myMyModel.getNodeById(mine.getRootId()), myRepositoryModel.getNodeById(repository.getRootId()))) {
         addSymmetric(mine, repository);
       } else {
-        addConflict(mine, repository);
+        addPossibleConflict(mine, repository);
       }
     }
   }
@@ -229,7 +237,7 @@ public class MergeConflictsBuilder {
       }
     }, ModelVersionChange.class);
     if ((int) MapSequence.fromMap(arranged._0()).count() == 1 && (int) MapSequence.fromMap(arranged._1()).count() == 1) {
-      addConflict(SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).first(), SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()).first());
+      addPossibleConflict(SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).first(), SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()).first());
     }
   }
 
@@ -249,7 +257,7 @@ public class MergeConflictsBuilder {
             if (nodeGroupChangesSymmetric(m, r)) {
               addSymmetric(m, r);
             } else {
-              addConflict(m, r);
+              addPossibleConflict(m, r);
             }
           }
         }

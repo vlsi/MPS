@@ -17,8 +17,7 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
-import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,7 +28,6 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -55,9 +53,9 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       }
       NullableState varState = result.get(instruction).get(variable);
       SNode parent = SNodeOperations.getParent(source);
-      if (!(instruction instanceof IfJumpInstruction) && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && !(DotExpression_Behavior.call_allowsNullOperand_4585239809762176541(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
+      if (!(instruction instanceof IfJumpInstruction) && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
         SNode dot = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if (SLinkOperations.getTarget(dot, "operand", true) == source && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dot, "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
+        if (SLinkOperations.getTarget(dot, "operand", true) == source && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(dot, "operation", true), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dot, "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
           if (NullableState.canBeNull(varState)) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
@@ -146,7 +144,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         for (SNode returnStatement : RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(method, "body", true))) {
           RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(returnStatement, "expression", true), returnStatement, program, result);
         }
-        SNode last = IMethodLike_Behavior.call_getLastStatement_1239354409446(method);
+        SNode last = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getLastStatement_1239354409446", new Object[]{});
         if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
           RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), last, program, result);
         }

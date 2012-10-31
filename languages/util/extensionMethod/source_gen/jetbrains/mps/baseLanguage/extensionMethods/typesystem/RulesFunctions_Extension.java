@@ -15,7 +15,11 @@ public class RulesFunctions_Extension {
   public RulesFunctions_Extension() {
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_equateApplicableType(final TypeCheckingContext typeCheckingContext, SNode instanceType, SNode extensionMethod, Map<SNode, List<SNode>> mmap) {
     SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extensionMethod), mmap);
     {

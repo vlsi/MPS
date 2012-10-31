@@ -19,7 +19,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.ErrorNodeEditor;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -80,7 +80,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     if (node.getLanguage() == null) {
       return new ErrorNodeEditor();
     }
-    String key = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    String key = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{});
     if (MapSequence.fromMap(myCachedEditors).containsKey(key)) {
       Constructor constructor = MapSequence.fromMap(myCachedEditors).get(key);
       if (constructor != null) {

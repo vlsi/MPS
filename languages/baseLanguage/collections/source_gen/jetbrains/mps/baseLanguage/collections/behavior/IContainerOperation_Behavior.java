@@ -7,13 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IContainerOperation_Behavior {
-  private static Class[] PARAMETERS_2141797557973018589 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -31,17 +28,13 @@ public class IContainerOperation_Behavior {
     return jt;
   }
 
+  @Deprecated
   public static SNode call_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, new Object[]{elementType});
-  }
-
-  public static SNode callSuperNew_expectedOperandType_2141797557973018589(SNode thisNode, String callerConceptFqName, SNode elementType) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), callerConceptFqName, "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, new Object[]{elementType});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expectedOperandType_2141797557973018589", new Object[]{elementType});
   }
 
   @Deprecated
   public static SNode callSuper_expectedOperandType_2141797557973018589(SNode thisNode, String callerConceptFqName, SNode elementType) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), callerConceptFqName, "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, new Object[]{elementType});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), callerConceptFqName, "virtual_expectedOperandType_2141797557973018589", new Class[]{SNode.class, SNode.class}, new Object[]{elementType});
   }
 }

@@ -9,14 +9,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Order_Behavior {
-  private static Class[] PARAMETERS_1499919975383913755 = {SNode.class, SNode.class};
-  private static Class[] PARAMETERS_3038738109029048958 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -42,32 +38,24 @@ public class Order_Behavior {
     return thisNode;
   }
 
+  @Deprecated
   public static boolean call_presents_1499919975383913755(SNode thisNode, SNode tab) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, new Object[]{tab});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_presents_1499919975383879508", new Object[]{tab});
   }
 
+  @Deprecated
   public static SNode call_getOrder_3038738109029048958(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958, new Object[]{});
-  }
-
-  public static boolean callSuperNew_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, new Object[]{tab});
-  }
-
-  public static SNode callSuperNew_getOrder_3038738109029048958(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_presents_1499919975383913755(SNode thisNode, String callerConceptFqName, SNode tab) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", PARAMETERS_1499919975383913755, new Object[]{tab});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_presents_1499919975383879508", new Class[]{SNode.class, SNode.class}, new Object[]{tab});
   }
 
   @Deprecated
   public static SNode callSuper_getOrder_3038738109029048958(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048958, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_getOrder_3038738109029048953", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static boolean isEmpty_tlwj75_a0b0b(String str) {

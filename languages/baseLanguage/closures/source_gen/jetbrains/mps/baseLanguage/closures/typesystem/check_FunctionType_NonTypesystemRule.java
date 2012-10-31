@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -28,7 +28,7 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "runtime interface must have exactly one method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049608", null, errorTarget);
       }
       SNode mtd = ListSequence.fromList(SLinkOperations.getTargets(rt, "method", true)).first();
-      if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
+      if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ft, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
         if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "return type expected", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049710", null, errorTarget);

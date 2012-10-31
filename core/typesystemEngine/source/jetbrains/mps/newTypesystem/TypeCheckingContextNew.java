@@ -378,11 +378,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   //--------
 
   @Override
-  public SModel getRuntimeTypesModel() {
-    return myTypeChecker.getRuntimeTypesModel();
-  }
-
-  @Override
   public Map<SNode, SNode> getMainContext() {
     return getNodeTypesComponent().getMainContext();
   }

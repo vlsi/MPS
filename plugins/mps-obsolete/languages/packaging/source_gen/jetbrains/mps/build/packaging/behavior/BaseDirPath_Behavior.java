@@ -5,6 +5,7 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BaseDirPath_Behavior {
   public static void init(SNode thisNode) {
@@ -12,7 +13,7 @@ public class BaseDirPath_Behavior {
   }
 
   public static String virtual_getName_1221141245424(SNode thisNode) {
-    String name = Path_Behavior.callSuperNew_getName_1221141245424(thisNode, "jetbrains.mps.build.packaging.structure.Path");
+    String name = BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.packaging.structure.Path", "virtual_getName_1221141245424", new Object[]{});
     if (name.equals("")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "path");
     }

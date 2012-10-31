@@ -27,12 +27,11 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
@@ -49,7 +48,11 @@ public class RulesFunctions_BaseLanguage {
   public RulesFunctions_BaseLanguage() {
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void comparisonOp(final TypeCheckingContext typeCheckingContext, SNode binOp) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -165,7 +168,11 @@ __switch__:
     return returnStatements;
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_InstanceMethodCallOperation(final TypeCheckingContext typeCheckingContext, SNode imco, SNode returnType, SNode instanceType, SNode methodClassifier) {
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, returnType, mmap);
@@ -174,12 +181,20 @@ __switch__:
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     inference_matchConcreteTypesWithTypeVariablesInternal(typeCheckingContext, genericClassifier, instanceType, mmap, null);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_matchConcreteTypesWithTypeVariablesInternal(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap, SNode nodeToCheck) {
     if ((genericClassifier != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
@@ -205,7 +220,11 @@ __switch__:
     match_forInnerClassifiers(typeCheckingContext, genericClassifier, instanceType, mmap);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void match_forInnerClassifiers(final TypeCheckingContext typeCheckingContext, SNode declClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     SNode parentFC = SNodeOperations.getAncestor(declClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (parentFC == null) {
@@ -227,7 +246,11 @@ __switch__:
     inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, parentFC, constructedType, mmap);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_matchConcreteTypesWithMethodTypeVariables(final TypeCheckingContext typeCheckingContext, SNode methodCall, Map<SNode, List<SNode>> mmap) {
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty() && (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       {
@@ -252,7 +275,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     if (returnType != null) {
       SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, returnType, mmap);
@@ -360,7 +387,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   private static void matchedType_supertypeOf_argument(final TypeCheckingContext typeCheckingContext, final SNode matchedType, final SNode arg) {
     {
       final SNode TARG = typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5380162141339274300", true);
@@ -376,7 +407,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_setConcreteUpperBorders(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
       for (SNode tvd : MapSequence.fromMap(mmap).keySet()) {
@@ -392,7 +427,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @InferenceMethod
+  @Deprecated
   public static void inference_equateMatchingTypeVariables(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
       for (List<SNode> nodes : MapSequence.fromMap(mmap).values()) {
@@ -411,7 +450,11 @@ __switch__:
     }
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
   @CheckingMethod
+  @Deprecated
   public static SNode inference_matchTypeWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -426,6 +469,7 @@ __switch__:
   }
 
   @CheckingMethod
+  @Deprecated
   private static void inference_mapTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -440,10 +484,12 @@ __switch__:
     }
   }
 
+  @Deprecated
   private static void inference_mapTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     putTypeVariable(tvd, tvar, mmap);
   }
 
+  @Deprecated
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
     if (nodes == null) {
@@ -453,6 +499,10 @@ __switch__:
     ListSequence.fromList(nodes).addElement(tvar);
   }
 
+  /**
+   * @deprecated to be removed at some point after 3.0
+   */
+  @Deprecated
   public static boolean isWithinStatic(SNode node) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     if (ancestor != null && (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
@@ -506,7 +556,7 @@ __switch__:
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ownMethod, "method has duplicate erasure with " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getAncestor(namesake, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) + "." + SPropertyOperations.getString(ownMethod, "name") + "(" + namesakeErasureSignature + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3115327157609989939", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ownMethod, "method has duplicate erasure with " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(namesake, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(ownMethod, "name") + "(" + namesakeErasureSignature + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3115327157609989939", null, errorTarget);
         }
         break;
       }
@@ -575,13 +625,13 @@ __switch__:
                 }
               }
             } else {
-              if (ListSequence.fromList(ancSLs).contains(IMethodLike_Behavior.call_getBody_1239354440022(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike")))) {
+              if (ListSequence.fromList(ancSLs).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getBody_1239354440022", new Object[]{}))) {
                 SNode methodLike = SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike");
-                supportsCheckedExceptions = IMethodLike_Behavior.call_supportsCheckedExceptions_8510677279630867629(methodLike);
-                if (IMethodLike_Behavior.call_implicitThrows_4989157187872658723(methodLike)) {
+                supportsCheckedExceptions = BehaviorReflection.invokeVirtual(Boolean.TYPE, methodLike, "virtual_supportsCheckedExceptions_8510677279630867629", new Object[]{});
+                if (BehaviorReflection.invokeVirtual(Boolean.TYPE, methodLike, "virtual_implicitThrows_4989157187872658723", new Object[]{})) {
                   ListSequence.fromList(throwTypes).clear();
                 } else {
-                  for (final SNode thr : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(methodLike)) {
+                  for (final SNode thr : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), methodLike, "virtual_getThrowableTypes_6204026822016975623", new Object[]{})) {
                     ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                       public boolean accept(SNode tt) {
                         return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);

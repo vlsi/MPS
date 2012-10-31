@@ -4,7 +4,6 @@ package jetbrains.mps.gwt.client.stubs;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
@@ -43,11 +42,11 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 
 public class GWTStubsSource extends StubModelDataSource implements FastFindSupportProvider {
-  private ModelRoot root;
+  private String path;
 
-  public GWTStubsSource(SModuleReference origin, ModelRoot root) {
+  public GWTStubsSource(SModuleReference origin, String path) {
     super(origin);
-    this.root = root;
+    this.path = path;
   }
 
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
@@ -56,7 +55,7 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
     model.addLanguage(lang);
 
     String pkg = model.getSModelFqName().getLongName();
-    PathItem pi = GWTModulePathItem.getPathItem(root.getPath());
+    PathItem pi = GWTModulePathItem.getPathItem(path);
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
     for (String modres : ListSequence.fromList(pi.resources(pkg))) {
@@ -70,10 +69,10 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
       }
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, gwtModule));
     }
-    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), root, module) {
+    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), path, module) {
       @Override
-      public StubModelDataSource createStubsSource(SModuleReference origin, ModelRoot loc) {
-        return new GWTStubsSource(origin, loc);
+      public StubModelDataSource createStubsSource(SModuleReference origin, String path) {
+        return new GWTStubsSource(origin, path);
       }
     };
     GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {

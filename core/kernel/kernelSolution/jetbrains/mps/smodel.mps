@@ -431,15 +431,6 @@
         <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
       </node>
     </node>
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="2140928436687217673">
-      <property name="name" nameId="tpck.1169194664001" value="concept_stubs_LibraryStubDescriptor" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2140928436687217674" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2140928436687217675" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="2140928436687217676">
-        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="n3kn.8529737993487825733" resolveInfo="LibraryStubDescriptor" />
-      </node>
-    </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="4116271674853115988">
       <property name="name" nameId="tpck.1169194664001" value="concept_generator_MappingConfiguration" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />

@@ -1926,14 +1926,14 @@
                     </node>
                     <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2590687671594979278">
                       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2590687671594979279">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8311430478078963827">
-                          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8311430478078963829">
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8311430478078964072">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xpj.~LibrariesLoader%dgetInstance()%cjetbrains%dmps%dstubs%dLibrariesLoader" resolveInfo="getInstance" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6xpj.~LibrariesLoader" resolveInfo="LibrariesLoader" />
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2501570281775985521">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2501570281775985825">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2501570281775985563">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n13f.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dreloading%dClassLoaderManager" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n13f.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8311430478078963831">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xpj.~LibrariesLoader%dloadNewLibs()%cvoid" resolveInfo="loadNewLibs" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6203698018926215843">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n13f.~ClassLoaderManager%dupdateModels()%cvoid" resolveInfo="updateModels" />
                             </node>
                           </node>
                         </node>
@@ -6828,7 +6828,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7260781342054500032">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.8911572761289368853" resolveInfo="getTestConfiturations" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.8911572761289368853" resolveInfo="getTestConfigurations" />
                             </node>
                           </node>
                         </node>
@@ -6874,7 +6874,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7260781342054499893">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.8911572761289368853" resolveInfo="getTestConfiturations" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.8911572761289368853" resolveInfo="getTestConfigurations" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7260781342054499894">

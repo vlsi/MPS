@@ -4,28 +4,21 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IYetUnresolved_Behavior {
-  private static Class[] PARAMETERS_8136348407761606764 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static _FunctionTypes._return_P0_E0<? extends SNode> call_evaluateSubst_8136348407761606764(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (_FunctionTypes._return_P0_E0<? extends SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "virtual_evaluateSubst_8136348407761606764", PARAMETERS_8136348407761606764, new Object[]{});
-  }
-
-  public static _FunctionTypes._return_P0_E0<? extends SNode> callSuperNew_evaluateSubst_8136348407761606764(SNode thisNode, String callerConceptFqName) {
-    return (_FunctionTypes._return_P0_E0<? extends SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), callerConceptFqName, "virtual_evaluateSubst_8136348407761606764", PARAMETERS_8136348407761606764, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), thisNode, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
   }
 
   @Deprecated
   public static _FunctionTypes._return_P0_E0<? extends SNode> callSuper_evaluateSubst_8136348407761606764(SNode thisNode, String callerConceptFqName) {
-    return (_FunctionTypes._return_P0_E0<? extends SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), callerConceptFqName, "virtual_evaluateSubst_8136348407761606764", PARAMETERS_8136348407761606764, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), callerConceptFqName, "virtual_evaluateSubst_8136348407761606764", new Class[]{SNode.class}, new Object[]{});
   }
 }

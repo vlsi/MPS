@@ -1523,7 +1523,7 @@
     <nodeInfo nodeId="7057666463730595183" fileName="BuilderCreator_Editor.java" startLine="105" startPosition="72" endLine="106" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7057666463730595183" fileName="BuilderCreator_Editor.java" startLine="106" startPosition="78" endLine="107" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7057666463730595183" fileName="BuilderCreator_Editor.java" startLine="108" startPosition="10" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7057666463730600155" fileName="BuilderCreator_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7057666463730600155" fileName="BuilderCreator_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7057666463730155285" fileName="BuilderCreator_Editor.java" startLine="78" startPosition="26" endLine="80" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7057666463730155284" fileName="BuilderCreator_Editor.java" startLine="30" startPosition="80" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7057666463730155284" fileName="BuilderCreator_Editor.java" startLine="30" startPosition="80" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1554,7 +1554,7 @@
     <scopeInfo nodeId="7057666463730595177" fileName="BuilderCreator_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="82" />
     <scopeInfo nodeId="7057666463730595177" fileName="BuilderCreator_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="81" />
     <scopeInfo nodeId="7057666463730595177" fileName="BuilderCreator_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="82" />
-    <scopeInfo nodeId="7057666463730595188" fileName="BuilderCreator_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="113" />
+    <scopeInfo nodeId="7057666463730595188" fileName="BuilderCreator_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="165" />
     <scopeInfo nodeId="7057666463730595177" fileName="BuilderCreator_Editor.java" startLine="40" startPosition="5" endLine="42" endPosition="51">
       <varInfo nodeId="7057666463730595177" varName="style" />
     </scopeInfo>
@@ -1708,8 +1708,8 @@
     <nodeInfo nodeId="7057666463730600176" fileName="BuilderStatement_Editor.java" startLine="116" startPosition="72" endLine="117" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7057666463730600176" fileName="BuilderStatement_Editor.java" startLine="117" startPosition="78" endLine="118" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7057666463730600176" fileName="BuilderStatement_Editor.java" startLine="119" startPosition="10" endLine="120" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8000882773529162960" fileName="BuilderStatement_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7057666463730600182" fileName="BuilderStatement_Editor.java" startLine="127" startPosition="111" endLine="128" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8000882773529162960" fileName="BuilderStatement_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7057666463730600182" fileName="BuilderStatement_Editor.java" startLine="127" startPosition="111" endLine="128" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8000882773529162957" fileName="BuilderStatement_Editor.java" startLine="54" startPosition="128" endLine="56" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7057666463730155308" fileName="BuilderStatement_Editor.java" startLine="89" startPosition="26" endLine="91" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7057666463730155307" fileName="BuilderStatement_Editor.java" startLine="30" startPosition="80" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1746,8 +1746,8 @@
     <scopeInfo nodeId="7057666463730600170" fileName="BuilderStatement_Editor.java" startLine="46" startPosition="5" endLine="47" endPosition="82" />
     <scopeInfo nodeId="7057666463730600170" fileName="BuilderStatement_Editor.java" startLine="47" startPosition="82" endLine="48" endPosition="81" />
     <scopeInfo nodeId="7057666463730600170" fileName="BuilderStatement_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="82" />
-    <scopeInfo nodeId="8000882773529162959" fileName="BuilderStatement_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="110" />
-    <scopeInfo nodeId="7057666463730600181" fileName="BuilderStatement_Editor.java" startLine="127" startPosition="111" endLine="128" endPosition="113" />
+    <scopeInfo nodeId="8000882773529162959" fileName="BuilderStatement_Editor.java" startLine="123" startPosition="111" endLine="124" endPosition="162" />
+    <scopeInfo nodeId="7057666463730600181" fileName="BuilderStatement_Editor.java" startLine="127" startPosition="111" endLine="128" endPosition="165" />
     <scopeInfo nodeId="7057666463730600170" fileName="BuilderStatement_Editor.java" startLine="43" startPosition="5" endLine="45" endPosition="51">
       <varInfo nodeId="7057666463730600170" varName="style" />
     </scopeInfo>
@@ -3998,7 +3998,7 @@
     <nodeInfo nodeId="7802271442981707304" fileName="AsBuilderStatement_Editor.java" startLine="132" startPosition="72" endLine="133" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7802271442981707304" fileName="AsBuilderStatement_Editor.java" startLine="133" startPosition="78" endLine="134" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7802271442981707304" fileName="AsBuilderStatement_Editor.java" startLine="135" startPosition="10" endLine="136" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7802271442981707311" fileName="AsBuilderStatement_Editor.java" startLine="139" startPosition="111" endLine="140" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7802271442981707311" fileName="AsBuilderStatement_Editor.java" startLine="139" startPosition="111" endLine="140" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7802271442981707321" fileName="AsBuilderStatement_Editor.java" startLine="53" startPosition="129" endLine="55" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7802271442981707323" fileName="AsBuilderStatement_Editor.java" startLine="88" startPosition="26" endLine="90" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7802271442981707299" fileName="AsBuilderStatement_Editor.java" startLine="105" startPosition="26" endLine="107" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4037,7 +4037,7 @@
     <scopeInfo nodeId="7802271442981707300" fileName="AsBuilderStatement_Editor.java" startLine="45" startPosition="5" endLine="46" endPosition="82" />
     <scopeInfo nodeId="7802271442981707300" fileName="AsBuilderStatement_Editor.java" startLine="46" startPosition="82" endLine="47" endPosition="81" />
     <scopeInfo nodeId="7802271442981707300" fileName="AsBuilderStatement_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="82" />
-    <scopeInfo nodeId="7802271442981707310" fileName="AsBuilderStatement_Editor.java" startLine="139" startPosition="111" endLine="140" endPosition="113" />
+    <scopeInfo nodeId="7802271442981707310" fileName="AsBuilderStatement_Editor.java" startLine="139" startPosition="111" endLine="140" endPosition="165" />
     <scopeInfo nodeId="7802271442981707300" fileName="AsBuilderStatement_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="51">
       <varInfo nodeId="7802271442981707300" varName="style" />
     </scopeInfo>

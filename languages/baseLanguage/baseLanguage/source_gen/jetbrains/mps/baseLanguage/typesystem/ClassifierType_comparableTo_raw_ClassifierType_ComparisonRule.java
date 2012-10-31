@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -28,7 +28,7 @@ public class ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule exten
       }
     })) {
       // formatting 
-      return Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(node1, "classifier", false), SLinkOperations.getTarget(node2, "classifier", false)) || Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(node2, "classifier", false), SLinkOperations.getTarget(node1, "classifier", false));
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node1, "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(node2, "classifier", false)}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node2, "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(node1, "classifier", false)});
     }
     return false;
   }

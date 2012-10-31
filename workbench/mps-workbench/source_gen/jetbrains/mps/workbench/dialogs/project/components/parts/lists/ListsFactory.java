@@ -10,7 +10,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.project.Path;
@@ -18,7 +18,6 @@ import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfig
 import java.util.List;
 import org.jdesktop.observablecollections.ObservableCollections;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.structure.model.ModelRootManager;
 import java.util.Comparator;
 
 public final class ListsFactory {
@@ -67,32 +66,9 @@ public final class ListsFactory {
       return ListsFactory.MODULE_REF_COMPARATOR.isEqual(o1, o2);
     }
   };
-  public static final ListsFactory.ListComparator<ModelRoot> MODEL_ROOT_COMPARATOR = new ListsFactory.ListComparator<ModelRoot>() {
-    public int compare(ModelRoot o1, ModelRoot o2) {
-      int result = o1.getPath().compareTo(o2.getPath());
-      if (result != 0) {
-        return result;
-      }
-
-      String o1cl = check_2m29re_a0d0a0a0d(o1.getManager());
-      String o2cl = check_2m29re_a0e0a0a0d(o2.getManager());
-      result = ((o1cl == null ?
-        "" :
-        o1cl
-      )).compareTo((o2cl == null ?
-        "" :
-        o2cl
-      ));
-      return result;
-    }
-
-    public boolean isEqual(ModelRoot o1, ModelRoot o2) {
-      if (super.isEqual(o1, o2)) {
-        return true;
-      }
-      String o1cl = check_2m29re_a0b0b0a0d(o1.getManager());
-      String o2cl = check_2m29re_a0c0b0a0d(o2.getManager());
-      return EqualUtil.equals(o1.getPath(), o2.getPath()) && EqualUtil.equals(o1cl, o2cl);
+  public static final ListsFactory.ListComparator<ModelRootDescriptor> MODEL_ROOT_COMPARATOR = new ListsFactory.ListComparator<ModelRootDescriptor>() {
+    public int compare(ModelRootDescriptor o1, ModelRootDescriptor o2) {
+      return 0;
     }
   };
   public static final ListsFactory.ListComparator<Dependency> DEPENDENCY_COMPARATOR = new ListsFactory.ListComparator<Dependency>() {
@@ -189,34 +165,6 @@ public final class ListsFactory {
         return ListsFactory.MODEL_REF_COMPARATOR.isEqual(o1, o2);
       }
     };
-  }
-
-  private static String check_2m29re_a0d0a0a0d(ModelRootManager checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassName();
-    }
-    return null;
-  }
-
-  private static String check_2m29re_a0e0a0a0d(ModelRootManager checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassName();
-    }
-    return null;
-  }
-
-  private static String check_2m29re_a0b0b0a0d(ModelRootManager checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassName();
-    }
-    return null;
-  }
-
-  private static String check_2m29re_a0c0b0a0d(ModelRootManager checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassName();
-    }
-    return null;
   }
 
   public static abstract class ListComparator<T> implements Comparator<T> {

@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templatemap__outputNode implements TemplateDeclaration {
@@ -30,7 +31,7 @@ public class Templatemap__outputNode implements TemplateDeclaration {
     try {
       environment.getTracer().pushMacro(nodeMacroRef_wi2k8y_a0a0a1a1);
       TemplateContext context1 = context.subContext("generated_root");
-      final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+      final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
       try {
         environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a3a1a1);
         environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
@@ -38,14 +39,14 @@ public class Templatemap__outputNode implements TemplateDeclaration {
         tnode2.setProperty("text", "output root");
 
         {
-          final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+          final SNode tnode3 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a1a5a3a1a1);
             environment.nodeCopied(context1, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738814182");
             tnode3.setProperty("text", "this is 'special child' in root template");
 
           } finally {
-            environment.getTracer().pushOutputNode(tnode3);
+            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
             environment.getTracer().closeTemplateNode(templateNode_wi2k8y_a0a0a1a5a3a1a1);
           }
           if (tnode3 != null) {
@@ -54,7 +55,7 @@ public class Templatemap__outputNode implements TemplateDeclaration {
           // TODO validate child 
         }
       } finally {
-        environment.getTracer().pushOutputNode(tnode2);
+        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
         environment.getTracer().closeTemplateNode(templateNode_wi2k8y_a0a0a3a1a1);
       }
       tlist1 = TemplateUtil.singletonList(tnode2);

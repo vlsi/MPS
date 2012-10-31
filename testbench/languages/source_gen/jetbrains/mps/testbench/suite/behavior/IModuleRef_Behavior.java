@@ -4,43 +4,31 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IModuleRef_Behavior {
-  private static Class[] PARAMETERS_1280144168199513544 = {SNode.class};
-  private static Class[] PARAMETERS_1280144168199745474 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static ModuleReference call_moduleReference_1280144168199513544(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (ModuleReference) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544, new Object[]{});
+    return BehaviorReflection.invokeVirtual(ModuleReference.class, thisNode, "virtual_moduleReference_1280144168199513544", new Object[]{});
   }
 
+  @Deprecated
   public static String call_presentation_1280144168199745474(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474, new Object[]{});
-  }
-
-  public static ModuleReference callSuperNew_moduleReference_1280144168199513544(SNode thisNode, String callerConceptFqName) {
-    return (ModuleReference) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544, new Object[]{});
-  }
-
-  public static String callSuperNew_presentation_1280144168199745474(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_presentation_1280144168199745474", new Object[]{});
   }
 
   @Deprecated
   public static ModuleReference callSuper_moduleReference_1280144168199513544(SNode thisNode, String callerConceptFqName) {
-    return (ModuleReference) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(ModuleReference.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_presentation_1280144168199745474(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_presentation_1280144168199745474", new Class[]{SNode.class}, new Object[]{});
   }
 }

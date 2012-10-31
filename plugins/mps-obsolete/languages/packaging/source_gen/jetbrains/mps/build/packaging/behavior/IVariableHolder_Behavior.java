@@ -6,14 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IVariableHolder_Behavior {
-  private static Class[] PARAMETERS_1234864693585 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,17 +24,13 @@ public class IVariableHolder_Behavior {
     return null;
   }
 
+  @Deprecated
   public static List<SNode> call_getAllVariable_1234864693585(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585, new Object[]{});
-  }
-
-  public static List<SNode> callSuperNew_getAllVariable_1234864693585(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAllVariable_1234864693585", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getAllVariable_1234864693585(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", new Class[]{SNode.class}, new Object[]{});
   }
 }

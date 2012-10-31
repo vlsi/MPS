@@ -16,7 +16,7 @@ import jetbrains.mps.ui.generator.template.helper.SessionObjects;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ui.behavior.UIObjectStatement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.ui.behavior.BeanPropertyView_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -25,7 +25,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.ui.modeling.behavior.UIObjectFactory_Behavior;
-import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -196,15 +195,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2459884175399462005(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String) SessionObjects.VARIABLE_NAME.find(_context, IUIObjectContextProvider_Behavior.call_getContext_8923564134258345451(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), null);
+    return (String) SessionObjects.VARIABLE_NAME.find(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContext_8923564134258345451", new Object[]{}), null);
   }
 
   public static Object propertyMacro_GetPropertyValue_413330188017221986(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String) SessionObjects.VARIABLE_NAME.find(_context, IUIObjectContextProvider_Behavior.call_getContext_8923564134258345451(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), null);
+    return (String) SessionObjects.VARIABLE_NAME.find(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContext_8923564134258345451", new Object[]{}), null);
   }
 
   public static Object propertyMacro_GetPropertyValue_6653319296676633380(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String) SessionObjects.VARIABLE_NAME.find(_context, IUIObjectContextProvider_Behavior.call_getContext_8923564134258345451(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), null);
+    return (String) SessionObjects.VARIABLE_NAME.find(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContext_8923564134258345451", new Object[]{}), null);
   }
 
   public static Object propertyMacro_GetPropertyValue_5409370515559813132(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -318,7 +317,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4587250023234501895(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_4587250023234501801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -326,19 +325,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4587250023234501749(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_413330188017223423(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_4587250023234501861(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getParent(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false))), "jetbrains.mps.ui.modeling.structure.UIObject");
+    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{})), "jetbrains.mps.ui.modeling.structure.UIObject");
   }
 
   public static Object referenceMacro_GetReferent_6653319296676633410(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_6261739386029041651(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -358,7 +357,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4981225789809336175(final IOperationContext operationContext, final IfMacroContext _context) {
-    return UIObjectStatement_Behavior.call_shouldReturnValue_7109250785404509292(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_shouldReturnValue_7109250785404509292", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_4587250023234481758(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -390,7 +389,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2459884175399461978(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_4587250023234501782(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -398,15 +397,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_413330188017221971(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_6653319296676633365(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_6261739386029041643(final IOperationContext operationContext, final IfMacroContext _context) {
-    return UIObjectStatement_Behavior.call_shouldReturnValue_7109250785404509292(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_shouldReturnValue_7109250785404509292", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_4983682755224092741(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -526,7 +525,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4981225789809336313(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(_context.getNode()));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(_context.getNode()), "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_4981225789809336377(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -538,11 +537,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1576918603588706064(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(_context.getNode()));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(_context.getNode()), "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_3091159734392477154(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(_context.getNode()));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(_context.getNode()), "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_2459884175400934838(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -550,11 +549,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2459884175395458306(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), "allows", false);
+    return SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{}), "allows", false);
   }
 
   public static SNode sourceNodeQuery_2459884175396110325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_2459884175395682057(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -566,11 +565,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2459884175395682148(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(IUIObjectContextProvider_Behavior.call_getContainer_8923564134258257521(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false)), "allows", false);
+    return SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContainer_8923564134258257521", new Object[]{}), "allows", false);
   }
 
   public static SNode sourceNodeQuery_2459884175399461982(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_2459884175399462026(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -578,11 +577,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_413330188017222004(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_6653319296676633398(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false), "virtual_getContextExpression_8923564134258345446", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_3546006303815182196(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -651,7 +650,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1251509410704218026(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode tpl = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate");
-    SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tpl, "factory", true)).first(), "context", true), "uiObject", false), SNodeOperations.getModel(tpl), GlobalScope.getInstance()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "runtimeType", true);
+    SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tpl, "factory", true)).first(), "context", true), "uiObject", false), "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(tpl), GlobalScope.getInstance()}), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "runtimeType", true);
     return rt;
   }
 

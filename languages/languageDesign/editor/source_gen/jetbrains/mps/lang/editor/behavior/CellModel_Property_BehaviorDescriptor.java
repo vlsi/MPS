@@ -9,16 +9,16 @@ public class CellModel_Property_BehaviorDescriptor extends CellModel_WithRole_Be
   public CellModel_Property_BehaviorDescriptor() {
   }
 
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_Property_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
   public String virtual_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     return CellModel_Property_Behavior.virtual_createCellId_1216737839993(thisNode, gc);
   }
 
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_Property_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_Property_Behavior.virtual_getOpeningText_1220339714057(thisNode);
   }
 
   public String virtual_getRoleForCell_1216377898846(SNode thisNode) {

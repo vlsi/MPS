@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -58,7 +59,7 @@ public class BuildProject_Behavior {
   @Nullable
   public static String call_getScriptsPath_4796668409958419284(SNode thisNode, Context context) {
     if ((SLinkOperations.getTarget(thisNode, "scriptsDir", true) != null)) {
-      return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "scriptsDir", true), context);
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "scriptsDir", true), "virtual_getLocalPath_5481553824944787364", new Object[]{context});
     }
     return BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
   }
@@ -105,14 +106,14 @@ public class BuildProject_Behavior {
         return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
       }
       for (SNode plugin : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "plugins", true))) {
-        Scope layoutScope = BuildPlugin_Behavior.call_getLayoutScope_1224588814561807654(plugin, kind);
+        Scope layoutScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
         if (layoutScope != null) {
           return layoutScope;
         }
       }
     } else if ("parts".equals(role)) {
       for (SNode plugin : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "plugins", true))) {
-        Scope projectScope = BuildPlugin_Behavior.call_getProjectStructureScope_3734116213129936182(plugin, kind);
+        Scope projectScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getProjectStructureScope_3734116213129936182", new Object[]{kind});
         if (projectScope != null) {
           return projectScope;
         }
@@ -174,7 +175,7 @@ public class BuildProject_Behavior {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return BuildMacro_Behavior.call_isPublic_6547494638219688113(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildMacro"));
+          return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildMacro"), "virtual_isPublic_6547494638219688113", new Object[]{});
         }
       });
     }

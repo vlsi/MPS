@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templatedescriptor implements TemplateDeclaration {
@@ -26,7 +27,7 @@ public class Templatedescriptor implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor", false);
+    final SNode tnode1 = new SNode("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor");
     try {
       environment.getTracer().pushTemplateNode(templateNode_e20rlw_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1698302279987411125");
@@ -48,7 +49,7 @@ public class Templatedescriptor implements TemplateDeclaration {
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(tnode1);
+      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
       environment.getTracer().closeTemplateNode(templateNode_e20rlw_a0a0a1a1);
     }
     return TemplateUtil.singletonList(tnode1);

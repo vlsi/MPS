@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class JDOMMemento implements Memento {
 
-  private Element myElement;
+  protected final Element myElement;
 
   public JDOMMemento(Element myElement) {
     this.myElement = myElement;

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +20,7 @@ public class typeof_FunctionParameterDeclaration_InferenceRule extends AbstractI
   }
 
   public void applyRule(final SNode fpd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.as(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.getAncestor(fpd, "jetbrains.mps.baseLanguage.structure.TypeDerivable", false, false), SNodeOperations.as(SNodeOperations.getParent(fpd), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true);
+    List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(fpd, "jetbrains.mps.baseLanguage.structure.TypeDerivable", false, false), "virtual_deriveType_1213877435747", new Object[]{SNodeOperations.as(SNodeOperations.getParent(fpd), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")}), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true);
     if (ListSequence.fromList(parms).count() > SNodeOperations.getIndexInParent(fpd)) {
       {
         SNode _nodeToCheck_1029348928467 = fpd;

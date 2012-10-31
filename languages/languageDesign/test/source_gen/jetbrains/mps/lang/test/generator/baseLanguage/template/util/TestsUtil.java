@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import java.io.File;
 import jetbrains.mps.project.Project;
@@ -29,7 +29,7 @@ public class TestsUtil {
   }
 
   public static String getTestBodyClassName(SNode testCase) {
-    return ITestCase_Behavior.call_getClassName_1216136193905(testCase) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 
   private static String check_6yh4up_a0c0a(File checkedDotOperand) {

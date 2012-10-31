@@ -17,24 +17,24 @@ public class Layout_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor im
     return Layout_Behavior.virtual_evaluateMacro_1234975967990(thisNode, macroName);
   }
 
-  public String virtual_getPath_1234976932856(SNode thisNode) {
-    return Layout_Behavior.virtual_getPath_1234976932856(thisNode);
+  public List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
+    return Layout_Behavior.virtual_getAllMacroNames_1234975567387(thisNode, addBasedir);
   }
 
   public List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     return Layout_Behavior.virtual_getAllVariable_1234864693585(thisNode);
   }
 
-  public List<SNode> virtual_getMacro_1107726059764558743(SNode thisNode) {
-    return IMacroHolder_Behavior.virtual_getMacro_1107726059764558743(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
-  public List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    return Layout_Behavior.virtual_getAllMacroNames_1234975567387(thisNode, addBasedir);
+  public List<SNode> virtual_getMacro_1107726059764558743(SNode thisNode) {
+    return IMacroHolder_Behavior.virtual_getMacro_1107726059764558743(thisNode);
+  }
+
+  public String virtual_getPath_1234976932856(SNode thisNode) {
+    return Layout_Behavior.virtual_getPath_1234976932856(thisNode);
   }
 
   @Override

@@ -4,15 +4,11 @@ package jetbrains.mps.lang.core.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ScopeProvider_Behavior {
-  private static Class[] PARAMETERS_3734116213129936182 = {SNode.class, SNode.class, SNode.class};
-  private static Class[] PARAMETERS_7722139651431880752 = {SNode.class, SNode.class, String.class, Integer.TYPE};
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,34 +17,26 @@ public class ScopeProvider_Behavior {
   }
 
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.call_getScope_3734116213129936182(thisNode, kind, null);
+    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_3734116213129936182", new Object[]{kind, null});
   }
 
+  @Deprecated
   public static Scope call_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind, child});
+    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
 
+  @Deprecated
   public static Scope call_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_7722139651431880752", PARAMETERS_7722139651431880752, new Object[]{kind, role, index});
-  }
-
-  public static Scope callSuperNew_getScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind, SNode child) {
-    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind, child});
-  }
-
-  public static Scope callSuperNew_getScope_7722139651431880752(SNode thisNode, String callerConceptFqName, SNode kind, String role, int index) {
-    return (Scope) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_7722139651431880752", PARAMETERS_7722139651431880752, new Object[]{kind, role, index});
+    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
   }
 
   @Deprecated
   public static Scope callSuper_getScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind, SNode child) {
-    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind, child});
+    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_3734116213129936182", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{kind, child});
   }
 
   @Deprecated
   public static Scope callSuper_getScope_7722139651431880752(SNode thisNode, String callerConceptFqName, SNode kind, String role, int index) {
-    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_7722139651431880752", PARAMETERS_7722139651431880752, new Object[]{kind, role, index});
+    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider"), callerConceptFqName, "virtual_getScope_7722139651431880752", new Class[]{SNode.class, SNode.class, String.class, Integer.TYPE}, new Object[]{kind, role, index});
   }
 }

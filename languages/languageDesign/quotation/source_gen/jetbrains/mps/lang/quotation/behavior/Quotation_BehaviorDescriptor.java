@@ -12,12 +12,12 @@ public class Quotation_BehaviorDescriptor extends Expression_BehaviorDescriptor 
   public Quotation_BehaviorDescriptor() {
   }
 
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return Quotation_Behavior.virtual_getMetaLevelChange_201537367881074474(thisNode);
+  }
+
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   @Override

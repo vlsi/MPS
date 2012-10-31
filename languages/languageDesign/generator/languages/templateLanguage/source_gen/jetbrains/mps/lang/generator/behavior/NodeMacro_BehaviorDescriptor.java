@@ -9,12 +9,12 @@ public abstract class NodeMacro_BehaviorDescriptor extends NodeAttribute_Behavio
   public NodeMacro_BehaviorDescriptor() {
   }
 
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return NodeMacro_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return NodeMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
+  }
+
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return NodeMacro_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
   @Override

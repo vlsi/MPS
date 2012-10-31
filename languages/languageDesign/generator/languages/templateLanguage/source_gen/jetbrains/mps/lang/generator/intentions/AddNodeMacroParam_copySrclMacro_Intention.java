@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
@@ -40,7 +40,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention extends BaseIntention imp
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Node Macro CopySrcl: node." + BaseConcept_Behavior.call_getPresentation_1213877396640(this.myParameter);
+    return "Add Node Macro CopySrcl: node." + BehaviorReflection.invokeVirtual(String.class, this.myParameter, "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

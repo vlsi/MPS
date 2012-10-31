@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -64,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462157225(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(_context.getNode(), "keystroke", true), "call_getKeyStroke_1213877273475", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeNonVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "keystroke", true), "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "call_getKeyStroke_1213877273475", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462256696(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -120,7 +120,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4192433084863764062(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeNonVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "call_getGeneratedClassLongName_1213877240120", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_478744034994714493(final IOperationContext operationContext, final PropertyMacroContext _context) {

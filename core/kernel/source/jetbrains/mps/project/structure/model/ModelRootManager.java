@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.model;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 
+@Deprecated
 public class ModelRootManager {
   private String myModuleId;
   private String myClassName;

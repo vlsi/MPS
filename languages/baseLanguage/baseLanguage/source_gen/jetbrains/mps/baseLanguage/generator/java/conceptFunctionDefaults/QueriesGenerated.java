@@ -8,7 +8,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1199879576743(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -24,6 +24,6 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1199879109301(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1213877522908(_context.getNode()));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_getFromParameterObject_1213877522908", new Object[]{}));
   }
 }

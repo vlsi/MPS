@@ -4,28 +4,21 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.io.File;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IPath_Behavior {
-  private static Class[] PARAMETERS_1233322718999 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static File call_getFile_1233322718999(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (File) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999, new Object[]{});
-  }
-
-  public static File callSuperNew_getFile_1233322718999(SNode thisNode, String callerConceptFqName) {
-    return (File) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", PARAMETERS_1233322718999, new Object[]{});
+    return BehaviorReflection.invokeVirtual(File.class, thisNode, "virtual_getFile_1233322718999", new Object[]{});
   }
 
   @Deprecated
   public static File callSuper_getFile_1233322718999(SNode thisNode, String callerConceptFqName) {
-    return (File) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", PARAMETERS_1233322718999, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(File.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -5,13 +5,10 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractTextGenParameter_Behavior {
-  private static Class[] PARAMETERS_1234885318469 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -37,17 +34,13 @@ public class AbstractTextGenParameter_Behavior {
     return false;
   }
 
+  @Deprecated
   public static String call_getGetterName_1234885318469(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469, new Object[]{});
-  }
-
-  public static String callSuperNew_getGetterName_1234885318469(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), callerConceptFqName, "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGetterName_1234885318469", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getGetterName_1234885318469(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), callerConceptFqName, "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), callerConceptFqName, "virtual_getGetterName_1234885318469", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -61,7 +61,7 @@ public class SolutionDescriptorPersistence {
             result_8ckma3_a0a0f0b0a.setOutputPath(result_8ckma3_a0a01a0a0f0b0a);
           }
 
-          result_8ckma3_a0a0f0b0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), macroHelper));
+          result_8ckma3_a0a0f0b0a.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), macroHelper));
 
           Element stubModelEntries = XmlUtil.first(rootElement, "stubModelEntries");
           if (stubModelEntries != null) {
@@ -112,7 +112,7 @@ public class SolutionDescriptorPersistence {
     }
 
     Element models = new Element("models");
-    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRoots(), macroHelper);
+    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
     result.addContent(models);
 
     if (!(descriptor.getAdditionalJavaStubPaths().isEmpty())) {

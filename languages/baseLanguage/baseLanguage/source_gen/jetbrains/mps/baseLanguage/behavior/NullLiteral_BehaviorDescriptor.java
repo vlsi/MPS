@@ -9,12 +9,12 @@ public class NullLiteral_BehaviorDescriptor extends Expression_BehaviorDescripto
   public NullLiteral_BehaviorDescriptor() {
   }
 
-  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
-    return NullLiteral_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  }
-
   public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     return NullLiteral_Behavior.virtual_eval_1213877519769(thisNode, module);
+  }
+
+  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+    return NullLiteral_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 
   @Override

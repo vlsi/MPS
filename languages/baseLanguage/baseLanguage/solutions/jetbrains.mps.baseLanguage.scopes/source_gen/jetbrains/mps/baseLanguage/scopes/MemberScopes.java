@@ -7,8 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @Deprecated
@@ -23,7 +22,7 @@ public class MemberScopes {
     return new FilteringScope(scope) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) || ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Class[]{SNode.class}));
+        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Object[]{});
       }
     };
   }
@@ -34,7 +33,7 @@ public class MemberScopes {
     return new FilteringScope(scope) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) || !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", new Class[]{SNode.class, SNode.class, SNode.class}, contextClassifier, contextNode)));
+        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode}));
       }
     };
   }
@@ -42,7 +41,7 @@ public class MemberScopes {
   @Deprecated
   public static Scope visibleClassifierMembers(SNode contextClassifier, SNode kind, SNode contextNode) {
     // use (sequence<node<IClassifierMember>>) classifierType.getVisibleMembers() instead 
-    Scope membersScope = Classifier_Behavior.call_getMembers_2201875424515824604(contextClassifier, kind);
+    Scope membersScope = BehaviorReflection.invokeVirtual(Scope.class, contextClassifier, "virtual_getMembers_2201875424515824604", new Object[]{kind});
     if (membersScope == null) {
       throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, "name") + " and kind " + SPropertyOperations.getString(kind, "name") + " is null");
     }

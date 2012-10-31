@@ -18,8 +18,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.StubSolution;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
@@ -139,7 +140,7 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(module, "uuid", source.getUUID());
     SPropertyOperations.set(module, "namespace", source.getNamespace());
 
-    for (ModelRoot root : source.getModelRoots()) {
+    for (ModelRootDescriptor root : source.getModelRootDescriptors()) {
       SLinkOperations.getTargets(module, "modelRoots", true).add(convert(root));
     }
     for (Dependency mdep : source.getDependencies()) {
@@ -161,10 +162,13 @@ public abstract class ProjectStructureBuilder {
     }
   }
 
-  private SNode convert(ModelRoot source) {
+  private SNode convert(ModelRootDescriptor source) {
     SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelRoot");
-    SPropertyOperations.set(result, "path", source.getPath());
-    SLinkOperations.setTarget(result, "manager", convert(source.getManager()), true);
+    ModelRoot root = source.getRoot();
+    if (root != null) {
+      SPropertyOperations.set(result, "path", root.getPath());
+      SLinkOperations.setTarget(result, "manager", convert(root.getManager()), true);
+    }
     return result;
   }
 

@@ -4,20 +4,20 @@ package jetbrains.mps.core.xml.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class XmlTextValue_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (XmlValuePart_Behavior.call_onNewLine_3080189811177340422(node)) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_3080189811177340422", new Object[]{})) {
       this.appendNewLine();
       this.indentBuffer();
       this.append("\t\t");
     }
     this.append(SPropertyOperations.getString(node, "text"));
-    if (XmlValuePart_Behavior.call_hasNewLineAfter_3080189811177340429(node)) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart") && XmlValuePart_Behavior.call_onNewLine_3080189811177340422(SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart"))) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{})) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
         return;
       }
       this.appendNewLine();
