@@ -56,9 +56,9 @@ public class ModelConstraints {
     }
 
     SNode parent = node.getParent();
+    assert parent != null;
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
 
-    assert parent != null;
     return canBeParent(parent, concept, node.getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
   }
 
