@@ -504,7 +504,7 @@ public class QueriesGenerated {
     if (ct == null) {
       ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true)).first();
+    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true)).first(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201019320624(final IOperationContext operationContext, final PropertyMacroContext _context) {
