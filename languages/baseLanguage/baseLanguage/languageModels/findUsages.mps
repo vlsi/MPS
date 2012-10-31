@@ -25,108 +25,108 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200309609796">
-      <property name="name" nameId="tpck.1169194664001" value="OverridingMethods" />
       <property name="description" nameId="tp3b.1197385993272" value="Overriding Methods" />
+      <property name="name" nameId="tpck.1169194664001" value="OverridingMethods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310248824">
-      <property name="name" nameId="tpck.1169194664001" value="ImplementingClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Implementing Classes" />
+      <property name="name" nameId="tpck.1169194664001" value="ImplementingClasses" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310287391">
-      <property name="name" nameId="tpck.1169194664001" value="DerivedInterfaces" />
       <property name="description" nameId="tp3b.1197385993272" value="Derived Interfaces" />
+      <property name="name" nameId="tpck.1169194664001" value="DerivedInterfaces" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200310473077">
-      <property name="name" nameId="tpck.1169194664001" value="DerivedClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Derived Classes" />
+      <property name="name" nameId="tpck.1169194664001" value="DerivedClasses" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200317943493">
-      <property name="name" nameId="tpck.1169194664001" value="AllMethodUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="All Method Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="AllMethodUsages" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="Usages of this method, overriding methods and implementing methods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200405628545">
-      <property name="name" nameId="tpck.1169194664001" value="FieldUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Field Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="FieldUsages" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200420731716">
-      <property name="name" nameId="tpck.1169194664001" value="OverridingFields" />
       <property name="description" nameId="tp3b.1197385993272" value="Overriding Fields" />
+      <property name="name" nameId="tpck.1169194664001" value="OverridingFields" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="inadequate" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200425321273">
-      <property name="name" nameId="tpck.1169194664001" value="InterfaceMethodImplementations" />
       <property name="description" nameId="tp3b.1197385993272" value="Interface Method Implementations" />
+      <property name="name" nameId="tpck.1169194664001" value="InterfaceMethodImplementations" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1200502085335">
-      <property name="name" nameId="tpck.1169194664001" value="ClassAncestors" />
       <property name="description" nameId="tp3b.1197385993272" value="Ancestors" />
+      <property name="name" nameId="tpck.1169194664001" value="ClassAncestors" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1201091722183">
-      <property name="name" nameId="tpck.1169194664001" value="ParameterUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Parameter Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="ParameterUsages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204121124763">
-      <property name="name" nameId="tpck.1169194664001" value="ConstructorUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Constructor Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="ConstructorUsages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204122859723">
-      <property name="name" nameId="tpck.1169194664001" value="StraightDerivedClasses" />
       <property name="description" nameId="tp3b.1197385993272" value="Straight Derivatives" />
+      <property name="name" nameId="tpck.1169194664001" value="StraightDerivedClasses" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204898641595">
-      <property name="name" nameId="tpck.1169194664001" value="BaseMethod" />
       <property name="description" nameId="tp3b.1197385993272" value="Base Methods" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseMethod" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1204899453042">
-      <property name="name" nameId="tpck.1169194664001" value="InterfaceAncestors" />
       <property name="description" nameId="tp3b.1197385993272" value="Interface Ancestors" />
+      <property name="name" nameId="tpck.1169194664001" value="InterfaceAncestors" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1216385454403">
-      <property name="name" nameId="tpck.1169194664001" value="BaseMethodUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Base Method Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseMethodUsages" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="Usages of all base methods" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1216392046439">
-      <property name="name" nameId="tpck.1169194664001" value="ImplementedInterfaces" />
       <property name="description" nameId="tp3b.1197385993272" value="Implemented Interfaces" />
+      <property name="name" nameId="tpck.1169194664001" value="ImplementedInterfaces" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1227527031007">
-      <property name="name" nameId="tpck.1169194664001" value="ExactMethodUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Exact Method Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="ExactMethodUsages" />
       <property name="longDescription" nameId="tp3b.1202838325511" value="Usages of exactly this method, not including usages of overriding methods" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1237738696198">
-      <property name="name" nameId="tpck.1169194664001" value="ClassUsages" />
       <property name="description" nameId="tp3b.1197385993272" value="Class Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="ClassUsages" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
     <node type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="4151347580001021181">
-      <property name="name" nameId="tpck.1169194664001" value="DerivedMethods" />
       <property name="description" nameId="tp3b.1197385993272" value="Derived Methods" />
+      <property name="name" nameId="tpck.1169194664001" value="DerivedMethods" />
       <link role="forConcept" roleId="tp3b.1218978181697" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
   </roots>
@@ -2780,8 +2780,10 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1216393234195">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1216393234196">
                 <property name="name" nameId="tpck.1169194664001" value="classMethods" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1216393234197">
-                  <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="8012838593626339650">
+                  <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8012838593626345614">
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                  </node>
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1216393234198" />
               </node>

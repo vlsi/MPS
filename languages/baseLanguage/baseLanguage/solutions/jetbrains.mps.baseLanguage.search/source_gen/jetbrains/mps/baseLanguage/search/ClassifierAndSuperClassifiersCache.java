@@ -318,7 +318,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       for (SNode classifier : classifiers) {
         allMethods.addAll(SLinkOperations.getTargets(classifier, "method", true));
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          allMethods.addAll(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true));
+          ListSequence.fromList(allMethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true)));
         }
       }
       this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
@@ -491,8 +491,8 @@ forEachInAllMethods:
           }
         }
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          List<SNode> fields = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true);
-          ListSequence.fromList(allFields).addSequence(ListSequence.fromList(fields));
+          Iterable<SNode> fields = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true);
+          ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(fields));
           for (SNode field : fields) {
             String name = SPropertyOperations.getString(field, "name");
             if (name == null) {

@@ -925,95 +925,95 @@
     <unitInfo nodeId="1204122859723" fileName="StraightDerivedClasses_Finder.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" />
   </root>
   <root nodeId="1204898641595" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="21" startPosition="56" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="27" startPosition="34" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="35" startPosition="30" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898714517" fileName="BaseMethod_Finder.java" startLine="40" startPosition="228" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898714534" fileName="BaseMethod_Finder.java" startLine="43" startPosition="219" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898714547" fileName="BaseMethod_Finder.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="49" startPosition="98" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216391750268" fileName="BaseMethod_Finder.java" startLine="51" startPosition="9" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216391860776" fileName="BaseMethod_Finder.java" startLine="52" startPosition="56" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216393165135" fileName="BaseMethod_Finder.java" startLine="53" startPosition="26" endLine="54" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216392932420" fileName="BaseMethod_Finder.java" startLine="54" startPosition="126" endLine="55" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216392973646" fileName="BaseMethod_Finder.java" startLine="55" startPosition="127" endLine="56" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216399625393" fileName="BaseMethod_Finder.java" startLine="57" startPosition="30" endLine="58" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216391893665" fileName="BaseMethod_Finder.java" startLine="58" startPosition="66" endLine="59" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216391954175" fileName="BaseMethod_Finder.java" startLine="59" startPosition="205" endLine="60" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216399643172" fileName="BaseMethod_Finder.java" startLine="61" startPosition="41" endLine="62" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216392981693" fileName="BaseMethod_Finder.java" startLine="62" startPosition="70" endLine="63" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216400588561" fileName="BaseMethod_Finder.java" startLine="64" startPosition="7" endLine="65" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216393234195" fileName="BaseMethod_Finder.java" startLine="66" startPosition="66" endLine="67" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216394246188" fileName="BaseMethod_Finder.java" startLine="69" startPosition="108" endLine="70" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216394867902" fileName="BaseMethod_Finder.java" startLine="73" startPosition="108" endLine="74" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216395474000" fileName="BaseMethod_Finder.java" startLine="75" startPosition="18" endLine="76" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216400604931" fileName="BaseMethod_Finder.java" startLine="80" startPosition="104" endLine="81" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216400684003" fileName="BaseMethod_Finder.java" startLine="85" startPosition="57" endLine="86" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="88" startPosition="15" endLine="89" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216232583475" fileName="BaseMethod_Finder.java" startLine="93" startPosition="45" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="23" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMethod_Finder#()V" />
-    <nodeInfo nodeId="1216395471622" fileName="BaseMethod_Finder.java" startLine="75" startPosition="16" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1204898714515" fileName="BaseMethod_Finder.java" startLine="39" startPosition="43" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1204898714532" fileName="BaseMethod_Finder.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216394222143" fileName="BaseMethod_Finder.java" startLine="68" startPosition="23" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216393234220" fileName="BaseMethod_Finder.java" startLine="79" startPosition="71" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="84" startPosition="7" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1216394855906" fileName="BaseMethod_Finder.java" startLine="72" startPosition="16" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="78" startPosition="9" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1216393234208" fileName="BaseMethod_Finder.java" startLine="72" startPosition="14" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1216391847836" fileName="BaseMethod_Finder.java" startLine="56" startPosition="128" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1216393234199" fileName="BaseMethod_Finder.java" startLine="67" startPosition="40" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="65" startPosition="69" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="50" startPosition="39" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="48" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="24" startPosition="30" endLine="24" endPosition="30" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="27" startPosition="34" endLine="28" endPosition="26" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="35" startPosition="30" endLine="36" endPosition="72" />
-    <scopeInfo nodeId="1204898714516" fileName="BaseMethod_Finder.java" startLine="40" startPosition="228" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="1204898714533" fileName="BaseMethod_Finder.java" startLine="43" startPosition="219" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="1216394222144" fileName="BaseMethod_Finder.java" startLine="69" startPosition="108" endLine="70" endPosition="161" />
-    <scopeInfo nodeId="1216394855908" fileName="BaseMethod_Finder.java" startLine="73" startPosition="108" endLine="74" endPosition="155" />
-    <scopeInfo nodeId="1216395471623" fileName="BaseMethod_Finder.java" startLine="75" startPosition="18" endLine="76" endPosition="152" />
-    <scopeInfo nodeId="1216393234225" fileName="BaseMethod_Finder.java" startLine="80" startPosition="104" endLine="81" endPosition="65" />
-    <scopeInfo nodeId="1216400655031" fileName="BaseMethod_Finder.java" startLine="85" startPosition="57" endLine="86" endPosition="59" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="88" startPosition="15" endLine="89" endPosition="21" />
-    <scopeInfo nodeId="1216232574271" fileName="BaseMethod_Finder.java" startLine="93" startPosition="45" endLine="94" endPosition="26" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="1216391847855" fileName="BaseMethod_Finder.java" startLine="61" startPosition="41" endLine="63" endPosition="213" />
-    <scopeInfo nodeId="1216391847837" fileName="BaseMethod_Finder.java" startLine="57" startPosition="30" endLine="60" endPosition="212" />
-    <scopeInfo nodeId="1216393234200" fileName="BaseMethod_Finder.java" startLine="68" startPosition="23" endLine="71" endPosition="11" />
-    <scopeInfo nodeId="1216393234219" fileName="BaseMethod_Finder.java" startLine="79" startPosition="71" endLine="82" endPosition="11" />
-    <scopeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="84" startPosition="7" endLine="87" endPosition="7">
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="22" startPosition="56" endLine="23" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="28" startPosition="34" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="32" startPosition="38" endLine="33" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="36" startPosition="30" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898714517" fileName="BaseMethod_Finder.java" startLine="41" startPosition="228" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898714534" fileName="BaseMethod_Finder.java" startLine="44" startPosition="219" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898714547" fileName="BaseMethod_Finder.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="50" startPosition="98" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216391750268" fileName="BaseMethod_Finder.java" startLine="52" startPosition="9" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216391860776" fileName="BaseMethod_Finder.java" startLine="53" startPosition="56" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216393165135" fileName="BaseMethod_Finder.java" startLine="54" startPosition="26" endLine="55" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216392932420" fileName="BaseMethod_Finder.java" startLine="55" startPosition="126" endLine="56" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216392973646" fileName="BaseMethod_Finder.java" startLine="56" startPosition="127" endLine="57" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216399625393" fileName="BaseMethod_Finder.java" startLine="58" startPosition="30" endLine="59" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216391893665" fileName="BaseMethod_Finder.java" startLine="59" startPosition="66" endLine="60" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216391954175" fileName="BaseMethod_Finder.java" startLine="60" startPosition="205" endLine="61" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216399643172" fileName="BaseMethod_Finder.java" startLine="62" startPosition="41" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216392981693" fileName="BaseMethod_Finder.java" startLine="63" startPosition="70" endLine="64" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216400588561" fileName="BaseMethod_Finder.java" startLine="65" startPosition="7" endLine="66" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216393234195" fileName="BaseMethod_Finder.java" startLine="67" startPosition="66" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216394246188" fileName="BaseMethod_Finder.java" startLine="70" startPosition="108" endLine="71" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216394867902" fileName="BaseMethod_Finder.java" startLine="74" startPosition="108" endLine="75" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216395474000" fileName="BaseMethod_Finder.java" startLine="76" startPosition="18" endLine="77" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216400604931" fileName="BaseMethod_Finder.java" startLine="81" startPosition="104" endLine="82" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216400684003" fileName="BaseMethod_Finder.java" startLine="86" startPosition="57" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="89" startPosition="15" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216232583475" fileName="BaseMethod_Finder.java" startLine="94" startPosition="45" endLine="95" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="24" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMethod_Finder#()V" />
+    <nodeInfo nodeId="1216395471622" fileName="BaseMethod_Finder.java" startLine="76" startPosition="16" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1204898714515" fileName="BaseMethod_Finder.java" startLine="40" startPosition="43" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1204898714532" fileName="BaseMethod_Finder.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216394222143" fileName="BaseMethod_Finder.java" startLine="69" startPosition="23" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216393234220" fileName="BaseMethod_Finder.java" startLine="80" startPosition="71" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="85" startPosition="7" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1216394855906" fileName="BaseMethod_Finder.java" startLine="73" startPosition="16" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="79" startPosition="9" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1216393234208" fileName="BaseMethod_Finder.java" startLine="73" startPosition="14" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1216391847836" fileName="BaseMethod_Finder.java" startLine="57" startPosition="128" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1216393234199" fileName="BaseMethod_Finder.java" startLine="68" startPosition="44" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="66" startPosition="69" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="51" startPosition="39" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="49" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="25" startPosition="30" endLine="25" endPosition="30" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="28" startPosition="34" endLine="29" endPosition="26" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="32" startPosition="38" endLine="33" endPosition="14" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="36" startPosition="30" endLine="37" endPosition="72" />
+    <scopeInfo nodeId="1204898714516" fileName="BaseMethod_Finder.java" startLine="41" startPosition="228" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="1204898714533" fileName="BaseMethod_Finder.java" startLine="44" startPosition="219" endLine="45" endPosition="19" />
+    <scopeInfo nodeId="1216394222144" fileName="BaseMethod_Finder.java" startLine="70" startPosition="108" endLine="71" endPosition="161" />
+    <scopeInfo nodeId="1216394855908" fileName="BaseMethod_Finder.java" startLine="74" startPosition="108" endLine="75" endPosition="155" />
+    <scopeInfo nodeId="1216395471623" fileName="BaseMethod_Finder.java" startLine="76" startPosition="18" endLine="77" endPosition="152" />
+    <scopeInfo nodeId="1216393234225" fileName="BaseMethod_Finder.java" startLine="81" startPosition="104" endLine="82" endPosition="65" />
+    <scopeInfo nodeId="1216400655031" fileName="BaseMethod_Finder.java" startLine="86" startPosition="57" endLine="87" endPosition="59" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="89" startPosition="15" endLine="90" endPosition="21" />
+    <scopeInfo nodeId="1216232574271" fileName="BaseMethod_Finder.java" startLine="94" startPosition="45" endLine="95" endPosition="26" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1216391847855" fileName="BaseMethod_Finder.java" startLine="62" startPosition="41" endLine="64" endPosition="213" />
+    <scopeInfo nodeId="1216391847837" fileName="BaseMethod_Finder.java" startLine="58" startPosition="30" endLine="61" endPosition="212" />
+    <scopeInfo nodeId="1216393234200" fileName="BaseMethod_Finder.java" startLine="69" startPosition="23" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="1216393234219" fileName="BaseMethod_Finder.java" startLine="80" startPosition="71" endLine="83" endPosition="11" />
+    <scopeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="85" startPosition="7" endLine="88" endPosition="7">
       <varInfo nodeId="1216400655029" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1204898641595" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1216393234209" fileName="BaseMethod_Finder.java" startLine="72" startPosition="16" endLine="77" endPosition="11" />
-    <scopeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="78" startPosition="9" endLine="83" endPosition="9">
+    <scopeInfo nodeId="1216393234209" fileName="BaseMethod_Finder.java" startLine="73" startPosition="16" endLine="78" endPosition="11" />
+    <scopeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="79" startPosition="9" endLine="84" endPosition="9">
       <varInfo nodeId="1216393234217" varName="classMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1204898641597" fileName="BaseMethod_Finder.java" startLine="39" startPosition="43" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1204898641597" fileName="BaseMethod_Finder.java" startLine="40" startPosition="43" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="39" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1204898641595" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1216393013712" fileName="BaseMethod_Finder.java" startLine="66" startPosition="66" endLine="83" endPosition="9">
+    <scopeInfo nodeId="1216393013712" fileName="BaseMethod_Finder.java" startLine="67" startPosition="66" endLine="84" endPosition="9">
       <varInfo nodeId="1216393234196" varName="classMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="65" startPosition="69" endLine="84" endPosition="7">
+    <scopeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="66" startPosition="69" endLine="85" endPosition="7">
       <varInfo nodeId="1216393013710" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1204898641599" fileName="BaseMethod_Finder.java" startLine="51" startPosition="9" endLine="87" endPosition="7">
+    <scopeInfo nodeId="1204898641599" fileName="BaseMethod_Finder.java" startLine="52" startPosition="9" endLine="88" endPosition="7">
       <varInfo nodeId="1216391750269" varName="allAncestors" />
       <varInfo nodeId="1216392932421" varName="classNode" />
       <varInfo nodeId="1216392973647" varName="interfaceNode" />
@@ -1021,14 +1021,14 @@
       <varInfo nodeId="1216391860777" varName="method" />
       <varInfo nodeId="1216400588562" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="49" startPosition="98" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="48" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="50" startPosition="98" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="49" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1204898641595" varName="_results" />
       <varInfo nodeId="1204898641595" varName="monitor" />
       <varInfo nodeId="1204898641595" varName="node" />
       <varInfo nodeId="1204898641595" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
+    <unitInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="22" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
   </root>
   <root nodeId="1204899453042" modelId="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)">
     <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="64" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
