@@ -217,13 +217,14 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       if (event instanceof SModelChildEvent) {
         SModelChildEvent childEvent = (SModelChildEvent) event;
         SNode child = childEvent.getChild();
+        SNode parent = childEvent.getParent();
         String childRole = childEvent.getChildRole();
         // Class or Interface was added/removed 
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
           return true;
         }
         // method was added/removed from containing Classifier 
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), "role").equals(childRole)) {
+        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           return true;
         }
         // one of extendedInterface/superclass/implementedInterface child elements was added/removed 
