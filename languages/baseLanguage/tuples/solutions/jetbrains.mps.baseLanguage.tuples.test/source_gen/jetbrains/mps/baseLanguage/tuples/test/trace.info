@@ -323,7 +323,7 @@
   <root nodeId="1239714501613" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
     <nodeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6278501903477416711" fileName="NamedTuples_Test.java" startLine="23" startPosition="55" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6278501903477416709" fileName="NamedTuples_Test.java" startLine="25" startPosition="15" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6278501903477416709" fileName="NamedTuples_Test.java" startLine="25" startPosition="23" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239718507781" fileName="NamedTuples_Test.java" startLine="27" startPosition="5" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239718529851" fileName="NamedTuples_Test.java" startLine="28" startPosition="38" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239718537185" fileName="NamedTuples_Test.java" startLine="29" startPosition="42" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -477,7 +477,7 @@
     <nodeInfo nodeId="1239720095043" fileName="NamedTuples_Test.java" startLine="209" startPosition="39" endLine="246" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239720061720" fileName="NamedTuples_Test.java" startLine="208" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSequence#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" />
-    <scopeInfo nodeId="6278501903477416705" fileName="NamedTuples_Test.java" startLine="25" startPosition="15" endLine="26" endPosition="13" />
+    <scopeInfo nodeId="6278501903477416705" fileName="NamedTuples_Test.java" startLine="25" startPosition="23" endLine="26" endPosition="13" />
     <scopeInfo nodeId="1240933105392" fileName="NamedTuples_Test.java" startLine="102" startPosition="38" endLine="103" endPosition="36" />
     <scopeInfo nodeId="8755343252890010280" fileName="NamedTuples_Test.java" startLine="147" startPosition="49" endLine="148" endPosition="28" />
     <scopeInfo nodeId="1241009587749" fileName="NamedTuples_Test.java" startLine="191" startPosition="52" endLine="192" endPosition="44" />
