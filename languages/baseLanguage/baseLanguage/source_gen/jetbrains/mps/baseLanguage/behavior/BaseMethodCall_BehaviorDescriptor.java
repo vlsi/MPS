@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import java.util.List;
 
 public abstract class BaseMethodCall_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor {
   public BaseMethodCall_BehaviorDescriptor() {
@@ -26,7 +25,7 @@ public abstract class BaseMethodCall_BehaviorDescriptor extends Expression_Behav
     return IMethodCall_Behavior.virtual_getTypesByTypeVars_851115533308208851(thisNode);
   }
 
-  public List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 

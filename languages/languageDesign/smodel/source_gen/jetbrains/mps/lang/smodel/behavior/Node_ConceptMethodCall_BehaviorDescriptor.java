@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
-import java.util.List;
 
 public class Node_ConceptMethodCall_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor {
   public Node_ConceptMethodCall_BehaviorDescriptor() {
@@ -33,7 +32,7 @@ public class Node_ConceptMethodCall_BehaviorDescriptor extends SNodeOperation_Be
     return TypeDerivable_Behavior.virtual_deriveType_4555537781928374706(thisNode, expression, link);
   }
 
-  public List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 

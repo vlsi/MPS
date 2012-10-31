@@ -8,7 +8,6 @@ import jetbrains.mps.project.IModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,7 +26,7 @@ public class StaticMethodCall_Behavior {
     return ReflectionUtil.staticInvoke(method, actualArguments);
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
+  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
     return Sequence.fromIterable(Members.visibleStaticMethods(SLinkOperations.getTarget(thisNode, "classConcept", false), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_8wxa2a_a0a0a0a0a0a0a2(SPropertyOperations.getString(it, "name"), methodName);

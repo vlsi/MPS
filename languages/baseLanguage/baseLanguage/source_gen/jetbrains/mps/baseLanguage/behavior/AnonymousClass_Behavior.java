@@ -51,7 +51,7 @@ public class AnonymousClass_Behavior {
     return new AnonymousClass_Behavior.QuotationClass_mhnjwj_a0a0e().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       return SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
