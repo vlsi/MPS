@@ -44,7 +44,6 @@ public class CheckingUtil {
       return false;
     }
     SNode classifier = SNodeOperations.getAncestor(fieldDecl, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    // <node> 
     List<SNode> allFields = new ArrayList<SNode>();
     ListSequence.fromList(allFields).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticField", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)));
     return ListSequence.fromList(allFields).any(new IWhereFilter<SNode>() {

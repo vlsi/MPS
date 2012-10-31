@@ -476,11 +476,11 @@ forEachInAllMethods:
     protected void init() {
       this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
       this.myStaticFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
-      List<SNode> allFields = new ArrayList<SNode>();
+      List<SNode> allFields = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
-        List<SNode> staticFields = SLinkOperations.getTargets(classifier, "staticField", true);
-        allFields.addAll(staticFields);
+        Iterable<SNode> staticFields = SLinkOperations.getTargets(classifier, "staticField", true);
+        ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(staticFields));
         for (SNode staticField : staticFields) {
           String name = SPropertyOperations.getString(staticField, "name");
           if (name == null) {
