@@ -81,7 +81,7 @@ public class ConceptPropertiesHelper {
       if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.structure.structure.ConceptProperty")) {
         SetSequence.fromSet(conceptUsages).addElement(SNodeOperations.getAncestor(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.ConceptProperty"), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", false, false));
       } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess") && needToMigrate(source)) {
-        SetSequence.fromSet(accessUsages).addElement(source);
+        SetSequence.fromSet(accessUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"));
       } else if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty")) {
         SetSequence.fromSet(cellUsages).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
       } else {
@@ -123,7 +123,7 @@ public class ConceptPropertiesHelper {
       private void replaceConceptUsages(SNode concept) {
         SPropertyOperations.set(concept, "conceptAlias", SConceptPropertyOperations.getString(concept, "alias"));
         SPropertyOperations.set(concept, "shortDescription", SConceptPropertyOperations.getString(concept, "shortDescription"));
-        SPropertyOperations.set(concept, "abstract", "" + (SPropertyOperations.getBoolean(concept, "abstract")));
+        SPropertyOperations.set(concept, "abstract", "" + (SConceptPropertyOperations.getBoolean(concept, "abstract")));
         SPropertyOperations.set(concept, "final", "" + (SConceptPropertyOperations.getBoolean(concept, "final")));
       }
 
