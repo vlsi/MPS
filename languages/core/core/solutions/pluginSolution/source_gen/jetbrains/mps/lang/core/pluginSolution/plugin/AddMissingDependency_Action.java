@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -44,7 +44,7 @@ public class AddMissingDependency_Action extends BaseAction {
       if (uid == null) {
         continue;
       }
-      if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
+      if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
         return true;
       }
     }
@@ -90,8 +90,8 @@ public class AddMissingDependency_Action extends BaseAction {
       IScope scope = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getScope();
       for (SReference ref : ((SNode) MapSequence.fromMap(_params).get("selectedNode")).getReferences()) {
         SModelReference uid = ref.getTargetSModelReference();
-        if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
-          SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
+        if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
+          SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(uid);
           ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getModule().addDependency(sm.getModule().getModuleReference(), false);
         }
       }

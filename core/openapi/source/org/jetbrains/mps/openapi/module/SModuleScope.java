@@ -15,38 +15,19 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
-public interface SModule {
+/**
+ * evgeny, 10/31/12
+ */
+public interface SModuleScope {
 
-  SModuleId getModuleId();
-
-  String getModuleName();
-
-  @NotNull
-  SModuleReference getModuleReference();
-
-  boolean isReadOnly();
-
-  boolean isPackaged();
-
-  SRepository getRepository();
-
-  SModuleScope getModuleScope();
-
-  Iterable<SDependency> getDeclaredDependencies();
-
-  Iterable<SLanguage> getUsedLanguages();
-
-  SModel resolveInDependencies(SModelId ref);
-
-  SModel getModel(SModelId id);
+  Iterable<SModule> getModules();
 
   Iterable<SModel> getModels();
 
-  Iterable<ModelRoot> getModelRoots();
+  SModel resolve(SModelReference reference);
+
+  SModule resolve(SModuleReference reference);
 }

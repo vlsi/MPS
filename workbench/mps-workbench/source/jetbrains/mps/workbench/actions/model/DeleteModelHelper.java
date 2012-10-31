@@ -32,12 +32,13 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.refactoring.framework.*;
+import jetbrains.mps.refactoring.framework.BaseRefactoring;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.IRefactoringTarget;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-
-import java.util.Set;
 
 public class DeleteModelHelper {
   private static final Logger LOG = Logger.getLogger(DeleteModelHelper.class);
@@ -96,7 +97,7 @@ public class DeleteModelHelper {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (!(modelDescriptor.isRegistered())){
+        if (!(modelDescriptor.isRegistered())) {
           return;
         }
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
@@ -156,21 +157,15 @@ public class DeleteModelHelper {
     @Override
     public void refactor(RefactoringContext refactoringContext) {
       SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
-      Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
-      for (ModelOwner modelOwner : owners) {
-        if (!(modelOwner instanceof IModule)) {
-          LOG.warning("Model owner type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for owners of this type.");
-          continue;
-        }
-        if ((IModule) modelOwner instanceof Language) {
-          deleteModelFromLanguage((Language) (IModule) modelOwner, modelDescriptor);
-        } else if ((IModule) modelOwner instanceof Solution) {
-          deleteModelFromSolution((Solution) (IModule) modelOwner, modelDescriptor);
-        } else if ((IModule) modelOwner instanceof Generator) {
-          deleteModelFromGenerator((Generator) (IModule) modelOwner, modelDescriptor);
-        } else {
-          LOG.warning("Module type " + ((IModule) modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
-        }
+      ModelOwner modelOwner = SModelRepository.getInstance().getOwner(modelDescriptor);
+      if (modelOwner instanceof Language) {
+        deleteModelFromLanguage((Language) (IModule) modelOwner, modelDescriptor);
+      } else if (modelOwner instanceof Solution) {
+        deleteModelFromSolution((Solution) (IModule) modelOwner, modelDescriptor);
+      } else if (modelOwner instanceof Generator) {
+        deleteModelFromGenerator((Generator) (IModule) modelOwner, modelDescriptor);
+      } else if (modelOwner != null) {
+        LOG.warning("Module type " + ((IModule) modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
       }
 
       // delete imports from available models, helps if there are no references to deleted model
@@ -185,10 +180,8 @@ public class DeleteModelHelper {
       }
 
       //todo: check correctness - they are not ALL model owners
-      for (ModelOwner modelOwner : owners) {
-        if (modelOwner instanceof IModule) {
-          ((IModule) modelOwner).save();
-        }
+      if (modelOwner instanceof IModule) {
+        ((IModule) modelOwner).save();
       }
     }
 

@@ -92,7 +92,7 @@ public class QuickFixAdapter extends BaseIntention  {
   public SNode getNodeByIntention() {
     String classFQName = myQuickFix.getClass().getName();
     SModelReference reference = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName));
-    SModelDescriptor sModelDescriptor = GlobalScope.getInstance().getModelDescriptor(reference);
+    SModelDescriptor sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (sModelDescriptor != null) {
       SModel model = sModelDescriptor.getSModel();
       if (model != null) {

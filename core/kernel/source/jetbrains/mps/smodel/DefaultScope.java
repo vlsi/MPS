@@ -37,16 +37,12 @@ public abstract class DefaultScope extends BaseScope {
   private Set<Language> myUsedLanguages;
   private Set<DevKit> myUsedDevkits;
 
+  @Override
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
 
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
-      //this is because we have modules (such as TransientModelsModule) not publishing their models
-      //todo move this logic to corresponding scopes
-      for (SModelDescriptor md : getHiddenModelDescriptors()) {
-        if (md.getSModelReference().equals(modelReference)) return md;
-      }
       return null;
     }
 
@@ -63,6 +59,7 @@ public abstract class DefaultScope extends BaseScope {
     return null;
   }
 
+  @Override
   public Language getLanguage(SModuleReference moduleReference) {
     Language l = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (l == null) return null;
@@ -74,6 +71,7 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
+  @Override
   public DevKit getDevKit(ModuleReference ref) {
     DevKit d = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
     if (d == null) return null;
@@ -85,19 +83,8 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
-  @Deprecated //todo remove
-  private List<SModelDescriptor> getHiddenModelDescriptors() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    synchronized (LOCK) {
-      initialize();
-      for (IModule m : myVisibleModules) {
-        result.addAll(m.getHiddenModelDescriptors());
-      }
-    }
-    return result;
-  }
-
   //todo replace with iterable
+  @Override
   public List<SModelDescriptor> getModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     synchronized (LOCK) {
@@ -119,6 +106,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   //todo replace with iterable
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     synchronized (LOCK) {

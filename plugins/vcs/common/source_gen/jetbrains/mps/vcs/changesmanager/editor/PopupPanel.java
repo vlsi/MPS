@@ -21,7 +21,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
-/*package*/ class PopupPanel extends JPanel implements ModelOwner {
+/*package*/ class PopupPanel extends JPanel {
   private ChangeStripsPainter myPainter;
   private ChangeGroup myChangeGroup;
   private PopupPanel.MyMouseListener myMouseListener = new PopupPanel.MyMouseListener();

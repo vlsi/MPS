@@ -47,7 +47,7 @@ public class SModelRepository implements CoreComponent {
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
-  private final Map<SModelDescriptor, List<ModelOwner>> myModelsWithOwners = new THashMap<SModelDescriptor, List<ModelOwner>>();
+  private final Map<SModelDescriptor, ModelOwner> myModelOwner = new THashMap<SModelDescriptor, ModelOwner>();
   private final Map<ModelOwner, Set<SModelDescriptor>> myModelsByOwner = new THashMap<ModelOwner, Set<SModelDescriptor>>();
 
   private final Object myListenersLock = new Object();
@@ -76,22 +76,19 @@ public class SModelRepository implements CoreComponent {
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     synchronized (myModelsLock) {
-      List<ModelOwner> owners = myModelsWithOwners.get(modelDescriptor);
-      if (owners != null && owners.contains(owner)) return;
+      ModelOwner prevOwner = myModelOwner.get(modelDescriptor);
+      if (prevOwner != null) {
+        if (prevOwner != owner) {
+          LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another owner: old=" + prevOwner + ", new=" + owner);
+        }
+        return;
+      }
 
       SModelReference modelReference = modelDescriptor.getSModelReference();
       SModelDescriptor registeredModel = getModelDescriptor(modelReference);
 
       LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
-        "Another model \"" + modelReference + "\" is already registered for " + owner);
-
-      LOG.assertLog(owners == null || !owners.contains(owner),
-        "Another model \"" + modelReference + "\" is already registered for " + owner);
-
-      if (owners == null) {
-        owners = new ArrayList<ModelOwner>(1);
-        myModelsWithOwners.put(modelDescriptor, owners);
-      }
+        "Another model \"" + modelReference + "\" is already registered");
 
       Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
       if (ownerModels == null) {
@@ -100,7 +97,7 @@ public class SModelRepository implements CoreComponent {
       }
 
       ownerModels.add(modelDescriptor);
-      owners.add(owner);
+      myModelOwner.put(modelDescriptor, owner);
 
       if (modelReference.getModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
@@ -116,30 +113,22 @@ public class SModelRepository implements CoreComponent {
     fireModelAdded(modelDescriptor);
   }
 
-  public void unRegisterModelDescriptor(SModelDescriptor md, ModelOwner owner) {
+  public void unRegisterModelDescriptor(SModelDescriptor md, ModelOwner forOwner) {
     synchronized (myModelsLock) {
-      List<ModelOwner> owners = myModelsWithOwners.get(md);
-      if (!owners.remove(owner)) throw new IllegalStateException();
-      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
-      if (!ownerModels.remove(md)) throw new IllegalStateException();
-
-      if (owners.isEmpty()) {
-        removeModelDescriptor(md);
-      }
+      ModelOwner owner = myModelOwner.get(md);
+      if (owner != forOwner) throw new IllegalStateException();
+      removeModelDescriptor(md);
     }
   }
 
   public void removeModelDescriptor(SModelDescriptor md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
-      List<ModelOwner> owners = myModelsWithOwners.get(md);
-      if (owners != null) {
-        for (ModelOwner owner : owners) {
-          Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
-          if (!ownerModels.remove(md)) throw new IllegalStateException();
-        }
-      }
-      myModelsWithOwners.remove(md);
+      ModelOwner owner = myModelOwner.remove(md);
+      if (owner == null) throw new IllegalStateException();
+      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      if (!ownerModels.remove(md)) throw new IllegalStateException();
+
       if (md.getSModelReference().getModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getModelId());
         if (md instanceof BaseSModelDescriptor) {
@@ -168,7 +157,7 @@ public class SModelRepository implements CoreComponent {
     if (d instanceof BaseSModelDescriptorWithSource) {
       ModelDataSource source = ((BaseSModelDescriptorWithSource) d).getSource();
       if (source instanceof FileBasedModelDataSource) {
-        for (String file: ((FileBasedModelDataSource) source).getFilesToListen()){
+        for (String file : ((FileBasedModelDataSource) source).getFilesToListen()) {
           IFile modelFile = FileSystem.getInstance().getFileByPath(file);
 
           if (modelFile != null && modelFile.exists()) {
@@ -185,7 +174,7 @@ public class SModelRepository implements CoreComponent {
 
   public List<SModelDescriptor> getModelDescriptors() {
     synchronized (myModelsLock) {
-      return new ArrayList<SModelDescriptor>(myModelsWithOwners.keySet());
+      return new ArrayList<SModelDescriptor>(myModelOwner.keySet());
     }
   }
 
@@ -221,12 +210,21 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  /**
+   * use getOwner
+   */
+  @Deprecated
   public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
     synchronized (myModelsLock) {
-      List<ModelOwner> modelOwners = myModelsWithOwners.get(modelDescriptor);
-      if (modelOwners == null || modelOwners.size() == 0) return Collections.emptySet();
-      if (modelOwners.size() == 1) return Collections.singleton(modelOwners.get(0));
-      return new HashSet<ModelOwner>(modelOwners);
+      ModelOwner modelOwner = myModelOwner.get(modelDescriptor);
+      if (modelOwner == null) return Collections.emptySet();
+      return Collections.singleton(modelOwner);
+    }
+  }
+
+  public ModelOwner getOwner(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+    synchronized (myModelsLock) {
+      return myModelOwner.get((SModelDescriptor)modelDescriptor);
     }
   }
 
@@ -235,7 +233,7 @@ public class SModelRepository implements CoreComponent {
 
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
-    for (SModelDescriptor md : myModelsWithOwners.keySet()) {
+    for (SModelDescriptor md : myModelOwner.keySet()) {
       if (!(md instanceof EditableSModelDescriptor)) continue;
 
       EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);

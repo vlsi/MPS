@@ -78,8 +78,8 @@ public class AddMissingDependencyAction extends BaseAction {
 
       for (SReference ref : curNode.getReferences()) {
         SModelReference uid = ref.getTargetSModelReference();
-        if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
-          SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
+        if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
+          SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(uid);
 
           IModule moduleToDependOn = sm.getModule();
           if (!(moduleToDependOn instanceof SolutionIdea)) {
@@ -200,7 +200,7 @@ public class AddMissingDependencyAction extends BaseAction {
       if (uid == null) {
         continue;
       }
-      if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
+      if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
         return true;
       }
     }

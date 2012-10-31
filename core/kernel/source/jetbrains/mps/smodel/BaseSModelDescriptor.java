@@ -144,18 +144,19 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
+  @Override
   @Nullable
   public IModule getModule() {
-    for (ModelOwner owner : SModelRepository.getInstance().getOwners(this)) {
-      if (owner instanceof IModule) {
-        return ((IModule) owner);
-      }
+    ModelOwner owner = SModelRepository.getInstance().getOwner(this);
+    if (owner instanceof IModule) {
+      return (IModule) owner;
     }
     return null;
   }
 
   protected abstract SModel getCurrentModelInternal();
 
+  @Override
   public void addModelListener(@NotNull SModelListener listener) {
     if (listener.getPriority() == SModelListenerPriority.PLATFORM) {
       myModelListeners.add(0, listener);
@@ -164,6 +165,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
+  @Override
   public void removeModelListener(@NotNull SModelListener listener) {
     myModelListeners.remove(listener);
   }

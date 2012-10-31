@@ -192,7 +192,7 @@ public enum LanguageAspect {
     return is(model.getModelDescriptor());
   }
 
-  public boolean is(SModelDescriptor sm) {
+  public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {
     return Language.getModelAspect(sm) == this;
   }
 
@@ -208,7 +208,7 @@ public enum LanguageAspect {
     SModelFqName fqName = new SModelFqName(l.getModuleName() + "." + myName, null);
 
     EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
-    if (md != null && SModelRepository.getInstance().getOwners(md).contains(l)) return ((DefaultSModelDescriptor) md);
+    if (md != null && SModelRepository.getInstance().getOwner(md) == l) return ((DefaultSModelDescriptor) md);
     return doCreate ? ((DefaultSModelDescriptor) createNew(l)) : null;
   }
 

@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collection;
@@ -68,7 +69,7 @@ public interface IModule extends ModelOwner, SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
-  void addDependency(ModuleReference moduleRef, boolean reexport);
+  void addDependency(SModuleReference moduleRef, boolean reexport);
 
   void addUsedLanguage(ModuleReference langRef);
 
@@ -83,8 +84,6 @@ public interface IModule extends ModelOwner, SModule {
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   List<SModelDescriptor> getOwnModelDescriptors();
-
-  List<SModelDescriptor> getHiddenModelDescriptors();
 
   Collection<SModelRoot> getSModelRoots();
 

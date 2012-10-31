@@ -39,9 +39,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.*;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -134,6 +132,11 @@ public abstract class AbstractModule implements IModule {
   }
 
   @Override
+  public SModuleScope getModuleScope() {
+    return getScope();
+  }
+
+  @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     // TODO API (implement)
     return null;
@@ -203,7 +206,7 @@ public abstract class AbstractModule implements IModule {
   //----adding different deps
 
   @Override
-  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     for (Dependency dep : descriptor.getDependencies()) {
@@ -219,7 +222,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef(moduleRef);
+    dep.setModuleRef((ModuleReference) moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 
@@ -490,10 +493,6 @@ public abstract class AbstractModule implements IModule {
   @Override
   public Collection<SModel> getModels() {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
-  }
-
-  public List<SModelDescriptor> getHiddenModelDescriptors() {
-    return Collections.emptyList();
   }
 
   public IFile getClassesGen() {
