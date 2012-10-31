@@ -20,19 +20,17 @@ import com.intellij.openapi.util.KeyedExtensionCollector;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.List;
 
-/**
- * evgeny, 10/23/12
- */
 public class PersistenceComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PersistenceComponent.class);
 
-  private final static KeyedExtensionCollector<ModelRootSettingsProvider, String> oursCollector =
-    new KeyedExtensionCollector<ModelRootSettingsProvider, String>("com.intellij.virtualFileSystem") {
+  private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
+    new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.virtualFileSystem") {
       @Override
       protected String keyToString(String key) {
         return key;
@@ -40,13 +38,14 @@ public class PersistenceComponent implements ApplicationComponent {
     };
 
   public PersistenceComponent(MPSCoreComponents components) {
+
   }
 
-  public static ModelRootSettingsProvider getModelRootSettingsProvider(ModelRoot root) {
-    List<ModelRootSettingsProvider> providers = oursCollector.forKey(root.getType());
+  public static ModelRootSettingsEditor getModelRootSettingsEditor(String type) {
+    List<ModelRootSettingsEditorProvider> providers = oursCollector.forKey(type);
     if (providers.isEmpty()) return null;
     LOG.assertLog(providers.size() == 1);
-    return providers.get(0);
+    return providers.get(0).createEditor();
   }
 
   @Override
@@ -61,6 +60,7 @@ public class PersistenceComponent implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
+
   }
 
   @NotNull

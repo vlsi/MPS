@@ -13,26 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence;
+package jetbrains.mps.ide.persistence;
 
-import org.jetbrains.mps.openapi.model.SModelId;
+import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-public abstract class PersistenceFacade {
+import javax.swing.JComponent;
 
-  protected PersistenceFacade() {
-  }
+/**
+ * evgeny, 10/24/12
+ */
+public interface ModelRootSettingsEditor {
+  //project here wil be removed since we have per-project repos
+  void reset(Project p, ModelRoot root);
 
-  protected static PersistenceFacade INSTANCE;
+  void apply(ModelRoot root);
 
-  public static PersistenceFacade getInstance() {
-    return INSTANCE;
-  }
-
-  public abstract Iterable<String> getTypeIds();
-
-  public abstract ModelRootFactory getModelRootFactory(String id);
-
-  public abstract ModelFactory getModelFactory(String extension);
-
-  public abstract SModelId getModelId(String text);
+  JComponent getComponent();
 }
