@@ -157,6 +157,9 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
           if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
             continue;
           }
+          if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(expectedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable")) {
+            continue;
+          }
         }
 
         // editor 
