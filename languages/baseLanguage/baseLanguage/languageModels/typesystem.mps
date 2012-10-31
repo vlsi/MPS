@@ -13278,6 +13278,56 @@
           </node>
         </node>
       </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="4690171080787098797">
+        <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="4690171080787098798">
+          <property name="name" nameId="tpck.1169194664001" value="tvd" />
+        </node>
+        <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4690171080787098799">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4690171080787103991">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2062135263152112825" resolveInfo="cdecl" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4690171080787098800">
+            <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1109279881614" />
+          </node>
+        </node>
+        <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="4690171080787098802">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4690171080787098803">
+            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4690171080787098804">
+              <node role="statement" roleId="tpee.1068581517665" type="tpd4.TypeVarDeclaration" typeId="tpd4.1174665551739" id="4690171080787098805">
+                <property name="name" nameId="tpck.1169194664001" value="T" />
+              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4690171080787098806">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4690171080787098807">
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="4690171080787098808">
+                    <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="4690171080787098805" resolveInfo="T" />
+                  </node>
+                  <node role="lValue" roleId="tpee.1068498886295" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="4690171080787098809">
+                    <node role="key" roleId="tp2q.1197932525128" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4690171080787098810">
+                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="4690171080787098798" resolveInfo="tvd" />
+                    </node>
+                    <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4690171080787098811">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2062135263152099291" resolveInfo="subs" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="4690171080787098812">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4690171080787098813">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4690171080787098814">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2062135263152099291" resolveInfo="subs" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsKeyOperation" typeId="tp2q.1201306600024" id="4690171080787098815">
+                  <node role="key" roleId="tp2q.1201654602639" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4690171080787098816">
+                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="4690171080787098798" resolveInfo="tvd" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4690171080787065915" />
       <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4340163696372956435">
         <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4340163696372956630">
           <property name="text" nameId="tpee.6329021646629104958" value="TODO: this is to avoid collecting generics from explicitly substituted types" />
