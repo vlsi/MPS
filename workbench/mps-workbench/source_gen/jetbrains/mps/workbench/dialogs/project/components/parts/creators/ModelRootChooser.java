@@ -8,10 +8,8 @@ import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.project.SModelRoot;
@@ -33,13 +31,12 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
   public ModelRootDescriptor compute() {
     PersistenceFacade pReg = PersistenceRegistry.getInstance();
     Iterable<String> ti = pReg.getTypeIds();
-    ti = Sequence.fromIterable(ti).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "default")));
     int index = Messages.showChooseDialog("select", "type", Sequence.fromIterable(ti).toGenericArray(String.class), Sequence.fromIterable(ti).first(), null);
     if (index == -1) {
       return null;
     }
 
-    String selectedType = Sequence.fromIterable(ti).take(index).last();
+    String selectedType = Sequence.fromIterable(ti).take(index + 1).last();
     ModelRoot mr = pReg.getModelRootFactory(selectedType).create();
 
     if (selectedType.equals("default")) {

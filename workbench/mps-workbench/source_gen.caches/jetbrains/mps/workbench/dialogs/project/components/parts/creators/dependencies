@@ -83,12 +83,10 @@
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="javax.swing.JDialog" />
     <classNode dependClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
     <classNode dependClassName="jetbrains.mps.ide.persistence.PersistenceComponent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.persistence.PathAwareJDOMMemento" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />

@@ -70,6 +70,14 @@ public class JavaClassStubsModelRoot extends ModelRootBase {
     myPath = memento.getPath("path");
   }
 
+  public String getPath() {
+    return myPath;
+  }
+
+  public void setPath(String path) {
+    myPath = path;
+  }
+
   private IClassPathItem create(String path) {
     try {
       return ClassPathFactory.getInstance().createFromPathFS(path, "JavaStubs");
