@@ -82,6 +82,11 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
             }
           }
 
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation"), "rightExpression", true) == dotExpression) {
+            // sequence is enough 
+            continue;
+          }
+
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement")) {
             if (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), "inputSequence", true) == dotExpression) {
               continue;
@@ -124,7 +129,7 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "list", true) == dotExpression) {
-            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a02a0a0a1a3().createNode();
+            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a22a0a0a1a3().createNode();
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.OperationCall")) {
@@ -176,8 +181,8 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
     }
   }
 
-  public static class QuotationClass_cbnudw_a0a0a02a0a0a1a3 {
-    public QuotationClass_cbnudw_a0a0a02a0a0a1a3() {
+  public static class QuotationClass_cbnudw_a0a0a22a0a0a1a3 {
+    public QuotationClass_cbnudw_a0a0a22a0a0a1a3() {
     }
 
     public SNode createNode() {
