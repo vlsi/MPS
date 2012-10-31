@@ -3,16 +3,15 @@
   <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubConstants" file="JavaClassStubConstants.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubsInitializer" file="JavaClassStubsInitializer.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubConstants" />
+  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
     <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot" />
-    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootSettingsProvider" file="JavaClassStubModelRootSettingsProvider.java">
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode extendsClassName="jetbrains.mps.ide.persistence.ModelRootSettingsProvider" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot" file="JavaClassStubsModelRoot.java">
     <classNode dependClassName="java.io.IOException" />

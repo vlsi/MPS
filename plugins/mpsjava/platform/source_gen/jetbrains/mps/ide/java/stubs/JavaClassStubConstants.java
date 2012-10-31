@@ -4,6 +4,9 @@ package jetbrains.mps.ide.java.stubs;
 
 
 public class JavaClassStubConstants {
+  /**
+   * should be in sync with what's written in plugin.xml
+   */
   public static final String STUB_TYPE = "java_class_stub";
 
   public JavaClassStubConstants() {
