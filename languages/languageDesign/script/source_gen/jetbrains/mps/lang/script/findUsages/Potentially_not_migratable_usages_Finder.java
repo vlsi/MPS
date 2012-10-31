@@ -47,10 +47,6 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
         if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.smodel.structure.SLinkListAccess")) {
           SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
 
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-            continue;
-          }
-
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
             SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
 
@@ -128,7 +124,7 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "list", true) == dotExpression) {
-            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a22a0a0a1a3().createNode();
+            expectedType = new Potentially_not_migratable_usages_Finder.QuotationClass_cbnudw_a0a0a02a0a0a1a3().createNode();
           }
 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.lang.textGen.structure.OperationCall")) {
@@ -143,6 +139,10 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
             if ((method != null)) {
               expectedType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
             }
+          }
+
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.CastExpression")) {
+            expectedType = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.CastExpression"), "type", true);
           }
 
           if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
@@ -164,8 +164,8 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
     }
   }
 
-  public static class QuotationClass_cbnudw_a0a0a22a0a0a1a3 {
-    public QuotationClass_cbnudw_a0a0a22a0a0a1a3() {
+  public static class QuotationClass_cbnudw_a0a0a02a0a0a1a3 {
+    public QuotationClass_cbnudw_a0a0a02a0a0a1a3() {
     }
 
     public SNode createNode() {
