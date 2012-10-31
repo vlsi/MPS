@@ -915,8 +915,7 @@ public class QueriesGenerated {
     SNode trg = new AdaptableClassifierTarget(_context).getTarget(_context.getNode());
     if ((trg != null)) {
       SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(trg, "classifierType_adapter");
-      List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
-      return ListSequence.fromList(cds).getElement(0);
+      return ListSequence.fromList(SLinkOperations.getTargets(cc, "constructor", true)).first();
     }
     _context.showErrorMessage(_context.getNode(), "Adaptable target not found");
     return null;
@@ -1079,13 +1078,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_8665905049776863776(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
+    SNode type = SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
     SNode cls = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(UnrestrictedFunctionType_Behavior.call_getRuntimeAdapterClassName_1231423631922(type) + "." + BehaviorReflection.invokeVirtual(String.class, type, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      List<SNode> ctrs = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
-      if (ctrs != null && ListSequence.fromList(ctrs).count() > 0) {
-        return ListSequence.fromList(ctrs).getElement(0);
-      }
+      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
     }
     return null;
   }
@@ -1100,13 +1096,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8665905049776865734(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
-    SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
+    SNode type = SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
     SNode cls = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(UnrestrictedFunctionType_Behavior.call_getRuntimeAdapterClassName_1231423631922(type) + "." + BehaviorReflection.invokeVirtual(String.class, type, "virtual_getRuntimeSignature_1213877404927", new Object[]{}));
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      List<SNode> ctrs = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
-      if (ctrs != null && ListSequence.fromList(ctrs).count() > 0) {
-        return ListSequence.fromList(ctrs).getElement(0);
-      }
+      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
     }
     return null;
   }
