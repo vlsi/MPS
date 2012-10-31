@@ -30,7 +30,7 @@ public class PersistenceComponent implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PersistenceComponent.class);
 
   private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
-    new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.virtualFileSystem") {
+    new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.mps.modelRootSettings") {
       @Override
       protected String keyToString(String key) {
         return key;
