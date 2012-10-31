@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopup;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
@@ -48,6 +49,8 @@ public class ShowImplementationComponent extends JPanel {
   private List<String> myModuleLabels = new ArrayList<String>();
   private List<SNodePointer> myOriginalNodePointers = new ArrayList<SNodePointer>();
 
+  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
+
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
@@ -60,8 +63,7 @@ public class ShowImplementationComponent extends JPanel {
       myOriginalNodePointers.add(new SNodePointer(node));
     }
 
-    myEditor = new EmbeddableEditor(context, new ModelOwner() {
-    }, myNodes.get(0), false);
+    myEditor = new EmbeddableEditor(context, myModelOwner, myNodes.get(0), false);
     myProject = context.getProject();
 
     init();
@@ -80,6 +82,8 @@ public class ShowImplementationComponent extends JPanel {
     for (SNode node : myNodes) {
       node.delete();
     }
+    myEditor.disposeEditor();
+    myModelOwner.unregisterModelOwner();
     myNodes = null;
     myNodeIcons = null;
     myNodeLabels = null;

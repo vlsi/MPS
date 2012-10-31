@@ -423,7 +423,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public static boolean isLanguageOwnedAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
-    ModelOwner modelOwner = SModelRepository.getInstance().getOwner(sm);
+    SModule modelOwner = SModelRepository.getInstance().getOwner(sm);
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
       if (l.isAccessoryModel(sm.getModelReference())) {
@@ -434,7 +434,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public static Language getLanguageFor(org.jetbrains.mps.openapi.model.SModel sm) {
-    ModelOwner owner = SModelRepository.getInstance().getOwner(sm);
+    SModule owner = SModelRepository.getInstance().getOwner(sm);
     if (owner instanceof Language) {
       return (Language) owner;
     }

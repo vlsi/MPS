@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
@@ -147,7 +148,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   @Nullable
   public IModule getModule() {
-    ModelOwner owner = SModelRepository.getInstance().getOwner(this);
+    SModule owner = SModelRepository.getInstance().getOwner(this);
     if (owner instanceof IModule) {
       return (IModule) owner;
     }

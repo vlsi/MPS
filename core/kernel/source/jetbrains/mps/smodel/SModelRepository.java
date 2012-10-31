@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -47,8 +48,8 @@ public class SModelRepository implements CoreComponent {
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
-  private final Map<SModelDescriptor, ModelOwner> myModelOwner = new THashMap<SModelDescriptor, ModelOwner>();
-  private final Map<ModelOwner, Set<SModelDescriptor>> myModelsByOwner = new THashMap<ModelOwner, Set<SModelDescriptor>>();
+  private final Map<SModelDescriptor, SModule> myModelOwner = new THashMap<SModelDescriptor, SModule>();
+  private final Map<SModule, Set<SModelDescriptor>> myModelsByOwner = new THashMap<SModule, Set<SModelDescriptor>>();
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
@@ -74,12 +75,12 @@ public class SModelRepository implements CoreComponent {
 
   //--------------------register/unregister----------------------
 
-  public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
+  public void registerModelDescriptor(SModelDescriptor modelDescriptor, SModule container) {
     synchronized (myModelsLock) {
-      ModelOwner prevOwner = myModelOwner.get(modelDescriptor);
-      if (prevOwner != null) {
-        if (prevOwner != owner) {
-          LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another owner: old=" + prevOwner + ", new=" + owner);
+      SModule prevModule = myModelOwner.get(modelDescriptor);
+      if (prevModule != null) {
+        if (prevModule != container) {
+          LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
         }
         return;
       }
@@ -90,14 +91,14 @@ public class SModelRepository implements CoreComponent {
       LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
         "Another model \"" + modelReference + "\" is already registered");
 
-      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(container);
       if (ownerModels == null) {
         ownerModels = new HashSet<SModelDescriptor>();
-        myModelsByOwner.put(owner, ownerModels);
+        myModelsByOwner.put(container, ownerModels);
       }
 
       ownerModels.add(modelDescriptor);
-      myModelOwner.put(modelDescriptor, owner);
+      myModelOwner.put(modelDescriptor, container);
 
       if (modelReference.getModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
@@ -113,10 +114,10 @@ public class SModelRepository implements CoreComponent {
     fireModelAdded(modelDescriptor);
   }
 
-  public void unRegisterModelDescriptor(SModelDescriptor md, ModelOwner forOwner) {
+  public void unRegisterModelDescriptor(SModelDescriptor md, SModule forModule) {
     synchronized (myModelsLock) {
-      ModelOwner owner = myModelOwner.get(md);
-      if (owner != forOwner) throw new IllegalStateException();
+      SModule owner = myModelOwner.get(md);
+      if (owner != forModule) throw new IllegalStateException();
       removeModelDescriptor(md);
     }
   }
@@ -124,7 +125,7 @@ public class SModelRepository implements CoreComponent {
   public void removeModelDescriptor(SModelDescriptor md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
-      ModelOwner owner = myModelOwner.remove(md);
+      SModule owner = myModelOwner.remove(md);
       if (owner == null) throw new IllegalStateException();
       Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
       if (!ownerModels.remove(md)) throw new IllegalStateException();
@@ -142,9 +143,9 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public void unRegisterModelDescriptors(ModelOwner owner) {
-    for (SModelDescriptor sm : getModelDescriptors(owner)) {
-      unRegisterModelDescriptor(sm, owner);
+  public void unRegisterModelDescriptors(SModule module) {
+    for (SModelDescriptor sm : getModelDescriptors(module)) {
+      unRegisterModelDescriptor(sm, module);
     }
   }
 
@@ -202,29 +203,17 @@ public class SModelRepository implements CoreComponent {
     return myIdToModelDescriptorMap.get(id);
   }
 
-  public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
+  public List<SModelDescriptor> getModelDescriptors(SModule module) {
     synchronized (myModelsLock) {
-      Set<SModelDescriptor> result = myModelsByOwner.get(modelOwner);
+      Set<SModelDescriptor> result = myModelsByOwner.get(module);
       if (result == null || result.size() == 0) return Collections.emptyList();
       return new ArrayList<SModelDescriptor>(result);
     }
   }
 
-  /**
-   * use getOwner
-   */
-  @Deprecated
-  public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
+  public SModule getOwner(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     synchronized (myModelsLock) {
-      ModelOwner modelOwner = myModelOwner.get(modelDescriptor);
-      if (modelOwner == null) return Collections.emptySet();
-      return Collections.singleton(modelOwner);
-    }
-  }
-
-  public ModelOwner getOwner(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    synchronized (myModelsLock) {
-      return myModelOwner.get((SModelDescriptor)modelDescriptor);
+      return myModelOwner.get((SModelDescriptor) modelDescriptor);
     }
   }
 

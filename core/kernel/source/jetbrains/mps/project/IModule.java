@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.Collection;
 import java.util.List;
 
-public interface IModule extends ModelOwner, SModule {
+public interface IModule extends SModule {
   @NotNull
   ModuleReference getModuleReference();
 

@@ -39,6 +39,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class DeleteModelHelper {
   private static final Logger LOG = Logger.getLogger(DeleteModelHelper.class);
@@ -157,7 +158,7 @@ public class DeleteModelHelper {
     @Override
     public void refactor(RefactoringContext refactoringContext) {
       SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
-      ModelOwner modelOwner = SModelRepository.getInstance().getOwner(modelDescriptor);
+      SModule modelOwner = SModelRepository.getInstance().getOwner(modelDescriptor);
       if (modelOwner instanceof Language) {
         deleteModelFromLanguage((Language) (IModule) modelOwner, modelDescriptor);
       } else if (modelOwner instanceof Solution) {

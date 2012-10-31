@@ -81,11 +81,13 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.remove(creationListener);
   }
 
+  @Override
   @Deprecated
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
     return createModel(name.toString(), root, adj);
   }
 
+  @Override
   public final EditableSModelDescriptor createModel(String name, ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
