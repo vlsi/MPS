@@ -42,7 +42,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
@@ -199,7 +199,7 @@ public class ConceptPropertiesHelper {
 
   private boolean needToMigrate(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(ConceptPropertiesHelper.class.getName())) {
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Object[]{}).equals(ConceptPropertiesHelper.class.getName())) {
       return false;
     }
     return true;
