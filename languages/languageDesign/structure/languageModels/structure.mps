@@ -6,6 +6,7 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1071489090640">
+      <property name="abstract" nameId="4628067390765956802" value="false" />
       <property name="rootable" nameId="1096454100552" value="true" />
       <property name="iconPath" nameId="1160488491229" value="${language_descriptor}/icons/structure.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptDeclaration" />
@@ -47,14 +48,14 @@
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="1084197782722">
       <property name="memberIdentifierPolicy" nameId="1197591154882" value="derive_from_internal_value" />
-      <property name="name" nameId="tpck.1169194664001" value="Cardinality" />
       <property name="hasNoDefaultMember" nameId="1212080844762" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="Cardinality" />
       <link role="memberDataType" roleId="1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="1084199179703">
       <property name="memberIdentifierPolicy" nameId="1197591154882" value="derive_from_internal_value" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkMetaclass" />
       <property name="hasNoDefaultMember" nameId="1212080844762" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkMetaclass" />
       <link role="memberDataType" roleId="1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105725006687">

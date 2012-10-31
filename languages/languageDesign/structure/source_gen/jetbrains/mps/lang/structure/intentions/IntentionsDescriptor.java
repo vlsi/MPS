@@ -14,6 +14,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
     add(new AddDeprecatedAnnotation_Intention(), "1224245135252");
     add(new CreateReferenceConcept_Intention(), "6895093993902311021");
+    add(new MakeAbsrtract_Intention(), "4672725010143198841");
+    add(new MakeFinal_Intention(), "4672725010143787708");
     add(new MakeRootable_Intention(), "2799938697970315260");
   }
 }
