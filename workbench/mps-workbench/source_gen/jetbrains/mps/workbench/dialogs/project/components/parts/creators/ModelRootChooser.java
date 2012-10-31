@@ -15,7 +15,8 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
 import jetbrains.mps.ide.persistence.PersistenceComponent;
-import javax.swing.JDialog;
+import jetbrains.mps.ide.dialogs.BaseDialog;
+import javax.swing.JComponent;
 import jetbrains.mps.persistence.PathAwareJDOMMemento;
 import org.jdom.Element;
 
@@ -53,11 +54,13 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
       return result.toDescriptor();
     }
 
-    ModelRootSettingsEditor editor = PersistenceComponent.getModelRootSettingsEditor(mr.getType());
+    final ModelRootSettingsEditor editor = PersistenceComponent.getModelRootSettingsEditor(mr.getType());
     editor.reset(null, mr);
-    JDialog d = new JDialog();
-    d.add(editor.getComponent());
-    d.show();
+    new BaseDialog(null) {
+      protected JComponent getMainComponent() {
+        return editor.getComponent();
+      }
+    }.showDialog();
     editor.apply(mr);
 
     PathAwareJDOMMemento memento = new PathAwareJDOMMemento(new Element("modelRoot"), null);

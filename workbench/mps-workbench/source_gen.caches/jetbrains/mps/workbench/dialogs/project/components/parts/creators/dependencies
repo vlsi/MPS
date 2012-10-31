@@ -83,7 +83,8 @@
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JDialog" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode dependClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
     <classNode dependClassName="jetbrains.mps.ide.persistence.PersistenceComponent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />

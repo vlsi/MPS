@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.ide.persistence;
 
-import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-
 public interface ModelRootSettingsEditorProvider {
   ModelRootSettingsEditor createEditor();
 }
