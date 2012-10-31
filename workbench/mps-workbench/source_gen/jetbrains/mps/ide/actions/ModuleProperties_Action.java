@@ -11,13 +11,18 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.dialogs.project.MPSPropertiesConfigurable;
+import jetbrains.mps.workbench.dialogs.project.ModulePropertiesConfigurable;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.properties.StandardDialogs;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
@@ -65,6 +70,15 @@ public class ModuleProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          configurableEditor.show();
+        }
+      });
+
+
       final Wrappers._T<BasePropertiesDialog> dialog = new Wrappers._T<BasePropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

@@ -115,6 +115,24 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.ide.properties.ModuleProperties" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.properties.MPSPropertiesConfigurable" file="MPSPropertiesConfigurable.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.ui.TabbedPaneWrapper" />
+    <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.awt.GridBagConstraints" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="org.jetbrains.annotations.Nls" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.Disposable" />
+    <classNode extendsClassName="com.intellij.openapi.options.Configurable" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.properties.MappingSelectTree" file="MappingSelectTree.java">
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />

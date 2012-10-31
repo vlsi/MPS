@@ -47,6 +47,7 @@ public class FindUsagesDialog extends DialogWrapper {
   public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final Project project) {
     super(project);
     setTitle("Find Usages");
+    setOKButtonText("Find");
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

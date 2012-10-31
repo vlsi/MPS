@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
@@ -62,7 +61,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
   }
 
   public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
-    (new MyBaseNodeDialog(null, hierarchyTreeNode)).show();
+    (new MyBaseNodeDialog(hierarchyTreeNode)).show();
     return true;
   }
 
@@ -77,8 +76,8 @@ public class SupertypesTree extends AbstractHierarchyTree {
   private class MyBaseNodeDialog extends BaseNodeDialog {
     private final HierarchyTreeNode myHierarchyTreeNode;
 
-    public MyBaseNodeDialog(Project project, HierarchyTreeNode hierarchyTreeNode) {
-      super(project, "", SupertypesTree.this.myOperationContext);
+    public MyBaseNodeDialog(HierarchyTreeNode hierarchyTreeNode) {
+      super("", SupertypesTree.this.myOperationContext);
       myHierarchyTreeNode = hierarchyTreeNode;
 
       setHorizontalStretch(2f);

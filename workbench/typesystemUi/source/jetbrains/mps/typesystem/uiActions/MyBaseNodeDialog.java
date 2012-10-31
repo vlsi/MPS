@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
@@ -36,8 +35,8 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   private Splitter myMainComponent;
   private JComponent mySupertypesViewComponent;
 
-  public MyBaseNodeDialog(Project project, IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) {
-    super(project, getTitle(node), operationContext);
+  public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) {
+    super(getTitle(node), operationContext);
 
     SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
 

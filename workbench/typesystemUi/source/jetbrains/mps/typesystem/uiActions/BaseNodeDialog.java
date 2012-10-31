@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.logging.Logger;
@@ -36,8 +35,8 @@ public abstract class BaseNodeDialog extends DialogWrapper {
   private Splitter mySplitter;
   private boolean myDisposed = false;
 
-  protected BaseNodeDialog(Project project,String text, IOperationContext operationContext) {
-    super(project);
+  protected BaseNodeDialog(String text, IOperationContext operationContext) {
+    super(true);
 
     myOperationContext = operationContext;
     InspectorEditorComponent inspector = new InspectorEditorComponent();

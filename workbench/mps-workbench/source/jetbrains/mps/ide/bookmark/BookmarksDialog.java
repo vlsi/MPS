@@ -35,11 +35,9 @@ public class BookmarksDialog extends DialogWrapper {
   public BookmarksDialog(Project project, BookmarkManager bookmarkManager) {
     super(true);
     setTitle("Editor Bookmarks");
+
     myBookmarkManager = bookmarkManager;
     myTree = new BookmarksTree(ProjectHelper.toMPSProject(project), bookmarkManager);
-
-    setTitle("Editor Bookmarks");
-
     myMainComponent.setLayout(new BorderLayout());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myMainComponent.add(scrollPane);
@@ -108,8 +106,12 @@ public class BookmarksDialog extends DialogWrapper {
   }
 
   @Override
+  protected String getDimensionServiceKey() {
+   return BookmarksDialog.class.getName();
+  }
+
+  @Override
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(400,300));
     return myMainComponent;
   }
 }
