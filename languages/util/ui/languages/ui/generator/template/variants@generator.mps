@@ -298,8 +298,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="7346866931625615762">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="7346866931625615763">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="Internal error" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -866,8 +866,8 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3210848622155981281">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3210848622155981282">
                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3210848622155981283" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3210848622155981284">
-                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1171626359898" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5909355414834572474">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1221737886778" />
                 </node>
               </node>
             </node>
