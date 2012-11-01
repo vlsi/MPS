@@ -21,8 +21,8 @@
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1203071677434">
-      <property name="name" nameId="tpck.1169194664001" value="ToolDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ToolDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6547237850567458268" resolveInfo="BaseToolDeclaration" />
     </node>
@@ -42,9 +42,9 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1203087890642">
-      <property name="name" nameId="tpck.1169194664001" value="ActionGroupDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionGroupNew.png" />
+      <property name="name" nameId="tpck.1169194664001" value="ActionGroupDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -84,8 +84,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1204383956737">
-      <property name="name" nameId="tpck.1169194664001" value="InterfaceGroup" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="InterfaceGroup" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1203087890642" resolveInfo="ActionGroupDeclaration" />
     </node>
@@ -183,9 +183,9 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1210179134063">
-      <property name="name" nameId="tpck.1169194664001" value="PreferencesComponentDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/preferences.png" />
+      <property name="name" nameId="tpck.1169194664001" value="PreferencesComponentDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -318,10 +318,10 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1562714432501166197">
-      <property name="name" nameId="tpck.1169194664001" value="KeymapChangesDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Keymaps" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/keymapChangesDeclaration.png" />
+      <property name="name" nameId="tpck.1169194664001" value="KeymapChangesDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Keymaps" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1562714432501166198">
@@ -374,15 +374,15 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6547237850567458268">
-      <property name="name" nameId="tpck.1169194664001" value="BaseToolDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/tool.png" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseToolDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5896642449625981893">
-      <property name="name" nameId="tpck.1169194664001" value="TabbedToolDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="TabbedToolDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6547237850567458268" resolveInfo="BaseToolDeclaration" />
     </node>
@@ -447,25 +447,25 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5023285075122009364">
-      <property name="name" nameId="tpck.1169194664001" value="IdeaInitializerDescriptor" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/ideaPluginDeclaration.png" />
+      <property name="name" nameId="tpck.1169194664001" value="IdeaInitializerDescriptor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8817525066851790100">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
       <property name="name" nameId="tpck.1169194664001" value="KeyStrokeType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1821622352985038318">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Keymaps.ShortcutChange" />
       <property name="name" nameId="tpck.1169194664001" value="ActionParameterReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Keymaps.ShortcutChange" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8131292300541727132">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
       <property name="name" nameId="tpck.1169194664001" value="AddKeystrokeStatement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070611750">
@@ -474,15 +474,15 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070611759">
-      <property name="name" nameId="tpck.1169194664001" value="EditorTab" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/tabbedEditor.png" />
+      <property name="name" nameId="tpck.1169194664001" value="EditorTab" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3743831881070612962">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods.GetNodes" />
       <property name="name" nameId="tpck.1169194664001" value="NodesBlock" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods.GetNodes" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070613135">
       <property name="name" nameId="tpck.1169194664001" value="IsApplicableTabBlock" />
@@ -500,13 +500,13 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2450897840534683973">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
       <property name="name" nameId="tpck.1169194664001" value="OrderConstraints" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2450897840534683975">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
-      <property name="name" nameId="tpck.1169194664001" value="Order" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Order" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2450897840534683979">
@@ -520,101 +520,101 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1203071646776">
-      <property name="name" nameId="tpck.1169194664001" value="ActionDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionNew.png" />
-      <property name="helpURL" nameId="tpce.2465654535473034588" value="http://confluence.jetbrains.com/display/MPSD2/Plugin#Plugin-actionsandactiongroups" />
+      <property name="name" nameId="tpck.1169194664001" value="ActionDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
+      <property name="helpURL" nameId="tpce.2465654535473034588" value="http://confluence.jetbrains.com/display/MPSD2/Plugin#Plugin-actionsandactiongroups" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="2498620720770664567">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <property name="name" nameId="tpck.1169194664001" value="ToolPosition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1988288734101112751">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
       <property name="name" nameId="tpck.1169194664001" value="ButtonCreator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1988288734101112747">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
       <property name="name" nameId="tpck.1169194664001" value="PopupCreator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1988288734101108470">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
       <property name="name" nameId="tpck.1169194664001" value="ToolbarCreator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1640281869714699879">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
       <property name="name" nameId="tpck.1169194664001" value="CreateTabBlock" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5538333046911298739">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <property name="name" nameId="tpck.1169194664001" value="CustomCondition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5538333046911348647">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <property name="name" nameId="tpck.1169194664001" value="ParameterCondition_ConceptFunctionParameter" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5538333046911348652">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <property name="name" nameId="tpck.1169194664001" value="ActionParameterCondition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5538333046911348654">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <property name="name" nameId="tpck.1169194664001" value="RequiredCondition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5678361901872075170">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <property name="name" nameId="tpck.1169194664001" value="EditableModel" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5864553086652219113">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <property name="name" nameId="tpck.1169194664001" value="PluginDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5864553086652219116">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <property name="name" nameId="tpck.1169194664001" value="IdeaPluginDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5864553086652219113" resolveInfo="PluginDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="203415309825565488">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <property name="name" nameId="tpck.1169194664001" value="MPSPluginDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5864553086652219113" resolveInfo="PluginDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="331224023792854814">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="IdeaActionsDescriptor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea.Actions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="331224023792854815">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="ActionGroupRef" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea.Actions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="331224023792855166">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="KeymapRef" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea.Actions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3205778618063718746">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
-      <property name="name" nameId="tpck.1169194664001" value="IdeaConfigurationXml" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="IdeaConfigurationXml" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Idea" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1050311802978903937">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptCondition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.Parameters.Condition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1207145475354">
@@ -623,9 +623,9 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1512255007353869532">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.DumbAware" />
-      <property name="name" nameId="tpck.1169194664001" value="NonDumbAwareActions" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="NonDumbAwareActions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action.DumbAware" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1512255007353869535">
@@ -759,10 +759,6 @@
       <property name="role" nameId="tpce.1071599776563" value="action" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203071646776" resolveInfo="ActionDeclaration" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1217514805740">
-      <property name="value" nameId="tpce.1105725733873" value="action" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
   <root id="1203092361741">
@@ -1594,16 +1590,16 @@
       <property name="externalValue" nameId="tpce.1083923523172" value="XWin" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1911082874216608561">
-      <property name="externalValue" nameId="tpce.1083923523172" value="GNOME" />
       <property name="internalValue" nameId="tpce.1083923523171" value="Default for GNOME" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="GNOME" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1911082874216608562">
-      <property name="externalValue" nameId="tpce.1083923523172" value="KDE" />
       <property name="internalValue" nameId="tpce.1083923523171" value="Default for KDE" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="KDE" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2443880313834664128">
-      <property name="externalValue" nameId="tpce.1083923523172" value="Default" />
       <property name="internalValue" nameId="tpce.1083923523171" value="$default" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="Default" />
     </node>
   </root>
   <root id="6193305307616715384">
@@ -2149,16 +2145,16 @@
   <root id="2450897840534683979">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2450897840534683980">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="editorTab" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3743831881070611759" resolveInfo="EditorTab" />
     </node>
   </root>
   <root id="2450897840534688273">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2450897840534688274">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="order" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2450897840534683975" resolveInfo="Order" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2450897840534688279">
@@ -2247,16 +2243,16 @@
       <property name="externalValue" nameId="tpce.1083923523172" value="bottom" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664569">
-      <property name="externalValue" nameId="tpce.1083923523172" value="top" />
       <property name="internalValue" nameId="tpce.1083923523171" value="TOP" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="top" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664570">
-      <property name="externalValue" nameId="tpce.1083923523172" value="left" />
       <property name="internalValue" nameId="tpce.1083923523171" value="LEFT" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="left" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2498620720770664571">
-      <property name="externalValue" nameId="tpce.1083923523172" value="right" />
       <property name="internalValue" nameId="tpce.1083923523171" value="RIGHT" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="right" />
     </node>
   </root>
   <root id="1988288734101112751">
@@ -2471,8 +2467,8 @@
   <root id="1512255007353869535">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1512255007353869536">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="actionDeclaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203071646776" resolveInfo="ActionDeclaration" />
     </node>
   </root>
