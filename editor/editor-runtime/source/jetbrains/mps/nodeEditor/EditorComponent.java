@@ -841,7 +841,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.isDeleted() || node.getModel().isNotEditable());
+    setReadOnly(node == null || node.getModel()==null || node.getModel().isNotEditable());
   }
 
   protected void editNode(final SNode node) {
@@ -1339,7 +1339,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null) {
+    if (myNode != null && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
@@ -2788,7 +2788,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (lastRemove != null) {
-      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.isDeleted())) {
+      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.getModel()==null)) {
         SModelChildEvent ce = (SModelChildEvent) lastRemove;
         int childIndex = ce.getChildIndex();
         String role = ce.getChildRole();
