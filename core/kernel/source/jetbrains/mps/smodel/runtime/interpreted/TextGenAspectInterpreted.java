@@ -27,8 +27,17 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
-public class TextGenAspectDescriptorInterpreted implements TextGenAspectDescriptor {
-  private static final Logger LOG = Logger.getLogger(TextGenAspectDescriptorInterpreted.class);
+public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
+  private static final Logger LOG = Logger.getLogger(TextGenAspectInterpreted.class);
+
+  private static final TextGenAspectInterpreted INSTANCE = new TextGenAspectInterpreted();
+
+  private TextGenAspectInterpreted() {
+  }
+
+  public static TextGenAspectDescriptor getInstance() {
+    return INSTANCE;
+  }
 
   @Override
   public SNodeTextGen getDescriptor(@NotNull String conceptFqName) {

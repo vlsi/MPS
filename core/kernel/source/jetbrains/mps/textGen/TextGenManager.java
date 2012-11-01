@@ -18,13 +18,14 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectDescriptorInterpreted;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -127,11 +128,6 @@ public class TextGenManager {
     }
 
     SNodeTextGen nodeTextGen = getTextGenForNode(node);
-    if (nodeTextGen == null) {
-      buffer.foundError("couldn't find text generator for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, null);
-    }
-    assert nodeTextGen != null;
-
     nodeTextGen.setBuffer(buffer);
     try {
       nodeTextGen.setSNode(node);
@@ -142,13 +138,9 @@ public class TextGenManager {
     }
   }
 
+  @NotNull
   private static SNodeTextGen getTextGenForNode(SNode node) {
-    try {
-      return new TextGenAspectDescriptorInterpreted().getDescriptor(node.getConcept().getId());
-    } catch (Throwable t) {
-      // todo: doesn't look like it's possible
-      return null;
-    }
+    return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getId());
   }
 
   private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {

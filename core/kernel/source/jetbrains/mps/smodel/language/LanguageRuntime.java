@@ -122,7 +122,7 @@ public abstract class LanguageRuntime {
 
   public TextGenAspectDescriptor getTextGenAspectDescriptor() {
     if (myTextGenDescriptor == null) {
-      myTextGenDescriptor = new TextGenAspectDescriptorInterpreted();
+      myTextGenDescriptor = TextGenAspectInterpreted.getInstance();
     }
     return myTextGenDescriptor;
   }
