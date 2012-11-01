@@ -10,8 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AnonymousClass_TextGen extends SNodeTextGen {
@@ -57,16 +55,8 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       }
       this.append(")");
     }
-    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).isNotEmpty()) {
-      this.append(" {");
-      this.appendNewLine();
-      this.increaseDepth();
-      BaseClassConceptTextGen.members(node, this);
-      this.decreaseDepth();
-      this.append("}");
-    } else {
-      this.append(" {}");
-    }
+    this.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, this);
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;
