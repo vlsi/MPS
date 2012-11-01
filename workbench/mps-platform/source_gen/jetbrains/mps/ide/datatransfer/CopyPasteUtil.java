@@ -323,6 +323,7 @@ public class CopyPasteUtil {
     return CopyPasteUtil.getNodesFromClipboard(model).get(0);
   }
 
+  @Nullable
   public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModelDescriptor().getModule() == null) {
       return null;
@@ -362,6 +363,7 @@ public class CopyPasteUtil {
     }
   }
 
+  @Nullable
   public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
     // shows dialog if necessary and pasted nodes were taken not from the same model 
     SModel oldModelProperties = pasteNodeData.getModelProperties();
