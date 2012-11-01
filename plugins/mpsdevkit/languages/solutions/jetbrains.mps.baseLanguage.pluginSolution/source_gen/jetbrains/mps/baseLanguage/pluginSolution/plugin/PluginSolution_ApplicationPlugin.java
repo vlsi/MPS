@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.FlyingActions_ActionGroup;
 import jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
@@ -22,9 +23,11 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNullDFA_Action());
     // groups 
     addGroup(new AnalyzersActions_ActionGroup());
+    addGroup(new FindNotMigratableLinksGroup_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(FindNotMigratableLinksGroup_ActionGroup.ID, FlyingActions_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
   }
 }

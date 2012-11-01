@@ -10,6 +10,12 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinksGroup_ActionGroup" file="FindNotMigratableLinksGroup_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action" file="FindNotMigratableLinks_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
@@ -45,8 +51,10 @@
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinksGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.FlyingActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
