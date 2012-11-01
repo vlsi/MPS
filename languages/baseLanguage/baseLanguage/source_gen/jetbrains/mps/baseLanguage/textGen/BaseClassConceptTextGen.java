@@ -86,13 +86,7 @@ public abstract class BaseClassConceptTextGen {
     }
     if ((SLinkOperations.getTarget(concept, "classInitializer", true) != null)) {
       BaseLanguageTextGen.newLine(needNewLine, textGen);
-      textGen.appendWithIndent("static {");
-      textGen.increaseDepth();
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SLinkOperations.getTarget(concept, "classInitializer", true), "statementList", true), textGen.getSNode());
-      textGen.appendNewLine();
-      textGen.decreaseDepth();
-      textGen.appendWithIndent("}");
-      textGen.appendNewLine();
+      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(concept, "classInitializer", true), textGen.getSNode());
     }
   }
 
