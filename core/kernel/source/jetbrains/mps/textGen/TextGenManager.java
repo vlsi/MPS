@@ -16,12 +16,9 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectDescriptorInterpreted;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -38,7 +35,6 @@ import java.util.*;
  * Date: Dec 22, 2003
  */
 public class TextGenManager {
-  private static final Logger LOG = Logger.getLogger(TextGenManager.class);
   private static TextGenManager ourInstance;
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
@@ -61,16 +57,11 @@ public class TextGenManager {
     return ourInstance;
   }
 
-  private Map<String, Class<SNodeTextGen>> myClassesCache;
-
   /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node, boolean withDebugInfo, StringBuilder[] buffers) {
-    myClassesCache = new HashMap<String, Class<SNodeTextGen>>();
-
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     buffer.putUserObject(ROOT_NODE, node);
     appendNodeText(context, buffer, node, null);
-    myClassesCache = null;
     String topBufferText = buffer.getTopBufferText();
     int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
 
@@ -126,7 +117,6 @@ public class TextGenManager {
     return loadNodeTextGen(null, node).getExtension(node);
   }
 
-
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
     if (node == null) {
       buffer.append("???");
@@ -154,61 +144,8 @@ public class TextGenManager {
     }
   }
 
-  private Class loadTextGenClass(SNode cd) {
-    assert cd != null;
-    SNode baseConcept = SModelUtil.getBaseConcept();
-    while (cd != baseConcept) {
-      Language l = SModelUtil.getDeclaringLanguage(cd);
-
-      String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(cd));
-      String className = cd.getName();
-      String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      Class textgenClass = l.getClass(textgenClassname);
-      if (textgenClass != null) {
-        return textgenClass;
-      }
-
-      cd = SNodeUtil.getConceptDeclaration_Extends(cd);
-      if (cd == null) cd = baseConcept;
-    }
-    return DefaultTextGen.class;
-  }
-
   private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
-    String nodeConcept = node.getConcept().getId();
-
-    Class<SNodeTextGen> textgenClass;
-
-    if (myClassesCache != null) {
-      textgenClass = myClassesCache.get(nodeConcept);
-      if (textgenClass == null) {
-        textgenClass = textGenForNode(node);
-        myClassesCache.put(nodeConcept, textgenClass);
-      }
-    } else {
-      textgenClass = textGenForNode(node);
-    }
-
-    try {
-      SNodeTextGen result = textgenClass.newInstance();
-      result.setContext(context);
-      return result;
-    } catch (Throwable t) {
-      LOG.error(t, node);
-    }
-
-    DefaultTextGen result = new DefaultTextGen();
-    result.setContext(context);
-    return result;
-  }
-
-  private Class textGenForNode(SNode node) {
-    SNode concept = node.getConceptDeclarationNode();
-    if (concept == null) {
-      LOG.error("Can't find concept node for concept: " + node.getConcept().getId());
-      return null;
-    }
-    return loadTextGenClass(concept);
+    return new TextGenAspectDescriptorInterpreted().getDescriptor(node.getConcept().getId());
   }
 
   private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {
@@ -230,5 +167,4 @@ public class TextGenManager {
     }
     return Collections.emptyList();
   }
-
 }
