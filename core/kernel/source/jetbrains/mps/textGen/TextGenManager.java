@@ -35,7 +35,8 @@ import java.util.*;
  * Date: Dec 22, 2003
  */
 public class TextGenManager {
-  private static TextGenManager ourInstance;
+  private static final TextGenManager INSTANCE = new TextGenManager();
+
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
@@ -46,15 +47,12 @@ public class TextGenManager {
   @Deprecated
   public static final String ADDED_IMPORT = "ADDED_IMPORT";
 
+  @Deprecated
   public static void reset() {
-    ourInstance = null;
   }
 
   public static TextGenManager instance() {
-    if (ourInstance == null) {
-      ourInstance = new TextGenManager();
-    }
-    return ourInstance;
+    return INSTANCE;
   }
 
   /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node, boolean withDebugInfo, StringBuilder[] buffers) {
@@ -110,11 +108,11 @@ public class TextGenManager {
   }
 
   public boolean canGenerateTextFor(SNode node) {
-    return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
+    return !(getTextGenForNode(node) instanceof DefaultTextGen);
   }
 
   public String getExtension(SNode node) {
-    return loadNodeTextGen(null, node).getExtension(node);
+    return getTextGenForNode(node).getExtension(node);
   }
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
@@ -128,7 +126,7 @@ public class TextGenManager {
       return;
     }
 
-    SNodeTextGen nodeTextGen = loadNodeTextGen(context, node);
+    SNodeTextGen nodeTextGen = getTextGenForNode(node);
     if (nodeTextGen == null) {
       buffer.foundError("couldn't find text generator for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, null);
     }
@@ -144,8 +142,13 @@ public class TextGenManager {
     }
   }
 
-  private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
-    return new TextGenAspectDescriptorInterpreted().getDescriptor(node.getConcept().getId());
+  private static SNodeTextGen getTextGenForNode(SNode node) {
+    try {
+      return new TextGenAspectDescriptorInterpreted().getDescriptor(node.getConcept().getId());
+    } catch (Throwable t) {
+      // todo: doesn't look like it's possible
+      return null;
+    }
   }
 
   private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {
