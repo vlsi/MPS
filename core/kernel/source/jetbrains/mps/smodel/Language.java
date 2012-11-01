@@ -26,7 +26,6 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -52,16 +51,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private ConcurrentHashSet<String> myNamesWithNoConcepts = new ConcurrentHashSet<String>(1);
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
-
-  private final Object LOCK = new Object();
-  private Runnable myClasspathInvalidator = new Runnable() {
-    public void run() {
-      synchronized (LOCK) {
-        myLanguageRuntimeClasspathCache = null;
-      }
-    }
-  };
-  private CompositeClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
 
@@ -215,7 +204,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public int getVersion() {
-    return ((DefaultSModelDescriptor)getStructureModelDescriptor()).getVersion();
+    return ((DefaultSModelDescriptor) getStructureModelDescriptor()).getVersion();
   }
 
   public Collection<Generator> getGenerators() {
@@ -470,13 +459,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       return Collections.singletonList(classesGen.getPath());
     }
     return Collections.emptyList();
-  }
-
-  protected void invalidateClassPath() {
-    super.invalidateClassPath();
-    synchronized (LOCK) {
-      myLanguageRuntimeClasspathCache = null;
-    }
   }
 
   @Override

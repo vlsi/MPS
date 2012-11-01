@@ -64,6 +64,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return myFile.toString();
   }
 
+  @Override
   public Collection<String> getFilesToListen() {
     return Collections.singleton(myFile.getPath());
   }
@@ -77,11 +78,13 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return ModelDigestUtil.hash(myFile);
   }
 
+  @Override
   public long getTimestamp() {
     if (myFile == null || !myFile.exists()) return -1;
     return myFile.lastModified();
   }
 
+  @Override
   public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException {
     return ModelPersistence.loadDescriptor(myFile);
   }
@@ -123,6 +126,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return result;
   }
 
+  @Override
   public boolean saveModel(SModelDescriptor descriptor) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) descriptor;
     SModel smodel = dsm.getSModel();
@@ -135,6 +139,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return ModelPersistence.saveModel(smodel, modelFile) != null;
   }
 
+  @Override
   public boolean hasModel(SModelDescriptor md) {
     return myFile != null && myFile.exists();
   }
@@ -212,6 +217,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return true;
   }
 
+  @Override
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }

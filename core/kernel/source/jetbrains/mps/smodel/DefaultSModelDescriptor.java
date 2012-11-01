@@ -251,21 +251,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Collections.unmodifiableMap(myMetadata);
   }
 
-  protected void checkModelDuplication() {
-    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
-    if (anotherModel != null) {
-      String message = "Model already registered: " + myModelReference + "\n";
-      message += "source = " + getSource() + "\n";
-
-      if (anotherModel instanceof BaseSModelDescriptorWithSource) {
-        message += "another model's source = " + ((BaseSModelDescriptorWithSource) anotherModel).getSource();
-      } else {
-        message += "another model is non-editable";
-      }
-      LOG.error(message);
-    }
-  }
-
   public IFile getModelFile() {
     return getSource().getFile();
   }
@@ -280,12 +265,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     getSource().setFile(newModelFile);
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-  }
-
-  private long fileTimestamp() {
-    IFile file = getModelFile();
-    if (file == null || !file.exists()) return -1;
-    return file.lastModified();
   }
 
   private void tryFixingVersion(SModelHeader header) {

@@ -522,6 +522,7 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
+  @Override
   public void dispose() {
     mySModelRoots.clear();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
