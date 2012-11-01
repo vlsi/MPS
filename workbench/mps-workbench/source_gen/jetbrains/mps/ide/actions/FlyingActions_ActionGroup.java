@@ -17,6 +17,7 @@ public class FlyingActions_ActionGroup extends GeneratedActionGroup {
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencyLoop_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action");
+      FlyingActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
