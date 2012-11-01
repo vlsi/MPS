@@ -637,7 +637,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   replace with getContainingRoot==this and fix tests
    */
   public boolean isRoot() {
-    return myModel != null && getParent() == null && myModel.isRoot(this);
+    return getModel() != null && getModel().isRoot(this);
   }
 
   /*
