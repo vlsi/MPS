@@ -140,7 +140,6 @@ public class BaseEditorTestBody extends BaseTestBody {
           public void run() {
             editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-            query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
             Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
             for (Pair<Intention, SNode> intention : intentions) {

@@ -19,6 +19,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +27,14 @@ import java.util.List;
 public class MigrationRefactoringAdapter extends BaseIntention {
   private AbstractMigrationRefactoring myRefactoring;
   private SNode myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
+  private SNodeReference myIntentionNodeReference;
+  private String myPresentation;
 
   public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, SNode migrationScript) {
     myRefactoring = refactoring;
     myMigrationScript = migrationScript;
+    myIntentionNodeReference = migrationScript.getReference();
+    myPresentation = migrationScript.getName();
   }
 
   public String getConcept() {
@@ -79,5 +84,20 @@ public class MigrationRefactoringAdapter extends BaseIntention {
 
   public SNode getNodeByIntention() {
     return null;
+  }
+
+  @Override
+  public String getPersistentStateKey() {
+    return myRefactoring.getClass().getName();
+  }
+
+  @Override
+  public SNodeReference getIntentionNodeReference() {
+    return myIntentionNodeReference;
+  }
+
+  @Override
+  public String getPresentation() {
+    return myPresentation;
   }
 }

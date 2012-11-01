@@ -19,12 +19,15 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class QuickFixAdapter extends BaseIntention  {
   private QuickFix_Runtime myQuickFix;
@@ -99,5 +102,22 @@ public class QuickFixAdapter extends BaseIntention  {
       }
     }
     return null;
+  }
+
+  @Override
+  public SNodeReference getIntentionNodeReference() {
+    //TODO: generate getQuickFixNodeReference() method into quickfix class
+    return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      @Override
+      public SNodeReference compute() {
+        SNode node = getNodeByIntention();
+        return node != null ? node.getReference() : null;
+      }
+    });
+  }
+
+  @Override
+  public String getPresentation() {
+    return myQuickFix.getClass().getName();
   }
 }

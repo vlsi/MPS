@@ -16,7 +16,12 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class AbstractIntention implements Intention {
   public abstract String getConcept();
@@ -88,5 +93,54 @@ public abstract class AbstractIntention implements Intention {
 
   public String getLocationString() {
     return "";
+  }
+
+  /**
+   * Was introduced in MPS 3.0 for the compatibility with generated code.
+   * Should be removed after 3.0 -> all generated intentions overrides this method
+   */
+  @Override
+  public SNodeReference getIntentionNodeReference() {
+    return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      @Override
+      public SNodeReference compute() {
+        SNode nodeByIntention = IntentionsManager.getInstance().getNodeByIntention(AbstractIntention.this);
+        return nodeByIntention != null ? nodeByIntention.getReference() : null;
+      }
+    });
+  }
+
+  /**
+   * Was introduced in MPS 3.0 for the compatibility with generated code.
+   * Should be removed after 3.0 -> all generated intentions overrides this method
+   */
+  @Override
+  public String getLanguageFqName() {
+    Language language = IntentionsManager.getInstance().getIntentionLanguage(this);
+    return language != null ? language.getModuleFqName() : null;
+  }
+
+  /**
+   * Was introduced in MPS 3.0 for the compatibility with generated code.
+   * Should be removed after 3.0 -> all generated intentions overrides this method
+   */
+  @Override
+  public String getPresentation() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        SNode intentionNode = ((SNodePointer) getIntentionNodeReference()).getNode();
+        if (intentionNode != null) {
+          return intentionNode.getName();
+        } else {
+          return AbstractIntention.this.getClass().getName();
+        }
+      }
+    });
+  }
+
+  @Override
+  public String getPersistentStateKey() {
+    return this.getClass().getName();
   }
 }

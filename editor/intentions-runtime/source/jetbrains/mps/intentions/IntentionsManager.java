@@ -23,6 +23,9 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.intentions.IntentionsVisitor.CheckAvailabilityVisitor;
+import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionTypesVisitor;
+import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
@@ -33,7 +36,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
@@ -44,7 +53,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 @State(
@@ -74,8 +91,12 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private Map<Intention, SNodePointer> myNodesByIntentions = new HashMap<Intention, SNodePointer>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
-  private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
+  private Set<String> myDisabledIntentionsCache = new HashSet<String>();
   private HashMap<Class, ModuleReference> myIntentionsLanguages = new HashMap<Class, ModuleReference>();
+
+  private Set<IntentionFactory> myIntentionFactories = new HashSet<IntentionFactory>();
+  private Map<String, Set<IntentionFactory>> myConcept2IntentionFactories = new HashMap<String, Set<IntentionFactory>>();
+
   private boolean myCachesAreValid = false;
   private boolean myLoaded = false;
 
@@ -87,27 +108,40 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
+  public Set<IntentionType> getAvailableBaseIntentionTypes(final SNode node) {
+    CollectAvailableIntentionTypesVisitor visitor = new CollectAvailableIntentionTypesVisitor();
+    visitIntentions(node, visitor);
+    return visitor.getAvailableIntentionTypes();
+  }
+
+  public boolean hasAvailableBaseIntentions(SNode node) {
+    CheckAvailabilityVisitor visitor = new CheckAvailabilityVisitor();
+    visitIntentions(node, visitor);
+    return visitor.isIntentionAvailable();
+  }
+
   public synchronized Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
     checkLoaded();
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
+        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null);
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(query, node, context, false)) {
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, filter)) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
 
         if (!query.isCurrentNodeOnly()) {
           SNode parent = node.getParent();
           while (parent != null) {
-            for (Intention intention : getAvailableIntentionsForExactNode(query, parent, context, true)) {
+            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
               result.add(new Pair<Intention, SNode>(intention, parent));
             }
             parent = parent.getParent();
           }
         }
 
-        return query.filter(result);
+        return result;
       }
     };
 
@@ -119,51 +153,40 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public synchronized boolean intentionIsDisabled(Intention intention) {
-    checkLoaded();
-    return getDisabledIntentions().contains(intention);
-  }
-
-  private List<Intention> getAvailableIntentionsForExactNode(QueryDescriptor query, final SNode node, @NotNull final EditorContext context, boolean childOnly) {
+  private List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean childOnly, Filter filter) {
     assert node != null : "node == null - inconsistent editor state";
-    List<Intention> intentions;
-    if (!query.isInstantiate()) {
-      intentions = getIntentionsFor(node, query.getTerminated());
-    } else {
-      intentions = new ArrayList<Intention>();
-      for (Intention intention : getIntentionsFor(node, query.getTerminated())) {
-        if (query.getTerminated().compute()) return new ArrayList<Intention>();
-        if (intention.isParameterized()) {
-          Method method = null;
-          try {
-            method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
-          } catch (NoSuchMethodException e) {
-            try {
-              // Was introduced in MPS 3.0 for backward compatibility with generated code.
-              // Should be removed after MPS 3.0
-              method = intention.getClass().getMethod("instances", SNode.class, jetbrains.mps.nodeEditor.EditorContext.class);
-            } catch (NoSuchMethodException ex2) {
-              LOG.error(e);
-            }
-          }
+    CollectAvailableIntentionsVisitor visitor = new CollectAvailableIntentionsVisitor();
+    visitIntentions(node.getConcept().getId(), visitor, filter, null);
+
+    List<Intention> intentions = new ArrayList<Intention>();
+    for (Intention intention : visitor.getAvailableIntentions()) {
+      // Legacy code for compatibility with generated code.
+      // Should be removed after MPS 3.0
+      if (intention.isParameterized()) {
+        try {
+          Method method = intention.getClass().getMethod("instances", SNode.class, jetbrains.mps.nodeEditor.EditorContext.class);
           // This cast to jetbrains.mps.nodeEditor.EditorContext was introduced in MPS 3.0 for backward compatibility with generated code.
           // Should be removed after MPS 3.0
           Object[] arguments = new Object[]{node, (jetbrains.mps.nodeEditor.EditorContext) context};
-          try {
-            List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
-            intentions.addAll(parameterizedIntentions);
-          } catch (IllegalAccessException e) {
-            LOG.error(e);
-          } catch (InvocationTargetException e) {
-            if (e.getTargetException() instanceof RuntimeInterruptedException) {
-              throw (RuntimeInterruptedException) e.getTargetException();
-            }
-            LOG.error(e);
+          List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
+          intentions.addAll(parameterizedIntentions);
+        } catch (NoSuchMethodException e) {
+          LOG.error(e);
+        } catch (IllegalAccessException e) {
+          LOG.error(e);
+        } catch (InvocationTargetException e) {
+          if (e.getTargetException() instanceof RuntimeInterruptedException) {
+            throw (RuntimeInterruptedException) e.getTargetException();
           }
-        } else {
-          intentions.add(intention);
+          LOG.error(e);
         }
+      } else {
+        intentions.add(intention);
       }
+    }
+
+    for (IntentionFactory factory : visitor.getAvailableIntentionFactories()) {
+      intentions.addAll(factory.instances(node, context));
     }
 
     List<Intention> result = new ArrayList<Intention>();
@@ -200,30 +223,22 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  private List<Intention> getIntentionsFor(SNode node, Computable<Boolean> terminated) {
-    String conceptFqName = node.getConcept().getId();
-    List<Intention> result = new ArrayList<Intention>();
-    for (String ancestor : LanguageHierarchyCache.getAncestorsNames(conceptFqName)) {
-      Set<Intention> intentions = myIntentions.get(ancestor);
-      if (intentions == null) continue;
-      for (Intention intention : intentions) {
-        if (terminated.compute()) return new ArrayList<Intention>();
-        result.add(intention);
-      }
-    }
-    return result;
+  public synchronized boolean isIntentionDisabled(String persistentStateKey) {
+    checkLoaded();
+    return getDisabledIntentions().contains(persistentStateKey);
   }
 
-  private Set<Intention> getDisabledIntentions() {
+  private Set<String> getDisabledIntentions() {
     if (!myCachesAreValid) {
       myDisabledIntentionsCache.clear();
       for (Set<Intention> conceptIntentions : myIntentions.values()) {
         for (Intention intention : conceptIntentions) {
-          if (myState.myDisabledIntentions.contains(intention.getClass().getName())) {
-            myDisabledIntentionsCache.add(intention);
+          if (myState.myDisabledIntentions.contains(intention.getPersistentStateKey())) {
+            myDisabledIntentionsCache.add(intention.getPersistentStateKey());
           }
         }
       }
+
       myCachesAreValid = true;
     }
     return myDisabledIntentionsCache;
@@ -236,32 +251,33 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------disabled state control-----------------
 
-  public synchronized void invertIntentionState(Intention intention) {
-    setIntentionState(intention, !intentionIsDisabled(intention));
-  }
-
-  public synchronized void setIntentionState(Intention intention, boolean disabled) {
+  public void setIntentionState(String persistentStateKey, boolean disabled) {
     if (disabled) {
-      disableIntention(intention);
+      disableIntention(persistentStateKey);
     } else {
-      enableIntention(intention);
+      enableIntention(persistentStateKey);
     }
   }
 
-  public synchronized void disableIntention(Intention intention) {
+  public synchronized void disableIntention(String persistentStateKey) {
     checkLoaded();
-    myState.myDisabledIntentions.add(intention.getClass().getName());
-    myDisabledIntentionsCache.add(intention);
+    myState.myDisabledIntentions.add(persistentStateKey);
+    myDisabledIntentionsCache.add(persistentStateKey);
   }
 
-  public synchronized void enableIntention(Intention intention) {
+  public synchronized void enableIntention(String persistentStateKey) {
     checkLoaded();
-    myState.myDisabledIntentions.remove(intention.getClass().getName());
-    myDisabledIntentionsCache.remove(intention);
+    myState.myDisabledIntentions.remove(persistentStateKey);
+    myDisabledIntentionsCache.remove(persistentStateKey);
   }
 
   //-------------node info by intention-----------------
 
+  /**
+   * Since MPS 3.0 Intention.getLanguageFqName() should be used.
+   * Remove this method after MPS 3.0
+   */
+  @Deprecated
   @Nullable
   public synchronized Language getIntentionLanguage(Intention intention) {
     checkLoaded();
@@ -270,20 +286,28 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
   }
 
+  /**
+   * Since MPS 3.0 Intention.getIntentionNodeReference() should be used.
+   * Remove this method after MPS 3.0
+   */
+  @Deprecated
   @Nullable
   public synchronized SNode getNodeByIntention(Intention intention) {
     checkLoaded();
     SNodePointer pointer = myNodesByIntentions.get(intention);
-    if (pointer == null) return intention.getNodeByIntention();
-    SNode node = pointer.getNode();
-    if (node == null) return intention.getNodeByIntention();
-    return node;
+    return pointer != null ? pointer.getNode() : null;
   }
 
   @NotNull
   public synchronized Set<Intention> getAllIntentions() {
     checkLoaded();
     return Collections.unmodifiableSet(myNodesByIntentions.keySet());
+  }
+
+  @NotNull
+  public synchronized Set<IntentionFactory> getAllIntentionFactories() {
+    checkLoaded();
+    return Collections.unmodifiableSet(myIntentionFactories);
   }
 
   //-------------reloading-----------------
@@ -298,6 +322,19 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     myNodesByIntentions.put(intention, node);
     myIntentionsLanguages.put(intention.getClass(), lang);
+  }
+
+  public synchronized void registerIntentionFactory(IntentionFactory intentionFactory) {
+    if (!myIntentionFactories.add(intentionFactory)) {
+      return;
+    }
+
+    Set<IntentionFactory> intentionFactories = myConcept2IntentionFactories.get(intentionFactory.getConcept());
+    if (intentionFactories == null) {
+      intentionFactories = new LinkedHashSet<IntentionFactory>();
+      myConcept2IntentionFactories.put(InternUtil.intern(intentionFactory.getConcept()), intentionFactories);
+    }
+    intentionFactories.add(intentionFactory);
   }
 
   private void checkLoaded() {
@@ -350,6 +387,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        myIntentionFactories.clear();
+        myConcept2IntentionFactories.clear();
+
         myIntentions.clear();
         myNodesByIntentions.clear();
         myIntentionsLanguages.clear();
@@ -371,30 +411,94 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
+  //-------------visiting registered intentions---------------
+
+  private synchronized void visitIntentions(final SNode node, final IntentionsVisitor visitor) {
+    checkLoaded();
+    try {
+      TypeChecker.getInstance().enableGlobalSubtypingCache();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          Filter filter = new Filter(BaseIntention.class, getDisabledIntentions());
+          Set<String> visitedConcepts = new HashSet<String>();
+          for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
+            visitIntentions(currentNode.getConcept().getId(), visitor, filter, visitedConcepts);
+          }
+        }
+      });
+    } finally {
+      TypeChecker.getInstance().clearGlobalSubtypingCache();
+    }
+  }
+
+  private void visitIntentions(String conceptFqName, IntentionsVisitor visitor, Filter filter, @Nullable Set<String> visitedConcepts) {
+    for (String conceptId : LanguageHierarchyCache.getAncestorsNames(conceptFqName)) {
+      if (visitedConcepts != null && !visitedConcepts.add(conceptId)) {
+        return;
+      }
+      if (myConcept2IntentionFactories.containsKey(conceptId)) {
+        for (IntentionFactory intentionFactory : myConcept2IntentionFactories.get(conceptId)) {
+          if (!filter.accept(intentionFactory)) {
+            continue;
+          }
+          if (!visitor.visit(intentionFactory)) {
+            return;
+          }
+        }
+      }
+      if (myIntentions.containsKey(conceptId)) {
+        for (Intention intention : myIntentions.get(conceptId)) {
+          if (!filter.accept(intention)) {
+            continue;
+          }
+          if (!visitor.visit(intention)) {
+            return;
+          }
+        }
+      }
+    }
+  }
+
+  static class Filter {
+    private Class<? extends Intention> myIntentionClass = null;
+    private Set<String> myDisabledIntentions = null;
+
+    public Filter(Class<? extends Intention> baseIntentionClass, Set<String> disabledIntentions) {
+      myIntentionClass = baseIntentionClass;
+      myDisabledIntentions = disabledIntentions;
+    }
+
+    boolean accept(Intention intention) {
+      if (myIntentionClass != null && !myIntentionClass.isAssignableFrom(intention.getClass())) {
+        return false;
+      }
+      if (myDisabledIntentions != null && myDisabledIntentions.contains(intention.getPersistentStateKey())) {
+        return false;
+      }
+      return true;
+    }
+
+    boolean accept(IntentionFactory intentionFactory) {
+      if (myDisabledIntentions != null && myDisabledIntentions.contains(intentionFactory.getPersistentStateKey())) {
+        return false;
+      }
+      return true;
+    }
+  }
 
   //-------------queryDescriptor-----------------
 
   public static class QueryDescriptor {
     private Class<? extends Intention> myIntentionClass = null;
-    private boolean myInstantiate = false;
     private boolean myEnabledOnly = false;
     private boolean myCurrentNodeOnly = false;
-    private Computable<Boolean> myTerminated = new Computable<Boolean>() {
-      public Boolean compute() {
-        return false;
-      }
-    };
 
     public QueryDescriptor() {
-
     }
 
     public void setIntentionClass(Class<? extends Intention> intentionClass) {
       myIntentionClass = intentionClass;
-    }
-
-    public void setInstantiate(boolean instantiate) {
-      myInstantiate = instantiate;
     }
 
     public void setEnabledOnly(boolean enabledOnly) {
@@ -405,35 +509,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       myCurrentNodeOnly = currentNodeOnly;
     }
 
-    public void setTerminated(Computable<Boolean> terminated) {
-      myTerminated = terminated;
-    }
-
-    public boolean isInstantiate() {
-      return myInstantiate;
-    }
-
     public boolean isCurrentNodeOnly() {
       return myCurrentNodeOnly;
-    }
-
-    public Computable<Boolean> getTerminated() {
-      return myTerminated;
-    }
-
-    public Set<Pair<Intention, SNode>> filter(Set<Pair<Intention, SNode>> intentions) {
-      Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
-
-      Set<Intention> disabled = IntentionsManager.getInstance().getDisabledIntentions();
-      for (Pair<Intention, SNode> p : intentions) {
-        if (myIntentionClass == null || myIntentionClass.isAssignableFrom(p.o1.getClass())) {
-          if (!(myEnabledOnly && disabled.contains(p.o1))) {
-            result.add(p);
-          }
-        }
-      }
-
-      return result;
     }
   }
 

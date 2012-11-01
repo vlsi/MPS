@@ -35,6 +35,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -133,21 +134,25 @@ public class IntentionsSupport {
       public void run() {
         try {
           Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
+          if (interrupted()) {
+            return;
+          }
 
           boolean show = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
             public Boolean compute() {
               if (isInconsistentEditor() || myEditor.isReadOnly()) return false;
               // TODO check for ActionsAsIntentions
-              return !getEnabledIntentions(false).isEmpty();
+              return IntentionsManager.getInstance().hasAvailableBaseIntentions(myEditor.getSelectedNode());
             }
           });
 
-          if (!show) return;
-          if (interrupted()) return;
+          if (!show || interrupted()) {
+            return;
+          }
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              if (isInconsistentEditor() || myEditor.isReadOnly()) return;
+              if (isInconsistentEditor() || myEditor.isReadOnly() || interrupted()) return;
 
               if (myEditor.getSelectedCell() == null) {
                 hideLightBulb();
@@ -224,7 +229,7 @@ public class IntentionsSupport {
   }
 
   private AnAction getIntentionGroup(final Intention intention, final SNode node) {
-    Icon icon = intention.getType().getIcon();
+        Icon icon = intention.getType().getIcon();
     //IntentionType.getLowestPriorityType().getIcon();
     final IntentionsManager intentionsManager = IntentionsManager.getInstance();
     final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
@@ -253,7 +258,7 @@ public class IntentionsSupport {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SNode intentionNode = intentionsManager.getNodeByIntention(intention);
+            SNode intentionNode = ((SNodePointer) intention.getIntentionNodeReference()).getNode();
             if (intentionNode == null) {
               Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
                 "Could not find declaration for " + intention.getClass().getSimpleName()
@@ -267,15 +272,10 @@ public class IntentionsSupport {
       }
     });
 
-    final boolean enabled = !intentionsManager.intentionIsDisabled(intention);
-    intentionActionGroup.add(new BaseAction((enabled ? "Disable" : "Enable") + " This Intention", (enabled ? "Disables" : "Enables") + " this intention type", icon) {
+    intentionActionGroup.add(new BaseAction("Disable This Intention", "Disables  this intention type", icon) {
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        if (enabled) {
-          intentionsManager.disableIntention(intention);
-        } else {
-          intentionsManager.enableIntention(intention);
-        }
+        intentionsManager.disableIntention(intention.getPersistentStateKey());
       }
     });
 
@@ -286,7 +286,7 @@ public class IntentionsSupport {
   private BaseGroup getIntentionsGroup(final DataContext dataContext) {
     // intentions
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(getEnabledIntentions(true));
+    groupItems.addAll(getEnabledIntentions());
 
     // actions as intentions
     List<AnAction> actions = new ArrayList<AnAction>();
@@ -300,10 +300,6 @@ public class IntentionsSupport {
       public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
         Intention intention1 = o1.o1;
         Intention intention2 = o2.o1;
-        boolean disabled1 = IntentionsManager.getInstance().intentionIsDisabled(intention1);
-        boolean disabled2 = IntentionsManager.getInstance().intentionIsDisabled(intention2);
-        if (disabled1 && !disabled2) return 1;
-        if (!disabled1 && disabled2) return -1;
         SNode node1 = o1.o2;
         SNode node2 = o2.o2;
         EditorContext context = myEditor.getEditorContext();
@@ -359,7 +355,7 @@ public class IntentionsSupport {
     int x = selectedCell.getX();
     int y = selectedCell.getY();
     if (selectedCell instanceof EditorCell_Label) {
-      y += ((EditorCell_Label) selectedCell).getHeight();
+      y += selectedCell.getHeight();
     }
     RelativePoint relativePoint = new RelativePoint(editorContext.getNodeEditorComponent(), new Point(x, y));
     popup.show(relativePoint);
@@ -369,19 +365,26 @@ public class IntentionsSupport {
     SNode node = myEditor.getEditedNode();
     if (node == null || node.getModel().isDisposed() || node.getModel().isNotEditable()) return;
 
-    Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions(false);
-    if (enabledIntentions.isEmpty()) return;
-
+    Set<IntentionType> availableIntentionTypes = IntentionsManager.getInstance().getAvailableBaseIntentionTypes(myEditor.getSelectedNode());
+    if (availableIntentionTypes.isEmpty()) {
+      return;
+    }
+    if (terminated.compute()) {
+      return;
+    }
     IntentionType typeToShow = IntentionType.getLowestPriorityType();
-    for (Pair<Intention, SNode> pair : enabledIntentions) {
-      if (pair.o1.getType().getPriority() < typeToShow.getPriority()) {
-        typeToShow = pair.o1.getType();
+    for (IntentionType intentionType : availableIntentionTypes) {
+      if (intentionType.getPriority() < typeToShow.getPriority()) {
+        typeToShow = intentionType;
       }
+    }
+    if (terminated.compute()) {
+      return;
     }
     showLightBulbComponent(typeToShow == IntentionType.NORMAL ? Icons.INTENTION : typeToShow.getIcon());
   }
 
-  private Set<Pair<Intention, SNode>> getEnabledIntentions(boolean instantiateParameterized) {
+  private Set<Pair<Intention, SNode>> getEnabledIntentions() {
     final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
@@ -389,7 +392,6 @@ public class IntentionsSupport {
       QueryDescriptor query = new QueryDescriptor();
       query.setIntentionClass(BaseIntention.class);
       query.setEnabledOnly(true);
-      query.setInstantiate(instantiateParameterized);
       result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;
