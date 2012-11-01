@@ -59,6 +59,7 @@ public class MakeSurroundWith_Intention extends BaseIntention implements Intenti
     }
     SPropertyOperations.set(sd, "name", SPropertyOperations.getString(node, "name"));
     SPropertyOperations.set(sd, "shortDescription", SPropertyOperations.getString(node, "shortDescription"));
+    SPropertyOperations.set(sd, "alias", SPropertyOperations.getString(node, "alias"));
     SPropertyOperations.set(sd, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
     SPropertyOperations.set(sd, "isAvailableInChildNodes", "" + (SPropertyOperations.getBoolean(node, "isAvailableInChildNodes")));
     SPropertyOperations.set(sd, "isErrorIntention", "" + (SPropertyOperations.getBoolean(node, "isErrorIntention")));
