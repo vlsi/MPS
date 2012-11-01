@@ -324,6 +324,7 @@ public class CopyPasteUtil {
     return CopyPasteUtil.getNodesFromClipboard(model).get(0);
   }
 
+  @Nullable
   public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModelDescriptor().getModule() == null) {
       return null;
@@ -350,14 +351,29 @@ public class CopyPasteUtil {
         necessaryLanguages.retainAll(additionalLanguages);
       }
     });
-    if ((!((necessaryImports.isEmpty()))) || (!((necessaryLanguages.isEmpty())))) {
-      AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new ModuleReference[necessaryLanguages.size()]));
-      dialog.show();
-      if (dialog.isOK()) {
-        return addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
-      }
+    if (necessaryImports.isEmpty() && necessaryLanguages.isEmpty()) {
+      return null;
     }
-    return null;
+
+    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new ModuleReference[necessaryLanguages.size()]));
+    dialog.show();
+    if (dialog.isOK()) {
+      return addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
+    } else {
+      return null;
+    }
+  }
+
+  @Nullable
+  public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
+    // shows dialog if necessary and pasted nodes were taken not from the same model 
+    SModel oldModelProperties = pasteNodeData.getModelProperties();
+    //  no dialog if copying from the same model 
+    if (oldModelProperties != null && targetModel.getLongName().equals(oldModelProperties.getLongName())) {
+      return null;
+    }
+
+    return CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
 
   private static Runnable addImports(Project p, final SModel targetModel, @NotNull final ModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
