@@ -20,12 +20,16 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 
+import java.util.List;
+
 /**
  * evgeny, 11/17/11
  */
 public interface EditorContext {
 
   SNode getSelectedNode();
+
+  List<SNode> getSelectedNodes();
 
   /**
    * same as selectWRTFocusPolicy(node, true);
@@ -83,4 +87,6 @@ public interface EditorContext {
   IOperationContext getOperationContext();
 
   boolean isInspector();
+
+  void openInspector();
 }

@@ -24,17 +24,28 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Setter;
+import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 import javax.swing.Icon;
+import java.awt.Component;
 import java.awt.Point;
 import java.util.Collections;
 import java.util.List;
@@ -45,7 +56,7 @@ public final class CreateFromUsageUtil {
   private CreateFromUsageUtil() {
   }
 
-  public static boolean isApplicable(EditorContext editorContext) {
+  public static boolean isApplicable(jetbrains.mps.openapi.editor.EditorContext editorContext) {
     boolean applicable = false;
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (selectedCell instanceof EditorCell_Error) {
@@ -55,7 +66,7 @@ public final class CreateFromUsageUtil {
     return applicable;
   }
 
-  public static String getText(EditorContext editorContext) {
+  public static String getText(jetbrains.mps.openapi.editor.EditorContext editorContext) {
     EditorCell cell = editorContext.getSelectedCell();
     if (cell instanceof EditorCell_Label) {
       return ((EditorCell_Label) cell).getText();
@@ -64,14 +75,15 @@ public final class CreateFromUsageUtil {
   }
 
 
-  public static void showCreateNewRootMenu(final EditorContext editorContext, final Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
+  public static void showCreateNewRootMenu(final jetbrains.mps.openapi.editor.EditorContext editorContext, final Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
     final EditorCell selectedCell = editorContext.getSelectedCell();
     int x = selectedCell.getX();
     int y = selectedCell.getY();
     if (selectedCell instanceof EditorCell_Label) {
-      y += ((EditorCell_Label) selectedCell).getHeight();
+      y += selectedCell.getHeight();
     }
-    final DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent(), x, y);
+    Component editorComponent = ((EditorContext) editorContext).getNodeEditorComponent();
+    final DataContext dataContext = DataManager.getInstance().getDataContext(editorComponent, x, y);
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
       public ListPopup compute() {
         ActionGroup group = getQuickCreateGroup(selectedCell.getSNode().getModel(), editorContext.getScope(), conceptsFilter, newRootHandler);
@@ -88,7 +100,7 @@ public final class CreateFromUsageUtil {
       }
     });
 //    popup.showInBestPositionFor(dataContext);
-    popup.show(new RelativePoint(editorContext.getNodeEditorComponent(), new Point(x, y)));
+    popup.show(new RelativePoint(editorComponent, new Point(x, y)));
   }
 
   private static BaseGroup getQuickCreateGroup(final SModel model, final IScope scope, Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
