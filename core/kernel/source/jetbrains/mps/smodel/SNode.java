@@ -667,13 +667,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   /*
-  replace with isDetached
-   */
-  public boolean isDeleted() {
-    return (myReferences.length == 0) && getParent() == null && myModel == null;
-  }
-
-  /*
   calling this means we've held a node between read actions and now it is deleted
   this won't happen if we store only node pointers
   in this case, isDisposed() can be replaced with false
@@ -1108,6 +1101,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isDeleted() {
+    return myModel == null;
+  }
 
   @Deprecated
   /**
