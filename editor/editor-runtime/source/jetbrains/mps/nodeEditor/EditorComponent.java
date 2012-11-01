@@ -841,7 +841,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel()==null || node.getModel().isNotEditable());
+    setReadOnly(node == null || node.getModel() == null || node.getModel().isNotEditable());
   }
 
   protected void editNode(final SNode node) {
@@ -1211,21 +1211,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void assertModelNotDisposed() {
     assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !jetbrains.mps.util.SNodeOperations.isDisposed(myNode) : getNodeDisposedMessage();
+    if (myNode == null) return;
+    SModel model = myNode.getModel();
+    if (model == null) return;
+    assert !model.isDisposed() : getNodeDisposedMessage(model);
   }
 
-  private String getNodeDisposedMessage() {
+  private String getNodeDisposedMessage(SModel model) {
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] result;
-      SModel model = myNode.getModelInternal();
-      if (model != null) {
-        result = model.getDisposedStacktrace();
-      } else {
-        result = null;
-      }
-      StackTraceElement[] modelDisposedTrace = result;
+      StackTraceElement[] modelDisposedTrace = model.getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -2788,7 +2784,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (lastRemove != null) {
-      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.getModel()==null)) {
+      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.getModel() == null)) {
         SModelChildEvent ce = (SModelChildEvent) lastRemove;
         int childIndex = ce.getChildIndex();
         String role = ce.getChildRole();
