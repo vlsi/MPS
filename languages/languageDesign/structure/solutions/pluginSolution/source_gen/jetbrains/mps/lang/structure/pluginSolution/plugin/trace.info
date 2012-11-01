@@ -284,7 +284,7 @@
     <nodeInfo nodeId="2957159279735437134" fileName="ConceptPropertiesHelper.java" startLine="297" startPosition="76" endLine="298" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2957159279735395686" fileName="ConceptPropertiesHelper.java" startLine="301" startPosition="74" endLine="302" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2957159279735407791" fileName="ConceptPropertiesHelper.java" startLine="304" startPosition="29" endLine="305" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2957159279735395701" fileName="ConceptPropertiesHelper.java" startLine="307" startPosition="11" endLine="308" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2957159279735395701" fileName="ConceptPropertiesHelper.java" startLine="305" startPosition="30" endLine="306" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2957159279736653695" fileName="ConceptPropertiesHelper.java" startLine="315" startPosition="13" endLine="316" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2957159279736687618" fileName="ConceptPropertiesHelper.java" startLine="317" startPosition="13" endLine="318" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2957159279736697525" fileName="ConceptPropertiesHelper.java" startLine="319" startPosition="14" endLine="320" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -715,7 +715,6 @@
     <nodeInfo nodeId="4257390899352409598" fileName="ConceptPropertiesHelper.java" startLine="225" startPosition="0" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4257390899352409795" fileName="ConceptPropertiesHelper.java" startLine="259" startPosition="26" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6550587705954007129" fileName="ConceptPropertiesHelper.java" startLine="278" startPosition="43" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2957159279735395691" fileName="ConceptPropertiesHelper.java" startLine="303" startPosition="71" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4257390899352409501" fileName="ConceptPropertiesHelper.java" startLine="324" startPosition="62" endLine="328" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4257390899352409525" fileName="ConceptPropertiesHelper.java" startLine="331" startPosition="63" endLine="335" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4257390899352409569" fileName="ConceptPropertiesHelper.java" startLine="338" startPosition="63" endLine="342" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -727,7 +726,7 @@
     <nodeInfo nodeId="229448211045662100" fileName="ConceptPropertiesHelper.java" startLine="91" startPosition="31" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2957159279735923903" fileName="ConceptPropertiesHelper.java" startLine="126" startPosition="129" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4257390899352409653" fileName="ConceptPropertiesHelper.java" startLine="233" startPosition="88" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2957159279735395690" fileName="ConceptPropertiesHelper.java" startLine="302" startPosition="36" endLine="307" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2957159279735395691" fileName="ConceptPropertiesHelper.java" startLine="303" startPosition="71" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4257390899352409516" fileName="ConceptPropertiesHelper.java" startLine="625" startPosition="45" endLine="630" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4257390899352409516" fileName="ConceptPropertiesHelper.java" startLine="625" startPosition="45" endLine="630" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4257390899352409540" fileName="ConceptPropertiesHelper.java" startLine="715" startPosition="45" endLine="720" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -740,6 +739,7 @@
     <nodeInfo nodeId="4257390899352409613" fileName="ConceptPropertiesHelper.java" startLine="963" startPosition="13" endLine="968" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2928721655729253204" fileName="ConceptPropertiesHelper.java" startLine="59" startPosition="0" endLine="65" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptPropertiesHelper#(Ljetbrains/mps/project/MPSProject;)V" />
     <nodeInfo nodeId="2957159279735474600" fileName="ConceptPropertiesHelper.java" startLine="286" startPosition="58" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="2957159279735395690" fileName="ConceptPropertiesHelper.java" startLine="302" startPosition="36" endLine="308" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6639471181490955902" fileName="ConceptPropertiesHelper.java" startLine="390" startPosition="50" endLine="396" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6639471181490955902" fileName="ConceptPropertiesHelper.java" startLine="390" startPosition="50" endLine="396" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6639471181490955902" fileName="ConceptPropertiesHelper.java" startLine="402" startPosition="9" endLine="408" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -983,7 +983,6 @@
     <scopeInfo nodeId="4257390899352409729" fileName="ConceptPropertiesHelper.java" startLine="247" startPosition="12" endLine="248" endPosition="13" />
     <scopeInfo nodeId="2957159279735479443" fileName="ConceptPropertiesHelper.java" startLine="288" startPosition="78" endLine="289" endPosition="54" />
     <scopeInfo nodeId="2957159279735437133" fileName="ConceptPropertiesHelper.java" startLine="297" startPosition="76" endLine="298" endPosition="51" />
-    <scopeInfo nodeId="2957159279735395692" fileName="ConceptPropertiesHelper.java" startLine="304" startPosition="29" endLine="305" endPosition="30" />
     <scopeInfo nodeId="2957159279736607857" fileName="ConceptPropertiesHelper.java" startLine="315" startPosition="13" endLine="316" endPosition="62" />
     <scopeInfo nodeId="2957159279736677915" fileName="ConceptPropertiesHelper.java" startLine="317" startPosition="13" endLine="318" endPosition="61" />
     <scopeInfo nodeId="2957159279736597474" fileName="ConceptPropertiesHelper.java" startLine="319" startPosition="14" endLine="320" endPosition="18" />
@@ -1011,6 +1010,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4257390899352409795" fileName="ConceptPropertiesHelper.java" startLine="260" startPosition="38" endLine="262" endPosition="145" />
     <scopeInfo nodeId="6550587705954007130" fileName="ConceptPropertiesHelper.java" startLine="279" startPosition="107" endLine="281" endPosition="87" />
+    <scopeInfo nodeId="2957159279735395692" fileName="ConceptPropertiesHelper.java" startLine="304" startPosition="29" endLine="306" endPosition="45" />
     <scopeInfo nodeId="6639471181490955902" fileName="ConceptPropertiesHelper.java" startLine="366" startPosition="56" endLine="368" endPosition="5" />
     <scopeInfo nodeId="6639471181491136417" fileName="ConceptPropertiesHelper.java" startLine="415" startPosition="56" endLine="417" endPosition="5" />
     <scopeInfo nodeId="6639471181491140160" fileName="ConceptPropertiesHelper.java" startLine="464" startPosition="56" endLine="466" endPosition="5" />
@@ -1076,7 +1076,6 @@
     <scopeInfo nodeId="229448211045722096" fileName="ConceptPropertiesHelper.java" startLine="92" startPosition="47" endLine="96" endPosition="0" />
     <scopeInfo nodeId="2957159279735929385" fileName="ConceptPropertiesHelper.java" startLine="127" startPosition="58" endLine="131" endPosition="0" />
     <scopeInfo nodeId="4257390899352409434" fileName="ConceptPropertiesHelper.java" startLine="203" startPosition="52" endLine="207" endPosition="110" />
-    <scopeInfo nodeId="2957159279735395691" fileName="ConceptPropertiesHelper.java" startLine="303" startPosition="71" endLine="307" endPosition="0" />
     <scopeInfo nodeId="4257390899352409501" fileName="ConceptPropertiesHelper.java" startLine="324" startPosition="62" endLine="328" endPosition="6" />
     <scopeInfo nodeId="4257390899352409525" fileName="ConceptPropertiesHelper.java" startLine="331" startPosition="63" endLine="335" endPosition="6" />
     <scopeInfo nodeId="4257390899352409569" fileName="ConceptPropertiesHelper.java" startLine="338" startPosition="63" endLine="342" endPosition="6" />
@@ -1149,6 +1148,7 @@
     <scopeInfo nodeId="6550587705954007118" fileName="ConceptPropertiesHelper.java" startLine="277" startPosition="58" endLine="282" endPosition="7">
       <varInfo nodeId="6550587705954007124" varName="source" />
     </scopeInfo>
+    <scopeInfo nodeId="2957159279735395691" fileName="ConceptPropertiesHelper.java" startLine="303" startPosition="71" endLine="308" endPosition="0" />
     <scopeInfo nodeId="4257390899352409516" fileName="ConceptPropertiesHelper.java" startLine="625" startPosition="45" endLine="630" endPosition="11" />
     <scopeInfo nodeId="4257390899352409540" fileName="ConceptPropertiesHelper.java" startLine="715" startPosition="45" endLine="720" endPosition="11" />
     <scopeInfo nodeId="4257390899352409561" fileName="ConceptPropertiesHelper.java" startLine="805" startPosition="45" endLine="810" endPosition="11" />
@@ -1197,7 +1197,7 @@
     <scopeInfo nodeId="6550587705954007115" fileName="ConceptPropertiesHelper.java" startLine="276" startPosition="0" endLine="283" endPosition="5">
       <varInfo nodeId="6550587705954007116" varName="usage" />
     </scopeInfo>
-    <scopeInfo nodeId="2957159279735395685" fileName="ConceptPropertiesHelper.java" startLine="301" startPosition="74" endLine="308" endPosition="41" />
+    <scopeInfo nodeId="2957159279735395685" fileName="ConceptPropertiesHelper.java" startLine="301" startPosition="74" endLine="308" endPosition="11" />
     <scopeInfo nodeId="4257390899352409501" fileName="ConceptPropertiesHelper.java" startLine="323" startPosition="0" endLine="330" endPosition="0">
       <varInfo nodeId="4257390899352409501" varName="a" />
       <varInfo nodeId="4257390899352409501" varName="b" />
@@ -1660,7 +1660,7 @@
     <unitInfo nodeId="4257390899355716447" fileName="ConceptPropertiesHelper.java" startLine="82" startPosition="29" endLine="86" endPosition="9" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$2" />
     <unitInfo nodeId="229448211045722094" fileName="ConceptPropertiesHelper.java" startLine="92" startPosition="35" endLine="96" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$3" />
     <unitInfo nodeId="2957159279735929385" fileName="ConceptPropertiesHelper.java" startLine="127" startPosition="28" endLine="131" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$4" />
-    <unitInfo nodeId="2957159279735395691" fileName="ConceptPropertiesHelper.java" startLine="303" startPosition="59" endLine="307" endPosition="9" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$8" />
+    <unitInfo nodeId="2957159279735395691" fileName="ConceptPropertiesHelper.java" startLine="303" startPosition="59" endLine="308" endPosition="9" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$8" />
     <unitInfo nodeId="2957159279735474600" fileName="ConceptPropertiesHelper.java" startLine="286" startPosition="28" endLine="292" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$6" />
     <unitInfo nodeId="2957159279735395678" fileName="ConceptPropertiesHelper.java" startLine="300" startPosition="73" endLine="310" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$7" />
     <unitInfo nodeId="3758155524778038316" fileName="ConceptPropertiesHelper.java" startLine="163" startPosition="8" endLine="180" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesHelper$5" />

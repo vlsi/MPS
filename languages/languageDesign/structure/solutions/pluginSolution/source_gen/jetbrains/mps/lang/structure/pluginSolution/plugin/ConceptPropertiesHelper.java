@@ -303,9 +303,9 @@ public class ConceptPropertiesHelper {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             refactor.invoke();
+            makeAllAndContinue(sourceModels);
           }
         });
-        makeAllAndContinue(sourceModels);
       }
     }, searchResults, false, getTitle());
   }
