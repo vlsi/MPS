@@ -45,6 +45,7 @@
     <orderEntry type="library" scope="TEST" name="xmlunit" level="project" />
     <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="migration" />
+    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>
 
