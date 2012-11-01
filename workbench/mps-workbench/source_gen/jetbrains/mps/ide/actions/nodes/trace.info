@@ -61,7 +61,7 @@
     <nodeInfo nodeId="4131125964516851083" fileName="GoToRulesHelper.java" startLine="111" startPosition="88" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995121945" fileName="GoToRulesHelper.java" startLine="115" startPosition="108" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995121952" fileName="GoToRulesHelper.java" startLine="118" startPosition="5" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3256144589678341989" fileName="GoToRulesHelper.java" startLine="136" startPosition="87" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3256144589678341989" fileName="GoToRulesHelper.java" startLine="136" startPosition="88" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995122063" fileName="GoToRulesHelper.java" startLine="154" startPosition="37" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995122075" fileName="GoToRulesHelper.java" startLine="158" startPosition="41" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6107809127287259423" fileName="GoToRulesHelper.java" startLine="169" startPosition="33" endLine="172" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -76,7 +76,7 @@
     <nodeInfo nodeId="3256144589678342832" fileName="GoToRulesHelper.java" startLine="92" startPosition="119" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4832363360995121975" fileName="GoToRulesHelper.java" startLine="128" startPosition="10" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995121663" fileName="GoToRulesHelper.java" startLine="42" startPosition="49" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3256144589678341989" fileName="GoToRulesHelper.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_l17hf5_a0c0b#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="3256144589678341989" fileName="GoToRulesHelper.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_l17hf5_a0c0b#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Ljetbrains/mps/smodel/SModel;" />
     <nodeInfo nodeId="4832363360995121834" fileName="GoToRulesHelper.java" startLine="90" startPosition="0" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4832363360995121877" fileName="GoToRulesHelper.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDeclaringLanguage#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/Language;" />
     <nodeInfo nodeId="4832363360995121971" fileName="GoToRulesHelper.java" startLine="125" startPosition="67" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -129,7 +129,7 @@
     <scopeInfo nodeId="3256144589678342861" fileName="GoToRulesHelper.java" startLine="93" startPosition="74" endLine="97" endPosition="0">
       <varInfo nodeId="3256144589678342861" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3256144589678341989" fileName="GoToRulesHelper.java" startLine="136" startPosition="87" endLine="140" endPosition="16" />
+    <scopeInfo nodeId="3256144589678341989" fileName="GoToRulesHelper.java" startLine="136" startPosition="88" endLine="140" endPosition="16" />
     <scopeInfo nodeId="4832363360995121669" fileName="GoToRulesHelper.java" startLine="43" startPosition="28" endLine="48" endPosition="13">
       <varInfo nodeId="1071422968910407172" varName="nodeToSelect" />
     </scopeInfo>

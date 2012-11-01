@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -133,7 +133,7 @@ public class GoToRulesHelper {
     }
   }
 
-  private static SModel check_l17hf5_a0c0b(DefaultSModelDescriptor checkedDotOperand) {
+  private static SModel check_l17hf5_a0c0b(EditableSModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }
