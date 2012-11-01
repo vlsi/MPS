@@ -12,13 +12,11 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -32,43 +30,21 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
   public typeof_IMethodCall_InferenceRule() {
   }
 
-  public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final SNode mdecl = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+  public void applyRule(final SNode mcall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode mdecl = SLinkOperations.getTarget(mcall, "baseMethodDeclaration", false);
     if (mdecl == null) {
       return;
     }
 
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     // check the inference context 
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, methodCall, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{}))) {
-      List<SNode> inferrableTypeVars = ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(mdecl, "returnType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.getParent(it) == mdecl;
-        }
-      }).toListSequence();
-      List<SNode> boundTypeVars = ListSequence.fromList(SLinkOperations.getTargets(mdecl, "parameter", true)).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode p) {
-          return SNodeOperations.getDescendants(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.getParent(it) == mdecl;
-        }
-      }).toListSequence();
-      for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mcall, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{}))) {
+      for (SNode tvd : ListSequence.fromList(BaseMethodDeclaration_Behavior.call_getInferrableTypeVars_6848250892784543828(mdecl))) {
         // assume all unbound type vars outside an inference context are Object 
-        MapSequence.fromMap(subs).put(tvd, new typeof_IMethodCall_InferenceRule.QuotationClass_2u2uyg_a1a0b0c0f0a().createNode(typeCheckingContext));
+        MapSequence.fromMap(subs).put(tvd, new typeof_IMethodCall_InferenceRule.QuotationClass_2u2uyg_a1a0b0a0f0a().createNode(typeCheckingContext));
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(mcall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true))) {
         if (!(MapSequence.fromMap(subs).containsKey(tvd))) {
           final SNode T_typevar_4695112407844173847 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -78,7 +54,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
     } else {
       {
         Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).iterator();
-        Iterator<SNode> targ_it = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
+        Iterator<SNode> targ_it = ListSequence.fromList(SLinkOperations.getTargets(mcall, "typeArgument", true)).iterator();
         SNode tvd_var;
         SNode targ_var;
         while (tvd_it.hasNext() && targ_it.hasNext()) {
@@ -92,7 +68,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
       }
     }
 
-    List<SNode> argl = SLinkOperations.getTargets(methodCall, "actualArgument", true);
+    List<SNode> argl = SLinkOperations.getTargets(mcall, "actualArgument", true);
     List<SNode> typel = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), mdecl, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{ListSequence.fromList(argl).count()});
     for (SNode type : ListSequence.fromList(typel)) {
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
@@ -106,7 +82,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
       retType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(retType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
     }
     {
-      SNode _nodeToCheck_1029348928467 = methodCall;
+      SNode _nodeToCheck_1029348928467 = mcall;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4695112407843789343", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) retType, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522945", true), false, true, _info_12389875345);
     }
@@ -126,7 +102,7 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
             typeCheckingContext.whenConcrete(A, new Runnable() {
               public void run() {
                 {
-                  SNode _nodeToCheck_1029348928467 = methodCall;
+                  SNode _nodeToCheck_1029348928467 = mcall;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951293505964", 0, null);
                   typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                 }
@@ -161,8 +137,8 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
     return false;
   }
 
-  public static class QuotationClass_2u2uyg_a1a0b0c0f0a {
-    public QuotationClass_2u2uyg_a1a0b0c0f0a() {
+  public static class QuotationClass_2u2uyg_a1a0b0a0f0a {
+    public QuotationClass_2u2uyg_a1a0b0a0f0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

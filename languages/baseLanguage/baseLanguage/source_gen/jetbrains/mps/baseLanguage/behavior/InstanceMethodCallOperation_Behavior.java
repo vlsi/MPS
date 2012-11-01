@@ -92,6 +92,12 @@ public class InstanceMethodCallOperation_Behavior {
     ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
   }
 
+  public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    SNode de = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
+    SNode methodAnc = SNodeOperations.getAncestor(de, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == de || ((methodAnc != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodAnc, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+  }
+
   private static boolean eq_xykbjj_a0a0a0a0a0a0a4(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

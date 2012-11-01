@@ -44,7 +44,7 @@ public class InstanceMethodCallOperation_BehaviorDescriptor extends BaseConcept_
   }
 
   public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
+    return InstanceMethodCallOperation_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
   }
 
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
