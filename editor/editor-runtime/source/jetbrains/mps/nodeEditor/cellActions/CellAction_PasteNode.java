@@ -83,14 +83,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        SModel oldModelProperties = pasteNodeData.getModelProperties();
-        final Runnable addImportsRunnable;
-        if (oldModelProperties == null || !model.getLongName().equals(oldModelProperties.getLongName())) {  // check if copying to other model
-          addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), model, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getOperationContext());
-        } else {
-          addImportsRunnable = null;
-        }
-
+        final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, model, context.getOperationContext());
         ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
             if (addImportsRunnable != null) {

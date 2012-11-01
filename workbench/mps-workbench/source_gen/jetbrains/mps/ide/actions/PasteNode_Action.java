@@ -101,7 +101,7 @@ public class PasteNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
-      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
       final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
       if (pasteNodes == null || pasteNodes.size() == 0) {
