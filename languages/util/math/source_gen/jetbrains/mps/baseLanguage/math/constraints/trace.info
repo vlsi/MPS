@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1236430656078" modelId="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)">
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="21" startPosition="85" endLine="22" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="24" startPosition="49" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -12,40 +12,40 @@
     <nodeInfo nodeId="1237825752863" fileName="MathSymbolIndexReference_Constraints.java" startLine="45" startPosition="107" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="50" startPosition="61" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="55" startPosition="7" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathSymbolIndexReference_Constraints#()V" />
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="31" startPosition="89" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="40" startPosition="49" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathSymbolIndexReference_Constraints#()V" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="39" startPosition="56" endLine="53" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="36" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="37" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
     <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="30" startPosition="75" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="27" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <nodeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="28" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="24" startPosition="49" endLine="25" endPosition="80" />
     <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
     <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="50" startPosition="61" endLine="51" endPosition="58" />
-    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1237825752100" fileName="MathSymbolIndexReference_Constraints.java" startLine="42" startPosition="142" endLine="46" endPosition="23">
       <varInfo nodeId="1237828450003" varName="ms" />
       <varInfo nodeId="1237825752847" varName="msi" />
     </scopeInfo>
-    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="31" startPosition="89" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="40" startPosition="49" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1236430656078" varName="_context" />
       <varInfo nodeId="1236430656078" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="39" startPosition="56" endLine="53" endPosition="10" />
-    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="36" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="37" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="29" startPosition="83" endLine="56" endPosition="22">
       <varInfo nodeId="1236430656078" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="27" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="28" startPosition="0" endLine="58" endPosition="0" />
     <unitInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="40" startPosition="19" endLine="53" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$2" />
     <unitInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="31" startPosition="35" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$1" />
     <unitInfo nodeId="1236430656078" fileName="MathSymbolIndexReference_Constraints.java" startLine="21" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints" />
   </root>
   <root nodeId="6219660258344759919" modelId="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)">
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="24" startPosition="92" endLine="25" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_5upoaw_a0a1a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_5upoaw_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="27" startPosition="56" endLine="28" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="32" startPosition="83" endLine="33" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="36" startPosition="44" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -67,12 +67,12 @@
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="82" startPosition="61" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="87" startPosition="7" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="59" startPosition="47" endLine="61" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixInitializerIndexReference_Constraints#()V" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixInitializerIndexReference_Constraints#()V" />
     <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="54" startPosition="58" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="65" startPosition="60" endLine="68" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="69" startPosition="21" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="34" startPosition="83" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="80" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
     <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="52" startPosition="57" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="63" startPosition="59" endLine="69" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="62" startPosition="24" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -80,11 +80,11 @@
     <nodeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="50" startPosition="52" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6219660258345571151" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="48" startPosition="31" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6219660258344774054" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="47" startPosition="57" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="43" startPosition="49" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="44" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="42" startPosition="56" endLine="85" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="39" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="40" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
     <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="33" startPosition="75" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="30" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <nodeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="31" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="27" startPosition="56" endLine="28" endPosition="87" />
     <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="36" startPosition="44" endLine="37" endPosition="20" />
     <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="55" startPosition="62" endLine="56" endPosition="195" />
@@ -94,15 +94,15 @@
     <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="82" startPosition="61" endLine="83" endPosition="58" />
     <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="59" startPosition="47" endLine="61" endPosition="134" />
     <scopeInfo nodeId="6219660258345571155" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="59" startPosition="47" endLine="61" endPosition="134" />
-    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="6219660258345571153" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="53" startPosition="19" endLine="57" endPosition="21">
       <varInfo nodeId="6219660258345571153" varName="matchingNode_5upoaw_a0a2a0a" />
     </scopeInfo>
     <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="64" startPosition="21" endLine="68" endPosition="23">
       <varInfo nodeId="6219660258345571158" varName="matchingNode_5upoaw_b0a2a0a" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="34" startPosition="83" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="6219660258345571158" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="62" startPosition="26" endLine="72" endPosition="21">
       <varInfo nodeId="6219660258345571158" varName="matches_5upoaw_b0a2a0a" />
     </scopeInfo>
@@ -117,22 +117,22 @@
       <varInfo nodeId="6219660258344773980" varName="indices" />
       <varInfo nodeId="6219660258344773970" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="43" startPosition="49" endLine="80" endPosition="0">
+    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="44" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="6219660258344759919" varName="_context" />
       <varInfo nodeId="6219660258344759919" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="42" startPosition="56" endLine="85" endPosition="10" />
-    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="39" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="40" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="32" startPosition="83" endLine="88" endPosition="22">
       <varInfo nodeId="6219660258344759919" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="30" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="31" startPosition="0" endLine="90" endPosition="0" />
     <unitInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="43" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$2" />
     <unitInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="34" startPosition="32" endLine="87" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$1" />
     <unitInfo nodeId="6219660258344759919" fileName="MatrixInitializerIndexReference_Constraints.java" startLine="24" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints" />
   </root>
   <root nodeId="964810815943407926" modelId="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)">
-    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="15" startPosition="80" endLine="16" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="18" startPosition="44" endLine="19" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="23" startPosition="43" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="28" startPosition="200" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -143,13 +143,13 @@
     <nodeInfo nodeId="964810815943408825" fileName="MatrixIndexWildcard_Constraints.java" startLine="39" startPosition="129" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="964810815943408830" fileName="MatrixIndexWildcard_Constraints.java" startLine="41" startPosition="12" endLine="42" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="964810815943408843" fileName="MatrixIndexWildcard_Constraints.java" startLine="42" startPosition="127" endLine="43" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixIndexWildcard_Constraints#()V" />
+    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixIndexWildcard_Constraints#()V" />
     <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="964810815943408828" fileName="MatrixIndexWildcard_Constraints.java" startLine="41" startPosition="10" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
     <nodeInfo nodeId="964810815943408815" fileName="MatrixIndexWildcard_Constraints.java" startLine="38" startPosition="148" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="37" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="18" startPosition="44" endLine="19" endPosition="75" />
     <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="23" startPosition="43" endLine="24" endPosition="16" />
     <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="67" />
@@ -157,20 +157,20 @@
     <scopeInfo nodeId="964810815943408829" fileName="MatrixIndexWildcard_Constraints.java" startLine="41" startPosition="12" endLine="43" endPosition="191">
       <varInfo nodeId="964810815943408831" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="964810815943407928" fileName="MatrixIndexWildcard_Constraints.java" startLine="38" startPosition="148" endLine="44" endPosition="5" />
     <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="28" startPosition="200" endLine="35" endPosition="18">
       <varInfo nodeId="964810815943407926" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="964810815943407926" varName="childConcept" />
       <varInfo nodeId="964810815943407926" varName="link" />
       <varInfo nodeId="964810815943407926" varName="node" />
       <varInfo nodeId="964810815943407926" varName="operationContext" />
       <varInfo nodeId="964810815943407926" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="964810815943407926" fileName="MatrixIndexWildcard_Constraints.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="964810815943407926" varName="checkingNodeContext" />
       <varInfo nodeId="964810815943407926" varName="childConcept" />
       <varInfo nodeId="964810815943407926" varName="link" />
@@ -182,9 +182,9 @@
   </root>
   <root nodeId="964810815943559912" modelId="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)">
     <nodeInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="8" startPosition="54" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="7" startPosition="90" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixElementAccessExpression_Constraints#()V" />
+    <nodeInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixElementAccessExpression_Constraints#()V" />
     <scopeInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="8" startPosition="54" endLine="9" endPosition="85" />
-    <scopeInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="7" startPosition="90" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
     <unitInfo nodeId="964810815943559912" fileName="MatrixElementAccessExpression_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixElementAccessExpression_Constraints" />
   </root>
 </debugInfo>

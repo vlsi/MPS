@@ -8,13 +8,13 @@
     <nodeInfo nodeId="2722286076674321295" fileName="NodeFileStatusMappingExt.java" startLine="27" startPosition="56" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674321303" fileName="NodeFileStatusMappingExt.java" startLine="28" startPosition="57" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2722286076674321632" fileName="NodeFileStatusMappingExt.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2722286076674321025" fileName="NodeFileStatusMappingExt.java" startLine="16" startPosition="69" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFileStatusMappingExt#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
+    <nodeInfo nodeId="2722286076674321025" fileName="NodeFileStatusMappingExt.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFileStatusMappingExt#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
     <nodeInfo nodeId="2722286076674321293" fileName="NodeFileStatusMappingExt.java" startLine="26" startPosition="50" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2722286076674321285" fileName="NodeFileStatusMappingExt.java" startLine="24" startPosition="46" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2722286076674321616" fileName="NodeFileStatusMappingExt.java" startLine="20" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statusChanged#(Lcom/intellij/openapi/vcs/FileStatusManager;Ljetbrains/mps/workbench/nodesFs/MPSNodesVirtualFileSystem;Ljetbrains/mps/smodel/SNodePointer;)V" />
+    <nodeInfo nodeId="2722286076674321616" fileName="NodeFileStatusMappingExt.java" startLine="21" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statusChanged#(Lcom/intellij/openapi/vcs/FileStatusManager;Ljetbrains/mps/workbench/nodesFs/MPSNodesVirtualFileSystem;Ljetbrains/mps/smodel/SNodePointer;)V" />
     <scopeInfo nodeId="2722286076674321028" fileName="NodeFileStatusMappingExt.java" startLine="17" startPosition="88" endLine="18" endPosition="29" />
     <scopeInfo nodeId="2722286076674321294" fileName="NodeFileStatusMappingExt.java" startLine="27" startPosition="56" endLine="29" endPosition="14" />
-    <scopeInfo nodeId="2722286076674321025" fileName="NodeFileStatusMappingExt.java" startLine="16" startPosition="69" endLine="19" endPosition="3">
+    <scopeInfo nodeId="2722286076674321025" fileName="NodeFileStatusMappingExt.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="2722286076674321040" varName="project" />
       <varInfo nodeId="2722286076674321055" varName="registry" />
     </scopeInfo>
@@ -27,7 +27,7 @@
     <scopeInfo nodeId="2722286076674321625" fileName="NodeFileStatusMappingExt.java" startLine="22" startPosition="113" endLine="32" endPosition="0">
       <varInfo nodeId="2722286076674321275" varName="currentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674321616" fileName="NodeFileStatusMappingExt.java" startLine="20" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="2722286076674321616" fileName="NodeFileStatusMappingExt.java" startLine="21" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="2722286076674321619" varName="fsm" />
       <varInfo nodeId="2722286076674321623" varName="nodePointer" />
       <varInfo nodeId="2722286076674321621" varName="nvfs" />
@@ -35,7 +35,7 @@
     <unitInfo nodeId="2722286076674321023" fileName="NodeFileStatusMappingExt.java" startLine="16" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" />
   </root>
   <root nodeId="5332932484372864216" modelId="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)">
-    <nodeInfo nodeId="5332932484372873505" fileName="NodeTabColorProvider.java" startLine="19" startPosition="63" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusMapping" />
+    <nodeInfo nodeId="5332932484372873505" fileName="NodeTabColorProvider.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusMapping" />
     <nodeInfo nodeId="5332932484372873510" fileName="NodeTabColorProvider.java" startLine="22" startPosition="71" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7963818663057826246" fileName="NodeTabColorProvider.java" startLine="29" startPosition="49" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5332932484372874207" fileName="NodeTabColorProvider.java" startLine="38" startPosition="43" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -47,18 +47,18 @@
     <nodeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="61" startPosition="36" endLine="62" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372874240" fileName="NodeTabColorProvider.java" startLine="43" startPosition="10" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5332932484372864218" fileName="NodeTabColorProvider.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTabColorProvider#(Ljetbrains/mps/vcs/changesmanager/NodeFileStatusMapping;)V" />
+    <nodeInfo nodeId="5332932484372864218" fileName="NodeTabColorProvider.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTabColorProvider#(Ljetbrains/mps/vcs/changesmanager/NodeFileStatusMapping;)V" />
+    <nodeInfo nodeId="5332932484372874203" fileName="NodeTabColorProvider.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/FileStatus;)Z" />
     <nodeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="53" startPosition="74" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="60" startPosition="72" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7963818663057826256" fileName="NodeTabColorProvider.java" startLine="30" startPosition="57" endLine="34" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332932484372874203" fileName="NodeTabColorProvider.java" startLine="37" startPosition="76" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/FileStatus;)Z" />
-    <nodeInfo nodeId="5332932484372871060" fileName="NodeTabColorProvider.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeColor#(Ljetbrains/mps/smodel/SNode;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6tqz68_a0a1a0#(Lcom/intellij/openapi/vcs/FileStatus;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6tqz68_a0a1#(Lcom/intellij/openapi/vcs/FileStatus;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="5332932484372874181" fileName="NodeTabColorProvider.java" startLine="28" startPosition="124" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNodePointer;)Lcom/intellij/openapi/vcs/FileStatus;" />
+    <nodeInfo nodeId="5332932484372871060" fileName="NodeTabColorProvider.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeColor#(Ljetbrains/mps/smodel/SNode;)Ljava/awt/Color;" />
+    <nodeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6tqz68_a0a1a0#(Lcom/intellij/openapi/vcs/FileStatus;)Ljava/awt/Color;" />
+    <nodeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6tqz68_a0a1#(Lcom/intellij/openapi/vcs/FileStatus;)Ljava/awt/Color;" />
+    <nodeInfo nodeId="5332932484372874181" fileName="NodeTabColorProvider.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNodePointer;)Lcom/intellij/openapi/vcs/FileStatus;" />
     <nodeInfo nodeId="5332932484372874173" fileName="NodeTabColorProvider.java" startLine="27" startPosition="68" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5332932484372874193" fileName="NodeTabColorProvider.java" startLine="36" startPosition="24" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5332932484372871053" fileName="NodeTabColorProvider.java" startLine="25" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAspectColor#(Ljava/lang/Iterable;)Ljava/awt/Color;" />
+    <nodeInfo nodeId="5332932484372871053" fileName="NodeTabColorProvider.java" startLine="26" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAspectColor#(Ljava/lang/Iterable;)Ljava/awt/Color;" />
     <scopeInfo nodeId="5332932484372864221" fileName="NodeTabColorProvider.java" startLine="22" startPosition="71" endLine="23" endPosition="34" />
     <scopeInfo nodeId="5332932484372874204" fileName="NodeTabColorProvider.java" startLine="38" startPosition="43" endLine="39" endPosition="60" />
     <scopeInfo nodeId="5332932484372874194" fileName="NodeTabColorProvider.java" startLine="41" startPosition="9" endLine="42" endPosition="74" />
@@ -66,33 +66,33 @@
     <scopeInfo nodeId="5332932484372871065" fileName="NodeTabColorProvider.java" startLine="49" startPosition="50" endLine="50" endPosition="66" />
     <scopeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="54" startPosition="36" endLine="55" endPosition="42" />
     <scopeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="61" startPosition="36" endLine="62" endPosition="42" />
-    <scopeInfo nodeId="5332932484372864218" fileName="NodeTabColorProvider.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+    <scopeInfo nodeId="5332932484372864218" fileName="NodeTabColorProvider.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5332932484372873502" varName="mapping" />
     </scopeInfo>
-    <scopeInfo nodeId="5332932484372874203" fileName="NodeTabColorProvider.java" startLine="37" startPosition="76" endLine="41" endPosition="0">
+    <scopeInfo nodeId="5332932484372874203" fileName="NodeTabColorProvider.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5332932484372874203" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332932484372871060" fileName="NodeTabColorProvider.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="5332932484372871063" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="53" startPosition="74" endLine="57" endPosition="16" />
     <scopeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="60" startPosition="72" endLine="64" endPosition="16" />
     <scopeInfo nodeId="5332932484372874182" fileName="NodeTabColorProvider.java" startLine="29" startPosition="49" endLine="34" endPosition="10">
       <varInfo nodeId="7963818663057826247" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="5332932484372871060" fileName="NodeTabColorProvider.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="5332932484372871063" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="52" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="5332932484372874236" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="5332932484372873654" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5332932484372874181" fileName="NodeTabColorProvider.java" startLine="28" startPosition="124" endLine="36" endPosition="0">
+    <scopeInfo nodeId="5332932484372874181" fileName="NodeTabColorProvider.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="5332932484372874181" varName="np" />
     </scopeInfo>
     <scopeInfo nodeId="5332932484372871059" fileName="NodeTabColorProvider.java" startLine="27" startPosition="68" endLine="45" endPosition="5">
       <varInfo nodeId="5332932484372874174" varName="statuses" />
     </scopeInfo>
-    <scopeInfo nodeId="5332932484372871053" fileName="NodeTabColorProvider.java" startLine="25" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="5332932484372871053" fileName="NodeTabColorProvider.java" startLine="26" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5332932484372871056" varName="nodePointers" />
     </scopeInfo>
     <unitInfo nodeId="5332932484372874203" fileName="NodeTabColorProvider.java" startLine="37" startPosition="48" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider$2" />

@@ -12,17 +12,17 @@
     <nodeInfo nodeId="2798275735916376337" fileName="AddCustomLocationJavaJar_Intention.java" startLine="42" startPosition="90" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2798275735916376386" fileName="AddCustomLocationJavaJar_Intention.java" startLine="46" startPosition="76" endLine="47" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="50" startPosition="37" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="11" startPosition="92" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddCustomLocationJavaJar_Intention#()V" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddCustomLocationJavaJar_Intention#()V" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="35" startPosition="84" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
     <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="63" />
     <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" />
@@ -33,26 +33,26 @@
     <scopeInfo nodeId="8706695667516275794" fileName="AddCustomLocationJavaJar_Intention.java" startLine="42" startPosition="90" endLine="43" endPosition="77" />
     <scopeInfo nodeId="8706695667516275791" fileName="AddCustomLocationJavaJar_Intention.java" startLine="46" startPosition="76" endLine="47" endPosition="120" />
     <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="50" startPosition="37" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="11" startPosition="92" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="8706695667516275787" varName="editorContext" />
       <varInfo nodeId="8706695667516275787" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="8706695667516275787" varName="editorContext" />
+      <varInfo nodeId="8706695667516275787" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="8706695667516275787" varName="editorContext" />
+      <varInfo nodeId="8706695667516275787" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="35" startPosition="84" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="8706695667516275787" varName="editorContext" />
-      <varInfo nodeId="8706695667516275787" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="8706695667516275787" varName="editorContext" />
-      <varInfo nodeId="8706695667516275787" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="8706695667516275787" varName="editorContext" />
       <varInfo nodeId="8706695667516275787" varName="node" />
     </scopeInfo>

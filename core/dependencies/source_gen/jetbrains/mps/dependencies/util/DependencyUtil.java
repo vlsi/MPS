@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
-
 /**
  * I wrote this code in order to analize dependency classpath of charisma-testing modules.
  */

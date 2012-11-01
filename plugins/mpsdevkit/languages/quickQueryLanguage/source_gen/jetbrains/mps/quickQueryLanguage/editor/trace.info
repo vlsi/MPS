@@ -112,12 +112,12 @@
     <nodeInfo nodeId="1218795555084" fileName="ModelQuery_Editor.java" startLine="95" startPosition="135" endLine="97" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218795912744" fileName="ModelQuery_Editor.java" startLine="103" startPosition="132" endLine="105" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="132" startPosition="26" endLine="134" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="114" startPosition="26" endLine="117" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="145" startPosition="69" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_1kyme_a1b0#()V" />
-    <nodeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="23" startPosition="58" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_1kyme_a1b0#()V" />
+    <nodeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218795577186" fileName="ModelQuery_Editor.java" startLine="64" startPosition="48" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="165" startPosition="44" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="39" startPosition="48" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="51" startPosition="48" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -130,18 +130,18 @@
     <nodeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="119" startPosition="59" endLine="125" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="136" startPosition="59" endLine="142" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="172" startPosition="61" endLine="178" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218795504996" fileName="ModelQuery_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1kyme_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795555084" fileName="ModelQuery_Editor.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1kyme_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795912744" fileName="ModelQuery_Editor.java" startLine="102" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1kyme_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="163" startPosition="28" endLine="170" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218795504996" fileName="ModelQuery_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1kyme_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795555084" fileName="ModelQuery_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1kyme_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795912744" fileName="ModelQuery_Editor.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1kyme_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218793628630" fileName="ModelQuery_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795577186" fileName="ModelQuery_Editor.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795918684" fileName="ModelQuery_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="127" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_1kyme_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="109" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_1kyme_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="157" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_1kyme_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218793628630" fileName="ModelQuery_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795577186" fileName="ModelQuery_Editor.java" startLine="62" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795918684" fileName="ModelQuery_Editor.java" startLine="74" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1kyme_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="128" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_1kyme_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="110" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_1kyme_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="158" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_1kyme_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="116" startPosition="58" endLine="116" endPosition="58" />
     <scopeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="133" startPosition="58" endLine="133" endPosition="58" />
     <scopeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="62" />
@@ -168,6 +168,10 @@
     <scopeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="166" startPosition="7" endLine="168" endPosition="70">
       <varInfo nodeId="1218795571418" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1218793625941" varName="editorContext" />
+      <varInfo nodeId="1218793625941" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="40" startPosition="5" endLine="43" endPosition="51">
       <varInfo nodeId="1218795500272" varName="style" />
     </scopeInfo>
@@ -186,21 +190,17 @@
       <varInfo nodeId="1218795923674" varName="manager" />
       <varInfo nodeId="1218795923674" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="145" startPosition="69" endLine="148" endPosition="5" />
+    <scopeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="146" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="1218795568072" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="154" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="1218795568072" varName="editorContext" />
+      <varInfo nodeId="1218795568072" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="173" startPosition="37" endLine="176" endPosition="107">
       <varInfo nodeId="1218795571418" varName="manager" />
       <varInfo nodeId="1218795571418" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="23" startPosition="58" endLine="27" endPosition="0">
-      <varInfo nodeId="1218793625941" varName="editorContext" />
-      <varInfo nodeId="1218793625941" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
-      <varInfo nodeId="1218795568072" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="1218795568072" varName="editorContext" />
-      <varInfo nodeId="1218795568072" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1218795577186" fileName="ModelQuery_Editor.java" startLine="63" startPosition="99" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1218795504996" fileName="ModelQuery_Editor.java" startLine="86" startPosition="88" endLine="91" endPosition="22">
@@ -219,20 +219,20 @@
     <scopeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="38" startPosition="99" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="50" startPosition="99" endLine="56" endPosition="5" />
     <scopeInfo nodeId="1218795918684" fileName="ModelQuery_Editor.java" startLine="75" startPosition="97" endLine="81" endPosition="5" />
-    <scopeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="163" startPosition="28" endLine="170" endPosition="75" />
-    <scopeInfo nodeId="1218795504996" fileName="ModelQuery_Editor.java" startLine="85" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1218795504996" fileName="ModelQuery_Editor.java" startLine="86" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1218795504996" varName="editorContext" />
       <varInfo nodeId="1218795504996" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795555084" fileName="ModelQuery_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="1218795555084" fileName="ModelQuery_Editor.java" startLine="94" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="1218795555084" varName="editorContext" />
       <varInfo nodeId="1218795555084" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795912744" fileName="ModelQuery_Editor.java" startLine="101" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="1218795912744" fileName="ModelQuery_Editor.java" startLine="102" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="1218795912744" varName="editorContext" />
       <varInfo nodeId="1218795912744" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218793628630" fileName="ModelQuery_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="163" startPosition="28" endLine="170" endPosition="75" />
+    <scopeInfo nodeId="1218793628630" fileName="ModelQuery_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1218793628630" varName="editorContext" />
       <varInfo nodeId="1218793628630" varName="node" />
     </scopeInfo>
@@ -248,19 +248,19 @@
     <scopeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="49" startPosition="89" endLine="59" endPosition="22">
       <varInfo nodeId="1218795552315" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1218795500272" fileName="ModelQuery_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1218795500272" varName="editorContext" />
       <varInfo nodeId="1218795500272" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795577186" fileName="ModelQuery_Editor.java" startLine="61" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1218795577186" fileName="ModelQuery_Editor.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1218795577186" varName="editorContext" />
       <varInfo nodeId="1218795577186" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795918684" fileName="ModelQuery_Editor.java" startLine="73" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1218795918684" fileName="ModelQuery_Editor.java" startLine="74" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1218795918684" varName="editorContext" />
       <varInfo nodeId="1218795918684" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="48" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1218795552315" fileName="ModelQuery_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1218795552315" varName="editorContext" />
       <varInfo nodeId="1218795552315" varName="node" />
     </scopeInfo>
@@ -276,11 +276,11 @@
       <varInfo nodeId="1218795568071" varName="editorCell" />
       <varInfo nodeId="1218795568071" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="127" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="128" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1218795923674" varName="editorContext" />
       <varInfo nodeId="1218795923674" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="109" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="110" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="1218795568071" varName="editorContext" />
       <varInfo nodeId="1218795568071" varName="node" />
     </scopeInfo>
@@ -290,7 +290,7 @@
       <varInfo nodeId="1218795571418" varName="editorCell" />
       <varInfo nodeId="1218795571418" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="157" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="1218795571418" fileName="ModelQuery_Editor.java" startLine="158" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="1218795571418" varName="editorContext" />
       <varInfo nodeId="1218795571418" varName="node" />
     </scopeInfo>
@@ -458,12 +458,12 @@
     <nodeInfo nodeId="1219745852524" fileName="ReplaceModelQuery_Editor.java" startLine="150" startPosition="129" endLine="152" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="179" startPosition="26" endLine="181" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="196" startPosition="26" endLine="198" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1219745771774" fileName="ReplaceModelQuery_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="161" startPosition="26" endLine="164" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="209" startPosition="69" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kwr3w_a1b0#()V" />
-    <nodeInfo nodeId="1219745771774" fileName="ReplaceModelQuery_Editor.java" startLine="23" startPosition="65" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="210" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kwr3w_a1b0#()V" />
+    <nodeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="214" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="218" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1219748754002" fileName="ReplaceModelQuery_Editor.java" startLine="64" startPosition="48" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="213" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="229" startPosition="44" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219745786558" fileName="ReplaceModelQuery_Editor.java" startLine="39" startPosition="48" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219745786562" fileName="ReplaceModelQuery_Editor.java" startLine="51" startPosition="48" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -483,23 +483,23 @@
     <nodeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="183" startPosition="59" endLine="189" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="200" startPosition="59" endLine="206" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="236" startPosition="61" endLine="242" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1219745786560" fileName="ReplaceModelQuery_Editor.java" startLine="125" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786564" fileName="ReplaceModelQuery_Editor.java" startLine="133" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786573" fileName="ReplaceModelQuery_Editor.java" startLine="141" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745852524" fileName="ReplaceModelQuery_Editor.java" startLine="149" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="227" startPosition="28" endLine="234" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1219745786560" fileName="ReplaceModelQuery_Editor.java" startLine="124" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786564" fileName="ReplaceModelQuery_Editor.java" startLine="132" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786573" fileName="ReplaceModelQuery_Editor.java" startLine="140" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745852524" fileName="ReplaceModelQuery_Editor.java" startLine="148" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kwr3w_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786557" fileName="ReplaceModelQuery_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786558" fileName="ReplaceModelQuery_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786574" fileName="ReplaceModelQuery_Editor.java" startLine="87" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219746088754" fileName="ReplaceModelQuery_Editor.java" startLine="112" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786562" fileName="ReplaceModelQuery_Editor.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219748754002" fileName="ReplaceModelQuery_Editor.java" startLine="61" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786570" fileName="ReplaceModelQuery_Editor.java" startLine="74" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745830394" fileName="ReplaceModelQuery_Editor.java" startLine="99" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="174" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_kwr3w_a1a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="191" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_kwr3w_a1b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="156" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_kwr3w_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="221" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_kwr3w_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786557" fileName="ReplaceModelQuery_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786558" fileName="ReplaceModelQuery_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786574" fileName="ReplaceModelQuery_Editor.java" startLine="88" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219746088754" fileName="ReplaceModelQuery_Editor.java" startLine="113" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786562" fileName="ReplaceModelQuery_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219748754002" fileName="ReplaceModelQuery_Editor.java" startLine="62" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786570" fileName="ReplaceModelQuery_Editor.java" startLine="75" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745830394" fileName="ReplaceModelQuery_Editor.java" startLine="100" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kwr3w_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="175" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_kwr3w_a1a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="192" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_kwr3w_a1b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="157" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_kwr3w_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="222" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_kwr3w_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="163" startPosition="58" endLine="163" endPosition="58" />
     <scopeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="180" startPosition="58" endLine="180" endPosition="58" />
     <scopeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="197" startPosition="58" endLine="197" endPosition="58" />
@@ -534,6 +534,10 @@
     <scopeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="230" startPosition="7" endLine="232" endPosition="70">
       <varInfo nodeId="1219745786567" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1219745771774" fileName="ReplaceModelQuery_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1219745771774" varName="editorContext" />
+      <varInfo nodeId="1219745771774" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1219745786558" fileName="ReplaceModelQuery_Editor.java" startLine="40" startPosition="5" endLine="43" endPosition="51">
       <varInfo nodeId="1219745786558" varName="style" />
     </scopeInfo>
@@ -565,21 +569,17 @@
       <varInfo nodeId="1219746142479" varName="manager" />
       <varInfo nodeId="1219746142479" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="209" startPosition="69" endLine="212" endPosition="5" />
+    <scopeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="210" startPosition="0" endLine="213" endPosition="0" />
+    <scopeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="214" startPosition="0" endLine="217" endPosition="0">
+      <varInfo nodeId="1219745786566" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="218" startPosition="0" endLine="221" endPosition="0">
+      <varInfo nodeId="1219745786566" varName="editorContext" />
+      <varInfo nodeId="1219745786566" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="237" startPosition="37" endLine="240" endPosition="107">
       <varInfo nodeId="1219745786567" varName="manager" />
       <varInfo nodeId="1219745786567" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1219745771774" fileName="ReplaceModelQuery_Editor.java" startLine="23" startPosition="65" endLine="27" endPosition="0">
-      <varInfo nodeId="1219745771774" varName="editorContext" />
-      <varInfo nodeId="1219745771774" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="213" startPosition="0" endLine="217" endPosition="0">
-      <varInfo nodeId="1219745786566" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1219745786566" fileName="ReplaceModelQuery_Editor.java" startLine="217" startPosition="0" endLine="221" endPosition="0">
-      <varInfo nodeId="1219745786566" varName="editorContext" />
-      <varInfo nodeId="1219745786566" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1219748754002" fileName="ReplaceModelQuery_Editor.java" startLine="63" startPosition="97" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1219745786560" fileName="ReplaceModelQuery_Editor.java" startLine="125" startPosition="88" endLine="130" endPosition="22">
@@ -604,24 +604,24 @@
     <scopeInfo nodeId="1219745786574" fileName="ReplaceModelQuery_Editor.java" startLine="89" startPosition="97" endLine="95" endPosition="5" />
     <scopeInfo nodeId="1219745830394" fileName="ReplaceModelQuery_Editor.java" startLine="101" startPosition="99" endLine="107" endPosition="5" />
     <scopeInfo nodeId="1219746088754" fileName="ReplaceModelQuery_Editor.java" startLine="114" startPosition="97" endLine="120" endPosition="5" />
-    <scopeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="227" startPosition="28" endLine="234" endPosition="75" />
-    <scopeInfo nodeId="1219745786560" fileName="ReplaceModelQuery_Editor.java" startLine="124" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="1219745786560" fileName="ReplaceModelQuery_Editor.java" startLine="125" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="1219745786560" varName="editorContext" />
       <varInfo nodeId="1219745786560" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786564" fileName="ReplaceModelQuery_Editor.java" startLine="132" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="1219745786564" fileName="ReplaceModelQuery_Editor.java" startLine="133" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="1219745786564" varName="editorContext" />
       <varInfo nodeId="1219745786564" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786573" fileName="ReplaceModelQuery_Editor.java" startLine="140" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="1219745786573" fileName="ReplaceModelQuery_Editor.java" startLine="141" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="1219745786573" varName="editorContext" />
       <varInfo nodeId="1219745786573" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745852524" fileName="ReplaceModelQuery_Editor.java" startLine="148" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="1219745852524" fileName="ReplaceModelQuery_Editor.java" startLine="149" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="1219745852524" varName="editorContext" />
       <varInfo nodeId="1219745852524" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786557" fileName="ReplaceModelQuery_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="227" startPosition="28" endLine="234" endPosition="75" />
+    <scopeInfo nodeId="1219745786557" fileName="ReplaceModelQuery_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1219745786557" varName="editorContext" />
       <varInfo nodeId="1219745786557" varName="node" />
     </scopeInfo>
@@ -646,31 +646,31 @@
     <scopeInfo nodeId="1219745830394" fileName="ReplaceModelQuery_Editor.java" startLine="100" startPosition="90" endLine="110" endPosition="22">
       <varInfo nodeId="1219745830394" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786558" fileName="ReplaceModelQuery_Editor.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1219745786558" fileName="ReplaceModelQuery_Editor.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1219745786558" varName="editorContext" />
       <varInfo nodeId="1219745786558" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786574" fileName="ReplaceModelQuery_Editor.java" startLine="87" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1219745786574" fileName="ReplaceModelQuery_Editor.java" startLine="88" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="1219745786574" varName="editorContext" />
       <varInfo nodeId="1219745786574" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219746088754" fileName="ReplaceModelQuery_Editor.java" startLine="112" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="1219746088754" fileName="ReplaceModelQuery_Editor.java" startLine="113" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="1219746088754" varName="editorContext" />
       <varInfo nodeId="1219746088754" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786562" fileName="ReplaceModelQuery_Editor.java" startLine="48" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1219745786562" fileName="ReplaceModelQuery_Editor.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1219745786562" varName="editorContext" />
       <varInfo nodeId="1219745786562" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219748754002" fileName="ReplaceModelQuery_Editor.java" startLine="61" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1219748754002" fileName="ReplaceModelQuery_Editor.java" startLine="62" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1219748754002" varName="editorContext" />
       <varInfo nodeId="1219748754002" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786570" fileName="ReplaceModelQuery_Editor.java" startLine="74" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1219745786570" fileName="ReplaceModelQuery_Editor.java" startLine="75" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1219745786570" varName="editorContext" />
       <varInfo nodeId="1219745786570" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745830394" fileName="ReplaceModelQuery_Editor.java" startLine="99" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="1219745830394" fileName="ReplaceModelQuery_Editor.java" startLine="100" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="1219745830394" varName="editorContext" />
       <varInfo nodeId="1219745830394" varName="node" />
     </scopeInfo>
@@ -692,15 +692,15 @@
       <varInfo nodeId="1219745786565" varName="editorCell" />
       <varInfo nodeId="1219745786565" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="174" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="175" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="1219745786576" varName="editorContext" />
       <varInfo nodeId="1219745786576" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="191" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="192" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="1219746142479" varName="editorContext" />
       <varInfo nodeId="1219746142479" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="156" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="157" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="1219745786565" varName="editorContext" />
       <varInfo nodeId="1219745786565" varName="node" />
     </scopeInfo>
@@ -710,7 +710,7 @@
       <varInfo nodeId="1219745786567" varName="editorCell" />
       <varInfo nodeId="1219745786567" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="221" startPosition="0" endLine="244" endPosition="0">
+    <scopeInfo nodeId="1219745786567" fileName="ReplaceModelQuery_Editor.java" startLine="222" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="1219745786567" varName="editorContext" />
       <varInfo nodeId="1219745786567" varName="node" />
     </scopeInfo>

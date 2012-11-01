@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 
-
 /**
  * Use NodeBySeveralConceptChooser
  */

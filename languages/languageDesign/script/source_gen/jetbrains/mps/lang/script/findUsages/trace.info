@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="FindUsagesDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.script.findUsages.FindUsagesDescriptor" />
   <root nodeId="5435616686793584368" modelId="r:e3313576-d158-4a38-8f18-4b8fe8313c4c(jetbrains.mps.lang.script.findUsages)">
-    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="25" startPosition="79" endLine="26" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="31" startPosition="34" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="35" startPosition="38" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="39" startPosition="30" endLine="40" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -81,8 +81,12 @@
     <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="198" startPosition="45" endLine="199" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="200" startPosition="9" endLine="201" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="202" startPosition="7" endLine="203" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="27" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Potentially_not_migratable_usages_Finder#()V" />
-    <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="184" startPosition="61" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_cbnudw_a0a0a22a0a0a1a3#()V" />
+    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Potentially_not_migratable_usages_Finder#()V" />
+    <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="185" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_cbnudw_a0a0a22a0a0a1a3#()V" />
+    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="61463667893902108" fileName="Potentially_not_migratable_usages_Finder.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="5435616686794184936" fileName="Potentially_not_migratable_usages_Finder.java" startLine="66" startPosition="31" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5435616686794364649" fileName="Potentially_not_migratable_usages_Finder.java" startLine="69" startPosition="13" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="61463667892359561" fileName="Potentially_not_migratable_usages_Finder.java" startLine="74" startPosition="35" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -100,10 +104,6 @@
     <nodeInfo nodeId="61463667895065703" fileName="Potentially_not_migratable_usages_Finder.java" startLine="161" startPosition="0" endLine="164" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5909355414809178810" fileName="Potentially_not_migratable_usages_Finder.java" startLine="164" startPosition="11" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132140827631226320" fileName="Potentially_not_migratable_usages_Finder.java" startLine="171" startPosition="115" endLine="174" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="61463667893902108" fileName="Potentially_not_migratable_usages_Finder.java" startLine="57" startPosition="252" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="5909355414828807416" fileName="Potentially_not_migratable_usages_Finder.java" startLine="84" startPosition="0" endLine="88" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5435616686793915726" fileName="Potentially_not_migratable_usages_Finder.java" startLine="110" startPosition="148" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5435616686801209935" fileName="Potentially_not_migratable_usages_Finder.java" startLine="89" startPosition="0" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -122,12 +122,12 @@
     <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="192" startPosition="32" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="192" startPosition="32" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="61463667893748637" fileName="Potentially_not_migratable_usages_Finder.java" startLine="53" startPosition="36" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="187" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="188" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5435616686794157774" fileName="Potentially_not_migratable_usages_Finder.java" startLine="49" startPosition="0" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5435616686793896886" fileName="Potentially_not_migratable_usages_Finder.java" startLine="46" startPosition="172" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5435616686793595223" fileName="Potentially_not_migratable_usages_Finder.java" startLine="45" startPosition="9" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="44" startPosition="39" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="42" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="43" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
     <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="28" startPosition="53" endLine="28" endPosition="53" />
     <scopeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="185" startPosition="52" endLine="185" endPosition="52" />
     <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="31" startPosition="34" endLine="32" endPosition="47" />
@@ -153,12 +153,18 @@
     <scopeInfo nodeId="5909355414809178812" fileName="Potentially_not_migratable_usages_Finder.java" startLine="165" startPosition="436" endLine="166" endPosition="21" />
     <scopeInfo nodeId="4132140827631226322" fileName="Potentially_not_migratable_usages_Finder.java" startLine="172" startPosition="174" endLine="173" endPosition="21" />
     <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="179" startPosition="15" endLine="180" endPosition="21" />
-    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="5909355414828807418" fileName="Potentially_not_migratable_usages_Finder.java" startLine="85" startPosition="358" endLine="87" endPosition="21" />
     <scopeInfo nodeId="5435616686793915728" fileName="Potentially_not_migratable_usages_Finder.java" startLine="111" startPosition="202" endLine="113" endPosition="73">
       <varInfo nodeId="61463667895056412" varName="lValue" />
     </scopeInfo>
-    <scopeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="184" startPosition="61" endLine="186" endPosition="5" />
+    <scopeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="185" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="61463667893902108" fileName="Potentially_not_migratable_usages_Finder.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="61463667893902108" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5435616686801209937" fileName="Potentially_not_migratable_usages_Finder.java" startLine="90" startPosition="156" endLine="93" endPosition="13" />
     <scopeInfo nodeId="5435616686801759899" fileName="Potentially_not_migratable_usages_Finder.java" startLine="96" startPosition="144" endLine="99" endPosition="13" />
     <scopeInfo nodeId="61463667895909286" fileName="Potentially_not_migratable_usages_Finder.java" startLine="125" startPosition="152" endLine="128" endPosition="13" />
@@ -166,12 +172,6 @@
     <scopeInfo nodeId="4132140827631221623" fileName="Potentially_not_migratable_usages_Finder.java" startLine="171" startPosition="115" endLine="174" endPosition="11" />
     <scopeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="196" startPosition="9" endLine="199" endPosition="62">
       <varInfo nodeId="8012838593619149892" varName="quotedNode1_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="61463667893902108" fileName="Potentially_not_migratable_usages_Finder.java" startLine="57" startPosition="252" endLine="61" endPosition="0">
-      <varInfo nodeId="61463667893902108" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="5435616686793912750" fileName="Potentially_not_migratable_usages_Finder.java" startLine="110" startPosition="148" endLine="114" endPosition="13" />
     <scopeInfo nodeId="8012838593619151545" fileName="Potentially_not_migratable_usages_Finder.java" startLine="135" startPosition="141" endLine="139" endPosition="13">
@@ -200,7 +200,7 @@
       <varInfo nodeId="8012838593619149892" varName="quotedNode_2" />
       <varInfo nodeId="8012838593619149892" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="187" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="8012838593619149892" fileName="Potentially_not_migratable_usages_Finder.java" startLine="188" startPosition="0" endLine="205" endPosition="0" />
     <scopeInfo nodeId="5435616686794157776" fileName="Potentially_not_migratable_usages_Finder.java" startLine="50" startPosition="141" endLine="82" endPosition="13">
       <varInfo nodeId="5435616686794355793" varName="operation" />
     </scopeInfo>
@@ -214,7 +214,7 @@
       <varInfo nodeId="5435616686793595225" varName="nodeUsage" />
     </scopeInfo>
     <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="43" startPosition="98" endLine="181" endPosition="5" />
-    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="42" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="5435616686793584368" fileName="Potentially_not_migratable_usages_Finder.java" startLine="43" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="5435616686793584368" varName="_results" />
       <varInfo nodeId="5435616686793584368" varName="monitor" />
       <varInfo nodeId="5435616686793584368" varName="node" />

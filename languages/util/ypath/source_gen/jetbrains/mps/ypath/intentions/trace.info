@@ -12,18 +12,18 @@
     <nodeInfo nodeId="1197704535692" fileName="SwitchDefault_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197704518472" fileName="SwitchDefault_Intention.java" startLine="50" startPosition="72" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="54" startPosition="37" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="11" startPosition="81" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SwitchDefault_Intention#()V" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SwitchDefault_Intention#()V" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
     <nodeInfo nodeId="1197704415472" fileName="SwitchDefault_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="12" startPosition="36" endLine="12" endPosition="36" />
     <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="64" />
     <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" />
@@ -32,30 +32,30 @@
     <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="1197704377993" fileName="SwitchDefault_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="16" />
     <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="54" startPosition="37" endLine="55" endPosition="44" />
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="11" startPosition="81" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1197704377995" fileName="SwitchDefault_Intention.java" startLine="49" startPosition="76" endLine="51" endPosition="66">
       <varInfo nodeId="1197704535693" varName="isDefault" />
     </scopeInfo>
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1197704377989" varName="editorContext" />
+      <varInfo nodeId="1197704377989" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1197704377991" fileName="SwitchDefault_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
     <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1197704377989" varName="editorContext" />
       <varInfo nodeId="1197704377989" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1197704377989" varName="editorContext" />
       <varInfo nodeId="1197704377989" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1197704377989" varName="editorContext" />
-      <varInfo nodeId="1197704377989" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1197704377989" fileName="SwitchDefault_Intention.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1197704377989" varName="editorContext" />
       <varInfo nodeId="1197704377989" varName="node" />
     </scopeInfo>
@@ -72,17 +72,17 @@
     <nodeInfo nodeId="1198003228139" fileName="RemoveExclamationMark_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198003245888" fileName="RemoveExclamationMark_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="51" startPosition="37" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="12" startPosition="89" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveExclamationMark_Intention#()V" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveExclamationMark_Intention#()V" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="36" startPosition="84" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="13" startPosition="44" endLine="13" endPosition="44" />
     <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="16" startPosition="30" endLine="17" endPosition="69" />
     <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="20" startPosition="36" endLine="21" endPosition="17" />
@@ -93,26 +93,26 @@
     <scopeInfo nodeId="1198003127666" fileName="RemoveExclamationMark_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="130" />
     <scopeInfo nodeId="1198003127668" fileName="RemoveExclamationMark_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="98" />
     <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="51" startPosition="37" endLine="52" endPosition="44" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="12" startPosition="89" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1198003127662" varName="editorContext" />
       <varInfo nodeId="1198003127662" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1198003127662" varName="editorContext" />
+      <varInfo nodeId="1198003127662" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1198003127662" varName="editorContext" />
+      <varInfo nodeId="1198003127662" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="36" startPosition="84" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="1198003127662" varName="editorContext" />
-      <varInfo nodeId="1198003127662" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1198003127662" varName="editorContext" />
-      <varInfo nodeId="1198003127662" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1198003127662" fileName="RemoveExclamationMark_Intention.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1198003127662" varName="editorContext" />
       <varInfo nodeId="1198003127662" varName="node" />
     </scopeInfo>
@@ -139,19 +139,19 @@
     <nodeInfo nodeId="4234084459084471279" fileName="replace_whereBlock_with_closure_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4234084459084472372" fileName="replace_whereBlock_with_closure_Intention.java" startLine="65" startPosition="56" endLine="66" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="69" startPosition="37" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="16" startPosition="99" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="replace_whereBlock_with_closure_Intention#()V" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="replace_whereBlock_with_closure_Intention#()V" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="40" startPosition="84" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
     <nodeInfo nodeId="4234084459084291785" fileName="replace_whereBlock_with_closure_Intention.java" startLine="59" startPosition="211" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <nodeInfo nodeId="4234084459084291706" fileName="replace_whereBlock_with_closure_Intention.java" startLine="58" startPosition="170" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="50" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="51" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="17" startPosition="54" endLine="17" endPosition="54" />
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="58" />
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" />
@@ -161,31 +161,31 @@
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="41" startPosition="58" endLine="42" endPosition="19" />
     <scopeInfo nodeId="4234084459084260659" fileName="replace_whereBlock_with_closure_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="73" />
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="69" startPosition="37" endLine="70" endPosition="44" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="16" startPosition="99" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="4234084459084291786" fileName="replace_whereBlock_with_closure_Intention.java" startLine="60" startPosition="164" endLine="62" endPosition="74">
       <varInfo nodeId="4234084459084291772" varName="pr" />
     </scopeInfo>
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="4234084459084260639" varName="editorContext" />
       <varInfo nodeId="4234084459084260639" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="4234084459084260639" varName="editorContext" />
+      <varInfo nodeId="4234084459084260639" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="40" startPosition="84" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="4234084459084291709" fileName="replace_whereBlock_with_closure_Intention.java" startLine="59" startPosition="211" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4234084459084260639" varName="editorContext" />
       <varInfo nodeId="4234084459084260639" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4234084459084291709" fileName="replace_whereBlock_with_closure_Intention.java" startLine="59" startPosition="211" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="4234084459084291706" fileName="replace_whereBlock_with_closure_Intention.java" startLine="58" startPosition="170" endLine="64" endPosition="5">
       <varInfo nodeId="4234084459084291707" varName="dsc" />
-    </scopeInfo>
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="4234084459084260639" varName="editorContext" />
-      <varInfo nodeId="4234084459084260639" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4234084459084260643" fileName="replace_whereBlock_with_closure_Intention.java" startLine="51" startPosition="76" endLine="66" endPosition="62">
       <varInfo nodeId="4234084459084260678" varName="cl" />
@@ -193,7 +193,7 @@
       <varInfo nodeId="7120113277826370346" varName="parameterType" />
       <varInfo nodeId="4234084459084291586" varName="scpd" />
     </scopeInfo>
-    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="50" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="4234084459084260639" fileName="replace_whereBlock_with_closure_Intention.java" startLine="51" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="4234084459084260639" varName="editorContext" />
       <varInfo nodeId="4234084459084260639" varName="node" />
     </scopeInfo>

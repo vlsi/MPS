@@ -6,6 +6,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 
 public interface IConfig {
   public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa);
+
   public static class Stub implements IConfig {
     public Stub() {
     }
@@ -14,5 +15,4 @@ public interface IConfig {
       throw new UnsupportedOperationException();
     }
   }
-
 }

@@ -8,16 +8,16 @@
   <root nodeId="4159153485696906651" modelId="r:97129371-9ac5-4a71-bfd5-5b11db119de9(jetbrains.mps.calculator.behavior)">
     <nodeInfo nodeId="4159153485696906725" fileName="Calculator_Behavior.java" startLine="16" startPosition="99" endLine="17" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4159153485696906738" fileName="Calculator_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="11" startPosition="34" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4159153485696906694" fileName="Calculator_Behavior.java" startLine="15" startPosition="101" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="4159153485696906653" fileName="Calculator_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="4159153485696906695" fileName="Calculator_Behavior.java" startLine="16" startPosition="99" endLine="17" endPosition="156" />
-    <scopeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="11" startPosition="34" endLine="14" endPosition="0">
+    <scopeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="4159153485696906651" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4159153485696906672" fileName="Calculator_Behavior.java" startLine="15" startPosition="101" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4159153485696906675" varName="child" />
       <varInfo nodeId="4159153485696906673" varName="kind" />
       <varInfo nodeId="4159153485696906651" varName="thisNode" />

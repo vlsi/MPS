@@ -4,4 +4,5 @@ package jetbrains.mps.core.properties.generator.template.main;
 
 
 public class QueriesGenerated {
+
 }

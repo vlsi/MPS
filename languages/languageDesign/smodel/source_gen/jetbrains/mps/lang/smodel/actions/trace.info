@@ -422,16 +422,16 @@
     </scopeInfo>
   </root>
   <root nodeId="1206377804308" modelId="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)">
-    <nodeInfo nodeId="1206377822467" fileName="ApplicableTypesInfo.java" startLine="7" startPosition="34" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToConcept" />
-    <nodeInfo nodeId="1206377824736" fileName="ApplicableTypesInfo.java" startLine="8" startPosition="37" endLine="9" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToNode" />
-    <nodeInfo nodeId="1206377825957" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="34" endLine="10" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToModel" />
-    <nodeInfo nodeId="1240146370519" fileName="ApplicableTypesInfo.java" startLine="10" startPosition="35" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToEnum" />
-    <nodeInfo nodeId="1240170392511" fileName="ApplicableTypesInfo.java" startLine="11" startPosition="34" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToEnumMember" />
-    <nodeInfo nodeId="572489343766100875" fileName="ApplicableTypesInfo.java" startLine="12" startPosition="40" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLinkAccess" />
-    <nodeInfo nodeId="1207689406331" fileName="ApplicableTypesInfo.java" startLine="13" startPosition="35" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLinkToConcept" />
-    <nodeInfo nodeId="1206378005506" fileName="ApplicableTypesInfo.java" startLine="15" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplicableTypesInfo#()V" />
+    <nodeInfo nodeId="1206377822467" fileName="ApplicableTypesInfo.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToConcept" />
+    <nodeInfo nodeId="1206377824736" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToNode" />
+    <nodeInfo nodeId="1206377825957" fileName="ApplicableTypesInfo.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToModel" />
+    <nodeInfo nodeId="1240146370519" fileName="ApplicableTypesInfo.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToEnum" />
+    <nodeInfo nodeId="1240170392511" fileName="ApplicableTypesInfo.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToEnumMember" />
+    <nodeInfo nodeId="572489343766100875" fileName="ApplicableTypesInfo.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLinkAccess" />
+    <nodeInfo nodeId="1207689406331" fileName="ApplicableTypesInfo.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLinkToConcept" />
+    <nodeInfo nodeId="1206378005506" fileName="ApplicableTypesInfo.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplicableTypesInfo#()V" />
     <scopeInfo nodeId="1206378005509" fileName="ApplicableTypesInfo.java" startLine="16" startPosition="32" endLine="16" endPosition="32" />
-    <scopeInfo nodeId="1206378005506" fileName="ApplicableTypesInfo.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1206378005506" fileName="ApplicableTypesInfo.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1206377804308" fileName="ApplicableTypesInfo.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.actions.ApplicableTypesInfo" />
   </root>
   <root nodeId="1206996873883" modelId="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)">

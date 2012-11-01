@@ -8,40 +8,40 @@
     <nodeInfo nodeId="2990235398086692454" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="32" startPosition="42" endLine="33" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2990235398086692476" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="38" startPosition="52" endLine="39" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="42" startPosition="42" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="17" startPosition="76" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2990235398086692450" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="31" startPosition="118" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2990235398086692450" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
     <nodeInfo nodeId="2990235398086687511" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="30" startPosition="59" endLine="35" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="16" startPosition="64" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="16" startPosition="64" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="14" startPosition="79" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractIconsToPlugin_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="15" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractIconsToPlugin_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
     <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="36" />
     <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="36" />
     <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="71" />
     <scopeInfo nodeId="2990235398086692451" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="32" startPosition="42" endLine="33" endPosition="177" />
     <scopeInfo nodeId="2990235398086684974" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="38" startPosition="52" endLine="39" endPosition="56" />
     <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="42" startPosition="42" endLine="43" endPosition="21" />
-    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="17" startPosition="76" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2990235398086692450" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="31" startPosition="118" endLine="35" endPosition="0">
+    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2990235398086692450" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="2990235398086692450" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="2990235398086684972" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2990235398086687510" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="30" startPosition="59" endLine="35" endPosition="11" />
-    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2990235398086684972" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="16" startPosition="64" endLine="45" endPosition="7" />
     <scopeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="15" startPosition="83" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="14" startPosition="79" endLine="46" endPosition="3">
+    <scopeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="15" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="2990235398086684968" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="2990235398086692450" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="31" startPosition="95" endLine="35" endPosition="9" unitName="jetbrains.mps.lang.resources.scripts.ExtractIconsToPlugin_MigrationScript$2" />
@@ -49,7 +49,7 @@
     <unitInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.resources.scripts.ExtractIconsToPlugin_MigrationScript" />
   </root>
   <root nodeId="2990235398086687528" modelId="r:04e320a0-32b8-420a-bb46-6bfe53d8f651(jetbrains.mps.lang.resources.scripts)">
-    <nodeInfo nodeId="2990235398086692145" fileName="ExtractIconsUtil.java" startLine="27" startPosition="31" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_st4ewd_a0a0a0b0b0a" />
+    <nodeInfo nodeId="2990235398086692145" fileName="ExtractIconsUtil.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_st4ewd_a0a0a0b0b0a" />
     <nodeInfo nodeId="2990235398086690118" fileName="ExtractIconsUtil.java" startLine="33" startPosition="57" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086690148" fileName="ExtractIconsUtil.java" startLine="35" startPosition="37" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="38" startPosition="9" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -91,33 +91,33 @@
     <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="122" startPosition="43" endLine="123" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="123" startPosition="77" endLine="124" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="125" startPosition="7" endLine="126" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990235398086687530" fileName="ExtractIconsUtil.java" startLine="29" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractIconsUtil#()V" />
-    <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="81" startPosition="60" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_st4ewd_a0a1a2a0a1a1a0#()V" />
-    <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="112" startPosition="59" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_st4ewd_a0a0d0a0b0b0a#()V" />
+    <nodeInfo nodeId="2990235398086687530" fileName="ExtractIconsUtil.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractIconsUtil#()V" />
+    <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_st4ewd_a0a1a2a0a1a1a0#()V" />
+    <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="113" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_st4ewd_a0a0d0a0b0b0a#()V" />
+    <nodeInfo nodeId="2990235398087945717" fileName="ExtractIconsUtil.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2990235398086689996" fileName="ExtractIconsUtil.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="98" startPosition="16" endLine="101" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="101" startPosition="11" endLine="104" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990235398087945717" fileName="ExtractIconsUtil.java" startLine="43" startPosition="132" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2990235398086689996" fileName="ExtractIconsUtil.java" startLine="63" startPosition="171" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2990235398086690009" fileName="ExtractIconsUtil.java" startLine="67" startPosition="7" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2990235398087945709" fileName="ExtractIconsUtil.java" startLine="42" startPosition="70" endLine="47" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692293" fileName="ExtractIconsUtil.java" startLine="47" startPosition="15" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2990235398086689988" fileName="ExtractIconsUtil.java" startLine="62" startPosition="44" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2990235398086687534" fileName="ExtractIconsUtil.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginModel#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;" />
+    <nodeInfo nodeId="2990235398086687534" fileName="ExtractIconsUtil.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginModel#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="95" startPosition="30" endLine="101" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="119" startPosition="32" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="119" startPosition="32" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="116" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="92" startPosition="43" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="92" startPosition="43" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="115" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="40" startPosition="156" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990235398086688361" fileName="ExtractIconsUtil.java" startLine="59" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconResourceBundle#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2990235398086688361" fileName="ExtractIconsUtil.java" startLine="60" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconResourceBundle#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="37" startPosition="188" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="89" startPosition="32" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="89" startPosition="32" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086690172" fileName="ExtractIconsUtil.java" startLine="36" startPosition="59" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2990235398086690131" fileName="ExtractIconsUtil.java" startLine="34" startPosition="83" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="84" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2990235398086690055" fileName="ExtractIconsUtil.java" startLine="32" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateIconResourceBundle#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="85" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2990235398086690055" fileName="ExtractIconsUtil.java" startLine="33" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateIconResourceBundle#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2990235398086687533" fileName="ExtractIconsUtil.java" startLine="30" startPosition="29" endLine="30" endPosition="29" />
     <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="82" startPosition="51" endLine="82" endPosition="51" />
     <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="113" startPosition="50" endLine="113" endPosition="50" />
@@ -125,26 +125,26 @@
     <scopeInfo nodeId="2990235398086689997" fileName="ExtractIconsUtil.java" startLine="64" startPosition="40" endLine="65" endPosition="77" />
     <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="96" startPosition="66" endLine="97" endPosition="64" />
     <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="102" startPosition="38" endLine="103" endPosition="80" />
-    <scopeInfo nodeId="2990235398086687530" fileName="ExtractIconsUtil.java" startLine="29" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="2990235398086687530" fileName="ExtractIconsUtil.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="2990235398086690010" fileName="ExtractIconsUtil.java" startLine="68" startPosition="24" endLine="70" endPosition="55" />
-    <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="81" startPosition="60" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="98" startPosition="18" endLine="100" endPosition="41" />
-    <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="112" startPosition="59" endLine="114" endPosition="5" />
+    <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="113" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="2990235398087945717" fileName="ExtractIconsUtil.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="2990235398087945717" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="2990235398086692294" fileName="ExtractIconsUtil.java" startLine="48" startPosition="33" endLine="51" endPosition="62" />
+    <scopeInfo nodeId="2990235398086689996" fileName="ExtractIconsUtil.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="2990235398086689996" varName="irb" />
+    </scopeInfo>
     <scopeInfo nodeId="2990235398086687537" fileName="ExtractIconsUtil.java" startLine="75" startPosition="73" endLine="78" endPosition="44">
       <varInfo nodeId="2990235398086688338" varName="aspectForModel" />
       <varInfo nodeId="2990235398086687557" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398087945717" fileName="ExtractIconsUtil.java" startLine="43" startPosition="132" endLine="47" endPosition="0">
-      <varInfo nodeId="2990235398087945717" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2990235398086689996" fileName="ExtractIconsUtil.java" startLine="63" startPosition="171" endLine="67" endPosition="0">
-      <varInfo nodeId="2990235398086689996" varName="irb" />
-    </scopeInfo>
     <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="120" startPosition="7" endLine="124" endPosition="31">
       <varInfo nodeId="2990235398087945774" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086687534" fileName="ExtractIconsUtil.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2990235398086687534" fileName="ExtractIconsUtil.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="2990235398086687538" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="119" startPosition="32" endLine="125" endPosition="7" />
@@ -165,11 +165,11 @@
       <varInfo nodeId="2990235398086688372" varName="pluginModel" />
       <varInfo nodeId="2990235398086689923" varName="smodel" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="92" startPosition="43" endLine="105" endPosition="9" />
-    <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="115" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="116" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="2990235398087945774" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086688361" fileName="ExtractIconsUtil.java" startLine="59" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="92" startPosition="43" endLine="105" endPosition="9" />
+    <scopeInfo nodeId="2990235398086688361" fileName="ExtractIconsUtil.java" startLine="60" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="2990235398086688365" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="38" startPosition="9" endLine="54" endPosition="11">
@@ -196,10 +196,10 @@
     <scopeInfo nodeId="2990235398086690058" fileName="ExtractIconsUtil.java" startLine="33" startPosition="57" endLine="57" endPosition="5">
       <varInfo nodeId="2990235398086690119" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="84" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="85" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="2990235398086692412" varName="parameter_5" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086690055" fileName="ExtractIconsUtil.java" startLine="32" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="2990235398086690055" fileName="ExtractIconsUtil.java" startLine="33" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="2990235398086690059" varName="cb" />
     </scopeInfo>
     <unitInfo nodeId="2990235398087945717" fileName="ExtractIconsUtil.java" startLine="43" startPosition="109" endLine="47" endPosition="13" unitName="jetbrains.mps.lang.resources.scripts.ExtractIconsUtil$1" />

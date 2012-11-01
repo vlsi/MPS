@@ -2,94 +2,94 @@
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.ExtensionDescriptor" />
   <root nodeId="2622946712629256035" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
-    <nodeInfo nodeId="2622946712629256041" fileName="LazyTestObject.java" startLine="6" startPosition="29" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="2622946712629256041" fileName="LazyTestObject.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2622946712629256045" fileName="LazyTestObject.java" startLine="9" startPosition="27" endLine="10" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LazyTestObject#()V" />
+    <nodeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LazyTestObject#()V" />
     <scopeInfo nodeId="2622946712629256040" fileName="LazyTestObject.java" startLine="9" startPosition="27" endLine="10" endPosition="20" />
-    <scopeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="8" startPosition="0" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
     <unitInfo nodeId="2622946712629256035" fileName="LazyTestObject.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
   </root>
   <root nodeId="2622946712629256054" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="8" startPosition="65" endLine="9" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2622946712629256057" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="12" startPosition="31" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="7" startPosition="109" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_lazyTestExtensionPoint2622946712629256054_#()V" />
-    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/lang/extension/tests/plugin/LazyTestObject;" />
+    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_lazyTestExtensionPoint2622946712629256054_#()V" />
+    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/lang/extension/tests/plugin/LazyTestObject;" />
     <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="8" startPosition="65" endLine="9" endPosition="71" />
     <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="12" startPosition="31" endLine="13" endPosition="32" />
-    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="7" startPosition="109" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint2622946712629256054_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint2622946712629256054_" />
   </root>
   <root nodeId="4451661519483734260" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="8" startPosition="62" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4451661519483734263" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="7" startPosition="98" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint4451661519483734260_#()V" />
-    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint4451661519483734260_#()V" />
+    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
     <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="8" startPosition="62" endLine="9" endPosition="68" />
     <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" />
-    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="7" startPosition="98" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint4451661519483734260_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734260_" />
   </root>
   <root nodeId="4451661519483734265" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
     <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="8" startPosition="62" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4451661519483734268" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="7" startPosition="98" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint4451661519483734265_#()V" />
-    <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint4451661519483734265_#()V" />
+    <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
     <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="8" startPosition="62" endLine="9" endPosition="68" />
     <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" />
-    <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="7" startPosition="98" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint4451661519483734265_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734265_" />
   </root>
   <root nodeId="7036359038356246776" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
-    <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="6" startPosition="25" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShutDown" />
-    <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="7" startPosition="29" endLine="8" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShutDown" />
+    <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="13" startPosition="32" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="17" startPosition="42" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="21" startPosition="28" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="25" startPosition="38" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7036359038356246778" fileName="TestObject.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestObject#()V" />
-    <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShutDown#()Z" />
-    <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShutDown#(Z)V" />
-    <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7036359038356246778" fileName="TestObject.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestObject#()V" />
+    <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShutDown#()Z" />
+    <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShutDown#(Z)V" />
+    <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="7036359038356246781" fileName="TestObject.java" startLine="10" startPosition="23" endLine="10" endPosition="23" />
     <scopeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="13" startPosition="32" endLine="14" endPosition="27" />
     <scopeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="17" startPosition="42" endLine="18" endPosition="28" />
     <scopeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="21" startPosition="28" endLine="22" endPosition="24" />
     <scopeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="25" startPosition="38" endLine="26" endPosition="25" />
-    <scopeInfo nodeId="7036359038356246778" fileName="TestObject.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="7036359038356246778" fileName="TestObject.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="7036359038356271889" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="7036359038356271907" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="7036359038356246776" fileName="TestObject.java" startLine="6" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
   </root>
   <root nodeId="7036359038356253986" modelId="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
-    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="7" startPosition="101" endLine="8" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestObject" />
+    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestObject" />
     <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="10" startPosition="61" endLine="11" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7036359038356262452" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="14" startPosition="27" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356253995" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="18" startPosition="26" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2622946712629175335" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="19" startPosition="36" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2622946712629175355" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="23" startPosition="28" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2622946712629175373" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="24" startPosition="35" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="9" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_testExtensionPoint7036359038356253986_#()V" />
-    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/lang/extension/tests/plugin/TestObject;" />
-    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="activate#()V" />
-    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deactivate#()V" />
+    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_testExtensionPoint7036359038356253986_#()V" />
+    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/lang/extension/tests/plugin/TestObject;" />
+    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="activate#()V" />
+    <nodeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deactivate#()V" />
     <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="10" startPosition="61" endLine="11" endPosition="67" />
     <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="14" startPosition="27" endLine="15" endPosition="24" />
     <scopeInfo nodeId="7036359038356253994" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="18" startPosition="26" endLine="20" endPosition="36" />
     <scopeInfo nodeId="2622946712629175354" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="23" startPosition="28" endLine="25" endPosition="24" />
-    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="10" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="7036359038356253986" fileName="Extension_testExtensionPoint7036359038356253986_.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint7036359038356253986_" />
   </root>
 </debugInfo>

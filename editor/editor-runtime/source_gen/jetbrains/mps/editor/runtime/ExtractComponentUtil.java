@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-
 /**
  * TODO: most probably move out to mps.ide.editor (plugin)
  * currently canot do that due to the compilation problems of editor.intentions model

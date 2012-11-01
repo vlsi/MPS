@@ -89,13 +89,24 @@
     <nodeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="281" startPosition="5" endLine="282" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="286" startPosition="36" endLine="287" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="288" startPosition="5" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2052504288806109974" fileName="ChangesStripActionsHelper.java" startLine="34" startPosition="40" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesStripActionsHelper#()V" />
+    <nodeInfo nodeId="2052504288806109974" fileName="ChangesStripActionsHelper.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesStripActionsHelper#()V" />
     <nodeInfo nodeId="4953964883742113001" fileName="ChangesStripActionsHelper.java" startLine="138" startPosition="14" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2052504288806114023" fileName="ChangesStripActionsHelper.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNeighbourGroupAvailable#(Ljetbrains/mps/nodeEditor/EditorContext;Z)Z" />
     <nodeInfo nodeId="2052504288806113932" fileName="ChangesStripActionsHelper.java" startLine="48" startPosition="69" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4652592318748341064" fileName="ChangesStripActionsHelper.java" startLine="59" startPosition="67" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5059587158025367323" fileName="ChangesStripActionsHelper.java" startLine="82" startPosition="95" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751511280" fileName="ChangesStripActionsHelper.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
     <nodeInfo nodeId="959738663751511322" fileName="ChangesStripActionsHelper.java" startLine="95" startPosition="71" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751511370" fileName="ChangesStripActionsHelper.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="4953964883742113026" fileName="ChangesStripActionsHelper.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="652420078226891604" fileName="ChangesStripActionsHelper.java" startLine="157" startPosition="7" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1108966977729622098" fileName="ChangesStripActionsHelper.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1108966977729720345" fileName="ChangesStripActionsHelper.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1108966977729720327" fileName="ChangesStripActionsHelper.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1108966977729622234" fileName="ChangesStripActionsHelper.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1108966977729720409" fileName="ChangesStripActionsHelper.java" startLine="190" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1108966977729720451" fileName="ChangesStripActionsHelper.java" startLine="195" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="1108966977729720468" fileName="ChangesStripActionsHelper.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="1108966977729720515" fileName="ChangesStripActionsHelper.java" startLine="204" startPosition="51" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="5059587158025329570" fileName="ChangesStripActionsHelper.java" startLine="215" startPosition="130" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6551560157631775303" fileName="ChangesStripActionsHelper.java" startLine="222" startPosition="82" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -108,59 +119,48 @@
     <nodeInfo nodeId="6883096464919730880" fileName="ChangesStripActionsHelper.java" startLine="271" startPosition="80" endLine="274" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="278" startPosition="74" endLine="281" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="285" startPosition="82" endLine="288" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2052504288806114023" fileName="ChangesStripActionsHelper.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNeighbourGroupAvailable#(Ljetbrains/mps/nodeEditor/EditorContext;Z)Z" />
-    <nodeInfo nodeId="959738663751511280" fileName="ChangesStripActionsHelper.java" startLine="90" startPosition="129" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-    <nodeInfo nodeId="959738663751511370" fileName="ChangesStripActionsHelper.java" startLine="100" startPosition="85" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="4953964883742113026" fileName="ChangesStripActionsHelper.java" startLine="143" startPosition="107" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="2052504288806114019" fileName="ChangesStripActionsHelper.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNeighbourChangeGroup#(Ljetbrains/mps/nodeEditor/EditorContext;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="5525460315804373559" fileName="ChangesStripActionsHelper.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPainter#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
+    <nodeInfo nodeId="1108966977729618977" fileName="ChangesStripActionsHelper.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentChangeGroup#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="1108966977729618949" fileName="ChangesStripActionsHelper.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="areOldNodesAvailable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <nodeInfo nodeId="1108966977729621937" fileName="ChangesStripActionsHelper.java" startLine="152" startPosition="134" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1108966977729622098" fileName="ChangesStripActionsHelper.java" startLine="168" startPosition="74" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1108966977729720345" fileName="ChangesStripActionsHelper.java" startLine="173" startPosition="106" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1108966977729720327" fileName="ChangesStripActionsHelper.java" startLine="178" startPosition="102" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1108966977729622234" fileName="ChangesStripActionsHelper.java" startLine="184" startPosition="71" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1108966977729720409" fileName="ChangesStripActionsHelper.java" startLine="189" startPosition="108" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1108966977729720451" fileName="ChangesStripActionsHelper.java" startLine="194" startPosition="101" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1108966977729720468" fileName="ChangesStripActionsHelper.java" startLine="199" startPosition="101" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="6663507428710602356" fileName="ChangesStripActionsHelper.java" startLine="292" startPosition="72" endLine="296" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2052504288806114019" fileName="ChangesStripActionsHelper.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNeighbourChangeGroup#(Ljetbrains/mps/nodeEditor/EditorContext;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
-    <nodeInfo nodeId="5525460315804373559" fileName="ChangesStripActionsHelper.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPainter#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
-    <nodeInfo nodeId="1108966977729618977" fileName="ChangesStripActionsHelper.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentChangeGroup#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="5525460315804363463" fileName="ChangesStripActionsHelper.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getHighlighter#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />
     <nodeInfo nodeId="959738663751511273" fileName="ChangesStripActionsHelper.java" startLine="89" startPosition="52" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="959738663751511317" fileName="ChangesStripActionsHelper.java" startLine="94" startPosition="11" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="959738663751511363" fileName="ChangesStripActionsHelper.java" startLine="99" startPosition="9" endLine="104" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1108966977729618949" fileName="ChangesStripActionsHelper.java" startLine="116" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="areOldNodesAvailable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="6214954779304808148" fileName="ChangesStripActionsHelper.java" startLine="111" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentChangeGroupPositionAndHidePopup#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="1108966977729622035" fileName="ChangesStripActionsHelper.java" startLine="142" startPosition="7" endLine="147" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1108966977729720338" fileName="ChangesStripActionsHelper.java" startLine="172" startPosition="9" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1108966977729622177" fileName="ChangesStripActionsHelper.java" startLine="177" startPosition="9" endLine="182" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1108966977729720401" fileName="ChangesStripActionsHelper.java" startLine="188" startPosition="11" endLine="193" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1108966977729720445" fileName="ChangesStripActionsHelper.java" startLine="193" startPosition="22" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1108966977729720462" fileName="ChangesStripActionsHelper.java" startLine="198" startPosition="11" endLine="203" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5525460315804363463" fileName="ChangesStripActionsHelper.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getHighlighter#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />
-    <nodeInfo nodeId="6214954779304808148" fileName="ChangesStripActionsHelper.java" startLine="110" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCurrentChangeGroupPositionAndHidePopup#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+    <nodeInfo nodeId="2052504288806114031" fileName="ChangesStripActionsHelper.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="goToY#(Ljetbrains/mps/nodeEditor/EditorComponent;I)V" />
     <nodeInfo nodeId="1108966977729621906" fileName="ChangesStripActionsHelper.java" startLine="151" startPosition="65" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2052504288806114031" fileName="ChangesStripActionsHelper.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="goToY#(Ljetbrains/mps/nodeEditor/EditorComponent;I)V" />
-    <nodeInfo nodeId="5059587158025329570" fileName="ChangesStripActionsHelper.java" startLine="214" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a0#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/nodeEditor/EditorContext;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
-    <nodeInfo nodeId="6551560157631775303" fileName="ChangesStripActionsHelper.java" startLine="221" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a0a0#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5525460315804373580" fileName="ChangesStripActionsHelper.java" startLine="228" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a5a2#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-    <nodeInfo nodeId="5525460315804363475" fileName="ChangesStripActionsHelper.java" startLine="235" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a1a4#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighterFactory;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />
-    <nodeInfo nodeId="5525460315804373565" fileName="ChangesStripActionsHelper.java" startLine="242" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a5#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;)Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
-    <nodeInfo nodeId="1108966977729619003" fileName="ChangesStripActionsHelper.java" startLine="249" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a6#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
-    <nodeInfo nodeId="5059587158025329608" fileName="ChangesStripActionsHelper.java" startLine="256" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a0h#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljava/util/List;" />
-    <nodeInfo nodeId="5525460315804373583" fileName="ChangesStripActionsHelper.java" startLine="263" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a6a0c0h#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
-    <nodeInfo nodeId="6883096464919730880" fileName="ChangesStripActionsHelper.java" startLine="270" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a1a8#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
-    <nodeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="277" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a2a8#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-    <nodeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="284" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a22a01#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
-    <nodeInfo nodeId="6663507428710602356" fileName="ChangesStripActionsHelper.java" startLine="291" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_ikrecr_a0a0a0a0a0d0t0k#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5059587158025329570" fileName="ChangesStripActionsHelper.java" startLine="215" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a0#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/nodeEditor/EditorContext;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="6551560157631775303" fileName="ChangesStripActionsHelper.java" startLine="222" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a0a0#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5525460315804373580" fileName="ChangesStripActionsHelper.java" startLine="229" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a5a2#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+    <nodeInfo nodeId="5525460315804363475" fileName="ChangesStripActionsHelper.java" startLine="236" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a1a4#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighterFactory;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />
+    <nodeInfo nodeId="5525460315804373565" fileName="ChangesStripActionsHelper.java" startLine="243" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a5#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;)Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
+    <nodeInfo nodeId="1108966977729619003" fileName="ChangesStripActionsHelper.java" startLine="250" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a6#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="5059587158025329608" fileName="ChangesStripActionsHelper.java" startLine="257" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a0a0h#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljava/util/List;" />
+    <nodeInfo nodeId="5525460315804373583" fileName="ChangesStripActionsHelper.java" startLine="264" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a6a0c0h#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
+    <nodeInfo nodeId="6883096464919730880" fileName="ChangesStripActionsHelper.java" startLine="271" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a1a8#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
+    <nodeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="278" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a2a8#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+    <nodeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="285" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_ikrecr_a22a01#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
+    <nodeInfo nodeId="6663507428710602356" fileName="ChangesStripActionsHelper.java" startLine="292" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_ikrecr_a0a0a0a0a0d0t0k#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4953964883742112947" fileName="ChangesStripActionsHelper.java" startLine="131" startPosition="56" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2052504288806114027" fileName="ChangesStripActionsHelper.java" startLine="46" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="goToNeighbourGroup#(Ljetbrains/mps/nodeEditor/EditorContext;Z)V" />
+    <nodeInfo nodeId="2052504288806114027" fileName="ChangesStripActionsHelper.java" startLine="47" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="goToNeighbourGroup#(Ljetbrains/mps/nodeEditor/EditorContext;Z)V" />
+    <nodeInfo nodeId="4953964883742112945" fileName="ChangesStripActionsHelper.java" startLine="131" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1108966977729622061" fileName="ChangesStripActionsHelper.java" startLine="150" startPosition="121" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4953964883742112945" fileName="ChangesStripActionsHelper.java" startLine="130" startPosition="130" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4953964883742112937" fileName="ChangesStripActionsHelper.java" startLine="129" startPosition="29" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2638118297328304981" fileName="ChangesStripActionsHelper.java" startLine="86" startPosition="67" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2638118297328304981" fileName="ChangesStripActionsHelper.java" startLine="87" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2638118297328304980" fileName="ChangesStripActionsHelper.java" startLine="85" startPosition="5" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1108966977729622199" fileName="ChangesStripActionsHelper.java" startLine="183" startPosition="69" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5059587158025319358" fileName="ChangesStripActionsHelper.java" startLine="80" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rollbackChanges#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="5059587158025319358" fileName="ChangesStripActionsHelper.java" startLine="81" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rollbackChanges#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="1108966977729622069" fileName="ChangesStripActionsHelper.java" startLine="167" startPosition="0" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1108966977729575745" fileName="ChangesStripActionsHelper.java" startLine="121" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyOldNodes#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1108966977729575745" fileName="ChangesStripActionsHelper.java" startLine="122" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyOldNodes#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <scopeInfo nodeId="2052504288806109977" fileName="ChangesStripActionsHelper.java" startLine="35" startPosition="39" endLine="35" endPosition="39" />
     <scopeInfo nodeId="2052504288806111819" fileName="ChangesStripActionsHelper.java" startLine="39" startPosition="106" endLine="40" endPosition="77" />
     <scopeInfo nodeId="2052504288806109982" fileName="ChangesStripActionsHelper.java" startLine="43" startPosition="103" endLine="44" endPosition="64" />
@@ -195,7 +195,7 @@
     <scopeInfo nodeId="6883096464919730880" fileName="ChangesStripActionsHelper.java" startLine="272" startPosition="36" endLine="273" endPosition="48" />
     <scopeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="279" startPosition="36" endLine="280" endPosition="47" />
     <scopeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="286" startPosition="36" endLine="287" endPosition="48" />
-    <scopeInfo nodeId="2052504288806109974" fileName="ChangesStripActionsHelper.java" startLine="34" startPosition="40" endLine="36" endPosition="3" />
+    <scopeInfo nodeId="2052504288806109974" fileName="ChangesStripActionsHelper.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="5525460315804363467" fileName="ChangesStripActionsHelper.java" startLine="66" startPosition="80" endLine="68" endPosition="128">
       <varInfo nodeId="5525460315804363460" varName="editorComponent" />
     </scopeInfo>
@@ -203,7 +203,17 @@
       <varInfo nodeId="1108966977729620231" varName="cg" />
     </scopeInfo>
     <scopeInfo nodeId="1108966977729621939" fileName="ChangesStripActionsHelper.java" startLine="153" startPosition="119" endLine="155" endPosition="16" />
+    <scopeInfo nodeId="2052504288806114023" fileName="ChangesStripActionsHelper.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="2052504288806109983" varName="editorContext" />
+      <varInfo nodeId="2052504288806111750" varName="next" />
+    </scopeInfo>
+    <scopeInfo nodeId="959738663751511280" fileName="ChangesStripActionsHelper.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="959738663751511280" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="959738663751511320" fileName="ChangesStripActionsHelper.java" startLine="95" startPosition="71" endLine="98" endPosition="11" />
+    <scopeInfo nodeId="959738663751511370" fileName="ChangesStripActionsHelper.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="959738663751511370" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="6214954779304808154" fileName="ChangesStripActionsHelper.java" startLine="111" startPosition="104" endLine="114" endPosition="33">
       <varInfo nodeId="6214954779304808180" varName="cg" />
     </scopeInfo>
@@ -211,49 +221,52 @@
       <varInfo nodeId="4953964883742112974" varName="changeChildren" />
       <varInfo nodeId="4953964883742112968" varName="ngc" />
     </scopeInfo>
+    <scopeInfo nodeId="4953964883742113026" fileName="ChangesStripActionsHelper.java" startLine="144" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="4953964883742113026" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729622098" fileName="ChangesStripActionsHelper.java" startLine="169" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="1108966977729622098" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729720345" fileName="ChangesStripActionsHelper.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="1108966977729720345" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729720327" fileName="ChangesStripActionsHelper.java" startLine="179" startPosition="0" endLine="182" endPosition="0">
+      <varInfo nodeId="1108966977729720327" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729622234" fileName="ChangesStripActionsHelper.java" startLine="185" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="1108966977729622234" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729720409" fileName="ChangesStripActionsHelper.java" startLine="190" startPosition="0" endLine="193" endPosition="0">
+      <varInfo nodeId="1108966977729720409" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729720451" fileName="ChangesStripActionsHelper.java" startLine="195" startPosition="0" endLine="198" endPosition="0">
+      <varInfo nodeId="1108966977729720451" varName="a" />
+      <varInfo nodeId="1108966977729720451" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1108966977729720468" fileName="ChangesStripActionsHelper.java" startLine="200" startPosition="0" endLine="203" endPosition="0">
+      <varInfo nodeId="1108966977729720468" varName="a" />
+      <varInfo nodeId="1108966977729720468" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="1108966977729720515" fileName="ChangesStripActionsHelper.java" startLine="204" startPosition="51" endLine="207" endPosition="9">
       <varInfo nodeId="1108966977729720518" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2052504288806114023" fileName="ChangesStripActionsHelper.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="2052504288806109983" varName="editorContext" />
-      <varInfo nodeId="2052504288806111750" varName="next" />
+    <scopeInfo nodeId="2052504288806114019" fileName="ChangesStripActionsHelper.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="2052504288806111860" varName="editorContext" />
+      <varInfo nodeId="2052504288806111862" varName="next" />
     </scopeInfo>
     <scopeInfo nodeId="2052504288806114015" fileName="ChangesStripActionsHelper.java" startLine="58" startPosition="69" endLine="62" endPosition="5">
       <varInfo nodeId="4652592318748341055" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751511280" fileName="ChangesStripActionsHelper.java" startLine="90" startPosition="129" endLine="94" endPosition="0">
-      <varInfo nodeId="959738663751511280" varName="ch" />
+    <scopeInfo nodeId="5525460315804373559" fileName="ChangesStripActionsHelper.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="5525460315804373558" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751511370" fileName="ChangesStripActionsHelper.java" startLine="100" startPosition="85" endLine="104" endPosition="0">
-      <varInfo nodeId="959738663751511370" varName="ch" />
+    <scopeInfo nodeId="1108966977729618977" fileName="ChangesStripActionsHelper.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1108966977729619010" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4953964883742113026" fileName="ChangesStripActionsHelper.java" startLine="143" startPosition="107" endLine="147" endPosition="0">
-      <varInfo nodeId="4953964883742113026" varName="n" />
+    <scopeInfo nodeId="1108966977729618949" fileName="ChangesStripActionsHelper.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="1108966977729618953" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1108966977729621908" fileName="ChangesStripActionsHelper.java" startLine="152" startPosition="134" endLine="156" endPosition="9" />
-    <scopeInfo nodeId="1108966977729622098" fileName="ChangesStripActionsHelper.java" startLine="168" startPosition="74" endLine="172" endPosition="0">
-      <varInfo nodeId="1108966977729622098" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729720345" fileName="ChangesStripActionsHelper.java" startLine="173" startPosition="106" endLine="177" endPosition="0">
-      <varInfo nodeId="1108966977729720345" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729720327" fileName="ChangesStripActionsHelper.java" startLine="178" startPosition="102" endLine="182" endPosition="0">
-      <varInfo nodeId="1108966977729720327" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729622234" fileName="ChangesStripActionsHelper.java" startLine="184" startPosition="71" endLine="188" endPosition="0">
-      <varInfo nodeId="1108966977729622234" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729720409" fileName="ChangesStripActionsHelper.java" startLine="189" startPosition="108" endLine="193" endPosition="0">
-      <varInfo nodeId="1108966977729720409" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729720451" fileName="ChangesStripActionsHelper.java" startLine="194" startPosition="101" endLine="198" endPosition="0">
-      <varInfo nodeId="1108966977729720451" varName="a" />
-      <varInfo nodeId="1108966977729720451" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729720468" fileName="ChangesStripActionsHelper.java" startLine="199" startPosition="101" endLine="203" endPosition="0">
-      <varInfo nodeId="1108966977729720468" varName="a" />
-      <varInfo nodeId="1108966977729720468" varName="b" />
-    </scopeInfo>
     <scopeInfo nodeId="5059587158025329570" fileName="ChangesStripActionsHelper.java" startLine="215" startPosition="130" endLine="219" endPosition="16" />
     <scopeInfo nodeId="6551560157631775303" fileName="ChangesStripActionsHelper.java" startLine="222" startPosition="82" endLine="226" endPosition="16" />
     <scopeInfo nodeId="5525460315804373580" fileName="ChangesStripActionsHelper.java" startLine="229" startPosition="99" endLine="233" endPosition="0" />
@@ -266,73 +279,60 @@
     <scopeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="278" startPosition="74" endLine="282" endPosition="16" />
     <scopeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="285" startPosition="82" endLine="289" endPosition="0" />
     <scopeInfo nodeId="6663507428710602356" fileName="ChangesStripActionsHelper.java" startLine="292" startPosition="72" endLine="296" endPosition="6" />
-    <scopeInfo nodeId="2052504288806114019" fileName="ChangesStripActionsHelper.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="2052504288806111860" varName="editorContext" />
-      <varInfo nodeId="2052504288806111862" varName="next" />
-    </scopeInfo>
-    <scopeInfo nodeId="5525460315804373559" fileName="ChangesStripActionsHelper.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="5525460315804373558" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1108966977729618977" fileName="ChangesStripActionsHelper.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="1108966977729619010" varName="editorContext" />
+    <scopeInfo nodeId="5525460315804363463" fileName="ChangesStripActionsHelper.java" startLine="65" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="5525460315804363462" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="959738663751511317" fileName="ChangesStripActionsHelper.java" startLine="94" startPosition="11" endLine="99" endPosition="9">
       <varInfo nodeId="959738663751511318" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="1108966977729618949" fileName="ChangesStripActionsHelper.java" startLine="116" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="1108966977729618953" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5525460315804363463" fileName="ChangesStripActionsHelper.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="5525460315804363462" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6214954779304808148" fileName="ChangesStripActionsHelper.java" startLine="110" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="6214954779304808148" fileName="ChangesStripActionsHelper.java" startLine="111" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="6214954779304808149" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2052504288806114031" fileName="ChangesStripActionsHelper.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="2052504288806114017" varName="editorComponent" />
+      <varInfo nodeId="2052504288806114035" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="1108966977729621906" fileName="ChangesStripActionsHelper.java" startLine="151" startPosition="65" endLine="157" endPosition="7">
       <varInfo nodeId="1108966977729621907" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2052504288806114031" fileName="ChangesStripActionsHelper.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="2052504288806114017" varName="editorComponent" />
-      <varInfo nodeId="2052504288806114035" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="5059587158025329570" fileName="ChangesStripActionsHelper.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="5059587158025329570" fileName="ChangesStripActionsHelper.java" startLine="215" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="5059587158025329570" varName="checkedDotOperand" />
       <varInfo nodeId="5059587158025329570" varName="editorContext" />
       <varInfo nodeId="5059587158025329570" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="6551560157631775303" fileName="ChangesStripActionsHelper.java" startLine="221" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="6551560157631775303" fileName="ChangesStripActionsHelper.java" startLine="222" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="6551560157631775303" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5525460315804373580" fileName="ChangesStripActionsHelper.java" startLine="228" startPosition="0" endLine="235" endPosition="0">
+    <scopeInfo nodeId="5525460315804373580" fileName="ChangesStripActionsHelper.java" startLine="229" startPosition="0" endLine="235" endPosition="0">
       <varInfo nodeId="5525460315804373580" varName="checkedDotOperand" />
       <varInfo nodeId="5525460315804373580" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="5525460315804363475" fileName="ChangesStripActionsHelper.java" startLine="235" startPosition="0" endLine="242" endPosition="0">
+    <scopeInfo nodeId="5525460315804363475" fileName="ChangesStripActionsHelper.java" startLine="236" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="5525460315804363475" varName="checkedDotOperand" />
       <varInfo nodeId="5525460315804363475" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5525460315804373565" fileName="ChangesStripActionsHelper.java" startLine="242" startPosition="0" endLine="249" endPosition="0">
+    <scopeInfo nodeId="5525460315804373565" fileName="ChangesStripActionsHelper.java" startLine="243" startPosition="0" endLine="249" endPosition="0">
       <varInfo nodeId="5525460315804373565" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1108966977729619003" fileName="ChangesStripActionsHelper.java" startLine="249" startPosition="0" endLine="256" endPosition="0">
+    <scopeInfo nodeId="1108966977729619003" fileName="ChangesStripActionsHelper.java" startLine="250" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="1108966977729619003" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5059587158025329608" fileName="ChangesStripActionsHelper.java" startLine="256" startPosition="0" endLine="263" endPosition="0">
+    <scopeInfo nodeId="5059587158025329608" fileName="ChangesStripActionsHelper.java" startLine="257" startPosition="0" endLine="263" endPosition="0">
       <varInfo nodeId="5059587158025329608" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5525460315804373583" fileName="ChangesStripActionsHelper.java" startLine="263" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="5525460315804373583" fileName="ChangesStripActionsHelper.java" startLine="264" startPosition="0" endLine="270" endPosition="0">
       <varInfo nodeId="5525460315804373583" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6883096464919730880" fileName="ChangesStripActionsHelper.java" startLine="270" startPosition="0" endLine="277" endPosition="0">
+    <scopeInfo nodeId="6883096464919730880" fileName="ChangesStripActionsHelper.java" startLine="271" startPosition="0" endLine="277" endPosition="0">
       <varInfo nodeId="6883096464919730880" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="277" startPosition="0" endLine="284" endPosition="0">
+    <scopeInfo nodeId="6214954779304826196" fileName="ChangesStripActionsHelper.java" startLine="278" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="6214954779304826196" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="284" startPosition="0" endLine="291" endPosition="0">
+    <scopeInfo nodeId="5525460315804374109" fileName="ChangesStripActionsHelper.java" startLine="285" startPosition="0" endLine="291" endPosition="0">
       <varInfo nodeId="5525460315804374109" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6663507428710602356" fileName="ChangesStripActionsHelper.java" startLine="291" startPosition="0" endLine="298" endPosition="0">
+    <scopeInfo nodeId="6663507428710602356" fileName="ChangesStripActionsHelper.java" startLine="292" startPosition="0" endLine="298" endPosition="0">
       <varInfo nodeId="6663507428710602356" varName="a" />
       <varInfo nodeId="6663507428710602356" varName="b" />
     </scopeInfo>
@@ -342,15 +342,15 @@
     </scopeInfo>
     <scopeInfo nodeId="4953964883742112946" fileName="ChangesStripActionsHelper.java" startLine="131" startPosition="56" endLine="140" endPosition="9" />
     <scopeInfo nodeId="1108966977729622064" fileName="ChangesStripActionsHelper.java" startLine="151" startPosition="65" endLine="160" endPosition="7" />
-    <scopeInfo nodeId="2052504288806114027" fileName="ChangesStripActionsHelper.java" startLine="46" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="2052504288806114027" fileName="ChangesStripActionsHelper.java" startLine="47" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="2052504288806111812" varName="editorContext" />
       <varInfo nodeId="2052504288806111814" varName="next" />
     </scopeInfo>
+    <scopeInfo nodeId="4953964883742112945" fileName="ChangesStripActionsHelper.java" startLine="131" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="4953964883742112945" varName="ch" />
+    </scopeInfo>
     <scopeInfo nodeId="1108966977729622061" fileName="ChangesStripActionsHelper.java" startLine="150" startPosition="121" endLine="161" endPosition="5">
       <varInfo nodeId="1108966977729622062" varName="pathToRoot" />
-    </scopeInfo>
-    <scopeInfo nodeId="4953964883742112945" fileName="ChangesStripActionsHelper.java" startLine="130" startPosition="130" endLine="142" endPosition="0">
-      <varInfo nodeId="4953964883742112945" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="2638118297328304982" fileName="ChangesStripActionsHelper.java" startLine="87" startPosition="25" endLine="106" endPosition="56">
       <varInfo nodeId="2638118297328304995" varName="model" />
@@ -362,11 +362,11 @@
       <varInfo nodeId="1108966977729720463" varName="max" />
       <varInfo nodeId="1108966977729720446" varName="min" />
     </scopeInfo>
-    <scopeInfo nodeId="2638118297328304981" fileName="ChangesStripActionsHelper.java" startLine="86" startPosition="67" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="2638118297328304981" fileName="ChangesStripActionsHelper.java" startLine="87" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="5059587158025319361" fileName="ChangesStripActionsHelper.java" startLine="81" startPosition="82" endLine="108" endPosition="7">
       <varInfo nodeId="5059587158025329605" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="5059587158025319358" fileName="ChangesStripActionsHelper.java" startLine="80" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="5059587158025319358" fileName="ChangesStripActionsHelper.java" startLine="81" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="5059587158025319362" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1108966977729622070" fileName="ChangesStripActionsHelper.java" startLine="172" startPosition="9" endLine="208" endPosition="7">
@@ -383,7 +383,7 @@
       <varInfo nodeId="1994027965669710605" varName="oldModel" />
       <varInfo nodeId="1108966977729622036" varName="paths" />
     </scopeInfo>
-    <scopeInfo nodeId="1108966977729575745" fileName="ChangesStripActionsHelper.java" startLine="121" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="1108966977729575745" fileName="ChangesStripActionsHelper.java" startLine="122" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="1108966977729575751" varName="editorContext" />
     </scopeInfo>
     <unitInfo nodeId="959738663751511280" fileName="ChangesStripActionsHelper.java" startLine="90" startPosition="90" endLine="94" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper$2" />
@@ -401,12 +401,12 @@
     <unitInfo nodeId="2052504288806109972" fileName="ChangesStripActionsHelper.java" startLine="34" startPosition="0" endLine="299" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
   </root>
   <root nodeId="2881457021876857496" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
-    <nodeInfo nodeId="2881457021876857518" fileName="PopupPanel.java" startLine="23" startPosition="45" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPainter" />
-    <nodeInfo nodeId="2881457021876857838" fileName="PopupPanel.java" startLine="24" startPosition="40" endLine="25" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroup" />
-    <nodeInfo nodeId="2837442331563682692" fileName="PopupPanel.java" startLine="25" startPosition="36" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMouseListener" />
-    <nodeInfo nodeId="2837442331563682699" fileName="PopupPanel.java" startLine="26" startPosition="88" endLine="27" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFocusListener" />
-    <nodeInfo nodeId="2837442331563748747" fileName="PopupPanel.java" startLine="27" startPosition="88" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
-    <nodeInfo nodeId="204834724131529735" fileName="PopupPanel.java" startLine="28" startPosition="35" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToolbar" />
+    <nodeInfo nodeId="2881457021876857518" fileName="PopupPanel.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPainter" />
+    <nodeInfo nodeId="2881457021876857838" fileName="PopupPanel.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroup" />
+    <nodeInfo nodeId="2837442331563682692" fileName="PopupPanel.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMouseListener" />
+    <nodeInfo nodeId="2837442331563682699" fileName="PopupPanel.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFocusListener" />
+    <nodeInfo nodeId="2837442331563748747" fileName="PopupPanel.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
+    <nodeInfo nodeId="204834724131529735" fileName="PopupPanel.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToolbar" />
     <nodeInfo nodeId="2881457021876870590" fileName="PopupPanel.java" startLine="31" startPosition="69" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2881457021876857526" fileName="PopupPanel.java" startLine="32" startPosition="26" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2837442331563748750" fileName="PopupPanel.java" startLine="33" startPosition="24" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -452,19 +452,19 @@
     <nodeInfo nodeId="2837442331563679273" fileName="PopupPanel.java" startLine="96" startPosition="56" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2837442331563679311" fileName="PopupPanel.java" startLine="105" startPosition="48" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2837442331563679337" fileName="PopupPanel.java" startLine="115" startPosition="45" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="100" startPosition="54" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMouseListener#()V" />
-    <nodeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="110" startPosition="54" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFocusListener#()V" />
+    <nodeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="101" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMouseListener#()V" />
+    <nodeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="111" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFocusListener#()V" />
+    <nodeInfo nodeId="3110655250282849316" fileName="PopupPanel.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
     <nodeInfo nodeId="5109148457513120328" fileName="PopupPanel.java" startLine="43" startPosition="42" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4477049948824827100" fileName="PopupPanel.java" startLine="48" startPosition="0" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3110655250282849316" fileName="PopupPanel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
     <nodeInfo nodeId="52085229094015861" fileName="PopupPanel.java" startLine="68" startPosition="74" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListeners#()V" />
-    <nodeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="83" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListeners#()V" />
-    <nodeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="113" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="focusLost#(Ljava/awt/event/FocusEvent;)V" />
-    <nodeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="88" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="58" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(II)V" />
-    <nodeInfo nodeId="2881457021876857498" fileName="PopupPanel.java" startLine="30" startPosition="0" endLine="53" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PopupPanel#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+    <nodeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListeners#()V" />
+    <nodeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListeners#()V" />
+    <nodeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="focusLost#(Ljava/awt/event/FocusEvent;)V" />
+    <nodeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="89" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="59" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(II)V" />
+    <nodeInfo nodeId="2881457021876857498" fileName="PopupPanel.java" startLine="31" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PopupPanel#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
     <scopeInfo nodeId="2837442331563679250" fileName="PopupPanel.java" startLine="101" startPosition="30" endLine="101" endPosition="30" />
     <scopeInfo nodeId="2837442331563679324" fileName="PopupPanel.java" startLine="111" startPosition="30" endLine="111" endPosition="30" />
     <scopeInfo nodeId="3110655250282849319" fileName="PopupPanel.java" startLine="55" startPosition="44" endLine="56" endPosition="25" />
@@ -476,33 +476,33 @@
     <scopeInfo nodeId="52085229094015862" fileName="PopupPanel.java" startLine="69" startPosition="23" endLine="71" endPosition="58" />
     <scopeInfo nodeId="2837442331563678936" fileName="PopupPanel.java" startLine="79" startPosition="31" endLine="81" endPosition="47" />
     <scopeInfo nodeId="2837442331563678940" fileName="PopupPanel.java" startLine="84" startPosition="34" endLine="86" endPosition="50" />
-    <scopeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="100" startPosition="54" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="110" startPosition="54" endLine="112" endPosition="5" />
-    <scopeInfo nodeId="3110655250282849316" fileName="PopupPanel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="103" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="2837442331563679247" fileName="PopupPanel.java" startLine="101" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="2837442331563679321" fileName="PopupPanel.java" startLine="111" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="3110655250282849316" fileName="PopupPanel.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2837442331563678934" fileName="PopupPanel.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2837442331563678938" fileName="PopupPanel.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="2837442331563679253" fileName="PopupPanel.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="2837442331563679256" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="113" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="2837442331563679327" fileName="PopupPanel.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="2837442331563679330" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="2837442331563679265" fileName="PopupPanel.java" startLine="89" startPosition="30" endLine="97" endPosition="28">
       <varInfo nodeId="731460841273166559" varName="layeredPane" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="88" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="2837442331563679263" fileName="PopupPanel.java" startLine="89" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="2837442331563679285" fileName="PopupPanel.java" startLine="59" startPosition="34" endLine="76" endPosition="19">
       <varInfo nodeId="2486616746024237137" varName="layeredPane" />
       <varInfo nodeId="52085229094018762" varName="overflow" />
     </scopeInfo>
-    <scopeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="58" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="2837442331563679283" fileName="PopupPanel.java" startLine="59" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="2837442331563679290" varName="x" />
       <varInfo nodeId="2837442331563679293" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="2881457021876857501" fileName="PopupPanel.java" startLine="31" startPosition="69" endLine="52" endPosition="5">
       <varInfo nodeId="5109148457513120002" varName="toolbarPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="2881457021876857498" fileName="PopupPanel.java" startLine="30" startPosition="0" endLine="53" endPosition="3">
+    <scopeInfo nodeId="2881457021876857498" fileName="PopupPanel.java" startLine="31" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="2881457021876857835" varName="group" />
       <varInfo nodeId="2881457021876857522" varName="painter" />
     </scopeInfo>
@@ -511,7 +511,7 @@
     <unitInfo nodeId="2881457021876857496" fileName="PopupPanel.java" startLine="23" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
   </root>
   <root nodeId="4477049948824855836" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
-    <nodeInfo nodeId="1455391539105549287" fileName="BaseVersionEditorComponent.java" startLine="30" startPosition="95" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
+    <nodeInfo nodeId="1455391539105549287" fileName="BaseVersionEditorComponent.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
     <nodeInfo nodeId="4477049948824882325" fileName="BaseVersionEditorComponent.java" startLine="33" startPosition="98" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4477049948824882337" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="28" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4477049948824882349" fileName="BaseVersionEditorComponent.java" startLine="35" startPosition="114" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -538,17 +538,17 @@
     <nodeInfo nodeId="4652592318748338330" fileName="BaseVersionEditorComponent.java" startLine="75" startPosition="55" endLine="76" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338336" fileName="BaseVersionEditorComponent.java" startLine="77" startPosition="5" endLine="78" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1455391539105552182" fileName="BaseVersionEditorComponent.java" startLine="81" startPosition="38" endLine="82" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3407638002087242024" fileName="BaseVersionEditorComponent.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3407638002087261686" fileName="BaseVersionEditorComponent.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)Ljetbrains/mps/vcs/diff/ui/common/Bounds;" />
+    <nodeInfo nodeId="3407638002087261696" fileName="BaseVersionEditorComponent.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/vcs/diff/ui/common/Bounds;Ljetbrains/mps/vcs/diff/ui/common/Bounds;)Ljetbrains/mps/vcs/diff/ui/common/Bounds;" />
     <nodeInfo nodeId="6786798249452836519" fileName="BaseVersionEditorComponent.java" startLine="57" startPosition="46" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3407638002087242024" fileName="BaseVersionEditorComponent.java" startLine="41" startPosition="157" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3407638002087261686" fileName="BaseVersionEditorComponent.java" startLine="46" startPosition="113" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)Ljetbrains/mps/vcs/diff/ui/common/Bounds;" />
-    <nodeInfo nodeId="3407638002087261696" fileName="BaseVersionEditorComponent.java" startLine="50" startPosition="57" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/vcs/diff/ui/common/Bounds;Ljetbrains/mps/vcs/diff/ui/common/Bounds;)Ljetbrains/mps/vcs/diff/ui/common/Bounds;" />
+    <nodeInfo nodeId="1455391539105552178" fileName="BaseVersionEditorComponent.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollPane#()Ljavax/swing/JScrollPane;" />
     <nodeInfo nodeId="4652592318748338317" fileName="BaseVersionEditorComponent.java" startLine="73" startPosition="65" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1455391539105552178" fileName="BaseVersionEditorComponent.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScrollPane#()Ljavax/swing/JScrollPane;" />
     <nodeInfo nodeId="3407638002087242015" fileName="BaseVersionEditorComponent.java" startLine="40" startPosition="0" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6786798249452830906" fileName="BaseVersionEditorComponent.java" startLine="55" startPosition="42" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4477049948824882309" fileName="BaseVersionEditorComponent.java" startLine="72" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4477049948824882309" fileName="BaseVersionEditorComponent.java" startLine="73" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3407638002087261679" fileName="BaseVersionEditorComponent.java" startLine="45" startPosition="7" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="32" startPosition="0" endLine="71" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseVersionEditorComponent#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+    <nodeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="33" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseVersionEditorComponent#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
     <scopeInfo nodeId="3407638002087242025" fileName="BaseVersionEditorComponent.java" startLine="42" startPosition="70" endLine="43" endPosition="111" />
     <scopeInfo nodeId="3407638002087261687" fileName="BaseVersionEditorComponent.java" startLine="47" startPosition="51" endLine="48" endPosition="60" />
     <scopeInfo nodeId="3407638002087261697" fileName="BaseVersionEditorComponent.java" startLine="51" startPosition="49" endLine="52" endPosition="26" />
@@ -557,25 +557,25 @@
     <scopeInfo nodeId="4652592318748338325" fileName="BaseVersionEditorComponent.java" startLine="74" startPosition="65" endLine="76" endPosition="73">
       <varInfo nodeId="4652592318748338327" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3407638002087242024" fileName="BaseVersionEditorComponent.java" startLine="41" startPosition="157" endLine="45" endPosition="0">
+    <scopeInfo nodeId="3407638002087242024" fileName="BaseVersionEditorComponent.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3407638002087242024" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="3407638002087261686" fileName="BaseVersionEditorComponent.java" startLine="46" startPosition="113" endLine="50" endPosition="0">
+    <scopeInfo nodeId="3407638002087261686" fileName="BaseVersionEditorComponent.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="3407638002087261686" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="3407638002087261696" fileName="BaseVersionEditorComponent.java" startLine="50" startPosition="57" endLine="54" endPosition="0">
+    <scopeInfo nodeId="3407638002087261696" fileName="BaseVersionEditorComponent.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="3407638002087261696" varName="a" />
       <varInfo nodeId="3407638002087261696" varName="b" />
     </scopeInfo>
+    <scopeInfo nodeId="1455391539105552178" fileName="BaseVersionEditorComponent.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="6786798249452830907" fileName="BaseVersionEditorComponent.java" startLine="56" startPosition="115" endLine="60" endPosition="7">
       <varInfo nodeId="6786798249452835784" varName="bounds" />
     </scopeInfo>
-    <scopeInfo nodeId="1455391539105552178" fileName="BaseVersionEditorComponent.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="4477049948824882315" fileName="BaseVersionEditorComponent.java" startLine="73" startPosition="65" endLine="78" endPosition="70" />
     <scopeInfo nodeId="6786798249452830906" fileName="BaseVersionEditorComponent.java" startLine="55" startPosition="42" endLine="61" endPosition="5">
       <varInfo nodeId="6786798249452830911" varName="leafCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4477049948824882309" fileName="BaseVersionEditorComponent.java" startLine="72" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="4477049948824882309" fileName="BaseVersionEditorComponent.java" startLine="73" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="4477049948824882312" varName="events" />
     </scopeInfo>
     <scopeInfo nodeId="4477049948824882324" fileName="BaseVersionEditorComponent.java" startLine="33" startPosition="98" endLine="70" endPosition="71">
@@ -586,7 +586,7 @@
       <varInfo nodeId="3407638002087261680" varName="verticalBounds" />
       <varInfo nodeId="3407638002087261791" varName="viewRect" />
     </scopeInfo>
-    <scopeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="32" startPosition="0" endLine="71" endPosition="3">
+    <scopeInfo nodeId="4477049948824882320" fileName="BaseVersionEditorComponent.java" startLine="33" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="4477049948824882333" varName="changeGroup" />
       <varInfo nodeId="4477049948824882326" varName="operationContext" />
     </scopeInfo>
@@ -596,13 +596,13 @@
     <unitInfo nodeId="4477049948824855836" fileName="BaseVersionEditorComponent.java" startLine="30" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent" />
   </root>
   <root nodeId="6402272430682173534" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
-    <nodeInfo nodeId="6402272430682173535" fileName="EditorHighlighter.java" startLine="39" startPosition="62" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
-    <nodeInfo nodeId="166132277801270136" fileName="EditorHighlighter.java" startLine="40" startPosition="44" endLine="41" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangesMessages" />
-    <nodeInfo nodeId="6402272430682178240" fileName="EditorHighlighter.java" startLine="41" startPosition="155" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDifference" />
-    <nodeInfo nodeId="867367425399300671" fileName="EditorHighlighter.java" startLine="42" startPosition="48" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStripsPainter" />
-    <nodeInfo nodeId="6402272430682173538" fileName="EditorHighlighter.java" startLine="43" startPosition="46" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
-    <nodeInfo nodeId="6402272430682178227" fileName="EditorHighlighter.java" startLine="44" startPosition="67" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposedLock" />
-    <nodeInfo nodeId="6402272430682178233" fileName="EditorHighlighter.java" startLine="45" startPosition="53" endLine="46" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposed" />
+    <nodeInfo nodeId="6402272430682173535" fileName="EditorHighlighter.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
+    <nodeInfo nodeId="166132277801270136" fileName="EditorHighlighter.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangesMessages" />
+    <nodeInfo nodeId="6402272430682178240" fileName="EditorHighlighter.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDifference" />
+    <nodeInfo nodeId="867367425399300671" fileName="EditorHighlighter.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStripsPainter" />
+    <nodeInfo nodeId="6402272430682173538" fileName="EditorHighlighter.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
+    <nodeInfo nodeId="6402272430682178227" fileName="EditorHighlighter.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposedLock" />
+    <nodeInfo nodeId="6402272430682178233" fileName="EditorHighlighter.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposed" />
     <nodeInfo nodeId="76450717690085773" fileName="EditorHighlighter.java" startLine="48" startPosition="108" endLine="49" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="166132277801288837" fileName="EditorHighlighter.java" startLine="49" startPosition="40" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7090398860987902384" fileName="EditorHighlighter.java" startLine="56" startPosition="31" endLine="57" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -655,8 +655,8 @@
     <nodeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="219" startPosition="5" endLine="220" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="224" startPosition="36" endLine="225" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="226" startPosition="5" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="560587099276883891" fileName="EditorHighlighter.java" startLine="230" startPosition="77" endLine="231" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddedMessages" />
-    <nodeInfo nodeId="560587099276885868" fileName="EditorHighlighter.java" startLine="231" startPosition="116" endLine="232" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRemovedMessages" />
+    <nodeInfo nodeId="560587099276883891" fileName="EditorHighlighter.java" startLine="231" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddedMessages" />
+    <nodeInfo nodeId="560587099276885868" fileName="EditorHighlighter.java" startLine="232" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRemovedMessages" />
     <nodeInfo nodeId="560587099276885882" fileName="EditorHighlighter.java" startLine="237" startPosition="58" endLine="238" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="928328222692503836" fileName="EditorHighlighter.java" startLine="238" startPosition="66" endLine="239" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="967454776205091700" fileName="EditorHighlighter.java" startLine="239" startPosition="95" endLine="240" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -670,69 +670,69 @@
     <nodeInfo nodeId="967454776205100320" fileName="EditorHighlighter.java" startLine="259" startPosition="46" endLine="260" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2343602534332756996" fileName="EditorHighlighter.java" startLine="260" startPosition="63" endLine="261" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2343602534332756988" fileName="EditorHighlighter.java" startLine="261" startPosition="55" endLine="262" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6402272430682178251" fileName="EditorHighlighter.java" startLine="233" startPosition="0" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCurrentDifferenceListener#()V" />
+    <nodeInfo nodeId="6402272430682178251" fileName="EditorHighlighter.java" startLine="234" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCurrentDifferenceListener#()V" />
     <nodeInfo nodeId="7090398860987902382" fileName="EditorHighlighter.java" startLine="55" startPosition="43" endLine="58" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8689837533387259883" fileName="EditorHighlighter.java" startLine="59" startPosition="71" endLine="62" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2835122602744614997" fileName="EditorHighlighter.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="6402272430682179133" fileName="EditorHighlighter.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="6402272430682179336" fileName="EditorHighlighter.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)V" />
     <nodeInfo nodeId="8601487597690662340" fileName="EditorHighlighter.java" startLine="121" startPosition="63" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3225080925238796239" fileName="EditorHighlighter.java" startLine="125" startPosition="40" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1859306244559451388" fileName="EditorHighlighter.java" startLine="132" startPosition="5" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6402272430682179261" fileName="EditorHighlighter.java" startLine="136" startPosition="38" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6402272430682179449" fileName="EditorHighlighter.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)Z" />
     <nodeInfo nodeId="867367425399245543" fileName="EditorHighlighter.java" startLine="160" startPosition="73" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="6402272430682179553" fileName="EditorHighlighter.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="2052504288806110296" fileName="EditorHighlighter.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripsPainter#()Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
+    <nodeInfo nodeId="867367425399245514" fileName="EditorHighlighter.java" startLine="204" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
+    <nodeInfo nodeId="6402272430682179302" fileName="EditorHighlighter.java" startLine="208" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlightManager#()Ljetbrains/mps/nodeEditor/NodeHighlightManager;" />
+    <nodeInfo nodeId="867367425399236949" fileName="EditorHighlighter.java" startLine="212" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftEditorHighlighter#()Ljetbrains/mps/nodeEditor/leftHighlighter/LeftEditorHighlighter;" />
     <nodeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="216" startPosition="83" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="223" startPosition="83" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="967454776205093008" fileName="EditorHighlighter.java" startLine="252" startPosition="74" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="967454776205093019" fileName="EditorHighlighter.java" startLine="255" startPosition="9" endLine="258" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2034607283473279946" fileName="EditorHighlighter.java" startLine="63" startPosition="57" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5643745088231029815" fileName="EditorHighlighter.java" startLine="67" startPosition="16" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2835122602744614997" fileName="EditorHighlighter.java" startLine="77" startPosition="108" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="6402272430682179133" fileName="EditorHighlighter.java" startLine="81" startPosition="59" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="6402272430682179336" fileName="EditorHighlighter.java" startLine="90" startPosition="100" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)V" />
-    <nodeInfo nodeId="6402272430682179449" fileName="EditorHighlighter.java" startLine="148" startPosition="140" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)Z" />
-    <nodeInfo nodeId="6402272430682179553" fileName="EditorHighlighter.java" startLine="173" startPosition="138" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="4081605450013996680" fileName="EditorHighlighter.java" startLine="179" startPosition="72" endLine="183" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6402272430682179508" fileName="EditorHighlighter.java" startLine="184" startPosition="21" endLine="188" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2052504288806110296" fileName="EditorHighlighter.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripsPainter#()Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
-    <nodeInfo nodeId="867367425399245514" fileName="EditorHighlighter.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
-    <nodeInfo nodeId="6402272430682179302" fileName="EditorHighlighter.java" startLine="207" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlightManager#()Ljetbrains/mps/nodeEditor/NodeHighlightManager;" />
-    <nodeInfo nodeId="867367425399236949" fileName="EditorHighlighter.java" startLine="211" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftEditorHighlighter#()Ljetbrains/mps/nodeEditor/leftHighlighter/LeftEditorHighlighter;" />
+    <nodeInfo nodeId="867367425399296128" fileName="EditorHighlighter.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
     <nodeInfo nodeId="6402272430682179329" fileName="EditorHighlighter.java" startLine="89" startPosition="75" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="867367425399300685" fileName="EditorHighlighter.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="867367425399245532" fileName="EditorHighlighter.java" startLine="160" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
     <nodeInfo nodeId="6402272430682179536" fileName="EditorHighlighter.java" startLine="172" startPosition="46" endLine="177" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="867367425399296128" fileName="EditorHighlighter.java" startLine="194" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="867367425399300685" fileName="EditorHighlighter.java" startLine="99" startPosition="64" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4366048675740426755" fileName="EditorHighlighter.java" startLine="237" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="4366048675740426771" fileName="EditorHighlighter.java" startLine="243" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="6402272430682179257" fileName="EditorHighlighter.java" startLine="135" startPosition="5" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="867367425399245532" fileName="EditorHighlighter.java" startLine="159" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
-    <nodeInfo nodeId="4366048675740426755" fileName="EditorHighlighter.java" startLine="236" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="4366048675740426771" fileName="EditorHighlighter.java" startLine="242" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="216" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_urq9my_a0a4#(Ljetbrains/mps/vcs/changesmanager/CurrentDifference;)Ljetbrains/mps/vcs/diff/ChangeSet;" />
+    <nodeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="223" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_urq9my_a3a0a2a#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
+    <nodeInfo nodeId="6402272430682179325" fileName="EditorHighlighter.java" startLine="89" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/util/List;)V" />
     <nodeInfo nodeId="867367425399300680" fileName="EditorHighlighter.java" startLine="98" startPosition="72" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6402272430682179410" fileName="EditorHighlighter.java" startLine="147" startPosition="94" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6402272430682179532" fileName="EditorHighlighter.java" startLine="171" startPosition="15" endLine="178" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="215" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_urq9my_a0a4#(Ljetbrains/mps/vcs/changesmanager/CurrentDifference;)Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="222" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_urq9my_a3a0a2a#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
-    <nodeInfo nodeId="6402272430682179325" fileName="EditorHighlighter.java" startLine="88" startPosition="141" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/util/List;)V" />
     <nodeInfo nodeId="6402272430682179119" fileName="EditorHighlighter.java" startLine="76" startPosition="40" endLine="85" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6402272430682179316" fileName="EditorHighlighter.java" startLine="87" startPosition="50" endLine="96" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6402272430682179108" fileName="EditorHighlighter.java" startLine="75" startPosition="73" endLine="86" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3375103409259077543" fileName="EditorHighlighter.java" startLine="86" startPosition="17" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5455599429139860995" fileName="EditorHighlighter.java" startLine="119" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6402272430682179391" fileName="EditorHighlighter.java" startLine="145" startPosition="72" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="5455599429139860995" fileName="EditorHighlighter.java" startLine="118" startPosition="59" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="967454776205092308" fileName="EditorHighlighter.java" startLine="250" startPosition="40" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5455599429139860994" fileName="EditorHighlighter.java" startLine="117" startPosition="45" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6402272430682179381" fileName="EditorHighlighter.java" startLine="144" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
+    <nodeInfo nodeId="6402272430682179381" fileName="EditorHighlighter.java" startLine="145" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
     <nodeInfo nodeId="3688511235932108471" fileName="EditorHighlighter.java" startLine="116" startPosition="109" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="560587099276885915" fileName="EditorHighlighter.java" startLine="248" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
+    <nodeInfo nodeId="560587099276885915" fileName="EditorHighlighter.java" startLine="249" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
     <nodeInfo nodeId="6402272430682179504" fileName="EditorHighlighter.java" startLine="170" startPosition="28" endLine="189" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="6402272430682179486" fileName="EditorHighlighter.java" startLine="168" startPosition="25" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6402272430682179484" fileName="EditorHighlighter.java" startLine="167" startPosition="57" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6402272430682179484" fileName="EditorHighlighter.java" startLine="168" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6402272430682179483" fileName="EditorHighlighter.java" startLine="166" startPosition="25" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6402272430682179479" fileName="EditorHighlighter.java" startLine="165" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="6402272430682179152" fileName="EditorHighlighter.java" startLine="114" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
+    <nodeInfo nodeId="6402272430682179479" fileName="EditorHighlighter.java" startLine="166" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="6402272430682179152" fileName="EditorHighlighter.java" startLine="115" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
     <nodeInfo nodeId="1998524321632141959" fileName="EditorHighlighter.java" startLine="71" startPosition="15" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7090398860987902378" fileName="EditorHighlighter.java" startLine="54" startPosition="29" endLine="108" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6099081905063733762" fileName="EditorHighlighter.java" startLine="53" startPosition="61" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6099081905063733762" fileName="EditorHighlighter.java" startLine="54" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6099081905063733761" fileName="EditorHighlighter.java" startLine="52" startPosition="25" endLine="110" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1998524321632141957" fileName="EditorHighlighter.java" startLine="51" startPosition="93" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1998524321632141957" fileName="EditorHighlighter.java" startLine="52" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1998524321632141950" fileName="EditorHighlighter.java" startLine="50" startPosition="0" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6402272430682173542" fileName="EditorHighlighter.java" startLine="47" startPosition="0" endLine="113" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorHighlighter#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="6402272430682173542" fileName="EditorHighlighter.java" startLine="48" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorHighlighter#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <scopeInfo nodeId="6402272430682178254" fileName="EditorHighlighter.java" startLine="234" startPosition="42" endLine="234" endPosition="42" />
     <scopeInfo nodeId="7090398860987902383" fileName="EditorHighlighter.java" startLine="56" startPosition="31" endLine="57" endPosition="23" />
     <scopeInfo nodeId="8689837533387259884" fileName="EditorHighlighter.java" startLine="60" startPosition="128" endLine="61" endPosition="23" />
@@ -759,9 +759,28 @@
     <scopeInfo nodeId="5643745088231029816" fileName="EditorHighlighter.java" startLine="68" startPosition="66" endLine="70" endPosition="81" />
     <scopeInfo nodeId="4081605450013996681" fileName="EditorHighlighter.java" startLine="180" startPosition="42" endLine="182" endPosition="40" />
     <scopeInfo nodeId="6402272430682179510" fileName="EditorHighlighter.java" startLine="185" startPosition="46" endLine="187" endPosition="32" />
-    <scopeInfo nodeId="6402272430682178251" fileName="EditorHighlighter.java" startLine="233" startPosition="0" endLine="235" endPosition="5" />
+    <scopeInfo nodeId="6402272430682178251" fileName="EditorHighlighter.java" startLine="234" startPosition="0" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="2835122602744614997" fileName="EditorHighlighter.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="2835122602744614997" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="6402272430682179133" fileName="EditorHighlighter.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="6402272430682179133" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="6402272430682179336" fileName="EditorHighlighter.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="6402272430682179336" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="867367425399300686" fileName="EditorHighlighter.java" startLine="100" startPosition="37" endLine="103" endPosition="47" />
+    <scopeInfo nodeId="6402272430682179449" fileName="EditorHighlighter.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="6402272430682179449" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="867367425399245535" fileName="EditorHighlighter.java" startLine="160" startPosition="73" endLine="163" endPosition="5" />
+    <scopeInfo nodeId="6402272430682179553" fileName="EditorHighlighter.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="6402272430682179553" varName="ch" />
+    </scopeInfo>
+    <scopeInfo nodeId="2052504288806110296" fileName="EditorHighlighter.java" startLine="200" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="867367425399245514" fileName="EditorHighlighter.java" startLine="204" startPosition="0" endLine="207" endPosition="0" />
+    <scopeInfo nodeId="6402272430682179302" fileName="EditorHighlighter.java" startLine="208" startPosition="0" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="867367425399236949" fileName="EditorHighlighter.java" startLine="212" startPosition="0" endLine="215" endPosition="0" />
     <scopeInfo nodeId="4366048675740426760" fileName="EditorHighlighter.java" startLine="237" startPosition="58" endLine="240" endPosition="90">
       <varInfo nodeId="560587099276885883" varName="messages" />
     </scopeInfo>
@@ -774,49 +793,30 @@
     <scopeInfo nodeId="967454776205093019" fileName="EditorHighlighter.java" startLine="255" startPosition="9" endLine="258" endPosition="9">
       <varInfo nodeId="967454776205093020" varName="addedMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="2835122602744614997" fileName="EditorHighlighter.java" startLine="77" startPosition="108" endLine="81" endPosition="0">
-      <varInfo nodeId="2835122602744614997" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="6402272430682179133" fileName="EditorHighlighter.java" startLine="81" startPosition="59" endLine="85" endPosition="0">
-      <varInfo nodeId="6402272430682179133" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="6402272430682179336" fileName="EditorHighlighter.java" startLine="90" startPosition="100" endLine="94" endPosition="0">
-      <varInfo nodeId="6402272430682179336" varName="m" />
-    </scopeInfo>
     <scopeInfo nodeId="6402272430682179259" fileName="EditorHighlighter.java" startLine="136" startPosition="38" endLine="140" endPosition="73" />
-    <scopeInfo nodeId="6402272430682179449" fileName="EditorHighlighter.java" startLine="148" startPosition="140" endLine="152" endPosition="0">
-      <varInfo nodeId="6402272430682179449" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="6402272430682179553" fileName="EditorHighlighter.java" startLine="173" startPosition="138" endLine="177" endPosition="0">
-      <varInfo nodeId="6402272430682179553" varName="ch" />
-    </scopeInfo>
     <scopeInfo nodeId="6402272430682179507" fileName="EditorHighlighter.java" startLine="184" startPosition="21" endLine="188" endPosition="13" />
-    <scopeInfo nodeId="2052504288806110296" fileName="EditorHighlighter.java" startLine="199" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="867367425399245514" fileName="EditorHighlighter.java" startLine="203" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="6402272430682179302" fileName="EditorHighlighter.java" startLine="207" startPosition="0" endLine="211" endPosition="0" />
-    <scopeInfo nodeId="867367425399236949" fileName="EditorHighlighter.java" startLine="211" startPosition="0" endLine="215" endPosition="0" />
+    <scopeInfo nodeId="867367425399296128" fileName="EditorHighlighter.java" startLine="195" startPosition="0" endLine="199" endPosition="0" />
     <scopeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="216" startPosition="83" endLine="220" endPosition="16" />
     <scopeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="223" startPosition="83" endLine="227" endPosition="0" />
     <scopeInfo nodeId="6402272430682179326" fileName="EditorHighlighter.java" startLine="89" startPosition="75" endLine="94" endPosition="25" />
-    <scopeInfo nodeId="6402272430682179534" fileName="EditorHighlighter.java" startLine="172" startPosition="46" endLine="177" endPosition="17" />
-    <scopeInfo nodeId="867367425399296128" fileName="EditorHighlighter.java" startLine="194" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="867367425399300685" fileName="EditorHighlighter.java" startLine="99" startPosition="64" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="867367425399245532" fileName="EditorHighlighter.java" startLine="159" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="867367425399300685" fileName="EditorHighlighter.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="867367425399245532" fileName="EditorHighlighter.java" startLine="160" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="867367425399245538" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426755" fileName="EditorHighlighter.java" startLine="236" startPosition="0" endLine="242" endPosition="0">
+    <scopeInfo nodeId="6402272430682179534" fileName="EditorHighlighter.java" startLine="172" startPosition="46" endLine="177" endPosition="17" />
+    <scopeInfo nodeId="4366048675740426755" fileName="EditorHighlighter.java" startLine="237" startPosition="0" endLine="242" endPosition="0">
       <varInfo nodeId="4366048675740426758" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426771" fileName="EditorHighlighter.java" startLine="242" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="4366048675740426771" fileName="EditorHighlighter.java" startLine="243" startPosition="0" endLine="248" endPosition="0">
       <varInfo nodeId="4366048675740426774" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="215" startPosition="0" endLine="222" endPosition="0">
+    <scopeInfo nodeId="9216758901194588266" fileName="EditorHighlighter.java" startLine="216" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="9216758901194588266" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="222" startPosition="0" endLine="229" endPosition="0">
+    <scopeInfo nodeId="7198651372200353460" fileName="EditorHighlighter.java" startLine="223" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="7198651372200353460" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6402272430682179325" fileName="EditorHighlighter.java" startLine="88" startPosition="141" endLine="96" endPosition="0">
+    <scopeInfo nodeId="6402272430682179325" fileName="EditorHighlighter.java" startLine="89" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="6402272430682179325" varName="messages" />
     </scopeInfo>
     <scopeInfo nodeId="6402272430682179109" fileName="EditorHighlighter.java" startLine="76" startPosition="40" endLine="85" endPosition="21" />
@@ -831,24 +831,24 @@
     <scopeInfo nodeId="967454776205092309" fileName="EditorHighlighter.java" startLine="251" startPosition="121" endLine="262" endPosition="57">
       <varInfo nodeId="8974964540305863489" varName="nodeHighlightManager" />
     </scopeInfo>
+    <scopeInfo nodeId="5455599429139860995" fileName="EditorHighlighter.java" startLine="119" startPosition="0" endLine="131" endPosition="0" />
     <scopeInfo nodeId="6402272430682179384" fileName="EditorHighlighter.java" startLine="145" startPosition="72" endLine="157" endPosition="5" />
     <scopeInfo nodeId="6402272430682179505" fileName="EditorHighlighter.java" startLine="171" startPosition="15" endLine="183" endPosition="13" />
-    <scopeInfo nodeId="5455599429139860995" fileName="EditorHighlighter.java" startLine="118" startPosition="59" endLine="131" endPosition="0" />
     <scopeInfo nodeId="560587099276885918" fileName="EditorHighlighter.java" startLine="250" startPosition="40" endLine="263" endPosition="7" />
     <scopeInfo nodeId="3688511235932108472" fileName="EditorHighlighter.java" startLine="117" startPosition="45" endLine="131" endPosition="9" />
-    <scopeInfo nodeId="6402272430682179381" fileName="EditorHighlighter.java" startLine="144" startPosition="0" endLine="159" endPosition="0">
+    <scopeInfo nodeId="6402272430682179381" fileName="EditorHighlighter.java" startLine="145" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="6402272430682179389" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="560587099276885915" fileName="EditorHighlighter.java" startLine="248" startPosition="0" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="560587099276885915" fileName="EditorHighlighter.java" startLine="249" startPosition="0" endLine="265" endPosition="0" />
     <scopeInfo nodeId="6402272430682179488" fileName="EditorHighlighter.java" startLine="169" startPosition="39" endLine="189" endPosition="11" />
     <scopeInfo nodeId="6402272430682179485" fileName="EditorHighlighter.java" startLine="168" startPosition="25" endLine="190" endPosition="9" />
-    <scopeInfo nodeId="6402272430682179484" fileName="EditorHighlighter.java" startLine="167" startPosition="57" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="6402272430682179484" fileName="EditorHighlighter.java" startLine="168" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="6402272430682179482" fileName="EditorHighlighter.java" startLine="166" startPosition="25" endLine="192" endPosition="7" />
     <scopeInfo nodeId="6402272430682179155" fileName="EditorHighlighter.java" startLine="115" startPosition="78" endLine="142" endPosition="26">
       <varInfo nodeId="6402272430682179192" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="6402272430682179479" fileName="EditorHighlighter.java" startLine="165" startPosition="0" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="6402272430682179152" fileName="EditorHighlighter.java" startLine="114" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="6402272430682179479" fileName="EditorHighlighter.java" startLine="166" startPosition="0" endLine="194" endPosition="0" />
+    <scopeInfo nodeId="6402272430682179152" fileName="EditorHighlighter.java" startLine="115" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="6402272430682179160" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="1998524321632141960" fileName="EditorHighlighter.java" startLine="72" startPosition="39" endLine="106" endPosition="70">
@@ -860,11 +860,11 @@
       <varInfo nodeId="6099081905063733778" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="6099081905063733763" fileName="EditorHighlighter.java" startLine="54" startPosition="29" endLine="108" endPosition="13" />
-    <scopeInfo nodeId="6099081905063733762" fileName="EditorHighlighter.java" startLine="53" startPosition="61" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="6099081905063733762" fileName="EditorHighlighter.java" startLine="54" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1998524321632141958" fileName="EditorHighlighter.java" startLine="52" startPosition="25" endLine="110" endPosition="11" />
-    <scopeInfo nodeId="1998524321632141957" fileName="EditorHighlighter.java" startLine="51" startPosition="93" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="1998524321632141957" fileName="EditorHighlighter.java" startLine="52" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="6402272430682173551" fileName="EditorHighlighter.java" startLine="48" startPosition="108" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="6402272430682173542" fileName="EditorHighlighter.java" startLine="47" startPosition="0" endLine="113" endPosition="3">
+    <scopeInfo nodeId="6402272430682173542" fileName="EditorHighlighter.java" startLine="48" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="6402272430682173546" varName="editorComponent" />
       <varInfo nodeId="6402272430682173543" varName="project" />
     </scopeInfo>
@@ -883,8 +883,8 @@
     <unitInfo nodeId="6402272430682173534" fileName="EditorHighlighter.java" startLine="39" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighter" />
   </root>
   <root nodeId="6402272430682179765" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
-    <nodeInfo nodeId="6080400160196223146" fileName="EditorHighlighterFactory.java" startLine="17" startPosition="72" endLine="18" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorsHighlighters" />
-    <nodeInfo nodeId="5694457522929144926" fileName="EditorHighlighterFactory.java" startLine="18" startPosition="145" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageBusConnection" />
+    <nodeInfo nodeId="6080400160196223146" fileName="EditorHighlighterFactory.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorsHighlighters" />
+    <nodeInfo nodeId="5694457522929144926" fileName="EditorHighlighterFactory.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageBusConnection" />
     <nodeInfo nodeId="6402272430682179779" fileName="EditorHighlighterFactory.java" startLine="21" startPosition="52" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5267577397386525072" fileName="EditorHighlighterFactory.java" startLine="26" startPosition="31" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5267577397386525084" fileName="EditorHighlighterFactory.java" startLine="27" startPosition="65" endLine="28" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -895,17 +895,17 @@
     <nodeInfo nodeId="2052504288806110218" fileName="EditorHighlighterFactory.java" startLine="49" startPosition="85" endLine="50" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6402272430682179832" fileName="EditorHighlighterFactory.java" startLine="57" startPosition="82" endLine="58" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6402272430682179836" fileName="EditorHighlighterFactory.java" startLine="61" startPosition="83" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5643745088231031267" fileName="EditorHighlighterFactory.java" startLine="53" startPosition="90" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
-    <nodeInfo nodeId="6402272430682179767" fileName="EditorHighlighterFactory.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorHighlighterFactory#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="5643745088231031267" fileName="EditorHighlighterFactory.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
+    <nodeInfo nodeId="6402272430682179767" fileName="EditorHighlighterFactory.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorHighlighterFactory#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="6402272430682179815" fileName="EditorHighlighterFactory.java" startLine="36" startPosition="84" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2052504288806110209" fileName="EditorHighlighterFactory.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlighter#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />
+    <nodeInfo nodeId="5267577397386525095" fileName="EditorHighlighterFactory.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentCreated#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="5267577397386525131" fileName="EditorHighlighterFactory.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="6402272430682179781" fileName="EditorHighlighterFactory.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
     <nodeInfo nodeId="1682111275047043017" fileName="EditorHighlighterFactory.java" startLine="42" startPosition="85" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2052504288806110209" fileName="EditorHighlighterFactory.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlighter#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />
-    <nodeInfo nodeId="5267577397386525095" fileName="EditorHighlighterFactory.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentCreated#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="5267577397386525131" fileName="EditorHighlighterFactory.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="6402272430682179781" fileName="EditorHighlighterFactory.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="6402272430682179785" fileName="EditorHighlighterFactory.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="1682111275047034270" fileName="EditorHighlighterFactory.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addHighighlighterIfNeeded#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="1682111275047034298" fileName="EditorHighlighterFactory.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeHighlighterIfNeeded#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="6402272430682179785" fileName="EditorHighlighterFactory.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="1682111275047034270" fileName="EditorHighlighterFactory.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addHighighlighterIfNeeded#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="1682111275047034298" fileName="EditorHighlighterFactory.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeHighlighterIfNeeded#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <scopeInfo nodeId="5643745088231031270" fileName="EditorHighlighterFactory.java" startLine="54" startPosition="46" endLine="54" endPosition="46" />
     <scopeInfo nodeId="6402272430682179770" fileName="EditorHighlighterFactory.java" startLine="21" startPosition="52" endLine="22" endPosition="19" />
     <scopeInfo nodeId="6402272430682179784" fileName="EditorHighlighterFactory.java" startLine="32" startPosition="31" endLine="33" endPosition="40" />
@@ -915,41 +915,41 @@
     <scopeInfo nodeId="5267577397386525137" fileName="EditorHighlighterFactory.java" startLine="61" startPosition="83" endLine="62" endPosition="50" />
     <scopeInfo nodeId="6402272430682179788" fileName="EditorHighlighterFactory.java" startLine="26" startPosition="31" endLine="28" endPosition="158" />
     <scopeInfo nodeId="1682111275047043019" fileName="EditorHighlighterFactory.java" startLine="43" startPosition="82" endLine="45" endPosition="76" />
-    <scopeInfo nodeId="5643745088231031267" fileName="EditorHighlighterFactory.java" startLine="53" startPosition="90" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="6402272430682179767" fileName="EditorHighlighterFactory.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
+    <scopeInfo nodeId="5643745088231031267" fileName="EditorHighlighterFactory.java" startLine="54" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="6402272430682179767" fileName="EditorHighlighterFactory.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="6402272430682179774" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="1682111275047034273" fileName="EditorHighlighterFactory.java" startLine="36" startPosition="84" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1682111275047034301" fileName="EditorHighlighterFactory.java" startLine="42" startPosition="85" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="2052504288806110209" fileName="EditorHighlighterFactory.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="2052504288806110209" fileName="EditorHighlighterFactory.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="2052504288806110214" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5267577397386525095" fileName="EditorHighlighterFactory.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="5267577397386525095" fileName="EditorHighlighterFactory.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="5267577397386525098" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5267577397386525131" fileName="EditorHighlighterFactory.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="5267577397386525131" fileName="EditorHighlighterFactory.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="5267577397386525134" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6402272430682179781" fileName="EditorHighlighterFactory.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6402272430682179785" fileName="EditorHighlighterFactory.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1682111275047034270" fileName="EditorHighlighterFactory.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="6402272430682179781" fileName="EditorHighlighterFactory.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1682111275047034301" fileName="EditorHighlighterFactory.java" startLine="42" startPosition="85" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="6402272430682179785" fileName="EditorHighlighterFactory.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1682111275047034270" fileName="EditorHighlighterFactory.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1682111275047043004" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1682111275047034298" fileName="EditorHighlighterFactory.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1682111275047034298" fileName="EditorHighlighterFactory.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1682111275047043006" varName="editorComponent" />
     </scopeInfo>
     <unitInfo nodeId="5643745088231031265" fileName="EditorHighlighterFactory.java" startLine="53" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory$MyEditorComponentCreateListener" />
     <unitInfo nodeId="6402272430682179765" fileName="EditorHighlighterFactory.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory" />
   </root>
   <root nodeId="867367425399189430" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
-    <nodeInfo nodeId="867367425399189431" fileName="ChangeStripsPainter.java" startLine="35" startPosition="69" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AREA_WIDTH" />
-    <nodeInfo nodeId="867367425399189435" fileName="ChangeStripsPainter.java" startLine="36" startPosition="42" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARROW_HEIGHT" />
-    <nodeInfo nodeId="867367425399190870" fileName="ChangeStripsPainter.java" startLine="37" startPosition="44" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AREA_FRAME_COLOR" />
-    <nodeInfo nodeId="867367425399189439" fileName="ChangeStripsPainter.java" startLine="39" startPosition="0" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorHighlighter" />
-    <nodeInfo nodeId="867367425399239206" fileName="ChangeStripsPainter.java" startLine="40" startPosition="48" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupLayout" />
-    <nodeInfo nodeId="2472608513402197608" fileName="ChangeStripsPainter.java" startLine="41" startPosition="48" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroupUnderMouse" />
-    <nodeInfo nodeId="2881457021876857880" fileName="ChangeStripsPainter.java" startLine="42" startPosition="40" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPopupToolbar" />
-    <nodeInfo nodeId="8183734928029126153" fileName="ChangeStripsPainter.java" startLine="43" startPosition="43" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroupMessages" />
+    <nodeInfo nodeId="867367425399189431" fileName="ChangeStripsPainter.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AREA_WIDTH" />
+    <nodeInfo nodeId="867367425399189435" fileName="ChangeStripsPainter.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARROW_HEIGHT" />
+    <nodeInfo nodeId="867367425399190870" fileName="ChangeStripsPainter.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AREA_FRAME_COLOR" />
+    <nodeInfo nodeId="867367425399189439" fileName="ChangeStripsPainter.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorHighlighter" />
+    <nodeInfo nodeId="867367425399239206" fileName="ChangeStripsPainter.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupLayout" />
+    <nodeInfo nodeId="2472608513402197608" fileName="ChangeStripsPainter.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroupUnderMouse" />
+    <nodeInfo nodeId="2881457021876857880" fileName="ChangeStripsPainter.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPopupToolbar" />
+    <nodeInfo nodeId="8183734928029126153" fileName="ChangeStripsPainter.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroupMessages" />
     <nodeInfo nodeId="867367425399189705" fileName="ChangeStripsPainter.java" startLine="46" startPosition="76" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="867367425399189711" fileName="ChangeStripsPainter.java" startLine="47" startPosition="56" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="867367425399239211" fileName="ChangeStripsPainter.java" startLine="48" startPosition="44" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1042,63 +1042,63 @@
     <nodeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="283" startPosition="5" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7429456937243135894" fileName="ChangeStripsPainter.java" startLine="142" startPosition="10" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1216620237029569878" fileName="ChangeStripsPainter.java" startLine="184" startPosition="10" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="867367425399189460" fileName="ChangeStripsPainter.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWeight#()I" />
     <nodeInfo nodeId="867367425399189485" fileName="ChangeStripsPainter.java" startLine="65" startPosition="45" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="867367425399189609" fileName="ChangeStripsPainter.java" startLine="86" startPosition="35" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="867367425399189623" fileName="ChangeStripsPainter.java" startLine="89" startPosition="7" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2472608513402197702" fileName="ChangeStripsPainter.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2472608513402197712" fileName="ChangeStripsPainter.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)V" />
     <nodeInfo nodeId="1992587573287146554" fileName="ChangeStripsPainter.java" startLine="161" startPosition="64" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3110655250282851294" fileName="ChangeStripsPainter.java" startLine="168" startPosition="49" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8909869386401300780" fileName="ChangeStripsPainter.java" startLine="177" startPosition="70" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8917608540812815318" fileName="ChangeStripsPainter.java" startLine="196" startPosition="46" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2052504288806111988" fileName="ChangeStripsPainter.java" startLine="214" startPosition="73" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2249966985595625958" fileName="ChangeStripsPainter.java" startLine="222" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupClosed#()V" />
     <nodeInfo nodeId="6551560157631774979" fileName="ChangeStripsPainter.java" startLine="227" startPosition="99" endLine="230" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6551560157631775271" fileName="ChangeStripsPainter.java" startLine="234" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Z" />
+    <nodeInfo nodeId="6551560157631775234" fileName="ChangeStripsPainter.java" startLine="241" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Z" />
     <nodeInfo nodeId="5059587158025367350" fileName="ChangeStripsPainter.java" startLine="254" startPosition="39" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2881457021876860826" fileName="ChangeStripsPainter.java" startLine="266" startPosition="72" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5059587158025327413" fileName="ChangeStripsPainter.java" startLine="273" startPosition="79" endLine="276" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="280" startPosition="72" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="867367425399189460" fileName="ChangeStripsPainter.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWeight#()I" />
-    <nodeInfo nodeId="2472608513402197702" fileName="ChangeStripsPainter.java" startLine="149" startPosition="112" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2472608513402197712" fileName="ChangeStripsPainter.java" startLine="153" startPosition="55" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeEditorMessage;)V" />
-    <nodeInfo nodeId="2249966985595625958" fileName="ChangeStripsPainter.java" startLine="221" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupClosed#()V" />
-    <nodeInfo nodeId="6551560157631775271" fileName="ChangeStripsPainter.java" startLine="233" startPosition="117" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Z" />
-    <nodeInfo nodeId="6551560157631775234" fileName="ChangeStripsPainter.java" startLine="240" startPosition="116" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Z" />
-    <nodeInfo nodeId="2881457021876857858" fileName="ChangeStripsPainter.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
-    <nodeInfo nodeId="867367425399189685" fileName="ChangeStripsPainter.java" startLine="101" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftAreaWidth#()I" />
-    <nodeInfo nodeId="867367425399189692" fileName="ChangeStripsPainter.java" startLine="106" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" />
-    <nodeInfo nodeId="2472608513402197573" fileName="ChangeStripsPainter.java" startLine="136" startPosition="117" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Z" />
+    <nodeInfo nodeId="2881457021876857858" fileName="ChangeStripsPainter.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
+    <nodeInfo nodeId="867367425399189685" fileName="ChangeStripsPainter.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftAreaWidth#()I" />
+    <nodeInfo nodeId="867367425399189692" fileName="ChangeStripsPainter.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" />
+    <nodeInfo nodeId="2472608513402197573" fileName="ChangeStripsPainter.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Z" />
+    <nodeInfo nodeId="5059587158025327332" fileName="ChangeStripsPainter.java" startLine="248" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
     <nodeInfo nodeId="1216620237029569852" fileName="ChangeStripsPainter.java" startLine="181" startPosition="36" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216620237029569548" fileName="ChangeStripsPainter.java" startLine="189" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseExited#(Ljava/awt/event/MouseEvent;)V" />
     <nodeInfo nodeId="2881457021876857936" fileName="ChangeStripsPainter.java" startLine="203" startPosition="72" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6551560157631775265" fileName="ChangeStripsPainter.java" startLine="232" startPosition="71" endLine="237" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6551560157631775228" fileName="ChangeStripsPainter.java" startLine="239" startPosition="42" endLine="244" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5059587158025327332" fileName="ChangeStripsPainter.java" startLine="247" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentChangeGroup#()Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="8183734928029126134" fileName="ChangeStripsPainter.java" startLine="260" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="7429456937243135899" fileName="ChangeStripsPainter.java" startLine="135" startPosition="46" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216620237029569548" fileName="ChangeStripsPainter.java" startLine="188" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseExited#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="8183734928029126134" fileName="ChangeStripsPainter.java" startLine="259" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="867367425399189701" fileName="ChangeStripsPainter.java" startLine="45" startPosition="0" endLine="52" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeStripsPainter#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;)V" />
+    <nodeInfo nodeId="2052504288806111908" fileName="ChangeStripsPainter.java" startLine="253" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showPopupForGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+    <nodeInfo nodeId="2881457021876860826" fileName="ChangeStripsPainter.java" startLine="266" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h84zmo_a1a11#(Ljetbrains/mps/vcs/changesmanager/editor/PopupPanel;)V" />
+    <nodeInfo nodeId="5059587158025327413" fileName="ChangeStripsPainter.java" startLine="273" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h84zmo_a0a51#(Ljetbrains/mps/vcs/changesmanager/editor/PopupPanel;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="280" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h84zmo_a0a61#(Ljetbrains/mps/vcs/changesmanager/editor/PopupPanel;)V" />
+    <nodeInfo nodeId="867367425399189701" fileName="ChangeStripsPainter.java" startLine="46" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeStripsPainter#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;)V" />
     <nodeInfo nodeId="5814105446971273955" fileName="ChangeStripsPainter.java" startLine="119" startPosition="68" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6551560157631775249" fileName="ChangeStripsPainter.java" startLine="238" startPosition="10" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2052504288806111908" fileName="ChangeStripsPainter.java" startLine="252" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showPopupForGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-    <nodeInfo nodeId="2881457021876860826" fileName="ChangeStripsPainter.java" startLine="265" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h84zmo_a1a11#(Ljetbrains/mps/vcs/changesmanager/editor/PopupPanel;)V" />
-    <nodeInfo nodeId="5059587158025327413" fileName="ChangeStripsPainter.java" startLine="272" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h84zmo_a0a51#(Ljetbrains/mps/vcs/changesmanager/editor/PopupPanel;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
-    <nodeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="279" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h84zmo_a0a61#(Ljetbrains/mps/vcs/changesmanager/editor/PopupPanel;)V" />
     <nodeInfo nodeId="2881457021876857897" fileName="ChangeStripsPainter.java" startLine="201" startPosition="40" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2472608513402197695" fileName="ChangeStripsPainter.java" startLine="148" startPosition="24" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2052504288806111924" fileName="ChangeStripsPainter.java" startLine="212" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showPopupForGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)V" />
     <nodeInfo nodeId="5814105446971272246" fileName="ChangeStripsPainter.java" startLine="117" startPosition="65" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7429456937243135882" fileName="ChangeStripsPainter.java" startLine="134" startPosition="70" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2052504288806111924" fileName="ChangeStripsPainter.java" startLine="211" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showPopupForGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)V" />
     <nodeInfo nodeId="2472608513402197690" fileName="ChangeStripsPainter.java" startLine="147" startPosition="96" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="867367425399189523" fileName="ChangeStripsPainter.java" startLine="72" startPosition="64" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4747879030830910053" fileName="ChangeStripsPainter.java" startLine="116" startPosition="10" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2472608513402197680" fileName="ChangeStripsPainter.java" startLine="146" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGroupHighlighted#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;Z)V" />
-    <nodeInfo nodeId="7429456937243134093" fileName="ChangeStripsPainter.java" startLine="160" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGroupUnderMouse#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
-    <nodeInfo nodeId="1216620237029569507" fileName="ChangeStripsPainter.java" startLine="174" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="7429456937243135759" fileName="ChangeStripsPainter.java" startLine="131" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findMessageGroupUnder#(Ljava/awt/Point;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="2472608513402197680" fileName="ChangeStripsPainter.java" startLine="147" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGroupHighlighted#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;Z)V" />
+    <nodeInfo nodeId="7429456937243134093" fileName="ChangeStripsPainter.java" startLine="161" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGroupUnderMouse#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
+    <nodeInfo nodeId="1216620237029569507" fileName="ChangeStripsPainter.java" startLine="175" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="7429456937243135759" fileName="ChangeStripsPainter.java" startLine="132" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findMessageGroupUnder#(Ljava/awt/Point;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
     <nodeInfo nodeId="6551560157631774974" fileName="ChangeStripsPainter.java" startLine="230" startPosition="5" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4747879030830910044" fileName="ChangeStripsPainter.java" startLine="113" startPosition="34" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2881457021876857886" fileName="ChangeStripsPainter.java" startLine="194" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="867367425399190824" fileName="ChangeStripsPainter.java" startLine="111" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2052504288806111603" fileName="ChangeStripsPainter.java" startLine="225" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourChangeGroup#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+    <nodeInfo nodeId="2881457021876857886" fileName="ChangeStripsPainter.java" startLine="195" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="867367425399190824" fileName="ChangeStripsPainter.java" startLine="112" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2052504288806111603" fileName="ChangeStripsPainter.java" startLine="226" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourChangeGroup#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
     <nodeInfo nodeId="867367425399189506" fileName="ChangeStripsPainter.java" startLine="68" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="867367425399189466" fileName="ChangeStripsPainter.java" startLine="62" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintInLocalCoordinates#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="867367425399189466" fileName="ChangeStripsPainter.java" startLine="63" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintInLocalCoordinates#(Ljava/awt/Graphics;)V" />
     <scopeInfo nodeId="2881457021876857861" fileName="ChangeStripsPainter.java" startLine="55" startPosition="50" endLine="56" endPosition="38" />
     <scopeInfo nodeId="867367425399189463" fileName="ChangeStripsPainter.java" startLine="59" startPosition="26" endLine="60" endPosition="13" />
     <scopeInfo nodeId="867367425399189486" fileName="ChangeStripsPainter.java" startLine="66" startPosition="80" endLine="67" endPosition="13" />
@@ -1134,37 +1134,38 @@
     </scopeInfo>
     <scopeInfo nodeId="1216620237029569553" fileName="ChangeStripsPainter.java" startLine="190" startPosition="45" endLine="192" endPosition="29" />
     <scopeInfo nodeId="8183734928029126137" fileName="ChangeStripsPainter.java" startLine="261" startPosition="25" endLine="263" endPosition="20" />
-    <scopeInfo nodeId="2881457021876857937" fileName="ChangeStripsPainter.java" startLine="204" startPosition="32" endLine="207" endPosition="24" />
-    <scopeInfo nodeId="867367425399189460" fileName="ChangeStripsPainter.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="2472608513402197702" fileName="ChangeStripsPainter.java" startLine="149" startPosition="112" endLine="153" endPosition="0">
+    <scopeInfo nodeId="867367425399189460" fileName="ChangeStripsPainter.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="2472608513402197702" fileName="ChangeStripsPainter.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="2472608513402197702" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="2472608513402197712" fileName="ChangeStripsPainter.java" startLine="153" startPosition="55" endLine="157" endPosition="0">
+    <scopeInfo nodeId="2472608513402197712" fileName="ChangeStripsPainter.java" startLine="154" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="2472608513402197712" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="2249966985595625958" fileName="ChangeStripsPainter.java" startLine="221" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="6551560157631775271" fileName="ChangeStripsPainter.java" startLine="233" startPosition="117" endLine="237" endPosition="0">
+    <scopeInfo nodeId="2881457021876857937" fileName="ChangeStripsPainter.java" startLine="204" startPosition="32" endLine="207" endPosition="24" />
+    <scopeInfo nodeId="2249966985595625958" fileName="ChangeStripsPainter.java" startLine="222" startPosition="0" endLine="225" endPosition="0" />
+    <scopeInfo nodeId="6551560157631775271" fileName="ChangeStripsPainter.java" startLine="234" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="6551560157631775271" varName="g" />
     </scopeInfo>
-    <scopeInfo nodeId="6551560157631775234" fileName="ChangeStripsPainter.java" startLine="240" startPosition="116" endLine="244" endPosition="0">
+    <scopeInfo nodeId="6551560157631775234" fileName="ChangeStripsPainter.java" startLine="241" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="6551560157631775234" varName="g" />
     </scopeInfo>
+    <scopeInfo nodeId="2881457021876857858" fileName="ChangeStripsPainter.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="867367425399189685" fileName="ChangeStripsPainter.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="867367425399189692" fileName="ChangeStripsPainter.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="2472608513402197573" fileName="ChangeStripsPainter.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="2472608513402197573" varName="cg" />
+    </scopeInfo>
+    <scopeInfo nodeId="5059587158025327332" fileName="ChangeStripsPainter.java" startLine="248" startPosition="0" endLine="252" endPosition="0" />
     <scopeInfo nodeId="2052504288806111911" fileName="ChangeStripsPainter.java" startLine="253" startPosition="67" endLine="257" endPosition="5" />
     <scopeInfo nodeId="2881457021876860826" fileName="ChangeStripsPainter.java" startLine="266" startPosition="72" endLine="270" endPosition="0" />
     <scopeInfo nodeId="5059587158025327413" fileName="ChangeStripsPainter.java" startLine="273" startPosition="79" endLine="277" endPosition="16" />
     <scopeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="280" startPosition="72" endLine="284" endPosition="0" />
     <scopeInfo nodeId="867367425399189704" fileName="ChangeStripsPainter.java" startLine="46" startPosition="76" endLine="51" endPosition="39" />
-    <scopeInfo nodeId="2881457021876857858" fileName="ChangeStripsPainter.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="867367425399189685" fileName="ChangeStripsPainter.java" startLine="101" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="867367425399189692" fileName="ChangeStripsPainter.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2472608513402197573" fileName="ChangeStripsPainter.java" startLine="136" startPosition="117" endLine="141" endPosition="0">
-      <varInfo nodeId="2472608513402197573" varName="cg" />
-    </scopeInfo>
-    <scopeInfo nodeId="5059587158025327332" fileName="ChangeStripsPainter.java" startLine="247" startPosition="0" endLine="252" endPosition="0" />
-    <scopeInfo nodeId="7429456937243135883" fileName="ChangeStripsPainter.java" startLine="135" startPosition="46" endLine="141" endPosition="9" />
-    <scopeInfo nodeId="1216620237029569548" fileName="ChangeStripsPainter.java" startLine="188" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="1216620237029569548" fileName="ChangeStripsPainter.java" startLine="189" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="1216620237029569551" varName="event" />
     </scopeInfo>
+    <scopeInfo nodeId="8183734928029126134" fileName="ChangeStripsPainter.java" startLine="260" startPosition="0" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="7429456937243135883" fileName="ChangeStripsPainter.java" startLine="135" startPosition="46" endLine="141" endPosition="9" />
     <scopeInfo nodeId="2881457021876857898" fileName="ChangeStripsPainter.java" startLine="202" startPosition="50" endLine="208" endPosition="7">
       <varInfo nodeId="2881457021876857928" varName="changeGroup" />
     </scopeInfo>
@@ -1174,36 +1175,35 @@
     <scopeInfo nodeId="6551560157631775250" fileName="ChangeStripsPainter.java" startLine="238" startPosition="12" endLine="244" endPosition="9">
       <varInfo nodeId="6551560157631775221" varName="topY" />
     </scopeInfo>
-    <scopeInfo nodeId="8183734928029126134" fileName="ChangeStripsPainter.java" startLine="259" startPosition="0" endLine="265" endPosition="0" />
-    <scopeInfo nodeId="867367425399189701" fileName="ChangeStripsPainter.java" startLine="45" startPosition="0" endLine="52" endPosition="3">
+    <scopeInfo nodeId="2052504288806111908" fileName="ChangeStripsPainter.java" startLine="253" startPosition="0" endLine="259" endPosition="0">
+      <varInfo nodeId="2052504288806112910" varName="group" />
+    </scopeInfo>
+    <scopeInfo nodeId="2881457021876860826" fileName="ChangeStripsPainter.java" startLine="266" startPosition="0" endLine="272" endPosition="0">
+      <varInfo nodeId="2881457021876860826" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="5059587158025327413" fileName="ChangeStripsPainter.java" startLine="273" startPosition="0" endLine="279" endPosition="0">
+      <varInfo nodeId="5059587158025327413" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="280" startPosition="0" endLine="286" endPosition="0">
+      <varInfo nodeId="2052504288806114084" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="867367425399189701" fileName="ChangeStripsPainter.java" startLine="46" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="867367425399189715" varName="editorHighlighter" />
     </scopeInfo>
     <scopeInfo nodeId="2052504288806111927" fileName="ChangeStripsPainter.java" startLine="212" startPosition="75" endLine="219" endPosition="30">
       <varInfo nodeId="2052504288806111977" varName="cell" />
       <varInfo nodeId="2052504288806112901" varName="foldingLineX" />
     </scopeInfo>
-    <scopeInfo nodeId="2052504288806111908" fileName="ChangeStripsPainter.java" startLine="252" startPosition="0" endLine="259" endPosition="0">
-      <varInfo nodeId="2052504288806112910" varName="group" />
-    </scopeInfo>
-    <scopeInfo nodeId="2881457021876860826" fileName="ChangeStripsPainter.java" startLine="265" startPosition="0" endLine="272" endPosition="0">
-      <varInfo nodeId="2881457021876860826" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="5059587158025327413" fileName="ChangeStripsPainter.java" startLine="272" startPosition="0" endLine="279" endPosition="0">
-      <varInfo nodeId="5059587158025327413" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="2052504288806114084" fileName="ChangeStripsPainter.java" startLine="279" startPosition="0" endLine="286" endPosition="0">
-      <varInfo nodeId="2052504288806114084" varName="checkedDotOperand" />
-    </scopeInfo>
     <scopeInfo nodeId="5814105446971273940" fileName="ChangeStripsPainter.java" startLine="118" startPosition="62" endLine="126" endPosition="9">
       <varInfo nodeId="5814105446971273965" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="2472608513402197694" fileName="ChangeStripsPainter.java" startLine="148" startPosition="24" endLine="157" endPosition="9" />
-    <scopeInfo nodeId="1216620237029569512" fileName="ChangeStripsPainter.java" startLine="176" startPosition="44" endLine="186" endPosition="5">
-      <varInfo nodeId="7429456937243136039" varName="changeGroup" />
-    </scopeInfo>
-    <scopeInfo nodeId="2052504288806111924" fileName="ChangeStripsPainter.java" startLine="211" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="2052504288806111924" fileName="ChangeStripsPainter.java" startLine="212" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="2052504288806111929" varName="changeGroup" />
       <varInfo nodeId="2052504288806112023" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216620237029569512" fileName="ChangeStripsPainter.java" startLine="176" startPosition="44" endLine="186" endPosition="5">
+      <varInfo nodeId="7429456937243136039" varName="changeGroup" />
     </scopeInfo>
     <scopeInfo nodeId="867367425399189524" fileName="ChangeStripsPainter.java" startLine="73" startPosition="33" endLine="84" endPosition="17">
       <varInfo nodeId="867367425399189526" varName="g2d" />
@@ -1219,27 +1219,27 @@
     <scopeInfo nodeId="4747879030830910054" fileName="ChangeStripsPainter.java" startLine="116" startPosition="12" endLine="128" endPosition="94">
       <varInfo nodeId="5814105446971273903" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="2881457021876857891" fileName="ChangeStripsPainter.java" startLine="196" startPosition="46" endLine="209" endPosition="5" />
-    <scopeInfo nodeId="2472608513402197680" fileName="ChangeStripsPainter.java" startLine="146" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="2472608513402197680" fileName="ChangeStripsPainter.java" startLine="147" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="2472608513402197685" varName="group" />
       <varInfo nodeId="2472608513402197687" varName="highlighted" />
     </scopeInfo>
-    <scopeInfo nodeId="7429456937243134093" fileName="ChangeStripsPainter.java" startLine="160" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="7429456937243134093" fileName="ChangeStripsPainter.java" startLine="161" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="7429456937243134135" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="1216620237029569507" fileName="ChangeStripsPainter.java" startLine="174" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="1216620237029569507" fileName="ChangeStripsPainter.java" startLine="175" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="1216620237029569510" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7429456937243135759" fileName="ChangeStripsPainter.java" startLine="131" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="2881457021876857891" fileName="ChangeStripsPainter.java" startLine="196" startPosition="46" endLine="209" endPosition="5" />
+    <scopeInfo nodeId="7429456937243135759" fileName="ChangeStripsPainter.java" startLine="132" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="7429456937243135804" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="867367425399190827" fileName="ChangeStripsPainter.java" startLine="113" startPosition="34" endLine="129" endPosition="5" />
-    <scopeInfo nodeId="2881457021876857886" fileName="ChangeStripsPainter.java" startLine="194" startPosition="0" endLine="211" endPosition="0">
+    <scopeInfo nodeId="2881457021876857886" fileName="ChangeStripsPainter.java" startLine="195" startPosition="0" endLine="211" endPosition="0">
       <varInfo nodeId="2881457021876857889" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="2052504288806111605" fileName="ChangeStripsPainter.java" startLine="227" startPosition="99" endLine="245" endPosition="5" />
-    <scopeInfo nodeId="867367425399190824" fileName="ChangeStripsPainter.java" startLine="111" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="2052504288806111603" fileName="ChangeStripsPainter.java" startLine="225" startPosition="0" endLine="247" endPosition="0">
+    <scopeInfo nodeId="867367425399190824" fileName="ChangeStripsPainter.java" startLine="112" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="2052504288806111603" fileName="ChangeStripsPainter.java" startLine="226" startPosition="0" endLine="247" endPosition="0">
       <varInfo nodeId="6551560157631774990" varName="contextCell" />
       <varInfo nodeId="2052504288806111630" varName="next" />
     </scopeInfo>
@@ -1254,7 +1254,7 @@
     <scopeInfo nodeId="867367425399189471" fileName="ChangeStripsPainter.java" startLine="64" startPosition="54" endLine="99" endPosition="5">
       <varInfo nodeId="867367425399189480" varName="clipBounds" />
     </scopeInfo>
-    <scopeInfo nodeId="867367425399189466" fileName="ChangeStripsPainter.java" startLine="62" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="867367425399189466" fileName="ChangeStripsPainter.java" startLine="63" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="867367425399189469" varName="g" />
     </scopeInfo>
     <unitInfo nodeId="2472608513402197702" fileName="ChangeStripsPainter.java" startLine="149" startPosition="62" endLine="153" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter$2" />
@@ -1265,7 +1265,7 @@
     <unitInfo nodeId="867367425399189430" fileName="ChangeStripsPainter.java" startLine="35" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
   </root>
   <root nodeId="867367425399245463" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
-    <nodeInfo nodeId="867367425399245502" fileName="StripsChangeGroupLayout.java" startLine="15" startPosition="69" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorHighlighter" />
+    <nodeInfo nodeId="867367425399245502" fileName="StripsChangeGroupLayout.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorHighlighter" />
     <nodeInfo nodeId="867367425399296040" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="71" endLine="19" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="867367425399296055" fileName="StripsChangeGroupLayout.java" startLine="19" startPosition="98" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="867367425399245507" fileName="StripsChangeGroupLayout.java" startLine="24" startPosition="45" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1273,30 +1273,30 @@
     <nodeInfo nodeId="867367425399245527" fileName="StripsChangeGroupLayout.java" startLine="33" startPosition="75" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="867367425399296030" fileName="StripsChangeGroupLayout.java" startLine="37" startPosition="76" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8859108093044337399" fileName="StripsChangeGroupLayout.java" startLine="42" startPosition="38" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="867367425399296035" fileName="StripsChangeGroupLayout.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StripsChangeGroupLayout#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;)V" />
-    <nodeInfo nodeId="867367425399245478" fileName="StripsChangeGroupLayout.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
-    <nodeInfo nodeId="867367425399245470" fileName="StripsChangeGroupLayout.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
-    <nodeInfo nodeId="867367425399245491" fileName="StripsChangeGroupLayout.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
-    <nodeInfo nodeId="867367425399245486" fileName="StripsChangeGroupLayout.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
-    <nodeInfo nodeId="8859108093044337391" fileName="StripsChangeGroupLayout.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
+    <nodeInfo nodeId="867367425399245478" fileName="StripsChangeGroupLayout.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
+    <nodeInfo nodeId="867367425399245470" fileName="StripsChangeGroupLayout.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightMessages#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/util/List;" />
+    <nodeInfo nodeId="867367425399296035" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StripsChangeGroupLayout#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;)V" />
+    <nodeInfo nodeId="867367425399245491" fileName="StripsChangeGroupLayout.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
+    <nodeInfo nodeId="867367425399245486" fileName="StripsChangeGroupLayout.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightComponent#()Ljetbrains/mps/nodeEditor/EditorComponent;" />
+    <nodeInfo nodeId="8859108093044337391" fileName="StripsChangeGroupLayout.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
     <scopeInfo nodeId="867367425399245495" fileName="StripsChangeGroupLayout.java" startLine="24" startPosition="45" endLine="25" endPosition="52" />
     <scopeInfo nodeId="867367425399245490" fileName="StripsChangeGroupLayout.java" startLine="29" startPosition="46" endLine="30" endPosition="52" />
     <scopeInfo nodeId="867367425399245485" fileName="StripsChangeGroupLayout.java" startLine="33" startPosition="75" endLine="34" endPosition="51" />
     <scopeInfo nodeId="867367425399245477" fileName="StripsChangeGroupLayout.java" startLine="37" startPosition="76" endLine="38" endPosition="51" />
     <scopeInfo nodeId="8859108093044337395" fileName="StripsChangeGroupLayout.java" startLine="42" startPosition="38" endLine="43" endPosition="46" />
     <scopeInfo nodeId="867367425399296039" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="71" endLine="20" endPosition="44" />
-    <scopeInfo nodeId="867367425399296035" fileName="StripsChangeGroupLayout.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
-      <varInfo nodeId="867367425399296053" varName="editorHighlighter" />
-    </scopeInfo>
-    <scopeInfo nodeId="867367425399245478" fileName="StripsChangeGroupLayout.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="867367425399245478" fileName="StripsChangeGroupLayout.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="867367425399245482" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="867367425399245470" fileName="StripsChangeGroupLayout.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="867367425399245470" fileName="StripsChangeGroupLayout.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="867367425399245474" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="867367425399245491" fileName="StripsChangeGroupLayout.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="867367425399245486" fileName="StripsChangeGroupLayout.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8859108093044337391" fileName="StripsChangeGroupLayout.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="867367425399296035" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="867367425399296053" varName="editorHighlighter" />
+    </scopeInfo>
+    <scopeInfo nodeId="867367425399245491" fileName="StripsChangeGroupLayout.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="867367425399245486" fileName="StripsChangeGroupLayout.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8859108093044337391" fileName="StripsChangeGroupLayout.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="867367425399245463" fileName="StripsChangeGroupLayout.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" />
   </root>
 </debugInfo>

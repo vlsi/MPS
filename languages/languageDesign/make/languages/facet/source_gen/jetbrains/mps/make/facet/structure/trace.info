@@ -3,8 +3,8 @@
   <unitInfo fileName="Facet_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.structure.Facet_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.make.facet.structure.StructureAspectDescriptor" />
   <root nodeId="1675547159918562083" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="15" startPosition="24" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="18" startPosition="46" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="19" startPosition="23" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="23" startPosition="27" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -23,18 +23,18 @@
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="58" startPosition="67" endLine="59" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="61" startPosition="67" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="63" startPosition="5" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/make/facet/structure/ResourcesPolicy;" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="48" startPosition="58" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="54" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourcesPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/make/facet/structure/ResourcesPolicy;" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="47" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/make/facet/structure/ResourcesPolicy;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourcesPolicy#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="35" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="48" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/make/facet/structure/ResourcesPolicy;" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -55,9 +55,9 @@
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="39" startPosition="65" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="14" startPosition="107" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="28" startPosition="107" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="9" startPosition="70" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="23" startPosition="27" endLine="24" endPosition="23" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="27" startPosition="36" endLine="28" endPosition="24" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="31" startPosition="28" endLine="32" endPosition="24" />
@@ -68,20 +68,20 @@
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="58" startPosition="67" endLine="59" endPosition="37" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="61" startPosition="67" endLine="62" endPosition="37" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="18" startPosition="46" endLine="20" endPosition="25" />
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1675547159918562083" varName="name" />
       <varInfo nodeId="1675547159918562083" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="35" startPosition="54" endLine="41" endPosition="16">
       <varInfo nodeId="1675547159918562083" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="34" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="48" startPosition="58" endLine="64" endPosition="40" />
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="48" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1675547159918562083" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -98,7 +98,7 @@
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1675547159918562083" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1675547159918562083" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -107,18 +107,18 @@
     <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="1675547159918562083" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="9" startPosition="70" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1675547159918562083" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1675547159918562083" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1675547159918562083" fileName="ResourcesPolicy.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy" />
     <unitInfo nodeId="1675547159918562083" fileName="ResourcesPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ResourcesPolicy_PropertySupport" />
   </root>
   <root nodeId="8351679702044326370" modelId="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)">
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="15" startPosition="24" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="18" startPosition="56" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="19" startPosition="23" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="23" startPosition="27" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -137,18 +137,18 @@
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="58" startPosition="75" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="61" startPosition="79" endLine="62" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="63" startPosition="5" endLine="64" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/make/facet/structure/TargetDependencyQualifier;" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="48" startPosition="68" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="54" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDependencyQualifier#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/make/facet/structure/TargetDependencyQualifier;" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="47" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/make/facet/structure/TargetDependencyQualifier;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDependencyQualifier#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="35" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="48" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/make/facet/structure/TargetDependencyQualifier;" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -169,9 +169,9 @@
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="39" startPosition="85" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="14" startPosition="127" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="28" startPosition="127" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="80" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="23" startPosition="27" endLine="24" endPosition="23" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="27" startPosition="36" endLine="28" endPosition="24" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="31" startPosition="28" endLine="32" endPosition="24" />
@@ -182,20 +182,20 @@
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="58" startPosition="75" endLine="59" endPosition="45" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="61" startPosition="79" endLine="62" endPosition="49" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="18" startPosition="56" endLine="20" endPosition="25" />
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="8351679702044326370" varName="name" />
       <varInfo nodeId="8351679702044326370" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="35" startPosition="64" endLine="41" endPosition="16">
       <varInfo nodeId="8351679702044326370" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="34" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="48" startPosition="68" endLine="64" endPosition="50" />
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="48" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8351679702044326370" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -212,7 +212,7 @@
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="8351679702044326370" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8351679702044326370" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
@@ -221,10 +221,10 @@
     <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
       <varInfo nodeId="8351679702044326370" varName="constants" />
     </scopeInfo>
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="80" endLine="23" endPosition="0">
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="8351679702044326370" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="8351679702044326370" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="8351679702044326370" fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />

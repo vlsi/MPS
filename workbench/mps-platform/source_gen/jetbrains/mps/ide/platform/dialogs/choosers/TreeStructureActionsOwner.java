@@ -9,7 +9,6 @@ import com.intellij.util.containers.HashSet;
 import com.intellij.ide.structureView.StructureViewModel;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 
-
 /**
  * * @author Konstantin Bulenkov
  */

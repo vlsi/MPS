@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.List;
 
-
 /**
  * * Should be thread safe.
  */

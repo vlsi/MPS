@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841941376" modelId="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841941377" fileName="HLineCellProvider.java" startLine="14" startPosition="61" endLine="15" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5487985028841941377" fileName="HLineCellProvider.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="5487985028841941387" fileName="HLineCellProvider.java" startLine="17" startPosition="40" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941417" fileName="HLineCellProvider.java" startLine="24" startPosition="85" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941430" fileName="HLineCellProvider.java" startLine="26" startPosition="16" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -15,42 +15,42 @@
     <nodeInfo nodeId="5487985028841941495" fileName="HLineCellProvider.java" startLine="41" startPosition="26" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941505" fileName="HLineCellProvider.java" startLine="44" startPosition="6" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841941428" fileName="HLineCellProvider.java" startLine="26" startPosition="14" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841941381" fileName="HLineCellProvider.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HLineCellProvider#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5487985028841941473" fileName="HLineCellProvider.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAscent#()I" />
+    <nodeInfo nodeId="5487985028841941381" fileName="HLineCellProvider.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HLineCellProvider#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5487985028841941473" fileName="HLineCellProvider.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAscent#()I" />
+    <nodeInfo nodeId="5487985028841941485" fileName="HLineCellProvider.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayoutImpl#()V" />
     <nodeInfo nodeId="5487985028841941415" fileName="HLineCellProvider.java" startLine="23" startPosition="75" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841941485" fileName="HLineCellProvider.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayoutImpl#()V" />
-    <nodeInfo nodeId="5487985028841941407" fileName="HLineCellProvider.java" startLine="22" startPosition="69" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
+    <nodeInfo nodeId="5487985028841941407" fileName="HLineCellProvider.java" startLine="23" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
     <nodeInfo nodeId="5487985028841941400" fileName="HLineCellProvider.java" startLine="21" startPosition="56" endLine="44" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841941394" fileName="HLineCellProvider.java" startLine="20" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5487985028841941394" fileName="HLineCellProvider.java" startLine="21" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="5487985028841941386" fileName="HLineCellProvider.java" startLine="17" startPosition="40" endLine="18" endPosition="23" />
     <scopeInfo nodeId="5487985028841941416" fileName="HLineCellProvider.java" startLine="24" startPosition="85" endLine="25" endPosition="34" />
     <scopeInfo nodeId="5487985028841941429" fileName="HLineCellProvider.java" startLine="26" startPosition="16" endLine="27" endPosition="34" />
     <scopeInfo nodeId="5487985028841941476" fileName="HLineCellProvider.java" startLine="36" startPosition="30" endLine="37" endPosition="50" />
     <scopeInfo nodeId="5487985028841941488" fileName="HLineCellProvider.java" startLine="40" startPosition="34" endLine="42" endPosition="26" />
-    <scopeInfo nodeId="5487985028841941381" fileName="HLineCellProvider.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="5487985028841941381" fileName="HLineCellProvider.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5487985028841941382" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841941473" fileName="HLineCellProvider.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5487985028841941485" fileName="HLineCellProvider.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5487985028841941473" fileName="HLineCellProvider.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5487985028841941485" fileName="HLineCellProvider.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="5487985028841941414" fileName="HLineCellProvider.java" startLine="23" startPosition="75" endLine="33" endPosition="49">
       <varInfo nodeId="5487985028841941444" varName="width" />
       <varInfo nodeId="5487985028841941436" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841941407" fileName="HLineCellProvider.java" startLine="22" startPosition="69" endLine="35" endPosition="0">
+    <scopeInfo nodeId="5487985028841941407" fileName="HLineCellProvider.java" startLine="23" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="5487985028841941410" varName="g" />
       <varInfo nodeId="5487985028841941412" varName="parentSettings" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841941399" fileName="HLineCellProvider.java" startLine="21" startPosition="56" endLine="45" endPosition="18">
       <varInfo nodeId="5487985028841941401" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841941394" fileName="HLineCellProvider.java" startLine="20" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="5487985028841941394" fileName="HLineCellProvider.java" startLine="21" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5487985028841941397" varName="p0" />
     </scopeInfo>
     <unitInfo nodeId="5487985028841941405" fileName="HLineCellProvider.java" startLine="22" startPosition="34" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider$1" />
     <unitInfo nodeId="5487985028841941376" fileName="HLineCellProvider.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" />
   </root>
   <root nodeId="5487985028841941507" modelId="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841941605" fileName="EditorCell_VerticalLine.java" startLine="13" startPosition="63" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isCaretShown" />
+    <nodeInfo nodeId="5487985028841941605" fileName="EditorCell_VerticalLine.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isCaretShown" />
     <nodeInfo nodeId="5487985028841941613" fileName="EditorCell_VerticalLine.java" startLine="16" startPosition="69" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841941518" fileName="EditorCell_VerticalLine.java" startLine="21" startPosition="28" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941523" fileName="EditorCell_VerticalLine.java" startLine="22" startPosition="30" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -63,20 +63,20 @@
     <nodeInfo nodeId="5487985028841941580" fileName="EditorCell_VerticalLine.java" startLine="33" startPosition="36" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941593" fileName="EditorCell_VerticalLine.java" startLine="37" startPosition="30" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941599" fileName="EditorCell_VerticalLine.java" startLine="38" startPosition="21" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841941609" fileName="EditorCell_VerticalLine.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorCell_VerticalLine#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5487985028841941576" fileName="EditorCell_VerticalLine.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="switchCaretVisible#()V" />
-    <nodeInfo nodeId="5487985028841941589" fileName="EditorCell_VerticalLine.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayoutImpl#()V" />
+    <nodeInfo nodeId="5487985028841941609" fileName="EditorCell_VerticalLine.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorCell_VerticalLine#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5487985028841941576" fileName="EditorCell_VerticalLine.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="switchCaretVisible#()V" />
+    <nodeInfo nodeId="5487985028841941589" fileName="EditorCell_VerticalLine.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayoutImpl#()V" />
     <nodeInfo nodeId="5487985028841941516" fileName="EditorCell_VerticalLine.java" startLine="20" startPosition="71" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841941508" fileName="EditorCell_VerticalLine.java" startLine="19" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
+    <nodeInfo nodeId="5487985028841941508" fileName="EditorCell_VerticalLine.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
     <scopeInfo nodeId="5487985028841941612" fileName="EditorCell_VerticalLine.java" startLine="16" startPosition="69" endLine="17" endPosition="25" />
     <scopeInfo nodeId="5487985028841941579" fileName="EditorCell_VerticalLine.java" startLine="33" startPosition="36" endLine="34" endPosition="45" />
     <scopeInfo nodeId="5487985028841941592" fileName="EditorCell_VerticalLine.java" startLine="37" startPosition="30" endLine="39" endPosition="22" />
-    <scopeInfo nodeId="5487985028841941609" fileName="EditorCell_VerticalLine.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+    <scopeInfo nodeId="5487985028841941609" fileName="EditorCell_VerticalLine.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="5487985028841941616" varName="context" />
       <varInfo nodeId="5487985028841941618" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841941576" fileName="EditorCell_VerticalLine.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5487985028841941589" fileName="EditorCell_VerticalLine.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5487985028841941576" fileName="EditorCell_VerticalLine.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5487985028841941589" fileName="EditorCell_VerticalLine.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="5487985028841941517" fileName="EditorCell_VerticalLine.java" startLine="21" startPosition="28" endLine="29" endPosition="42">
       <varInfo nodeId="5487985028841941548" varName="height" />
       <varInfo nodeId="5487985028841941524" varName="parent" />
@@ -85,24 +85,24 @@
       <varInfo nodeId="5487985028841941536" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841941515" fileName="EditorCell_VerticalLine.java" startLine="20" startPosition="71" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="5487985028841941508" fileName="EditorCell_VerticalLine.java" startLine="19" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5487985028841941508" fileName="EditorCell_VerticalLine.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5487985028841941511" varName="g" />
       <varInfo nodeId="5487985028841941513" varName="parentSettings" />
     </scopeInfo>
     <unitInfo nodeId="5487985028841941507" fileName="EditorCell_VerticalLine.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine" />
   </root>
   <root nodeId="5487985028841941621" modelId="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841941622" fileName="VLineCellProvider.java" startLine="10" startPosition="61" endLine="11" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5487985028841941622" fileName="VLineCellProvider.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="5487985028841941632" fileName="VLineCellProvider.java" startLine="13" startPosition="40" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841941645" fileName="VLineCellProvider.java" startLine="17" startPosition="56" endLine="18" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841941626" fileName="VLineCellProvider.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VLineCellProvider#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5487985028841941639" fileName="VLineCellProvider.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5487985028841941626" fileName="VLineCellProvider.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VLineCellProvider#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5487985028841941639" fileName="VLineCellProvider.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="5487985028841941631" fileName="VLineCellProvider.java" startLine="13" startPosition="40" endLine="14" endPosition="23" />
     <scopeInfo nodeId="5487985028841941644" fileName="VLineCellProvider.java" startLine="17" startPosition="56" endLine="18" endPosition="56" />
-    <scopeInfo nodeId="5487985028841941626" fileName="VLineCellProvider.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+    <scopeInfo nodeId="5487985028841941626" fileName="VLineCellProvider.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="5487985028841941627" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841941639" fileName="VLineCellProvider.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="5487985028841941639" fileName="VLineCellProvider.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5487985028841941642" varName="p0" />
     </scopeInfo>
     <unitInfo nodeId="5487985028841941621" fileName="VLineCellProvider.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.VLineCellProvider" />

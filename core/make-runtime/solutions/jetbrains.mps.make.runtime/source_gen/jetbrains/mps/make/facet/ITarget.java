@@ -21,6 +21,7 @@ public interface ITarget {
   public <T> T createParameters(Class<T> varCls);
   public <T> T createParameters(Class<T> varCls, T copyFrom);
   public IJob createJob();
+
   public static class Name extends DefaultHName<IFacet.Name> {
     public Name(String name) {
       super(name);
@@ -30,5 +31,4 @@ public interface ITarget {
       return new IFacet.Name(parentFqName);
     }
   }
-
 }

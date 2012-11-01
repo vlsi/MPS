@@ -4,15 +4,15 @@
     <nodeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2341412953773657688" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtension#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtension#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" />
     <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" />
-    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="52" endLine="12" endPosition="0">
+    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="1236699935298" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+    <scopeInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1236699935298" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.sampleXML.textGen.Document_TextGen" />
@@ -44,8 +44,8 @@
     <nodeInfo nodeId="1236700642865" fileName="ElementCreator.java" startLine="41" startPosition="77" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236700827376" fileName="ElementCreator.java" startLine="21" startPosition="36" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1236700642863" fileName="ElementCreator.java" startLine="40" startPosition="25" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="16" startPosition="38" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="byElement#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
-    <nodeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="32" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createElement#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)Lorg/jdom/Element;" />
+    <nodeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="17" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="byElement#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
+    <nodeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="33" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createElement#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)Lorg/jdom/Element;" />
     <scopeInfo nodeId="1237463992006" fileName="ElementCreator.java" startLine="26" startPosition="58" endLine="27" endPosition="29" />
     <scopeInfo nodeId="1236700827379" fileName="ElementCreator.java" startLine="28" startPosition="0" endLine="29" endPosition="48">
       <varInfo nodeId="1236700827380" varName="e" />
@@ -73,7 +73,7 @@
       <varInfo nodeId="1236700571835" varName="element" />
       <varInfo nodeId="1236700571841" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="16" startPosition="38" endLine="32" endPosition="0">
+    <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="17" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1236700593595" varName="node" />
       <varInfo nodeId="1236700479964" varName="textGen" />
     </scopeInfo>
@@ -81,7 +81,7 @@
       <varInfo nodeId="1236700642860" varName="first" />
       <varInfo nodeId="1236700642828" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="32" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="33" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1236700623868" varName="element" />
       <varInfo nodeId="1236700479964" varName="textGen" />
     </scopeInfo>

@@ -9,6 +9,7 @@ public interface IWritableGenericParameterizedFeatureDesign<T> extends IGenericP
   public SNode replaceStatement(SNode srcExpr, T param, SNode range, SNode replaceExpr, ITemplateGenerator generator);
   public SNode removeStatement(SNode srcExpr, T param, SNode range, ITemplateGenerator generator);
   public SNode insertStatement(SNode srcExpr, T param, SNode range, SNode insertExpr, ITemplateGenerator generator);
+
   public static class Stub<E> extends IGenericParameterizedFeatureDesign.Stub<E> implements IWritableGenericParameterizedFeatureDesign<E> {
     public Stub() {
     }
@@ -25,5 +26,4 @@ public interface IWritableGenericParameterizedFeatureDesign<T> extends IGenericP
       return null;
     }
   }
-
 }

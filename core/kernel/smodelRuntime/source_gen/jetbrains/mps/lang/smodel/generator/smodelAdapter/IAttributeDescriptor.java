@@ -9,6 +9,7 @@ import jetbrains.mps.util.NameUtil;
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
   public void update(@NotNull SNode attribute);
+
   public static class AttributeDescriptor implements IAttributeDescriptor {
     protected SNode myAttributeDeclaration;
 
@@ -130,5 +131,4 @@ public interface IAttributeDescriptor {
       SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName", myPropertyName);
     }
   }
-
 }

@@ -9,7 +9,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-
 /**
  * Feature is either node, node's property, node's reference, node's property list,
  * or node's reference list (see subclasses)

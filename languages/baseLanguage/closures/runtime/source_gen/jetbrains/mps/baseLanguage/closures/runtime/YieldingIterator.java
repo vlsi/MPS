@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.closures.runtime;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
 /**
  * * @author fyodor
  */
