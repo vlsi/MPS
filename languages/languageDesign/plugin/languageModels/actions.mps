@@ -29,7 +29,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MoveParametersToTopLevel" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1218809006684">
-      <property name="name" nameId="tpck.1169194664001" value="MoveGroupMembersToTopLevel" />
+      <property name="name" nameId="tpck.1169194664001" value="ActionGroupMemberSubstitutions" />
     </node>
     <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="485694842828664420">
       <property name="name" nameId="tpck.1169194664001" value="add_parameter_to_closure" />
