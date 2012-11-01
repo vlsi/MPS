@@ -124,11 +124,25 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     checkLoaded();
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
-        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null);
+        // Hiding intentions with same getPersistentStateKey()
+        // important then currently selected element and it's parent has same intention
+        final Set<String> processedIntentionKeys = new HashSet<String>();
+        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null) {
+          @Override
+          boolean accept(Intention intention) {
+            return super.accept(intention) && !processedIntentionKeys.contains(intention.getPersistentStateKey());
+          }
+
+          @Override
+          boolean accept(IntentionFactory intentionFactory) {
+            return super.accept(intentionFactory) && !processedIntentionKeys.contains(intentionFactory.getPersistentStateKey());
+          }
+        };
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
         for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, filter)) {
           result.add(new Pair<Intention, SNode>(intention, node));
+          processedIntentionKeys.add(intention.getPersistentStateKey());
         }
 
         if (!query.isCurrentNodeOnly()) {
@@ -136,6 +150,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           while (parent != null) {
             for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
               result.add(new Pair<Intention, SNode>(intention, parent));
+              processedIntentionKeys.add(intention.getPersistentStateKey());
             }
             parent = parent.getParent();
           }
