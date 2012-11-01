@@ -66,11 +66,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     this.appendNewLine();
     BaseClassConceptTextGen.members(node, this);
     this.decreaseDepth();
-    if (!(node.isRoot())) {
-      this.appendWithIndent("}");
-    } else {
-      this.append("}");
-    }
+    this.appendWithIndent("}");
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {
