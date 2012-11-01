@@ -33,6 +33,7 @@ public class ConceptPropertiesMigrationDialog extends DialogWrapper {
     this.mpsProject = mpsProject;
     init();
     setResizable(false);
+    setTitle("Get rid of concept properties");
   }
 
   @Nullable

@@ -6,8 +6,8 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.project.ProjectHelper;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import javax.swing.SwingUtilities;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -70,28 +70,27 @@ public class ConceptPropertiesHelper {
 
   public void migrateNextStep() {
     final ConceptPropertiesMigrationDialog dialog = new ConceptPropertiesMigrationDialog(ideaProject, project);
+    switch (step) {
+      case 1:
+        dialog.setAction(new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+            migrateBaseConceptProperties();
+          }
+        });
+        break;
+      case 2:
+        dialog.setAction(new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+            removeConceptProperties();
+          }
+        });
+        break;
+      default:
+        return;
+    }
+    dialog.setText(getTitle());
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        switch (step) {
-          case 1:
-            dialog.setText("Migrate Concept Properties");
-            dialog.setAction(new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                migrateBaseConceptProperties();
-              }
-            });
-            break;
-          case 2:
-            dialog.setText("Remove Concept Properties");
-            dialog.setAction(new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                removeConceptProperties();
-              }
-            });
-            break;
-          default:
-            return;
-        }
         dialog.show();
       }
     });
@@ -129,7 +128,7 @@ public class ConceptPropertiesHelper {
       public void invoke() {
         doMigrate(cellUsages, accessUsages, conceptUsages);
       }
-    }, searchResults, "Migration step 1: migrate concept properties");
+    }, searchResults);
     final Set<SModelDescriptor> sourceModels = new HashSet<SModelDescriptor>();
     for (SModel model : ((Set<SModel>) searchResults.getAffectedModels())) {
       sourceModels.add(model.getModelDescriptor());
@@ -290,10 +289,10 @@ public class ConceptPropertiesHelper {
           SNodeOperations.deleteNode(conceptProperty);
         }
       }
-    }, searchResults, "Migration step 2: remove concept properties");
+    }, searchResults);
   }
 
-  private void showRefactoringView(final _FunctionTypes._void_P0_E0 refactor, SearchResults searchResults, String title) {
+  private void showRefactoringView(final _FunctionTypes._void_P0_E0 refactor, SearchResults searchResults) {
     final Set<SModelDescriptor> sourceModels = new HashSet<SModelDescriptor>();
     for (SModel model : ((Set<SModel>) searchResults.getAffectedModels())) {
       sourceModels.add(model.getModelDescriptor());
@@ -308,7 +307,18 @@ public class ConceptPropertiesHelper {
         });
         makeAllAndContinue(sourceModels);
       }
-    }, searchResults, false, title);
+    }, searchResults, false, getTitle());
+  }
+
+  private String getTitle() {
+    switch (step) {
+      case 1:
+        return "Migration step 1: migrate concept properties";
+      case 2:
+        return "Migration step 2: remove concept properties";
+      default:
+        return "";
+    }
   }
 
   private static boolean eq_azpnkk_a0e0i(Object a, Object b) {
