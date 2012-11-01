@@ -675,10 +675,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
-  public SModel getModelInternal() {
-    return myModel;
-  }
-
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
