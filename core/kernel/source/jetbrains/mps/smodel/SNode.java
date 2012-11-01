@@ -372,10 +372,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
         "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
-    if (((SNode) child).isRoot()) {
-      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(((SNode) child)) + " is root node. Can't add it as a child");
-    }
-
     if (getTopmostAncestor() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
     }
@@ -838,8 +834,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SNode parent = getParent();
     if (parent != null) {
       parent.removeChild(this);
-    } else if (isRoot()) {
-      getModel().removeRoot(this);
+    } else {
+      SModel model = getModel();
+      if (model != null && model.isRoot(this)) {
+        model.removeRoot(this);
+      }
     }
   }
 
@@ -877,8 +876,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void enforceModelLoad() {
-    if (!isRoot()) return;
     if (myModel == null) return;
+    if (!myModel.isRoot(this)) return;
     myModel.enforceFullLoad();
   }
 
