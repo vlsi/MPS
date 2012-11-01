@@ -534,7 +534,7 @@
     <nodeInfo nodeId="6648410850421135431" fileName="BaseVersionEditorComponent.java" startLine="67" startPosition="119" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3407638002087261840" fileName="BaseVersionEditorComponent.java" startLine="68" startPosition="72" endLine="69" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3407638002087261854" fileName="BaseVersionEditorComponent.java" startLine="69" startPosition="54" endLine="70" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748338326" fileName="BaseVersionEditorComponent.java" startLine="74" startPosition="65" endLine="75" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748338326" fileName="BaseVersionEditorComponent.java" startLine="74" startPosition="72" endLine="75" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4652592318748338330" fileName="BaseVersionEditorComponent.java" startLine="75" startPosition="55" endLine="76" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338336" fileName="BaseVersionEditorComponent.java" startLine="77" startPosition="5" endLine="78" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1455391539105552182" fileName="BaseVersionEditorComponent.java" startLine="81" startPosition="38" endLine="82" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -554,7 +554,7 @@
     <scopeInfo nodeId="3407638002087261697" fileName="BaseVersionEditorComponent.java" startLine="51" startPosition="49" endLine="52" endPosition="26" />
     <scopeInfo nodeId="6786798249452836520" fileName="BaseVersionEditorComponent.java" startLine="58" startPosition="156" endLine="59" endPosition="44" />
     <scopeInfo nodeId="1455391539105552181" fileName="BaseVersionEditorComponent.java" startLine="81" startPosition="38" endLine="82" endPosition="24" />
-    <scopeInfo nodeId="4652592318748338325" fileName="BaseVersionEditorComponent.java" startLine="74" startPosition="65" endLine="76" endPosition="73">
+    <scopeInfo nodeId="4652592318748338325" fileName="BaseVersionEditorComponent.java" startLine="74" startPosition="72" endLine="76" endPosition="73">
       <varInfo nodeId="4652592318748338327" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="3407638002087242024" fileName="BaseVersionEditorComponent.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
