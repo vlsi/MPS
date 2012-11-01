@@ -37,7 +37,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
@@ -166,14 +166,14 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SModel check_guz8cy_a0c0a0(DefaultSModelDescriptor checkedDotOperand) {
+  private static SModel check_guz8cy_a0c0a0(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }
     return null;
   }
 
-  private static DefaultSModelDescriptor check_guz8cy_a0a2a0a(Language checkedDotOperand) {
+  private static SModelDescriptor check_guz8cy_a0a2a0a(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStructureModelDescriptor();
     }

@@ -215,7 +215,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public int getVersion() {
-    return getStructureModelDescriptor().getVersion();
+    return ((DefaultSModelDescriptor)getStructureModelDescriptor()).getVersion();
   }
 
   public Collection<Generator> getGenerators() {
@@ -305,7 +305,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
-  public DefaultSModelDescriptor getStructureModelDescriptor() {
+  public SModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
