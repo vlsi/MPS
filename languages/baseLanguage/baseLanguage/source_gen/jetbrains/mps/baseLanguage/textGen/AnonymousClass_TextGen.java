@@ -56,7 +56,7 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       this.append(")");
     }
     this.append(" ");
-    BaseClassConceptTextGen.membersWithBrackets(node, this);
+    BaseClassConceptTextGen.membersWithBrackets(node, false, this);
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;

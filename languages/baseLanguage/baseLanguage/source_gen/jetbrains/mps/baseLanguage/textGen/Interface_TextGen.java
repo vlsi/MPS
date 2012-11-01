@@ -49,7 +49,7 @@ public class Interface_TextGen extends SNodeTextGen {
       }
     }
     this.append(" ");
-    BaseClassConceptTextGen.membersWithBrackets(node, this);
+    BaseClassConceptTextGen.membersWithBrackets(node, true, this);
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {

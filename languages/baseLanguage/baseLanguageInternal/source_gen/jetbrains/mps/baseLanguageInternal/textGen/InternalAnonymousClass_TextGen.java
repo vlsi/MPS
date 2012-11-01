@@ -49,7 +49,7 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
       return;
     }
     this.append(" ");
-    BaseClassConceptTextGen.membersWithBrackets(node, this);
+    BaseClassConceptTextGen.membersWithBrackets(node, false, this);
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;

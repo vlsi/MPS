@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class BaseClassConceptTextGen {
-  public static void membersWithBrackets(SNode classifier, final SNodeTextGen textGen) {
-    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).isNotEmpty()) {
+  public static void membersWithBrackets(SNode classifier, boolean newLineOnEmptyMembers, final SNodeTextGen textGen) {
+    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).isNotEmpty() || newLineOnEmptyMembers) {
       textGen.append("{");
       textGen.appendNewLine();
       textGen.increaseDepth();
@@ -21,7 +21,7 @@ public abstract class BaseClassConceptTextGen {
       textGen.decreaseDepth();
       textGen.appendWithIndent("}");
     } else {
-      textGen.append(" {}");
+      textGen.append("{}");
     }
   }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7jnlv0lasqocxhin3ogpibumqyhu7r1">
+<dependencies version="2" modelHash="d3vbu8xdnrrq0tag41lie3im2kamnsx">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -159,7 +159,7 @@
     <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <file name="AnnotationMethodDeclaration_TextGen.java" />
   </source>
-  <source id="1234887555845" name="AnonymousClass_TextGen" hash="-ebeulpl6xfskyti63f3mrmyhbrk3guk">
+  <source id="1234887555845" name="AnonymousClass_TextGen" hash="6gvwb9ariibrzonwy8ozqhwexiwxjwq">
     <dep root="1234796104060" />
     <dep root="3408882292339889057" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -439,7 +439,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="CharType_TextGen.java" />
   </source>
-  <source id="1234891178357" name="ClassConcept_TextGen" hash="e7ykothpvpzymzz8xa8o8b785o8x89z">
+  <source id="1234891178357" name="ClassConcept_TextGen" hash="-niv5k9j6r1h87el97xoxd6b9nw9drq">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep root="3408882292339889057" />
@@ -692,7 +692,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="IntegerType_TextGen.java" />
   </source>
-  <source id="1235068684876" name="Interface_TextGen" hash="erz5ln5rb2k311p0rakg0y0rovbgrz8">
+  <source id="1235068684876" name="Interface_TextGen" hash="5ptfozoosnlg49re5yfpxmkq2hbvkyi">
     <dep root="1234796104060" />
     <dep root="1234891338660" />
     <dep root="3408882292339889057" />
@@ -1793,7 +1793,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="PlaceholderMethodDeclaration_TextGen.java" />
   </source>
-  <source id="3408882292339889057" name="BaseClassConceptTextGen" hash="3kz5n65cnzj30x48zxan5fwktweepc9">
+  <source id="3408882292339889057" name="BaseClassConceptTextGen" hash="-7dg4bkgpsvpf5mxv3k6o7gh2psm0nrm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
