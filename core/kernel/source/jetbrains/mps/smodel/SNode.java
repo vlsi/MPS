@@ -852,9 +852,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     } else if (isRoot()) {
       getModel().removeRoot(this);
     }
-
-    // really delete
-    UnregisteredNodes.instance().remove(this);
   }
 
   private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
