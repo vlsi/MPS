@@ -97,7 +97,19 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   protected void doAssertLegalRead(SNode node) {
-    if (isInRegisteredModel(node) && !canRead() && !myIndexingThreads.contains(Thread.currentThread())) {
+    if (canRead()) return;
+
+    boolean old = setReadEnabledFlag(true);
+    boolean reg = false;
+    try {
+      SModel model = node.getModel();
+      if (model == null) return;
+      reg = model.isRegistered();
+    } finally {
+      setReadEnabledFlag(old);
+    }
+
+    if (reg && !myIndexingThreads.contains(Thread.currentThread())) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }

@@ -27,7 +27,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public abstract class ModelAccess implements ModelCommandExecutor {
-
   protected static final Logger LOG = Logger.getLogger(ModelAccess.class);
 
   private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
@@ -147,26 +146,36 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   }
 
   static void assertLegalRead(SNode node) {
-    if (jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
-      SModel model = node.getModelInternal();
-      String modelName = model == null ? "<null>" : model.getLongName();
-      if (ourErroredModels.add(modelName)) {
-        System.err.println("CRITICAL: INVALID OPERATION DETECTED");
-        System.err.println("model: " + modelName);
-        new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
+    if (node.isDisposed()) {
+      boolean old = ModelAccess.instance().setReadEnabledFlag(true);
+      try {
+        String modelName = node.getModel().getLongName();
+        if (ourErroredModels.add(modelName)) {
+          System.err.println("CRITICAL: INVALID OPERATION DETECTED");
+          System.err.println("model: " + modelName);
+          new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
+        }
+      } finally {
+        ModelAccess.instance().setReadEnabledFlag(old);
       }
     }
     ModelAccess.instance().doAssertLegalRead(node);
   }
 
-  protected static boolean isInRegisteredModel(SNode node) {
-    SModel model = node.getModelInternal();
-    if (model == null) return false;
-    return model.isRegistered();
-  }
-
   protected void doAssertLegalRead(SNode node) {
-    if (isInRegisteredModel(node) && !canRead()) {
+    if (canRead()) return;
+
+    boolean old = setReadEnabledFlag(true);
+    boolean reg = false;
+    try {
+      SModel model = node.getModel();
+      if (model == null) return;
+      reg = model.isRegistered();
+    } finally {
+      setReadEnabledFlag(old);
+    }
+
+    if (reg) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
