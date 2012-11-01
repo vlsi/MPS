@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -107,7 +108,7 @@ public abstract class AbstractMigrationScriptHelper {
     }
 
     public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-      return GlobalScope.getInstance().getModelDescriptor(modelReference);
+      return SModelRepository.getInstance().getModelDescriptor(modelReference);
     }
 
     public List<Language> getVisibleLanguages() {

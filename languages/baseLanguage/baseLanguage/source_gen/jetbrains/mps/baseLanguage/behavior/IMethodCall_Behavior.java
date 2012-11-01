@@ -111,7 +111,7 @@ public class IMethodCall_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return new ArrayList<SNode>();
   }
 
@@ -136,8 +136,8 @@ public class IMethodCall_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+  public static Iterable<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
   }
 
   @Deprecated
@@ -161,8 +161,8 @@ public class IMethodCall_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, new Object[]{methodName});
+  public static Iterable<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, new Object[]{methodName});
   }
 
   @Deprecated

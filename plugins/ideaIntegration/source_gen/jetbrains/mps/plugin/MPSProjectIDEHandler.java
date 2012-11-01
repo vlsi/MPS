@@ -14,17 +14,17 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Frame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.LanguageID;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -111,14 +111,11 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showNode(final String namespace, final String id) throws RemoteException {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
-          if (!(namespace.equals(descriptor.getSModelReference().getLongName()))) {
+        for (SModel descriptor : SModelRepository.getInstance().getModelDescriptors()) {
+          if (!(namespace.equals(descriptor.getModelName()))) {
             continue;
           }
-          if (descriptor.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-            continue;
-          }
-          SNode node = descriptor.getSModel().getNodeById(id);
+          SNode node = ((SModelDescriptor) descriptor).getSModel().getNodeById(id);
           if (node != null) {
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));

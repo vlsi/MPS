@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
@@ -144,18 +145,19 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
+  @Override
   @Nullable
   public IModule getModule() {
-    for (ModelOwner owner : SModelRepository.getInstance().getOwners(this)) {
-      if (owner instanceof IModule) {
-        return ((IModule) owner);
-      }
+    SModule owner = SModelRepository.getInstance().getOwner(this);
+    if (owner instanceof IModule) {
+      return (IModule) owner;
     }
     return null;
   }
 
   protected abstract SModel getCurrentModelInternal();
 
+  @Override
   public void addModelListener(@NotNull SModelListener listener) {
     if (listener.getPriority() == SModelListenerPriority.PLATFORM) {
       myModelListeners.add(0, listener);
@@ -164,6 +166,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
+  @Override
   public void removeModelListener(@NotNull SModelListener listener) {
     myModelListeners.remove(listener);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.ide.persistence;
 
-/**
- * User: Sergey Dmitriev
- * Date: Apr 14, 2005
- */
-public interface ModelOwner {
+public interface ModelRootSettingsEditorProvider {
+  ModelRootSettingsEditor createEditor();
 }

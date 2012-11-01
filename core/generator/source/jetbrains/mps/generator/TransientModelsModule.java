@@ -17,12 +17,12 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
@@ -30,7 +30,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends ClassLoadingModule   {
+public class TransientModelsModule extends ClassLoadingModule {
   private static final Logger LOG = Logger.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
@@ -163,7 +163,7 @@ public class TransientModelsModule extends ClassLoadingModule   {
       if (model instanceof TransientSModelDescriptor) {
         if (((TransientSModelDescriptor) model).unloadModel()) {
           if (myPublished.contains(model)) {
-            SModelRepository.getInstance().removeModelDescriptor(model);
+//            SModelRepository.getInstance().removeModelDescriptor(model);
           }
         }
       }
@@ -195,10 +195,6 @@ public class TransientModelsModule extends ClassLoadingModule   {
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>(myModels.values());
-  }
-
-  public List<SModelDescriptor> getHiddenModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 

@@ -1622,14 +1622,14 @@ public class ASTConverter {
 
   private SNode findConstructor(SNode claz, Expression[] args) {
     SNode result;
-    List<SNode> conss = SLinkOperations.getTargets(claz, "constructor", true);
-    if (ListSequence.fromList(conss).isEmpty()) {
+    Iterable<SNode> conss = SLinkOperations.getTargets(claz, "constructor", true);
+    if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
-    } else if ((int) ListSequence.fromList(conss).count() == 1) {
-      result = ListSequence.fromList(conss).first();
+    } else if ((int) Sequence.fromIterable(conss).count() == 1) {
+      result = Sequence.fromIterable(conss).first();
     } else {
       final int argCount = args.length;
-      Iterable<SNode> subset = ListSequence.fromList(conss).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> subset = Sequence.fromIterable(conss).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == argCount;
         }

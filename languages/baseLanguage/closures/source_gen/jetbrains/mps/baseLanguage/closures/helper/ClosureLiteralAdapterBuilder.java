@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -83,7 +84,7 @@ public class ClosureLiteralAdapterBuilder {
   }
 
   private SNode getAdapterClassFunctionType(SNode cls) {
-    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(SLinkOperations.getTargets(cls, "method", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode md) {
         return SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
       }

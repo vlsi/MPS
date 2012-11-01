@@ -11,12 +11,13 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
 
 public class MissingDependenciesFixer {
@@ -48,11 +49,11 @@ public class MissingDependenciesFixer {
           if (moduleScope.getModelDescriptor(modelImport) != null) {
             continue;
           }
-          SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
+          SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(modelImport);
           if (sm == null) {
             SModelFqName fqName = modelImport.getSModelFqName();
             sm = (fqName != null ?
-              GlobalScope.getInstance().getModelDescriptor(fqName) :
+              SModelRepository.getInstance().getModelDescriptor(fqName) :
               null
             );
             if (sm == null) {

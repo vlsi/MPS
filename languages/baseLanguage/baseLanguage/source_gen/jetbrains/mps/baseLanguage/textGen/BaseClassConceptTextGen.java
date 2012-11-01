@@ -7,7 +7,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class BaseClassConceptTextGen {
   public static void body(SNode concept, final SNodeTextGen textGen) {
@@ -84,8 +84,8 @@ public abstract class BaseClassConceptTextGen {
     }
   }
 
-  public static void collection(List<SNode> nodes, final SNodeTextGen textGen) {
-    if (ListSequence.fromList(nodes).isNotEmpty()) {
+  public static void collection(Iterable<SNode> nodes, final SNodeTextGen textGen) {
+    if (Sequence.fromIterable(nodes).isNotEmpty()) {
       for (SNode item : nodes) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }

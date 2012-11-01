@@ -1160,7 +1160,7 @@
     <nodeInfo nodeId="8184320397304932138" fileName="ConvertAnonymousRefactoring.java" startLine="43" startPosition="44" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6886971383097505982" fileName="ConvertAnonymousRefactoring.java" startLine="47" startPosition="28" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6886971383097474162" fileName="ConvertAnonymousRefactoring.java" startLine="48" startPosition="25" endLine="49" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8184320397304932277" fileName="ConvertAnonymousRefactoring.java" startLine="50" startPosition="28" endLine="51" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8184320397304932277" fileName="ConvertAnonymousRefactoring.java" startLine="50" startPosition="28" endLine="51" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8184320397304932584" fileName="ConvertAnonymousRefactoring.java" startLine="55" startPosition="37" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="637963823610833336" fileName="ConvertAnonymousRefactoring.java" startLine="56" startPosition="25" endLine="57" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8184320397304993518" fileName="ConvertAnonymousRefactoring.java" startLine="57" startPosition="48" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1195,8 +1195,8 @@
     <nodeInfo nodeId="6724021030166343584" fileName="ConvertAnonymousRefactoring.java" startLine="129" startPosition="106" endLine="130" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6724021030166345735" fileName="ConvertAnonymousRefactoring.java" startLine="130" startPosition="102" endLine="131" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6724021030166445378" fileName="ConvertAnonymousRefactoring.java" startLine="131" startPosition="111" endLine="132" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8184320397305029834" fileName="ConvertAnonymousRefactoring.java" startLine="133" startPosition="5" endLine="134" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8184320397305035940" fileName="ConvertAnonymousRefactoring.java" startLine="134" startPosition="126" endLine="135" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8184320397305029834" fileName="ConvertAnonymousRefactoring.java" startLine="133" startPosition="5" endLine="134" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8184320397305035940" fileName="ConvertAnonymousRefactoring.java" startLine="134" startPosition="120" endLine="135" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8184320397305045315" fileName="ConvertAnonymousRefactoring.java" startLine="135" startPosition="54" endLine="136" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6584037136593274580" fileName="ConvertAnonymousRefactoring.java" startLine="142" startPosition="39" endLine="143" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8184320397305048050" fileName="ConvertAnonymousRefactoring.java" startLine="145" startPosition="26" endLine="146" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1488,7 +1488,7 @@
     <scopeInfo nodeId="8184320397304996253" fileName="ConvertAnonymousRefactoring.java" startLine="444" startPosition="44" endLine="444" endPosition="44" />
     <scopeInfo nodeId="637963823611062445" fileName="ConvertAnonymousRefactoring.java" startLine="462" startPosition="44" endLine="462" endPosition="44" />
     <scopeInfo nodeId="58673743036078112" fileName="ConvertAnonymousRefactoring.java" startLine="489" startPosition="46" endLine="489" endPosition="46" />
-    <scopeInfo nodeId="6886971383097474990" fileName="ConvertAnonymousRefactoring.java" startLine="50" startPosition="28" endLine="51" endPosition="186" />
+    <scopeInfo nodeId="6886971383097474990" fileName="ConvertAnonymousRefactoring.java" startLine="50" startPosition="28" endLine="51" endPosition="180" />
     <scopeInfo nodeId="637963823610828243" fileName="ConvertAnonymousRefactoring.java" startLine="64" startPosition="104" endLine="65" endPosition="316" />
     <scopeInfo nodeId="8184320397304986421" fileName="ConvertAnonymousRefactoring.java" startLine="73" startPosition="83" endLine="74" endPosition="314" />
     <scopeInfo nodeId="5907083257159797402" fileName="ConvertAnonymousRefactoring.java" startLine="83" startPosition="41" endLine="84" endPosition="91" />

@@ -70,6 +70,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
+  public Iterable<String> getTypeIds() {
+    return myRootFactories.keySet();
+  }
+
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");

@@ -13,15 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.persistence;
+package org.jetbrains.mps.openapi.module;
 
-import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
- * evgeny, 10/24/12
+ * evgeny, 10/31/12
  */
-public interface ModelRootSettingsProvider {
+public interface SModuleScope {
 
-  void show(Project project, ModelRoot modelRoot);
+  Iterable<SModule> getModules();
+
+  Iterable<SModel> getModels();
+
+  SModel resolve(SModelReference reference);
+
+  SModule resolve(SModuleReference reference);
 }

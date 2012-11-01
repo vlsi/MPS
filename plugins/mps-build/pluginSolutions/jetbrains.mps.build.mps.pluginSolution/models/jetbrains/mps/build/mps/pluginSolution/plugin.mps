@@ -180,8 +180,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8722937377469659497">
       <property name="name" nameId="tpck.1169194664001" value="GenerateBuildForProjectAction" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Build Solution" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Build Solution" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8722937377469659543">
       <property name="name" nameId="tpck.1169194664001" value="ProjectPaneProjectAddition" />
@@ -6777,7 +6777,7 @@
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelRepository" resolveInfo="SModelRepository" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8722937377469656854">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptors(jetbrains%dmps%dsmodel%dModelOwner)%cjava%dutil%dList" resolveInfo="getModelDescriptors" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptors(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjava%dutil%dList" resolveInfo="getModelDescriptors" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8722937377469656855">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8722937377469656828" resolveInfo="solution" />
                       </node>
@@ -12582,10 +12582,10 @@
                     <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3256085672520562274">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="3256085672520562275">
                         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562276">
-                          <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033161" resolveInfo="languages" />
+                          <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033161" />
                         </node>
                         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562277">
-                          <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1348803421063031332" resolveInfo="license" />
+                          <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1348803421063031332" />
                         </node>
                         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="3684398890534586727">
                           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3684398890534586728">
@@ -12594,7 +12594,7 @@
                             </node>
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="3684398890534586738">
-                            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="ffeo.3684398890534586740" resolveInfo="bin" />
+                            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="ffeo.3684398890534586740" />
                             <node role="selectors" roleId="3ior.6789562173791401562" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="3684398890534677816">
                               <property name="pattern" nameId="3ior.5248329904288051101" value="log.xml" />
                             </node>
@@ -12679,7 +12679,7 @@
                             </node>
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="3256085672520562281">
-                            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="ffeo.1392391688313033167" resolveInfo="lib" />
+                            <link role="target" roleId="3ior.5610619299013057365" targetNodeId="ffeo.1392391688313033167" />
                             <node role="selectors" roleId="3ior.6789562173791401562" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="3256085672520562282">
                               <property name="pattern" nameId="3ior.5248329904288051112" value="MPS-src.zip" />
                             </node>
@@ -12706,16 +12706,16 @@
                         </node>
                         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="3256085672520562288">
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562289">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033217" resolveInfo="svn4idea" />
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033217" />
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562290">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033209" resolveInfo="cvsIntegration" />
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033209" />
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562291">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033226" resolveInfo="git4idea" />
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033226" />
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562292">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.614687982853436655" resolveInfo="mps-core" />
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.614687982853436655" />
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_Plugin" typeId="kdzh.6592112598314498926" id="3256085672520562293">
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3256085672520562294">
@@ -12729,7 +12729,7 @@
                             <property name="text" nameId="3ior.9126048691954700811" value="optional plugins" />
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6265574260762108798">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.6265574260762011106" resolveInfo="mps-make.jar" />
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.6265574260762011106" />
                           </node>
                           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3256085672520562296">
                             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="3256085672520562297">

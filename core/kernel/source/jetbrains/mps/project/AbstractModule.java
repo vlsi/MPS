@@ -39,9 +39,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.*;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -83,11 +81,13 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.remove(creationListener);
   }
 
+  @Override
   @Deprecated
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
     return createModel(name.toString(), root, adj);
   }
 
+  @Override
   public final EditableSModelDescriptor createModel(String name, ModelRoot root, ModelAdjuster adj) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
@@ -131,6 +131,11 @@ public abstract class AbstractModule implements IModule {
   public SRepository getRepository() {
     // TODO API (implement)
     return null;
+  }
+
+  @Override
+  public SModuleScope getModuleScope() {
+    return getScope();
   }
 
   @Override
@@ -203,7 +208,7 @@ public abstract class AbstractModule implements IModule {
   //----adding different deps
 
   @Override
-  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     for (Dependency dep : descriptor.getDependencies()) {
@@ -219,7 +224,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef(moduleRef);
+    dep.setModuleRef((ModuleReference) moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 
@@ -492,10 +497,6 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
-  public List<SModelDescriptor> getHiddenModelDescriptors() {
-    return Collections.emptyList();
-  }
-
   public IFile getClassesGen() {
     return ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
   }
@@ -552,38 +553,37 @@ public abstract class AbstractModule implements IModule {
     List<org.jetbrains.mps.openapi.model.SModelReference> allLoadedModels = new ArrayList<org.jetbrains.mps.openapi.model.SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    if (descriptor != null) {
-      SModelRepository smRepo = SModelRepository.getInstance();
-      Collection<ModelRootDescriptor> roots = descriptor.getModelRootDescriptors();
-      for (ModelRootDescriptor modelRoot : roots) {
-        try {
-          ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
-          if (modelRootFactory == null) {
-            LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
-            continue;
-          }
+    if (descriptor == null) return result;
 
-          ModelRoot root = modelRootFactory.create();
-          root.load(modelRoot.getMemento());
-          ((ModelRootBase) root).setModule(this);
-          result.add(root);
-
-          for (SModel model : root.getModels()) {
-            allLoadedModels.add(model.getModelReference());
-            if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
-              smRepo.registerModelDescriptor((SModelDescriptor) model, this);
-            }
-          }
-        } catch (Exception e) {
-          LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
+    SModelRepository smRepo = SModelRepository.getInstance();
+    for (ModelRootDescriptor modelRoot : descriptor.getModelRootDescriptors()) {
+      try {
+        ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
+        if (modelRootFactory == null) {
+          LOG.error("Unknown model root type: `" + modelRoot.getType() + "'. Requested by: " + this);
+          continue;
         }
-      }
 
-      for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
-        if (allLoadedModels.contains(md.getSModelReference())) continue;
-        if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
-        smRepo.unRegisterModelDescriptor(md, this);
+        ModelRoot root = modelRootFactory.create();
+        root.load(modelRoot.getMemento());
+        ((ModelRootBase) root).setModule(this);
+        result.add(root);
+
+        for (SModel model : root.getModels()) {
+          allLoadedModels.add(model.getModelReference());
+          if (smRepo.getModelDescriptor(model.getModelReference()) == null) {
+            smRepo.registerModelDescriptor((SModelDescriptor) model, this);
+          }
+        }
+      } catch (Exception e) {
+        LOG.error("Error loading models from root with type: `" + modelRoot.getType() + "'. Requested by: " + this, e);
       }
+    }
+
+    for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
+      if (allLoadedModels.contains(md.getSModelReference())) continue;
+      if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
+      smRepo.unRegisterModelDescriptor(md, this);
     }
     return result;
   }

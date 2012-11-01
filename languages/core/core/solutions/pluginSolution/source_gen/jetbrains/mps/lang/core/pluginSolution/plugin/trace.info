@@ -11,7 +11,7 @@
     <nodeInfo nodeId="1209385285846" fileName="AddMissingDependency_Action.java" startLine="40" startPosition="87" endLine="41" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209385276369" fileName="AddMissingDependency_Action.java" startLine="42" startPosition="103" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222430244831" fileName="AddMissingDependency_Action.java" startLine="44" startPosition="24" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1209385290905" fileName="AddMissingDependency_Action.java" startLine="47" startPosition="111" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1209385290905" fileName="AddMissingDependency_Action.java" startLine="47" startPosition="116" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209385293184" fileName="AddMissingDependency_Action.java" startLine="50" startPosition="5" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="56" startPosition="7" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="57" startPosition="60" endLine="58" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -26,8 +26,8 @@
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209385300976" fileName="AddMissingDependency_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209385300990" fileName="AddMissingDependency_Action.java" startLine="91" startPosition="105" endLine="92" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209385301011" fileName="AddMissingDependency_Action.java" startLine="93" startPosition="113" endLine="94" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209385306059" fileName="AddMissingDependency_Action.java" startLine="94" startPosition="82" endLine="95" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209385301011" fileName="AddMissingDependency_Action.java" startLine="93" startPosition="118" endLine="94" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209385306059" fileName="AddMissingDependency_Action.java" startLine="94" startPosition="87" endLine="95" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2724756130234264101" fileName="AddMissingDependency_Action.java" startLine="97" startPosition="7" endLine="98" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="100" startPosition="33" endLine="101" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="73" startPosition="57" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -58,7 +58,7 @@
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="74" startPosition="25" endLine="74" endPosition="25" />
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />
     <scopeInfo nodeId="1222430227714" fileName="AddMissingDependency_Action.java" startLine="44" startPosition="24" endLine="45" endPosition="17" />
-    <scopeInfo nodeId="1209385276389" fileName="AddMissingDependency_Action.java" startLine="47" startPosition="111" endLine="48" endPosition="20" />
+    <scopeInfo nodeId="1209385276389" fileName="AddMissingDependency_Action.java" startLine="47" startPosition="116" endLine="48" endPosition="20" />
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="61" startPosition="33" endLine="62" endPosition="95" />
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="69" startPosition="53" endLine="70" endPosition="19" />
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="78" startPosition="67" endLine="79" endPosition="19" />
@@ -67,7 +67,7 @@
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="56" startPosition="7" endLine="58" endPosition="63">
       <varInfo nodeId="2222556283720140738" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Action.java" startLine="93" startPosition="113" endLine="95" endPosition="170">
+    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Action.java" startLine="93" startPosition="118" endLine="95" endPosition="170">
       <varInfo nodeId="1209385301012" varName="sm" />
     </scopeInfo>
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="29" startPosition="40" endLine="32" endPosition="41" />

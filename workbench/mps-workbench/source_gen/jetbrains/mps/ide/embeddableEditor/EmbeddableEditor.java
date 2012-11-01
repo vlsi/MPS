@@ -5,7 +5,7 @@ package jetbrains.mps.ide.embeddableEditor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.ModelOwner;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
@@ -60,15 +60,15 @@ public class EmbeddableEditor {
   private EmbeddableEditorPanel myPanel;
   private final IOperationContext myContext;
   private final EditableSModelDescriptor myModel;
-  private final ModelOwner myOwner;
+  private final SModule myOwner;
   private SNode myNode;
   private final boolean myIsEditable;
 
-  public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
+  public EmbeddableEditor(IOperationContext context, SModule owner, SNode node) {
     this(context, owner, node, true);
   }
 
-  public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node, boolean editable) {
+  public EmbeddableEditor(IOperationContext context, SModule owner, SNode node, boolean editable) {
     myOwner = owner;
     myContext = context;
     myIsEditable = editable;

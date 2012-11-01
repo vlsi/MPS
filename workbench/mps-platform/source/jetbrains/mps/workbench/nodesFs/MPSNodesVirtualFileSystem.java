@@ -21,7 +21,6 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -110,7 +109,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
         SModelReference reference = SModelReference.fromString(m.group(1));
         final String name = m.group(2);
-        SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(reference);
+        SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(reference);
         if (sm == null) return null;
 
         Condition<SNode> cond = new Condition<SNode>() {

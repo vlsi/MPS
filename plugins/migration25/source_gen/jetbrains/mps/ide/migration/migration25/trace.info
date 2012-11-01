@@ -1138,9 +1138,9 @@
     <nodeInfo nodeId="495581478240917454" fileName="MethodCallChecker.java" startLine="75" startPosition="9" endLine="76" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="495581478240917456" fileName="MethodCallChecker.java" startLine="76" startPosition="51" endLine="77" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="495581478240917464" fileName="MethodCallChecker.java" startLine="78" startPosition="26" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="495581478240917468" fileName="MethodCallChecker.java" startLine="80" startPosition="9" endLine="81" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495581478240917517" fileName="MethodCallChecker.java" startLine="85" startPosition="119" endLine="86" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="495581478240917524" fileName="MethodCallChecker.java" startLine="86" startPosition="88" endLine="87" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="495581478240917468" fileName="MethodCallChecker.java" startLine="80" startPosition="9" endLine="81" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="495581478240917517" fileName="MethodCallChecker.java" startLine="85" startPosition="124" endLine="86" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="495581478240917524" fileName="MethodCallChecker.java" startLine="86" startPosition="93" endLine="87" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="495581478240917539" fileName="MethodCallChecker.java" startLine="87" startPosition="110" endLine="88" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="495581478240917541" fileName="MethodCallChecker.java" startLine="89" startPosition="15" endLine="90" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="495581478240917546" fileName="MethodCallChecker.java" startLine="95" startPosition="5" endLine="96" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1170,9 +1170,9 @@
     <nodeInfo nodeId="495581478240917533" fileName="MethodCallChecker.java" startLine="106" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_lz161n_a0a1a0a5a0a7a1a6a0#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
     <nodeInfo nodeId="495581478240917534" fileName="MethodCallChecker.java" startLine="113" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_lz161n_a0a0b0a0f0a0h0b0g0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="495581478240917526" fileName="MethodCallChecker.java" startLine="120" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_lz161n_a0b0a0f0a0h0b0g0a#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="495581478240917500" fileName="MethodCallChecker.java" startLine="83" startPosition="184" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
-    <nodeInfo nodeId="495581478240917487" fileName="MethodCallChecker.java" startLine="82" startPosition="74" endLine="92" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="495581478240917475" fileName="MethodCallChecker.java" startLine="81" startPosition="88" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="495581478240917500" fileName="MethodCallChecker.java" startLine="83" startPosition="200" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
+    <nodeInfo nodeId="495581478240917487" fileName="MethodCallChecker.java" startLine="82" startPosition="63" endLine="92" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="495581478240917475" fileName="MethodCallChecker.java" startLine="81" startPosition="115" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="495581478240917426" fileName="MethodCallChecker.java" startLine="60" startPosition="219" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFix#()Z" />
     <nodeInfo nodeId="495581478240917415" fileName="MethodCallChecker.java" startLine="59" startPosition="50" endLine="74" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="495581478240917413" fileName="MethodCallChecker.java" startLine="58" startPosition="9" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1191,7 +1191,7 @@
     <scopeInfo nodeId="495581478240917534" fileName="MethodCallChecker.java" startLine="115" startPosition="36" endLine="116" endPosition="43" />
     <scopeInfo nodeId="495581478240917526" fileName="MethodCallChecker.java" startLine="122" startPosition="36" endLine="123" endPosition="43" />
     <scopeInfo nodeId="495581478240917298" fileName="MethodCallChecker.java" startLine="35" startPosition="56" endLine="37" endPosition="3" />
-    <scopeInfo nodeId="495581478240917516" fileName="MethodCallChecker.java" startLine="85" startPosition="119" endLine="88" endPosition="28">
+    <scopeInfo nodeId="495581478240917516" fileName="MethodCallChecker.java" startLine="85" startPosition="124" endLine="88" endPosition="28">
       <varInfo nodeId="495581478240917518" varName="sm" />
     </scopeInfo>
     <scopeInfo nodeId="2235828751986251002" fileName="MethodCallChecker.java" startLine="65" startPosition="67" endLine="69" endPosition="17">
@@ -1218,8 +1218,8 @@
     <scopeInfo nodeId="495581478240917526" fileName="MethodCallChecker.java" startLine="120" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="495581478240917526" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="495581478240917500" fileName="MethodCallChecker.java" startLine="83" startPosition="184" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="495581478240917486" fileName="MethodCallChecker.java" startLine="82" startPosition="74" endLine="92" endPosition="13" />
+    <scopeInfo nodeId="495581478240917500" fileName="MethodCallChecker.java" startLine="83" startPosition="200" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="495581478240917486" fileName="MethodCallChecker.java" startLine="82" startPosition="63" endLine="92" endPosition="13" />
     <scopeInfo nodeId="495581478240917427" fileName="MethodCallChecker.java" startLine="61" startPosition="36" endLine="72" endPosition="26">
       <varInfo nodeId="495581478240917429" varName="fixer" />
       <varInfo nodeId="2235828751986250772" varName="reResolvedTargets" />
@@ -1247,7 +1247,7 @@
       <varInfo nodeId="495581478240917310" varName="monitor" />
       <varInfo nodeId="495581478240917312" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="495581478240917500" fileName="MethodCallChecker.java" startLine="83" startPosition="164" endLine="92" endPosition="11" unitName="jetbrains.mps.ide.migration.migration25.MethodCallChecker$2" />
+    <unitInfo nodeId="495581478240917500" fileName="MethodCallChecker.java" startLine="83" startPosition="180" endLine="92" endPosition="11" unitName="jetbrains.mps.ide.migration.migration25.MethodCallChecker$2" />
     <unitInfo nodeId="495581478240917426" fileName="MethodCallChecker.java" startLine="60" startPosition="199" endLine="74" endPosition="11" unitName="jetbrains.mps.ide.migration.migration25.MethodCallChecker$1" />
     <unitInfo nodeId="495581478240917296" fileName="MethodCallChecker.java" startLine="35" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.MethodCallChecker" />
   </root>
