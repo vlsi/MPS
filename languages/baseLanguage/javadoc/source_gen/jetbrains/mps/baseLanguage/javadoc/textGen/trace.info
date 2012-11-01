@@ -277,26 +277,23 @@
     <nodeInfo nodeId="2004985048484774398" fileName="ClassifierDocComment_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2004985048484856472" fileName="ClassifierDocComment_TextGen.java" startLine="20" startPosition="0" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484856472" fileName="ClassifierDocComment_TextGen.java" startLine="20" startPosition="0" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5774894706564089012" fileName="ClassifierDocComment_TextGen.java" startLine="21" startPosition="48" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5774894706564089012" fileName="ClassifierDocComment_TextGen.java" startLine="21" startPosition="48" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2004985048484856458" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="50" />
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="16" startPosition="74" endLine="17" endPosition="109" />
     <scopeInfo nodeId="2004985048484856472" fileName="ClassifierDocComment_TextGen.java" startLine="20" startPosition="0" endLine="21" endPosition="48" />
-    <scopeInfo nodeId="5774894706564089012" fileName="ClassifierDocComment_TextGen.java" startLine="21" startPosition="48" endLine="22" endPosition="25" />
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7" />
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7">
       <varInfo nodeId="2004985048484774339" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="2004985048484774339" fileName="ClassifierDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="42" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="42" endLine="21" endPosition="48" />
+    <scopeInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="12" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="4021391592916003702" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
+    <unitInfo nodeId="4021391592916003702" fileName="ClassifierDocComment_TextGen.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
   </root>
   <root nodeId="4021391592916005381" modelId="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)">
     <nodeInfo nodeId="4021391592916005384" fileName="BaseParameterReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
