@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InstanceInitializer_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
     this.appendWithIndent("{");
     this.increaseDepth();
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "statementList", true), this.getSNode());
