@@ -933,25 +933,13 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="3421461530438560657">
-          <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="3421461530438560658">
-            <property name="value" nameId="2omo.1237305576108" value=" {" />
+        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="1237557133060">
+          <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="1237557134640">
+            <property name="value" nameId="2omo.1237305576108" value=" " />
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="2omo.WithIndentOperation" typeId="2omo.1236188139846" id="3421461530438560659">
-          <node role="list" roleId="2omo.1236188238861" type="tpee.StatementList" typeId="tpee.1068580123136" id="3421461530438560660">
-            <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="3421461530438560661">
-              <node role="part" roleId="2omo.1237306115446" type="2omo.OperationCall" typeId="2omo.1233924848298" id="3421461530438560662">
-                <link role="function" roleId="2omo.1234190664409" targetNodeId="dmyu.1465982738256626457" resolveInfo="members" />
-                <node role="parameter" roleId="2omo.1234191323697" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="3421461530438560663" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="3421461530438560664">
-          <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="3421461530438560665">
-            <property name="withIndent" nameId="2omo.1237306361677" value="true" />
-            <property name="value" nameId="2omo.1237305576108" value="}" />
+          <node role="part" roleId="2omo.1237306115446" type="2omo.OperationCall" typeId="2omo.1233924848298" id="5574237510126159633">
+            <link role="function" roleId="2omo.1234190664409" targetNodeId="dmyu.5574237510125018168" resolveInfo="membersWithBrackets" />
+            <node role="parameter" roleId="2omo.1234191323697" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="5574237510126159839" />
           </node>
         </node>
       </node>

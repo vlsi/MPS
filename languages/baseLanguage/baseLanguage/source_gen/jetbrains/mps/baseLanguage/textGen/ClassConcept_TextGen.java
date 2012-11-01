@@ -57,16 +57,8 @@ public class ClassConcept_TextGen extends SNodeTextGen {
         }
       }
     }
-    this.append(" {");
-    this.appendNewLine();
-    this.increaseDepth();
-    BaseClassConceptTextGen.members(node, this);
-    this.decreaseDepth();
-    if (!(node.isRoot())) {
-      this.appendWithIndent("}");
-    } else {
-      this.append("}");
-    }
+    this.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, this);
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {
