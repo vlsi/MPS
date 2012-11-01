@@ -17,6 +17,7 @@ import java.awt.Insets;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 
@@ -70,7 +71,11 @@ public class ConceptPropertiesMigrationDialog extends DialogWrapper {
 
   private void doMigrate() {
     this.close(OK_EXIT_CODE);
-    action.invoke();
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        action.invoke();
+      }
+    });
   }
 
   private class MigrateAction extends AbstractAction {

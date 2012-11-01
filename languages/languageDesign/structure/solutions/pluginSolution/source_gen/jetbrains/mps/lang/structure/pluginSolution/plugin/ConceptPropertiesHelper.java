@@ -5,12 +5,13 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.ide.project.ProjectHelper;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -20,16 +21,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.IMakeService;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -37,13 +41,10 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.make.MakeSession;
-import java.util.concurrent.Future;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.smodel.resources.ModelsToResources;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
@@ -55,48 +56,51 @@ public class ConceptPropertiesHelper {
   private Project ideaProject;
   private IScope scope;
   private int step;
-  private Set<SNode> conceptUsages = SetSequence.fromSet(new HashSet<SNode>());
-  private Set<SNode> accessUsages = SetSequence.fromSet(new HashSet<SNode>());
-  private Set<SNode> cellUsages = SetSequence.fromSet(new HashSet<SNode>());
-  private ConceptPropertiesMigrationDialog dialog;
 
   public ConceptPropertiesHelper(MPSProject project) {
     step = 1;
     this.project = project;
     this.ideaProject = ProjectHelper.toIdeaProject(project);
     this.scope = project.getScope();
-    this.dialog = new ConceptPropertiesMigrationDialog(this.ideaProject, this.project);
   }
 
   public int getStep() {
     return step;
   }
 
-  public void migrate() {
-    switch (step) {
-      case 1:
-        dialog.setText("Migrate Concept Properties");
-        dialog.setAction(new _FunctionTypes._void_P0_E0() {
-          public void invoke() {
-            migrateBaseConceptProperties();
-          }
-        });
-        break;
-      case 2:
-        dialog.setText("Remove Concept Properties");
-        dialog.setAction(new _FunctionTypes._void_P0_E0() {
-          public void invoke() {
-            removeConceptProperties();
-          }
-        });
-        break;
-      default:
-        return;
-    }
-    dialog.show();
+  public void migrateNextStep() {
+    final ConceptPropertiesMigrationDialog dialog = new ConceptPropertiesMigrationDialog(ideaProject, project);
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        switch (step) {
+          case 1:
+            dialog.setText("Migrate Concept Properties");
+            dialog.setAction(new _FunctionTypes._void_P0_E0() {
+              public void invoke() {
+                migrateBaseConceptProperties();
+              }
+            });
+            break;
+          case 2:
+            dialog.setText("Remove Concept Properties");
+            dialog.setAction(new _FunctionTypes._void_P0_E0() {
+              public void invoke() {
+                removeConceptProperties();
+              }
+            });
+            break;
+          default:
+            return;
+        }
+        dialog.show();
+      }
+    });
   }
 
   private void migrateBaseConceptProperties() {
+    final Set<SNode> conceptUsages = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> accessUsages = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> cellUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
     final Set<SNode> searchedNodes = getSearchedNodes();
 
@@ -121,23 +125,15 @@ public class ConceptPropertiesHelper {
     }
 
     final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
+    showRefactoringView(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        doMigrate(cellUsages, accessUsages, conceptUsages);
+      }
+    }, searchResults, "Migration step 1: migrate concept properties");
     final Set<SModelDescriptor> sourceModels = new HashSet<SModelDescriptor>();
     for (SModel model : ((Set<SModel>) searchResults.getAffectedModels())) {
       sourceModels.add(model.getModelDescriptor());
     }
-    RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
-      public void performAction(final RefactoringViewItem refactoringViewItem) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            doMigrate(cellUsages, accessUsages, conceptUsages);
-            refactoringViewItem.close();
-            makeAll(sourceModels);
-            step = 2;
-            migrate();
-          }
-        });
-      }
-    }, searchResults, false, "remove alias");
   }
 
   private Set<SNode> getSearchedNodes() {
@@ -149,7 +145,7 @@ public class ConceptPropertiesHelper {
     return result;
   }
 
-  private void makeAll(final Set<SModelDescriptor> sourceModels) {
+  private void makeAllAndContinue(final Set<SModelDescriptor> sourceModels) {
     if (sourceModels.isEmpty()) {
       return;
     }
@@ -165,16 +161,24 @@ public class ConceptPropertiesHelper {
       }
     }
     final IOperationContext operationContext = new ProjectOperationContext(project);
-    ConceptPropertiesHelper.MyThread makeThread = new ConceptPropertiesHelper.MyThread(operationContext, descriptors, this);
-    makeThread.run();
-    synchronized (this) {
-      while (!(makeThread.isReady())) {
-        try {
-          wait();
-        } catch (InterruptedException e) {
+    new Thread() {
+      public void run() {
+        MakeSession sess = new MakeSession(operationContext);
+        if (IMakeService.INSTANCE.get().openNewSession(sess)) {
+          Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));
+          try {
+            result.get();
+          } catch (InterruptedException e) {
+          } catch (CancellationException ignore) {
+          } catch (ExecutionException e) {
+            e.printStackTrace();
+          } finally {
+            step++;
+            migrateNextStep();
+          }
         }
       }
-    }
+    }.start();
   }
 
   private boolean needToMigrate(SNode node) {
@@ -280,20 +284,31 @@ public class ConceptPropertiesHelper {
     }
 
     final SearchResults searchResults = new SearchResults<SNode>(searchedNodes, SetSequence.fromSet(allUsages).toListSequence());
+    showRefactoringView(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        for (SNode conceptProperty : SetSequence.fromSet(conceptProperties)) {
+          SNodeOperations.deleteNode(conceptProperty);
+        }
+      }
+    }, searchResults, "Migration step 2: remove concept properties");
+  }
+
+  private void showRefactoringView(final _FunctionTypes._void_P0_E0 refactor, SearchResults searchResults, String title) {
     final Set<SModelDescriptor> sourceModels = new HashSet<SModelDescriptor>();
     for (SModel model : ((Set<SModel>) searchResults.getAffectedModels())) {
       sourceModels.add(model.getModelDescriptor());
     }
-
     RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
       public void performAction(RefactoringViewItem refactoringViewItem) {
         refactoringViewItem.close();
-        for (SNode conceptProperty : SetSequence.fromSet(conceptProperties)) {
-          SNodeOperations.deleteNode(conceptProperty);
-        }
-        makeAll(sourceModels);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            refactor.invoke();
+          }
+        });
+        makeAllAndContinue(sourceModels);
       }
-    }, searchResults, false, "Remove Concept Properties");
+    }, searchResults, false, title);
   }
 
   private static boolean eq_azpnkk_a0e0i(Object a, Object b) {
@@ -336,44 +351,6 @@ public class ConceptPropertiesHelper {
       a.equals(b) :
       a == b
     );
-  }
-
-  public class MyThread extends Thread {
-    private boolean ready = false;
-    private IOperationContext myOperationContext;
-    private List<org.jetbrains.mps.openapi.model.SModel> myDescriptors;
-    private Object objectToLock;
-
-    public MyThread(IOperationContext operationContext, List<org.jetbrains.mps.openapi.model.SModel> descriptors, Object objectToLock) {
-      MyThread.this.myOperationContext = operationContext;
-      MyThread.this.myDescriptors = descriptors;
-      this.objectToLock = objectToLock;
-    }
-
-    public void run() {
-      synchronized (objectToLock) {
-        try {
-          MakeSession sess = new MakeSession(MyThread.this.myOperationContext);
-          final Future<IResult> result;
-          if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-            result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(MyThread.this.myOperationContext, MyThread.this.myDescriptors).resources(false));
-            //  wait for end of make to remove member access modifier 
-            result.get();
-          }
-        } catch (InterruptedException e) {
-        } catch (CancellationException ignore) {
-        } catch (ExecutionException e) {
-          e.printStackTrace();
-        } finally {
-          ready = true;
-          objectToLock.notifyAll();
-        }
-      }
-    }
-
-    public boolean isReady() {
-      return ready;
-    }
   }
 
   public static class QuotationClass_azpnkk_a0a0a0a1a3 {

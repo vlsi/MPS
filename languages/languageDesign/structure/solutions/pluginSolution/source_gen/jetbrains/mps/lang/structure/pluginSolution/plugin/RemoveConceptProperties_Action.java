@@ -21,7 +21,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
   public RemoveConceptProperties_Action() {
     super("Get rid of concept properties", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -64,7 +64,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrate();
+      new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrateNextStep();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RemoveConceptProperties", t);
