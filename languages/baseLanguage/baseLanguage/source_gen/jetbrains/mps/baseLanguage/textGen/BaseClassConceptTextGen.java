@@ -13,17 +13,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class BaseClassConceptTextGen {
   public static void members(SNode classifier, final SNodeTextGen textGen) {
-    boolean needNewLineBefore = false;
-    for (SNode member : Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier))) {
-      BaseLanguageTextGen.newLine(needNewLineBefore, textGen);
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), member, textGen.getSNode());
-      needNewLineBefore = true;
+    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).isNotEmpty()) {
+      for (SNode item : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
+        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+      }
     }
-    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "classInitializer", true) != null)) {
-      BaseLanguageTextGen.newLine(needNewLineBefore, textGen);
+    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true) != null)) {
       textGen.appendWithIndent("static {");
       textGen.increaseDepth();
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "classInitializer", true), "statementList", true), textGen.getSNode());
+      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true), textGen.getSNode());
       textGen.appendNewLine();
       textGen.decreaseDepth();
       textGen.appendWithIndent("}");

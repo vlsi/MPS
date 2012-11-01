@@ -30,7 +30,6 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), this.getSNode());
     }
     SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
     if (!(SNodeOperations.isInstanceOf(declaringClass, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
@@ -72,6 +71,7 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
+    this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {
         String traceableProperty = "";

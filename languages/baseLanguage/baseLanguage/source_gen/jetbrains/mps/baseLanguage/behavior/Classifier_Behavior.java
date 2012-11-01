@@ -34,6 +34,7 @@ import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -435,27 +436,42 @@ public class Classifier_Behavior {
 
   public static Iterable<SNode> call_members_1465982738252129704(SNode thisNode) {
     // todo: change on .members 
-    List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
+    final List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
+    _FunctionTypes._void_P2_E0<? super Iterable<SNode>, ? super Boolean> addMembersToResult = new _FunctionTypes._void_P2_E0<Iterable<SNode>, Boolean>() {
+      public void invoke(Iterable<SNode> curMembers, Boolean addWhitespaceAfterEachMember) {
+        for (SNode member : Sequence.fromIterable(curMembers)) {
+          ListSequence.fromList(members).addElement(member);
+          if (addWhitespaceAfterEachMember) {
+            ListSequence.fromList(members).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null));
+          }
+        }
+        if (Sequence.fromIterable(curMembers).isNotEmpty() && !(addWhitespaceAfterEachMember)) {
+          ListSequence.fromList(members).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null));
+        }
+      }
+    };
+    _FunctionTypes._void_P1_E0<? super SNode> addMemberToResult = new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode member) {
+        if ((member != null)) {
+          ListSequence.fromList(members).addElement(member);
+          ListSequence.fromList(members).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null));
+        }
+      }
+    };
 
     SNode asClass = SNodeOperations.as(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
-    if ((SLinkOperations.getTarget(asClass, "instanceInitializer", true) != null)) {
-      ListSequence.fromList(members).addElement(SLinkOperations.getTarget(asClass, "instanceInitializer", true));
-    }
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
-    if (ListSequence.fromList(SLinkOperations.getTargets(asClass, "field", true)).isNotEmpty()) {
-      ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "field", true)));
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(asClass, "constructor", true)).isNotEmpty()) {
-      ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "constructor", true)));
-    }
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
-    if (ListSequence.fromList(SLinkOperations.getTargets(asClass, "staticMethod", true)).isNotEmpty()) {
-      ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "staticMethod", true)));
-    }
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
-    if ((SLinkOperations.getTarget(asClass, "classInitializer", true) != null)) {
-      ListSequence.fromList(members).addElement(SLinkOperations.getTarget(asClass, "classInitializer", true));
+    addMemberToResult.invoke(SLinkOperations.getTarget(asClass, "instanceInitializer", true));
+    addMembersToResult.invoke(SLinkOperations.getTargets(thisNode, "staticField", true), false);
+    addMembersToResult.invoke(SLinkOperations.getTargets(asClass, "field", true), false);
+    addMembersToResult.invoke(SLinkOperations.getTargets(asClass, "constructor", true), true);
+    addMembersToResult.invoke(SLinkOperations.getTargets(thisNode, "method", true), !(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.Interface")));
+    addMembersToResult.invoke(SLinkOperations.getTargets(asClass, "staticMethod", true), true);
+    addMembersToResult.invoke(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true), true);
+    addMemberToResult.invoke(SLinkOperations.getTarget(asClass, "classInitializer", true));
+
+    if (ListSequence.fromList(members).count() > 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(members).last(), "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
+      ListSequence.fromList(members).removeLastElement();
     }
 
     return members;
