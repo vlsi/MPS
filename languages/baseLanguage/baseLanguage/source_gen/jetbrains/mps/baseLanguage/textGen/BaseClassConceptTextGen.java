@@ -4,12 +4,33 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class BaseClassConceptTextGen {
+  public static void members(SNode classifier, final SNodeTextGen textGen) {
+    boolean needNewLineBefore = false;
+    for (SNode member : Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier))) {
+      BaseLanguageTextGen.newLine(needNewLineBefore, textGen);
+      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), member, textGen.getSNode());
+      needNewLineBefore = true;
+    }
+    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "classInitializer", true) != null)) {
+      BaseLanguageTextGen.newLine(needNewLineBefore, textGen);
+      textGen.appendWithIndent("static {");
+      textGen.increaseDepth();
+      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "classInitializer", true), "statementList", true), textGen.getSNode());
+      textGen.appendNewLine();
+      textGen.decreaseDepth();
+      textGen.appendWithIndent("}");
+      textGen.appendNewLine();
+    }
+  }
+
   public static void body(SNode concept, final SNodeTextGen textGen) {
     boolean needNewLine = false;
     if ((SLinkOperations.getTarget(concept, "instanceInitializer", true) != null)) {

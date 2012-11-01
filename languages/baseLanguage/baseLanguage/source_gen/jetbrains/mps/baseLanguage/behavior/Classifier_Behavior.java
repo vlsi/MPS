@@ -433,6 +433,34 @@ public class Classifier_Behavior {
     // do nothing by default 
   }
 
+  public static Iterable<SNode> call_members_1465982738252129704(SNode thisNode) {
+    // todo: change on .members 
+    List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
+
+    SNode asClass = SNodeOperations.as(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+
+    if ((SLinkOperations.getTarget(asClass, "instanceInitializer", true) != null)) {
+      ListSequence.fromList(members).addElement(SLinkOperations.getTarget(asClass, "instanceInitializer", true));
+    }
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
+    if (ListSequence.fromList(SLinkOperations.getTargets(asClass, "field", true)).isNotEmpty()) {
+      ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "field", true)));
+    }
+    if (ListSequence.fromList(SLinkOperations.getTargets(asClass, "constructor", true)).isNotEmpty()) {
+      ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "constructor", true)));
+    }
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    if (ListSequence.fromList(SLinkOperations.getTargets(asClass, "staticMethod", true)).isNotEmpty()) {
+      ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "staticMethod", true)));
+    }
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
+    if ((SLinkOperations.getTarget(asClass, "classInitializer", true) != null)) {
+      ListSequence.fromList(members).addElement(SLinkOperations.getTarget(asClass, "classInitializer", true));
+    }
+
+    return members;
+  }
+
   public static List<SNode> getNonStaticContextClassifiers_6775591514230482802(SNode context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
