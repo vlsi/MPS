@@ -259,16 +259,15 @@ public class NodeTypesComponent {
     keySet.addAll(nodesToErrorsMapNT.keySet());
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
-      if (!reporters.isEmpty()) {
-        if (key.getContainingRoot() == null) {
-          /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
-                    for (IErrorReporter reporter : reporters) {
-                      LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
-                    }     */
-          continue;
-        }
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
+      if (reporters.isEmpty()) continue;
+      if (key.getContainingRoot() == null) {
+        /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
+                  for (IErrorReporter reporter : reporters) {
+                    LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+                  }     */
+        continue;
       }
+      result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
     }
     return result;
   }
