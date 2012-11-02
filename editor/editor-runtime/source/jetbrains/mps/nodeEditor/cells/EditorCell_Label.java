@@ -604,8 +604,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (getSNode() != null && !EqualUtil.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
       UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
 
-      if (getSNode().getContainingRoot() != null) {
-        MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNode().getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
+      SNode root = getSNode().getContainingRoot();
+      if (root != null) {
+        MPSNodesVirtualFileSystem.getInstance().getFileFor(root).setModificationStamp(LocalTimeCounter.currentTime());
       }
     }
   }

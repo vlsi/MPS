@@ -57,20 +57,7 @@ public class MigrationRefactoringAdapter extends BaseIntention {
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    List<SNode> allParents = new ArrayList<SNode>();
-    for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
-      allParents.add(currentNode);
-    }
     myRefactoring.doUpdateInstanceNode(node);
-    // Node was removed/replaced - trying to select first parent remaining in model
-    if (node != null && node.getContainingRoot() == null) {
-      for (SNode predecessor : allParents) {
-        if (predecessor.getContainingRoot() != null) {
-          editorContext.selectWRTFocusPolicy(predecessor);
-          break;
-        }
-      }
-    }
   }
 
   public IntentionType getType() {
