@@ -99,7 +99,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   public SNode getActionType(String pattern, EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode sourceNodePeer = getSourceNode();
-    SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
+    CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
     SNode sourceNode = mapping.get(sourceNodePeer);
     SNode nodeToEquatePeer = sourceNodePeer;

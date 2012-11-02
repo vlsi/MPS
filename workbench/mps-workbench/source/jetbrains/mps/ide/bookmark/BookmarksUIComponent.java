@@ -92,7 +92,7 @@ public class BookmarksUIComponent implements ProjectComponent {
     if (myBookmarkManager != null) {
       SNode editedNode = editorComponent.getEditedNode();
       if (editedNode != null) {
-        for (Pair<SNode, Integer> bookmark : myBookmarkManager.getBookmarks(editedNode.getContainingRoot())) {
+        for (Pair<SNode, Integer> bookmark : myBookmarkManager.getBookmarks(editedNode.getTopmostAncestor())) {
           addRenderer(editorComponent, bookmark.o1, bookmark.o2);
         }
       }
@@ -104,7 +104,7 @@ public class BookmarksUIComponent implements ProjectComponent {
     SNode editedNode = editorComponent.getEditedNode();
     if (editedNode != null) {
       boolean modified = false;
-      for (Pair<SNode, Integer> bookmark : myBookmarkManager.getBookmarks(editedNode.getContainingRoot())) {
+      for (Pair<SNode, Integer> bookmark : myBookmarkManager.getBookmarks(editedNode.getTopmostAncestor())) {
         modified |= addRenderer(editorComponent, bookmark.o1, bookmark.o2);
       }
       if (modified) editorComponent.repaint();

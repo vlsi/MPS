@@ -1154,7 +1154,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isDetached() {
-    return getContainingRoot() == null;
+    return getModel() == null;
   }
 
   @Deprecated
