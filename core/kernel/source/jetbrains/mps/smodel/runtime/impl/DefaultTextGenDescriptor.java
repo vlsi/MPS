@@ -13,10 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.runtime;
+package jetbrains.mps.smodel.runtime.impl;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.textGen.TextGenBuffer;
 
-public interface TextGenAspectDescriptor {
-  TextGenDescriptor getDescriptor(@NotNull String conceptFqName);
+public class DefaultTextGenDescriptor implements TextGenDescriptor {
+  @Override
+  public void doGenerateText(SNode node, TextGenBuffer buffer) {
+    buffer.append("<!TextGen not found for '" + node.getConcept().getId() + "'!>");
+  }
+
+  @Override
+  public String getExtension(SNode node) {
+    return null;
+  }
 }

@@ -15,8 +15,13 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TextGenBuffer;
+import org.jetbrains.annotations.Nullable;
 
-public interface TextGenAspectDescriptor {
-  TextGenDescriptor getDescriptor(@NotNull String conceptFqName);
+public interface TextGenDescriptor {
+  void doGenerateText(SNode node, TextGenBuffer buffer);
+
+  @Nullable
+  public String getExtension(SNode node);
 }

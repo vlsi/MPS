@@ -22,8 +22,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
-import jetbrains.mps.textGen.DefaultTextGen;
-import jetbrains.mps.textGen.SNodeTextGen;
+import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
+import jetbrains.mps.smodel.runtime.impl.SNodeTextGenAdapter;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,11 +41,11 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
   }
 
   @Override
-  public SNodeTextGen getDescriptor(@NotNull String conceptFqName) {
+  public TextGenDescriptor getDescriptor(@NotNull String conceptFqName) {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (concept == null) {
       LOG.error("Can't find concept node for concept: " + conceptFqName);
-      return new DefaultTextGen();
+      return new DefaultTextGenDescriptor();
     }
 
     SNode baseConcept = SModelUtil.getBaseConcept();
@@ -56,11 +57,7 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       Class textgenClass = l.getClass(textgenClassname);
       if (textgenClass != null) {
-        try {
-          return (SNodeTextGen) textgenClass.newInstance();
-        } catch (Throwable t) {
-          LOG.error(t, conceptFqName);
-        }
+        return new SNodeTextGenAdapter(conceptFqName, textgenClass);
       }
 
       concept = SNodeUtil.getConceptDeclaration_Extends(concept);
@@ -69,6 +66,6 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
       }
     }
 
-    return new DefaultTextGen();
+    return new DefaultTextGenDescriptor();
   }
 }

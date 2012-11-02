@@ -22,6 +22,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -117,6 +118,18 @@ public class TextGen {
   }
 
   // compatibility stuff
+  @Deprecated
+  public static void appendNodeText(SNodeTextGen textGen, SNode node, TextGenBuffer buffer) {
+    textGen.setBuffer(buffer);
+    try {
+      textGen.setSNode(node);
+      textGen.doGenerateText(node);
+      textGen.setSNode(null);
+    } catch (Exception e) {
+      buffer.foundError("failed to generate text for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, e);
+    }
+  }
+
   /* package */ static void appendNodeText(TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
     if (node == null) {
       buffer.append("???");
@@ -128,20 +141,12 @@ public class TextGen {
       return;
     }
 
-    SNodeTextGen nodeTextGen = getTextGenForNode(node);
-    nodeTextGen.setBuffer(buffer);
-    try {
-      nodeTextGen.setSNode(node);
-      nodeTextGen.doGenerateText(node);
-      nodeTextGen.setSNode(null);
-    } catch (Exception e) {
-      buffer.foundError("failed to generate text for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, e);
-    }
+    getTextGenForNode(node).doGenerateText(node, buffer);
   }
 
   // helper stuff
   @NotNull
-  private static SNodeTextGen getTextGenForNode(SNode node) {
+  private static TextGenDescriptor getTextGenForNode(SNode node) {
     return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getId());
   }
 
