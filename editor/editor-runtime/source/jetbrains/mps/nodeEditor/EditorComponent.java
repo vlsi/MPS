@@ -1210,11 +1210,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void assertModelNotDisposed() {
-    assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    if (myNode == null) return;
-    SModel model = myNode.getModel();
-    if (model == null) return;
-    assert !model.isDisposed() : getNodeDisposedMessage(model);
+    boolean old = ModelAccess.instance().setReadEnabledFlag(true);
+    try {
+      assert myModelDisposedStackTrace == null : getModelDisposedMessage();
+      if (myNode == null) return;
+      SModel model = myNode.getModel();
+      if (model == null) return;
+      assert !model.isDisposed() : getNodeDisposedMessage(model);
+    } finally {
+      ModelAccess.instance().setReadEnabledFlag(old);
+    }
   }
 
   private String getNodeDisposedMessage(SModel model) {
