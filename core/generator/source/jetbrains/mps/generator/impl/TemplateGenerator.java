@@ -709,13 +709,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public SNode getOriginalRootByGenerated(SNode root) {
     SNode node = myNewToOldRoot.get(root);
-    if (node != null && !(node.getModel() != null && node.getModel().isRoot(node))) {
-      SNode noderoot = node.getContainingRoot();
-      if (noderoot != null) {
-        return noderoot;
-      }
-    }
-    return node;
+    if (node == null) return null;
+    if (node.getModel() == null) return null;
+    if (node.getModel().isRoot(node)) return node;
+    return node.getTopmostAncestor();
   }
 
   public boolean isIncremental() {
