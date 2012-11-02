@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 
@@ -89,4 +90,6 @@ public interface EditorContext {
   boolean isInspector();
 
   void openInspector();
+
+  SModel getModel();
 }

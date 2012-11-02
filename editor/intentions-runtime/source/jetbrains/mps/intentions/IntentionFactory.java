@@ -16,7 +16,7 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
@@ -36,7 +36,6 @@ public interface IntentionFactory {
 
   IntentionType getType();
 
-  // TODO: do we need it?
   SNodeReference getIntentionNodeReference();
 
   Collection<Intention> instances(SNode node, EditorContext editorContext);
