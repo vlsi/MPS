@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.extapi.persistence;
 
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 /**
- * @author Evgeny Gerashchenko
+ * evgeny, 11/2/12
  */
-public interface FileSystemProvider {
-  IFile getFile(@NotNull String path);
-  boolean isFileIgnored(String name);
-  void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
-  boolean runWriteTransaction(Runnable r);
+public abstract class DataSourceBase implements DataSource {
 
-  void addListener(FileSystemListener listener);
-  void removeListener(FileSystemListener listener);
+  @Override
+  public void addListener(DataSourceListener listener) {
+  }
+
+  @Override
+  public void removeListener(DataSourceListener listener) {
+  }
+
+  @Override
+  public long getTimestamp() {
+    return 0;
+  }
 }
