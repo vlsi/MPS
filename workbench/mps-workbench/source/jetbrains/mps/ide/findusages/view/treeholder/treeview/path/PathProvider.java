@@ -40,7 +40,7 @@ public class PathProvider {
         SModel model = node.getModel();
         LOG.error("Node with null containing root in model checker results: " +
           "id=" + node.getSNodeId() + ", concept=" + node.getConcept().getId()
-          + ", model=" + (model != null ? model.getSModelReference(): "") + ", registered=", jetbrains.mps.util.SNodeOperations.isRegistered(node));
+          + ", model=" + (model != null ? model.getSModelReference(): "") + ", registered=", node.getModel() != null);
         return (List<PathItem>) Collections.EMPTY_LIST;
       }
       res.add(new PathItem(PathItemRole.ROLE_TARGET_NODE, node));

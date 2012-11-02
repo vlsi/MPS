@@ -116,7 +116,8 @@ public class RenameMethod_Action extends BaseAction {
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
+          if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.RenameMethod", Arrays.asList("newName", "refactorOverriding"), Arrays.asList(newName, d.getOverriding()), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

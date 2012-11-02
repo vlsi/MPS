@@ -382,7 +382,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     ((SNode) child).setRoleInParent(role);
 
     SModel model = getModel();
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+    if (model != null) {
       ((SNode) child).registerInModel(model);
     } else {
       ((SNode) child).changeModel(model);

@@ -167,7 +167,7 @@ public class GoToRulesHelper {
           public void actionPerformed(ActionEvent e) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
-                if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || !(jetbrains.mps.util.SNodeOperations.isRegistered(node)) || node.getModel().getModelDescriptor() != null) {
+                if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || !(node.getModel() != null) || node.getModel().getModelDescriptor() != null) {
                   return;
                 }
                 // TODO: use node pointers here 

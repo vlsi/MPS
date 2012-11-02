@@ -156,15 +156,6 @@ public class SNodeOperations {
   }
 
   /**
-   * todo KILL IT! should be node.getModel!=null
-   * todo after killing it, correct migration script to return model!=null instead
-   */
-  @Deprecated
-  public static boolean isRegistered(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).getModel() != null;
-  }
-
-  /**
    * todo KILL IT! should not be used since nodes are not passed between read actions
    * todo after killing it, correct migration script to return false instead
    */

@@ -111,10 +111,12 @@ public class MoveLinkUp_Action extends BaseAction {
       final Boolean merge = mergeLinks;
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
+          if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
             return;
           }
-          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) targetConcept))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) targetConcept))) {
+          SNode node1 = ((SNode) targetConcept);
+          if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) targetConcept))) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveLinkUp", Arrays.asList("targetConcept", "mergeLinks"), Arrays.asList(targetConcept, merge), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
