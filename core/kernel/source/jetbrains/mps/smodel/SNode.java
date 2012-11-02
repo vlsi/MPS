@@ -640,28 +640,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----root, deleted, etc.---
 
   /*
-  replace with getTopmostAncestor
-   */
-  public SNode getContainingRoot() {
-    ModelAccess.assertLegalRead(this);
-
-    SNode current = this;
-
-    while (true) {
-      current.fireNodeReadAccess();
-      if (current.treeParent() == null) {
-        if (myModel != null && myModel.isRoot(current)) {
-          return current;
-        } else {
-          return null;
-        }
-      } else {
-        current = (SNode) current.treeParent();
-      }
-    }
-  }
-
-  /*
   calling this means we've held a node between read actions and now it is deleted
   this won't happen if we store only node pointers
   in this case, isDisposed() can be replaced with false
@@ -1095,6 +1073,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode getContainingRoot() {
+    SNode root = getTopmostAncestor();
+    return root.getModel() == null ? null : root;
+  }
 
   @Deprecated
   /**
