@@ -82,12 +82,18 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @NotNull
   public final SNode getTopmostAncestor() {
+    ModelAccess.assertLegalRead(this);
+
     SNode current = this;
-    while (current.treeParent() != null) {
-      assert current != current.treeParent();
-      current = current.treeParent();
+
+    while (true) {
+      current.fireNodeReadAccess();
+      if (current.treeParent() == null) {
+        return current;
+      } else {
+        current = current.treeParent();
+      }
     }
-    return current;
   }
 
   public String getName() {
