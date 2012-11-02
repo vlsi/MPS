@@ -44,7 +44,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return node.getContainingRoot();
+    return node.getTopmostAncestor();
   }
 
   @Deprecated
@@ -75,8 +75,8 @@ public class SNodeOperations {
 
     // look up for certain concept 
     if (root) {
-      SNode rootParent = node.getContainingRoot();
-      if (rootParent != null && SNodeOperations.nullSafeInstanceOf(rootParent, ancestorConceptFqName)) {
+      SNode rootParent = node.getTopmostAncestor();
+      if (rootParent.getModel() != null && SNodeOperations.nullSafeInstanceOf(rootParent, ancestorConceptFqName)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;
         }
@@ -132,7 +132,7 @@ public class SNodeOperations {
       return null;
     }
     if (root) {
-      SNode rootParent = node.getContainingRoot();
+      SNode rootParent = node.getTopmostAncestor();
       if (SNodeOperations._isInstanceOf(rootParent, ancestorConceptFqNames)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;
@@ -477,7 +477,7 @@ public class SNodeOperations {
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
-    if (oldChildParent == null && !(oldChild.getModel() != null && oldChild.getModel().isRoot(oldChild))) {
+    if (oldChildParent == null && !(oldChild.isRoot())) {
       return null;
     }
     SModel model = oldChild.getModel();
