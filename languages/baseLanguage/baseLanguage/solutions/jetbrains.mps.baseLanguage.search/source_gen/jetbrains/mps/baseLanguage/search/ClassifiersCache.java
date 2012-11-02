@@ -134,7 +134,7 @@ import jetbrains.mps.cache.CachesManager;
         return;
       }
     }
-    this.processNode(node, false);
+    this.processNode(node, true);
   }
 
   public void propertyChanged(SModelPropertyEvent event) {
