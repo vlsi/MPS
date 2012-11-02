@@ -35,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -193,7 +193,7 @@ public class CollectTests_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) md).isReadOnly());
+    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
   }
 
   private boolean isUserEditableGeneratableModel(SModelDescriptor md, final Map<String, Object> _params) {

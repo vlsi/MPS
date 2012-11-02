@@ -6,10 +6,11 @@ import java.util.Set;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,12 +29,12 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 
 /*package*/ class ModelFileProcessor extends EventProcessor {
   private final Set<FileBasedModelDataSource> myInvalidatedSources = SetSequence.fromSet(new HashSet<FileBasedModelDataSource>());
-  private final Set<IModule> myModulesWithChangedModelSets = SetSequence.fromSet(new HashSet<IModule>());
+  private final Set<SModule> myModulesWithChangedModelSets = SetSequence.fromSet(new HashSet<SModule>());
 
   public ModelFileProcessor() {
   }
 
-  public void validateModules(Iterable<IModule> modules) {
+  public void validateModules(Iterable<SModule> modules) {
     SetSequence.fromSet(myModulesWithChangedModelSets).removeSequence(Sequence.fromIterable(modules));
   }
 
@@ -43,9 +44,9 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 
   public void update(ProgressIndicator indicator) {
     indicator.setText("Reloading updated models... Please wait.");
-    for (IModule module : SetSequence.fromSet(myModulesWithChangedModelSets)) {
-      indicator.setText2("reloading all models in module " + module.getModuleFqName());
-      module.reloadFromDisk(false);
+    for (SModule module : SetSequence.fromSet(myModulesWithChangedModelSets)) {
+      indicator.setText2("reloading all models in module " + module.getModuleName());
+      ((IModule) module).reloadFromDisk(false);
     }
     for (FileBasedModelDataSource source : SetSequence.fromSet(myInvalidatedSources)) {
       source.invalidate();
@@ -71,16 +72,16 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
     List<FileBasedModelDataSource> sources = findSourceIntersection(file, false);
     SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(sources));
 
-    List<IModule> modules = findModelRootIntersection(file, false);
+    List<SModule> modules = findModelRootIntersection(file, false);
 
     SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules));
     // todo remove when generators are disconnected from languages 
-    SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules).where(new IWhereFilter<IModule>() {
-      public boolean accept(IModule it) {
+    SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
         return it instanceof Generator;
       }
-    }).select(new ISelector<IModule, Language>() {
-      public Language select(IModule it) {
+    }).select(new ISelector<SModule, Language>() {
+      public Language select(SModule it) {
         return ((Generator) it).getSourceLanguage();
       }
     }));
@@ -90,12 +91,12 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
     SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(findSourceIntersection(file, false)));
   }
 
-  private List<IModule> findModelRootIntersection(VirtualFile file, boolean onlyFirst) {
-    List<IModule> res = ListSequence.fromList(new ArrayList<IModule>());
+  private List<SModule> findModelRootIntersection(VirtualFile file, boolean onlyFirst) {
+    List<SModule> res = ListSequence.fromList(new ArrayList<SModule>());
     String path = file.getPath();
 
-    Set<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-    for (IModule module : SetSequence.fromSet(modules)) {
+    Iterable<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
+    for (IModule module : Sequence.fromIterable(modules)) {
       for (SModelRoot smr : CollectionSequence.fromCollection(module.getSModelRoots())) {
         if (!(intersects(path, smr.getPath()))) {
           continue;

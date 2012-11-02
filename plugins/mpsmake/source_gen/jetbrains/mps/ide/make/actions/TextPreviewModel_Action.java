@@ -19,7 +19,7 @@ import jetbrains.mps.ide.make.TextPreviewUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -99,6 +99,6 @@ public class TextPreviewModel_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel((SModelDescriptor) md))) {
       return false;
     }
-    return md instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) md).isReadOnly());
+    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
   }
 }

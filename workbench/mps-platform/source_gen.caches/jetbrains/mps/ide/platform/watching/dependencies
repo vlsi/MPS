@@ -100,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.ReloadableSources" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.EventProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ModuleFileProcessor" file="ModuleFileProcessor.java">
@@ -138,6 +139,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.EventProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ModuleRootCache" file="ModuleRootCache.java" />

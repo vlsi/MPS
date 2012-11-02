@@ -3497,7 +3497,7 @@
     <nodeInfo nodeId="8610665572788515808" fileName="TextPreviewModel_Action.java" startLine="93" startPosition="5" endLine="94" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5551197716189850100" fileName="TextPreviewModel_Action.java" startLine="97" startPosition="85" endLine="98" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8610665572788515819" fileName="TextPreviewModel_Action.java" startLine="99" startPosition="65" endLine="100" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="101" startPosition="5" endLine="102" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="101" startPosition="5" endLine="102" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9010458443787641484" fileName="TextPreviewModel_Action.java" startLine="39" startPosition="87" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3555,7 +3555,7 @@
     <scopeInfo nodeId="8610665572788515978" fileName="TextPreviewModel_Action.java" startLine="39" startPosition="87" endLine="44" endPosition="87">
       <varInfo nodeId="8610665572788515980" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515813" fileName="TextPreviewModel_Action.java" startLine="97" startPosition="85" endLine="102" endPosition="99" />
+    <scopeInfo nodeId="8610665572788515813" fileName="TextPreviewModel_Action.java" startLine="97" startPosition="85" endLine="102" endPosition="101" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8610665572788515769" varName="_params" />
       <varInfo nodeId="8610665572788515769" varName="event" />
