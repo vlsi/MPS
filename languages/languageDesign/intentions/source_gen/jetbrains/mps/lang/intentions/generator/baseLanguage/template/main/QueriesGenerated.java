@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -19,7 +21,6 @@ import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -30,6 +31,10 @@ public class QueriesGenerated {
   public static boolean createRootRule_Condition_3804167831988830136(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration")).isNotEmpty() && Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.INTENTIONS;
+  }
+
+  public static boolean baseMappingRule_Condition_6718223406754812438(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1192802755354(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -51,7 +56,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7040691005578862316(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0a5(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
+        return eq_x583g4_a0a0a0a0a0a0a0a6(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
     }).first().getSNodeId().toString();
   }
@@ -119,10 +124,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_647666612128184445(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)", "~BaseIntention");
-  }
-
-  public static Object referenceMacro_GetReferent_647666612127998948(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BaseIntentionDeclaration_Behavior.call_getGeneratedName_6263518417926802289(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_4228980283917439752(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -222,7 +223,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "queryBlock", true), "body", true), "statement", true);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0a5(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
