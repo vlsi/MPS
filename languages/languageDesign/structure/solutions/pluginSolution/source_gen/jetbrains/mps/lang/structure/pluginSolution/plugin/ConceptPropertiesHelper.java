@@ -56,6 +56,7 @@ public class ConceptPropertiesHelper {
   private Project ideaProject;
   private IScope scope;
   private int step;
+  private final int stepsNumber = 2;
 
   public ConceptPropertiesHelper(MPSProject project) {
     step = 1;
@@ -69,6 +70,9 @@ public class ConceptPropertiesHelper {
   }
 
   public void migrateNextStep() {
+    if (step > stepsNumber) {
+      return;
+    }
     final ConceptPropertiesMigrationDialog dialog = new ConceptPropertiesMigrationDialog(ideaProject, project);
     switch (step) {
       case 1:
