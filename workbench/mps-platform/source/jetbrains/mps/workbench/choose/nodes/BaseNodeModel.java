@@ -66,7 +66,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
             }
             // TODO: use node pointers here
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+            NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
           }
         });
       }

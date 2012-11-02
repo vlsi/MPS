@@ -134,7 +134,7 @@ public class DelayedChanges {
           SNode parent = myChildToReplace.getParent();
           if (parent == null) {
             // root?
-            if (myChildToReplace.isRoot()) {
+            if (myChildToReplace.getModel() != null && myChildToReplace.getModel().isRoot(myChildToReplace)) {
               myChildToReplace.getModel().addRoot(child);
               myChildToReplace.getModel().removeRoot(myChildToReplace);
               myGenerator.rootReplaced(myChildToReplace, child);

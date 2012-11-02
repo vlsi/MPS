@@ -221,7 +221,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             myGenerationTracer.pushRule(rule.getRuleNode());
             try {
               boolean copyRootOnFailure = false;
-              if (inputNode.isRoot() && !rule.keepSourceRoot()) {
+              if (inputNode.getModel() != null && inputNode.getModel().isRoot(inputNode) && !rule.keepSourceRoot()) {
                 rootsToCopy.remove(inputNode);
                 copyRootOnFailure = true;
               }
@@ -284,7 +284,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
-      if (copyRootOnFailure && inputNode.isRoot()) {
+      if (copyRootOnFailure && inputNode.getModel() != null && inputNode.getModel().isRoot(inputNode)) {
         copyRootNodeFromInput(inputNode, environment);
       }
     } catch (TemplateProcessingFailureException e) {
@@ -709,7 +709,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public SNode getOriginalRootByGenerated(SNode root) {
     SNode node = myNewToOldRoot.get(root);
-    if (node != null && !node.isRoot()) {
+    if (node != null && !(node.getModel() != null && node.getModel().isRoot(node))) {
       SNode noderoot = node.getContainingRoot();
       if (noderoot != null) {
         return noderoot;

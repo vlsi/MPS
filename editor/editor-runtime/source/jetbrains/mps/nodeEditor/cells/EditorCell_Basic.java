@@ -469,7 +469,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return getSNode().isRoot();
+        return getSNode().getModel() != null && getSNode().getModel().isRoot(getSNode());
       }
     })) return false;
 

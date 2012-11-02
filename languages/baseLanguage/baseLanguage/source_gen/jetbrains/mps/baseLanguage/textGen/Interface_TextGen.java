@@ -53,7 +53,7 @@ public class Interface_TextGen extends SNodeTextGen {
     this.increaseDepth();
     BaseClassConceptTextGen.members(node, this);
     this.decreaseDepth();
-    if (node.isRoot()) {
+    if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
       this.append("}");
     } else {
       this.appendWithIndent("}");

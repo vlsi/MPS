@@ -136,7 +136,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
               // TODO: use node pointers here
               if (node != null) {
                 IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-                NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+                NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
               }
             }
           });

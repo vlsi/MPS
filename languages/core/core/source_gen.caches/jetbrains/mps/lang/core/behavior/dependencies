@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.presentation.ReferenceConceptUtil" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" file="BaseConcept_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

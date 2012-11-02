@@ -833,7 +833,7 @@
     <nodeInfo nodeId="7390982340086720354" fileName="ConstraintsChecker.java" startLine="103" startPosition="52" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8112532282171046248" fileName="ConstraintsChecker.java" startLine="38" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7390982340086720184" fileName="ConstraintsChecker.java" startLine="59" startPosition="7" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086720245" fileName="ConstraintsChecker.java" startLine="71" startPosition="24" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086720245" fileName="ConstraintsChecker.java" startLine="71" startPosition="58" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086720312" fileName="ConstraintsChecker.java" startLine="92" startPosition="7" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086720424" fileName="ConstraintsChecker.java" startLine="116" startPosition="5" endLine="121" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086720500" fileName="ConstraintsChecker.java" startLine="132" startPosition="103" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -892,7 +892,7 @@
     <scopeInfo nodeId="8887378328853481943" fileName="ConstraintsChecker.java" startLine="34" startPosition="88" endLine="43" endPosition="5">
       <varInfo nodeId="8112532282171046257" varName="breakingNodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086720244" fileName="ConstraintsChecker.java" startLine="71" startPosition="24" endLine="80" endPosition="7">
+    <scopeInfo nodeId="7390982340086720244" fileName="ConstraintsChecker.java" startLine="71" startPosition="58" endLine="80" endPosition="7">
       <varInfo nodeId="7390982340086720246" varName="canBeRoot" />
     </scopeInfo>
     <scopeInfo nodeId="8887378328853481940" fileName="ConstraintsChecker.java" startLine="34" startPosition="0" endLine="45" endPosition="0">

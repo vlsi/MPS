@@ -108,7 +108,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
       SNodeTreeNode treeNode = (SNodeTreeNode) myTreeNode.findDescendantWith(node.getSNodeId().toString());
       if (treeNode == null) continue;
 
-      if (node.isRoot()) {
+      if (node.getModel() != null && node.getModel().isRoot(node)) {
         MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
         int currentIndex = parentTreeNode.getIndex(treeNode);
 
@@ -237,7 +237,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
             nodesWithChangedPresentations.add(event.getNode());
 
-            if (SModelTreeNode.PACK.equals(event.getPropertyName()) && event.getNode().isRoot()) {
+            if (SModelTreeNode.PACK.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getModel().isRoot(event.getNode())) {
               nodesWithChangedPackages.add(event.getNode());
             }
           }

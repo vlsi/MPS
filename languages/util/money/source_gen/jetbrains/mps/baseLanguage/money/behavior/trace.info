@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="MoneyCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyGetAmountMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyIsZeroMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
   <root nodeId="1213877266178" modelId="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)">
     <nodeInfo nodeId="1213877266178" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877266180" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

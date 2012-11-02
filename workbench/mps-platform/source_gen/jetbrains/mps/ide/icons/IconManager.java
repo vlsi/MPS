@@ -105,7 +105,7 @@ public class IconManager {
           }
         }
         if (mainIcon == null) {
-          if (node.isRoot()) {
+          if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
             return IdeIcons.DEFAULT_ROOT_ICON;
           } else {
             return IdeIcons.DEFAULT_NODE_ICON;
@@ -171,7 +171,7 @@ public class IconManager {
       icon = getIconForConcept(cd);
     }
     if (icon == null) {
-      if (cd != null && cd.isRoot()) {
+      if (cd != null && jetbrains.mps.util.SNodeOperations.isRoot(cd)) {
         return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
         return IdeIcons.DEFAULT_NODE_ICON;

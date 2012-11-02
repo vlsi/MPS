@@ -11,11 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class EnumClass_TextGen extends SNodeTextGen {
   private static Logger LOG = Logger.getLogger(EnumClass_TextGen.class);
@@ -30,7 +30,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), this.getSNode());
     }
-    if (!(node.isRoot())) {
+    if (!(SNodeOperations.isRoot(node))) {
       this.append("static ");
     }
     this.appendWithIndent("enum ");
@@ -66,7 +66,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     this.appendNewLine();
     BaseClassConceptTextGen.members(node, this);
     this.decreaseDepth();
-    if (!(node.isRoot())) {
+    if (!(SNodeOperations.isRoot(node))) {
       this.appendWithIndent("}");
     } else {
       this.append("}");
@@ -76,7 +76,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
       {
         String unitName = null;
         try {
-          unitName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
+          unitName = BehaviorReflection.invokeVirtual(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
         } catch (Throwable t) {
           LOG.error("Can't calculate unit name for a node " + node + ".", t);
         }

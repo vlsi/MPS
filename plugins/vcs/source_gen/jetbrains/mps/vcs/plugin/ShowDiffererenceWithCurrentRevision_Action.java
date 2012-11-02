@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
@@ -45,7 +46,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
       return false;
     }
     VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile());
-    if (((SNode) MapSequence.fromMap(_params).get("node")).isRoot() && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
+    if (SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))) && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
       FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
     }

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BLArrayType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.BLArrayType_BehaviorDescriptor" />
-  <unitInfo fileName="BarConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.BarConcept_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="FooConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.FooConcept_BehaviorDescriptor" />
-  <unitInfo fileName="FunctionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.FunctionType_BehaviorDescriptor" />
-  <unitInfo fileName="PrimitiveTypeDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeDescriptor_BehaviorDescriptor" />
-  <unitInfo fileName="PrimitiveTypeRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeRef_BehaviorDescriptor" />
   <root nodeId="1213877253188" modelId="r:00000000-0000-4000-0000-011c895902da(jetbrains.mps.baseLanguage.blTypes.behavior)">
     <nodeInfo nodeId="1213877253188" fileName="BLArrayType_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877253190" fileName="BLArrayType_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

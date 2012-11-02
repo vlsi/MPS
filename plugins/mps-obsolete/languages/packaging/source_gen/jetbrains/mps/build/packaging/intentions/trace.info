@@ -2,82 +2,82 @@
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.IntentionsDescriptor" />
   <root nodeId="1228398444440" modelId="r:e0c736f5-141d-492a-8ea5-d9cfc3978a00(jetbrains.mps.build.packaging.intentions)">
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="34" startPosition="44" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398558440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228400353788" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398608359" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228401860648" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="54" startPosition="112" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228401952129" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="56" startPosition="62" endLine="57" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228401965037" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="57" startPosition="135" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228401975149" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="58" startPosition="54" endLine="59" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228402019058" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="59" startPosition="150" endLine="60" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228398644853" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="61" startPosition="5" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228398649394" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="62" startPosition="44" endLine="63" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228398687267" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="63" startPosition="27" endLine="64" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228398713752" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="64" startPosition="63" endLine="65" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1071422968910375396" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="65" startPosition="172" endLine="66" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="69" startPosition="37" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateNewBuildLanguageProject_Intention#()V" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="42" startPosition="84" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="19" startPosition="52" endLine="19" endPosition="52" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="61" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="26" startPosition="36" endLine="27" endPosition="17" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="17" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="34" startPosition="44" endLine="35" endPosition="17" />
-    <scopeInfo nodeId="1228398444442" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="46" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="43" startPosition="58" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="1228400350023" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="49" startPosition="90" endLine="50" endPosition="144" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="69" startPosition="37" endLine="70" endPosition="54" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="27" startPosition="36" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="31" startPosition="37" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="35" startPosition="44" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398558440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="44" startPosition="58" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228400353788" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398608359" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228401860648" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="112" endLine="56" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228401952129" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="57" startPosition="62" endLine="58" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228401965037" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="58" startPosition="135" endLine="59" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228401975149" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="59" startPosition="54" endLine="60" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228402019058" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="60" startPosition="150" endLine="61" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228398644853" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228398649394" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="63" startPosition="44" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228398687267" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="64" startPosition="27" endLine="65" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228398713752" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="65" startPosition="63" endLine="66" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1071422968910375396" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="66" startPosition="172" endLine="67" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateNewBuildLanguageProject_Intention#()V" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="43" startPosition="84" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="56" startPosition="129" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="54" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="20" startPosition="52" endLine="20" endPosition="52" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="61" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="27" startPosition="36" endLine="28" endPosition="17" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="31" startPosition="37" endLine="32" endPosition="17" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="35" startPosition="44" endLine="36" endPosition="17" />
+    <scopeInfo nodeId="1228398444442" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="39" startPosition="85" endLine="40" endPosition="46" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="44" startPosition="58" endLine="45" endPosition="19" />
+    <scopeInfo nodeId="1228400350023" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="144" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="54" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1228398444440" varName="editorContext" />
       <varInfo nodeId="1228398444440" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1228398444440" varName="editorContext" />
       <varInfo nodeId="1228398444440" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="42" startPosition="84" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="1228401917620" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="56" startPosition="62" endLine="60" endPosition="104">
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="43" startPosition="84" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="1228401917620" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="57" startPosition="62" endLine="61" endPosition="104">
       <varInfo nodeId="1228401952130" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1228398444440" varName="editorContext" />
       <varInfo nodeId="1228398444440" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5">
+    <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="56" startPosition="129" endLine="62" endPosition="5">
       <varInfo nodeId="1228401917618" varName="prop" />
     </scopeInfo>
-    <scopeInfo nodeId="1228398444444" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="76" endLine="66" endPosition="118">
+    <scopeInfo nodeId="1228398444444" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="54" startPosition="76" endLine="67" endPosition="133">
       <varInfo nodeId="1228401860649" varName="externalProps" />
       <varInfo nodeId="1228398644854" varName="model" />
       <varInfo nodeId="1228398608360" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="54" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1228398444440" varName="editorContext" />
       <varInfo nodeId="1228398444440" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.CreateNewBuildLanguageProject_Intention" />
+    <unitInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.packaging.intentions.CreateNewBuildLanguageProject_Intention" />
   </root>
   <root nodeId="1228400780252" modelId="r:e0c736f5-141d-492a-8ea5-d9cfc3978a00(jetbrains.mps.build.packaging.intentions)">
     <nodeInfo nodeId="1228400780252" fileName="CreateNewTarget_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

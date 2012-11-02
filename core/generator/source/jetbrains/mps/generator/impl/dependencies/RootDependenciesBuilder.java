@@ -62,7 +62,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   }
 
   private void addOriginalNodeAccess(SNode root) {
-    if (root == myOriginalRoot || root.getModel() != myBuilder.originalInputModel || !root.isRoot()) {
+    if (root == myOriginalRoot || root.getModel() != myBuilder.originalInputModel || !(root.getModel() != null && root.getModel().isRoot(root))) {
       return;
     }
     dependsOn.add(root);

@@ -143,7 +143,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void fileHeader(SNode cls, final SNodeTextGen textGen) {
-    if (cls.isRoot()) {
+    if (jetbrains.mps.util.SNodeOperations.isRoot(cls)) {
       int wasPart = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.append("package " + BaseLanguageTextGen.getPackageName(cls, textGen) + ";");
       textGen.appendNewLine();

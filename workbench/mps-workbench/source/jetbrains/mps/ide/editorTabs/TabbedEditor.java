@@ -117,7 +117,7 @@ public class TabbedEditor extends BaseNodeEditor{
     }
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getComponent(), new NodeChangeCallback() {
         public void changeNode(SNode newNode) {
-          showNodeInternal(newNode, !newNode.isRoot(), true);
+          showNodeInternal(newNode, !(newNode.getModel() != null && newNode.getModel().isRoot(newNode)), true);
         }
       }, new CreateModeCallback() {
         public void exitCreateMode() {
@@ -167,7 +167,7 @@ public class TabbedEditor extends BaseNodeEditor{
   }
 
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
-    SNode containingRoot = node.isRoot() ? node : node.getTopmostAncestor();
+    SNode containingRoot = node.getModel() != null && node.getModel().isRoot(node) ? node : node.getTopmostAncestor();
     SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
     EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) {
@@ -238,7 +238,7 @@ public class TabbedEditor extends BaseNodeEditor{
     List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, myTabsComponent.getCurrentTabAspect(), new NodeChangeCallback() {
       public void changeNode(SNode node) {
         myTabsComponent.setLastNode(new SNodePointer(node));
-        showNode(node, !node.isRoot());
+        showNode(node, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
     for (DefaultActionGroup group : groups) {

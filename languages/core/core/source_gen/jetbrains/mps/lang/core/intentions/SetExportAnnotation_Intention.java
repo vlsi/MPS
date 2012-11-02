@@ -56,7 +56,7 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return node.isRoot();
+    return jetbrains.mps.util.SNodeOperations.isRoot(node);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

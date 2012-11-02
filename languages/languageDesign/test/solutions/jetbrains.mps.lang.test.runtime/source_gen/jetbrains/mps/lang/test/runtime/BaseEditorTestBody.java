@@ -157,7 +157,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
-    return NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+    return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
   }
 
   public static void closeEditor(Project project, SNode node) {

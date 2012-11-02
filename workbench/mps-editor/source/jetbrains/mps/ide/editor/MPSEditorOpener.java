@@ -78,7 +78,7 @@ public class MPSEditorOpener {
         if (module == null) return;
 
         ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
-        openNode(node, context, true, !node.isRoot());
+        openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
   }
@@ -88,7 +88,7 @@ public class MPSEditorOpener {
    */
   @Deprecated
   public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return openNode(node, context, true, !node.isRoot());
+    return openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
   /*

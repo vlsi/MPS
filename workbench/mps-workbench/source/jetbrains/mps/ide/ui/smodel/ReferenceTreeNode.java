@@ -40,7 +40,7 @@ public class ReferenceTreeNode extends TextTreeNode {
       public void run() {
         SNode target = myRef.getTargetNode();
         if (target == null) return;
-        NavigationSupport.getInstance().openNode(getOperationContext(), target, true, !(target.isRoot()));
+        NavigationSupport.getInstance().openNode(getOperationContext(), target, true, !(target.getModel() != null && target.getModel().isRoot(target)));
       }
     });
   }

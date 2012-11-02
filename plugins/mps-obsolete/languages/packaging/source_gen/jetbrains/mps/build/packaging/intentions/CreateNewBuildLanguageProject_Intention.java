@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.util.SNodeOperations;
 
 public class CreateNewBuildLanguageProject_Intention extends BaseIntention implements Intention {
   public CreateNewBuildLanguageProject_Intention() {
@@ -63,7 +64,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention imple
     model.addRoot(project);
     SLinkOperations.setTarget(node, "project", project, false);
     SLinkOperations.setTarget(node, "targetDeclaration", SLinkOperations.getTarget(SLinkOperations.getTarget(project, "default", true), "targetDeclaration", false), false);
-    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), project, true, !(project.isRoot()));
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), project, true, !(SNodeOperations.isRoot(project)));
   }
 
   public String getLocationString() {

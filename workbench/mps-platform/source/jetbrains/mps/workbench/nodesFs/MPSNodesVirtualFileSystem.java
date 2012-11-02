@@ -212,7 +212,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
       MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getModel().getSModelReference(), event.getNode().getSNodeId()));
-      if (!event.getNode().isRoot() || vf == null) return;
+      if (!(event.getNode().getModel() != null && event.getNode().getModel().isRoot(event.getNode())) || vf == null) return;
       String newName = event.getNode().getPresentation();
       if (!newName.equals(vf.getName())) {
         myRenamedFiles.add(new Pair<MPSNodeVirtualFile, String>(vf, newName));
