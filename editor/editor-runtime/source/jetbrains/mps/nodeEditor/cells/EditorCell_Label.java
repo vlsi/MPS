@@ -21,8 +21,6 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
@@ -31,7 +29,6 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
@@ -42,7 +39,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
@@ -601,14 +601,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     EditorComponent editor = getEditor();
     CellInfo cellInfo = getCellInfo();
 
-    if (getSNode() != null && !EqualUtil.equals(oldText, text) && !isValidText(text) && CommandProcessor.getInstance().getCurrentCommand() != null) {
-      UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(getSNode(), cellInfo, editor, oldText, text));
+    SNode node = getSNode();
+    if (node == null) return;
+    if (CommandProcessor.getInstance().getCurrentCommand() == null)return;
+    if (EqualUtil.equals(oldText, text)) return;
+    if (isValidText(text)) return;
 
-      SNode root = getSNode().getContainingRoot();
-      if (root != null) {
-        MPSNodesVirtualFileSystem.getInstance().getFileFor(root).setModificationStamp(LocalTimeCounter.currentTime());
-      }
-    }
+    UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(node, cellInfo, editor, oldText, text));
+
+    if (node.getModel()==null) return;
+
+    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getTopmostAncestor()).setModificationStamp(LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {
