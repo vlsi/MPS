@@ -5,6 +5,7 @@ package jetbrains.mps.lang.core.intentions;
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
@@ -13,7 +14,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     add(new AddMissingLanguageImport_Intention(), "1209383918929");
-    add(new SetExportAnnotation_Intention(), "4075196924244322258");
     add(new SuppressErrors_Intention(), "4222318806802430725");
+    IntentionsManager.getInstance().registerIntentionFactory(new SetExportAnnotation_Intention());
   }
 }

@@ -2,45 +2,53 @@
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.testbench.suite.intentions.IntentionsDescriptor" />
   <root nodeId="8605005254686393770" modelId="r:7344827c-92d1-4046-9d4e-c93304e0d649(jetbrains.mps.testbench.suite.intentions)">
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="27" startPosition="44" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8605005254686437218" fileName="editoMute_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8605005254686445845" fileName="editoMute_Intention.java" startLine="39" startPosition="100" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="43" startPosition="37" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="11" startPosition="77" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="editoMute_Intention#()V" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="8605005254686437205" fileName="editoMute_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="15" startPosition="30" endLine="16" endPosition="62" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="19" startPosition="36" endLine="20" endPosition="17" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="23" startPosition="37" endLine="24" endPosition="17" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="27" startPosition="44" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="43" startPosition="37" endLine="44" endPosition="54" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="11" startPosition="77" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="8605005254686393774" fileName="editoMute_Intention.java" startLine="38" startPosition="76" endLine="40" endPosition="66" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393772" fileName="editoMute_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="21" startPosition="35" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686437218" fileName="editoMute_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8605005254686445845" fileName="editoMute_Intention.java" startLine="53" startPosition="100" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="13" startPosition="56" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="editoMute_Intention#()V" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="8605005254686437205" fileName="editoMute_Intention.java" startLine="41" startPosition="85" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="14" startPosition="32" endLine="14" endPosition="32" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="21" startPosition="35" endLine="22" endPosition="23" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="74" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="135" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="13" startPosition="56" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="8605005254686393774" fileName="editoMute_Intention.java" startLine="52" startPosition="76" endLine="54" endPosition="62" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393772" fileName="editoMute_Intention.java" startLine="41" startPosition="85" endLine="45" endPosition="6" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="8605005254686393770" varName="editorContext" />
       <varInfo nodeId="8605005254686393770" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="8605005254686393770" varName="editorContext" />
       <varInfo nodeId="8605005254686393770" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.testbench.suite.intentions.editoMute_Intention" />
+    <unitInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.testbench.suite.intentions.editoMute_Intention" />
   </root>
 </debugInfo>
 

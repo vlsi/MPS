@@ -175,7 +175,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isPropertyMacroApplicable(node, (EditorCell) editorContext.getSelectedCell());
+      return QueriesUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
