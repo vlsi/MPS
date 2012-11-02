@@ -27,6 +27,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
@@ -174,7 +175,7 @@ public class FSChangesWatcher implements ApplicationComponent {
           }
           ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
             public void run(@NotNull final ProgressIndicator progressIndicator) {
-              session.doReload(progressIndicator);
+              session.doReload(new ProgressMonitorAdapter(progressIndicator));
             }
           });
         }

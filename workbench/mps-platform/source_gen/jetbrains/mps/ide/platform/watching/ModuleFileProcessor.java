@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.LibraryInitializer;
@@ -49,27 +49,36 @@ import java.util.Collections;
     return SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty() && MapSequence.fromMap(myNewLibModules).isEmpty() && MapSequence.fromMap(myNewProjectModules).isEmpty();
   }
 
-  public void update(ProgressIndicator indicator) {
-    indicator.setText("Reloading updated modules... Please wait.");
-    for (final SModule module : myChangedModules) {
-      String text = "Reloading " + module.getModuleName();
-      indicator.setText2(text);
-      ((IModule) module).reloadFromDisk(false);
-      SetSequence.fromSet(myProcessedModules).addElement(module);
-    }
-    for (final SModule module : myDeletedModules) {
-      indicator.setText2("Unloading removed module " + module.getModuleName());
-      ModuleRepositoryFacade.getInstance().removeModuleForced((IModule) module);
-      SetSequence.fromSet(myProcessedModules).addElement(module);
-    }
-    // update lib modules 
-    for (String lib : SetSequence.fromSet(MapSequence.fromMap(myNewLibModules).keySet())) {
-      List<SModule> newModules = LibraryInitializer.getInstance().registerNewModules(lib, MapSequence.fromMap(myNewLibModules).get(lib));
-      SetSequence.fromSet(myProcessedModules).addSequence(ListSequence.fromList(newModules));
-    }
-    // update project modules 
-    for (Project project : SetSequence.fromSet(MapSequence.fromMap(myNewProjectModules).keySet())) {
-      addNewModules(project, MapSequence.fromMap(myNewProjectModules).get(project));
+  public void update(ProgressMonitor monitor) {
+    monitor.start("Reloading updated modules... Please wait.", SetSequence.fromSet(myChangedModules).count() + SetSequence.fromSet(myDeletedModules).count() + MapSequence.fromMap(myNewLibModules).count() + MapSequence.fromMap(myNewProjectModules).count() + 1);
+    try {
+      for (final SModule module : myChangedModules) {
+        monitor.step("Reloading " + module.getModuleName());
+        ((IModule) module).reloadFromDisk(false);
+        SetSequence.fromSet(myProcessedModules).addElement(module);
+        monitor.advance(1);
+      }
+      for (final SModule module : myDeletedModules) {
+        monitor.step("Unloading removed module " + module.getModuleName());
+        ModuleRepositoryFacade.getInstance().removeModuleForced((IModule) module);
+        monitor.advance(1);
+        SetSequence.fromSet(myProcessedModules).addElement(module);
+      }
+      // update lib modules 
+      monitor.step("Updating lib modules");
+      for (String lib : SetSequence.fromSet(MapSequence.fromMap(myNewLibModules).keySet())) {
+        List<SModule> newModules = LibraryInitializer.getInstance().registerNewModules(lib, MapSequence.fromMap(myNewLibModules).get(lib));
+        SetSequence.fromSet(myProcessedModules).addSequence(ListSequence.fromList(newModules));
+        monitor.advance(1);
+      }
+      // update project modules 
+      monitor.step("Loading new modules");
+      for (Project project : SetSequence.fromSet(MapSequence.fromMap(myNewProjectModules).keySet())) {
+        addNewModules(project, MapSequence.fromMap(myNewProjectModules).get(project));
+        monitor.advance(1);
+      }
+    } finally {
+      monitor.done();
     }
   }
 

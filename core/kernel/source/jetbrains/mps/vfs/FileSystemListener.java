@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.vfs;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.progress.ProgressMonitor;
 
 /**
- * @author Evgeny Gerashchenko
+ * evgeny, 11/2/12
  */
-public interface FileSystemProvider {
-  IFile getFile(@NotNull String path);
-  boolean isFileIgnored(String name);
-  void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
-  boolean runWriteTransaction(Runnable r);
+public interface FileSystemListener {
 
-  void addListener(FileSystemListener listener);
-  void removeListener(FileSystemListener listener);
+  IFile getSource();
+
+  Iterable<FileSystemListener> getDependencies();
+
+  void fileChanged(ProgressMonitor monitor, IFile file);
+
+  void folderChanged(ProgressMonitor monitor, Iterable<IFile> created, Iterable<IFile> deleted);
 }

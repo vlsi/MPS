@@ -9,9 +9,9 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.progress.SubProgressKind;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -42,16 +42,21 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
     return !(ReloadableSources.getInstance().needsReloading()) && SetSequence.fromSet(myInvalidatedSources).isEmpty() && SetSequence.fromSet(myModulesWithChangedModelSets).isEmpty();
   }
 
-  public void update(ProgressIndicator indicator) {
-    indicator.setText("Reloading updated models... Please wait.");
-    for (SModule module : SetSequence.fromSet(myModulesWithChangedModelSets)) {
-      indicator.setText2("reloading all models in module " + module.getModuleName());
-      ((IModule) module).reloadFromDisk(false);
+  public void update(ProgressMonitor monitor) {
+    monitor.start("Reloading updated models... Please wait.", SetSequence.fromSet(myModulesWithChangedModelSets).count() + 10);
+    try {
+      for (SModule module : SetSequence.fromSet(myModulesWithChangedModelSets)) {
+        monitor.step("reloading all models in module " + module.getModuleName());
+        ((IModule) module).reloadFromDisk(false);
+        monitor.advance(1);
+      }
+      for (FileBasedModelDataSource source : SetSequence.fromSet(myInvalidatedSources)) {
+        source.invalidate();
+      }
+      ReloadableSources.getInstance().reload(monitor.subTask(10, SubProgressKind.AS_COMMENT));
+    } finally {
+      monitor.done();
     }
-    for (FileBasedModelDataSource source : SetSequence.fromSet(myInvalidatedSources)) {
-      source.invalidate();
-    }
-    ReloadableSources.getInstance().reload(new ProgressMonitorAdapter(indicator));
   }
 
   protected boolean accepts(VirtualFile file) {
