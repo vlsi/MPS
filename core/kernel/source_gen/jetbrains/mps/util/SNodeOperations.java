@@ -174,15 +174,6 @@ public class SNodeOperations {
   }
 
   /**
-   * todo KILL IT! should be node.getTopMostAncestor
-   * todo after killing it, correct migration script getTopMostAncestor
-   */
-  @Deprecated
-  public static SNode getContainingRoot(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).getContainingRoot();
-  }
-
-  /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    */
   public static String getDebugText(SNode node) {
