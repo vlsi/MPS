@@ -269,16 +269,18 @@ public class ConceptPropertiesHelper {
   public void removeConceptProperties() {
     assert step == 2 : "can't remove concept properties before migrating them to properties";
     final Set<SNode> conceptProperties = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> conceptPropertyDeclarations = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> searchedNodes = getSearchedNodes();
 
     Set<SReference> usages = FindUsagesManager.getInstance().findUsages(searchedNodes, SearchType.USAGES, scope, new EmptyProgressMonitor());
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-
     for (SReference usage : SetSequence.fromSet(usages)) {
       SNode source = usage.getSourceNode();
       if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.structure.structure.ConceptProperty")) {
         SetSequence.fromSet(conceptProperties).addElement(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.ConceptProperty"));
+        SetSequence.fromSet(conceptPropertyDeclarations).addElement(SLinkOperations.getTarget(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.ConceptProperty"), "conceptPropertyDeclaration", false));
         SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(source, ""));
+        SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(SLinkOperations.getTarget(SNodeOperations.cast(source, "jetbrains.mps.lang.structure.structure.ConceptProperty"), "conceptPropertyDeclaration", false), ""));
       }
     }
 
@@ -287,6 +289,9 @@ public class ConceptPropertiesHelper {
       public void invoke() {
         for (SNode conceptProperty : SetSequence.fromSet(conceptProperties)) {
           SNodeOperations.deleteNode(conceptProperty);
+        }
+        for (SNode conceptPropertyDeclaration : SetSequence.fromSet(conceptPropertyDeclarations)) {
+          SNodeOperations.deleteNode(conceptPropertyDeclaration);
         }
       }
     }, searchResults);
