@@ -241,8 +241,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelListener extends SModelAdapter {
     public void eventFired(SModelEvent event) {
-      if (event.getAffectedRoot() == null) return;
-      updateModificationStamp(event.getAffectedRoot());
+      SNode root = event.getAffectedRoot();
+      if (root.getModel() == null) return;
+      updateModificationStamp(root);
     }
 
     public void modelReplaced(final SModelDescriptor sm) {

@@ -58,11 +58,10 @@ public class NodeIconUpdater extends AbstractProjectComponent {
   private class MyModelListener extends SModelAdapter {
     @Override
     public void eventFired(SModelEvent event) {
-      SNode affectedRoot = event.getAffectedRoot();
-      if (affectedRoot != null) {
-        synchronized (myUpdatedRoots) {
-          myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), affectedRoot.getSNodeId()));
-        }
+      SNode root = event.getAffectedRoot();
+      if (root.getModel() == null) return;
+      synchronized (myUpdatedRoots) {
+        myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), root.getSNodeId()));
       }
     }
   }
