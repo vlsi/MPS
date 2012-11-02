@@ -38,7 +38,7 @@ public class MarkVariableDeclarationAsThreadSafe_Intention extends BaseIntention
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:400a7ce0-e668-4a1b-beb5-a02efe968606(org.jetbrains.mps.samples.ParallelFor.intentions@3_0)", "2975785153735290139");
+    return new SNodePointer("r:7dd3cee3-7562-4ff9-8f56-2becff8682cc(org.jetbrains.mps.samples.ParallelFor.intentions@3_0)", "2975785153735290139");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

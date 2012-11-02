@@ -38,7 +38,7 @@ public class FontStyleQuery_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:2b8b9d7b-9f65-4efd-91b4-8fbb9e7489ae(jetbrains.mps.lang.editor.intentions@1_0)", "1221476558282");
+    return new SNodePointer("r:49ddab87-c30a-4978-8da2-7d7dc16830c4(jetbrains.mps.lang.editor.intentions@1_0)", "1221476558282");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

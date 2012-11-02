@@ -35,7 +35,7 @@ public class AddMissingLanguageImport_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:e3ba8361-9578-4b82-a2ba-85eab8ec44bc(jetbrains.mps.lang.core.intentions@1_0)", "1209383918929");
+    return new SNodePointer("r:ccf3514e-0522-4626-af02-6407f093c85f(jetbrains.mps.lang.core.intentions@1_0)", "1209383918929");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

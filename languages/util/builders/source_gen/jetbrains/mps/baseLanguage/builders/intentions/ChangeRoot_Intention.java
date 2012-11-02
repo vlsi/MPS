@@ -35,7 +35,7 @@ public class ChangeRoot_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:06fdf2e6-f447-40dc-a40e-97ec7e9d540f(jetbrains.mps.baseLanguage.builders.intentions@1_0)", "5219429592916269568");
+    return new SNodePointer("r:0c163d08-350a-4d5a-a424-0984ca740e05(jetbrains.mps.baseLanguage.builders.intentions@1_0)", "5219429592916269568");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

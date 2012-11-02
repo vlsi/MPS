@@ -42,7 +42,7 @@ public class NewTemplateInSwitchCase_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:9089869a-096c-4c7d-ab8d-27c01370a0b9(jetbrains.mps.lang.generator.intentions@3_0)", "8004199436029426156");
+    return new SNodePointer("r:bda568eb-a9f1-4a7d-bbff-1c00bbe87f34(jetbrains.mps.lang.generator.intentions@3_0)", "8004199436029426156");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

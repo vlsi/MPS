@@ -35,7 +35,7 @@ public class convertToNamed_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:069efc2a-c12d-4e27-9e16-fe0bb022931c(jetbrains.mps.baseLanguage.regexp.intentions@1_0)", "305848682816615072");
+    return new SNodePointer("r:f57b8026-976a-465c-8955-d984c0b505ba(jetbrains.mps.baseLanguage.regexp.intentions@1_0)", "305848682816615072");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

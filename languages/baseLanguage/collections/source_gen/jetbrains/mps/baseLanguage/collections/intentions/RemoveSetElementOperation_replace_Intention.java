@@ -41,7 +41,7 @@ public class RemoveSetElementOperation_replace_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:2058b266-ad9c-45a1-bf9f-8bf4c09ab223(jetbrains.mps.baseLanguage.collections.intentions@3_0)", "4863683935051453872");
+    return new SNodePointer("r:a30b45e0-eeeb-4289-9a5e-dc943f6cf430(jetbrains.mps.baseLanguage.collections.intentions@3_0)", "4863683935051453872");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

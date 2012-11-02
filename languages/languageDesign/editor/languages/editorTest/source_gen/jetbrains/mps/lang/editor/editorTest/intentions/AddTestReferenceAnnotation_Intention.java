@@ -40,7 +40,7 @@ public class AddTestReferenceAnnotation_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:78127f27-5f27-4b20-b6aa-0adcd5bc8c14(jetbrains.mps.lang.editor.editorTest.intentions@1_0)", "7658393498702987309");
+    return new SNodePointer("r:10f1c943-97bc-4c69-acc9-7fcaad51e462(jetbrains.mps.lang.editor.editorTest.intentions@1_0)", "7658393498702987309");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

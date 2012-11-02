@@ -37,7 +37,7 @@ public class CommentOutCommand_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:449f0c54-6de9-4a62-8b1d-d95ab9261c6a(jetbrains.mps.bash.intentions@1_0)", "1109366303090554669");
+    return new SNodePointer("r:5fb40ae3-ee33-4866-8d14-cb28c95970f4(jetbrains.mps.bash.intentions@1_0)", "1109366303090554669");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

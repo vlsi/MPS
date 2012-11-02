@@ -39,7 +39,7 @@ public class UnmarkLocalInstanceMethodCallAsThreadSafe_Intention extends BaseInt
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:400a7ce0-e668-4a1b-beb5-a02efe968606(org.jetbrains.mps.samples.ParallelFor.intentions@3_0)", "3540747636396569349");
+    return new SNodePointer("r:7dd3cee3-7562-4ff9-8f56-2becff8682cc(org.jetbrains.mps.samples.ParallelFor.intentions@3_0)", "3540747636396569349");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

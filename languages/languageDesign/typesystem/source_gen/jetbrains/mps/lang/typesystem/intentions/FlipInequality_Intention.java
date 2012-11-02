@@ -39,7 +39,7 @@ public class FlipInequality_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:417dc360-c456-4155-ad66-fc79f455c42f(jetbrains.mps.lang.typesystem.intentions@3_0)", "6840209722389643031");
+    return new SNodePointer("r:6cd1848d-7973-446d-943e-a0781322f155(jetbrains.mps.lang.typesystem.intentions@3_0)", "6840209722389643031");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

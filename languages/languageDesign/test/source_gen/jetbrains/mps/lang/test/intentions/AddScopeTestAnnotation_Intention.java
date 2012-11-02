@@ -42,7 +42,7 @@ public class AddScopeTestAnnotation_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:34d3c480-4ffc-4871-8831-0e9894b87500(jetbrains.mps.lang.test.intentions@1_0)", "3100207102208970627");
+    return new SNodePointer("r:5e5b3747-3228-47d0-882d-7662bd553b70(jetbrains.mps.lang.test.intentions@1_0)", "3100207102208970627");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

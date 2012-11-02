@@ -39,7 +39,7 @@ public class SurroundWithSynchronized_Intention extends SurroundWithIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:20de48b0-42f2-4107-9f28-986d564d8711(jetbrains.mps.baseLanguage.intentions@3_0)", "3366354716707929843");
+    return new SNodePointer("r:e456489e-54f1-4f7f-a501-bb6a31480eab(jetbrains.mps.baseLanguage.intentions@3_0)", "3366354716707929843");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

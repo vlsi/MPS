@@ -37,7 +37,7 @@ public class AddSinceBlockDocTag_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:4e20fa57-4e23-4e71-987c-5bce75b8e2ae(jetbrains.mps.baseLanguage.javadoc.intentions@2_0)", "8465538089690815842");
+    return new SNodePointer("r:2167abe7-3634-479b-a698-2bff67ab958a(jetbrains.mps.baseLanguage.javadoc.intentions@2_0)", "8465538089690815842");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

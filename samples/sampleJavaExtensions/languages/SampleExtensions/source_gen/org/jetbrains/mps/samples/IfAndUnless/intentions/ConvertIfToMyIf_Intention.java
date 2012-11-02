@@ -38,7 +38,7 @@ public class ConvertIfToMyIf_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:f1082a1d-31e0-4a7f-bae5-520048133e55(org.jetbrains.mps.samples.IfAndUnless.intentions@1_0)", "954830572076084528");
+    return new SNodePointer("r:9399e2ec-9887-4ca8-b4ce-f27eacafd0aa(org.jetbrains.mps.samples.IfAndUnless.intentions@1_0)", "954830572076084528");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

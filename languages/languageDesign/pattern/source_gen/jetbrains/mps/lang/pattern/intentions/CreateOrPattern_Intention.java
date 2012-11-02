@@ -38,7 +38,7 @@ public class CreateOrPattern_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:054a8c2a-850f-4347-a5f5-530bd06215ba(jetbrains.mps.lang.pattern.intentions@1_0)", "8263735385373627208");
+    return new SNodePointer("r:1cc95e10-c11c-4ea2-b394-554777670099(jetbrains.mps.lang.pattern.intentions@1_0)", "8263735385373627208");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

@@ -39,7 +39,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:9089869a-096c-4c7d-ab8d-27c01370a0b9(jetbrains.mps.lang.generator.intentions@3_0)", "1203775431223");
+    return new SNodePointer("r:bda568eb-a9f1-4a7d-bbff-1c00bbe87f34(jetbrains.mps.lang.generator.intentions@3_0)", "1203775431223");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
