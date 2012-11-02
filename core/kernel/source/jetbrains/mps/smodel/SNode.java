@@ -634,13 +634,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----root, deleted, etc.---
 
   /*
-  inline
-   */
-  public boolean isRoot() {
-    return getModel() != null && getModel().isRoot(this);
-  }
-
-  /*
   replace with getTopmostAncestor
    */
   public SNode getContainingRoot() {
@@ -1096,6 +1089,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isRoot() {
+    return getModel() != null && getModel().isRoot(this);
+  }
 
   @Deprecated
   /**
