@@ -77,7 +77,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
     outer:
     for (SNode added : addedNodes) {
-      if (added.isDeleted()) continue;
+      if (added.getModel() == null) continue;
       if (added.getParent() == null) continue;
       SNodeTreeNode parent = (SNodeTreeNode) myTreeNode.findDescendantWith(added.getParent().getSNodeId().toString());
       if (parent == null) continue;

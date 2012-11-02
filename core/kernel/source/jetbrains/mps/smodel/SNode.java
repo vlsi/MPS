@@ -1103,7 +1103,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isDeleted() {
-    return myModel == null;
+    return getModel() == null;
   }
 
   @Deprecated
