@@ -4,22 +4,18 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptConstraints_Behavior {
-  private static Class[] PARAMETERS_8952337903384645670 = {SNode.class};
-  private static Class[] PARAMETERS_6261424444345978682 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -31,34 +27,6 @@ public class ConceptConstraints_Behavior {
     SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
   }
 
-  public static SNode call_getBaseConcept_8952337903384645670(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384645670, new Object[]{});
-  }
-
-  public static void call_setBaseConcept_6261424444345978682(SNode thisNode, SNode baseConcept) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978682, new Object[]{baseConcept});
-  }
-
-  public static SNode callSuperNew_getBaseConcept_8952337903384645670(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384645670, new Object[]{});
-  }
-
-  public static void callSuperNew_setBaseConcept_6261424444345978682(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978682, new Object[]{baseConcept});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getBaseConcept_8952337903384645670(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384645670, new Object[]{});
-  }
-
-  @Deprecated
-  public static void callSuper_setBaseConcept_6261424444345978682(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978682, new Object[]{baseConcept});
-  }
-
   public static SNode getConstraintFunctionBodyUsingInheritance_4960272075650318140(SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode concept) {
@@ -67,14 +35,34 @@ public class ConceptConstraints_Behavior {
     };
     SNode method = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_computeInHierarchy_4184580446578561998(concept, computePredicate), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
     if (method == null) {
-      return new ConceptConstraints_Behavior.QuotationClass_wrxfmp_a0a0c0j().createNode();
+      return new ConceptConstraints_Behavior.QuotationClass_wrxfmp_a0a0c0d().createNode();
     } else {
       return SLinkOperations.getTarget(method, "body", true);
     }
   }
 
-  public static class QuotationClass_wrxfmp_a0a0c0j {
-    public QuotationClass_wrxfmp_a0a0c0j() {
+  @Deprecated
+  public static SNode call_getBaseConcept_8952337903384645670(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+  }
+
+  @Deprecated
+  public static void call_setBaseConcept_6261424444345978682(SNode thisNode, SNode baseConcept) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
+  }
+
+  @Deprecated
+  public static SNode callSuper_getBaseConcept_8952337903384645670(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static void callSuper_setBaseConcept_6261424444345978682(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
+  }
+
+  public static class QuotationClass_wrxfmp_a0a0c0d {
+    public QuotationClass_wrxfmp_a0a0c0d() {
     }
 
     public SNode createNode() {

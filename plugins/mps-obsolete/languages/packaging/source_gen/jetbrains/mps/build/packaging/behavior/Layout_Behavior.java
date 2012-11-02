@@ -11,9 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.io.File;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.io.File;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -47,18 +48,18 @@ public class Layout_Behavior {
   }
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
-    return IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(thisNode, "scriptsDirectory", true)).getAbsolutePath();
+    return BehaviorReflection.invokeVirtual(File.class, SLinkOperations.getTarget(thisNode, "scriptsDirectory", true), "virtual_getFile_1233322718999", new Object[]{}).getAbsolutePath();
   }
 
   public static String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
     if (macroName.equals(Layout_Behavior.getScriptsDirName_462257719548547202())) {
       return Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "scriptsDirectory", true));
     }
-    return IMacroHolder_Behavior.callSuperNew_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", macroName);
+    return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", "virtual_evaluateMacro_1234975967990", new Object[]{macroName});
   }
 
   public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    List<String> allMacroNames = IMacroHolder_Behavior.callSuperNew_getAllMacroNames_1234975567387(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", addBasedir);
+    List<String> allMacroNames = BehaviorReflection.invokeSuper((Class<List<String>>) ((Class) Object.class), thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", "virtual_getAllMacroNames_1234975567387", new Object[]{addBasedir});
     ListSequence.fromList(allMacroNames).addElement(Layout_Behavior.getScriptsDirName_462257719548547202());
     return allMacroNames;
   }
@@ -90,7 +91,7 @@ public class Layout_Behavior {
     for (SNode component : ListSequence.fromList(all)) {
       if (AbstractProjectComponent_Behavior.call_included_1213877333807(component, config)) {
         ListSequence.fromList(result).addElement(component);
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractProjectComponent_Behavior.call_getPostProcessingTasks_1213877333861(component)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), component, "virtual_getPostProcessingTasks_1213877333861", new Object[]{})));
       }
     }
     return result;
@@ -154,7 +155,7 @@ public class Layout_Behavior {
         Layout_Behavior.proceesAbstractProjectComponent_1233317260545(entry, list);
       }
     } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent")) {
-      List<SNode> childrenToDo = ITransparentProjectComponent_Behavior.call_getChildrenToDo_1240564451382(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"));
+      List<SNode> childrenToDo = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", new Object[]{});
       for (SNode child : ListSequence.fromList(childrenToDo)) {
         Layout_Behavior.proceesAbstractProjectComponent_1233317260545(child, list);
       }

@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
@@ -58,7 +58,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
                 List<SNode> result = new ArrayList<SNode>();
                 SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
                 for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
-                  if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extension, "type", true), SetSequence.fromSet(new HashSet<SNode>())))) {
+                  if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(extension, "type", true), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())}))) {
                     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true))) {
                       if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
                         ListSequence.fromList(result).addElement(method);
@@ -68,7 +68,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
                 }
                 for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
                   for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
-                    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(method, "extendedType", true), SetSequence.fromSet(new HashSet<SNode>())))) {
+                    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(method, "extendedType", true), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())}))) {
                       if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
                         ListSequence.fromList(result).addElement(method);
                       }
@@ -82,7 +82,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
               public boolean isInScope(SNode node) {
                 SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
                 SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-                return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod), SetSequence.fromSet(new HashSet<SNode>()))) && VisibilityUtil.isVisible(_context.getReferenceNode(), extMethod);
+                return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())})) && VisibilityUtil.isVisible(_context.getReferenceNode(), extMethod);
               }
             };
 

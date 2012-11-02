@@ -3,6 +3,7 @@ core/openapi/classes
 :core
 core/analyzers/classes
 core/kernel/classes
+core/persistence/classes
 core/runtime/classes
 core/findUsages-runtime/classes
 core/refactoring-runtime/classes

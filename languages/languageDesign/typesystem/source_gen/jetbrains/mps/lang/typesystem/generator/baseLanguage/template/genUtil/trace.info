@@ -14,7 +14,7 @@
     <nodeInfo nodeId="1224161885446" fileName="TypesystemGenUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7087631766427572151" fileName="TypesystemGenUtil.java" startLine="51" startPosition="58" endLine="52" endPosition="339" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7087631766427572227" fileName="TypesystemGenUtil.java" startLine="54" startPosition="235" endLine="55" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9150969968748700132" fileName="TypesystemGenUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9150969968748700132" fileName="TypesystemGenUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9150969968748700148" fileName="TypesystemGenUtil.java" startLine="60" startPosition="325" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7087631766427572231" fileName="TypesystemGenUtil.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="71" startPosition="31" endLine="72" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -47,18 +47,18 @@
     <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="129" startPosition="163" endLine="130" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="130" startPosition="43" endLine="131" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="132" startPosition="7" endLine="133" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1220457566054" fileName="TypesystemGenUtil.java" startLine="20" startPosition="32" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesystemGenUtil#()V" />
-    <nodeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="67" startPosition="58" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a0a0a1a0a3a1#()V" />
-    <nodeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="85" startPosition="60" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a0a0a1a0a3a1_0#()V" />
-    <nodeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="103" startPosition="56" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a1a0a0a1a2#()V" />
-    <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="120" startPosition="56" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a1a0a0a3a2#()V" />
+    <nodeInfo nodeId="1220457566054" fileName="TypesystemGenUtil.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesystemGenUtil#()V" />
+    <nodeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a0a0a1a0a3a1#()V" />
+    <nodeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="86" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a0a0a1a0a3a1_0#()V" />
+    <nodeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="104" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a1a0a0a1a2#()V" />
+    <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="121" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_y65bbo_a1a0a0a3a2#()V" />
     <nodeInfo nodeId="1224161250811" fileName="TypesystemGenUtil.java" startLine="35" startPosition="57" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1224161776051" fileName="TypesystemGenUtil.java" startLine="42" startPosition="94" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7087631766427572187" fileName="TypesystemGenUtil.java" startLine="53" startPosition="42" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9150969968748700146" fileName="TypesystemGenUtil.java" startLine="59" startPosition="114" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1220457826901" fileName="TypesystemGenUtil.java" startLine="26" startPosition="28" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="7087631766427572170" fileName="TypesystemGenUtil.java" startLine="52" startPosition="339" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9150969968748700142" fileName="TypesystemGenUtil.java" startLine="58" startPosition="98" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9150969968748700142" fileName="TypesystemGenUtil.java" startLine="58" startPosition="171" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="110" startPosition="32" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="110" startPosition="32" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="127" startPosition="32" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -69,13 +69,13 @@
     <nodeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="92" startPosition="32" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="92" startPosition="32" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224161550299" fileName="TypesystemGenUtil.java" startLine="39" startPosition="144" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1220457598870" fileName="TypesystemGenUtil.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInCheckEquation#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="106" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="123" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="70" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="88" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7087631766427572124" fileName="TypesystemGenUtil.java" startLine="50" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="returnsNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1224160905100" fileName="TypesystemGenUtil.java" startLine="33" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInRuleWithContext#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1220457598870" fileName="TypesystemGenUtil.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInCheckEquation#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="107" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="124" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="71" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="89" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7087631766427572124" fileName="TypesystemGenUtil.java" startLine="51" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="returnsNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1224160905100" fileName="TypesystemGenUtil.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInRuleWithContext#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1220457566057" fileName="TypesystemGenUtil.java" startLine="21" startPosition="30" endLine="21" endPosition="30" />
     <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="68" startPosition="49" endLine="68" endPosition="49" />
     <scopeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="86" startPosition="51" endLine="86" endPosition="51" />
@@ -85,12 +85,12 @@
     <scopeInfo nodeId="1224161776052" fileName="TypesystemGenUtil.java" startLine="43" startPosition="287" endLine="44" endPosition="22" />
     <scopeInfo nodeId="7087631766427572188" fileName="TypesystemGenUtil.java" startLine="54" startPosition="235" endLine="55" endPosition="21" />
     <scopeInfo nodeId="9150969968748700147" fileName="TypesystemGenUtil.java" startLine="60" startPosition="325" endLine="61" endPosition="21" />
-    <scopeInfo nodeId="1220457566054" fileName="TypesystemGenUtil.java" startLine="20" startPosition="32" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="1220457566054" fileName="TypesystemGenUtil.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1220457826903" fileName="TypesystemGenUtil.java" startLine="27" startPosition="29" endLine="29" endPosition="122" />
-    <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="67" startPosition="58" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="85" startPosition="60" endLine="87" endPosition="5" />
-    <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="103" startPosition="56" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="120" startPosition="56" endLine="122" endPosition="5" />
+    <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="68" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="86" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="104" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="121" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="7087631766427572171" fileName="TypesystemGenUtil.java" startLine="53" startPosition="42" endLine="56" endPosition="7" />
     <scopeInfo nodeId="9150969968748700143" fileName="TypesystemGenUtil.java" startLine="59" startPosition="114" endLine="62" endPosition="7" />
     <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="111" startPosition="7" endLine="114" endPosition="31">
@@ -123,6 +123,9 @@
       <varInfo nodeId="1220457740224" varName="current" />
       <varInfo nodeId="1220469252725" varName="oldCurrent" />
     </scopeInfo>
+    <scopeInfo nodeId="1220457598870" fileName="TypesystemGenUtil.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1220457656515" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="107" startPosition="31" endLine="116" endPosition="20">
       <varInfo nodeId="7087631766427572225" varName="_parameterValues_129834374" />
       <varInfo nodeId="7087631766427572225" varName="quotedNode_1" />
@@ -132,9 +135,6 @@
       <varInfo nodeId="9150969968748700157" varName="_parameterValues_129834374" />
       <varInfo nodeId="9150969968748700157" varName="quotedNode_1" />
       <varInfo nodeId="9150969968748700157" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1220457598870" fileName="TypesystemGenUtil.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1220457656515" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="71" startPosition="31" endLine="81" endPosition="20">
       <varInfo nodeId="1224161858933" varName="_parameterValues_129834374" />
@@ -146,22 +146,22 @@
       <varInfo nodeId="1224161807930" varName="quotedNode_1" />
       <varInfo nodeId="1224161807930" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="106" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="123" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="107" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="9150969968748700157" fileName="TypesystemGenUtil.java" startLine="124" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="71" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="89" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="7087631766427572127" fileName="TypesystemGenUtil.java" startLine="51" startPosition="58" endLine="64" endPosition="16">
       <varInfo nodeId="9150969968748700133" varName="lastStatement" />
       <varInfo nodeId="7087631766427572152" varName="returnStatements" />
     </scopeInfo>
-    <scopeInfo nodeId="1224161858933" fileName="TypesystemGenUtil.java" startLine="70" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1224161807930" fileName="TypesystemGenUtil.java" startLine="88" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="1224160905103" fileName="TypesystemGenUtil.java" startLine="34" startPosition="57" endLine="48" endPosition="17">
       <varInfo nodeId="1224161480347" varName="baseMethodDeclaration" />
       <varInfo nodeId="1224160939712" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="7087631766427572124" fileName="TypesystemGenUtil.java" startLine="50" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="7087631766427572124" fileName="TypesystemGenUtil.java" startLine="51" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7087631766427572130" varName="subtypingRule" />
     </scopeInfo>
-    <scopeInfo nodeId="1224160905100" fileName="TypesystemGenUtil.java" startLine="33" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1224160905100" fileName="TypesystemGenUtil.java" startLine="34" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1224160951919" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="7087631766427572225" fileName="TypesystemGenUtil.java" startLine="103" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil$QuotationClass_y65bbo_a1a0a0a1a2" />

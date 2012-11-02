@@ -9,12 +9,12 @@ public class QueryFunction_SubstituteWrapper_BehaviorDescriptor extends ConceptF
   public QueryFunction_SubstituteWrapper_BehaviorDescriptor() {
   }
 
-  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return QueryFunction_SubstituteWrapper_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
-  }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_SubstituteWrapper_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return QueryFunction_SubstituteWrapper_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }
 
   @Override

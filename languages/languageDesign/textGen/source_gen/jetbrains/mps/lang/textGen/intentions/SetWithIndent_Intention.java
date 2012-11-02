@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -41,7 +41,7 @@ public class SetWithIndent_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Append " + (AbstractAppendPart_Behavior.call_withIndent_1237466287046(node) ?
+    return "Append " + (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{}) ?
       "without" :
       "with"
     ) + " Indent";
@@ -63,7 +63,7 @@ public class SetWithIndent_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    boolean indent = AbstractAppendPart_Behavior.call_withIndent_1237466287046(node);
+    boolean indent = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{});
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) {
       SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), "withIndent", "" + (!(indent)));
     } else {

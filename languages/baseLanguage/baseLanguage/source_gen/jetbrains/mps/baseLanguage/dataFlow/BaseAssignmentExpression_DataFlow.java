@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNode;
 
 public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
@@ -16,7 +16,7 @@ public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      if (BaseAssignmentExpression_Behavior.call_isReadAsignment_1215696236033(_context.getNode())) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isReadAsignment_1215696236033", new Object[]{})) {
         _context.getBuilder().emitRead(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
       }
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));

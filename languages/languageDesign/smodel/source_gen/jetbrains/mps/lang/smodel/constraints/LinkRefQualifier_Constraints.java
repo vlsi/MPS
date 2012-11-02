@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_cgym5w_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
@@ -40,7 +40,7 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode qualifierContainer = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer");
-            return ILinkAccessQualifierContainer_Behavior.call_getLinkAccessScope_2906110183022538642(qualifierContainer);
+            return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), qualifierContainer, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
           }
 
           @Override

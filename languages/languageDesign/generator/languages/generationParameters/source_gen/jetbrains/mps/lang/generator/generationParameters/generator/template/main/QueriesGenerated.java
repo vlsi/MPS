@@ -4,11 +4,11 @@ package jetbrains.mps.lang.generator.generationParameters.generator.template.mai
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3064182000795632408(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IGeneratorParameter_Behavior.call_getUniqueId_650531548511609559(SLinkOperations.getTarget(_context.getNode(), "parameter", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "parameter", false), "virtual_getUniqueId_650531548511609559", new Object[]{});
   }
 }

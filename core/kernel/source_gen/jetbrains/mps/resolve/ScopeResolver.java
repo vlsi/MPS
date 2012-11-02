@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -24,7 +24,7 @@ public class ScopeResolver implements IResolver {
   }
 
   public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final IOperationContext operationContext) {
-    SNode linkDeclaration = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(sourceNode), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, reference.getRole()));
+    SNode linkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(sourceNode), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{reference.getRole()});
     if (linkDeclaration == null) {
       return false;
     }

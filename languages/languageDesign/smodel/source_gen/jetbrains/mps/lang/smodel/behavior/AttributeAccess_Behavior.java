@@ -4,12 +4,11 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -20,10 +19,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class AttributeAccess_Behavior {
-  private static Class[] PARAMETERS_6960953357954063537 = {SNode.class};
-  private static Class[] PARAMETERS_6960953357954063547 = {SNode.class};
-  private static Class[] PARAMETERS_6960953357954063543 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -32,7 +27,7 @@ public class AttributeAccess_Behavior {
   }
 
   public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return !(SConceptPropertyOperations.getBoolean(AttributeQualifier_Behavior.call_getTargetConcept_6407023681583066586(SLinkOperations.getTarget(thisNode, "qualifier", true)), "multiple") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
+    return !(SConceptPropertyOperations.getBoolean(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{}), "multiple") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
   }
 
   public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
@@ -40,7 +35,7 @@ public class AttributeAccess_Behavior {
   }
 
   public static SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
-    return AttributeQualifier_Behavior.call_getTargetConcept_6407023681583066586(SLinkOperations.getTarget(thisNode, "qualifier", true));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
   }
 
   public static SNode call_getAttributeContainerType_6960953357954139822(SNode thisNode) {
@@ -51,46 +46,34 @@ public class AttributeAccess_Behavior {
     );
   }
 
+  @Deprecated
   public static boolean call_isSingularCardinality_6960953357954063537(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSingularCardinality_4024382256428848847", new Object[]{});
   }
 
+  @Deprecated
   public static boolean call_isAggregation_6960953357954063547(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAggregation_4024382256428848854", new Object[]{});
   }
 
+  @Deprecated
   public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isSingularCardinality_6960953357954063537(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isAggregation_6960953357954063547(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getTargetConcept_6960953357954063543(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetConcept_4024382256428848859", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isSingularCardinality_6960953357954063537(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isAggregation_6960953357954063547(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getTargetConcept_6960953357954063543(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_q663c8_a0a1a5 {

@@ -6,7 +6,7 @@ import jetbrains.mps.datatransfer.PastePostProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.behavior.IVariableReference_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,9 +19,9 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
   public void postProcesNode(SNode pastedNode) {
     // todo: not working for IVariableReference. Unify and fix it. 
     if (Scope.parent(pastedNode) != null) {
-      if (Scope.getScope(Scope.parent(pastedNode), pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(IVariableReference_Behavior.call_getVariable_1023687332192481693(pastedNode))) {
+      if (Scope.getScope(Scope.parent(pastedNode), pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}))) {
         SNode variableReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.VariableReference");
-        SLinkOperations.setTarget(variableReference, "variableDeclaration", SNodeOperations.cast(IVariableReference_Behavior.call_getVariable_1023687332192481693(pastedNode), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), false);
+        SLinkOperations.setTarget(variableReference, "variableDeclaration", SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), false);
       }
     }
   }

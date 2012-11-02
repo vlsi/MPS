@@ -24,12 +24,11 @@ import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalBehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted.InterpretedBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -135,7 +134,7 @@ public class ConceptRegistry implements CoreComponent {
     }
 
     if (!startLoad(fqName, LanguageAspect.BEHAVIOR)) {
-      return new IllegalBehaviorDescriptor(fqName);
+      return NullSafeIllegalBehaviorDescriptor.INSTANCE;
     }
 
     try {
@@ -165,8 +164,7 @@ public class ConceptRegistry implements CoreComponent {
 
   public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
     if (node == null) {
-      // todo: more clearly logic
-      return BehaviorAspectInterpreted.getInstance().getDescriptor(null);
+      return NullSafeIllegalBehaviorDescriptor.INSTANCE;
     } else {
       return getBehaviorDescriptor(node.getConcept().getId());
     }

@@ -35,14 +35,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CollectTests_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -193,7 +193,7 @@ public class CollectTests_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) md).isReadOnly());
+    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
   }
 
   private boolean isUserEditableGeneratableModel(SModelDescriptor md, final Map<String, Object> _params) {
@@ -219,7 +219,7 @@ public class CollectTests_Action extends BaseAction {
   private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode ms) {
-        return IModuleRef_Behavior.call_moduleReference_1280144168199513544(SLinkOperations.getTarget(ms, "moduleRef", true));
+        return BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(ms, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
       }
     }).toListSequence();
   }

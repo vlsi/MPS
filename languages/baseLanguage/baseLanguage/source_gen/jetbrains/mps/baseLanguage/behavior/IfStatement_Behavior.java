@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 
 public class IfStatement_Behavior {
@@ -42,7 +43,7 @@ public class IfStatement_Behavior {
     }
 
     SNode onlyStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
-    return Statement_Behavior.call_isGuardClauseStatement_1237547327995(onlyStatement);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, onlyStatement, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
   }
 
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
@@ -54,7 +55,7 @@ public class IfStatement_Behavior {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "ifTrue", true), throwables, ignoreMayBeThrowables);
     }
     if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null)) {
-      Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), throwables, ignoreMayBeThrowables);
+      BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
     }
     for (SNode elseIfClause : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true))) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(elseIfClause, "statementList", true), throwables, ignoreMayBeThrowables);

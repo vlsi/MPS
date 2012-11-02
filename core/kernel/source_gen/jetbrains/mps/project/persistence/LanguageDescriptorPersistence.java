@@ -56,10 +56,10 @@ public class LanguageDescriptorPersistence {
 
           Element modelsTag = XmlUtil.first(languageElement, "models");
           if (modelsTag != null) {
-            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(modelsTag, "modelRoot"), macroHelper));
+            result_v3r4p8_a0a0d0c0a.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(modelsTag, "modelRoot"), macroHelper));
           } else {
             // old - for backwards compatibility 
-            result_v3r4p8_a0a0d0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(languageElement, "modelRoot"), macroHelper));
+            result_v3r4p8_a0a0d0c0a.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(languageElement, "modelRoot"), macroHelper));
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0d0c0a, languageElement);
@@ -136,7 +136,7 @@ public class LanguageDescriptorPersistence {
     }
 
     Element models = new Element("models");
-    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRoots(), macroHelper);
+    ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
     languageElement.addContent(models);
 
     Element accessoryModels = new Element("accessoryModels");

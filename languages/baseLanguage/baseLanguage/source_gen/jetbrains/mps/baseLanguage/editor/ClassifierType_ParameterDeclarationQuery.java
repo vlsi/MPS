@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ClassifierType_ParameterDeclarationQuery extends ParametersInformation<SNode> {
   public ClassifierType_ParameterDeclarationQuery() {
@@ -37,7 +37,7 @@ public class ClassifierType_ParameterDeclarationQuery extends ParametersInformat
         if (SNodeOperations.getIndexInParent(param) == SNodeOperations.getIndexInParent(argument)) {
           styledText.setBold(true);
         }
-        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(param));
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, param, "virtual_getPresentation_1213877396640", new Object[]{}));
         styledText.setBold(false);
       }
     }

@@ -15,7 +15,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Enumeration;
 
 public abstract class ModelTreeBuilder implements TreeExpansionListener {
@@ -68,7 +68,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
   public static Iterable<SNode> sortChildNodes(Iterable<SNode> nodes) {
     return Sequence.fromIterable(nodes).sort(new ISelector<SNode, String>() {
       public String select(SNode node) {
-        return SPropertyOperations.getString(node, "virtualPackage") + "|" + ((String) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+        return SPropertyOperations.getString(node, "virtualPackage") + "|" + BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
       }
     }, true);
   }

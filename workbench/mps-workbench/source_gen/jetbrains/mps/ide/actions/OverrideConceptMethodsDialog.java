@@ -11,7 +11,7 @@ import com.intellij.ui.NonFocusableCheckBox;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -53,7 +53,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
       SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
       if ((concept != null)) {
-        return ((String) BehaviorManager.getInstance().invoke(Object.class, concept, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+        return BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{});
       }
     }
     return super.getText(node);
@@ -91,7 +91,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
-    for (SNode c : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, baseClass, "call_getAllSuperBehaviors_1818770337282950280", new Class[]{SNode.class}))) {
+    for (SNode c : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", "call_getAllSuperBehaviors_1818770337282950280", new Object[]{})) {
       MapSequence.fromMap(containerIndex).put(c, i++);
     }
     return Sequence.fromIterable(methods).sort(new Comparator<SNode>() {

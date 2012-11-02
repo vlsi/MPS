@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -30,14 +30,14 @@ public class typeof_UIObjectStatement_InferenceRule extends AbstractInferenceRul
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(uios, "Wrong context", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134259416738", null, errorTarget);
       }
     } else {
-      if (!((IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios)) != null))) {
+      if (!((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios), "virtual_getContextExpression_8923564134258345446", new Object[]{}) != null))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(uios, "No context", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134259658269", null, errorTarget);
       }
       {
-        SNode _nodeToCheck_1029348928467 = IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios));
+        SNode _nodeToCheck_1029348928467 = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios), "virtual_getContextExpression_8923564134258345446", new Object[]{});
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413336", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413328", true), (SNode) UIObjectStatement_Behavior.call_expectedContextType_5197527271413889619(uios, abt), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413328", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), uios, "virtual_expectedContextType_5197527271413889619", new Object[]{abt}), false, true, _info_12389875345);
       }
     }
   }

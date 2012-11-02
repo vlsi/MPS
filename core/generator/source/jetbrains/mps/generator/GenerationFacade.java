@@ -127,9 +127,6 @@ public class GenerationFacade {
   }
 
   public static boolean canGenerate(org.jetbrains.mps.openapi.model.SModel sm) {
-    if (sm instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) sm).isDoNotGenerate()) {
-      return false;
-    }
     return sm instanceof SModelDescriptor && ((SModelDescriptor)sm).isGeneratable();
   }
 

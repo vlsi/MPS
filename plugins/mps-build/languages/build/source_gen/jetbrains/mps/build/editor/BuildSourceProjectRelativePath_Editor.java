@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -104,10 +104,10 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_698n2d_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode parent = BuildSourcePath_Behavior.call_getParent_8654221991637145399(node);
+        SNode parent = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getParent_8654221991637145399", new Object[]{});
         return (parent == null ?
           "no parent" :
-          BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(parent)
+          BehaviorReflection.invokeVirtual(String.class, parent, "virtual_getRelativePath_5481553824944787371", new Object[]{})
         );
       }
 

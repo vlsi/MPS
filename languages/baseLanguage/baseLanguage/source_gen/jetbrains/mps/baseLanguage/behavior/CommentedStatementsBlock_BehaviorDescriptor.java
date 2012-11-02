@@ -4,16 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 import java.util.Set;
 import java.util.List;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
 public class CommentedStatementsBlock_BehaviorDescriptor extends Statement_BehaviorDescriptor implements ILocalVariableElementList_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public CommentedStatementsBlock_BehaviorDescriptor() {
-  }
-
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
@@ -22,6 +18,10 @@ public class CommentedStatementsBlock_BehaviorDescriptor extends Statement_Behav
 
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return CommentedStatementsBlock_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
+  }
+
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   @Override

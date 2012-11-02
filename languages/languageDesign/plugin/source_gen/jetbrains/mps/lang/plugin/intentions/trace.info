@@ -17,19 +17,19 @@
     <nodeInfo nodeId="1204990896326" fileName="ExtractGroup_Intention.java" startLine="64" startPosition="163" endLine="65" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204990992075" fileName="ExtractGroup_Intention.java" startLine="65" startPosition="92" endLine="66" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204991034776" fileName="ExtractGroup_Intention.java" startLine="66" startPosition="110" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="16" startPosition="59" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractGroup_Intention#()V" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractGroup_Intention#()V" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="48" startPosition="84" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="17" startPosition="35" endLine="17" endPosition="35" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="72" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="24" startPosition="35" endLine="25" endPosition="26" />
@@ -41,31 +41,31 @@
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="1205510378351" fileName="ExtractGroup_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="51" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="59" startPosition="44" endLine="60" endPosition="17" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="16" startPosition="59" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1204990433124" varName="editorContext" />
       <varInfo nodeId="1204990433124" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1204990433124" varName="editorContext" />
+      <varInfo nodeId="1204990433124" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="48" startPosition="84" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1204990433124" varName="editorContext" />
-      <varInfo nodeId="1204990433124" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1204990433128" fileName="ExtractGroup_Intention.java" startLine="63" startPosition="76" endLine="67" endPosition="37">
       <varInfo nodeId="1204990880224" varName="rootGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1204990433124" varName="editorContext" />
       <varInfo nodeId="1204990433124" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1204990433124" fileName="ExtractGroup_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1204990433124" varName="editorContext" />
       <varInfo nodeId="1204990433124" varName="node" />
     </scopeInfo>

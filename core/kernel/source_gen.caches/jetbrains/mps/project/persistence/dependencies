@@ -109,9 +109,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.persistence.PathAwareJDOMMemento" />
     <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />

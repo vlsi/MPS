@@ -28,6 +28,8 @@ public abstract class PersistenceFacade {
     return INSTANCE;
   }
 
+  public abstract Iterable<String> getTypeIds();
+
   public abstract ModelRootFactory getModelRootFactory(String id);
 
   public abstract ModelFactory getModelFactory(String extension);

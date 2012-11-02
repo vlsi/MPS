@@ -140,7 +140,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
-    if (SModelStereotype.isStubModelStereotype(getSourceNode().getModel().getStereotype())) return;
+    SModel model = getSourceNode().getModel();
+    if (model != null && SModelStereotype.isStubModelStereotype(model.getStereotype())) return;
 
     synchronized (ourErrorReportedRefs) {
       if (ourErrorReportedRefs.contains(this)) return;
@@ -163,6 +164,9 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
 
     SModel model = node.getModel();
+    if (model == null){
+      return null;
+    }
     if (!model.isTransient()) {
       return new SNodePointer(node);
     }

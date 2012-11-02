@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class LambdaExpression_Behavior {
   public static boolean call_hasParameterRefs_7397484091645986293(SNode thisNode) {
     SNode node = thisNode;
     node = SNodeOperations.getParent(node);
-    while (node != null && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner") && !(ListSequence.fromList(VariableOwner_Behavior.call_getVariables_8981808925914841576(SNodeOperations.cast(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"))).contains(SNodeOperations.as(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))) {
+    while (node != null && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner") && !(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), "virtual_getVariables_8981808925914841576", new Object[]{})).contains(SNodeOperations.as(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))) {
       node = SNodeOperations.getParent(node);
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")) {

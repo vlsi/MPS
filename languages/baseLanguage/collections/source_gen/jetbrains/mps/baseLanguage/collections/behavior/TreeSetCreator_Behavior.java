@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,8 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class TreeSetCreator_Behavior {
-  private static Class[] PARAMETERS_2261417478150191164 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,21 +22,17 @@ public class TreeSetCreator_Behavior {
   }
 
   public static boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
-    return AbstractContainerCreator_Behavior.callSuperNew_canHaveParameter_2261417478150191157(thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator") && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
   }
 
+  @Deprecated
   public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
-  }
-
-  public static boolean callSuperNew_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canHaveParameter_2261417478150191157", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class QuotationClass_529210_a0a0b {

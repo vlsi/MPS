@@ -20,9 +20,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.LinkedHashSet;
 
 public class OverridingMethodsFinder {
@@ -117,7 +116,7 @@ public class OverridingMethodsFinder {
       List<SNode> overridingMethods = new ArrayList<SNode>();
       for (SNode overridingMethod : SetSequence.fromSet(similarMethods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, classifierMethod, "call_hasSameSignature_1213877350435", new Class[]{SNode.class, SNode.class}, it));
+          return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, classifierMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_hasSameSignature_1213877350435", new Object[]{it});
         }
       })) {
         SetSequence.fromSet(safeGet(this.myOverridingToOverridenMethodsMap, overridingMethod)).addElement(MultiTuple.<SNode,SNode>from(classifierMethod, classifier));
@@ -133,12 +132,8 @@ public class OverridingMethodsFinder {
     }
   }
 
-  public static Iterable<SNode> getInstanceMethods(final SNode containingClassifier) {
-    Iterable<SNode> result = Sequence.fromClosure(new ISequenceClosure<SNode>() {
-      public Iterable<SNode> iterable() {
-        return SLinkOperations.getTargets(containingClassifier, "method", true);
-      }
-    });
+  public static Iterable<SNode> getInstanceMethods(SNode containingClassifier) {
+    Iterable<SNode> result = SLinkOperations.getTargets(containingClassifier, "method", true);
     if (SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
       for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
         result = Sequence.fromIterable(result).concat(ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)));

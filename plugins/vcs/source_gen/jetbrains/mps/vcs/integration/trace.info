@@ -7,23 +7,23 @@
     <nodeInfo nodeId="7171758144016903359" fileName="ProjectCheckoutListener.java" startLine="28" startPosition="36" endLine="29" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3521790172251160982" fileName="ProjectCheckoutListener.java" startLine="31" startPosition="7" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3521790172251160984" fileName="ProjectCheckoutListener.java" startLine="33" startPosition="5" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="66" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectCheckoutListener#()V" />
+    <nodeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectCheckoutListener#()V" />
+    <nodeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7171758144016813677" fileName="ProjectCheckoutListener.java" startLine="27" startPosition="100" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="61" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3521790172251160918" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="78" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3521790172251160968" fileName="ProjectCheckoutListener.java" startLine="25" startPosition="219" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3521790172251160941" fileName="ProjectCheckoutListener.java" startLine="23" startPosition="7" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
+    <nodeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
     <scopeInfo nodeId="3521790172251160909" fileName="ProjectCheckoutListener.java" startLine="15" startPosition="36" endLine="15" endPosition="36" />
     <scopeInfo nodeId="3521790172251160991" fileName="ProjectCheckoutListener.java" startLine="37" startPosition="63" endLine="37" endPosition="63" />
     <scopeInfo nodeId="3521790172251160935" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="52" endLine="21" endPosition="60" />
     <scopeInfo nodeId="7171758144016813678" fileName="ProjectCheckoutListener.java" startLine="28" startPosition="36" endLine="29" endPosition="97" />
-    <scopeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="66" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="37" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="3521790172251160989" varName="lastOpenedProject" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="61" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3521790172251160931" varName="dir" />
       <varInfo nodeId="3521790172251160933" varName="name" />
     </scopeInfo>
@@ -36,7 +36,7 @@
     <scopeInfo nodeId="3521790172251160917" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="78" endLine="34" endPosition="17">
       <varInfo nodeId="3521790172251160919" varName="files" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="3521790172251160915" varName="directory" />
       <varInfo nodeId="3521790172251160913" varName="project" />
     </scopeInfo>
@@ -44,8 +44,8 @@
     <unitInfo nodeId="3521790172251160903" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener" />
   </root>
   <root nodeId="3521790172251226878" modelId="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)">
-    <nodeInfo nodeId="3521790172251226881" fileName="ModuleVcsPathPresenter.java" startLine="17" startPosition="62" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3521790172251226884" fileName="ModuleVcsPathPresenter.java" startLine="18" startPosition="34" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
+    <nodeInfo nodeId="3521790172251226881" fileName="ModuleVcsPathPresenter.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="3521790172251226884" fileName="ModuleVcsPathPresenter.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
     <nodeInfo nodeId="3521790172251226895" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="94" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3521790172251226899" fileName="ModuleVcsPathPresenter.java" startLine="22" startPosition="24" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3521790172251226914" fileName="ModuleVcsPathPresenter.java" startLine="27" startPosition="23" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -57,13 +57,13 @@
     <nodeInfo nodeId="3521790172251226909" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="71" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3521790172251226939" fileName="ModuleVcsPathPresenter.java" startLine="33" startPosition="30" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3521790172251226966" fileName="ModuleVcsPathPresenter.java" startLine="38" startPosition="57" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251226887" fileName="ModuleVcsPathPresenter.java" startLine="20" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleVcsPathPresenter#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;)V" />
-    <nodeInfo nodeId="3521790172251226998" fileName="ModuleVcsPathPresenter.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePath#(Lcom/intellij/openapi/vcs/changes/ContentRevision;Lcom/intellij/openapi/vcs/changes/ContentRevision;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3521790172251226998" fileName="ModuleVcsPathPresenter.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePath#(Lcom/intellij/openapi/vcs/changes/ContentRevision;Lcom/intellij/openapi/vcs/changes/ContentRevision;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3521790172251226887" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleVcsPathPresenter#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;)V" />
     <nodeInfo nodeId="3521790172251226934" fileName="ModuleVcsPathPresenter.java" startLine="32" startPosition="53" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3521790172251226959" fileName="ModuleVcsPathPresenter.java" startLine="37" startPosition="9" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3521790172251226924" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="87" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3521790172251226924" fileName="ModuleVcsPathPresenter.java" startLine="31" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
     <nodeInfo nodeId="3521790172251226916" fileName="ModuleVcsPathPresenter.java" startLine="29" startPosition="5" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="25" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePathFor#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePathFor#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
     <scopeInfo nodeId="3521790172251226913" fileName="ModuleVcsPathPresenter.java" startLine="27" startPosition="23" endLine="28" endPosition="16" />
     <scopeInfo nodeId="3521790172251226944" fileName="ModuleVcsPathPresenter.java" startLine="34" startPosition="56" endLine="35" endPosition="85" />
     <scopeInfo nodeId="3521790172251226973" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="58" endLine="40" endPosition="85" />
@@ -71,13 +71,13 @@
     <scopeInfo nodeId="3521790172251226894" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="94" endLine="23" endPosition="24" />
     <scopeInfo nodeId="3521790172251226938" fileName="ModuleVcsPathPresenter.java" startLine="33" startPosition="30" endLine="36" endPosition="11" />
     <scopeInfo nodeId="3521790172251226965" fileName="ModuleVcsPathPresenter.java" startLine="38" startPosition="57" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="3521790172251226887" fileName="ModuleVcsPathPresenter.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="3521790172251226892" varName="manager" />
-      <varInfo nodeId="3521790172251226890" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251226998" fileName="ModuleVcsPathPresenter.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="3521790172251226998" fileName="ModuleVcsPathPresenter.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3521790172251227001" varName="fromRevision" />
       <varInfo nodeId="3521790172251227003" varName="toRevision" />
+    </scopeInfo>
+    <scopeInfo nodeId="3521790172251226887" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3521790172251226892" varName="manager" />
+      <varInfo nodeId="3521790172251226890" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3521790172251226959" fileName="ModuleVcsPathPresenter.java" startLine="37" startPosition="9" endLine="42" endPosition="9">
       <varInfo nodeId="3521790172251226963" varName="root" />
@@ -85,9 +85,9 @@
     <scopeInfo nodeId="3521790172251226927" fileName="ModuleVcsPathPresenter.java" startLine="31" startPosition="31" endLine="43" endPosition="54">
       <varInfo nodeId="3521790172251226929" varName="baseDir" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251226924" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="87" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3521790172251226924" fileName="ModuleVcsPathPresenter.java" startLine="31" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3521790172251226908" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="71" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="25" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3521790172251226906" varName="file" />
     </scopeInfo>
     <unitInfo nodeId="3521790172251226922" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="65" endLine="45" endPosition="5" unitName="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter$1" />
@@ -106,21 +106,21 @@
     <nodeInfo nodeId="4093906047203397526" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="34" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203397523" fileName="GeneratedFilesExcludePolicy.java" startLine="44" startPosition="16" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4093906047203397531" fileName="GeneratedFilesExcludePolicy.java" startLine="48" startPosition="5" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="82" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFilesExcludePolicy#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFilesExcludePolicy#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="4093906047203397446" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="51" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4093906047203397507" fileName="GeneratedFilesExcludePolicy.java" startLine="37" startPosition="125" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4093906047203397519" fileName="GeneratedFilesExcludePolicy.java" startLine="41" startPosition="11" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4093906047203397487" fileName="GeneratedFilesExcludePolicy.java" startLine="34" startPosition="65" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4093906047203397475" fileName="GeneratedFilesExcludePolicy.java" startLine="32" startPosition="51" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="56" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="23" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllExcludeRoots#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="24" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllExcludeRoots#()Ljava/util/Set;" />
     <scopeInfo nodeId="4093906047203397512" fileName="GeneratedFilesExcludePolicy.java" startLine="40" startPosition="18" endLine="40" endPosition="18" />
     <scopeInfo nodeId="4093906047203397524" fileName="GeneratedFilesExcludePolicy.java" startLine="44" startPosition="18" endLine="44" endPosition="18" />
     <scopeInfo nodeId="4093906047203397438" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="67" endLine="21" endPosition="19" />
     <scopeInfo nodeId="4093906047203397452" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="91" endLine="28" endPosition="35" />
     <scopeInfo nodeId="4093906047203397513" fileName="GeneratedFilesExcludePolicy.java" startLine="38" startPosition="34" endLine="39" endPosition="33" />
     <scopeInfo nodeId="4093906047203397525" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="34" endLine="43" endPosition="33" />
-    <scopeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="82" endLine="22" endPosition="3">
+    <scopeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="4093906047203397435" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="4093906047203397491" fileName="GeneratedFilesExcludePolicy.java" startLine="35" startPosition="33" endLine="45" endPosition="11">
@@ -139,14 +139,14 @@
     <scopeInfo nodeId="4093906047203397445" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="51" endLine="49" endPosition="17">
       <varInfo nodeId="4093906047203397456" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="24" startPosition="0" endLine="51" endPosition="0" />
     <unitInfo nodeId="4093906047203397429" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy" />
   </root>
   <root nodeId="6203974263416579308" modelId="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)">
-    <nodeInfo nodeId="6203974263416590491" fileName="GeneratedFileConflictResolving.java" startLine="21" startPosition="78" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVcsManager" />
-    <nodeInfo nodeId="6203974263416606192" fileName="GeneratedFileConflictResolving.java" startLine="22" startPosition="46" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusManager" />
-    <nodeInfo nodeId="6203974263416606260" fileName="GeneratedFileConflictResolving.java" startLine="23" startPosition="48" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDirtyScopeManager" />
-    <nodeInfo nodeId="6203974263416607411" fileName="GeneratedFileConflictResolving.java" startLine="24" startPosition="51" endLine="25" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileListener" />
+    <nodeInfo nodeId="6203974263416590491" fileName="GeneratedFileConflictResolving.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVcsManager" />
+    <nodeInfo nodeId="6203974263416606192" fileName="GeneratedFileConflictResolving.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusManager" />
+    <nodeInfo nodeId="6203974263416606260" fileName="GeneratedFileConflictResolving.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDirtyScopeManager" />
+    <nodeInfo nodeId="6203974263416607411" fileName="GeneratedFileConflictResolving.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileListener" />
     <nodeInfo nodeId="6203974263416606269" fileName="GeneratedFileConflictResolving.java" startLine="27" startPosition="170" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6203974263416606276" fileName="GeneratedFileConflictResolving.java" startLine="28" startPosition="19" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6203974263416606285" fileName="GeneratedFileConflictResolving.java" startLine="29" startPosition="30" endLine="30" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -164,19 +164,19 @@
     <nodeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6203974263416588924" fileName="GeneratedFileConflictResolving.java" startLine="74" startPosition="57" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6203974263416588932" fileName="GeneratedFileConflictResolving.java" startLine="79" startPosition="60" endLine="80" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6203974263416588881" fileName="GeneratedFileConflictResolving.java" startLine="69" startPosition="59" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileListener#()V" />
+    <nodeInfo nodeId="6203974263416588881" fileName="GeneratedFileConflictResolving.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileListener#()V" />
     <nodeInfo nodeId="4959319918758774435" fileName="GeneratedFileConflictResolving.java" startLine="46" startPosition="37" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="62" startPosition="84" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6203974263416588856" fileName="GeneratedFileConflictResolving.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="6203974263416588852" fileName="GeneratedFileConflictResolving.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="6203974263416605686" fileName="GeneratedFileConflictResolving.java" startLine="53" startPosition="64" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6203974263416588856" fileName="GeneratedFileConflictResolving.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="6203974263416588852" fileName="GeneratedFileConflictResolving.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="6203974263416588893" fileName="GeneratedFileConflictResolving.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentsChanged#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
-    <nodeInfo nodeId="6203974263416588907" fileName="GeneratedFileConflictResolving.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeFileDeletion#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
-    <nodeInfo nodeId="6203974263416606264" fileName="GeneratedFileConflictResolving.java" startLine="26" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFileConflictResolving#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;Lcom/intellij/openapi/vcs/FileStatusManager;Lcom/intellij/openapi/vcs/changes/VcsDirtyScopeManager;)V" />
+    <nodeInfo nodeId="6203974263416588893" fileName="GeneratedFileConflictResolving.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentsChanged#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+    <nodeInfo nodeId="6203974263416588907" fileName="GeneratedFileConflictResolving.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeFileDeletion#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+    <nodeInfo nodeId="6203974263416606264" fileName="GeneratedFileConflictResolving.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFileConflictResolving#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;Lcom/intellij/openapi/vcs/FileStatusManager;Lcom/intellij/openapi/vcs/changes/VcsDirtyScopeManager;)V" />
+    <nodeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_tqtyvq_a0d0a0c#(Lcom/intellij/openapi/vcs/AbstractVcs;)Lcom/intellij/openapi/vcs/merge/MergeProvider;" />
     <nodeInfo nodeId="6203974263416593522" fileName="GeneratedFileConflictResolving.java" startLine="51" startPosition="87" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_tqtyvq_a0d0a0c#(Lcom/intellij/openapi/vcs/AbstractVcs;)Lcom/intellij/openapi/vcs/merge/MergeProvider;" />
     <nodeInfo nodeId="6203974263416588949" fileName="GeneratedFileConflictResolving.java" startLine="44" startPosition="52" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6203974263416588917" fileName="GeneratedFileConflictResolving.java" startLine="43" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveIfNeeded#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+    <nodeInfo nodeId="6203974263416588917" fileName="GeneratedFileConflictResolving.java" startLine="44" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveIfNeeded#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
     <scopeInfo nodeId="6203974263416588884" fileName="GeneratedFileConflictResolving.java" startLine="70" startPosition="29" endLine="70" endPosition="29" />
     <scopeInfo nodeId="6203974263416588859" fileName="GeneratedFileConflictResolving.java" startLine="35" startPosition="31" endLine="36" endPosition="76" />
     <scopeInfo nodeId="6203974263416588855" fileName="GeneratedFileConflictResolving.java" startLine="40" startPosition="34" endLine="41" endPosition="79" />
@@ -185,27 +185,27 @@
     <scopeInfo nodeId="6203974263416588898" fileName="GeneratedFileConflictResolving.java" startLine="74" startPosition="57" endLine="75" endPosition="29" />
     <scopeInfo nodeId="6203974263416588912" fileName="GeneratedFileConflictResolving.java" startLine="79" startPosition="60" endLine="80" endPosition="29" />
     <scopeInfo nodeId="6203974263416605688" fileName="GeneratedFileConflictResolving.java" startLine="54" startPosition="163" endLine="56" endPosition="46" />
-    <scopeInfo nodeId="6203974263416588881" fileName="GeneratedFileConflictResolving.java" startLine="69" startPosition="59" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="6203974263416588881" fileName="GeneratedFileConflictResolving.java" startLine="70" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="6203974263416606268" fileName="GeneratedFileConflictResolving.java" startLine="27" startPosition="170" endLine="31" endPosition="44" />
+    <scopeInfo nodeId="6203974263416588856" fileName="GeneratedFileConflictResolving.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6203974263416588852" fileName="GeneratedFileConflictResolving.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="62" startPosition="84" endLine="66" endPosition="16" />
-    <scopeInfo nodeId="6203974263416588856" fileName="GeneratedFileConflictResolving.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6203974263416588852" fileName="GeneratedFileConflictResolving.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="6203974263416588893" fileName="GeneratedFileConflictResolving.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="6203974263416588896" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="6203974263416588907" fileName="GeneratedFileConflictResolving.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6203974263416588910" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="6203974263416593523" fileName="GeneratedFileConflictResolving.java" startLine="52" startPosition="34" endLine="57" endPosition="9">
       <varInfo nodeId="6203974263416605724" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="6203974263416588893" fileName="GeneratedFileConflictResolving.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="6203974263416588896" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6203974263416588907" fileName="GeneratedFileConflictResolving.java" startLine="77" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="6203974263416588910" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6203974263416606264" fileName="GeneratedFileConflictResolving.java" startLine="26" startPosition="0" endLine="32" endPosition="3">
+    <scopeInfo nodeId="6203974263416606264" fileName="GeneratedFileConflictResolving.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6203974263416606292" varName="dirtyScopeManager" />
       <varInfo nodeId="6203974263416606283" varName="fileStatusManager" />
       <varInfo nodeId="6203974263416606270" varName="project" />
       <varInfo nodeId="6203974263416606274" varName="vcsManager" />
     </scopeInfo>
-    <scopeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="6203974263416606152" fileName="GeneratedFileConflictResolving.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="6203974263416606152" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="6203974263416588951" fileName="GeneratedFileConflictResolving.java" startLine="45" startPosition="59" endLine="58" endPosition="7">
@@ -213,7 +213,7 @@
       <varInfo nodeId="6203974263416606150" varName="mergeProvider" />
     </scopeInfo>
     <scopeInfo nodeId="6203974263416588920" fileName="GeneratedFileConflictResolving.java" startLine="44" startPosition="52" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="6203974263416588917" fileName="GeneratedFileConflictResolving.java" startLine="43" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="6203974263416588917" fileName="GeneratedFileConflictResolving.java" startLine="44" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6203974263416588922" varName="e" />
     </scopeInfo>
     <unitInfo nodeId="6203974263416588879" fileName="GeneratedFileConflictResolving.java" startLine="69" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.vcs.integration.GeneratedFileConflictResolving$MyFileListener" />

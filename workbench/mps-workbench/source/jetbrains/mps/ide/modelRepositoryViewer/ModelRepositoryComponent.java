@@ -33,11 +33,10 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Map;
 
 public class ModelRepositoryComponent {
@@ -111,7 +110,8 @@ public class ModelRepositoryComponent {
         super(null);
         myModelDescriptor = modelDescriptor;
         setNodeIdentifier(myModelDescriptor.getLongName());
-        for (ModelOwner owner : SModelRepository.getInstance().getOwners(myModelDescriptor)) {
+        SModule owner = SModelRepository.getInstance().getOwner(myModelDescriptor);
+        if (owner != null) {
           add(new OwnerTreeNode(owner));
         }
       }
@@ -129,9 +129,9 @@ public class ModelRepositoryComponent {
     }
 
     private class OwnerTreeNode extends MPSTreeNode {
-      private ModelOwner myOwner;
+      private SModule myOwner;
 
-      public OwnerTreeNode(ModelOwner owner) {
+      public OwnerTreeNode(SModule owner) {
         super(null);
         myOwner = owner;
         setNodeIdentifier(myOwner.toString());

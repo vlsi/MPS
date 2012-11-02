@@ -9,13 +9,13 @@
     <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="7" startPosition="59" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
     <scopeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="59">
       <varInfo nodeId="6585869519574764228" varName="testValue" />
     </scopeInfo>
-    <scopeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="7" startPosition="59" endLine="17" endPosition="0">
+    <scopeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="6585869519574764228" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_id_PropertySupport" />
@@ -27,13 +27,13 @@
     <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="7" startPosition="60" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
     <scopeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="41">
       <varInfo nodeId="7211731935130600900" varName="testValue" />
     </scopeInfo>
-    <scopeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="7" startPosition="60" endLine="17" endPosition="0">
+    <scopeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7211731935130600900" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_int_PropertySupport" />
@@ -45,13 +45,13 @@
     <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <scopeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
     <scopeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
     <scopeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="50">
       <varInfo nodeId="7211731935130600901" varName="testValue" />
     </scopeInfo>
-    <scopeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="7" startPosition="62" endLine="17" endPosition="0">
+    <scopeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7211731935130600901" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_float_PropertySupport" />

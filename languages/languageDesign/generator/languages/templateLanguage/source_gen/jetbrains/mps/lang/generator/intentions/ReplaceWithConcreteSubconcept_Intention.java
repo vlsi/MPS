@@ -19,7 +19,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.intentions.BaseIntention;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -105,7 +105,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Replace with instance of  " + BaseConcept_Behavior.call_getPresentation_1213877396640(myParameter) + " concept";
+      return "Replace with instance of  " + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " concept";
     }
 
     public boolean isApplicable(final SNode node, final EditorContext editorContext) {

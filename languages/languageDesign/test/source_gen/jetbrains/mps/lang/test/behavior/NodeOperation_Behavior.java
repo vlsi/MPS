@@ -4,14 +4,10 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeOperation_Behavior {
-  private static Class[] PARAMETERS_1217435265700 = {SNode.class};
-  private static Class[] PARAMETERS_1215601182156 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -31,34 +27,26 @@ public class NodeOperation_Behavior {
   }
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    return "test_" + NodeOperation_Behavior.call_getName_1217435265700(thisNode) + thisNode.getSNodeId().toString();
+    return "test_" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1217435265700", new Object[]{}) + thisNode.getSNodeId().toString();
   }
 
+  @Deprecated
   public static String call_getName_1217435265700(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1217435265700", new Object[]{});
   }
 
+  @Deprecated
   public static void call_perform_1215601182156(SNode thisNode, SNode node) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
-  }
-
-  public static String callSuperNew_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
-  }
-
-  public static void callSuperNew_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_1215601182156", new Object[]{node});
   }
 
   @Deprecated
   public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static void callSuper_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, new Object[]{node});
   }
 }

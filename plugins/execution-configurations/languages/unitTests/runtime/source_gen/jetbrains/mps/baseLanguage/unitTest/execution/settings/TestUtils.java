@@ -27,7 +27,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -209,11 +209,7 @@ __switch__:
       return null;
     }
 
-    SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(modelName));
-    if (modelDescriptor == null) {
-      return null;
-    }
-    return modelDescriptor;
+    return SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelName));
   }
 
   @Nullable

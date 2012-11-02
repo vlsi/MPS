@@ -27,7 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -184,7 +184,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         }
         SNode overridenMethod = SetSequence.fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, it, "call_hasSameSignature_1213877350435", new Class[]{SNode.class, SNode.class}, derivedClassifierMethod));
+            return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_hasSameSignature_1213877350435", new Object[]{derivedClassifierMethod});
           }
         });
         if (overridenMethod != null) {
@@ -217,13 +217,14 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       if (event instanceof SModelChildEvent) {
         SModelChildEvent childEvent = (SModelChildEvent) event;
         SNode child = childEvent.getChild();
+        SNode parent = childEvent.getParent();
         String childRole = childEvent.getChildRole();
         // Class or Interface was added/removed 
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
           return true;
         }
         // method was added/removed from containing Classifier 
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), "role").equals(childRole)) {
+        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           return true;
         }
         // one of extendedInterface/superclass/implementedInterface child elements was added/removed 
@@ -271,15 +272,15 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
       return getEnumConstantPresentation(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
     }
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   private String getClassifierPresentation(SNode classifier) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   private String getEnumConstantPresentation(SNode enumConstantDeclaration) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, enumConstantDeclaration, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeVirtual(String.class, enumConstantDeclaration, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   private static boolean isParameterType(SNode type) {

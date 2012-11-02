@@ -19,11 +19,11 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.util.Icons;
 import com.intellij.ui.RowIcon;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -115,15 +115,15 @@ public class IconManager {
         if (model == null || model.isDisposed()) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) model.getModelDescriptor()).isReadOnly()) {
+        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) model.getModelDescriptor()).isReadOnly()) {
           mainIcon = new LayeredIcon(mainIcon, Icons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
         if (!(withoutAdditional)) {
-          result.setIcon(((Icon) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class})), 1);
+          result.setIcon(BehaviorReflection.invokeVirtual(Icon.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{}), 1);
         }
-        List<Icon> markIcons = ((List<Icon>) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}));
+        List<Icon> markIcons = BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), node, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
         if (markIcons != null) {
           LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
           layeredIcon.setIcon(result, 0);

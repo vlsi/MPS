@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MappingType_Behavior {
@@ -12,6 +12,6 @@ public class MappingType_Behavior {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SConceptPropertyOperations.getString(thisNode, "alias") + "<" + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "keyType", true)) + ", " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "valueType", true)) + ">";
+    return SConceptPropertyOperations.getString(thisNode, "alias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "keyType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ", " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "valueType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
 }

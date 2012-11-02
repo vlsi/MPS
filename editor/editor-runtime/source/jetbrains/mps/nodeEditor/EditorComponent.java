@@ -60,7 +60,6 @@ import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -853,9 +852,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         clearModelDisposedTrace();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (myNode != null && jetbrains.mps.util.SNodeOperations.isRegistered(myNode)) {
-          myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
-          myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+        if (myNode != null && myNode.getModel() != null && myNode.getModel().isRegistered()) {
+          myNodePointer = new SNodePointer(myNode);
+          myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         } else {
           myNodePointer = null;
           myVirtualFile = null;
@@ -1339,7 +1338,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null && !AuxilaryRuntimeModel.isAuxModel(myNode.getModel())) {
+    if (myNode != null && !myNode.isDeleted() && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
@@ -1377,7 +1376,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode node : nodes) {
       SModel model = node.getModel();
-      if (model==null) continue;
+      if (model == null) continue;
 
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor == null) continue;

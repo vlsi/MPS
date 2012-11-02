@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ConcreteReferencePart_Behavior {
@@ -21,7 +22,7 @@ public class ConcreteReferencePart_Behavior {
     } else {
       SPropertyOperations.set(linkDeclaration, "sourceCardinality", "1");
     }
-    SLinkOperations.setTarget(linkDeclaration, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "conceptReference", true), conceptsToTargets), false);
+    SLinkOperations.setTarget(linkDeclaration, "target", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "conceptReference", true), "virtual_getConcept_1238594571574", new Object[]{conceptsToTargets}), false);
     MapSequence.fromMap(partsToLinks).put(thisNode, linkDeclaration);
   }
 }

@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MultiForEachStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -31,6 +31,6 @@ public class MultiForEachStatement_Behavior {
         }), ScopeUtils.lazyParentScope(thisNode, kind));
       }
     }
-    return ScopeProvider_Behavior.callSuperNew_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", kind, child);
+    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
 }

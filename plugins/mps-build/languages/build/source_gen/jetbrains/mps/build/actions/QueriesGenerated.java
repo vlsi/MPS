@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
-import jetbrains.mps.build.behavior.BuildRelativePath_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -39,7 +38,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import java.util.regex.Matcher;
-import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -79,7 +77,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourcePath_2725562405081831808(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    String localPath = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(_context.getSourceNode(), Context.defaultContext());
+    String localPath = BehaviorReflection.invokeVirtual(String.class, _context.getSourceNode(), "virtual_getLocalPath_5481553824944787364", new Object[]{Context.defaultContext()});
     if ((localPath == null || localPath.length() == 0)) {
       return false;
     }
@@ -190,7 +188,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.build.structure.BuildRelativePath", false, false), Context.defaultContext()));
+            return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
           }
         };
         Iterable<String> queryResult = (Iterable) computable.compute();
@@ -349,10 +347,10 @@ public class QueriesGenerated {
                   _context.getParentNode()
                 );
                 if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildStringContainer")) {
-                  if (BuildStringContainer_Behavior.call_isValidPart_9184644532456897464(SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
+                  if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", new Object[]{pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
                     _context.getParentNode().getRole() :
                     _context.getCurrentTargetNode().getRole()
-                  ))) {
+                  )})) {
                     return pattern;
                   }
                 } else if (!(pattern.contains("$"))) {

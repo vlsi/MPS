@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -139,7 +139,7 @@ public class EventPropertyGetter_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_w9w689_d0b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", true));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", true), "virtual_getPresentation_1213877396640", new Object[]{});
       }
 
       public void setText(String s) {

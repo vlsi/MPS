@@ -31,11 +31,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
@@ -216,12 +216,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Tuples._2<SNode, Boolean> resolveMethod(SNode methodCall, String name) {
-    if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, methodCall, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Class[]{SNode.class}))) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, methodCall, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{})) {
       return resolveMethodUsingScopes(methodCall, name);
     }
 
-    List<SNode> candidates = getCandidates(methodCall, name);
-    if (candidates == null || candidates.isEmpty()) {
+    Iterable<SNode> candidates = getCandidates(methodCall, name);
+    if (candidates == null || Sequence.fromIterable(candidates).isEmpty()) {
       return MultiTuple.<SNode,Boolean>from((SNode) null, false);
     }
     Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
@@ -273,12 +273,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return ((Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Class[]{SNode.class}));
+    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
   }
 
-  public List<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
-    List<SNode> availableMethodDeclarations = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
-    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+  public Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
+    Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Object[]{});
     return availableMethodDeclarations;
   }
 

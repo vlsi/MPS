@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -15,13 +15,11 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.LocalArtifacts;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -44,7 +42,7 @@ import jetbrains.mps.build.util.LocalSourcePathArtifact;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1500819558096430320(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(_context.getNode());
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isCompilable_7454762407073969360", new Object[]{});
   }
 
   public static boolean baseMappingRule_Condition_2591537044436204156(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -64,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_6592112598315069773(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(_context.getNode().isRegistered());
+    return !(_context.getNode().getModel() != null);
   }
 
   public static boolean baseMappingRule_Condition_4034578608468849381(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -72,7 +70,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_6592112598315069890(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(_context.getNode().isRegistered());
+    return !(_context.getNode().getModel() != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1500819558096225938(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -111,10 +109,10 @@ public class QueriesGenerated {
       return "???";
     }
     SNode path = SLinkOperations.getTarget(_context.getNode(), "targetPath", false);
-    final String pathText = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(path);
+    final String pathText = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getRelativePath_5481553824944787371", new Object[]{});
     String result = ListSequence.fromList(SLinkOperations.getTargets(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), "jarLocations", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a3a41(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
+        return eq_x583g4_a0a0a0a0a0a0a3a41(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -128,7 +126,7 @@ public class QueriesGenerated {
     LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
     Tuples._2<SNode, String> location = outputFiles.getResource(path);
     if (location._0() == null) {
-      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      String jarName = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(path)});
       _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
       return "???";
     }
@@ -136,7 +134,7 @@ public class QueriesGenerated {
     try {
       return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(location._0(), "jetbrains.mps.build.structure.BuildLayout_Node")) + location._1();
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
-      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      String jarName = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(path)});
       _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
       return "";
     }
@@ -148,10 +146,10 @@ public class QueriesGenerated {
       return "???";
     }
     SNode path = SLinkOperations.getTarget(_context.getNode(), "targetPath", false);
-    final String pathText = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(path);
+    final String pathText = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getRelativePath_5481553824944787371", new Object[]{});
     String result = ListSequence.fromList(SLinkOperations.getTargets(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), "jarLocations", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a3a51(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
+        return eq_x583g4_a0a0a0a0a0a0a3a51(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -165,7 +163,7 @@ public class QueriesGenerated {
     LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
     Tuples._2<SNode, String> location = outputFiles.getResource(path);
     if (location._0() == null) {
-      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      String jarName = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(path)});
       _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
       return "???";
     }
@@ -173,7 +171,7 @@ public class QueriesGenerated {
     try {
       return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(location._0(), "jetbrains.mps.build.structure.BuildLayout_Node")) + location._1();
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
-      String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
+      String jarName = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(path)});
       _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
       return "";
     }
@@ -184,14 +182,14 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4743026300739110547(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(_context.getNode())});
   }
 
   public static Object propertyMacro_GetPropertyValue_8654221991637263445(final IOperationContext operationContext, final PropertyMacroContext _context) {
     try {
-      String relative = ((RelativePathHelper) _context.getVariable("var:modulePath")).makeRelative(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(_context.getNode(), "folder", true), Context.defaultContext(_context)));
+      String relative = ((RelativePathHelper) _context.getVariable("var:modulePath")).makeRelative(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "folder", true), "virtual_getLocalPath_5481553824944787364", new Object[]{Context.defaultContext(_context)}));
       if (relative == null) {
-        _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "folder", true), "model root folder should be placed under module: " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "folder", true)));
+        _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "folder", true), "model root folder should be placed under module: " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "folder", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
       return relative;
     } catch (RelativePathHelper.PathException ex) {
@@ -221,7 +219,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name") + " was not found in the layout");
       return "???";
     }
-    String val = BuildLayout_PathElement_Behavior.call_location_7117056644539862594(layoutNode, helper, artifact);
+    String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, artifact});
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name"));
       return "???";
@@ -273,7 +271,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462106(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "splashScreen", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "splashScreen", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462141(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -281,23 +279,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462063(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "aboutScreen", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "aboutScreen", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462314(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462338(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon16", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon16", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462361(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_8108467228800460452(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "dialogImage", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "dialogImage", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084462431(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -317,11 +315,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084452948(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "welcomeCaption", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "welcomeCaption", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084461752(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "welcomeSlogan", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "welcomeSlogan", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
   public static Object propertyMacro_GetPropertyValue_1462305029084452900(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -365,7 +363,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7832771629085134957(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode icon16 = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "icon16", true);
-    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(icon16, Context.defaultContext(_context).getMacros(_context.getNode()));
+    return "/" + BehaviorReflection.invokeVirtual(String.class, icon16, "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(_context.getNode())});
   }
 
   public static Object propertyMacro_GetPropertyValue_7832771629085133854(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -453,7 +451,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2794582399917924015(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(SLinkOperations.getTarget(_context.getNode(), "module", false));
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "module", false), "virtual_isCompilable_7454762407073969360", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_2540145662854694255(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -517,7 +515,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1462305029084461806(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a09(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a09(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
   }
 
   public static boolean ifMacro_Condition_7832771629085134029(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -553,7 +551,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8654221991637113346(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BuildSourcePath_Behavior.call_getParent_8654221991637145399(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getParent_8654221991637145399", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_8654221991637263395(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -561,7 +559,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2540145662854694242(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BuildSourcePath_Behavior.call_getParent_8654221991637145399(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getParent_8654221991637145399", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_2540145662854694674(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -648,7 +646,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(it);
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isCompilable_7454762407073969360", new Object[]{});
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -1030,7 +1028,7 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_8654221991637263463(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return new RelativePathHelper(BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), Context.defaultContext(_context)));
+    return new RelativePathHelper(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{Context.defaultContext(_context)}));
   }
 
   public static Object insertMacro_varValue_6859736767834869981(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1047,23 +1045,23 @@ public class QueriesGenerated {
       StringBuilder suffix = new StringBuilder();
       SNode current = SNodeOperations.as(path, "jetbrains.mps.build.structure.BuildRelativePath");
       if (current != null) {
-        suffix.append("/").append(BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, null));
-        current = SNodeOperations.as(BuildSourcePath_Behavior.call_getParent_8654221991637145399(current), "jetbrains.mps.build.structure.BuildRelativePath");
+        suffix.append("/").append(BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{null}));
+        current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
       }
       SNode containingRoot = SNodeOperations.getContainingRoot(path);
       while (current != null) {
-        SNode res = helper.artifacts().get(new LocalSourcePathArtifact(containingRoot, BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(current), true));
+        SNode res = helper.artifacts().get(new LocalSourcePathArtifact(containingRoot, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getRelativePath_5481553824944787371", new Object[]{}), true));
         if (res != null) {
           return MultiTuple.<SNode,String>from(SNodeOperations.as(res, "jetbrains.mps.build.structure.BuildLayout_Node"), suffix.substring(1));
         }
 
-        suffix.insert(0, BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(current, null)).insert(0, "/");
-        current = SNodeOperations.as(BuildSourcePath_Behavior.call_getParent_8654221991637145399(current), "jetbrains.mps.build.structure.BuildRelativePath");
+        suffix.insert(0, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getLastSegment_1368030936106771141", new Object[]{null})).insert(0, "/");
+        current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
       }
     }
 
     if (layoutNode == null || !(SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_File"))) {
-      _context.showErrorMessage(_context.getNode(), "path " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(((SNode) _context.getVariable("remotePath"))) + " was not found in the layout");
+      _context.showErrorMessage(_context.getNode(), "path " + BehaviorReflection.invokeVirtual(String.class, ((SNode) _context.getVariable("remotePath")), "virtual_getRelativePath_5481553824944787371", new Object[]{}) + " was not found in the layout");
       return null;
     }
     return MultiTuple.<SNode,Object>from(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_File"), null);

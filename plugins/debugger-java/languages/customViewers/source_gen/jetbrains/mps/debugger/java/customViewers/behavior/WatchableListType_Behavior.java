@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,12 +18,12 @@ public class WatchableListType_Behavior {
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    IGenericType_Behavior.callSuperNew_collectGenericSubstitutions_4107091686347010321(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions);
-    IGenericType_Behavior.call_collectGenericSubstitutions_4107091686347010321(new WatchableListType_Behavior.QuotationClass_za89pk_a0a1a1().createNode(), substitutions);
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+    BehaviorReflection.invokeVirtual(Void.class, new WatchableListType_Behavior.QuotationClass_za89pk_a1a1a1().createNode(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
   }
 
-  public static class QuotationClass_za89pk_a0a1a1 {
-    public QuotationClass_za89pk_a0a1a1() {
+  public static class QuotationClass_za89pk_a1a1a1 {
+    public QuotationClass_za89pk_a1a1a1() {
     }
 
     public SNode createNode() {

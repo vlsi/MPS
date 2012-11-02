@@ -42,6 +42,15 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.StateUtil" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer" />
   </dependency>
+  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer" file="ModelRootRenderer.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
+  </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleImportRenderer" file="ModuleImportRenderer.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />

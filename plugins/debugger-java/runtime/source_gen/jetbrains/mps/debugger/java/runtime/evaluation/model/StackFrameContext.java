@@ -32,7 +32,7 @@ import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaThisObject;
@@ -180,9 +180,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
     if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}))), true);
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Object[]{})), true);
     } else if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
-      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", new Class[]{SNode.class}))), true);
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", new Object[]{})), true);
     } else {
       SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, null), true);
     }
@@ -296,7 +296,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if ((staticContextTypeName == null || staticContextTypeName.length() == 0)) {
       return false;
     }
-    return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
+    return staticContextTypeName.equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}));
   }
 
   private static String check_4zsmpx_a0a6a5(SNodeId checkedDotOperand) {

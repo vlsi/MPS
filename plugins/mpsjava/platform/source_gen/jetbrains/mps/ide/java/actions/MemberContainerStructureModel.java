@@ -7,8 +7,8 @@ import com.intellij.ide.structureView.StructureViewModel;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.ide.structureView.ModelListener;
@@ -21,7 +21,7 @@ public class MemberContainerStructureModel extends NodeTreeModel implements Stru
 
   public MemberContainerStructureModel(SNode memberContainer) {
     container = new SNodePointer(memberContainer);
-    members = ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, memberContainer, "virtual_getMembers_1213877531970", new Class[]{SNode.class}))).select(new ISelector<SNode, SNodePointer>() {
+    members = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), memberContainer, "virtual_getMembers_1213877531970", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
       public SNodePointer select(SNode it) {
         return new SNodePointer(it);
       }

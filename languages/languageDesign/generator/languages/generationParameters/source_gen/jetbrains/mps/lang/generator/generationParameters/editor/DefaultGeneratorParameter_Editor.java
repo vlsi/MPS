@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -71,7 +71,7 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_95jom2_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return IGeneratorParameter_Behavior.call_getUniqueId_650531548511609559(node);
+        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getUniqueId_650531548511609559", new Object[]{});
       }
 
       public void setText(String s) {

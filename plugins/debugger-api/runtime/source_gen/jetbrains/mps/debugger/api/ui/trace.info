@@ -20,23 +20,23 @@
     <nodeInfo nodeId="2392684134639615017" fileName="DebugActionsUtil.java" startLine="59" startPosition="44" endLine="60" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2392684134639615051" fileName="DebugActionsUtil.java" startLine="67" startPosition="26" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2392684134639615053" fileName="DebugActionsUtil.java" startLine="69" startPosition="5" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2392684134639614909" fileName="DebugActionsUtil.java" startLine="19" startPosition="31" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugActionsUtil#()V" />
+    <nodeInfo nodeId="2392684134639614909" fileName="DebugActionsUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugActionsUtil#()V" />
     <nodeInfo nodeId="2392684134639614940" fileName="DebugActionsUtil.java" startLine="31" startPosition="80" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2392684134639614996" fileName="DebugActionsUtil.java" startLine="52" startPosition="19" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2392684134639615046" fileName="DebugActionsUtil.java" startLine="66" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2392684134639615027" fileName="DebugActionsUtil.java" startLine="61" startPosition="7" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2392684134639614913" fileName="DebugActionsUtil.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/AbstractDebugSession;" />
     <nodeInfo nodeId="2392684134639615012" fileName="DebugActionsUtil.java" startLine="56" startPosition="117" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2392684134639614913" fileName="DebugActionsUtil.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/AbstractDebugSession;" />
-    <nodeInfo nodeId="2392684134639614952" fileName="DebugActionsUtil.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/DataContext;)Ljetbrains/mps/debug/api/AbstractDebugSession;" />
-    <nodeInfo nodeId="2392684134639614929" fileName="DebugActionsUtil.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEvaluationProvider#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" />
+    <nodeInfo nodeId="2392684134639614952" fileName="DebugActionsUtil.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/DataContext;)Ljetbrains/mps/debug/api/AbstractDebugSession;" />
+    <nodeInfo nodeId="2392684134639614929" fileName="DebugActionsUtil.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEvaluationProvider#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" />
     <nodeInfo nodeId="2392684134639614994" fileName="DebugActionsUtil.java" startLine="51" startPosition="10" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2392684134639614990" fileName="DebugActionsUtil.java" startLine="47" startPosition="34" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2392684134639614977" fileName="DebugActionsUtil.java" startLine="44" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSession;" />
+    <nodeInfo nodeId="2392684134639614977" fileName="DebugActionsUtil.java" startLine="45" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSession;" />
     <scopeInfo nodeId="2392684134639614912" fileName="DebugActionsUtil.java" startLine="20" startPosition="29" endLine="20" endPosition="29" />
     <scopeInfo nodeId="2392684134639614944" fileName="DebugActionsUtil.java" startLine="32" startPosition="31" endLine="33" endPosition="50" />
     <scopeInfo nodeId="2392684134639615000" fileName="DebugActionsUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="20" />
     <scopeInfo nodeId="2392684134639615050" fileName="DebugActionsUtil.java" startLine="67" startPosition="26" endLine="68" endPosition="18" />
-    <scopeInfo nodeId="2392684134639614909" fileName="DebugActionsUtil.java" startLine="19" startPosition="31" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="2392684134639614909" fileName="DebugActionsUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="2392684134639614918" fileName="DebugActionsUtil.java" startLine="24" startPosition="75" endLine="26" endPosition="57">
       <varInfo nodeId="2392684134639614920" varName="dataContext" />
     </scopeInfo>
@@ -46,16 +46,16 @@
       <varInfo nodeId="2392684134639614959" varName="runContentDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="2392684134639615016" fileName="DebugActionsUtil.java" startLine="57" startPosition="29" endLine="60" endPosition="145" />
+    <scopeInfo nodeId="2392684134639614913" fileName="DebugActionsUtil.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2392684134639614916" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="2392684134639614934" fileName="DebugActionsUtil.java" startLine="30" startPosition="80" endLine="35" endPosition="16">
       <varInfo nodeId="2392684134639614936" varName="debugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="2392684134639614913" fileName="DebugActionsUtil.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="2392684134639614916" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2392684134639614952" fileName="DebugActionsUtil.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="2392684134639614952" fileName="DebugActionsUtil.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2392684134639614955" varName="dataContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2392684134639614929" fileName="DebugActionsUtil.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="2392684134639614929" fileName="DebugActionsUtil.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2392684134639614932" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="2392684134639614995" fileName="DebugActionsUtil.java" startLine="51" startPosition="12" endLine="65" endPosition="9">
@@ -64,7 +64,7 @@
     <scopeInfo nodeId="2392684134639614986" fileName="DebugActionsUtil.java" startLine="46" startPosition="134" endLine="70" endPosition="93">
       <varInfo nodeId="2392684134639614988" varName="processHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="2392684134639614977" fileName="DebugActionsUtil.java" startLine="44" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2392684134639614977" fileName="DebugActionsUtil.java" startLine="45" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="2392684134639614983" varName="project" />
       <varInfo nodeId="2392684134639614980" varName="runContentDescriptor" />
     </scopeInfo>

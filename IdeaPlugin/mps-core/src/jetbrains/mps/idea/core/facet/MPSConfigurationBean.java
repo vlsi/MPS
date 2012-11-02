@@ -17,12 +17,16 @@
 package jetbrains.mps.idea.core.facet;
 
 import com.intellij.util.xmlb.annotations.Transient;
+import jetbrains.mps.persistence.PathAwareJDOMMemento;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import org.jdom.Element;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -77,12 +81,23 @@ public class MPSConfigurationBean {
   }
 
   public Collection<ModelRoot> getModelRoots() {
-    return new HashSet(myDescriptor.getModelRoots());
+    List<ModelRoot> roots = new ArrayList<ModelRoot>();
+    for (ModelRootDescriptor modelRootDescriptor : myDescriptor.getModelRootDescriptors()) {
+      ModelRoot root = modelRootDescriptor.getRoot();
+      if (root != null) {
+        roots.add(root);
+      }
+    }
+    return roots;
   }
 
   public void setModelRoots(Collection<ModelRoot> paths) {
-    myDescriptor.getModelRoots().clear();
-    myDescriptor.getModelRoots().addAll(paths);
+    myDescriptor.getModelRootDescriptors().clear();
+    for (ModelRoot path : paths) {
+      ModelRootDescriptor descr = new ModelRootDescriptor(null, new PathAwareJDOMMemento(new Element("modelRoot"), null));
+      path.save(descr.getMemento());
+      myDescriptor.getModelRootDescriptors().add(descr);
+    }
   }
 
   public String[] getUsedLanguages() {

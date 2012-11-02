@@ -8,12 +8,12 @@ public class CellModel_Error_BehaviorDescriptor extends CellModel_AbstractLabel_
   public CellModel_Error_BehaviorDescriptor() {
   }
 
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_Error_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_Error_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_Error_Behavior.virtual_getOpeningText_1220339714057(thisNode);
   }
 
   @Override

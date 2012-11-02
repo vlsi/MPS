@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public interface IGenericFeatureDesign extends IFeatureDesign {
   public SNode getterExpression(SNode srcExpr, ITemplateGenerator generator);
+
   public static class Stub implements IGenericFeatureDesign {
     public Stub() {
     }
@@ -15,5 +16,4 @@ public interface IGenericFeatureDesign extends IFeatureDesign {
       return null;
     }
   }
-
 }

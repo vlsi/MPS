@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -71,8 +71,12 @@ public class QueriesGenerated {
     return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_6718223406753534151(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes");
+  }
+
   public static Object propertyMacro_GetPropertyValue_647666612127803317(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "forConcept", false));
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "forConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_647666612127821457(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -88,7 +92,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_647666612127856323(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SModelOperations.getModuleStub(SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(_context.getNode()))));
+    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6718223406754383666(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -97,10 +101,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6718223406754383679(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getSNodeId().toString();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_6718223406753534151(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes");
   }
 
   public static Object referenceMacro_GetReferent_5264392666049409975(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -134,10 +134,6 @@ public class QueriesGenerated {
     }).first() != null);
   }
 
-  public static boolean ifMacro_Condition_647666612127881320(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "isErrorIntention");
-  }
-
   public static boolean ifMacro_Condition_6718223406753527923(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
   }
@@ -156,6 +152,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_6718223406753528027(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes") && (SLinkOperations.getTarget(_context.getNode(), "childFilterFunction", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_647666612127881320(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isErrorIntention");
   }
 
   public static SNode sourceNodeQuery_5264392666049483255(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

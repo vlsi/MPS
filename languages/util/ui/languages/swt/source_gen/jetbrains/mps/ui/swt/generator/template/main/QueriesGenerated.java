@@ -18,7 +18,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.ui.swt.generator.template.helper.SWTTransientValues;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
-import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -365,15 +365,15 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_6991444902044111418(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setTarget(SNodeOperations.cast(_context.getOutputNode(), "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"), "template", HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()), false);
+    SLinkOperations.setTarget(SNodeOperations.cast(_context.getOutputNode(), "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"), "template", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()}), false);
   }
 
   public static void mapSrcMacro_post_mapper_6991444902044111458(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setTarget(SNodeOperations.cast(_context.getOutputNode(), "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"), "template", HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()), false);
+    SLinkOperations.setTarget(SNodeOperations.cast(_context.getOutputNode(), "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"), "template", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()}), false);
   }
 
   public static void mapSrcMacro_post_mapper_6991444902044111494(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setTarget(SNodeOperations.cast(_context.getOutputNode(), "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"), "template", HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()), false);
+    SLinkOperations.setTarget(SNodeOperations.cast(_context.getOutputNode(), "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"), "template", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()}), false);
   }
 
   public static class QuotationClass_x583g4_a0a0gc {

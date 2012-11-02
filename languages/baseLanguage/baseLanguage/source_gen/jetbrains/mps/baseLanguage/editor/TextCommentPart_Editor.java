@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.behavior.CommentPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class TextCommentPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -58,7 +58,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
   }
 
   private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, EditorContext editorContext) {
-    if (CommentPart_Behavior.call_isToDo_7236590470026152831(node)) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isToDo_7236590470026152831", new Object[]{})) {
       return Color.BLUE;
     } else {
       return Color.GRAY;

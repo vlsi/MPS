@@ -4,17 +4,17 @@ package jetbrains.mps.core.xml.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlWhitespace_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    boolean needNewLine = XmlPart_Behavior.call_onNewLine_2133624044437631588(node);
+    boolean needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
     if (!(needNewLine)) {
       SNode left = SNodeOperations.getPrevSibling(node);
       if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPrologElement")) {
-        needNewLine = XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
+        needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPrologElement"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
       }
     }
     if (needNewLine) {

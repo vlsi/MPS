@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4226637275972869608" modelId="r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)">
-    <nodeInfo nodeId="4226637275972869621" fileName="Complex.java" startLine="6" startPosition="22" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="re" />
-    <nodeInfo nodeId="4226637275972869627" fileName="Complex.java" startLine="7" startPosition="24" endLine="8" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="im" />
+    <nodeInfo nodeId="4226637275972869621" fileName="Complex.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="re" />
+    <nodeInfo nodeId="4226637275972869627" fileName="Complex.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="im" />
     <nodeInfo nodeId="4226637275972869642" fileName="Complex.java" startLine="13" startPosition="39" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4226637275972869651" fileName="Complex.java" startLine="14" startPosition="16" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4226637275972869664" fileName="Complex.java" startLine="18" startPosition="25" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4226637275972869674" fileName="Complex.java" startLine="22" startPosition="25" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4226637275972869685" fileName="Complex.java" startLine="26" startPosition="23" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4226637275972869610" fileName="Complex.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Complex#()V" />
-    <nodeInfo nodeId="4226637275972869659" fileName="Complex.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIm#()D" />
-    <nodeInfo nodeId="4226637275972869669" fileName="Complex.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRe#()D" />
-    <nodeInfo nodeId="4226637275972869678" fileName="Complex.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#()V" />
-    <nodeInfo nodeId="4226637275972869633" fileName="Complex.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(DD)V" />
+    <nodeInfo nodeId="4226637275972869610" fileName="Complex.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Complex#()V" />
+    <nodeInfo nodeId="4226637275972869659" fileName="Complex.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIm#()D" />
+    <nodeInfo nodeId="4226637275972869669" fileName="Complex.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRe#()D" />
+    <nodeInfo nodeId="4226637275972869678" fileName="Complex.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#()V" />
+    <nodeInfo nodeId="4226637275972869633" fileName="Complex.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(DD)V" />
     <scopeInfo nodeId="4226637275972869613" fileName="Complex.java" startLine="10" startPosition="20" endLine="10" endPosition="20" />
     <scopeInfo nodeId="4226637275972869662" fileName="Complex.java" startLine="18" startPosition="25" endLine="19" endPosition="19" />
     <scopeInfo nodeId="4226637275972869672" fileName="Complex.java" startLine="22" startPosition="25" endLine="23" endPosition="19" />
     <scopeInfo nodeId="4226637275972869681" fileName="Complex.java" startLine="26" startPosition="23" endLine="27" endPosition="54" />
-    <scopeInfo nodeId="4226637275972869610" fileName="Complex.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="4226637275972869610" fileName="Complex.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <scopeInfo nodeId="4226637275972869636" fileName="Complex.java" startLine="13" startPosition="39" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="4226637275972869659" fileName="Complex.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869669" fileName="Complex.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869678" fileName="Complex.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869633" fileName="Complex.java" startLine="12" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="4226637275972869659" fileName="Complex.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="4226637275972869669" fileName="Complex.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4226637275972869678" fileName="Complex.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4226637275972869633" fileName="Complex.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="4226637275972869639" varName="i" />
       <varInfo nodeId="4226637275972869637" varName="r" />
     </scopeInfo>
@@ -44,12 +44,12 @@
     <nodeInfo nodeId="4888428037514423988" fileName="TestComplex.java" startLine="23" startPosition="93" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2673276898228773531" fileName="TestComplex.java" startLine="25" startPosition="5" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2673276898228773758" fileName="TestComplex.java" startLine="26" startPosition="63" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="6" startPosition="26" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestComplex#()V" />
+    <nodeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestComplex#()V" />
     <nodeInfo nodeId="4888428037514423986" fileName="TestComplex.java" startLine="22" startPosition="0" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="10" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="4226637275972869619" fileName="TestComplex.java" startLine="7" startPosition="24" endLine="7" endPosition="24" />
     <scopeInfo nodeId="4888428037514423987" fileName="TestComplex.java" startLine="23" startPosition="93" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="6" startPosition="26" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <scopeInfo nodeId="4226637275972870387" fileName="TestComplex.java" startLine="10" startPosition="42" endLine="27" endPosition="63">
       <varInfo nodeId="4226637275972870395" varName="a" />
       <varInfo nodeId="4226637275972873358" varName="b" />
@@ -57,7 +57,7 @@
       <varInfo nodeId="162210779026732168" varName="d" />
       <varInfo nodeId="4888428037514421012" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="10" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4226637275972870388" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="4226637275972869614" fileName="TestComplex.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.TestComplex" />
@@ -78,14 +78,14 @@
     <nodeInfo nodeId="2673276898228773427" fileName="ComplexOperators.java" startLine="34" startPosition="82" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2673276898228773433" fileName="ComplexOperators.java" startLine="35" startPosition="32" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2673276898228773424" fileName="ComplexOperators.java" startLine="36" startPosition="56" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="6" startPosition="31" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComplexOperators#()V" />
-    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="9" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_PlusExpression_Complex_Complex#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;" />
-    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_MulExpression_Complex_Complex#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;" />
-    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_PlusExpression_Complex_Complex2#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;" />
-    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_PlusExpression_Complex2_Complex2#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;" />
-    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_MulExpression_int_Complex#(ILjetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;" />
+    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComplexOperators#()V" />
+    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="10" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_PlusExpression_Complex_Complex#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;" />
+    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_MulExpression_Complex_Complex#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;" />
+    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_PlusExpression_Complex_Complex2#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;" />
+    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_PlusExpression_Complex2_Complex2#(Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2;" />
+    <nodeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_MulExpression_int_Complex#(ILjetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;)Ljetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex;" />
     <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="7" startPosition="29" endLine="7" endPosition="29" />
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="6" startPosition="31" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <scopeInfo nodeId="4226637275972873401" fileName="ComplexOperators.java" startLine="10" startPosition="91" endLine="13" endPosition="15">
       <varInfo nodeId="4226637275972873408" varName="res" />
     </scopeInfo>
@@ -101,23 +101,23 @@
     <scopeInfo nodeId="2673276898228773419" fileName="ComplexOperators.java" startLine="34" startPosition="82" endLine="37" endPosition="15">
       <varInfo nodeId="2673276898228773428" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="9" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="10" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4226637275972869620" varName="left" />
       <varInfo nodeId="4226637275972869620" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4226637275972869620" varName="left" />
       <varInfo nodeId="4226637275972869620" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="4226637275972869620" varName="left" />
       <varInfo nodeId="4226637275972869620" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4226637275972869620" varName="left" />
       <varInfo nodeId="4226637275972869620" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4226637275972869620" fileName="ComplexOperators.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="4226637275972869620" varName="left" />
       <varInfo nodeId="4226637275972869620" varName="right" />
     </scopeInfo>
@@ -125,12 +125,12 @@
   </root>
   <root nodeId="4888428037514503250" modelId="r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)">
     <nodeInfo nodeId="4888428037514503278" fileName="StringOperators.java" startLine="10" startPosition="107" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="6" startPosition="30" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringOperators#()V" />
-    <nodeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_customOperator_4888428037514503287_string_string#(Ljava/lang/String;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringOperators#()V" />
+    <nodeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_customOperator_4888428037514503287_string_string#(Ljava/lang/String;Ljava/lang/String;)Z" />
     <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="7" startPosition="28" endLine="7" endPosition="28" />
     <scopeInfo nodeId="4888428037514503274" fileName="StringOperators.java" startLine="10" startPosition="107" endLine="11" endPosition="32" />
-    <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="6" startPosition="30" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+    <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
+    <scopeInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="4888428037514503250" varName="left" />
       <varInfo nodeId="4888428037514503250" varName="right" />
     </scopeInfo>
@@ -140,16 +140,16 @@
     <nodeInfo nodeId="6517886960437939964" fileName="Complex2.java" startLine="10" startPosition="23" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6517886960437940022" fileName="Complex2.java" startLine="12" startPosition="27" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6517886960437940007" fileName="Complex2.java" startLine="15" startPosition="28" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6517886960437939911" fileName="Complex2.java" startLine="6" startPosition="39" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Complex2#()V" />
+    <nodeInfo nodeId="6517886960437939911" fileName="Complex2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Complex2#()V" />
     <nodeInfo nodeId="6517886960437939952" fileName="Complex2.java" startLine="11" startPosition="35" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6517886960437939993" fileName="Complex2.java" startLine="14" startPosition="5" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="9" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#()V" />
+    <nodeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="10" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#()V" />
     <scopeInfo nodeId="6517886960437939914" fileName="Complex2.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
     <scopeInfo nodeId="6517886960437939953" fileName="Complex2.java" startLine="12" startPosition="27" endLine="13" endPosition="28" />
     <scopeInfo nodeId="6517886960437939994" fileName="Complex2.java" startLine="15" startPosition="28" endLine="16" endPosition="45" />
-    <scopeInfo nodeId="6517886960437939911" fileName="Complex2.java" startLine="6" startPosition="39" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="6517886960437939911" fileName="Complex2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <scopeInfo nodeId="6517886960437939919" fileName="Complex2.java" startLine="10" startPosition="23" endLine="17" endPosition="5" />
-    <scopeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="9" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="10" startPosition="0" endLine="19" endPosition="0" />
     <unitInfo nodeId="6517886960437939909" fileName="Complex2.java" startLine="6" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex2" />
   </root>
 </debugInfo>

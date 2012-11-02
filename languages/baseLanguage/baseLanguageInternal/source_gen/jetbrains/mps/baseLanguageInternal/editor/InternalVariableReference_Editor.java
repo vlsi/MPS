@@ -21,7 +21,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -107,7 +107,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
-        result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
+        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }

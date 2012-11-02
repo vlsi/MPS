@@ -74,27 +74,27 @@
     <nodeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="36" startPosition="10" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218736942029" fileName="ThisClassifierExpression_Editor.java" startLine="52" startPosition="87" endLine="54" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="124" startPosition="60" endLine="126" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205752655131" fileName="ThisClassifierExpression_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="87" startPosition="26" endLine="90" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="105" startPosition="70" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kpqhey_a0a0#()V" />
-    <nodeInfo nodeId="1205752655131" fileName="ThisClassifierExpression_Editor.java" startLine="25" startPosition="72" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736911690" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_kpqhey_a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kpqhey_a0a0#()V" />
+    <nodeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="62" startPosition="74" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="74" startPosition="74" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218736911690" fileName="ThisClassifierExpression_Editor.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_kpqhey_a0#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="123" startPosition="28" endLine="127" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="33" startPosition="33" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="60" startPosition="90" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="72" startPosition="90" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="92" startPosition="59" endLine="98" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="129" startPosition="61" endLine="135" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218736942029" fileName="ThisClassifierExpression_Editor.java" startLine="50" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kpqhey_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736919162" fileName="ThisClassifierExpression_Editor.java" startLine="41" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kpqhey_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="29" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_kpqhey_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="58" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kpqhey_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kpqhey_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="82" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_kpqhey_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="117" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_kpqhey_a0a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736942029" fileName="ThisClassifierExpression_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kpqhey_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736919162" fileName="ThisClassifierExpression_Editor.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_kpqhey_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_kpqhey_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="59" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kpqhey_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="71" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kpqhey_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="83" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_kpqhey_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="118" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_kpqhey_a0a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="38" startPosition="5" endLine="38" endPosition="5" />
     <scopeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="89" startPosition="58" endLine="89" endPosition="58" />
     <scopeInfo nodeId="1205752655131" fileName="ThisClassifierExpression_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="64" />
@@ -116,31 +116,31 @@
       <varInfo nodeId="1218736911692" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="124" startPosition="60" endLine="126" endPosition="78" />
+    <scopeInfo nodeId="1205752655131" fileName="ThisClassifierExpression_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1205752655131" varName="editorContext" />
+      <varInfo nodeId="1205752655131" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="87" startPosition="26" endLine="90" endPosition="73" />
     <scopeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="93" startPosition="35" endLine="96" endPosition="105">
       <varInfo nodeId="1218736930196" varName="manager" />
       <varInfo nodeId="1218736930196" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="105" startPosition="70" endLine="108" endPosition="5" />
-    <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="130" startPosition="37" endLine="133" endPosition="107">
-      <varInfo nodeId="1218736934855" varName="manager" />
-      <varInfo nodeId="1218736934855" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205752655131" fileName="ThisClassifierExpression_Editor.java" startLine="25" startPosition="72" endLine="29" endPosition="0">
-      <varInfo nodeId="1205752655131" varName="editorContext" />
-      <varInfo nodeId="1205752655131" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218736911690" fileName="ThisClassifierExpression_Editor.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="1218736911690" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="1218736911690" varName="editorContext" />
       <varInfo nodeId="1218736911690" varName="node" />
       <varInfo nodeId="1218736911690" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="1218736930197" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="1218736930197" fileName="ThisClassifierExpression_Editor.java" startLine="114" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="1218736930197" varName="editorContext" />
       <varInfo nodeId="1218736930197" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="130" startPosition="37" endLine="133" endPosition="107">
+      <varInfo nodeId="1218736934855" varName="manager" />
+      <varInfo nodeId="1218736934855" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="123" startPosition="28" endLine="127" endPosition="75" />
     <scopeInfo nodeId="1218736942029" fileName="ThisClassifierExpression_Editor.java" startLine="51" startPosition="89" endLine="56" endPosition="22">
@@ -151,17 +151,17 @@
     </scopeInfo>
     <scopeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="60" startPosition="90" endLine="66" endPosition="5" />
     <scopeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="72" startPosition="90" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="1218736942029" fileName="ThisClassifierExpression_Editor.java" startLine="50" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1218736942029" fileName="ThisClassifierExpression_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1218736942029" varName="editorContext" />
       <varInfo nodeId="1218736942029" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218736919162" fileName="ThisClassifierExpression_Editor.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1218736919162" varName="editorContext" />
+      <varInfo nodeId="1218736919162" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="30" startPosition="90" endLine="39" endPosition="22">
       <varInfo nodeId="1218736911688" varName="alternationCondition" />
       <varInfo nodeId="1218736911688" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218736919162" fileName="ThisClassifierExpression_Editor.java" startLine="41" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1218736919162" varName="editorContext" />
-      <varInfo nodeId="1218736919162" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="59" startPosition="89" endLine="68" endPosition="22">
       <varInfo nodeId="1218736946375" varName="editorCell" />
@@ -169,15 +169,15 @@
     <scopeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="71" startPosition="88" endLine="80" endPosition="22">
       <varInfo nodeId="1218736911692" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="29" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1218736911688" fileName="ThisClassifierExpression_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1218736911688" varName="editorContext" />
       <varInfo nodeId="1218736911688" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="58" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1218736946375" fileName="ThisClassifierExpression_Editor.java" startLine="59" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1218736946375" varName="editorContext" />
       <varInfo nodeId="1218736946375" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="1218736911692" fileName="ThisClassifierExpression_Editor.java" startLine="71" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1218736911692" varName="editorContext" />
       <varInfo nodeId="1218736911692" varName="node" />
     </scopeInfo>
@@ -187,17 +187,17 @@
       <varInfo nodeId="1218736930196" varName="editorCell" />
       <varInfo nodeId="1218736930196" varName="provider" />
     </scopeInfo>
+    <scopeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="83" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="1218736930196" varName="editorContext" />
+      <varInfo nodeId="1218736930196" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="118" startPosition="93" endLine="135" endPosition="24">
       <varInfo nodeId="1218736934855" varName="attributeConcept" />
       <varInfo nodeId="1218736934855" varName="attributeKind" />
       <varInfo nodeId="1218736934855" varName="editorCell" />
       <varInfo nodeId="1218736934855" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1218736930196" fileName="ThisClassifierExpression_Editor.java" startLine="82" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="1218736930196" varName="editorContext" />
-      <varInfo nodeId="1218736930196" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="117" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="1218736934855" fileName="ThisClassifierExpression_Editor.java" startLine="118" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="1218736934855" varName="editorContext" />
       <varInfo nodeId="1218736934855" varName="node" />
     </scopeInfo>
@@ -273,13 +273,13 @@
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="122" startPosition="74" endLine="123" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="123" startPosition="80" endLine="124" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="125" startPosition="12" endLine="126" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205752924231" fileName="DefaultClassifierType_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205752934708" fileName="DefaultClassifierType_Editor.java" startLine="79" startPosition="26" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="93" startPosition="69" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_35pyag_a2a#()V" />
-    <nodeInfo nodeId="1205752924231" fileName="DefaultClassifierType_Editor.java" startLine="23" startPosition="69" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_35pyag_a2a#()V" />
+    <nodeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="41" startPosition="74" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205752950761" fileName="DefaultClassifierType_Editor.java" startLine="66" startPosition="74" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="113" startPosition="44" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="53" startPosition="74" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="112" startPosition="60" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -289,12 +289,12 @@
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="120" startPosition="61" endLine="126" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="51" startPosition="87" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="111" startPosition="28" endLine="118" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205752926576" fileName="DefaultClassifierType_Editor.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_35pyag_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_35pyag_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205752950761" fileName="DefaultClassifierType_Editor.java" startLine="62" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_35pyag_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="49" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_35pyag_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205752934708" fileName="DefaultClassifierType_Editor.java" startLine="74" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_35pyag_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="105" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_35pyag_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752926576" fileName="DefaultClassifierType_Editor.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_35pyag_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_35pyag_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752950761" fileName="DefaultClassifierType_Editor.java" startLine="63" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_35pyag_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="50" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_35pyag_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752934708" fileName="DefaultClassifierType_Editor.java" startLine="75" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_35pyag_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="106" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_35pyag_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1205752934708" fileName="DefaultClassifierType_Editor.java" startLine="81" startPosition="58" endLine="81" endPosition="58" />
     <scopeInfo nodeId="1205752924231" fileName="DefaultClassifierType_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
     <scopeInfo nodeId="1205752926576" fileName="DefaultClassifierType_Editor.java" startLine="29" startPosition="96" endLine="30" endPosition="48" />
@@ -314,6 +314,10 @@
     <scopeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="114" startPosition="7" endLine="116" endPosition="83">
       <varInfo nodeId="1205752935414" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1205752924231" fileName="DefaultClassifierType_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1205752924231" varName="editorContext" />
+      <varInfo nodeId="1205752924231" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="54" startPosition="5" endLine="57" endPosition="57">
       <varInfo nodeId="1205752929909" varName="style" />
     </scopeInfo>
@@ -322,21 +326,17 @@
       <varInfo nodeId="1205752934708" varName="manager" />
       <varInfo nodeId="1205752934708" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="93" startPosition="69" endLine="96" endPosition="5" />
+    <scopeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="98" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="1205752934709" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="102" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1205752934709" varName="editorContext" />
+      <varInfo nodeId="1205752934709" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="121" startPosition="37" endLine="124" endPosition="107">
       <varInfo nodeId="1205752935414" varName="manager" />
       <varInfo nodeId="1205752935414" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205752924231" fileName="DefaultClassifierType_Editor.java" startLine="23" startPosition="69" endLine="27" endPosition="0">
-      <varInfo nodeId="1205752924231" varName="editorContext" />
-      <varInfo nodeId="1205752924231" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="1205752934709" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205752934709" fileName="DefaultClassifierType_Editor.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="1205752934709" varName="editorContext" />
-      <varInfo nodeId="1205752934709" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="112" startPosition="60" endLine="117" endPosition="7" />
     <scopeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="39" startPosition="96" endLine="45" endPosition="5" />
@@ -346,28 +346,28 @@
     </scopeInfo>
     <scopeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="51" startPosition="87" endLine="58" endPosition="5" />
     <scopeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="111" startPosition="28" endLine="118" endPosition="75" />
+    <scopeInfo nodeId="1205752926576" fileName="DefaultClassifierType_Editor.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1205752926576" varName="editorContext" />
+      <varInfo nodeId="1205752926576" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="38" startPosition="88" endLine="47" endPosition="22">
       <varInfo nodeId="1205752927297" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1205752950761" fileName="DefaultClassifierType_Editor.java" startLine="63" startPosition="88" endLine="72" endPosition="22">
       <varInfo nodeId="1205752950761" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752926576" fileName="DefaultClassifierType_Editor.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1205752926576" varName="editorContext" />
-      <varInfo nodeId="1205752926576" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="50" startPosition="88" endLine="60" endPosition="22">
       <varInfo nodeId="1205752929909" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1205752927297" fileName="DefaultClassifierType_Editor.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1205752927297" varName="editorContext" />
       <varInfo nodeId="1205752927297" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752950761" fileName="DefaultClassifierType_Editor.java" startLine="62" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1205752950761" fileName="DefaultClassifierType_Editor.java" startLine="63" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1205752950761" varName="editorContext" />
       <varInfo nodeId="1205752950761" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="49" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="1205752929909" fileName="DefaultClassifierType_Editor.java" startLine="50" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1205752929909" varName="editorContext" />
       <varInfo nodeId="1205752929909" varName="node" />
     </scopeInfo>
@@ -377,7 +377,7 @@
       <varInfo nodeId="1205752934708" varName="editorCell" />
       <varInfo nodeId="1205752934708" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752934708" fileName="DefaultClassifierType_Editor.java" startLine="74" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="1205752934708" fileName="DefaultClassifierType_Editor.java" startLine="75" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1205752934708" varName="editorContext" />
       <varInfo nodeId="1205752934708" varName="node" />
     </scopeInfo>
@@ -387,7 +387,7 @@
       <varInfo nodeId="1205752935414" varName="editorCell" />
       <varInfo nodeId="1205752935414" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="105" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="1205752935414" fileName="DefaultClassifierType_Editor.java" startLine="106" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="1205752935414" varName="editorContext" />
       <varInfo nodeId="1205752935414" varName="node" />
     </scopeInfo>
@@ -489,43 +489,43 @@
     <nodeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="204" startPosition="7" endLine="205" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="205" startPosition="36" endLine="206" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205769425501" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="56" startPosition="87" endLine="58" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205769390549" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="66" startPosition="77" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="77" startPosition="55" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="115" startPosition="69" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_c9gv4j_a0a#()V" />
+    <nodeInfo nodeId="8253869385207983720" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_c9gv4j_a2a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="8253869385208016813" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_c9gv4j_a3a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_c9gv4j_a0a#()V" />
+    <nodeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="133" startPosition="28" endLine="136" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="148" startPosition="87" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="actualArgumentListHandler_c9gv4j_c0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="actualArgumentListHandler_c9gv4j_c0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="171" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="181" startPosition="9" endLine="184" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205769390549" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="36" startPosition="84" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="43" startPosition="48" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="76" startPosition="106" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="91" startPosition="58" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="91" startPosition="58" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8253869385207983720" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_c9gv4j_a2a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="8253869385208016813" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_c9gv4j_a3a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="177" startPosition="134" endLine="181" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="42" startPosition="96" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="64" startPosition="87" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="152" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="158" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="199" startPosition="50" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="98" startPosition="59" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="138" startPosition="61" endLine="144" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="157" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="164" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="198" startPosition="88" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205769425501" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c9gv4j_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="89" startPosition="26" endLine="96" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="163" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769425501" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="54" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c9gv4j_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="187" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="188" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="63" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c9gv4j_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="74" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_c9gv4j_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="175" startPosition="132" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="62" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c9gv4j_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="73" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_c9gv4j_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="196" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c9gv4j_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="174" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="40" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c9gv4j_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="127" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c9gv4j_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="84" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_c9gv4j_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="197" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c9gv4j_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="175" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c9gv4j_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="128" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c9gv4j_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="85" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_c9gv4j_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1205769390549" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" />
     <scopeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="47" startPosition="5" endLine="48" endPosition="80" />
     <scopeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="81" />
@@ -553,17 +553,38 @@
       <varInfo nodeId="1205769434991" varName="listOwner" />
     </scopeInfo>
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="178" startPosition="34" endLine="180" endPosition="80" />
+    <scopeInfo nodeId="1205769390549" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1205769390549" varName="editorContext" />
+      <varInfo nodeId="1205769390549" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="99" startPosition="35" endLine="102" endPosition="105">
       <varInfo nodeId="1205769396163" varName="manager" />
       <varInfo nodeId="1205769396163" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="115" startPosition="69" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="8253869385207983720" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="8253869385207983720" varName="editorContext" />
+      <varInfo nodeId="8253869385207983720" varName="node" />
+      <varInfo nodeId="8253869385207983720" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8253869385208016813" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="111" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="8253869385208016813" varName="editorContext" />
+      <varInfo nodeId="8253869385208016813" varName="node" />
+      <varInfo nodeId="8253869385208016813" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1205769396164" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="124" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="1205769396164" varName="editorContext" />
+      <varInfo nodeId="1205769396164" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="133" startPosition="28" endLine="136" endPosition="75" />
     <scopeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="139" startPosition="37" endLine="142" endPosition="107">
       <varInfo nodeId="1205769397479" varName="manager" />
       <varInfo nodeId="1205769397479" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="148" startPosition="87" endLine="151" endPosition="5">
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="1205769434991" varName="childRole" />
       <varInfo nodeId="1205769434991" varName="context" />
       <varInfo nodeId="1205769434991" varName="ownerNode" />
@@ -571,63 +592,42 @@
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="158" startPosition="86" endLine="161" endPosition="25">
       <varInfo nodeId="1205769434991" varName="elementCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="171" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="1205769434991" varName="editorContext" />
+      <varInfo nodeId="1205769434991" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="200" startPosition="7" endLine="203" endPosition="50">
       <varInfo nodeId="1205770756352" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769390549" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="36" startPosition="84" endLine="40" endPosition="0">
-      <varInfo nodeId="1205769390549" varName="editorContext" />
-      <varInfo nodeId="1205769390549" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="76" startPosition="106" endLine="80" endPosition="5" />
     <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="91" startPosition="58" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="8253869385207983720" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="8253869385207983720" varName="editorContext" />
-      <varInfo nodeId="8253869385207983720" varName="node" />
-      <varInfo nodeId="8253869385207983720" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="8253869385208016813" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="8253869385208016813" varName="editorContext" />
-      <varInfo nodeId="8253869385208016813" varName="node" />
-      <varInfo nodeId="8253869385208016813" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="1205769396164" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769396164" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="123" startPosition="0" endLine="127" endPosition="0">
-      <varInfo nodeId="1205769396164" varName="editorContext" />
-      <varInfo nodeId="1205769396164" varName="node" />
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="1205769434991" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="164" startPosition="68" endLine="168" endPosition="23">
       <varInfo nodeId="1205769434991" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="170" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="1205769434991" varName="editorContext" />
-      <varInfo nodeId="1205769434991" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="42" startPosition="96" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1205769425501" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="55" startPosition="88" endLine="60" endPosition="22">
       <varInfo nodeId="1205769425501" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="64" startPosition="87" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="152" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="158" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="1205769434991" varName="editorContext" />
+      <varInfo nodeId="1205769434991" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="189" startPosition="84" endLine="194" endPosition="24">
       <varInfo nodeId="1205769434991" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="157" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="164" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="1205769434991" varName="editorContext" />
-      <varInfo nodeId="1205769434991" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="198" startPosition="88" endLine="204" endPosition="7" />
-    <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="89" startPosition="26" endLine="96" endPosition="73" />
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="163" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="1205769434991" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769425501" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="54" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="1205769425501" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1205769425501" varName="editorContext" />
       <varInfo nodeId="1205769425501" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="89" startPosition="26" endLine="96" endPosition="73" />
     <scopeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="63" startPosition="88" endLine="71" endPosition="22">
       <varInfo nodeId="1205769437461" varName="editorCell" />
     </scopeInfo>
@@ -636,36 +636,36 @@
       <varInfo nodeId="1205769434991" varName="handler" />
     </scopeInfo>
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="176" startPosition="96" endLine="184" endPosition="9" />
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="187" startPosition="0" endLine="196" endPosition="0">
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="188" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="1205769434991" varName="editorContext" />
       <varInfo nodeId="1205769434991" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="197" startPosition="91" endLine="206" endPosition="24">
       <varInfo nodeId="1205770756352" varName="editorCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="63" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1205769437461" varName="editorContext" />
+      <varInfo nodeId="1205769437461" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="74" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1205769434991" varName="editorContext" />
+      <varInfo nodeId="1205769434991" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="175" startPosition="132" endLine="185" endPosition="7" />
     <scopeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="41" startPosition="89" endLine="52" endPosition="22">
       <varInfo nodeId="1205769393645" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769437461" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="1205769437461" varName="editorContext" />
-      <varInfo nodeId="1205769437461" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="1205769434991" varName="editorContext" />
-      <varInfo nodeId="1205769434991" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="196" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="1205770756352" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="197" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="1205770756352" varName="editorContext" />
       <varInfo nodeId="1205770756352" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="174" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="1205769434991" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="175" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="1205769434991" varName="editorContext" />
       <varInfo nodeId="1205769434991" varName="elementCell" />
       <varInfo nodeId="1205769434991" varName="elementNode" />
       <varInfo nodeId="1205769434991" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1205769393645" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1205769393645" varName="editorContext" />
       <varInfo nodeId="1205769393645" varName="node" />
     </scopeInfo>
@@ -675,17 +675,17 @@
       <varInfo nodeId="1205769397479" varName="editorCell" />
       <varInfo nodeId="1205769397479" varName="provider" />
     </scopeInfo>
+    <scopeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="128" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="1205769397479" varName="editorContext" />
+      <varInfo nodeId="1205769397479" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="85" startPosition="87" endLine="104" endPosition="22">
       <varInfo nodeId="1205769396163" varName="attributeConcept" />
       <varInfo nodeId="1205769396163" varName="attributeKind" />
       <varInfo nodeId="1205769396163" varName="editorCell" />
       <varInfo nodeId="1205769396163" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769397479" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="127" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="1205769397479" varName="editorContext" />
-      <varInfo nodeId="1205769397479" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="84" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="1205769396163" fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="85" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="1205769396163" varName="editorContext" />
       <varInfo nodeId="1205769396163" varName="node" />
     </scopeInfo>
@@ -883,21 +883,24 @@
     <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="369" startPosition="131" endLine="370" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1221310280147" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="137" startPosition="87" endLine="139" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280158" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="158" startPosition="92" endLine="160" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="59" startPosition="82" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="59" startPosition="82" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="67" startPosition="81" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="67" startPosition="81" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="209" startPosition="58" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="209" startPosition="58" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="232" startPosition="82" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="parameterListHandler_77c6be_h0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310280135" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="224" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_77c6be_a3a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1221310280161" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="228" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_77c6be_a9a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="233" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="parameterListHandler_77c6be_h0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="255" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="265" startPosition="9" endLine="268" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="294" startPosition="84" endLine="297" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="throwsItemListHandler_77c6be_b9a#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="295" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="throwsItemListHandler_77c6be_b9a#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="323" startPosition="9" endLine="326" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="340" startPosition="83" endLine="343" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="annotationListHandler_77c6be_b0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="341" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="annotationListHandler_77c6be_b0#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="365" startPosition="134" endLine="368" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="368" startPosition="9" endLine="371" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="41" startPosition="82" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="52" startPosition="48" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="77" startPosition="49" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="97" startPosition="69" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -905,55 +908,52 @@
     <nodeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="147" startPosition="77" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="167" startPosition="47" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="195" startPosition="51" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221310280135" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="223" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_77c6be_a3a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1221310280161" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_77c6be_a9a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="254" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="237" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="261" startPosition="134" endLine="265" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="299" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="319" startPosition="134" endLine="323" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="345" startPosition="0" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="51" startPosition="96" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="76" startPosition="96" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8856861289653390753" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="105" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280134" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="118" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280146" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3059910031789061929" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="130" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="166" startPosition="98" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="194" startPosition="106" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="208" startPosition="26" endLine="213" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="236" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="242" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="283" startPosition="50" endLine="288" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="298" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="344" startPosition="0" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8856861289653390753" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="104" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280134" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280146" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3059910031789061929" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="129" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="304" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="350" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280132" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="111" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="215" startPosition="59" endLine="221" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="241" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="248" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="282" startPosition="88" endLine="288" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="303" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="349" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280132" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="310" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="356" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310300903" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_77c6be_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280147" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="136" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="145" startPosition="87" endLine="152" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="247" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="309" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="355" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310300903" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="86" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_77c6be_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280147" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="135" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280158" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="156" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_a9a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="175" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_77c6be_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="183" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_77c6be_b9a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="271" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="329" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280158" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="157" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_a9a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="176" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_77c6be_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="184" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_77c6be_b9a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="272" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="330" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="95" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="363" startPosition="132" endLine="372" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="94" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_77c6be_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="165" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="259" startPosition="132" endLine="269" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="317" startPosition="132" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="164" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="74" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_77c6be_j0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="191" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_77c6be_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="280" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_a7a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="362" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="143" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="258" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="316" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="203" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_77c6be_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="49" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_77c6be_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="75" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_77c6be_j0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="192" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_77c6be_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="281" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_a7a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="363" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="144" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_77c6be_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="259" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="317" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="204" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_77c6be_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="50" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_77c6be_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="8856861289653390753" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="107" startPosition="69" endLine="107" endPosition="69" />
     <scopeInfo nodeId="1221310280134" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="120" startPosition="69" endLine="120" endPosition="69" />
     <scopeInfo nodeId="1221310280146" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="126" startPosition="69" endLine="126" endPosition="69" />
@@ -1021,6 +1021,14 @@
     <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="345" startPosition="66" endLine="347" endPosition="93">
       <varInfo nodeId="1221310301283" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1205769853449" varName="editorContext" />
+      <varInfo nodeId="1205769853449" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1205769853449" varName="editorContext" />
+      <varInfo nodeId="1205769853449" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="59" startPosition="82" endLine="62" endPosition="5" />
     <scopeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="67" startPosition="81" endLine="70" endPosition="5" />
     <scopeInfo nodeId="8856861289653390753" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="105" startPosition="89" endLine="108" endPosition="22">
@@ -1044,7 +1052,17 @@
       <varInfo nodeId="1221310280145" varName="manager" />
       <varInfo nodeId="1221310280145" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="232" startPosition="82" endLine="235" endPosition="5">
+    <scopeInfo nodeId="1221310280135" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="224" startPosition="0" endLine="227" endPosition="0">
+      <varInfo nodeId="1221310280135" varName="editorContext" />
+      <varInfo nodeId="1221310280135" varName="node" />
+      <varInfo nodeId="1221310280135" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280161" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="228" startPosition="0" endLine="231" endPosition="0">
+      <varInfo nodeId="1221310280161" varName="editorContext" />
+      <varInfo nodeId="1221310280161" varName="node" />
+      <varInfo nodeId="1221310280161" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="233" startPosition="0" endLine="236" endPosition="0">
       <varInfo nodeId="1221310280149" varName="childRole" />
       <varInfo nodeId="1221310280149" varName="context" />
       <varInfo nodeId="1221310280149" varName="ownerNode" />
@@ -1052,10 +1070,14 @@
     <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="242" startPosition="86" endLine="245" endPosition="25">
       <varInfo nodeId="1221310280149" varName="elementCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="255" startPosition="0" endLine="258" endPosition="0">
+      <varInfo nodeId="1221310280149" varName="editorContext" />
+      <varInfo nodeId="1221310280149" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="284" startPosition="7" endLine="287" endPosition="50">
       <varInfo nodeId="1221310280150" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="294" startPosition="84" endLine="297" endPosition="5">
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="295" startPosition="0" endLine="298" endPosition="0">
       <varInfo nodeId="1221310280160" varName="childRole" />
       <varInfo nodeId="1221310280160" varName="context" />
       <varInfo nodeId="1221310280160" varName="ownerNode" />
@@ -1063,7 +1085,7 @@
     <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="304" startPosition="86" endLine="307" endPosition="25">
       <varInfo nodeId="1221310280160" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="340" startPosition="83" endLine="343" endPosition="5">
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="341" startPosition="0" endLine="344" endPosition="0">
       <varInfo nodeId="1221310301283" varName="childRole" />
       <varInfo nodeId="1221310301283" varName="context" />
       <varInfo nodeId="1221310301283" varName="ownerNode" />
@@ -1071,38 +1093,25 @@
     <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="350" startPosition="86" endLine="353" endPosition="25">
       <varInfo nodeId="1221310301283" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="41" startPosition="82" endLine="45" endPosition="0">
-      <varInfo nodeId="1205769853449" varName="editorContext" />
-      <varInfo nodeId="1205769853449" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205769853449" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="1205769853449" varName="editorContext" />
-      <varInfo nodeId="1205769853449" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="97" startPosition="69" endLine="101" endPosition="5" />
     <scopeInfo nodeId="1221310280132" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="111" startPosition="89" endLine="115" endPosition="22">
       <varInfo nodeId="1221310280132" varName="editorCell" />
       <varInfo nodeId="1221310280132" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280135" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="223" startPosition="0" endLine="227" endPosition="0">
-      <varInfo nodeId="1221310280135" varName="editorContext" />
-      <varInfo nodeId="1221310280135" varName="node" />
-      <varInfo nodeId="1221310280135" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280161" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="227" startPosition="0" endLine="231" endPosition="0">
-      <varInfo nodeId="1221310280161" varName="editorContext" />
-      <varInfo nodeId="1221310280161" varName="node" />
-      <varInfo nodeId="1221310280161" varName="scope" />
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="237" startPosition="0" endLine="241" endPosition="0">
+      <varInfo nodeId="1221310280149" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="248" startPosition="68" endLine="252" endPosition="23">
       <varInfo nodeId="1221310280149" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="254" startPosition="0" endLine="258" endPosition="0">
-      <varInfo nodeId="1221310280149" varName="editorContext" />
-      <varInfo nodeId="1221310280149" varName="node" />
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="299" startPosition="0" endLine="303" endPosition="0">
+      <varInfo nodeId="1221310280160" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="310" startPosition="68" endLine="314" endPosition="23">
       <varInfo nodeId="1221310280160" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="345" startPosition="0" endLine="349" endPosition="0">
+      <varInfo nodeId="1221310301283" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="356" startPosition="68" endLine="360" endPosition="23">
       <varInfo nodeId="1221310301283" varName="emptyCell" />
@@ -1111,6 +1120,22 @@
     <scopeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="76" startPosition="96" endLine="81" endPosition="5" />
     <scopeInfo nodeId="1221310300903" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="87" startPosition="91" endLine="92" endPosition="22">
       <varInfo nodeId="1221310300903" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8856861289653390753" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="105" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="8856861289653390753" varName="editorContext" />
+      <varInfo nodeId="8856861289653390753" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280134" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="118" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1221310280134" varName="editorContext" />
+      <varInfo nodeId="1221310280134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280146" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="124" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="1221310280146" varName="editorContext" />
+      <varInfo nodeId="1221310280146" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3059910031789061929" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="130" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="3059910031789061929" varName="editorContext" />
+      <varInfo nodeId="3059910031789061929" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1221310280147" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="136" startPosition="88" endLine="141" endPosition="22">
       <varInfo nodeId="1221310280147" varName="editorCell" />
@@ -1129,155 +1154,130 @@
     </scopeInfo>
     <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="194" startPosition="106" endLine="199" endPosition="5" />
     <scopeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="208" startPosition="26" endLine="213" endPosition="73" />
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="236" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="242" startPosition="0" endLine="247" endPosition="0">
       <varInfo nodeId="1221310280149" varName="editorContext" />
+      <varInfo nodeId="1221310280149" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="273" startPosition="84" endLine="278" endPosition="24">
       <varInfo nodeId="1221310280149" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="298" startPosition="0" endLine="303" endPosition="0">
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="304" startPosition="0" endLine="309" endPosition="0">
       <varInfo nodeId="1221310280160" varName="editorContext" />
+      <varInfo nodeId="1221310280160" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="331" startPosition="84" endLine="336" endPosition="24">
       <varInfo nodeId="1221310280160" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="344" startPosition="0" endLine="349" endPosition="0">
-      <varInfo nodeId="1221310301283" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8856861289653390753" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="104" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="8856861289653390753" varName="editorContext" />
-      <varInfo nodeId="8856861289653390753" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280134" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="1221310280134" varName="editorContext" />
-      <varInfo nodeId="1221310280134" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280146" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
-      <varInfo nodeId="1221310280146" varName="editorContext" />
-      <varInfo nodeId="1221310280146" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3059910031789061929" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="129" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="3059910031789061929" varName="editorContext" />
-      <varInfo nodeId="3059910031789061929" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="241" startPosition="0" endLine="247" endPosition="0">
-      <varInfo nodeId="1221310280149" varName="editorContext" />
-      <varInfo nodeId="1221310280149" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="282" startPosition="88" endLine="288" endPosition="7" />
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="303" startPosition="0" endLine="309" endPosition="0">
-      <varInfo nodeId="1221310280160" varName="editorContext" />
-      <varInfo nodeId="1221310280160" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="349" startPosition="0" endLine="355" endPosition="0">
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="350" startPosition="0" endLine="355" endPosition="0">
       <varInfo nodeId="1221310301283" varName="editorContext" />
       <varInfo nodeId="1221310301283" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280132" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="111" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="1221310280132" varName="editorContext" />
+      <varInfo nodeId="1221310280132" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="248" startPosition="0" endLine="254" endPosition="0">
+      <varInfo nodeId="1221310280149" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="282" startPosition="88" endLine="288" endPosition="7" />
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="310" startPosition="0" endLine="316" endPosition="0">
+      <varInfo nodeId="1221310280160" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="356" startPosition="0" endLine="362" endPosition="0">
+      <varInfo nodeId="1221310301283" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221310300903" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1221310300903" varName="editorContext" />
+      <varInfo nodeId="1221310300903" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="95" startPosition="89" endLine="102" endPosition="22">
       <varInfo nodeId="1233068406061" varName="editorCell" />
       <varInfo nodeId="1233068406061" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280132" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="1221310280132" varName="editorContext" />
-      <varInfo nodeId="1221310280132" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="145" startPosition="87" endLine="152" endPosition="83" />
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="247" startPosition="0" endLine="254" endPosition="0">
-      <varInfo nodeId="1221310280149" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="309" startPosition="0" endLine="316" endPosition="0">
-      <varInfo nodeId="1221310280160" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="355" startPosition="0" endLine="362" endPosition="0">
-      <varInfo nodeId="1221310301283" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="364" startPosition="96" endLine="371" endPosition="9" />
-    <scopeInfo nodeId="1221310300903" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="86" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="1221310300903" varName="editorContext" />
-      <varInfo nodeId="1221310300903" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280147" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="135" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="1221310280147" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="136" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="1221310280147" varName="editorContext" />
       <varInfo nodeId="1221310280147" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280158" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="156" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="145" startPosition="87" endLine="152" endPosition="83" />
+    <scopeInfo nodeId="1221310280158" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="157" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="1221310280158" varName="editorContext" />
       <varInfo nodeId="1221310280158" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="165" startPosition="88" endLine="173" endPosition="22">
-      <varInfo nodeId="1221310301281" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="175" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="176" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="1221310280149" varName="editorContext" />
       <varInfo nodeId="1221310280149" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="183" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="184" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="1221310280160" varName="editorContext" />
       <varInfo nodeId="1221310280160" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="364" startPosition="96" endLine="371" endPosition="9" />
+    <scopeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="165" startPosition="88" endLine="173" endPosition="22">
+      <varInfo nodeId="1221310301281" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="260" startPosition="96" endLine="268" endPosition="9" />
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="272" startPosition="0" endLine="280" endPosition="0">
+      <varInfo nodeId="1221310280149" varName="editorContext" />
+      <varInfo nodeId="1221310280149" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="318" startPosition="96" endLine="326" endPosition="9" />
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="330" startPosition="0" endLine="338" endPosition="0">
+      <varInfo nodeId="1221310280160" varName="editorContext" />
+      <varInfo nodeId="1221310280160" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="75" startPosition="90" endLine="84" endPosition="22">
       <varInfo nodeId="1221310280157" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="95" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1233068406061" varName="editorContext" />
+      <varInfo nodeId="1233068406061" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="192" startPosition="91" endLine="201" endPosition="22">
       <varInfo nodeId="1221310301283" varName="editorCell" />
       <varInfo nodeId="1221310301283" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="271" startPosition="0" endLine="280" endPosition="0">
-      <varInfo nodeId="1221310280149" varName="editorContext" />
-      <varInfo nodeId="1221310280149" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="281" startPosition="91" endLine="290" endPosition="24">
       <varInfo nodeId="1221310280150" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="329" startPosition="0" endLine="338" endPosition="0">
-      <varInfo nodeId="1221310280160" varName="editorContext" />
-      <varInfo nodeId="1221310280160" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="363" startPosition="132" endLine="372" endPosition="7" />
-    <scopeInfo nodeId="1233068406061" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="94" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="1233068406061" varName="editorContext" />
-      <varInfo nodeId="1233068406061" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="144" startPosition="88" endLine="154" endPosition="22">
       <varInfo nodeId="1221310280155" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="259" startPosition="132" endLine="269" endPosition="7" />
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="317" startPosition="132" endLine="327" endPosition="7" />
-    <scopeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="164" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="1221310301281" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="165" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="1221310301281" varName="editorContext" />
       <varInfo nodeId="1221310301281" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="74" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="259" startPosition="132" endLine="269" endPosition="7" />
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="317" startPosition="132" endLine="327" endPosition="7" />
+    <scopeInfo nodeId="1221310280157" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="75" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1221310280157" varName="editorContext" />
       <varInfo nodeId="1221310280157" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="191" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="192" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="1221310301283" varName="editorContext" />
       <varInfo nodeId="1221310301283" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="280" startPosition="0" endLine="292" endPosition="0">
+    <scopeInfo nodeId="1221310280150" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="281" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="1221310280150" varName="editorContext" />
       <varInfo nodeId="1221310280150" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="362" startPosition="0" endLine="374" endPosition="0">
+    <scopeInfo nodeId="1221310301283" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="363" startPosition="0" endLine="374" endPosition="0">
       <varInfo nodeId="1221310301283" varName="editorContext" />
       <varInfo nodeId="1221310301283" varName="elementCell" />
       <varInfo nodeId="1221310301283" varName="elementNode" />
       <varInfo nodeId="1221310301283" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="143" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="1221310280155" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="144" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="1221310280155" varName="editorContext" />
       <varInfo nodeId="1221310280155" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="258" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="1221310280149" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="259" startPosition="0" endLine="271" endPosition="0">
       <varInfo nodeId="1221310280149" varName="editorContext" />
       <varInfo nodeId="1221310280149" varName="elementCell" />
       <varInfo nodeId="1221310280149" varName="elementNode" />
       <varInfo nodeId="1221310280149" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="316" startPosition="0" endLine="329" endPosition="0">
+    <scopeInfo nodeId="1221310280160" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="317" startPosition="0" endLine="329" endPosition="0">
       <varInfo nodeId="1221310280160" varName="editorContext" />
       <varInfo nodeId="1221310280160" varName="elementCell" />
       <varInfo nodeId="1221310280160" varName="elementNode" />
@@ -1289,14 +1289,14 @@
       <varInfo nodeId="1221310280145" varName="editorCell" />
       <varInfo nodeId="1221310280145" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="203" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="1221310280145" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="204" startPosition="0" endLine="223" endPosition="0">
       <varInfo nodeId="1221310280145" varName="editorContext" />
       <varInfo nodeId="1221310280145" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="50" startPosition="89" endLine="72" endPosition="22">
       <varInfo nodeId="1221310280115" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="49" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1221310280115" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="50" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1221310280115" varName="editorContext" />
       <varInfo nodeId="1221310280115" varName="node" />
     </scopeInfo>
@@ -1347,19 +1347,19 @@
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="82" startPosition="74" endLine="83" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="83" startPosition="80" endLine="84" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="85" startPosition="12" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213999822982" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="38" startPosition="26" endLine="41" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="52" startPosition="69" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_c4gh6o_a0a#()V" />
-    <nodeInfo nodeId="1213999822982" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="22" startPosition="85" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_c4gh6o_a0a#()V" />
+    <nodeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="73" startPosition="74" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c4gh6o_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="43" startPosition="59" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="71" startPosition="60" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="80" startPosition="61" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c4gh6o_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="70" startPosition="28" endLine="78" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="33" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_c4gh6o_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="64" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c4gh6o_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="34" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_c4gh6o_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="65" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c4gh6o_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="40" startPosition="58" endLine="40" endPosition="58" />
     <scopeInfo nodeId="1213999822982" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" />
     <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" />
@@ -1370,35 +1370,35 @@
     <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="74" startPosition="7" endLine="76" endPosition="83">
       <varInfo nodeId="1213999830409" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1213999822982" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1213999822982" varName="editorContext" />
+      <varInfo nodeId="1213999822982" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="38" startPosition="26" endLine="41" endPosition="73" />
     <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="44" startPosition="35" endLine="47" endPosition="105">
       <varInfo nodeId="1213999826700" varName="manager" />
       <varInfo nodeId="1213999826700" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="52" startPosition="69" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1213999826701" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1213999826701" varName="editorContext" />
+      <varInfo nodeId="1213999826701" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="81" startPosition="37" endLine="84" endPosition="107">
       <varInfo nodeId="1213999830409" varName="manager" />
       <varInfo nodeId="1213999830409" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1213999822982" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="22" startPosition="85" endLine="26" endPosition="0">
-      <varInfo nodeId="1213999822982" varName="editorContext" />
-      <varInfo nodeId="1213999822982" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="27" startPosition="89" endLine="31" endPosition="22">
       <varInfo nodeId="1213999826700" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="1213999826701" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213999826701" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="1213999826701" varName="editorContext" />
-      <varInfo nodeId="1213999826701" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="71" startPosition="60" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1213999826700" varName="editorContext" />
       <varInfo nodeId="1213999826700" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="71" startPosition="60" endLine="77" endPosition="7" />
     <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="70" startPosition="28" endLine="78" endPosition="75" />
     <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="34" startPosition="87" endLine="49" endPosition="22">
       <varInfo nodeId="1213999826700" varName="attributeConcept" />
@@ -1406,7 +1406,7 @@
       <varInfo nodeId="1213999826700" varName="editorCell" />
       <varInfo nodeId="1213999826700" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="33" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1213999826700" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="34" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1213999826700" varName="editorContext" />
       <varInfo nodeId="1213999826700" varName="node" />
     </scopeInfo>
@@ -1416,7 +1416,7 @@
       <varInfo nodeId="1213999830409" varName="editorCell" />
       <varInfo nodeId="1213999830409" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="64" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="1213999830409" fileName="DefaultClassifierFieldAccessOperation_Editor.java" startLine="65" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1213999830409" varName="editorContext" />
       <varInfo nodeId="1213999830409" varName="node" />
     </scopeInfo>
@@ -1432,15 +1432,15 @@
     <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="26" startPosition="42" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="28" startPosition="5" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="29" startPosition="34" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1217433556668" fileName="SuperClassifierExpresson_Editor.java" startLine="16" startPosition="72" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217433556668" fileName="SuperClassifierExpresson_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="24" startPosition="74" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="22" startPosition="91" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4b7fwc_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4b7fwc_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1217433556668" fileName="SuperClassifierExpresson_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="61" />
     <scopeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="25" startPosition="5" endLine="27" endPosition="81">
       <varInfo nodeId="1217433575742" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1217433556668" fileName="SuperClassifierExpresson_Editor.java" startLine="16" startPosition="72" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1217433556668" fileName="SuperClassifierExpresson_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1217433556668" varName="editorContext" />
       <varInfo nodeId="1217433556668" varName="node" />
     </scopeInfo>
@@ -1448,7 +1448,7 @@
     <scopeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="21" startPosition="87" endLine="30" endPosition="22">
       <varInfo nodeId="1217433575742" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="1217433575742" fileName="SuperClassifierExpresson_Editor.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1217433575742" varName="editorContext" />
       <varInfo nodeId="1217433575742" varName="node" />
     </scopeInfo>
@@ -1465,19 +1465,19 @@
     <nodeInfo nodeId="320172740465932812" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="55" startPosition="72" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="893779103613501859" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="57" startPosition="31" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="320172740465932771" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="61" startPosition="39" endLine="62" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="20" startPosition="100" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultClassifierMethodParameterInformationQuery#()V" />
+    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultClassifierMethodParameterInformationQuery#()V" />
+    <nodeInfo nodeId="1260722811065453335" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1260722811065453522" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStyledMethodPresentation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/editor/runtime/StyledTextPrinter;)V" />
+    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMethodCurrent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="893779103613501850" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="56" startPosition="57" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="320172740465932759" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="320172740465932899" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="25" startPosition="81" endLine="29" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1260722811065452595" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="31" startPosition="112" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1260722811065453335" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="36" startPosition="90" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1260722811065453522" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="40" startPosition="40" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStyledMethodPresentation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/editor/runtime/StyledTextPrinter;)V" />
-    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMethodCurrent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="320172740465932759" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="60" startPosition="171" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="320172740465932748" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="59" startPosition="5" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4737538687464680163" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="35" startPosition="7" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="320172740465932346" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="54" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedActualArgument#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="23" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="320172740465932346" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="55" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedActualArgument#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="24" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethods#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="21" startPosition="61" endLine="21" endPosition="61" />
     <scopeInfo nodeId="1260722811065453336" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="37" startPosition="37" endLine="38" endPosition="125" />
     <scopeInfo nodeId="1260722811065453523" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="41" startPosition="39" endLine="42" endPosition="26" />
@@ -1485,31 +1485,31 @@
     <scopeInfo nodeId="4737538687464648013" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="51" startPosition="98" endLine="52" endPosition="79" />
     <scopeInfo nodeId="893779103613501851" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="57" startPosition="31" endLine="58" endPosition="18" />
     <scopeInfo nodeId="320172740465932760" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="61" startPosition="39" endLine="62" endPosition="362" />
-    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="20" startPosition="100" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="1260722811065453335" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="36" startPosition="90" endLine="40" endPosition="0">
+    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1260722811065453335" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1260722811065453335" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1260722811065453522" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="40" startPosition="40" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1260722811065453522" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1260722811065453522" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="4737538687464648006" varName="editorContext" />
       <varInfo nodeId="4737538687464648006" varName="node" />
       <varInfo nodeId="4737538687464648006" varName="parameterObject" />
       <varInfo nodeId="4737538687464648006" varName="styledText" />
     </scopeInfo>
-    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4737538687464648006" varName="editorContext" />
       <varInfo nodeId="4737538687464648006" varName="node" />
       <varInfo nodeId="4737538687464648006" varName="parameterObject" />
     </scopeInfo>
-    <scopeInfo nodeId="320172740465932759" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="60" startPosition="171" endLine="64" endPosition="0">
+    <scopeInfo nodeId="320172740465932759" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="320172740465932759" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="320172740465932348" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="55" startPosition="72" endLine="64" endPosition="7">
       <varInfo nodeId="320172740465932813" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="320172740465932346" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="54" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="320172740465932346" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="320172740465932801" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="4737538687464648009" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="24" startPosition="78" endLine="44" endPosition="7">
@@ -1519,7 +1519,7 @@
       <varInfo nodeId="1260722811065452418" varName="scope" />
       <varInfo nodeId="320172740465932867" varName="selectedActualArgument" />
     </scopeInfo>
-    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="23" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="4737538687464648006" fileName="DefaultClassifierMethodParameterInformationQuery.java" startLine="24" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4737538687464648006" varName="editorContext" />
       <varInfo nodeId="4737538687464648006" varName="node" />
     </scopeInfo>

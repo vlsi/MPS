@@ -4,28 +4,21 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IStaticContainerForMethods_Behavior {
-  private static Class[] PARAMETERS_1222174378300 = {SNode.class, SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static IStaticContainerProcessor call_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (IStaticContainerProcessor) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, new Object[]{node});
-  }
-
-  public static IStaticContainerProcessor callSuperNew_getStaticContainerProcessor_1222174378300(SNode thisNode, String callerConceptFqName, SNode node) {
-    return (IStaticContainerProcessor) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), callerConceptFqName, "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, new Object[]{node});
+    return BehaviorReflection.invokeVirtual(IStaticContainerProcessor.class, thisNode, "virtual_getStaticContainerProcessor_1222174378300", new Object[]{node});
   }
 
   @Deprecated
   public static IStaticContainerProcessor callSuper_getStaticContainerProcessor_1222174378300(SNode thisNode, String callerConceptFqName, SNode node) {
-    return (IStaticContainerProcessor) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), callerConceptFqName, "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, new Object[]{node});
+    return BehaviorManager.getInstance().invokeSuper(IStaticContainerProcessor.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), callerConceptFqName, "virtual_getStaticContainerProcessor_1222174378300", new Class[]{SNode.class, SNode.class}, new Object[]{node});
   }
 }

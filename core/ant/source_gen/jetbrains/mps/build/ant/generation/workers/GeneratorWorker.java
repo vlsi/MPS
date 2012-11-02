@@ -29,7 +29,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -166,7 +165,7 @@ public class GeneratorWorker extends MpsWorker {
         if (doneSomething.value) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         } else {
-          LibrariesLoader.getInstance().loadNewLibs();
+          ClassLoaderManager.getInstance().updateModels();
         }
       }
     });
@@ -303,7 +302,6 @@ public class GeneratorWorker extends MpsWorker {
     public void clear() {
     }
   }
-
 
   /**
    * We already have graphs in MPS, why we need this class here?

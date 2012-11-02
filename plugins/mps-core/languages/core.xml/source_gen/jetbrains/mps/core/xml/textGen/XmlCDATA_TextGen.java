@@ -5,13 +5,13 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlCDATA_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     SNode left = SNodeOperations.getPrevSibling(node);
-    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent") && XmlPart_Behavior.call_hasNewLineAfter_2133624044437631594(SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent"))) {
+    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
       this.appendNewLine();
       this.indentBuffer();
     }

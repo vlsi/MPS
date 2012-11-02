@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigrationScript {
@@ -45,7 +45,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
           return false;
         }
         while (classifier != declarationClassifier) {
-          for (SNode method : Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), node)) {
+          for (SNode method : Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), node)) {
             if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
               return false;
             }

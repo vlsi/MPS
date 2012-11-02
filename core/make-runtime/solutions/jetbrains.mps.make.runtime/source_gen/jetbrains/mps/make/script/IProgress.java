@@ -9,6 +9,7 @@ public interface IProgress {
   public void advanceWork(String name, int done);
   public void advanceWork(String name, int done, String comment);
   public void finishWork(String name);
+
   public static class Stub implements IProgress {
     public Stub() {
     }
@@ -29,5 +30,4 @@ public interface IProgress {
       return 0;
     }
   }
-
 }

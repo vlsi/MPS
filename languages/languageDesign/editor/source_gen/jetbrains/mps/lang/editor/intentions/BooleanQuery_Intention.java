@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -57,7 +57,7 @@ public class BooleanQuery_Intention extends BaseIntention {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BooleanStyleSheetItem_Behavior.call_useQuery_1223387362946(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
   }
 
   public boolean isAvailableInChildNodes() {

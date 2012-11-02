@@ -190,8 +190,7 @@ public class GenerationPartitioningUtil {
       if (nodeID.equals("*")) {
         return s + "*";
       } else {
-        GlobalScope scope = GlobalScope.getInstance();
-        SModelDescriptor refModel = scope.getModelDescriptor(SModelReference.fromString(modelUID));
+        SModelDescriptor refModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelUID));
         if (refModel != null) {
           SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
           if (mappingConfig != null) {

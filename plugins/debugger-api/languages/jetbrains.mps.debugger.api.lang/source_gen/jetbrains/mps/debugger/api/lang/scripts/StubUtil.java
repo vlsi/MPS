@@ -18,11 +18,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class StubUtil {
   public StubUtil() {
@@ -79,10 +78,10 @@ public class StubUtil {
 
     SNode provider = ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.lang.core.structure.ScopeProvider", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.ScopeProvider"), concept, node) != null;
+        return BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Object[]{concept, node}) != null;
       }
     });
-    Scope scope = ScopeProvider_Behavior.call_getScope_3734116213129936182(provider, concept, node);
+    Scope scope = BehaviorReflection.invokeVirtual(Scope.class, provider, "virtual_getScope_3734116213129936182", new Object[]{concept, node});
     SNode candidate = scope.resolve(node, SLinkOperations.getResolveInfo(reference));
     if (candidate != null) {
       SModelReference oldModelReference = reference.getTargetSModelReference();
@@ -95,7 +94,7 @@ public class StubUtil {
         public String invoke(SNode candidate) {
           return SPropertyOperations.getString(SNodeOperations.cast(candidate, "jetbrains.mps.lang.core.structure.IResolveInfo"), "resolveInfo");
         }
-      }, INamedConcept_Behavior.call_getFqName_1213877404258(concept));
+      }, BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{}));
     }
   }
 

@@ -12,12 +12,12 @@ public class PropertiesFile_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   public PropertiesFile_BehaviorDescriptor() {
   }
 
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return PropertiesFile_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
-  }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
+    return PropertiesFile_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
   }
 
   @Override

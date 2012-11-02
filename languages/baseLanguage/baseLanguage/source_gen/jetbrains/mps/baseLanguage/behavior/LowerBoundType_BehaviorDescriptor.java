@@ -10,6 +10,18 @@ public class LowerBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor i
   public LowerBoundType_BehaviorDescriptor() {
   }
 
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    LowerBoundType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  }
+
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  }
+
+  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  }
+
   public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     return LowerBoundType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
@@ -18,28 +30,16 @@ public class LowerBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return LowerBoundType_Behavior.virtual_getErasure_702942408396803226(thisNode);
   }
 
-  public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
-    return LowerBoundType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
-  }
-
-  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    LowerBoundType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
-  }
-
-  public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
-    return LowerBoundType_Behavior.virtual_isValueType_4836112446988592019(thisNode);
-  }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return LowerBoundType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
-  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    return LowerBoundType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
   }
 
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
+    return LowerBoundType_Behavior.virtual_isValueType_4836112446988592019(thisNode);
   }
 
   @Override

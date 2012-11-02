@@ -11,7 +11,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -30,7 +30,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     List<SNode> result = new ArrayList<SNode>();
     SNode elemType = SLinkOperations.getTarget(type, "elementType", true);
     if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      elemType = Type_Behavior.call_getUnboxedType_1213877337320(elemType);
+      elemType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), elemType, "virtual_getUnboxedType_1213877337320", new Object[]{});
     }
     ListSequence.fromList(result).addElement(new supertypesOf_List_SubtypingRule.QuotationClass_w26thq_a0a0d0a().createNode(elemType, typeCheckingContext));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {

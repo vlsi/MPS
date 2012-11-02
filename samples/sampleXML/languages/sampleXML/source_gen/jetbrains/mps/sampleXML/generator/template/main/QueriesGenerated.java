@@ -4,4 +4,5 @@ package jetbrains.mps.sampleXML.generator.template.main;
 
 
 public class QueriesGenerated {
+
 }

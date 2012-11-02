@@ -4,15 +4,11 @@ package jetbrains.mpslite.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FeatureAccessConcept_Behavior {
-  private static Class[] PARAMETERS_8405639817129357299 = {SNode.class, SNode.class, Map.class, Map.class};
-  private static Class[] PARAMETERS_8405639817129358591 = {SNode.class, Map.class, Map.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,31 +20,23 @@ public class FeatureAccessConcept_Behavior {
     throw new UnsupportedOperationException();
   }
 
+  @Deprecated
   public static void call_fillConcept_8405639817129357299(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), "virtual_fillConcept_1239891562930", PARAMETERS_8405639817129357299, new Object[]{concept, conceptsToTargets, partsToLinks});
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_fillConcept_1239891562930", new Object[]{concept, conceptsToTargets, partsToLinks});
   }
 
+  @Deprecated
   public static SNode call_createEditor_8405639817129358591(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), "virtual_createEditor_1239890004879", PARAMETERS_8405639817129358591, new Object[]{conceptsToTargets, partsToLinks});
-  }
-
-  public static void callSuperNew_fillConcept_8405639817129357299(SNode thisNode, String callerConceptFqName, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), callerConceptFqName, "virtual_fillConcept_1239891562930", PARAMETERS_8405639817129357299, new Object[]{concept, conceptsToTargets, partsToLinks});
-  }
-
-  public static SNode callSuperNew_createEditor_8405639817129358591(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), callerConceptFqName, "virtual_createEditor_1239890004879", PARAMETERS_8405639817129358591, new Object[]{conceptsToTargets, partsToLinks});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createEditor_1239890004879", new Object[]{conceptsToTargets, partsToLinks});
   }
 
   @Deprecated
   public static void callSuper_fillConcept_8405639817129357299(SNode thisNode, String callerConceptFqName, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), callerConceptFqName, "virtual_fillConcept_1239891562930", PARAMETERS_8405639817129357299, new Object[]{concept, conceptsToTargets, partsToLinks});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), callerConceptFqName, "virtual_fillConcept_1239891562930", new Class[]{SNode.class, SNode.class, Map.class, Map.class}, new Object[]{concept, conceptsToTargets, partsToLinks});
   }
 
   @Deprecated
   public static SNode callSuper_createEditor_8405639817129358591(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), callerConceptFqName, "virtual_createEditor_1239890004879", PARAMETERS_8405639817129358591, new Object[]{conceptsToTargets, partsToLinks});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.FeatureAccessConcept"), callerConceptFqName, "virtual_createEditor_1239890004879", new Class[]{SNode.class, Map.class, Map.class}, new Object[]{conceptsToTargets, partsToLinks});
   }
 }

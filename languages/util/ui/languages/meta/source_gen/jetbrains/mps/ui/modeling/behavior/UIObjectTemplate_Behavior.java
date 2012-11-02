@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -17,7 +18,7 @@ public class UIObjectTemplate_Behavior {
   public static Iterable<SNode> call_allExtendsTemplates_4007322171506129964(final SNode thisNode) {
     return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(thisNode, "uiObject", false))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode uio) {
-        return SNodeOperations.as(HasTemplate_Behavior.call_findTemplate_3939571372331676060(uio, SNodeOperations.getModel(thisNode), GlobalScope.getInstance()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate");
+        return SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), uio, "virtual_findTemplate_3939571372331676060", new Object[]{SNodeOperations.getModel(thisNode), GlobalScope.getInstance()}), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate");
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode tpl) {

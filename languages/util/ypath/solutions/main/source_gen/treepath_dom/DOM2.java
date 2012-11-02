@@ -33,6 +33,7 @@ public class DOM2 extends TreePath<Node> {
   }
 
   private static class Children {
+
   }
 
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {

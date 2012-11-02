@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.core.xml.behavior.XmlPart_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -154,7 +154,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_5fx40y_a0a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return XmlPart_Behavior.call_isFirstPositionAllowed_2133624044437631446(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
   private static boolean renderingCondition_5fx40y_a1a(SNode node, EditorContext editorContext, IScope scope) {
@@ -163,7 +163,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_5fx40y_a2a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return XmlPart_Behavior.call_isLastPositionAllowed_2133624044437631519(node);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 
   private static class linesListHandler_5fx40y_a0b0 extends RefNodeListHandler {

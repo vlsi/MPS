@@ -21,8 +21,8 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="134" startPosition="53" endLine="171" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$4" />
   <unitInfo fileName="QueriesGenerated.java" startLine="35" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated" />
   <root nodeId="1622293396948974642" modelId="r:a097594c-50a7-4de7-9168-6b82c2b41d5c(jetbrains.mps.core.xml.actions)">
-    <nodeInfo nodeId="1622293396949015926" fileName="QueriesGenerated.java" startLine="35" startPosition="31" endLine="36" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5" />
-    <nodeInfo nodeId="1622293396949013944" fileName="QueriesGenerated.java" startLine="36" startPosition="103" endLine="37" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5" />
+    <nodeInfo nodeId="1622293396949015926" fileName="QueriesGenerated.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5" />
+    <nodeInfo nodeId="1622293396949013944" fileName="QueriesGenerated.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5" />
     <nodeInfo nodeId="1622293396949013918" fileName="QueriesGenerated.java" startLine="184" startPosition="94" endLine="185" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1622293396949015909" fileName="QueriesGenerated.java" startLine="185" startPosition="55" endLine="186" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1622293396949015950" fileName="QueriesGenerated.java" startLine="187" startPosition="118" endLine="188" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -176,17 +176,17 @@
     <nodeInfo nodeId="6666499814681637548" fileName="AttributeUtil.java" startLine="38" startPosition="14" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6666499814681637450" fileName="AttributeUtil.java" startLine="42" startPosition="36" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="47" startPosition="62" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6666499814681637422" fileName="AttributeUtil.java" startLine="14" startPosition="28" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeUtil#()V" />
+    <nodeInfo nodeId="6666499814681637422" fileName="AttributeUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeUtil#()V" />
+    <nodeInfo nodeId="6666499814681637530" fileName="AttributeUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setIndexSelection#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6666499814681637592" fileName="AttributeUtil.java" startLine="35" startPosition="14" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6666499814681637546" fileName="AttributeUtil.java" startLine="38" startPosition="12" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6666499814681637530" fileName="AttributeUtil.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setIndexSelection#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6666499814681637914" fileName="AttributeUtil.java" startLine="21" startPosition="75" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6666499814681637443" fileName="AttributeUtil.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_u51ahb_a0a0a0e0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_u51ahb_a0a0a0e0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6666499814681637559" fileName="AttributeUtil.java" startLine="29" startPosition="96" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6666499814681637475" fileName="AttributeUtil.java" startLine="28" startPosition="72" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6666499814681637463" fileName="AttributeUtil.java" startLine="27" startPosition="27" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6666499814681637426" fileName="AttributeUtil.java" startLine="20" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6666499814681637426" fileName="AttributeUtil.java" startLine="21" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="6666499814681637425" fileName="AttributeUtil.java" startLine="15" startPosition="26" endLine="15" endPosition="26" />
     <scopeInfo nodeId="6666499814681637533" fileName="AttributeUtil.java" startLine="18" startPosition="69" endLine="18" endPosition="69" />
     <scopeInfo nodeId="6666499814681637915" fileName="AttributeUtil.java" startLine="22" startPosition="23" endLine="23" endPosition="13" />
@@ -195,15 +195,15 @@
     <scopeInfo nodeId="6666499814681637547" fileName="AttributeUtil.java" startLine="38" startPosition="14" endLine="39" endPosition="25" />
     <scopeInfo nodeId="6666499814681637444" fileName="AttributeUtil.java" startLine="42" startPosition="36" endLine="43" endPosition="36" />
     <scopeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="47" startPosition="62" endLine="48" endPosition="44" />
-    <scopeInfo nodeId="6666499814681637422" fileName="AttributeUtil.java" startLine="14" startPosition="28" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="6666499814681637591" fileName="AttributeUtil.java" startLine="32" startPosition="39" endLine="34" endPosition="65" />
-    <scopeInfo nodeId="6666499814681637530" fileName="AttributeUtil.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="6666499814681637422" fileName="AttributeUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="6666499814681637530" fileName="AttributeUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="6666499814681637534" varName="editorContext" />
     </scopeInfo>
+    <scopeInfo nodeId="6666499814681637591" fileName="AttributeUtil.java" startLine="32" startPosition="39" endLine="34" endPosition="65" />
     <scopeInfo nodeId="6666499814681637443" fileName="AttributeUtil.java" startLine="41" startPosition="5" endLine="44" endPosition="5">
       <varInfo nodeId="6666499814681637446" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6666499814681637579" fileName="AttributeUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="6666499814681637579" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="6666499814681637477" fileName="AttributeUtil.java" startLine="29" startPosition="96" endLine="37" endPosition="9" />
@@ -215,7 +215,7 @@
       <varInfo nodeId="6666499814681637458" varName="lastValue" />
       <varInfo nodeId="6666499814681637433" varName="valuesToDelete" />
     </scopeInfo>
-    <scopeInfo nodeId="6666499814681637426" fileName="AttributeUtil.java" startLine="20" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="6666499814681637426" fileName="AttributeUtil.java" startLine="21" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="6666499814681637430" varName="attr" />
       <varInfo nodeId="6666499814681637594" varName="editorContext" />
     </scopeInfo>

@@ -42,8 +42,8 @@
     <nodeInfo nodeId="5506931792172374387" fileName="QueriesGenerated.java" startLine="125" startPosition="131" endLine="126" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5506931792172374382" fileName="QueriesGenerated.java" startLine="126" startPosition="40" endLine="127" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="633195941006898684" fileName="QueriesGenerated.java" startLine="46" startPosition="153" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5337045848190861070" fileName="QueriesGenerated.java" startLine="119" startPosition="200" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5506931792172374302" fileName="QueriesGenerated.java" startLine="123" startPosition="45" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5337045848190861070" fileName="QueriesGenerated.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5506931792172374302" fileName="QueriesGenerated.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5337045848190669727" fileName="QueriesGenerated.java" startLine="118" startPosition="155" endLine="129" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5337045848190803510" fileName="QueriesGenerated.java" startLine="38" startPosition="154" endLine="39" endPosition="52" />
     <scopeInfo nodeId="5337045848190803544" fileName="QueriesGenerated.java" startLine="42" startPosition="154" endLine="43" endPosition="57" />
@@ -61,14 +61,14 @@
     <scopeInfo nodeId="7865129668866947451" fileName="QueriesGenerated.java" startLine="102" startPosition="150" endLine="103" endPosition="106" />
     <scopeInfo nodeId="633195941006921761" fileName="QueriesGenerated.java" startLine="114" startPosition="154" endLine="115" endPosition="118" />
     <scopeInfo nodeId="5337045848190861071" fileName="QueriesGenerated.java" startLine="120" startPosition="39" endLine="121" endPosition="153" />
+    <scopeInfo nodeId="5337045848190861070" fileName="QueriesGenerated.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="5337045848190861070" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="5506931792172374303" fileName="QueriesGenerated.java" startLine="124" startPosition="37" endLine="127" endPosition="17">
       <varInfo nodeId="5506931792172374310" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="5337045848190861070" fileName="QueriesGenerated.java" startLine="119" startPosition="200" endLine="123" endPosition="0">
-      <varInfo nodeId="5337045848190861070" varName="it" />
-    </scopeInfo>
     <scopeInfo nodeId="633195941006880943" fileName="QueriesGenerated.java" startLine="46" startPosition="153" endLine="51" endPosition="118" />
-    <scopeInfo nodeId="5506931792172374302" fileName="QueriesGenerated.java" startLine="123" startPosition="45" endLine="129" endPosition="0">
+    <scopeInfo nodeId="5506931792172374302" fileName="QueriesGenerated.java" startLine="124" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="5506931792172374302" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="5337045848190669726" fileName="QueriesGenerated.java" startLine="118" startPosition="155" endLine="129" endPosition="24" />

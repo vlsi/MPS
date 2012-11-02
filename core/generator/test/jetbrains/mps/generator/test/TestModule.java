@@ -20,7 +20,6 @@ import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -122,10 +121,6 @@ public class TestModule extends ClassLoadingModule {
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>(myModels.values());
-  }
-
-  public List<SModelDescriptor> getHiddenModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 

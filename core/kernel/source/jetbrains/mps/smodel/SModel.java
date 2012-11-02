@@ -217,7 +217,7 @@ public class SModel {
     return canFireEvent();
   }
 
-  boolean isRegistered() {
+  public boolean isRegistered() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered();
   }
 

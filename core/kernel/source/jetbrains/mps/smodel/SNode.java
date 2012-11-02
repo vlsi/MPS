@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
@@ -64,7 +62,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private String[] myProperties = null;
 
   private SModel myModel;
-  private SModel myOldModel;// DO NOT USE!!!
   private SNodeId myId;
 
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
@@ -689,54 +686,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel;
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel);
-  }
-
-  @Deprecated
-  //for migration purposes only. Should be removed in release
-  public void setModel(SModel model) {
-    myOldModel = model;
-  }
-
-  @Deprecated
-  /**
-   * Use<br/>
-   * n = new SNode(concept);<br/>
-   * model.addNode(n)<br/>
-   * or<br/>
-   * n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   * InternUtil.intern should be done in outer code
-   *
-   * @Deprecated in 3.0
-   */
-  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
-    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
-    setModel(model);
-  }
-
-  @Deprecated
-  /**
-   * Use<br/>
-   * n = new SNode(concept);<br/>
-   * model.addNode(n)<br/>
-   * or<br/>
-   * n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   *
-   * @Deprecated in 3.0
-   */
-  public SNode(SModel model, String conceptFqName) {
-    this(InternUtil.intern(conceptFqName));
-    setModel(model);
-  }
-
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -744,7 +693,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void setId(@Nullable SNodeId id) {
     if (EqualUtil.equals(id, myId)) return;
 
-    if (myModel == null || AuxilaryRuntimeModel.isAuxModel(myModel)) {
+    if (myModel == null) {
       myId = id;
     } else {
       LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
@@ -773,17 +722,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getParent().getLinkDeclaration(getRole());
   }
 
-  private static Set<String> ourReported = new THashSet<String>();
-
-  public SModel getOldModel() {
-//    Throwable t = new Throwable();
-//    String s = t.toString();
-//    if (!ourReported.contains(s)) {
-//      ourReported.add(s);
-//      LOG.error("DO NOT USE!!!", t);
-//    }
-    return myOldModel;
-  }
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
@@ -804,7 +742,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+    LOG.assertLog(myModel == null, "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
 
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
@@ -851,7 +789,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------private (SNode and SModel usages)-------
 
   void unRegisterFromModel() {
-    if (myModel == null || AuxilaryRuntimeModel.isAuxModel(myModel)) return;
+    if (myModel == null) return;
 
     for (SReference ref : myReferences) {
       ref.makeDirect();
@@ -863,13 +801,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       child.unRegisterFromModel();
     }
 
-    myOldModel = myModel;
     myModel = null;
   }
 
   void registerInModel(SModel model) {
     if (model != myModel) {
-      if (myModel != null && !AuxilaryRuntimeModel.isAuxModel(myModel)) {
+      if (myModel != null) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
         return;
       }
@@ -1175,6 +1112,45 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
 
+  @Deprecated
+  /**
+   * Use<br/>
+   * n = new SNode(concept);<br/>
+   * model.addNode(n)<br/>
+   * or<br/>
+   * n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   * InternUtil.intern should be done in outer code
+   *
+   * @Deprecated in 3.0
+   */
+  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
+    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
+  }
+
+  @Deprecated
+  /**
+   * Use<br/>
+   * n = new SNode(concept);<br/>
+   * model.addNode(n)<br/>
+   * or<br/>
+   * n = model.newNode(concept)<br/>
+   * Set id if needed before adding to model
+   *
+   * @Deprecated in 3.0
+   */
+  public SNode(SModel model, String conceptFqName) {
+    this(InternUtil.intern(conceptFqName));
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return getModel() != null;
+  }
 
   @Deprecated
   /**

@@ -22,7 +22,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.build.behavior.BuildRelativePath_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -109,7 +109,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(node, Context.defaultContext()));
+      IFile file = FileSystem.getInstance().getFileByPath(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
       if (!(file.exists())) {
         return ListSequence.fromList(new ArrayList<String>());
       }

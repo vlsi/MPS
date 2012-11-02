@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.util.Set;
@@ -54,7 +55,7 @@ public class PathHolder_Behavior {
 
   public static SNode createPathHolder_7235580512916878209(@NotNull String path, @NotNull SNode module) {
     SNode layout = SNodeOperations.getAncestor(module, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true);
-    return PathHolder_Behavior.createPathHolder_55204148067446946(path, IMacroHolder_Behavior.call_getMacro_1107726059764558743(layout), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(module).getPath(), module);
+    return PathHolder_Behavior.createPathHolder_55204148067446946(path, BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), layout, "virtual_getMacro_1107726059764558743", new Object[]{}), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(module).getPath(), module);
   }
 
   public static SNode createPathHolder_55204148067446946(@NotNull String path, List<SNode> macros, String homePath, @Nullable SNode module) {

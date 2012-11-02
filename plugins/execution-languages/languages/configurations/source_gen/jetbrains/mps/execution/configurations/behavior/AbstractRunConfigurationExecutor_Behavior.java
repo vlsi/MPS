@@ -5,8 +5,9 @@ package jetbrains.mps.execution.configurations.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 
 public class AbstractRunConfigurationExecutor_Behavior {
   public static void init(SNode thisNode) {
@@ -20,7 +21,7 @@ public class AbstractRunConfigurationExecutor_Behavior {
 
   @NonNls
   public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
-    return IGeneratedToClass_Behavior.call_getSuffix_946964771156905483(SLinkOperations.getTarget(thisNode, "configuration", false)) + "_RunProfileState";
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "configuration", false), "virtual_getSuffix_946964771156905483", new Object[]{}) + "_RunProfileState";
   }
 
   public static String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {

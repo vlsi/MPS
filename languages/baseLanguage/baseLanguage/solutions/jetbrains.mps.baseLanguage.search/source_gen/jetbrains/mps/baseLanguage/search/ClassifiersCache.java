@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.cache.CachesManager;
 
 @Deprecated
@@ -64,8 +65,7 @@ import jetbrains.mps.cache.CachesManager;
     }
     ListSequence.fromList(MapSequence.fromMap(myClassifiersByName).get(name)).addElement(classifier);
     MapSequence.fromMap(myNameByClassifier).put(classifier, name);
-    List<SNode> list = SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true);
-    for (SNode innerClassifier : list) {
+    for (SNode innerClassifier : SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true)) {
       this.putClassifier(innerClassifier);
     }
   }
@@ -80,8 +80,7 @@ import jetbrains.mps.cache.CachesManager;
       }
     }
     MapSequence.fromMap(myNameByClassifier).removeKey(classifier);
-    List<SNode> list = SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true);
-    for (SNode innerClassifier : list) {
+    for (SNode innerClassifier : SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true)) {
       this.removeClassifier(innerClassifier);
     }
   }
@@ -135,7 +134,7 @@ import jetbrains.mps.cache.CachesManager;
         return;
       }
     }
-    this.processNode(node, true);
+    this.processNode(node, false);
   }
 
   public void propertyChanged(SModelPropertyEvent event) {
@@ -161,8 +160,8 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   private void collectInnerClasses(SNode classConcept, List<SNode> list) {
-    List<SNode> inners = SLinkOperations.getTargets(classConcept, "staticInnerClassifiers", true);
-    list.addAll(inners);
+    Iterable<SNode> inners = SLinkOperations.getTargets(classConcept, "staticInnerClassifiers", true);
+    ListSequence.fromList(list).addSequence(Sequence.fromIterable(inners));
     for (SNode inner : inners) {
       this.collectInnerClasses(inner, list);
     }

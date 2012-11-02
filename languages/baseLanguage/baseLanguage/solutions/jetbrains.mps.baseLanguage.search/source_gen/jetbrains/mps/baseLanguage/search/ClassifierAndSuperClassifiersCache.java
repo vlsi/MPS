@@ -26,7 +26,7 @@ import java.util.LinkedHashSet;
 import java.util.Iterator;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 @Deprecated
@@ -316,9 +316,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       List<SNode> allMethods = new ArrayList<SNode>();
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
-        allMethods.addAll(SLinkOperations.getTargets(classifier, "method", true));
+        ListSequence.fromList(allMethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)));
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          allMethods.addAll(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true));
+          ListSequence.fromList(allMethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true)));
         }
       }
       this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
@@ -391,7 +391,7 @@ forEachInAllMethods:
           result.append(',');
         }
         if (type != null) {
-          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
+          result.append(BehaviorReflection.invokeVirtual(String.class, type, "virtual_getErasureSignature_1213877337313", new Object[]{}));
         } else {
           result.append("");
         }
@@ -476,11 +476,11 @@ forEachInAllMethods:
     protected void init() {
       this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
       this.myStaticFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
-      List<SNode> allFields = new ArrayList<SNode>();
+      List<SNode> allFields = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
-        List<SNode> staticFields = SLinkOperations.getTargets(classifier, "staticField", true);
-        allFields.addAll(staticFields);
+        Iterable<SNode> staticFields = SLinkOperations.getTargets(classifier, "staticField", true);
+        ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(staticFields));
         for (SNode staticField : staticFields) {
           String name = SPropertyOperations.getString(staticField, "name");
           if (name == null) {
@@ -491,8 +491,8 @@ forEachInAllMethods:
           }
         }
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          List<SNode> fields = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true);
-          ListSequence.fromList(allFields).addSequence(ListSequence.fromList(fields));
+          Iterable<SNode> fields = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true);
+          ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(fields));
           for (SNode field : fields) {
             String name = SPropertyOperations.getString(field, "name");
             if (name == null) {

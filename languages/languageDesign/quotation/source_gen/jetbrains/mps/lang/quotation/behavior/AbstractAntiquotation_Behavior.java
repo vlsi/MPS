@@ -5,7 +5,7 @@ package jetbrains.mps.lang.quotation.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.EmptyScope;
 
 public class AbstractAntiquotation_Behavior {
@@ -29,7 +29,7 @@ public class AbstractAntiquotation_Behavior {
     int metaLevelChange = 0;
     while ((node != null)) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")) {
-        metaLevelChange += IMetaLevelChanger_Behavior.call_getMetaLevelChange_201537367881074474(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"));
+        metaLevelChange += BehaviorReflection.invokeVirtual(Integer.TYPE, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
       }
       if (metaLevelChange == 0) {
         break;

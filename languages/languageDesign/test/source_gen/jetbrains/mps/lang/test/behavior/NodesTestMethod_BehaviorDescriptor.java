@@ -11,16 +11,16 @@ public abstract class NodesTestMethod_BehaviorDescriptor extends BaseMethodDecla
   public NodesTestMethod_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return NodesTestMethod_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
-  }
-
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return NodesTestMethod_Behavior.virtual_getTestCase_1216134500045(thisNode);
   }
 
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return NodesTestMethod_Behavior.virtual_getTestName_1216136419751(thisNode);
+  }
+
+  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
+    return NodesTestMethod_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   @Override

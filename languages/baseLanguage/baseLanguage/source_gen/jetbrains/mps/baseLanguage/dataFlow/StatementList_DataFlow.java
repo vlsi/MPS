@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 
 public class StatementList_DataFlow extends DataFlowBuilder {
@@ -28,7 +28,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
       SNode methodLike = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((methodLike != null)) {
-        lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
+        lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{});
       }
     }
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {

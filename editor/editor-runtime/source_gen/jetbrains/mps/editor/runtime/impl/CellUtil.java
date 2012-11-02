@@ -6,7 +6,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -24,7 +24,7 @@ public class CellUtil {
 
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
     SNode deprecatable = SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.IDeprecatable");
-    if (deprecatable != null && (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, deprecatable, "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})) || ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.getConceptDeclaration(deprecatable), "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})))) {
+    if (deprecatable != null && (BehaviorReflection.invokeVirtual(Boolean.TYPE, deprecatable, "virtual_isDeprecated_1224609060727", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(deprecatable), "virtual_isDeprecated_1224609060727", new Object[]{}))) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
   }
@@ -37,7 +37,7 @@ public class CellUtil {
   }
 
   public static SNode getConceptPropertyDeclaration(SNode node, final String conceptPropertyName) {
-    return ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(node), "call_getConceptPropertyDeclarations_1213877394562", new Class[]{SNode.class}))).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getConceptPropertyDeclarations_1213877394562", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return conceptPropertyName.equals(SPropertyOperations.getString(it, "name"));
       }

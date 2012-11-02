@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FieldDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "declaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false)));
+    this.append(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "declaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getFqName_1213877404258", new Object[]{}));
     this.append("#");
     this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "declaration", false), "name"));
   }

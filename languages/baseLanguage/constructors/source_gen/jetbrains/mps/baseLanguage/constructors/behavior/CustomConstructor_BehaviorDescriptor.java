@@ -11,12 +11,12 @@ public class CustomConstructor_BehaviorDescriptor extends ConceptFunction_Behavi
   public CustomConstructor_BehaviorDescriptor() {
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CustomConstructor_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   @Override

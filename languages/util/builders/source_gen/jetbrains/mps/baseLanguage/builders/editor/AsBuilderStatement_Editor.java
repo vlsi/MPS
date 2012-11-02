@@ -16,7 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AsBuilderStatement_Editor extends DefaultNodeEditor {
@@ -137,6 +137,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_a75gvn_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(Builder_Behavior.call_isLeaf_7057666463730595159(SLinkOperations.getTarget(node, "builder", true)));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{}));
   }
 }

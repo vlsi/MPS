@@ -11,7 +11,8 @@ import jetbrains.mps.project.listener.ModelCreationListener;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
@@ -45,9 +46,9 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   @Override
   public void projectOpened() {
     super.projectOpened();
-    for (SModelDescriptor md : GlobalScope.getInstance().getModelDescriptors()) {
+    for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
-        myStructureModels.add(md);
+        myStructureModels.add((SModelDescriptor) md);
       }
     }
   }

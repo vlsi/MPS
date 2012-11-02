@@ -4,12 +4,31 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
 
 public abstract class BaseClassConceptTextGen {
+  public static void members(SNode classifier, final SNodeTextGen textGen) {
+    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).isNotEmpty()) {
+      for (SNode item : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
+        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+      }
+    }
+    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true) != null)) {
+      textGen.appendWithIndent("static {");
+      textGen.increaseDepth();
+      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true), textGen.getSNode());
+      textGen.appendNewLine();
+      textGen.decreaseDepth();
+      textGen.appendWithIndent("}");
+      textGen.appendNewLine();
+    }
+  }
+
   public static void body(SNode concept, final SNodeTextGen textGen) {
     boolean needNewLine = false;
     if ((SLinkOperations.getTarget(concept, "instanceInitializer", true) != null)) {
@@ -65,13 +84,7 @@ public abstract class BaseClassConceptTextGen {
     }
     if ((SLinkOperations.getTarget(concept, "classInitializer", true) != null)) {
       BaseLanguageTextGen.newLine(needNewLine, textGen);
-      textGen.appendWithIndent("static {");
-      textGen.increaseDepth();
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(SLinkOperations.getTarget(concept, "classInitializer", true), "statementList", true), textGen.getSNode());
-      textGen.appendNewLine();
-      textGen.decreaseDepth();
-      textGen.appendWithIndent("}");
-      textGen.appendNewLine();
+      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(concept, "classInitializer", true), textGen.getSNode());
     }
   }
 
@@ -84,8 +97,8 @@ public abstract class BaseClassConceptTextGen {
     }
   }
 
-  public static void collection(List<SNode> nodes, final SNodeTextGen textGen) {
-    if (ListSequence.fromList(nodes).isNotEmpty()) {
+  public static void collection(Iterable<SNode> nodes, final SNodeTextGen textGen) {
+    if (Sequence.fromIterable(nodes).isNotEmpty()) {
       for (SNode item : nodes) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }

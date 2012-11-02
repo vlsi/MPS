@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MethodSignature implements Signature {
   private final String singature;
@@ -52,12 +52,12 @@ public class MethodSignature implements Signature {
           if (context.containsUserObject(cacheKey)) {
             result.append(context.getUserObject(cacheKey));
           } else {
-            String typeSignature = ((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class}));
+            String typeSignature = BehaviorReflection.invokeVirtual(String.class, type, "virtual_getErasureSignature_1213877337313", new Object[]{});
             context.putUserObject(cacheKey, typeSignature);
             result.append(typeSignature);
           }
         } else {
-          result.append(((String) BehaviorManager.getInstance().invoke(Object.class, type, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class})));
+          result.append(BehaviorReflection.invokeVirtual(String.class, type, "virtual_getErasureSignature_1213877337313", new Object[]{}));
         }
       } else {
         result.append("");

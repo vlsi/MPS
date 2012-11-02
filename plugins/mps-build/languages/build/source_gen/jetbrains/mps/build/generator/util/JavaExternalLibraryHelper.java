@@ -11,12 +11,9 @@ import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collections;
-import jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior;
-import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -50,7 +47,7 @@ public class JavaExternalLibraryHelper {
           if (jarArtifact != null) {
             ListSequence.fromList(artifacts).addElement(jarArtifact);
           } else {
-            genContext.showErrorMessage(library, "jar `" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true), null) + "' was not found in the layout");
+            genContext.showErrorMessage(library, "jar `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null}) + "' was not found in the layout");
             return Collections.emptyList();
           }
         } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")) {
@@ -62,7 +59,7 @@ public class JavaExternalLibraryHelper {
           if (artifact != null) {
             ListSequence.fromList(artifacts).addElement(artifact);
           } else {
-            genContext.showErrorMessage(library, "jar file `" + BuildSource_SingleFile_Behavior.call_getApproximateName_5610619299013425878(file) + "' was not found in the layout");
+            genContext.showErrorMessage(library, "jar file `" + BehaviorReflection.invokeVirtual(String.class, file, "virtual_getApproximateName_5610619299013425878", new Object[]{}) + "' was not found in the layout");
             return Collections.emptyList();
           }
 
@@ -75,7 +72,7 @@ public class JavaExternalLibraryHelper {
           if (artifact != null) {
             ListSequence.fromList(jarContainers).addElement(artifact);
           } else {
-            genContext.showErrorMessage(library, "jar folder `" + BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(folder) + "' was not found in the layout");
+            genContext.showErrorMessage(library, "jar folder `" + BehaviorReflection.invokeVirtual(String.class, folder, "virtual_getApproximateName_5610619299014531547", new Object[]{}) + "' was not found in the layout");
             return Collections.emptyList();
           }
         } else {
@@ -106,7 +103,7 @@ public class JavaExternalLibraryHelper {
     for (SNode pe : ListSequence.fromList(artifacts).distinct()) {
       String val = helper.locations().get(pe);
       if (val == null) {
-        genContext.showErrorMessage(pe, "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
+        genContext.showErrorMessage(pe, "no location for " + BehaviorReflection.invokeVirtual(String.class, pe, "virtual_getPresentation_1213877396640", new Object[]{}) + " (unsupported layout element)");
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
@@ -116,7 +113,7 @@ public class JavaExternalLibraryHelper {
     for (SNode pe : jarContainers) {
       String val = helper.contentLocations().get(pe);
       if (val == null) {
-        genContext.showErrorMessage(pe, "no content location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(pe) + " (unsupported layout element)");
+        genContext.showErrorMessage(pe, "no content location for " + BehaviorReflection.invokeVirtual(String.class, pe, "virtual_getPresentation_1213877396640", new Object[]{}) + " (unsupported layout element)");
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");

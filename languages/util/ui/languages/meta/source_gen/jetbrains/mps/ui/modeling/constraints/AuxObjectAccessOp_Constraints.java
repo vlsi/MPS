@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AuxObjectAccessOp_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "1412244996131807618");
@@ -64,7 +64,7 @@ public class AuxObjectAccessOp_Constraints extends BaseConstraintsDescriptor {
               SLinkOperations.getTarget(SLinkOperations.getTarget(uiof, "context", true), "uiObject", false) :
               SLinkOperations.getTarget(uiot, "uiObject", false)
             );
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(HasTemplate_Behavior.call_findTemplate_3939571372331676060(uio, _context.getModel(), operationContext.getScope()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "auxillary", true), "auxTemplate", true);
+            return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), uio, "virtual_findTemplate_3939571372331676060", new Object[]{_context.getModel(), operationContext.getScope()}), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "auxillary", true), "auxTemplate", true);
           }
 
           @Override

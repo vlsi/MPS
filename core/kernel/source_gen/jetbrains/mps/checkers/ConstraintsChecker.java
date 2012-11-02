@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -54,7 +54,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.smodel.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
       final SNode link = SNodeOperations.getContainingLinkDeclaration(node);
       if (link == null) {
-        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "virtual_getFqName_1213877404258", new Class[]{SNode.class})), null);
+        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "virtual_getFqName_1213877404258", new Object[]{}), null);
         return;
       }
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {

@@ -12,24 +12,32 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
   public ClassifierType_BehaviorDescriptor() {
   }
 
-  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+    ClassifierType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  }
+
+  public SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_createDefaultTypeExpression_3359611512358152580(thisNode);
+  }
+
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  }
+
+  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
+    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
   }
 
   public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     return ClassifierType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
   }
 
-  public boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
-    return ClassifierType_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
+  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }
 
-  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
-  }
-
-  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    ClassifierType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
 
   public SNode virtual_getClassifier_7405920559687237513(SNode thisNode) {
@@ -40,16 +48,20 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return ClassifierType_Behavior.virtual_getDetailedPresentation_2354269628709769373(thisNode);
   }
 
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
   public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
     return ClassifierType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
   }
 
-  public SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_createDefaultTypeExpression_3359611512358152580(thisNode);
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
+  public SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
+    return ClassifierType_Behavior.virtual_getLooseType_5744862332972792015(thisNode, visitedTypes);
+  }
+
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
   public Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode) {
@@ -60,32 +72,20 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return ClassifierType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
 
-  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_getErasure_702942408396803226(thisNode);
-  }
-
-  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
+  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
   }
 
   public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return ClassifierType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
   }
 
-  public SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
-    return ClassifierType_Behavior.virtual_getLooseType_5744862332972792015(thisNode, visitedTypes);
+  public boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    return ClassifierType_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
   }
 
-  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
-  }
-
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
-  }
-
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return ClassifierType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return ClassifierType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }
 
   @Override

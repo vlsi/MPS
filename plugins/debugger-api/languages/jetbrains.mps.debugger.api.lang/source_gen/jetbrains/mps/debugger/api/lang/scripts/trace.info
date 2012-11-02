@@ -68,70 +68,70 @@
     <nodeInfo nodeId="4239159129957581671" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="264" startPosition="187" endLine="265" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8285632988623946998" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="268" startPosition="52" endLine="269" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="272" startPosition="42" endLine="273" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945375717" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
     <nodeInfo nodeId="901167123042926443" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="88" startPosition="59" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="109" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="135" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="139" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993407" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="165" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956943531" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="187" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="192" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="196" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993483" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="211" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="222" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="226" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="230" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
     <nodeInfo nodeId="1466384023878431607" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="234" startPosition="59" endLine="237" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945375717" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="38" startPosition="256" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="49" startPosition="76" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="75" startPosition="76" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="104" startPosition="76" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="130" startPosition="76" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993407" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="149" startPosition="284" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="160" startPosition="76" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="168" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956943531" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="179" startPosition="262" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="191" startPosition="76" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993483" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="210" startPosition="266" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="216" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="221" startPosition="76" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="225" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="229" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="241" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="245" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="250" startPosition="76" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="254" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="258" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="267" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="271" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="242" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="246" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="251" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="255" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="259" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="268" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="272" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="173" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="263" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="5992322387945375649" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="37" startPosition="52" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="116" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="142" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="7594826025259993397" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="148" startPosition="52" endLine="153" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="172" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4239159129956943521" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="178" startPosition="52" endLine="183" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="203" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="7594826025259993473" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="209" startPosition="52" endLine="214" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="262" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="87" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="147" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="208" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="233" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="177" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="88" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="148" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="209" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="234" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="178" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="48" startPosition="7" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="48" startPosition="7" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="103" startPosition="7" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -150,7 +150,7 @@
     <nodeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="190" startPosition="7" endLine="220" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="159" startPosition="7" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="159" startPosition="7" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="16" startPosition="80" endLine="276" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerMovedToPlugin_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="17" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerMovedToPlugin_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
     <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="38" />
     <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="38" />
     <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="69" />
@@ -219,116 +219,116 @@
     <scopeInfo nodeId="4239159129957581662" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="263" startPosition="59" endLine="265" endPosition="61">
       <varInfo nodeId="4239159129957581664" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5992322387945375717" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="38" startPosition="256" endLine="42" endPosition="0">
+    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5992322387945375717" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="5992322387945375717" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="49" startPosition="76" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="5992322387945373692" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="75" startPosition="76" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="4239159129957581680" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="104" startPosition="76" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="100" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="105" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="109" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="113" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="122" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="4239159129956939270" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="130" startPosition="76" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993407" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="149" startPosition="284" endLine="153" endPosition="0">
+    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="135" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="139" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993407" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="7594826025259993407" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="160" startPosition="76" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="4239159129956943531" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="179" startPosition="262" endLine="183" endPosition="0">
+    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="156" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="161" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="165" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="169" startPosition="0" endLine="172" endPosition="0" />
+    <scopeInfo nodeId="4239159129956943531" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="180" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="4239159129956943531" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="186" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="191" startPosition="76" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="195" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="199" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="7594826025259993483" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="210" startPosition="266" endLine="214" endPosition="0">
+    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="187" startPosition="0" endLine="190" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="192" startPosition="0" endLine="195" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="196" startPosition="0" endLine="199" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="200" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="7594826025259993483" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="211" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="7594826025259993483" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="216" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="221" startPosition="76" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="225" startPosition="0" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="229" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="241" startPosition="0" endLine="245" endPosition="0">
+    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="217" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="222" startPosition="0" endLine="225" endPosition="0" />
+    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="226" startPosition="0" endLine="229" endPosition="0" />
+    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="230" startPosition="0" endLine="233" endPosition="0" />
+    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="242" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="4239159129956944343" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="245" startPosition="0" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="250" startPosition="76" endLine="254" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="254" startPosition="0" endLine="258" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="258" startPosition="0" endLine="262" endPosition="0" />
-    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="267" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="246" startPosition="0" endLine="249" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="251" startPosition="0" endLine="254" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="255" startPosition="0" endLine="258" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="259" startPosition="0" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="268" startPosition="0" endLine="271" endPosition="0">
       <varInfo nodeId="4239159129957581638" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="271" startPosition="0" endLine="275" endPosition="0" />
-    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="272" startPosition="0" endLine="275" endPosition="0" />
+    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="5992322387945369965" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945369967" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="37" startPosition="52" endLine="42" endPosition="62" />
-    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="61" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="5992322387945373692" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="4239159129956939270" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="143" startPosition="0" endLine="147" endPosition="0">
+      <varInfo nodeId="7594826025259993376" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="173" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="4239159129956943478" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="204" startPosition="0" endLine="208" endPosition="0">
+      <varInfo nodeId="7594826025259993453" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="263" startPosition="0" endLine="267" endPosition="0">
+      <varInfo nodeId="4239159129957581638" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5992322387945369967" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="37" startPosition="52" endLine="42" endPosition="62" />
     <scopeInfo nodeId="4239159129957581704" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="88" startPosition="59" endLine="93" endPosition="61">
       <varInfo nodeId="4239159129957581706" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129956939270" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="116" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="4239159129956939270" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="142" startPosition="0" endLine="147" endPosition="0">
-      <varInfo nodeId="7594826025259993376" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="7594826025259993378" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="148" startPosition="52" endLine="153" endPosition="74" />
-    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="172" startPosition="0" endLine="177" endPosition="0">
-      <varInfo nodeId="4239159129956943478" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="203" startPosition="0" endLine="208" endPosition="0">
-      <varInfo nodeId="7594826025259993453" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="7594826025259993455" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="209" startPosition="52" endLine="214" endPosition="74" />
     <scopeInfo nodeId="4239159129956944347" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="234" startPosition="59" endLine="239" endPosition="61">
       <varInfo nodeId="4239159129956944349" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129957581638" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="262" startPosition="0" endLine="267" endPosition="0">
-      <varInfo nodeId="4239159129957581638" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="4239159129956943480" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="178" startPosition="52" endLine="184" endPosition="335" />
-    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="36" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="5992322387945369965" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5992322387945369965" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="87" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="4239159129957581680" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="88" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="4239159129957581680" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="147" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="7594826025259993376" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="148" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="7594826025259993376" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="208" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="209" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="7594826025259993453" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="233" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="4239159129956944343" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="234" startPosition="0" endLine="241" endPosition="0">
       <varInfo nodeId="4239159129956944343" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="177" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="178" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="4239159129956943478" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5992322387945373692" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="48" startPosition="7" endLine="74" endPosition="7" />
@@ -341,7 +341,7 @@
     <scopeInfo nodeId="7594826025259993453" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="190" startPosition="7" endLine="220" endPosition="7" />
     <scopeInfo nodeId="4239159129956943478" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="159" startPosition="7" endLine="190" endPosition="7" />
     <scopeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="17" startPosition="84" endLine="275" endPosition="7" />
-    <scopeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="16" startPosition="80" endLine="276" endPosition="3">
+    <scopeInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="17" startPosition="0" endLine="277" endPosition="0">
       <varInfo nodeId="4899606958030665162" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="5992322387945375717" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="38" startPosition="209" endLine="42" endPosition="9" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript$2" />
@@ -360,139 +360,139 @@
     <unitInfo nodeId="4899606958030665162" fileName="DebuggerMovedToPlugin_MigrationScript.java" startLine="16" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.DebuggerMovedToPlugin_MigrationScript" />
   </root>
   <root nodeId="5992322387945369927" modelId="r:89ed2c62-93d2-424b-93aa-b8a2e95c351f(jetbrains.mps.debugger.api.lang.scripts)">
-    <nodeInfo nodeId="4149553233885954361" fileName="StubUtil.java" startLine="31" startPosition="73" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4149553233885954397" fileName="StubUtil.java" startLine="33" startPosition="24" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6727196686829006647" fileName="StubUtil.java" startLine="35" startPosition="5" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727196686829006684" fileName="StubUtil.java" startLine="37" startPosition="40" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4149553233885954456" fileName="StubUtil.java" startLine="39" startPosition="5" endLine="40" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6727196686829006687" fileName="StubUtil.java" startLine="44" startPosition="85" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727196686829006724" fileName="StubUtil.java" startLine="46" startPosition="40" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6727196686829009562" fileName="StubUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5992322387945370882" fileName="StubUtil.java" startLine="49" startPosition="0" endLine="50" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5992322387945371028" fileName="StubUtil.java" startLine="50" startPosition="135" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5992322387945371855" fileName="StubUtil.java" startLine="53" startPosition="96" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5992322387945371859" fileName="StubUtil.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5992322387945373973" fileName="StubUtil.java" startLine="60" startPosition="168" endLine="61" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5992322387945375483" fileName="StubUtil.java" startLine="61" startPosition="57" endLine="62" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5992322387945375488" fileName="StubUtil.java" startLine="62" startPosition="91" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8285632988623924288" fileName="StubUtil.java" startLine="65" startPosition="92" endLine="66" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8285632988623924294" fileName="StubUtil.java" startLine="66" startPosition="81" endLine="67" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8285632988623924302" fileName="StubUtil.java" startLine="67" startPosition="82" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8285632988623924303" fileName="StubUtil.java" startLine="68" startPosition="0" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8285632988623924310" fileName="StubUtil.java" startLine="69" startPosition="55" endLine="70" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8285632988623924316" fileName="StubUtil.java" startLine="70" startPosition="88" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4239159129956941442" fileName="StubUtil.java" startLine="73" startPosition="5" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8285632988623946771" fileName="StubUtil.java" startLine="77" startPosition="92" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8285632988623946906" fileName="StubUtil.java" startLine="78" startPosition="51" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8285632988623946861" fileName="StubUtil.java" startLine="81" startPosition="39" endLine="82" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8285632988623946872" fileName="StubUtil.java" startLine="84" startPosition="7" endLine="85" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8285632988623946880" fileName="StubUtil.java" startLine="85" startPosition="100" endLine="86" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8285632988623946790" fileName="StubUtil.java" startLine="87" startPosition="28" endLine="88" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8285632988623946796" fileName="StubUtil.java" startLine="88" startPosition="79" endLine="89" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8285632988623946804" fileName="StubUtil.java" startLine="89" startPosition="74" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8285632988623946805" fileName="StubUtil.java" startLine="90" startPosition="0" endLine="91" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8285632988623946812" fileName="StubUtil.java" startLine="91" startPosition="47" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2440919800288585455" fileName="StubUtil.java" startLine="95" startPosition="47" endLine="96" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5992322387945369929" fileName="StubUtil.java" startLine="27" startPosition="23" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubUtil#()V" />
-    <nodeInfo nodeId="4149553233885954368" fileName="StubUtil.java" startLine="32" startPosition="69" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6727196686829006655" fileName="StubUtil.java" startLine="36" startPosition="81" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6727196686829006695" fileName="StubUtil.java" startLine="45" startPosition="81" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5992322387945371852" fileName="StubUtil.java" startLine="52" startPosition="82" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="80" startPosition="174" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="94" startPosition="84" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="102" startPosition="64" endLine="106" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="109" startPosition="64" endLine="113" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5992322387945371037" fileName="StubUtil.java" startLine="51" startPosition="81" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8285632988623946849" fileName="StubUtil.java" startLine="79" startPosition="0" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2440919800288585442" fileName="StubUtil.java" startLine="93" startPosition="12" endLine="98" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2440919800288585440" fileName="StubUtil.java" startLine="93" startPosition="10" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="101" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g10q2g_a0a0f0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g10q2g_a0a0d0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4149553233885952378" fileName="StubUtil.java" startLine="64" startPosition="125" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4149553233885952374" fileName="StubUtil.java" startLine="63" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4149553233885954349" fileName="StubUtil.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReferenceToDebuggerStub#(Ljetbrains/mps/smodel/SReference;)Z" />
-    <nodeInfo nodeId="2440919800288580198" fileName="StubUtil.java" startLine="86" startPosition="85" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5992322387945369933" fileName="StubUtil.java" startLine="42" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebuggerModelForReference#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="5992322387945373864" fileName="StubUtil.java" startLine="59" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findAndReplace#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8285632988623946767" fileName="StubUtil.java" startLine="76" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveAndReplace#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="5992322387945369932" fileName="StubUtil.java" startLine="28" startPosition="21" endLine="28" endPosition="21" />
-    <scopeInfo nodeId="4149553233885954369" fileName="StubUtil.java" startLine="33" startPosition="24" endLine="34" endPosition="19" />
-    <scopeInfo nodeId="6727196686829006656" fileName="StubUtil.java" startLine="37" startPosition="40" endLine="38" endPosition="19" />
-    <scopeInfo nodeId="6727196686829006696" fileName="StubUtil.java" startLine="46" startPosition="40" endLine="47" endPosition="18" />
-    <scopeInfo nodeId="5992322387945371854" fileName="StubUtil.java" startLine="53" startPosition="96" endLine="54" endPosition="29" />
-    <scopeInfo nodeId="8285632988623946860" fileName="StubUtil.java" startLine="81" startPosition="39" endLine="82" endPosition="172" />
-    <scopeInfo nodeId="2440919800288585449" fileName="StubUtil.java" startLine="95" startPosition="47" endLine="96" endPosition="145" />
-    <scopeInfo nodeId="5992322387945369929" fileName="StubUtil.java" startLine="27" startPosition="23" endLine="29" endPosition="3" />
-    <scopeInfo nodeId="5992322387945371040" fileName="StubUtil.java" startLine="52" startPosition="82" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="80" startPosition="174" endLine="84" endPosition="0">
+    <nodeInfo nodeId="4149553233885954361" fileName="StubUtil.java" startLine="30" startPosition="73" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4149553233885954397" fileName="StubUtil.java" startLine="32" startPosition="24" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727196686829006647" fileName="StubUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727196686829006684" fileName="StubUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4149553233885954456" fileName="StubUtil.java" startLine="38" startPosition="5" endLine="39" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727196686829006687" fileName="StubUtil.java" startLine="43" startPosition="85" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727196686829006724" fileName="StubUtil.java" startLine="45" startPosition="40" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727196686829009562" fileName="StubUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5992322387945370882" fileName="StubUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5992322387945371028" fileName="StubUtil.java" startLine="49" startPosition="135" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5992322387945371855" fileName="StubUtil.java" startLine="52" startPosition="96" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5992322387945371859" fileName="StubUtil.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5992322387945373973" fileName="StubUtil.java" startLine="59" startPosition="168" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5992322387945375483" fileName="StubUtil.java" startLine="60" startPosition="57" endLine="61" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5992322387945375488" fileName="StubUtil.java" startLine="61" startPosition="91" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8285632988623924288" fileName="StubUtil.java" startLine="64" startPosition="92" endLine="65" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8285632988623924294" fileName="StubUtil.java" startLine="65" startPosition="81" endLine="66" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8285632988623924302" fileName="StubUtil.java" startLine="66" startPosition="82" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8285632988623924303" fileName="StubUtil.java" startLine="67" startPosition="0" endLine="68" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8285632988623924310" fileName="StubUtil.java" startLine="68" startPosition="55" endLine="69" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8285632988623924316" fileName="StubUtil.java" startLine="69" startPosition="88" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4239159129956941442" fileName="StubUtil.java" startLine="72" startPosition="5" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8285632988623946771" fileName="StubUtil.java" startLine="76" startPosition="92" endLine="77" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8285632988623946906" fileName="StubUtil.java" startLine="77" startPosition="51" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8285632988623946861" fileName="StubUtil.java" startLine="80" startPosition="39" endLine="81" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8285632988623946872" fileName="StubUtil.java" startLine="83" startPosition="7" endLine="84" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8285632988623946880" fileName="StubUtil.java" startLine="84" startPosition="143" endLine="85" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8285632988623946790" fileName="StubUtil.java" startLine="86" startPosition="28" endLine="87" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8285632988623946796" fileName="StubUtil.java" startLine="87" startPosition="79" endLine="88" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8285632988623946804" fileName="StubUtil.java" startLine="88" startPosition="74" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8285632988623946805" fileName="StubUtil.java" startLine="89" startPosition="0" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8285632988623946812" fileName="StubUtil.java" startLine="90" startPosition="47" endLine="91" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2440919800288585455" fileName="StubUtil.java" startLine="94" startPosition="47" endLine="95" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5992322387945369929" fileName="StubUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubUtil#()V" />
+    <nodeInfo nodeId="4149553233885954368" fileName="StubUtil.java" startLine="31" startPosition="69" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6727196686829006655" fileName="StubUtil.java" startLine="35" startPosition="81" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6727196686829006695" fileName="StubUtil.java" startLine="44" startPosition="81" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5992322387945371852" fileName="StubUtil.java" startLine="51" startPosition="82" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="101" startPosition="64" endLine="105" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="108" startPosition="64" endLine="112" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5992322387945371037" fileName="StubUtil.java" startLine="50" startPosition="81" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8285632988623946849" fileName="StubUtil.java" startLine="78" startPosition="0" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2440919800288585442" fileName="StubUtil.java" startLine="92" startPosition="12" endLine="97" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2440919800288585440" fileName="StubUtil.java" startLine="92" startPosition="10" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="101" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g10q2g_a0a0f0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="108" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g10q2g_a0a0d0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4149553233885952378" fileName="StubUtil.java" startLine="63" startPosition="125" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4149553233885952374" fileName="StubUtil.java" startLine="62" startPosition="0" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4149553233885954349" fileName="StubUtil.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReferenceToDebuggerStub#(Ljetbrains/mps/smodel/SReference;)Z" />
+    <nodeInfo nodeId="2440919800288580198" fileName="StubUtil.java" startLine="85" startPosition="85" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5992322387945369933" fileName="StubUtil.java" startLine="42" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebuggerModelForReference#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="5992322387945373864" fileName="StubUtil.java" startLine="59" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findAndReplace#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8285632988623946767" fileName="StubUtil.java" startLine="76" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveAndReplace#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="5992322387945369932" fileName="StubUtil.java" startLine="27" startPosition="21" endLine="27" endPosition="21" />
+    <scopeInfo nodeId="4149553233885954369" fileName="StubUtil.java" startLine="32" startPosition="24" endLine="33" endPosition="19" />
+    <scopeInfo nodeId="6727196686829006656" fileName="StubUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="19" />
+    <scopeInfo nodeId="6727196686829006696" fileName="StubUtil.java" startLine="45" startPosition="40" endLine="46" endPosition="18" />
+    <scopeInfo nodeId="5992322387945371854" fileName="StubUtil.java" startLine="52" startPosition="96" endLine="53" endPosition="29" />
+    <scopeInfo nodeId="8285632988623946860" fileName="StubUtil.java" startLine="80" startPosition="39" endLine="81" endPosition="215" />
+    <scopeInfo nodeId="2440919800288585449" fileName="StubUtil.java" startLine="94" startPosition="47" endLine="95" endPosition="145" />
+    <scopeInfo nodeId="5992322387945369929" fileName="StubUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5992322387945371040" fileName="StubUtil.java" startLine="51" startPosition="82" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="8285632988623946859" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="94" startPosition="84" endLine="98" endPosition="0">
+    <scopeInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="2440919800288585448" varName="candidate" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="102" startPosition="64" endLine="106" endPosition="6" />
-    <scopeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="109" startPosition="64" endLine="113" endPosition="6" />
-    <scopeInfo nodeId="5992322387945371037" fileName="StubUtil.java" startLine="51" startPosition="81" endLine="56" endPosition="5">
+    <scopeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="101" startPosition="64" endLine="105" endPosition="6" />
+    <scopeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="108" startPosition="64" endLine="112" endPosition="6" />
+    <scopeInfo nodeId="5992322387945371037" fileName="StubUtil.java" startLine="50" startPosition="81" endLine="55" endPosition="5">
       <varInfo nodeId="5992322387945371038" varName="debuggerModel" />
     </scopeInfo>
-    <scopeInfo nodeId="2440919800288580199" fileName="StubUtil.java" startLine="87" startPosition="28" endLine="92" endPosition="80">
+    <scopeInfo nodeId="2440919800288580199" fileName="StubUtil.java" startLine="86" startPosition="28" endLine="91" endPosition="80">
       <varInfo nodeId="8285632988623946791" varName="oldModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="2440919800288585441" fileName="StubUtil.java" startLine="93" startPosition="12" endLine="98" endPosition="71" />
-    <scopeInfo nodeId="4149553233885952380" fileName="StubUtil.java" startLine="65" startPosition="92" endLine="71" endPosition="15">
+    <scopeInfo nodeId="2440919800288585441" fileName="StubUtil.java" startLine="92" startPosition="12" endLine="97" endPosition="117" />
+    <scopeInfo nodeId="4149553233885952380" fileName="StubUtil.java" startLine="64" startPosition="92" endLine="70" endPosition="15">
       <varInfo nodeId="8285632988623924289" varName="oldModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="101" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="101" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="5992322387945371777" varName="a" />
       <varInfo nodeId="5992322387945371777" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="108" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="108" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="4149553233885952429" varName="a" />
       <varInfo nodeId="4149553233885952429" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4149553233885952377" fileName="StubUtil.java" startLine="64" startPosition="125" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="4149553233885954352" fileName="StubUtil.java" startLine="31" startPosition="73" endLine="40" endPosition="89">
+    <scopeInfo nodeId="4149553233885952377" fileName="StubUtil.java" startLine="63" startPosition="125" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="4149553233885954352" fileName="StubUtil.java" startLine="30" startPosition="73" endLine="39" endPosition="89">
       <varInfo nodeId="4149553233885954362" varName="model" />
       <varInfo nodeId="6727196686829006648" varName="targetSModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4149553233885952374" fileName="StubUtil.java" startLine="63" startPosition="0" endLine="73" endPosition="5">
+    <scopeInfo nodeId="4149553233885952374" fileName="StubUtil.java" startLine="62" startPosition="0" endLine="72" endPosition="5">
       <varInfo nodeId="4149553233885952375" varName="candidate" />
     </scopeInfo>
-    <scopeInfo nodeId="4149553233885954349" fileName="StubUtil.java" startLine="30" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4149553233885954349" fileName="StubUtil.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4149553233885954356" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945369936" fileName="StubUtil.java" startLine="44" startPosition="85" endLine="57" endPosition="16">
+    <scopeInfo nodeId="5992322387945369936" fileName="StubUtil.java" startLine="43" startPosition="85" endLine="56" endPosition="16">
       <varInfo nodeId="5992322387945370883" varName="debuggerApi" />
       <varInfo nodeId="5992322387945371029" varName="debuggerModels" />
       <varInfo nodeId="6727196686829006688" varName="targetSModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945373867" fileName="StubUtil.java" startLine="60" startPosition="168" endLine="74" endPosition="0">
+    <scopeInfo nodeId="5992322387945373867" fileName="StubUtil.java" startLine="59" startPosition="168" endLine="73" endPosition="0">
       <varInfo nodeId="5992322387945375484" varName="newModelDescriptor" />
       <varInfo nodeId="5992322387945373974" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945369933" fileName="StubUtil.java" startLine="42" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="5992322387945369933" fileName="StubUtil.java" startLine="42" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="5992322387945371785" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="5992322387945373864" fileName="StubUtil.java" startLine="59" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="5992322387945373864" fileName="StubUtil.java" startLine="59" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="4149553233885952293" varName="conceptFqName" />
       <varInfo nodeId="5992322387945375531" varName="getResolveInfo" />
       <varInfo nodeId="5992322387945373870" varName="role" />
       <varInfo nodeId="5992322387945373868" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8285632988623946770" fileName="StubUtil.java" startLine="77" startPosition="92" endLine="99" endPosition="5">
+    <scopeInfo nodeId="8285632988623946770" fileName="StubUtil.java" startLine="76" startPosition="92" endLine="98" endPosition="5">
       <varInfo nodeId="8285632988623946881" varName="candidate" />
       <varInfo nodeId="8285632988623946850" varName="provider" />
       <varInfo nodeId="8285632988623946772" varName="reference" />
       <varInfo nodeId="8285632988623946873" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8285632988623946767" fileName="StubUtil.java" startLine="76" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="8285632988623946767" fileName="StubUtil.java" startLine="76" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="8285632988623946897" varName="concept" />
       <varInfo nodeId="8285632988623946833" varName="node" />
       <varInfo nodeId="8285632988623946835" varName="role" />
     </scopeInfo>
-    <unitInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="80" startPosition="151" endLine="84" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil$1" />
-    <unitInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="94" startPosition="37" endLine="98" endPosition="7" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil$2" />
-    <unitInfo nodeId="5992322387945369927" fileName="StubUtil.java" startLine="27" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil" />
+    <unitInfo nodeId="8285632988623946859" fileName="StubUtil.java" startLine="79" startPosition="151" endLine="83" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil$1" />
+    <unitInfo nodeId="2440919800288585448" fileName="StubUtil.java" startLine="93" startPosition="37" endLine="97" endPosition="7" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil$2" />
+    <unitInfo nodeId="5992322387945369927" fileName="StubUtil.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.StubUtil" />
   </root>
 </debugInfo>
 

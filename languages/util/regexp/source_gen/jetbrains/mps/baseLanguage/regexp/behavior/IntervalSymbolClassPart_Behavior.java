@@ -4,14 +4,11 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IntervalSymbolClassPart_Behavior {
-  private static Class[] PARAMETERS_8173814113624650554 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,17 +16,13 @@ public class IntervalSymbolClassPart_Behavior {
     return SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, "start")) + "-" + SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, "end"));
   }
 
+  @Deprecated
   public static String call_getRepresentation_8173814113624650554(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554, new Object[]{});
-  }
-
-  public static String callSuperNew_getRepresentation_8173814113624650554(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getRepresentation_8173814113624650554(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", new Class[]{SNode.class}, new Object[]{});
   }
 }

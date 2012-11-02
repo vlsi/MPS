@@ -8,8 +8,7 @@ import jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior;
-
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 /**
  * Process only default xml elements (XmlElement) and attributes.
@@ -89,12 +88,12 @@ public class XmlSignature {
         // ignore 
       } else if (SNodeOperations.isInstanceOf(val, "jetbrains.mps.core.xml.structure.XmlTextValue")) {
         SNode tv = SNodeOperations.cast(val, "jetbrains.mps.core.xml.structure.XmlTextValue");
-        if (XmlValuePart_Behavior.call_onNewLine_3080189811177340422(tv)) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, tv, "virtual_onNewLine_3080189811177340422", new Object[]{})) {
           sb.append("\n");
         }
         sb.append(SPropertyOperations.getString(tv, "text"));
-        if (XmlValuePart_Behavior.call_hasNewLineAfter_3080189811177340429(tv)) {
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(tv), "jetbrains.mps.core.xml.structure.XmlValuePart") && XmlValuePart_Behavior.call_onNewLine_3080189811177340422(SNodeOperations.cast(SNodeOperations.getNextSibling(tv), "jetbrains.mps.core.xml.structure.XmlValuePart"))) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, tv, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{})) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(tv), "jetbrains.mps.core.xml.structure.XmlValuePart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(tv), "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
             return;
           }
           sb.append("\n");

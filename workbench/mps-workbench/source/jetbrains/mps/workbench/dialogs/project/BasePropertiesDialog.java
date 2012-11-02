@@ -17,11 +17,9 @@ package jetbrains.mps.workbench.dialogs.project;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.IOperationContext;
 
-import java.awt.HeadlessException;
-import java.util.List;
+import java.awt.*;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
@@ -59,14 +57,5 @@ public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
       return false;
     }
     return true;
-  }
-
-  protected String checkStubModels(List<ModelRoot> models) {
-    for (ModelRoot me : models) {
-      if (me.getManager() == null) {
-        return "Manager is not specified for root " + me.getPath();
-      }
-    }
-    return null;
   }
 }

@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -104,7 +104,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return ((SLinkOperations.getTarget(node, "classifier", false) != null) ?
-          INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(node, "classifier", false)) :
+          BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}) :
           "<unknown>"
         );
       }

@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
@@ -101,7 +101,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   }
 
   private void _populateLocalVariablesFromList(SNode statementList, SNode beforeStatement, List<SNode> result) {
-    for (SNode sNode : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, statementList, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}))) {
+    for (SNode sNode : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), statementList, "virtual_getLocalVariableElements_1238805763253", new Object[]{})) {
       // todo: bad code =( 
       if (ListSequence.fromList(SNodeOperations.getAncestors(beforeStatement, null, false)).contains(sNode)) {
         break;
@@ -113,7 +113,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
       if (!(SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))) {
         continue;
       }
-      SNode declNode = ((SNode) BehaviorManager.getInstance().invoke(Object.class, sNode, "virtual_getLocalVariableDeclaration_1238803857389", new Class[]{SNode.class}));
+      SNode declNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), sNode, "virtual_getLocalVariableDeclaration_1238803857389", new Object[]{});
       if (declNode != null) {
         result.add(declNode);
       }

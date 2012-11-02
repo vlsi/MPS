@@ -14,11 +14,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public enum JUnitRunTypes2 {
   METHOD() {
-
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
       return TestUtils.wrapPointerStrings(configuration.getTestMethods());
     }
-
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if ((configuration.getTestMethods() == null || configuration.getTestMethods().isEmpty())) {
         return "Methods list is empty.";
@@ -36,11 +34,9 @@ public enum JUnitRunTypes2 {
 
   },
   NODE() {
-
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
       return TestUtils.wrapPointerStrings(configuration.getTestCases());
     }
-
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if ((configuration.getTestCases() == null || configuration.getTestCases().isEmpty())) {
         return "Classes list is empty.";
@@ -58,7 +54,6 @@ public enum JUnitRunTypes2 {
 
   },
   MODEL() {
-
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
       SModel model = TestUtils.getModel(configuration.getModel());
       if (model == null) {
@@ -66,7 +61,6 @@ public enum JUnitRunTypes2 {
       }
       return TestUtils.getModelTests(model);
     }
-
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if (configuration.getModel() == null) {
         return "Model is not selected.";
@@ -83,7 +77,6 @@ public enum JUnitRunTypes2 {
 
   },
   MODULE() {
-
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
       SModule module = TestUtils.getModule(configuration.getModule());
       if (module == null) {
@@ -91,7 +84,6 @@ public enum JUnitRunTypes2 {
       }
       return TestUtils.getModuleTests(module);
     }
-
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if (isEmpty_torbaz_a0a0b3(configuration.getModule())) {
         return "Module is not selected.";
@@ -108,14 +100,12 @@ public enum JUnitRunTypes2 {
 
   },
   PROJECT() {
-
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
       if (project == null) {
         return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
       return TestUtils.getProjectTests(project);
     }
-
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if (project == null) {
         return null;

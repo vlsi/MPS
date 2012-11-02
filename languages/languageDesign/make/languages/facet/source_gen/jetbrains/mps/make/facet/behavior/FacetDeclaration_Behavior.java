@@ -17,13 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class FacetDeclaration_Behavior {
-  private static Class[] PARAMETERS_8853708281362019178 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -78,17 +75,13 @@ public class FacetDeclaration_Behavior {
     );
   }
 
+  @Deprecated
   public static String call_classifierName_8853708281362019178(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178, new Object[]{});
-  }
-
-  public static String callSuperNew_classifierName_8853708281362019178(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_classifierName_8853708281362019178(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", new Class[]{SNode.class}, new Object[]{});
   }
 }

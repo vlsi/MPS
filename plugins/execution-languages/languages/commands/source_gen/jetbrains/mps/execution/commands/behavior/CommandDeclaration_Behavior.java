@@ -13,19 +13,15 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CommandDeclaration_Behavior {
-  private static Class[] PARAMETERS_856705193941282112 = {SNode.class};
-  private static Class[] PARAMETERS_856705193941282121 = {SNode.class};
-
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "debuggerParameter", SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", null), true);
   }
@@ -93,39 +89,11 @@ public class CommandDeclaration_Behavior {
       public Iterable<SNode> translate(SNode it) {
         return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_generateField_8478830098674441876", new Object[]{});
           }
         });
       }
     });
-  }
-
-  public static String call_getSuffix_856705193941282112(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
-  }
-
-  public static SNode call_createType_856705193941282121(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
-  }
-
-  public static String callSuperNew_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
-  }
-
-  public static SNode callSuperNew_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
   }
 
   public static String getCreateProcessMethodName_856705193941282090() {
@@ -138,6 +106,26 @@ public class CommandDeclaration_Behavior {
 
   public static String getGetDebuggerConfidurationMethodName_6226796386650472924() {
     return "getDebuggerConfiguration";
+  }
+
+  @Deprecated
+  public static String call_getSuffix_856705193941282112(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_946964771156905483", new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_createType_856705193941282121(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
+  }
+
+  @Deprecated
+  public static String callSuper_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {

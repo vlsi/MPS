@@ -48,6 +48,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.NameUtil;
@@ -544,7 +545,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }
-    SNode newNode = new SNode(node.getModel(), concreteConceptFqName);
+    SNode newNode = new SNode(InternUtil.intern(concreteConceptFqName));
     org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;

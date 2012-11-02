@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -34,14 +34,14 @@ public class TypeVariableReference_Behavior {
       return SPropertyOperations.getString(decl, "name");
     }
     if (decl != null) {
-      return "@" + BaseConcept_Behavior.call_getPresentation_1213877396640(decl);
+      return "@" + BehaviorReflection.invokeVirtual(String.class, decl, "virtual_getPresentation_1213877396640", new Object[]{});
     }
     return "?typevar_ref?";
   }
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
-      return Type_Behavior.call_getErasure_702942408396803226(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true));
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true), "virtual_getErasure_702942408396803226", new Object[]{});
     }
     return new TypeVariableReference_Behavior.QuotationClass_6i211a_a0b0c().createNode();
   }
@@ -51,7 +51,7 @@ public class TypeVariableReference_Behavior {
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
       SetSequence.fromSet(visitedTypeVariableReferences).addElement(thisNode);
       SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
-      SLinkOperations.setTarget(upperBoundType, "bound", Type_Behavior.call_getLooseType_5744862332972792015(bound, visitedTypeVariableReferences), true);
+      SLinkOperations.setTarget(upperBoundType, "bound", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bound, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypeVariableReferences}), true);
       SetSequence.fromSet(visitedTypeVariableReferences).removeElement(thisNode);
       return upperBoundType;
     } else {
@@ -67,7 +67,7 @@ public class TypeVariableReference_Behavior {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), thisNode);
     } else {
-      IGenericType_Behavior.callSuperNew_collectGenericSubstitutions_4107091686347010321(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", substitutions);
+      BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     }
   }
 
@@ -83,7 +83,7 @@ public class TypeVariableReference_Behavior {
       }
       if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         ListSequence.fromList(expTrace).addElement(thisNode);
-        exp = IGenericType_Behavior.call_expandGenerics_4122274986016348613(SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), substitutions, expTrace);
+        exp = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
       }
       return exp;
     }

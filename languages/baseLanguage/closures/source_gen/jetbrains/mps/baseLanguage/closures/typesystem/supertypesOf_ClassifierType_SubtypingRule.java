@@ -13,10 +13,13 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -31,8 +34,8 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode classifier = SLinkOperations.getTarget(ct, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
-      List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
+      Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
           return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
         }
@@ -43,12 +46,24 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         null
       );
       if (!(it.hasNext()) && (mtd != null)) {
-        List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
+        List<SNode> paramTypes = new ArrayList<SNode>();
+
+        Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        BehaviorReflection.invokeVirtual(Void.class, ct, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+
         for (SNode p : SLinkOperations.getTargets(mtd, "parameter", true)) {
-          ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
+          SNode pt = SLinkOperations.getTarget(p, "type", true);
+          if (SNodeOperations.isInstanceOf(pt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+            pt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+          }
+          ListSequence.fromList(paramTypes).addElement(pt);
         }
-        SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), ct);
-        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0d0e0c0a().createNode(paramTypes, resType, typeCheckingContext));
+
+        SNode rt = SLinkOperations.getTarget(mtd, "returnType", true);
+        if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+        }
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0j0e0c0a().createNode(paramTypes, rt, typeCheckingContext));
       }
     }
     return supertypes;
@@ -69,8 +84,8 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     return true;
   }
 
-  public static class QuotationClass_qen718_a1a0d0e0c0a {
-    public QuotationClass_qen718_a1a0d0e0c0a() {
+  public static class QuotationClass_qen718_a1a0j0e0c0a {
+    public QuotationClass_qen718_a1a0j0e0c0a() {
     }
 
     public SNode createNode(Object parameter_6, Object parameter_7, final TypeCheckingContext typeCheckingContext) {

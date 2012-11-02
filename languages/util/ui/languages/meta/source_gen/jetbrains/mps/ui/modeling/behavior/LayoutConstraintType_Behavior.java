@@ -5,14 +5,11 @@ package jetbrains.mps.ui.modeling.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LayoutConstraintType_Behavior {
-  private static Class[] PARAMETERS_5572604531249685429 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,17 +20,13 @@ public class LayoutConstraintType_Behavior {
     )) + ">";
   }
 
+  @Deprecated
   public static String call_getPresentation_5572604531249685429(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429, new Object[]{});
-  }
-
-  public static String callSuperNew_getPresentation_5572604531249685429(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getPresentation_5572604531249685429(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_5572604531249685429, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.LayoutConstraintType"), callerConceptFqName, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}, new Object[]{});
   }
 }

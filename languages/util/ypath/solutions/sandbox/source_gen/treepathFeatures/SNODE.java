@@ -33,6 +33,7 @@ public class SNODE extends TreePath<SNode> {
   }
 
   private static class Children {
+
   }
 
   private static class Feature_child extends AbstractCollection<SNode> {

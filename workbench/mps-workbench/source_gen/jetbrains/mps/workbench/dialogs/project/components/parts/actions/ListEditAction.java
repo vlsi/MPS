@@ -17,11 +17,19 @@ public abstract class ListEditAction extends BaseValidatedAction {
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
-    e.getPresentation().setEnabled(myList.getSelectedIndices().length == 1);
+    e.getPresentation().setEnabled(isApplicable());
+  }
+
+  protected boolean isApplicable() {
+    return myList.getSelectedIndices().length == 1;
   }
 
   public final void doPerform(AnActionEvent e) {
     doEdit();
+  }
+
+  public JList getList() {
+    return myList;
   }
 
   protected abstract void doEdit();

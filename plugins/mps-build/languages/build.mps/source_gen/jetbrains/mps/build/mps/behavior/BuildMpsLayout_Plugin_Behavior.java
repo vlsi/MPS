@@ -11,11 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
-import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.build.behavior.BuildLayout_Container_Behavior;
 
 public class BuildMpsLayout_Plugin_Behavior {
   public static void init(SNode thisNode) {
@@ -64,7 +62,7 @@ public class BuildMpsLayout_Plugin_Behavior {
         final SNode module = SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
         if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, artifactId);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_exports_6547494638219603457", new Object[]{artifactId});
           }
         })) {
           SNode group = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).where(new IWhereFilter<SNode>() {
@@ -80,7 +78,7 @@ public class BuildMpsLayout_Plugin_Behavior {
         return null;
       }
     }
-    return BuildLayout_PathElement_Behavior.callSuperNew_location_7117056644539862594(thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", helper, artifactId);
+    return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", "virtual_location_7117056644539862594", new Object[]{helper, artifactId});
   }
 
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, final Object artifactId) {
@@ -97,12 +95,12 @@ public class BuildMpsLayout_Plugin_Behavior {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) {
         return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, artifactId);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_exports_6547494638219603457", new Object[]{artifactId});
           }
         });
       }
     }
-    return BuildLayout_Node_Behavior.callSuperNew_exports_6547494638219603457(thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", artifactId);
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", "virtual_exports_6547494638219603457", new Object[]{artifactId});
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
@@ -111,7 +109,7 @@ public class BuildMpsLayout_Plugin_Behavior {
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {
     if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container")) {
-      String parentChildrenTargetDir = BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container"), context);
+      String parentChildrenTargetDir = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{context});
       return parentChildrenTargetDir + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "plugin", false), "containerName", true), context.getMacros(thisNode));
     }
     return null;

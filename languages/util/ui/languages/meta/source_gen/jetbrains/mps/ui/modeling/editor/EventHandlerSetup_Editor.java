@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
@@ -144,7 +144,7 @@ public class EventHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_5c1jtb_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", false, false), "producerType", true));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", false, false), "producerType", true), "virtual_getPresentation_1213877396640", new Object[]{});
       }
 
       public void setText(String s) {
@@ -164,7 +164,7 @@ public class EventHandlerSetup_Editor extends DefaultNodeEditor {
       public String getText() {
         SNode et = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", false, false), "eventType", true);
         SNode res = new EventHandlerSetup_Editor.QuotationClass_5c1jtb_a0a1a0a0b0a0a41().createNode(et);
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(res);
+        return BehaviorReflection.invokeVirtual(String.class, res, "virtual_getPresentation_1213877396640", new Object[]{});
       }
 
       public void setText(String s) {

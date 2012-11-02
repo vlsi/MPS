@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841950114" modelId="r:4ce56964-b22a-4d19-97e7-bc025372f3fa(jetbrains.mps.ui.internal.testdata.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841950115" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="90" endLine="9" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
+    <nodeInfo nodeId="5487985028841950115" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
     <nodeInfo nodeId="5487985028841950133" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="17" startPosition="64" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950144" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="22" startPosition="58" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950152" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="25" startPosition="6" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950160" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="29" startPosition="27" endLine="30" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950166" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="30" startPosition="66" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorExtension_CustomApplicationPlugin#()V" />
-    <nodeInfo nodeId="5487985028841950127" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="15" startPosition="123" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventHandlerTemplatesModel#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5487985028841950138" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWidgetTemplatesModel#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
+    <nodeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorExtension_CustomApplicationPlugin#()V" />
+    <nodeInfo nodeId="5487985028841950127" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventHandlerTemplatesModel#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5487985028841950138" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWidgetTemplatesModel#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
     <nodeInfo nodeId="5487985028841950120" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="24" endLine="25" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
+    <nodeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
     <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="11" startPosition="52" endLine="11" endPosition="52" />
     <scopeInfo nodeId="5487985028841950132" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="17" startPosition="64" endLine="18" endPosition="32" />
     <scopeInfo nodeId="5487985028841950143" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="22" startPosition="58" endLine="23" endPosition="35" />
-    <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="5487985028841950159" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="29" startPosition="27" endLine="31" endPosition="63" />
-    <scopeInfo nodeId="5487985028841950127" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="15" startPosition="123" endLine="20" endPosition="0">
+    <scopeInfo nodeId="5487985028841950127" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5487985028841950128" varName="base" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950138" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="5487985028841950138" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5487985028841950139" varName="base" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="5487985028841950119" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="24" endLine="26" endPosition="63" />
-    <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="5487985028841950124" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="15" startPosition="62" endLine="25" endPosition="5" unitName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin$1" />
     <unitInfo nodeId="5487985028841950114" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.EditorExtension_CustomApplicationPlugin" />
   </root>
   <root nodeId="7162597690967997053" modelId="r:4ce56964-b22a-4d19-97e7-bc025372f3fa(jetbrains.mps.ui.internal.testdata.pluginSolution.plugin)">
-    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="5" endLine="25" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="89" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="52" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="5" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
     <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="23" startPosition="112" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initCustomParts#()Ljava/util/List;" />
+    <nodeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initCustomParts#()Ljava/util/List;" />
     <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="45" endLine="15" endPosition="45" />
     <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="5" endLine="27" endPosition="20">
       <varInfo nodeId="7162597690967997053" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="29" endPosition="15">
       <varInfo nodeId="7162597690967997053" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="7162597690967997053" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
 </debugInfo>

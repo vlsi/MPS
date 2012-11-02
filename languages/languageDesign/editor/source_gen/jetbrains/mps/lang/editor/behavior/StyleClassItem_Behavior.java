@@ -7,15 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.style.StyleAttribute;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StyleClassItem_Behavior {
-  private static Class[] PARAMETERS_1214304723440 = {SNode.class, SNode.class};
-  private static Class[] PARAMETERS_1215703564594 = {SNode.class};
-  private static Class[] PARAMETERS_2554389230519612632 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -31,45 +26,33 @@ public class StyleClassItem_Behavior {
     return null;
   }
 
+  @Deprecated
   public static boolean call_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, new Object[]{cellModel});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicableTo_1214304723440", new Object[]{cellModel});
   }
 
+  @Deprecated
   public static SNode call_getStyleConstant_1215703564594(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getStyleConstant_1215703564594", new Object[]{});
   }
 
+  @Deprecated
   public static StyleAttribute call_getStyleAttribute_2554389230519612632(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (StyleAttribute) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), "virtual_getStyleAttribute_2554389230519612632", PARAMETERS_2554389230519612632, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isApplicableTo_1214304723440(SNode thisNode, String callerConceptFqName, SNode cellModel) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, new Object[]{cellModel});
-  }
-
-  public static SNode callSuperNew_getStyleConstant_1215703564594(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594, new Object[]{});
-  }
-
-  public static StyleAttribute callSuperNew_getStyleAttribute_2554389230519612632(SNode thisNode, String callerConceptFqName) {
-    return (StyleAttribute) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleAttribute_2554389230519612632", PARAMETERS_2554389230519612632, new Object[]{});
+    return BehaviorReflection.invokeVirtual(StyleAttribute.class, thisNode, "virtual_getStyleAttribute_2554389230519612632", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isApplicableTo_1214304723440(SNode thisNode, String callerConceptFqName, SNode cellModel) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", PARAMETERS_1214304723440, new Object[]{cellModel});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", new Class[]{SNode.class, SNode.class}, new Object[]{cellModel});
   }
 
   @Deprecated
   public static SNode callSuper_getStyleConstant_1215703564594(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static StyleAttribute callSuper_getStyleAttribute_2554389230519612632(SNode thisNode, String callerConceptFqName) {
-    return (StyleAttribute) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleAttribute_2554389230519612632", PARAMETERS_2554389230519612632, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(StyleAttribute.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleAttribute_2554389230519612632", new Class[]{SNode.class}, new Object[]{});
   }
 }

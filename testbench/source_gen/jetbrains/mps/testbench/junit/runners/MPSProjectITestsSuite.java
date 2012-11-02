@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.Project;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -69,7 +69,7 @@ public class MPSProjectITestsSuite extends Suite {
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
           for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, testCase, "virtual_getClassName_1216136193905", new Class[]{SNode.class})), model.getModule()));
+            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), model.getModule()));
           }
         }
       }
@@ -134,34 +134,34 @@ public class MPSProjectITestsSuite extends Suite {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
-public static   @interface ModuleUUID {
-    /**
+public static   @interface ModuleUUID {    /**
      * 
      * 
      * @return path to MPS project
      */
+
     String value();
 }
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.TYPE})
-public static @interface ModelLongName {
-  /**
+public static @interface ModelLongName {  /**
    * 
    * 
    * @return path to MPS project
    */
+
   String value();
 }
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {ElementType.TYPE})
-public static @interface TestClass {
-/**
+public static @interface TestClass {/**
  * 
  * 
  * @return path to MPS project
  */
+
 String value();
 }
 }

@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CustomMPSApplication_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.build.deprecated.execution.CustomMPSApplication_Configuration_Factory";
@@ -131,7 +131,7 @@ public class CustomMPSApplication_Producer {
           isApplicable.value = (layout.value != null);
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout.value, "configuration", true)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, source, "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, it));
+              return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, source, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "call_included_1213877333807", new Object[]{it});
             }
           });
           configurationId.value = configuration.value.getSNodeId().toString();

@@ -18,13 +18,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior;
 import jetbrains.mps.build.util.JavaExportUtil;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildMps_Module_Behavior {
-  private static Class[] PARAMETERS_7454762407073969360 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -152,18 +149,14 @@ public class BuildMps_Module_Behavior {
     }
   }
 
+  @Deprecated
   public static boolean call_isCompilable_7454762407073969360(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
-  }
-
-  public static boolean callSuperNew_isCompilable_7454762407073969360(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuperNew(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCompilable_7454762407073969360", new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_isCompilable_7454762407073969360(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static boolean isNotEmpty_va39l0_a0a0c0i0c(String str) {

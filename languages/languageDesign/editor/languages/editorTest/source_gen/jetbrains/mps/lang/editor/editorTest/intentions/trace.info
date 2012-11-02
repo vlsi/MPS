@@ -17,19 +17,19 @@
     <nodeInfo nodeId="7658393498702996085" fileName="AddTestReferenceAnnotation_Intention.java" startLine="66" startPosition="54" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7658393498703022822" fileName="AddTestReferenceAnnotation_Intention.java" startLine="67" startPosition="58" endLine="68" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7658393498703024682" fileName="AddTestReferenceAnnotation_Intention.java" startLine="68" startPosition="69" endLine="69" endPosition="307" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="18" startPosition="73" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddTestReferenceAnnotation_Intention#()V" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddTestReferenceAnnotation_Intention#()V" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="50" startPosition="84" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="19" startPosition="49" endLine="19" endPosition="49" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="22" startPosition="30" endLine="23" endPosition="59" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="26" startPosition="35" endLine="27" endPosition="40" />
@@ -41,34 +41,34 @@
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
     <scopeInfo nodeId="7846202737110257650" fileName="AddTestReferenceAnnotation_Intention.java" startLine="57" startPosition="91" endLine="58" endPosition="76" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="61" startPosition="44" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="18" startPosition="73" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="7658393498702987309" varName="editorContext" />
       <varInfo nodeId="7658393498702987309" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="7658393498702987309" varName="editorContext" />
+      <varInfo nodeId="7658393498702987309" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="50" startPosition="84" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="7658393498702987309" varName="editorContext" />
-      <varInfo nodeId="7658393498702987309" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="7658393498702987313" fileName="AddTestReferenceAnnotation_Intention.java" startLine="65" startPosition="76" endLine="69" endPosition="307">
       <varInfo nodeId="7658393498702987474" varName="cell" />
       <varInfo nodeId="7658393498702996086" varName="linkRole" />
       <varInfo nodeId="7658393498703022823" varName="referentNode" />
       <varInfo nodeId="7658393498703024685" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="7658393498702987309" varName="editorContext" />
       <varInfo nodeId="7658393498702987309" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="7658393498702987309" varName="editorContext" />
       <varInfo nodeId="7658393498702987309" varName="node" />
     </scopeInfo>

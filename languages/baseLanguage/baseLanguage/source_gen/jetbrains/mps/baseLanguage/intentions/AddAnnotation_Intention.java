@@ -10,7 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddAnnotation_Intention extends BaseIntention {
@@ -56,14 +57,14 @@ public class AddAnnotation_Intention extends BaseIntention {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty()) {
       return false;
     }
-    if (!(HasAnnotation_Behavior.call_canBeAnnotated_1233076312117(node))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canBeAnnotated_1233076312117", new Object[]{}))) {
       return false;
     }
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == node) {
       return true;
     }
-    return ListSequence.fromList(HasAnnotation_Behavior.call_getChildrenToDisplayIntention_4025276038182319200(node)).contains(selectedNode);
+    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{})).contains(selectedNode);
   }
 
   public boolean isAvailableInChildNodes() {

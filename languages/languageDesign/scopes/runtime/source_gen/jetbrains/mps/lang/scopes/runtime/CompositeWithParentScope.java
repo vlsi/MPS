@@ -6,7 +6,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -35,7 +35,7 @@ public class CompositeWithParentScope {
   }
 
   public static Scope fromLink(SNode link, SNode node, SNode kind) {
-    return from(new SimpleRoleScope(node, link, ((String) BehaviorManager.getInstance().invoke(Object.class, kind, "virtual_getFqName_1213877404258", new Class[]{SNode.class}))) {
+    return from(new SimpleRoleScope(node, link, BehaviorReflection.invokeVirtual(String.class, kind, "virtual_getFqName_1213877404258", new Object[]{})) {
       public String getName(SNode child) {
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

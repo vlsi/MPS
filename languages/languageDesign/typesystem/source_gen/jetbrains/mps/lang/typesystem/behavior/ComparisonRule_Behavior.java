@@ -4,14 +4,11 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ComparisonRule_Behavior {
-  private static Class[] PARAMETERS_4484478261143589913 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,17 +16,13 @@ public class ComparisonRule_Behavior {
     return SLinkOperations.getTarget(thisNode, "anotherNode", true);
   }
 
+  @Deprecated
   public static SNode call_getSecondNodeCondition_4484478261143589913(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913, new Object[]{});
-  }
-
-  public static SNode callSuperNew_getSecondNodeCondition_4484478261143589913(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913, new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getSecondNodeCondition_4484478261143589913(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143589913, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", new Class[]{SNode.class}, new Object[]{});
   }
 }

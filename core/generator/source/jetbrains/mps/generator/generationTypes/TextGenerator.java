@@ -178,29 +178,30 @@ public class TextGenerator {
 
       }
 
+
+      if (unchangedDependencies.isEmpty() || !myGenerateDebugInfo) {
+        return;
+      }
       DebugInfo generatedDebugInfo = status.getDebugInfo();
-      if (!unchangedDependencies.isEmpty()) {
-        if (generatedDebugInfo == null) {
-          // touch
-          myStreamHandler.touch(TraceInfoCache.getInstance().getCacheFileName(), false);
-        } else {
-          // complete debug info with info for roots that did not changed and therefore were not generated
-          // we get debug info for them from cache
-          DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
-          if (cachedDebugInfo != null) {
+      if (generatedDebugInfo == null) {
+        generatedDebugInfo = new DebugInfoBuilder().getDebugInfo();
+        status.setDebugInfo(generatedDebugInfo);
+      }
+      // complete debug info with info for roots that did not changed and therefore were not generated
+      // we get debug info for them from cache
+      DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().getLastGeneratedDebugInfo(status.getOriginalInputModel());
+      if (cachedDebugInfo != null) {
 
-            List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
-            String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
+        List<SNodePointer> unchangedRoots = new ArrayList<SNodePointer>();
+        String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
 
-            for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
-              String rootId = dependency.getRootId();
-              if (rootId == null) continue;
-              unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
-            }
-
-            DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
-          }
+        for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
+          String rootId = dependency.getRootId();
+          if (rootId == null) continue;
+          unchangedRoots.add(new SNodePointer(inputModelUid, rootId));
         }
+
+        DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
       }
     }
   }

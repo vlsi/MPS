@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -19,9 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
@@ -98,7 +96,7 @@ public class MethodResolveUtil {
           } else {
             SNode desc = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             SNode anc = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, desc, "virtual_isDescendant_7165541881557222913", new Class[]{SNode.class, SNode.class}, anc))) {
+            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, desc, "virtual_isDescendant_7165541881557222913", new Object[]{anc})) {
               goodMethods.add(method);
             } else {
               badMethods.add(method);
@@ -185,7 +183,7 @@ public class MethodResolveUtil {
       }
       List<SNode> methodTypeVariableDecls = SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true);
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
-        typeByTypeVar.put(tvd, SModelOperations.createNewNode(((SModel) AuxilaryRuntimeModel.getDescriptor().getSModel()), null, "jetbrains.mps.baseLanguage.structure.WildCardType"));
+        typeByTypeVar.put(tvd, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null));
       }
       SNode typeOfParam = (varArg ?
         SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) :

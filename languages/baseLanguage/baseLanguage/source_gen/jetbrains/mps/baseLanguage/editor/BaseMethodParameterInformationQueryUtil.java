@@ -7,14 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class BaseMethodParameterInformationQueryUtil {
   public BaseMethodParameterInformationQueryUtil() {
@@ -25,9 +23,9 @@ public class BaseMethodParameterInformationQueryUtil {
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
     Iterable<SNode> members;
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      members = IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(IClassifier_Behavior.call_getThisType_7405920559687254782(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")), methodCall);
+      members = IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_7405920559687254782", new Object[]{}), methodCall);
     } else {
-      members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
+      members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getMembers_1213877531970", new Object[]{});
     }
     List<SNode> methodsToShow = new ArrayList<SNode>();
     for (SNode member : Sequence.fromIterable(members)) {
@@ -41,7 +39,7 @@ public class BaseMethodParameterInformationQueryUtil {
   public static void fillPresentation(SNode methodDeclaration, SNode selectedActualArgument, StyledTextPrinter styledText) {
     if (!(SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
-        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(methodDeclaration, "returnType", true)) + " ");
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(methodDeclaration, "returnType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + " ");
       } else {
         styledText.append("??? ");
       }
@@ -59,7 +57,7 @@ public class BaseMethodParameterInformationQueryUtil {
           if (SNodeOperations.getIndexInParent(param) > 0) {
             styledText.append(", ");
           }
-          styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(param));
+          styledText.append(BehaviorReflection.invokeVirtual(String.class, param, "virtual_getPresentation_1213877396640", new Object[]{}));
         }
         styledText.append(">");
       }
@@ -78,7 +76,7 @@ public class BaseMethodParameterInformationQueryUtil {
         styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(param, "type", true) != null) {
-        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(param, "type", true)));
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         styledText.append("???");
       }

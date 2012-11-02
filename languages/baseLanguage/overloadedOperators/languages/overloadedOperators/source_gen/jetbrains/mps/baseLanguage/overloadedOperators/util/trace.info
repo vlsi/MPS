@@ -38,7 +38,7 @@
     <nodeInfo nodeId="5035379201237126440" fileName="BinaryOperationUtil.java" startLine="122" startPosition="5" endLine="123" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5035379201237126447" fileName="BinaryOperationUtil.java" startLine="123" startPosition="43" endLine="124" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5035379201237126454" fileName="BinaryOperationUtil.java" startLine="124" startPosition="51" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5035379201237126466" fileName="BinaryOperationUtil.java" startLine="17" startPosition="34" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BinaryOperationUtil#()V" />
+    <nodeInfo nodeId="5035379201237126466" fileName="BinaryOperationUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BinaryOperationUtil#()V" />
     <nodeInfo nodeId="5035379201237126041" fileName="BinaryOperationUtil.java" startLine="21" startPosition="100" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5035379201237126059" fileName="BinaryOperationUtil.java" startLine="25" startPosition="179" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5035379201237126092" fileName="BinaryOperationUtil.java" startLine="29" startPosition="294" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -59,17 +59,17 @@
     <nodeInfo nodeId="5035379201237126363" fileName="BinaryOperationUtil.java" startLine="105" startPosition="60" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5035379201237126381" fileName="BinaryOperationUtil.java" startLine="109" startPosition="177" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5035379201237126424" fileName="BinaryOperationUtil.java" startLine="117" startPosition="65" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5035379201237126318" fileName="BinaryOperationUtil.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSubTypeOperator#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Z)Z" />
+    <nodeInfo nodeId="5035379201237126318" fileName="BinaryOperationUtil.java" startLine="94" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSubTypeOperator#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Z)Z" />
     <nodeInfo nodeId="5035379201237126138" fileName="BinaryOperationUtil.java" startLine="41" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5035379201237126201" fileName="BinaryOperationUtil.java" startLine="56" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5035379201237126406" fileName="BinaryOperationUtil.java" startLine="114" startPosition="78" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5035379201237126057" fileName="BinaryOperationUtil.java" startLine="24" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5035379201237126232" fileName="BinaryOperationUtil.java" startLine="67" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSubTypeOperatorStraight#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5035379201237126275" fileName="BinaryOperationUtil.java" startLine="80" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReversedSubTypeOperator#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5035379201237126180" fileName="BinaryOperationUtil.java" startLine="52" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasOverloadedOperators#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="5035379201237126029" fileName="BinaryOperationUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isOverloading#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5035379201237126109" fileName="BinaryOperationUtil.java" startLine="36" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOverloadedOperators#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljava/util/Map;" />
-    <nodeInfo nodeId="5035379201237126340" fileName="BinaryOperationUtil.java" startLine="100" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNearestOverloaded#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5035379201237126232" fileName="BinaryOperationUtil.java" startLine="68" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSubTypeOperatorStraight#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5035379201237126275" fileName="BinaryOperationUtil.java" startLine="81" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReversedSubTypeOperator#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5035379201237126180" fileName="BinaryOperationUtil.java" startLine="53" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasOverloadedOperators#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="5035379201237126029" fileName="BinaryOperationUtil.java" startLine="21" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isOverloading#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5035379201237126109" fileName="BinaryOperationUtil.java" startLine="37" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOverloadedOperators#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljava/util/Map;" />
+    <nodeInfo nodeId="5035379201237126340" fileName="BinaryOperationUtil.java" startLine="101" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNearestOverloaded#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="5035379201237126469" fileName="BinaryOperationUtil.java" startLine="18" startPosition="32" endLine="18" endPosition="32" />
     <scopeInfo nodeId="5035379201237126042" fileName="BinaryOperationUtil.java" startLine="22" startPosition="264" endLine="23" endPosition="19" />
     <scopeInfo nodeId="5035379201237126060" fileName="BinaryOperationUtil.java" startLine="26" startPosition="283" endLine="27" endPosition="20" />
@@ -90,21 +90,21 @@
     <scopeInfo nodeId="5035379201237126344" fileName="BinaryOperationUtil.java" startLine="102" startPosition="104" endLine="103" endPosition="18" />
     <scopeInfo nodeId="5035379201237126364" fileName="BinaryOperationUtil.java" startLine="106" startPosition="25" endLine="107" endPosition="20" />
     <scopeInfo nodeId="5035379201237126382" fileName="BinaryOperationUtil.java" startLine="110" startPosition="62" endLine="111" endPosition="18" />
-    <scopeInfo nodeId="5035379201237126466" fileName="BinaryOperationUtil.java" startLine="17" startPosition="34" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="5035379201237126466" fileName="BinaryOperationUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="5035379201237126425" fileName="BinaryOperationUtil.java" startLine="118" startPosition="58" endLine="120" endPosition="47" />
     <scopeInfo nodeId="5035379201237126058" fileName="BinaryOperationUtil.java" startLine="25" startPosition="179" endLine="28" endPosition="7" />
     <scopeInfo nodeId="5035379201237126091" fileName="BinaryOperationUtil.java" startLine="29" startPosition="294" endLine="32" endPosition="7" />
     <scopeInfo nodeId="5035379201237126321" fileName="BinaryOperationUtil.java" startLine="94" startPosition="101" endLine="98" endPosition="65" />
     <scopeInfo nodeId="5035379201237126139" fileName="BinaryOperationUtil.java" startLine="42" startPosition="38" endLine="48" endPosition="7" />
     <scopeInfo nodeId="5035379201237126202" fileName="BinaryOperationUtil.java" startLine="57" startPosition="38" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="5035379201237126409" fileName="BinaryOperationUtil.java" startLine="115" startPosition="85" endLine="121" endPosition="7">
-      <varInfo nodeId="5035379201237126411" varName="operator" />
-      <varInfo nodeId="5035379201237126417" varName="reversed" />
-    </scopeInfo>
-    <scopeInfo nodeId="5035379201237126318" fileName="BinaryOperationUtil.java" startLine="93" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="5035379201237126318" fileName="BinaryOperationUtil.java" startLine="94" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="5035379201237126338" varName="reversed" />
       <varInfo nodeId="5035379201237126334" varName="subOperator" />
       <varInfo nodeId="5035379201237126336" varName="superOperator" />
+    </scopeInfo>
+    <scopeInfo nodeId="5035379201237126409" fileName="BinaryOperationUtil.java" startLine="115" startPosition="85" endLine="121" endPosition="7">
+      <varInfo nodeId="5035379201237126411" varName="operator" />
+      <varInfo nodeId="5035379201237126417" varName="reversed" />
     </scopeInfo>
     <scopeInfo nodeId="5035379201237126138" fileName="BinaryOperationUtil.java" startLine="41" startPosition="5" endLine="49" endPosition="5">
       <varInfo nodeId="5035379201237126173" varName="operator" />
@@ -118,31 +118,31 @@
     <scopeInfo nodeId="5035379201237126235" fileName="BinaryOperationUtil.java" startLine="68" startPosition="91" endLine="78" endPosition="16" />
     <scopeInfo nodeId="5035379201237126278" fileName="BinaryOperationUtil.java" startLine="81" startPosition="91" endLine="91" endPosition="16" />
     <scopeInfo nodeId="5035379201237126191" fileName="BinaryOperationUtil.java" startLine="53" startPosition="116" endLine="65" endPosition="17" />
+    <scopeInfo nodeId="5035379201237126232" fileName="BinaryOperationUtil.java" startLine="68" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="5035379201237126271" varName="subOperator" />
+      <varInfo nodeId="5035379201237126273" varName="superOperator" />
+    </scopeInfo>
+    <scopeInfo nodeId="5035379201237126275" fileName="BinaryOperationUtil.java" startLine="81" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="5035379201237126314" varName="subOperator" />
+      <varInfo nodeId="5035379201237126316" varName="superOperator" />
+    </scopeInfo>
     <scopeInfo nodeId="5035379201237126040" fileName="BinaryOperationUtil.java" startLine="21" startPosition="100" endLine="34" endPosition="17" />
     <scopeInfo nodeId="5035379201237126119" fileName="BinaryOperationUtil.java" startLine="37" startPosition="128" endLine="50" endPosition="18">
       <varInfo nodeId="5035379201237126121" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5035379201237126232" fileName="BinaryOperationUtil.java" startLine="67" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="5035379201237126271" varName="subOperator" />
-      <varInfo nodeId="5035379201237126273" varName="superOperator" />
-    </scopeInfo>
-    <scopeInfo nodeId="5035379201237126275" fileName="BinaryOperationUtil.java" startLine="80" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="5035379201237126314" varName="subOperator" />
-      <varInfo nodeId="5035379201237126316" varName="superOperator" />
-    </scopeInfo>
-    <scopeInfo nodeId="5035379201237126180" fileName="BinaryOperationUtil.java" startLine="52" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="5035379201237126180" fileName="BinaryOperationUtil.java" startLine="53" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="5035379201237126183" varName="leftType" />
       <varInfo nodeId="5035379201237126181" varName="node" />
       <varInfo nodeId="5035379201237126187" varName="operators" />
       <varInfo nodeId="5035379201237126185" varName="rightType" />
     </scopeInfo>
-    <scopeInfo nodeId="5035379201237126029" fileName="BinaryOperationUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="5035379201237126029" fileName="BinaryOperationUtil.java" startLine="21" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="5035379201237126032" varName="leftType" />
       <varInfo nodeId="5035379201237126030" varName="node" />
       <varInfo nodeId="5035379201237126036" varName="operator" />
       <varInfo nodeId="5035379201237126034" varName="rightType" />
     </scopeInfo>
-    <scopeInfo nodeId="5035379201237126109" fileName="BinaryOperationUtil.java" startLine="36" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="5035379201237126109" fileName="BinaryOperationUtil.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5035379201237126112" varName="leftType" />
       <varInfo nodeId="5035379201237126110" varName="node" />
       <varInfo nodeId="5035379201237126116" varName="operators" />
@@ -153,7 +153,7 @@
       <varInfo nodeId="5035379201237126353" varName="result" />
       <varInfo nodeId="5035379201237126399" varName="resultReversed" />
     </scopeInfo>
-    <scopeInfo nodeId="5035379201237126340" fileName="BinaryOperationUtil.java" startLine="100" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="5035379201237126340" fileName="BinaryOperationUtil.java" startLine="101" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="5035379201237126459" varName="leftType" />
       <varInfo nodeId="5035379201237126457" varName="node" />
       <varInfo nodeId="5035379201237126463" varName="operators" />

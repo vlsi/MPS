@@ -15,10 +15,9 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
 import jetbrains.mps.make.facet.behavior.TargetDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -108,7 +107,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5086995156117240631(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_classifierName_4609636120081351397", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5189627237350277729(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -121,7 +120,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5086995156117328675(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // node.classifierName() should be nested class of node.facetDeclaration().classifierName 
-    return JavaNameUtil.shortName(IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode()));
+    return JavaNameUtil.shortName(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_classifierName_4609636120081351397", new Object[]{}));
   }
 
   public static Object propertyMacro_GetPropertyValue_7219266275016638724(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -138,11 +137,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3868725017587329779(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode()) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
+    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_classifierName_4609636120081351397", new Object[]{}) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_3868725017587343025(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode()) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
+    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_classifierName_4609636120081351397", new Object[]{}) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_184542595914128124(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -166,7 +165,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6648795410106216330(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String fqn = INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "target", false)), "jetbrains.mps.make.facet.structure.FacetDeclaration"));
+    String fqn = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "target", false)), "jetbrains.mps.make.facet.structure.FacetDeclaration"), "virtual_getFqName_1213877404258", new Object[]{});
     String facetClass = fqn + "_Facet";
     String trgClass = "Target_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "target", false), "name"));
     String paramClass = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", false), "parameters", true), "name");

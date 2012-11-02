@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class InvokeFunctionOperation_parameters extends ParametersInformation<SNode> {
   public InvokeFunctionOperation_parameters() {
@@ -21,7 +21,7 @@ public class InvokeFunctionOperation_parameters extends ParametersInformation<SN
   }
 
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
-    styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(parameterObject));
+    styledText.append(BehaviorReflection.invokeVirtual(String.class, parameterObject, "virtual_getPresentation_1213877396640", new Object[]{}));
   }
 
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {

@@ -45,13 +45,13 @@
     <nodeInfo nodeId="2603522263179374356" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="40" startPosition="87" endLine="42" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="48" startPosition="87" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="59" startPosition="26" endLine="61" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2603522263179374349" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="17" startPosition="76" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2603522263179374349" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2603522263179374354" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mxb426_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="63" startPosition="59" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2603522263179374354" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mxb426_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2603522263179374356" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mxb426_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mxb426_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mxb426_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_mxb426_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2603522263179374356" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mxb426_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mxb426_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mxb426_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="55" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_mxb426_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="60" startPosition="58" endLine="60" endPosition="58" />
     <scopeInfo nodeId="2603522263179374349" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" />
     <scopeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="23" startPosition="96" endLine="24" endPosition="48" />
@@ -63,13 +63,13 @@
     <scopeInfo nodeId="2603522263179374356" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="40" startPosition="87" endLine="42" endPosition="85" />
     <scopeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="48" startPosition="87" endLine="50" endPosition="77" />
     <scopeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="59" startPosition="26" endLine="61" endPosition="73" />
+    <scopeInfo nodeId="2603522263179374349" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2603522263179374349" varName="editorContext" />
+      <varInfo nodeId="2603522263179374349" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
       <varInfo nodeId="2603522263179374358" varName="manager" />
       <varInfo nodeId="2603522263179374358" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2603522263179374349" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="17" startPosition="76" endLine="21" endPosition="0">
-      <varInfo nodeId="2603522263179374349" varName="editorContext" />
-      <varInfo nodeId="2603522263179374349" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2603522263179374354" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="32" startPosition="88" endLine="36" endPosition="22">
       <varInfo nodeId="2603522263179374354" varName="editorCell" />
@@ -80,22 +80,22 @@
     <scopeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="47" startPosition="88" endLine="52" endPosition="22">
       <varInfo nodeId="2603522263179374360" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
-      <varInfo nodeId="2603522263179374351" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2603522263179374354" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="2603522263179374354" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2603522263179374354" varName="editorContext" />
       <varInfo nodeId="2603522263179374354" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2603522263179374356" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="22" startPosition="89" endLine="29" endPosition="22">
+      <varInfo nodeId="2603522263179374351" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2603522263179374356" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2603522263179374356" varName="editorContext" />
       <varInfo nodeId="2603522263179374356" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="46" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="2603522263179374360" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="2603522263179374360" varName="editorContext" />
       <varInfo nodeId="2603522263179374360" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="2603522263179374351" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="22" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="2603522263179374351" varName="editorContext" />
       <varInfo nodeId="2603522263179374351" varName="node" />
     </scopeInfo>
@@ -105,7 +105,7 @@
       <varInfo nodeId="2603522263179374358" varName="editorCell" />
       <varInfo nodeId="2603522263179374358" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="54" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="2603522263179374358" fileName="NList_CopyWithTraceOperation_Editor.java" startLine="55" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="2603522263179374358" varName="editorContext" />
       <varInfo nodeId="2603522263179374358" varName="node" />
     </scopeInfo>
@@ -121,25 +121,25 @@
     <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="29" startPosition="15" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="31" startPosition="5" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6942529559415687107" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="28" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6942529559415687107" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="16" startPosition="75" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="23" startPosition="46" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="22" startPosition="101" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="20" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ivgi6x_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="21" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ivgi6x_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6942529559415687107" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="61" />
     <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="29" startPosition="15" endLine="30" endPosition="60" />
-    <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="24" startPosition="5" endLine="27" endPosition="81">
-      <varInfo nodeId="1144146355879" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="6942529559415687107" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="16" startPosition="75" endLine="20" endPosition="0">
+    <scopeInfo nodeId="6942529559415687107" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="6942529559415687107" varName="editorContext" />
       <varInfo nodeId="6942529559415687107" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="24" startPosition="5" endLine="27" endPosition="81">
+      <varInfo nodeId="1144146355879" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="22" startPosition="101" endLine="31" endPosition="5" />
     <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="21" startPosition="87" endLine="33" endPosition="22">
       <varInfo nodeId="1144146355879" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="20" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1144146355879" fileName="Node_CopyWithTraceOperation_Editor.java" startLine="21" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1144146355879" varName="editorContext" />
       <varInfo nodeId="1144146355879" varName="node" />
     </scopeInfo>

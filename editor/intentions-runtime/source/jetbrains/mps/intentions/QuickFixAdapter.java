@@ -18,12 +18,12 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -92,7 +92,7 @@ public class QuickFixAdapter extends BaseIntention  {
   public SNode getNodeByIntention() {
     String classFQName = myQuickFix.getClass().getName();
     SModelReference reference = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName));
-    SModelDescriptor sModelDescriptor = GlobalScope.getInstance().getModelDescriptor(reference);
+    SModelDescriptor sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (sModelDescriptor != null) {
       SModel model = sModelDescriptor.getSModel();
       if (model != null) {

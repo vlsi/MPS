@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.EqualUtil;
@@ -76,10 +76,10 @@ public class InitialPropertyValueClause_Editor extends DefaultNodeEditor {
         // if you need presentation like alias(...)->.. 
         // then use the ConceptFunctionAliased_Component 
         if (SConceptPropertyOperations.getBoolean(node, "showName")) {
-          result.append(ConceptFunction_Behavior.call_getName_1216468837268(node));
+          result.append(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getName_1216468837268", new Object[]{}));
         }
         result.append("(");
-        List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(node);
+        List<SNode> parameters = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{});
         boolean isFirst = true;
         for (SNode cfp : parameters) {
           if (!(isFirst)) {

@@ -5,13 +5,10 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SimpleTextGenOperation_Behavior {
-  private static Class[] PARAMETERS_1234789420862 = {SNode.class};
-
   public static void init(SNode thisNode) {
   }
 
@@ -40,17 +37,13 @@ public class SimpleTextGenOperation_Behavior {
     return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
   }
 
+  @Deprecated
   public static String call_getMethodName_1234789420862(SNode thisNode) {
-    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862, new Object[]{});
-  }
-
-  public static String callSuperNew_getMethodName_1234789420862(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuperNew(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), callerConceptFqName, "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862, new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getMethodName_1234789420862", new Object[]{});
   }
 
   @Deprecated
   public static String callSuper_getMethodName_1234789420862(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), callerConceptFqName, "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), callerConceptFqName, "virtual_getMethodName_1234789420862", new Class[]{SNode.class}, new Object[]{});
   }
 }

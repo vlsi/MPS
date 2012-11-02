@@ -10,11 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior;
 
 public class ForStatement_TextGen extends SNodeTextGen {
   private static Logger LOG = Logger.getLogger(ForStatement_TextGen.class);
@@ -69,7 +68,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
       {
         String traceableProperty = "";
         try {
-          traceableProperty = TraceableConcept_Behavior.call_getTraceableProperty_5067982036267369901(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"));
+          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
         } catch (Throwable t) {
           LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
         }
@@ -78,7 +77,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
       {
         List<SNode> scopeVariables = new ArrayList<SNode>();
         try {
-          scopeVariables = ScopeConcept_Behavior.call_getScopeVariables_5067982036267369894(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"));
+          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
           LOG.error("Can't calculate scope variables for a node " + node + ".", t);
         }

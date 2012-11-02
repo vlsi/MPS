@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -63,7 +63,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3210848622155026211(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) + "_" + VariantsUtil.withinVariant(_context.getNode());
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}) + "_" + VariantsUtil.withinVariant(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_3210848622155981147(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -96,7 +96,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3210848622155981279(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "staticInitializer", true);
+    return SLinkOperations.getTarget(_context.getNode(), "classInitializer", true);
   }
 
   public static SNode sourceNodeQuery_3210848622155981288(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

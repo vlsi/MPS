@@ -13,7 +13,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -100,7 +100,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2985097847315916808(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.core.structure.BaseConcept"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2167053794906731221(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -108,7 +108,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_199058371937604760(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.core.structure.BaseConcept"));
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_2167053794906731228(final IOperationContext operationContext, final PropertyMacroContext _context) {

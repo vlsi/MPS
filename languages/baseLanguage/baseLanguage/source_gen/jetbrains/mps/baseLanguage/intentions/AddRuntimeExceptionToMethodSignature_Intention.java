@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
@@ -78,7 +78,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check it's instance of RuntimeException 
-    if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(exceptionJavaType, (SNode) SLinkOperations.getTarget(new AddRuntimeExceptionToMethodSignature_Intention.QuotationClass_11l094_a0a1a0j0i().createNode(), "classifier", false)))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) SLinkOperations.getTarget(new AddRuntimeExceptionToMethodSignature_Intention.QuotationClass_11l094_a0a0a3a0j0i().createNode(), "classifier", false)}))) {
       return false;
     }
     // check if it's not thrown by a method yet 
@@ -101,8 +101,8 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 
-  public static class QuotationClass_11l094_a0a1a0j0i {
-    public QuotationClass_11l094_a0a1a0j0i() {
+  public static class QuotationClass_11l094_a0a0a3a0j0i {
+    public QuotationClass_11l094_a0a0a3a0j0i() {
     }
 
     public SNode createNode() {

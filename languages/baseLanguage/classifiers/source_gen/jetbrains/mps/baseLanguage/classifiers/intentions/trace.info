@@ -15,19 +15,19 @@
     <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="57" startPosition="44" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218968276334" fileName="CreateReferenceOnClassifier_Intention.java" startLine="61" startPosition="76" endLine="62" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1218968276346" fileName="CreateReferenceOnClassifier_Intention.java" startLine="62" startPosition="244" endLine="63" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="14" startPosition="74" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateReferenceOnClassifier_Intention#()V" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateReferenceOnClassifier_Intention#()V" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="46" startPosition="84" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="15" startPosition="50" endLine="15" endPosition="50" />
     <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="87" />
     <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="22" startPosition="35" endLine="23" endPosition="41" />
@@ -39,31 +39,31 @@
     <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="47" startPosition="53" endLine="48" endPosition="19" />
     <scopeInfo nodeId="1218968276354" fileName="CreateReferenceOnClassifier_Intention.java" startLine="53" startPosition="91" endLine="54" endPosition="240" />
     <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="57" startPosition="44" endLine="58" endPosition="17" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="14" startPosition="74" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1218968276333" fileName="CreateReferenceOnClassifier_Intention.java" startLine="61" startPosition="76" endLine="63" endPosition="71">
       <varInfo nodeId="1218968276335" varName="outerConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1218968276327" varName="editorContext" />
       <varInfo nodeId="1218968276327" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1218968276327" varName="editorContext" />
+      <varInfo nodeId="1218968276327" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="46" startPosition="84" endLine="50" endPosition="16" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1218968276327" varName="editorContext" />
       <varInfo nodeId="1218968276327" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="60" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="1218968276327" varName="editorContext" />
-      <varInfo nodeId="1218968276327" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1218968276327" fileName="CreateReferenceOnClassifier_Intention.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1218968276327" varName="editorContext" />
       <varInfo nodeId="1218968276327" varName="node" />
     </scopeInfo>

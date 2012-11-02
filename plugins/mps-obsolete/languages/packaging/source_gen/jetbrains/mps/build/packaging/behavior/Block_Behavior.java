@@ -5,6 +5,7 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -14,28 +15,28 @@ public class Block_Behavior {
 
   public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
-      return IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SLinkOperations.getTarget(thisNode, "layout", false), addBasedir);
+      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "layout", false), "virtual_getAllMacroNames_1234975567387", new Object[]{addBasedir});
     }
     return ListSequence.fromList(new ArrayList<String>());
   }
 
   public static String virtual_getPath_1234976932856(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
-      return IMacroHolder_Behavior.call_getPath_1234976932856(SLinkOperations.getTarget(thisNode, "layout", false));
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "layout", false), "virtual_getPath_1234976932856", new Object[]{});
     }
     return "";
   }
 
   public static String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
-      return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SLinkOperations.getTarget(thisNode, "layout", false), macroName);
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "layout", false), "virtual_evaluateMacro_1234975967990", new Object[]{macroName});
     }
-    return IMacroHolder_Behavior.callSuperNew_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", macroName);
+    return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", "virtual_evaluateMacro_1234975967990", new Object[]{macroName});
   }
 
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
-      return IVariableHolder_Behavior.call_getAllVariable_1234864693585(SLinkOperations.getTarget(thisNode, "layout", false));
+      return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "layout", false), "virtual_getAllVariable_1234864693585", new Object[]{});
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }

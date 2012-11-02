@@ -8,6 +8,7 @@ public interface IParameterizedFeatureDesign<T> extends IFeatureDesign {
   public Iterable<T> getParameters(SNode nodeType);
   public SNode getTargetType(T param, SNode nodeType);
   public String parameterToString(T param);
+
   public static class Stub<E> implements IParameterizedFeatureDesign<E> {
     public Stub() {
     }
@@ -24,5 +25,4 @@ public interface IParameterizedFeatureDesign<T> extends IFeatureDesign {
       return null;
     }
   }
-
 }

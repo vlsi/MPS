@@ -5,7 +5,7 @@ package jetbrains.mps.make.facet.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 
 public class TargetDeclaration_Behavior {
@@ -25,6 +25,6 @@ public class TargetDeclaration_Behavior {
   }
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(TargetDeclaration_Behavior.call_facetDeclaration_7854369758457971846(thisNode)) + ".Target_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name"));
+    return BehaviorReflection.invokeVirtual(String.class, TargetDeclaration_Behavior.call_facetDeclaration_7854369758457971846(thisNode), "virtual_classifierName_4609636120081351397", new Object[]{}) + ".Target_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name"));
   }
 }

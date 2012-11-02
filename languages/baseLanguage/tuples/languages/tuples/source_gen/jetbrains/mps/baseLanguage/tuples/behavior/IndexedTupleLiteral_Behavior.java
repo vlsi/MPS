@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IndexedTupleLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -12,7 +12,7 @@ public class IndexedTupleLiteral_Behavior {
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     for (SNode mexp : SLinkOperations.getTargets(thisNode, "component", true)) {
-      if (!(Expression_Behavior.call_isLValue_1213877519786(mexp))) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mexp, "virtual_isLValue_1213877519786", new Object[]{}))) {
         return false;
       }
     }

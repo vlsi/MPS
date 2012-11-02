@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Component;
 import javax.swing.JTable;
+import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.UIManager;
 import javax.swing.BorderFactory;
@@ -77,7 +78,10 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     myAloneError.setFont(boldFont);
   }
 
-  public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+  public Component getTableCellRendererComponent(JTable table, @Nullable Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+    if (value == null) {
+      value = table.getModel().getValueAt(row, column);
+    }
     TestStatisticsRow rowValue = (TestStatisticsRow) value;
     JComponent result = null;
     boolean keepForeground = false;

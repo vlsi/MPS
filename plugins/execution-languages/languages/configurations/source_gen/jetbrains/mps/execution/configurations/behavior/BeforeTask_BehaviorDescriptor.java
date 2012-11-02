@@ -7,24 +7,28 @@ import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_BehaviorDesc
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BeforeTask_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStructureDeprecatable_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor {
   public BeforeTask_BehaviorDescriptor() {
+  }
+
+  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public String virtual_getFullName_946964771156905503(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
 
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
-  }
-
-  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
   }
 
   public String virtual_getMessage_1225207468592(SNode thisNode) {
@@ -36,12 +40,8 @@ public class BeforeTask_BehaviorDescriptor extends BaseConcept_BehaviorDescripto
     return BeforeTask_Behavior.virtual_getSuffix_946964771156905483(thisNode);
   }
 
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  }
-
-  public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
+  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
+    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
   @Override

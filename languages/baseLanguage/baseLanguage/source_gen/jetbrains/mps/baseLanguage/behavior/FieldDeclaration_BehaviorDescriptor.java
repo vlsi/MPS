@@ -4,47 +4,35 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public FieldDeclaration_BehaviorDescriptor() {
-  }
-
-  public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
-    return FieldDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return FieldDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
-  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
-  }
-
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return FieldDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
-  }
-
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    FieldDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
 
-  public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
+    return FieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
 
-  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  public String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
+    return FieldDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
   }
 
   @Nullable
@@ -52,20 +40,32 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return FieldDeclaration_Behavior.virtual_getTraceableProperty_5067982036267369901(thisNode);
   }
 
-  public String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    return FieldDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
-  }
-
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
-  public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    return FieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
+  public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
+    return FieldDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
+  }
+
+  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  }
+
+  public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    FieldDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
 
   @Override

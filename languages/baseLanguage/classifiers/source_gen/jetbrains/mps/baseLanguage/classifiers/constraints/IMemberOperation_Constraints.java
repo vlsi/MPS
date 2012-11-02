@@ -21,9 +21,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
@@ -54,8 +53,8 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
               IMatchingPattern pattern_dyvyal_c0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
               SNode coercedNode_dyvyal_c0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_c0a0);
               if (coercedNode_dyvyal_c0a0 != null) {
-                for (SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_dyvyal_c0a0, _context.getEnclosingNode())) {
-                  if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget())) && IMember_Behavior.call_canBeReferent_8179323502814657526(member, _context.getLinkTarget())) {
+                for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_dyvyal_c0a0, "virtual_getMembers_1213877402148", new Object[]{_context.getEnclosingNode()})) {
+                  if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget())) && BehaviorReflection.invokeVirtual(Boolean.TYPE, member, "virtual_canBeReferent_8179323502814657526", new Object[]{_context.getLinkTarget()})) {
                     ListSequence.fromList(applicableMembers).addElement(member);
                   }
                 }

@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
@@ -24,12 +24,12 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
     for (SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false, new String[]{})) {
-      if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, remark, "call_isTodo_1213877427548", new Class[]{SNode.class}))) {
+      if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, remark, "jetbrains.mps.baseLanguage.structure.RemarkStatement", "call_isTodo_1213877427548", new Object[]{})) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this));
       }
     }
     for (SNode textCommentPart : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false, new String[]{})) {
-      if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, textCommentPart, "virtual_isToDo_7236590470026152831", new Class[]{SNode.class}))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, textCommentPart, "virtual_isToDo_7236590470026152831", new Object[]{})) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, "text"), this));
       }
     }

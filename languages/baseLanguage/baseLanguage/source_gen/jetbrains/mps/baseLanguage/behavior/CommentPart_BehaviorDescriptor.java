@@ -11,12 +11,12 @@ public abstract class CommentPart_BehaviorDescriptor extends BaseConcept_Behavio
   public CommentPart_BehaviorDescriptor() {
   }
 
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
   public boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
     return CommentPart_Behavior.virtual_isToDo_7236590470026152831(thisNode);
+  }
+
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   @Override

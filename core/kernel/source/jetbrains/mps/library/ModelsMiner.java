@@ -16,7 +16,6 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -32,14 +31,6 @@ import java.util.List;
  * evgeny, 3/18/11
  */
 public class ModelsMiner {
-
-  /*
-   * use #collectModelDescriptors(dir, models)
-   */
-  @Deprecated
-  public static void collectModelDescriptors(IFile dir, ModelRoot modelRoot, Collection<ModelHandle> models) {
-    collectModelDescriptors(dir, models);
-  }
 
   public static void collectModelDescriptors(IFile dir, Collection<ModelHandle> models) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;

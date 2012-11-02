@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +18,7 @@ public class typeof_SimpleBuilderParentExpression_InferenceRule extends Abstract
   }
 
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode builder = BaseSimpleBuilderDeclaration_Behavior.call_getContextDeclaration_6254726786820551255(SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", false, false));
+    SNode builder = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", false, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{});
     {
       SNode _nodeToCheck_1029348928467 = expression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "7288041816792806060", 0, null);

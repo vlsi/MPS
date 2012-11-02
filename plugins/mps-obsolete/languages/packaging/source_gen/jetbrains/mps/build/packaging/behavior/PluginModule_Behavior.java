@@ -9,9 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.plugin.behavior.PluginDependency_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -48,7 +48,7 @@ public class PluginModule_Behavior {
 
   public static SNode call_createPluginXmlPathHolder_989489456094459829(SNode thisNode) {
     SNode layout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true);
-    return PathHolder_Behavior.createPathHolder_55204148067446946(PluginModule_Behavior.call_getFullPathToPluginXml_989489456094444401(thisNode), IMacroHolder_Behavior.call_getMacro_1107726059764558743(layout), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_55204148067446946(PluginModule_Behavior.call_getFullPathToPluginXml_989489456094444401(thisNode), BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), layout, "virtual_getMacro_1107726059764558743", new Object[]{}), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath(), thisNode);
   }
 
   public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
@@ -62,7 +62,7 @@ public class PluginModule_Behavior {
   public static List<String> virtual_getDependency_3033860308390155295(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true), "ideaInitializer", false), "dependency", true)).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return PluginDependency_Behavior.call_getPluginId_5864553086652219131(it);
+        return BehaviorReflection.invokeVirtual(String.class, it, "virtual_getPluginId_5864553086652219131", new Object[]{});
       }
     }).toListSequence();
   }

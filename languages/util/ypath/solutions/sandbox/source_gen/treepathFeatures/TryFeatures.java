@@ -30,6 +30,7 @@ public class TryFeatures extends TreePath<Node> {
   }
 
   private static class Children {
+
   }
 
   public static class foo_NodeKindTrigger implements IFilter<Node> {

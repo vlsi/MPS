@@ -217,7 +217,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(executionContext), getOperationContext(), myGenerationTracer);
         try {
           if (executionContext.isApplicable(rule, environment, new DefaultTemplateContext(inputNode))) {
-            myGenerationTracer.pushInputNode(inputNode);
+            myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
             myGenerationTracer.pushRule(rule.getRuleNode());
             try {
               boolean copyRootOnFailure = false;
@@ -227,7 +227,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               }
               createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
             } finally {
-              myGenerationTracer.closeInputNode(inputNode);
+              myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
             }
           }
         } catch (GenerationException e) {
@@ -305,7 +305,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // copy
-    myGenerationTracer.pushInputNode(inputRootNode);
+    myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
     try {
       boolean[] changed = new boolean[]{false};
       SNode root = copyNodeFromInputNode_internal(null, null, inputRootNode, environment.getReductionContext(), changed);
@@ -314,7 +314,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         setChanged();
       }
     } finally {
-      myGenerationTracer.closeInputNode(inputRootNode);
+      myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
     }
   }
 
@@ -336,9 +336,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     try {
       if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
         if (environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, new DefaultTemplateContext(inputRootNode))) {
-          myGenerationTracer.pushInputNode(inputRootNode);
+          myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
           myGenerationTracer.pushRule(rule.getRuleNode());
-          myGenerationTracer.closeInputNode(inputRootNode);
+          myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
           return true;
         }
       }
@@ -485,7 +485,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   Collection<SNode> copyNodeFromInputNode(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
-    myGenerationTracer.pushInputNode(inputNode);
+    myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
     try {
       Collection<SNode> outputNodes = tryToReduce(new DefaultTemplateContext(inputNode), null, mappingName, reductionContext);
       if (outputNodes != null) {
@@ -497,14 +497,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, copiedNode);
       return Collections.singletonList(copiedNode);
     } finally {
-      myGenerationTracer.closeInputNode(inputNode);
+      myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
     }
   }
 
   private SNode copyNodeFromInputNode_internal(@Nullable SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
-    SNode outputNode = new SNode(myOutputModel, inputNode.getConcept().getId(), false);
+    SNode outputNode = new SNode(inputNode.getConcept().getId());
     if (inputNode.getSNodeId() != null && jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       outputNode.setId(inputNode.getSNodeId());
     }
@@ -589,7 +589,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode inputChildNode : inputNode.getChildren()) {
       String childRole = inputChildNode.getRole_();
       assert childRole != null;
-      myGenerationTracer.pushInputNode(inputChildNode);
+      myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
       try {
         Collection<SNode> outputChildNodes = tryToReduce(new DefaultTemplateContext(inputChildNode), null, null, reductionContext);
         if (outputChildNodes != null) {
@@ -609,11 +609,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           outputNode.addChild(childRole, copyNodeFromInputNode_internal(null, null, inputChildNode, reductionContext, changed));
         }
       } finally {
-        myGenerationTracer.closeInputNode(inputChildNode);
+        myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
       }
     }
 
-    myGenerationTracer.pushOutputNode(outputNode);
+    myGenerationTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
     return outputNode;
   }
 

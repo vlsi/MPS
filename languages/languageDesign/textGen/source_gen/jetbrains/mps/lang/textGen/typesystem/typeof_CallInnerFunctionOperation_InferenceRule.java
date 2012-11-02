@@ -8,24 +8,36 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Map;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CallInnerFunctionOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(methodCall, "function", false) == null) {
+  public void applyRule(final SNode opcall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode opdecl = SLinkOperations.getTarget(opcall, "function", false);
+    if (opdecl == null) {
       return;
     }
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, methodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "function", false), "returnType", true), mmap);
-    RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
+
+    {
+      Iterator<SNode> pdecl_it = ListSequence.fromList(SLinkOperations.getTargets(opdecl, "parameter", true)).iterator();
+      Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(opcall, "parameter", true)).iterator();
+      SNode pdecl_var;
+      SNode arg_var;
+      while (pdecl_it.hasNext() && arg_it.hasNext()) {
+        pdecl_var = pdecl_it.next();
+        arg_var = arg_it.next();
+        {
+          SNode _nodeToCheck_1029348928467 = arg_var;
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "9033423951287770196", 0, null);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "9033423951287769724", true), (SNode) SLinkOperations.getTarget(pdecl_var, "type", true), false, true, _info_12389875345);
+        }
+      }
+    }
   }
 
   public String getApplicableConceptFQName() {

@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -105,13 +106,13 @@ public class LibraryInitializer implements CoreComponent {
     return myLibsToOwners.keySet();
   }
 
-  public List<IModule> registerNewModules(String lib, Collection<ModuleHandle> modules) {
+  public List<SModule> registerNewModules(String lib, Collection<ModuleHandle> modules) {
     ModelAccess.assertLegalWrite();
 
     MPSModuleOwner owner = myLibsToOwners.get(lib);
     assert owner != null;
 
-    List<IModule> loaded = new ArrayList<IModule>();
+    List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle handle : modules) {
       IModule module = ModuleRepositoryFacade.createModule(handle, owner);
       module.onModuleLoad();

@@ -8,12 +8,12 @@ public class QueryFunction_Color_BehaviorDescriptor extends QueryFunction_StyleP
   public QueryFunction_Color_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isFunction_1225463329531(SNode thisNode) {
-    return IQueryFunction_Color_Behavior.virtual_isFunction_1225463329531(thisNode);
-  }
-
   public String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return IQueryFunction_Color_Behavior.virtual_getRGBValue_1225468086082(thisNode);
+  }
+
+  public boolean virtual_isFunction_1225463329531(SNode thisNode) {
+    return IQueryFunction_Color_Behavior.virtual_isFunction_1225463329531(thisNode);
   }
 
   @Override

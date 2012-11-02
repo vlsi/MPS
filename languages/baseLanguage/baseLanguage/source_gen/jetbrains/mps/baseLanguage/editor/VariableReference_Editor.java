@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IClassifierMember_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -112,7 +112,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
 
     private static int _StyleParameter_QueryFunction_ge17fi_a1a0a0(SNode node, EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-        if (IClassifierMember_Behavior.call_isStatic_7405920559687241224(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
           return MPSFonts.BOLD_ITALIC;
         } else {
           return MPSFonts.BOLD;

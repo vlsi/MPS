@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -21,7 +21,7 @@ public class typeof_CellMenuPart_Abstract_editedNode_InferenceRule extends Abstr
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode hostComponent = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(hostComponent);
+    SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), hostComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086221", 0, null);

@@ -33,7 +33,7 @@ public class StubMigrationHelper {
   //ret null if no need for conversion or failed
   public static SModelId convertModelUIDAny(String fid, boolean forceResolve) {
     if ((!forceResolve) && ourRefsFixingMode) return null;
-    return convertModelUIDInScope(fid, GlobalScope.getInstance().getModelDescriptors());
+    return convertModelUIDInScope(fid, SModelRepository.getInstance().getModelDescriptors());
   }
 
   //ret null if no need for conversion or failed

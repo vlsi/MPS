@@ -11,12 +11,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Map;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class InstanceMethodCallOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -50,7 +50,7 @@ public class InstanceMethodCallOperation_Behavior {
     return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
   }
 
-  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
+  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
     return Sequence.fromIterable(Members.visibleInstanceMethods(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_xykbjj_a0a0a0a0a0a0a4(SPropertyOperations.getString(it, "name"), methodName);
@@ -75,7 +75,7 @@ public class InstanceMethodCallOperation_Behavior {
       return false;
     }
     while (classifier != declarationClassifier) {
-      for (SNode method : Members.visibleInstanceMethods(IClassifier_Behavior.call_getThisType_7405920559687254782(classifier), thisNode)) {
+      for (SNode method : Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
         if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
           return false;
         }

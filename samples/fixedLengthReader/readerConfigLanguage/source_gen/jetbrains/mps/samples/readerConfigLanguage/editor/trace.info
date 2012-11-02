@@ -92,34 +92,34 @@
     <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="167" startPosition="63" endLine="168" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="169" startPosition="7" endLine="170" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="170" startPosition="36" endLine="171" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="100" startPosition="26" endLine="103" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="114" startPosition="80" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="mappingListHandler_vfprw_b2a#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="mappingListHandler_vfprw_b2a#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="137" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="143" startPosition="134" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="146" startPosition="9" endLine="149" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="28" startPosition="67" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="44" startPosition="48" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="71" startPosition="46" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="43" startPosition="99" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="70" startPosition="86" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="118" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="164" startPosition="50" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1116535083749" fileName="ReaderConfiguration_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535182163" fileName="ReaderConfiguration_Editor.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="105" startPosition="59" endLine="111" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="130" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="163" startPosition="123" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535083749" fileName="ReaderConfiguration_Editor.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535182163" fileName="ReaderConfiguration_Editor.java" startLine="79" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="129" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535179177" fileName="ReaderConfiguration_Editor.java" startLine="53" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vfprw_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vfprw_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="86" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_vfprw_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535179177" fileName="ReaderConfiguration_Editor.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vfprw_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vfprw_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="87" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_vfprw_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="153" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="141" startPosition="132" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="152" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vfprw_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="140" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="161" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="95" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_vfprw_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="69" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="42" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vfprw_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="141" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="162" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_vfprw_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="96" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_vfprw_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="62" />
     <scopeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="34" startPosition="97" endLine="35" endPosition="47" />
     <scopeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="82" />
@@ -147,12 +147,16 @@
     <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="119" startPosition="66" endLine="121" endPosition="93">
       <varInfo nodeId="1116535190962" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1116535065149" varName="editorContext" />
+      <varInfo nodeId="1116535065149" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="100" startPosition="26" endLine="103" endPosition="73" />
     <scopeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="106" startPosition="35" endLine="109" endPosition="105">
       <varInfo nodeId="1116535104470" varName="manager" />
       <varInfo nodeId="1116535104470" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="114" startPosition="80" endLine="117" endPosition="5">
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="1116535190962" varName="childRole" />
       <varInfo nodeId="1116535190962" varName="context" />
       <varInfo nodeId="1116535190962" varName="ownerNode" />
@@ -160,12 +164,12 @@
     <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="124" startPosition="86" endLine="127" endPosition="25">
       <varInfo nodeId="1116535190962" varName="elementCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="137" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="1116535190962" varName="editorContext" />
+      <varInfo nodeId="1116535190962" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="165" startPosition="7" endLine="168" endPosition="62">
       <varInfo nodeId="1116535342282" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535065149" fileName="ReaderConfiguration_Editor.java" startLine="28" startPosition="67" endLine="32" endPosition="0">
-      <varInfo nodeId="1116535065149" varName="editorContext" />
-      <varInfo nodeId="1116535065149" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535083749" fileName="ReaderConfiguration_Editor.java" startLine="62" startPosition="88" endLine="66" endPosition="22">
       <varInfo nodeId="1116535083749" varName="editorCell" />
@@ -173,20 +177,20 @@
     <scopeInfo nodeId="1116535182163" fileName="ReaderConfiguration_Editor.java" startLine="80" startPosition="88" endLine="84" endPosition="22">
       <varInfo nodeId="1116535182163" varName="editorCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="1116535190962" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="130" startPosition="68" endLine="134" endPosition="23">
       <varInfo nodeId="1116535190962" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="136" startPosition="0" endLine="140" endPosition="0">
-      <varInfo nodeId="1116535190962" varName="editorContext" />
-      <varInfo nodeId="1116535190962" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="43" startPosition="99" endLine="48" endPosition="5" />
     <scopeInfo nodeId="1116535179177" fileName="ReaderConfiguration_Editor.java" startLine="54" startPosition="89" endLine="59" endPosition="22">
       <varInfo nodeId="1116535179177" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="70" startPosition="86" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="118" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="124" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="1116535190962" varName="editorContext" />
+      <varInfo nodeId="1116535190962" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="154" startPosition="84" endLine="159" endPosition="24">
       <varInfo nodeId="1116535190962" varName="editorCell" />
@@ -194,68 +198,64 @@
     <scopeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="33" startPosition="88" endLine="39" endPosition="22">
       <varInfo nodeId="1116535073479" varName="editorCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535083749" fileName="ReaderConfiguration_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1116535083749" varName="editorContext" />
+      <varInfo nodeId="1116535083749" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116535182163" fileName="ReaderConfiguration_Editor.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1116535182163" varName="editorContext" />
+      <varInfo nodeId="1116535182163" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="87" startPosition="91" endLine="93" endPosition="22">
       <varInfo nodeId="1116535190962" varName="editorCell" />
       <varInfo nodeId="1116535190962" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="130" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="1116535190962" varName="editorContext" />
-      <varInfo nodeId="1116535190962" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="163" startPosition="123" endLine="169" endPosition="7" />
-    <scopeInfo nodeId="1116535083749" fileName="ReaderConfiguration_Editor.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="1116535083749" varName="editorContext" />
-      <varInfo nodeId="1116535083749" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535182163" fileName="ReaderConfiguration_Editor.java" startLine="79" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="1116535182163" varName="editorContext" />
-      <varInfo nodeId="1116535182163" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="129" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="1116535190962" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="142" startPosition="96" endLine="149" endPosition="9" />
-    <scopeInfo nodeId="1116535179177" fileName="ReaderConfiguration_Editor.java" startLine="53" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1116535179177" fileName="ReaderConfiguration_Editor.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1116535179177" varName="editorContext" />
       <varInfo nodeId="1116535179177" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="142" startPosition="96" endLine="149" endPosition="9" />
+    <scopeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1116535073479" varName="editorContext" />
+      <varInfo nodeId="1116535073479" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="69" startPosition="87" endLine="77" endPosition="22">
       <varInfo nodeId="1116535127706" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535073479" fileName="ReaderConfiguration_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="1116535073479" varName="editorContext" />
-      <varInfo nodeId="1116535073479" varName="node" />
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="87" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1116535190962" varName="editorContext" />
+      <varInfo nodeId="1116535190962" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="153" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="1116535190962" varName="editorContext" />
+      <varInfo nodeId="1116535190962" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="42" startPosition="89" endLine="51" endPosition="22">
       <varInfo nodeId="1116535079638" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="86" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="1116535190962" varName="editorContext" />
-      <varInfo nodeId="1116535190962" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="141" startPosition="132" endLine="150" endPosition="7" />
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="152" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="1116535190962" varName="editorContext" />
-      <varInfo nodeId="1116535190962" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="162" startPosition="91" endLine="171" endPosition="24">
       <varInfo nodeId="1116535342282" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="68" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1116535127706" fileName="ReaderConfiguration_Editor.java" startLine="69" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1116535127706" varName="editorContext" />
       <varInfo nodeId="1116535127706" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1116535079638" fileName="ReaderConfiguration_Editor.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1116535079638" varName="editorContext" />
       <varInfo nodeId="1116535079638" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="140" startPosition="0" endLine="152" endPosition="0">
+    <scopeInfo nodeId="1116535190962" fileName="ReaderConfiguration_Editor.java" startLine="141" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="1116535190962" varName="editorContext" />
       <varInfo nodeId="1116535190962" varName="elementCell" />
       <varInfo nodeId="1116535190962" varName="elementNode" />
       <varInfo nodeId="1116535190962" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="161" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="1116535342282" fileName="ReaderConfiguration_Editor.java" startLine="162" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="1116535342282" varName="editorContext" />
       <varInfo nodeId="1116535342282" varName="node" />
     </scopeInfo>
@@ -265,7 +265,7 @@
       <varInfo nodeId="1116535104470" varName="editorCell" />
       <varInfo nodeId="1116535104470" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="95" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="1116535104470" fileName="ReaderConfiguration_Editor.java" startLine="96" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="1116535104470" varName="editorContext" />
       <varInfo nodeId="1116535104470" varName="node" />
     </scopeInfo>
@@ -369,37 +369,37 @@
     <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="173" startPosition="63" endLine="174" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="175" startPosition="7" endLine="176" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="176" startPosition="36" endLine="177" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="97" startPosition="26" endLine="100" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535474183" fileName="Mapping_Editor.java" startLine="115" startPosition="26" endLine="118" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="129" startPosition="79" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="fieldListHandler_mcrsin_b1a#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="fieldListHandler_mcrsin_b1a#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="158" startPosition="134" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="161" startPosition="9" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="28" startPosition="55" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="43" startPosition="49" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="56" startPosition="49" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="75" startPosition="48" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="42" startPosition="99" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="55" startPosition="99" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="74" startPosition="90" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="139" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="170" startPosition="51" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1116535425601" fileName="Mapping_Editor.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mcrsin_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="102" startPosition="59" endLine="108" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1116535474183" fileName="Mapping_Editor.java" startLine="120" startPosition="59" endLine="126" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="138" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="145" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="169" startPosition="121" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535425601" fileName="Mapping_Editor.java" startLine="65" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mcrsin_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="144" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mcrsin_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="83" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_mcrsin_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mcrsin_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_mcrsin_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="156" startPosition="132" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="72" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mcrsin_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mcrsin_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="155" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="167" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mcrsin_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mcrsin_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="92" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_mcrsin_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535474183" fileName="Mapping_Editor.java" startLine="110" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_mcrsin_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mcrsin_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="54" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mcrsin_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="156" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="168" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mcrsin_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mcrsin_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_mcrsin_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535474183" fileName="Mapping_Editor.java" startLine="111" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_mcrsin_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="34" startPosition="97" endLine="35" endPosition="48" />
     <scopeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="35" startPosition="48" endLine="36" endPosition="83" />
@@ -429,6 +429,10 @@
     <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="134" startPosition="66" endLine="136" endPosition="93">
       <varInfo nodeId="1116535602908" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1116535393470" varName="editorContext" />
+      <varInfo nodeId="1116535393470" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="97" startPosition="26" endLine="100" endPosition="73" />
     <scopeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="103" startPosition="35" endLine="106" endPosition="105">
       <varInfo nodeId="1116535431541" varName="manager" />
@@ -439,7 +443,7 @@
       <varInfo nodeId="1116535474183" varName="manager" />
       <varInfo nodeId="1116535474183" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="129" startPosition="79" endLine="132" endPosition="5">
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="130" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="1116535602908" varName="childRole" />
       <varInfo nodeId="1116535602908" varName="context" />
       <varInfo nodeId="1116535602908" varName="ownerNode" />
@@ -447,22 +451,21 @@
     <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="139" startPosition="86" endLine="142" endPosition="25">
       <varInfo nodeId="1116535602908" varName="elementCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="152" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="1116535602908" varName="editorContext" />
+      <varInfo nodeId="1116535602908" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="171" startPosition="7" endLine="174" endPosition="62">
       <varInfo nodeId="1116535661191" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535393470" fileName="Mapping_Editor.java" startLine="28" startPosition="55" endLine="32" endPosition="0">
-      <varInfo nodeId="1116535393470" varName="editorContext" />
-      <varInfo nodeId="1116535393470" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535425601" fileName="Mapping_Editor.java" startLine="66" startPosition="89" endLine="70" endPosition="22">
       <varInfo nodeId="1116535425601" varName="editorCell" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="134" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="1116535602908" varName="editorContext" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="145" startPosition="68" endLine="149" endPosition="23">
       <varInfo nodeId="1116535602908" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="151" startPosition="0" endLine="155" endPosition="0">
-      <varInfo nodeId="1116535602908" varName="editorContext" />
-      <varInfo nodeId="1116535602908" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="33" startPosition="89" endLine="38" endPosition="22">
       <varInfo nodeId="1116535413503" varName="editorCell" />
@@ -470,39 +473,36 @@
     <scopeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="42" startPosition="99" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="55" startPosition="99" endLine="60" endPosition="5" />
     <scopeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="74" startPosition="90" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="133" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="139" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1116535602908" varName="editorContext" />
+      <varInfo nodeId="1116535602908" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116535425601" fileName="Mapping_Editor.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1116535425601" varName="editorContext" />
+      <varInfo nodeId="1116535425601" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="84" startPosition="92" endLine="90" endPosition="22">
       <varInfo nodeId="1116535602908" varName="editorCell" />
       <varInfo nodeId="1116535602908" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="138" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="145" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="1116535602908" varName="editorContext" />
-      <varInfo nodeId="1116535602908" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="169" startPosition="121" endLine="175" endPosition="7" />
-    <scopeInfo nodeId="1116535425601" fileName="Mapping_Editor.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="1116535425601" varName="editorContext" />
-      <varInfo nodeId="1116535425601" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="144" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="1116535602908" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="157" startPosition="96" endLine="164" endPosition="9" />
-    <scopeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1116535413503" fileName="Mapping_Editor.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1116535413503" varName="editorContext" />
       <varInfo nodeId="1116535413503" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="157" startPosition="96" endLine="164" endPosition="9" />
     <scopeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="73" startPosition="89" endLine="81" endPosition="22">
       <varInfo nodeId="1116535587625" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="54" startPosition="90" endLine="63" endPosition="22">
-      <varInfo nodeId="1116535566607" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="83" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="84" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1116535602908" varName="editorContext" />
       <varInfo nodeId="1116535602908" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="54" startPosition="90" endLine="63" endPosition="22">
+      <varInfo nodeId="1116535566607" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="156" startPosition="132" endLine="165" endPosition="7" />
     <scopeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="168" startPosition="92" endLine="177" endPosition="24">
@@ -511,25 +511,25 @@
     <scopeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="41" startPosition="90" endLine="51" endPosition="22">
       <varInfo nodeId="1116535422630" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="72" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1116535587625" fileName="Mapping_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1116535587625" varName="editorContext" />
       <varInfo nodeId="1116535587625" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1116535566607" fileName="Mapping_Editor.java" startLine="54" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1116535566607" varName="editorContext" />
       <varInfo nodeId="1116535566607" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="155" startPosition="0" endLine="167" endPosition="0">
+    <scopeInfo nodeId="1116535602908" fileName="Mapping_Editor.java" startLine="156" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="1116535602908" varName="editorContext" />
       <varInfo nodeId="1116535602908" varName="elementCell" />
       <varInfo nodeId="1116535602908" varName="elementNode" />
       <varInfo nodeId="1116535602908" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="167" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="1116535661191" fileName="Mapping_Editor.java" startLine="168" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="1116535661191" varName="editorContext" />
       <varInfo nodeId="1116535661191" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="40" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1116535422630" fileName="Mapping_Editor.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1116535422630" varName="editorContext" />
       <varInfo nodeId="1116535422630" varName="node" />
     </scopeInfo>
@@ -545,11 +545,11 @@
       <varInfo nodeId="1116535474183" varName="editorCell" />
       <varInfo nodeId="1116535474183" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="92" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="1116535431541" fileName="Mapping_Editor.java" startLine="93" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1116535431541" varName="editorContext" />
       <varInfo nodeId="1116535431541" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535474183" fileName="Mapping_Editor.java" startLine="110" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="1116535474183" fileName="Mapping_Editor.java" startLine="111" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="1116535474183" varName="editorContext" />
       <varInfo nodeId="1116535474183" varName="node" />
     </scopeInfo>
@@ -626,10 +626,10 @@
     <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="103" startPosition="72" endLine="104" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="104" startPosition="78" endLine="105" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="106" startPosition="10" endLine="107" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1116535736473" fileName="Field_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="60" startPosition="26" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535883950" fileName="Field_Editor.java" startLine="78" startPosition="26" endLine="81" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="96" startPosition="26" endLine="99" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1116535736473" fileName="Field_Editor.java" startLine="18" startPosition="53" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="36" startPosition="47" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="47" startPosition="47" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="35" startPosition="87" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -637,12 +637,12 @@
     <nodeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="65" startPosition="59" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1116535883950" fileName="Field_Editor.java" startLine="83" startPosition="59" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="101" startPosition="59" endLine="107" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_s65pvt_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_s65pvt_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_s65pvt_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="55" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_s65pvt_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535883950" fileName="Field_Editor.java" startLine="73" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_s65pvt_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="91" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_s65pvt_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_s65pvt_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_s65pvt_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_s65pvt_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_s65pvt_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535883950" fileName="Field_Editor.java" startLine="74" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_s65pvt_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="92" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_s65pvt_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1116535736473" fileName="Field_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
     <scopeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" />
     <scopeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" />
@@ -659,6 +659,10 @@
     <scopeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="51">
       <varInfo nodeId="1116535914749" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1116535736473" fileName="Field_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1116535736473" varName="editorContext" />
+      <varInfo nodeId="1116535736473" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="60" startPosition="26" endLine="63" endPosition="73" />
     <scopeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
       <varInfo nodeId="1116535854212" varName="manager" />
@@ -674,10 +678,6 @@
       <varInfo nodeId="1116535940767" varName="manager" />
       <varInfo nodeId="1116535940767" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535736473" fileName="Field_Editor.java" startLine="18" startPosition="53" endLine="22" endPosition="0">
-      <varInfo nodeId="1116535736473" varName="editorContext" />
-      <varInfo nodeId="1116535736473" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="35" startPosition="87" endLine="40" endPosition="5" />
     <scopeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="46" startPosition="87" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="23" startPosition="89" endLine="31" endPosition="22">
@@ -689,15 +689,15 @@
     <scopeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="45" startPosition="88" endLine="53" endPosition="22">
       <varInfo nodeId="1116535914749" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1116535830741" fileName="Field_Editor.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1116535830741" varName="editorContext" />
       <varInfo nodeId="1116535830741" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1116535874417" fileName="Field_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1116535874417" varName="editorContext" />
       <varInfo nodeId="1116535874417" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1116535914749" fileName="Field_Editor.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1116535914749" varName="editorContext" />
       <varInfo nodeId="1116535914749" varName="node" />
     </scopeInfo>
@@ -719,15 +719,15 @@
       <varInfo nodeId="1116535940767" varName="editorCell" />
       <varInfo nodeId="1116535940767" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="55" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1116535854212" fileName="Field_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1116535854212" varName="editorContext" />
       <varInfo nodeId="1116535854212" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535883950" fileName="Field_Editor.java" startLine="73" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="1116535883950" fileName="Field_Editor.java" startLine="74" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1116535883950" varName="editorContext" />
       <varInfo nodeId="1116535883950" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="91" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="1116535940767" fileName="Field_Editor.java" startLine="92" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="1116535940767" varName="editorContext" />
       <varInfo nodeId="1116535940767" varName="node" />
     </scopeInfo>

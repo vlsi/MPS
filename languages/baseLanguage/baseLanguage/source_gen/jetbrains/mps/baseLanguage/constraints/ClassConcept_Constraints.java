@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -28,7 +28,7 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
   }
 
   public String getAlternativeIcon(SNode node) {
-    if (Classifier_Behavior.call_isDescendant_7165541881557222913(node, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable"))) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable")})) {
       if (SPropertyOperations.getBoolean(node, "abstractClass")) {
         return "${language_descriptor}/icons/abstractException.png";
       }

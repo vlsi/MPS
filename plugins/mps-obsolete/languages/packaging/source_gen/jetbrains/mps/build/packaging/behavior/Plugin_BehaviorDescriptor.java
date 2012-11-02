@@ -9,6 +9,14 @@ public class Plugin_BehaviorDescriptor extends AbstractProjectComponent_Behavior
   public Plugin_BehaviorDescriptor() {
   }
 
+  public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
+    return Plugin_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
+  }
+
+  public List<String> virtual_getDependency_3033860308390155295(SNode thisNode) {
+    return Plugin_Behavior.virtual_getDependency_3033860308390155295(thisNode);
+  }
+
   public String virtual_getExcludes_1213877279373(SNode thisNode) {
     return ICompositeComponent_Behavior.virtual_getExcludes_1213877279373(thisNode);
   }
@@ -19,14 +27,6 @@ public class Plugin_BehaviorDescriptor extends AbstractProjectComponent_Behavior
 
   public String virtual_getIncludes_1213877279430(SNode thisNode) {
     return ICompositeComponent_Behavior.virtual_getIncludes_1213877279430(thisNode);
-  }
-
-  public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
-    return Plugin_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
-  }
-
-  public List<String> virtual_getDependency_3033860308390155295(SNode thisNode) {
-    return Plugin_Behavior.virtual_getDependency_3033860308390155295(thisNode);
   }
 
   @Override

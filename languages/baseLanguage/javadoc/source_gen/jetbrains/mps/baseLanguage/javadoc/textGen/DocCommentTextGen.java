@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public abstract class DocCommentTextGen {
   public static void javadocIndent(final SNodeTextGen textGen) {
@@ -16,7 +16,6 @@ public abstract class DocCommentTextGen {
   }
 
   public static void docCommentStart(SNode node, final SNodeTextGen textGen) {
-    textGen.appendNewLine();
     textGen.indentBuffer();
     textGen.append("/**");
 
@@ -28,7 +27,7 @@ public abstract class DocCommentTextGen {
       }
     }
 
-    if (!(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(node))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}))) {
       textGen.appendNewLine();
       DocCommentTextGen.javadocIndent(textGen);
     }
@@ -59,5 +58,6 @@ public abstract class DocCommentTextGen {
     textGen.appendNewLine();
     textGen.indentBuffer();
     textGen.append(" */");
+    textGen.appendNewLine();
   }
 }

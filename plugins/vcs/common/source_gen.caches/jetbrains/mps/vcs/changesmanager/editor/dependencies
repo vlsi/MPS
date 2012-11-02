@@ -180,7 +180,6 @@
     <classNode extendsClassName="java.awt.event.FocusAdapter" />
     <classNode extendsClassName="java.awt.event.MouseAdapter" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.smodel.ModelOwner" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" file="StripsChangeGroupLayout.java">
     <classNode dependClassName="java.util.List" />

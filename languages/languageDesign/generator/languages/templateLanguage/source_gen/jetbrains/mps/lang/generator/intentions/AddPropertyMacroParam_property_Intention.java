@@ -18,7 +18,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntention;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -117,7 +117,7 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Property Macro: node." + BaseConcept_Behavior.call_getPresentation_1213877396640(myParameter) + " (property)";
+      return "Add Property Macro: node." + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " (property)";
     }
 
     public boolean isApplicable(final SNode node, final EditorContext editorContext) {

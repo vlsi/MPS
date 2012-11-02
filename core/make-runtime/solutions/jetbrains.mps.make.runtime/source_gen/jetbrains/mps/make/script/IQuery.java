@@ -11,10 +11,10 @@ public interface IQuery<T extends IOption> {
   public Iterable<T> options();
   public T voidOption();
   public T defaultOption();
+
   public static class Name extends SmartWrapper<String> {
     public Name(String name) {
       super(name);
     }
   }
-
 }
