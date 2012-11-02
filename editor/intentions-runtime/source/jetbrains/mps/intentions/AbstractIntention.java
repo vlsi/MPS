@@ -71,6 +71,11 @@ public abstract class AbstractIntention implements Intention {
 
   }
 
+  /**
+   * @deprecated starting from MPS 3.0 proper content will be generated into getType() method
+   * Should be removed after 3.0
+   */
+  @Deprecated
   public boolean isErrorIntention() {
     return false;
   }
@@ -79,6 +84,10 @@ public abstract class AbstractIntention implements Intention {
     return false;
   }
 
+  /**
+   * @deprecated starting from MPS 3.0 proper content will be generated into getType() method
+   * of sub-classes. This method should be removed.
+   */
   public IntentionType getType() {
     return isErrorIntention() ? IntentionType.ERROR : IntentionType.NORMAL;
   }

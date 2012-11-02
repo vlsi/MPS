@@ -34,10 +34,10 @@ public interface IntentionFactory {
 
   String getLanguageFqName();
 
+  IntentionType getType();
+
   // TODO: do we need it?
   SNodeReference getIntentionNodeReference();
-
-  IntentionType getType();
 
   Collection<Intention> instances(SNode node, EditorContext editorContext);
 }
