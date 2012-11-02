@@ -39,7 +39,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention extends Su
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:93e49088-faf0-4e36-bb0d-3271af9bd425(jetbrains.mps.lang.access.intentions@1_0)", "1616052750811363739");
+    return new SNodePointer("r:4df57e9b-2a09-44c7-b16d-4af6620e3aaa(jetbrains.mps.lang.access.intentions)", "1616052750811363739");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

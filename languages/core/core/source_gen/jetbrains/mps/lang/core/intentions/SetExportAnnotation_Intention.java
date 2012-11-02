@@ -49,7 +49,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:ccf3514e-0522-4626-af02-6407f093c85f(jetbrains.mps.lang.core.intentions@1_0)", "4075196924244322258");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4075196924244322258");
   }
 
   public Collection<Intention> instances(final SNode node, final EditorContext context) {

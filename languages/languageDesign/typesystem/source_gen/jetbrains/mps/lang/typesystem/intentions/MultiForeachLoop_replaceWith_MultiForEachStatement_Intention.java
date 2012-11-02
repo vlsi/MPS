@@ -47,7 +47,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:6cd1848d-7973-446d-943e-a0781322f155(jetbrains.mps.lang.typesystem.intentions@3_0)", "8293956702610699517");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "8293956702610699517");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

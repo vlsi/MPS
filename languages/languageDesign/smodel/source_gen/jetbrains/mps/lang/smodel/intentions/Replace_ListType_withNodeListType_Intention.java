@@ -37,7 +37,7 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:b457e00d-8ebc-46ca-aafa-d2681bbfa794(jetbrains.mps.lang.smodel.intentions@3_0)", "1205354609722");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1205354609722");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

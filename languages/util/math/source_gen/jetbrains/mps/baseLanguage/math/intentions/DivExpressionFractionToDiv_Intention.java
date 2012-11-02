@@ -41,7 +41,7 @@ public class DivExpressionFractionToDiv_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:3ae70292-e242-43df-9d84-705f32384bae(jetbrains.mps.baseLanguage.math.intentions@4_0)", "1237104496404");
+    return new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1237104496404");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

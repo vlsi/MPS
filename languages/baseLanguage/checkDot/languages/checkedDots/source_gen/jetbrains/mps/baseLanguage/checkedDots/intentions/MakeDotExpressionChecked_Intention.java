@@ -37,7 +37,7 @@ public class MakeDotExpressionChecked_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:faa67fb4-2e97-4364-a4ce-fe194a4e199f(jetbrains.mps.baseLanguage.checkedDots.intentions@1_0)", "1038097819968653124");
+    return new SNodePointer("r:e7b16359-4f7b-4995-8330-19c6bbadce25(jetbrains.mps.baseLanguage.checkedDots.intentions)", "1038097819968653124");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

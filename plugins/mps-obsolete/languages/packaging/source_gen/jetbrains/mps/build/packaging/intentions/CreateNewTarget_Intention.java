@@ -38,7 +38,7 @@ public class CreateNewTarget_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:d4839c08-d2cb-4778-9a85-0379b70c3f69(jetbrains.mps.build.packaging.intentions@1_0)", "1228400780252");
+    return new SNodePointer("r:e0c736f5-141d-492a-8ea5-d9cfc3978a00(jetbrains.mps.build.packaging.intentions)", "1228400780252");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

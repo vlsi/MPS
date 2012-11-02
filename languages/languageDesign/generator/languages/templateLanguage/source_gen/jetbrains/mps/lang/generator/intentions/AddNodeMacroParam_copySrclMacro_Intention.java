@@ -47,7 +47,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention implements IntentionFacto
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:bda568eb-a9f1-4a7d-bbff-1c00bbe87f34(jetbrains.mps.lang.generator.intentions@3_0)", "1240595864245");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240595864245");
   }
 
   public Collection<Intention> instances(final SNode node, final EditorContext context) {

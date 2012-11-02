@@ -39,7 +39,7 @@ public class AddConditions_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:4c4d2d25-aab6-4162-ac0c-48ba9a5635d0(jetbrains.mps.baseLanguage.contracts.intentions@1_0)", "6302815655306137102");
+    return new SNodePointer("r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)", "6302815655306137102");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

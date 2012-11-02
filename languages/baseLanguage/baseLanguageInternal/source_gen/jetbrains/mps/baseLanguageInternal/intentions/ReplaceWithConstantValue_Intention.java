@@ -40,7 +40,7 @@ public class ReplaceWithConstantValue_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:7155f093-1702-456f-be20-2707aa72be68(jetbrains.mps.baseLanguageInternal.intentions@2_0)", "5332097447638335764");
+    return new SNodePointer("r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)", "5332097447638335764");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

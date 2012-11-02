@@ -36,7 +36,7 @@ public class RemoveExclamationMark_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:69bf3816-9ce1-447e-8b18-160153a26e7b(jetbrains.mps.ypath.intentions@3_0)", "1198003127662");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)", "1198003127662");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

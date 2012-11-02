@@ -38,7 +38,7 @@ public class ConvertToBeanBuilder_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:0c163d08-350a-4d5a-a424-0984ca740e05(jetbrains.mps.baseLanguage.builders.intentions@1_0)", "5219429592916136228");
+    return new SNodePointer("r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)", "5219429592916136228");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

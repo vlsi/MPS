@@ -35,7 +35,7 @@ public class SwitchDefault_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:69bf3816-9ce1-447e-8b18-160153a26e7b(jetbrains.mps.ypath.intentions@3_0)", "1197704377989");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)", "1197704377989");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

@@ -41,7 +41,7 @@ public class Add_Comparator_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:a30b45e0-eeeb-4289-9a5e-dc943f6cf430(jetbrains.mps.baseLanguage.collections.intentions@3_0)", "2261417478149151571");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "2261417478149151571");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

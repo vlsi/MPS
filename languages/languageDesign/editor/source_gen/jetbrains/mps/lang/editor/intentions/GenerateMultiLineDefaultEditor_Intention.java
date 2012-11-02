@@ -35,7 +35,7 @@ public class GenerateMultiLineDefaultEditor_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:49ddab87-c30a-4978-8da2-7d7dc16830c4(jetbrains.mps.lang.editor.intentions@1_0)", "1239368960873");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1239368960873");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

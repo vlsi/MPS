@@ -37,7 +37,7 @@ public class View_wrap_with_ValidatingView_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:141e0415-489b-4450-b6ec-2c948289a4a3(jetbrains.mps.ui.intentions@2_0)", "8381258131358771407");
+    return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "8381258131358771407");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

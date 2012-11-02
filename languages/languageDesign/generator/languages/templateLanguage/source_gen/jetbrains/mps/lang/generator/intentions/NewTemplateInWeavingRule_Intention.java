@@ -44,7 +44,7 @@ public class NewTemplateInWeavingRule_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:bda568eb-a9f1-4a7d-bbff-1c00bbe87f34(jetbrains.mps.lang.generator.intentions@3_0)", "8699312839322230162");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "8699312839322230162");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

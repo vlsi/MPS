@@ -40,7 +40,7 @@ public class UnwrapUnlessBlock_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:9399e2ec-9887-4ca8-b4ce-f27eacafd0aa(org.jetbrains.mps.samples.IfAndUnless.intentions@1_0)", "393299394024667052");
+    return new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "393299394024667052");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

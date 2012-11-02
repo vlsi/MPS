@@ -41,7 +41,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:6cd1848d-7973-446d-943e-a0781322f155(jetbrains.mps.lang.typesystem.intentions@3_0)", "1195490883262");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "1195490883262");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

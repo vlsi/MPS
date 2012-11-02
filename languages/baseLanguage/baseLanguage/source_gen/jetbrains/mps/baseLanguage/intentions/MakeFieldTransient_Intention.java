@@ -35,7 +35,7 @@ public class MakeFieldTransient_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:e456489e-54f1-4f7f-a501-bb6a31480eab(jetbrains.mps.baseLanguage.intentions@3_0)", "8606350594693687997");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "8606350594693687997");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

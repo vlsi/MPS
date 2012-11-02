@@ -7,7 +7,7 @@
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371691619" fileName="CreatePatternVariable_Intention.java" startLine="41" startPosition="85" endLine="42" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="46" startPosition="53" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -33,7 +33,7 @@
     <scopeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="83" />
     <scopeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" />
     <scopeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="136" />
+    <scopeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="132" />
     <scopeInfo nodeId="3514655265371682054" fileName="CreatePatternVariable_Intention.java" startLine="41" startPosition="85" endLine="42" endPosition="37" />
     <scopeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="46" startPosition="53" endLine="47" endPosition="19" />
     <scopeInfo nodeId="3514655265371691622" fileName="CreatePatternVariable_Intention.java" startLine="52" startPosition="91" endLine="53" endPosition="64" />
@@ -72,7 +72,7 @@
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="35" startPosition="37" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="39" startPosition="34" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371753275" fileName="CreatePropertyPatternVariable_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -102,7 +102,7 @@
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="91" />
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="35" startPosition="37" endLine="36" endPosition="43" />
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="39" startPosition="34" endLine="40" endPosition="32" />
-    <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="136" />
+    <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="132" />
     <scopeInfo nodeId="3514655265371724200" fileName="CreatePropertyPatternVariable_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="46" />
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="63" startPosition="44" endLine="64" endPosition="16" />
@@ -147,7 +147,7 @@
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="30" startPosition="41" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="34" startPosition="37" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="38" startPosition="34" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789393" fileName="CreateListPattern_Intention.java" startLine="46" startPosition="85" endLine="47" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -178,7 +178,7 @@
     <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="30" startPosition="41" endLine="31" endPosition="79" />
     <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="34" startPosition="37" endLine="35" endPosition="43" />
     <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="38" startPosition="34" endLine="39" endPosition="32" />
-    <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="136" />
+    <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="132" />
     <scopeInfo nodeId="3514655265371785883" fileName="CreateListPattern_Intention.java" startLine="46" startPosition="85" endLine="47" endPosition="33" />
     <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
     <scopeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="62" startPosition="44" endLine="63" endPosition="16" />
@@ -226,7 +226,7 @@
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="28" startPosition="41" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="32" startPosition="37" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="36" startPosition="34" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789449" fileName="CreateWildcardPattern_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -253,7 +253,7 @@
     <scopeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="28" startPosition="41" endLine="29" endPosition="83" />
     <scopeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="32" startPosition="37" endLine="33" endPosition="43" />
     <scopeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="36" startPosition="34" endLine="37" endPosition="32" />
-    <scopeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="136" />
+    <scopeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="132" />
     <scopeInfo nodeId="3514655265371789446" fileName="CreateWildcardPattern_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="29" />
     <scopeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="3514655265371789452" fileName="CreateWildcardPattern_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="64" />
@@ -294,7 +294,7 @@
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="28" startPosition="41" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="32" startPosition="37" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="36" startPosition="34" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789474" fileName="CreateAsPattern_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -321,7 +321,7 @@
     <scopeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="28" startPosition="41" endLine="29" endPosition="77" />
     <scopeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="32" startPosition="37" endLine="33" endPosition="43" />
     <scopeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="36" startPosition="34" endLine="37" endPosition="32" />
-    <scopeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="136" />
+    <scopeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="132" />
     <scopeInfo nodeId="3514655265371789471" fileName="CreateAsPattern_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="31" />
     <scopeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="3514655265371789477" fileName="CreateAsPattern_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="64" />
@@ -362,7 +362,7 @@
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="30" startPosition="41" endLine="31" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="34" startPosition="37" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="38" startPosition="34" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907743482" fileName="CreateActionAsPattern_Intention.java" startLine="46" startPosition="85" endLine="47" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -390,7 +390,7 @@
     <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="30" startPosition="41" endLine="31" endPosition="83" />
     <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="34" startPosition="37" endLine="35" endPosition="43" />
     <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="38" startPosition="34" endLine="39" endPosition="32" />
-    <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="136" />
+    <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="42" startPosition="53" endLine="43" endPosition="132" />
     <scopeInfo nodeId="4413230749907735530" fileName="CreateActionAsPattern_Intention.java" startLine="46" startPosition="85" endLine="47" endPosition="35" />
     <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
     <scopeInfo nodeId="4413230749907743503" fileName="CreateActionAsPattern_Intention.java" startLine="57" startPosition="91" endLine="58" endPosition="64" />
@@ -431,7 +431,7 @@
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="28" startPosition="41" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="32" startPosition="37" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="36" startPosition="34" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373638271" fileName="CreateOrPattern_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -461,7 +461,7 @@
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="28" startPosition="41" endLine="29" endPosition="77" />
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="32" startPosition="37" endLine="33" endPosition="43" />
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="36" startPosition="34" endLine="37" endPosition="32" />
-    <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="136" />
+    <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="40" startPosition="53" endLine="41" endPosition="132" />
     <scopeInfo nodeId="8263735385373627210" fileName="CreateOrPattern_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="30" />
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="60" startPosition="44" endLine="61" endPosition="17" />

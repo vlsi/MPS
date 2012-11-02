@@ -7,7 +7,7 @@
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="35" startPosition="37" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="39" startPosition="34" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195491061285" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -43,7 +43,7 @@
     <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="104" />
     <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="35" startPosition="37" endLine="36" endPosition="43" />
     <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="39" startPosition="34" endLine="40" endPosition="32" />
-    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="133" />
+    <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="43" startPosition="53" endLine="44" endPosition="129" />
     <scopeInfo nodeId="1195490883264" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="47" startPosition="85" endLine="48" endPosition="44" />
     <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="1195490883262" fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="63" startPosition="44" endLine="64" endPosition="17" />
@@ -91,7 +91,7 @@
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="45" startPosition="53" endLine="46" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="45" startPosition="53" endLine="46" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380616699" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="85" endLine="50" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="54" startPosition="53" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -170,7 +170,7 @@
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="90" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="43" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" />
-    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="45" startPosition="53" endLine="46" endPosition="139" />
+    <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="45" startPosition="53" endLine="46" endPosition="135" />
     <scopeInfo nodeId="3302086321380606111" fileName="CreateTypesystemIntention_Intention.java" startLine="49" startPosition="85" endLine="50" endPosition="33" />
     <scopeInfo nodeId="3302086321380606109" fileName="CreateTypesystemIntention_Intention.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="3302086321380616665" fileName="CreateTypesystemIntention_Intention.java" startLine="61" startPosition="197" endLine="62" endPosition="19" />
@@ -254,7 +254,7 @@
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="29" startPosition="41" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="33" startPosition="37" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="37" startPosition="34" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="41" startPosition="53" endLine="42" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="41" startPosition="53" endLine="42" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389709817" fileName="FlipInequality_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389709864" fileName="FlipInequality_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -296,7 +296,7 @@
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="29" startPosition="41" endLine="30" endPosition="79" />
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="33" startPosition="37" endLine="34" endPosition="43" />
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="37" startPosition="34" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="41" startPosition="53" endLine="42" endPosition="139" />
+    <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="41" startPosition="53" endLine="42" endPosition="135" />
     <scopeInfo nodeId="6840209722389643033" fileName="FlipInequality_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="29" />
     <scopeInfo nodeId="6840209722389643031" fileName="FlipInequality_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="16" />
     <scopeInfo nodeId="6840209722389709849" fileName="FlipInequality_Intention.java" startLine="55" startPosition="125" endLine="56" endPosition="136" />
@@ -331,7 +331,7 @@
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750251" fileName="MakeInequalityCheckOnly_Intention.java" startLine="42" startPosition="60" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750255" fileName="MakeInequalityCheckOnly_Intention.java" startLine="44" startPosition="12" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -354,7 +354,7 @@
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="88" />
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" />
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="139" />
+    <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="135" />
     <scopeInfo nodeId="6840209722389750241" fileName="MakeInequalityCheckOnly_Intention.java" startLine="42" startPosition="60" endLine="43" endPosition="47" />
     <scopeInfo nodeId="6840209722389750254" fileName="MakeInequalityCheckOnly_Intention.java" startLine="44" startPosition="12" endLine="45" endPosition="43" />
     <scopeInfo nodeId="6840209722389750234" fileName="MakeInequalityCheckOnly_Intention.java" startLine="49" startPosition="44" endLine="50" endPosition="16" />
@@ -384,7 +384,7 @@
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="37" startPosition="41" endLine="38" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="45" startPosition="34" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610708760" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="53" startPosition="85" endLine="54" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="57" startPosition="44" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8293956702610709747" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="64" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -493,7 +493,7 @@
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="37" startPosition="41" endLine="38" endPosition="115" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="41" startPosition="37" endLine="42" endPosition="43" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="45" startPosition="34" endLine="46" endPosition="31" />
-    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="139" />
+    <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="135" />
     <scopeInfo nodeId="8293956702610699519" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="53" startPosition="85" endLine="54" endPosition="60" />
     <scopeInfo nodeId="8293956702610699517" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="57" startPosition="44" endLine="58" endPosition="17" />
     <scopeInfo nodeId="8293956702610709746" fileName="MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.java" startLine="63" startPosition="37" endLine="64" endPosition="294" />

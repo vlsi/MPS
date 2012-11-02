@@ -36,7 +36,7 @@ public class addHandler_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:e3af67db-05a5-4686-851c-e590d767da64(jetbrains.mps.core.xml.sax.intentions@1_0)", "2264311582634140824");
+    return new SNodePointer("r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)", "2264311582634140824");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

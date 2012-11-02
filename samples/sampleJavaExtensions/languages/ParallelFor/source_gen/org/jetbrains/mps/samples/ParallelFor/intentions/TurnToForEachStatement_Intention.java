@@ -41,7 +41,7 @@ public class TurnToForEachStatement_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:7dd3cee3-7562-4ff9-8f56-2becff8682cc(org.jetbrains.mps.samples.ParallelFor.intentions@3_0)", "5384012304952504715");
+    return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952504715");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

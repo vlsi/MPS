@@ -38,7 +38,7 @@ public class ExtractGroup_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:6cc93d23-d151-4ea0-a02b-f151129842df(jetbrains.mps.lang.plugin.intentions@1_0)", "1204990433124");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)", "1204990433124");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

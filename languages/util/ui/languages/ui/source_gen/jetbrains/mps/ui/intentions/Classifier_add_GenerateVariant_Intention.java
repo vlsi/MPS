@@ -58,7 +58,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:141e0415-489b-4450-b6ec-2c948289a4a3(jetbrains.mps.ui.intentions@2_0)", "8905126934806239993");
+    return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "8905126934806239993");
   }
 
   public Collection<Intention> instances(final SNode node, final EditorContext context) {

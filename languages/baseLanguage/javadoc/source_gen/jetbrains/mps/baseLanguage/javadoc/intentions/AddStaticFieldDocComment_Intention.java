@@ -38,7 +38,7 @@ public class AddStaticFieldDocComment_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:2167abe7-3634-479b-a698-2bff67ab958a(jetbrains.mps.baseLanguage.javadoc.intentions@2_0)", "4021391592916341753");
+    return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "4021391592916341753");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

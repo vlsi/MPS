@@ -49,7 +49,7 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:136be205-5485-41c2-9c27-bf22b3015d62(jetbrains.mps.baseLanguage.unitTest.intentions@3_0)", "2230548360390192818");
+    return new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "2230548360390192818");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

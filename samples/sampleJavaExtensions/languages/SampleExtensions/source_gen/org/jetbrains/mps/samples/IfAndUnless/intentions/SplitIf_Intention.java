@@ -38,7 +38,7 @@ public class SplitIf_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:9399e2ec-9887-4ca8-b4ce-f27eacafd0aa(org.jetbrains.mps.samples.IfAndUnless.intentions@1_0)", "8008559088281289910");
+    return new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "8008559088281289910");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

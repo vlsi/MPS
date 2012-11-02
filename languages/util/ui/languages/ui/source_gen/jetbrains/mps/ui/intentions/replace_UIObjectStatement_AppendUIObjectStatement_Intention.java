@@ -38,7 +38,7 @@ public class replace_UIObjectStatement_AppendUIObjectStatement_Intention extends
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:141e0415-489b-4450-b6ec-2c948289a4a3(jetbrains.mps.ui.intentions@2_0)", "1576918603588812821");
+    return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "1576918603588812821");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

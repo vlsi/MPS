@@ -39,7 +39,7 @@ public class AsyncExecution_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:5fb40ae3-ee33-4866-8d14-cb28c95970f4(jetbrains.mps.bash.intentions@1_0)", "2362837471608610775");
+    return new SNodePointer("r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)", "2362837471608610775");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

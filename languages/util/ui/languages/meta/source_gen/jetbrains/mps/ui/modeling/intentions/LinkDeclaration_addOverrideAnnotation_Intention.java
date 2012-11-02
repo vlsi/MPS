@@ -39,7 +39,7 @@ public class LinkDeclaration_addOverrideAnnotation_Intention extends BaseIntenti
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:c56898e4-f3c9-4089-b188-8644b4a26692(jetbrains.mps.ui.modeling.intentions@1_0)", "6247544121092588774");
+    return new SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6247544121092588774");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

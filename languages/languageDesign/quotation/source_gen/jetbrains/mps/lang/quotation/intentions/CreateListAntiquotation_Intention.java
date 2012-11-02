@@ -40,7 +40,7 @@ public class CreateListAntiquotation_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:79c9b1b1-5770-4df7-953f-ce17d0346ebe(jetbrains.mps.lang.quotation.intentions@1_0)", "1227886484790");
+    return new SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "1227886484790");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

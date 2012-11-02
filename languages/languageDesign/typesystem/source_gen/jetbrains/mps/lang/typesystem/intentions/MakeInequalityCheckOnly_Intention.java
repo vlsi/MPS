@@ -35,7 +35,7 @@ public class MakeInequalityCheckOnly_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:6cd1848d-7973-446d-943e-a0781322f155(jetbrains.mps.lang.typesystem.intentions@3_0)", "6840209722389750234");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "6840209722389750234");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

@@ -7,7 +7,7 @@
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140815" fileName="Switch_HasAttributes_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="13" startPosition="67" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Switch_HasAttributes_Intention#()V" />
@@ -27,7 +27,7 @@
     <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="25" startPosition="41" endLine="26" endPosition="82" />
     <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="43" />
     <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="33" startPosition="34" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="136" />
+    <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="37" startPosition="53" endLine="38" endPosition="132" />
     <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" />
     <scopeInfo nodeId="2264311582634140814" fileName="Switch_HasAttributes_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="108" />
     <scopeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="13" startPosition="67" endLine="15" endPosition="3" />
@@ -55,7 +55,7 @@
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="26" startPosition="41" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="34" startPosition="34" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="38" startPosition="53" endLine="39" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="38" startPosition="53" endLine="39" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140827" fileName="addHandler_Intention.java" startLine="42" startPosition="85" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="47" startPosition="53" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="49" startPosition="5" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -81,7 +81,7 @@
     <scopeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="26" startPosition="41" endLine="27" endPosition="72" />
     <scopeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="30" startPosition="37" endLine="31" endPosition="43" />
     <scopeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="34" startPosition="34" endLine="35" endPosition="32" />
-    <scopeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="38" startPosition="53" endLine="39" endPosition="136" />
+    <scopeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="38" startPosition="53" endLine="39" endPosition="132" />
     <scopeInfo nodeId="2264311582634140826" fileName="addHandler_Intention.java" startLine="42" startPosition="85" endLine="43" endPosition="25" />
     <scopeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="47" startPosition="53" endLine="48" endPosition="19" />
     <scopeInfo nodeId="2264311582634140840" fileName="addHandler_Intention.java" startLine="53" startPosition="91" endLine="54" endPosition="70" />

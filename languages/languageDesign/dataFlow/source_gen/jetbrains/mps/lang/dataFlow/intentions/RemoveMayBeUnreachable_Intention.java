@@ -35,7 +35,7 @@ public class RemoveMayBeUnreachable_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:dd4712df-7cfe-4cbc-8b3a-3b0bae905a8b(jetbrains.mps.lang.dataFlow.intentions@1_0)", "1206534526647");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)", "1206534526647");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

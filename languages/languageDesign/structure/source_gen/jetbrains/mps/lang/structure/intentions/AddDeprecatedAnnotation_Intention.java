@@ -39,7 +39,7 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:7bf7b653-1fa3-4f70-962e-ac4230bbe4c2(jetbrains.mps.lang.structure.intentions@2_0)", "1224245135252");
+    return new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "1224245135252");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

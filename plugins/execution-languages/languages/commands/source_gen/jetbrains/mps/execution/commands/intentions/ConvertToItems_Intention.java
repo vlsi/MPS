@@ -37,7 +37,7 @@ public class ConvertToItems_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:b3ba2978-d9e1-42da-a40c-ee739f2edfbf(jetbrains.mps.execution.commands.intentions@1_0)", "2168104298250372811");
+    return new SNodePointer("r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)", "2168104298250372811");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

@@ -40,7 +40,7 @@ public class CreateListPattern_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:1cc95e10-c11c-4ea2-b394-554777670099(jetbrains.mps.lang.pattern.intentions@1_0)", "3514655265371785881");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371785881");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

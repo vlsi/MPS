@@ -42,7 +42,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:44026767-c203-47df-9bd2-82a9d54c8d2e(jetbrains.mps.baseLanguage.closures.intentions@2_0)", "1235748072133");
+    return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1235748072133");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

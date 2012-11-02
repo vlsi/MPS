@@ -40,7 +40,7 @@ public class convert_to_restricted_Intention extends BaseIntention {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:44026767-c203-47df-9bd2-82a9d54c8d2e(jetbrains.mps.baseLanguage.closures.intentions@2_0)", "1229783748457");
+    return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1229783748457");
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
