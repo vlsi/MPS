@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import java.util.LinkedList;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.Iterator;
@@ -142,6 +143,14 @@ public class SNodeOperations {
       SetSequence.fromSet(res).addElement(ref.getRole());
     }
     return res;
+  }
+
+  /**
+   * todo rewrite the code using this
+   */
+  public static boolean isRoot(SNode n) {
+    SModel model = ((jetbrains.mps.smodel.SNode) n).getModel();
+    return model != null && model.isRoot(((jetbrains.mps.smodel.SNode) n));
   }
 
   /**
