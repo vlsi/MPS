@@ -47,6 +47,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Map<String, ModuleReference> myLoadedClasses = new THashMap<String, ModuleReference>();
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
+  private boolean isReloadRequested;
 
   private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
 
@@ -67,6 +68,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
+    isReloadRequested = false;
 
     monitor.start("Reloading classes...", 5);
     try {
@@ -162,6 +164,16 @@ public class ClassLoaderManager implements CoreComponent {
       m.invalidateClasses();
     }
     ClassPathFactory.getInstance().invalidateAll();
+  }
+
+  public boolean isReloadRequested() {
+    return isReloadRequested;
+  }
+
+  public void requestReload() {
+    LOG.assertCanWrite();
+
+    isReloadRequested = true;
   }
 
   //---------------reload handlers------------------

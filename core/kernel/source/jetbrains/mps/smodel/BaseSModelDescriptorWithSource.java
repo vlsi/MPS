@@ -40,6 +40,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     return (ModelDataSource) super.getSource();
   }
 
+  @Override
   public void dispose() {
     getSource().removeListener(mySourceListener);
     super.dispose();

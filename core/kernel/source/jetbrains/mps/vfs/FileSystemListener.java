@@ -22,9 +22,9 @@ import jetbrains.mps.progress.ProgressMonitor;
  */
 public interface FileSystemListener {
 
-  IFile getSource();
+  IFile getFileToListen();
 
-  Iterable<FileSystemListener> getDependencies();
+  Iterable<FileSystemListener> getListenerDependencies();
 
   void fileChanged(ProgressMonitor monitor, IFile file);
 

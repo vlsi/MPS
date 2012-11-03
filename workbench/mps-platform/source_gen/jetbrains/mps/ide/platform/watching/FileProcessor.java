@@ -11,7 +11,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.progress.SubProgressKind;
-import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -52,7 +51,6 @@ public class FileProcessor extends EventProcessor {
           listener.folderChanged(monitor.subTask(1, SubProgressKind.AS_COMMENT), data.added, data.removed);
         }
       }
-      ReloadableSources.getInstance().reload(monitor.subTask(10, SubProgressKind.AS_COMMENT));
     } finally {
       monitor.done();
     }
@@ -71,7 +69,7 @@ public class FileProcessor extends EventProcessor {
       return;
     }
     result.add(listener);
-    Iterable<FileSystemListener> dependencies = listener.getDependencies();
+    Iterable<FileSystemListener> dependencies = listener.getListenerDependencies();
     if (dependencies == null) {
       return;
     }

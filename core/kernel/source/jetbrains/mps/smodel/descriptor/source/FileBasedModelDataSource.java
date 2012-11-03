@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -26,8 +25,9 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * This is a base class for all data sources built on the top of file system
+ * @deprecated Use FileDataSource
  */
+@Deprecated
 public abstract class FileBasedModelDataSource implements ModelDataSource {
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
@@ -38,9 +38,8 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     myOrigin = origin;
   }
 
-  public ModuleReference getOrigin() {
-    // TODO remove cast
-    return (ModuleReference) myOrigin;
+  public SModuleReference getOrigin() {
+    return myOrigin;
   }
 
   @Override

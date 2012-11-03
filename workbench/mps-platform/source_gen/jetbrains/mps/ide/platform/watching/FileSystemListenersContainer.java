@@ -23,7 +23,7 @@ public class FileSystemListenersContainer {
     if (myListeners.containsKey(listener)) {
       return;
     }
-    String path = listener.getSource().getPath();
+    String path = listener.getFileToListen().getPath();
     if (myListeners.putIfAbsent(listener, path) != null) {
       return;
     }

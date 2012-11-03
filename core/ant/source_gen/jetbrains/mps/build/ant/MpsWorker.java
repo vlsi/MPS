@@ -296,7 +296,7 @@ public abstract class MpsWorker {
         modelReference = SModelReference.fromPath(ifile.getPath());
       }
       info("Read model " + modelReference);
-      DescriptorLoadResult d = new RegularModelDataSource(null, ifile).loadDescriptor(null, modelReference.getSModelFqName());
+      DescriptorLoadResult d = new RegularModelDataSource(ifile, null).loadDescriptor(null, modelReference.getSModelFqName());
       SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getHeader().getModelReference());
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");

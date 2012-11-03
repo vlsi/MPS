@@ -81,18 +81,11 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public Set<ModelRoot> doUpdateModelsSet() {
+  public Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    SModelRepository repo = SModelRepository.getInstance();
     for (String stub : SetSequence.fromSet(myStubPaths)) {
       SModelRoot smodelRoot = new SModelRoot(LanguageID.JAVA_MANAGER);
       smodelRoot.setPath(stub);
-      smodelRoot.setModule(this);
-      for (SModel descriptor : Sequence.fromIterable(smodelRoot.getModels())) {
-        if (repo.getModelDescriptor(descriptor.getModelReference()) == null) {
-          repo.registerModelDescriptor((SModelDescriptor) descriptor, this);
-        }
-      }
       result.add(smodelRoot);
     }
     return result;

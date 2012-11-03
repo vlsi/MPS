@@ -18,8 +18,6 @@ public class ReloadSession {
 
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners;
   private boolean myReloaded = false;
-  private ModelFileProcessor myModelProcessor = new ModelFileProcessor();
-  private ModuleFileProcessor myModuleProcessor = new ModuleFileProcessor();
   private FileProcessor myFileProcessor = new FileProcessor();
 
   public ReloadSession(Set<FSChangesWatcher.IReloadListener> reloadListeners) {
@@ -27,7 +25,7 @@ public class ReloadSession {
   }
 
   public EventProcessor[] getProcessors() {
-    return new EventProcessor[]{myModuleProcessor, myModelProcessor, myFileProcessor};
+    return new EventProcessor[]{myFileProcessor};
   }
 
   public boolean isEmpty() {
@@ -43,19 +41,14 @@ public class ReloadSession {
     assert !(myReloaded) : "Contract: do not call doReload twice on one reload session";
     myReloaded = true;
 
-    monitor.start("Reloading ...", 4);
+    monitor.start("Reloading ...", 2);
     fireReloadStarted();
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          myModuleProcessor.update(monitor.subTask(1, SubProgressKind.REPLACING));
-
-          myModelProcessor.validateModules(myModuleProcessor.getProcessedModules());
-          myModelProcessor.update(monitor.subTask(1, SubProgressKind.REPLACING));
-
           myFileProcessor.update(monitor.subTask(1, SubProgressKind.REPLACING));
 
-          if (myModuleProcessor.needsReload()) {
+          if (ClassLoaderManager.getInstance().isReloadRequested()) {
             monitor.subTask(1, SubProgressKind.REPLACING).start("Reloading classes... Please wait.", 1);
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
           }

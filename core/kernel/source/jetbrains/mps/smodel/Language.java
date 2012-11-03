@@ -59,7 +59,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
-    myDescriptorFile = file;
+    super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
@@ -139,6 +139,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
   }
 
+  @Override
   public void onModuleLoad() {
     super.onModuleLoad();
 

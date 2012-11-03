@@ -17,7 +17,6 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.project.IModule;
@@ -29,7 +28,6 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -41,13 +39,10 @@ public class LibraryInitializer implements CoreComponent {
     return INSTANCE;
   }
 
-  private Set<String> myLoadedLibs = new HashSet<String>();
-  private Map<String, MPSModuleOwner> myLibsToOwners = new HashMap<String, MPSModuleOwner>();
+  private Set<SLibrary> myLibraries = new HashSet<SLibrary>();
   private Map<String, ClassLoader> myParentLoaders = new HashMap<String, ClassLoader>();
-  private Map<String, Boolean> myHiddenPaths = new HashMap<String, Boolean>();
 
-  private MPSModuleRepository myRepo;
-
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -55,13 +50,13 @@ public class LibraryInitializer implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }
 
   @SuppressWarnings("UnusedParameters")
   public LibraryInitializer(MPSModuleRepository repo, ClassLoaderManager clm) {
-    myRepo = repo;
   }
 
   public void update() {
@@ -69,6 +64,7 @@ public class LibraryInitializer implements CoreComponent {
   }
 
   public ClassLoader getParentLoaderForModule(IClassLoadingModule module) {
+    // TODO find classloader using ModuleOwner (SLibrary)
     String pluginPath = module.getPluginPath();
     if (pluginPath != null) {
       for (String path : myParentLoaders.keySet()) {
@@ -83,72 +79,37 @@ public class LibraryInitializer implements CoreComponent {
   }
 
   public void update(boolean refreshFiles) {
+    ModelAccess.assertLegalWrite();
+
+    Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
+    Set<SLibrary> toLoad = new HashSet<SLibrary>();
     myParentLoaders.clear();
-    Set<String> newLibs = new HashSet<String>();
     for (LibraryContributor lc : myContributors) {
       for (LibDescriptor s : lc.getLibraries()) {
         IFile path = FileSystem.getInstance().getFileByPath(s.path);
+        SLibrary lib = new SLibrary(path, s.parentLoader, lc.hiddenLanguages());
+        toUnload.remove(lib);
+        if (!myLibraries.contains(lib)) {
+          myLibraries.add(lib);
+          toLoad.add(lib);
+        }
+
         IFile bundlePath = FileSystem.getInstance().isPackaged(path) ? FileSystem.getInstance().getBundleHome(path) : null;
         myParentLoaders.put(bundlePath != null ? bundlePath.getPath() : s.path, s.parentLoader != null ? s.parentLoader : LibraryInitializer.class.getClassLoader());
-        newLibs.add(s.path);
-        Boolean oldValue = myHiddenPaths.get(s.path);
-        if (oldValue == null || !oldValue) {
-          myHiddenPaths.put(s.path, lc.hiddenLanguages());
-        }
       }
     }
-    reload(myLoadedLibs, newLibs, refreshFiles);
 
-    myLoadedLibs = newLibs;
-  }
-
-  public Set<String> getLibs() {
-    return myLibsToOwners.keySet();
-  }
-
-  public List<SModule> registerNewModules(String lib, Collection<ModuleHandle> modules) {
-    ModelAccess.assertLegalWrite();
-
-    MPSModuleOwner owner = myLibsToOwners.get(lib);
-    assert owner != null;
-
-    List<SModule> loaded = new ArrayList<SModule>();
-    for (ModuleHandle handle : modules) {
-      IModule module = ModuleRepositoryFacade.createModule(handle, owner);
-      module.onModuleLoad();
-      loaded.add(module);
-    }
-    return loaded;
-  }
-
-  private void reload(Set<String> loadedLibs, Set<String> newLibs, boolean refreshFiles) {
-    ModelAccess.assertLegalWrite();
-
-    //unload
-    HashSet<String> toUnload = new HashSet<String>(loadedLibs);
-    toUnload.removeAll(newLibs);
-    for (String unloadLib : toUnload) {
-      ModuleRepositoryFacade.getInstance().unregisterModules(myLibsToOwners.remove(unloadLib));
+    // unload
+    for (SLibrary unloadLib : toUnload) {
+      unloadLib.dispose();
     }
 
     //load new
-    HashSet<String> toLoad = new HashSet<String>(newLibs);
-    toLoad.removeAll(loadedLibs);
-    for (String loadLib : toLoad) {
-      final Boolean hidden = myHiddenPaths.get(loadLib);
-      MPSModuleOwner owner = new MPSModuleOwner() {
-        @Override
-        public boolean isHidden() {
-          return hidden != null && hidden;
-        }
-      };
-      myLibsToOwners.put(loadLib, owner);
-      List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(loadLib), refreshFiles);
-      for (ModuleHandle moduleHandle : moduleHandles) {
-        ModuleRepositoryFacade.createModule(moduleHandle, owner);
-      }
-      fireOnLoad(owner);
+    for (SLibrary loadLib : toLoad) {
+      loadLib.attach(refreshFiles);
     }
+
+    if (toUnload.isEmpty() && toLoad.isEmpty()) return;
 
     CleanupManager.getInstance().cleanup();
     ClassLoaderManager.getInstance().updateClassPath();
@@ -161,27 +122,23 @@ public class LibraryInitializer implements CoreComponent {
     }
   }
 
-  protected void fireOnLoad(final MPSModuleOwner owner) {
-    for (IModule m : myRepo.getModules(owner)) {
-      m.onModuleLoad();
-    }
-  }
-
   //----------bootstrap modules
 
-  public Collection<IModule> getModules(String path) {
-    return myRepo.getModules(myLibsToOwners.get(path));
-  }
-
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
+    ModelAccess.assertLegalRead();
+
+    Set<String> bootstrapPaths = new HashSet<String>();
+    bootstrapPaths.addAll(PathManager.getBootstrapPaths());
+    bootstrapPaths.add(PathManager.getLanguagesPath());
+
     List<M> result = new ArrayList<M>();
-    for (String path : PathManager.getBootstrapPaths()) {
-      result.addAll(ModuleRepositoryFacade.getInstance().getModules(myLibsToOwners.get(path), cls));
+    for (SLibrary lib : myLibraries) {
+      if (bootstrapPaths.contains(lib.getFile().getPath())) {
+        result.addAll(ModuleRepositoryFacade.getInstance().getModules(lib, cls));
+      }
     }
-    result.addAll(ModuleRepositoryFacade.getInstance().getModules(myLibsToOwners.get(PathManager.getLanguagesPath()), cls));
 
     addGenerators(cls, result);
-
     return new HashSet<M>(result);
   }
 

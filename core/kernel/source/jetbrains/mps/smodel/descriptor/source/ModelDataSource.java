@@ -16,15 +16,16 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+@Deprecated
 public interface ModelDataSource extends DataSource {
 
   DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException;
@@ -35,7 +36,7 @@ public interface ModelDataSource extends DataSource {
 
   //------model changes handling------
 
-  ModuleReference getOrigin();
+  SModuleReference getOrigin();
 
   // todo move to loadSModel - return null in case no model is there
   boolean hasModel(SModelDescriptor d);

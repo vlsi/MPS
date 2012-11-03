@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -94,9 +95,11 @@ public class MPSModuleRepository implements CoreComponent {
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
+    module.attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
+    ClassLoaderManager.getInstance().requestReload();
     return module;
   }
 
