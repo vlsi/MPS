@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.ParametersInformation;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import java.awt.Component;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.ToolTipData;
 import jetbrains.mps.nodeEditor.EditorComponent;

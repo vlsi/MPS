@@ -1675,7 +1675,7 @@
     <nodeInfo nodeId="1723009172163864505" fileName="CreateDefaultEditor_Action.java" startLine="108" startPosition="173" endLine="109" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1046216210062552876" fileName="CreateDefaultEditor_Action.java" startLine="110" startPosition="88" endLine="111" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2970389781192979519" fileName="CreateDefaultEditor_Action.java" startLine="112" startPosition="7" endLine="113" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165106376654286550" fileName="CreateDefaultEditor_Action.java" startLine="113" startPosition="206" endLine="114" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165106376654286550" fileName="CreateDefaultEditor_Action.java" startLine="113" startPosition="206" endLine="114" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="116" startPosition="33" endLine="117" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="87" startPosition="57" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2165106376654285625" fileName="CreateDefaultEditor_Action.java" startLine="46" startPosition="171" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1740,7 +1740,7 @@
     <scopeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="94" startPosition="5" endLine="98" endPosition="5" />
     <scopeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="98" startPosition="5" endLine="102" endPosition="5" />
     <scopeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="107" startPosition="9" endLine="114" endPosition="108">
+    <scopeInfo nodeId="2165106376654272257" fileName="CreateDefaultEditor_Action.java" startLine="107" startPosition="9" endLine="114" endPosition="104">
       <varInfo nodeId="2165106376654286525" varName="conceptDeclaration" />
       <varInfo nodeId="1723009172163864506" varName="editorDeclaration" />
     </scopeInfo>

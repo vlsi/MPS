@@ -18,7 +18,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.OverrideConceptMethodsAction;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class OverrideBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;

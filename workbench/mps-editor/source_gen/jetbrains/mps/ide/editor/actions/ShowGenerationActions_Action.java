@@ -14,13 +14,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
 
 public class ShowGenerationActions_Action extends BaseAction {
@@ -92,7 +93,7 @@ public class ShowGenerationActions_Action extends BaseAction {
         return;
       }
 
-      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
+      RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

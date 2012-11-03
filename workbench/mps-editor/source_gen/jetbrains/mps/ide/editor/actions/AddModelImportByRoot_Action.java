@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;

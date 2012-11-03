@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.Generator;
@@ -34,6 +34,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -122,7 +123,7 @@ public class AttachMappingLabel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
+      final IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
       IModule module = operationContext.getModule();
       List<SNode> mappings;
       if (module instanceof Generator) {
@@ -180,7 +181,7 @@ __switch__:
       }).toListSequence();
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+          AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, ProjectHelper.toMainFrame(operationContext.getProject()), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
           dialog.showDialog();
         }
       });
