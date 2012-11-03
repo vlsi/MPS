@@ -562,7 +562,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6837653846148442043(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + "." + _context.getNode().getId();
+    return _context.getTemplateValue() + "." + _context.getNode().getSNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5368511706901764962(final IOperationContext operationContext, final PropertyMacroContext _context) {
