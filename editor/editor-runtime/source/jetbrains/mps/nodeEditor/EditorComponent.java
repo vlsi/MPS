@@ -1088,7 +1088,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final EditorContext editorContext = createEditorContextForActions();
     for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, editorContext))) continue;
+        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext))) continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
         result.add(mpsAction);
@@ -3012,7 +3012,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       try {
-        myAction.execute(null, myEditorContext);
+        myAction.execute(null, (jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
       } catch (Throwable t) {
         LOG.error(t);
       }
