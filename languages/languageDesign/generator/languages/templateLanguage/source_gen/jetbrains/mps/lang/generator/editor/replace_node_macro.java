@@ -44,7 +44,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
       SNode macro = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
       SNodeOperations.replaceWithAnother(node, macro);
       editorContext.selectAndSetCaret(macro, 1);
-      ((jetbrains.mps.nodeEditor.EditorContext) editorContext).openInspector();
+      editorContext.openInspector();
     }
 
     public boolean isReferentPresentation() {
