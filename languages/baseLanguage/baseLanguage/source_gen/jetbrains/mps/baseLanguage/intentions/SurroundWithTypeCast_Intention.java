@@ -69,7 +69,7 @@ public class SurroundWithTypeCast_Intention extends SurroundWithIntention {
     SNode castExpression = new SurroundWithTypeCast_Intention.QuotationClass_598b5x_a0a1a01().createNode(SNodeOperations.copyNode(node), expectedType);
     SNodeOperations.replaceWithAnother(node, castExpression);
     if (expectedType != null) {
-      ((jetbrains.mps.nodeEditor.EditorContext) editorContext).select(castExpression);
+      editorContext.select(castExpression);
     } else {
       editorContext.selectAndSetCaret(SLinkOperations.getTarget(SNodeOperations.cast(castExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), 2);
     }

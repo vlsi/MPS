@@ -6271,14 +6271,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1202130310989" resolveInfo="stringLiteral" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectOperation" typeId="tpc2.1201265905111" id="1202131133159">
-              <node role="editorContext" roleId="tpc2.1201266028598" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3061157328623969813">
-                <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3061157328623969810">
-                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3061157328623970507">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorContext" resolveInfo="EditorContext" />
-                  </node>
-                  <node role="expression" roleId="tpee.1070534934092" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3061157328623969815" />
-                </node>
-              </node>
+              <node role="editorContext" roleId="tpc2.1201266028598" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="1595884135314227249" />
               <node role="selectLaterParameter" roleId="tpc2.1201266036224" type="tpc2.CaretPositionParameter" typeId="tpc2.1201270864927" id="1202131147115">
                 <node role="position" roleId="tpc2.1201270907764" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1202131178144">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1202131180718">
@@ -13139,14 +13132,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="418779379561923716" resolveInfo="castExpression" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectOperation" typeId="tpc2.1201265905111" id="418779379561923739">
-                  <node role="editorContext" roleId="tpc2.1201266028598" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6848243497851720707">
-                    <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3061157328623978988">
-                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3061157328623979035">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorContext" resolveInfo="EditorContext" />
-                      </node>
-                      <node role="expression" roleId="tpee.1070534934092" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="418779379561923761" />
-                    </node>
-                  </node>
+                  <node role="editorContext" roleId="tpc2.1201266028598" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="1595884135314246177" />
                 </node>
               </node>
             </node>

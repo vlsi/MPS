@@ -441,14 +441,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1203775487327" resolveInfo="templateNode" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectOperation" typeId="tpc2.1201265905111" id="1203776134097">
-              <node role="editorContext" roleId="tpc2.1201266028598" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6848243497851523023">
-                <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6848243497851135945">
-                  <node role="expression" roleId="tpee.1070534934092" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="6848243497851135944" />
-                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6848243497851135996">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorContext" resolveInfo="EditorContext" />
-                  </node>
-                </node>
-              </node>
+              <node role="editorContext" roleId="tpc2.1201266028598" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="1595884135314256467" />
             </node>
           </node>
         </node>

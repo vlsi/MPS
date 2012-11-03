@@ -76,6 +76,6 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
     SNode templateRefNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
     SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
 
-    ((jetbrains.mps.nodeEditor.EditorContext) editorContext).select(templateNode);
+    editorContext.select(templateNode);
   }
 }

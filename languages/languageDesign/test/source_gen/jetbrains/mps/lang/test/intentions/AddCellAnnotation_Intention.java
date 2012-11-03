@@ -104,6 +104,6 @@ public class AddCellAnnotation_Intention extends BaseIntention {
       SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionEnd", nodeRangeSelection.getLastNode(), false);
     }
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.INodeAnnotattion")), newAnnotation);
-    ((jetbrains.mps.nodeEditor.EditorContext) editorContext).select(newAnnotation);
+    editorContext.select(newAnnotation);
   }
 }
