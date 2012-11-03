@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -61,8 +61,8 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends Editor
       }
 
       // Next cell should belong to some other SNode, not our typeVarDeclaration 
-      EditorCell selectedCell = (EditorCell) editorContext.getSelectedCell();
-      EditorCell nextLeaf = selectedCell.getNextLeaf();
+      jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell();
+      jetbrains.mps.nodeEditor.cells.EditorCell nextLeaf = selectedCell.getNextLeaf();
       if (nextLeaf == null) {
         return false;
       }

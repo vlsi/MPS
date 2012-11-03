@@ -5,8 +5,8 @@ package jetbrains.mps.lang.generator.editor;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -226,11 +226,11 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isReferenceMacroApplicable(node, (EditorCell) editorContext.getSelectedCell());
+      return QueriesUtil.isReferenceMacroApplicable(node, (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell());
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, (EditorCell) editorContext.getSelectedCell());
+      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell());
       // set caret 
       editorContext.selectAndSetCaret(referenceMacro, 2);
       EditorInspector inspector = editorContext.getInspector();

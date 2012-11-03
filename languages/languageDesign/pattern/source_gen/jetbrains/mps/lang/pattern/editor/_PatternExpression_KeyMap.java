@@ -5,8 +5,8 @@ package jetbrains.mps.lang.pattern.editor;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -402,9 +402,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      jetbrains.mps.openapi.editor.EditorCell selectedCell = editorContext.getSelectedCell();
+      EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
-      SNode linkNode = ((EditorCell) selectedCell).getLinkDeclaration();
+      SNode linkNode = ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).getLinkDeclaration();
       if (!(SNodeOperations.isInstanceOf(linkNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
         return;
       }
