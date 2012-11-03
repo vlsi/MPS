@@ -29,14 +29,14 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
-      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
+      <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -887,6 +887,9 @@
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717851756">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorComponent%disReadOnly()%cboolean" resolveInfo="isReadOnly" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3953380713228523911">
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorComponent%dupdate()%cvoid" resolveInfo="update" />
       </node>
     </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="2783385774420420452" />
