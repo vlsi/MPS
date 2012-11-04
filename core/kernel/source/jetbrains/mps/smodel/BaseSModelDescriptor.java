@@ -81,6 +81,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getSModel().getNode(id);
   }
 
+  public void attach() {
+  }
+
   public void dispose() {
     ModelAccess.assertLegalWrite();
     SModel smodel = getCurrentModelInternal();

@@ -119,7 +119,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
-        FileSystem.getInstance().addListener(this);
+        FileSystem.getInstance().removeListener(this);
       }
     }
   }

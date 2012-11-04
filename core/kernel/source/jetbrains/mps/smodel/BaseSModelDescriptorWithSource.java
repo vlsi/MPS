@@ -32,12 +32,17 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected BaseSModelDescriptorWithSource(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-    getSource().addListener(mySourceListener);
   }
 
   @NotNull
   public ModelDataSource getSource() {
     return (ModelDataSource) super.getSource();
+  }
+
+  @Override
+  public void attach() {
+    getSource().addListener(mySourceListener);
+    super.attach();
   }
 
   @Override

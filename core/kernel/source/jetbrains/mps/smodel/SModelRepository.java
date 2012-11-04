@@ -110,6 +110,9 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
+      if (modelDescriptor instanceof BaseSModelDescriptor) {
+        ((BaseSModelDescriptor) modelDescriptor).attach();
+      }
       modelDescriptor.addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);

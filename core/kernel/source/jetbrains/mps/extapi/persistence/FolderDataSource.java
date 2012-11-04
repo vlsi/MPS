@@ -142,7 +142,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
-        FileSystem.getInstance().addListener(this);
+        FileSystem.getInstance().removeListener(this);
       }
     }
   }

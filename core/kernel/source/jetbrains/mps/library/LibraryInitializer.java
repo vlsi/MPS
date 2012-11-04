@@ -52,10 +52,14 @@ public class LibraryInitializer implements CoreComponent {
 
   @Override
   public void dispose() {
-    for (SLibrary lib : myLibraries) {
-      lib.dispose();
-    }
-    myLibraries.clear();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        for (SLibrary lib : myLibraries) {
+          lib.dispose();
+        }
+        myLibraries.clear();
+      }
+    });
     INSTANCE = null;
   }
 
