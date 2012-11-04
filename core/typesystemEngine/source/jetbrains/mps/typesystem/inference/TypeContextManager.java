@@ -124,6 +124,13 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void dispose() {
+    for (SModelDescriptor model : myListeningForModels) {
+      model.removeModelListener(myModelListener);
+    }
+    myListeningForModels.clear();
+    for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
+      removeContextForNode(nodePointer);
+    }
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
     INSTANCE = null;
