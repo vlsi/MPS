@@ -52,6 +52,11 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void dispose() {
+    SModelRepository smRepo = SModelRepository.getInstance();
+    for (SModel model : myModels) {
+      smRepo.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+    }
+    myModels.clear();
     isRegistered = false;
   }
 

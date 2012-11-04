@@ -67,13 +67,6 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
   }
 
   private IModelRootManager getManager() {
-    if (myManager instanceof InvalidModelRootManager) {
-      // try to recreate
-      IModelRootManager n = createManager();
-      if (!(n instanceof InvalidModelRootManager)) {
-        myManager = n;
-      }
-    }
     return myManager;
   }
 
@@ -209,6 +202,18 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
       return Collections.singleton((FileSystemListener) getModule());
     }
     return null;
+  }
+
+  @Override
+  public void update() {
+    if (myManager instanceof InvalidModelRootManager) {
+      // try to recreate
+      IModelRootManager n = createManager();
+      if (!(n instanceof InvalidModelRootManager)) {
+        myManager = n;
+      }
+    }
+    super.update();
   }
 
   @Override

@@ -21,14 +21,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class StubModelDataSource extends FolderSetDataSource implements ModelDataSource {
-  public StubModelDataSource(SModuleReference origin) {
+
+  public StubModelDataSource() {
   }
 
   public String toString() {
-    return "stub model data source"; //todo include filenames
+    return "stub " + super.toString();
   }
 
   public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) {
@@ -42,10 +42,6 @@ public abstract class StubModelDataSource extends FolderSetDataSource implements
 
   public final boolean saveModel(SModelDescriptor descriptor) {
     throw new UnsupportedOperationException();
-  }
-
-  public void addPath(String path) {
-    addPath(path, null);
   }
 
   //todo more precise

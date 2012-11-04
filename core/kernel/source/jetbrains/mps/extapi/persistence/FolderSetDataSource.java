@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -37,7 +38,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
   private final Map<String, PathListener> myPaths = new LinkedHashMap<String, PathListener>();
 
-  private final Set<FileSystemListener> myListenerDependencies = new HashSet<FileSystemListener>();
+  private final Set<FileSystemListener> myListenerDependencies = new ConcurrentHashSet<FileSystemListener>();
 
   public FolderSetDataSource() {
   }
@@ -46,7 +47,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
   public void addPath(@NotNull String path, ModelRoot modelRoot) {
-    ModelAccess.assertLegalWrite();
+    ModelAccess.assertLegalRead();
 
     if (modelRoot instanceof FileSystemListener) {
       myListenerDependencies.add((FileSystemListener) modelRoot);
@@ -72,8 +73,28 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     return result;
   }
 
+
+  @Override
   public String toString() {
-    return "folder set DataSource";
+    StringBuilder sb = new StringBuilder("FolderSetDataSource(");
+    synchronized (LOCK) {
+      boolean first = true;
+      for (String s : myPaths.keySet()) {
+        if (first) {
+          first = false;
+        } else {
+          sb.append(",");
+        }
+        if (sb.length() > 200) {
+          sb.append("....");
+          break;
+        } else {
+          sb.append(s);
+        }
+      }
+    }
+    sb.append(")");
+    return sb.toString();
   }
 
   @Override
@@ -93,12 +114,14 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @Override
   public long getTimestamp() {
     long max = -1;
-    List<String> strings;
+    List<IFile> paths = new ArrayList<IFile>();
     synchronized (LOCK) {
-      strings = new ArrayList<String>(myPaths.keySet());
+      for (PathListener pl : myPaths.values()) {
+        paths.add(pl.path);
+      }
     }
-    for (String path : strings) {
-      long ts = getTimestampRecursive(FileSystem.getInstance().getFileByPath(path));
+    for (IFile path : paths) {
+      long ts = getTimestampRecursive(path);
       max = Math.max(max, ts);
     }
     return max;
@@ -172,6 +195,17 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     return max;
   }
 
+  @Override
+  public Collection<IFile> getAffectedFiles() {
+    Collection<IFile> result = new ArrayList<IFile>();
+    synchronized (LOCK) {
+      for (PathListener l : myPaths.values()) {
+        result.add(l.path);
+      }
+    }
+    return result;
+  }
+
   private class PathListener implements FileSystemListener {
     private IFile path;
 
@@ -193,17 +227,5 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     public void update(ProgressMonitor monitor, FileSystemEvent event) {
       event.notify(FolderSetDataSource.this);
     }
-  }
-
-
-  @Override
-  public Collection<IFile> getAffectedFiles() {
-    Collection<IFile> result = new ArrayList<IFile>();
-    synchronized (LOCK) {
-      for (PathListener l : myPaths.values()) {
-        result.add(l.path);
-      }
-    }
-    return result;
   }
 }

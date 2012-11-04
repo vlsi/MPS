@@ -69,8 +69,9 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     }
   }
 
+  @Override
   public String toString() {
-    return myFile.toString();
+    return "FileDataSource(" + myFile.toString() + ")";
   }
 
   public boolean isReadOnly() {

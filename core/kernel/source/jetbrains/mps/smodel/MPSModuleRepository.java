@@ -120,6 +120,7 @@ public class MPSModuleRepository implements CoreComponent {
     for (IModule module : modulesToDispose) {
       fireModuleRemoved(module);
       module.dispose();
+      ClassLoaderManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
       fireRepositoryChanged();

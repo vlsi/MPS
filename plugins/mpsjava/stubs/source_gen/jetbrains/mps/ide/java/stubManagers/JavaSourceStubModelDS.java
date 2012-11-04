@@ -5,7 +5,6 @@ package jetbrains.mps.ide.java.stubManagers;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -39,8 +38,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
 
   private boolean myModelLoaded = false;
 
-  public JavaSourceStubModelDS(ModuleReference origin) {
-    super(origin);
+  public JavaSourceStubModelDS() {
   }
 
   protected Set<Language> getLanguagesToImport() {

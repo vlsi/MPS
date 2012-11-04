@@ -38,4 +38,9 @@ public abstract class DataSourceBase implements DataSource {
 
   public void refresh() {
   }
+
+  @Override
+  public String toString() {
+    return "DataSource";
+  }
 }

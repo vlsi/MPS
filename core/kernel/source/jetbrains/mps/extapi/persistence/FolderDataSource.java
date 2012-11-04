@@ -34,7 +34,7 @@ import java.util.*;
 /**
  * evgeny, 11/4/12
  */
-public class FolderDataSource implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
+public class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
 
@@ -70,6 +70,7 @@ public class FolderDataSource implements MultiStreamDataSource, FileSystemListen
     return myFolder;
   }
 
+  @Override
   public String toString() {
     return "FolderDataSource(" + myFolder.toString() + ")";
   }
@@ -87,7 +88,9 @@ public class FolderDataSource implements MultiStreamDataSource, FileSystemListen
   public Iterable<String> getAvailableStreams() {
     Set<String> names = new HashSet<String>();
     for (IFile file : getStreams()) {
-      names.add(getStreamName(file));
+      if (isIncluded(file)) {
+        names.add(getStreamName(file));
+      }
     }
     return names;
   }
@@ -113,8 +116,10 @@ public class FolderDataSource implements MultiStreamDataSource, FileSystemListen
   @Override
   public long getTimestamp() {
     long max = -1;
-    for (IFile child : getStreams()) {
-      long timestamp = child.lastModified();
+    for (IFile file : getStreams()) {
+      if (!isIncluded(file)) continue;
+
+      long timestamp = file.lastModified();
       if (timestamp > max) {
         max = timestamp;
       }

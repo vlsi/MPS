@@ -97,8 +97,8 @@ public class Utils {
     SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, ourModule.getModuleReference());
 
     BaseStubModelDescriptor smd;
-    smd = new BaseStubModelDescriptor(modRef, new JavaSourceStubModelDS(ourModule.getModuleReference()), ourModule);
-    ((JavaSourceStubModelDS) smd.getSource()).addPath(path);
+    smd = new BaseStubModelDescriptor(modRef, new JavaSourceStubModelDS(), ourModule);
+    ((JavaSourceStubModelDS) smd.getSource()).addPath(path, null);
     SModel mdl = smd.getSModel();
 
     Assert.assertTrue(mdl.rootsIterator().hasNext());

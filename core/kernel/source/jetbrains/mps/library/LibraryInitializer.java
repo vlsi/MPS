@@ -52,6 +52,10 @@ public class LibraryInitializer implements CoreComponent {
 
   @Override
   public void dispose() {
+    for (SLibrary lib : myLibraries) {
+      lib.dispose();
+    }
+    myLibraries.clear();
     INSTANCE = null;
   }
 

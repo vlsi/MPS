@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Map;
@@ -31,7 +32,7 @@ public class SModelFileTracker implements CoreComponent {
 
   private SModelRepository myRepo;
   private GlobalSModelEventsManager myGem;
-  private final Map<String, SModelDescriptor> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModelDescriptor>();
+  private final Map<String, SModel> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
   private final SModelRepositoryAdapter myRepoListener = new MySModelRepositoryAdapter();
   private final SModelFileTracker.ModelChangeListener myModelChangeListener = new ModelChangeListener();
 
@@ -66,7 +67,7 @@ public class SModelFileTracker implements CoreComponent {
     return (BaseSModelDescriptorWithSource) myPathsToModelDescriptorMap.get(modelFile.getPath());
   }
 
-  private void addModelToFileCache(SModelDescriptor md) {
+  private void addModelToFileCache(SModel md) {
     DataSource source = md.getSource();
     if (!(source instanceof FileDataSource)) return;
 
@@ -74,7 +75,7 @@ public class SModelFileTracker implements CoreComponent {
     myPathsToModelDescriptorMap.put(file.getPath(), md);
   }
 
-  private void removeModelFromFileCache(SModelDescriptor md) {
+  private void removeModelFromFileCache(SModel md) {
     DataSource source = md.getSource();
     if (!(source instanceof FileDataSource)) return;
 

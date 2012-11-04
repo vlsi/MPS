@@ -47,7 +47,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Map<String, ModuleReference> myLoadedClasses = new THashMap<String, ModuleReference>();
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
-  private boolean isReloadRequested;
+  private volatile boolean isReloadRequested;
 
   private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
 

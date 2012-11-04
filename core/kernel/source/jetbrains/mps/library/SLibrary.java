@@ -80,11 +80,6 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
         changed = true;
       }
     }
-    for (IFile f : event.getRemoved()) {
-      if (ModulesMiner.getInstance().isModuleFile(f)) {
-        changed = true;
-      }
-    }
     if (changed) {
       update(false);
     }

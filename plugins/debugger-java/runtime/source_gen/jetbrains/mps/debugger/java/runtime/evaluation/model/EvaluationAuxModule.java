@@ -77,7 +77,7 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public Iterable<ModelRoot> loadRoots() {
+  protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
     for (String stub : SetSequence.fromSet(myStubPaths)) {
       SModelRoot smodelRoot = new SModelRoot(LanguageID.JAVA_MANAGER);

@@ -51,7 +51,6 @@
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItem" />
     <classNode dependClassName="jetbrains.mps.stubs.util.StubModelDescriptors" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.ModelRootManagerBase" />
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTStubsSource" file="GWTStubsSource.java">
@@ -95,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
   </dependency>

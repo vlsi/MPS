@@ -72,6 +72,6 @@ public class TextModelDataSource extends FolderDataSource implements ModelDataSo
 
   public boolean hasModel(SModelDescriptor descriptor) {
     // TODO ?? 
-    return getStreams().iterator().hasNext();
+    return getAvailableStreams().iterator().hasNext();
   }
 }
