@@ -54,7 +54,13 @@ public abstract class ModelRootBase implements ModelRoot {
   public void dispose() {
     SModelRepository smRepo = SModelRepository.getInstance();
     for (SModel model : myModels) {
-      smRepo.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+      SModelDescriptor modelDescriptor = (SModelDescriptor) model;
+      if (!modelDescriptor.isRegistered()) {
+        // TODO fix the problem and remove continue statement
+        // theoretically can happen in JavaStubs (where several roots share the same model)
+        continue;
+      }
+      smRepo.unRegisterModelDescriptor(modelDescriptor, getModule());
     }
     myModels.clear();
     isRegistered = false;
