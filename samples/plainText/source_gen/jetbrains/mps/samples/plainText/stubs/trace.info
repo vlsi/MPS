@@ -2,12 +2,12 @@
 <debugInfo>
   <root nodeId="681855071694401672" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
     <nodeInfo nodeId="681855071694402685" fileName="PlainText.java" startLine="26" startPosition="75" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="681855071694402823" fileName="PlainText.java" startLine="27" startPosition="90" endLine="28" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="681855071694402675" fileName="PlainText.java" startLine="28" startPosition="197" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681855071694402823" fileName="PlainText.java" startLine="27" startPosition="90" endLine="28" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="681855071694402675" fileName="PlainText.java" startLine="28" startPosition="164" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6528405377109489967" fileName="PlainText.java" startLine="33" startPosition="96" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6528405377109490012" fileName="PlainText.java" startLine="36" startPosition="40" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694742842" fileName="PlainText.java" startLine="43" startPosition="100" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="681855071694743056" fileName="PlainText.java" startLine="44" startPosition="53" endLine="45" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681855071694743056" fileName="PlainText.java" startLine="44" startPosition="53" endLine="45" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694417401" fileName="PlainText.java" startLine="48" startPosition="45" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PlainText#()V" />
     <nodeInfo nodeId="6528405377109490008" fileName="PlainText.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
@@ -20,7 +20,7 @@
     <scopeInfo nodeId="6528405377109490009" fileName="PlainText.java" startLine="36" startPosition="40" endLine="37" endPosition="51" />
     <scopeInfo nodeId="681855071694417400" fileName="PlainText.java" startLine="48" startPosition="45" endLine="49" endPosition="66" />
     <scopeInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="681855071694401679" fileName="PlainText.java" startLine="43" startPosition="100" endLine="45" endPosition="132">
+    <scopeInfo nodeId="681855071694401679" fileName="PlainText.java" startLine="43" startPosition="100" endLine="45" endPosition="99">
       <varInfo nodeId="681855071694742843" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="681855071694401674" fileName="PlainText.java" startLine="26" startPosition="75" endLine="29" endPosition="15">
@@ -154,116 +154,97 @@
     <unitInfo nodeId="681855071694416212" fileName="TextModelDescriptor.java" startLine="15" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor" />
   </root>
   <root nodeId="681855071694417235" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
-    <nodeInfo nodeId="681855071694743151" fileName="TextModelDataSource.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dir" />
-    <nodeInfo nodeId="681855071694743146" fileName="TextModelDataSource.java" startLine="29" startPosition="64" endLine="30" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="681855071694743154" fileName="TextModelDataSource.java" startLine="30" startPosition="15" endLine="31" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="681855071694743164" fileName="TextModelDataSource.java" startLine="34" startPosition="48" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1985010624611081230" fileName="TextModelDataSource.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1985010624611081162" fileName="TextModelDataSource.java" startLine="41" startPosition="48" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1985010624611081235" fileName="TextModelDataSource.java" startLine="43" startPosition="7" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1985010624611081328" fileName="TextModelDataSource.java" startLine="45" startPosition="5" endLine="46" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="681855071694743493" fileName="TextModelDataSource.java" startLine="49" startPosition="107" endLine="50" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="681855071694744841" fileName="TextModelDataSource.java" startLine="53" startPosition="107" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6528405377109531266" fileName="TextModelDataSource.java" startLine="56" startPosition="48" endLine="57" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6528405377109531267" fileName="TextModelDataSource.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="681855071694744943" fileName="TextModelDataSource.java" startLine="59" startPosition="0" endLine="60" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9157262317016834395" fileName="TextModelDataSource.java" startLine="61" startPosition="11" endLine="62" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9157262317016834467" fileName="TextModelDataSource.java" startLine="62" startPosition="49" endLine="63" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9157262317016834529" fileName="TextModelDataSource.java" startLine="63" startPosition="39" endLine="64" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6528405377109564238" fileName="TextModelDataSource.java" startLine="64" startPosition="31" endLine="65" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="681855071694744887" fileName="TextModelDataSource.java" startLine="65" startPosition="63" endLine="66" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9157262317016834410" fileName="TextModelDataSource.java" startLine="66" startPosition="71" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9157262317016834416" fileName="TextModelDataSource.java" startLine="68" startPosition="31" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="681855071694744983" fileName="TextModelDataSource.java" startLine="71" startPosition="5" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="681855071694744878" fileName="TextModelDataSource.java" startLine="72" startPosition="0" endLine="73" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6528405377109564082" fileName="TextModelDataSource.java" startLine="76" startPosition="57" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9157262317016791130" fileName="TextModelDataSource.java" startLine="79" startPosition="11" endLine="80" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9157262317016791075" fileName="TextModelDataSource.java" startLine="80" startPosition="106" endLine="81" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9157262317016823642" fileName="TextModelDataSource.java" startLine="81" startPosition="71" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9157262317016823742" fileName="TextModelDataSource.java" startLine="83" startPosition="31" endLine="84" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9157262317016823772" fileName="TextModelDataSource.java" startLine="86" startPosition="5" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="681855071694743228" fileName="TextModelDataSource.java" startLine="90" startPosition="56" endLine="91" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="681855071694743094" fileName="TextModelDataSource.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFilesToListen#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="1985010624611081160" fileName="TextModelDataSource.java" startLine="40" startPosition="66" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="681855071694743105" fileName="TextModelDataSource.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadDescriptor#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelFqName;)Ljetbrains/mps/smodel/persistence/def/DescriptorLoadResult;" />
-    <nodeInfo nodeId="6528405377109531206" fileName="TextModelDataSource.java" startLine="55" startPosition="66" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="681855071694743136" fileName="TextModelDataSource.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="681855071694417237" fileName="TextModelDataSource.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextModelDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/module/SModuleReference;)V" />
-    <nodeInfo nodeId="1985010624611081154" fileName="TextModelDataSource.java" startLine="39" startPosition="17" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9157262317016823731" fileName="TextModelDataSource.java" startLine="78" startPosition="132" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6528405377109562786" fileName="TextModelDataSource.java" startLine="77" startPosition="42" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="681855071694743101" fileName="TextModelDataSource.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimestamp#()J" />
-    <nodeInfo nodeId="9157262317016834408" fileName="TextModelDataSource.java" startLine="60" startPosition="117" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="681855071694743128" fileName="TextModelDataSource.java" startLine="76" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="6528405377109531174" fileName="TextModelDataSource.java" startLine="54" startPosition="59" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="681855071694743116" fileName="TextModelDataSource.java" startLine="53" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSModel#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/loading/ModelLoadingState;)Ljetbrains/mps/smodel/loading/ModelLoadResult;" />
-    <scopeInfo nodeId="681855071694743098" fileName="TextModelDataSource.java" startLine="34" startPosition="48" endLine="35" endPosition="48" />
-    <scopeInfo nodeId="1985010624611081161" fileName="TextModelDataSource.java" startLine="41" startPosition="48" endLine="42" endPosition="17" />
-    <scopeInfo nodeId="681855071694743113" fileName="TextModelDataSource.java" startLine="49" startPosition="107" endLine="50" endPosition="38" />
-    <scopeInfo nodeId="6528405377109531208" fileName="TextModelDataSource.java" startLine="56" startPosition="48" endLine="57" endPosition="17" />
-    <scopeInfo nodeId="9157262317016834411" fileName="TextModelDataSource.java" startLine="68" startPosition="0" endLine="69" endPosition="28">
+    <nodeInfo nodeId="681855071694743146" fileName="TextModelDataSource.java" startLine="27" startPosition="60" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5156576372285322748" fileName="TextModelDataSource.java" startLine="32" startPosition="44" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681855071694743493" fileName="TextModelDataSource.java" startLine="36" startPosition="107" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681855071694744841" fileName="TextModelDataSource.java" startLine="40" startPosition="107" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="681855071694744943" fileName="TextModelDataSource.java" startLine="42" startPosition="71" endLine="43" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9157262317016834395" fileName="TextModelDataSource.java" startLine="44" startPosition="11" endLine="45" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9157262317016834467" fileName="TextModelDataSource.java" startLine="45" startPosition="48" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9157262317016834529" fileName="TextModelDataSource.java" startLine="46" startPosition="39" endLine="47" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6528405377109564238" fileName="TextModelDataSource.java" startLine="47" startPosition="31" endLine="48" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="681855071694744887" fileName="TextModelDataSource.java" startLine="48" startPosition="53" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9157262317016834410" fileName="TextModelDataSource.java" startLine="49" startPosition="71" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9157262317016834416" fileName="TextModelDataSource.java" startLine="51" startPosition="31" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="681855071694744983" fileName="TextModelDataSource.java" startLine="54" startPosition="5" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="681855071694744878" fileName="TextModelDataSource.java" startLine="55" startPosition="0" endLine="56" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6528405377109564082" fileName="TextModelDataSource.java" startLine="59" startPosition="57" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9157262317016791130" fileName="TextModelDataSource.java" startLine="62" startPosition="11" endLine="63" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9157262317016791075" fileName="TextModelDataSource.java" startLine="63" startPosition="86" endLine="64" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9157262317016823642" fileName="TextModelDataSource.java" startLine="64" startPosition="71" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9157262317016823742" fileName="TextModelDataSource.java" startLine="66" startPosition="31" endLine="67" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9157262317016823772" fileName="TextModelDataSource.java" startLine="69" startPosition="5" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5156576372285373474" fileName="TextModelDataSource.java" startLine="73" startPosition="56" endLine="74" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5156576372285375313" fileName="TextModelDataSource.java" startLine="74" startPosition="15" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681855071694417237" fileName="TextModelDataSource.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextModelDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
+    <nodeInfo nodeId="681855071694743105" fileName="TextModelDataSource.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadDescriptor#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelFqName;)Ljetbrains/mps/smodel/persistence/def/DescriptorLoadResult;" />
+    <nodeInfo nodeId="5156576372285322738" fileName="TextModelDataSource.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIncluded#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="681855071694743136" fileName="TextModelDataSource.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="9157262317016823731" fileName="TextModelDataSource.java" startLine="61" startPosition="132" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6528405377109562786" fileName="TextModelDataSource.java" startLine="60" startPosition="42" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9157262317016834408" fileName="TextModelDataSource.java" startLine="43" startPosition="117" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6528405377109531174" fileName="TextModelDataSource.java" startLine="41" startPosition="59" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="681855071694743128" fileName="TextModelDataSource.java" startLine="59" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="681855071694743116" fileName="TextModelDataSource.java" startLine="40" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSModel#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/loading/ModelLoadingState;)Ljetbrains/mps/smodel/loading/ModelLoadResult;" />
+    <scopeInfo nodeId="681855071694417240" fileName="TextModelDataSource.java" startLine="27" startPosition="60" endLine="28" endPosition="24" />
+    <scopeInfo nodeId="5156576372285322744" fileName="TextModelDataSource.java" startLine="32" startPosition="44" endLine="33" endPosition="69" />
+    <scopeInfo nodeId="681855071694743113" fileName="TextModelDataSource.java" startLine="36" startPosition="107" endLine="37" endPosition="38" />
+    <scopeInfo nodeId="9157262317016834411" fileName="TextModelDataSource.java" startLine="51" startPosition="0" endLine="52" endPosition="28">
       <varInfo nodeId="9157262317016834412" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="9157262317016834414" fileName="TextModelDataSource.java" startLine="68" startPosition="31" endLine="69" endPosition="28" />
-    <scopeInfo nodeId="9157262317016823734" fileName="TextModelDataSource.java" startLine="83" startPosition="0" endLine="84" endPosition="28">
+    <scopeInfo nodeId="9157262317016834414" fileName="TextModelDataSource.java" startLine="51" startPosition="31" endLine="52" endPosition="28" />
+    <scopeInfo nodeId="9157262317016823734" fileName="TextModelDataSource.java" startLine="66" startPosition="0" endLine="67" endPosition="28">
       <varInfo nodeId="9157262317016823735" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="9157262317016823737" fileName="TextModelDataSource.java" startLine="83" startPosition="31" endLine="84" endPosition="28" />
-    <scopeInfo nodeId="681855071694743141" fileName="TextModelDataSource.java" startLine="90" startPosition="56" endLine="91" endPosition="96" />
-    <scopeInfo nodeId="681855071694417240" fileName="TextModelDataSource.java" startLine="29" startPosition="64" endLine="31" endPosition="20" />
-    <scopeInfo nodeId="681855071694743094" fileName="TextModelDataSource.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="681855071694743105" fileName="TextModelDataSource.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="9157262317016823737" fileName="TextModelDataSource.java" startLine="66" startPosition="31" endLine="67" endPosition="28" />
+    <scopeInfo nodeId="681855071694743141" fileName="TextModelDataSource.java" startLine="73" startPosition="56" endLine="75" endPosition="45" />
+    <scopeInfo nodeId="681855071694417237" fileName="TextModelDataSource.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="681855071694417252" varName="folder" />
+      <varInfo nodeId="681855071694743147" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="681855071694743105" fileName="TextModelDataSource.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="681855071694743108" varName="module" />
       <varInfo nodeId="681855071694743110" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="9157262317016823732" fileName="TextModelDataSource.java" startLine="79" startPosition="11" endLine="82" endPosition="19">
+    <scopeInfo nodeId="9157262317016823732" fileName="TextModelDataSource.java" startLine="62" startPosition="11" endLine="65" endPosition="19">
       <varInfo nodeId="9157262317016791131" varName="os" />
     </scopeInfo>
-    <scopeInfo nodeId="681855071694743136" fileName="TextModelDataSource.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="5156576372285322738" fileName="TextModelDataSource.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="5156576372285322742" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="681855071694743136" fileName="TextModelDataSource.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="681855071694743139" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="681855071694417237" fileName="TextModelDataSource.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="681855071694417252" varName="file" />
-      <varInfo nodeId="681855071694743147" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="1985010624611081159" fileName="TextModelDataSource.java" startLine="40" startPosition="66" endLine="44" endPosition="48" />
-    <scopeInfo nodeId="1985010624611081154" fileName="TextModelDataSource.java" startLine="39" startPosition="17" endLine="45" endPosition="5">
-      <varInfo nodeId="1985010624611081155" varName="child" />
-    </scopeInfo>
-    <scopeInfo nodeId="9157262317016834409" fileName="TextModelDataSource.java" startLine="61" startPosition="11" endLine="67" endPosition="0">
+    <scopeInfo nodeId="9157262317016834409" fileName="TextModelDataSource.java" startLine="44" startPosition="11" endLine="50" endPosition="0">
       <varInfo nodeId="9157262317016834468" varName="buf" />
       <varInfo nodeId="9157262317016834396" varName="is" />
       <varInfo nodeId="9157262317016834530" varName="len" />
     </scopeInfo>
-    <scopeInfo nodeId="6528405377109562789" fileName="TextModelDataSource.java" startLine="78" startPosition="132" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="681855071694743104" fileName="TextModelDataSource.java" startLine="38" startPosition="30" endLine="46" endPosition="15">
-      <varInfo nodeId="1985010624611081231" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="6528405377109562786" fileName="TextModelDataSource.java" startLine="77" startPosition="42" endLine="86" endPosition="5">
+    <scopeInfo nodeId="6528405377109562789" fileName="TextModelDataSource.java" startLine="61" startPosition="132" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="6528405377109562786" fileName="TextModelDataSource.java" startLine="60" startPosition="42" endLine="69" endPosition="5">
       <varInfo nodeId="6528405377109562787" varName="tf" />
     </scopeInfo>
-    <scopeInfo nodeId="681855071694743101" fileName="TextModelDataSource.java" startLine="38" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="681855071694743133" fileName="TextModelDataSource.java" startLine="76" startPosition="57" endLine="87" endPosition="17">
-      <varInfo nodeId="6528405377109564083" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="681855071694743128" fileName="TextModelDataSource.java" startLine="76" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="681855071694743131" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="6528405377109531177" fileName="TextModelDataSource.java" startLine="55" startPosition="66" endLine="70" endPosition="7">
+    <scopeInfo nodeId="6528405377109531177" fileName="TextModelDataSource.java" startLine="42" startPosition="71" endLine="53" endPosition="7">
       <varInfo nodeId="681855071694744944" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="6528405377109531174" fileName="TextModelDataSource.java" startLine="54" startPosition="59" endLine="71" endPosition="5">
+    <scopeInfo nodeId="681855071694743133" fileName="TextModelDataSource.java" startLine="59" startPosition="57" endLine="70" endPosition="17">
+      <varInfo nodeId="6528405377109564083" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="6528405377109531174" fileName="TextModelDataSource.java" startLine="41" startPosition="59" endLine="54" endPosition="5">
       <varInfo nodeId="6528405377109531175" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="681855071694743125" fileName="TextModelDataSource.java" startLine="53" startPosition="107" endLine="73" endPosition="66">
+    <scopeInfo nodeId="681855071694743128" fileName="TextModelDataSource.java" startLine="59" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="681855071694743131" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="681855071694743125" fileName="TextModelDataSource.java" startLine="40" startPosition="107" endLine="56" endPosition="66">
       <varInfo nodeId="681855071694744842" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="681855071694743116" fileName="TextModelDataSource.java" startLine="53" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="681855071694743116" fileName="TextModelDataSource.java" startLine="40" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="681855071694743121" varName="descriptor" />
       <varInfo nodeId="681855071694743119" varName="module" />
       <varInfo nodeId="681855071694743123" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="681855071694417235" fileName="TextModelDataSource.java" startLine="26" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" />
+    <unitInfo nodeId="681855071694417235" fileName="TextModelDataSource.java" startLine="26" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" />
   </root>
   <root nodeId="681855071694743498" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
     <nodeInfo nodeId="6528405377109531132" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

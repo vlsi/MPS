@@ -6,6 +6,9 @@ import java.util.Map;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -14,10 +17,8 @@ import jetbrains.mps.progress.SubProgressKind;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.Collection;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashSet;
@@ -25,35 +26,51 @@ import java.util.HashSet;
 public class FileProcessor extends EventProcessor {
   private FileSystemListenersContainer listenersContainer;
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
+  private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
 
   public FileProcessor() {
     this.listenersContainer = ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).getListenersContainer();
   }
 
   public void update(ProgressMonitor monitor) {
-    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() * 2);
+    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
     try {
       for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {
         FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
         if (!(listenersContainer.contains(listener))) {
+          monitor.advance(1);
           continue;
         }
 
-        if (data.changed.isEmpty()) {
-          monitor.advance(1);
-        } else {
-          filesChanged(monitor.subTask(1, SubProgressKind.AS_COMMENT), listener, data.changed);
+        listener.update(monitor.subTask(1, SubProgressKind.AS_COMMENT), data);
+        data.isNotified = true;
+      }
+      FileSystemListener listener;
+      while ((listener = QueueSequence.fromQueue(postNotify).removeFirstElement()) != null) {
+        FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
+        if (data.isNotified) {
+          continue;
         }
-
-        if (data.added.isEmpty() && data.removed.isEmpty()) {
-          monitor.advance(1);
-        } else {
-          listener.folderChanged(monitor.subTask(1, SubProgressKind.AS_COMMENT), data.added, data.removed);
-        }
+        listener.update(monitor.subTask(0, SubProgressKind.AS_COMMENT), data);
+        data.isNotified = true;
       }
     } finally {
       monitor.done();
     }
+  }
+
+  private void notify(FileSystemListener listener, FileProcessor.ListenerData source) {
+    FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
+    if (data == null) {
+      data = new FileProcessor.ListenerData();
+      MapSequence.fromMap(dataMap).put(listener, data);
+      QueueSequence.fromQueue(postNotify).addLastElement(listener);
+    } else if (data.isNotified) {
+      return;
+    }
+    data.added.addAll(source.added);
+    data.changed.addAll(source.changed);
+    data.removed.addAll(source.removed);
   }
 
   private Iterable<FileSystemListener> sortedListeners() {
@@ -85,18 +102,6 @@ public class FileProcessor extends EventProcessor {
       result.remove(listener);
       result.add(listener);
     }
-  }
-
-  private void filesChanged(ProgressMonitor monitor, FileSystemListener listener, Collection<IFile> files) {
-    monitor.start("", CollectionSequence.fromCollection(files).count());
-    try {
-      for (IFile file : CollectionSequence.fromCollection(files)) {
-        listener.fileChanged(monitor.subTask(1), file);
-      }
-    } finally {
-      monitor.done();
-    }
-
   }
 
   protected boolean accepts(VirtualFile file) {
@@ -150,12 +155,29 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
-  private class ListenerData {
+  private class ListenerData implements FileSystemListener.FileSystemEvent {
     private Set<IFile> added = new HashSet<IFile>();
     private Set<IFile> removed = new HashSet<IFile>();
     private Set<IFile> changed = new HashSet<IFile>();
+    private boolean isNotified;
 
     private ListenerData() {
+    }
+
+    public Iterable<IFile> getCreated() {
+      return added;
+    }
+
+    public Iterable<IFile> getRemoved() {
+      return removed;
+    }
+
+    public Iterable<IFile> getChanged() {
+      return changed;
+    }
+
+    public void notify(FileSystemListener listener) {
+      FileProcessor.this.notify(listener, this);
     }
   }
 }

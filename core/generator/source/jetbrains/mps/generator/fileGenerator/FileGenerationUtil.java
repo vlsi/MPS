@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -47,6 +47,7 @@ public class FileGenerationUtil {
 
   /**
    * Returns a (sub-)subdirectory of outputRootDir matching the reference model package.
+   *
    * @param reference
    * @param outputRootDir
    * @return

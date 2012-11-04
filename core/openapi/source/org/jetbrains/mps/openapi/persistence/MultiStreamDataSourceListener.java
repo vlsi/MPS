@@ -20,5 +20,5 @@ package org.jetbrains.mps.openapi.persistence;
  */
 public interface MultiStreamDataSourceListener extends DataSourceListener {
 
-  void changed(DataSource source, String streamName);
+  void changed(DataSource source, Iterable<String> streamNames);
 }

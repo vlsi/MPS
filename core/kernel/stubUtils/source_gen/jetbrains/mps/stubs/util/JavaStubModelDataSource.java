@@ -80,7 +80,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
 
   private CompositeClassPathItem createClassPath(SModelDescriptor descriptor) {
     CompositeClassPathItem cp = new CompositeClassPathItem();
-    for (String dir : getStubPaths()) {
+    for (String dir : getPaths()) {
       try {
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));

@@ -31,6 +31,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import java.util.Collection;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFileVisitor;
@@ -110,8 +111,8 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
       }
 
       sources.add(sms);
-      Collection<String> filenames = sms.getFilesToListen();
-      for (String path : filenames) {
+      Collection<IFile> files = sms.getAffectedFiles();
+      for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {
           if (log.isWarnEnabled()) {

@@ -16,91 +16,110 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
- * evgeny, 11/2/12
+ * evgeny, 11/4/12
  */
-public class FileDataSource extends DataSourceBase implements StreamDataSource, FileSystemListener, FileSystemBasedDataSource {
-
+public class FolderDataSource implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
 
   @NotNull
-  private IFile myFile;
+  private final IFile myFolder;
   private final ModelRoot myModelRoot;
 
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
-  public FileDataSource(@NotNull IFile file, ModelRoot modelRoot) {
-    this.myFile = file;
+  public FolderDataSource(@NotNull IFile folder, ModelRoot modelRoot) {
+    this.myFolder = folder;
     this.myModelRoot = modelRoot;
   }
 
-  public IFile getFile() {
-    return myFile;
+  protected boolean isIncluded(IFile file) {
+    return myFolder.equals(file.getParent());
   }
 
-  public void setFile(@NotNull IFile file) {
-    ModelAccess.assertLegalWrite();
+  protected Iterable<IFile> getStreams() {
+    return myFolder.getChildren();
+  }
 
-    myFile = file;
-    synchronized (LOCK) {
-      if (!(myListeners.isEmpty())) {
-        FileSystem.getInstance().removeListener(this);
-        FileSystem.getInstance().addListener(this);
-      }
-    }
+  protected String getStreamName(IFile file) {
+    return file.getName();
+  }
+
+  protected IFile getFile(String streamName) {
+    return myFolder.getDescendant(streamName);
+  }
+
+  public IFile getFolder() {
+    return myFolder;
   }
 
   public String toString() {
-    return myFile.toString();
+    return "FolderDataSource(" + myFolder.toString() + ")";
   }
 
   public boolean isReadOnly() {
-    return FileSystem.getInstance().isPackaged(myFile);
+    return FileSystem.getInstance().isPackaged(myFolder);
   }
 
   @Override
   public String getLocation() {
-    return myFile.toString();
+    return myFolder.toString();
   }
 
   @Override
-  public InputStream openInputStream() throws IOException {
-    return myFile.openInputStream();
+  public Iterable<String> getAvailableStreams() {
+    Set<String> names = new HashSet<String>();
+    for (IFile file : getStreams()) {
+      names.add(getStreamName(file));
+    }
+    return names;
   }
 
   @Override
-  public OutputStream openOutputStream() throws IOException {
-    return myFile.openOutputStream();
+  public InputStream openInputStream(String name) throws IOException {
+    IFile file = getFile(name);
+    if (file == null) {
+      throw new IOException("stream is not available");
+    }
+    return file.openInputStream();
   }
 
   @Override
-  public void refresh() {
-    FileSystem.getInstance().refresh(myFile);
+  public OutputStream openOutputStream(String name) throws IOException {
+    IFile file = getFile(name);
+    if (file == null) {
+      throw new IOException("stream is not available");
+    }
+    return file.openOutputStream();
   }
 
   @Override
   public long getTimestamp() {
-    if (!myFile.exists()) return -1;
-    return myFile.lastModified();
+    long max = -1;
+    for (IFile child : getStreams()) {
+      long timestamp = child.lastModified();
+      if (timestamp > max) {
+        max = timestamp;
+      }
+    }
+    return max;
   }
 
   @Override
@@ -125,7 +144,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @Override
   public IFile getFileToListen() {
-    return myFile;
+    return myFolder;
   }
 
   @Override
@@ -140,17 +159,30 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+  public void update(ProgressMonitor monitor, FileSystemListener.FileSystemEvent event) {
+    Set<String> affectedStreams = new HashSet<String>();
     for (IFile file : event.getChanged()) {
-      if (file.equals(myFile)) {
-        fireChanged(monitor);
+      if (isIncluded(file)) {
+        affectedStreams.add(getStreamName(file));
         break;
       }
     }
-    // ignore, deletion is handled by model roots
+    for (IFile file : event.getCreated()) {
+      if (isIncluded(file)) {
+        affectedStreams.add(getStreamName(file));
+        break;
+      }
+    }
+    for (IFile file : event.getRemoved()) {
+      if (isIncluded(file)) {
+        affectedStreams.add(getStreamName(file));
+        break;
+      }
+    }
+    fireChanged(monitor, affectedStreams);
   }
 
-  private void fireChanged(ProgressMonitor monitor) {
+  private void fireChanged(ProgressMonitor monitor, Iterable<String> streams) {
     List<DataSourceListener> listeners;
     synchronized (LOCK) {
       listeners = new ArrayList<DataSourceListener>(myListeners);
@@ -158,7 +190,11 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     monitor.start("Reloading", listeners.size());
     try {
       for (DataSourceListener l : listeners) {
-        l.changed(this);
+        if (l instanceof MultiStreamDataSourceListener) {
+          ((MultiStreamDataSourceListener) l).changed(this, streams);
+        } else {
+          l.changed(this);
+        }
         monitor.advance(1);
       }
     } finally {
@@ -168,6 +204,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @Override
   public Collection<IFile> getAffectedFiles() {
-    return Collections.singleton(myFile);
+    return Collections.singleton(myFolder);
   }
 }

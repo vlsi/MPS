@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 @Deprecated
@@ -35,8 +34,6 @@ public interface ModelDataSource extends DataSource {
   boolean saveModel(SModelDescriptor descriptor);
 
   //------model changes handling------
-
-  SModuleReference getOrigin();
 
   // todo move to loadSModel - return null in case no model is there
   boolean hasModel(SModelDescriptor d);

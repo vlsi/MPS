@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -58,14 +55,10 @@ public class ModelDigestHelper {
   }
 
   public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    if (!(descriptor instanceof BaseSModelDescriptorWithSource)) return descriptor.getModelHash();
+    DataSource source = descriptor.getSource();
+    if (!(source instanceof FileDataSource)) return descriptor.getModelHash();
 
-    ModelDataSource source = ((BaseSModelDescriptorWithSource) descriptor).getSource();
-    if (!(source instanceof FileBasedModelDataSource)) return descriptor.getModelHash();
-
-    Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
-    if (files.size() != 1) return descriptor.getModelHash();
-    IFile modelFile = FileSystem.getInstance().getFileByPath(files.iterator().next());
+    IFile modelFile = ((FileDataSource) source).getFile();
     if (modelFile == null) return descriptor.getModelHash();
 
     for (DigestProvider p : myProviders) {

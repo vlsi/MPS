@@ -26,7 +26,16 @@ public interface FileSystemListener {
 
   Iterable<FileSystemListener> getListenerDependencies();
 
-  void fileChanged(ProgressMonitor monitor, IFile file);
+  void update(ProgressMonitor monitor, FileSystemEvent event);
 
-  void folderChanged(ProgressMonitor monitor, Iterable<IFile> created, Iterable<IFile> deleted);
+  public interface FileSystemEvent {
+
+    Iterable<IFile> getCreated();
+
+    Iterable<IFile> getRemoved();
+
+    Iterable<IFile> getChanged();
+
+    void notify(FileSystemListener listener);
+  }
 }

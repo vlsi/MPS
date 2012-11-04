@@ -68,21 +68,19 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   }
 
   @Override
-  public void fileChanged(ProgressMonitor monitor, IFile file) {
-    if (ModulesMiner.getInstance().isModuleFile(file)) {
-      update(false);
-    }
-  }
-
-  @Override
-  public void folderChanged(ProgressMonitor monitor, Iterable<IFile> created, Iterable<IFile> deleted) {
+  public void update(ProgressMonitor monitor, FileSystemEvent event) {
     boolean changed = false;
-    for (IFile f : created) {
+    for (IFile f : event.getChanged()) {
       if (ModulesMiner.getInstance().isModuleFile(f)) {
         changed = true;
       }
     }
-    for (IFile f : deleted) {
+    for (IFile f : event.getCreated()) {
+      if (ModulesMiner.getInstance().isModuleFile(f)) {
+        changed = true;
+      }
+    }
+    for (IFile f : event.getRemoved()) {
       if (ModulesMiner.getInstance().isModuleFile(f)) {
         changed = true;
       }

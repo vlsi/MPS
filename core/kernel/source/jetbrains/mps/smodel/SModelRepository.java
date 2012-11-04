@@ -19,18 +19,19 @@ import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.persistence.DataSourceBase;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -155,16 +156,12 @@ public class SModelRepository implements CoreComponent {
     fireModelWillBeDeletedEvent(d);
     removeModelDescriptor(d);
 
-    if (d instanceof BaseSModelDescriptorWithSource) {
-      ModelDataSource source = ((BaseSModelDescriptorWithSource) d).getSource();
-      if (source instanceof FileBasedModelDataSource) {
-        for (String file : ((FileBasedModelDataSource) source).getFilesToListen()) {
-          IFile modelFile = FileSystem.getInstance().getFileByPath(file);
+    DataSource source = d.getSource();
+    if (source instanceof FileDataSource) {
+      IFile modelFile = ((FileDataSource) source).getFile();
 
-          if (modelFile != null && modelFile.exists()) {
-            modelFile.delete();
-          }
-        }
+      if (modelFile != null && modelFile.exists()) {
+        modelFile.delete();
       }
     }
     SModelRepository.getInstance().fireModelDeletedEvent(d);
@@ -242,17 +239,10 @@ public class SModelRepository implements CoreComponent {
       modelsToRefresh = getModelsToSave();
     }
 
-    FileSystem fs = FileSystem.getInstance();
     for (EditableSModelDescriptor emd : modelsToRefresh) {
-      if (!(emd instanceof BaseSModelDescriptorWithSource)) return;
-
-      ModelDataSource source = ((BaseSModelDescriptorWithSource) emd).getSource();
-      if (!(source instanceof FileBasedModelDataSource)) continue;
-
-      Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
-      for (String file : files) {
-        fs.refresh(fs.getFileByPath(file));
-      }
+      DataSource source = emd.getSource();
+      if (!(source instanceof DataSourceBase)) continue;
+      ((DataSourceBase) source).refresh();
     }
 
     synchronized (myModelsLock) {

@@ -67,6 +67,13 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
   }
 
   private IModelRootManager getManager() {
+    if (myManager instanceof InvalidModelRootManager) {
+      // try to recreate
+      IModelRootManager n = createManager();
+      if (!(n instanceof InvalidModelRootManager)) {
+        myManager = n;
+      }
+    }
     return myManager;
   }
 
@@ -205,12 +212,7 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
   }
 
   @Override
-  public void fileChanged(ProgressMonitor monitor, IFile file) {
-    update();
-  }
-
-  @Override
-  public void folderChanged(ProgressMonitor monitor, Iterable<IFile> created, Iterable<IFile> deleted) {
+  public void update(ProgressMonitor monitor, FileSystemEvent event) {
     update();
   }
 }

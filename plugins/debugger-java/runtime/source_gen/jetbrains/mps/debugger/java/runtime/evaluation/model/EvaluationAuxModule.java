@@ -17,12 +17,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.LanguageID;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;

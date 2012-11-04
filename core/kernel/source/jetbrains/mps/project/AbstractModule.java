@@ -561,19 +561,19 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public void fileChanged(ProgressMonitor monitor, IFile file) {
-    if (file.equals(myDescriptorFile)) {
-      reloadFromDisk(false);
-      ClassLoaderManager.getInstance().requestReload();
-    }
-  }
-
-  @Override
-  public void folderChanged(ProgressMonitor monitor, Iterable<IFile> created, Iterable<IFile> deleted) {
-    for (IFile file : deleted) {
+  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);
         ClassLoaderManager.getInstance().requestReload();
+        return;
+      }
+    }
+    for (IFile file : event.getChanged()) {
+      if (file.equals(myDescriptorFile)) {
+        reloadFromDisk(false);
+        ClassLoaderManager.getInstance().requestReload();
+        return;
       }
     }
   }

@@ -203,6 +203,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
           error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
         }
       } else {
+        // TODO listen to file location ...
         error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
@@ -321,12 +322,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   @Override
-  public void fileChanged(ProgressMonitor monitor, IFile file) {
+  public void update(ProgressMonitor monitor, FileSystemEvent event) {
     readModules();
-  }
-
-  @Override
-  public void folderChanged(ProgressMonitor monitor, Iterable<IFile> created, Iterable<IFile> deleted) {
-
   }
 }

@@ -38,7 +38,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
@@ -110,11 +109,6 @@ public class RegularModelDataSource extends FileDataSource implements FastFindSu
     IFile modelFile = dsm.getModelFile();
     assert modelFile != null;
     return ModelPersistence.saveModel(smodel, modelFile) != null;
-  }
-
-  @Override
-  public SModuleReference getOrigin() {
-    return null;
   }
 
   @Override

@@ -13,7 +13,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.Collection;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -21,6 +20,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.ide.java.newparser.JavaParser;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import java.util.List;
@@ -29,6 +29,7 @@ import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
@@ -36,12 +37,10 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 public class JavaSourceStubModelDS extends StubModelDataSource implements FastFindSupportProvider {
   private static Logger LOG = Logger.getLogger(JavaSourceStubModelDS.class);
 
-  private String myRoot;
   private boolean myModelLoaded = false;
 
-  public JavaSourceStubModelDS(ModuleReference origin, String root) {
+  public JavaSourceStubModelDS(ModuleReference origin) {
     super(origin);
-    myRoot = root;
   }
 
   protected Set<Language> getLanguagesToImport() {
@@ -56,14 +55,6 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
   }
 
   @Override
-  public Collection<String> getFilesToListen() {
-    Set<String> set = new HashSet<String>();
-    set.addAll(getStubPaths());
-    set.add(myRoot);
-    return set;
-  }
-
-  @Override
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
 
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
@@ -75,7 +66,7 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
 
     JavaParser parser = new JavaParser();
 
-    for (String path : SetSequence.fromSet(getStubPaths())) {
+    for (String path : CollectionSequence.fromCollection(getPaths())) {
       File f = new File(path);
       String code = FileUtil.read(f);
 

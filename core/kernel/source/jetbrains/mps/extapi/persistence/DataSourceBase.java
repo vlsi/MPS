@@ -35,4 +35,7 @@ public abstract class DataSourceBase implements DataSource {
   public long getTimestamp() {
     return 0;
   }
+
+  public void refresh() {
+  }
 }

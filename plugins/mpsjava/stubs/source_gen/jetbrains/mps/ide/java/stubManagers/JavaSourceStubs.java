@@ -43,9 +43,9 @@ public class JavaSourceStubs extends ModelRootManagerBase {
     List<IFile> files = ListSequence.fromList(new ArrayList<IFile>());
     for (IFile c : ListSequence.fromList(dir.getChildren())) {
       if (c.isDirectory()) {
-        subdirs.add(c);
+        ListSequence.fromList(subdirs).addElement(c);
       } else if (c.getName().endsWith(MPSExtentions.DOT_JAVAFILE)) {
-        files.add(c);
+        ListSequence.fromList(files).addElement(c);
       }
     }
 
@@ -70,7 +70,7 @@ public class JavaSourceStubs extends ModelRootManagerBase {
 
       } else {
 
-        smd = new JavaSourceStubModelDescriptor(modelReference, new JavaSourceStubModelDS(module.getModuleReference(), dir.getPath()), module);
+        smd = new JavaSourceStubModelDescriptor(modelReference, new JavaSourceStubModelDS(module.getModuleReference()), module);
 
         for (IFile file : ListSequence.fromList(files)) {
           ((StubModelDataSource) smd.getSource()).addPath(file.getPath());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor.source.changes;
+package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Collection;
 
-public interface ModelFileWatcherProvider {
-  void startListening(FileBasedModelDataSource source, Collection<String> files);
+/**
+ * evgeny, 11/4/12
+ */
+public interface FileSystemBasedDataSource extends DataSource {
 
-  void stopListening(FileBasedModelDataSource source, Collection<String> remove);
+  Collection<IFile> getAffectedFiles();
 }

@@ -3,9 +3,7 @@
   <dependency className="jetbrains.mps.stubs.util.FileStubSource" file="FileStubSource.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -34,11 +32,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
+    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.ModelDataSource" />
   </dependency>
   <dependency className="jetbrains.mps.stubs.util.JavaStubModelDataSource" file="JavaStubModelDataSource.java">
     <classNode dependClassName="java.io.File" />
