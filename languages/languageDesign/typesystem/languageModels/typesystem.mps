@@ -4081,9 +4081,7 @@
                       </node>
                     </node>
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="9018995606186854378">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="9018995606186854896">
-                        <node role="statement" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="9018995606186854852" />
-                      </node>
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="4702299144000306174" />
                     </node>
                   </node>
                 </node>

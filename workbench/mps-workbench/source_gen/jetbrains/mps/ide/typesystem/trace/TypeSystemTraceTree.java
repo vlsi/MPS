@@ -38,6 +38,8 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -47,7 +49,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collection;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -56,7 +57,6 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import java.awt.Graphics;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.util.Collections;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final IOperationContext myOperationContext;
@@ -303,9 +303,22 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   @Nullable
-  public Object getData(@NonNls String id) {
+  public Object getData(@NonNls final String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a31(currentNode);
+    if (currentNode instanceof TypeSystemTraceTreeNode) {
+      final Wrappers._T<Object> _data = new Wrappers._T<Object>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          _data.value = _getData(id);
+        }
+      });
+      return _data.value;
+    }
+    return null;
+  }
+
+  private Object _getData(String id) {
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a41(this.getCurrentNode(), this);
     if (operation == null) {
       return null;
     }
@@ -393,14 +406,14 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showDetails(MPSTreeNode treeNode) {
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a81(treeNode);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a91(treeNode);
     myDetailsTree.setOperation(operation);
   }
 
   private void showDetails(Collection<? extends MPSTreeNode> treeNodes) {
     List<AbstractOperation> operations = new ArrayList<AbstractOperation>();
     for (MPSTreeNode treeNode : treeNodes) {
-      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a91(treeNode);
+      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a02(treeNode);
       operations.add(operation);
     }
     myDetailsTree.setOperations(operations);
@@ -413,21 +426,21 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static Object check_kyyn1p_a0a1a31(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a0a41(MPSTreeNode checkedDotOperand, TypeSystemTraceTree checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
     return null;
   }
 
-  private static Object check_kyyn1p_a0a0a81(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a0a91(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
     return null;
   }
 
-  private static Object check_kyyn1p_a0a0a1a91(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a0a1a02(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
