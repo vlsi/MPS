@@ -35,4 +35,10 @@ public interface EditorCell {
   SNode getSNode();
 
   boolean isSingleNodeCell();
+
+  EditorCell findLeaf(int x, int y);
+
+  void setCaretX(int x);
+
+  int getCaretX();
 }
