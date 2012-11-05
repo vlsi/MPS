@@ -24,12 +24,12 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
+import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -53,13 +53,13 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   public Set<EditorMessage> createMessages(final SNode node, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    final TypeCheckingContext context = editorContext.getNodeEditorComponent().getTypeCheckingContext();
+    final TypeCheckingContext context = ((EditorComponent) editorContext.getEditorComponent()).getTypeCheckingContext();
     if (context == null) return messages;
     context.runTypeCheckingAction(new Runnable() {
       @Override
       public void run() {
         NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
-        if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getNodeEditorComponent().getClass())) {
+        if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getEditorComponent().getClass())) {
           try {
             myMessagesChanged = true;
             context.checkIfNotChecked(node, false);
@@ -153,10 +153,10 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
                         if (restoreCaretPosition) {
                           editorContext.flushEvents();
-                          EditorCell rootCell = editorContext.getNodeEditorComponent().getRootCell();
+                          EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
                           EditorCell leaf = rootCell.findLeaf(caretX, caretY);
                           if (leaf != null) {
-                            editorContext.getNodeEditorComponent().changeSelection(leaf);
+                            editorContext.getEditorComponent().changeSelection(leaf);
                             leaf.setCaretX(caretX);
                           }
                         }
