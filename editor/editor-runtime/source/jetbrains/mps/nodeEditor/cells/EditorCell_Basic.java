@@ -114,7 +114,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorComponent getEditor() {
-    return ((jetbrains.mps.nodeEditor.EditorContext) getContext()).getNodeEditorComponent();
+    return (EditorComponent) getContext().getEditorComponent();
   }
 
   public boolean isErrorState() {

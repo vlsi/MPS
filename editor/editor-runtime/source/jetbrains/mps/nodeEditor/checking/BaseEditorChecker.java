@@ -84,7 +84,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
    * should be transformed to abstract method in future
    */
   protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
-    return createMessages(rootNode, events, wasCheckedOnce, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
+    return createMessages(rootNode, events, wasCheckedOnce, editorContext);
   }
 
   /**
