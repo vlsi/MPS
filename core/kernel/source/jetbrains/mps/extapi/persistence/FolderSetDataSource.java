@@ -18,7 +18,6 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
