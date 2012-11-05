@@ -243,10 +243,5 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTreeNode" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.typesystem.trace._Adapters" file="_Adapters.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="java.lang.Runnable" />
-  </dependency>
 </dependenciesRoot>
 

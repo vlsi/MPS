@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.transformation.test.errorReporting.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ErrorReportingRoot_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.errorReporting.behavior.ErrorReportingRoot_BehaviorDescriptor" />
   <root nodeId="2511103526757027804" modelId="r:7b09edd3-2151-4e12-ac29-9997c3ec4408(jetbrains.mps.transformation.test.errorReporting.behavior)">
     <nodeInfo nodeId="2511103526757027804" fileName="ErrorReportingRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757027806" fileName="ErrorReportingRoot_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
