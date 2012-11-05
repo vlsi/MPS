@@ -19,7 +19,7 @@ public class Node_CopyWithTraceOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ivgi6x_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "copy with trace");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy with trace");
     editorCell.setCellId("Constant_ivgi6x_a");
     {
       Style style = editorCell.getStyle();

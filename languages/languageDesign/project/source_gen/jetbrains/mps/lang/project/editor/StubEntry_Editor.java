@@ -36,7 +36,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cypwxg_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_cypwxg_b0");
     {
       Style style = editorCell.getStyle();
@@ -47,7 +47,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cypwxg_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in vcs");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in vcs");
     editorCell.setCellId("Constant_cypwxg_c0");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -55,7 +55,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cypwxg_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_cypwxg_d0");
     {
       Style style = editorCell.getStyle();
@@ -66,7 +66,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cypwxg_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_cypwxg_f0");
     {
       Style style = editorCell.getStyle();
@@ -77,7 +77,7 @@ public class StubEntry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cypwxg_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_cypwxg_h0");
     {
       Style style = editorCell.getStyle();

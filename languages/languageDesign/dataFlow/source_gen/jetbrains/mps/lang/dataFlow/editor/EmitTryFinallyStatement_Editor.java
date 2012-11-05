@@ -32,7 +32,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rf0pho_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "try");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "try");
     editorCell.setCellId("Constant_rf0pho_a0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
@@ -44,7 +44,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rf0pho_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "finally");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "finally");
     editorCell.setCellId("Constant_rf0pho_c0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
@@ -56,7 +56,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rf0pho_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "end");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_rf0pho_e0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {

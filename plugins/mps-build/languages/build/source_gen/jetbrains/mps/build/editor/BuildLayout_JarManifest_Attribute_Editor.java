@@ -47,7 +47,7 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_8khnja_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8khnja_b0a");
     {
       Style style = editorCell.getStyle();
@@ -59,7 +59,7 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_8khnja_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8khnja_b0");
     editorCell.setDefaultText("");
     return editorCell;

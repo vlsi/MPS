@@ -79,7 +79,7 @@ public class Help_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cz9u6t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "help");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "help");
     editorCell.setCellId("Constant_cz9u6t_a0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -87,7 +87,7 @@ public class Help_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cz9u6t_a0b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "file");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "file");
     editorCell.setCellId("Constant_cz9u6t_a0b0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -95,7 +95,7 @@ public class Help_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cz9u6t_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "root");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_cz9u6t_a1b0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -103,7 +103,7 @@ public class Help_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cz9u6t_a2b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "url");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "url");
     editorCell.setCellId("Constant_cz9u6t_a2b0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

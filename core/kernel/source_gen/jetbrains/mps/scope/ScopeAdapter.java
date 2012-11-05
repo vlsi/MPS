@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.SModelReference;
 
-
 /**
  * * Temporary solution to adapt Scope to deprecated ISearchScope.
  */

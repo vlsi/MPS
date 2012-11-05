@@ -35,21 +35,21 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-          public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-            EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
-            collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
+          public EditorCell createEditorCell(EditorContext context) {
+            EditorCell_Collection collection = EditorCell_Collection.createVertical(context, node);
+            collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));
             if (SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
-              collection.addEditorCell(new EditorCell_Constant(editorContext, node, SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
+              collection.addEditorCell(new EditorCell_Constant(context, node, SConceptPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
             }
-            collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
-            collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
+            collection.addEditorCell(new EditorCell_Constant(context, node, ""));
+            collection.addEditorCell(new EditorCell_Constant(context, node, "Parameter help:"));
             for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
               String alias = SPropertyOperations.getString(cfp, "alias");
               String description = SPropertyOperations.getString(cfp, "shortDescription");
               if (description == null) {
                 description = "<no help. use short_description concept function property to create one>";
               }
-              EditorCell_Constant message = new EditorCell_Constant(editorContext, node, alias + " : " + description);
+              EditorCell_Constant message = new EditorCell_Constant(context, node, alias + " : " + description);
               collection.addEditorCell(message);
             }
             return collection;

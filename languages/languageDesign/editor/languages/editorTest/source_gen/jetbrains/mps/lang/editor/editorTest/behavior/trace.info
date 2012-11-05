@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="6956295981009368164" modelId="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)">
-    <nodeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="6956295981009368166" fileName="AttractsFocusBlock_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0">
+    <scopeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="6956295981009368164" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_Behavior" />

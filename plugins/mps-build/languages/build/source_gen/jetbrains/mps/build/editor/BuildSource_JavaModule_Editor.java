@@ -69,7 +69,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kr3er8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java module");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java module");
     editorCell.setCellId("Constant_kr3er8_a0");
     buildStyles_StyleSheet.getProjectPartKeyword(editorCell).apply(editorCell);
     {
@@ -82,7 +82,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kr3er8_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "content:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_kr3er8_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -94,7 +94,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kr3er8_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dependencies:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_kr3er8_d2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -106,7 +106,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kr3er8_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kr3er8_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -248,7 +248,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_kr3er8_a2c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_kr3er8_a2c0");
       {
         Style style = editorCell.getStyle();
@@ -299,7 +299,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_kr3er8_a4c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_kr3er8_a4c0");
       {
         Style style = editorCell.getStyle();

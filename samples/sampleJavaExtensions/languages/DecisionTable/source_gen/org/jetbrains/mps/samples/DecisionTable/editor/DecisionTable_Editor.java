@@ -34,7 +34,7 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_h1ymql_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Default:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Default:");
     editorCell.setCellId("Constant_h1ymql_b0");
     editorCell.setDefaultText("");
     return editorCell;

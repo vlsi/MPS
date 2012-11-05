@@ -26,7 +26,6 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.runtime.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -53,16 +52,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
-  private final Object LOCK = new Object();
-  private Runnable myClasspathInvalidator = new Runnable() {
-    public void run() {
-      synchronized (LOCK) {
-        myLanguageRuntimeClasspathCache = null;
-      }
-    }
-  };
-  private CompositeClassPathItem myLanguageRuntimeClasspathCache;
-
   private CachesInvalidator myCachesInvalidator;
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
@@ -70,7 +59,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
-    myDescriptorFile = file;
+    super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
   }
@@ -150,6 +139,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
   }
 
+  @Override
   public void onModuleLoad() {
     super.onModuleLoad();
 
@@ -215,7 +205,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public int getVersion() {
-    return getStructureModelDescriptor().getVersion();
+    return ((DefaultSModelDescriptor) getStructureModelDescriptor()).getVersion();
   }
 
   public Collection<Generator> getGenerators() {
@@ -305,7 +295,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
-  public DefaultSModelDescriptor getStructureModelDescriptor() {
+  public SModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
@@ -470,13 +460,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       return Collections.singletonList(classesGen.getPath());
     }
     return Collections.emptyList();
-  }
-
-  protected void invalidateClassPath() {
-    super.invalidateClassPath();
-    synchronized (LOCK) {
-      myLanguageRuntimeClasspathCache = null;
-    }
   }
 
   @Override

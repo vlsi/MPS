@@ -22,7 +22,7 @@ public class ModelsToGenerateByDefault_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cf4y26_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "models from usages");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models from usages");
     editorCell.setCellId("Constant_cf4y26_a0");
     editorCell.setDefaultText("");
     return editorCell;

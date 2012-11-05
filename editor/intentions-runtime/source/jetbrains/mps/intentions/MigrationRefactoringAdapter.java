@@ -16,20 +16,25 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MigrationRefactoringAdapter extends BaseIntention {
   private AbstractMigrationRefactoring myRefactoring;
   private SNode myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
+  private SNodeReference myIntentionNodeReference;
+  private String myPresentation;
 
   public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, SNode migrationScript) {
     myRefactoring = refactoring;
     myMigrationScript = migrationScript;
+    myIntentionNodeReference = migrationScript.getReference();
+    myPresentation = migrationScript.getName();
   }
 
   public String getConcept() {
@@ -50,10 +55,6 @@ public class MigrationRefactoringAdapter extends BaseIntention {
 
   public boolean isAvailableInChildNodes() {
     return false;
-  }
-
-  public List parameter(SNode node, EditorContext editorContext) {
-    return null;
   }
 
   public void execute(SNode node, EditorContext editorContext) {
@@ -85,9 +86,18 @@ public class MigrationRefactoringAdapter extends BaseIntention {
     return null;
   }
 
-  public List<Intention> getParameterizedInstances(SNode node, EditorContext editorContext) {
-    List<Intention> list = new ArrayList<Intention>();
-    list.add(this);
-    return list;
+  @Override
+  public String getPersistentStateKey() {
+    return myRefactoring.getClass().getName();
+  }
+
+  @Override
+  public SNodeReference getIntentionNodeReference() {
+    return myIntentionNodeReference;
+  }
+
+  @Override
+  public String getPresentation() {
+    return myPresentation;
   }
 }

@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.java.platform.refactorings.IntroduceConstantDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
 
 public class IntroduceConstant_Action extends BaseAction {

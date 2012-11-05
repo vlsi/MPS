@@ -32,7 +32,7 @@ public class BwfMacroListImport_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5bz59z_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "import macros from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import macros from");
     editorCell.setCellId("Constant_5bz59z_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -40,7 +40,7 @@ public class BwfMacroListImport_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5bz59z_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "prefix");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prefix");
     editorCell.setCellId("Constant_5bz59z_c0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -48,7 +48,7 @@ public class BwfMacroListImport_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5bz59z_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5bz59z_e0");
     editorCell.setDefaultText("");
     return editorCell;

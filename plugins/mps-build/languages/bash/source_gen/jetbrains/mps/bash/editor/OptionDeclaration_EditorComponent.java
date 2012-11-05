@@ -42,7 +42,7 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_vqukkr_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "@");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_vqukkr_b0");
     editorCell.setDefaultText("");
     return editorCell;

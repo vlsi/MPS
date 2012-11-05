@@ -72,7 +72,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vgxjtu_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "continue");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "continue");
     editorCell.setCellId("Constant_vgxjtu_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -85,7 +85,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vgxjtu_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_vgxjtu_d0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

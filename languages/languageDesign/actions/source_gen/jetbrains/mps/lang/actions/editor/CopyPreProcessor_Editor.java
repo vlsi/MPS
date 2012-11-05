@@ -57,14 +57,14 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cybmg4_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "copy pre processor");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy pre processor");
     editorCell.setCellId("Constant_cybmg4_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createIndentCell_cybmg4_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

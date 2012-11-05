@@ -15,7 +15,7 @@ public class MatrixIndexWildcard_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_do4b1s_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "*");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
     editorCell.setCellId("Constant_do4b1s_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

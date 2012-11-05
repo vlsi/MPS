@@ -33,7 +33,7 @@ public class AskBooleanExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8j3puq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ask for boolean");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ask for boolean");
     editorCell.setCellId("Constant_8j3puq_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class AskBooleanExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8j3puq_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_8j3puq_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

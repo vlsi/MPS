@@ -24,6 +24,10 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2598676492883170109">
       <property name="name" nameId="tpck.1169194664001" value="check_FactoryMigrationScriptPath" />
     </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7867202088808416390">
+      <property name="name" nameId="tpck.1169194664001" value="check_PullUpMethod" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+    </node>
   </roots>
   <root id="1177463041902">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1177463041903">
@@ -144,6 +148,50 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2598676492883170111">
       <property name="name" nameId="tpck.1169194664001" value="part" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp33.2598676492883164205" resolveInfo="FactoryMigrationScriptPart" />
+    </node>
+  </root>
+  <root id="7867202088808416390">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7867202088808416391">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7867202088808424003">
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="7867202088808426928">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7867202088808430632">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7867202088808430643" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7867202088808427886">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7867202088808428717">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tp33.4242940223545038298" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7867202088808427411">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7867202088808416393" resolveInfo="pullUpMethod" />
+              </node>
+            </node>
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7867202088808426405">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7867202088808424789">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7867202088808425558">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tp33.4242940223545038297" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7867202088808424398">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7867202088808416393" resolveInfo="pullUpMethod" />
+              </node>
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7867202088808426670" />
+          </node>
+        </node>
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7867202088808424005">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="7867202088808423945">
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7867202088808430878">
+              <property name="value" nameId="tpee.1070475926801" value="Either old or new method should be specified" />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7867202088808423976">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7867202088808416393" resolveInfo="pullUpMethod" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7867202088808416393">
+      <property name="name" nameId="tpck.1169194664001" value="pullUpMethod" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp33.849077997121870276" resolveInfo="PullUpMethod" />
     </node>
   </root>
 </model>

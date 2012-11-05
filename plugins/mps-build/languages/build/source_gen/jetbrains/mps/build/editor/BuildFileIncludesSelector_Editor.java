@@ -27,7 +27,7 @@ public class BuildFileIncludesSelector_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dmuu98_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "includes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_dmuu98_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

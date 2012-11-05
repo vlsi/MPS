@@ -62,4 +62,6 @@ public interface EditorComponent {
   EditorContext getEditorContext();
 
   boolean isReadOnly();
+
+  void update();
 }

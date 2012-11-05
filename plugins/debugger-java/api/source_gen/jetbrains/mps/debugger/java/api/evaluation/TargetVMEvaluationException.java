@@ -11,7 +11,6 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 
-
 /**
  * Wraps com.sun.jdi.InvocationException.
  * Thrown to indicate an exception occurred in an invoked method within the target VM.

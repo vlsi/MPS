@@ -20,7 +20,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Point;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import java.util.List;
@@ -110,7 +111,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
         return;
       }
 
-      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
+      RelativePoint relativePoint = new RelativePoint((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -120,7 +121,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   }
 
   private jetbrains.mps.nodeEditor.cells.EditorCell getAnchorCell(final Map<String, Object> _params) {
-    Selection selection = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent().getSelectionManager().getSelection();
+    Selection selection = ((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getSelectionManager().getSelection();
     if (selection == null) {
       return null;
     }
@@ -159,7 +160,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   private Iterable<Pair<Intention, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
     IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
     query.setIntentionClass(SurroundWithIntention.class);
-    query.setInstantiate(true);
     query.setCurrentNodeOnly(true);
     return IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }

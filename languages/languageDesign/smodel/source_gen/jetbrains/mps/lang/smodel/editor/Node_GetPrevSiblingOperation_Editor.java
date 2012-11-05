@@ -18,7 +18,7 @@ public class Node_GetPrevSiblingOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1l0asd_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "prev-sibling");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prev-sibling");
     editorCell.setCellId("Constant_1l0asd_a");
     {
       Style style = editorCell.getStyle();

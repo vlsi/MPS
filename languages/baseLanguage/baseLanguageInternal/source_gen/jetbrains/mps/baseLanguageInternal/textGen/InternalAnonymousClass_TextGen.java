@@ -50,7 +50,7 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
     }
     this.append(" {");
     this.increaseDepth();
-    BaseClassConceptTextGen.body(node, this);
+    BaseClassConceptTextGen.members(node, this);
     this.decreaseDepth();
     this.appendWithIndent("}");
     if (getBuffer().hasPositionsSupport()) {

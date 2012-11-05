@@ -29,7 +29,6 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), this.getSNode());
     }
-    this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
@@ -71,9 +70,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(node, "isAbstract")) {
       this.append(";");
-      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        this.appendNewLine();
-      }
+      this.appendNewLine();
     } else {
       this.append(" {");
       this.increaseDepth();

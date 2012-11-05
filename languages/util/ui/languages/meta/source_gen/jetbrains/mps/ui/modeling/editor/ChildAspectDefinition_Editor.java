@@ -33,7 +33,7 @@ public class ChildAspectDefinition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8y02r6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "optional");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "optional");
     editorCell.setCellId("Constant_8y02r6_a0");
     ChildAspectDefinition_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

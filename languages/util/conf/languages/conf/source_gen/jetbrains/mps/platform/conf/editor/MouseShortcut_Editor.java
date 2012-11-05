@@ -53,21 +53,21 @@ public class MouseShortcut_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ixjd4g_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keymap=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap=");
     editorCell.setCellId("Constant_ixjd4g_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ixjd4g_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keystroke:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keystroke:");
     editorCell.setCellId("Constant_ixjd4g_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createIndentCell_ixjd4g_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

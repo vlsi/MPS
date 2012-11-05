@@ -32,34 +32,34 @@
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="78" startPosition="263" endLine="79" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="80" startPosition="11" endLine="81" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="82" startPosition="9" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="55" startPosition="56" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7325qm_a2a0g0a0#()V" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="26" startPosition="79" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_throwsOrder#()V" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7325qm_a2a0g0a0#()V" />
+    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
+    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_throwsOrder#()V" />
+    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="68" startPosition="338" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="68" startPosition="338" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="74" startPosition="11" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="74" startPosition="11" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="34" startPosition="53" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_throwsOrder#()V" />
+    <nodeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_throwsOrder#()V" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="64" startPosition="34" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="64" startPosition="34" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="58" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="59" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="47" endLine="56" endPosition="47" />
     <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="46" endLine="46" endPosition="67" />
     <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="28" startPosition="51" endLine="30" endPosition="123" />
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="55" startPosition="56" endLine="57" endPosition="7" />
+    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="49" startPosition="101" endLine="52" endPosition="67">
       <varInfo nodeId="6374750171056867500" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="69" startPosition="11" endLine="73" endPosition="62">
       <varInfo nodeId="6374750171056899811" varName="quotedNode1_5" />
     </scopeInfo>
     <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="75" startPosition="11" endLine="79" endPosition="62">
       <varInfo nodeId="6374750171056899811" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="26" startPosition="79" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6374750171056867495" varName="expected" />
       <varInfo nodeId="6374750171056867491" varName="gencontext" />
       <varInfo nodeId="6374750171056867493" varName="literal" />
@@ -71,7 +71,7 @@
       <varInfo nodeId="6374750171056867525" varName="genContext" />
       <varInfo nodeId="6374750171056867531" varName="literal" />
     </scopeInfo>
-    <scopeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="34" startPosition="53" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="35" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="65" startPosition="9" endLine="81" endPosition="33">
       <varInfo nodeId="6374750171056899811" varName="quotedNode1_4" />
     </scopeInfo>
@@ -83,40 +83,40 @@
       <varInfo nodeId="6374750171056899811" varName="quotedNode_3" />
       <varInfo nodeId="6374750171056899811" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="58" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="59" startPosition="0" endLine="85" endPosition="0" />
     <unitInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="55" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody$QuotationClass_7325qm_a2a0g0a0" />
     <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="33" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody" />
     <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
   </root>
   <root nodeId="7178287329507395260" modelId="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)">
-    <nodeInfo nodeId="7178287329507546914" fileName="MockTemplateQueryContext.java" startLine="10" startPosition="68" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sessionObjects" />
+    <nodeInfo nodeId="7178287329507546914" fileName="MockTemplateQueryContext.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sessionObjects" />
     <nodeInfo nodeId="7178287329507396063" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7178287329507551690" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7178287329507551715" fileName="MockTemplateQueryContext.java" startLine="27" startPosition="35" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7178287329507551717" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="46" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MockTemplateQueryContext#()V" />
-    <nodeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showWarningMessage#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showErrorMessage#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSessionObject#(Ljava/lang/Object;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MockTemplateQueryContext#()V" />
+    <nodeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showWarningMessage#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showErrorMessage#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSessionObject#(Ljava/lang/Object;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
     <scopeInfo nodeId="7178287329507395274" fileName="MockTemplateQueryContext.java" startLine="18" startPosition="61" endLine="18" endPosition="61" />
     <scopeInfo nodeId="7178287329507395287" fileName="MockTemplateQueryContext.java" startLine="22" startPosition="59" endLine="22" endPosition="59" />
     <scopeInfo nodeId="7178287329507395265" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" />
     <scopeInfo nodeId="7178287329507400244" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="46" endLine="33" endPosition="35" />
     <scopeInfo nodeId="7178287329507400231" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="28" endPosition="17" />
-    <scopeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="7178287329507395270" varName="node" />
       <varInfo nodeId="7178287329507395272" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="7178287329507395283" varName="node" />
       <varInfo nodeId="7178287329507395285" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7178287329507400242" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7178287329507400227" varName="key" />
       <varInfo nodeId="7178287329507400229" varName="value" />
     </scopeInfo>
@@ -235,14 +235,14 @@
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="217" startPosition="248" endLine="218" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="219" startPosition="11" endLine="220" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="221" startPosition="9" endLine="222" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="68" startPosition="56" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a1a0e0a0#()V" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="56" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a2a0f0a0#()V" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="156" startPosition="56" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a1a0e0b0#()V" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="194" startPosition="56" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a2a0f0b0#()V" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="25" startPosition="77" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz#()V" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz2#()V" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a1a0e0a0#()V" />
+    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="125" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a2a0f0a0#()V" />
+    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="157" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a1a0e0b0#()V" />
+    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="195" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_u745oo_a2a0f0b0#()V" />
+    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
+    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz#()V" />
+    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz2#()V" />
+    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="50" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="50" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="107" startPosition="50" endLine="113" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -259,8 +259,8 @@
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="207" startPosition="248" endLine="213" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="213" startPosition="11" endLine="219" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="213" startPosition="11" endLine="219" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="39" startPosition="53" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz#()V" />
-    <nodeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz2#()V" />
+    <nodeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz#()V" />
+    <nodeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz2#()V" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="88" startPosition="47" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="88" startPosition="47" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="104" startPosition="48" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -277,12 +277,12 @@
     <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="203" startPosition="34" endLine="221" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="166" startPosition="34" endLine="189" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="166" startPosition="34" endLine="189" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="127" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="197" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="159" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="128" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="198" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="160" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="81" startPosition="34" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="81" startPosition="34" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="72" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="69" startPosition="47" endLine="69" endPosition="47" />
     <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="125" startPosition="47" endLine="125" endPosition="47" />
     <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="157" startPosition="47" endLine="157" endPosition="47" />
@@ -290,14 +290,14 @@
     <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="46" endLine="59" endPosition="67" />
     <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="27" startPosition="43" endLine="29" endPosition="113" />
     <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="33" startPosition="44" endLine="35" endPosition="114" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="68" startPosition="56" endLine="70" endPosition="7" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="56" endLine="126" endPosition="7" />
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="156" startPosition="56" endLine="158" endPosition="7" />
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="194" startPosition="56" endLine="196" endPosition="7" />
+    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="125" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="157" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="195" startPosition="0" endLine="197" endPosition="0" />
+    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="62" startPosition="101" endLine="65" endPosition="67">
       <varInfo nodeId="7178287329507579315" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="92" startPosition="15" endLine="96" endPosition="63">
       <varInfo nodeId="7178287329507578907" varName="quotedNode1_11" />
     </scopeInfo>
@@ -322,8 +322,13 @@
     <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="214" startPosition="11" endLine="218" endPosition="62">
       <varInfo nodeId="7178287329507581164" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="25" startPosition="77" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="7178287329507579310" varName="expected" />
+      <varInfo nodeId="7178287329507579303" varName="gencontext" />
+      <varInfo nodeId="7178287329507579307" varName="literal" />
+    </scopeInfo>
     <scopeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="40" startPosition="45" endLine="46" endPosition="143">
       <varInfo nodeId="7178287329507546211" varName="genContext" />
       <varInfo nodeId="7178287329507551975" varName="literal" />
@@ -331,11 +336,6 @@
     <scopeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="49" startPosition="46" endLine="55" endPosition="143">
       <varInfo nodeId="7178287329507581137" varName="genContext" />
       <varInfo nodeId="7178287329507581143" varName="literal" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="7178287329507579310" varName="expected" />
-      <varInfo nodeId="7178287329507579303" varName="gencontext" />
-      <varInfo nodeId="7178287329507579307" varName="literal" />
     </scopeInfo>
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="50" endLine="97" endPosition="15" />
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="107" startPosition="50" endLine="113" endPosition="15" />
@@ -345,8 +345,8 @@
     <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="181" startPosition="11" endLine="187" endPosition="11" />
     <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="207" startPosition="248" endLine="213" endPosition="11" />
     <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="213" startPosition="11" endLine="219" endPosition="11" />
-    <scopeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="39" startPosition="53" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="48" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="49" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="89" startPosition="13" endLine="98" endPosition="61">
       <varInfo nodeId="7178287329507578907" varName="quotedNode1_10" />
     </scopeInfo>
@@ -393,8 +393,8 @@
       <varInfo nodeId="7178287329507581164" varName="quotedNode_3" />
       <varInfo nodeId="7178287329507581164" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="127" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="197" startPosition="0" endLine="224" endPosition="0" />
+    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="128" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="198" startPosition="0" endLine="224" endPosition="0" />
     <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="160" startPosition="33" endLine="190" endPosition="22">
       <varInfo nodeId="7178287329507581150" varName="_parameterValues_129834374" />
       <varInfo nodeId="7178287329507581150" varName="quotedNode_1" />
@@ -403,7 +403,7 @@
       <varInfo nodeId="7178287329507581150" varName="quotedNode_4" />
       <varInfo nodeId="7178287329507581150" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="159" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="160" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="82" startPosition="9" endLine="118" endPosition="33">
       <varInfo nodeId="7178287329507578907" varName="quotedNode1_8" />
     </scopeInfo>
@@ -419,7 +419,7 @@
       <varInfo nodeId="7178287329507578907" varName="quotedNode_7" />
       <varInfo nodeId="7178287329507578907" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="72" startPosition="0" endLine="122" endPosition="0" />
     <unitInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a2a0f0a0" />
     <unitInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="194" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a2a0f0b0" />
     <unitInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="156" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody$QuotationClass_u745oo_a1a0e0b0" />

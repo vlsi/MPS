@@ -78,14 +78,14 @@ public class Plan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ibbzj5_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "plan");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
     editorCell.setCellId("Constant_ibbzj5_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ibbzj5_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ibbzj5_b0");
     {
       Style style = editorCell.getStyle();
@@ -96,7 +96,7 @@ public class Plan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ibbzj5_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_ibbzj5_a2a");
     {
       Style style = editorCell.getStyle();
@@ -107,7 +107,7 @@ public class Plan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ibbzj5_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ibbzj5_d0");
     {
       Style style = editorCell.getStyle();
@@ -118,7 +118,7 @@ public class Plan_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ibbzj5_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_ibbzj5_a4a");
     {
       Style style = editorCell.getStyle();
@@ -215,7 +215,7 @@ public class Plan_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_ibbzj5_a1c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "press <Ctrl>+<Enter> to add Value");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Value");
       editorCell.setCellId("Constant_ibbzj5_a1c0");
       {
         Style style = editorCell.getStyle();
@@ -267,7 +267,7 @@ public class Plan_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_ibbzj5_a1e0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "press <Ctrl>+<Enter> to add Event");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Event");
       editorCell.setCellId("Constant_ibbzj5_a1e0");
       {
         Style style = editorCell.getStyle();

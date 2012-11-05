@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
 
-
 /**
  * This is a map from 'Feature' to arbitrary value. Also it stores which features are ancestors of
  * features which are added in this map.

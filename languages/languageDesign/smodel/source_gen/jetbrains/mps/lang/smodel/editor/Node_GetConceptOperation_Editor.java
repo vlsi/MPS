@@ -19,7 +19,7 @@ public class Node_GetConceptOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7x7o5m_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_7x7o5m_a");
     {
       Style style = editorCell.getStyle();

@@ -144,7 +144,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "simple item");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple item");
     editorCell.setCellId("Constant_qqk04t_a0a");
     {
       Style style = editorCell.getStyle();
@@ -155,7 +155,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "can substitute");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can substitute");
     editorCell.setCellId("Constant_qqk04t_a1b0");
     {
       Style style = editorCell.getStyle();
@@ -166,7 +166,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_c1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "matching text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_qqk04t_c1b0");
     {
       Style style = editorCell.getStyle();
@@ -177,7 +177,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_e1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "description text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_qqk04t_e1b0");
     {
       Style style = editorCell.getStyle();
@@ -188,7 +188,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "icon");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_qqk04t_g1b0");
     {
       Style style = editorCell.getStyle();
@@ -199,7 +199,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_i1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_qqk04t_i1b0");
     {
       Style style = editorCell.getStyle();
@@ -210,7 +210,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_qqk04t_k1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "create child node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create child node");
     editorCell.setCellId("Constant_qqk04t_k1b0");
     {
       Style style = editorCell.getStyle();
@@ -221,37 +221,37 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qqk04t_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qqk04t_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qqk04t_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qqk04t_a7b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qqk04t_a9b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_qqk04t_a11b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

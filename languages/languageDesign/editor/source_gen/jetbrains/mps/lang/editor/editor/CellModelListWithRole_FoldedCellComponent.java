@@ -42,7 +42,7 @@ public class CellModelListWithRole_FoldedCellComponent extends AbstractCellProvi
   }
 
   private EditorCell createConstant_yqmvfy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/folded cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/folded cell:");
     editorCell.setCellId("Constant_yqmvfy_a0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

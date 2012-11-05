@@ -51,7 +51,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_62ivzp_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_62ivzp_b0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);

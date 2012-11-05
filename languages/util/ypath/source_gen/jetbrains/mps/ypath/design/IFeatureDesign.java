@@ -8,5 +8,4 @@ public interface IFeatureDesign {
     public Stub() {
     }
   }
-
 }

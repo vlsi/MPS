@@ -145,7 +145,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "map node macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "map node macro");
     editorCell.setCellId("Constant_pr8n4z_a0");
     {
       Style style = editorCell.getStyle();
@@ -158,7 +158,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pr8n4z_b0");
     {
       Style style = editorCell.getStyle();
@@ -169,14 +169,14 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_pr8n4z_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pr8n4z_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pr8n4z_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -187,14 +187,14 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_pr8n4z_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pr8n4z_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pr8n4z_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -205,7 +205,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapped nodes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped nodes");
     editorCell.setCellId("Constant_pr8n4z_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -216,7 +216,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pr8n4z_b2c0");
     {
       Style style = editorCell.getStyle();
@@ -227,7 +227,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a3c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping func");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping func");
     editorCell.setCellId("Constant_pr8n4z_a3c0");
     {
       Style style = editorCell.getStyle();
@@ -238,7 +238,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_b3c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pr8n4z_b3c0");
     {
       Style style = editorCell.getStyle();
@@ -249,7 +249,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "post-processing");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "post-processing");
     editorCell.setCellId("Constant_pr8n4z_a4c0");
     {
       Style style = editorCell.getStyle();
@@ -260,7 +260,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_b4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pr8n4z_b4c0");
     {
       Style style = editorCell.getStyle();
@@ -271,7 +271,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pr8n4z_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$MAP_SRCL$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$MAP_SRCL$");
     editorCell.setCellId("Constant_pr8n4z_a0_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     if (true) {

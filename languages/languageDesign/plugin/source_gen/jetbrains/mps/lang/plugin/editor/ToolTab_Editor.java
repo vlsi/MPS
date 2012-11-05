@@ -39,14 +39,14 @@ public class ToolTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vspo6f_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "tab");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tab");
     editorCell.setCellId("Constant_vspo6f_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_vspo6f_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_vspo6f_b0");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
@@ -58,7 +58,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vspo6f_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "component:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component:");
     editorCell.setCellId("Constant_vspo6f_c0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -70,7 +70,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vspo6f_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "title:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title:");
     editorCell.setCellId("Constant_vspo6f_e0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -82,7 +82,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vspo6f_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "icon:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
     editorCell.setCellId("Constant_vspo6f_g0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -94,7 +94,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vspo6f_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dispose:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dispose:");
     editorCell.setCellId("Constant_vspo6f_i0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -106,7 +106,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vspo6f_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_vspo6f_k0");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {

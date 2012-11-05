@@ -127,7 +127,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_gkr2rl_b0");
     {
       Style style = editorCell.getStyle();
@@ -138,14 +138,14 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_gkr2rl_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_gkr2rl_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "context");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_gkr2rl_a1d0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -153,7 +153,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_b1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_gkr2rl_b1d0");
     {
       Style style = editorCell.getStyle();
@@ -165,7 +165,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gkr2rl_e0");
     {
       Style style = editorCell.getStyle();
@@ -177,7 +177,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weaving rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weaving rule");
     editorCell.setCellId("Constant_gkr2rl_a0");
     {
       Style style = editorCell.getStyle();
@@ -190,7 +190,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_b0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gkr2rl_b0_0");
     {
       Style style = editorCell.getStyle();
@@ -201,7 +201,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gkr2rl_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_gkr2rl_a2a");
     editorCell.setDefaultText("");
     return editorCell;

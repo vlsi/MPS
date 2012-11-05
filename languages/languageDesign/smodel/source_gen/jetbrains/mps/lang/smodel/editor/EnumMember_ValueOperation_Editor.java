@@ -14,7 +14,7 @@ public class EnumMember_ValueOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_osc6zd_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "value");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
     editorCell.setCellId("Constant_osc6zd_a");
     editorCell.setDefaultText("");
     return editorCell;

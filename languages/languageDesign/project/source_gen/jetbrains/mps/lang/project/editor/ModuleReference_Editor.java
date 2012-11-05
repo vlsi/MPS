@@ -53,14 +53,14 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ijcvyu_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Module reference:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Module reference:");
     editorCell.setCellId("Constant_ijcvyu_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ijcvyu_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "uuid");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
     editorCell.setCellId("Constant_ijcvyu_a1a");
     ProjectStructure_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -68,7 +68,7 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ijcvyu_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ijcvyu_b1a");
     {
       Style style = editorCell.getStyle();

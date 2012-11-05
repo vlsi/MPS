@@ -19,6 +19,5 @@ public class ClassifierDocComment_TextGen extends SNodeTextGen {
     }
 
     DocCommentTextGen.docCommentEnd(node, this);
-    this.appendNewLine();
   }
 }

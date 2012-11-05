@@ -28,7 +28,7 @@ public class ExpressionConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kxhwy6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "expression concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expression concept");
     editorCell.setCellId("Constant_kxhwy6_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

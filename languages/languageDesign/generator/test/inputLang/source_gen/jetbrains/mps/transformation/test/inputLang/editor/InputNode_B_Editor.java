@@ -91,28 +91,28 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9tg0f2_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "InputNode_B");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "InputNode_B");
     editorCell.setCellId("Constant_9tg0f2_a0a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9tg0f2_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "option:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "option:");
     editorCell.setCellId("Constant_9tg0f2_a1a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9tg0f2_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "children:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_9tg0f2_a2a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9tg0f2_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_9tg0f2_b0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -205,7 +205,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -213,7 +213,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_9tg0f2_a1c0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "..");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "..");
       editorCell.setCellId("Constant_9tg0f2_a1c0a");
       editorCell.setDefaultText("");
       return editorCell;

@@ -1052,7 +1052,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     popupMenu.show(EditorComponent.this, x, y);
   }
 
-  public void executeIntention(final Intention intention, final SNode node, final EditorContext context) {
+  public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
     context.executeCommand(new Runnable() {
       public void run() {
         try {
@@ -1069,11 +1069,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();
-        EditorContext editorContext = getEditorContext();
+        jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
         if (node != null && editorContext != null) {
           QueryDescriptor query = new QueryDescriptor();
           query.setIntentionClass(BaseIntention.class);
-          query.setInstantiate(true);
           result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
         }
       }
@@ -1089,7 +1088,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final EditorContext editorContext = createEditorContextForActions();
     for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, editorContext))) continue;
+        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext))) continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
         result.add(mpsAction);
@@ -3013,7 +3012,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       try {
-        myAction.execute(null, myEditorContext);
+        myAction.execute(null, (jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
       } catch (Throwable t) {
         LOG.error(t);
       }

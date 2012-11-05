@@ -15,7 +15,7 @@ public class DialogExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_oc1nba_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dialog");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dialog");
     editorCell.setCellId("Constant_oc1nba_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

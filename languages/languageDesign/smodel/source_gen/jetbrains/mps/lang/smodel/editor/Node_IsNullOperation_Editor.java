@@ -19,7 +19,7 @@ public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9h000p_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "isNull");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isNull");
     editorCell.setCellId("Constant_9h000p_a");
     {
       Style style = editorCell.getStyle();

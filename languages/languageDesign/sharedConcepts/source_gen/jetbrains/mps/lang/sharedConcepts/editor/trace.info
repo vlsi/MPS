@@ -12,9 +12,9 @@
     <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="26" startPosition="34" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="27" startPosition="66" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="28" startPosition="59" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceOnConcept#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="11" startPosition="38" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceDecorated#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceOnConceptualFeature#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
+    <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceOnConcept#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
+    <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceDecorated#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
+    <nodeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceOnConceptualFeature#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="19" startPosition="68" endLine="22" endPosition="17">
       <varInfo nodeId="1203541329669" varName="style" />
     </scopeInfo>
@@ -24,13 +24,13 @@
     <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="25" startPosition="78" endLine="29" endPosition="17">
       <varInfo nodeId="1203541329669" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1203541329669" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="11" startPosition="38" endLine="18" endPosition="0">
+    <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1203541329669" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1203541329669" varName="cell" />
     </scopeInfo>
     <unitInfo nodeId="1203541329669" fileName="SharedStyles_StyleSheet.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />

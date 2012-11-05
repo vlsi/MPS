@@ -30,7 +30,7 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2kx0ph_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "new");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "new");
     editorCell.setCellId("Constant_2kx0ph_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

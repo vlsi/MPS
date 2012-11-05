@@ -30,7 +30,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rkyx3t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "memberForValue");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "memberForValue");
     editorCell.setCellId("Constant_rkyx3t_a0");
     BaseLanguageStyle_StyleSheet.getStaticMethod(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -38,7 +38,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rkyx3t_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_rkyx3t_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -46,7 +46,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rkyx3t_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_rkyx3t_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

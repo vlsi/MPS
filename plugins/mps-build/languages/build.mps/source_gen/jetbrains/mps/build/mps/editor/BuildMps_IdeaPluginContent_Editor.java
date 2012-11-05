@@ -14,7 +14,7 @@ public class BuildMps_IdeaPluginContent_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_wi9fp9_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "none");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "none");
     editorCell.setCellId("Error_wi9fp9_a");
     return editorCell;
   }

@@ -74,9 +74,10 @@ public class TransientModelsModule extends ClassLoadingModule {
     return !myPublished.isEmpty();
   }
 
+  @Override
   public void dispose() {
-    super.dispose();
     clearAll();
+    super.dispose();
   }
 
   public void clearAll() {

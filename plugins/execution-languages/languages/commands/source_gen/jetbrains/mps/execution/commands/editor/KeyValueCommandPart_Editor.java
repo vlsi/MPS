@@ -52,7 +52,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4797dc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4797dc_a0");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     {
@@ -64,7 +64,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4797dc_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_4797dc_b0");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4797dc_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4797dc_e0");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     {
@@ -88,7 +88,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4797dc_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "dash");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dash");
     editorCell.setCellId("Constant_4797dc_a0_0");
     editorCell.setDefaultText("");
     return editorCell;

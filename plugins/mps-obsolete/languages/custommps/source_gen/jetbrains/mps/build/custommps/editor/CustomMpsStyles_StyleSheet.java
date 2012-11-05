@@ -8,7 +8,7 @@ import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CustomMpsStyles_StyleSheet {
   public static Style getUndeclaredVaribale(final EditorCell cell) {
@@ -21,7 +21,7 @@ public class CustomMpsStyles_StyleSheet {
           cell.getSNode()
         ), (cell == null ?
           null :
-          cell.getEditorContext()
+          cell.getContext()
         ));
       }
     });

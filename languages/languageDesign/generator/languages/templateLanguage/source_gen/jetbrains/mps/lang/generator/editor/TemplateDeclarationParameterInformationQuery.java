@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.editor.runtime.ParametersInformation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.StyledTextPrinter;
@@ -30,7 +30,7 @@ public class TemplateDeclarationParameterInformationQuery extends ParametersInfo
     return true;
   }
 
-  private SNode getSelectedActualArgument(jetbrains.mps.openapi.editor.EditorContext editorContext, final SNode templateCall) {
+  private SNode getSelectedActualArgument(EditorContext editorContext, final SNode templateCall) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
       return null;

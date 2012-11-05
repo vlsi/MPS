@@ -28,7 +28,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6mas5q_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "skip");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip");
     editorCell.setCellId("Constant_6mas5q_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -40,7 +40,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6mas5q_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_6mas5q_b0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

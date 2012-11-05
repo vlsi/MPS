@@ -29,14 +29,14 @@ public class AddElementStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_92vjrw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "addJavaAction");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "addJavaAction");
     editorCell.setCellId("Constant_92vjrw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_92vjrw_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_92vjrw_c0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

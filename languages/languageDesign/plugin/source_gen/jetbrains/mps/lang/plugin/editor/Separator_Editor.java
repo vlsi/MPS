@@ -14,7 +14,7 @@ public class Separator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ygm7mr_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<--->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<--->");
     editorCell.setCellId("Constant_ygm7mr_a");
     editorCell.setDefaultText("");
     return editorCell;

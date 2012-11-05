@@ -28,7 +28,7 @@ public class BuildMps_ExtractedModuleDependency_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createConstant_r26ggp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(extracted)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(extracted)");
     editorCell.setCellId("Constant_r26ggp_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

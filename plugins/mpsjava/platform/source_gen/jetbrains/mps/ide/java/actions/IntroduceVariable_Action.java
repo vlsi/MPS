@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer;
 import java.awt.Frame;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
 
 public class IntroduceVariable_Action extends BaseAction {

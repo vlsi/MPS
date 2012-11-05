@@ -58,7 +58,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ncr7br_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "amount  :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "amount  :");
     editorCell.setCellId("Constant_ncr7br_a0a");
     {
       Style style = editorCell.getStyle();
@@ -69,7 +69,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ncr7br_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "account :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "account :");
     editorCell.setCellId("Constant_ncr7br_a1a");
     {
       Style style = editorCell.getStyle();

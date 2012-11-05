@@ -92,14 +92,14 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zca0xt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "custom cell");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom cell");
     editorCell.setCellId("Constant_zca0xt_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zca0xt_b0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_zca0xt_b0_0");
     {
       Style style = editorCell.getStyle();
@@ -110,14 +110,14 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zca0xt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Custom cell:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Custom cell:");
     editorCell.setCellId("Constant_zca0xt_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zca0xt_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "cell provider");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell provider");
     editorCell.setCellId("Constant_zca0xt_a0d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

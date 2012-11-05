@@ -25,7 +25,7 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_udsylt_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "remove defaults");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove defaults");
     editorCell.setCellId("Constant_udsylt_a0");
     {
       Style style = editorCell.getStyle();

@@ -81,7 +81,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_ysso2m_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_ysso2m_b0");
     {
       Style style = editorCell.getStyle();

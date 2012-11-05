@@ -15,7 +15,7 @@ public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_olvqde_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check dataflow");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check dataflow");
     editorCell.setCellId("Constant_olvqde_a");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

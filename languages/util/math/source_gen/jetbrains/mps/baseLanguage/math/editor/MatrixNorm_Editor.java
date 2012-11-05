@@ -33,14 +33,14 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_47eu07_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\u2551");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u2551");
     editorCell.setCellId("Constant_47eu07_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_47eu07_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "\u2551");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u2551");
     editorCell.setCellId("Constant_47eu07_c0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -40,7 +40,7 @@ public class PropertiesFile_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3d3qm_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ".properties");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".properties");
     editorCell.setCellId("Constant_3d3qm_b0");
     {
       Style style = editorCell.getStyle();
@@ -53,7 +53,7 @@ public class PropertiesFile_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3d3qm_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3d3qm_c0");
     {
       Style style = editorCell.getStyle();
@@ -133,7 +133,7 @@ public class PropertiesFile_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_3d3qm_a3a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_3d3qm_a3a");
       editorCell.setDefaultText("<empty file>");
       return editorCell;

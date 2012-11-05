@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2511103526757027804" modelId="r:7b09edd3-2151-4e12-ac29-9997c3ec4408(jetbrains.mps.transformation.test.errorReporting.behavior)">
-    <nodeInfo nodeId="2511103526757027804" fileName="ErrorReportingRoot_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757027804" fileName="ErrorReportingRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757027806" fileName="ErrorReportingRoot_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757027804" fileName="ErrorReportingRoot_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0">
+    <scopeInfo nodeId="2511103526757027804" fileName="ErrorReportingRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="2511103526757027804" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757027804" fileName="ErrorReportingRoot_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.errorReporting.behavior.ErrorReportingRoot_Behavior" />

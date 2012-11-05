@@ -29,7 +29,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
   }
 
   private EditorCell createConstant_swjj57_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get prev input");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get prev input");
     editorCell.setCellId("Constant_swjj57_a0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

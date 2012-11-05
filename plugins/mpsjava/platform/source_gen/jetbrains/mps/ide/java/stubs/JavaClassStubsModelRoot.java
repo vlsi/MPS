@@ -99,10 +99,10 @@ public class JavaClassStubsModelRoot extends ModelRootBase {
           smd = (BaseStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
         } else {
-          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(module.getModuleReference(), false), module);
+          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(false), module);
           ListSequence.fromList(result).addElement(smd);
         }
-        ((JavaStubModelDataSource) smd.getSource()).addPath(child(startPath, subpackage));
+        ((JavaStubModelDataSource) smd.getSource()).addPath(child(startPath, subpackage), this);
       }
       getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2511103526757020846" modelId="r:99104ac0-f848-404d-b7cf-d79e1a30554c(jetbrains.mps.baseLanguage.contracts.behavior)">
-    <nodeInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="7" startPosition="33" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757020848" fileName="Condition_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="7" startPosition="33" endLine="10" endPosition="0">
+    <scopeInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="2511103526757020846" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.behavior.Condition_Behavior" />

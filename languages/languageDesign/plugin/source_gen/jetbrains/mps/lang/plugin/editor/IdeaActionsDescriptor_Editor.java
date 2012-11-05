@@ -49,7 +49,7 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rofybv_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "actions:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "actions:");
     editorCell.setCellId("Constant_rofybv_a0");
     {
       Style style = editorCell.getStyle();
@@ -60,7 +60,7 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rofybv_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "groups:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "groups:");
     editorCell.setCellId("Constant_rofybv_a1a");
     {
       Style style = editorCell.getStyle();
@@ -71,7 +71,7 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rofybv_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_rofybv_c1a");
     {
       Style style = editorCell.getStyle();
@@ -82,7 +82,7 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rofybv_d1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keymaps:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymaps:");
     editorCell.setCellId("Constant_rofybv_d1a");
     {
       Style style = editorCell.getStyle();

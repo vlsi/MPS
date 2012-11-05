@@ -86,7 +86,7 @@ public class Replace_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_m6tzv0_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_m6tzv0_c0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -106,7 +106,7 @@ public class Replace_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_m6tzv0_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -203,7 +203,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_m6tzv0_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<pairs token-value>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<pairs token-value>");
       editorCell.setCellId("Constant_m6tzv0_a1b0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

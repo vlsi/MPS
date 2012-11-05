@@ -24,11 +24,11 @@ public class KeyMap_EditorCellActionWrapper extends EditorCellKeyMapAction {
     myCellAction = action;
   }
 
-  public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
+  public boolean canExecute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
     return myCellAction.canExecute(context);
   }
 
-  public void execute(KeyEvent keyEvent, EditorContext context) {
-    myCellAction.execute((jetbrains.mps.openapi.editor.EditorContext) context);
+  public void execute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
+    myCellAction.execute(context);
   }
 }

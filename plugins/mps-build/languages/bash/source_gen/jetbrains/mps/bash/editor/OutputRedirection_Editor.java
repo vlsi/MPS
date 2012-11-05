@@ -48,7 +48,7 @@ public class OutputRedirection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2e668_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_b2e668_b0");
     {
       Style style = editorCell.getStyle();
@@ -60,14 +60,14 @@ public class OutputRedirection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b2e668_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "|");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
     editorCell.setCellId("Constant_b2e668_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_b2e668_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "noclobber:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "noclobber:");
     editorCell.setCellId("Constant_b2e668_a0");
     editorCell.setDefaultText("");
     return editorCell;

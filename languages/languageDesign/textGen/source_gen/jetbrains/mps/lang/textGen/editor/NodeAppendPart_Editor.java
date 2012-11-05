@@ -55,7 +55,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jdqktq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "${");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "${");
     editorCell.setCellId("Constant_jdqktq_a0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -68,7 +68,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jdqktq_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_jdqktq_c0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -80,14 +80,14 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_jdqktq_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_jdqktq_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_jdqktq_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "indent");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
     editorCell.setCellId("Constant_jdqktq_b0a");
     editorCell.setDefaultText("");
     return editorCell;

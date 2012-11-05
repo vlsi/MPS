@@ -27,7 +27,7 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3riti7_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "resources");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resources");
     editorCell.setCellId("Constant_3riti7_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

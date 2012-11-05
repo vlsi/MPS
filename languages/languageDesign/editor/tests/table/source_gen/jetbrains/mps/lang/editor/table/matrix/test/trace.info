@@ -6,21 +6,21 @@
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1310272842909656081" fileName="CreateX_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="13" startPosition="59" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateX_Test#()V" />
-    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateX#()V" />
-    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateX_Test#()V" />
+    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateX#()V" />
+    <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="14" startPosition="25" endLine="14" endPosition="25" />
     <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="13" startPosition="59" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="18" startPosition="47" endLine="20" endPosition="107" />
-    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="105">
       <varInfo nodeId="1310272842909633660" varName="editor" />
       <varInfo nodeId="1310272842909633660" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test$TestBody" />
     <unitInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test" />
   </root>
@@ -30,21 +30,21 @@
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1310272842909656104" fileName="CreateY_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="13" startPosition="59" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateY_Test#()V" />
-    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateY#()V" />
-    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateY_Test#()V" />
+    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateY#()V" />
+    <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="14" startPosition="25" endLine="14" endPosition="25" />
     <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="13" startPosition="59" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="18" startPosition="47" endLine="20" endPosition="107" />
-    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="105">
       <varInfo nodeId="1310272842909656084" varName="editor" />
       <varInfo nodeId="1310272842909656084" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody" />
     <unitInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test" />
   </root>
@@ -54,21 +54,21 @@
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4379396156287837038" fileName="Create_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="13" startPosition="58" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Create_Test#()V" />
-    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Create#()V" />
-    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Create_Test#()V" />
+    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Create#()V" />
+    <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="14" startPosition="24" endLine="14" endPosition="24" />
     <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="13" startPosition="58" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="18" startPosition="46" endLine="20" endPosition="106" />
-    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="105">
       <varInfo nodeId="4379396156287837027" varName="editor" />
       <varInfo nodeId="4379396156287837027" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.Create_Test$TestBody" />
     <unitInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.Create_Test" />
   </root>
@@ -78,21 +78,21 @@
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1315230867830196353" fileName="RemoveY_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="13" startPosition="59" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveY_Test#()V" />
-    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveY#()V" />
-    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveY_Test#()V" />
+    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveY#()V" />
+    <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="14" startPosition="25" endLine="14" endPosition="25" />
     <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="13" startPosition="59" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="18" startPosition="47" endLine="20" endPosition="107" />
-    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
       <varInfo nodeId="8748948598094995664" varName="editor" />
       <varInfo nodeId="8748948598094995664" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="27" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test$TestBody" />
     <unitInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test" />
   </root>

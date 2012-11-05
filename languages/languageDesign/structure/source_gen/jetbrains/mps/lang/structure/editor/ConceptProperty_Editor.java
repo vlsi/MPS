@@ -14,7 +14,7 @@ public class ConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_5iy5t3_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<choose property>");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose property>");
     editorCell.setCellId("Error_5iy5t3_a");
     return editorCell;
   }

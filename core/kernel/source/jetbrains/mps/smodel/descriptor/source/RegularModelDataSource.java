@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
@@ -23,7 +24,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -38,52 +38,27 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.Collection;
-import java.util.Collections;
 
-public class RegularModelDataSource extends FileBasedModelDataSource implements FastFindSupportProvider {
+public class RegularModelDataSource extends FileDataSource implements FastFindSupportProvider, ModelDataSource {
   public static String FAST_FIND_ID = "regular";
 
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
 
-  private IFile myFile;
-
-  public RegularModelDataSource(SModuleReference origin, @NotNull IFile file) {
-    super(origin);
-    myFile = file;
-  }
-
-  public IFile getFile() {
-    return myFile;
-  }
-
-  public String toString() {
-    return myFile.toString();
-  }
-
-  public Collection<String> getFilesToListen() {
-    return Collections.singleton(myFile.getPath());
-  }
-
-  public boolean isReadOnly() {
-    return FileSystem.getInstance().isPackaged(myFile);
+  public RegularModelDataSource(@NotNull IFile file, ModelRoot root) {
+    super(file, root);
   }
 
   public String getModelHash() {
-    if (myFile == null) return null;
-    return ModelDigestUtil.hash(myFile);
+    if (getFile() == null) return null;
+    return ModelDigestUtil.hash(getFile());
   }
 
-  public long getTimestamp() {
-    if (myFile == null || !myFile.exists()) return -1;
-    return myFile.lastModified();
-  }
-
+  @Override
   public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException {
-    return ModelPersistence.loadDescriptor(myFile);
+    return ModelPersistence.loadDescriptor(getFile());
   }
 
   @Override
@@ -123,6 +98,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return result;
   }
 
+  @Override
   public boolean saveModel(SModelDescriptor descriptor) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) descriptor;
     SModel smodel = dsm.getSModel();
@@ -135,8 +111,9 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return ModelPersistence.saveModel(smodel, modelFile) != null;
   }
 
+  @Override
   public boolean hasModel(SModelDescriptor md) {
-    return myFile != null && myFile.exists();
+    return getFile() != null && getFile().exists();
   }
 
   public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
@@ -147,11 +124,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
   public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     return RefactoringsPersistence.load(dsm.getModelFile());
-  }
-
-  public void setFile(IFile file) {
-    myFile = file;
-    sourceFilesChanged();
   }
 
   public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {
@@ -186,7 +158,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
 
   public static RegularModelDataSource createSourceForModelUID(SModelRoot root, SModelFqName fqName, SModule module) {
     IFile file = createFileForModelUID(root, fqName, isLanguageAspect(root, module, fqName));
-    return new RegularModelDataSource(module.getModuleReference(), file);
+    return new RegularModelDataSource(file, root);
   }
 
   public static boolean isLanguageAspect(SModelRoot root, SModule module, SModelFqName modelFqName) {
@@ -212,6 +184,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return true;
   }
 
+  @Override
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }

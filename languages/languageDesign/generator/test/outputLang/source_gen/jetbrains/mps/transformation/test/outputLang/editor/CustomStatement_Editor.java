@@ -30,14 +30,14 @@ public class CustomStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zewgzr_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "work: ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "work: ");
     editorCell.setCellId("Constant_zewgzr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zewgzr_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_zewgzr_c0");
     editorCell.setDefaultText("");
     return editorCell;

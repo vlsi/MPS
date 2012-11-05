@@ -28,7 +28,7 @@ public class StatementConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vm3pdl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "statement concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statement concept");
     editorCell.setCellId("Constant_vm3pdl_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

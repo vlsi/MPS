@@ -14,6 +14,7 @@ public interface IFeatureDescriptor<T> {
   public boolean isDefault();
   public boolean isAscending();
   public String getOpposite();
+
   public static   enum Type {
     SEQUENCE("sequence"),
     LIST("list");
@@ -71,5 +72,4 @@ public interface IFeatureDescriptor<T> {
       return true;
     }
   }
-
 }

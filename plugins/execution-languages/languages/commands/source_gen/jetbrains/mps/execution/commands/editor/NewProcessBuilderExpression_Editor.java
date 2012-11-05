@@ -74,7 +74,7 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u94itw_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "in");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_u94itw_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -82,7 +82,7 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_u94itw_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "working directory:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "working directory:");
     editorCell.setCellId("Constant_u94itw_a0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

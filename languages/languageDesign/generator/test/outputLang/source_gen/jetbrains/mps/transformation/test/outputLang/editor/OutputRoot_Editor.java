@@ -67,35 +67,35 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3ev9w4_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "output root:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output root:");
     editorCell.setCellId("Constant_3ev9w4_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_3ev9w4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ev9w4_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_3ev9w4_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ev9w4_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_3ev9w4_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "special child:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "special child:");
     editorCell.setCellId("Constant_3ev9w4_a4a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_3ev9w4_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ev9w4_f0");
     editorCell.setDefaultText("");
     return editorCell;

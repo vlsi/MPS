@@ -65,14 +65,14 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5606pw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "agreement declarations");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "agreement declarations");
     editorCell.setCellId("Constant_5606pw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5606pw_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5606pw_b0");
     {
       Style style = editorCell.getStyle();
@@ -83,14 +83,14 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5606pw_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    account types: {");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    account types: {");
     editorCell.setCellId("Constant_5606pw_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5606pw_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_5606pw_c2a");
     {
       Style style = editorCell.getStyle();
@@ -101,7 +101,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5606pw_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5606pw_d0");
     {
       Style style = editorCell.getStyle();
@@ -112,7 +112,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5606pw_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    event types:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    event types:");
     editorCell.setCellId("Constant_5606pw_a4a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -185,7 +185,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -193,7 +193,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_5606pw_a1c0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "press <Ctrl>+<Enter> to add account type");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add account type");
       editorCell.setCellId("Constant_5606pw_a1c0");
       {
         Style style = editorCell.getStyle();
@@ -245,7 +245,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_5606pw_a1e0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "press <Ctrl>+<Enter> to add event type");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add event type");
       editorCell.setCellId("Constant_5606pw_a1e0");
       {
         Style style = editorCell.getStyle();

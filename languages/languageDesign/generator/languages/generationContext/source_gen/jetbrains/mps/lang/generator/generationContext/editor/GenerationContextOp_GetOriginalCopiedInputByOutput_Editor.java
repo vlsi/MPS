@@ -30,7 +30,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
   }
 
   private EditorCell createConstant_xb66g7_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get original copied input for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get original copied input for");
     editorCell.setCellId("Constant_xb66g7_a0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -38,7 +38,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
   }
 
   private EditorCell createConstant_xb66g7_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xb66g7_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -46,7 +46,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
   }
 
   private EditorCell createConstant_xb66g7_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xb66g7_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

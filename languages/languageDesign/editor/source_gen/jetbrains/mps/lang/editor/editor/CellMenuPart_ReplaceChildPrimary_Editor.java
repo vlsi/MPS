@@ -50,7 +50,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ywfh4u_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "primary replace child menu");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "primary replace child menu");
     editorCell.setCellId("Constant_ywfh4u_a0a");
     {
       Style style = editorCell.getStyle();
@@ -62,7 +62,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ywfh4u_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ywfh4u_a1a");
     {
       Style style = editorCell.getStyle();
@@ -73,7 +73,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ywfh4u_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "no customization needed");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no customization needed");
     editorCell.setCellId("Constant_ywfh4u_b1a");
     {
       Style style = editorCell.getStyle();

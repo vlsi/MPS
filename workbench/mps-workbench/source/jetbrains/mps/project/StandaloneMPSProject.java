@@ -26,6 +26,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -36,6 +37,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -58,7 +60,7 @@ import java.util.*;
   },
   reloadable = false
 )
-public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
+public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
   private static final Logger LOG = Logger.getLogger(StandaloneMPSProject.class);
 
   // project data
@@ -72,6 +74,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     super(project);
   }
 
+  @Override
   public List<String> getWatchedModulesPaths() {
     List<String> result = new ArrayList<String>();
     for (Path p : getAllModulePaths()) {
@@ -80,12 +83,14 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     return result;
   }
 
+  @Override
   public Element getState() {
     if (myProject.getPresentableUrl() == null || myProjectDescriptor == null) {
       return myProjectElement;
     }
 
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
+      @Override
       public Element compute() {
         ProjectDescriptor descriptor = getProjectDescriptor();
         return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor,
@@ -94,14 +99,17 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     });
   }
 
+  @Override
   public void loadState(Element state) {
     myProjectElement = state;
   }
 
+  @Override
   public void initComponent() {
     super.initComponent();
   }
 
+  @Override
   public void disposeComponent() {
     super.disposeComponent();
   }
@@ -120,6 +128,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
     }
     init(descriptor);
+    if (url != null) {
+      FileSystem.getInstance().addListener(this);
+    }
   }
 
   // public for tests only!
@@ -128,6 +139,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
     assert !isDisposed();
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         myProjectDescriptor = projectDescriptor;
 
@@ -191,6 +203,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
           error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
         }
       } else {
+        // TODO listen to file location ...
         error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
       }
     }
@@ -248,8 +261,10 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   @Override
   public void dispose() {
+    FileSystem.getInstance().removeListener(this);
     super.dispose();
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
 
@@ -292,5 +307,22 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       }
     }
     return null;
+  }
+
+  @Override
+  public IFile getFileToListen() {
+    String presentableUrl = myProject.getPresentableUrl();
+    if (presentableUrl == null) return null;
+    return FileSystem.getInstance().getFileByPath(presentableUrl);
+  }
+
+  @Override
+  public Iterable<FileSystemListener> getListenerDependencies() {
+    return null;
+  }
+
+  @Override
+  public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    readModules();
   }
 }

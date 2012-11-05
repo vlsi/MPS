@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.util.MultiRootModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import java.util.List;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -44,8 +43,7 @@ import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 public class ConfStubSource extends StubModelDataSource implements MultiRootModelDataSource, FastFindSupportProvider {
   private List<String> roots;
 
-  public ConfStubSource(SModuleReference origin, String path) {
-    super(origin);
+  public ConfStubSource(String path) {
     this.roots = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(this.roots).addElement(path);
   }
@@ -79,8 +77,8 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), roots, module) {
       @Override
-      public StubModelDataSource createStubsSource(SModuleReference origin, String path) {
-        return new ConfStubSource(origin, path);
+      public StubModelDataSource createStubsSource(String path) {
+        return new ConfStubSource(path);
       }
     };
     ConfReader reader = new ConfReader(new ConfReader.Resolver() {

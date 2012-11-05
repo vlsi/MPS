@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2511103526757027813" modelId="r:3065fee5-0453-4dea-af1f-6eab5ad0cfe5(jetbrains.mps.ui.internal.behavior)">
-    <nodeInfo nodeId="2511103526757027813" fileName="AuxObjectHandler_Behavior.java" startLine="7" startPosition="40" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757027813" fileName="AuxObjectHandler_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757027815" fileName="AuxObjectHandler_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757027813" fileName="AuxObjectHandler_Behavior.java" startLine="7" startPosition="40" endLine="10" endPosition="0">
+    <scopeInfo nodeId="2511103526757027813" fileName="AuxObjectHandler_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="2511103526757027813" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757027813" fileName="AuxObjectHandler_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.internal.behavior.AuxObjectHandler_Behavior" />

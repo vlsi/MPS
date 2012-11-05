@@ -30,7 +30,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ue6gv5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "check");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_ue6gv5_a0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -38,7 +38,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ue6gv5_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "type errors");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type errors");
     editorCell.setCellId("Constant_ue6gv5_c0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -46,7 +46,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ue6gv5_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ue6gv5_d0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -48,7 +48,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8l0in6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8l0in6_a0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -60,7 +60,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8l0in6_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "==>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==>");
     editorCell.setCellId("Constant_8l0in6_c0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
@@ -72,7 +72,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -82,7 +82,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_8l0in6_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8l0in6_e0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -125,7 +125,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_8l0in6_a0c0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8l0in6_a0c0(SNode node, EditorContext editorContext) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 
@@ -171,7 +171,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -179,7 +179,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_8l0in6_a1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_8l0in6_a1a");
       {
         Style style = editorCell.getStyle();

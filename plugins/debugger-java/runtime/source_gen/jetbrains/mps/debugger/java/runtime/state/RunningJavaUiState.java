@@ -13,7 +13,6 @@ import jetbrains.mps.debug.api.AbstractUiState;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 
-
 /**
  * No context (i.e. not paused)
  */

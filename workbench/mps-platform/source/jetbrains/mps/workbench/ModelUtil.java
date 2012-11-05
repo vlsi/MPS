@@ -17,16 +17,14 @@
 package jetbrains.mps.workbench;
 
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,9 +32,12 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class ModelUtil {
-  public static ArrayList<VirtualFile> getVFilesByModelDescriptor(SModelDescriptor desc) {
+  public static Collection<VirtualFile> getVFilesByModelDescriptor(SModelDescriptor desc) {
+    DataSource source = desc.getSource();
+    if (!(source instanceof FileSystemBasedDataSource)) return Collections.emptyList();
+
     ArrayList<VirtualFile> res = new ArrayList<VirtualFile>();
-    for(String path: getPathsByModelDescriptor(desc)){
+    for (IFile path : ((FileSystemBasedDataSource) source).getAffectedFiles()) {
       res.add(VirtualFileUtils.getVirtualFile(path));
     }
     return res;
@@ -44,21 +45,12 @@ public abstract class ModelUtil {
 
   @NotNull
   public static Collection<IFile> getFilesByModelDescriptor(SModelDescriptor desc) {
+    DataSource source = desc.getSource();
+    if (!(source instanceof FileSystemBasedDataSource)) return Collections.emptyList();
+
     List<IFile> res = new ArrayList<IFile>();
-    for (String path : getPathsByModelDescriptor(desc)) {
-      IFile f = FileSystem.getInstance().getFileByPath(path);
-      if (f == null) continue;
-      res.add(f);
-    }
-
+    res.addAll(((FileSystemBasedDataSource) source).getAffectedFiles());
     return res;
-  }
-
-  private static Collection<String> getPathsByModelDescriptor(SModelDescriptor desc) {
-    if (!(desc instanceof BaseSModelDescriptorWithSource)) return Collections.emptyList();
-    ModelDataSource source = ((BaseSModelDescriptorWithSource) desc).getSource();
-    if (!(source instanceof FileBasedModelDataSource)) return Collections.emptyList();
-    return  ((FileBasedModelDataSource) source).getFilesToListen();
   }
 
   public static VirtualFile getFileByModel(@Nullable SModel model) {

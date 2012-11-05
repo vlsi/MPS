@@ -68,7 +68,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gp4zyx_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(models only)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(models only)");
     editorCell.setCellId("Constant_gp4zyx_c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     delete_ModuleSources_modelsOnly.setCellActions(editorCell, node, editorContext);
@@ -77,7 +77,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gp4zyx_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "models only:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models only:");
     editorCell.setCellId("Constant_gp4zyx_a0a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

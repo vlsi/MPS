@@ -35,7 +35,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   }
 
   private EditorCell createConstant_4ccleb_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4ccleb_b0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
@@ -47,7 +47,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   }
 
   private EditorCell createConstant_4ccleb_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4ccleb_d0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

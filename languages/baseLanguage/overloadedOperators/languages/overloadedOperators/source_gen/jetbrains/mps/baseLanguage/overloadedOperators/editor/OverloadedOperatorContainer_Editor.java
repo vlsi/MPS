@@ -99,7 +99,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ntrw4_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "overloaded operators");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "overloaded operators");
     editorCell.setCellId("Constant_2ntrw4_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -107,7 +107,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ntrw4_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2ntrw4_c0");
     {
       Style style = editorCell.getStyle();
@@ -118,7 +118,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ntrw4_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2ntrw4_a0d0");
     {
       Style style = editorCell.getStyle();
@@ -131,7 +131,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ntrw4_a1b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_2ntrw4_a1b3a");
     {
       Style style = editorCell.getStyle();
@@ -143,7 +143,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2ntrw4_c3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2ntrw4_c3a");
     {
       Style style = editorCell.getStyle();
@@ -183,7 +183,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_2ntrw4_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -257,7 +257,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_2ntrw4_a1b1d0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_2ntrw4_a1b1d0");
       editorCell.setDefaultText("<<custom operators declaration>>");
       return editorCell;
@@ -304,7 +304,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_2ntrw4_a2b1d0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_2ntrw4_a2b1d0");
       editorCell.setDefaultText("<<overloaded binary operators>>");
       return editorCell;

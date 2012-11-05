@@ -40,7 +40,7 @@ public class ParametersDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_hy8r7y_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
@@ -84,7 +84,7 @@ public class ParametersDeclaration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_hy8r7y_a1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_hy8r7y_a1a");
       editorCell.setDefaultText("Enter creates a property");
       return editorCell;

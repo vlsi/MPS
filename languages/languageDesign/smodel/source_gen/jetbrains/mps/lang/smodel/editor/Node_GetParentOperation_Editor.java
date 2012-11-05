@@ -18,7 +18,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5yfyqc_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "parent");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent");
     editorCell.setCellId("Constant_5yfyqc_a");
     {
       Style style = editorCell.getStyle();

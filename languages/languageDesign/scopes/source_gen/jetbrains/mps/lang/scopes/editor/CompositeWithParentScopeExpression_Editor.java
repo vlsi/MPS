@@ -32,7 +32,7 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createConstant_ayfre3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "composite");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "composite");
     editorCell.setCellId("Constant_ayfre3_a0");
     {
       Style style = editorCell.getStyle();
@@ -44,7 +44,7 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createConstant_ayfre3_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with parent scope");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with parent scope");
     editorCell.setCellId("Constant_ayfre3_c0");
     {
       Style style = editorCell.getStyle();

@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.library.ModulesMiner;
@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.util.FileStubSource;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 
@@ -30,18 +31,18 @@ public class ProjectStubs extends ModelRootManagerBase {
   @Override
   public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
     List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    ListSequence.fromList(models).addSequence(Sequence.fromIterable(ProjectStubs.this.findModules(modelRoot.getPath(), modelRoot.getModule())));
+    ListSequence.fromList(models).addSequence(Sequence.fromIterable(ProjectStubs.this.findModules(modelRoot.getPath(), modelRoot)));
     return models;
   }
 
-  /*package*/ Iterable<BaseStubModelDescriptor> findModules(String path, final SModule module) {
+  /*package*/ Iterable<BaseStubModelDescriptor> findModules(String path, final ModelRoot modelRoot) {
     IFile folder = FileSystem.getInstance().getFileByPath(path);
     Iterable<ModulesMiner.ModuleHandle> descriptors = ModulesMiner.getInstance().collectModules(folder, false);
     final String stereotype = SModelStereotype.getStubStereotypeForId("project");
     return Sequence.fromIterable(descriptors).select(new ISelector<ModulesMiner.ModuleHandle, BaseStubModelDescriptor>() {
       public BaseStubModelDescriptor select(ModulesMiner.ModuleHandle it) {
-        SModelReference modelRef = ProjectStubs.this.createModelReference(it, module, stereotype);
-        BaseStubModelDescriptor descriptor = new BaseStubModelDescriptor(modelRef, new FileStubSource(module.getModuleReference(), it.getFile(), modelRef), module);
+        SModelReference modelRef = ProjectStubs.this.createModelReference(it, modelRoot.getModule(), stereotype);
+        BaseStubModelDescriptor descriptor = new BaseStubModelDescriptor(modelRef, new FileStubSource(it.getFile(), modelRoot, modelRef), modelRoot.getModule());
         return descriptor;
       }
     });

@@ -46,7 +46,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1px6hs_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "assert");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
     editorCell.setCellId("Constant_1px6hs_a0");
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1px6hs_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "==");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==");
     editorCell.setCellId("Constant_1px6hs_c0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
@@ -69,7 +69,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1px6hs_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_1px6hs_f0");
     {
       Style style = editorCell.getStyle();

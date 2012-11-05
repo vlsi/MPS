@@ -4,24 +4,24 @@
     <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="15" startPosition="43" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="23" startPosition="36" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="24" startPosition="83" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="13" startPosition="79" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="40" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="11" startPosition="74" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Languages_PluginInitializer#()V" />
+    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Languages_PluginInitializer#()V" />
     <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="28" startPosition="31" endLine="28" endPosition="31" />
     <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="31" startPosition="34" endLine="31" endPosition="34" />
     <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="15" startPosition="43" endLine="16" endPosition="20" />
     <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="23" startPosition="36" endLine="25" endPosition="37" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="13" startPosition="79" endLine="18" endPosition="0">
+    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6863272677075182370" varName="klass" />
     </scopeInfo>
     <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="40" endLine="18" endPosition="7" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="20" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="11" startPosition="74" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="13" startPosition="54" endLine="18" endPosition="5" unitName="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer$1" />
     <unitInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer" />
     <unitInfo nodeId="6863272677075182370" fileName="plugin.xml" startLine="1" startPosition="0" endLine="22" endPosition="14" unitName="jetbrains.mps.execution.languages.plugin.plugin" />

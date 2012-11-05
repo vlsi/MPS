@@ -92,14 +92,14 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zabbeg_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keymap");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap");
     editorCell.setCellId("Constant_zabbeg_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zabbeg_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_zabbeg_b0");
     {
       Style style = editorCell.getStyle();
@@ -110,14 +110,14 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zabbeg_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "everyModel");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "everyModel");
     editorCell.setCellId("Constant_zabbeg_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_zabbeg_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_zabbeg_d0");
     {
       Style style = editorCell.getStyle();
@@ -128,7 +128,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zabbeg_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "applicable concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable concept:");
     editorCell.setCellId("Constant_zabbeg_a4a");
     {
       Style style = editorCell.getStyle();
@@ -139,7 +139,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zabbeg_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_zabbeg_f0");
     {
       Style style = editorCell.getStyle();
@@ -150,7 +150,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zabbeg_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keymap items:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap items:");
     editorCell.setCellId("Constant_zabbeg_g0");
     {
       Style style = editorCell.getStyle();
@@ -161,7 +161,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_zabbeg_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_zabbeg_h0");
     {
       Style style = editorCell.getStyle();

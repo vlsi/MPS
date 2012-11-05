@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2511103526757027822" modelId="r:636c9596-b7dd-4f5f-8b0b-20006d279b8b(jetbrains.mps.xmlUnitTest.behavior)">
-    <nodeInfo nodeId="2511103526757027822" fileName="Text_Behavior.java" startLine="7" startPosition="28" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757027822" fileName="Text_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757027824" fileName="Text_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757027822" fileName="Text_Behavior.java" startLine="7" startPosition="28" endLine="10" endPosition="0">
+    <scopeInfo nodeId="2511103526757027822" fileName="Text_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="2511103526757027822" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757027822" fileName="Text_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.xmlUnitTest.behavior.Text_Behavior" />

@@ -62,14 +62,14 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_lyzgir_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "node factories");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node factories");
     editorCell.setCellId("Constant_lyzgir_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_lyzgir_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lyzgir_b0");
     {
       Style style = editorCell.getStyle();

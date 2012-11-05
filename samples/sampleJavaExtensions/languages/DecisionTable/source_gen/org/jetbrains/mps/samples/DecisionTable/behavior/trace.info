@@ -19,33 +19,33 @@
     <nodeInfo nodeId="1736299320260998340" fileName="DecisionTable_Behavior.java" startLine="44" startPosition="39" endLine="45" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3863300516938159663" fileName="DecisionTable_Behavior.java" startLine="48" startPosition="37" endLine="49" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3863300516938159673" fileName="DecisionTable_Behavior.java" startLine="51" startPosition="8" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="701359002710699834" fileName="DecisionTable_Behavior.java" startLine="29" startPosition="219" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3863300516938155447" fileName="DecisionTable_Behavior.java" startLine="33" startPosition="45" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1736299320260998338" fileName="DecisionTable_Behavior.java" startLine="43" startPosition="222" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3863300516938159659" fileName="DecisionTable_Behavior.java" startLine="47" startPosition="45" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="701359002710699834" fileName="DecisionTable_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3863300516938155447" fileName="DecisionTable_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1736299320260998338" fileName="DecisionTable_Behavior.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3863300516938159659" fileName="DecisionTable_Behavior.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="3863300516938155471" fileName="DecisionTable_Behavior.java" startLine="28" startPosition="63" endLine="37" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3863300516938159636" fileName="DecisionTable_Behavior.java" startLine="42" startPosition="66" endLine="51" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="15" startPosition="37" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="26" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_referencedLVDs_3863300516938155424#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="40" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_referencedParams_3863300516938159619#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="16" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="27" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_referencedLVDs_3863300516938155424#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_referencedParams_3863300516938159619#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
     <scopeInfo nodeId="701359002710699835" fileName="DecisionTable_Behavior.java" startLine="30" startPosition="39" endLine="31" endPosition="170" />
     <scopeInfo nodeId="3863300516938155448" fileName="DecisionTable_Behavior.java" startLine="34" startPosition="37" endLine="35" endPosition="162" />
     <scopeInfo nodeId="1736299320260998339" fileName="DecisionTable_Behavior.java" startLine="44" startPosition="39" endLine="45" endPosition="166" />
     <scopeInfo nodeId="3863300516938159660" fileName="DecisionTable_Behavior.java" startLine="48" startPosition="37" endLine="49" endPosition="158" />
-    <scopeInfo nodeId="701359002710699834" fileName="DecisionTable_Behavior.java" startLine="29" startPosition="219" endLine="33" endPosition="0">
+    <scopeInfo nodeId="701359002710699834" fileName="DecisionTable_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="701359002710699834" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3863300516938155447" fileName="DecisionTable_Behavior.java" startLine="33" startPosition="45" endLine="37" endPosition="0">
+    <scopeInfo nodeId="3863300516938155447" fileName="DecisionTable_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="3863300516938155447" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1736299320260998338" fileName="DecisionTable_Behavior.java" startLine="43" startPosition="222" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1736299320260998338" fileName="DecisionTable_Behavior.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1736299320260998338" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3863300516938159659" fileName="DecisionTable_Behavior.java" startLine="47" startPosition="45" endLine="51" endPosition="0">
+    <scopeInfo nodeId="3863300516938159659" fileName="DecisionTable_Behavior.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3863300516938159659" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1987251859606942548" fileName="DecisionTable_Behavior.java" startLine="16" startPosition="43" endLine="24" endPosition="109" />
-    <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="15" startPosition="37" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="16" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1987251859606942546" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="3863300516938155427" fileName="DecisionTable_Behavior.java" startLine="27" startPosition="84" endLine="38" endPosition="15">
@@ -54,10 +54,10 @@
     <scopeInfo nodeId="3863300516938159622" fileName="DecisionTable_Behavior.java" startLine="41" startPosition="86" endLine="52" endPosition="18">
       <varInfo nodeId="3863300516938159627" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="26" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="27" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1987251859606942546" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="40" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1987251859606942546" fileName="DecisionTable_Behavior.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1987251859606942546" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="701359002710699834" fileName="DecisionTable_Behavior.java" startLine="29" startPosition="196" endLine="33" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior$1" />

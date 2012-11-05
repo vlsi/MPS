@@ -65,14 +65,14 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g3syp0_e0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_g3syp0_e0a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createIndentCell_g3syp0_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

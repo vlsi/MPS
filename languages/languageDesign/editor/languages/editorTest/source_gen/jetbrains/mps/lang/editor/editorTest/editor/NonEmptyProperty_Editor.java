@@ -42,7 +42,7 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vbxoaj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "property");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
     editorCell.setCellId("Constant_vbxoaj_a0");
     editorCell.setDefaultText("");
     return editorCell;

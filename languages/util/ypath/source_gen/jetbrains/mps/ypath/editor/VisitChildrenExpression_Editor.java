@@ -54,14 +54,14 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kcujn9_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_kcujn9_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_kcujn9_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_kcujn9_c1a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -144,7 +144,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -152,7 +152,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_kcujn9_a1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<no arguments>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no arguments>");
       editorCell.setCellId("Constant_kcujn9_a1b0");
       {
         Style style = editorCell.getStyle();

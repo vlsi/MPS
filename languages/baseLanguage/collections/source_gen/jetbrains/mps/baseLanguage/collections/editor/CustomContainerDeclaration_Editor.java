@@ -115,7 +115,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ddrapt_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "container");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container");
     editorCell.setCellId("Constant_ddrapt_b0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -123,7 +123,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ddrapt_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "specifies");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specifies");
     editorCell.setCellId("Constant_ddrapt_e0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -131,7 +131,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ddrapt_g0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ddrapt_g0a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -139,7 +139,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ddrapt_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "runtime type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runtime type:");
     editorCell.setCellId("Constant_ddrapt_a1b0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -147,7 +147,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ddrapt_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "factory:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "factory:");
     editorCell.setCellId("Constant_ddrapt_a1c0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -155,7 +155,7 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ddrapt_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ddrapt_d0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -163,12 +163,12 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ddrapt_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_ddrapt_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

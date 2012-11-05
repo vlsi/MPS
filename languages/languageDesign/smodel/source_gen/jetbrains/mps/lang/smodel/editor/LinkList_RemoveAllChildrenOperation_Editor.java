@@ -18,7 +18,7 @@ public class LinkList_RemoveAllChildrenOperation_Editor extends DefaultNodeEdito
   }
 
   private EditorCell createConstant_vpuwq5_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "remove all");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove all");
     editorCell.setCellId("Constant_vpuwq5_a");
     {
       Style style = editorCell.getStyle();

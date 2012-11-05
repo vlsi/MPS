@@ -25,15 +25,13 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.io.OutputStream" />
-    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
@@ -43,8 +41,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DescriptorLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderDataSource" />
+    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.ModelDataSource" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor" file="TextModelDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />

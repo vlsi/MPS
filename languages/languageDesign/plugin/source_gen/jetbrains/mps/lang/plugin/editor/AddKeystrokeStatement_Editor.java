@@ -31,7 +31,7 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4pzy21_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "addKeystroke");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "addKeystroke");
     editorCell.setCellId("Constant_4pzy21_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -39,7 +39,7 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4pzy21_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_4pzy21_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -47,7 +47,7 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4pzy21_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_4pzy21_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -55,7 +55,7 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4pzy21_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_4pzy21_e0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

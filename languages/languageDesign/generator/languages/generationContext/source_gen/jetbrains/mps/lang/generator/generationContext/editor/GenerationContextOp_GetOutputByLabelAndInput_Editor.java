@@ -37,7 +37,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   }
 
   private EditorCell createConstant_k5omkm_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "get output");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get output");
     editorCell.setCellId("Constant_k5omkm_a0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -45,7 +45,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   }
 
   private EditorCell createConstant_k5omkm_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_k5omkm_c0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
@@ -57,7 +57,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   }
 
   private EditorCell createConstant_k5omkm_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_k5omkm_d0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -65,7 +65,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   }
 
   private EditorCell createConstant_k5omkm_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_k5omkm_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

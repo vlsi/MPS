@@ -39,21 +39,21 @@ public class ForCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1fo3k5_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_1fo3k5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_1fo3k5_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "((");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "((");
     editorCell.setCellId("Constant_1fo3k5_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_1fo3k5_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_1fo3k5_d0");
     {
       Style style = editorCell.getStyle();
@@ -64,7 +64,7 @@ public class ForCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1fo3k5_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_1fo3k5_f0");
     {
       Style style = editorCell.getStyle();
@@ -75,21 +75,21 @@ public class ForCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1fo3k5_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "))");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "))");
     editorCell.setCellId("Constant_1fo3k5_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_1fo3k5_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_1fo3k5_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_1fo3k5_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "do");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_1fo3k5_j0");
     {
       Style style = editorCell.getStyle();
@@ -100,7 +100,7 @@ public class ForCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1fo3k5_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "done");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "done");
     editorCell.setCellId("Constant_1fo3k5_l0");
     editorCell.setDefaultText("");
     return editorCell;

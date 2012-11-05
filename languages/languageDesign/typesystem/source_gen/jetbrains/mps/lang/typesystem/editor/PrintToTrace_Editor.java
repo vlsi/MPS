@@ -28,7 +28,7 @@ public class PrintToTrace_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vg9ckn_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "print to trace");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "print to trace");
     editorCell.setCellId("Constant_vg9ckn_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

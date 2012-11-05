@@ -47,7 +47,7 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ge4r0w_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "export as java library");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export as java library");
     editorCell.setCellId("Constant_ge4r0w_a0");
     buildStyles_StyleSheet.getOutputLayout(editorCell).apply(editorCell);
     {

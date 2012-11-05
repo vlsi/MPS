@@ -18,7 +18,7 @@ public class Date_Past_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_54iyzo_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "PAST");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "PAST");
     editorCell.setCellId("Constant_54iyzo_a");
     {
       Style style = editorCell.getStyle();

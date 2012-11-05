@@ -17,8 +17,11 @@ package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
+
+import java.util.List;
 
 /**
  * evgeny, 11/17/11
@@ -26,6 +29,8 @@ import jetbrains.mps.util.Computable;
 public interface EditorContext {
 
   SNode getSelectedNode();
+
+  List<SNode> getSelectedNodes();
 
   /**
    * same as selectWRTFocusPolicy(node, true);
@@ -42,7 +47,11 @@ public interface EditorContext {
    */
   void selectWRTFocusPolicy(SNode node, boolean force);
 
+  void selectWRTFocusPolicy(EditorCell editorCell);
+
   void select(SNode node);
+
+  void selectRange(SNode first, SNode last);
 
   void select(SNode node, String cellId);
 
@@ -79,4 +88,8 @@ public interface EditorContext {
   IOperationContext getOperationContext();
 
   boolean isInspector();
+
+  void openInspector();
+
+  SModel getModel();
 }

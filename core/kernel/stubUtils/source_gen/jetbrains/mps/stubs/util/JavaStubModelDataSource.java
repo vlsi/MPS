@@ -4,7 +4,6 @@ package jetbrains.mps.stubs.util;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -41,8 +40,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
 
   private boolean skipPrivate;
 
-  public JavaStubModelDataSource(SModuleReference origin, boolean skipPrivate) {
-    super(origin);
+  public JavaStubModelDataSource(boolean skipPrivate) {
     this.skipPrivate = skipPrivate;
   }
 
@@ -80,7 +78,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
 
   private CompositeClassPathItem createClassPath(SModelDescriptor descriptor) {
     CompositeClassPathItem cp = new CompositeClassPathItem();
-    for (String dir : getStubPaths()) {
+    for (String dir : getPaths()) {
       try {
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));

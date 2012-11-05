@@ -29,7 +29,7 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_g0zw24_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "java jar");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java jar");
     editorCell.setCellId("Constant_g0zw24_a0");
     editorCell.setDefaultText("");
     return editorCell;

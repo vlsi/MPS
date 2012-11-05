@@ -27,7 +27,7 @@ public class FactoryMigrationScriptPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_chq41h_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Factory static method: ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Factory static method: ");
     editorCell.setCellId("Constant_chq41h_a0");
     editorCell.setDefaultText("");
     return editorCell;

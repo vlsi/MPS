@@ -104,7 +104,7 @@ public class IFeature_Properties extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_dntgs2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "properties");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties");
     editorCell.setCellId("Constant_dntgs2_a0a");
     {
       Style style = editorCell.getStyle();
@@ -115,14 +115,14 @@ public class IFeature_Properties extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_dntgs2_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_dntgs2_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_dntgs2_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "ascending");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ascending");
     editorCell.setCellId("Constant_dntgs2_a0b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -130,7 +130,7 @@ public class IFeature_Properties extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_dntgs2_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_dntgs2_a1b1a");
     {
       Style style = editorCell.getStyle();

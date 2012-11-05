@@ -117,7 +117,7 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$INSERT$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$INSERT$");
     editorCell.setCellId("Constant_iwpawc_a0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -134,7 +134,7 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "insert node macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert node macro");
     editorCell.setCellId("Constant_iwpawc_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -147,7 +147,7 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_iwpawc_b0");
     {
       Style style = editorCell.getStyle();
@@ -158,14 +158,14 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_iwpawc_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_iwpawc_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -176,14 +176,14 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_iwpawc_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_iwpawc_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -194,7 +194,7 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "output node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output node");
     editorCell.setCellId("Constant_iwpawc_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -205,7 +205,7 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_iwpawc_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b2c0");
     {
       Style style = editorCell.getStyle();

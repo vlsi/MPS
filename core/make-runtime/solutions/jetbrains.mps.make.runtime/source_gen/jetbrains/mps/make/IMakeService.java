@@ -20,6 +20,7 @@ public interface IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor);
   public void addListener(IMakeNotificationListener listener);
   public void removeListener(IMakeNotificationListener listener);
+
   public static class INSTANCE {
     private static IMakeService Component;
 
@@ -45,5 +46,4 @@ public interface IMakeService {
       return Component != null;
     }
   }
-
 }

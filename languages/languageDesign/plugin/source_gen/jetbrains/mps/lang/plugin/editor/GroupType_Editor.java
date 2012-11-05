@@ -36,7 +36,7 @@ public class GroupType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5vhand_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "group");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
     editorCell.setCellId("Constant_5vhand_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -48,7 +48,7 @@ public class GroupType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5vhand_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5vhand_b0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
@@ -61,7 +61,7 @@ public class GroupType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5vhand_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5vhand_d0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {

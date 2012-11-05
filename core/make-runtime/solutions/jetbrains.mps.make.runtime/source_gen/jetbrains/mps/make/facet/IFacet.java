@@ -12,6 +12,7 @@ public interface IFacet {
   public Iterable<IFacet.Name> optional();
   public Iterable<ITarget> targets();
   public IPropertiesPersistence propertiesPersistence();
+
   public static class Name extends FqName {
     public Name(String fqn) {
       super(fqn);
@@ -46,5 +47,4 @@ public interface IFacet {
       return null;
     }
   }
-
 }

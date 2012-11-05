@@ -54,7 +54,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4c1nzp_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "case:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "case:");
     editorCell.setCellId("Constant_4c1nzp_a0a");
     {
       Style style = editorCell.getStyle();
@@ -65,7 +65,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4c1nzp_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_4c1nzp_a1a");
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4c1nzp_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4c1nzp_c0");
     editorCell.setDefaultText("");
     return editorCell;

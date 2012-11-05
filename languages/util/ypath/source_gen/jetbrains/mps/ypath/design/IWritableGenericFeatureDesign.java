@@ -9,6 +9,7 @@ public interface IWritableGenericFeatureDesign extends IGenericFeatureDesign {
   public SNode replaceStatement(SNode srcExpr, SNode range, SNode replaceExpr, ITemplateGenerator generator);
   public SNode removeStatement(SNode srcExpr, SNode range, ITemplateGenerator generator);
   public SNode insertStatement(SNode srcExpr, SNode range, SNode insertExpr, ITemplateGenerator generator);
+
   public static class Stub extends IGenericFeatureDesign.Stub implements IWritableGenericFeatureDesign {
     public Stub() {
     }
@@ -25,5 +26,4 @@ public interface IWritableGenericFeatureDesign extends IGenericFeatureDesign {
       return null;
     }
   }
-
 }

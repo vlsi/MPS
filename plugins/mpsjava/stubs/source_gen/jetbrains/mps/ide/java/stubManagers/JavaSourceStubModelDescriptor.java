@@ -6,7 +6,7 @@ import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.NodesNavigationContributor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
@@ -23,7 +23,7 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
   private static Logger LOG = Logger.getLogger(JavaSourceStubModelDescriptor.class);
 
-  public JavaSourceStubModelDescriptor(SModelReference modelReference, JavaSourceStubModelDS source, IModule module) {
+  public JavaSourceStubModelDescriptor(SModelReference modelReference, JavaSourceStubModelDS source, SModule module) {
     super(modelReference, source, module);
   }
 

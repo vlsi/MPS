@@ -75,28 +75,28 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aw3qer_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weave");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave");
     editorCell.setCellId("Constant_aw3qer_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_aw3qer_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weave each");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave each");
     editorCell.setCellId("Constant_aw3qer_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_aw3qer_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weave many");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave many");
     editorCell.setCellId("Constant_aw3qer_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_aw3qer_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "weave each many");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave each many");
     editorCell.setCellId("Constant_aw3qer_h0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -135,22 +135,22 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aw3qer_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_aw3qer_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_aw3qer_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_aw3qer_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

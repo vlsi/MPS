@@ -303,7 +303,6 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-
   /**
    * We already have graphs in MPS, why we need this class here?
    * V vertex type

@@ -63,7 +63,7 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bdyu74_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

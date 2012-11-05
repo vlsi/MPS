@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1790427706118304183" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
-    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="16" startPosition="72" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="19" startPosition="36" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="29" startPosition="200" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -11,28 +11,28 @@
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="35" startPosition="0" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1790427706118304186" fileName="GetCurrency_Constraints.java" startLine="39" startPosition="148" endLine="40" endPosition="445" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetCurrency_Constraints#()V" />
+    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetCurrency_Constraints#()V" />
     <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="19" startPosition="36" endLine="20" endPosition="67" />
     <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" />
     <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="32" startPosition="51" endLine="33" endPosition="67" />
     <scopeInfo nodeId="1790427706118304185" fileName="GetCurrency_Constraints.java" startLine="39" startPosition="148" endLine="40" endPosition="445" />
-    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1790427706118304183" varName="childConcept" />
       <varInfo nodeId="1790427706118304183" varName="link" />
       <varInfo nodeId="1790427706118304183" varName="node" />
       <varInfo nodeId="1790427706118304183" varName="operationContext" />
       <varInfo nodeId="1790427706118304183" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="29" startPosition="200" endLine="36" endPosition="18">
       <varInfo nodeId="1790427706118304183" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1790427706118304183" varName="checkingNodeContext" />
       <varInfo nodeId="1790427706118304183" varName="childConcept" />
       <varInfo nodeId="1790427706118304183" varName="link" />
@@ -43,7 +43,7 @@
     <unitInfo nodeId="1790427706118304183" fileName="GetCurrency_Constraints.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.GetCurrency_Constraints" />
   </root>
   <root nodeId="1790427706118381728" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
-    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="16" startPosition="70" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="19" startPosition="34" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="29" startPosition="200" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -52,28 +52,28 @@
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="35" startPosition="0" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1790427706118381731" fileName="ConvertTo_Constraints.java" startLine="39" startPosition="148" endLine="40" endPosition="445" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertTo_Constraints#()V" />
+    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertTo_Constraints#()V" />
     <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="19" startPosition="34" endLine="20" endPosition="65" />
     <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" />
     <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="32" startPosition="51" endLine="33" endPosition="67" />
     <scopeInfo nodeId="1790427706118381730" fileName="ConvertTo_Constraints.java" startLine="39" startPosition="148" endLine="40" endPosition="445" />
-    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1790427706118381728" varName="childConcept" />
       <varInfo nodeId="1790427706118381728" varName="link" />
       <varInfo nodeId="1790427706118381728" varName="node" />
       <varInfo nodeId="1790427706118381728" varName="operationContext" />
       <varInfo nodeId="1790427706118381728" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="29" startPosition="200" endLine="36" endPosition="18">
       <varInfo nodeId="1790427706118381728" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1790427706118381728" fileName="ConvertTo_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1790427706118381728" varName="checkingNodeContext" />
       <varInfo nodeId="1790427706118381728" varName="childConcept" />
       <varInfo nodeId="1790427706118381728" varName="link" />
@@ -85,13 +85,13 @@
   </root>
   <root nodeId="3607579524910558859" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
     <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="7" startPosition="73" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyLiteral_Constraints#()V" />
+    <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyLiteral_Constraints#()V" />
     <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" />
-    <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="7" startPosition="73" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
     <unitInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="org.jetbrains.mps.samples.Money.constraints.MoneyLiteral_Constraints" />
   </root>
   <root nodeId="5447719361346553527" modelId="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)">
-    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="16" startPosition="70" endLine="17" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="19" startPosition="34" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="29" startPosition="200" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -100,28 +100,28 @@
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="35" startPosition="0" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5447719361346553530" fileName="GetAmount_Constraints.java" startLine="39" startPosition="148" endLine="40" endPosition="445" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetAmount_Constraints#()V" />
+    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetAmount_Constraints#()V" />
     <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="19" startPosition="34" endLine="20" endPosition="65" />
     <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" />
     <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="32" startPosition="51" endLine="33" endPosition="67" />
     <scopeInfo nodeId="5447719361346553529" fileName="GetAmount_Constraints.java" startLine="39" startPosition="148" endLine="40" endPosition="445" />
-    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="5447719361346553527" varName="childConcept" />
       <varInfo nodeId="5447719361346553527" varName="link" />
       <varInfo nodeId="5447719361346553527" varName="node" />
       <varInfo nodeId="5447719361346553527" varName="operationContext" />
       <varInfo nodeId="5447719361346553527" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="29" startPosition="200" endLine="36" endPosition="18">
       <varInfo nodeId="5447719361346553527" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="5447719361346553527" fileName="GetAmount_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="5447719361346553527" varName="checkingNodeContext" />
       <varInfo nodeId="5447719361346553527" varName="childConcept" />
       <varInfo nodeId="5447719361346553527" varName="link" />

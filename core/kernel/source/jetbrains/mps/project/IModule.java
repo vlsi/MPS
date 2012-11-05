@@ -120,6 +120,8 @@ public interface IModule extends SModule {
 
   boolean isPackaged();
 
+  void attach();
+
   void dispose();
 
   void reloadFromDisk(boolean reloadClasses);

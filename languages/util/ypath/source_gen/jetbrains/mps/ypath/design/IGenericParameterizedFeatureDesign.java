@@ -8,6 +8,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 public interface IGenericParameterizedFeatureDesign<T> extends IParameterizedFeatureDesign<T> {
   public SNode getterExpression(SNode srcExpr, T param, ITemplateGenerator generator);
   public boolean isSingleTargetCardinality(T param);
+
   public static class Stub<E> extends IParameterizedFeatureDesign.Stub<E> implements IGenericParameterizedFeatureDesign<E> {
     public Stub() {
     }
@@ -20,5 +21,4 @@ public interface IGenericParameterizedFeatureDesign<T> extends IParameterizedFea
       return false;
     }
   }
-
 }

@@ -106,7 +106,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_m1raju_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "copy/reduce node macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy/reduce node macro");
     editorCell.setCellId("Constant_m1raju_a0");
     {
       Style style = editorCell.getStyle();
@@ -119,7 +119,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_m1raju_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_m1raju_b0");
     {
       Style style = editorCell.getStyle();
@@ -130,14 +130,14 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_m1raju_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "comment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_m1raju_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_m1raju_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_m1raju_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -148,14 +148,14 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_m1raju_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_m1raju_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_m1raju_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_m1raju_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -166,7 +166,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_m1raju_a2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapped node");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
     editorCell.setCellId("Constant_m1raju_a2c0");
     {
       Style style = editorCell.getStyle();
@@ -177,7 +177,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_m1raju_b2c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_m1raju_b2c0");
     {
       Style style = editorCell.getStyle();

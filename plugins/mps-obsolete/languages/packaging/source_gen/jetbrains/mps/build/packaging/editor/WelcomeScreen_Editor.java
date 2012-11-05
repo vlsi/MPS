@@ -67,7 +67,7 @@ public class WelcomeScreen_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dwq3in_a0b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "caption");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caption");
     editorCell.setCellId("Constant_dwq3in_a0b0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -75,7 +75,7 @@ public class WelcomeScreen_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dwq3in_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "slogan");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "slogan");
     editorCell.setCellId("Constant_dwq3in_a1b0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -52,7 +52,7 @@ public class ExportScopePublic_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -68,7 +68,7 @@ public class ExportScopePublic_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_pjxymp_a0a0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_pjxymp_a0a0(SNode node, EditorContext editorContext) {
     return (SNodeOperations.getParent(node) != null) && SNodeOperations.getParent(node).isRoot();
   }
 }

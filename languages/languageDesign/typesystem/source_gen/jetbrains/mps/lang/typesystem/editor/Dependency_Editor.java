@@ -58,21 +58,21 @@ public class Dependency_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_l58ghc_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "target concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
     editorCell.setCellId("Constant_l58ghc_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_l58ghc_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " find source:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " find source:");
     editorCell.setCellId("Constant_l58ghc_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_l58ghc_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "source concept(optional):");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source concept(optional):");
     editorCell.setCellId("Constant_l58ghc_a1a");
     editorCell.setDefaultText("");
     return editorCell;

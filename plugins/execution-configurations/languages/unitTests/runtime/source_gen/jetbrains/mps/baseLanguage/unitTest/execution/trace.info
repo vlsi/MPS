@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1796275887793108017" modelId="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)">
-    <nodeInfo nodeId="1796275887793108314" fileName="TestEvent.java" startLine="12" startPosition="24" endLine="13" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="START_TEST_PREFIX" />
-    <nodeInfo nodeId="1796275887793108318" fileName="TestEvent.java" startLine="13" startPosition="64" endLine="14" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="END_TEST_PREFIX" />
-    <nodeInfo nodeId="1796275887793108322" fileName="TestEvent.java" startLine="14" startPosition="60" endLine="15" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEST_PREFIX" />
-    <nodeInfo nodeId="1796275887793108326" fileName="TestEvent.java" startLine="15" startPosition="70" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEST_SUFFIX" />
-    <nodeInfo nodeId="1796275887793108330" fileName="TestEvent.java" startLine="16" startPosition="68" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAILURE_TEST_PREFIX" />
-    <nodeInfo nodeId="1796275887793108334" fileName="TestEvent.java" startLine="17" startPosition="74" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAILURE_TEST_SUFFIX" />
-    <nodeInfo nodeId="1796275887793108338" fileName="TestEvent.java" startLine="18" startPosition="72" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALL_TOKENS" />
-    <nodeInfo nodeId="1796275887793108131" fileName="TestEvent.java" startLine="19" startPosition="41" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_6m48zo_a0a0b0b0c" />
-    <nodeInfo nodeId="1796275887793108234" fileName="TestEvent.java" startLine="21" startPosition="0" endLine="22" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToken" />
-    <nodeInfo nodeId="1796275887793108237" fileName="TestEvent.java" startLine="22" startPosition="31" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestCaseName" />
-    <nodeInfo nodeId="1796275887793108240" fileName="TestEvent.java" startLine="23" startPosition="38" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestMethodName" />
-    <nodeInfo nodeId="1796275887793108243" fileName="TestEvent.java" startLine="24" startPosition="40" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMemoryUsage" />
-    <nodeInfo nodeId="1796275887793108246" fileName="TestEvent.java" startLine="25" startPosition="35" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTime" />
+    <nodeInfo nodeId="1796275887793108314" fileName="TestEvent.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="START_TEST_PREFIX" />
+    <nodeInfo nodeId="1796275887793108318" fileName="TestEvent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="END_TEST_PREFIX" />
+    <nodeInfo nodeId="1796275887793108322" fileName="TestEvent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEST_PREFIX" />
+    <nodeInfo nodeId="1796275887793108326" fileName="TestEvent.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_TEST_SUFFIX" />
+    <nodeInfo nodeId="1796275887793108330" fileName="TestEvent.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAILURE_TEST_PREFIX" />
+    <nodeInfo nodeId="1796275887793108334" fileName="TestEvent.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAILURE_TEST_SUFFIX" />
+    <nodeInfo nodeId="1796275887793108338" fileName="TestEvent.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALL_TOKENS" />
+    <nodeInfo nodeId="1796275887793108131" fileName="TestEvent.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_6m48zo_a0a0b0b0c" />
+    <nodeInfo nodeId="1796275887793108234" fileName="TestEvent.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToken" />
+    <nodeInfo nodeId="1796275887793108237" fileName="TestEvent.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestCaseName" />
+    <nodeInfo nodeId="1796275887793108240" fileName="TestEvent.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestMethodName" />
+    <nodeInfo nodeId="1796275887793108243" fileName="TestEvent.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMemoryUsage" />
+    <nodeInfo nodeId="1796275887793108246" fileName="TestEvent.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTime" />
     <nodeInfo nodeId="1796275887793108176" fileName="TestEvent.java" startLine="28" startPosition="59" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108182" fileName="TestEvent.java" startLine="29" startPosition="20" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108562" fileName="TestEvent.java" startLine="30" startPosition="58" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -57,26 +57,26 @@
     <nodeInfo nodeId="1796275887793108161" fileName="TestEvent.java" startLine="122" startPosition="5" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1796275887793108463" fileName="TestEvent.java" startLine="126" startPosition="10" endLine="127" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108273" fileName="TestEvent.java" startLine="48" startPosition="40" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1796275887793108342" fileName="TestEvent.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToken#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1796275887793108350" fileName="TestEvent.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestCaseName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1796275887793108358" fileName="TestEvent.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethodName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1796275887793108366" fileName="TestEvent.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMemoryUsage#()J" />
+    <nodeInfo nodeId="1796275887793108374" fileName="TestEvent.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTime#()J" />
     <nodeInfo nodeId="1796275887793108388" fileName="TestEvent.java" startLine="78" startPosition="36" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1796275887793108058" fileName="TestEvent.java" startLine="104" startPosition="56" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1796275887793108091" fileName="TestEvent.java" startLine="117" startPosition="56" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796275887793108342" fileName="TestEvent.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToken#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1796275887793108350" fileName="TestEvent.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestCaseName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1796275887793108358" fileName="TestEvent.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethodName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1796275887793108366" fileName="TestEvent.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMemoryUsage#()J" />
-    <nodeInfo nodeId="1796275887793108374" fileName="TestEvent.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTime#()J" />
+    <nodeInfo nodeId="1796275887793108434" fileName="TestEvent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
     <nodeInfo nodeId="1796275887793108030" fileName="TestEvent.java" startLine="93" startPosition="78" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796275887793108434" fileName="TestEvent.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
     <nodeInfo nodeId="1796275887793108026" fileName="TestEvent.java" startLine="92" startPosition="24" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1796275887793108230" fileName="TestEvent.java" startLine="36" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestEvent#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V" />
+    <nodeInfo nodeId="1796275887793108230" fileName="TestEvent.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestEvent#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V" />
     <nodeInfo nodeId="1796275887793108091" fileName="TestEvent.java" startLine="114" startPosition="70" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1796275887793108168" fileName="TestEvent.java" startLine="27" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestEvent#(Ljava/lang/String;Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="1796275887793108382" fileName="TestEvent.java" startLine="76" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1796275887793108045" fileName="TestEvent.java" startLine="101" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parse#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;" />
+    <nodeInfo nodeId="1796275887793108168" fileName="TestEvent.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestEvent#(Ljava/lang/String;Lorg/junit/runner/Description;)V" />
+    <nodeInfo nodeId="1796275887793108382" fileName="TestEvent.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1796275887793108045" fileName="TestEvent.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parse#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;" />
+    <nodeInfo nodeId="1796275887793108018" fileName="TestEvent.java" startLine="91" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEventToken#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1796275887793108080" fileName="TestEvent.java" startLine="112" startPosition="31" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1796275887793108018" fileName="TestEvent.java" startLine="90" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEventToken#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1796275887793108250" fileName="TestEvent.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1796275887793108073" fileName="TestEvent.java" startLine="110" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parse#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;" />
+    <nodeInfo nodeId="1796275887793108250" fileName="TestEvent.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1796275887793108073" fileName="TestEvent.java" startLine="111" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parse#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;" />
     <scopeInfo nodeId="1796275887793108279" fileName="TestEvent.java" startLine="49" startPosition="40" endLine="50" endPosition="56" />
     <scopeInfo nodeId="1796275887793108345" fileName="TestEvent.java" startLine="57" startPosition="28" endLine="58" endPosition="24" />
     <scopeInfo nodeId="1796275887793108353" fileName="TestEvent.java" startLine="61" startPosition="35" endLine="62" endPosition="31" />
@@ -89,17 +89,17 @@
     <scopeInfo nodeId="1796275887793108092" fileName="TestEvent.java" startLine="118" startPosition="35" endLine="119" endPosition="167" />
     <scopeInfo nodeId="1796275887793108462" fileName="TestEvent.java" startLine="126" startPosition="10" endLine="127" endPosition="258" />
     <scopeInfo nodeId="1796275887793108031" fileName="TestEvent.java" startLine="94" startPosition="52" endLine="96" endPosition="14" />
-    <scopeInfo nodeId="1796275887793108342" fileName="TestEvent.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1796275887793108350" fileName="TestEvent.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1796275887793108358" fileName="TestEvent.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1796275887793108366" fileName="TestEvent.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1796275887793108374" fileName="TestEvent.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108342" fileName="TestEvent.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108350" fileName="TestEvent.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108358" fileName="TestEvent.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108366" fileName="TestEvent.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108374" fileName="TestEvent.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108434" fileName="TestEvent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="1796275887793108029" fileName="TestEvent.java" startLine="93" startPosition="78" endLine="97" endPosition="7" />
     <scopeInfo nodeId="1796275887793108233" fileName="TestEvent.java" startLine="37" startPosition="108" endLine="42" endPosition="18" />
     <scopeInfo nodeId="1796275887793108387" fileName="TestEvent.java" startLine="78" startPosition="36" endLine="83" endPosition="154">
       <varInfo nodeId="1796275887793108401" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1796275887793108434" fileName="TestEvent.java" startLine="85" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="1796275887793108091" fileName="TestEvent.java" startLine="115" startPosition="7" endLine="120" endPosition="9">
       <varInfo nodeId="1796275887793108091" varName="_matcher_0" />
       <varInfo nodeId="1796275887793108091" varName="_pattern_0" />
@@ -114,19 +114,25 @@
       <varInfo nodeId="1796275887793108054" varName="expectedToken" />
       <varInfo nodeId="1796275887793108050" varName="testEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="1796275887793108230" fileName="TestEvent.java" startLine="36" startPosition="0" endLine="43" endPosition="3">
+    <scopeInfo nodeId="1796275887793108230" fileName="TestEvent.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1796275887793108499" varName="memoryUsage" />
       <varInfo nodeId="1796275887793108493" varName="testCaseName" />
       <varInfo nodeId="1796275887793108496" varName="testMethodName" />
       <varInfo nodeId="1796275887793108502" varName="time" />
       <varInfo nodeId="1796275887793108490" varName="token" />
     </scopeInfo>
-    <scopeInfo nodeId="1796275887793108168" fileName="TestEvent.java" startLine="27" startPosition="0" endLine="35" endPosition="3">
+    <scopeInfo nodeId="1796275887793108168" fileName="TestEvent.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1796275887793108475" varName="description" />
       <varInfo nodeId="1796275887793108169" varName="token" />
     </scopeInfo>
+    <scopeInfo nodeId="1796275887793108382" fileName="TestEvent.java" startLine="77" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1796275887793108385" varName="p0" />
+    </scopeInfo>
     <scopeInfo nodeId="1796275887793108021" fileName="TestEvent.java" startLine="91" startPosition="60" endLine="99" endPosition="17">
       <varInfo nodeId="1796275887793108023" varName="token" />
+    </scopeInfo>
+    <scopeInfo nodeId="1796275887793108045" fileName="TestEvent.java" startLine="102" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="1796275887793108071" varName="messageString" />
     </scopeInfo>
     <scopeInfo nodeId="1796275887793108081" fileName="TestEvent.java" startLine="113" startPosition="50" endLine="121" endPosition="7">
       <varInfo nodeId="1796275887793108083" varName="params" />
@@ -134,20 +140,14 @@
     <scopeInfo nodeId="1796275887793108253" fileName="TestEvent.java" startLine="45" startPosition="28" endLine="54" endPosition="30">
       <varInfo nodeId="1796275887793108255" varName="builder" />
     </scopeInfo>
-    <scopeInfo nodeId="1796275887793108382" fileName="TestEvent.java" startLine="76" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="1796275887793108385" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="1796275887793108045" fileName="TestEvent.java" startLine="101" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="1796275887793108071" varName="messageString" />
-    </scopeInfo>
-    <scopeInfo nodeId="1796275887793108018" fileName="TestEvent.java" startLine="90" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="1796275887793108018" fileName="TestEvent.java" startLine="91" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="1796275887793108043" varName="messageString" />
     </scopeInfo>
-    <scopeInfo nodeId="1796275887793108250" fileName="TestEvent.java" startLine="44" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1796275887793108250" fileName="TestEvent.java" startLine="45" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1796275887793108075" fileName="TestEvent.java" startLine="111" startPosition="78" endLine="123" endPosition="21">
       <varInfo nodeId="1796275887793108077" varName="testEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="1796275887793108073" fileName="TestEvent.java" startLine="110" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="1796275887793108073" fileName="TestEvent.java" startLine="111" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="1796275887793108163" varName="expectedToken" />
       <varInfo nodeId="1796275887793108165" varName="messageString" />
     </scopeInfo>

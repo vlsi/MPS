@@ -95,7 +95,7 @@ public class IAspectParameterHolder_Component extends AbstractCellProvider {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), ",");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -103,7 +103,7 @@ public class IAspectParameterHolder_Component extends AbstractCellProvider {
     }
 
     private EditorCell createConstant_qkwmzt_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_qkwmzt_a0a");
       editorCell.setDefaultText("<no aspect param>");
       return editorCell;

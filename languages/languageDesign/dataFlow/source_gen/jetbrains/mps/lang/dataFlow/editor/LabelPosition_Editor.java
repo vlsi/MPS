@@ -29,7 +29,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xi88on_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "after");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
     editorCell.setCellId("Constant_xi88on_a0");
     DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

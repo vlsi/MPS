@@ -33,14 +33,14 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_knkyai_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is applicable:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_knkyai_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_knkyai_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_knkyai_c0");
     {
       Style style = editorCell.getStyle();
@@ -51,14 +51,14 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_knkyai_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "convertor:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "convertor:");
     editorCell.setCellId("Constant_knkyai_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_knkyai_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_knkyai_f0");
     {
       Style style = editorCell.getStyle();

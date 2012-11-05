@@ -59,7 +59,7 @@ public class ModificationsEditor extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_jfpqgy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "modifications");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifications");
     editorCell.setCellId("Constant_jfpqgy_a0");
     {
       Style style = editorCell.getStyle();
@@ -70,7 +70,7 @@ public class ModificationsEditor extends AbstractCellProvider {
   }
 
   private EditorCell createConstant_jfpqgy_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_jfpqgy_a1a");
     {
       Style style = editorCell.getStyle();

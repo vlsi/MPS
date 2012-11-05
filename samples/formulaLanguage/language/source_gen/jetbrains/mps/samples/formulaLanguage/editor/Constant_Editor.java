@@ -14,7 +14,7 @@ public class Constant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createError_b5vi9g_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "?constant?");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?constant?");
     editorCell.setCellId("Error_b5vi9g_a");
     return editorCell;
   }

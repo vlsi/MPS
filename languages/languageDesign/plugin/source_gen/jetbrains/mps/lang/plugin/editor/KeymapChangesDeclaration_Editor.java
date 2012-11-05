@@ -69,35 +69,35 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_anqw30_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(plugin.xml)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(plugin.xml)");
     editorCell.setCellId("Constant_anqw30_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_anqw30_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "keymap changes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap changes");
     editorCell.setCellId("Constant_anqw30_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_anqw30_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_anqw30_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_anqw30_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_anqw30_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_anqw30_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "register via plugin.xml:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register via plugin.xml:");
     editorCell.setCellId("Constant_anqw30_a0");
     editorCell.setDefaultText("");
     return editorCell;

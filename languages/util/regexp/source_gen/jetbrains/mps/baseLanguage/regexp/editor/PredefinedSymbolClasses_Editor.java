@@ -37,7 +37,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ry768y_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "predefined symbol classes");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "predefined symbol classes");
     editorCell.setCellId("Constant_ry768y_a0");
     {
       Style style = editorCell.getStyle();
@@ -48,7 +48,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ry768y_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ry768y_b0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
@@ -60,7 +60,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ry768y_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ry768y_d0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {

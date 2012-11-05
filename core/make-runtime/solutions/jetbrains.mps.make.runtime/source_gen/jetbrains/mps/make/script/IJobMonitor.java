@@ -13,6 +13,7 @@ public interface IJobMonitor {
   @Deprecated
   public IProgress currentProgress();
   public void reportFeedback(IFeedback fdbk);
+
   public static class Stub implements IJobMonitor {
     private IProgress pstub;
 
@@ -35,5 +36,4 @@ public interface IJobMonitor {
       return false;
     }
   }
-
 }

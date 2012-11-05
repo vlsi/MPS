@@ -27,7 +27,7 @@ public class YetAnotherGoodConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_h02pym_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "yet another good");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "yet another good");
     editorCell.setCellId("Constant_h02pym_a0");
     editorCell.setDefaultText("");
     return editorCell;

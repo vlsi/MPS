@@ -27,7 +27,7 @@ public class BuildSource_JavaClassFolder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wef3hb_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "classes folder");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classes folder");
     editorCell.setCellId("Constant_wef3hb_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

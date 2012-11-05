@@ -49,7 +49,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ie6eqd_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ie6eqd_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -105,7 +105,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
             cell.getSNode()
           ), (cell == null ?
             null :
-            cell.getEditorContext()
+            cell.getContext()
           ));
         }
       });
@@ -121,7 +121,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_ie6eqd_a0b0(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ie6eqd_a0b0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else {

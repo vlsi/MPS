@@ -26,7 +26,8 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.Rectangle;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -120,7 +121,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
           });
         }
       });
-      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Rectangle cellBounds = ((EditorCell) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell()).getBounds();
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
       RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 

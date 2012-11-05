@@ -55,7 +55,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   }
 
   private EditorCell createConstant_h8lpox_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "replace child (custom child's concept)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (custom child's concept)");
     editorCell.setCellId("Constant_h8lpox_a0a");
     {
       Style style = editorCell.getStyle();
@@ -67,7 +67,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   }
 
   private EditorCell createConstant_h8lpox_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_h8lpox_a1a");
     {
       Style style = editorCell.getStyle();
@@ -78,7 +78,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   }
 
   private EditorCell createConstant_h8lpox_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "concept of child");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept of child");
     editorCell.setCellId("Constant_h8lpox_b1a");
     {
       Style style = editorCell.getStyle();
@@ -89,7 +89,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   }
 
   private EditorCell createConstant_h8lpox_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_h8lpox_c1a");
     {
       Style style = editorCell.getStyle();

@@ -4,7 +4,6 @@ package jetbrains.mps.gwt.client.stubs;
 
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -44,8 +43,7 @@ import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 public class GWTStubsSource extends StubModelDataSource implements FastFindSupportProvider {
   private String path;
 
-  public GWTStubsSource(SModuleReference origin, String path) {
-    super(origin);
+  public GWTStubsSource(String path) {
     this.path = path;
   }
 
@@ -71,8 +69,8 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), path, module) {
       @Override
-      public StubModelDataSource createStubsSource(SModuleReference origin, String path) {
-        return new GWTStubsSource(origin, path);
+      public StubModelDataSource createStubsSource(String path) {
+        return new GWTStubsSource(path);
       }
     };
     GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {

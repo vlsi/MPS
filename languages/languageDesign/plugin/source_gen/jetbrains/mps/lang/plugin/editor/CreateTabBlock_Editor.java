@@ -37,7 +37,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kdmyd8_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "command:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "command:");
     editorCell.setCellId("Constant_kdmyd8_a0a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -15,7 +15,7 @@ public class LiteralI_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_kk4rft_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "i");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
     editorCell.setCellId("Constant_kk4rft_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

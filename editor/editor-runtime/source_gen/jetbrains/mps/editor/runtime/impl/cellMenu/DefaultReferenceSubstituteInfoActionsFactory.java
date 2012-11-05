@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 
-
 /**
  * TODO: merge with DefaultReferenceSubstituteInfo
  */

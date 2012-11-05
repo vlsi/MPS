@@ -33,7 +33,7 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k3sm1x_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "error");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error");
     editorCell.setCellId("Constant_k3sm1x_a0");
     {
       Style style = editorCell.getStyle();
@@ -44,7 +44,7 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_k3sm1x_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_k3sm1x_c0");
     {
       Style style = editorCell.getStyle();

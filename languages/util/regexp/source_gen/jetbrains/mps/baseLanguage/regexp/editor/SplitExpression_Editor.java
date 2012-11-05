@@ -29,7 +29,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_b94n19_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "split with");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "split with");
     editorCell.setCellId("Constant_b94n19_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

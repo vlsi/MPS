@@ -122,35 +122,35 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xc5f9o_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "operation concepts:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation concepts:");
     editorCell.setCellId("Constant_xc5f9o_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "left operand type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left operand type:");
     editorCell.setCellId("Constant_xc5f9o_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is exact:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_xc5f9o_c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_a4b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "use strong subtyping");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
     editorCell.setCellId("Constant_xc5f9o_a4b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_f1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "    ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_xc5f9o_f1a");
     {
       Style style = editorCell.getStyle();
@@ -161,42 +161,42 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xc5f9o_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "right operand type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right operand type:");
     editorCell.setCellId("Constant_xc5f9o_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is exact:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_xc5f9o_c2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_a4c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "use strong subtyping");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
     editorCell.setCellId("Constant_xc5f9o_a4c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "is applicable:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_xc5f9o_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "operation type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation type:");
     editorCell.setCellId("Constant_xc5f9o_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "-----------------------------------------------");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-----------------------------------------------");
     editorCell.setCellId("Constant_xc5f9o_h0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -401,7 +401,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, this.getOwner(), "|");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), "|");
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);

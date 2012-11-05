@@ -36,7 +36,10 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   private final Object LOCK = new Object();
 
   protected ClassLoadingModule() {
+  }
 
+  protected ClassLoadingModule(IFile myDescriptorFile) {
+    super(myDescriptorFile);
   }
 
   public Class getClass(String fqName) {

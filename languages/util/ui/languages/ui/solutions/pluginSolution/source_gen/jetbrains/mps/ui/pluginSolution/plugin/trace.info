@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5487985028841950172" modelId="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841950333" fileName="Variants.java" startLine="16" startPosition="23" endLine="17" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGS" />
-    <nodeInfo nodeId="5487985028841950344" fileName="Variants.java" startLine="17" startPosition="161" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="5487985028841950348" fileName="Variants.java" startLine="18" startPosition="42" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISPOSED" />
-    <nodeInfo nodeId="5487985028841950173" fileName="Variants.java" startLine="20" startPosition="0" endLine="21" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="variantLanguages" />
+    <nodeInfo nodeId="5487985028841950333" fileName="Variants.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGS" />
+    <nodeInfo nodeId="5487985028841950344" fileName="Variants.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="5487985028841950348" fileName="Variants.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISPOSED" />
+    <nodeInfo nodeId="5487985028841950173" fileName="Variants.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="variantLanguages" />
     <nodeInfo nodeId="5487985028841950359" fileName="Variants.java" startLine="24" startPosition="35" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950192" fileName="Variants.java" startLine="29" startPosition="52" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950209" fileName="Variants.java" startLine="34" startPosition="54" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -19,26 +19,26 @@
     <nodeInfo nodeId="5487985028841950324" fileName="Variants.java" startLine="80" startPosition="5" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950329" fileName="Variants.java" startLine="84" startPosition="46" endLine="85" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950356" fileName="Variants.java" startLine="23" startPosition="26" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5487985028841950184" fileName="Variants.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addVariant#(Ljava/lang/String;Ljetbrains/mps/project/IModule;)V" />
     <nodeInfo nodeId="5487985028841950207" fileName="Variants.java" startLine="33" startPosition="90" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="5487985028841950222" fileName="Variants.java" startLine="39" startPosition="27" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="5487985028841950235" fileName="Variants.java" startLine="46" startPosition="52" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5487985028841950251" fileName="Variants.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5487985028841950272" fileName="Variants.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
     <nodeInfo nodeId="5487985028841950298" fileName="Variants.java" startLine="70" startPosition="35" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841950315" fileName="Variants.java" startLine="77" startPosition="45" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841950184" fileName="Variants.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addVariant#(Ljava/lang/String;Ljetbrains/mps/project/IModule;)V" />
-    <nodeInfo nodeId="5487985028841950251" fileName="Variants.java" startLine="53" startPosition="125" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5487985028841950272" fileName="Variants.java" startLine="61" startPosition="123" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
-    <nodeInfo nodeId="5487985028841950326" fileName="Variants.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInitialized#()Z" />
-    <nodeInfo nodeId="5487985028841950353" fileName="Variants.java" startLine="22" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Variants#()V" />
+    <nodeInfo nodeId="5487985028841950326" fileName="Variants.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInitialized#()Z" />
+    <nodeInfo nodeId="5487985028841950353" fileName="Variants.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Variants#()V" />
+    <nodeInfo nodeId="5487985028841950199" fileName="Variants.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runRegistrations#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="5487985028841950219" fileName="Variants.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="5487985028841950245" fileName="Variants.java" startLine="52" startPosition="54" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950264" fileName="Variants.java" startLine="60" startPosition="64" endLine="65" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950295" fileName="Variants.java" startLine="69" startPosition="53" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="5487985028841950199" fileName="Variants.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runRegistrations#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="5487985028841950219" fileName="Variants.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="5487985028841950228" fileName="Variants.java" startLine="44" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5487985028841950312" fileName="Variants.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ui/pluginSolution/plugin/Variants;" />
-    <nodeInfo nodeId="5487985028841950242" fileName="Variants.java" startLine="51" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="availableVariants#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5487985028841950261" fileName="Variants.java" startLine="59" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="moduleToGenerate#(Ljava/lang/String;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="5487985028841950286" fileName="Variants.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="register#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="5487985028841950228" fileName="Variants.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5487985028841950312" fileName="Variants.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ui/pluginSolution/plugin/Variants;" />
+    <nodeInfo nodeId="5487985028841950242" fileName="Variants.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="availableVariants#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5487985028841950261" fileName="Variants.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="moduleToGenerate#(Ljava/lang/String;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="5487985028841950286" fileName="Variants.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="register#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
     <scopeInfo nodeId="5487985028841950358" fileName="Variants.java" startLine="24" startPosition="35" endLine="25" endPosition="22" />
     <scopeInfo nodeId="5487985028841950191" fileName="Variants.java" startLine="29" startPosition="52" endLine="30" endPosition="99" />
     <scopeInfo nodeId="5487985028841950208" fileName="Variants.java" startLine="34" startPosition="54" endLine="35" endPosition="66" />
@@ -50,37 +50,37 @@
     <scopeInfo nodeId="5487985028841950316" fileName="Variants.java" startLine="78" startPosition="27" endLine="79" endPosition="57" />
     <scopeInfo nodeId="5487985028841950328" fileName="Variants.java" startLine="84" startPosition="46" endLine="85" endPosition="28" />
     <scopeInfo nodeId="5487985028841950355" fileName="Variants.java" startLine="23" startPosition="26" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="5487985028841950206" fileName="Variants.java" startLine="33" startPosition="90" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="5487985028841950221" fileName="Variants.java" startLine="39" startPosition="27" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="5487985028841950297" fileName="Variants.java" startLine="70" startPosition="35" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="5487985028841950184" fileName="Variants.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5487985028841950184" fileName="Variants.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5487985028841950187" varName="lang" />
       <varInfo nodeId="5487985028841950185" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950230" fileName="Variants.java" startLine="45" startPosition="30" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="5487985028841950251" fileName="Variants.java" startLine="53" startPosition="125" endLine="57" endPosition="0">
+    <scopeInfo nodeId="5487985028841950206" fileName="Variants.java" startLine="33" startPosition="90" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="5487985028841950221" fileName="Variants.java" startLine="39" startPosition="27" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="5487985028841950251" fileName="Variants.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="5487985028841950251" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950272" fileName="Variants.java" startLine="61" startPosition="123" endLine="65" endPosition="0">
+    <scopeInfo nodeId="5487985028841950272" fileName="Variants.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="5487985028841950272" varName="t" />
     </scopeInfo>
+    <scopeInfo nodeId="5487985028841950297" fileName="Variants.java" startLine="70" startPosition="35" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="5487985028841950326" fileName="Variants.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950230" fileName="Variants.java" startLine="45" startPosition="30" endLine="49" endPosition="5" />
     <scopeInfo nodeId="5487985028841950314" fileName="Variants.java" startLine="77" startPosition="45" endLine="81" endPosition="20" />
-    <scopeInfo nodeId="5487985028841950326" fileName="Variants.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="5487985028841950353" fileName="Variants.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="5487985028841950244" fileName="Variants.java" startLine="52" startPosition="54" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="5487985028841950263" fileName="Variants.java" startLine="60" startPosition="64" endLine="65" endPosition="12" />
-    <scopeInfo nodeId="5487985028841950199" fileName="Variants.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="5487985028841950353" fileName="Variants.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950199" fileName="Variants.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="5487985028841950200" varName="regs" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950219" fileName="Variants.java" startLine="38" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950219" fileName="Variants.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950244" fileName="Variants.java" startLine="52" startPosition="54" endLine="57" endPosition="7" />
+    <scopeInfo nodeId="5487985028841950263" fileName="Variants.java" startLine="60" startPosition="64" endLine="65" endPosition="12" />
+    <scopeInfo nodeId="5487985028841950228" fileName="Variants.java" startLine="45" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="5487985028841950289" fileName="Variants.java" startLine="68" startPosition="86" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="5487985028841950228" fileName="Variants.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="5487985028841950312" fileName="Variants.java" startLine="76" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="5487985028841950242" fileName="Variants.java" startLine="51" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5487985028841950261" fileName="Variants.java" startLine="59" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="5487985028841950312" fileName="Variants.java" startLine="77" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950242" fileName="Variants.java" startLine="52" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950261" fileName="Variants.java" startLine="60" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="5487985028841950284" varName="variant" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950286" fileName="Variants.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="5487985028841950286" fileName="Variants.java" startLine="68" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="5487985028841950308" varName="regBlock" />
     </scopeInfo>
     <unitInfo nodeId="5487985028841950251" fileName="Variants.java" startLine="53" startPosition="76" endLine="57" endPosition="5" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants$1" />
@@ -88,45 +88,45 @@
     <unitInfo nodeId="5487985028841950172" fileName="Variants.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants" />
   </root>
   <root nodeId="5487985028841950363" modelId="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841950364" fileName="Variants_CustomApplicationPlugin.java" startLine="7" startPosition="83" endLine="8" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="variants" />
+    <nodeInfo nodeId="5487985028841950364" fileName="Variants_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="variants" />
     <nodeInfo nodeId="5487985028841950369" fileName="Variants_CustomApplicationPlugin.java" startLine="13" startPosition="24" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950376" fileName="Variants_CustomApplicationPlugin.java" startLine="14" startPosition="68" endLine="15" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950384" fileName="Variants_CustomApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950390" fileName="Variants_CustomApplicationPlugin.java" startLine="19" startPosition="61" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Variants_CustomApplicationPlugin#()V" />
-    <nodeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
-    <nodeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
+    <nodeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Variants_CustomApplicationPlugin#()V" />
+    <nodeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
+    <nodeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
     <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="10" startPosition="45" endLine="10" endPosition="45" />
-    <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <scopeInfo nodeId="5487985028841950368" fileName="Variants_CustomApplicationPlugin.java" startLine="13" startPosition="24" endLine="15" endPosition="58" />
     <scopeInfo nodeId="5487985028841950383" fileName="Variants_CustomApplicationPlugin.java" startLine="18" startPosition="27" endLine="20" endPosition="58" />
-    <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="5487985028841950363" fileName="Variants_CustomApplicationPlugin.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.pluginSolution.plugin.Variants_CustomApplicationPlugin" />
   </root>
   <root nodeId="7162597690967997054" modelId="r:7c3ddb9d-2636-40d4-bfd7-ff3fc5bad172(jetbrains.mps.ui.pluginSolution.plugin)">
-    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="5" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="82" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="52" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="28" startPosition="5" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
+    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
     <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="23" startPosition="112" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initCustomParts#()Ljava/util/List;" />
+    <nodeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initCustomParts#()Ljava/util/List;" />
     <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="45" endLine="15" endPosition="45" />
     <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="5" endLine="27" endPosition="20">
       <varInfo nodeId="7162597690967997054" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="29" endPosition="15">
       <varInfo nodeId="7162597690967997054" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="7162597690967997054" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ui.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   </root>
 </debugInfo>

@@ -30,7 +30,7 @@ public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeE
   }
 
   private EditorCell createConstant_oe6cnf_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "~");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
     editorCell.setCellId("Constant_oe6cnf_a0");
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
     {

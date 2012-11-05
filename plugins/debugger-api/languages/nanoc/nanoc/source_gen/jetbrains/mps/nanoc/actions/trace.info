@@ -35,8 +35,8 @@
     <scopeInfo nodeId="6585869519574724397" fileName="QueriesGenerated.java" startLine="41" startPosition="149" endLine="46" endPosition="5" />
   </root>
   <root nodeId="6585869519574739817" modelId="r:06cc3258-66fd-4250-9712-b65b9d7d629a(jetbrains.mps.nanoc.actions)">
-    <nodeInfo nodeId="6585869519574740985" fileName="QueriesGenerated.java" startLine="33" startPosition="31" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a3" />
-    <nodeInfo nodeId="6585869519574740995" fileName="QueriesGenerated.java" startLine="34" startPosition="93" endLine="35" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0d" />
+    <nodeInfo nodeId="6585869519574740985" fileName="QueriesGenerated.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a3" />
+    <nodeInfo nodeId="6585869519574740995" fileName="QueriesGenerated.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0d" />
     <nodeInfo nodeId="6585869519574741007" fileName="QueriesGenerated.java" startLine="119" startPosition="94" endLine="120" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6585869519574741015" fileName="QueriesGenerated.java" startLine="120" startPosition="112" endLine="121" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574741032" fileName="QueriesGenerated.java" startLine="121" startPosition="62" endLine="122" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

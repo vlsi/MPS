@@ -45,7 +45,7 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_lhunxw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "extend");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extend");
     editorCell.setCellId("Constant_lhunxw_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_lhunxw_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_lhunxw_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -65,7 +65,7 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_lhunxw_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lhunxw_d0");
     {
       Style style = editorCell.getStyle();
@@ -77,7 +77,7 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   private EditorCell createConstant_lhunxw_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_lhunxw_g0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -29,6 +29,7 @@
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>
 

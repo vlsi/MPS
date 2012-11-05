@@ -21,11 +21,13 @@ import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -43,12 +45,31 @@ import java.util.Set;
 public class IdeaFileSystemProvider implements FileSystemProvider {
   static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
+  private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
+
   // Workaround for IDEA-75359
   private static final Set<VirtualFile> ourJarRootsAccessedAtLeastOnce = new HashSet<VirtualFile>();
+
+  public IdeaFileSystemProvider() {
+  }
 
   @Override
   public IFile getFile(@NotNull String path) {
     return new IdeaFile(path);
+  }
+
+  @Override
+  public void addListener(FileSystemListener listener) {
+    myListeners.addListener(listener);
+  }
+
+  @Override
+  public void removeListener(FileSystemListener listener) {
+    myListeners.removeListener(listener);
+  }
+
+  public FileSystemListenersContainer getListenersContainer() {
+    return myListeners;
   }
 
   @Override

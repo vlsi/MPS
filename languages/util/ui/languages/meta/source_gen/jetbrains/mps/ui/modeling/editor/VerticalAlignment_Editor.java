@@ -54,7 +54,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cjpy1b_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<-");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<-");
     editorCell.setCellId("Constant_cjpy1b_a0a");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0a0a()}));
@@ -62,7 +62,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cjpy1b_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " ->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ->");
     editorCell.setCellId("Constant_cjpy1b_b0a");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0b0a()}));
@@ -70,7 +70,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cjpy1b_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, " - ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " - ");
     editorCell.setCellId("Constant_cjpy1b_c0a");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0c0a()}));
@@ -78,7 +78,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cjpy1b_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<->");
     editorCell.setCellId("Constant_cjpy1b_d0a");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0d0a()}));

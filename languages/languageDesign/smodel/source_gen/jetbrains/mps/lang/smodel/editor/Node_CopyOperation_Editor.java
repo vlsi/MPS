@@ -19,7 +19,7 @@ public class Node_CopyOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_227urv_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "copy");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy");
     editorCell.setCellId("Constant_227urv_a");
     {
       Style style = editorCell.getStyle();

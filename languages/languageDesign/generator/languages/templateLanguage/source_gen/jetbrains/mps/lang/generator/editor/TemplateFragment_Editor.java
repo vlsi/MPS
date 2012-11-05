@@ -95,7 +95,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "template fragment");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template fragment");
     editorCell.setCellId("Constant_73o0fl_a0");
     {
       Style style = editorCell.getStyle();
@@ -108,7 +108,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_73o0fl_b0");
     {
       Style style = editorCell.getStyle();
@@ -119,14 +119,14 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "mapping label");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_73o0fl_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_73o0fl_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_73o0fl_b0c0");
     {
       Style style = editorCell.getStyle();
@@ -137,7 +137,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "fragment context");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fragment context");
     editorCell.setCellId("Constant_73o0fl_a1c0");
     {
       Style style = editorCell.getStyle();
@@ -148,7 +148,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_b1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_73o0fl_b1c0");
     {
       Style style = editorCell.getStyle();
@@ -159,7 +159,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<TF");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<TF");
     editorCell.setCellId("Constant_73o0fl_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -173,7 +173,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_73o0fl_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "TF>");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "TF>");
     editorCell.setCellId("Constant_73o0fl_d0");
     {
       Style style = editorCell.getStyle();

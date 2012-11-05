@@ -36,7 +36,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ryfqc2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "isSubtype");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isSubtype");
     editorCell.setCellId("Constant_ryfqc2_a0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IsSubtypeExpression_Editor.ReplaceWith_IsSubtypeExpression_cellMenu_a0a0()}));
@@ -44,7 +44,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ryfqc2_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ryfqc2_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -52,14 +52,14 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ryfqc2_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<");
     editorCell.setCellId("Constant_ryfqc2_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_ryfqc2_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ryfqc2_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -69,5 +70,13 @@ public class IoFileSystemProvider implements FileSystemProvider {
       return false;
     }
     return true;
+  }
+
+  @Override
+  public void addListener(FileSystemListener listener) {
+  }
+
+  @Override
+  public void removeListener(FileSystemListener listener) {
   }
 }

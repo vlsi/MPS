@@ -27,7 +27,7 @@ public class Macro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_diu3eo_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");
     editorCell.setCellId("Constant_diu3eo_a0");
     editorCell.setDefaultText("");
     return editorCell;

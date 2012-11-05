@@ -14,7 +14,7 @@ public class NodeUnreachable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_f2u1l9_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "unreachable");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unreachable");
     editorCell.setCellId("Constant_f2u1l9_a");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

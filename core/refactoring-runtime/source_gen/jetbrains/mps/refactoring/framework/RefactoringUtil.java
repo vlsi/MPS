@@ -215,21 +215,18 @@ public class RefactoringUtil {
 
   public static   enum Applicability {
     APPLICABLE() {
-
       public boolean lessThan(RefactoringUtil.Applicability level) {
         return false;
       }
 
     },
     NOT_APPLICABLE() {
-
       public boolean lessThan(RefactoringUtil.Applicability level) {
         return true;
       }
 
     },
     OVERRIDDEN() {
-
       public boolean lessThan(RefactoringUtil.Applicability level) {
         return level == RefactoringUtil.Applicability.APPLICABLE;
       }

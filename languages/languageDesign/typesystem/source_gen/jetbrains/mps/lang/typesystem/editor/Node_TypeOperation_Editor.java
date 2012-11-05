@@ -25,7 +25,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_63pn5a_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_63pn5a_a");
     editorCell.setDefaultText("");
     return editorCell;

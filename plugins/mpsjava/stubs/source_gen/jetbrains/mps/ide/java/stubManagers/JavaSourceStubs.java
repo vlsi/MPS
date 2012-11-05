@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
@@ -28,24 +28,24 @@ public class JavaSourceStubs extends ModelRootManagerBase {
   @Override
   public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    IFile file = FileSystem.getInstance().getFileByPath(modelRoot.getModelRoot().getPath());
+    IFile file = FileSystem.getInstance().getFileByPath(modelRoot.getPath());
     if (file.exists() && file.isDirectory()) {
-      JavaSourceStubs.this.getModelDescriptors(result, "", file, LanguageID.JAVA, ((IModule) modelRoot.getModule()));
+      JavaSourceStubs.this.getModelDescriptors(result, "", file, LanguageID.JAVA, modelRoot);
     } else {
       // ... 
-      throw new RuntimeException("Java source stubs: " + modelRoot.getModelRoot().getPath() + " isn't a good path");
+      throw new RuntimeException("Java source stubs: " + modelRoot.getPath() + " isn't a good path");
     }
     return result;
   }
 
-  /*package*/ void getModelDescriptors(List<SModelDescriptor> result, String pkg, IFile dir, String languageId, IModule module) {
+  /*package*/ void getModelDescriptors(List<SModelDescriptor> result, String pkg, IFile dir, String languageId, ModelRoot modelRoot) {
     List<IFile> subdirs = ListSequence.fromList(new ArrayList<IFile>());
     List<IFile> files = ListSequence.fromList(new ArrayList<IFile>());
     for (IFile c : ListSequence.fromList(dir.getChildren())) {
       if (c.isDirectory()) {
-        subdirs.add(c);
+        ListSequence.fromList(subdirs).addElement(c);
       } else if (c.getName().endsWith(MPSExtentions.DOT_JAVAFILE)) {
-        files.add(c);
+        ListSequence.fromList(files).addElement(c);
       }
     }
 
@@ -56,11 +56,11 @@ public class JavaSourceStubs extends ModelRootManagerBase {
         subdir.getName() :
         pkg + "." + subdir.getName()
       );
-      JavaSourceStubs.this.getModelDescriptors(result, newPkg, subdir, languageId, module);
+      JavaSourceStubs.this.getModelDescriptors(result, newPkg, subdir, languageId, modelRoot);
     }
 
     if (!(files.isEmpty())) {
-      SModelReference modelReference = StubHelper.uidForPackageInStubs(pkg, languageId, module.getModuleReference());
+      SModelReference modelReference = StubHelper.uidForPackageInStubs(pkg, languageId, modelRoot.getModule().getModuleReference());
       BaseStubModelDescriptor smd;
 
       if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
@@ -70,10 +70,10 @@ public class JavaSourceStubs extends ModelRootManagerBase {
 
       } else {
 
-        smd = new JavaSourceStubModelDescriptor(modelReference, new JavaSourceStubModelDS(module.getModuleReference(), dir.getPath()), module);
+        smd = new JavaSourceStubModelDescriptor(modelReference, new JavaSourceStubModelDS(), modelRoot.getModule());
 
         for (IFile file : ListSequence.fromList(files)) {
-          ((StubModelDataSource) smd.getSource()).addPath(file.getPath());
+          ((StubModelDataSource) smd.getSource()).addPath(file.getPath(), modelRoot);
         }
 
       }

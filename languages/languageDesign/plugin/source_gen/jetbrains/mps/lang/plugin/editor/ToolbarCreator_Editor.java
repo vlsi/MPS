@@ -33,7 +33,7 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5tw6n1_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "toolbar");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toolbar");
     editorCell.setCellId("Constant_5tw6n1_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -41,7 +41,7 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5tw6n1_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5tw6n1_b0");
     BaseLanguageStyle_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -49,14 +49,14 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5tw6n1_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_5tw6n1_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5tw6n1_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5tw6n1_f0");
     BaseLanguageStyle_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

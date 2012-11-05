@@ -44,7 +44,7 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_amcwze_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "$ref{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ref{");
     editorCell.setCellId("Constant_amcwze_a0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -57,7 +57,7 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_amcwze_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_amcwze_c0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
@@ -69,14 +69,14 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_amcwze_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "unique name in file");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unique name in file");
     editorCell.setCellId("Constant_amcwze_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_amcwze_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_amcwze_b0");
     editorCell.setDefaultText("");
     return editorCell;

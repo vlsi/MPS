@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2511103526757027810" modelId="r:6403882d-ffad-429a-8b59-eb2f29334fb1(jetbrains.mps.transformation.test.outputLang.behavior)">
-    <nodeInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2511103526757027812" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="7" startPosition="34" endLine="10" endPosition="0">
+    <scopeInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="2511103526757027810" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_Behavior" />

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil" file="CommitUtil.java">
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
-    <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />

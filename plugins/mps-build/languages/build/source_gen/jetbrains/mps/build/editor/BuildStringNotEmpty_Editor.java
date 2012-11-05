@@ -84,7 +84,7 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createError_vy9fh5_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Error editorCell = new EditorCell_Error((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "<empty>");
+      EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<empty>");
       editorCell.setCellId("Error_vy9fh5_a0a");
       return editorCell;
     }

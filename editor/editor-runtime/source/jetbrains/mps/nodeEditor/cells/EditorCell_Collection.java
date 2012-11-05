@@ -15,10 +15,20 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cellLayout.*;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayoutExt;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent_Old;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Superscript;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.selection.Selection;
@@ -27,18 +37,27 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 import java.util.Queue;
 
 /**
@@ -86,46 +105,46 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   private MouseListener myUnfoldCollectionMouseListener;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public static EditorCell_Collection createVertical(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, EditorCellListHandler handler) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Vertical(), handler);
+  public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Vertical(), handler);
   }
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public static EditorCell_Collection createHorizontal(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, EditorCellListHandler handler) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Horizontal(), handler);
+  public static EditorCell_Collection createHorizontal(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Horizontal(), handler);
   }
 
-  public static EditorCell_Collection createVertical(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Vertical(), null);
+  public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Vertical(), null);
   }
 
-  public static EditorCell_Collection createHorizontal(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Horizontal(), null);
+  public static EditorCell_Collection createHorizontal(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Horizontal(), null);
   }
 
-  public static EditorCell_Collection createIndent2(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Indent(), null);
+  public static EditorCell_Collection createIndent2(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Indent(), null);
   }
 
-  public static EditorCell_Collection createSuperscript(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Superscript(), null);
+  public static EditorCell_Collection createSuperscript(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Superscript(), null);
   }
 
-  public static EditorCell_Collection createTable(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Table(), null);
+  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Table(), null);
   }
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public static EditorCell_Collection createFlow(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, EditorCellListHandler handler) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Flow(), handler);
+  public static EditorCell_Collection createFlow(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Flow(), handler);
   }
 
-  public static EditorCell_Collection createFlow(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, new CellLayout_Flow(), null);
+  public static EditorCell_Collection createFlow(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Flow(), null);
   }
 
-  public static EditorCell_Collection create(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, CellLayout cellLayout, AbstractCellListHandler handler) {
-    return new EditorCell_Collection((EditorContext) editorContext, node, cellLayout, handler);
+  public static EditorCell_Collection create(EditorContext editorContext, SNode node, CellLayout cellLayout, AbstractCellListHandler handler) {
+    return new EditorCell_Collection(editorContext, node, cellLayout, handler);
   }
 
   public boolean isFolded() {
@@ -150,7 +169,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   private EditorCell getFoldedCell() {
     assert hasFoldedCell();
     if (myFoldedCell == null) {
-      EditorCell_Constant foldedCell = new EditorCell_Constant(getEditorContext(), getSNode(), FOLDED_TEXT);
+      EditorCell_Constant foldedCell = new EditorCell_Constant(getContext(), getSNode(), FOLDED_TEXT);
       Style style = foldedCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, Color.lightGray);
@@ -253,8 +272,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   private void setBraces() {
-    myOpeningBrace = new EditorCell_Brace(getEditorContext(), getSNode(), true);
-    myClosingBrace = new EditorCell_Brace(getEditorContext(), getSNode(), false);
+    myOpeningBrace = new EditorCell_Brace(getContext(), getSNode(), true);
+    myClosingBrace = new EditorCell_Brace(getContext(), getSNode(), false);
 
     if (myLastCellSelectionListener == null) {
       myLastCellSelectionListener = new MyLastCellSelectionListener();
@@ -454,7 +473,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       removeFoldingListenerForChildren();
     }
     if (!programmaticaly) {
-      getEditorContext().flushEvents();
+      getContext().flushEvents();
       getEditor().relayout();
       adjustSelectionToFoldingState(getEditor());
     }
@@ -569,7 +588,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
 
     if (!programmaticaly) {
-      getEditorContext().flushEvents();
+      getContext().flushEvents();
       getEditor().relayout();
       adjustSelectionToFoldingState(getEditor());
     }
@@ -834,11 +853,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   private class SelectFirstChild extends EditorCellAction {
-    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+    public boolean canExecute(EditorContext context) {
       return EditorCell_Collection.this.isSelected() && findChild(CellFinders.FIRST_SELECTABLE_LEAF) != null;
     }
 
-    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
+    public void execute(EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       editorComponent.clearSelectionStack();
       editorComponent.changeSelection(findChild(CellFinders.FIRST_SELECTABLE_LEAF));
@@ -846,11 +865,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   private class SelectLastChild extends EditorCellAction {
-    public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+    public boolean canExecute(EditorContext context) {
       return EditorCell_Collection.this.isSelected() && findChild(CellFinders.LAST_SELECTABLE_LEAF) != null;
     }
 
-    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
+    public void execute(EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       editorComponent.clearSelectionStack();
       editorComponent.changeSelection(findChild(CellFinders.LAST_SELECTABLE_LEAF));

@@ -55,6 +55,9 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find potentially not migratable classifier links (.field, .method etc) usages" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3217566643542853018">
+      <property name="name" nameId="tpck.1169194664001" value="FindNotMigratableLinksGroup" />
+    </node>
   </roots>
   <root id="6573807532044001855">
     <node role="initBlock" roleId="tgbt.481983775135178836" type="tgbt.ProjectPluginInitBlock" typeId="tgbt.481983775135178825" id="6573807532044001874">
@@ -371,6 +374,16 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="3217566643542853018">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="3217566643542871013">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3217566643542871057">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5909355414823772787" resolveInfo="FindNotMigratableLinks" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3217566643542871194">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.4053449317375378317" resolveInfo="FlyingActions" />
     </node>
   </root>
 </model>

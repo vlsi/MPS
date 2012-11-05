@@ -79,7 +79,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_5rturt_a0");
     {
       Style style = editorCell.getStyle();
@@ -91,7 +91,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "/");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_5rturt_c0");
     {
       Style style = editorCell.getStyle();
@@ -103,7 +103,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "m");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "m");
     editorCell.setCellId("Constant_5rturt_d0");
     {
       Style style = editorCell.getStyle();
@@ -116,7 +116,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "s");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
     editorCell.setCellId("Constant_5rturt_e0");
     {
       Style style = editorCell.getStyle();
@@ -129,7 +129,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "i");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
     editorCell.setCellId("Constant_5rturt_f0");
     {
       Style style = editorCell.getStyle();
@@ -142,7 +142,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Options:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Options:");
     editorCell.setCellId("Constant_5rturt_a0_0");
     {
       Style style = editorCell.getStyle();
@@ -153,14 +153,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Case insensitive (/i) :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive (/i) :");
     editorCell.setCellId("Constant_5rturt_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5rturt_d0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5rturt_d0_0");
     {
       Style style = editorCell.getStyle();
@@ -171,14 +171,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_e0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Dot all (/s) : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all (/s) : ");
     editorCell.setCellId("Constant_5rturt_e0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5rturt_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_5rturt_g0");
     {
       Style style = editorCell.getStyle();
@@ -189,7 +189,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
     editorCell.setCellId("Constant_5rturt_h0");
     {
       Style style = editorCell.getStyle();
@@ -201,7 +201,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5rturt_i0");
     {
       Style style = editorCell.getStyle();
@@ -212,14 +212,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Multiline mode (/m) : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode (/m) : ");
     editorCell.setCellId("Constant_5rturt_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5rturt_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_5rturt_l0");
     {
       Style style = editorCell.getStyle();
@@ -230,7 +230,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
     editorCell.setCellId("Constant_5rturt_m0");
     {
       Style style = editorCell.getStyle();
@@ -242,7 +242,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_5rturt_n0");
     {
       Style style = editorCell.getStyle();
@@ -253,7 +253,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
     editorCell.setCellId("Constant_5rturt_o0");
     {
       Style style = editorCell.getStyle();
@@ -265,7 +265,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_p0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5rturt_p0");
     {
       Style style = editorCell.getStyle();
@@ -276,7 +276,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5rturt_q0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "Value:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
     editorCell.setCellId("Constant_5rturt_q0");
     editorCell.setDefaultText("");
     return editorCell;

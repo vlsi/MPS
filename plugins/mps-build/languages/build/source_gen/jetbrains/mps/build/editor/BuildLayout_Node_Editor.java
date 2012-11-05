@@ -16,7 +16,7 @@ public class BuildLayout_Node_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_s55ryp_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_s55ryp_a");
     {
       Style style = editorCell.getStyle();

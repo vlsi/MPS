@@ -97,7 +97,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bndx6c_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "as");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_bndx6c_a2a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -105,7 +105,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bndx6c_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_bndx6c_b0");
     {
       Style style = editorCell.getStyle();
@@ -116,7 +116,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bndx6c_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_bndx6c_d0");
     {
       Style style = editorCell.getStyle();
@@ -127,7 +127,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bndx6c_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant((jetbrains.mps.nodeEditor.EditorContext) editorContext, node, "alias");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alias");
     editorCell.setCellId("Constant_bndx6c_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -142,7 +142,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bndx6c_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 

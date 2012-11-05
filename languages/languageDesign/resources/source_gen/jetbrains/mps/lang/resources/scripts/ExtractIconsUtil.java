@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Set;
 import java.util.HashSet;
@@ -73,7 +73,7 @@ public class ExtractIconsUtil {
   }
 
   private static EditableSModelDescriptor getPluginModel(Language lang) {
-    DefaultSModelDescriptor plugin = LanguageAspect.PLUGIN.get(lang);
+    SModelDescriptor plugin = LanguageAspect.PLUGIN.get(lang);
     LanguageAspect aspectForModel = lang.getAspectForModel(plugin);
     return aspectForModel.getOrCreate(lang);
   }

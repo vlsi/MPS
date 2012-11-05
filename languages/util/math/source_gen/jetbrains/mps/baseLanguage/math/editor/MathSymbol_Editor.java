@@ -252,7 +252,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_b0ego6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_b0ego6_a0");
     {
       Style style = editorCell.getStyle();
@@ -263,7 +263,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createEmpty_b0ego6_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_b0ego6_d0");
     {
       Style style = editorCell.getStyle();
