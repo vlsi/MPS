@@ -92,4 +92,10 @@ public interface EditorContext {
   void openInspector();
 
   SModel getModel();
+
+  Object createMemento(boolean full);
+
+  Object createMemento();
+
+  boolean setMemento(Object o);
 }
