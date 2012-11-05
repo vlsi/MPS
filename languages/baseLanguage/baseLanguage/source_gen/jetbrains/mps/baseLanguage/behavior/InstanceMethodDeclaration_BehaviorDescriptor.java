@@ -4,21 +4,16 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import java.util.Map;
-import java.util.List;
 import javax.swing.Icon;
+import java.util.List;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class InstanceMethodDeclaration_BehaviorDescriptor extends MethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IGenericDeclaration_BehaviorDescriptor, ITypeApplicable_BehaviorDescriptor {
+public class InstanceMethodDeclaration_BehaviorDescriptor extends MethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, ITypeApplicable_BehaviorDescriptor {
   public InstanceMethodDeclaration_BehaviorDescriptor() {
   }
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
-  }
-
-  public void virtual_collectGenericSubstitutions_8277080359323274918(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> applications) {
-    InstanceMethodDeclaration_Behavior.virtual_collectGenericSubstitutions_8277080359323274918(thisNode, substitutions, applications);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {

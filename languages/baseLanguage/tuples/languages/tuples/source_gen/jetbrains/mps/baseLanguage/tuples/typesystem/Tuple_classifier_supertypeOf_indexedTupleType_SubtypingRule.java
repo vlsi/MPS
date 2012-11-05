@@ -11,11 +11,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -30,17 +29,17 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
 
   public List<SNode> getSubOrSuperTypes(SNode itt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
-    String clname = "Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
-    SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a2a0().createNode(typeCheckingContext), "classifier", false));
-    for (SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      if ((clname).equals(BehaviorReflection.invokeVirtual(String.class, ct, "virtual_getNestedName_8540045600162184125", new Object[]{}))) {
-        SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a0a3a0().createNode(ct, typeCheckingContext);
-        ListSequence.fromList(result).addElement(supertype);
-        for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
-          SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
-          ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).addElement(SNodeOperations.copyNode(javatype));
-        }
+    final String ifcname = "_" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
+    SNode ifc = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a0a2a0().createNode(typeCheckingContext), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode ifc) {
+        return ifcname.equals(SPropertyOperations.getString(ifc, "name"));
       }
+    });
+    SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a3a0().createNode(ifc, typeCheckingContext);
+    ListSequence.fromList(result).addElement(supertype);
+    for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
+      SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
+      ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).addElement(SNodeOperations.copyNode(javatype));
     }
     return result;
   }
@@ -60,8 +59,8 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     return true;
   }
 
-  public static class QuotationClass_tm6bn3_a0a0a2a0 {
-    public QuotationClass_tm6bn3_a0a0a2a0() {
+  public static class QuotationClass_tm6bn3_a0a0a0a2a0 {
+    public QuotationClass_tm6bn3_a0a0a0a2a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -91,8 +90,8 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     }
   }
 
-  public static class QuotationClass_tm6bn3_a0a0a0a3a0 {
-    public QuotationClass_tm6bn3_a0a0a0a3a0() {
+  public static class QuotationClass_tm6bn3_a0a3a0 {
+    public QuotationClass_tm6bn3_a0a3a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
