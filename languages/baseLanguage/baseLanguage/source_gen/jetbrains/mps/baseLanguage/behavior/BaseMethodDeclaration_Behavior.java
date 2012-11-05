@@ -22,6 +22,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Set;
@@ -278,6 +280,32 @@ public class BaseMethodDeclaration_Behavior {
     }
 
     return result;
+  }
+
+  public static List<SNode> call_getInferrableTypeVars_6848250892784543828(final SNode thisNode) {
+    List<SNode> returnTypeVars = ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "returnType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getParent(it) == thisNode;
+      }
+    }).toListSequence();
+    List<SNode> boundTypeVars = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode p) {
+        return SNodeOperations.getDescendants(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "typeVariableDeclaration", false);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getParent(it) == thisNode;
+      }
+    }).toListSequence();
+    return ListSequence.fromList(returnTypeVars).subtract(ListSequence.fromList(boundTypeVars)).toListSequence();
   }
 
   @Deprecated

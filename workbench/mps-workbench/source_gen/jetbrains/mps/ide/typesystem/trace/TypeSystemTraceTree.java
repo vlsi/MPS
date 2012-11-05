@@ -56,6 +56,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import java.awt.Graphics;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.util.Collections;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private final IOperationContext myOperationContext;
@@ -405,7 +406,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     myDetailsTree.setOperations(operations);
   }
 
-  private static Object check_kyyn1p_a0a0a1a3c(MPSTreeNode checkedDotOperand) {
+  private static Object check_kyyn1p_a0a0a4c(MPSTreeNode checkedDotOperand, TypeSystemTraceTree.DetailsTree checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
@@ -584,25 +585,36 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
 
     @Nullable
-    public Object getData(@NonNls String id) {
+    public Object getData(@NonNls final String id) {
       MPSTreeNode currentNode = this.getCurrentNode();
       if (currentNode instanceof TypeSystemTraceTreeNode) {
-        AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a3c(currentNode);
-        if (operation == null) {
-          return null;
-        }
-        final Pair<String, String> rule = operation.getRule();
-        final SNode source = operation.getSource();
-        if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-          return myOperationContext;
-        }
-        if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
-          return rule;
-        }
-        if (source != null && source.getModel() != null) {
-          if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
-            return source;
+        final Wrappers._T<Object> _data = new Wrappers._T<Object>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            _data.value = _getData(id);
           }
+        });
+        return _data.value;
+      }
+      return null;
+    }
+
+    private Object _getData(String id) {
+      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a4c(this.getCurrentNode(), this);
+      if (operation == null) {
+        return null;
+      }
+      final Pair<String, String> rule = operation.getRule();
+      final SNode source = operation.getSource();
+      if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
+        return myOperationContext;
+      }
+      if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
+        return rule;
+      }
+      if (source != null && source.getModel() != null) {
+        if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
+          return source;
         }
       }
       return null;

@@ -108,7 +108,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(subtype, "Parameters counts don't match", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635126223", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Parameters counts don't match", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635126223", null, errorTarget);
             HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
           }
         }
