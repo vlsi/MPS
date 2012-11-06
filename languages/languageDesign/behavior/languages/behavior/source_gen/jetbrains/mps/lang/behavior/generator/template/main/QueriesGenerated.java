@@ -77,7 +77,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5914983970298771350(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ConceptMethodDeclaration_Behavior.call_getOldSuperCallerMethodName_5914983970298756775(_context.getNode());
+    return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_5914983970298756775(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1902094167073769075(final IOperationContext operationContext, final PropertyMacroContext _context) {
