@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Event_BehaviorDescriptor" />
+  <unitInfo fileName="HandleEvent_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.HandleEvent_BehaviorDescriptor" />
+  <unitInfo fileName="StateMachineTestMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTestMethod_BehaviorDescriptor" />
+  <unitInfo fileName="StateMachineTest_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_BehaviorDescriptor" />
+  <unitInfo fileName="StateMachine_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachine_BehaviorDescriptor" />
+  <unitInfo fileName="State_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.State_BehaviorDescriptor" />
+  <unitInfo fileName="Transition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Transition_BehaviorDescriptor" />
   <root nodeId="3191472212106638383" modelId="r:bf569071-47c0-4c8e-8820-c63d5ff55ed1(jetbrains.mps.samples.secretCompartmentLanguage.behavior)">
     <nodeInfo nodeId="1197251292013" fileName="StateMachineTest_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3191472212106638383" fileName="StateMachineTest_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
