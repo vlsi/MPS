@@ -153,9 +153,9 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="319021450862604090">
-          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
           <property name="vertical" nameId="tpc2.1140524450554" value="false" />
           <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp68.319021450862604085" />
           <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="319021450862604091">
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="319021450862604092">
@@ -251,9 +251,9 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="319021450862601966">
-          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
           <property name="vertical" nameId="tpc2.1140524450554" value="false" />
           <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp68.319021450862590135" />
           <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="319021450862601967">
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="319021450862601968">
@@ -292,46 +292,7 @@
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1179333322202">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Flow" typeId="tpc2.1106270637846" id="1179333322203" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322204">
-        <property name="text" nameId="tpc2.1073389577007" value="Package" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322205">
-        <property name="text" nameId="tpc2.1073389577007" value="name" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322206">
-        <property name="text" nameId="tpc2.1073389577007" value="may" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322207">
-        <property name="text" nameId="tpc2.1073389577007" value="be" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322208">
-        <property name="text" nameId="tpc2.1073389577007" value="splitted" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322209">
-        <property name="text" nameId="tpc2.1073389577007" value="from" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322210">
-        <property name="text" nameId="tpc2.1073389577007" value="short" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322211">
-        <property name="text" nameId="tpc2.1073389577007" value="class" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322212">
-        <property name="text" nameId="tpc2.1073389577007" value="name" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322213">
-        <property name="text" nameId="tpc2.1073389577007" value="with" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322214">
-        <property name="text" nameId="tpc2.1073389577007" value="either" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322215">
-        <property name="text" nameId="tpc2.1073389577007" value="'.'" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322216">
-        <property name="text" nameId="tpc2.1073389577007" value="or" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1179333322217">
-        <property name="text" nameId="tpc2.1073389577007" value="'!'" />
+        <property name="text" nameId="tpc2.1073389577007" value="Package name may be splitted from short class name with either '.' or '!'" />
       </node>
     </node>
   </root>
@@ -1097,9 +1058,9 @@
             </node>
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="3421461530438559987">
-            <property name="separatorText" nameId="tpc2.1140524450557" value="," />
             <property name="vertical" nameId="tpc2.1140524450554" value="false" />
             <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+            <property name="separatorText" nameId="tpc2.1140524450557" value="," />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp68.3421461530438559756" />
             <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3421461530438559988">
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="3421461530438559989">
@@ -1559,9 +1520,9 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1100832983841311047">
-          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
           <property name="vertical" nameId="tpc2.1140524450554" value="false" />
           <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+          <property name="separatorText" nameId="tpc2.1140524450557" value="," />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp68.1100832983841311028" />
           <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1100832983841311048">
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1100832983841311049">
