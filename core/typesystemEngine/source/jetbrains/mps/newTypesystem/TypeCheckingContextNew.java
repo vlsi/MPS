@@ -47,16 +47,26 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private static Logger LOG = Logger.getLogger(TypeCheckingContextNew.class);
 
   public final Object TYPECHECKING_LOCK = new Object();
+
   private State myState;
+
   private SNode myRootNode;
+
   private TypeChecker myTypeChecker;
+
   private NodeTypesComponent myNodeTypesComponent;
+
+
   private boolean myIsNonTypesystemComputation = false;
   private boolean myIsTraceMode = false;
   private boolean myIsInferenceMode = false;
+
+
   private IOperationContext myOperationContext;
+
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
+
   private boolean myIsSingleTypeComputation = false;
 
   //normal mode - all types calculation, generation mode - single type computation
@@ -68,12 +78,19 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myTypeChecker = typeChecker;
   }
 
+  /**
+   *
+   * @param rootNode
+   * @param typeChecker
+   * @param computeSingleType
+   */
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean computeSingleType) {
+    this(rootNode, typeChecker);
     myIsSingleTypeComputation = computeSingleType;
-    myState = new State(this);
-    myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
-    myTypeChecker = typeChecker;
+  }
+
+  public boolean isSingleTypeComputation() {
+    return myIsSingleTypeComputation;
   }
 
   @Override
@@ -337,10 +354,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return resultType;
   }
 
-  @Override
-  public SubtypingManager getSubtypingManager() {
-    return myTypeChecker.getSubtypingManager();
-  }
 
   @Override
   public void dispose() {
@@ -566,11 +579,4 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return messages.get(0);
   }
 
-  public boolean isSingleTypeComputation() {
-    return myIsSingleTypeComputation;
-  }
-
-  public void setSingleTypeComputation(boolean isSingleTypeComputation) {
-    myIsSingleTypeComputation = isSingleTypeComputation;
-  }
 }

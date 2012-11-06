@@ -32,7 +32,6 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class TypeCheckingContext {
-  public abstract SubtypingManager getSubtypingManager();
 
   public abstract Map<SNode, SNode> getMainContext();
 
@@ -211,7 +210,6 @@ public abstract class TypeCheckingContext {
   //returns the most serious error for node (warning if no errors, info if no warnings and errors)
   public abstract IErrorReporter getTypeMessageDontCheck(SNode node);
   public abstract boolean isSingleTypeComputation();
-  public abstract void setSingleTypeComputation(boolean isSingleTypeComputation);
   public abstract void clear();
 
   public static class NodeInfo {

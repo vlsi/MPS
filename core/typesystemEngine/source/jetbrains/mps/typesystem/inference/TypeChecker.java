@@ -52,26 +52,26 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   public final Object LISTENERS_LOCK = new Object();
 
-  private SubtypingManager mySubtypingManager;
-  private RuntimeSupport myRuntimeSupport;
-  private RulesManager myRulesManager;
-
-  private RuntimeSupport myRuntimeSupportTracer;
-  private SubtypingManager mySubtypingManagerTracer;
-
   private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
-
-  private SubtypingCache mySubtypingCache = null;
-  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
-  private SubtypingCache myGenerationSubTypingCache = null;
-
-  private Map<SNode, SNode> myComputedTypesForCompletion = null;
-
-  private IPerformanceTracer myPerformanceTracer = null;
-
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
   private final LanguageRegistry myLanguageRegistry;
+
+  private IPerformanceTracer myPerformanceTracer = null;
+
+  private SubtypingManager mySubtypingManager;
+  private SubtypingManager mySubtypingManagerTracer;
+
+  private RuntimeSupport myRuntimeSupport;
+  private RuntimeSupport myRuntimeSupportTracer;
+
+  private RulesManager myRulesManager;
+  private SubtypingCache mySubtypingCache = null;
+  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
+
+  private SubtypingCache myGenerationSubTypingCache = null;
+
+  private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
   private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
     @Override
@@ -274,8 +274,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
     TypeCheckingContext typeCheckingContext =
-      TypeContextManager.getInstance().createTypeCheckingContext(node);
-    typeCheckingContext.setSingleTypeComputation(true);
+      TypeContextManager.getInstance().createTypeCheckingContextSingle(node);
     SNode type = typeCheckingContext.computeTypeInferenceMode(node);
     typeCheckingContext.dispose();
     return type;

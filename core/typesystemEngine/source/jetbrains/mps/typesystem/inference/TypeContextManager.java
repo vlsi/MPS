@@ -44,7 +44,11 @@ public class TypeContextManager implements CoreComponent {
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
   private Map<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new THashMap<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
-  private boolean myComputeInNormalMode = false;
+
+  private boolean myComputeInNormalMode_resolverVooDoo = false;
+
+  private ThreadLocal<Set<SNode>> myResolveNodes = new ThreadLocal<Set<SNode>>();
+
   private ThreadLocal<Boolean> myResolveMode = new ThreadLocal<Boolean>() {
     @Override
     protected Boolean initialValue() {
@@ -53,9 +57,8 @@ public class TypeContextManager implements CoreComponent {
   };
 
   private TypeChecker myTypeChecker;
-  private ClassLoaderManager myClassLoaderManager;
 
-  private ThreadLocal<Set<SNode>> myResolveNodes = new ThreadLocal<Set<SNode>>();
+  private ClassLoaderManager myClassLoaderManager;
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     @Override
@@ -161,6 +164,11 @@ public class TypeContextManager implements CoreComponent {
     return new TypeCheckingContextNew(node, myTypeChecker, myTypeChecker.isGenerationMode());
   }
 
+  public TypeCheckingContext createTypeCheckingContextSingle(SNode node) {
+    ModelAccess.assertLegalRead();
+    return new TypeCheckingContextNew(node, myTypeChecker, true);
+  }
+
   private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
     return new TypeCheckingContext_Tracer(node, myTypeChecker);
@@ -253,7 +261,6 @@ public class TypeContextManager implements CoreComponent {
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
     TypeCheckingContextNew context = new TypeCheckingContextNew(root, myTypeChecker, true);
-    context.setSingleTypeComputation(true);
     return context;
   }
 
@@ -299,10 +306,10 @@ public class TypeContextManager implements CoreComponent {
 
       TypeCheckingContext context = getOrCreateContext(root, owner, true);
       try {
-        if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
-          myComputeInNormalMode = false;
+        if (myComputeInNormalMode_resolverVooDoo && context != null && context.isCheckedRoot(false)) {
+          myComputeInNormalMode_resolverVooDoo = false;
           SNode type = context.getTypeOf_normalMode(node);
-          myComputeInNormalMode = true;
+          myComputeInNormalMode_resolverVooDoo = true;
           return type;
         }
         if (isResolveMode) {
@@ -324,7 +331,10 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  public void setComputeInNormalMode(boolean computeInNormalMode) {
-    myComputeInNormalMode = computeInNormalMode;
+  /**
+   * @deprecated let's come up with something smarter
+   */
+  public void setComputeInNormalMode_resolverVooDoo(boolean computeInNormalMode_resolverVooDoo) {
+    myComputeInNormalMode_resolverVooDoo = computeInNormalMode_resolverVooDoo;
   }
 }
