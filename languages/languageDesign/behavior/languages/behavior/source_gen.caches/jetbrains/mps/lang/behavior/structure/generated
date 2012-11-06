@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4l9ecfc6vmjqywdztr7kpf8rd86a2b3">
+<dependencies version="2" modelHash="-hywfvw7j2882famotp3sm7swmmkjoz">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="21snxjnsdyx017gstofkv07qfwhy8bp" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="drfxt8i63upja5k7zfj1z568c5k4586" />
@@ -37,7 +37,7 @@
   <source id="1225194413805" name="ConceptConstructorDeclaration" hash="-69wufhh9jobq6rova4yavg5r3ctdhwx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225194472830" name="ConceptMethodDeclaration" hash="h5b37zlz7oifuctfrmsuvf20uloiy9">
+  <source id="1225194472830" name="ConceptMethodDeclaration" hash="-78p32veknw55zvzaxwlxjtusn5ri5ys">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1225194588610" name="StaticConceptMethodDeclaration" hash="-6h07gs1c85dri6pkdttkn0u5rtc5wok">
@@ -49,13 +49,13 @@
   <source id="1225194691553" name="ThisNodeExpression" hash="2zhjn49ho1ie953lanio1qpogkraekw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6496299201655527393" name="LocalBehaviorMethodCall" hash="6pgmtbfm91mqrz8cujx78td56xwm72j">
+  <source id="6496299201655527393" name="LocalBehaviorMethodCall" hash="-e9m5ejb4iqfjyik190i5vql69my2gyf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="646895014681116169" name="InternalConceptDeclarationReference" hash="hch35f4cq9rw9r57n5jvyc8nfbvfkl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="646895014681116171" name="InternalConceptDeclarationsHolder" hash="5catfvf47p8c55ctsm9gp7kduj5x53w">
+  <source id="646895014681116171" name="InternalConceptDeclarationsHolder" hash="4b564lxp597n460msf2nfdyupwyyrcw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

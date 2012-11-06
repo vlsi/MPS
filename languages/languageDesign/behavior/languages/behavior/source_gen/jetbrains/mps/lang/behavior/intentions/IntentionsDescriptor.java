@@ -13,6 +13,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     add(new MakeAbstract_Intention(), "1225201879279");
+    add(new MakeStatic_Intention(), "4748945189160275754");
     add(new MakeVirtual_Intention(), "1225201879322");
     add(new RemoveTVD_Intention(), "6678378332547031548");
   }
