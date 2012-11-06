@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -50,7 +51,7 @@ public class TextGen {
   }
 
   public static boolean canGenerateTextFor(SNode node) {
-    return !(getTextGenForNode(node) instanceof DefaultTextGen);
+    return !(getTextGenForNode(node) instanceof DefaultTextGenDescriptor);
   }
 
   public static String getExtension(SNode node) {
