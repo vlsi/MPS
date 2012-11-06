@@ -294,9 +294,6 @@ public class ConceptPropertiesHelper {
         for (SNode conceptProperty : SetSequence.fromSet(conceptProperties)) {
           SNodeOperations.deleteNode(conceptProperty);
         }
-        for (SNode conceptPropertyDeclaration : SetSequence.fromSet(conceptPropertyDeclarations)) {
-          SNodeOperations.deleteNode(conceptPropertyDeclaration);
-        }
       }
     }, searchResults);
   }
