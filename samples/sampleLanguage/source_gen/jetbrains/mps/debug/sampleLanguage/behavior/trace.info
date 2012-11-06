@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="WannabeClass_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeClass_BehaviorDescriptor" />
-  <unitInfo fileName="WannabeMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="WannabeMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethod_BehaviorDescriptor" />
   <root nodeId="7798828310133165649" modelId="r:444f499a-ac56-4a65-bc1d-a7b02f186006(jetbrains.mps.debug.sampleLanguage.behavior)">
     <nodeInfo nodeId="7798828310133165809" fileName="WannabeClass_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7798828310133165649" fileName="WannabeClass_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />

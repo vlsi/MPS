@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9cbd42465b11ofwb363rrzdpj243yzz">
+<dependencies version="2" modelHash="19o1maeotuk3uaycc6rpk9z2a9lasvc">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -53,12 +53,12 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6r1gsoq3dd0l5ofyes4ojz73yszw60" />
   <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="3xqbx0ns5e3euc4nhur47rikzb9l5ic" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
-  <common hash="cc8qy8vz6imdsg2tuozws4thtt0rom7" dependsOnNodes="true">
+  <common hash="-bqtn4e3ckd51nygdymt8ucjq33fadb6" dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="7545884443035896082" name="ReRunMergeFromBackup" hash="-6h8566vrzuekz8hfp0kcjfa9kh5b7u8">
+  <source id="7545884443035896082" name="ReRunMergeFromBackup" hash="-eap9tzqhp9ku65nh8ysugcjgu4am6z8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -90,7 +90,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReRunMergeFromBackup_Action.java" />
   </source>
-  <source id="7545884443035896373" name="ShowDifferencesWithModelOnDisk" hash="-5embgsmdc1qzj74vuu0hqp1iz9m6r03">
+  <source id="7545884443035896373" name="ShowDifferencesWithModelOnDisk" hash="-9pk7g4lxgzha08j50ljgrsfd1e84btr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -149,7 +149,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="ModuleVcsActions_ActionGroup.java" />
   </source>
-  <source id="7545884443035924713" name="IgnoreModuleInVcs" hash="-bj3n9n7sidfx00xe8m6nck0o7x398bm">
+  <source id="7545884443035924713" name="IgnoreModuleInVcs" hash="-7vv7c8bo4y9pg522u0ilnc0n0fd1guf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -177,7 +177,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IgnoreModuleInVcs_Action.java" />
   </source>
-  <source id="7545884443035924748" name="AddModuleToVcs" hash="-e0lrhyjw1hqd3xyi86otzfm8f73dm5m">
+  <source id="7545884443035924748" name="AddModuleToVcs" hash="-33ryrf006nmb4dayexunbvnnl8ir5je">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -205,7 +205,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddModuleToVcs_Action.java" />
   </source>
-  <source id="7545884443035919781" name="ShowDiffererenceWithCurrentRevision" hash="8m4wqt9xdvy16wlxpjruzyazfqn7rjb">
+  <source id="7545884443035919781" name="ShowDiffererenceWithCurrentRevision" hash="5ujgihsnxcvx4rmjlddzonbnq2g1x9c">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -234,7 +234,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ShowDiffererenceWithCurrentRevision_Action.java" />
   </source>
-  <source id="3531023421907347091" name="VCS Integration for MPS" hash="7eole4fc72uga3rtmo9jv4dzydap3kf">
+  <source id="3531023421907347091" name="VCS Integration for MPS" hash="-v3pgp5ygzo0bzjwaxkg1vacv5cjs4t">
     <dep root="7162597690968188471" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.components(MPS.Platform/com.intellij.openapi.components@java_stub)" />
@@ -263,7 +263,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="MakeFromChangesView_ActionGroup.java" />
   </source>
-  <source id="1156564534683188476" name="MakeOrRebuildModelsFromChangeList" hash="-591g27mp71ik9ou6ayx7cadc4z9z3xv">
+  <source id="1156564534683188476" name="MakeOrRebuildModelsFromChangeList" hash="-bkptr68y55obu00p10jb9bx9sg380r3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -284,7 +284,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MakeOrRebuildModelsFromChangeList_Action.java" />
   </source>
-  <source id="3877003870834324810" name="CompareTransientModels" hash="76c0cxllnbmpj060me5gpmpmpr4daax">
+  <source id="3877003870834324810" name="CompareTransientModels" hash="-9sltetqx88u8xrkxn3gshs2nd9ljdwj">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -345,7 +345,7 @@
     <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" />
     <file name="Vcs_ApplicationPlugin.java" />
   </source>
-  <source id="5047908084943665620" name="TestMergeAction" hash="-3z0kepnvyma5wdg6rsjg1k96yedvj0w">
+  <source id="5047908084943665620" name="TestMergeAction" hash="-bws2gxrl9skj9llp475ji38m3y6ctic">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

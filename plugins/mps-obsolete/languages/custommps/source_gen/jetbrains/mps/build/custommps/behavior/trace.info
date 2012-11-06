@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="LibraryFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_BehaviorDescriptor" />
-  <unitInfo fileName="MPSBuild_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_BehaviorDescriptor" />
   <root nodeId="1233155892819" modelId="r:0053416c-db1b-459c-a55a-a05cf9d1cf89(jetbrains.mps.build.custommps.behavior)">
     <nodeInfo nodeId="8868408063538039041" fileName="MPSBuild_Behavior.java" startLine="26" startPosition="43" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233155998228" fileName="MPSBuild_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
