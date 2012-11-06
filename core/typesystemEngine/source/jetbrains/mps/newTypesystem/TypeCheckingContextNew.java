@@ -61,15 +61,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private boolean myIsTraceMode = false;
   private boolean myIsInferenceMode = false;
 
-
-  private IOperationContext myOperationContext;
-
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
-
-  private boolean myIsSingleTypeComputation = false;
-
-  //normal mode - all types calculation, generation mode - single type computation
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     myState = new State(this);
@@ -459,16 +452,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public void setOperationContext(IOperationContext context) {
-    myOperationContext = context;
-  }
-
-  @Override
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
-  }
-
-  @Override
   public void runTypeCheckingAction(Runnable r) {
     synchronized (TYPECHECKING_LOCK) {
       r.run();
@@ -530,7 +513,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       checkRoot(refreshTypes);
       //non-typesystem checks
-      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(getOperationContext());
+      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(null);
 
       return new THashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
     }

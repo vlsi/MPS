@@ -274,7 +274,6 @@ class NonTypeSystemComponent extends CheckingComponent {
     if (root == null) return;
     doInvalidate();
     myNodeTypesComponent.setNonTypeSystemCheckingInProgress(true);
-    getTypeCheckingContext().setOperationContext(context);
     try {
       Queue<SNode> frontier = new LinkedList<SNode>();
       frontier.add(root);
@@ -285,7 +284,6 @@ class NonTypeSystemComponent extends CheckingComponent {
       }
       //all error reporters must be simple reporters, no error expansion needed
     } finally {
-      getTypeCheckingContext().setOperationContext(null);
       myNodeTypesComponent.setNonTypeSystemCheckingInProgress(false);
       myInvalidationWasPerformed = false;
     }

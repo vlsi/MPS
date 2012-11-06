@@ -165,10 +165,6 @@ public abstract class TypeCheckingContext {
 
   public abstract NodeTypesComponent getBaseNodeTypesComponent();
 
-  public abstract void setOperationContext(IOperationContext context);
-
-  public abstract IOperationContext getOperationContext();
-
   public abstract void runTypeCheckingAction(Runnable r);
 
   public abstract <T> T runTypeCheckingAction(Computable<T> c);
