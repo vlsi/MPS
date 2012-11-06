@@ -188,7 +188,7 @@
       <varInfo nodeId="852155438141020164" varName="allowWarnings" />
       <varInfo nodeId="1215078403182" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6273236171923055297" fileName="SubtreeChecker.java" startLine="44" startPosition="34" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6273236171923055297" fileName="SubtreeChecker.java" startLine="44" startPosition="34" endLine="44" endPosition="56" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker$1" />
     <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="34" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
   </root>
   <root nodeId="1221569991485" modelId="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)">

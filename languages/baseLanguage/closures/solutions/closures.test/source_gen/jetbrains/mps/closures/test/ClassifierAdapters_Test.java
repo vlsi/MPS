@@ -230,7 +230,7 @@ __switch__:
       public void run() {
         foo.value = 42;
       }
-    });
+    }) {};
     trd.start();
     try {
       trd.join();

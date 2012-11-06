@@ -3104,7 +3104,7 @@
     <scopeInfo nodeId="739457190729177668" fileName="ChangeGroupMessages.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="739457190729189663" fileName="ChangeGroupMessages.java" startLine="30" startPosition="34" endLine="39" endPosition="7" />
     <scopeInfo nodeId="739457190729189660" fileName="ChangeGroupMessages.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
-    <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="14" endPosition="0" />
+    <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="15" endPosition="79" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$1" />
     <unitInfo nodeId="9208869176467556553" fileName="ChangeGroupMessages.java" startLine="33" startPosition="39" endLine="37" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183618" fileName="ChangeGroupMessages.java" startLine="48" startPosition="67" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="5837303828188495132" fileName="ChangeGroupMessages.java" startLine="31" startPosition="39" endLine="39" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />

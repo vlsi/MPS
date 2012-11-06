@@ -1,290 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1183980545104" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
-    <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="180" startPosition="29" endLine="180" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="179" startPosition="29" endLine="179" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="17" startPosition="24" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="18" startPosition="63" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="22" startPosition="33" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184238624130" fileName="TryFeatures.java" startLine="27" startPosition="42" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
-    <nodeInfo nodeId="1197705695677" fileName="TryFeatures.java" startLine="42" startPosition="38" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="47" startPosition="29" endLine="48" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="49" startPosition="7" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="55" startPosition="69" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="59" startPosition="43" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="60" startPosition="33" endLine="61" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="61" startPosition="84" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="67" startPosition="43" endLine="68" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="68" startPosition="33" endLine="69" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="69" startPosition="84" endLine="70" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="73" startPosition="7" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705709089" fileName="TryFeatures.java" startLine="78" startPosition="48" endLine="79" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="85" startPosition="69" endLine="86" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="89" startPosition="43" endLine="90" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="90" startPosition="33" endLine="91" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="91" startPosition="84" endLine="92" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="97" startPosition="43" endLine="98" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="98" startPosition="33" endLine="99" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="99" startPosition="84" endLine="100" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="103" startPosition="7" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705937142" fileName="TryFeatures.java" startLine="108" startPosition="48" endLine="109" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="115" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="117" startPosition="41" endLine="118" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="122" startPosition="42" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="124" startPosition="7" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1184067910293" fileName="TryFeatures.java" startLine="124" startPosition="7" endLine="125" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184067925893" fileName="TryFeatures.java" startLine="128" startPosition="23" endLine="129" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="134" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="136" startPosition="46" endLine="137" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184068366994" fileName="TryFeatures.java" startLine="140" startPosition="38" endLine="141" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="147" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1227876789944" fileName="TryFeatures.java" startLine="148" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_count" />
-    <nodeInfo nodeId="1227876789952" fileName="TryFeatures.java" startLine="149" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_idx" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="156" startPosition="30" endLine="157" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="157" startPosition="56" endLine="158" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="159" startPosition="29" endLine="160" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="162" startPosition="51" endLine="163" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="163" startPosition="42" endLine="164" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="165" startPosition="25" endLine="166" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="166" startPosition="40" endLine="167" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="168" startPosition="29" endLine="169" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="169" startPosition="33" endLine="170" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="170" startPosition="40" endLine="171" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="172" startPosition="29" endLine="173" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="173" startPosition="40" endLine="174" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="174" startPosition="71" endLine="175" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="176" startPosition="29" endLine="177" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227876789943" fileName="TryFeatures.java" startLine="176" startPosition="29" endLine="177" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="177" startPosition="74" endLine="178" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="178" startPosition="40" endLine="179" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="180" startPosition="29" endLine="181" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="181" startPosition="40" endLine="182" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="183" startPosition="30" endLine="184" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="186" startPosition="33" endLine="187" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="196" startPosition="38" endLine="197" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184068560651" fileName="TryFeatures.java" startLine="200" startPosition="23" endLine="201" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="209" startPosition="50" endLine="210" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="213" startPosition="33" endLine="214" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="217" startPosition="29" endLine="218" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="221" startPosition="32" endLine="222" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="225" startPosition="34" endLine="226" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="234" startPosition="50" endLine="235" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="238" startPosition="33" endLine="239" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="242" startPosition="29" endLine="243" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="246" startPosition="32" endLine="247" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="250" startPosition="34" endLine="251" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="foo_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="206" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_nodes#()V" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="231" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_attributes#()V" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1197705695677" fileName="TryFeatures.java" startLine="41" startPosition="38" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="46" startPosition="29" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="48" startPosition="7" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="54" startPosition="69" endLine="55" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="58" startPosition="43" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="59" startPosition="33" endLine="60" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="60" startPosition="84" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="66" startPosition="43" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="67" startPosition="33" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="68" startPosition="84" endLine="69" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="72" startPosition="7" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705709089" fileName="TryFeatures.java" startLine="77" startPosition="48" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="84" startPosition="69" endLine="85" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="88" startPosition="43" endLine="89" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="89" startPosition="33" endLine="90" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="90" startPosition="84" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="96" startPosition="43" endLine="97" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="97" startPosition="33" endLine="98" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="98" startPosition="84" endLine="99" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="102" startPosition="7" endLine="103" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705937142" fileName="TryFeatures.java" startLine="107" startPosition="48" endLine="108" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="114" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="116" startPosition="41" endLine="117" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="121" startPosition="42" endLine="122" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="123" startPosition="7" endLine="124" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1184067910293" fileName="TryFeatures.java" startLine="123" startPosition="7" endLine="124" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184067925893" fileName="TryFeatures.java" startLine="127" startPosition="23" endLine="128" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="133" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="135" startPosition="46" endLine="136" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184068366994" fileName="TryFeatures.java" startLine="139" startPosition="38" endLine="140" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="146" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1227876789944" fileName="TryFeatures.java" startLine="147" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_count" />
+    <nodeInfo nodeId="1227876789952" fileName="TryFeatures.java" startLine="148" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_idx" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="155" startPosition="30" endLine="156" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="156" startPosition="56" endLine="157" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="158" startPosition="29" endLine="159" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="161" startPosition="51" endLine="162" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="162" startPosition="42" endLine="163" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="164" startPosition="25" endLine="165" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="165" startPosition="40" endLine="166" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="167" startPosition="29" endLine="168" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="168" startPosition="33" endLine="169" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="169" startPosition="40" endLine="170" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="171" startPosition="29" endLine="172" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="172" startPosition="40" endLine="173" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="173" startPosition="71" endLine="174" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="175" startPosition="29" endLine="176" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876789943" fileName="TryFeatures.java" startLine="175" startPosition="29" endLine="176" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="176" startPosition="74" endLine="177" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="177" startPosition="40" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="179" startPosition="29" endLine="180" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="180" startPosition="40" endLine="181" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="182" startPosition="30" endLine="183" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="185" startPosition="33" endLine="186" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="195" startPosition="38" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184068560651" fileName="TryFeatures.java" startLine="199" startPosition="23" endLine="200" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="208" startPosition="50" endLine="209" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="212" startPosition="33" endLine="213" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="216" startPosition="29" endLine="217" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="220" startPosition="32" endLine="221" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="224" startPosition="34" endLine="225" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="233" startPosition="50" endLine="234" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="237" startPosition="33" endLine="238" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="241" startPosition="29" endLine="242" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="245" startPosition="32" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="249" startPosition="34" endLine="250" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="foo_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="205" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_nodes#()V" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="230" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_attributes#()V" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;" />
     <nodeInfo nodeId="1183980545108" fileName="TryFeatures.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="46" startPosition="47" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197705676416" fileName="TryFeatures.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1197705912408" fileName="TryFeatures.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_nodes#(Lorg/w3c/dom/Node;)V" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="121" startPosition="30" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_attributes#(Lorg/w3c/dom/Node;)V" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="196" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="221" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="225" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="234" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="238" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="242" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="246" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="250" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="45" startPosition="47" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1197705676416" fileName="TryFeatures.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1197705912408" fileName="TryFeatures.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_nodes#(Lorg/w3c/dom/Node;)V" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="120" startPosition="30" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="127" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="135" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_attributes#(Lorg/w3c/dom/Node;)V" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="195" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="199" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="208" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="212" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="216" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="220" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="224" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="233" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="237" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="241" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="245" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="249" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TryFeatures#()V" />
-    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="161" startPosition="29" endLine="165" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="121" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)Lorg/w3c/dom/Node;" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="57" startPosition="31" endLine="64" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="65" startPosition="14" endLine="72" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="87" startPosition="31" endLine="94" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="95" startPosition="14" endLine="102" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="65" startPosition="12" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="95" startPosition="12" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="56" startPosition="21" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="86" startPosition="21" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="55" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="85" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="153" startPosition="22" endLine="185" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="151" startPosition="48" endLine="186" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="151" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="145" startPosition="46" endLine="189" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="145" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="143" startPosition="42" endLine="191" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="143" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184068527933" fileName="TryFeatures.java" startLine="141" startPosition="39" endLine="193" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="140" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="39" startPosition="35" endLine="39" endPosition="35" />
-    <scopeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="180" startPosition="29" endLine="180" endPosition="29" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="206" startPosition="33" endLine="206" endPosition="33" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="231" startPosition="38" endLine="231" endPosition="38" />
+    <nodeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="160" startPosition="29" endLine="164" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="96" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="120" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)Lorg/w3c/dom/Node;" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="56" startPosition="31" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="64" startPosition="14" endLine="71" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="86" startPosition="31" endLine="93" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="94" startPosition="14" endLine="101" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="64" startPosition="12" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="94" startPosition="12" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="55" startPosition="21" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="85" startPosition="21" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="54" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="84" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="152" startPosition="22" endLine="184" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="150" startPosition="48" endLine="185" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="150" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="144" startPosition="46" endLine="188" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="144" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="142" startPosition="42" endLine="190" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="142" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184068527933" fileName="TryFeatures.java" startLine="140" startPosition="39" endLine="192" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="139" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="38" startPosition="35" endLine="38" endPosition="35" />
+    <scopeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="179" startPosition="29" endLine="179" endPosition="29" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="205" startPosition="33" endLine="205" endPosition="33" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="230" startPosition="38" endLine="230" endPosition="38" />
     <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="22" startPosition="33" endLine="23" endPosition="43" />
     <scopeInfo nodeId="1183980545110" fileName="TryFeatures.java" startLine="27" startPosition="42" endLine="28" endPosition="34" />
-    <scopeInfo nodeId="1197705668637" fileName="TryFeatures.java" startLine="42" startPosition="38" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="47" startPosition="29" endLine="48" endPosition="57" />
-    <scopeInfo nodeId="1197705676418" fileName="TryFeatures.java" startLine="78" startPosition="48" endLine="79" endPosition="18" />
-    <scopeInfo nodeId="1197705912410" fileName="TryFeatures.java" startLine="108" startPosition="48" endLine="109" endPosition="18" />
-    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="117" startPosition="41" endLine="118" endPosition="31" />
-    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="122" startPosition="42" endLine="123" endPosition="46" />
-    <scopeInfo nodeId="1184067892217" fileName="TryFeatures.java" startLine="124" startPosition="7" endLine="125" endPosition="53" />
-    <scopeInfo nodeId="1184067892219" fileName="TryFeatures.java" startLine="128" startPosition="23" endLine="129" endPosition="55" />
-    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="136" startPosition="46" endLine="137" endPosition="31" />
-    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="159" startPosition="29" endLine="160" endPosition="40" />
-    <scopeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="176" startPosition="29" endLine="177" endPosition="74" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="183" startPosition="30" endLine="184" endPosition="39" />
-    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="196" startPosition="38" endLine="197" endPosition="40" />
-    <scopeInfo nodeId="1184068102104" fileName="TryFeatures.java" startLine="200" startPosition="23" endLine="201" endPosition="55" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="209" startPosition="50" endLine="210" endPosition="49" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="213" startPosition="33" endLine="214" endPosition="18" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="217" startPosition="29" endLine="218" endPosition="21" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="221" startPosition="32" endLine="222" endPosition="19" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="225" startPosition="34" endLine="226" endPosition="19" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="234" startPosition="50" endLine="235" endPosition="54" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="238" startPosition="33" endLine="239" endPosition="18" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="242" startPosition="29" endLine="243" endPosition="26" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="246" startPosition="32" endLine="247" endPosition="19" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="250" startPosition="34" endLine="251" endPosition="19" />
+    <scopeInfo nodeId="1197705668637" fileName="TryFeatures.java" startLine="41" startPosition="38" endLine="42" endPosition="18" />
+    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="46" startPosition="29" endLine="47" endPosition="57" />
+    <scopeInfo nodeId="1197705676418" fileName="TryFeatures.java" startLine="77" startPosition="48" endLine="78" endPosition="18" />
+    <scopeInfo nodeId="1197705912410" fileName="TryFeatures.java" startLine="107" startPosition="48" endLine="108" endPosition="18" />
+    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="116" startPosition="41" endLine="117" endPosition="31" />
+    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="121" startPosition="42" endLine="122" endPosition="46" />
+    <scopeInfo nodeId="1184067892217" fileName="TryFeatures.java" startLine="123" startPosition="7" endLine="124" endPosition="53" />
+    <scopeInfo nodeId="1184067892219" fileName="TryFeatures.java" startLine="127" startPosition="23" endLine="128" endPosition="55" />
+    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="135" startPosition="46" endLine="136" endPosition="31" />
+    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="158" startPosition="29" endLine="159" endPosition="40" />
+    <scopeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="175" startPosition="29" endLine="176" endPosition="74" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="182" startPosition="30" endLine="183" endPosition="39" />
+    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="195" startPosition="38" endLine="196" endPosition="40" />
+    <scopeInfo nodeId="1184068102104" fileName="TryFeatures.java" startLine="199" startPosition="23" endLine="200" endPosition="55" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="208" startPosition="50" endLine="209" endPosition="49" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="212" startPosition="33" endLine="213" endPosition="18" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="216" startPosition="29" endLine="217" endPosition="21" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="220" startPosition="32" endLine="221" endPosition="19" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="224" startPosition="34" endLine="225" endPosition="19" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="233" startPosition="50" endLine="234" endPosition="54" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="237" startPosition="33" endLine="238" endPosition="18" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="241" startPosition="29" endLine="242" endPosition="26" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="245" startPosition="32" endLine="246" endPosition="19" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="249" startPosition="34" endLine="250" endPosition="19" />
     <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="17" startPosition="24" endLine="19" endPosition="68" />
-    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="156" startPosition="30" endLine="158" endPosition="37" />
-    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="162" startPosition="51" endLine="164" endPosition="32" />
-    <scopeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="180" startPosition="29" endLine="182" endPosition="30" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="206" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="231" startPosition="0" endLine="233" endPosition="0" />
+    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="155" startPosition="30" endLine="157" endPosition="37" />
+    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="161" startPosition="51" endLine="163" endPosition="32" />
+    <scopeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="179" startPosition="29" endLine="181" endPosition="30" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="205" startPosition="0" endLine="207" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="230" startPosition="0" endLine="232" endPosition="0" />
     <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1183980545104" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1183980545108" fileName="TryFeatures.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1183980545108" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1197705668635" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="59" startPosition="43" endLine="62" endPosition="50">
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="58" startPosition="43" endLine="61" endPosition="50">
       <varInfo nodeId="1197705676415" varName="actualValue" />
       <varInfo nodeId="1197705676415" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="67" startPosition="43" endLine="70" endPosition="39">
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="66" startPosition="43" endLine="69" endPosition="39">
       <varInfo nodeId="1197705676415" varName="actualValue" />
       <varInfo nodeId="1197705676415" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705676416" fileName="TryFeatures.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1197705676416" fileName="TryFeatures.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1197705676416" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="89" startPosition="43" endLine="92" endPosition="50">
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="88" startPosition="43" endLine="91" endPosition="50">
       <varInfo nodeId="1197705912407" varName="actualValue" />
       <varInfo nodeId="1197705912407" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="97" startPosition="43" endLine="100" endPosition="39">
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="96" startPosition="43" endLine="99" endPosition="39">
       <varInfo nodeId="1197705912407" varName="actualValue" />
       <varInfo nodeId="1197705912407" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912408" fileName="TryFeatures.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="1197705912408" fileName="TryFeatures.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1197705912408" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="117" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="1184067892215" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="128" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="136" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="127" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="135" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="1184068102100" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="168" startPosition="29" endLine="171" endPosition="30" />
-    <scopeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="172" startPosition="29" endLine="175" endPosition="36" />
-    <scopeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="176" startPosition="29" endLine="179" endPosition="30" />
-    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="196" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="200" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="209" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="167" startPosition="29" endLine="170" endPosition="30" />
+    <scopeInfo nodeId="1227876819045" fileName="TryFeatures.java" startLine="171" startPosition="29" endLine="174" endPosition="36" />
+    <scopeInfo nodeId="1227876789942" fileName="TryFeatures.java" startLine="175" startPosition="29" endLine="178" endPosition="30" />
+    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="195" startPosition="0" endLine="198" endPosition="0" />
+    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="199" startPosition="0" endLine="202" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="208" startPosition="0" endLine="211" endPosition="0">
       <varInfo nodeId="1183980545104" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="217" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="221" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="225" startPosition="0" endLine="228" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="234" startPosition="0" endLine="237" endPosition="0">
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="212" startPosition="0" endLine="215" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="216" startPosition="0" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="220" startPosition="0" endLine="223" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="224" startPosition="0" endLine="227" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="233" startPosition="0" endLine="236" endPosition="0">
       <varInfo nodeId="1183980545104" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="238" startPosition="0" endLine="241" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="242" startPosition="0" endLine="245" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="246" startPosition="0" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="250" startPosition="0" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="237" startPosition="0" endLine="240" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="241" startPosition="0" endLine="244" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="245" startPosition="0" endLine="248" endPosition="0" />
+    <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="249" startPosition="0" endLine="252" endPosition="0" />
     <scopeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="46" startPosition="47" endLine="50" endPosition="22" />
-    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="121" startPosition="30" endLine="125" endPosition="53" />
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="45" startPosition="47" endLine="49" endPosition="22" />
+    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="120" startPosition="30" endLine="124" endPosition="53" />
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="1197705676415" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="66" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1197705676415" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1197705912407" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="97" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="96" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="1197705912407" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="46" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="121" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="45" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="120" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="1184067892215" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="161" startPosition="29" endLine="167" endPosition="30" />
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="57" startPosition="31" endLine="64" endPosition="10" />
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="65" startPosition="14" endLine="72" endPosition="10" />
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="87" startPosition="31" endLine="94" endPosition="10" />
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="95" startPosition="14" endLine="102" endPosition="10" />
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="55" startPosition="69" endLine="74" endPosition="36">
+    <scopeInfo nodeId="1227876789951" fileName="TryFeatures.java" startLine="160" startPosition="29" endLine="166" endPosition="30" />
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="56" startPosition="31" endLine="63" endPosition="10" />
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="64" startPosition="14" endLine="71" endPosition="10" />
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="86" startPosition="31" endLine="93" endPosition="10" />
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="94" startPosition="14" endLine="101" endPosition="10" />
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="54" startPosition="69" endLine="73" endPosition="36">
       <varInfo nodeId="1197705676415" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="85" startPosition="69" endLine="104" endPosition="36">
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="84" startPosition="69" endLine="103" endPosition="36">
       <varInfo nodeId="1197705912407" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="55" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="54" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1197705676415" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="85" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="84" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="1197705912407" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="153" startPosition="22" endLine="185" endPosition="21" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="151" startPosition="48" endLine="187" endPosition="31" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="151" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="145" startPosition="46" endLine="189" endPosition="16" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="145" startPosition="0" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="143" startPosition="42" endLine="191" endPosition="12" />
-    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="143" startPosition="0" endLine="193" endPosition="0" />
-    <scopeInfo nodeId="1184068102102" fileName="TryFeatures.java" startLine="140" startPosition="38" endLine="193" endPosition="9">
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="152" startPosition="22" endLine="184" endPosition="21" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="150" startPosition="48" endLine="186" endPosition="31" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="150" startPosition="0" endLine="188" endPosition="0" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="144" startPosition="46" endLine="188" endPosition="16" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="144" startPosition="0" endLine="190" endPosition="0" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="142" startPosition="42" endLine="190" endPosition="12" />
+    <scopeInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="142" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="1184068102102" fileName="TryFeatures.java" startLine="139" startPosition="38" endLine="192" endPosition="9">
       <varInfo nodeId="1184068366995" varName="_node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="140" startPosition="0" endLine="195" endPosition="0" />
-    <unitInfo nodeId="1183980545111" fileName="TryFeatures.java" startLine="32" startPosition="0" endLine="35" endPosition="0" unitName="treepathFeatures.TryFeatures$Children" />
+    <scopeInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="139" startPosition="0" endLine="194" endPosition="0" />
+    <unitInfo nodeId="1183980545111" fileName="TryFeatures.java" startLine="32" startPosition="0" endLine="34" endPosition="0" unitName="treepathFeatures.TryFeatures$Children" />
     <unitInfo nodeId="1183980545108" fileName="TryFeatures.java" startLine="26" startPosition="0" endLine="31" endPosition="0" unitName="treepathFeatures.TryFeatures$Parent" />
-    <unitInfo nodeId="1197705676416" fileName="TryFeatures.java" startLine="77" startPosition="0" endLine="82" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAR_Property$Getter" />
-    <unitInfo nodeId="1197705912408" fileName="TryFeatures.java" startLine="107" startPosition="0" endLine="112" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAZ_Property$Getter" />
-    <unitInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="58" startPosition="21" endLine="64" endPosition="9" unitName="treepathFeatures.TryFeatures$1" />
-    <unitInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="66" startPosition="21" endLine="72" endPosition="9" unitName="treepathFeatures.TryFeatures$2" />
-    <unitInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="88" startPosition="21" endLine="94" endPosition="9" unitName="treepathFeatures.TryFeatures$1" />
-    <unitInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="96" startPosition="21" endLine="102" endPosition="9" unitName="treepathFeatures.TryFeatures$2" />
-    <unitInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="36" startPosition="0" endLine="53" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_NodeKindTrigger" />
-    <unitInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="114" startPosition="0" endLine="132" endPosition="0" unitName="treepathFeatures.TryFeatures$Feature_nodes" />
-    <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="205" startPosition="0" endLine="229" endPosition="0" unitName="treepathFeatures.TryFeatures$Desc_Feature_nodes" />
-    <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="230" startPosition="0" endLine="254" endPosition="0" unitName="treepathFeatures.TryFeatures$Desc_Feature_attributes" />
-    <unitInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="54" startPosition="0" endLine="83" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAR_Property" />
-    <unitInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="84" startPosition="0" endLine="113" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAZ_Property" />
-    <unitInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="146" startPosition="25" endLine="189" endPosition="15" unitName="treepathFeatures.TryFeatures$3" />
-    <unitInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="144" startPosition="21" endLine="191" endPosition="11" unitName="treepathFeatures.TryFeatures$2" />
-    <unitInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="142" startPosition="38" endLine="193" endPosition="7" unitName="treepathFeatures.TryFeatures$1" />
-    <unitInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="133" startPosition="0" endLine="204" endPosition="0" unitName="treepathFeatures.TryFeatures$Feature_attributes" />
-    <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="16" startPosition="0" endLine="255" endPosition="0" unitName="treepathFeatures.TryFeatures" />
+    <unitInfo nodeId="1197705676416" fileName="TryFeatures.java" startLine="76" startPosition="0" endLine="81" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAR_Property$Getter" />
+    <unitInfo nodeId="1197705912408" fileName="TryFeatures.java" startLine="106" startPosition="0" endLine="111" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAZ_Property$Getter" />
+    <unitInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="57" startPosition="21" endLine="63" endPosition="9" unitName="treepathFeatures.TryFeatures$1" />
+    <unitInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="65" startPosition="21" endLine="71" endPosition="9" unitName="treepathFeatures.TryFeatures$2" />
+    <unitInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="87" startPosition="21" endLine="93" endPosition="9" unitName="treepathFeatures.TryFeatures$1" />
+    <unitInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="95" startPosition="21" endLine="101" endPosition="9" unitName="treepathFeatures.TryFeatures$2" />
+    <unitInfo nodeId="1197705668635" fileName="TryFeatures.java" startLine="35" startPosition="0" endLine="52" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_NodeKindTrigger" />
+    <unitInfo nodeId="1184067892215" fileName="TryFeatures.java" startLine="113" startPosition="0" endLine="131" endPosition="0" unitName="treepathFeatures.TryFeatures$Feature_nodes" />
+    <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="204" startPosition="0" endLine="228" endPosition="0" unitName="treepathFeatures.TryFeatures$Desc_Feature_nodes" />
+    <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="229" startPosition="0" endLine="253" endPosition="0" unitName="treepathFeatures.TryFeatures$Desc_Feature_attributes" />
+    <unitInfo nodeId="1197705676415" fileName="TryFeatures.java" startLine="53" startPosition="0" endLine="82" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAR_Property" />
+    <unitInfo nodeId="1197705912407" fileName="TryFeatures.java" startLine="83" startPosition="0" endLine="112" endPosition="0" unitName="treepathFeatures.TryFeatures$foo_BAZ_Property" />
+    <unitInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="145" startPosition="25" endLine="188" endPosition="15" unitName="treepathFeatures.TryFeatures$3" />
+    <unitInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="143" startPosition="21" endLine="190" endPosition="11" unitName="treepathFeatures.TryFeatures$2" />
+    <unitInfo nodeId="1227876789941" fileName="TryFeatures.java" startLine="141" startPosition="38" endLine="192" endPosition="7" unitName="treepathFeatures.TryFeatures$1" />
+    <unitInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="132" startPosition="0" endLine="203" endPosition="0" unitName="treepathFeatures.TryFeatures$Feature_attributes" />
+    <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="16" startPosition="0" endLine="254" endPosition="0" unitName="treepathFeatures.TryFeatures" />
   </root>
   <root nodeId="1184148497590" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
     <nodeInfo nodeId="1184148604080" fileName="FeaturesDemo.java" startLine="14" startPosition="42" endLine="15" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -321,59 +321,59 @@
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="21" startPosition="63" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="25" startPosition="62" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184687141107" fileName="SNODE.java" startLine="30" startPosition="44" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="43" startPosition="56" endLine="44" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="44" startPosition="31" endLine="45" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184687034428" fileName="SNODE.java" startLine="48" startPosition="39" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="52" startPosition="39" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184687047941" fileName="SNODE.java" startLine="56" startPosition="23" endLine="57" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="65" startPosition="55" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="66" startPosition="31" endLine="67" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184688446655" fileName="SNODE.java" startLine="70" startPosition="39" endLine="71" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="74" startPosition="39" endLine="75" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184688456181" fileName="SNODE.java" startLine="78" startPosition="23" endLine="79" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="84" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="86" startPosition="45" endLine="87" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="90" startPosition="52" endLine="91" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="94" startPosition="33" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="98" startPosition="29" endLine="99" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="102" startPosition="32" endLine="103" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="106" startPosition="34" endLine="107" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="112" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="114" startPosition="44" endLine="115" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="118" startPosition="52" endLine="119" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="122" startPosition="33" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="126" startPosition="29" endLine="127" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="130" startPosition="32" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="134" startPosition="34" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="42" startPosition="56" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="43" startPosition="31" endLine="44" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184687034428" fileName="SNODE.java" startLine="47" startPosition="39" endLine="48" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="51" startPosition="39" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184687047941" fileName="SNODE.java" startLine="55" startPosition="23" endLine="56" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="64" startPosition="55" endLine="65" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="65" startPosition="31" endLine="66" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184688446655" fileName="SNODE.java" startLine="69" startPosition="39" endLine="70" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="73" startPosition="39" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184688456181" fileName="SNODE.java" startLine="77" startPosition="23" endLine="78" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="83" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="85" startPosition="45" endLine="86" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="89" startPosition="52" endLine="90" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="93" startPosition="33" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="97" startPosition="29" endLine="98" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="101" startPosition="32" endLine="102" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="105" startPosition="34" endLine="106" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="111" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="113" startPosition="44" endLine="114" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="117" startPosition="52" endLine="118" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="121" startPosition="33" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="125" startPosition="29" endLine="126" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="129" startPosition="32" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="133" startPosition="34" endLine="134" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNODE#()V" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="child#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFeatureDescriptor;" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="link#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFeatureDescriptor;" />
     <nodeInfo nodeId="1184685688050" fileName="SNODE.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_child#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_link#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_child#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_link#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_child#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_link#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_child#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_link#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
     <nodeInfo nodeId="1227876805076" fileName="SNODE_Design.java" startLine="22" startPosition="41" endLine="23" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876794368" fileName="SNODE_Design.java" startLine="26" startPosition="40" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184851332821" fileName="SNODE_Design.java" startLine="32" startPosition="62" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -433,27 +433,27 @@
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="21" startPosition="63" endLine="22" endPosition="47" />
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="25" startPosition="62" endLine="26" endPosition="46" />
     <scopeInfo nodeId="1184685688052" fileName="SNODE.java" startLine="30" startPosition="44" endLine="31" endPosition="45" />
-    <scopeInfo nodeId="1184685792726" fileName="SNODE.java" startLine="48" startPosition="39" endLine="49" endPosition="73" />
-    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="52" startPosition="39" endLine="53" endPosition="40" />
-    <scopeInfo nodeId="1184685792728" fileName="SNODE.java" startLine="56" startPosition="23" endLine="57" endPosition="80" />
-    <scopeInfo nodeId="1184688224777" fileName="SNODE.java" startLine="70" startPosition="39" endLine="71" endPosition="74" />
-    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="74" startPosition="39" endLine="75" endPosition="40" />
-    <scopeInfo nodeId="1184688224779" fileName="SNODE.java" startLine="78" startPosition="23" endLine="79" endPosition="81" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="86" startPosition="45" endLine="87" endPosition="25" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="90" startPosition="52" endLine="91" endPosition="55" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="94" startPosition="33" endLine="95" endPosition="18" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="98" startPosition="29" endLine="99" endPosition="21" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="102" startPosition="32" endLine="103" endPosition="19" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="106" startPosition="34" endLine="107" endPosition="19" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="114" startPosition="44" endLine="115" endPosition="25" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="118" startPosition="52" endLine="119" endPosition="54" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="122" startPosition="33" endLine="123" endPosition="18" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="126" startPosition="29" endLine="127" endPosition="20" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="130" startPosition="32" endLine="131" endPosition="19" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="134" startPosition="34" endLine="135" endPosition="19" />
+    <scopeInfo nodeId="1184685792726" fileName="SNODE.java" startLine="47" startPosition="39" endLine="48" endPosition="73" />
+    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="51" startPosition="39" endLine="52" endPosition="40" />
+    <scopeInfo nodeId="1184685792728" fileName="SNODE.java" startLine="55" startPosition="23" endLine="56" endPosition="80" />
+    <scopeInfo nodeId="1184688224777" fileName="SNODE.java" startLine="69" startPosition="39" endLine="70" endPosition="74" />
+    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="73" startPosition="39" endLine="74" endPosition="40" />
+    <scopeInfo nodeId="1184688224779" fileName="SNODE.java" startLine="77" startPosition="23" endLine="78" endPosition="81" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="85" startPosition="45" endLine="86" endPosition="25" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="89" startPosition="52" endLine="90" endPosition="55" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="93" startPosition="33" endLine="94" endPosition="18" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="97" startPosition="29" endLine="98" endPosition="21" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="101" startPosition="32" endLine="102" endPosition="19" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="105" startPosition="34" endLine="106" endPosition="19" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="113" startPosition="44" endLine="114" endPosition="25" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="117" startPosition="52" endLine="118" endPosition="54" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="121" startPosition="33" endLine="122" endPosition="18" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="125" startPosition="29" endLine="126" endPosition="20" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="129" startPosition="32" endLine="130" endPosition="19" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="133" startPosition="34" endLine="134" endPosition="19" />
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="43" startPosition="56" endLine="45" endPosition="25" />
-    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="65" startPosition="55" endLine="67" endPosition="25" />
+    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="42" startPosition="56" endLine="44" endPosition="25" />
+    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="64" startPosition="55" endLine="66" endPosition="25" />
     <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1184685688047" varName="node" />
     </scopeInfo>
@@ -466,37 +466,37 @@
     <scopeInfo nodeId="1184685688050" fileName="SNODE.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1184685688050" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1184685688047" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1184685688047" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="98" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="102" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="114" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="105" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="1184685688047" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="118" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="117" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="1184685688047" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="134" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="121" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="125" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="129" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="133" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="1184685792724" fileName="SNODE.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1184685792724" varName="param" />
       <varInfo nodeId="1184685792724" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1184688224775" fileName="SNODE.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1184688224775" varName="param" />
       <varInfo nodeId="1184688224775" varName="thisNode" />
     </scopeInfo>
@@ -586,13 +586,13 @@
     <scopeInfo nodeId="1196853157164" fileName="SNODE_Design.java" startLine="98" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1196853157164" varName="parameter_3" />
     </scopeInfo>
-    <unitInfo nodeId="1184685688053" fileName="SNODE.java" startLine="35" startPosition="0" endLine="38" endPosition="0" unitName="treepathFeatures.SNODE$Children" />
+    <unitInfo nodeId="1184685688053" fileName="SNODE.java" startLine="35" startPosition="0" endLine="37" endPosition="0" unitName="treepathFeatures.SNODE$Children" />
     <unitInfo nodeId="1184685688050" fileName="SNODE.java" startLine="29" startPosition="0" endLine="34" endPosition="0" unitName="treepathFeatures.SNODE$Parent" />
-    <unitInfo nodeId="1184685792724" fileName="SNODE.java" startLine="39" startPosition="0" endLine="60" endPosition="0" unitName="treepathFeatures.SNODE$Feature_child" />
-    <unitInfo nodeId="1184688224775" fileName="SNODE.java" startLine="61" startPosition="0" endLine="82" endPosition="0" unitName="treepathFeatures.SNODE$Feature_link" />
-    <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="83" startPosition="0" endLine="110" endPosition="0" unitName="treepathFeatures.SNODE$Desc_Feature_child" />
-    <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="111" startPosition="0" endLine="138" endPosition="0" unitName="treepathFeatures.SNODE$Desc_Feature_link" />
-    <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="13" startPosition="0" endLine="139" endPosition="0" unitName="treepathFeatures.SNODE" />
+    <unitInfo nodeId="1184685792724" fileName="SNODE.java" startLine="38" startPosition="0" endLine="59" endPosition="0" unitName="treepathFeatures.SNODE$Feature_child" />
+    <unitInfo nodeId="1184688224775" fileName="SNODE.java" startLine="60" startPosition="0" endLine="81" endPosition="0" unitName="treepathFeatures.SNODE$Feature_link" />
+    <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="82" startPosition="0" endLine="109" endPosition="0" unitName="treepathFeatures.SNODE$Desc_Feature_child" />
+    <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="110" startPosition="0" endLine="137" endPosition="0" unitName="treepathFeatures.SNODE$Desc_Feature_link" />
+    <unitInfo nodeId="1184685688047" fileName="SNODE.java" startLine="13" startPosition="0" endLine="138" endPosition="0" unitName="treepathFeatures.SNODE" />
     <unitInfo nodeId="1227876805072" fileName="SNODE_Design.java" startLine="21" startPosition="224" endLine="25" endPosition="7" unitName="treepathFeatures.SNODE_Design$1" />
     <unitInfo nodeId="1227876794364" fileName="SNODE_Design.java" startLine="25" startPosition="20" endLine="29" endPosition="7" unitName="treepathFeatures.SNODE_Design$2" />
     <unitInfo nodeId="1227876801384" fileName="SNODE_Design.java" startLine="34" startPosition="228" endLine="38" endPosition="7" unitName="treepathFeatures.SNODE_Design$3" />

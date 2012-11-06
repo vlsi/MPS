@@ -1835,7 +1835,7 @@
   </root>
   <root nodeId="7651593722933678120" modelId="r:08318e8b-b87d-4355-b53c-ed3d06786f3d(jetbrains.mps.lang.editor.tableTests.editor)">
     <nodeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7651593722933678125" fileName="LightWeightDecisionTable_Editor.java" startLine="23" startPosition="95" endLine="24" endPosition="415" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651593722933678125" fileName="LightWeightDecisionTable_Editor.java" startLine="23" startPosition="95" endLine="24" endPosition="418" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="26" startPosition="6" endLine="27" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="27" startPosition="154" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="27" startPosition="154" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1845,7 +1845,7 @@
     <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="21" startPosition="84" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTable_qbxdb8_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="58" />
-    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="23" startPosition="95" endLine="24" endPosition="415" />
+    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="23" startPosition="95" endLine="24" endPosition="418" />
     <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="27" startPosition="154" endLine="28" endPosition="45" />
     <scopeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="7651593722933678120" varName="editorContext" />
@@ -1863,7 +1863,7 @@
       <varInfo nodeId="7651593722933678122" varName="editorContext" />
       <varInfo nodeId="7651593722933678122" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4550201027691224956" fileName="LightWeightDecisionTable_Editor.java" startLine="24" startPosition="19" endLine="16" endPosition="0" />
+    <unitInfo nodeId="4550201027691224956" fileName="LightWeightDecisionTable_Editor.java" startLine="24" startPosition="19" endLine="24" endPosition="417" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$2" />
     <unitInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="22" startPosition="36" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$1" />
     <unitInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor" />
   </root>

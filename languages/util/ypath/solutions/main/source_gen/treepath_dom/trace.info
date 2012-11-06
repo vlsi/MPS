@@ -216,369 +216,369 @@
     <unitInfo nodeId="1175083364493" fileName="DOM.java" startLine="14" startPosition="0" endLine="168" endPosition="0" unitName="treepath_dom.DOM" />
   </root>
   <root nodeId="1184239525252" modelId="r:00000000-0000-4000-0000-011c895905b5(treepath_dom)">
-    <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="224" startPosition="30" endLine="224" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="223" startPosition="30" endLine="223" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="20" startPosition="17" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="21" startPosition="61" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="25" startPosition="33" endLine="26" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184239525373" fileName="DOM2.java" startLine="30" startPosition="42" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
-    <nodeInfo nodeId="1184245739811" fileName="DOM2.java" startLine="45" startPosition="35" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="50" startPosition="29" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
-    <nodeInfo nodeId="1184245749925" fileName="DOM2.java" startLine="63" startPosition="35" endLine="64" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="68" startPosition="29" endLine="69" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="70" startPosition="7" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="76" startPosition="69" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="80" startPosition="43" endLine="81" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="81" startPosition="33" endLine="82" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="82" startPosition="81" endLine="83" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="88" startPosition="43" endLine="89" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="89" startPosition="33" endLine="90" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="90" startPosition="81" endLine="91" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="94" startPosition="7" endLine="95" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739802" fileName="DOM2.java" startLine="99" startPosition="45" endLine="100" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="106" startPosition="69" endLine="107" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="110" startPosition="43" endLine="111" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="111" startPosition="33" endLine="112" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="112" startPosition="79" endLine="113" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="118" startPosition="43" endLine="119" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="119" startPosition="33" endLine="120" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="120" startPosition="79" endLine="121" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="124" startPosition="7" endLine="125" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749906" fileName="DOM2.java" startLine="129" startPosition="45" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="136" startPosition="69" endLine="137" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="140" startPosition="43" endLine="141" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="141" startPosition="33" endLine="142" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="142" startPosition="80" endLine="143" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="148" startPosition="43" endLine="149" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="149" startPosition="33" endLine="150" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="150" startPosition="80" endLine="151" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="154" startPosition="7" endLine="155" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245749916" fileName="DOM2.java" startLine="159" startPosition="45" endLine="160" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="166" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="168" startPosition="46" endLine="169" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184239525313" fileName="DOM2.java" startLine="172" startPosition="38" endLine="173" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="179" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1227876790041" fileName="DOM2.java" startLine="180" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_attributes" />
-    <nodeInfo nodeId="1227876790049" fileName="DOM2.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_count" />
-    <nodeInfo nodeId="1227876790055" fileName="DOM2.java" startLine="182" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8_idx" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="189" startPosition="30" endLine="190" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="190" startPosition="56" endLine="191" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="192" startPosition="29" endLine="193" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="195" startPosition="51" endLine="196" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="196" startPosition="42" endLine="197" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="198" startPosition="25" endLine="199" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="199" startPosition="41" endLine="200" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="201" startPosition="30" endLine="202" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="202" startPosition="33" endLine="203" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="203" startPosition="40" endLine="204" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="206" startPosition="52" endLine="207" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="207" startPosition="42" endLine="208" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="209" startPosition="25" endLine="210" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="210" startPosition="40" endLine="211" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="212" startPosition="30" endLine="213" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="213" startPosition="41" endLine="214" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="214" startPosition="71" endLine="215" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="216" startPosition="29" endLine="217" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227876790040" fileName="DOM2.java" startLine="216" startPosition="29" endLine="217" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="217" startPosition="67" endLine="218" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="218" startPosition="40" endLine="219" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="220" startPosition="29" endLine="221" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227876790048" fileName="DOM2.java" startLine="220" startPosition="29" endLine="221" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="221" startPosition="66" endLine="222" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="222" startPosition="40" endLine="223" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="224" startPosition="30" endLine="225" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="225" startPosition="41" endLine="226" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="227" startPosition="30" endLine="228" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="230" startPosition="33" endLine="231" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="240" startPosition="38" endLine="241" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525348" fileName="DOM2.java" startLine="244" startPosition="23" endLine="245" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="250" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="252" startPosition="41" endLine="253" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="257" startPosition="42" endLine="258" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="259" startPosition="7" endLine="260" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1184250373638" fileName="DOM2.java" startLine="259" startPosition="7" endLine="260" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184250381008" fileName="DOM2.java" startLine="263" startPosition="23" endLine="264" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="272" startPosition="50" endLine="273" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="276" startPosition="33" endLine="277" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="280" startPosition="29" endLine="281" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="284" startPosition="32" endLine="285" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="288" startPosition="34" endLine="289" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="297" startPosition="50" endLine="298" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="301" startPosition="33" endLine="302" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="305" startPosition="29" endLine="306" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="309" startPosition="32" endLine="310" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="313" startPosition="34" endLine="314" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ELEMENT_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ATTR_NodeKindTrigger#()V" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="269" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_attributes#()V" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="294" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_nodes#()V" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1184245739811" fileName="DOM2.java" startLine="44" startPosition="35" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="49" startPosition="29" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="51" startPosition="7" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1184245749925" fileName="DOM2.java" startLine="62" startPosition="35" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="67" startPosition="29" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="69" startPosition="7" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="75" startPosition="69" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="79" startPosition="43" endLine="80" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="80" startPosition="33" endLine="81" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="81" startPosition="81" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="87" startPosition="43" endLine="88" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="88" startPosition="33" endLine="89" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="89" startPosition="81" endLine="90" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="93" startPosition="7" endLine="94" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245739802" fileName="DOM2.java" startLine="98" startPosition="45" endLine="99" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="105" startPosition="69" endLine="106" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="109" startPosition="43" endLine="110" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="110" startPosition="33" endLine="111" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="111" startPosition="79" endLine="112" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="117" startPosition="43" endLine="118" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="118" startPosition="33" endLine="119" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="119" startPosition="79" endLine="120" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="123" startPosition="7" endLine="124" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749906" fileName="DOM2.java" startLine="128" startPosition="45" endLine="129" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="135" startPosition="69" endLine="136" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="139" startPosition="43" endLine="140" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="140" startPosition="33" endLine="141" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="141" startPosition="80" endLine="142" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="147" startPosition="43" endLine="148" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="148" startPosition="33" endLine="149" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="149" startPosition="80" endLine="150" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="153" startPosition="7" endLine="154" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245749916" fileName="DOM2.java" startLine="158" startPosition="45" endLine="159" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="165" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="167" startPosition="46" endLine="168" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184239525313" fileName="DOM2.java" startLine="171" startPosition="38" endLine="172" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="178" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1227876790041" fileName="DOM2.java" startLine="179" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_attributes" />
+    <nodeInfo nodeId="1227876790049" fileName="DOM2.java" startLine="180" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_count" />
+    <nodeInfo nodeId="1227876790055" fileName="DOM2.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8_idx" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="188" startPosition="30" endLine="189" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="189" startPosition="56" endLine="190" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="191" startPosition="29" endLine="192" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="194" startPosition="51" endLine="195" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="195" startPosition="42" endLine="196" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="197" startPosition="25" endLine="198" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="198" startPosition="41" endLine="199" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="200" startPosition="30" endLine="201" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="201" startPosition="33" endLine="202" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="202" startPosition="40" endLine="203" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="205" startPosition="52" endLine="206" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="206" startPosition="42" endLine="207" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="208" startPosition="25" endLine="209" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="209" startPosition="40" endLine="210" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="211" startPosition="30" endLine="212" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="212" startPosition="41" endLine="213" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="213" startPosition="71" endLine="214" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="215" startPosition="29" endLine="216" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876790040" fileName="DOM2.java" startLine="215" startPosition="29" endLine="216" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="216" startPosition="67" endLine="217" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="217" startPosition="40" endLine="218" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="219" startPosition="29" endLine="220" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1227876790048" fileName="DOM2.java" startLine="219" startPosition="29" endLine="220" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="220" startPosition="66" endLine="221" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="221" startPosition="40" endLine="222" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="223" startPosition="30" endLine="224" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="224" startPosition="41" endLine="225" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="226" startPosition="30" endLine="227" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="229" startPosition="33" endLine="230" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="239" startPosition="38" endLine="240" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525348" fileName="DOM2.java" startLine="243" startPosition="23" endLine="244" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="249" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="251" startPosition="41" endLine="252" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="256" startPosition="42" endLine="257" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="258" startPosition="7" endLine="259" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1184250373638" fileName="DOM2.java" startLine="258" startPosition="7" endLine="259" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184250381008" fileName="DOM2.java" startLine="262" startPosition="23" endLine="263" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="271" startPosition="50" endLine="272" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="275" startPosition="33" endLine="276" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="279" startPosition="29" endLine="280" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="283" startPosition="32" endLine="284" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="287" startPosition="34" endLine="288" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="296" startPosition="50" endLine="297" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="300" startPosition="33" endLine="301" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="304" startPosition="29" endLine="305" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="308" startPosition="32" endLine="309" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="312" startPosition="34" endLine="313" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ELEMENT_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="59" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ATTR_NodeKindTrigger#()V" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="268" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_attributes#()V" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="293" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Desc_Feature_nodes#()V" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;" />
     <nodeInfo nodeId="1184239525370" fileName="DOM2.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="49" startPosition="47" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="67" startPosition="47" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184245739799" fileName="DOM2.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1184245749903" fileName="DOM2.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1184245749913" fileName="DOM2.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_attributes#(Lorg/w3c/dom/Node;)V" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="240" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="244" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="252" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_nodes#(Lorg/w3c/dom/Node;)V" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="256" startPosition="30" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="263" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="272" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="276" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="280" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="284" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="288" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="297" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="301" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="305" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="309" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
-    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="313" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="48" startPosition="47" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/w3c/dom/Node;)Z" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="66" startPosition="47" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184245739799" fileName="DOM2.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1184245749903" fileName="DOM2.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1184245749913" fileName="DOM2.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Lorg/w3c/dom/Node;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="167" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_attributes#(Lorg/w3c/dom/Node;)V" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="243" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="251" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Feature_nodes#(Lorg/w3c/dom/Node;)V" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="255" startPosition="30" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="262" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="271" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="275" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="279" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="283" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="287" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="296" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#(Lorg/w3c/dom/Node;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="300" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpposite#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="304" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="308" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDefault#()Z" />
+    <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="312" startPosition="0" endLine="315" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAscending#()Z" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DOM2#()V" />
-    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="194" startPosition="29" endLine="198" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="205" startPosition="29" endLine="209" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="80" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="118" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="140" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="148" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="256" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)Lorg/w3c/dom/Node;" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="78" startPosition="31" endLine="85" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="86" startPosition="14" endLine="93" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="108" startPosition="31" endLine="115" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="116" startPosition="14" endLine="123" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="138" startPosition="31" endLine="145" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="146" startPosition="14" endLine="153" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="86" startPosition="12" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="116" startPosition="12" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="146" startPosition="12" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="77" startPosition="21" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="107" startPosition="21" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="137" startPosition="21" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="76" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="106" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="136" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="186" startPosition="22" endLine="229" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="184" startPosition="48" endLine="230" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="184" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="177" startPosition="46" endLine="233" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="177" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="42" endLine="235" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1184239525317" fileName="DOM2.java" startLine="173" startPosition="39" endLine="237" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="172" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="42" startPosition="39" endLine="42" endPosition="39" />
-    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="60" startPosition="36" endLine="60" endPosition="36" />
-    <scopeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="224" startPosition="30" endLine="224" endPosition="30" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="269" startPosition="38" endLine="269" endPosition="38" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="294" startPosition="33" endLine="294" endPosition="33" />
+    <nodeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="193" startPosition="29" endLine="197" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="204" startPosition="29" endLine="208" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="117" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="139" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="147" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="255" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)Lorg/w3c/dom/Node;" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="77" startPosition="31" endLine="84" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="85" startPosition="14" endLine="92" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="107" startPosition="31" endLine="114" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="115" startPosition="14" endLine="122" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="137" startPosition="31" endLine="144" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="145" startPosition="14" endLine="152" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="85" startPosition="12" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="115" startPosition="12" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="145" startPosition="12" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="76" startPosition="21" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="106" startPosition="21" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="136" startPosition="21" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="75" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="105" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="135" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="185" startPosition="22" endLine="228" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="183" startPosition="48" endLine="229" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="183" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="46" endLine="232" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="42" endLine="234" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1184239525317" fileName="DOM2.java" startLine="172" startPosition="39" endLine="236" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="171" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="41" startPosition="39" endLine="41" endPosition="39" />
+    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="59" startPosition="36" endLine="59" endPosition="36" />
+    <scopeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="223" startPosition="30" endLine="223" endPosition="30" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="268" startPosition="38" endLine="268" endPosition="38" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="293" startPosition="33" endLine="293" endPosition="33" />
     <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="25" startPosition="33" endLine="26" endPosition="36" />
     <scopeInfo nodeId="1184239525372" fileName="DOM2.java" startLine="30" startPosition="42" endLine="31" endPosition="34" />
-    <scopeInfo nodeId="1184245739810" fileName="DOM2.java" startLine="45" startPosition="35" endLine="46" endPosition="34" />
-    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="50" startPosition="29" endLine="51" endPosition="54" />
-    <scopeInfo nodeId="1184245749924" fileName="DOM2.java" startLine="63" startPosition="35" endLine="64" endPosition="31" />
-    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="68" startPosition="29" endLine="69" endPosition="51" />
-    <scopeInfo nodeId="1184245739801" fileName="DOM2.java" startLine="99" startPosition="45" endLine="100" endPosition="42" />
-    <scopeInfo nodeId="1184245749905" fileName="DOM2.java" startLine="129" startPosition="45" endLine="130" endPosition="36" />
-    <scopeInfo nodeId="1184245749915" fileName="DOM2.java" startLine="159" startPosition="45" endLine="160" endPosition="37" />
-    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="168" startPosition="46" endLine="169" endPosition="31" />
-    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="192" startPosition="29" endLine="193" endPosition="40" />
-    <scopeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="216" startPosition="29" endLine="217" endPosition="67" />
-    <scopeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="220" startPosition="29" endLine="221" endPosition="66" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="227" startPosition="30" endLine="228" endPosition="39" />
-    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="240" startPosition="38" endLine="241" endPosition="40" />
-    <scopeInfo nodeId="1184239525347" fileName="DOM2.java" startLine="244" startPosition="23" endLine="245" endPosition="55" />
-    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="252" startPosition="41" endLine="253" endPosition="31" />
-    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="257" startPosition="42" endLine="258" endPosition="46" />
-    <scopeInfo nodeId="1184250348503" fileName="DOM2.java" startLine="259" startPosition="7" endLine="260" endPosition="53" />
-    <scopeInfo nodeId="1184250348505" fileName="DOM2.java" startLine="263" startPosition="23" endLine="264" endPosition="55" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="272" startPosition="50" endLine="273" endPosition="47" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="276" startPosition="33" endLine="277" endPosition="18" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="280" startPosition="29" endLine="281" endPosition="26" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="284" startPosition="32" endLine="285" endPosition="19" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="288" startPosition="34" endLine="289" endPosition="19" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="297" startPosition="50" endLine="298" endPosition="42" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="301" startPosition="33" endLine="302" endPosition="18" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="305" startPosition="29" endLine="306" endPosition="21" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="309" startPosition="32" endLine="310" endPosition="19" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="313" startPosition="34" endLine="314" endPosition="19" />
+    <scopeInfo nodeId="1184245739810" fileName="DOM2.java" startLine="44" startPosition="35" endLine="45" endPosition="34" />
+    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="49" startPosition="29" endLine="50" endPosition="54" />
+    <scopeInfo nodeId="1184245749924" fileName="DOM2.java" startLine="62" startPosition="35" endLine="63" endPosition="31" />
+    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="67" startPosition="29" endLine="68" endPosition="51" />
+    <scopeInfo nodeId="1184245739801" fileName="DOM2.java" startLine="98" startPosition="45" endLine="99" endPosition="42" />
+    <scopeInfo nodeId="1184245749905" fileName="DOM2.java" startLine="128" startPosition="45" endLine="129" endPosition="36" />
+    <scopeInfo nodeId="1184245749915" fileName="DOM2.java" startLine="158" startPosition="45" endLine="159" endPosition="37" />
+    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="167" startPosition="46" endLine="168" endPosition="31" />
+    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="191" startPosition="29" endLine="192" endPosition="40" />
+    <scopeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="215" startPosition="29" endLine="216" endPosition="67" />
+    <scopeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="219" startPosition="29" endLine="220" endPosition="66" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="226" startPosition="30" endLine="227" endPosition="39" />
+    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="239" startPosition="38" endLine="240" endPosition="40" />
+    <scopeInfo nodeId="1184239525347" fileName="DOM2.java" startLine="243" startPosition="23" endLine="244" endPosition="55" />
+    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="251" startPosition="41" endLine="252" endPosition="31" />
+    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="256" startPosition="42" endLine="257" endPosition="46" />
+    <scopeInfo nodeId="1184250348503" fileName="DOM2.java" startLine="258" startPosition="7" endLine="259" endPosition="53" />
+    <scopeInfo nodeId="1184250348505" fileName="DOM2.java" startLine="262" startPosition="23" endLine="263" endPosition="55" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="271" startPosition="50" endLine="272" endPosition="47" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="275" startPosition="33" endLine="276" endPosition="18" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="279" startPosition="29" endLine="280" endPosition="26" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="283" startPosition="32" endLine="284" endPosition="19" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="287" startPosition="34" endLine="288" endPosition="19" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="296" startPosition="50" endLine="297" endPosition="42" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="300" startPosition="33" endLine="301" endPosition="18" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="304" startPosition="29" endLine="305" endPosition="21" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="308" startPosition="32" endLine="309" endPosition="19" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="312" startPosition="34" endLine="313" endPosition="19" />
     <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="20" startPosition="17" endLine="22" endPosition="56" />
-    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="42" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="60" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="189" startPosition="30" endLine="191" endPosition="37" />
-    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="195" startPosition="51" endLine="197" endPosition="32" />
-    <scopeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="206" startPosition="52" endLine="208" endPosition="32" />
-    <scopeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="224" startPosition="30" endLine="226" endPosition="30" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="269" startPosition="0" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="294" startPosition="0" endLine="296" endPosition="0" />
+    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="59" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="188" startPosition="30" endLine="190" endPosition="37" />
+    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="194" startPosition="51" endLine="196" endPosition="32" />
+    <scopeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="205" startPosition="52" endLine="207" endPosition="32" />
+    <scopeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="223" startPosition="30" endLine="225" endPosition="30" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="268" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="293" startPosition="0" endLine="295" endPosition="0" />
     <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1184239525252" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1184239525370" fileName="DOM2.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1184239525370" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1184245739808" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1184245749922" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="80" startPosition="43" endLine="83" endPosition="50">
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="79" startPosition="43" endLine="82" endPosition="50">
       <varInfo nodeId="1184245739798" varName="actualValue" />
       <varInfo nodeId="1184245739798" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="88" startPosition="43" endLine="91" endPosition="39">
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="87" startPosition="43" endLine="90" endPosition="39">
       <varInfo nodeId="1184245739798" varName="actualValue" />
       <varInfo nodeId="1184245739798" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739799" fileName="DOM2.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="1184245739799" fileName="DOM2.java" startLine="98" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="1184245739799" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="110" startPosition="43" endLine="113" endPosition="50">
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="109" startPosition="43" endLine="112" endPosition="50">
       <varInfo nodeId="1184245749902" varName="actualValue" />
       <varInfo nodeId="1184245749902" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="118" startPosition="43" endLine="121" endPosition="39">
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="117" startPosition="43" endLine="120" endPosition="39">
       <varInfo nodeId="1184245749902" varName="actualValue" />
       <varInfo nodeId="1184245749902" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749903" fileName="DOM2.java" startLine="129" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="1184245749903" fileName="DOM2.java" startLine="128" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="1184245749903" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="140" startPosition="43" endLine="143" endPosition="50">
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="139" startPosition="43" endLine="142" endPosition="50">
       <varInfo nodeId="1184245749912" varName="actualValue" />
       <varInfo nodeId="1184245749912" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="148" startPosition="43" endLine="151" endPosition="39">
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="147" startPosition="43" endLine="150" endPosition="39">
       <varInfo nodeId="1184245749912" varName="actualValue" />
       <varInfo nodeId="1184245749912" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749913" fileName="DOM2.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="1184245749913" fileName="DOM2.java" startLine="158" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="1184245749913" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="168" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="167" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="1184239525310" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="201" startPosition="30" endLine="204" endPosition="30" />
-    <scopeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="212" startPosition="30" endLine="215" endPosition="36" />
-    <scopeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="216" startPosition="29" endLine="219" endPosition="30" />
-    <scopeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="220" startPosition="29" endLine="223" endPosition="30" />
-    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="240" startPosition="0" endLine="243" endPosition="0" />
-    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="244" startPosition="0" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="252" startPosition="0" endLine="255" endPosition="0">
+    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="200" startPosition="30" endLine="203" endPosition="30" />
+    <scopeInfo nodeId="1227876818693" fileName="DOM2.java" startLine="211" startPosition="30" endLine="214" endPosition="36" />
+    <scopeInfo nodeId="1227876790039" fileName="DOM2.java" startLine="215" startPosition="29" endLine="218" endPosition="30" />
+    <scopeInfo nodeId="1227876790047" fileName="DOM2.java" startLine="219" startPosition="29" endLine="222" endPosition="30" />
+    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="243" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="251" startPosition="0" endLine="254" endPosition="0">
       <varInfo nodeId="1184250348501" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="263" startPosition="0" endLine="266" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="272" startPosition="0" endLine="275" endPosition="0">
+    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="262" startPosition="0" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="271" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="1184239525252" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="276" startPosition="0" endLine="279" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="280" startPosition="0" endLine="283" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="284" startPosition="0" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="288" startPosition="0" endLine="291" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="297" startPosition="0" endLine="300" endPosition="0">
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="275" startPosition="0" endLine="278" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="279" startPosition="0" endLine="282" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="283" startPosition="0" endLine="286" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="287" startPosition="0" endLine="290" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="296" startPosition="0" endLine="299" endPosition="0">
       <varInfo nodeId="1184239525252" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="301" startPosition="0" endLine="304" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="305" startPosition="0" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="309" startPosition="0" endLine="312" endPosition="0" />
-    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="313" startPosition="0" endLine="316" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="300" startPosition="0" endLine="303" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="304" startPosition="0" endLine="307" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="308" startPosition="0" endLine="311" endPosition="0" />
+    <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="312" startPosition="0" endLine="315" endPosition="0" />
     <scopeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="49" startPosition="47" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="67" startPosition="47" endLine="71" endPosition="22" />
-    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="256" startPosition="30" endLine="260" endPosition="53" />
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="80" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="48" startPosition="47" endLine="52" endPosition="22" />
+    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="66" startPosition="47" endLine="70" endPosition="22" />
+    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="255" startPosition="30" endLine="259" endPosition="53" />
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1184245739798" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1184245739798" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="110" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="1184245749902" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="118" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="117" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="1184245749902" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="140" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="139" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1184245749912" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="148" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="147" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="1184245749912" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="67" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="194" startPosition="29" endLine="200" endPosition="30" />
-    <scopeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="205" startPosition="29" endLine="211" endPosition="30" />
-    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="256" startPosition="0" endLine="262" endPosition="0">
+    <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1184245749922" fileName="DOM2.java" startLine="66" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1227876790054" fileName="DOM2.java" startLine="193" startPosition="29" endLine="199" endPosition="30" />
+    <scopeInfo nodeId="1227876790046" fileName="DOM2.java" startLine="204" startPosition="29" endLine="210" endPosition="30" />
+    <scopeInfo nodeId="1184250348501" fileName="DOM2.java" startLine="255" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="1184250348501" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="78" startPosition="31" endLine="85" endPosition="10" />
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="86" startPosition="14" endLine="93" endPosition="10" />
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="108" startPosition="31" endLine="115" endPosition="10" />
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="116" startPosition="14" endLine="123" endPosition="10" />
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="138" startPosition="31" endLine="145" endPosition="10" />
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="146" startPosition="14" endLine="153" endPosition="10" />
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="76" startPosition="69" endLine="95" endPosition="36">
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="77" startPosition="31" endLine="84" endPosition="10" />
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="85" startPosition="14" endLine="92" endPosition="10" />
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="107" startPosition="31" endLine="114" endPosition="10" />
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="115" startPosition="14" endLine="122" endPosition="10" />
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="137" startPosition="31" endLine="144" endPosition="10" />
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="145" startPosition="14" endLine="152" endPosition="10" />
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="75" startPosition="69" endLine="94" endPosition="36">
       <varInfo nodeId="1184245739798" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="106" startPosition="69" endLine="125" endPosition="36">
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="105" startPosition="69" endLine="124" endPosition="36">
       <varInfo nodeId="1184245749902" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="136" startPosition="69" endLine="155" endPosition="36">
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="135" startPosition="69" endLine="154" endPosition="36">
       <varInfo nodeId="1184245749912" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="76" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="1184245739798" fileName="DOM2.java" startLine="75" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="1184245739798" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="106" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="1184245749902" fileName="DOM2.java" startLine="105" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="1184245749902" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="136" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="1184245749912" fileName="DOM2.java" startLine="135" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="1184245749912" varName="matchValue" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="186" startPosition="22" endLine="229" endPosition="21" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="184" startPosition="48" endLine="231" endPosition="31" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="184" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="177" startPosition="46" endLine="233" endPosition="16" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="177" startPosition="0" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="42" endLine="235" endPosition="12" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="0" endLine="237" endPosition="0" />
-    <scopeInfo nodeId="1184239525312" fileName="DOM2.java" startLine="172" startPosition="38" endLine="237" endPosition="9">
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="185" startPosition="22" endLine="228" endPosition="21" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="183" startPosition="48" endLine="230" endPosition="31" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="183" startPosition="0" endLine="232" endPosition="0" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="46" endLine="232" endPosition="16" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="0" endLine="234" endPosition="0" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="42" endLine="234" endPosition="12" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="0" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="1184239525312" fileName="DOM2.java" startLine="171" startPosition="38" endLine="236" endPosition="9">
       <varInfo nodeId="1184239525314" varName="_node" />
     </scopeInfo>
-    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="172" startPosition="0" endLine="239" endPosition="0" />
-    <unitInfo nodeId="1184239525376" fileName="DOM2.java" startLine="35" startPosition="0" endLine="38" endPosition="0" unitName="treepath_dom.DOM2$Children" />
+    <scopeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="171" startPosition="0" endLine="238" endPosition="0" />
+    <unitInfo nodeId="1184239525376" fileName="DOM2.java" startLine="35" startPosition="0" endLine="37" endPosition="0" unitName="treepath_dom.DOM2$Children" />
     <unitInfo nodeId="1184239525370" fileName="DOM2.java" startLine="29" startPosition="0" endLine="34" endPosition="0" unitName="treepath_dom.DOM2$Parent" />
-    <unitInfo nodeId="1184245739799" fileName="DOM2.java" startLine="98" startPosition="0" endLine="103" endPosition="0" unitName="treepath_dom.DOM2$ELEMENT_tag_Property$Getter" />
-    <unitInfo nodeId="1184245749903" fileName="DOM2.java" startLine="128" startPosition="0" endLine="133" endPosition="0" unitName="treepath_dom.DOM2$ATTR_name_Property$Getter" />
-    <unitInfo nodeId="1184245749913" fileName="DOM2.java" startLine="158" startPosition="0" endLine="163" endPosition="0" unitName="treepath_dom.DOM2$ATTR_value_Property$Getter" />
-    <unitInfo nodeId="1184245739798" fileName="DOM2.java" startLine="79" startPosition="21" endLine="85" endPosition="9" unitName="treepath_dom.DOM2$1" />
-    <unitInfo nodeId="1184245739798" fileName="DOM2.java" startLine="87" startPosition="21" endLine="93" endPosition="9" unitName="treepath_dom.DOM2$2" />
-    <unitInfo nodeId="1184245749902" fileName="DOM2.java" startLine="109" startPosition="21" endLine="115" endPosition="9" unitName="treepath_dom.DOM2$1" />
-    <unitInfo nodeId="1184245749902" fileName="DOM2.java" startLine="117" startPosition="21" endLine="123" endPosition="9" unitName="treepath_dom.DOM2$2" />
-    <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="139" startPosition="21" endLine="145" endPosition="9" unitName="treepath_dom.DOM2$1" />
-    <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="147" startPosition="21" endLine="153" endPosition="9" unitName="treepath_dom.DOM2$2" />
-    <unitInfo nodeId="1184245739808" fileName="DOM2.java" startLine="39" startPosition="0" endLine="56" endPosition="0" unitName="treepath_dom.DOM2$ELEMENT_NodeKindTrigger" />
-    <unitInfo nodeId="1184245749922" fileName="DOM2.java" startLine="57" startPosition="0" endLine="74" endPosition="0" unitName="treepath_dom.DOM2$ATTR_NodeKindTrigger" />
-    <unitInfo nodeId="1184250348501" fileName="DOM2.java" startLine="249" startPosition="0" endLine="267" endPosition="0" unitName="treepath_dom.DOM2$Feature_nodes" />
-    <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="268" startPosition="0" endLine="292" endPosition="0" unitName="treepath_dom.DOM2$Desc_Feature_attributes" />
-    <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="293" startPosition="0" endLine="317" endPosition="0" unitName="treepath_dom.DOM2$Desc_Feature_nodes" />
-    <unitInfo nodeId="1184245739798" fileName="DOM2.java" startLine="75" startPosition="0" endLine="104" endPosition="0" unitName="treepath_dom.DOM2$ELEMENT_tag_Property" />
-    <unitInfo nodeId="1184245749902" fileName="DOM2.java" startLine="105" startPosition="0" endLine="134" endPosition="0" unitName="treepath_dom.DOM2$ATTR_name_Property" />
-    <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="135" startPosition="0" endLine="164" endPosition="0" unitName="treepath_dom.DOM2$ATTR_value_Property" />
-    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="178" startPosition="25" endLine="233" endPosition="15" unitName="treepath_dom.DOM2$3" />
-    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="21" endLine="235" endPosition="11" unitName="treepath_dom.DOM2$2" />
-    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="38" endLine="237" endPosition="7" unitName="treepath_dom.DOM2$1" />
-    <unitInfo nodeId="1184239525310" fileName="DOM2.java" startLine="165" startPosition="0" endLine="248" endPosition="0" unitName="treepath_dom.DOM2$Feature_attributes" />
-    <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="19" startPosition="0" endLine="318" endPosition="0" unitName="treepath_dom.DOM2" />
+    <unitInfo nodeId="1184245739799" fileName="DOM2.java" startLine="97" startPosition="0" endLine="102" endPosition="0" unitName="treepath_dom.DOM2$ELEMENT_tag_Property$Getter" />
+    <unitInfo nodeId="1184245749903" fileName="DOM2.java" startLine="127" startPosition="0" endLine="132" endPosition="0" unitName="treepath_dom.DOM2$ATTR_name_Property$Getter" />
+    <unitInfo nodeId="1184245749913" fileName="DOM2.java" startLine="157" startPosition="0" endLine="162" endPosition="0" unitName="treepath_dom.DOM2$ATTR_value_Property$Getter" />
+    <unitInfo nodeId="1184245739798" fileName="DOM2.java" startLine="78" startPosition="21" endLine="84" endPosition="9" unitName="treepath_dom.DOM2$1" />
+    <unitInfo nodeId="1184245739798" fileName="DOM2.java" startLine="86" startPosition="21" endLine="92" endPosition="9" unitName="treepath_dom.DOM2$2" />
+    <unitInfo nodeId="1184245749902" fileName="DOM2.java" startLine="108" startPosition="21" endLine="114" endPosition="9" unitName="treepath_dom.DOM2$1" />
+    <unitInfo nodeId="1184245749902" fileName="DOM2.java" startLine="116" startPosition="21" endLine="122" endPosition="9" unitName="treepath_dom.DOM2$2" />
+    <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="138" startPosition="21" endLine="144" endPosition="9" unitName="treepath_dom.DOM2$1" />
+    <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="146" startPosition="21" endLine="152" endPosition="9" unitName="treepath_dom.DOM2$2" />
+    <unitInfo nodeId="1184245739808" fileName="DOM2.java" startLine="38" startPosition="0" endLine="55" endPosition="0" unitName="treepath_dom.DOM2$ELEMENT_NodeKindTrigger" />
+    <unitInfo nodeId="1184245749922" fileName="DOM2.java" startLine="56" startPosition="0" endLine="73" endPosition="0" unitName="treepath_dom.DOM2$ATTR_NodeKindTrigger" />
+    <unitInfo nodeId="1184250348501" fileName="DOM2.java" startLine="248" startPosition="0" endLine="266" endPosition="0" unitName="treepath_dom.DOM2$Feature_nodes" />
+    <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="267" startPosition="0" endLine="291" endPosition="0" unitName="treepath_dom.DOM2$Desc_Feature_attributes" />
+    <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="292" startPosition="0" endLine="316" endPosition="0" unitName="treepath_dom.DOM2$Desc_Feature_nodes" />
+    <unitInfo nodeId="1184245739798" fileName="DOM2.java" startLine="74" startPosition="0" endLine="103" endPosition="0" unitName="treepath_dom.DOM2$ELEMENT_tag_Property" />
+    <unitInfo nodeId="1184245749902" fileName="DOM2.java" startLine="104" startPosition="0" endLine="133" endPosition="0" unitName="treepath_dom.DOM2$ATTR_name_Property" />
+    <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="134" startPosition="0" endLine="163" endPosition="0" unitName="treepath_dom.DOM2$ATTR_value_Property" />
+    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="177" startPosition="25" endLine="232" endPosition="15" unitName="treepath_dom.DOM2$3" />
+    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="21" endLine="234" endPosition="11" unitName="treepath_dom.DOM2$2" />
+    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="38" endLine="236" endPosition="7" unitName="treepath_dom.DOM2$1" />
+    <unitInfo nodeId="1184239525310" fileName="DOM2.java" startLine="164" startPosition="0" endLine="247" endPosition="0" unitName="treepath_dom.DOM2$Feature_attributes" />
+    <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="19" startPosition="0" endLine="317" endPosition="0" unitName="treepath_dom.DOM2" />
   </root>
 </debugInfo>
 

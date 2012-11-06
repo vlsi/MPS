@@ -17,7 +17,8 @@ public class InternalAnonymousClassUsage {
       System.out.println("exception: " + x.getMessage());
     }
 
-    new Closeable() {      public void close() {
+    new Closeable() {
+      public void close() {
       }
     };
   }
@@ -31,14 +32,16 @@ public class InternalAnonymousClassUsage {
   }
 
   public void check2() {
-    safeRun(new Runnable() {      public void run() {
+    safeRun(new Runnable() {
+      public void run() {
         System.out.println("done");
       }
     });
   }
 
   public void check3() throws IOException {
-    (new Readable() {      public int read(CharBuffer cb) throws IOException {
+    (new Readable() {
+      public int read(CharBuffer cb) throws IOException {
         if (cb == null) {
           throw new IOException();
         }
@@ -48,13 +51,15 @@ public class InternalAnonymousClassUsage {
   }
 
   public void check4() {
-    new Runnable() {      public void run() {
+    new Runnable() {
+      public void run() {
       }
     }.run();
   }
 
   public void check5() {
-    new ReadableImpl("wow, my title") {      {
+    new ReadableImpl("wow, my title") {
+      {
         System.out.println("initializer");
       }
 
