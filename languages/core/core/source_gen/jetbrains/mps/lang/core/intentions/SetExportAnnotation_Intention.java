@@ -118,7 +118,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     }
 
     private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-      return node.isRoot();
+      return jetbrains.mps.util.SNodeOperations.isRoot(node);
     }
 
     public boolean isAvailableInChildNodes() {

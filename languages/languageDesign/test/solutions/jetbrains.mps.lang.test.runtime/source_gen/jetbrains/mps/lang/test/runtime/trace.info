@@ -277,7 +277,7 @@
     <nodeInfo nodeId="4352241072706430875" fileName="BaseEditorTestBody.java" startLine="143" startPosition="43" endLine="144" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7633582661619344946" fileName="BaseEditorTestBody.java" startLine="146" startPosition="76" endLine="147" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225983619982" fileName="BaseEditorTestBody.java" startLine="156" startPosition="88" endLine="157" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2182758403695034376" fileName="BaseEditorTestBody.java" startLine="157" startPosition="78" endLine="158" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2182758403695034376" fileName="BaseEditorTestBody.java" startLine="157" startPosition="78" endLine="158" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225981838433" fileName="BaseEditorTestBody.java" startLine="161" startPosition="63" endLine="162" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225981838438" fileName="BaseEditorTestBody.java" startLine="162" startPosition="106" endLine="163" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5898974437025058141" fileName="BaseEditorTestBody.java" startLine="166" startPosition="116" endLine="167" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -377,7 +377,7 @@
     <scopeInfo nodeId="5364632142688376166" fileName="BaseEditorTestBody.java" startLine="77" startPosition="34" endLine="79" endPosition="135" />
     <scopeInfo nodeId="4840161274939429361" fileName="BaseEditorTestBody.java" startLine="121" startPosition="9" endLine="123" endPosition="28" />
     <scopeInfo nodeId="4840161274939429354" fileName="BaseEditorTestBody.java" startLine="133" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="1225983542397" fileName="BaseEditorTestBody.java" startLine="156" startPosition="88" endLine="158" endPosition="91">
+    <scopeInfo nodeId="1225983542397" fileName="BaseEditorTestBody.java" startLine="156" startPosition="88" endLine="158" endPosition="125">
       <varInfo nodeId="1225983619983" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="1225981799337" fileName="BaseEditorTestBody.java" startLine="161" startPosition="63" endLine="163" endPosition="86">

@@ -69,6 +69,6 @@ public class ExportScopeModule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean _StyleParameter_QueryFunction_1l2km8_a0a0(SNode node, EditorContext editorContext) {
-    return (SNodeOperations.getParent(node) != null) && SNodeOperations.getParent(node).isRoot();
+    return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
   }
 }
