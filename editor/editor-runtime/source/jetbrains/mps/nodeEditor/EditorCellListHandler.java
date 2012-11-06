@@ -60,7 +60,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   }
 
   protected EditorCell createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    EditorCell_Constant emptyCell = new EditorCell_Constant((EditorContext) editorContext, getOwner(), null);
+    EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));

@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JComponent;
 import java.util.List;
 
 /**

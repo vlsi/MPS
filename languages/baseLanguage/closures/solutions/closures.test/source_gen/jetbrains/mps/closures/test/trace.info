@@ -3839,7 +3839,6 @@
       <varInfo nodeId="4073449185570422679" varName="ucl" />
     </scopeInfo>
     <scopeInfo nodeId="4073449185570421959" fileName="ClassifierAdapters_Test.java" startLine="280" startPosition="0" endLine="381" endPosition="0" />
-    <unitInfo nodeId="5988816933596123665" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="21" endLine="24" endPosition="0" />
     <unitInfo nodeId="876385242039332960" fileName="ClassifierAdapters_Test.java" startLine="266" startPosition="76" endLine="269" endPosition="7" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$13" />
     <unitInfo nodeId="1202778458188" fileName="ClassifierAdapters_Test.java" startLine="26" startPosition="21" endLine="30" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$1" />
     <unitInfo nodeId="1202778862220" fileName="ClassifierAdapters_Test.java" startLine="42" startPosition="78" endLine="46" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$2" />
@@ -3848,7 +3847,7 @@
     <unitInfo nodeId="1204637282822" fileName="ClassifierAdapters_Test.java" startLine="171" startPosition="50" endLine="175" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$7" />
     <unitInfo nodeId="1202780600123" fileName="ClassifierAdapters_Test.java" startLine="204" startPosition="31" endLine="208" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$9" />
     <unitInfo nodeId="1219743569116" fileName="ClassifierAdapters_Test.java" startLine="214" startPosition="32" endLine="218" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$10" />
-    <unitInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="32" endLine="233" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
+    <unitInfo nodeId="5988816933596123644" fileName="ClassifierAdapters_Test.java" startLine="229" startPosition="32" endLine="233" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$11" />
     <unitInfo nodeId="1202928346611" fileName="ClassifierAdapters_Test.java" startLine="243" startPosition="26" endLine="247" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$12" />
     <unitInfo nodeId="4073449185570422616" fileName="ClassifierAdapters_Test.java" startLine="282" startPosition="61" endLine="286" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$14" />
     <unitInfo nodeId="4073449185570422652" fileName="ClassifierAdapters_Test.java" startLine="289" startPosition="8" endLine="293" endPosition="5" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test$15" />

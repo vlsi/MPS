@@ -33,7 +33,6 @@ public class DOMF extends TreePath<Node> {
   }
 
   private static class Children {
-
   }
 
   private static class Feature_elements extends AbstractCollection<Node> {

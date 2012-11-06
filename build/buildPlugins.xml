@@ -35,7 +35,10 @@
       <fileset file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" />
       <filterchain>
         <tokenfilter>
-          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+          <replaceregex pattern="../platform/classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="../workbench/classes/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
       </filterchain>
     </copy>

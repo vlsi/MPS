@@ -4,5 +4,4 @@ package jetbrains.mps.nanoj.actions;
 
 
 public class QueriesGenerated {
-
 }

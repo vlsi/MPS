@@ -20,10 +20,10 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
@@ -52,7 +52,7 @@ public class HighlightUtil {
   }
 
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorCheckerAdapter checker, EditorContext editorContext) {
-    return createHighlighterMessage(node, message, (IErrorReporter) null, checker, editorContext);
+    return createHighlighterMessage(node, message, null, checker, editorContext);
   }
 
   public static HighlighterMessage createWarningMessage(SNode node, String message, EditorCheckerAdapter checker) {

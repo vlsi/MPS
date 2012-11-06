@@ -67,7 +67,13 @@ public interface EditorContext {
 
   EditorInspector getInspector();
 
+  boolean isInspector();
+
+  void openInspector();
+
   EditorComponent getEditorComponent();
+
+  IOperationContext getOperationContext();
 
   void executeCommand(Runnable r);
 
@@ -79,17 +85,19 @@ public interface EditorContext {
 
   IScope getScope();
 
+  SModel getModel();
+
+  boolean isEditable();
+
+  Object createMemento(boolean full);
+
+  Object createMemento();
+
+  boolean setMemento(Object o);
+
   EditorCell createNodeCell(SNode node);
 
   EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
 
   EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
-
-  IOperationContext getOperationContext();
-
-  boolean isInspector();
-
-  void openInspector();
-
-  SModel getModel();
 }

@@ -49,7 +49,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     if ((errorText == null) || (errorText.length() == 0)) {
       errorText = " <no  " + myConceptPropertyName + "  value> ";
     }
-    editorCell = EditorCell_Property.create((jetbrains.mps.nodeEditor.EditorContext) myEditorContext, new ConstantModelAccessor(text), getSNode());
+    editorCell = EditorCell_Property.create(myEditorContext, new ConstantModelAccessor(text), getSNode());
     editorCell.setDefaultText(errorText);
     editorCell.setEditable(true);
     editorCell.getStyle().set(StyleAttributes.FONT_STYLE, DEFAULT_FONT_STYLE);

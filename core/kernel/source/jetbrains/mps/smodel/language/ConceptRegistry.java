@@ -20,15 +20,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -45,6 +44,7 @@ public class ConceptRegistry implements CoreComponent {
   private final Map<String, ConceptDescriptor> conceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
   private final Map<String, BehaviorDescriptor> behaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
   private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<String, ConstraintsDescriptor>();
+  private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
 
   private final ThreadLocal<Set<Pair<String, LanguageAspect>>> conceptsInLoading = new ThreadLocal<Set<Pair<String, LanguageAspect>>>() {
     @Override
@@ -210,6 +210,50 @@ public class ConceptRegistry implements CoreComponent {
     }
   }
 
+  @NotNull
+  public TextGenDescriptor getTextGenDescriptor(@Nullable String fqName) {
+    TextGenDescriptor descriptor = textGenDescriptors.get(fqName);
+
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (fqName == null) {
+      return new DefaultTextGenDescriptor();
+    }
+
+    if (!startLoad(fqName, LanguageAspect.TEXT_GEN)) {
+      return new DefaultTextGenDescriptor();
+    }
+
+    try {
+      try {
+        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        TextGenAspectDescriptor textGenAspectDescriptor;
+        if (languageRuntime == null) {
+          // Then language was just renamed and was not re-generated then it can happen that it has no
+          LOG.warning("No language for: " + fqName + ", while looking for constraints descriptor.", new Throwable());
+          textGenAspectDescriptor = TextGenAspectInterpreted.getInstance();
+        } else {
+          textGenAspectDescriptor = languageRuntime.getTextGenAspectDescriptor();
+        }
+        descriptor = textGenAspectDescriptor.getDescriptor(fqName);
+      } catch (Throwable e) {
+        LOG.warning("Exception while constraints descriptor creating", e);
+      }
+
+      if (descriptor == null) {
+        descriptor = new DefaultTextGenDescriptor();
+      }
+
+      textGenDescriptors.put(fqName, descriptor);
+
+      return descriptor;
+    } finally {
+      finishLoad(fqName, LanguageAspect.TEXT_GEN);
+    }
+  }
+
   public void languagesLoaded(Iterable<LanguageRuntime> languages) {
     ModelAccess.assertLegalWrite();
 
@@ -221,5 +265,6 @@ public class ConceptRegistry implements CoreComponent {
     conceptDescriptors.clear();
     behaviorDescriptors.clear();
     constraintsDescriptors.clear();
+    textGenDescriptors.clear();
   }
 }
