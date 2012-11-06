@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.facet;
 
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 
@@ -100,6 +101,37 @@ public class MPSConfigurationBean {
     usedLanguageReferences.clear();
     for (String usedLanguage : usedLanguages) {
       usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));
+    }
+  }
+
+  public DependencyBean[] getDependencies() {
+    DependencyBean[] dependencies = new DependencyBean[myDescriptor.getDependencies().size()];
+    int i = 0;
+    for (Dependency dep : myDescriptor.getDependencies()) {
+      dependencies[i] = new DependencyBean(dep.getModuleRef().toString(), dep.isReexport());
+      i++;
+    }
+    return dependencies;
+  }
+
+  public void setDependencies(DependencyBean[] dependencies) {
+    Collection<Dependency> descriptorDependencies = myDescriptor.getDependencies();
+    descriptorDependencies.clear();
+    for (DependencyBean dependency : dependencies) {
+      descriptorDependencies.add(new Dependency(ModuleReference.fromString(dependency.myModuleReference), dependency.myReExported));
+    }
+  }
+
+  public static class DependencyBean {
+    public String myModuleReference;
+    public boolean myReExported;
+
+    public DependencyBean() {
+    }
+
+    public DependencyBean(String moduleReference, boolean reExported) {
+      myModuleReference = moduleReference;
+      myReExported = reExported;
     }
   }
 }

@@ -33,6 +33,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.Processor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -49,20 +50,20 @@ import java.util.*;
  */
 public class ModuleRuntimeLibrariesManager {
   private FacetEditorContext myContext;
-  private Collection<ModuleReference> myAddedLanguages;
+  private Collection<ModuleReference> myAddedModules;
   private ModifiableRootModel myModifiableRootModel;
   private Library[] myProjectLibraries;
   private LibrariesContainer myLibrariesContainer;
 
-  public ModuleRuntimeLibrariesManager(FacetEditorContext context, Collection<ModuleReference> addedLanguages) {
+  public ModuleRuntimeLibrariesManager(FacetEditorContext context, Collection<ModuleReference> addedModules) {
     myContext = context;
-    myAddedLanguages = addedLanguages;
+    myAddedModules = addedModules;
     myModifiableRootModel = myContext.getModifiableRootModel();
     myProjectLibraries = myContext.getLibraries();
   }
 
-  public ModuleRuntimeLibrariesManager(Module ideaModule, Collection<ModuleReference> addedLanguages, ModifiableRootModel modifiableModel) {
-    myAddedLanguages = addedLanguages;
+  public ModuleRuntimeLibrariesManager(Module ideaModule, Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel) {
+    myAddedModules = addedModules;
     myModifiableRootModel = modifiableModel;
     myProjectLibraries = LibraryTablesRegistrar.getInstance().getLibraryTable(ideaModule.getProject()).getLibraries();
     myLibrariesContainer = LibrariesContainerFactory.createContainer(ideaModule);
@@ -90,7 +91,7 @@ public class ModuleRuntimeLibrariesManager {
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
     Map<String, Collection<VirtualFile>> projectLibs2Create = new HashMap<String, Collection<VirtualFile>>();
-    for (IModule usedModule : collectRuntimeModules(myAddedLanguages)) {
+    for (IModule usedModule : collectRuntimeModules(myAddedModules)) {
       if (!(usedModule instanceof Solution) || !usedModule.isPackaged() ||
         BootstrapLanguages.JDK.equals(usedModule.getModuleReference())) {
         continue;
@@ -136,12 +137,14 @@ public class ModuleRuntimeLibrariesManager {
     }
   }
 
-  private Set<IModule> collectRuntimeModules(Collection<ModuleReference> languages) {
+  private Set<IModule> collectRuntimeModules(Collection<ModuleReference> moduleReferences) {
     Set<IModule> runtimeDependencies = new HashSet<IModule>();
-    for (ModuleReference moduleReference : languages) {
+    for (ModuleReference moduleReference : moduleReferences) {
       IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
       if (module instanceof Language) {
         collectRuntimeModules(runtimeDependencies, (Language) module);
+      } else if (module instanceof Solution && !(module instanceof SolutionIdea)) {
+        collectRuntimeModules(runtimeDependencies, (Solution) module);
       }
     }
     return runtimeDependencies;
@@ -152,6 +155,16 @@ public class ModuleRuntimeLibrariesManager {
       IModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
       if (runtimeModule != null) {
         collectRuntimeDependencies(runtimeModule, runtimeDependencies);
+      }
+    }
+  }
+
+  private void collectRuntimeModules(Set<IModule> runtimeDependencies, Solution solution) {
+    GlobalModuleDependenciesManager manager = new GlobalModuleDependenciesManager(Collections.singleton((IModule) solution));
+    runtimeDependencies.add(solution);
+    for (IModule module : manager.getModules(Deptype.COMPILE)){
+      if (module instanceof Solution) {
+        runtimeDependencies.add(module);
       }
     }
   }

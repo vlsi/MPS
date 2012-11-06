@@ -116,7 +116,6 @@ public class SolutionIdea extends Solution {
     if (myDependencies == null) {
       // TODO: move to Solution descriptor & try to use common Solution implementation here?
       myDependencies = new ArrayList<Dependency>();
-      ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
       for (Map.Entry<ModuleId, ModuleReference> e : LibrariesLoader.getInstance().getLoadedSolutions().entrySet()) {
         ModuleReference lang = e.getValue();
         if (getUsedLanguagesReferences().contains(lang)) {
@@ -126,6 +125,7 @@ public class SolutionIdea extends Solution {
           myDependencies.add(dep);
         }
       }
+      ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
@@ -142,6 +142,10 @@ public class SolutionIdea extends Solution {
       Solution jdkSolution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
       if (jdkSolution != null) {
         myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
+      }
+
+      for (Dependency dependency : getModuleDescriptor().getDependencies()) {
+        myDependencies.add(dependency);
       }
     }
     return myDependencies;
@@ -170,7 +174,11 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
-
+    super.addDependency(moduleRef, reexport);
+    ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
+    new ModuleRuntimeLibrariesManager(myModule, Collections.singleton(moduleRef), modifiableModel).addMissingLibraries();
+    modifiableModel.commit();
+    invalidateDependencies();
   }
 
   @Override
