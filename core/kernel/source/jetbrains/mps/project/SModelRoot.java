@@ -206,6 +206,7 @@ public class SModelRoot extends ModelRootBase implements FileSystemListener {
 
   @Override
   public void update() {
+    assert isRegistered();
     if (myManager instanceof InvalidModelRootManager) {
       // try to recreate
       IModelRootManager n = createManager();

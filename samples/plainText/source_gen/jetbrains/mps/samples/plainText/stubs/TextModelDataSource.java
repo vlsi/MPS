@@ -6,11 +6,8 @@ import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
@@ -31,10 +28,6 @@ public class TextModelDataSource extends FolderDataSource implements ModelDataSo
   @Override
   protected boolean isIncluded(IFile file) {
     return super.isIncluded(file) && file.getPath().endsWith(".txt");
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) throws ModelReadException {
-    return new DescriptorLoadResult();
   }
 
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {

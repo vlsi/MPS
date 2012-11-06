@@ -31,15 +31,6 @@ public abstract class StubModelDataSource extends FolderSetDataSource implements
     return "stub " + super.toString();
   }
 
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) {
-    DescriptorLoadResult result = new DescriptorLoadResult();
-
-    SModelId modelId = SModelId.foreign(modelName.getStereotype(), module.getModuleReference().getModuleId().toString(), modelName.getLongName());
-    result.setUID(modelId.toString());
-
-    return result;
-  }
-
   public final boolean saveModel(SModelDescriptor descriptor) {
     throw new UnsupportedOperationException();
   }

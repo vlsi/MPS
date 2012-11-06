@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.UpdateableModel;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -303,7 +304,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   protected void reload() {
     DescriptorLoadResult dr;
     try {
-      dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
+      dr = ModelPersistence.loadDescriptor(getSource().getFile());
     } catch (ModelReadException e) {
       updateDiskTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);

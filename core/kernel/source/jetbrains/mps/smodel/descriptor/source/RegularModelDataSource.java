@@ -57,11 +57,6 @@ public class RegularModelDataSource extends FileDataSource implements FastFindSu
   }
 
   @Override
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName modelName) throws ModelReadException {
-    return ModelPersistence.loadDescriptor(getFile());
-  }
-
-  @Override
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor sm, ModelLoadingState state) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     SModelReference dsmRef = dsm.getSModelReference();

@@ -34,8 +34,6 @@ import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
@@ -105,10 +103,6 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
     SNodeOperations.deleteNode(sample);
 
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) {
-    return null;
   }
 
   public long getTimestamp() {

@@ -8,10 +8,8 @@ import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
@@ -41,12 +39,6 @@ public class FileStubSource extends FileDataSource implements ModelDataSource {
   public FileStubSource(IFile file, ModelRoot modelRoot, SModelReference ref) {
     super(file, modelRoot);
     this.ref = ref;
-  }
-
-  public DescriptorLoadResult loadDescriptor(IModule module, SModelFqName name) {
-    DescriptorLoadResult result = new DescriptorLoadResult();
-    result.setUID(ref.getSModelId().toString());
-    return result;
   }
 
   public ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
