@@ -7,7 +7,7 @@
       <varInfo nodeId="1196985119947853649" varName="myClass" />
     </scopeInfo>
     <scopeInfo nodeId="1196985119947853644" fileName="SomeClass.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="1196985119947853655" fileName="SomeClass.java" startLine="9" startPosition="29" endLine="7" endPosition="0" />
+    <unitInfo nodeId="1196985119947853655" fileName="SomeClass.java" startLine="9" startPosition="29" endLine="9" endPosition="44" unitName="jetbrains.mps.testModels.anonymousClass1.SomeClass$1" />
     <unitInfo nodeId="1196985119947853642" fileName="SomeClass.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.testModels.anonymousClass1.SomeClass" />
   </root>
 </debugInfo>

@@ -4,5 +4,4 @@ package jetbrains.mps.make.sandbox.sample.submodel1;
 
 
 public class Foo {
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AnonymousClass_TextGen extends SNodeTextGen {
@@ -56,20 +55,8 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       }
       this.append(")");
     }
-    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass"))) {
-        return;
-      } else {
-        this.append(" {}");
-        return;
-      }
-    }
-    this.append(" {");
-    this.appendNewLine();
-    this.increaseDepth();
-    BaseClassConceptTextGen.members(node, this);
-    this.decreaseDepth();
-    this.appendWithIndent("}");
+    this.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, false, this);
     if (getBuffer().hasPositionsSupport()) {
       {
         String unitName = null;

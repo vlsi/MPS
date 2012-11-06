@@ -242,7 +242,7 @@ public abstract class MpsWorker {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<SModule>>() {
         public List<SModule> compute() {
           IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
+          BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
           List<SModule> modules = new ArrayList<SModule>();
           for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
             IModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);

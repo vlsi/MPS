@@ -48,16 +48,8 @@ public class Interface_TextGen extends SNodeTextGen {
         }
       }
     }
-    this.append(" {");
-    this.appendNewLine();
-    this.increaseDepth();
-    BaseClassConceptTextGen.members(node, this);
-    this.decreaseDepth();
-    if (node.isRoot()) {
-      this.append("}");
-    } else {
-      this.appendWithIndent("}");
-    }
+    this.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, true, this);
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {

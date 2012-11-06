@@ -5,5 +5,4 @@ package jetbrains.mps.debugger.java.evaluation.textGen;
 import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 
 public abstract class EvaluationTextGen extends BaseLanguageTextGen {
-
 }
