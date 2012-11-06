@@ -197,7 +197,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
           return;
         }
         IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-        NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+        NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
   }

@@ -54,7 +54,7 @@ public class NodeNavigatable extends BaseNavigatable {
     if (module == null) return;
 
     ModuleContext context = new ModuleContext(module, project);
-    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
+    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
   public SNodePointer getNodePointer() {

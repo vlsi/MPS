@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
@@ -30,7 +31,6 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -118,7 +118,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           SNode node = ((SModelDescriptor) descriptor).getSModel().getNodeById(id);
           if (node != null) {
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-            NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
+            NavigationSupport.getInstance().openNode(context, node, true, !(SNodeOperations.isRoot(node)));
           }
         }
         FrameUtil.activateFrame(getMainFrame());
@@ -164,14 +164,14 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
 
         }
-        SNode cls = SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
+        SNode cls = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;
         }
-        Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
           }
         });
         SNode method = Sequence.fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {

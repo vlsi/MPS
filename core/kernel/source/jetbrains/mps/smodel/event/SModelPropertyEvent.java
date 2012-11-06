@@ -36,7 +36,7 @@ public class SModelPropertyEvent extends SModelEvent {
   }
 
   public SNode getAffectedRoot() {
-    return myNode.getContainingRoot();
+    return myNode.getTopmostAncestor();
   }
 
   public String getPropertyName() {

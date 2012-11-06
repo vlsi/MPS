@@ -80,7 +80,8 @@ public class SortKeymapMembers_Action extends BaseAction {
     try {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) (((SNode) MapSequence.fromMap(_params).get("target"))))) || !(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) (((SNode) MapSequence.fromMap(_params).get("target"))))))) {
+          SNode node = ((SNode) (((SNode) MapSequence.fromMap(_params).get("target"))));
+          if (jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) (((SNode) MapSequence.fromMap(_params).get("target"))))) || !(node.getModel() != null)) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

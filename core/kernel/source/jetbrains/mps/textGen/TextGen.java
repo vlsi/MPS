@@ -64,7 +64,7 @@ public class TextGen {
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
       Message m = new Message(MessageKind.ERROR, error);
-      if (node != null && jetbrains.mps.util.SNodeOperations.isRegistered(node) && node.getModel() != null && !node.getModel().isTransient()) {
+      if (node != null && node.getModel() != null && !node.getModel().isTransient()) {
         m.setHintObject(new SNodePointer(node));
       }
       return new TextGenerationResult(NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);

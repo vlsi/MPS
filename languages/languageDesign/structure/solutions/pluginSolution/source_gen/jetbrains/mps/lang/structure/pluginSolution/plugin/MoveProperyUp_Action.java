@@ -96,10 +96,12 @@ public class MoveProperyUp_Action extends BaseAction {
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
+          if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
             return;
           }
-          if (!(jetbrains.mps.util.SNodeOperations.isRegistered(((SNode) targetConcept))) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) targetConcept))) {
+          SNode node1 = ((SNode) targetConcept);
+          if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) targetConcept))) {
             return;
           }
 

@@ -81,7 +81,7 @@ class ButtonEditorTab {
         DefaultActionGroup result = new DefaultActionGroup();
         Set<SNode> added = new HashSet<SNode>();
         for (final SNode node : nodes) {
-            SNode root = node.getContainingRoot();
+            SNode root = node.getTopmostAncestor();
             if (added.contains(root)) continue;
             added.add(root);
             result.add(new NavigateNodeAction(node, getActionName(node)));

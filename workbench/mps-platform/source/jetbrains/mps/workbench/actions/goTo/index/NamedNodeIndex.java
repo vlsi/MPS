@@ -40,7 +40,7 @@ public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
 
   private static class SNodeCondition implements Condition<SNode> {
     public boolean met(SNode node) {
-      return node.isRoot() || node.getPersistentProperty(SNodeUtil.property_INamedConcept_name) != null;
+      return node.getModel() != null && node.getModel().isRoot(node) || node.getPersistentProperty(SNodeUtil.property_INamedConcept_name) != null;
     }
   }
 }

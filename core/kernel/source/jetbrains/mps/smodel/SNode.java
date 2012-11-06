@@ -82,12 +82,18 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @NotNull
   public final SNode getTopmostAncestor() {
+    ModelAccess.assertLegalRead(this);
+
     SNode current = this;
-    while (current.treeParent() != null) {
-      assert current != current.treeParent();
-      current = current.treeParent();
+
+    while (true) {
+      current.fireNodeReadAccess();
+      if (current.treeParent() == null) {
+        return current;
+      } else {
+        current = current.treeParent();
+      }
     }
-    return current;
   }
 
   public String getName() {
@@ -372,10 +378,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
         "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
-    if (((SNode) child).isRoot()) {
-      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(((SNode) child)) + " is root node. Can't add it as a child");
-    }
-
     if (getTopmostAncestor() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
     }
@@ -386,7 +388,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     ((SNode) child).setRoleInParent(role);
 
     SModel model = getModel();
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+    if (model != null) {
       ((SNode) child).registerInModel(model);
     } else {
       ((SNode) child).changeModel(model);
@@ -638,52 +640,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----root, deleted, etc.---
 
   /*
-  replace with getContainingRoot==this and fix tests
-   */
-  public boolean isRoot() {
-    return myModel != null && getParent() == null && myModel.isRoot(this);
-  }
-
-  /*
-  replace with getTopmostAncestor
-   */
-  public SNode getContainingRoot() {
-    ModelAccess.assertLegalRead(this);
-
-    SNode current = this;
-
-    while (true) {
-      current.fireNodeReadAccess();
-      if (current.treeParent() == null) {
-        if (myModel != null && myModel.isRoot(current)) {
-          return current;
-        } else {
-          return null;
-        }
-      } else {
-        current = (SNode) current.treeParent();
-      }
-    }
-  }
-
-  /*
-  replace with isDetached
-   */
-  public boolean isDeleted() {
-    return (myReferences.length == 0) && getParent() == null && myModel == null;
-  }
-
-  /*
   calling this means we've held a node between read actions and now it is deleted
   this won't happen if we store only node pointers
   in this case, isDisposed() can be replaced with false
    */
   public boolean isDisposed() {
     return myModel != null && myModel.isDisposed();
-  }
-
-  public SModel getModelInternal() {
-    return myModel;
   }
 
   //----------------------------------------------------------
@@ -849,12 +811,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SNode parent = getParent();
     if (parent != null) {
       parent.removeChild(this);
-    } else if (isRoot()) {
-      getModel().removeRoot(this);
+    } else {
+      SModel model = getModel();
+      if (model != null && model.isRoot(this)) {
+        model.removeRoot(this);
+      }
     }
-
-    // really delete
-    UnregisteredNodes.instance().remove(this);
   }
 
   private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
@@ -891,8 +853,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void enforceModelLoad() {
-    if (!isRoot()) return;
     if (myModel == null) return;
+    if (!myModel.isRoot(this)) return;
     myModel.enforceFullLoad();
   }
 
@@ -1114,6 +1076,34 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Deprecated
   /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode getContainingRoot() {
+    SNode root = getTopmostAncestor();
+    return root.getModel() == null ? null : root;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isRoot() {
+    return getModel() != null && getModel().isRoot(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isDeleted() {
+    return getModel() == null;
+  }
+
+  @Deprecated
+  /**
    * Use<br/>
    * n = new SNode(concept);<br/>
    * model.addNode(n)<br/>
@@ -1158,7 +1148,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isDetached() {
-    return getContainingRoot() == null;
+    return getModel() == null;
   }
 
   @Deprecated

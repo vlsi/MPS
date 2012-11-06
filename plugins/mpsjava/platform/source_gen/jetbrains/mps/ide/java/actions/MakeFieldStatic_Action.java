@@ -77,7 +77,8 @@ public class MakeFieldStatic_Action extends BaseAction {
     try {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          if (!(SNodeOperations.isRegistered(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) || SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
+          if (!(node.getModel() != null) || SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

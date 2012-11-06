@@ -39,7 +39,7 @@
     <nodeInfo nodeId="7376433222636454275" fileName="BaseConcept_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1213877396701" fileName="BaseConcept_Behavior.java" startLine="55" startPosition="10" endLine="56" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2354269628709769382" fileName="BaseConcept_Behavior.java" startLine="59" startPosition="92" endLine="60" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3981318653438236159" fileName="BaseConcept_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3981318653438236159" fileName="BaseConcept_Behavior.java" startLine="64" startPosition="62" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="201537367881074507" fileName="BaseConcept_Behavior.java" startLine="66" startPosition="5" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="201537367881074512" fileName="BaseConcept_Behavior.java" startLine="68" startPosition="137" endLine="69" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="201537367881074524" fileName="BaseConcept_Behavior.java" startLine="70" startPosition="5" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -90,7 +90,7 @@
     <scopeInfo nodeId="1213877396680" fileName="BaseConcept_Behavior.java" startLine="47" startPosition="39" endLine="48" endPosition="34" />
     <scopeInfo nodeId="1213877396694" fileName="BaseConcept_Behavior.java" startLine="52" startPosition="31" endLine="53" endPosition="26" />
     <scopeInfo nodeId="2354269628709769376" fileName="BaseConcept_Behavior.java" startLine="59" startPosition="92" endLine="60" endPosition="125" />
-    <scopeInfo nodeId="3981318653438234735" fileName="BaseConcept_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="15" />
+    <scopeInfo nodeId="3981318653438234735" fileName="BaseConcept_Behavior.java" startLine="64" startPosition="62" endLine="65" endPosition="15" />
     <scopeInfo nodeId="201537367881074495" fileName="BaseConcept_Behavior.java" startLine="68" startPosition="137" endLine="69" endPosition="149" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="75" startPosition="81" endLine="76" endPosition="131" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="80" startPosition="82" endLine="81" endPosition="158" />

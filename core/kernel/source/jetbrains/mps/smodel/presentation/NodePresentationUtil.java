@@ -121,7 +121,7 @@ public class NodePresentationUtil {
       return shortDescription;
     }
 
-    if (node.isRoot()) {
+    if (node.getModel() != null && node.getModel().isRoot(node)) {
       return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
@@ -150,7 +150,7 @@ public class NodePresentationUtil {
 
   public static String getPathToRoot(SNode node) {
     if (node == null) return "null";
-    if (node.isRoot()) return node.getName();
+    if (node.getModel() != null && node.getModel().isRoot(node)) return node.getName();
     return getPathToRoot(node.getParent()) + " > " + node.getName();
   }
 }

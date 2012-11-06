@@ -359,7 +359,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public void editNode(final SNode node, final IOperationContext context, final boolean focus) {
     ModelAccess.assertLegalWrite();
-    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
+    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

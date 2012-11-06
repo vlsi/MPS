@@ -76,6 +76,6 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
       }
     }
     SNodeOperations.deleteNode(node);
-    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), nonTypesystemRule, true, !(nonTypesystemRule.isRoot()));
+    NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), nonTypesystemRule, true, !(jetbrains.mps.util.SNodeOperations.isRoot(nonTypesystemRule)));
   }
 }

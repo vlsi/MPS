@@ -118,10 +118,8 @@ public class CreateRootNodeGroup extends BaseGroup {
       SNode node = event.getData(MPSDataKeys.NODE);
       myPackage = null;
       if (node != null) {
-        SNode root = node.getContainingRoot();
-        if (root != null) {
-          myPackage = root.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
-        }
+        SNode root = node.getTopmostAncestor();
+        myPackage = root.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
       }
     }
 

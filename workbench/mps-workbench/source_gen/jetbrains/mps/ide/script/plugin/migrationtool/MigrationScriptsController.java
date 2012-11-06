@@ -14,7 +14,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 
@@ -58,7 +57,7 @@ public abstract class MigrationScriptsController {
       });
       final SNode node = seachResult.getObject();
       // still alive? 
-      if (node != null && SNodeOperations.isRegistered(node)) {
+      if (node != null && node.getModel() != null) {
         // still applicable? 
         final AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(seachResult);
         runCommand(new Runnable() {

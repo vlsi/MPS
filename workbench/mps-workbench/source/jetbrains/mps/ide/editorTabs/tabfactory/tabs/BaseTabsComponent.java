@@ -163,7 +163,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
       result.put(d, nodes);
       for (SNode node : nodes) {
-        getTabRemovalListener().aspectAdded(node.getContainingRoot());
+        getTabRemovalListener().aspectAdded(node.getTopmostAncestor());
         SNodePointer nodePointer = new SNodePointer(node);
         editedNodesNew.add(nodePointer);
         editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));

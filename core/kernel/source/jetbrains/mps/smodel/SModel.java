@@ -156,8 +156,9 @@ public class SModel {
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
     if (myRoots.contains(node)) return;
-    if (node.getModel() != this && node.isRoot()) {
-      node.getModel().removeRoot(node);
+    SModel model = node.getModel();
+    if (model != null && model != this && model.isRoot(node)) {
+      model.removeRoot(node);
     } else {
       SNode parent = node.getParent();
       if (parent != null) {

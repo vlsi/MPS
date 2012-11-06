@@ -385,7 +385,7 @@ public class ASTConverter {
     // FIXME 
     String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ?
       null :
-      cls.getId()
+      cls.getSNodeId().toString()
     );
 
     if (method instanceof MethodDeclaration) {

@@ -539,7 +539,7 @@
     <nodeInfo nodeId="5797068448049416012" fileName="HierarchyTreeNode.java" startLine="90" startPosition="34" endLine="91" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5797068448049415983" fileName="HierarchyTreeNode.java" startLine="93" startPosition="6" endLine="94" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797068448049415996" fileName="HierarchyTreeNode.java" startLine="98" startPosition="62" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6107809127287260120" fileName="HierarchyTreeNode.java" startLine="103" startPosition="180" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732671373443366490" fileName="HierarchyTreeNode.java" startLine="103" startPosition="150" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797068448049416027" fileName="HierarchyTreeNode.java" startLine="105" startPosition="9" endLine="106" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6107809127287259013" fileName="HierarchyTreeNode.java" startLine="107" startPosition="36" endLine="108" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5797068448049416039" fileName="HierarchyTreeNode.java" startLine="108" startPosition="42" endLine="109" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -553,7 +553,7 @@
     <nodeInfo nodeId="5797068448049415928" fileName="HierarchyTreeNode.java" startLine="67" startPosition="43" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5797068448049415960" fileName="HierarchyTreeNode.java" startLine="84" startPosition="83" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5797068448049415990" fileName="HierarchyTreeNode.java" startLine="97" startPosition="29" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6107809127287259423" fileName="HierarchyTreeNode.java" startLine="102" startPosition="25" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7732671373443366488" fileName="HierarchyTreeNode.java" startLine="102" startPosition="25" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6494427353898345765" fileName="HierarchyTreeNode.java" startLine="76" startPosition="5" endLine="80" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5797068448049415973" fileName="HierarchyTreeNode.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="5797068448049416034" fileName="HierarchyTreeNode.java" startLine="106" startPosition="81" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -578,7 +578,7 @@
     <scopeInfo nodeId="6494427353898345768" fileName="HierarchyTreeNode.java" startLine="74" startPosition="12" endLine="75" endPosition="33" />
     <scopeInfo nodeId="5797068448049415964" fileName="HierarchyTreeNode.java" startLine="85" startPosition="32" endLine="86" endPosition="18" />
     <scopeInfo nodeId="5797068448049415995" fileName="HierarchyTreeNode.java" startLine="98" startPosition="62" endLine="99" endPosition="13" />
-    <scopeInfo nodeId="6107809127287259424" fileName="HierarchyTreeNode.java" startLine="103" startPosition="180" endLine="104" endPosition="17" />
+    <scopeInfo nodeId="7732671373443366489" fileName="HierarchyTreeNode.java" startLine="103" startPosition="150" endLine="104" endPosition="17" />
     <scopeInfo nodeId="5797068448049416007" fileName="HierarchyTreeNode.java" startLine="89" startPosition="78" endLine="91" endPosition="71">
       <varInfo nodeId="5797068448049416009" varName="node" />
     </scopeInfo>

@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -35,9 +36,10 @@ public abstract class ReferenceInfo_TemplateBase extends ReferenceInfo {
     if (!generator.isStrict()/* || !generator.isIncremental()*/) return;
 
     // Additional check - reference target should be generated from the same root (required for incremental generation)
-    SNode outputTargetRoot = outputTarget.getContainingRoot();
-    SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
-    if (outputTargetRoot != null) {
+    SNode outputTargetRoot = outputTarget.getTopmostAncestor();
+    SNode outputSourceRoot = myOutputSourceNode.getTopmostAncestor();
+    SModel model = outputTargetRoot.getModel();
+    if (model == null || !model.isRoot(outputTargetRoot)) {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {
