@@ -28,9 +28,8 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.DebugInfoBuilder;
 import jetbrains.mps.util.NameUtil;
@@ -67,14 +66,14 @@ public class TextGenerator {
     if (!status.isOk()) return false;
 
     Map<SNode, Object> outputNodeContents = new LinkedHashMap<SNode, Object>();
-    if (!generateText(context, status, outputNodeContents)) return false;
+    if (!generateText(status, outputNodeContents)) return false;
 
     generateFiles(status, outputNodeContents);
     generateCaches(status);
     return myTextGenProblems.isEmpty();
   }
 
-  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, Object> outputNodeContents) {
+  private boolean generateText(GenerationStatus status, Map<SNode, Object> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
     status.setBLDependencies(dependRoot);
@@ -91,34 +90,30 @@ public class TextGenerator {
     StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768)};
 
     for (SNode outputNode : outputModel.roots()) {
-      try {
-        buffers[0].setLength(0);
-        buffers[1].setLength(0);
-        if (buffers[0].capacity() > 100000) {
-          buffers[0] = new StringBuilder(8192);
-        }
-        if (buffers[1].capacity() > 200000) {
-          buffers[1] = new StringBuilder(32768);
-        }
-        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen, myGenerateDebugInfo, buffers);
-        hasErrors |= result.hasErrors();
-        if (result.hasErrors()) {
-          myTextGenProblems.addAll(result.problems());
-        } else {
-          Object contents = result.getResult();
-          if (TextGenerationUtil.NO_TEXTGEN != contents) {
-            String fileName = getFileName(outputNode);
-            if (debugInfoBuilder != null) {
-              debugInfoBuilder.fillDebugInfo(fileName, result.getPositions(), result.getScopePositions(), result.getUnitPositions(), status.getOriginalInputModel());
-            }
-            fillDependencies(dependRoot, outputNode, fileName, result);
-            outputNodeContents.put(outputNode, contents);
-          } else {
-            // ignore this node
+      buffers[0].setLength(0);
+      buffers[1].setLength(0);
+      if (buffers[0].capacity() > 100000) {
+        buffers[0] = new StringBuilder(8192);
+      }
+      if (buffers[1].capacity() > 200000) {
+        buffers[1] = new StringBuilder(32768);
+      }
+      TextGenerationResult result = TextGen.generateText(outputNode, myFailIfNoTextgen, myGenerateDebugInfo, buffers);
+      hasErrors |= result.hasErrors();
+      if (result.hasErrors()) {
+        myTextGenProblems.addAll(result.problems());
+      } else {
+        Object contents = result.getResult();
+        if (TextGen.NO_TEXTGEN != contents) {
+          String fileName = getFileName(outputNode);
+          if (debugInfoBuilder != null) {
+            debugInfoBuilder.fillDebugInfo(fileName, result.getPositions(), result.getScopePositions(), result.getUnitPositions(), status.getOriginalInputModel());
           }
+          fillDependencies(dependRoot, outputNode, fileName, result);
+          outputNodeContents.put(outputNode, contents);
+        } else {
+          // ignore this node
         }
-      } finally {
-        TextGenManager.reset();
       }
     }
     return !hasErrors;
@@ -126,13 +121,13 @@ public class TextGenerator {
 
   private void fillDependencies(ModelDependencies root, SNode outputNode, String fileName, TextGenerationResult result) {
     if (result.hasDependencies()) {
-      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), fileName, result.getDependencies(TextGenManager.DEPENDENCY),
-        result.getDependencies(TextGenManager.EXTENDS)));
+      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), fileName, result.getDependencies(TextGen.DEPENDENCY),
+        result.getDependencies(TextGen.EXTENDS)));
     }
   }
 
   public static String getFileName(SNode outputRootNode) {
-    String extension = TextGenManager.instance().getExtension(outputRootNode);
+    String extension = TextGen.getExtension(outputRootNode);
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
