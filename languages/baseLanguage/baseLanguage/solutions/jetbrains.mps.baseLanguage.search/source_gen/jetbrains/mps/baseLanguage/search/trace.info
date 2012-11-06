@@ -932,7 +932,7 @@
     <nodeInfo nodeId="3161373106581137158" fileName="ClassifiersCache.java" startLine="126" startPosition="5" endLine="127" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2197509460969611332" fileName="ClassifiersCache.java" startLine="130" startPosition="58" endLine="131" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2197509460969611354" fileName="ClassifiersCache.java" startLine="133" startPosition="119" endLine="134" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2197509460969611355" fileName="ClassifiersCache.java" startLine="136" startPosition="5" endLine="137" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2197509460969611355" fileName="ClassifiersCache.java" startLine="136" startPosition="5" endLine="137" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581137207" fileName="ClassifiersCache.java" startLine="140" startPosition="58" endLine="141" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8464025797199043237" fileName="ClassifiersCache.java" startLine="142" startPosition="138" endLine="143" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161373106581137227" fileName="ClassifiersCache.java" startLine="143" startPosition="103" endLine="144" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1066,7 +1066,7 @@
     <scopeInfo nodeId="3161373106581137132" fileName="ClassifiersCache.java" startLine="120" startPosition="50" endLine="127" endPosition="33">
       <varInfo nodeId="3161373106581137134" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137169" fileName="ClassifiersCache.java" startLine="130" startPosition="58" endLine="137" endPosition="33">
+    <scopeInfo nodeId="3161373106581137169" fileName="ClassifiersCache.java" startLine="130" startPosition="58" endLine="137" endPosition="34">
       <varInfo nodeId="2197509460969611333" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581137312" fileName="ClassifiersCache.java" startLine="162" startPosition="0" endLine="169" endPosition="0">
