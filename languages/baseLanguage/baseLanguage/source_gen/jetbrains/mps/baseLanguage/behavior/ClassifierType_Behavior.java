@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -28,7 +29,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -102,6 +102,9 @@ public class ClassifierType_Behavior {
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     String classifierName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name");
+    if (classifierName == null) {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
     String shortName = NameUtil.shortNameFromLongName(classifierName);
     return ((List<String>) NameUtil.splitByCamels(NameUtil.decapitalize(shortName)));
   }
