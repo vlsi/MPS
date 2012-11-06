@@ -11,19 +11,30 @@ public class BehaviorMethodNames {
 
   public static String getDeclarationName(SNode method) {
     SNode baseMethod = ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(method);
-    if (baseMethod == null) {
-      return getCallerMethodName(method);
-    }
-    return "virtual_" + SPropertyOperations.getString(baseMethod, "name") + "_" + baseMethod.getSNodeId().toString();
+    String prefix = (((baseMethod != null) ?
+      "virtual" :
+      "call"
+    )) + ((SPropertyOperations.getBoolean(method, "isStatic") ?
+      "Static" :
+      ""
+    )) + "_";
+    return prefix + getMethodName(((baseMethod != null) ?
+      baseMethod :
+      method
+    ));
   }
 
   @Deprecated
   public static String getCallerMethodName(SNode method) {
-    return "call_" + SPropertyOperations.getString(method, "name") + "_" + method.getSNodeId().toString();
+    return "call_" + getMethodName(method);
   }
 
   @Deprecated
   public static String getSuperCallerMethodName(SNode method) {
-    return "callSuper_" + SPropertyOperations.getString(method, "name") + "_" + method.getSNodeId().toString();
+    return "callSuper_" + getMethodName(method);
+  }
+
+  private static String getMethodName(SNode method) {
+    return SPropertyOperations.getString(method, "name") + "_" + method.getSNodeId().toString();
   }
 }
