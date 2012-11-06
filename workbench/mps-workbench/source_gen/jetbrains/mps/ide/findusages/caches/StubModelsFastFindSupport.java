@@ -29,7 +29,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import gnu.trove.THashSet;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import java.util.Collection;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -103,15 +103,17 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
 
     for (final SModelDescriptor sm : models) {
       assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-      ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
-      assert source instanceof StubModelDataSource : source.getClass().getName();
-      StubModelDataSource sms = (StubModelDataSource) source;
-      if (sources.contains(sms)) {
+      StubModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
+      if (sources.contains(source)) {
         continue;
       }
 
-      sources.add(sms);
-      Collection<IFile> files = sms.getAffectedFiles();
+      sources.add(source);
+
+      if (!(source instanceof FileSystemBasedDataSource)) {
+        continue;
+      }
+      Collection<IFile> files = ((FileSystemBasedDataSource) source).getAffectedFiles();
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {

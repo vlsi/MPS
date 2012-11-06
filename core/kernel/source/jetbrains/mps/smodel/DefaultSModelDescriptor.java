@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.UpdateableModel;
+import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -73,11 +74,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   private boolean myChanged = false;
 
-  private SModule myModule;
-
-  public DefaultSModelDescriptor(SModule module, DataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  public DefaultSModelDescriptor(RegularModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
     super(modelReference, source);
-    myModule = module;
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
   }
@@ -117,8 +115,46 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
-    return getSource().loadSModel((IModule) myModule, this, loadingState);
+    return loadSModel(loadingState);
   }
+
+  private ModelLoadResult loadSModel(ModelLoadingState state) {
+    SModelReference dsmRef = getModelReference();
+
+    IFile modelFile = getModelFile();
+    if (!modelFile.isReadOnly() && !modelFile.exists()) {
+      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    }
+
+    ModelLoadResult result;
+    try {
+      // TODO use DataSource
+      result = ModelPersistence.readModel(getDescriptorSModelHeader(), modelFile, state);
+    } catch (ModelReadException e) {
+      SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
+      SModel newModel = new StubModel(getSModelReference(), e);
+      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
+    }
+
+    SModel model = result.getModel();
+    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
+
+      if (needToSave && !modelFile.isReadOnly()) {
+        SModelRepository.getInstance().markChanged(model);
+      }
+    }
+
+    LOG.assertLog(model.getSModelReference().equals(dsmRef),
+      "\nError loading model from file: \"" + modelFile + "\"\n" +
+        "expected model UID     : \"" + dsmRef + "\"\n" +
+        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
+        "the model will not be available.\n" +
+        "Make sure that all project's roots and/or the model namespace is correct");
+    return result;
+  }
+
 
   @Override
   public boolean isChanged() {
@@ -174,9 +210,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
-    boolean reload = getSource().saveModel(this);
+    boolean reload = saveModel();
     if (reload) {
-      ModelLoadResult res = getSource().loadSModel((IModule) myModule, this, getUpdateableModel().getState());
+      ModelLoadResult res = loadSModel(getUpdateableModel().getState());
       updateDiskTimestamp();
       replaceModel(res.getModel(), res.getState());
     }
@@ -184,6 +220,17 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     updateDiskTimestamp();
 
     fireModelSaved();
+  }
+
+  private boolean saveModel() {
+    SModel smodel = getSModel();
+    if (smodel instanceof StubModel) {
+      // we do not save stub model to not overwrite the real model
+      return false;
+    }
+    IFile modelFile = getModelFile();
+    assert modelFile != null;
+    return ModelPersistence.saveModel(smodel, modelFile) != null;
   }
 
   @Override
@@ -252,6 +299,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     return Collections.unmodifiableMap(myMetadata);
   }
 
+  /**
+   * use getSource() -> openInputStream/etc.
+   * @return
+   */
+  @Deprecated
   public IFile getModelFile() {
     return getSource().getFile();
   }
@@ -282,7 +334,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    if (!getSource().hasModel(this)) {
+    if (!getModelFile().exists()) {
       SModelRepository.getInstance().removeModelDescriptor(this);
       return;
     }

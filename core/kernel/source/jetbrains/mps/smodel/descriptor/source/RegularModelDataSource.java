@@ -21,17 +21,10 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -42,7 +35,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 
-public class RegularModelDataSource extends FileDataSource implements FastFindSupportProvider, ModelDataSource {
+public class RegularModelDataSource extends FileDataSource implements FastFindSupportProvider {
   public static String FAST_FIND_ID = "regular";
 
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
@@ -54,61 +47,6 @@ public class RegularModelDataSource extends FileDataSource implements FastFindSu
   public String getModelHash() {
     if (getFile() == null) return null;
     return ModelDigestUtil.hash(getFile());
-  }
-
-  @Override
-  public ModelLoadResult loadSModel(IModule module, SModelDescriptor sm, ModelLoadingState state) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    SModelReference dsmRef = dsm.getSModelReference();
-
-    if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
-      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-    }
-
-    ModelLoadResult result;
-    try {
-      result = ModelPersistence.readModel(dsm.getDescriptorSModelHeader(), dsm.getModelFile(), state);
-    } catch (ModelReadException e) {
-      SuspiciousModelHandler.getHandler().handleSuspiciousModel(dsm, false);
-      SModel newModel = new StubModel(dsm.getSModelReference(), e);
-      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
-    }
-
-    SModel model = result.getModel();
-    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
-
-      if (needToSave && !dsm.getModelFile().isReadOnly()) {
-        SModelRepository.getInstance().markChanged(model);
-      }
-    }
-
-    LOG.assertLog(model.getSModelReference().equals(dsmRef),
-      "\nError loading model from file: \"" + dsm.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
-        "the model will not be available.\n" +
-        "Make sure that all project's roots and/or the model namespace is correct");
-    return result;
-  }
-
-  @Override
-  public boolean saveModel(SModelDescriptor descriptor) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) descriptor;
-    SModel smodel = dsm.getSModel();
-    if (smodel instanceof StubModel) {
-      // we do not save stub model to do not overwrite the real model
-      return false;
-    }
-    IFile modelFile = dsm.getModelFile();
-    assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile) != null;
-  }
-
-  @Override
-  public boolean hasModel(SModelDescriptor md) {
-    return getFile() != null && getFile().exists();
   }
 
   public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {

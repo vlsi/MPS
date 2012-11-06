@@ -9,17 +9,24 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.io.OutputStream;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.io.IOException;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.io.InputStream;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
   private SModel myModel = null;
-  private SModule myModule;
   private boolean isChanged = false;
 
   public TextModelDescriptor(SModule module, TextModelDataSource source) {
     super(TextPersistenceUtil.refByModule(module.getModuleReference()), source);
-    this.myModule = module;
     updateDiskTimestamp();
   }
 
@@ -55,7 +62,17 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   public void save() {
-    getSource().saveModel(this);
+    SModel model = getSModel();
+    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.samples.plainText.structure.TextFile"))) {
+      try {
+        OutputStream os = ((MultiStreamDataSource) getSource()).openOutputStream(SPropertyOperations.getString(tf, "name"));
+        os.write(SPropertyOperations.getString(tf, "text").getBytes());
+        os.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
     isChanged = false;
     updateDiskTimestamp();
   }
@@ -75,11 +92,31 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   public synchronized SModel getSModel() {
     if (myModel == null) {
-      myModel = getSource().loadSModel((IModule) myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+      myModel = loadSModel().getModel();
       myModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
+  }
+
+  public ModelLoadResult loadSModel() {
+    SModel m = new SModel(getSModelReference());
+    MultiStreamDataSource source = (MultiStreamDataSource) getSource();
+    for (String child : Sequence.fromIterable(source.getAvailableStreams())) {
+      SNode root = SModelOperations.createNewRootNode(m, "jetbrains.mps.samples.plainText.structure.TextFile", null);
+      try {
+        InputStream is = source.openInputStream(child);
+        byte[] buf = new byte[1000000];
+        int len = is.read(buf);
+        SPropertyOperations.set(root, "name", child);
+        SPropertyOperations.set(root, "text", new String(buf, 0, len));
+
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    return new ModelLoadResult(m, ModelLoadingState.FULLY_LOADED);
   }
 
   public ModelLoadingState getLoadingState() {
