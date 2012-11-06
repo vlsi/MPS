@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.SingleTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -161,12 +162,17 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContextNew(node, myTypeChecker, myTypeChecker.isGenerationMode());
+    if (myTypeChecker.isGenerationMode()) {
+      return new SingleTypecheckingContext(node, myTypeChecker);
+    }
+    else {
+      return new TypeCheckingContextNew(node, myTypeChecker);
+    }
   }
 
   public TypeCheckingContext createTypeCheckingContextSingle(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContextNew(node, myTypeChecker, true);
+    return new SingleTypecheckingContext(node, myTypeChecker);
   }
 
   private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
@@ -260,7 +266,7 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
-    TypeCheckingContextNew context = new TypeCheckingContextNew(root, myTypeChecker, true);
+    TypeCheckingContextNew context = new SingleTypecheckingContext(root, myTypeChecker);
     return context;
   }
 
@@ -337,4 +343,6 @@ public class TypeContextManager implements CoreComponent {
   public void setComputeInNormalMode_resolverVooDoo(boolean computeInNormalMode_resolverVooDoo) {
     myComputeInNormalMode_resolverVooDoo = computeInNormalMode_resolverVooDoo;
   }
+
+
 }

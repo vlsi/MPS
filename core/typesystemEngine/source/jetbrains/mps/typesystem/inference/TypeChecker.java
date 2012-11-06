@@ -66,6 +66,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private RuntimeSupport myRuntimeSupportTracer;
 
   private RulesManager myRulesManager;
+
   private SubtypingCache mySubtypingCache = null;
   private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
 

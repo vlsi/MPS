@@ -54,7 +54,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   private TypeChecker myTypeChecker;
 
-  private NodeTypesComponent myNodeTypesComponent;
+  protected NodeTypesComponent myNodeTypesComponent;
 
 
   private boolean myIsNonTypesystemComputation = false;
@@ -78,19 +78,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myTypeChecker = typeChecker;
   }
 
-  /**
-   *
-   * @param rootNode
-   * @param typeChecker
-   * @param computeSingleType
-   */
-  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean computeSingleType) {
-    this(rootNode, typeChecker);
-    myIsSingleTypeComputation = computeSingleType;
-  }
-
   public boolean isSingleTypeComputation() {
-    return myIsSingleTypeComputation;
+    return false;
   }
 
   @Override
@@ -178,18 +167,20 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
-      if (!myIsSingleTypeComputation) {
-        currentTypesComponent.typeOfNodeCalled(node);
-        if (addDependency) {
-          currentTypesComponent.addDependencyOnCurrent(node);
-        }
-        if (ruleModel != null && ruleId != null) {
-          currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
-          //todo wrap into "if (addDependency) {}" when sure that typeof works fine
-        }
-      }
+      processDependency(node, ruleModel, ruleId, addDependency, currentTypesComponent);
     }
     return myState.typeOf(node, info);
+  }
+
+  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency, NodeTypesComponent currentTypesComponent) {
+    currentTypesComponent.typeOfNodeCalled(node);
+    if (addDependency) {
+      currentTypesComponent.addDependencyOnCurrent(node);
+    }
+    if (ruleModel != null && ruleId != null) {
+      currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+      //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+    }
   }
 
   @Override
@@ -324,36 +315,18 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void addDependencyForCurrent(SNode node) {
-    if (myIsSingleTypeComputation) return;
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
   @Override
   protected SNode getTypeOf_generationMode(final SNode node) {
-    myIsSingleTypeComputation = true;
-    long start = System.nanoTime();
-    SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
-      }
-    });
-    TypeSystemReporter.getInstance().reportTypeOf(node, (System.nanoTime() - start));
-    return result;
+    throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
   }
 
   @Override
   protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
-    myIsSingleTypeComputation = true;
-    Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
-    if (pair.o2) {
-      return pair.o1;
-    }
-    SNode resultType = myNodeTypesComponent.computeTypesForNodeDuringResolving(node);
-    typeChecker.putTypeComputedForCompletion(node, resultType);
-    return resultType;
+    throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
   }
-
 
   @Override
   public void dispose() {
@@ -365,7 +338,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   protected SNode getTypeOf_normalMode(SNode node) {
-    myIsSingleTypeComputation = false;
     if (!checkIfNotChecked(node, false)) return null;
     return getTypeDontCheck(node);
   }
@@ -397,7 +369,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !myIsSingleTypeComputation && myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
+    return myTypeChecker.isGlobalIncrementalMode() && myState.getInequalitySystem() == null;
   }
 
   @Override
@@ -453,7 +425,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (myIsSingleTypeComputation) return;
     if (nodeWithError == null) {
       myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo
@@ -515,12 +486,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
     if (node == null) return null;
     synchronized (TYPECHECKING_LOCK) {
-      if (this.isSingleTypeComputation()) {
-        return getTypeOf_resolveMode(node, typeChecker);
-      } else {
-        return getTypeOf_normalMode(node);
-      }
+      return _getTypeOf(node, typeChecker);
     }
+  }
+
+  protected SNode _getTypeOf(SNode node, TypeChecker typeChecker) {
+    return getTypeOf_normalMode(node);
   }
 
   @Override
