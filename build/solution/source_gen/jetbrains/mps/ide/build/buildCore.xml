@@ -1914,7 +1914,6 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime-src.jar">
       <zipfileset file="${mps_home}/languages/baseLanguage/logging/runtime/runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/logging/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.jar/META-INF" />
