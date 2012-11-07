@@ -2,9 +2,10 @@
 <debugInfo>
   <unitInfo fileName="AbstractOperationParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AbstractOperationParameter_BehaviorDescriptor" />
   <unitInfo fileName="AllAttributeQualifier_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AllAttributeQualifier_BehaviorDescriptor" />
+  <unitInfo fileName="AsNodeOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AsNodeOperation_BehaviorDescriptor" />
   <unitInfo fileName="AttributeAccess_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeAccess_BehaviorDescriptor" />
   <unitInfo fileName="AttributeQualifier_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CheckedModuleReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.CheckedModuleReference_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFqNameRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ConceptFqNameRefExpression_BehaviorDescriptor" />
   <unitInfo fileName="ConceptPropertyNameRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ConceptPropertyNameRefExpression_BehaviorDescriptor" />
@@ -1475,6 +1476,14 @@
       <varInfo nodeId="6407023681583098555" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6407023681583098555" fileName="PropertyAttributeQualifier_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.PropertyAttributeQualifier_Behavior" />
+  </root>
+  <root nodeId="8866923313515896900" modelId="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)">
+    <nodeInfo nodeId="8866923313515896900" fileName="AsNodeOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="8866923313515896913" fileName="AsNodeOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="8866923313515896900" fileName="AsNodeOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="8866923313515896900" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8866923313515896900" fileName="AsNodeOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AsNodeOperation_Behavior" />
   </root>
 </debugInfo>
 
