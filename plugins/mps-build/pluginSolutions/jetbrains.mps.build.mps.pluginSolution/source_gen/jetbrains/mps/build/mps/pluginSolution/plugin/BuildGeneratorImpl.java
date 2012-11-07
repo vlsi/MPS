@@ -200,7 +200,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       indicator.setText("Creating Model...");
       return BuildGeneratorUtil.createModel(getNewModelName(), solution);
     } else {
-      return this.getModel();
+      return (SModelDescriptor) this.getModel();
     }
   }
 

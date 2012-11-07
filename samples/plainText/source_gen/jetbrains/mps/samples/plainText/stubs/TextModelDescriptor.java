@@ -126,6 +126,9 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     );
   }
 
+  public void reloadFromDisk() {
+  }
+
   private static void check_bp2jat_a1a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
