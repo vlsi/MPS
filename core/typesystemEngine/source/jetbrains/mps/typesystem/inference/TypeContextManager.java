@@ -162,22 +162,21 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
+    TypeCheckingContextNew context = new TypeCheckingContextNew(node, myTypeChecker);
     if (myTypeChecker.isGenerationMode()) {
-      return new SingleTypecheckingContext(node, myTypeChecker);
+      return new SingleTypecheckingContext(context);
     }
-    else {
-      return new TypeCheckingContextNew(node, myTypeChecker);
-    }
+    return context;
   }
 
   public TypeCheckingContext createTypeCheckingContextSingle(SNode node) {
     ModelAccess.assertLegalRead();
-    return new SingleTypecheckingContext(node, myTypeChecker);
+    return new SingleTypecheckingContext(new TypeCheckingContextNew(node, myTypeChecker));
   }
 
   private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContext_Tracer(node, myTypeChecker);
+    return new TypeCheckingContext_Tracer(new TypeCheckingContextNew(node, myTypeChecker));
   }
 
   public TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
@@ -266,8 +265,7 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
-    TypeCheckingContextNew context = new SingleTypecheckingContext(root, myTypeChecker);
-    return context;
+    return new SingleTypecheckingContext(new TypeCheckingContextNew(root, myTypeChecker));
   }
 
   private Set<SNode> getMyResolveNodes() {

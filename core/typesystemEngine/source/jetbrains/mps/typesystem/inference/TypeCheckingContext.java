@@ -175,13 +175,13 @@ public abstract class TypeCheckingContext {
   public abstract SNode getTypeOf(SNode node, TypeChecker typeChecker);
 
   @Nullable
-  protected abstract SNode getTypeOf_normalMode(SNode node);
+  public abstract SNode getTypeOf_normalMode(SNode node);
 
-  protected abstract SNode getTypeOf_generationMode(SNode node);
+  public abstract SNode getTypeOf_generationMode(SNode node);
+
+  public abstract SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker);
 
   public abstract SNode getTypeInGenerationMode(SNode node);
-
-  protected abstract SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker);
 
   public abstract boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules);
 

@@ -15,14 +15,19 @@
  */
 package jetbrains.mps.lang.typesystem.runtime.performance;
 
+import jetbrains.mps.newTypesystem.BaseTypecheckingContext;
+import jetbrains.mps.newTypesystem.DelegateTypecheckingContext;
+import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 
-public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
-  public TypeCheckingContext_Tracer(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+public class TypeCheckingContext_Tracer extends DelegateTypecheckingContext {
+
+  public TypeCheckingContext_Tracer(TypeCheckingContext context) {
+    super(context);
   }
 
   @Override
@@ -35,12 +40,13 @@ public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
   }
 
   @Override
-  protected SNode getTypeOf_generationMode(final SNode node) {
-    return getTypeChecker().computeWithTrace(new Computable<SNode>(){
+  public SNode getTypeOf_generationMode(final SNode node) {
+    return TypeChecker.getInstance().computeWithTrace(new Computable<SNode>(){
       @Override
       public SNode compute() {
         return TypeCheckingContext_Tracer.super.getTypeOf_generationMode(node);
       }
     }, "type computing");
   }
+
 }

@@ -20,6 +20,7 @@ import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -30,10 +31,10 @@ import jetbrains.mps.util.Pair;
  * Time: 3:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SingleTypecheckingContext extends TypeCheckingContextNew {
+public class SingleTypecheckingContext extends DelegateTypecheckingContext {
 
-  public SingleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public SingleTypecheckingContext (TypeCheckingContext context) {
+    super(context);
   }
 
   @Override
@@ -56,24 +57,23 @@ public class SingleTypecheckingContext extends TypeCheckingContextNew {
     // do nothing
   }
 
-
   @Override
   public boolean isIncrementalMode() {
     return false;
   }
 
   @Override
-  protected SNode getTypeOf_normalMode(SNode node) {
+  public SNode getTypeOf_normalMode(SNode node) {
     throw new IllegalStateException("Invalid usage of SingleTypecheckingContext");
   }
 
   @Override
-  protected SNode getTypeOf_generationMode(final SNode node) {
+  public SNode getTypeOf_generationMode(final SNode node) {
     long start = System.nanoTime();
     SNode result = LanguageScopeExecutor.execWithModelScope(node.getModel(), new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+        return myDelegate.getBaseNodeTypesComponent().computeTypesForNodeDuringGeneration(node);
       }
     });
     TypeSystemReporter.getInstance().reportTypeOf(node, (System.nanoTime() - start));
@@ -81,18 +81,23 @@ public class SingleTypecheckingContext extends TypeCheckingContextNew {
   }
 
   @Override
-  protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+  public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
     Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = myNodeTypesComponent.computeTypesForNodeDuringResolving(node);
+    SNode resultType = myDelegate.getBaseNodeTypesComponent().computeTypesForNodeDuringResolving(node);
     typeChecker.putTypeComputedForCompletion(node, resultType);
     return resultType;
   }
 
+
   @Override
-  protected SNode _getTypeOf(SNode node, TypeChecker typeChecker) {
-    return getTypeOf_resolveMode(node, typeChecker);
+  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
+    if (node == null) return null;
+    synchronized (TYPECHECKING_LOCK) {
+      return getTypeOf_resolveMode(node, typeChecker);
+    }
   }
+
 }

@@ -43,10 +43,8 @@ import jetbrains.mps.util.SNodeOperations;
 
 import java.util.*;
 
-public class TypeCheckingContextNew extends TypeCheckingContext {
+public class TypeCheckingContextNew extends BaseTypecheckingContext {
   private static Logger LOG = Logger.getLogger(TypeCheckingContextNew.class);
-
-  public final Object TYPECHECKING_LOCK = new Object();
 
   private State myState;
 
@@ -55,7 +53,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private TypeChecker myTypeChecker;
 
   protected NodeTypesComponent myNodeTypesComponent;
-
 
   private boolean myIsNonTypesystemComputation = false;
   private boolean myIsTraceMode = false;
@@ -150,30 +147,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
     createComparableEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
-  }
-
-  @Override
-  public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
-    if (node == null) return null;
-    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
-    if (currentTypesComponent != null) {
-      //--- for incremental algorithm:
-      currentTypesComponent.addNodeToFrontier(node);
-      processDependency(node, ruleModel, ruleId, addDependency, currentTypesComponent);
-    }
-    return myState.typeOf(node, info);
-  }
-
-  protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency, NodeTypesComponent currentTypesComponent) {
-    currentTypesComponent.typeOfNodeCalled(node);
-    if (addDependency) {
-      currentTypesComponent.addDependencyOnCurrent(node);
-    }
-    if (ruleModel != null && ruleId != null) {
-      currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
-      //todo wrap into "if (addDependency) {}" when sure that typeof works fine
-    }
   }
 
   @Override
@@ -311,14 +284,17 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     getNodeTypesComponent().addDependencyForCurrent(node);
   }
 
-  @Override
-  protected SNode getTypeOf_generationMode(final SNode node) {
+  public SNode getTypeOf_generationMode(final SNode node) {
     throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
   }
 
-  @Override
-  protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+  public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
     throw new IllegalStateException("Invalid usage of TypeCheckingContextNew");
+  }
+
+  public SNode getTypeOf_normalMode(SNode node) {
+    if (!checkIfNotChecked(node, false)) return null;
+    return getTypeDontCheck(node);
   }
 
   @Override
@@ -327,12 +303,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myNodeTypesComponent.dispose();
     myRequesting.clear();
     myState.clear(true);
-  }
-
-  @Override
-  protected SNode getTypeOf_normalMode(SNode node) {
-    if (!checkIfNotChecked(node, false)) return null;
-    return getTypeDontCheck(node);
   }
 
   public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
@@ -463,18 +433,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       return c.compute();
     }
-  }
-
-  @Override
-  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    if (node == null) return null;
-    synchronized (TYPECHECKING_LOCK) {
-      return _getTypeOf(node, typeChecker);
-    }
-  }
-
-  protected SNode _getTypeOf(SNode node, TypeChecker typeChecker) {
-    return getTypeOf_normalMode(node);
   }
 
   @Override
