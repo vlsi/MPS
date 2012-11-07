@@ -14,9 +14,6 @@ public class BehaviorMethodNames {
     String prefix = (((baseMethod != null) ?
       "virtual" :
       "call"
-    )) + ((SPropertyOperations.getBoolean(method, "isStatic") ?
-      "Static" :
-      ""
     )) + "_";
     return prefix + getMethodName(((baseMethod != null) ?
       baseMethod :
