@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.presentation;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -129,7 +130,7 @@ public class NodePresentationUtil {
   }
 
   public static String getAliasOrConceptName(SNode node) {
-    String alias = node.getConceptProperty("alias");
+    String alias = SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node), "conceptAlias");
     if (alias != null) {
       return alias;
     }
