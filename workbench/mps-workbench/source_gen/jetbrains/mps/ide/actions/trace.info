@@ -12694,7 +12694,7 @@
     <nodeInfo nodeId="1815921522227175836" fileName="MappingDialog.java" startLine="69" startPosition="47" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2606490174690342441" fileName="MappingDialog.java" startLine="71" startPosition="9" endLine="72" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6107809127287287514" fileName="MappingDialog.java" startLine="74" startPosition="29" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7732671373443366591" fileName="MappingDialog.java" startLine="76" startPosition="129" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732671373443366591" fileName="MappingDialog.java" startLine="76" startPosition="126" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6107809127287287524" fileName="MappingDialog.java" startLine="78" startPosition="13" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1071422968910407069" fileName="MappingDialog.java" startLine="79" startPosition="44" endLine="80" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7054831363147696156" fileName="MappingDialog.java" startLine="84" startPosition="7" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -12763,7 +12763,7 @@
     <scopeInfo nodeId="1815921522227175439" fileName="MappingDialog.java" startLine="61" startPosition="50" endLine="62" endPosition="17" />
     <scopeInfo nodeId="1815921522227175538" fileName="MappingDialog.java" startLine="65" startPosition="27" endLine="66" endPosition="17" />
     <scopeInfo nodeId="1815921522227175748" fileName="MappingDialog.java" startLine="69" startPosition="47" endLine="70" endPosition="17" />
-    <scopeInfo nodeId="7732671373443366590" fileName="MappingDialog.java" startLine="76" startPosition="129" endLine="77" endPosition="21" />
+    <scopeInfo nodeId="7732671373443366590" fileName="MappingDialog.java" startLine="76" startPosition="126" endLine="77" endPosition="21" />
     <scopeInfo nodeId="7054831363147658708" fileName="MappingDialog.java" startLine="89" startPosition="43" endLine="90" endPosition="27" />
     <scopeInfo nodeId="1723406319279177998" fileName="MappingDialog.java" startLine="94" startPosition="82" endLine="95" endPosition="77" />
     <scopeInfo nodeId="7054831363147695809" fileName="MappingDialog.java" startLine="99" startPosition="29" endLine="100" endPosition="18" />

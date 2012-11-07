@@ -67,7 +67,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePoint
               node == null ||
                 node.getModel() == null ||
                 node.getModel().isDisposed() ||
-                node.getModel().getModelDescriptor() != null) {
+                node.getModel().getModelDescriptor() == null) {
               return;
             }
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));

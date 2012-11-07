@@ -79,7 +79,10 @@ public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourcePath_2725562405081831808(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     String localPath = BehaviorReflection.invokeVirtual(String.class, _context.getSourceNode(), "virtual_getLocalPath_5481553824944787364", new Object[]{Context.defaultContext()});
     if ((localPath == null || localPath.length() == 0)) {
-      return false;
+      localPath = BehaviorReflection.invokeVirtual(String.class, _context.getSourceNode(), "virtual_getRelativePath_5481553824944787371", new Object[]{});
+      if ((localPath == null || localPath.length() == 0)) {
+        return false;
+      }
     }
     return localPath.matches(".*\\.(jar|zip|war|tar|tar\\.gz|tar\\.bz)");
   }
