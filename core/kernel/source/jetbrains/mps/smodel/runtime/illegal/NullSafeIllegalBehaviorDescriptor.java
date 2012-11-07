@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
   public static NullSafeIllegalBehaviorDescriptor INSTANCE = new NullSafeIllegalBehaviorDescriptor();
@@ -40,6 +41,11 @@ public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    throw new IllegalArgumentException();
+  }
+
+  @Override
+  public Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
     throw new IllegalArgumentException();
   }
 
