@@ -437,6 +437,8 @@ public class Classifier_Behavior {
   public static Iterable<SNode> call_members_1465982738252129704(SNode thisNode) {
     // todo: change on .members 
     final List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)));
+
     _FunctionTypes._void_P2_E0<? super Iterable<SNode>, ? super Boolean> addMembersToResult = new _FunctionTypes._void_P2_E0<Iterable<SNode>, Boolean>() {
       public void invoke(Iterable<SNode> curMembers, Boolean addWhitespaceAfterEachMember) {
         for (SNode member : Sequence.fromIterable(curMembers)) {
