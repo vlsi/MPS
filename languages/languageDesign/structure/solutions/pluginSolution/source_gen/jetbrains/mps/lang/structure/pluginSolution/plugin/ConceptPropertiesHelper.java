@@ -259,7 +259,7 @@ public class ConceptPropertiesHelper {
     SLinkOperations.setTarget(modelComponent, "keyMap", SLinkOperations.getTarget(cell, "keyMap", false), false);
     SLinkOperations.setTarget(modelComponent, "styleClass", SLinkOperations.getTarget(cell, "styleClass", false), false);
     {
-      Iterator<SNode> nodeChild_it = ListSequence.fromList(SLinkOperations.getTargets(modelComponent, "styleItem", true)).iterator();
+      Iterator<SNode> nodeChild_it = ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).iterator();
       SNode nodeChild_var;
       while (nodeChild_it.hasNext()) {
         nodeChild_var = nodeChild_it.next();
