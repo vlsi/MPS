@@ -63,8 +63,8 @@ public class BuildLayout_Zip_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("tagName", "mkdir");
           quotedNode1_6.setProperty("shortEmptyNotation", "true");
+          quotedNode1_6.setProperty("tagName", "mkdir");
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_7 = quotedNode_3;
@@ -104,8 +104,8 @@ public class BuildLayout_Zip_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
-          quotedNode1_8.setProperty("tagName", "unzip");
           quotedNode1_8.setProperty("shortEmptyNotation", "true");
+          quotedNode1_8.setProperty("tagName", "unzip");
           {
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
             SNode quotedNode1_9 = quotedNode_3;
