@@ -19,6 +19,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new AddFinalModifierToAny_Intention(), "1203703270380");
     add(new AddInstanceInitializer_Intention(), "1206631638103");
     add(new AddMainMethod_Intention(), "1236007216018");
+    add(new AddModifiers_Intention(), "3166734731684557381");
     add(new AddNewLine_Intention(), "6227066020986359514");
     add(new AddRemoveStaticMethodModifier_Intention(), "1203701450442");
     add(new AddRuntimeExceptionToMethodSignature_Intention(), "1199627248517");

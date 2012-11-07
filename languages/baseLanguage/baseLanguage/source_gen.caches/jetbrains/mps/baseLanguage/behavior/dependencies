@@ -461,6 +461,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IHasModifiers_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
@@ -2142,6 +2143,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IGeneric_BehaviorDescriptor" file="IGeneric_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.baseLanguage.behavior.IHasModifiers_BehaviorDescriptor" file="IHasModifiers_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior" file="IInternalType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -2934,6 +2936,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.Modifier_BehaviorDescriptor" file="Modifier_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.MulAssignmentExpression_BehaviorDescriptor" file="MulAssignmentExpression_BehaviorDescriptor.java">

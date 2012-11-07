@@ -98,6 +98,9 @@
       <modulePath path="${project}/languages/baseLanguage/jdk7/languages/jdk7/jdk7.mpl" folder="baseLanguage.jdk7" />
       <modulePath path="${project}/languages/baseLanguage/jdk7/solutions/jetbrains.mps.baseLanguage.jdk7.sandbox/jetbrains.mps.baseLanguage.jdk7.sandbox.msd" folder="baseLanguage.jdk7" />
       <modulePath path="${project}/languages/baseLanguage/logging/logging.mpl" folder="baseLanguage" />
+      <modulePath path="${project}/languages/baseLanguage/methodDispatch/methodDispatch.mpl" folder="baseLanguage" />
+      <modulePath path="${project}/languages/baseLanguage/methodDispatch/solutions/sandbox/sandbox.msd" folder="baseLanguage" />
+      <modulePath path="${project}/languages/baseLanguage/methodDispatch/solutions/test.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" folder="baseLanguage.overloadedOperators" />
       <modulePath path="${project}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" folder="baseLanguage.overloadedOperators" />
       <modulePath path="${project}/languages/baseLanguage/tuples/languages/tuples/tuples.mpl" folder="baseLanguage.tuples" />

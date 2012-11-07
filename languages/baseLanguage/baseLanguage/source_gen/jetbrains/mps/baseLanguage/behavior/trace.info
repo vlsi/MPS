@@ -116,6 +116,7 @@
   <unitInfo fileName="IGenericDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IGenericDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="IGenericType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor" />
   <unitInfo fileName="IGeneric_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IGeneric_BehaviorDescriptor" />
+  <unitInfo fileName="IHasModifiers_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IHasModifiers_BehaviorDescriptor" />
   <unitInfo fileName="IInternalType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IInternalType_BehaviorDescriptor" />
   <unitInfo fileName="ILocalDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ILocalReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalReference_BehaviorDescriptor" />
@@ -173,6 +174,7 @@
   <unitInfo fileName="MethodDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="MinusAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MinusAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="MinusExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MinusExpression_BehaviorDescriptor" />
+  <unitInfo fileName="Modifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Modifier_BehaviorDescriptor" />
   <unitInfo fileName="MulAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MulAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="MulExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MulExpression_BehaviorDescriptor" />
   <unitInfo fileName="NPEEqualsExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NPEEqualsExpression_BehaviorDescriptor" />
