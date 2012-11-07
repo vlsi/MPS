@@ -173,7 +173,7 @@ public class SNodeUtil {
   }
 
   public static String getConceptShortDescription(SNode concept) {
-    return SPropertyOperations.getString(concept, "shortDescription");
+    return SPropertyOperations.getString(concept, "conceptShortDescription");
   }
 
   public static String getConceptAlias(SNode concept) {
