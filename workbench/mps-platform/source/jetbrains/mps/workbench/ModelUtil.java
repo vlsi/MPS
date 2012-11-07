@@ -38,7 +38,10 @@ public abstract class ModelUtil {
 
     ArrayList<VirtualFile> res = new ArrayList<VirtualFile>();
     for (IFile path : ((FileSystemBasedDataSource) source).getAffectedFiles()) {
-      res.add(VirtualFileUtils.getVirtualFile(path));
+      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(path);
+      if (virtualFile != null) {
+        res.add(virtualFile);
+      }
     }
     return res;
   }

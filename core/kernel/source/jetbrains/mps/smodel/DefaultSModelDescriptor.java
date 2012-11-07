@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.Refactorable;
@@ -34,8 +33,6 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Collections;
 import java.util.Map;
@@ -301,6 +298,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   /**
    * use getSource() -> openInputStream/etc.
+   *
    * @return
    */
   @Deprecated

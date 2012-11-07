@@ -45,60 +45,54 @@
     <unitInfo nodeId="5521353027965879577" fileName="MakeGenerationHandler.java" startLine="20" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.MakeGenerationHandler" />
   </root>
   <root nodeId="5521353027965879670" modelId="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)">
-    <nodeInfo nodeId="5521353027965879787" fileName="MakeGenerationStrategy.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" />
-    <nodeInfo nodeId="5521353027965879790" fileName="MakeGenerationStrategy.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isIncremental" />
-    <nodeInfo nodeId="5521353027965879680" fileName="MakeGenerationStrategy.java" startLine="21" startPosition="88" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5521353027965879686" fileName="MakeGenerationStrategy.java" startLine="22" startPosition="23" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5521353027965879711" fileName="MakeGenerationStrategy.java" startLine="33" startPosition="50" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879725" fileName="MakeGenerationStrategy.java" startLine="38" startPosition="21" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879732" fileName="MakeGenerationStrategy.java" startLine="41" startPosition="32" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879745" fileName="MakeGenerationStrategy.java" startLine="44" startPosition="51" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5521353027965879760" fileName="MakeGenerationStrategy.java" startLine="50" startPosition="5" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5521353027965879766" fileName="MakeGenerationStrategy.java" startLine="51" startPosition="63" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5521353027965879767" fileName="MakeGenerationStrategy.java" startLine="52" startPosition="0" endLine="53" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5521353027965879778" fileName="MakeGenerationStrategy.java" startLine="54" startPosition="28" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879780" fileName="MakeGenerationStrategy.java" startLine="56" startPosition="5" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5521353027965879781" fileName="MakeGenerationStrategy.java" startLine="57" startPosition="0" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879797" fileName="MakeGenerationStrategy.java" startLine="61" startPosition="41" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879707" fileName="MakeGenerationStrategy.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
-    <nodeInfo nodeId="5521353027965879723" fileName="MakeGenerationStrategy.java" startLine="37" startPosition="93" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5521353027965879730" fileName="MakeGenerationStrategy.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5521353027965879773" fileName="MakeGenerationStrategy.java" startLine="53" startPosition="41" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5521353027965879793" fileName="MakeGenerationStrategy.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIncrementalEnabled#()Z" />
-    <nodeInfo nodeId="5521353027965879672" fileName="MakeGenerationStrategy.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeGenerationStrategy#(Ljetbrains/mps/generator/GenerationCacheContainer;Z)V" />
-    <nodeInfo nodeId="5521353027965879699" fileName="MakeGenerationStrategy.java" startLine="26" startPosition="78" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879751" fileName="MakeGenerationStrategy.java" startLine="45" startPosition="38" endLine="49" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879693" fileName="MakeGenerationStrategy.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencies#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/generator/impl/dependencies/GenerationDependencies;" />
-    <nodeInfo nodeId="5521353027965879738" fileName="MakeGenerationStrategy.java" startLine="43" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5521353027965879713" fileName="MakeGenerationStrategy.java" startLine="37" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelHashes#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/Map;" />
-    <scopeInfo nodeId="5521353027965879710" fileName="MakeGenerationStrategy.java" startLine="33" startPosition="50" endLine="34" endPosition="17" />
-    <scopeInfo nodeId="5521353027965879724" fileName="MakeGenerationStrategy.java" startLine="38" startPosition="21" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="5521353027965879731" fileName="MakeGenerationStrategy.java" startLine="41" startPosition="32" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="5521353027965879777" fileName="MakeGenerationStrategy.java" startLine="54" startPosition="28" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="5521353027965879796" fileName="MakeGenerationStrategy.java" startLine="61" startPosition="41" endLine="62" endPosition="25" />
-    <scopeInfo nodeId="5521353027965879679" fileName="MakeGenerationStrategy.java" startLine="21" startPosition="88" endLine="23" endPosition="39" />
-    <scopeInfo nodeId="5521353027965879707" fileName="MakeGenerationStrategy.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5521353027965879793" fileName="MakeGenerationStrategy.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="5521353027965879672" fileName="MakeGenerationStrategy.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+    <nodeInfo nodeId="5521353027965879787" fileName="MakeGenerationStrategy.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" />
+    <nodeInfo nodeId="5521353027965879790" fileName="MakeGenerationStrategy.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isIncremental" />
+    <nodeInfo nodeId="5521353027965879680" fileName="MakeGenerationStrategy.java" startLine="19" startPosition="88" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5521353027965879686" fileName="MakeGenerationStrategy.java" startLine="20" startPosition="23" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5521353027965879711" fileName="MakeGenerationStrategy.java" startLine="31" startPosition="50" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521353027965879725" fileName="MakeGenerationStrategy.java" startLine="36" startPosition="21" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521353027965879732" fileName="MakeGenerationStrategy.java" startLine="39" startPosition="32" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5481755926445105709" fileName="MakeGenerationStrategy.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5481755926445118544" fileName="MakeGenerationStrategy.java" startLine="42" startPosition="0" endLine="43" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5481755926445142373" fileName="MakeGenerationStrategy.java" startLine="44" startPosition="35" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5481755926445112990" fileName="MakeGenerationStrategy.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5521353027965879745" fileName="MakeGenerationStrategy.java" startLine="47" startPosition="0" endLine="48" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5521353027965879797" fileName="MakeGenerationStrategy.java" startLine="55" startPosition="41" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521353027965879707" fileName="MakeGenerationStrategy.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
+    <nodeInfo nodeId="5521353027965879723" fileName="MakeGenerationStrategy.java" startLine="35" startPosition="93" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5521353027965879730" fileName="MakeGenerationStrategy.java" startLine="38" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5481755926445137279" fileName="MakeGenerationStrategy.java" startLine="43" startPosition="120" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5521353027965879793" fileName="MakeGenerationStrategy.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIncrementalEnabled#()Z" />
+    <nodeInfo nodeId="5521353027965879672" fileName="MakeGenerationStrategy.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeGenerationStrategy#(Ljetbrains/mps/generator/GenerationCacheContainer;Z)V" />
+    <nodeInfo nodeId="5521353027965879699" fileName="MakeGenerationStrategy.java" startLine="24" startPosition="78" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521353027965879751" fileName="MakeGenerationStrategy.java" startLine="48" startPosition="36" endLine="52" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521353027965879693" fileName="MakeGenerationStrategy.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencies#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/generator/impl/dependencies/GenerationDependencies;" />
+    <nodeInfo nodeId="5521353027965879713" fileName="MakeGenerationStrategy.java" startLine="35" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelHashes#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/Map;" />
+    <scopeInfo nodeId="5521353027965879710" fileName="MakeGenerationStrategy.java" startLine="31" startPosition="50" endLine="32" endPosition="17" />
+    <scopeInfo nodeId="5521353027965879724" fileName="MakeGenerationStrategy.java" startLine="36" startPosition="21" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="5521353027965879731" fileName="MakeGenerationStrategy.java" startLine="39" startPosition="32" endLine="40" endPosition="18" />
+    <scopeInfo nodeId="5481755926445137281" fileName="MakeGenerationStrategy.java" startLine="44" startPosition="35" endLine="45" endPosition="30" />
+    <scopeInfo nodeId="5521353027965879796" fileName="MakeGenerationStrategy.java" startLine="55" startPosition="41" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="5521353027965879679" fileName="MakeGenerationStrategy.java" startLine="19" startPosition="88" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="5521353027965879707" fileName="MakeGenerationStrategy.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5521353027965879793" fileName="MakeGenerationStrategy.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="5521353027965879672" fileName="MakeGenerationStrategy.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="5521353027965879673" varName="cache" />
       <varInfo nodeId="5521353027965879675" varName="isIncremental" />
     </scopeInfo>
-    <scopeInfo nodeId="5521353027965879698" fileName="MakeGenerationStrategy.java" startLine="26" startPosition="78" endLine="30" endPosition="6" />
-    <scopeInfo nodeId="5521353027965879744" fileName="MakeGenerationStrategy.java" startLine="44" startPosition="51" endLine="49" endPosition="8">
-      <varInfo nodeId="5521353027965879746" varName="hash" />
-    </scopeInfo>
-    <scopeInfo nodeId="5521353027965879693" fileName="MakeGenerationStrategy.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5521353027965879698" fileName="MakeGenerationStrategy.java" startLine="24" startPosition="78" endLine="28" endPosition="6" />
+    <scopeInfo nodeId="5521353027965879693" fileName="MakeGenerationStrategy.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5521353027965879696" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5521353027965879722" fileName="MakeGenerationStrategy.java" startLine="37" startPosition="93" endLine="58" endPosition="83">
-      <varInfo nodeId="5521353027965879761" varName="esm" />
-      <varInfo nodeId="5521353027965879768" varName="modelFile" />
+    <scopeInfo nodeId="5521353027965879722" fileName="MakeGenerationStrategy.java" startLine="35" startPosition="93" endLine="52" endPosition="6">
+      <varInfo nodeId="5481755926445118545" varName="generationHashes" />
+      <varInfo nodeId="5521353027965879746" varName="hash" />
     </scopeInfo>
-    <scopeInfo nodeId="5521353027965879713" fileName="MakeGenerationStrategy.java" startLine="37" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="5521353027965879713" fileName="MakeGenerationStrategy.java" startLine="35" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5521353027965879720" varName="context" />
       <varInfo nodeId="5521353027965879718" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="5521353027965879670" fileName="MakeGenerationStrategy.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.MakeGenerationStrategy" />
+    <unitInfo nodeId="5521353027965879670" fileName="MakeGenerationStrategy.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.MakeGenerationStrategy" />
   </root>
   <root nodeId="6648795410103939538" modelId="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)">
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />

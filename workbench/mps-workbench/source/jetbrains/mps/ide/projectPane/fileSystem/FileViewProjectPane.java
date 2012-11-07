@@ -43,6 +43,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
@@ -52,12 +53,9 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -66,11 +64,9 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
-import javax.swing.Timer;
+import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
@@ -419,9 +415,12 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
           }
         });
         SModelDescriptor d = smodel.getModelDescriptor();
-        if (!(d instanceof DefaultSModelDescriptor)) return false;
+        if (d == null) return false;
 
-        IFile modelFile = ((DefaultSModelDescriptor) d).getModelFile();
+        DataSource source = d.getSource();
+        if (!(source instanceof FileSystemBasedDataSource)) return false;
+
+        IFile modelFile = ((FileSystemBasedDataSource) d).getAffectedFiles().iterator().next();
         VirtualFile realFile = null;
         if (modelFile != null) {
           realFile = VirtualFileUtils.getVirtualFile(modelFile);
