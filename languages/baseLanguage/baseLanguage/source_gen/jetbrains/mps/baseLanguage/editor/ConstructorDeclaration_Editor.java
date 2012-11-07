@@ -20,8 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -60,9 +58,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_1x071y_i0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_1x071y_j0(editorContext, node));
-    if (renderingCondition_1x071y_a01a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_1x071y_k0(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -149,17 +144,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1x071y_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_1x071y_k0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_1x071y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_1x071y_a0");
@@ -229,10 +213,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_1x071y_a8a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
-  }
-
-  private static boolean renderingCondition_1x071y_a01a(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null && !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
   private static class parameterListHandler_1x071y_g0 extends RefNodeListHandler {

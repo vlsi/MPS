@@ -23,8 +23,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -71,9 +69,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_j4vm40_m0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_j4vm40_n0(editorContext, node));
-    if (renderingCondition_j4vm40_a41a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_j4vm40_o0(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -196,17 +191,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_j4vm40_o0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_j4vm40_o0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_j4vm40_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_j4vm40_a0");
@@ -280,10 +264,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_j4vm40_a21a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
-  }
-
-  private static boolean renderingCondition_j4vm40_a41a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
   private static class parameterListHandler_j4vm40_k0 extends RefNodeListHandler {
