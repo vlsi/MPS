@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -161,7 +160,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1144956008583624648(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SConceptPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract");
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract");
   }
 
   public static Object propertyMacro_GetPropertyValue_1144956008583742122(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -580,7 +579,7 @@ public class QueriesGenerated {
 
     return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && !(SConceptPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
       }
     });
   }

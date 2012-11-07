@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
@@ -34,7 +34,7 @@ public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
       SNode act = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType");
       return ListSequence.fromList(SConceptOperations.getAllSubConcepts(act, SNodeOperations.getModel(node), scope)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+          return !(SPropertyOperations.getBoolean(it, "abstract"));
         }
       }).concat(ListSequence.fromList(others)).toListSequence();
     }

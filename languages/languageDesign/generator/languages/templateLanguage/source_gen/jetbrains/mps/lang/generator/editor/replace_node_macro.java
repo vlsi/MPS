@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
@@ -31,7 +31,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro"), SNodeOperations.getModel(node), scope)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+          return !(SPropertyOperations.getBoolean(it, "abstract"));
         }
       }).toListSequence();
     }
@@ -56,7 +56,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     }
 
     public String getMatchingText_internal(SNode parameterObject) {
-      return SConceptPropertyOperations.getString(parameterObject, "alias");
+      return SPropertyOperations.getString(parameterObject, "conceptAlias");
     }
 
     public String getDescriptionText(Object parameterObject) {
@@ -64,7 +64,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     }
 
     public String getDescriptionText_internal(SNode parameterObject) {
-      return SConceptPropertyOperations.getString(parameterObject, "alias");
+      return SPropertyOperations.getString(parameterObject, "conceptAlias");
     }
   }
 }

@@ -26,10 +26,11 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class ExponentOperation_Component extends AbstractCellProvider {
   public ExponentOperation_Component(SNode node) {
@@ -116,7 +117,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "allowedSubstituends")).first(), SNodeOperations.getModel(node), scope))) {
-        if (!(SConceptPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
+        if (!(SPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
           ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
         }
       }
@@ -148,7 +149,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public String getDescriptionText_internal(SNode parameterObject) {
-      return SConceptPropertyOperations.getString(parameterObject, "shortDescription");
+      return SPropertyOperations.getString(parameterObject, "shortDescription");
     }
   }
 }

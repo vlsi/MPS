@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
@@ -59,7 +59,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends BaseIntention imple
       return false;
     }
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return SConceptPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
+    return SPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -76,7 +76,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends BaseIntention imple
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
     return ListSequence.fromList(SConceptOperations.getAllSubConcepts(selectedNodeConcept, SNodeOperations.getModel(node), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+        return !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(it), "abstract"));
       }
     }).toListSequence();
   }

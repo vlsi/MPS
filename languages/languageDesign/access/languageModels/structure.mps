@@ -24,28 +24,43 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348174">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandInEDTStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute command in EDT" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348170" resolveInfo="BaseExecuteCommandStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348177">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348172" resolveInfo="BaseExecuteCommandStatementSync" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348179">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteEDTCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute in EDT" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348170" resolveInfo="BaseExecuteCommandStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348181">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteLightweightCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read action" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348172" resolveInfo="BaseExecuteCommandStatementSync" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348183">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteWriteActionStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="write action" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348172" resolveInfo="BaseExecuteCommandStatementSync" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8974276187400348185">
@@ -69,35 +84,11 @@
       <property name="role" nameId="tpce.1071599776563" value="project" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8974276187400348176">
-      <property name="value" nameId="tpce.1105725733873" value="execute command in EDT" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
-  <root id="8974276187400348177">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8974276187400348178">
-      <property name="value" nameId="tpce.1105725733873" value="command" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="8974276187400348179">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8974276187400348180">
-      <property name="value" nameId="tpce.1105725733873" value="execute in EDT" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="8974276187400348181">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8974276187400348182">
-      <property name="value" nameId="tpce.1105725733873" value="read action" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="8974276187400348183">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8974276187400348184">
-      <property name="value" nameId="tpce.1105725733873" value="write action" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
+  <root id="8974276187400348177" />
+  <root id="8974276187400348179" />
+  <root id="8974276187400348181" />
+  <root id="8974276187400348183" />
   <root id="8974276187400348185" />
 </model>
 

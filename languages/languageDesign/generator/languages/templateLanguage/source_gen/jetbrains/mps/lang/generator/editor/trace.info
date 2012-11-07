@@ -19426,7 +19426,7 @@
   </root>
   <root nodeId="2265407187494399846" modelId="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)">
     <nodeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8399143188353015590" fileName="replace_node_macro.java" startLine="33" startPosition="41" endLine="34" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8399143188353015590" fileName="replace_node_macro.java" startLine="33" startPosition="41" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="39" startPosition="162" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2265407187494450833" fileName="replace_node_macro.java" startLine="43" startPosition="163" endLine="44" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2265407187494450788" fileName="replace_node_macro.java" startLine="44" startPosition="101" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -19451,7 +19451,7 @@
     <nodeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="28" startPosition="44" endLine="28" endPosition="44" />
     <scopeInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="23" startPosition="31" endLine="24" endPosition="95" />
-    <scopeInfo nodeId="8399143188353015586" fileName="replace_node_macro.java" startLine="33" startPosition="41" endLine="34" endPosition="74" />
+    <scopeInfo nodeId="8399143188353015586" fileName="replace_node_macro.java" startLine="33" startPosition="41" endLine="34" endPosition="67" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="39" startPosition="162" endLine="40" endPosition="107" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="50" startPosition="45" endLine="51" endPosition="19" />
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="54" startPosition="59" endLine="55" endPosition="68" />

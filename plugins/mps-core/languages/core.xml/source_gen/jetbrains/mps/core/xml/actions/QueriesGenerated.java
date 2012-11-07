@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -302,11 +301,11 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDeclaration"), "shortDescription");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDeclaration"), "shortDescription");
           }
 
           public String getMatchingText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDeclaration"), "alias");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDeclaration"), "conceptAlias");
           }
 
           public String getVisibleMatchingText(String pattern) {
@@ -335,11 +334,11 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), "shortDescription");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), "shortDescription");
           }
 
           public String getMatchingText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), "alias");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), "conceptAlias");
           }
 
           public String getVisibleMatchingText(String pattern) {

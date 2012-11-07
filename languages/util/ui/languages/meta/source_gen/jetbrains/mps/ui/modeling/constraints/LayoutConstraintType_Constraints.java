@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,14 +47,14 @@ public class LayoutConstraintType_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SConceptPropertyOperations.getString(((SNode) _context.getParameterNode()), "alias");
+            return SPropertyOperations.getString(((SNode) _context.getParameterNode()), "conceptAlias");
           }
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.LayoutConstraint"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+                return !(SPropertyOperations.getBoolean(it, "abstract"));
               }
             });
           }

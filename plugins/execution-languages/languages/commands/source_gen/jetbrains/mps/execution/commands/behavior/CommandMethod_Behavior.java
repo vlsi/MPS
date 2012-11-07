@@ -4,11 +4,12 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandMethod_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
-    SConceptPropertyOperations.setBoolean(thisNode, "abstract", false);
+    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(thisNode), "abstract", "" + (false));
   }
 }

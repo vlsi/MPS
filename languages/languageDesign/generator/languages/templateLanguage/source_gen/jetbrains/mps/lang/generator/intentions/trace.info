@@ -377,13 +377,13 @@
     <nodeInfo nodeId="1210374656847785822" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="56" startPosition="90" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210374656847785833" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="58" startPosition="63" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210374656847785873" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="60" startPosition="5" endLine="61" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210374656847785845" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="61" startPosition="76" endLine="62" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210374656847785845" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="61" startPosition="76" endLine="62" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210374656847785917" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="65" startPosition="76" endLine="66" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210374656847785925" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="66" startPosition="118" endLine="67" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210374656847785935" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="67" startPosition="70" endLine="68" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210374656847780346" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="75" startPosition="93" endLine="76" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210374656847829675" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="78" startPosition="39" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210374656847829675" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="78" startPosition="39" endLine="79" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="84" startPosition="96" endLine="85" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="85" startPosition="77" endLine="86" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="88" startPosition="37" endLine="89" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -417,7 +417,7 @@
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="50" startPosition="58" endLine="51" endPosition="19" />
     <scopeInfo nodeId="1210374656847785832" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="58" startPosition="63" endLine="59" endPosition="19" />
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="53" />
-    <scopeInfo nodeId="1210374656847829418" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="78" startPosition="39" endLine="79" endPosition="72" />
+    <scopeInfo nodeId="1210374656847829418" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="78" startPosition="39" endLine="79" endPosition="104" />
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1210374656847760942" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="65" startPosition="76" endLine="68" endPosition="37">
       <varInfo nodeId="1210374656847785918" varName="concreteConceptInstance" />
@@ -442,7 +442,7 @@
     <scopeInfo nodeId="1210374656847760938" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="87" startPosition="28" endLine="92" endPosition="7">
       <varInfo nodeId="1210374656847760938" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1210374656847785819" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="56" startPosition="90" endLine="62" endPosition="82">
+    <scopeInfo nodeId="1210374656847785819" fileName="ReplaceWithConcreteSubconcept_Intention.java" startLine="56" startPosition="90" endLine="62" endPosition="75">
       <varInfo nodeId="1210374656847785874" varName="selectedNodeConcept" />
       <varInfo nodeId="1210374656847785823" varName="sm" />
     </scopeInfo>

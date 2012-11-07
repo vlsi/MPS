@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.Set;
@@ -163,7 +162,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement"), "alias");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement"), "conceptAlias");
           }
 
           public String getVisibleMatchingText(String pattern) {
@@ -200,7 +199,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement"), "alias") + " <amount> of " + SPropertyOperations.getString((item), "workName");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement"), "conceptAlias") + " <amount> of " + SPropertyOperations.getString((item), "workName");
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -229,7 +228,7 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), "alias") + " " + SPropertyOperations.getString((item), "workName");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), "conceptAlias") + " " + SPropertyOperations.getString((item), "workName");
               }
 
               public String getVisibleMatchingText(String pattern) {

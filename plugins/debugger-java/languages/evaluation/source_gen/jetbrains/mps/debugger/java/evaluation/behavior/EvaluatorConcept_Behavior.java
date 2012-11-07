@@ -72,7 +72,7 @@ public class EvaluatorConcept_Behavior {
     }
 
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true)) + SConceptPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "alias") + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
+      return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true)) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), "conceptAlias") + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
     }
 
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
@@ -94,8 +94,8 @@ public class EvaluatorConcept_Behavior {
     if (operation == null) {
       return "????";
     }
-    if (isNotEmpty_29c8r0_a0b0g(SConceptPropertyOperations.getString(operation, "alias"))) {
-      return SConceptPropertyOperations.getString(operation, "alias");
+    if (isNotEmpty_29c8r0_a0b0g(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias"))) {
+      return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {

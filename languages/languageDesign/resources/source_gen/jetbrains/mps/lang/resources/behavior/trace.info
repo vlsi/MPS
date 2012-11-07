@@ -130,11 +130,11 @@
     <unitInfo nodeId="8974276187400030158" fileName="IconResourceBundle_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.IconResourceBundle_Behavior" />
   </root>
   <root nodeId="8974276187400030172" modelId="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)">
-    <nodeInfo nodeId="8974276187400030178" fileName="IconResourceReference_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8974276187400030178" fileName="IconResourceReference_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400030172" fileName="IconResourceReference_Behavior.java" startLine="10" startPosition="45" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8974276187400030172" fileName="IconResourceReference_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="8974276187400030174" fileName="IconResourceReference_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="8974276187400030177" fileName="IconResourceReference_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="178" />
+    <scopeInfo nodeId="8974276187400030177" fileName="IconResourceReference_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="217" />
     <scopeInfo nodeId="8974276187400030172" fileName="IconResourceReference_Behavior.java" startLine="10" startPosition="45" endLine="13" endPosition="0">
       <varInfo nodeId="8974276187400030172" varName="thisNode" />
     </scopeInfo>

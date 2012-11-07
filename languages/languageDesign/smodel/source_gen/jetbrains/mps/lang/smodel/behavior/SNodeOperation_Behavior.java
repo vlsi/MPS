@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -51,7 +51,7 @@ public class SNodeOperation_Behavior {
   }
 
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    String variableExpectedName = NameUtil.toValidCamelIdentifier(SConceptPropertyOperations.getString(thisNode, "alias"));
+    String variableExpectedName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     return variableExpectedName;
   }
 

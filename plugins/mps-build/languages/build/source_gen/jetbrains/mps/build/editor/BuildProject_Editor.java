@@ -31,7 +31,7 @@ import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.editor.util.EditorUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -541,7 +541,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_vny568_a91a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).isEmpty() || SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last()), "abstract");
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).isEmpty() || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last()), "abstract");
   }
 
   private static JComponent _QueryFunction_JComponent_vny568_a0b6a(final SNode node, final EditorContext editorContext) {

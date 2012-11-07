@@ -13,7 +13,8 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Plugin_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "5246455451713051088");
@@ -60,7 +61,7 @@ public class Plugin_Constraints extends BaseConstraintsDescriptor {
             node.getSNodeId().toString() :
             id
           );
-          return SConceptPropertyOperations.getString(node, "alias") + "$" + (id).replace('.', '-');
+          return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") + "$" + (id).replace('.', '-');
         }
       }
 

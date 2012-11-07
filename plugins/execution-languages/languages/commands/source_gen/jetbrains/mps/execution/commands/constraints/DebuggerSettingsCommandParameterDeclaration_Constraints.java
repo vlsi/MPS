@@ -9,7 +9,8 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DebuggerSettingsCommandParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   public DebuggerSettingsCommandParameterDeclaration_Constraints() {
@@ -28,7 +29,7 @@ public class DebuggerSettingsCommandParameterDeclaration_Constraints extends Bas
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return SConceptPropertyOperations.getString(node, "alias");
+        return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias");
       }
     });
     return properties;

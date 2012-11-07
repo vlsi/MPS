@@ -459,7 +459,7 @@
     <unitInfo nodeId="7576379307094721681" fileName="typeof_BuilderCreator_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.typesystem.typeof_BuilderCreator_InferenceRule" />
   </root>
   <root nodeId="7802271442981733175" modelId="r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)">
-    <nodeInfo nodeId="8009360033695211239" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="22" startPosition="154" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8009360033695211239" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="22" startPosition="147" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7802271442981756582" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7802271442981756582" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="26" startPosition="98" endLine="27" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7802271442981756582" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="27" startPosition="212" endLine="28" endPosition="463" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -476,7 +476,7 @@
     <nodeInfo nodeId="7802271442981733175" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="7802271442981733175" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="7802271442981733175" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="18" startPosition="52" endLine="18" endPosition="52" />
-    <scopeInfo nodeId="8009360033695211213" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="22" startPosition="154" endLine="23" endPosition="13" />
+    <scopeInfo nodeId="8009360033695211213" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="22" startPosition="147" endLine="23" endPosition="13" />
     <scopeInfo nodeId="7802271442981733175" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="32" startPosition="46" endLine="33" endPosition="78" />
     <scopeInfo nodeId="7802271442981733175" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="17" />
     <scopeInfo nodeId="7802271442981733175" fileName="typeof_AsBuilderStatement_InferenceRule.java" startLine="17" startPosition="125" endLine="19" endPosition="3" />

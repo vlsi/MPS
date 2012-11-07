@@ -11,13 +11,11 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor.ConceptFunction_Component;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -37,7 +35,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     }
     editorCell.addEditorCell(this.createCollection_5v10so_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_5v10so_c0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_5v10so_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_e0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_f0(editorContext, node));
@@ -51,7 +49,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConceptProperty_5v10so_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_5v10so_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0a(editorContext, node));
     return editorCell;
   }
@@ -260,6 +258,27 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createComponent_5v10so_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConceptFunction_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_5v10so_a0a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_5v10so_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ShortDescriptionEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
     return editorCell;
   }
 
@@ -557,51 +576,6 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_5v10so_a0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_5v10so_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("shortDescription");
-    provider.setNoTargetText("<no shortDescription>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_shortDescription");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 }

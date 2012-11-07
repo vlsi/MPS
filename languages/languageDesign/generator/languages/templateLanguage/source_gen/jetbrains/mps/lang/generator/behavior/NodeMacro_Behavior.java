@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,7 +32,7 @@ public class NodeMacro_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder builder = new StringBuilder();
     boolean newWord = false;
-    for (char ch : SConceptPropertyOperations.getString(thisNode, "alias").toCharArray()) {
+    for (char ch : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias").toCharArray()) {
       if (ch == '$' || ch == '_') {
         newWord = true;
         continue;

@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -48,7 +47,7 @@ public class BaseConcept_Behavior {
       return smartRefPresentation;
     }
     // -- 
-    String conceptAlias = SConceptPropertyOperations.getString(thisNode, "alias");
+    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
     if (conceptAlias != null) {
       return conceptAlias;
     }

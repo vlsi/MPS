@@ -35,7 +35,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
@@ -147,7 +146,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
             List<SNode> subConcepts = (List<SNode>) SConceptOperations.getAllSubConcepts(SLinkOperations.getTarget(SNodeOperations.as(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false), Collections.singleton(currentLanguage));
             return ListSequence.fromList(subConcepts).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+                return !(SPropertyOperations.getBoolean(it, "abstract"));
               }
             });
           }

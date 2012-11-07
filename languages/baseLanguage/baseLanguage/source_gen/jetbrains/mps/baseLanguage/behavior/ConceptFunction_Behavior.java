@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -59,7 +60,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static String virtual_getName_1216468837268(SNode thisNode) {
-    return SConceptPropertyOperations.getString(thisNode, "alias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
 
   public static String call_getHeader_2866018809101862250(SNode thisNode) {
@@ -87,7 +88,7 @@ public class ConceptFunction_Behavior {
         result.append(", ");
       }
       isFirst = false;
-      result.append(SConceptPropertyOperations.getString(cfp, "alias"));
+      result.append(SPropertyOperations.getString(cfp, "conceptAlias"));
     }
     result.append(")->");
     SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);

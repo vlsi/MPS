@@ -20,6 +20,7 @@
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
+  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="4569055436237489038">
       <property name="name" nameId="tpck.1169194664001" value="Component_variants" />
@@ -34,32 +35,32 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="6618365175184889515">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
       <property name="name" nameId="tpck.1169194664001" value="InterfaceExtensionPoint_interface" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensionPoints" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="6618365175184971339">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
       <property name="name" nameId="tpck.1169194664001" value="BeanExtensionAttribute" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="7161354651095863072">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
       <property name="name" nameId="tpck.1169194664001" value="BeanExtension" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="7161354651095876187">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
       <property name="name" nameId="tpck.1169194664001" value="InterfaceExtension" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.extensions" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="3886786302241722680">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
       <property name="name" nameId="tpck.1169194664001" value="IActionItem_subs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="3886786302241755455">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
       <property name="name" nameId="tpck.1169194664001" value="GroupReference_subs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
     </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="8841589787282420429">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.containers" />
       <property name="name" nameId="tpck.1169194664001" value="Components_variants" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.containers" />
     </node>
   </roots>
   <root id="4569055436237489038">
@@ -359,12 +360,12 @@
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6183559520328570731">
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6183559520328570732">
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6183559520328570733">
-                          <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="6183559520328570734">
-                            <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="cs0q.1740160309778171006" resolveInfo="BeanExtensionPoint" />
+                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2886182022231371021">
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2886182022231371022">
+                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.5092175715804935370" resolveInfo="conceptAlias" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="6183559520328570735">
-                            <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+                          <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2886182022231371023">
+                            <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="cs0q.1740160309778171006" resolveInfo="BeanExtensionPoint" />
                           </node>
                         </node>
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6183559520328570736">
@@ -514,12 +515,12 @@
                       <property name="value" nameId="tpee.1070475926801" value="=" />
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6618365175184903487">
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6618365175184903488">
-                        <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="6618365175184903489">
-                          <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="cs0q.1740160309778171007" resolveInfo="IntefaceExtensionPoint" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2886182022231765704">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2886182022231765705">
+                          <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.5092175715804935370" resolveInfo="conceptAlias" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="6618365175184903490">
-                          <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+                        <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2886182022231765706">
+                          <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="cs0q.1740160309778171007" resolveInfo="IntefaceExtensionPoint" />
                         </node>
                       </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6618365175184903491">
@@ -1134,10 +1135,13 @@
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3886786302241735460">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3886786302241735455">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3886786302241735454" />
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="3886786302241735459">
-                        <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2886182022231610518">
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2886182022231610519">
+                        <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.5092175715804935370" resolveInfo="conceptAlias" />
+                      </node>
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2886182022231610520">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="2886182022231610521" />
+                        <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2886182022231610522" />
                       </node>
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3886786302241735463">
@@ -1250,12 +1254,12 @@
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3886786302241755518">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3886786302241755513">
-                      <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="3886786302241755512">
-                        <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2886182022231367561">
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2886182022231367562">
+                        <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.5092175715804935370" resolveInfo="conceptAlias" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="3886786302241755517">
-                        <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+                      <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2886182022231367563">
+                        <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
                       </node>
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3886786302241755521">

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunctionParameter_Behavior {
@@ -38,7 +39,7 @@ public class ConceptFunctionParameter_Behavior {
   }
 
   public static String virtual_getParameterName_1225280611056(SNode thisNode) {
-    return SConceptPropertyOperations.getString(thisNode, "alias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
 
   public static SNode virtual_getDeclaration_1225282371351(SNode thisNode) {

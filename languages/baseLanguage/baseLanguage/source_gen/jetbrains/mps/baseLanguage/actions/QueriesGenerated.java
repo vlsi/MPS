@@ -43,7 +43,6 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
@@ -51,6 +50,7 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -1055,7 +1055,7 @@ __switch__:
               }
 
               public String getDescriptionText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "shortDescription");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "shortDescription");
               }
             });
           }
@@ -1100,7 +1100,7 @@ __switch__:
               }
 
               public String getDescriptionText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "shortDescription");
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "shortDescription");
               }
             });
           }
@@ -1339,7 +1339,7 @@ __switch__:
               ListSequence.fromList(types).addElement(type);
             }
             for (SNode typeConcept : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type"), _context.getModel(), operationContext.getScope()))) {
-              if (!(SConceptPropertyOperations.getBoolean(typeConcept, "abstract"))) {
+              if (!(SPropertyOperations.getBoolean(typeConcept, "abstract"))) {
                 ListSequence.fromList(types).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(typeConcept), null));
               }
             }
@@ -1732,11 +1732,11 @@ __switch__:
           }
 
           public String getDescriptionText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
           }
 
           public String getMatchingText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "alias");
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "conceptAlias");
           }
 
           public String getVisibleMatchingText(String pattern) {
@@ -1760,7 +1760,7 @@ __switch__:
             ));
             if ((instanceOf != null)) {
               SLinkOperations.setTarget(cast, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "classType", true)), true);
-              SLinkOperations.setTarget(cast, "expression", (_context.getCurrentTargetNode() == null || SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
+              SLinkOperations.setTarget(cast, "expression", (_context.getCurrentTargetNode() == null || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
                 SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "leftExpression", true)) :
                 null
               ), true);
@@ -1790,7 +1790,7 @@ __switch__:
                 if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
                   typeName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_getPresentation_1213877396640", new Object[]{});
                 }
-                var = (_context.getCurrentTargetNode() == null || SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
+                var = (_context.getCurrentTargetNode() == null || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
                   SLinkOperations.getTarget(instanceOf, "leftExpression", true) :
                   _context.getCurrentTargetNode()
                 );
@@ -1981,7 +1981,7 @@ __switch__:
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;
-                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a2a0a1a901(SConceptPropertyOperations.getString(param, "alias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
+                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a2a0a1a901(SPropertyOperations.getString(param, "conceptAlias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);
@@ -2001,7 +2001,7 @@ __switch__:
               }
 
               public String getMatchingText(String pattern) {
-                String alias = SConceptPropertyOperations.getString((item), "alias");
+                String alias = SPropertyOperations.getString((item), "conceptAlias");
                 return alias + ".class";
               }
 
@@ -3713,7 +3713,7 @@ __switch__:
         }
 
         public String getMatchingText(String pattern) {
-          return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "alias");
+          return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "conceptAlias");
         }
 
         public String getVisibleMatchingText(String pattern) {
@@ -3721,7 +3721,7 @@ __switch__:
         }
 
         public String getDescriptionText(String pattern) {
-          return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+          return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
         }
       });
     }

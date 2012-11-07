@@ -608,7 +608,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator"), "alias") + "<";
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator"), "conceptAlias") + "<";
           }
 
           public String getVisibleMatchingText(String pattern) {

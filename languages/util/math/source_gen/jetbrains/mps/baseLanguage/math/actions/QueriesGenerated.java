@@ -195,7 +195,7 @@ public class QueriesGenerated {
         public Object compute() {
           List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
           for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), _context.getModel(), operationContext.getScope()))) {
-            if (!(SConceptPropertyOperations.getBoolean(a, "abstract"))) {
+            if (!(SPropertyOperations.getBoolean(a, "abstract"))) {
               ListSequence.fromList(result).addElement(a);
             }
           }

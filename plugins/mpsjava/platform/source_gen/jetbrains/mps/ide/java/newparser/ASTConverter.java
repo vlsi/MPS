@@ -109,7 +109,6 @@ import org.eclipse.jdt.internal.compiler.ast.TrueLiteral;
 import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
 import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.scope.Scope;
@@ -1775,7 +1774,7 @@ public class ASTConverter {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       // <node> 
       // <node> 
-      return SConceptPropertyOperations.getString(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType"), "alias");
+      return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")), "conceptAlias");
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       // <node> 
       //  we'll do assert later when parser always returns dynamic refs 

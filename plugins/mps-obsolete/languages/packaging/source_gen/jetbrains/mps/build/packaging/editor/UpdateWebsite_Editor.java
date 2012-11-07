@@ -9,12 +9,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.InternalFlag;
 
@@ -26,7 +27,7 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2cmpa5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2cmpa5_a");
-    editorCell.addEditorCell(this.createConceptProperty_2cmpa5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_2cmpa5_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2cmpa5_b0(editorContext, node));
     return editorCell;
   }
@@ -80,6 +81,13 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_2cmpa5_a2b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2cmpa5_b2b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_2cmpa5_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     return editorCell;
   }
 
@@ -147,25 +155,6 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no updateChannel>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_2cmpa5_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

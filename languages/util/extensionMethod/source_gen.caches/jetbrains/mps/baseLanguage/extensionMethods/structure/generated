@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cqyqskrem7nlgpo1xelcebhd8lj9wq1">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
+<dependencies version="2" modelHash="3nf5q8cg1z81eamj6k44m0mbjl68xdq">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="32r4fwoqxvjm4c9ivtrpwu9rluuq7jx" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2zzibu7tqv74frgzpnz5uza1ucknhwm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="9sjztv8rf0lvgvtvh42jm4e0wa670o1" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-cjp3x7kpslsgnhml4bi405qvj66t1vk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dweusve4s1cnqvm1h7144swvj24rs4o" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="4owbxbs8ql65a8recge1up294uklza3" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-6md5g2h2acbyqtqsfqzg1ljuryigg5c" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-3223m9cg8337am9br9ikluvywbkblf4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3dak0br4zy0kdlet4vcbpbps4f0f1hj" />
@@ -29,7 +29,7 @@
     <file name="ExtensionMethods_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1894531970723270160" name="TypeExtension" hash="-b16toq5g7kkt7w0t6l3ll726437fnok">
+  <source id="1894531970723270160" name="TypeExtension" hash="eaz6qov37b8x5nmon0hi5g062ezxfre">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1550313277221324859" name="ExtensionMethodCall" hash="an6e86dkfbkond60rerw841sdt1yc8z">
@@ -38,13 +38,13 @@
   <source id="1550313277222152185" name="ExtensionMethodDeclaration" hash="-3x5jc2vbb84boh6ocbx4cvbh3ksqv3n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3316739663067157299" name="ThisExtensionExpression" hash="-52hc1hun61x4j9so2zkysi0vppnq9jl">
+  <source id="3316739663067157299" name="ThisExtensionExpression" hash="-dtrmzqkgh2374s08bhytcgl2da2jdl7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8022092943109322131" name="SimpleExtensionMethodsContainer" hash="-2r3lojtd7zs6psqiyifajjyogppr6jv">
+  <source id="8022092943109322131" name="SimpleExtensionMethodsContainer" hash="22q2qsuj652jekhko7o5tmjwdhw2maf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8022092943110829337" name="BaseExtensionMethodContainer" hash="-1rzvmrynrl56clcugge38or0f00o50l">
+  <source id="8022092943110829337" name="BaseExtensionMethodContainer" hash="-dpm7yagy7bpnk3kcm034ut78lh46zp2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1973189701690850247" name="ExtensionStaticFieldReference" hash="9uyupb65rhaj071jtjv1b3k355kaz2v">
@@ -53,7 +53,7 @@
   <source id="1973189701691027447" name="ExtensionStaticFieldDeclaration" hash="-3heyvv6sqzrpswricv7rin6xa97zo7l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7685333756920172912" name="LocalExtendedMethodCall" hash="-2iq4t3adklgmgt101zxsqt2baz761xv">
+  <source id="7685333756920172912" name="LocalExtendedMethodCall" hash="-1dzu8eby2lk9rmij8tw7e4xse3j6vqo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

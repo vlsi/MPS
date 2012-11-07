@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -19,7 +19,7 @@ public class typeof_AsBuilderStatement_InferenceRule extends AbstractInferenceRu
   }
 
   public void applyRule(final SNode statement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(statement, "builder", true)), "abstract")) {
+    if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(statement, "builder", true)), "abstract")) {
       return;
     }
     {

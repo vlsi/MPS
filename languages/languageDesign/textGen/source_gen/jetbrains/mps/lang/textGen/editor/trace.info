@@ -653,88 +653,69 @@
     <unitInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet" />
   </root>
   <root nodeId="1233751668642" modelId="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)">
-    <nodeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="33" startPosition="88" endLine="34" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="34" startPosition="128" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="36" startPosition="5" endLine="37" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="37" startPosition="42" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="40" startPosition="5" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="41" startPosition="34" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="45" startPosition="95" endLine="46" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="46" startPosition="89" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="47" startPosition="30" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="48" startPosition="43" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="49" startPosition="26" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="50" startPosition="58" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="51" startPosition="50" endLine="52" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="52" startPosition="79" endLine="53" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="53" startPosition="73" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="54" startPosition="57" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="56" startPosition="35" endLine="57" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="57" startPosition="72" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="58" startPosition="78" endLine="59" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="60" startPosition="10" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="50" startPosition="58" endLine="52" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="20" startPosition="70" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="49" startPosition="26" endLine="53" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="35" startPosition="47" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="34" startPosition="128" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="55" startPosition="59" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_yb6w4b_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="32" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yb6w4b_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="44" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_yb6w4b_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
-    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" />
-    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" />
-    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="81" />
-    <scopeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="50" startPosition="58" endLine="52" endPosition="79" />
-    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="36" startPosition="5" endLine="39" endPosition="63">
+    <nodeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="31" startPosition="89" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="32" startPosition="67" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="33" startPosition="69" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="33" startPosition="69" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="34" startPosition="79" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="38" startPosition="88" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="39" startPosition="128" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="41" startPosition="5" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="45" startPosition="5" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="46" startPosition="34" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="18" startPosition="70" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="40" startPosition="47" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="39" startPosition="128" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_yb6w4b_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_yb6w4b_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yb6w4b_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
+    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="82" />
+    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="81" />
+    <scopeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="33" startPosition="69" endLine="34" endPosition="79" />
+    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="41" startPosition="5" endLine="44" endPosition="63">
       <varInfo nodeId="1234201440979" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="56" startPosition="35" endLine="59" endPosition="105">
-      <varInfo nodeId="1233751675083" varName="manager" />
-      <varInfo nodeId="1233751675083" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="20" startPosition="70" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="18" startPosition="70" endLine="22" endPosition="0">
       <varInfo nodeId="1233751668642" varName="editorContext" />
       <varInfo nodeId="1233751668642" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="49" startPosition="26" endLine="53" endPosition="73" />
-    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="25" startPosition="89" endLine="30" endPosition="22">
+    <scopeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="31" startPosition="89" endLine="35" endPosition="22">
+      <varInfo nodeId="2886182022232400301" varName="editorCell" />
+      <varInfo nodeId="2886182022232400301" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22">
       <varInfo nodeId="1233751672003" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="34" startPosition="128" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="39" startPosition="128" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="2886182022232400301" fileName="SimpleTextGenOperation_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2886182022232400301" varName="editorContext" />
+      <varInfo nodeId="2886182022232400301" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1233751672003" fileName="SimpleTextGenOperation_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1233751672003" varName="editorContext" />
       <varInfo nodeId="1233751672003" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="33" startPosition="88" endLine="42" endPosition="22">
+    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="38" startPosition="88" endLine="47" endPosition="22">
       <varInfo nodeId="1234201440979" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1234201440979" fileName="SimpleTextGenOperation_Editor.java" startLine="37" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1234201440979" varName="editorContext" />
       <varInfo nodeId="1234201440979" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="45" startPosition="95" endLine="61" endPosition="22">
-      <varInfo nodeId="1233751675083" varName="attributeConcept" />
-      <varInfo nodeId="1233751675083" varName="attributeKind" />
-      <varInfo nodeId="1233751675083" varName="editorCell" />
-      <varInfo nodeId="1233751675083" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1233751675083" fileName="SimpleTextGenOperation_Editor.java" startLine="44" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1233751675083" varName="editorContext" />
-      <varInfo nodeId="1233751675083" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.SimpleTextGenOperation_Editor" />
+    <unitInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.SimpleTextGenOperation_Editor" />
   </root>
   <root nodeId="1233922090283" modelId="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)">
     <nodeInfo nodeId="1233922212887" fileName="LanguageTextGenDeclaration_Editor.java" startLine="168" startPosition="58" endLine="168" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

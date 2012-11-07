@@ -8,6 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -17,9 +21,6 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
@@ -34,7 +35,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9nqz5z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9nqz5z_a");
-    editorCell.addEditorCell(this.createConceptProperty_9nqz5z_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_9nqz5z_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9nqz5z_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9nqz5z_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9nqz5z_d0(editorContext, node));
@@ -49,6 +50,14 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9nqz5z_a_0");
     editorCell.addEditorCell(this.createConstant_9nqz5z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9nqz5z_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_9nqz5z_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    buildStyles_StyleSheet.getOutputLayout(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1()}));
     return editorCell;
   }
 
@@ -153,25 +162,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_9nqz5z_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    buildStyles_StyleSheet.getOutputLayout(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -267,7 +267,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
-    return !(SConceptPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptPropertyOperations.getBoolean(thisNode, "dontSubstituteByDefault"));
+    return !(SPropertyOperations.getBoolean(thisNode, "abstract")) && !(SConceptPropertyOperations.getBoolean(thisNode, "dontSubstituteByDefault"));
   }
 
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept, IScope scope) {

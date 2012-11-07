@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Iterator;
@@ -221,7 +220,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
           fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
         } else {
-          fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
+          fqNameNode = TransformationUtil.createStringLiteral(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(componentType), "conceptAlias"));
         }
         // todo multi-arraycal 
         SNode size = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "dimensionExpression", true)).first(), "expression", true);
@@ -233,7 +232,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
           fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
         } else {
-          fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
+          fqNameNode = TransformationUtil.createStringLiteral(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(componentType), "conceptAlias"));
         }
         List<SNode> initValues = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), "initValue", true);
 
