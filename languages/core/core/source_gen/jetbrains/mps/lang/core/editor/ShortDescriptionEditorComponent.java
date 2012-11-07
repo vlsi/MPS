@@ -36,7 +36,7 @@ public class ShortDescriptionEditorComponent extends AbstractCellProvider {
   private EditorCell createReadOnlyModelAccessor_37ao6w_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription");
+        return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptShortDescription");
       }
 
       public void setText(String s) {
