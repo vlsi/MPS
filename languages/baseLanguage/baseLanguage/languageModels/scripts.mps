@@ -32,25 +32,25 @@
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1240068519431">
-      <property name="category" nameId="tp33.1206123296179" value="find java util reference" />
       <property name="title" nameId="tp33.1177457669450" value="Show java.util.* References" />
+      <property name="category" nameId="tp33.1206123296179" value="find java util reference" />
       <property name="name" nameId="tpck.1169194664001" value="ShowJavaUtilReferences" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4581730695772514123">
       <property name="title" nameId="tp33.1177457669450" value="BaseLanguage Enhancements" />
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEnhancements" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEnhancements" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1704189004094297789">
-      <property name="category" nameId="tp33.1206123296179" value="baseLanguage" />
       <property name="title" nameId="tp33.1177457669450" value="Remove &quot;this&quot; Where Appropriate" />
-      <property name="name" nameId="tpck.1169194664001" value="RemoveThisWhereAppropriate" />
+      <property name="category" nameId="tp33.1206123296179" value="baseLanguage" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="6252" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveThisWhereAppropriate" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8647043020514320142">
       <property name="title" nameId="tp33.1177457669450" value="Convert Deprecated Annotation Instances" />
-      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
       <property name="name" nameId="tpck.1169194664001" value="ConvertAnnotationInstances" />
+      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
@@ -5733,11 +5733,14 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="842610415962474426">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="842610415962474495">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="842610415962474519">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="842610415962474496">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842610415962474431" resolveInfo="applicableConcept" />
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1809527500895304491">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1809527500895304488">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AsNodeOperation" typeId="tp25.8866923313515890008" id="1809527500895304489" />
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1809527500895304490">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="842610415962474431" resolveInfo="applicableConcept" />
+              </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="842610415962506053">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1809527500895304492">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877404258" resolveInfo="getFqName" />
             </node>
           </node>

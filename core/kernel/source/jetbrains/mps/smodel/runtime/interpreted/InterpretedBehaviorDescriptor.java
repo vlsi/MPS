@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -37,6 +38,15 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
 
   @Override
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters) {
+    return genericInvoke(node, methodName, parameters);
+  }
+
+  @Override
+  public Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+    return genericInvoke(concept, methodName, parameters);
+  }
+
+  private Object genericInvoke(@NotNull Object arg, String methodName, Object[] parameters) {
     Method method = methods.get(methodName);
     if (method == null) {
       method = findMethod(getConceptFqName(), methodName);
@@ -48,7 +58,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     }
 
     Object[] params = new Object[parameters.length + 1];
-    params[0] = node;
+    params[0] = arg;
     System.arraycopy(parameters, 0, params, 1, parameters.length);
 
     try {

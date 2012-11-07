@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible"}, new String[]{"isVirtual", "isPrivate", "isAbstract"}, new String[]{"overriddenMethod"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible"}, new String[]{"isVirtual", "isPrivate", "isAbstract", "isStatic"}, new String[]{"overriddenMethod"});
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"concept"});
       case 4:

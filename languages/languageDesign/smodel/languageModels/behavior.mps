@@ -148,6 +148,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8866923313515896900">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp25.8866923313515890008" resolveInfo="AsNodeOperation" />
+    </node>
   </roots>
   <root id="1213877264086">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877264087">
@@ -3699,6 +3703,11 @@
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="559557797393017728">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="559557797393017729" />
+    </node>
+  </root>
+  <root id="8866923313515896900">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="8866923313515896912">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8866923313515896913" />
     </node>
   </root>
 </model>

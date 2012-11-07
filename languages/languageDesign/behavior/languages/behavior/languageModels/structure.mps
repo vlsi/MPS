@@ -41,8 +41,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6496299201655527393">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <property name="name" nameId="tpck.1169194664001" value="LocalBehaviorMethodCall" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068499141036" resolveInfo="BaseMethodCall" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="646895014681116169">
@@ -50,8 +50,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="646895014681116171">
-      <property name="name" nameId="tpck.1169194664001" value="InternalConceptDeclarationsHolder" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="InternalConceptDeclarationsHolder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -114,6 +114,10 @@
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1225194472834">
       <property name="name" nameId="tpck.1169194664001" value="isAbstract" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5864038008284099149">
+      <property name="name" nameId="tpck.1169194664001" value="isStatic" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1225194472835">
