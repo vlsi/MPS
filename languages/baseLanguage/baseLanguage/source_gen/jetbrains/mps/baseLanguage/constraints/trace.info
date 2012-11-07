@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104836688" modelId="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)">
     <nodeInfo nodeId="1213104836688" fileName="ClosureParameterReference_Constraints.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_j093wa_a0a0a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1213104836688" fileName="ClosureParameterReference_Constraints.java" startLine="24" startPosition="50" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1980,6 +1980,47 @@
     <unitInfo nodeId="363746191845183794" fileName="LoopLabelReference_Constraints.java" startLine="40" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.baseLanguage.constraints.LoopLabelReference_Constraints$2" />
     <unitInfo nodeId="363746191845183794" fileName="LoopLabelReference_Constraints.java" startLine="31" startPosition="36" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.LoopLabelReference_Constraints$1" />
     <unitInfo nodeId="363746191845183794" fileName="LoopLabelReference_Constraints.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LoopLabelReference_Constraints" />
+  </root>
+  <root nodeId="4595369208717708535" modelId="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)">
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="16" startPosition="48" endLine="17" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="26" startPosition="200" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="27" startPosition="96" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="32" startPosition="0" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4595369208717712205" fileName="EnumConstantDeclaration_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EnumConstantDeclaration_Constraints#()V" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="16" startPosition="48" endLine="17" endPosition="74" />
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="29" startPosition="51" endLine="30" endPosition="67" />
+    <scopeInfo nodeId="4595369208717711991" fileName="EnumConstantDeclaration_Constraints.java" startLine="36" startPosition="148" endLine="37" endPosition="102" />
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4595369208717708535" varName="childConcept" />
+      <varInfo nodeId="4595369208717708535" varName="link" />
+      <varInfo nodeId="4595369208717708535" varName="node" />
+      <varInfo nodeId="4595369208717708535" varName="operationContext" />
+      <varInfo nodeId="4595369208717708535" varName="parentNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="26" startPosition="200" endLine="33" endPosition="18">
+      <varInfo nodeId="4595369208717708535" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="25" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4595369208717708535" varName="checkingNodeContext" />
+      <varInfo nodeId="4595369208717708535" varName="childConcept" />
+      <varInfo nodeId="4595369208717708535" varName="link" />
+      <varInfo nodeId="4595369208717708535" varName="node" />
+      <varInfo nodeId="4595369208717708535" varName="operationContext" />
+      <varInfo nodeId="4595369208717708535" varName="parentNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4595369208717708535" fileName="EnumConstantDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.EnumConstantDeclaration_Constraints" />
   </root>
   <root nodeId="4836112446988635826" modelId="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)">
     <nodeInfo nodeId="4836112446988635826" fileName="BaseVariableDeclaration_Constraints.java" startLine="8" startPosition="48" endLine="9" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
