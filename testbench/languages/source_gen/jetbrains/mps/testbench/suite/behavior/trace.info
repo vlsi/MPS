@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="IModuleRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" />
+  <unitInfo fileName="ITestRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
+  <unitInfo fileName="JUnit3TestCaseRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" />
+  <unitInfo fileName="JUnit4TestCaseRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" />
+  <unitInfo fileName="ModuleSuite_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor" />
+  <unitInfo fileName="SolutionRef_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.SolutionRef_BehaviorDescriptor" />
+  <unitInfo fileName="TestCaseRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_BehaviorDescriptor" />
   <root nodeId="1280144168199506814" modelId="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)">
     <nodeInfo nodeId="1280144168199518345" fileName="ModuleSuite_Behavior.java" startLine="21" startPosition="71" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1280144168199518369" fileName="ModuleSuite_Behavior.java" startLine="23" startPosition="34" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

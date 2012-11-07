@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="CommentMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.CommentMigrationScriptPart_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractInterfaceMigration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.ExtractInterfaceMigration_BehaviorDescriptor" />
+  <unitInfo fileName="FactoryMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FactoryMigrationScriptPart_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScriptPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScriptPart_Instance_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScriptPart_Instance_Predicate_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScriptPart_Instance_Updater_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScriptPart_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_node_BehaviorDescriptor" />
+  <unitInfo fileName="MigrationScript_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScript_BehaviorDescriptor" />
+  <unitInfo fileName="PullUpMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.PullUpMethod_BehaviorDescriptor" />
+  <unitInfo fileName="WhitespaceMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.WhitespaceMigrationScriptPart_BehaviorDescriptor" />
   <root nodeId="5166971494091017143" modelId="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)">
     <nodeInfo nodeId="5166971494091017150" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
