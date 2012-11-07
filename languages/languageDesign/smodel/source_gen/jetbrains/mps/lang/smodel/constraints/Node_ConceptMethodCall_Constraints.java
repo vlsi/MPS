@@ -17,12 +17,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.search.ISearchScope;
-import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_zb7xc_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104840562");
@@ -47,19 +49,30 @@ public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescripto
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-            SNode snodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
-            ISearchScope searchScope;
-            if ((snodeType != null)) {
-              SNode concept = SLinkOperations.getTarget(snodeType, "concept", false);
-              if ((concept == null)) {
-                concept = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
-              }
-              List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode());
-              searchScope = new SimpleSearchScope(methods);
-            } else {
-              searchScope = new EmptySearchScope();
+            SNode type = TypeChecker.getInstance().getTypeOf(leftExpression);
+            if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeType")) && !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType"))) {
+              return new EmptySearchScope();
             }
-            return searchScope;
+
+            SNode concept;
+            final Wrappers._boolean isStatic = new Wrappers._boolean();
+            if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType")) {
+              concept = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.lang.smodel.structure.SConceptType"), "conceptDeclaraton", false);
+              isStatic.value = true;
+            } else {
+              concept = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
+              isStatic.value = false;
+            }
+            if ((concept == null)) {
+              concept = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+            }
+            List<SNode> methods = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SPropertyOperations.getBoolean(it, "isStatic") == isStatic.value;
+              }
+            }).toListSequence();
+
+            return new SimpleSearchScope(methods);
           }
 
           @Override
