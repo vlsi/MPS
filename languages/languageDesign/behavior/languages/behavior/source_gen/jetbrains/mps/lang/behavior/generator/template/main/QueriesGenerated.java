@@ -197,8 +197,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5570334447680928666(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode enclosingMethod = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false);
-    assert (enclosingMethod != null);
-    return (SPropertyOperations.getBoolean(enclosingMethod, "isStatic") ?
+    return (((enclosingMethod != null) && SPropertyOperations.getBoolean(enclosingMethod, "isStatic")) ?
       "thisConcept" :
       "thisNode"
     );
