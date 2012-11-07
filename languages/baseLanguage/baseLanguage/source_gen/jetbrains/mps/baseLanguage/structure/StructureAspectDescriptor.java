@@ -450,7 +450,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 216:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"classifier", "staticFieldDeclaration"});
       case 217:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember"}, new String[]{}, new String[]{});
       case 218:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.StaticKind", null, true, new String[]{}, new String[]{}, new String[]{});
       case 219:
