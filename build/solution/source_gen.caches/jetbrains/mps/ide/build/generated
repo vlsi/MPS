@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-br3vz23xkfv24wa5ta1b48e9sii5osr">
+<dependencies version="2" modelHash="-ebdvhtq8o4qexr51exeq610xnnagt8p">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="5evnomp6a0d9l6p0ghnuwh03hk54y5k" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-knk8ncknhnsmbmjgf4t9man9splm22" />
@@ -9,11 +9,11 @@
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="9f2jxfc09cdoqvzkxexfgxk1of5tgre" />
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="852tmu72rsv4lihtjc4d0bafbqgk4oh" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-ct28ply7vbiwguujdbc1vwgzyfm54vz" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-f4u66hj90gl3cdh0z5mx2o685qln6m" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-4einw9nxvc4o3jy5s3dftgatoocseg0" />
   <common hash="c95sy96k7jwjoycn1fcmv5cqmkrc13n">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="7926701909975931624" name="buildCore" hash="-9tzjeqy4r48j5l6wdywjedqylns68fo">
+  <source id="7926701909975931624" name="buildCore" hash="empzz176g71p0qtgioh7geqtnd1rtgq">
     <dep root="7181125477683264500" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
@@ -156,7 +156,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildExecutionPlugin.xml" />
   </source>
-  <source id="2075442863766408895" name="buildExperimental" hash="9omf5of8owhjs81qvoqshes4wyvrz08">
+  <source id="2075442863766408895" name="buildExperimental" hash="dzjt08sd8p5bcz0eljggawb9qfigxr0">
     <dep root="2569834391839970845" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
