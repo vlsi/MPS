@@ -81,7 +81,10 @@ public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourcePath_2725562405081831808(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     String localPath = BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(_context.getSourceNode(), Context.defaultContext());
     if ((localPath == null || localPath.length() == 0)) {
-      return false;
+      localPath = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(_context.getSourceNode());
+      if ((localPath == null || localPath.length() == 0)) {
+        return false;
+      }
     }
     return localPath.matches(".*\\.(jar|zip|war|tar|tar\\.gz|tar\\.bz)");
   }

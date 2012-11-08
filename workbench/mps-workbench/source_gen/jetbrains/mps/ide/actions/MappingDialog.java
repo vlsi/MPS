@@ -72,7 +72,7 @@ public class MappingDialog extends BaseDialog {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             SNode node = treeNode.getSNode();
-            if (node.isDisposed() || !(node.isRegistered()) || node.getModel().getModelDescriptor() != null) {
+            if (node.isDisposed() || !(node.isRegistered()) || node.getModel().getModelDescriptor() == null) {
               return;
             }
             // TODO: use node pointers here 

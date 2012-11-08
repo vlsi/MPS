@@ -39,6 +39,7 @@ public class ProjectViewSelectInProvider implements ApplicationComponent {
         return n == null ? null : ModelUtil.getFileByModel(n.getModel());
       }
     });
+    if (modelFile == null) {return null;}
     return new VirtualFileSelectInContext(ProjectHelper.toIdeaProject(p), modelFile);
   }
 
