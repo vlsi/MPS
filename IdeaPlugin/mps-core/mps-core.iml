@@ -36,6 +36,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/ant/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/openapi/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/migration/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/persistence/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/persistence/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../editor">
       <sourceFolder url="file://$MODULE_DIR$/../../editor/actions-runtime/source" isTestSource="false" />
